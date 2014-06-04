@@ -1,0 +1,26 @@
+Template se.m02.d16.sun.ma
+
+		Head 
+			Set_Date month 2 day 16 End_Date
+			Page_Header_Even 
+				left @pageNbr 
+				right 
+					@text "Matins" 
+					@date  lang L1
+			End_Page_Header_Even
+			Page_Header_Odd 
+				left 
+					@text "Matins"
+					@date lang L2
+				right @pageNbr 
+			End_Page_Header_Odd
+			Set_Page_Number 13 End_Set_Page_Number
+		End_Head
+	
+	when-movable-cycle-day-is 1 thru 127 use:
+		Insert_template mc.map.ma End-Insert
+		otherwise use:
+		
+	end-when	
+
+End-Template

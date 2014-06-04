@@ -1,0 +1,128 @@
+Template cu.MatinsOrdinary 
+
+Status Final
+
+	import ematinscovers_en_US_ematins.*	
+	import ho.s03_gr_GR_cog.*
+	import ps_gr_GR_cog.*
+	
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	
+	import iTags.*
+	import bTags.*
+	import roles.*
+	import rules.*
+
+	Head 
+	Template_Title @text "Matins Ordinary" End_Title
+			Page_Header_Even
+				center @lookup sid ma.pdf.header lang L1 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ma.pdf.header lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+	
+	Section Part1
+		Title role desig sid hoMA.title End-Title
+		Break line End_Break
+		Actor sid Priest End-Actor
+		Dialog sid enarxis01 End-Dialog
+		Actor sid Reader End-Actor
+		Dialog sid res04 End-Dialog
+		Actor sid Priest End-Actor
+		Insert_section ho.s01.Heavenly_King End-Insert
+	End-Section
+	
+	Section Part2		
+		Actor sid Reader End-Actor
+		Insert_section ho.s01.Trisagion_Prayers End-Insert
+		Actor sid Priest End-Actor
+		Dialog sid exc20 End-Dialog
+		Actor sid Reader End-Actor
+		Dialog sid res04 End-Dialog
+		Reading sid me.m09.d14_gr_GR_cog.meVE.Apolytikion1.text End-Reading
+		Reading sid DoxaPatri.text End-Reading
+		Reading sid me.m09.d14_gr_GR_cog.meMA.Kontakion1.text End-Reading
+		Reading sid KaiNynKaiAei.text End-Reading
+		Reading sid hoMA.Troparion3.text End-Reading
+	End-Section
+	
+	Section Part3		
+		Actor sid Priest End-Actor
+		Dialog sid pet17 End-Dialog
+		Dialog <i>sid res06p</> End-Dialog		
+		Dialog sid pet18 End-Dialog
+		Dialog <i>sid res06p</> End-Dialog		
+		Dialog sid pet19 End-Dialog
+		Dialog <i>sid res06p</> End-Dialog		
+		Dialog sid exc11 End-Dialog
+		Actor sid Chanter End-Actor
+		Dialog sid res04 sid EnOnomatiKyriou.text End-Dialog
+		Actor sid Priest End-Actor
+		Dialog sid enarxis03 End-Dialog
+		Actor sid Reader End-Actor
+		Dialog sid res04 End-Dialog				
+	End-Section
+	
+	Section Part4		
+		Title role desig sid SixPsalms.title End-Title
+		Reading sid le.go.os_gr_GR_cog.leosMA.SixPsalmsIntro1.text <inr>sid Thrice</>End-Reading		
+		Reading sid psa50.v17.text <inr>sid Twice</>End-Reading
+		Title role desig sid psa3.title End-Title
+		Reading sid psa3.text End-Reading		
+		Reading sid psa3.v6.text End-Reading		
+		Title role desig sid psa37.title End-Title
+		Reading sid psa37.text End-Reading		
+		Reading sid psa37.v22.text sid psa37.v23.text End-Reading		
+		Title role desig sid psa62.title End-Title
+		Reading sid psa62.text End-Reading		
+		Reading sid psa62.v7b.text sid psa62.v8.text sid psa62.v9.text End-Reading		
+	
+		Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+		Reading sid Allilouia3Doxa.text End-Reading		
+		Reading sid Allilouia3Doxa.text End-Reading		
+		Reading sid Allilouia3Doxa.text End-Reading		
+		Reading sid res01 sid res01 sid res01  End-Reading
+		Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+
+		Title role desig sid psa87.title End-Title
+		Reading sid psa87.text End-Reading		
+		Reading sid psa87.v2.text sid psa87.v3.text End-Reading		
+		Title role desig sid psa102.title End-Title
+		Reading sid psa102.text End-Reading		
+		Reading sid psa102.v22b.text End-Reading		
+		Title role desig sid psa142.title End-Title
+		Reading sid psa142.text End-Reading		
+		Reading sid psa142.v1alt.text sid psa142.v2a.text End-Reading		
+		Reading sid psa142.v1alt.text sid psa142.v2a.text End-Reading		
+		Reading sid psa142.v10b.text End-Reading		
+		
+		Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+		Reading sid Allilouia3Doxa.text End-Reading		
+		Reading sid Allilouia3Doxa.text End-Reading
+		Rubric sid Intoned End-Rubric		
+		Reading sid Allilouia3Doxa.text sid IElpisImonKyrie End-Reading		
+	End-Section
+	
+	Section Part5	
+		Actor sid PriestOrDeacon End-Actor
+		Insert_section Litanies.GreatLitany01 End-Insert	
+		Actor sid Priest End-Actor
+		Dialog sid exc01 End-Dialog
+		Actor sid Choir End-Actor
+		Dialog sid res04 End-Dialog
+	End-Section
+					
+End-Template

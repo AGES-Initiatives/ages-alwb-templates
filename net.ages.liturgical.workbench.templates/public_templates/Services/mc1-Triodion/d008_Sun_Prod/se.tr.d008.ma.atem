@@ -1,0 +1,102 @@
+Template se.tr.d008.ma 
+
+//Sunday of Publican and Pharisee Matins: no Menaion
+
+	import ho.s03_gr_GR_cog.*
+	import oc.*
+	import tr.d008_gr_GR_cog.*
+	
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+	
+	import iTags.*
+	import bTags.*
+	import roles.*
+	
+	//Imorted Templates
+	import kTriodion2.*  //Katavasia
+	import MatinsParts.*
+	import Litanies.*
+	
+	
+	Insert_section SunGITL_NoSaint End-Insert
+Break line End_Break
+	Insert_section ShortLitany02 End-Insert
+	Insert_section SunKathisma1_NoSaint End-Insert
+	Insert_section SunKathisma2 End-Insert
+	Insert_section ResurrectionalEvlogetaria End-Insert
+Break line End_Break
+	Insert_section ShortLitany04 End-Insert	
+	Insert_section HypakoeAntiphonsProkeimenon End-Insert
+Break line End_Break
+	Actor sid Reader End-Actor
+	Title role desig sid KontakionAnastasimon End-Title
+	Reading rid ocMA.Kontakion.text End-Reading
+	Title role desig sid OOikos End-Title
+	Reading rid ocMA.Oikos.text End-Reading 
+	Title role desig sid KontakionTouTriodiou End-Title
+	Title role mixed <Tmode>sid trMA.Kontakion.mode</><Tmelody>sid trMA.Kontakion.melody </> End-Title
+	Reading sid trMA.Kontakion.text End-Reading
+	Title role desig sid OOikos End-Title
+	Reading sid trMA.Oikos.text End-Reading 
+	
+	Insert_section Synaxarion.Synaxarion End-Insert
+Break line End_Break
+	Actor sid Choir End-Actor
+	Insert_section k_1345678 End-Insert
+Break line End_Break
+	Insert_section MatinsGospel_Intro End-Insert
+	Insert_section MatinsGospel_Eothina End-Insert
+Break line End_Break
+	Insert_section Supplication End-Insert
+	Actor sid PriestOrDeacon End-Actor
+	Dialog sid exc15 End-Dialog
+Break line End_Break
+	Section Part1_Mode //copy and set mode of Title and Media
+		Actor sid Choir End-Actor
+		Title role mixed <Tdesig>sid titles_gr_GR_cog.Megalynarion</> <Tmode>sid Mode2</> End-Title
+		Media sid oc.m2.d1_gr_GR_cog.ocMA.Magnificat.text End-Media// set mode
+	End-Section //Part1
+	Insert_section Magnificat.Part2_Verse123456 End-Insert
+	Insert_section k_9 End-Insert
+Break line End_Break
+	Insert_section ShortLitany10 End-Insert	
+	Insert_section SunHITLExaposteilarion.part01 End-Insert
+	Title role desig sid TouTriodiou End-Title
+	Title role mixed <Tmode>sid trMA.Exaposteilarion1.mode</> <Tmelody>sid trMA.Exaposteilarion1.melody</> End-Title
+	Hymn sid trMA.Exaposteilarion1.text End-Hymn
+	Title role desig sid Eteron sid Omoion End-Title
+	Hymn sid trMA.Exaposteilarion2.text End-Hymn
+	Title role desig sid Theotokion sid Omoion End-Title
+	Hymn sid trMA.ExapTheotokion.text End-Hymn
+Break line End_Break
+	Insert_section SunLaudsRes1234 End-Insert
+		Insert_section Lauds_Verse.v05 End-Insert
+		Hymn rid ocMA.Lauds5.text End-Hymn
+	
+	Section Lauds_Triodion
+		Title role desig sid IdiomelaTouTriodiou End-Title
+		Title role mode sid trMA.Lauds1.mode End-Title
+		Insert_section Lauds_Verse.v06 End-Insert
+		Hymn sid trMA.Lauds1.text End-Hymn
+		Title role mode sid trMA.Lauds2.mode End-Title
+		Insert_section Lauds_Verse.v07 End-Insert
+		Hymn sid trMA.Lauds2.text End-Hymn
+		Title role mode sid trMA.Lauds3.mode End-Title
+		Insert_section Lauds_Verse.v08 End-Insert
+		Hymn sid trMA.Lauds3.text End-Hymn
+	End-Section
+	
+	Section Glory_Triodion
+		Title role mixed sid Doxa <Tdesig>sid TouTriodiou</> End-Title
+		Title role mode sid trMA.LaudsGlory.mode End-Title
+		Hymn sid trMA.LaudsGlory.text End-Hymn
+	End-Section
+	
+	Insert_section EothinonGloryBoth.Part2 End-Insert
+
+
+End-Template

@@ -1,0 +1,163 @@
+Template se.m02.d06.wkd.ve
+
+	import client_gr_GR_cog.*
+	import eu.lichrysbasil_gr_GR_cog.*
+	import ho.s03_gr_GR_cog.*
+	import ho.s07_gr_GR_cog.*
+	import ho.s10_gr_GR_cog.*	
+	import me.m02.d06_gr_GR_cog.*
+//	import pe.d000_gr_GR_cog.*
+//	import tr.d000_gr_GR_cog.*
+
+//	import oc.*
+//	import pe.*
+//	import tr.*
+
+	//Templates
+	import VespersParts.*
+	import MatinsParts.*
+	import kTheotokos.*  //Katavasia
+	import LectionaryReadings.*
+	import bk.eu.li.chrysbasil.*
+	import Litanies.*
+	
+	import actors_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 2 day 6 End_Date
+		Page_Header_Even 
+			left @pageNbr 
+			center 
+				@lookup sid ve.pdf.header lang L2 
+		End_Page_Header_Even
+		Page_Header_Odd 
+			center 
+				@lookup sid meShortCommemoration1.text lang L2
+			right @pageNbr 
+		End_Page_Header_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Insert_section Vespers_01 End-Insert
+	Insert_section LIHC_Mode2 End-Insert
+	Section Stichera
+		Title role mixed <Tmode> sid meVE.Stichera01.mode </> <Tmelody>sid meVE.Stichera01.melody </>End-Title
+		Insert_section LIHC_Verse.v05 End-Insert
+		Hymn sid 	meVE.Stichera01.text End-Hymn
+		Insert_section LIHC_Verse.v06 End-Insert
+		Hymn sid 	meVE.Stichera02.text End-Hymn
+		Insert_section LIHC_Verse.v07 End-Insert
+		Hymn sid 	meVE.Stichera03.text End-Hymn
+		Title role mixed <Tmode> sid meVE.Stichera04.mode </> <Tmelody>sid meVE.Stichera04.melody </>End-Title
+		Insert_section LIHC_Verse.v08 End-Insert
+		Hymn sid 	meVE.Stichera04.text End-Hymn
+		Insert_section LIHC_Verse.v09 End-Insert
+		Hymn sid 	meVE.Stichera05.text End-Hymn
+		Insert_section LIHC_Verse.v10 End-Insert
+		Hymn sid 	meVE.Stichera06.text End-Hymn
+		Title role mixed sid Doxa <Tmode> sid meVE.SticGlory.mode </>End-Title
+		Hymn sid meVE.SticGlory.text End-Hymn
+		Title role mixed sid KaiNyn <Tmode> sid meVE.SticBoth.mode </>End-Title
+		Hymn sid meVE.SticBoth.text End-Hymn
+	End-Section //Stichera
+
+	Insert_section Vespers_03 End-Insert
+
+	Section Vespers_04_menaion //import this if used on date. copy and change to sid when needed
+		Actor sid Reader End-Actor
+		Dialog sid hoVE.Reading_Intro.text1 sid meVE.Reading1.book sid hoVE.Reading_Intro.text2 End-Dialog
+		Actor sid PriestOrDeacon End-Actor
+		Dialog sid exc17 sid exc19 End-Dialog
+		Actor sid Reader End-Actor
+		Title role chapverse sid meVE.Reading1.chapverse End-Title
+		Reading sid meVE.Reading1.text End-Reading
+		Actor sid Reader End-Actor
+		Dialog sid hoVE.Reading_Intro.text1 sid meVE.Reading2.book sid hoVE.Reading_Intro.text2 End-Dialog
+		Actor sid PriestOrDeacon End-Actor
+		Dialog sid exc17 sid exc19 End-Dialog
+		Actor sid Reader End-Actor
+		Title role chapverse sid meVE.Reading2.chapverse End-Title
+		Reading sid meVE.Reading2.text End-Reading
+		Actor sid Reader End-Actor
+		Dialog sid hoVE.Reading_Intro.text1 sid meVE.Reading3.book sid hoVE.Reading_Intro.text2 End-Dialog
+		Actor sid PriestOrDeacon End-Actor
+		Dialog sid exc17 sid exc19 End-Dialog
+		Actor sid Reader End-Actor
+		Title role chapverse sid meVE.Reading3.chapverse End-Title
+		Reading sid meVE.Reading3.text End-Reading
+	End-Section
+
+	Insert_section Vespers_05_Litanies End-Insert
+	
+	Section Vespers_06_LityAndArtoclasia
+		Section Part1 //import this if used on date and hymn is Lity1. copy and change to sid when needed
+			Title role desig sid ILitiKaiArtoklasia End-Title
+			Actor sid Choir End-Actor
+			Title role mode sid meVE.Lity1.mode End-Title
+			Hymn sid meVE.Lity1.text End-Hymn	 
+		End-Section // Part1
+		Section Part2 
+			Break line End_Break 
+			Insert_section Ektenia03 End-Insert
+			Title role desig sid Apolytikion End-Title
+			Media sid hoVE.ArtoTheotokeParthene.text End-Media
+			Insert_section bk.ho.s10.Artoclasia.theotokion End-Insert
+		Break line End_Break 
+	
+			Actor sid Deacon End-Actor
+			Dialog sid pet00 End-Dialog
+			Dialog <i>sid res01p </>End-Dialog	
+			Actor sid Priest End-Actor
+			Dialog sid hoVE.ArtoPrayer1 End-Dialog	
+			Dialog sid hoVE.ArtoPrayer2 End-Dialog
+			Dialog <i> sid res04p </>End-Dialog	
+		
+			Actor sid Clergy End-Actor
+			Media sid hoVE.ArtoHymn.text End-Media
+			Insert_section bk.ho.s10.Artoclasia.hymn_once End-Insert
+			Actor sid Choir End-Actor
+			Insert_section bk.ho.s10.Artoclasia.hymn_twice End-Insert
+		End-Section //Part2
+	End-Section // Lity and Artoclasia
+
+	Section Vespers_07_MenaionAposticha
+		Title role desig sid Aposticha End-Title		
+		Title role mixed <Tdesig> sid Idiomela</> <Tmode>sid meVE.Aposticha1.mode </>End-Title
+		Hymn sid meVE.Aposticha1.text End-Hymn
+		Verse sid meVE.ApostichaVerse2.text End-Verse
+		Hymn sid meVE.Aposticha2.text End-Hymn
+		Verse sid meVE.ApostichaVerse3.text End-Verse
+		Hymn sid meVE.Aposticha3.text End-Hymn
+		Title role mixed sid Doxa <Tmode> sid meVE.AposGlory.mode </>End-Title
+		Hymn sid meVE.AposGlory.text End-Hymn
+		Title role mixed sid KaiNyn <Tmode> sid meVE.AposBoth.mode </>End-Title
+		Hymn sid meVE.AposBoth.text End-Hymn
+	End-Section
+	Insert_section Symeon_Trisagion End-Insert	
+	
+	Actor sid Choir End-Actor
+	Title role mixed <Tdesig> sid Apolytikion </> <Tmode>sid meVE.Apolytikion1.mode </>End-Title
+	Hymn sid meVE.Apolytikion1.text End-Hymn
+	Title role mixed sid DoxaKaiNyn <Tdesig> sid TisEortis </> <Tmode>sid meVE.Apolytikion2.mode </>End-Title
+	Hymn sid meVE.Apolytikion2.text End-Hymn
+	
+	Insert_section Vespers_09_AfterArto End-Insert
+
+	Section Vespers_FinalDismissal
+		Actor sid Priest End-Actor
+		Insert_section Dismissals.Com_Yes End-Insert
+		Dialog sid DiEfchonPateron.text End-Dialog
+		Actor sid People End-Actor
+		Dialog sid res04 End-Dialog
+	End-Section
+
+End-Template

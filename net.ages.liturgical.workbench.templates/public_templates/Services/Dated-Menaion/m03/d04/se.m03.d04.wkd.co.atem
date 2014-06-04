@@ -1,0 +1,27 @@
+Template se.m03.d04.wkd.co
+
+	import template.titles_gr_GR_cog.*
+	
+	Head 
+		Set_Date month 3 day 4 End_Date
+		Page_Header_Even 
+			left @pageNbr 
+			center 
+				@lookup sid co.greatcompline.pdf.header lang L2
+//				@date  
+		End_Page_Header_Even
+		Page_Header_Odd 
+			center 
+				@lookup sid co.greatcompline.pdf.header lang L2
+//				@date  
+			right @pageNbr 
+		End_Page_Header_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	when-movable-cycle-day-is 1 thru 127 use:
+		Insert_template mc.map.co End-Insert
+		otherwise use:
+		
+	end-when
+End-Template

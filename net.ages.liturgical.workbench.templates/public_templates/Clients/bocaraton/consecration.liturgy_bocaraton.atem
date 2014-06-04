@@ -1,0 +1,500 @@
+Template consecration.liturgy_bocaraton 
+
+	import client_gr_GR_cog.*
+	import eu.consecration_gr_GR_cog.*
+	import le.ep.va.consecration_gr_GR_cog.*
+	import le.go.va.consecration_gr_GR_cog.*
+
+	import actors_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+	
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	//Imorted Templates
+	import ho.s01.*
+	import Litanies.*
+
+	Head 
+		Set_Date month 2 day 22 year 2014 End_Date
+		Page_Header_Even 
+			left @pageNbr 
+			center @lookup sid con.consecration sid service lang L2
+		End_Page_Header_Even
+		Page_Header_Odd 
+			center @date 
+			right @pageNbr 
+		End_Page_Header_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Switch-Version L2 End-Switch-Version
+	Title role desig sid euCON.Key4000.title End-Title
+	Switch-Version Both End-Switch-Version
+	Actor sid Hierarch End-Actor
+	Dialog sid euCON.Key4101.text End-Dialog
+	Rubric sid euCON.R410 End-Rubric
+	Dialog sid euCON.Key4102.text End-Dialog
+	Actor sid Reader End-Actor
+	Title role desig sid euCON.Key4103.title End-Title
+	Reading sid euCON.Key4103.text End-Reading
+	Actor sid Deacon End-Actor
+	Insert_section ShortLitany01 End-Insert
+
+	Actor sid Hierarch End-Actor
+	Dialog sid exc05 End-Dialog
+	Dialog <i>sid res04p</> End-Dialog
+	Actor sid Deacon End-Actor
+	Dialog sid pet00 End-Dialog
+	Dialog <i>sid res01p</> End-Dialog
+
+	Actor sid Hierarch End-Actor
+	Switch-Version L2 End-Switch-Version
+	Rubric sid euCON.R411 End-Rubric
+	Switch-Version Both End-Switch-Version
+	Para role prayer sid euCON.Key4104.text End-Para
+	Para role prayer sid euCON.Key4105.text End-Para
+	Dialog <i>sid res04p</> End-Dialog
+	Dialog sid pet31 End-Dialog
+	Dialog <i>sid res05p</> End-Dialog
+	Actor sid Deacon End-Actor
+	Dialog sid pet32 End-Dialog
+	Dialog <i>sid res03p</> End-Dialog
+	Actor sid Hierarch End-Actor
+	Para role prayer sid euCON.Key4106.text End-Para
+	Para role prayer sid euCON.Key4107.text End-Para
+	Dialog <i>sid res04p</> End-Dialog
+
+	Switch-Version L2 End-Switch-Version
+	Title role desig sid euCON.Key4200.title End-Title
+    Rubric sid euCON.R420 End-Rubric
+    Rubric sid euCON.R421 End-Rubric
+	Switch-Version Both End-Switch-Version
+    Actor sid Choir End-Actor
+	Title role mode sid euCON.Key4201.mode End-Title
+	Hymn sid euCON.Key4201.text End-Hymn
+	Title role mode sid euCON.Key4202.mode End-Title
+	Hymn sid euCON.Key4202.text End-Hymn
+	Switch-Version L2 End-Switch-Version
+    Rubric sid euCON.R422 End-Rubric
+	Switch-Version Both End-Switch-Version
+	Title role mode sid euCON.Key4203.mode End-Title
+	Hymn sid euCON.Key4203.text End-Hymn
+	Title role mode sid euCON.Key4204.mode End-Title
+	Hymn sid euCON.Key4204.text End-Hymn
+	Title role mode sid euCON.Key4205.mode End-Title
+	Hymn sid euCON.Key4205.text End-Hymn
+	Title role mixed sid DoxaKaiNyn <Tmode> sid euCON.Key4206.mode</> End-Title
+	Hymn sid euCON.Key4206.text End-Hymn
+	Switch-Version L2 End-Switch-Version
+    Rubric sid euCON.R423 End-Rubric
+	Switch-Version Both End-Switch-Version
+	Title role desig sid euCON.Key4207.title End-Title
+	Section Epistle1
+		Title role desig sid OApostolos End-Title
+		Actor sid Deacon End-Actor
+		Dialog sid exc19 End-Dialog
+		Actor sid Reader End-Actor
+		Title role mixed <Tdesig>sid Prokeimenon</> <Tmode> sid levaCON.Epistle1.Prokeimenon.mode</> End-Title
+		Reading sid levaCON.Epistle1.Prokeimenon.text End-Reading
+		Verse <bnr>sid vVerse</> sid levaCON.Epistle1.ProkeimenonVerse.text End-Verse
+		Actor sid Deacon End-Actor
+		Dialog sid exc17 End-Dialog		
+		Actor sid Reader End-Actor
+		Dialog sid epi01a sid levaCON.Epistle1.book sid epi01b End-Dialog
+		Actor sid Deacon End-Actor
+		Dialog sid exc19 End-Dialog
+		Actor sid Reader End-Actor
+		Title role chapverse sid levaCON.Epistle1.chapverse End-Title		
+		Reading sid levaCON.Epistle1.text End-Reading
+		Actor sid Hierarch End-Actor
+		Dialog sid epi02 End-Dialog		
+	End-Section //Epistle1
+	Section Gospel1
+		Title role desig sid ToTheionEvangelion End-Title
+		Actor sid Choir End-Actor
+		Hymn sid Allilouia3.text End-Hymn
+		Actor sid Deacon End-Actor
+		Dialog sid exc17 sid exc18 sid gos02 End-Dialog
+		Actor sid Hierarch End-Actor
+		Dialog sid pet31 End-Dialog
+		Dialog <i>sid res05p </>End-Dialog
+		Actor sid Hierarch End-Actor
+		Dialog sid gos03a sid levaCON.Gospel1.book sid gos03b End-Dialog		
+		Actor sid Deacon End-Actor
+		Dialog sid exc19 End-Dialog
+		Dialog <i> sid DoxaSoiKyrieP </>End-Dialog	
+		Actor sid Hierarch End-Actor
+		Title role chapverse sid levaCON.Gospel1.chapverse End-Title
+		Reading sid levaCON.Gospel1.text End-Reading
+		Actor sid Choir End-Actor						
+		Dialog sid DoxaSoiKyrie End-Dialog	
+	End-Section //Gospel1
+	Switch-Version L2 End-Switch-Version
+	Rubric sid euCON.R424 End-Rubric
+	Rubric sid euCON.R425 End-Rubric
+	Switch-Version Both End-Switch-Version
+	Title role desig sid euCON.Key4208.title End-Title
+	Section Epistle2
+		Title role desig sid OApostolos End-Title
+		Actor sid Deacon End-Actor
+		Dialog sid exc19 End-Dialog
+		Actor sid Reader End-Actor
+		Title role mixed <Tdesig>sid Prokeimenon</> <Tmode> sid levaCON.Epistle2.Prokeimenon.mode</> End-Title
+		Reading sid levaCON.Epistle2.Prokeimenon.text End-Reading
+		Verse <bnr>sid vVerse</> sid levaCON.Epistle2.ProkeimenonVerse.text End-Verse
+		Actor sid Deacon End-Actor
+		Dialog sid exc17 End-Dialog		
+		Actor sid Reader End-Actor
+		Dialog sid epi01a sid levaCON.Epistle2.book sid epi01b End-Dialog
+		Actor sid Deacon End-Actor
+		Dialog sid exc19 End-Dialog
+		Actor sid Reader End-Actor
+		Title role chapverse sid levaCON.Epistle2.chapverse End-Title		
+		Reading sid levaCON.Epistle2.text End-Reading
+		Actor sid Hierarch End-Actor
+		Dialog sid epi02 End-Dialog		
+	End-Section //Epistle2
+	Section Gospel2
+		Title role desig sid ToTheionEvangelion End-Title
+		Actor sid Choir End-Actor
+		Hymn sid Allilouia3.text End-Hymn
+		Actor sid Deacon End-Actor
+		Dialog sid exc17 sid exc18 sid gos02 End-Dialog
+		Actor sid Hierarch End-Actor
+		Dialog sid pet31 End-Dialog
+		Dialog <i>sid res05p </>End-Dialog
+		Actor sid Hierarch End-Actor
+		Dialog sid gos03a sid levaCON.Gospel2.book sid gos03b End-Dialog		
+		Actor sid Deacon End-Actor
+		Dialog sid exc19 End-Dialog
+		Dialog <i> sid DoxaSoiKyrieP </>End-Dialog	
+		Actor sid Hierarch End-Actor
+		Title role chapverse sid levaCON.Gospel2.chapverse End-Title
+		Reading sid levaCON.Gospel2.text End-Reading
+		Actor sid Choir End-Actor						
+		Dialog sid DoxaSoiKyrie End-Dialog	
+	End-Section //Gospel2
+	Switch-Version L2 End-Switch-Version
+	Rubric sid euCON.R426 End-Rubric
+	Rubric sid euCON.R427 End-Rubric
+	Switch-Version Both End-Switch-Version
+	Actor sid Hierarch End-Actor
+	Para role prayer sid euCON.Key4209.text End-Para
+	Actor sid Choir End-Actor
+	Dialog sid res04 End-Dialog
+	Title role mode sid euCON.Key4210.mode End-Title
+	Hymn sid euCON.Key4210.text	End-Hymn
+	Actor sid Deacon End-Actor
+	Dialog sid pet00 End-Dialog
+	Dialog <i>sid res01p</> End-Dialog
+	Switch-Version L2 End-Switch-Version
+	Rubric sid euCON.R428 End-Rubric
+	Switch-Version Both End-Switch-Version
+	Actor sid Hierarch End-Actor
+	Para role prayer sid euCON.Key4211a.text sid cl.consecration.name sid euCON.Key4211c.text End-Para
+	Para role prayer sid euCON.Key4212.text End-Para
+	Dialog <i>sid res04p</> End-Dialog
+	Actor sid Deacon End-Actor
+	Dialog sid pet00 End-Dialog
+	Dialog <i>sid res01p</> End-Dialog
+	Actor sid Hierarch End-Actor
+	Para role prayer sid euCON.Key4213.text End-Para
+	Para role prayer sid euCON.Key4214.text End-Para
+	Dialog <i>sid res04p</> End-Dialog
+
+	Switch-Version L2 End-Switch-Version
+	Title role desig sid euCON.Key4300.title End-Title
+    Rubric sid euCON.R430 End-Rubric
+	Switch-Version Both End-Switch-Version
+	Actor sid Hierarch End-Actor
+	Dialog sid euCON.Key4301.text End-Dialog
+	Switch-Version L2 End-Switch-Version
+    Rubric sid euCON.R431 End-Rubric
+	Switch-Version Both End-Switch-Version
+	Actor sid Priest End-Actor
+	Dialog sid euCON.Key4302.text End-Dialog
+	Actor sid Hierarch End-Actor
+	Dialog sid euCON.Key4303.text End-Dialog
+	Switch-Version L2 End-Switch-Version
+    Rubric sid euCON.R432 End-Rubric
+	Switch-Version Both End-Switch-Version
+	Actor sid Choir End-Actor
+	Title role desig sid euCON.Key4304.title End-Title
+	Title role mode sid euCON.Key4304.mode End-Title
+	Hymn sid euCON.Key4304.text End-Hymn
+	
+	Switch-Version L2 End-Switch-Version
+	Title role desig sid euCON.Key4400.title End-Title
+    Rubric sid euCON.R440 End-Rubric
+	Switch-Version Both End-Switch-Version
+	Actor sid Hierarch End-Actor
+	Dialog sid euCON.Key4401.text End-Dialog
+	Actor sid People End-Actor	
+	Hymn sid euCON.Key4402.text <r>sid Thrice media-off</>End-Hymn
+	Switch-Version L2 End-Switch-Version
+	Rubric sid euCON.R441 End-Rubric
+	Rubric sid euCON.R442 End-Rubric
+	Switch-Version Both End-Switch-Version
+	Actor sid Deacon End-Actor
+	Dialog sid pet00 End-Dialog
+	Dialog <i>sid res01p</> End-Dialog
+	Actor sid Hierarch End-Actor
+	Para role prayer sid euCON.Key4403.text End-Para
+	Para role prayer sid euCON.Key4404.text End-Para
+	Dialog <i>sid res04p</> End-Dialog
+	Actor sid Deacon End-Actor
+	Dialog sid pet00 End-Dialog
+	Dialog <i>sid res01p</> End-Dialog
+	Actor sid Hierarch End-Actor
+	Para role prayer sid euCON.Key4405a.text sid cl.consecration.name sid euCON.Key4405c.text End-Para
+	Para role prayer sid euCON.Key4406.text End-Para
+	Dialog <i>sid res04p</> End-Dialog
+	Switch-Version L2 End-Switch-Version
+	Rubric sid euCON.R443 End-Rubric
+	Switch-Version Both End-Switch-Version
+	Actor sid ChanterOrReader End-Actor
+	Title role desig sid euCON.Key4407.title End-Title
+	Reading sid euCON.Key4407.text End-Reading
+	Switch-Version L2 End-Switch-Version
+	Rubric sid euCON.R444 End-Rubric
+	Switch-Version Both End-Switch-Version
+	Actor sid ChanterOrReader End-Actor
+	Title role desig sid euCON.Key4408.title End-Title
+	Reading sid euCON.Key4408.text End-Reading
+
+	Switch-Version L2 End-Switch-Version
+	Title role desig sid euCON.Key4500.title End-Title
+    Rubric sid euCON.R450 End-Rubric
+	Switch-Version Both End-Switch-Version
+	Actor sid Hierarch End-Actor
+	Dialog sid euCON.Key4501.text End-Dialog
+	Dialog <i>sid res04p</> End-Dialog
+	Actor sid Deacon End-Actor
+	Dialog sid euCON.Key4502.text End-Dialog
+	Dialog <i>sid res01p</> End-Dialog
+	Switch-Version L2 End-Switch-Version
+    Rubric sid euCON.R451 End-Rubric
+	Switch-Version Both End-Switch-Version
+	Actor sid Hierarch End-Actor
+	Para role prayer sid euCON.Key4503a.text sid cl.consecration.name sid euCON.Key4503c.text End-Para
+	Para role prayer sid euCON.Key4504.text End-Para
+	Actor sid Deacon End-Actor
+	Dialog sid euCON.Key4505.text End-Dialog
+	Dialog <i>sid res01p</> End-Dialog
+	Section GreatLitany
+		Dialog sid pet02 End-Dialog
+		Dialog sid pet03 End-Dialog
+		Dialog sid pet04 End-Dialog
+		Dialog sid pet05 End-Dialog
+		Dialog sid pet06a sid cl.bishop1.rank sid cl.bishop1.name_c sid pet06b End-Dialog //with client specific bishop's name
+		Dialog sid pet07S End-Dialog
+		Dialog sid petConsecration01 End-Dialog
+		Dialog sid petConsecration02 End-Dialog
+		Dialog sid pet08 End-Dialog
+		Dialog sid pet09 End-Dialog
+		Dialog sid pet10 End-Dialog
+		Dialog sid pet11 End-Dialog
+		Dialog sid pet12 End-Dialog
+		Dialog sid pet13 End-Dialog
+		Dialog <i> sid res03p </> End-Dialog
+	End-Section
+	Actor sid Hierarch End-Actor
+	Dialog sid euCON.Key4506.text End-Dialog
+	Dialog <i>sid res04p</> End-Dialog
+	Switch-Version L2 End-Switch-Version
+    Rubric sid euCON.R452 End-Rubric
+	Switch-Version Both End-Switch-Version
+	Actor sid Deacon End-Actor
+	Dialog sid pet00 End-Dialog
+	Dialog <i>sid res01p</> End-Dialog
+	Actor sid Hierarch End-Actor
+	Para role prayer sid euCON.Key4507.text End-Para
+	Dialog <i>sid res04p</> End-Dialog
+	Para role prayer sid euCON.Key4508.text End-Para
+	Dialog <i>sid res04p</> End-Dialog
+	Switch-Version L2 End-Switch-Version
+    Rubric sid euCON.R453 End-Rubric
+	Switch-Version Both End-Switch-Version
+	Actor sid ChanterOrReader End-Actor
+	Title role desig sid euCON.Key4509.title End-Title
+	Reading sid euCON.Key4509.text End-Reading
+	Actor sid Hierarch End-Actor
+	Para role prayer sid euCON.Key4510.text End-Para
+	Dialog <i>sid res04p</> End-Dialog
+
+	Switch-Version L2 End-Switch-Version
+	Title role desig sid euCON.Key4600.title End-Title
+    Rubric sid euCON.R460 End-Rubric
+	Switch-Version Both End-Switch-Version
+	Actor sid Hierarch End-Actor
+	Para role prayer sid euCON.Key4601.text End-Para
+	Switch-Version L2 End-Switch-Version
+    Rubric sid euCON.R461 End-Rubric
+	Switch-Version Both End-Switch-Version
+	Para role prayer sid euCON.Key4602.text End-Para
+	Para role prayer sid euCON.Key4603.text End-Para
+	Dialog <i>sid res04p</> End-Dialog
+	Actor sid Deacon End-Actor
+	Dialog sid exc19 End-Dialog
+	Actor sid Hierarch End-Actor
+	Hymn sid Allilouia3.text End-Hymn
+	Switch-Version L2 End-Switch-Version
+    Rubric sid euCON.R462 End-Rubric
+	Switch-Version Both End-Switch-Version
+	Actor sid Hierarch End-Actor
+	Title role desig sid euCON.Key4605.title End-Title
+	Para role prayer sid euCON.Key4605.text End-Para
+	Para role prayer sid euCON.Key4606.text <i>sid res04p</>End-Para
+	Para role prayer sid euCON.Key4607.text <i>sid res04p</>End-Para
+	Switch-Version L2 End-Switch-Version
+    Rubric sid euCON.R463 End-Rubric
+    Rubric sid euCON.R464 End-Rubric
+    Rubric sid euCON.R465 End-Rubric
+	Switch-Version Both End-Switch-Version
+
+	Switch-Version L2 End-Switch-Version
+	Title role desig sid euCON.Key4700.title End-Title
+    Rubric sid euCON.R470 End-Rubric
+	Switch-Version Both End-Switch-Version
+	Actor sid ChanterOrReader End-Actor
+	Title role desig sid euCON.Key4701.title End-Title
+	Reading sid euCON.Key4701.text End-Reading
+	Actor sid Hierarch End-Actor
+	Dialog sid euCON.Key4702.text <i>sid res04p</>End-Dialog
+	Switch-Version L2 End-Switch-Version
+    Rubric sid euCON.R471 End-Rubric
+	Switch-Version Both End-Switch-Version
+	Actor sid ChanterOrReader End-Actor
+	Title role desig sid euCON.Key4703.title End-Title
+	Reading sid euCON.Key4703.text End-Reading
+	Actor sid Hierarch End-Actor
+	Dialog sid euCON.Key4704.text <i>sid res04p</>End-Dialog
+	Switch-Version L2 End-Switch-Version
+    Rubric sid euCON.R472 End-Rubric
+    Rubric sid euCON.R473 End-Rubric
+	Switch-Version Both End-Switch-Version
+	Actor sid ChanterOrReader End-Actor
+	Title role desig sid euCON.Key4705.title End-Title
+	Reading sid euCON.Key4705.text End-Reading
+	
+	Switch-Version L2 End-Switch-Version
+	Title role desig sid euCON.Key4800.title End-Title
+    Rubric sid euCON.R480 End-Rubric
+	Switch-Version Both End-Switch-Version
+	Actor sid Hierarch End-Actor
+	Dialog sid euCON.Key4801.text End-Dialog
+	Actor sid Deacon End-Actor
+	Insert_section ShortLitany01 End-Insert
+	Actor sid Hierarch End-Actor
+	Dialog sid exc01 End-Dialog
+	Dialog <i>sid res04p</> End-Dialog
+
+	Switch-Version L2 End-Switch-Version
+	Title role desig sid euCON.Key4802.title End-Title
+    Rubric sid euCON.R481 End-Rubric
+	Switch-Version Both End-Switch-Version
+	Actor sid Deacon End-Actor
+	Dialog sid pet00 End-Dialog
+	Dialog <i>sid res01p</> End-Dialog
+	Actor sid Hierarch End-Actor
+	Para role prayer sid euCON.Key4802.text End-Para
+	Para role prayer sid euCON.Key4803.text End-Para
+	Dialog <i>sid res04p</> End-Dialog
+	Actor sid Hierarch End-Actor
+	Dialog sid pet31 End-Dialog
+	Dialog <i>sid res05p</> End-Dialog
+	Actor sid Deacon End-Actor
+	Dialog sid pet32 End-Dialog
+	Dialog <i>sid res03p</> End-Dialog
+	Switch-Version L2 End-Switch-Version
+    Rubric sid euCON.R482 End-Rubric
+	Switch-Version Both End-Switch-Version
+	Actor sid Hierarch End-Actor
+	Para role prayer sid euCON.Key4804.text End-Para
+	Dialog <i>sid res04p</> End-Dialog
+	
+	Switch-Version L2 End-Switch-Version
+	Title role desig sid euCON.Key4802.title End-Title
+    Rubric sid euCON.R483 End-Rubric
+    Rubric sid euCON.R484 End-Rubric
+    Rubric sid euCON.R485 End-Rubric
+	Switch-Version Both End-Switch-Version
+	
+	Switch-Version L2 End-Switch-Version
+	Title role desig sid euCON.Key4900.title End-Title
+	Title role desig sid euCON.Key4901.title End-Title
+	Title role desig sid euCON.Key4902.title End-Title
+    Rubric sid euCON.R490 End-Rubric
+	Switch-Version Both End-Switch-Version
+	Actor sid Deacon End-Actor
+	Dialog sid pet00 End-Dialog
+	Dialog <i>sid res01p</> End-Dialog
+	Actor sid Hierarch End-Actor
+	Dialog sid exc05a End-Dialog	
+	Actor sid Deacon End-Actor
+	Dialog sid exc05b End-Dialog
+	Actor sid Choir End-Actor
+	Dialog sid res04 End-Dialog
+	Hymn sid AgiosOTheos.text End-Hymn
+	Switch-Version L2 End-Switch-Version
+    Rubric sid euCON.R491 End-Rubric
+	Switch-Version Both End-Switch-Version
+		
+	Section Epistle
+		Title role desig sid OApostolos End-Title
+		Actor sid Deacon End-Actor
+		Dialog sid exc19 End-Dialog
+		Actor sid Reader End-Actor
+		Title role mixed <Tdesig>sid Prokeimenon</> <Tmode> sid levaLI.EpistleProkeimenon.mode</> End-Title
+		Reading sid levaLI.EpistleProkeimenon.text End-Reading
+		Verse <bnr>sid vVerse</> sid levaLI.EpistleProkeimenonVerse.text End-Verse
+		Actor sid Deacon End-Actor
+		Dialog sid exc17 End-Dialog		
+		Actor sid Reader End-Actor
+		Dialog sid epi01a sid levaLI.Epistle.book sid epi01b End-Dialog
+		Actor sid Deacon End-Actor
+		Dialog sid exc19 End-Dialog
+		Actor sid Reader End-Actor
+		Title role chapverse sid levaLI.Epistle.chapverse End-Title		
+		Reading sid levaLI.Epistle.text End-Reading
+		Actor sid Hierarch End-Actor
+		Dialog sid epi02 End-Dialog		
+	End-Section //Epistle
+	Section Gospel
+		Title role desig sid ToTheionEvangelion End-Title
+		Actor sid Choir End-Actor
+		Hymn sid Allilouia3.text End-Hymn
+		Actor sid Deacon End-Actor
+		Dialog sid exc17 sid exc18 sid gos02 End-Dialog
+		Actor sid Hierarch End-Actor
+		Dialog sid pet31 End-Dialog
+		Dialog <i>sid res05p </>End-Dialog
+		Actor sid Deacon End-Actor
+		Dialog sid gos03a sid levaLI.Gospel.book sid gos03b End-Dialog		
+		Actor sid Priest End-Actor
+		Dialog sid exc19 End-Dialog
+		Dialog <i> sid DoxaSoiKyrieP </>End-Dialog	
+		Actor sid Deacon End-Actor
+		Title role chapverse sid levaLI.Gospel.chapverse End-Title
+		Reading sid levaLI.Gospel.text End-Reading
+		Actor sid Hierarch End-Actor
+		Dialog sid gos04 End-Dialog
+		Actor sid Choir End-Actor						
+		Dialog sid DoxaSoiKyrie End-Dialog	
+	End-Section //Gospel
+	Break line End_Break	
+	Switch-Version L2 End-Switch-Version
+		Title role desig sid ContinueLiturgy End-Title
+	Switch-Version Both End-Switch-Version
+
+
+
+
+
+End-Template

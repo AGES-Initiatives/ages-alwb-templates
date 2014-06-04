@@ -1,0 +1,87 @@
+Template se.m11.d03.sun.ve
+
+//Vespers on Sat. Evening with two commemorations from the Menaion
+	
+	import oc.*
+	import ho.s10_gr_GR_cog.*
+	import me.m11.d03_gr_GR_cog.*
+	import actors_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	
+
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	//Imorted Templates
+	import Litanies.*
+	import VespersParts.*
+
+Insert_section Vespers_01 End-Insert
+Break line End_Break
+Insert_section Vespers_02_Sunday.LIHC End-Insert
+Insert_section Vespers_02_Sunday.ResurrectionalStichera.Stichera_1234 End-Insert
+
+	Section Stichera_Menaion
+		Title role desig sid TonMartyron End-Title
+		Title role mixed <Tmode> sid meVE.Stichera01.mode </> <Tmelody>sid meVE.Stichera01.melody  </>End-Title
+		Insert_section LIHC_Verse.v05 End-Insert
+		Hymn sid meVE.Stichera01.text End-Hymn
+		Insert_section LIHC_Verse.v06 End-Insert
+		Hymn sid meVE.Stichera02.text End-Hymn
+		Insert_section LIHC_Verse.v07 End-Insert
+		Hymn sid meVE.Stichera03.text End-Hymn
+		Title role desig sid TouAgiou End-Title
+		Title role mixed <Tmode> sid meVE.Stichera04.mode </> <Tmelody>sid meVE.Stichera04.melody  </>End-Title
+		Insert_section LIHC_Verse.v08 End-Insert
+		Hymn sid meVE.Stichera04.text End-Hymn
+		Insert_section LIHC_Verse.v09 End-Insert
+		Hymn sid meVE.Stichera05.text End-Hymn
+		Insert_section LIHC_Verse.v10 End-Insert
+		Hymn sid meVE.Stichera06.text End-Hymn
+		Title role mixed sid Doxa <Tmode> sid meVE.SticGlory.mode </>End-Title
+		Hymn sid meVE.SticGlory.text End-Hymn
+	End-Section //Stichera_Menaion
+	
+	Title role mixed sid KaiNyn <Tdesig>sid Theotokion</> End-Title
+	Title role mode rid ocVE.SticTheotokion.mode End-Title
+	Hymn rid ocVE.SticTheotokion.text End-Hymn
+	
+Insert_section Vespers_03 End-Insert
+Insert_section Vespers_05_Litanies End-Insert
+Insert_section Vespers_07_ResrrectionalAposticha.Aposticha_1 End-Insert
+Insert_section Vespers_07_ResrrectionalAposticha.Aposticha_234 End-Insert
+
+	Title role mixed sid Doxa <Tdesig>sid TonMartyron</> End-Title
+	Title role mode sid meVE.AposGlory.mode End-Title
+	Hymn sid meVE.AposGlory.text End-Hymn
+	Title role mixed sid KaiNyn <Tdesig> sid Theotokion</> End-Title
+	Hymn sid oc.m6.d1_gr_GR_cog.ocVE.AposTheotokion.text End-Hymn
+
+Insert_section Symeon_Trisagion End-Insert	
+
+	Actor sid Choir End-Actor
+	Title role desig sid ApolytikionAnastasimon End-Title
+	Title role mixed <Tmode>rid ocVE.Apolytikion.mode </> <Tmelody>rid ocVE.Apolytikion.melody</>End-Title
+	Hymn rid ocVE.Apolytikion.text End-Hymn
+	Title role desig sid TonMartyron End-Title
+	Title role mode sid he.ga_gr_GR_cog.OiMartyresSouKyrie.mode End-Title
+	Hymn sid he.ga_gr_GR_cog.OiMartyresSouKyrie.text End-Hymn
+	Title role mixed sid Doxa <Tdesig> sid TouAgiou</> End-Title
+	Title role mode sid me.m04.d23_gr_GR_cog.meVE.Apolytikion1.mode End-Title
+	Hymn sid me.m04.d23_gr_GR_cog.meVE.Apolytikion1.text End-Hymn
+	Title role mixed sid KaiNyn <Tdesig> sid Theotokion</> End-Title
+	Hymn sid oc.m4.d1_gr_GR_cog.ocVE.ApolTheotokionVM.text End-Hymn	
+	
+	Insert_section Vespers_09 End-Insert
+
+	Actor sid Priest End-Actor
+	Insert_section Dismissals.Com_Yes End-Insert
+	Dialog sid DiEfchonPateron.text End-Dialog
+	Actor sid People End-Actor
+	Dialog sid res04 End-Dialog
+
+End-Template
