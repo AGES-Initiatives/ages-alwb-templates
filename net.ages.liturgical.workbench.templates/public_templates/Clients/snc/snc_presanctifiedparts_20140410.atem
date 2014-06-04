@@ -1,0 +1,52 @@
+Template snc_presanctifiedparts_20140410 
+
+	import ho.s10_gr_GR_cog.*	
+	import ps_gr_GR_cog.*
+	import tr.d061_gr_GR_cog.*
+
+	//Templates
+	import bk.eu.li.presanctified.*
+	import VespersParts.*
+	
+	import actors_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import poets_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+		Head 
+			Set_Date month 4 day 10 End_Date
+				Page_Header_Even
+					left @pageNbr
+					center @lookup sid pl.pdf.header lang L2 
+				End_Page_Header_Even
+				Page_Header_Odd
+					center @lookup sid Tetarti sid Tis6Evdomados lang L2 
+					right @pageNbr
+				End_Page_Header_Odd
+			Set_Page_Number 1 End_Set_Page_Number
+		End_Head
+	
+	Insert_section LIHC_Mode5  End-Insert
+	Insert_section Presanctified02 End-Insert
+	Section Presanctified03 // Entrance
+//		Actor sid Deacon End-Actor
+//		Rubric sid InALowVoice End-Rubric
+//		Dialog sid pet00 End-Dialog
+//		Actor sid Priest <Trubric>sid InALowVoice</>End-Actor
+//		Title role desig sid hiVE.Key0108.title End-Title
+//		Para role inaudible sid hiVE.Key0108.text End-Para
+		Actor sid Deacon End-Actor
+		Dialog sid exc17 sid exc18 End-Dialog
+		Actor sid Reader End-Actor
+		Reading sid hoVE.FosIlaron.text End-Reading
+	End-Section
+	Insert_section Presanctified04 End-Insert
+
+End-Template
