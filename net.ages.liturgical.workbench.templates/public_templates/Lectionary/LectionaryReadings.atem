@@ -109,6 +109,31 @@ Template LectionaryReadings
 		End-Section
 	End-Section
 
+	Section Lectionary_Epistle_Daily_hierarchical //computes
+		Insert_section Epistle_Title End-Insert
+		Section Prokeimenon
+			Title role desig sid OApostolos End-Title
+			Actor sid Deacon End-Actor	
+			Dialog sid exc19 End-Dialog
+			Actor sid Reader End-Actor
+			Insert_section Epistle_Prokeimenon_Title End-Insert
+			Insert_section Epistle_Prokeimenon End-Insert
+		End-Section
+		Section Lesson
+			Actor sid Deacon End-Actor
+			Dialog sid exc17 End-Dialog
+			Actor sid Reader End-Actor
+			Insert_section Epistle_Book End-Insert
+			Actor sid Deacon End-Actor
+			Dialog sid exc19 End-Dialog
+			Actor sid Reader End-Actor
+			Insert_section Epistle_Chapverse End-Insert
+			Insert_section Epistle_Text End-Insert
+			Actor sid Priest End-Actor
+			Dialog sid epi02 End-Dialog		
+		End-Section
+	End-Section
+
 
 	Section Lectionary_Epistle_Martyr
 		Section Lesson
@@ -246,6 +271,39 @@ Template LectionaryReadings
 			Insert_section Gospel_Chapverse End-Insert
 			Insert_section Gospel_Text End-Insert
 			Actor sid Priest End-Actor
+			Dialog sid euLI.Key0705.text End-Dialog
+			Actor sid Choir End-Actor						
+			Dialog sid DoxaSoiKyrie End-Dialog	
+		End-Section	//Lesson
+	End-Section
+
+	Section Lectionary_Gospel_Daily_hierarchical
+		Section Alleluia 
+			Actor sid Choir End-Actor
+			Insert_section Gospel_Alleluia_Mode End-Insert
+			Media sid hoLI.GospelAlleluia.text End-Media
+			Hymn sid hoLI.GospelAlleluia.text  media-off End-Hymn
+			Insert_section Gospel_Alleluia_Verse1 End-Insert
+			Hymn sid hoLI.GospelAlleluia.text  media-off End-Hymn
+			Insert_section Gospel_Alleluia_Verse2 End-Insert
+			Hymn sid hoLI.GospelAlleluia.text  media-off End-Hymn
+		End-Section //Alleluia
+		Section Lesson 
+			Title role desig sid ToEvangelion End-Title
+			Actor sid Deacon End-Actor
+			Dialog sid exc17 sid exc18 sid gos02 End-Dialog
+			Actor sid Hierarch End-Actor
+			Dialog sid pet31 End-Dialog
+			Dialog <i>sid res05p </>End-Dialog
+			Actor sid Deacon End-Actor
+			Insert_section Gospel_Book End-Insert
+			Actor sid Priest End-Actor
+			Dialog sid exc19 End-Dialog
+			Dialog <i> sid DoxaSoiKyrieP </>End-Dialog	
+			Actor sid Deacon End-Actor
+			Insert_section Gospel_Chapverse End-Insert
+			Insert_section Gospel_Text End-Insert
+			Actor sid Hierarch End-Actor
 			Dialog sid euLI.Key0705.text End-Dialog
 			Actor sid Choir End-Actor						
 			Dialog sid DoxaSoiKyrie End-Dialog	
