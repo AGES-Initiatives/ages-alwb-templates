@@ -2,7 +2,7 @@ Template se.pe.d120.hli
 
 Status Review
 
-	import client_gr_GR_cog.*
+//	import client_gr_GR_cog.*
 	import eu.lichrysbasil_gr_GR_cog.*
 	import ho.s07_gr_GR_cog.*
 	import pe.d120_gr_GR_cog.*
@@ -17,6 +17,7 @@ Status Review
 	import Litanies.*
 	
 	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
 	import template.titles_gr_GR_cog.*
 	import misc_gr_GR_cog.*
 	import prayers_gr_GR_cog.*
@@ -84,6 +85,7 @@ Status Review
 	Section Antiphon3
 		Actor sid Choir End-Actor
 		Title role desig sid Antifonon3 End-Title
+		Title role mode sid peVE.Apolytikion1.mode End-Title
 		Verse <bnr>sid vVerse1</> sid peLI.Antiphon3Verse1.text End-Verse
 		Verse <bnr>sid vVerse2</> sid peLI.Antiphon3Verse2.text End-Verse
 		Verse <bnr>sid vVerse3</> sid peLI.Antiphon3Verse3.text End-Verse
@@ -130,7 +132,10 @@ Status Review
 	End-Section
 //	Insert_section bk.eu.li.chrysbasil.Section24.chrys_Hierarchical End-Insert
 	Insert_section bk.eu.li.chrysbasil.Section25.chrys End-Insert
+	Break line End_Break
+	Title role desig sid ho.s21_gr_GR_cog.hoPCPrayer.title End-Title
 //	Insert_section bk.eu.li.chrysbasil.Section26 End-Insert
+	Break line End_Break
 	Section Part_15_1_CommunionHymn
 		Actor sid Choir End-Actor
 		Title role desig sid euLI.Key1500.title End-Title
@@ -148,7 +153,30 @@ Status Review
 	Insert_section bk.eu.li.chrysbasil.Section32 End-Insert
 	// Insert_section bk.eu.li.chrysbasil.Section33 End-Insert
 	Insert_section bk.eu.li.chrysbasil.Section34.chrys End-Insert
-	Insert_section bk.eu.li.chrysbasil.Section35.chrys End-Insert
-//	Insert_section bk.eu.li.chrysbasil.Section36.comno_Hierarchical End-Insert
+	Section part1
+		Title role desig sid euLI.Key1700.title End-Title
+		Actor sid Priest End-Actor
+		Dialog sid euLI.Key1701.text End-Dialog
+		Actor sid Deacon End-Actor
+		Dialog sid pet00 End-Dialog
+		Dialog <i> sid res06p </>End-Dialog
+		Dialog <i> sid res13p </>End-Dialog
+		Actor sid Priest End-Actor
+		Dialog sid euLI.Key1702.text End-Dialog
+		Dialog <i> sid res04p</> End-Dialog
+	End-Section
+	Insert_section bk.eu.li.chrysbasil.Section35.chrys.part2 End-Insert
+	Insert_section bk.eu.li.chrysbasil.Section35.chrys.part3 End-Insert
+	Section Part_17_2_ComNo_Hierarchical
+		Dialog sid dis00 sid peDismissal sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08 sid me.m01.d10_gr_GR_cog.meInsert1 sid me.m11.d13_gr_GR_cog.meInsert1 sid dis09 sid dis10 sid dis89 End-Dialog 
+		Actor sid Choir End-Actor
+		Hymn sid euLI.Key1706h.text End-Hymn
+		Actor sid Hierarch End-Actor
+		Dialog sid DiEfchonPateron.text End-Dialog
+		Dialog <i> sid res04p</> End-Dialog
+		Actor sid Clergy End-Actor
+		Dialog sid DiEfchonDespotou.text End-Dialog
+		Dialog <i> sid res04p</> End-Dialog
+	End-Section
 	
 End-Template
