@@ -1,11 +1,12 @@
-Template bk.eu.li.chrysbasil 
+Template eu.li.chrysbasil.hierarchical 
 
-Status Review
+Status Draft
 
 	import client_gr_GR_cog.*
 	import eu.lichrysbasil_gr_GR_cog.*
 	import ho.s07_gr_GR_cog.* // antiphon refrains
 	import ho.s21_gr_GR_cog.* //for pre-communion prayers
+	import ps_gr_GR_cog.*
 
 	import me.*
 	import pe.*
@@ -30,6 +31,8 @@ Status Review
 	
 
 	Section Section01
+		Actor sid Deacon End-Actor
+		Dialog sid res08 End-Dialog
 		Actor sid Priest End-Actor
 		Dialog sid euLI.Key0109.text End-Dialog
 		Dialog <i>sid res04p </>End-Dialog
@@ -40,14 +43,14 @@ Status Review
 		Media sid euLI.Key0200.text End-Media
 		Actor sid Deacon End-Actor
 		Insert_section GreatLitany01 End-Insert
-		Actor sid Priest <Trubric>sid InALowVoice</> End-Actor 
+		Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor 
 		Para role inaudible sid euLI.Key0201.text End-Para
 		Actor sid Priest End-Actor
 		Dialog sid exc01 End-Dialog
 		Dialog <i>sid res04p</> End-Dialog
 	End-Section
 	
-	Section Section03 //antiphon 1 sunday_saint
+	Section Section03 //sunday_saint
 		Actor sid Choir End-Actor
 		Title role desig sid Antifonon1 End-Title
 		Title role mode sid Mode2 End-Title
@@ -57,7 +60,7 @@ Status Review
 	Section Section04
 		Actor sid Deacon End-Actor
 		Insert_section ShortLitany01 End-Insert
-		Actor sid Priest <Trubric>sid InALowVoice</> End-Actor 
+		Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor 
 		Para role inaudible sid euLI.Key0301.text End-Para
 		Actor sid Priest End-Actor
 		Dialog sid exc02 End-Dialog
@@ -78,11 +81,11 @@ Status Review
 			Insert_section Antiphon2.saint End-Insert
 		End-Section
 	End-Section
-
+	
 	Section Section06
 		Actor sid Deacon End-Actor
 		Insert_section ShortLitany01 End-Insert
-		Actor sid Priest <Trubric>sid InALowVoice</> End-Actor 
+		Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor 
 		Para role inaudible sid euLI.Key0401.text End-Para
 		Actor sid Priest End-Actor
 		Dialog sid exc03 End-Dialog
@@ -97,11 +100,11 @@ Status Review
 		
 	Section Section08 //entrance
 		Title role desig sid SmallEntrance End-Title
-		Actor sid Priest <Trubric>sid InALowVoice</> End-Actor 
+		Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor 
 		Para role inaudible sid euLI.Key0501.text sid exc01 End-Para
 		Actor sid Deacon <Trubric>sid InALowVoice</> End-Actor
 		Para role inaudible sid euLI.Key0502.text End-Para
-		Actor sid Priest <Trubric>sid InALowVoice</> End-Actor
+		Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor
 		Para role inaudible sid euLI.Key0503.text sid res04 End-Para
 		Actor sid Deacon End-Actor
 		Dialog sid exc17 sid exc18 End-Dialog
@@ -139,8 +142,13 @@ Status Review
 			Dialog sid hoLI.Antiphon22.text End-Dialog
 		End-Section
 	End-Section	
+
+	Section Section11
+		Title role desig sid YmnoiMetaTinMikranEisodon End-Title
+		Actor sid Clergy End-Actor
+	End-Section
 	
-	Section Section11 //client
+	Section Section11_opt
 		Title role desig sid cl.Apolytikion1.title End-Title
 		Title role mode sid cl.Apolytikion1.mode End-Title
 		Hymn sid cl.Apolytikion1.text End-Hymn		
@@ -148,92 +156,233 @@ Status Review
 	
 	Section Section12
 		Section default //O Protection
+			Actor sid Clergy End-Actor
 			Title role mixed <Tdesig>sid Kontakion</> <Tmode>sid Mode2</>End-Title
 			Hymn sid hoTY.Key0408.text End-Hymn
 		End-Section
-		Section seasonal
+		Section seasonal_menaion
+			Actor sid Clergy End-Actor
 			Title role desig sid Kontakion End-Title
 			Title role mixed <Tmode> rid meLI.SeasonalKontakion.mode</> <Tmelody> rid meLI.SeasonalKontakion.melody</> End-Title
 			Hymn rid meLI.SeasonalKontakion.text End-Hymn
 		End-Section
+		Section seasonal_triodion
+			Actor sid Clergy End-Actor
+			Title role desig sid Kontakion End-Title
+			Title role mixed <Tmode> rid trLI.SeasonalKontakion.mode</> <Tmelody> rid trLI.SeasonalKontakion.melody</> End-Title
+			Hymn rid trLI.SeasonalKontakion.text End-Hymn
+		End-Section
+		Section seasonal_pentecostarion
+			Actor sid Clergy End-Actor
+			Title role desig sid Kontakion End-Title
+			Title role mixed <Tmode> rid peLI.SeasonalKontakion.mode</> <Tmelody> rid peLI.SeasonalKontakion.melody</> End-Title
+			Hymn rid peLI.SeasonalKontakion.text End-Hymn
+		End-Section
 	End-Section
 	
-	Section Section13 //Trisagion
+	Section Section13
 		Section prayer
 			Actor sid Deacon End-Actor
-			Dialog sid pet00 End-Dialog
 			Dialog <i> sid res01p </> End-Dialog
-			Actor sid Priest <Trubric>sid InALowVoice</> End-Actor 
+			Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor 
 			Para role inaudible sid euLI.Key0601.text End-Para
-			Actor sid Priest End-Actor
+			Actor sid Hierarch End-Actor
 			Dialog sid exc05a End-Dialog
 			Actor sid Deacon End-Actor
 			Dialog sid exc05b End-Dialog
-			Actor sid Choir End-Actor
-			Dialog sid res04 End-Dialog	
+			Dialog sid res04p End-Dialog
 		End-Section
 		Section holygod	
 			Title role desig sid hoLI.TrisagiosHymn.title End-Title
-			Hymn sid hoLI.TrisagiosHymn.text <r>sid Thrice media-off</> End-Hymn	
-			Verse sid DoxaPatri.text sid KaiNynKaiAei.text End-Verse	
+			Actor sid ChoirR End-Actor
+			Hymn sid hoLI.TrisagiosHymn.text End-Hymn	
+			Actor sid ChoirL End-Actor
+			Hymn sid hoLI.TrisagiosHymn.text media-off End-Hymn	
+			Actor sid Clergy End-Actor
+			Hymn sid hoLI.TrisagiosHymn.text media-off End-Hymn	
+			Actor sid ChoirR End-Actor
+			Hymn sid hoLI.TrisagiosHymn.text media-off End-Hymn	
+			Actor sid Clergy End-Actor
+			Hymn sid hoLI.TrisagiosHymn.text media-off End-Hymn	
+			Actor sid ChoirL End-Actor
+			Verse sid DoxaPatri.text End-Verse	
+			Actor sid ChoirR End-Actor
+			Verse sid KaiNynKaiAei.text End-Verse
+			Actor sid ChoirL End-Actor
 			Para role hymnlinelast sid hoLI.TrisagiosHymn3.text sid hoLI.TrisagiosHymn4.text End-Para
+			Actor sid Clergy End-Actor
+			Para role chant sid hoLI.TrisagiosHymn1.text media-off End-Para	
+			Actor sid Hierarch End-Actor
+			Dialog sid psa79.v15alt.text sid psa79.v16alt.text End-Dialog
+			Actor sid ChoirR End-Actor
+			Para role chant sid res07 End-Para
+			Actor sid Clergy End-Actor
+			Para role hymnlinelast sid hoLI.TrisagiosHymn2.text media-off End-Para	
+			Actor sid Hierarch End-Actor
+			Dialog sid psa79.v15alt.text sid psa79.v16alt.text End-Dialog
+			Actor sid ChoirL End-Actor
+			Para role chant sid res07 End-Para
+			Actor sid Clergy End-Actor
+			Para role hymnlinelast sid hoLI.TrisagiosHymn3.text media-off End-Para	
+			Actor sid Hierarch End-Actor
+			Dialog sid psa79.v15alt.text sid psa79.v16alt.text End-Dialog
+			Actor sid ChoirR End-Actor
+			Para role chant sid res07 End-Para
+			Actor sid Clergy End-Actor
+			Para role hymnlinelast sid hoLI.TrisagiosHymn4.text media-off End-Para
 			Actor sid Deacon End-Actor
 			Dialog sid euLI.Key0602.text End-Dialog		
 			Actor sid Deacon <Trubric>sid InALowVoice</> End-Actor
 			Para role inaudible sid euLI.Key0603.text End-Para
-			Actor sid Priest End-Actor
+			Actor sid Hierarch End-Actor
 			Para role inaudible sid euLI.Key0604.text End-Para
 			Actor sid Deacon End-Actor
 			Para role inaudible sid euLI.Key0605.text End-Para
-			Actor sid Priest End-Actor
+			Actor sid Hierarch End-Actor
 			Para role inaudible sid euLI.Key0606.text End-Para
 			Actor sid Choir End-Actor
-			Hymn sid euLI.Key0602.text sid hoLI.TrisagiosHymn.text media-off End-Hymn	
+			Hymn sid euLI.Key0602.text sid hoLI.TrisagiosHymn.text  media-off End-Hymn				
 		End-Section
 		Section baptized
 			Title role desig sid hoLI.OsoiEisChriston.title End-Title
-			Hymn sid hoLI.OsoiEisChriston.text <r>sid Thrice media-off</> End-Hymn	
-			Verse sid DoxaPatri.text sid KaiNynKaiAei.text End-Verse	
+			Actor sid ChoirR End-Actor
+			Hymn sid hoLI.OsoiEisChriston.text End-Hymn	
+			Actor sid ChoirL End-Actor
+			Hymn sid hoLI.OsoiEisChriston.text media-off End-Hymn	
+			Actor sid Clergy End-Actor
+			Hymn sid hoLI.OsoiEisChriston.text media-off End-Hymn	
+			Actor sid ChoirR End-Actor
+			Hymn sid hoLI.OsoiEisChriston.text media-off End-Hymn	
+			Actor sid Clergy End-Actor
+			Hymn sid hoLI.OsoiEisChriston.text media-off End-Hymn	
+			Actor sid ChoirL End-Actor
+			Verse sid DoxaPatri.text End-Verse	
+			Actor sid ChoirR End-Actor
+			Verse sid KaiNynKaiAei.text End-Verse
+			Actor sid ChoirL End-Actor
 			Para role hymnlinelast sid hoLI.OsoiEisChriston3.text sid hoLI.OsoiEisChriston4.text End-Para
+			Actor sid Clergy End-Actor
+			Para role chant  sid hoLI.OsoiEisChriston1.text media-off End-Para	
+			Actor sid Hierarch End-Actor
+			Dialog sid psa79.v15alt.text sid psa79.v16alt.text End-Dialog
+			Actor sid ChoirR End-Actor
+			Para role chant sid res07 End-Para
+			Actor sid Clergy End-Actor
+			Para role hymnlinelast  sid hoLI.OsoiEisChriston2.text media-off End-Para	
+			Actor sid Hierarch End-Actor
+			Dialog sid psa79.v15alt.text sid psa79.v16alt.text End-Dialog
+			Actor sid ChoirL End-Actor
+			Para role chant sid res07 End-Para
+			Actor sid Clergy End-Actor
+			Para role hymnlinelast  sid hoLI.OsoiEisChriston3.text media-off End-Para	
+			Actor sid Hierarch End-Actor
+			Dialog sid psa79.v15alt.text sid psa79.v16alt.text End-Dialog
+			Actor sid ChoirR End-Actor
+			Para role chant sid res07 End-Para
+			Actor sid Clergy End-Actor
+			Para role hymnlinelast  sid hoLI.OsoiEisChriston4.text media-off End-Para	
 			Actor sid Deacon End-Actor
 			Dialog sid euLI.Key0602.text End-Dialog		
 			Actor sid Deacon <Trubric>sid InALowVoice</> End-Actor
 			Para role inaudible sid euLI.Key0603.text End-Para
-			Actor sid Priest End-Actor
+			Actor sid Hierarch End-Actor
 			Para role inaudible sid euLI.Key0604.text End-Para
 			Actor sid Deacon End-Actor
 			Para role inaudible sid euLI.Key0605.text End-Para
-			Actor sid Priest End-Actor
+			Actor sid Hierarch End-Actor
 			Para role inaudible sid euLI.Key0606.text End-Para
 			Actor sid Choir End-Actor
 			Hymn sid euLI.Key0602.text sid hoLI.OsoiEisChriston.text  media-off End-Hymn				
-		End-Section	
+		End-Section
 		Section cross
 			Title role desig sid hoLI.TonStavronSou.title End-Title
-			Hymn sid hoLI.TonStavronSou.text <r>sid Thrice media-off</> End-Hymn	
-			Verse sid DoxaPatri.text sid KaiNynKaiAei.text End-Verse	
+			Actor sid ChoirR End-Actor
+			Hymn sid hoLI.TonStavronSou.text End-Hymn	
+			Actor sid ChoirL End-Actor
+			Hymn sid hoLI.TonStavronSou.text media-off End-Hymn	
+			Actor sid Clergy End-Actor
+			Hymn sid hoLI.TonStavronSou.text media-off End-Hymn	
+			Actor sid ChoirR End-Actor
+			Hymn sid hoLI.TonStavronSou.text media-off End-Hymn	
+			Actor sid Clergy End-Actor
+			Hymn sid hoLI.TonStavronSou.text media-off End-Hymn	
+			Actor sid ChoirL End-Actor
+			Verse sid DoxaPatri.text End-Verse	
+			Actor sid ChoirR End-Actor
+			Verse sid KaiNynKaiAei.text End-Verse
+			Actor sid ChoirL End-Actor
 			Para role hymnlinelast sid hoLI.TonStavronSou3.text sid hoLI.TonStavronSou4.text End-Para
+			Actor sid Clergy End-Actor
+			Para role chant  sid hoLI.TonStavronSou1.text media-off End-Para	
+			Actor sid Hierarch End-Actor
+			Dialog sid psa79.v15alt.text sid psa79.v16alt.text End-Dialog
+			Actor sid ChoirR End-Actor
+			Para role chant sid res07 End-Para
+			Actor sid Clergy End-Actor
+			Para role hymnlinelast  sid hoLI.TonStavronSou2.text media-off End-Para	
+			Actor sid Hierarch End-Actor
+			Dialog sid psa79.v15alt.text sid psa79.v16alt.text End-Dialog
+			Actor sid ChoirL End-Actor
+			Para role chant sid res07 End-Para
+			Actor sid Clergy End-Actor
+			Para role hymnlinelast  sid hoLI.TonStavronSou3.text media-off End-Para	
+			Actor sid Hierarch End-Actor
+			Dialog sid psa79.v15alt.text sid psa79.v16alt.text End-Dialog
+			Actor sid ChoirR End-Actor
+			Para role chant sid res07 End-Para
+			Actor sid Clergy End-Actor
+			Para role hymnlinelast  sid hoLI.TonStavronSou4.text media-off End-Para	
 			Actor sid Deacon End-Actor
 			Dialog sid euLI.Key0602.text End-Dialog		
 			Actor sid Deacon <Trubric>sid InALowVoice</> End-Actor
 			Para role inaudible sid euLI.Key0603.text End-Para
-			Actor sid Priest End-Actor
+			Actor sid Hierarch End-Actor
 			Para role inaudible sid euLI.Key0604.text End-Para
 			Actor sid Deacon End-Actor
 			Para role inaudible sid euLI.Key0605.text End-Para
-			Actor sid Priest End-Actor
+			Actor sid Hierarch End-Actor
 			Para role inaudible sid euLI.Key0606.text End-Para
 			Actor sid Choir End-Actor
 			Hymn sid euLI.Key0602.text sid hoLI.TonStavronSou.text  media-off End-Hymn				
 		End-Section
-	End-Section	
+		Section fimi
+			Actor sid Deacon End-Actor
+			Dialog sid euLI.Key0607.text End-Dialog
+			Actor sid Clergy End-Actor
+			Para role chant sid euLI.Key0607.text End-Para
+			Actor sid Deacon End-Actor
+			Dialog sid euLI.Key0607.text End-Dialog
+			Actor sid ChoirR End-Actor
+			Para role chant sid euLI.Key0607.text End-Para
+			Actor sid Deacon End-Actor
+			Dialog sid euLI.Key0607.text End-Dialog
+			Actor sid ChoirL End-Actor
+			Para role chant sid euLI.Key0607.text End-Para
+			Actor sid Deacon End-Actor
+			Dialog sid euLI.Key0608.text End-Dialog
+			Actor sid Clergy End-Actor
+			Para role chant sid euLI.Key0608.text End-Para
+			Actor sid Deacon <Trubric>sid Intoned</>End-Actor
+			Dialog sid client_gr_GR_cog.cl.bishop0.fimi.text End-Dialog	
+			Actor sid Clergy <Trubric>sid Sung</>End-Actor
+			Para role chant sid client_gr_GR_cog.cl.bishop0.fimi.text End-Para
+			Actor sid Deacon <Trubric>sid Intoned</>End-Actor
+			Dialog sid client_gr_GR_cog.cl.bishop1.fimi.text End-Dialog	
+			Actor sid Clergy <Trubric>sid Sung</>End-Actor
+			Para role chant sid client_gr_GR_cog.cl.bishop1.fimi.text End-Para
+			Actor sid ChoirR End-Actor
+			Para role chant sid client_gr_GR_cog.cl.bishop1.fimi.text End-Para
+			Actor sid ChoirL End-Actor
+			Para role chant sid client_gr_GR_cog.cl.bishop1.fimi.text End-Para
+		End-Section	
+	End-Section
 
-	Section Section14 //prayer before gospel
-			Actor sid Priest <Trubric>sid InALowVoice</> End-Actor 
-			Para role inaudible sid euLI.Key0704.text End-Para
-	End-Section 
+	Section Section14
+		Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor 
+		Para role inaudible sid euLI.Key0704.text End-Para
+	End-Section //Gospel
 
-	Section Section15 //long version 
+	Section Section15 
 		Actor sid Deacon End-Actor
 		Dialog sid pet15 End-Dialog
 		Dialog <i> sid res01p </> End-Dialog
@@ -250,7 +399,7 @@ Status Review
 		Dialog sid pet21 End-Dialog
 		Dialog sid pet22 End-Dialog
 		Dialog sid pet23 End-Dialog
-		Actor sid Priest <Trubric>sid InALowVoice</> End-Actor 
+		Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor 
 		Para role inaudible sid euLI.Key0801.text End-Para
 		Actor sid Priest End-Actor
 		Dialog sid exc11 End-Dialog
@@ -275,7 +424,7 @@ Status Review
 		Dialog <i> sid res01p </> End-Dialog
 		Dialog sid euLI.Key0908.text End-Dialog	
 		Dialog <i> sid res03p </> End-Dialog
-		Actor sid Priest <Trubric>sid InALowVoice</> End-Actor 
+		Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor 
 		Para role inaudible sid euLI.Key0909.text End-Para
 		Actor sid Priest End-Actor
 		Dialog sid euLI.Key0910.text End-Dialog
@@ -291,7 +440,7 @@ Status Review
 		Dialog <i> sid res01p </> End-Dialog
 		Dialog sid exc17 End-Dialog
 		Title role desig sid euLI.Key1001.title End-Title
-		Actor sid Priest <Trubric>sid InALowVoice</> End-Actor 
+		Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor 
 		Para role inaudible sid euLI.Key1001.text End-Para
 		Actor sid Priest  End-Actor 
 		Dialog sid exc01 End-Dialog
@@ -306,12 +455,12 @@ Status Review
 		Dialog <i> sid res01p </> End-Dialog
 		Dialog sid exc17 End-Dialog
 	End-Section
-	
+
 	Section Section19
 		Title role desig sid euLI.Key1002.title End-Title
-		Actor sid Priest <Trubric>sid InALowVoice</> End-Actor 
+		Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor 
 		Para role inaudible sid euLI.Key1002.text End-Para
-		Actor sid Priest  End-Actor 
+		Actor sid Hierarch  End-Actor 
 		Dialog sid euLI.Key1003.text End-Dialog
 		Dialog <i>sid res04p</> End-Dialog
 	End-Section //PrayerOfTheFaithful2
@@ -323,13 +472,25 @@ Status Review
 		Media sid euLI.Key1102.text End-Media
 		Hymn sid euLI.Key1102.text media-off sid euLI.Key1103.text End-Hymn	
 //		Rubric End-Rubric
-		Actor sid Priest <Trubric>sid InALowVoice</> End-Actor 
+		Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor 
 		Para role inaudible sid euLI.Key1101.text End-Para
 //		Rubric End-Rubric
 		Actor sid Deacon End-Actor
 		Dialog sid euLI.Key1110.text End-Dialog		
 		Actor sid Choir End-Actor
 		Dialog sid res04 End-Dialog
+		Actor sid Deacon End-Actor
+		Dialog sid euLI.Key1124.text End-Dialog
+		Dialog <i>sid res04p</> End-Dialog
+		Actor sid Hierarch End-Actor		
+		Dialog sid euLI.Key1112.text End-Dialog
+		Dialog <i>sid res04p</> End-Dialog
+		Actor sid Deacon End-Actor
+		Dialog sid euLI.Key1124.text End-Dialog
+		Dialog <i>sid res04p</> End-Dialog
+		Actor sid Hierarch End-Actor		
+		Dialog sid euLI.Key1113.text End-Dialog
+		Dialog <i>sid res04p</> End-Dialog
 //		Rubric End-Rubric
 		Actor sid Choir End-Actor
 		Hymn sid euLI.Key1123.text End-Hymn		
@@ -365,22 +526,21 @@ Status Review
 			Dialog <i> sid res02p </> End-Dialog
 			Dialog sid pet13 End-Dialog
 			Dialog <i> sid res03p </> End-Dialog
-		
 			Title role desig sid euLI.Key1202.title End-Title
-			Actor sid Priest <Trubric>sid InALowVoice</> End-Actor 
+			Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor 
 			Para role inaudible sid euLI.Key1202.text End-Para			
 			Actor sid Priest  End-Actor 
 			Dialog sid euLI.Key1203.text End-Dialog
 			Actor sid Choir End-Actor
 			Dialog sid res04 End-Dialog
-			Actor sid Priest End-Actor
+			Actor sid Hierarch End-Actor
 			Dialog sid pet31 End-Dialog
 			Actor sid Choir End-Actor
 			Dialog sid res05 End-Dialog
 			Actor sid Deacon End-Actor
 			Dialog sid euLI.Key1204.text End-Dialog
 			Actor sid Choir End-Actor
-			Hymn sid euLI.Key1205.text End-Hymn				
+			Hymn sid psa17.v2.text sid psa17.v3aalt.text End-Hymn
 			Actor sid Deacon End-Actor
 			Dialog sid euLI.Key1208.text End-Dialog				
 			Actor sid People End-Actor
@@ -414,29 +574,28 @@ Status Review
 			Dialog <i> sid res02p </> End-Dialog
 			Dialog sid pet13 End-Dialog
 			Dialog <i> sid res03p </> End-Dialog
-		
 			Title role desig sid euLI.Key1202.title End-Title
-			Actor sid Priest <Trubric>sid InALowVoice</> End-Actor 
+			Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor 
 			Para role inaudible sid euLI.Key1202.basil.text End-Para			
 			Actor sid Priest  End-Actor 
 			Dialog sid euLI.Key1203.text End-Dialog
 			Actor sid Choir End-Actor
 			Dialog sid res04 End-Dialog
-			Actor sid Priest End-Actor
+			Actor sid Hierarch End-Actor
 			Dialog sid pet31 End-Dialog
 			Actor sid Choir End-Actor
 			Dialog sid res05 End-Dialog
 			Actor sid Deacon End-Actor
 			Dialog sid euLI.Key1204.text End-Dialog
 			Actor sid Choir End-Actor
-			Hymn sid euLI.Key1205.text End-Hymn				
+			Hymn sid psa17.v2.text sid psa17.v3aalt.text End-Hymn
 			Actor sid Deacon End-Actor
 			Dialog sid euLI.Key1208.text End-Dialog				
 			Actor sid People End-Actor
 			Reading sid Pistevo.text	End-Reading
 		End-Section //LitanyAndCreed
 	End-Section				
-
+				
 	Section Section22
 		Section chrys
 			Title role desig sid euLI.Key1300.title End-Title	
@@ -444,43 +603,43 @@ Status Review
 			Dialog sid euLI.Key1301.text End-Dialog
 			Actor sid Choir End-Actor
 			Dialog sid euLI.Key1302.text End-Dialog
-			Actor sid Priest End-Actor
+			Actor sid Hierarch End-Actor
 			Dialog sid euLI.Key1303.text End-Dialog
 			Actor sid Choir End-Actor
 			Dialog sid euLI.Key1304.text End-Dialog
-			Actor sid Priest End-Actor
+			Actor sid Hierarch End-Actor
 			Dialog sid euLI.Key1305.text End-Dialog
 			Actor sid Choir End-Actor
 			Dialog sid euLI.Key1306.text End-Dialog
-			Actor sid Priest End-Actor
+			Actor sid Hierarch End-Actor
 			Dialog sid euLI.Key1307.text End-Dialog
 			Actor sid Choir End-Actor
 			Dialog sid euLI.Key1308.text End-Dialog
-			Actor sid Priest <Trubric>sid InALowVoice</> End-Actor 
+			Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor 
 			Para role inaudible sid euLI.Key1309.text End-Para				
 			Actor sid Priest End-Actor
 			Dialog sid euLI.Key1310.text End-Dialog
 			Actor sid Choir End-Actor
 			Hymn sid euLI.Key1311.text End-Hymn	
-			Actor sid Priest <Trubric>sid InALowVoice</> End-Actor 
+			Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor 
 			Para role inaudible sid euLI.Key1312.text End-Para				
-			Actor sid Priest End-Actor
+			Actor sid Hierarch End-Actor
 			Dialog sid euLI.Key1313.text End-Dialog
 			Actor sid Choir End-Actor
 			Dialog sid res04 End-Dialog
-			Actor sid Priest <Trubric>sid InALowVoice</> End-Actor 
+			Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor 
 			Para role inaudible sid euLI.Key1314.text End-Para				
-			Actor sid Priest End-Actor
+			Actor sid Hierarch End-Actor
 			Dialog sid euLI.Key1315.text End-Dialog
 			Actor sid Choir End-Actor
 			Dialog sid res04 End-Dialog
-			Actor sid Priest <Trubric>sid InALowVoice</> End-Actor 
+			Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor 
 			Para role inaudible sid euLI.Key1316.text End-Para				
-			Actor sid Priest End-Actor
+			Actor sid Hierarch End-Actor
 			Dialog sid euLI.Key1317.text End-Dialog
 			Actor sid Choir End-Actor
 			Hymn sid euLI.Key1318.text End-Hymn
-			Actor sid Priest <Trubric>sid InALowVoice</> End-Actor 
+			Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor 
 			Para role inaudible sid euLI.Key1319.text End-Para				
 			Para role inaudible sid euLI.Key1321.text End-Para				
 			Para role inaudible <i>sid res04p </>End-Para				
@@ -489,7 +648,7 @@ Status Review
 			Para role inaudible sid euLI.Key1325.text End-Para				
 			Para role inaudible <i>sid res10p </>End-Para				
 			Para role inaudible sid euLI.Key1326.text End-Para				
-			Actor sid Priest End-Actor
+			Actor sid Hierarch End-Actor
 			Dialog sid euLI.Key1327.text End-Dialog				
 			Actor sid Choir End-Actor
 		End-Section
@@ -499,43 +658,43 @@ Status Review
 			Dialog sid euLI.Key1301.text End-Dialog
 			Actor sid Choir End-Actor
 			Dialog sid euLI.Key1302.text End-Dialog
-			Actor sid Priest End-Actor
+			Actor sid Hierarch End-Actor
 			Dialog sid euLI.Key1303.text End-Dialog
 			Actor sid Choir End-Actor
 			Dialog sid euLI.Key1304.text End-Dialog
-			Actor sid Priest End-Actor
+			Actor sid Hierarch End-Actor
 			Dialog sid euLI.Key1305.text End-Dialog
 			Actor sid Choir End-Actor
 			Dialog sid euLI.Key1306.text End-Dialog
-			Actor sid Priest End-Actor
+			Actor sid Hierarch End-Actor
 			Dialog sid euLI.Key1307.text End-Dialog
 			Actor sid Choir End-Actor
 			Dialog sid euLI.Key1308.text End-Dialog
-			Actor sid Priest <Trubric>sid InALowVoice</> End-Actor 
+			Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor 
 			Para role inaudible sid euLI.Key1309.basil.text End-Para				
 			Actor sid Priest End-Actor
 			Dialog sid euLI.Key1310.text End-Dialog
 			Actor sid Choir End-Actor
 			Hymn sid euLI.Key1311.text End-Hymn	
-			Actor sid Priest <Trubric>sid InALowVoice</> End-Actor 
+			Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor 
 			Para role inaudible sid euLI.Key1312.basil.text End-Para				
-			Actor sid Priest End-Actor
+			Actor sid Hierarch End-Actor
 			Dialog sid euLI.Key1313.basil.text End-Dialog
 			Actor sid Choir End-Actor
 			Dialog sid res04 End-Dialog
-			Actor sid Priest <Trubric>sid InALowVoice</> End-Actor 
+			Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor 
 			Para role inaudible sid euLI.Key1314.basil.text End-Para				
-			Actor sid Priest End-Actor
+			Actor sid Hierarch End-Actor
 			Dialog sid euLI.Key1315.basil.text End-Dialog
 			Actor sid Choir End-Actor
 			Dialog sid res04 End-Dialog
-			Actor sid Priest <Trubric>sid InALowVoice</> End-Actor 
+			Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor 
 			Para role inaudible sid euLI.Key1316.basil.text End-Para				
-			Actor sid Priest End-Actor
+			Actor sid Hierarch End-Actor
 			Dialog sid euLI.Key1317.text End-Dialog
 			Actor sid Choir End-Actor
 			Hymn sid euLI.Key1318.text End-Hymn
-			Actor sid Priest <Trubric>sid InALowVoice</> End-Actor 
+			Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor 
 			Para role inaudible sid euLI.Key1319.basil.text End-Para				
 			Para role inaudible sid euLI.Key1321.basil.text End-Para				
 			Para role inaudible <i>sid res04p </>End-Para				
@@ -544,7 +703,7 @@ Status Review
 			Para role inaudible sid euLI.Key1325.basil.text End-Para				
 			Para role inaudible <i>sid res10p </>End-Para				
 			Para role inaudible sid euLI.Key1326.basil.text End-Para				
-			Actor sid Priest End-Actor
+			Actor sid Hierarch End-Actor
 			Dialog sid euLI.Key1327.text End-Dialog				
 			Actor sid Choir End-Actor
 		End-Section
@@ -564,41 +723,45 @@ Status Review
 
 	Section Section24
 		Section chrys
-			Actor sid Priest <Trubric>sid InALowVoice</> End-Actor 
+			Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor 
 			Para role inaudible sid euLI.Key1329.text End-Para				
-			Actor sid Priest End-Actor
-			Dialog sid euLI.Key1330a.text <r>sid cl.bishop1.rank sid cl.bishop1.name_p</> sid euLI.Key1330b.text End-Dialog				
+			Actor sid Hierarch End-Actor
+			Dialog sid euLI.Key1330a.text sid cl.bishop0.rank sid cl.bishop0.name_p sid euLI.Key1330b.text End-Dialog				
+			Actor sid Clergy End-Actor
+			Dialog sid euLI.Key1330a.text sid cl.bishop1.rank sid cl.bishop1.name_p sid euLI.Key1330b.text End-Dialog				
 			Actor sid Deacon End-Actor
 			Dialog sid euLI.Key1331.text End-Dialog				
 			Actor sid Choir End-Actor
 			Dialog sid euLI.Key1332.text End-Dialog		
-			Actor sid Priest <Trubric>sid InALowVoice</> End-Actor 
+			Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor 
 			Para role inaudible sid euLI.Key1333.text End-Para				
 			Actor sid Priest End-Actor
 			Dialog sid euLI.Key1334.text End-Dialog		
 			Actor sid Choir End-Actor
 			Dialog sid res04 End-Dialog
-			Actor sid Priest End-Actor
+			Actor sid Hierarch End-Actor
 			Dialog sid euLI.Key1335.text End-Dialog		
 			Actor sid Choir End-Actor
 			Dialog sid euLI.Key1336.text End-Dialog		
 		End-Section		
 		Section basil
-			Actor sid Priest <Trubric>sid InALowVoice</> End-Actor 
+			Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor 
 			Para role inaudible sid euLI.Key1329.basil.text End-Para				
-			Actor sid Priest End-Actor
-			Dialog sid euLI.Key1330a.text <r>sid cl.bishop1.rank sid cl.bishop1.name_p</> sid euLI.Key1330b.text End-Dialog				
+			Actor sid Hierarch End-Actor
+			Dialog sid euLI.Key1330a.text sid cl.bishop0.rank sid cl.bishop1.name_p sid euLI.Key1330b.text End-Dialog				
+			Actor sid Clergy End-Actor
+			Dialog sid euLI.Key1330a.text sid cl.bishop1.rank sid cl.bishop1.name_p sid euLI.Key1330b.text End-Dialog				
 			Actor sid Deacon End-Actor
 			Dialog sid euLI.Key1331.text End-Dialog				
 			Actor sid Choir End-Actor
 			Dialog sid euLI.Key1332.text End-Dialog		
-			Actor sid Priest <Trubric>sid InALowVoice</> End-Actor 
+			Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor 
 			Para role inaudible sid euLI.Key1333.basil.text End-Para				
 			Actor sid Priest End-Actor
 			Dialog sid euLI.Key1334.text End-Dialog		
 			Actor sid Choir End-Actor
 			Dialog sid res04 End-Dialog
-			Actor sid Priest End-Actor
+			Actor sid Hierarch End-Actor
 			Dialog sid euLI.Key1335.text End-Dialog		
 			Actor sid Choir End-Actor
 			Dialog sid euLI.Key1336.text End-Dialog		
@@ -617,7 +780,7 @@ Status Review
 			// Optionally insert additional petitions
 			Dialog sid euLI.Key1404.text End-Dialog			
 			Dialog <i>sid res03p </>End-Dialog
-			Actor sid Priest <Trubric>sid InALowVoice</> End-Actor 
+			Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor 
 			Para role inaudible sid euLI.Key1405.text End-Para				
 			Actor sid Priest End-Actor
 			Dialog sid euLI.Key1406.text End-Dialog
@@ -627,22 +790,22 @@ Status Review
 			Actor sid Priest End-Actor
 			Dialog sid exc20 End-Dialog
 			Dialog <i>sid res04p</> End-Dialog
-			Actor sid Priest End-Actor
+			Actor sid Hierarch End-Actor
 			Dialog sid pet31 End-Dialog
 			Dialog <i>sid res05p</> End-Dialog
 			Actor sid Deacon End-Actor
 			Dialog sid pet32 End-Dialog
 			Dialog <i>sid res03p </>End-Dialog
-			Actor sid Priest <Trubric>sid InALowVoice</> End-Actor 
+			Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor 
 			Para role inaudible sid euLI.Key1407.text End-Para				
 			Actor sid Priest End-Actor
 			Dialog sid euLI.Key1408.text End-Dialog				
 			Dialog <i>sid res04p</> End-Dialog
-			Actor sid Priest <Trubric>sid InALowVoice</> End-Actor 
+			Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor 
 			Para role inaudible sid euLI.Key1409.text End-Para				
 			Actor sid Deacon End-Actor
 			Dialog sid exc19 End-Dialog
-			Actor sid Priest End-Actor
+			Actor sid Hierarch End-Actor
 			Dialog sid euLI.Key1410.text End-Dialog				
 			Actor sid Choir End-Actor
 			Hymn sid euLI.Key1411.text End-Hymn	
@@ -658,7 +821,7 @@ Status Review
 			// Optionally insert additional petitions
 			Dialog sid euLI.Key1404.text End-Dialog			
 			Dialog <i>sid res03p </>End-Dialog
-			Actor sid Priest <Trubric>sid InALowVoice</> End-Actor 
+			Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor 
 			Para role inaudible sid euLI.Key1405.basil.text End-Para				
 			Actor sid Priest End-Actor
 			Dialog sid euLI.Key1406.text End-Dialog
@@ -668,22 +831,22 @@ Status Review
 			Actor sid Priest End-Actor
 			Dialog sid exc20 End-Dialog
 			Dialog <i>sid res04p</> End-Dialog
-			Actor sid Priest End-Actor
+			Actor sid Hierarch End-Actor
 			Dialog sid pet31 End-Dialog
 			Dialog <i>sid res05p</> End-Dialog
 			Actor sid Deacon End-Actor
 			Dialog sid pet32 End-Dialog
 			Dialog <i>sid res03p </>End-Dialog
-			Actor sid Priest <Trubric>sid InALowVoice</> End-Actor 
+			Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor 
 			Para role inaudible sid euLI.Key1407.basil.text End-Para				
 			Actor sid Priest End-Actor
 			Dialog sid euLI.Key1408.text End-Dialog				
 			Dialog <i>sid res04p</> End-Dialog
-			Actor sid Priest <Trubric>sid InALowVoice</> End-Actor 
+			Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor 
 			Para role inaudible sid euLI.Key1409.text End-Para				
 			Actor sid Deacon End-Actor
 			Dialog sid exc19 End-Dialog
-			Actor sid Priest End-Actor
+			Actor sid Hierarch End-Actor
 			Dialog sid euLI.Key1410.text End-Dialog				
 			Actor sid Choir End-Actor
 			Hymn sid euLI.Key1411.text End-Hymn	
@@ -699,7 +862,7 @@ Status Review
 		Reading sid hoPCPrayer.TouDeipnouSou.text End-Reading
 	End-Section
 	
-	Section Section27
+	Section Section27 //Sunday
 		Actor sid Choir End-Actor
 		Insert_section d1.communion_title End-Insert
 		Media sid da.d1_gr_GR_cog.daLI.CommunionHymn.text End-Media
@@ -709,23 +872,24 @@ Status Review
 	Section Section28
 		Actor sid Deacon <Trubric>sid InALowVoice</> End-Actor	
 		Para role inaudible sid euLI.Key1501.text End-Para				
-		Actor sid Priest End-Actor
+		Actor sid Hierarch End-Actor
 		Para role inaudible sid euLI.Key1502.text End-Para				
 		Actor sid Deacon End-Actor	
 		Para role inaudible sid euLI.Key1503.text End-Para				
-		Actor sid Priest End-Actor
+		Actor sid Hierarch End-Actor
 		Para role inaudible sid euLI.Key1504.text End-Para				
 		Actor sid Deacon End-Actor	
 		Para role inaudible sid res04 sid euLI.Key1505.text End-Para				
-		Actor sid Priest End-Actor
+		Actor sid Hierarch End-Actor
 		Para role inaudible sid euLI.Key1506.text End-Para				
 		Actor sid Deacon End-Actor	
 		Para role inaudible sid euLI.Key1507.text End-Para				
 	End-Section
-
+	
+/* this section needs work
 	Section Section29
 		Rubric sid InALowVoice End-Rubric
-		Actor sid Priest End-Actor
+		Actor sid Hierarch End-Actor
 		Para role inaudible sid euLI.Key1508.text End-Para				
 		Para role inaudible sid euLI.Key1509.text End-Para				
 		Para role inaudible sid euLI.Key1510.text End-Para				
@@ -750,7 +914,7 @@ Status Review
 		// The following line may be here or after communion of the faithful			
 		//Para role inaudible sid euLI.Key1525.text End-Para	
 	End-Section
-	
+ */	
 	Section Section30
 		Actor sid Deacon End-Actor
 		Dialog sid euLI.Key1526.text End-Dialog
@@ -775,12 +939,12 @@ Status Review
 	End-Section	
 	
 	Section Section32
-		Actor sid Priest End-Actor 
+		Actor sid Hierarch End-Actor 
 		Rubric sid InALowVoice End-Rubric
 		Para role inaudible sid euLI.Key1525.text End-Para	
 		Actor sid Deacon End-Actor
 		Para role inaudible sid euLI.Key1601.text End-Para	
-		Actor sid Priest End-Actor 
+		Actor sid Hierarch End-Actor 
 		Para role inaudible sid euLI.Key1602.text End-Para
 		Para role inaudible sid EvlogitosOTheosImon.text End-Para
 		Actor sid Priest End-Actor 
@@ -792,7 +956,7 @@ Status Review
 		Actor sid Choir End-Actor
 		Hymn sid euLI.Key1603.text End-Hymn	
 	End-Section
-
+	
 	Section Section34
 		Section chrys
 			Actor sid Deacon End-Actor
@@ -804,7 +968,7 @@ Status Review
 			Dialog <i>sid res01p </> End-Dialog
 			Dialog sid euLI.Key1605.text End-Dialog	
 			Dialog <i>sid res03p </> End-Dialog
-			Actor sid Priest <Trubric>sid InALowVoice</> End-Actor 
+			Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor 
 			Title role desig sid euLI.Key1606.title End-Title
 			Para role inaudible sid euLI.Key1606.text End-Para				
 			Actor sid Priest End-Actor 
@@ -819,7 +983,7 @@ Status Review
 			Dialog <i>sid res01p </> End-Dialog
 			Dialog sid euLI.Key1605.text End-Dialog	
 			Dialog <i>sid res03p </> End-Dialog
-			Actor sid Priest <Trubric>sid InALowVoice</> End-Actor 
+			Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor 
 			Title role desig sid euLI.Key1606.title End-Title
 			Para role inaudible sid euLI.Key1606.basil.text End-Para				
 			Actor sid Priest End-Actor 
@@ -847,12 +1011,12 @@ Status Review
 				Hymn sid ps_gr_GR_cog.psa112.v2alt1.text <r>sid Thrice </>  End-Hymn
 			End-Section
 			Section part3
-				Actor sid Priest <Trubric>sid InALowVoice</> End-Actor 
+				Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor 
 				Para role inaudible sid euLI.Key1704.text End-Para				
 				Actor sid Deacon End-Actor
 				Dialog sid pet00 End-Dialog		
 				Dialog <i> sid res01p</> End-Dialog
-				Actor sid Priest End-Actor
+				Actor sid Hierarch End-Actor
 				Dialog sid pet37 End-Dialog	
 				Dialog <i> sid res04p</> End-Dialog
 				Dialog sid DoxaSoiChriste2 End-Dialog
@@ -879,12 +1043,12 @@ Status Review
 				Hymn sid euLI.Key1703.text <r>sid Thrice media-off</> End-Hymn
 			End-Section
 			Section part3
-				Actor sid Priest <Trubric>sid InALowVoice</> End-Actor 
+				Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor 
 				Para role inaudible sid euLI.Key1704.basil.text End-Para				
 				Actor sid Deacon End-Actor
 				Dialog sid pet00 End-Dialog		
 				Dialog <i> sid res01p</> End-Dialog
-				Actor sid Priest End-Actor
+				Actor sid Hierarch End-Actor
 				Dialog sid pet37 End-Dialog	
 				Dialog <i> sid res04p</> End-Dialog
 				Dialog sid DoxaSoiChriste2 End-Dialog
@@ -896,19 +1060,25 @@ Status Review
 		Section comyes
 			Insert_section Dismissals.Com_Yes End-Insert
 			Actor sid Choir End-Actor
-			Hymn sid euLI.Key1706.text End-Hymn
-			Actor sid Priest End-Actor
+			Hymn sid euLI.Key1706h.text End-Hymn
+			Actor sid Hierarch End-Actor
 			Dialog sid DiEfchonPateron.text End-Dialog
+			Dialog <i> sid res04p</> End-Dialog
+			Actor sid Clergy End-Actor
+			Dialog sid DiEfchonDespotou.text End-Dialog
 			Dialog <i> sid res04p</> End-Dialog
 		End-Section
 		Section comno
 			Insert_section Dismissals.Com_No End-Insert
 			Actor sid Choir End-Actor
-			Hymn sid euLI.Key1706.text End-Hymn
-			Actor sid Priest End-Actor
+			Hymn sid euLI.Key1706h.text End-Hymn
+			Actor sid Hierarch End-Actor
 			Dialog sid DiEfchonPateron.text End-Dialog
+			Dialog <i> sid res04p</> End-Dialog
+			Actor sid Clergy End-Actor
+			Dialog sid DiEfchonDespotou.text End-Dialog
 			Dialog <i> sid res04p</> End-Dialog
 		End-Section
 	End-Section
-	
+
 End-Template
