@@ -2,44 +2,125 @@ Template se.m07.dHF.li
 
 Status Review
 
+	import client_gr_GR_cog.*
+	import eu.lichrysbasil_gr_GR_cog.*
+	import ho.s03_gr_GR_cog.*
 	import ho.s07_gr_GR_cog.*
-	import oc.*
-	import eo.*
+	import ho.s10_gr_GR_cog.*	
 	import me.m07.dHF_gr_GR_cog.*
-	import properties_gr_GR_cog.*
-	import properties_gr_GR_cog.Actors.*
-	import titles_gr_GR_cog.*
-	import rubrical_gr_GR_cog.*
-	import misc_gr_GR_cog.*
-	
-	import prayers_gr_GR_cog.*
+//	import pe.d000_gr_GR_cog.*
+//	import tr.d000_gr_GR_cog.*
 
+	import da.*
+	import oc.*
+//	import pe.*
+//	import tr.*
+
+	//Templates
+	import VespersParts.*
+	import MatinsParts.*
+	import kTheotokos.*  //Katavasia
+	import LectionaryReadings.*
+	import LiturgyChrysBasil.*
+	import Litanies.*
 	
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
 	import iTags.*
 	import bTags.*
 	import roles.*
 
-	Title role desig sid Antifonon3 End-Title
-	Title role desig sid ApolytikionAnastasimon End-Title
-	Title role mixed <Tmode> rid ocVE.Apolytikion.mode</> <Tmelody> rid ocVE.Apolytikion.melody</> End-Title
-	Hymn rid ocVE.Apolytikion.text End-Hymn
+	Head 
+			Page_Header_Even
+				center @lookup sid li.pdf.header sid d.on lang L1 @date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
 
-	Title role desig sid ApolytikionAnastasimon End-Title
-	Title role mixed <Tmode> rid ocVE.Apolytikion.mode</> <Tmelody> rid ocVE.Apolytikion.melody</> End-Title
-	Hymn rid ocVE.Apolytikion.text End-Hymn
-	
-	Title role mixed <Tmode> sid meVE.Apolytikion1.mode</> <Tmelody> sid meVE.Apolytikion1.melody</> End-Title
-	Hymn sid meVE.Apolytikion1.text End-Hymn
-	
-	Title role desig sid TouNaou End-Title
-	Break line End_Break
-	//hymn of the local church
-
-	Title role desig sid Kontakion End-Title
-	Title role mode sid hoTY.Key0408.mode End-Title
-	Hymn sid hoTY.Key0408.text End-Hymn
-
-
-
+	Section Section01
+		Insert_section eu.li.chrysbasil.Section01 End-Insert
+		Insert_section eu.li.chrysbasil.Section02 End-Insert
+		Insert_section eu.li.chrysbasil.Section03 End-Insert
+		Insert_section eu.li.chrysbasil.Section04 End-Insert
+		Insert_section eu.li.chrysbasil.Section05.sunday End-Insert
+		Insert_section eu.li.chrysbasil.Section06 End-Insert
+		Insert_section eu.li.chrysbasil.Section07.sunday End-Insert
+		Insert_section eu.li.chrysbasil.Section08 End-Insert
+		Insert_section eu.li.chrysbasil.Section09.clergy End-Insert
+		Insert_section eu.li.chrysbasil.Section10.sunday End-Insert
+	End-Section
+	Section Section02
+		Title role desig sid Antifonon3 End-Title
+		Title role desig sid ApolytikionAnastasimon End-Title
+		Title role mixed <Tmode> rid ocVE.Apolytikion.mode</> <Tmelody> rid ocVE.Apolytikion.melody</> End-Title
+		Hymn rid ocVE.Apolytikion.text End-Hymn
+		Title role mixed <Tmode> sid meVE.Apolytikion1.mode</> <Tmelody> sid meVE.Apolytikion1.melody</> End-Title
+		Hymn sid meVE.Apolytikion1.text End-Hymn
+		Insert_section eu.li.chrysbasil.Section11_opt End-Insert
+		Insert_section eu.li.chrysbasil.Section12.default.single End-Insert
+		Insert_section eu.li.chrysbasil.Section13.prayer End-Insert
+		Insert_section eu.li.chrysbasil.Section13.holygod End-Insert
+		Insert_section Lectionary_Epistle_Menaion End-Insert
+		Insert_section Lectionary_Gospel_Menaion.Alleluia End-Insert
+		Insert_section eu.li.chrysbasil.Section14 End-Insert
+		Section Lesson
+			Title role desig sid ToEvangelion End-Title
+			Title <inr>rid meShortCommemoration1.text</> End-Title
+			Actor sid Deacon End-Actor
+			Dialog sid exc17 sid exc18 sid gos02 End-Dialog
+			Actor sid Priest End-Actor
+			Dialog sid pet31 End-Dialog
+			Dialog <i>sid res05p </>End-Dialog
+			Actor sid Deacon End-Actor
+			Dialog sid gos03a sid le.go.me.m07.dHF_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog		
+			Actor sid Priest End-Actor
+			Dialog sid exc19 End-Dialog
+			Dialog <i> sid DoxaSoiKyrieP </>End-Dialog	
+			Actor sid Deacon End-Actor
+			Title role chapverse sid le.go.me.m07.dHF_gr_GR_cog.lemeLI.Gospel.chapverse End-Title
+			Reading sid le.go.me.m07.dHF_gr_GR_cog.lemeLI.Gospel.text End-Reading
+			Actor sid Priest End-Actor
+			Dialog sid euLI.Key0705.text End-Dialog
+			Actor sid Choir End-Actor						
+			Dialog sid DoxaSoiKyrie End-Dialog	
+			End-Section
+	End-Section
+	Section Section03
+		Insert_section eu.li.chrysbasil.Section19 End-Insert
+		Insert_section eu.li.chrysbasil.Section20 End-Insert
+		Insert_section eu.li.chrysbasil.Section21.chrys End-Insert
+		Insert_section eu.li.chrysbasil.Section22.chrys End-Insert
+		Insert_section eu.li.chrysbasil.Section23.chrys End-Insert
+		Insert_section eu.li.chrysbasil.Section24.chrys End-Insert
+		Insert_section eu.li.chrysbasil.Section25.chrys End-Insert
+		Insert_section eu.li.chrysbasil.Section26 End-Insert
+		Insert_section eu.li.chrysbasil.Section27 End-Insert
+	//	Insert_section eu.li.chrysbasil.Section28 End-Insert
+	//	Insert_section eu.li.chrysbasil.Section29 End-Insert
+		Insert_section eu.li.chrysbasil.Section30 End-Insert
+	End-Section
+	Insert_section eu.li.chrysbasil.Section31 End-Insert
+	Section Section05	
+		Insert_section eu.li.chrysbasil.Section32 End-Insert
+		// Insert_section eu.li.chrysbasil.Section33 End-Insert
+		Insert_section eu.li.chrysbasil.Section34.chrys End-Insert
+		Insert_section eu.li.chrysbasil.Section35.chrys End-Insert
+		Insert_section eu.li.chrysbasil.Section36.comno End-Insert
+	End-Section
 
 End-Template
