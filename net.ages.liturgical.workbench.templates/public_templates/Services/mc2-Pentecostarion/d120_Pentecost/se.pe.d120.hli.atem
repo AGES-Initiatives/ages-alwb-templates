@@ -29,23 +29,27 @@ Status Review
 	import bTags.*
 	import roles.*
 
-		Head 
-			Set_Date month 6 day 8 year 2014 End_Date
-				Page_Header_Even
-					center @lookup sid li.pdf.header sid d.on lang L1 @date lang L1
-				End_Page_Header_Even
-				Page_Header_Odd
-					center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
-				End_Page_Header_Odd
-				Page_Footer_Even
-					center @pageNbr
-				End_Page_Footer_Even
-				Page_Footer_Odd
-					center @pageNbr
-				End_Page_Footer_Odd
-			Set_Page_Number 1 End_Set_Page_Number
-		End_Head
-	
+	Head 
+		Set_Date month 6 day 8 End_Date
+			Page_Header_Even
+				center @lookup sid li.pdf.header sid d.on lang L1 @date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+ 
+	Preface Covers
+		Insert_template ematins.cover.li End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
 
 	Insert_section Section01 End-Insert
 	Insert_section Section02 End-Insert
@@ -96,7 +100,7 @@ Status Review
 	End-Section
 	Insert_section Section08 End-Insert
 	Insert_section Section09 End-Insert
-	Insert_section Section10.pentecostarion End-Insert
+	Insert_section Section10.pentecost End-Insert
 	Insert_section Section11 End-Insert
 	Title role desig sid Apolytikion End-Title
 	Title role mixed <Tdesig> sid Apolytikion</> <Tmode>sid peVE.Apolytikion1.mode</>End-Title
@@ -145,20 +149,20 @@ Status Review
 	Insert_section Section32 End-Insert
 
 	Insert_section Section34.chrys End-Insert
-	Section Section35_chrys_part1
-		Title role desig sid euLI.Key1700.title End-Title
-		Actor sid Priest End-Actor
-		Dialog sid euLI.Key1701.text End-Dialog
+	Insert_section Section35.chrys.part1 End-Insert
+	Insert_section Section35.chrys.part2 End-Insert
+	Section Section34_part3
+		Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor 
+		Para role inaudible sid euLI.Key1704.text End-Para				
 		Actor sid Deacon End-Actor
-		Dialog sid pet00 End-Dialog
+		Dialog sid pet00 End-Dialog		
 		Dialog <i> sid res06p </>End-Dialog
 		Dialog <i> sid res13p </>End-Dialog
-		Actor sid Priest End-Actor
-		Dialog sid euLI.Key1702.text End-Dialog
+		Actor sid Hierarch End-Actor
+		Dialog sid pet37 End-Dialog	
 		Dialog <i> sid res04p</> End-Dialog
+		Dialog sid DoxaSoiChriste2 End-Dialog
 	End-Section
-	Insert_section Section35.chrys.part2 End-Insert
-	Insert_section Section35.chrys.part3 End-Insert
 	Section Section36_comno
 		Dialog sid dis00 sid peDismissal sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08 sid me.m01.d10_gr_GR_cog.meInsert1 sid me.m11.d13_gr_GR_cog.meInsert1 sid dis09 sid dis10 sid dis89 End-Dialog 
 		Actor sid Choir End-Actor
