@@ -1,0 +1,35 @@
+Template se.m07.d13.li
+
+Status Review
+
+import da.*
+import template.titles_gr_GR_cog.*
+
+	Head 
+		Set_Date month 7 day 13 End_Date
+			Page_Header_Even
+				center @lookup sid li.pdf.header sid d.on lang L1 @date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+when-name-of-day-is
+	Sunday use: Insert_template se.m07.dHF.li End-Insert
+	
+	Saturday use:
+	
+	
+		otherwise use:
+		
+end-when		
+
+End-Template

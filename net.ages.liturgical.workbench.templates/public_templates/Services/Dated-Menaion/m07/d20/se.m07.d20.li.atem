@@ -1,31 +1,43 @@
-Template se.m06.d22.li 
+Template se.m07.d20.li
 
 Status Review
 
 	import client_gr_GR_cog.*
 	import eu.lichrysbasil_gr_GR_cog.*
+	import ho.s03_gr_GR_cog.*
 	import ho.s07_gr_GR_cog.*
+	import ho.s10_gr_GR_cog.*	
+	import me.m07.d20_gr_GR_cog.*
+//	import pe.d000_gr_GR_cog.*
+//	import tr.d000_gr_GR_cog.*
+
+	import da.*
 	import oc.*
+//	import pe.*
+//	import tr.*
 
 	//Templates
+	import VespersParts.*
+	import MatinsParts.*
+	import kTheotokos.*  //Katavasia
 	import LectionaryReadings.*
-	import eu.li.chrysbasil.*
+	import LiturgyChrysBasil.*
 	import Litanies.*
-	import PaschaParts.*
 	
 	import actors_gr_GR_cog.*
-	import template.titles_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
 	import misc_gr_GR_cog.*
 	import prayers_gr_GR_cog.*
 	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
 	import titles_gr_GR_cog.*
 		
 	import iTags.*
 	import bTags.*
 	import roles.*
-	
+
 	Head 
-	Set_Date month 6 day 22 End_Date
+		Set_Date month 7 day 20 End_Date
 			Page_Header_Even
 				center @lookup sid li.pdf.header sid d.on lang L1 @date lang L1
 			End_Page_Header_Even
@@ -40,15 +52,11 @@ Status Review
 			End_Page_Footer_Odd
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
-	
-when-movable-cycle-day-is 1 thru 127 use:
-	Insert_template mc.map.li End-Insert //adjust to appropriate service
-	otherwise use:
-		
-		when-name-of-day-is 
+
+	when-name-of-day-is 
 		Sunday use:	
-			Section Section_Sunday
-				Section Section01
+			Section Instance02
+				Section block1
 					Insert_section eu.li.chrysbasil.Section01 End-Insert
 					Insert_section eu.li.chrysbasil.Section02 End-Insert
 					Insert_section eu.li.chrysbasil.Section03 End-Insert
@@ -60,21 +68,24 @@ when-movable-cycle-day-is 1 thru 127 use:
 					Insert_section eu.li.chrysbasil.Section09.clergy End-Insert
 					Insert_section eu.li.chrysbasil.Section10.sunday End-Insert
 				End-Section
-				Section Section02
+				Section block2
 					Actor sid Choir End-Actor
 					Title role desig sid ApolytikionAnastasimon End-Title
 					Title role mode rid ocVE.Apolytikion.mode End-Title
 					Hymn rid ocVE.Apolytikion.text End-Hymn
-	Insert_section eu.li.chrysbasil.Section11_opt End-Insert
+					Title role desig sid TouProfitou End-Title
+					Title role mixed <Tmode>sid meVE.Apolytikion1.mode</> <Tmelody>sid meVE.Apolytikion1.melody</> End-Title
+					Hymn sid meVE.Apolytikion1.text End-Hymn
+					Insert_section eu.li.chrysbasil.Section11_opt End-Insert
 					Insert_section eu.li.chrysbasil.Section12.default.single End-Insert
 					Insert_section eu.li.chrysbasil.Section13.prayer End-Insert
-Insert_section eu.li.chrysbasil.Section13.holygod End-Insert
-					Insert_section Lectionary_Epistle_Daily End-Insert
+					Insert_section eu.li.chrysbasil.Section13.holygod End-Insert
+					Insert_section Lectionary_Epistle_Menaion End-Insert
 					Insert_section Lectionary_Gospel_Daily.Alleluia End-Insert
 					Insert_section eu.li.chrysbasil.Section14 End-Insert
-	Insert_section Lectionary_Gospel_Daily.Lesson End-Insert
+					Insert_section Lectionary_Gospel_Daily.Lesson End-Insert
 				End-Section
-				Section Section03
+				Section block3
 					Insert_section eu.li.chrysbasil.Section19 End-Insert
 					Insert_section eu.li.chrysbasil.Section20 End-Insert
 					Insert_section eu.li.chrysbasil.Section21.chrys End-Insert
@@ -89,7 +100,7 @@ Insert_section eu.li.chrysbasil.Section13.holygod End-Insert
 					Insert_section eu.li.chrysbasil.Section30 End-Insert
 				End-Section
 				Insert_section eu.li.chrysbasil.Section31 End-Insert
-				Section Section05	
+				Section block4	
 					Insert_section eu.li.chrysbasil.Section32 End-Insert
 					// Insert_section eu.li.chrysbasil.Section33 End-Insert
 					Insert_section eu.li.chrysbasil.Section34.chrys End-Insert
@@ -102,8 +113,6 @@ Insert_section eu.li.chrysbasil.Section13.holygod End-Insert
 		
 			otherwise use:
 			
-		end-when
-		
-end-when
+	end-when
 
 End-Template
