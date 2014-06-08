@@ -65,7 +65,10 @@ when-name-of-day-is
 				Title role mixed sid KaiNyn <Tdesig> sid Theotokion</>End-Title
 				Hymn sid oc.m3.d1_gr_GR_cog.ocVE.ApolTheotokionVM.text End-Hymn
 			End-Section
-			Insert_section SunKathisma1_WhenSaint End-Insert
+			when-mode-of-week-is 
+				M3 use: Insert_section SunKathisma1 End-Insert
+				otherwise use: Insert_section SunKathisma1_WhenSaint End-Insert
+			end-when
 			Insert_section SunKathisma2 End-Insert
 			Insert_section Instance01.block4 End-Insert
 			Insert_section ResurrectionalEvlogetaria End-Insert
@@ -164,12 +167,9 @@ when-name-of-day-is
 					Title role desig sid Kontakion End-Title
 					Title role mixed <Tmode>sid meMA.Kontakion1.mode</> <Tmelody> sid meMA.Kontakion1.melody </> End-Title
 					Reading sid meMA.Kontakion1.text End-Reading
-					Break line End_Break
 					Title role desig sid OOikos End-Title
 					Reading sid meMA.Oikos1.text End-Reading
-					Break line End_Break
 					Insert_section Synaxarion.Synaxarion End-Insert
-					Break line End_Break
 					Actor sid Choir End-Actor
 					Insert_section k_1345678 End-Insert
 					Insert_section Ode9_Intro End-Insert
