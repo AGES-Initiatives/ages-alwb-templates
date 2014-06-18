@@ -1,4 +1,4 @@
-Template snc_presanctifiedparts_20140306 
+Template usgoaatlnc04_presanctifiedparts_20140327
 
 	import client_gr_GR_cog.*
 	import eu.lichrysbasil_gr_GR_cog.*
@@ -7,7 +7,8 @@ Template snc_presanctifiedparts_20140306
 	import ho.s10_gr_GR_cog.*	
 //	import me.m00.d00_gr_GR_cog.*
 //	import pe.d000_gr_GR_cog.*
-//	import tr.d000_gr_GR_cog.*
+	import ps_gr_GR_cog.*
+	import tr.d047_gr_GR_cog.*
 
 //	import oc.*
 //	import pe.*
@@ -35,20 +36,42 @@ Template snc_presanctifiedparts_20140306
 	
 
 		Head 
-			Set_Date month 3 day 6 End_Date
+			Set_Date month 3 day 27 End_Date
 				Page_Header_Even
 					left @pageNbr
 					center @lookup sid pl.pdf.header lang L2 
 				End_Page_Header_Even
 				Page_Header_Odd
-					center @lookup sid Tetarti sid Tis1Evdomados lang L2 
+					center @lookup sid Tetarti sid Tis4Evdomados lang L2 
 					right @pageNbr
 				End_Page_Header_Odd
 			Set_Page_Number 1 End_Set_Page_Number
 		End_Head
 	
 	
-	Insert_section Presanctified02 End-Insert
+	Insert_section LIHC_Mode4  End-Insert
+	Section Idiomela_Triodion
+		Title role desig sid TouTriodiou End-Title
+		Title role mixed <Tdesig> sid StichironIdiomelon</> <Tmode>sid trVE.AposIdiomelon1.mode</> End-Title
+		Media sid trVE.AposIdiomelon1.text End-Media
+		Insert_section LIHC_Verse.v01 End-Insert
+		Hymn sid trVE.AposIdiomelon1.text media-off End-Hymn
+		Media sid trVE.AposIdiomelon2.text End-Media
+		Insert_section LIHC_Verse.v02 End-Insert
+		Hymn sid trVE.AposIdiomelon2.text  media-off End-Hymn
+		Title role desig sid Martyrikon End-Title
+		Title role melody rid trVE.AposMartyric.melody End-Title
+		Media sid trVE.AposMartyric.text End-Media
+		Insert_section LIHC_Verse.v03 End-Insert
+		Hymn sid trVE.AposMartyric.text  media-off End-Hymn
+	End-Section
+	Insert_section Presanctified02.Stichera_Triodion End-Insert
+	Insert_section Presanctified02.Stichera_Menaion End-Insert
+	Section GloryBoth
+		Title role mixed sid DoxaKaiNyn <Tdesig>sid TouStavrou</>End-Title
+		Media sid trVE.SticGlory.text End-Media
+		Hymn sid trVE.SticGlory.text End-Hymn
+	End-Section
 	Section Presanctified03 // Entrance
 //		Actor sid Deacon End-Actor
 //		Rubric sid InALowVoice End-Rubric
@@ -63,5 +86,5 @@ Template snc_presanctifiedparts_20140306
 	End-Section
 	Insert_section Presanctified04 End-Insert
 	Break line End_Break
-	Title <r>sid client_en_US_snc.cl.eu.presanctified.R002</> End-Title
+	Title <r>sid client_en_US_usgoaatlnc04.cl.eu.presanctified.R002</> End-Title
 End-Template
