@@ -11,6 +11,7 @@ Status Draft
 	import ps_gr_GR_cog.*
 
 	//Templates
+	import bk.consecration.vespers.*
 	import ho.s01.*
 	import Litanies.*
 	import VespersParts.*
@@ -42,21 +43,8 @@ Status Draft
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
-	Insert_section Vespers_01 End-Insert
-	Insert_section LIHC_Mode4 End-Insert
-	Section block01
-		Title role desig sid TonEnkainion End-Title
-		Title role mixed <Tmode>sid euVE.Stichera01.mode</> <Tmelody>sid euVE.Stichera01.melody</> End-Title
-		Insert_section LIHC_Verse.v05 End-Insert
-		Hymn sid euVE.Stichera01.text End-Hymn
-		Title role mixed <Tmode>sid euVE.Stichera02.mode</> <Tmelody>sid euVE.Stichera02.melody</> End-Title
-		Insert_section LIHC_Verse.v06 End-Insert
-		Hymn sid euVE.Stichera01.text End-Hymn
-		Title role mixed <Tmode>sid euVE.Stichera03.mode</> <Tmelody>sid euVE.Stichera03.melody</> End-Title
-		Insert_section LIHC_Verse.v07 End-Insert
-		Hymn sid euVE.Stichera02.text End-Hymn
-	End-Section //Stichera_Consecration
-	Section block02
+	Insert_section Section01 End-Insert
+	Section Section02 //client option
 		Title role desig sid TouAgiou End-Title
 		Title role mixed <Tmode>sid meVE.Stichera01.mode</> <Tmelody>sid meVE.Stichera01.melody</> End-Title
 		Insert_section LIHC_Verse.v08 End-Insert
@@ -67,106 +55,12 @@ Status Draft
 		Hymn sid meVE.Stichera03.text End-Hymn
 		Title role mixed sid Doxa <Tmode> sid meVE.SticGlory.mode </>End-Title
 		Hymn sid meVE.SticGlory.text End-Hymn
-	End-Section //Stichera_Menaion
-	Title role mixed sid KaiNyn <Tmode> sid euVE.Stichera04.mode </>End-Title
-	Hymn sid euVE.Stichera04.text End-Hymn
-	Insert_section Vespers_03 End-Insert
-
-	Section block03 //Readings
-		Actor sid Reader End-Actor
-		Dialog sid hoVE.Reading_Intro.text1 sid le.pr.me.r98_gr_GR_cog.leprVE.reading.book sid hoVE.Reading_Intro.text2 End-Dialog
-		Actor sid PriestOrDeacon End-Actor
-		Dialog sid exc17 sid exc19 End-Dialog
-		Actor sid Reader End-Actor
-		Title role chapverse sid le.pr.me.r98_gr_GR_cog.leprVE.reading.chapverse End-Title
-		Reading sid le.pr.me.r98_gr_GR_cog.leprVE.reading.text End-Reading
-		Actor sid Reader End-Actor
-		Dialog sid hoVE.Reading_Intro.text1 sid le.pr.me.r40_gr_GR_cog.leprVE.reading.book sid hoVE.Reading_Intro.text2 End-Dialog
-		Actor sid PriestOrDeacon End-Actor
-		Dialog sid exc17 sid exc19 End-Dialog
-		Actor sid Reader End-Actor
-		Title role chapverse sid le.pr.me.r40_gr_GR_cog.leprVE.reading.chapverse End-Title
-		Reading sid le.pr.me.r40_gr_GR_cog.leprVE.reading.text End-Reading
-		Actor sid Reader End-Actor
-		Dialog sid hoVE.Reading_Intro.text1 sid le.pr.me.r73_gr_GR_cog.leprVE.reading.book sid hoVE.Reading_Intro.text2 End-Dialog
-		Actor sid PriestOrDeacon End-Actor
-		Dialog sid exc17 sid exc19 End-Dialog
-		Actor sid Reader End-Actor
-		Title role chapverse sid le.pr.me.r73_gr_GR_cog.leprVE.reading.chapverse End-Title
-		Reading sid le.pr.me.r73_gr_GR_cog.leprVE.reading.text End-Reading
-	End-Section //Vespers_04
-	Section Vespers_05_Litanies  	
-		Insert_section Ektenia01 End-Insert
-		Actor sid Reader End-Actor
-		Reading sid hoVE.Prayer_Kataxioson.text End-Reading
-		Insert_section ComplementaryV End-Insert
-		Section BowHeadsV
-			Actor sid Hierarch End-Actor
-			Dialog sid pet31 End-Dialog
-			Dialog <i> sid res05p </> End-Dialog
-			Break line End_Break 
-			Actor sid PriestOrDeacon End-Actor
-			Dialog sid pet32 End-Dialog
-			Dialog <i> sid res03p </> End-Dialog
-			Actor sid Hierarch End-Actor
-			Para role inaudible <inr>sid InALowVoice</>sid hiVE.Key0111.text End-Para
-			Actor sid Priest End-Actor
-			Dialog sid exc14 End-Dialog
-			Dialog <i> sid res04p </> End-Dialog
-		End-Section //BowHeadsV
-	End-Section //Vespers_05_Litanies
-	Section Vespers_06_LityAndArtoclasia
-		Section Part1
-			Title role desig sid ILitiKaiArtoklasia End-Title
-			Actor sid Choir End-Actor
-			Title role mode sid euVE.SticBoth.mode End-Title
-			Hymn sid euVE.SticBoth.text End-Hymn	 
-		End-Section // Part1
-		Section Part2 
-			Section Ektenia03_part1
-				Actor sid Deacon End-Actor
-				Media sid ho.s10_gr_GR_cog.hoVE.LityKyrieEleison.text End-Media
-				Dialog sid pet17 End-Dialog
-				Dialog <i> sid res06p </> End-Dialog
-				Dialog sid pet18 End-Dialog
-				Dialog sid pet19a sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
-				Dialog sid pet21a End-Dialog
-				Dialog sid pet33 End-Dialog
-				Dialog sid pet34 End-Dialog
-				Actor sid Hierarch End-Actor
-				Dialog sid pet35 End-Dialog
-				Dialog sid exc11a End-Dialog
-				Dialog <i>sid res04p</> End-Dialog
-				Dialog sid pet31 End-Dialog
-				Dialog <i>sid res05p</> End-Dialog
-				Actor sid Deacon End-Actor
-				Dialog sid pet32 End-Dialog
-				Dialog <i>sid res03p</> End-Dialog
-			End-Section //Ektenia03_part1
-			Section Ektenia03_part2
-				Actor sid Hierarch End-Actor
-				Dialog sid sup00a sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid sup15 End-Dialog
-				Dialog sid pet36 End-Dialog
-			End-Section //Ektenia03_part2
-			Title role desig sid Apolytikion End-Title
-			Media sid hoVE.ArtoTheotokeParthene.text End-Media
-			Insert_section bk.ho.s10.Artoclasia.theotokion End-Insert
-			Actor sid Deacon End-Actor
-			Dialog sid pet00 End-Dialog
-			Dialog <i>sid res01p </>End-Dialog	
-			Actor sid Hierarch End-Actor
-			Dialog sid hoVE.ArtoPrayer1 End-Dialog	
-			Dialog sid hoVE.ArtoPrayer2 End-Dialog
-			Dialog <i> sid res04p </>End-Dialog	
-			Actor sid Clergy End-Actor
-			Media sid hoVE.ArtoHymn.text End-Media
-			Insert_section bk.ho.s10.Artoclasia.hymn_once End-Insert
-			Actor sid Choir End-Actor
-			Insert_section bk.ho.s10.Artoclasia.hymn_twice End-Insert
-		End-Section //Part2
-	End-Section //Vespers_06_LityAndArtoclasia
-
-	Section Vespers_07_Aposticha
+		Title role mixed sid KaiNyn <Tmode> sid euVE.Stichera04.mode </>End-Title
+		Hymn sid euVE.Stichera04.text End-Hymn
+	End-Section
+	Insert_section Section03 End-Insert
+	Insert_section Section04 End-Insert
+	Section Section05 //client option
 		Title role desig sid Aposticha sid TouAgiou End-Title		
 		Title role mixed <Tmode>sid meVE.Aposticha1.mode</> <Tmelody>sid meVE.Aposticha1.melody</>End-Title
 		Hymn sid meVE.Aposticha1.text End-Hymn
@@ -180,52 +74,13 @@ Status Draft
 		Title role desig sid TonEnkainion End-Title
 		Hymn sid euVE.AposGlory.text End-Hymn
 	End-Section
-	Section Symeon_Trisagion
-		Actor sid Hierarch End-Actor
-		Insert_section bk.ho.s10.NynApolyeis.title End-Insert
-		Actor sid People End-Actor		
-		Insert_section Trisagion_Prayers End-Insert
-		Actor sid Priest End-Actor
-		Dialog sid exc20 <i> sid res04p </>End-Dialog
-	End-Section
-	
-	Actor sid Choir End-Actor
-	Title role desig sid Apolytikia End-Title
-	Title role mixed <Tdesig>sid TouAgiou</> <Tmode>sid ApostoleAgie.mode </>End-Title
-	Title role mixed <Tmode>sid meVE.Apolytikion1.mode</> <Tmelody>sid meVE.Apolytikion1.melody</> End-Title
-	Hymn sid meVE.Apolytikion1.text End-Hymn
-	Title role mixed sid DoxaKaiNyn <Tdesig>sid TonEnkainion</> End-Title
-	Title role mode sid euVE.Apolytikion.mode End-Title
-	Hymn sid euVE.Apolytikion.text End-Hymn 
-
-	Section Vespers_Dismissal_AfterArto	
-		Actor sid Deacon End-Actor
-		Dialog sid pet00 End-Dialog
-		Dialog <i>sid res01p </>End-Dialog	
-		Actor sid Priest End-Actor
-		Dialog sid pet37 End-Dialog
-		Dialog <i>sid res04p</>End-Dialog
-		Actor sid Hierarch End-Actor
-		Dialog sid StereosaiKyrios.text End-Dialog
-		Actor sid Reader End-Actor
-		Dialog sid res04 End-Dialog
-		Dialog sid TinTimioteran.text End-Dialog
-		Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
-		Dialog sid res01 <r>sid Thrice</> End-Dialog
-		Dialog sid res13 End-Dialog
-	End-Section
-		
-	Section comyes
-		Actor sid Priest End-Actor
-		Insert_section Dismissals.Com_Yes End-Insert
+	Insert_section Section06 End-Insert
+	Section Section07 //client option
 		Actor sid Choir End-Actor
-		Hymn sid eu.lichrysbasil_gr_GR_cog.euLI.Key1706h.text End-Hymn
-		Actor sid Hierarch End-Actor
-		Dialog sid DiEfchonPateron.text End-Dialog
-		Dialog <i> sid res04p</> End-Dialog
-		Actor sid Clergy End-Actor
-		Dialog sid DiEfchonDespotou.text End-Dialog
-		Dialog <i> sid res04p</> End-Dialog
+		Title role desig sid Apolytikion sid TouAgiou End-Title
+		Title role mixed <Tmode>sid meVE.Apolytikion1.mode</> <Tmelody>sid meVE.Apolytikion1.melody</> End-Title
+		Hymn sid meVE.Apolytikion1.text End-Hymn
 	End-Section
+	Insert_section Section08 End-Insert
 
 End-Template
