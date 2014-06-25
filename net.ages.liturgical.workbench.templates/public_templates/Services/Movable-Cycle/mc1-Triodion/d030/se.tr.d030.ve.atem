@@ -1,0 +1,132 @@
+Template se.tr.d030.ve
+
+	import client_gr_GR_cog.*
+	import hi.s01_gr_GR_cog.*
+	import ho.s10_gr_GR_cog.*	
+	import tr.d030_gr_GR_cog.*
+
+	import me.*
+	import oc.*
+
+	//Templates
+	import LentParts.*
+	import VespersParts.*
+	import Litanies.*
+	
+	import actors_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Insert_section Vespers_01 End-Insert
+	Insert_section LIHC_Mode4 End-Insert
+	Section Stichera_1234
+		Title role desig sid Katanyktika End-Title
+		Title role mixed <Tmode>rid octrVE.Stichera1.mode</> <Tmelody>rid octrVE.Stichera1.melody</>End-Title
+		Insert_section LIHC_Verse.v01 End-Insert
+		Hymn rid octrVE.Stichera1.text media-off End-Hymn
+		Insert_section LIHC_Verse.v02 End-Insert
+		Hymn rid octrVE.Stichera2.text  media-off End-Hymn
+		Insert_section LIHC_Verse.v03 End-Insert
+		Hymn rid octrVE.Stichera3.text  media-off End-Hymn
+		Insert_section LIHC_Verse.v04 End-Insert
+		Hymn rid octrVE.Stichera4.text  media-off End-Hymn
+	End-Section //Stichera_1234
+	Section Stichera_567
+		Title role desig sid TouTriodiou End-Title
+		Title role mixed <Tmode>sid trVE.Stichera01.mode</> <Tmelody>sid trVE.Stichera01.melody</>End-Title
+		Media sid trVE.Stichera01.text End-Media
+		Insert_section LIHC_Verse.v05 End-Insert
+		Hymn sid trVE.Stichera01.text  media-off End-Hymn
+		Media sid trVE.Stichera02.text End-Media
+		Insert_section LIHC_Verse.v06 End-Insert
+		Hymn sid trVE.Stichera02.text  media-off End-Hymn
+		Title role mixed <Tmode>sid trVE.Stichera03.mode</> <Tmelody>sid trVE.Stichera03.melody</>End-Title
+		Media sid trVE.Stichera03.text End-Media
+		Insert_section LIHC_Verse.v07 End-Insert
+		Hymn sid trVE.Stichera03.text  media-off End-Hymn
+	End-Section //Stichera_567
+	Section Stichera
+		Title role desig sid EkTouMinaiou End-Title
+		Title role mixed <Tmode> rid meVE.Stichera01.mode </> <Tmelody>rid meVE.Stichera01.melody </>End-Title
+		Insert_section LIHC_Verse.v08 End-Insert
+		Hymn rid meVE.Stichera01.text End-Hymn
+		Insert_section LIHC_Verse.v09 End-Insert
+		Hymn rid meVE.Stichera02.text End-Hymn
+		Insert_section LIHC_Verse.v10 End-Insert
+		Hymn rid meVE.Stichera03.text End-Hymn
+		Title role mixed sid DoxaKaiNyn <Tdesig> sid Theotokion</>End-Title
+		Hymn rid meVE.SticTheotokion.text End-Hymn
+	End-Section //Stichera
+
+	Section Vespers_03 // Entrance thru Prokeimenon
+		Actor sid Deacon End-Actor
+		Rubric sid InALowVoice End-Rubric
+		Dialog sid pet00 End-Dialog
+		Actor sid Priest End-Actor
+		Title role desig sid hiVE.Key0108.title End-Title
+		Para role inaudible <inr>sid InALowVoice</>sid hiVE.Key0108.text End-Para
+		Actor sid Deacon End-Actor
+		Dialog sid exc17 sid exc18 End-Dialog
+		Actor sid ClergyAndPeople End-Actor
+		Title role mode sid Mode2 End-Title
+		Hymn sid hoVE.FosIlaron.text End-Hymn
+		Actor sid PriestOrDeacon End-Actor
+		Dialog sid hiVE.Key0109.text End-Dialog
+		Actor sid Choir End-Actor
+		Insert_section Lent_GreatProkeimenon2 End-Insert
+	End-Section
+	
+	Section Vespers_05_Litanies // Ektenia 	
+		Insert_section Ektenia04 End-Insert
+		Actor sid Reader End-Actor
+		Reading sid hoVE.Prayer_Kataxioson.text End-Reading
+		Insert_section ComplementaryV End-Insert
+		Insert_section BowHeadsV End-Insert
+	End-Section
+
+	Insert_section IconsProcession End-Insert
+
+	Section Lent_Aposticha
+		Title role desig sid Aposticha sid TouTriodiou End-Title		
+		Title role mixed <Tdesig> sid Idiomelon</> <Tmode>sid trVE.AposIdiomelon1.mode </>End-Title
+		Hymn sid trVE.AposIdiomelon1.text End-Hymn
+		Insert_section bk.ho.s10.Aposticha.Weekday_Verse_1 End-Insert
+		Hymn sid trVE.AposIdiomelon1.text media-off End-Hymn
+		Title role desig sid Martyrikon End-Title
+		Media sid trVE.AposMartyric.text End-Media
+		Insert_section bk.ho.s10.Aposticha.Weekday_Verse_2 End-Insert
+		Hymn sid trVE.AposMartyric.text media-off End-Hymn
+		Title role mixed sid DoxaKaiNyn <Tdesig>sid Theotokion</> End-Title
+		Hymn sid trVE.AposTheotokion.text End-Hymn
+	End-Section
+	
+	Insert_section Symeon_Trisagion End-Insert	
+	Insert_section Lent_Apolytikia End-Insert
+	
+	Actor sid Reader End-Actor
+	Dialog sid res01 <r>sid Forty </>End-Dialog
+	Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
+	Dialog sid TinTimioteran.text End-Dialog
+	Dialog sid EnOnomatiKyriou.text End-Dialog
+	Actor sid Priest End-Actor
+	Dialog sid OOnEvlogitos.text End-Dialog
+	Actor sid Reader End-Actor
+	Dialog sid res04 End-Dialog
+	Dialog sid EpouranieVasilef.text sid res04 End-Dialog
+	Actor sid Priest End-Actor
+	Insert_section StEphraimPrayer End-Insert
+	Actor sid Reader End-Actor
+	Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
+	Dialog sid res06 End-Dialog
+	Dialog sid Evlogison End-Dialog
+	
+	Insert_section Dismissals.Com_No End-Insert
+
+End-Template

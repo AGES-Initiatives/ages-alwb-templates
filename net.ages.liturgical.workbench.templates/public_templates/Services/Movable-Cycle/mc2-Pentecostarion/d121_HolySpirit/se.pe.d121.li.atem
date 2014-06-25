@@ -1,0 +1,141 @@
+Template se.pe.d121.li 
+
+Status Review
+
+	import client_gr_GR_cog.*
+	import eu.lichrysbasil_gr_GR_cog.*
+	import ho.s07_gr_GR_cog.*
+	import pe.d120_gr_GR_cog.*
+
+//	import da.*
+	import oc.*
+
+	//Templates
+	import LectionaryReadings.*
+	import eu.li.chrysbasil.*
+	import Litanies.*
+	
+	import actors_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+		Head 
+//			Set_Date month 6 day 9 year 2014 End_Date
+				Page_Header_Even
+					center @lookup sid li.pdf.header sid d.on lang L1 @date lang L1
+				End_Page_Header_Even
+				Page_Header_Odd
+					center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+				End_Page_Header_Odd
+				Page_Footer_Even
+					center @pageNbr
+				End_Page_Footer_Even
+				Page_Footer_Odd
+					center @pageNbr
+				End_Page_Footer_Odd
+			Set_Page_Number 1 End_Set_Page_Number
+		End_Head
+	
+
+	Insert_section eu.li.chrysbasil.Section01 End-Insert
+	Insert_section eu.li.chrysbasil.Section02 End-Insert
+	Section Antiphon1 //festal antiphons
+		Actor sid Choir End-Actor
+		Title role desig sid Antifonon1 End-Title
+		Title role mode sid Mode2 End-Title
+		Media sid hoLI.Antiphon1.text End-Media
+		Verse <bnr>sid vVerse1</> sid peLI.Antiphon1Verse1.text End-Verse
+		Hymn sid hoLI.Antiphon1.text media-off End-Hymn
+		Verse <bnr>sid vVerse2</> sid peLI.Antiphon1Verse2.text End-Verse
+		Hymn sid hoLI.Antiphon1.text media-off End-Hymn
+		Verse <bnr>sid vVerse3</> sid peLI.Antiphon1Verse3.text End-Verse
+		Hymn sid hoLI.Antiphon1.text media-off End-Hymn
+		Verse <bnr>sid vVerse4</> sid peLI.Antiphon1Verse4.text End-Verse
+		Hymn sid hoLI.Antiphon1.text media-off End-Hymn
+		Verse sid DoxaPatri.text sid KaiNynKaiAei.text End-Verse
+		Hymn sid hoLI.Antiphon1.text media-off End-Hymn
+	End-Section
+	Insert_section eu.li.chrysbasil.Section04 End-Insert
+	Section Antiphon2 //festal antiphons
+		Actor sid Choir End-Actor
+		Title role desig sid Antifonon2 End-Title
+		Title role mode sid Mode2 End-Title
+		Media sid peLI.Antiphon2.text End-Media
+		Verse <bnr>sid vVerse1</> sid peLI.Antiphon2Verse1.text End-Verse
+		Hymn sid peLI.Antiphon2.text media-off sid hoLI.Antiphon22.text media-off End-Hymn
+		Verse <bnr>sid vVerse2</> sid peLI.Antiphon2Verse2.text End-Verse
+		Hymn sid peLI.Antiphon2.text media-off sid hoLI.Antiphon22.text media-off End-Hymn
+		Verse <bnr>sid vVerse3</> sid peLI.Antiphon2Verse3.text End-Verse
+		Hymn sid peLI.Antiphon2.text media-off sid hoLI.Antiphon22.text media-off End-Hymn
+		Media sid hoLI.OnlyBegotten.text End-Media
+		Verse sid DoxaPatri.text End-Verse
+		Verse sid KaiNynKaiAei.text End-Verse
+		Hymn sid hoLI.OnlyBegotten.text media-off End-Hymn
+	End-Section
+	Insert_section eu.li.chrysbasil.Section06 End-Insert
+	Section Antiphon3
+		Actor sid Choir End-Actor
+		Title role desig sid Antifonon3 End-Title
+		Verse <bnr>sid vVerse1</> sid peLI.Antiphon3Verse1.text End-Verse
+		Verse <bnr>sid vVerse2</> sid peLI.Antiphon3Verse2.text End-Verse
+		Verse <bnr>sid vVerse3</> sid peLI.Antiphon3Verse3.text End-Verse
+		Verse <bnr>sid vVerse4</> sid peLI.Antiphon3Verse4.text End-Verse
+		Title role mode sid peVE.Apolytikion1.mode End-Title
+		Hymn sid peVE.Apolytikion1.text End-Hymn
+	End-Section
+	Insert_section eu.li.chrysbasil.Section08 End-Insert
+	Insert_section eu.li.chrysbasil.Section09.clergy End-Insert
+	Section EntranceHymnFestal
+		Media sid peLI.EntranceHymn.text End-Media
+		Hymn sid peLI.EntranceHymn.text media-off sid peLI.Antiphon2.text media-off End-Hymn
+		Actor sid Choir End-Actor
+		Dialog sid hoLI.Antiphon22.text End-Dialog
+		Title role desig sid Apolytikion End-Title
+		Title role mixed <Tdesig> sid Apolytikion</> <Tmode>sid peVE.Apolytikion1.mode</>End-Title
+		Hymn sid peVE.Apolytikion1.text <inr>sid Thrice media-off </>End-Hymn
+	End-Section
+	Section SeasonalKontakion
+		Title role mixed <Tdesig> sid Kontakion</> <Tmode> sid peLI.SeasonalKontakion.mode</> End-Title
+		Hymn sid peLI.SeasonalKontakion.text End-Hymn
+	End-Section
+	Insert_section eu.li.chrysbasil.Section13.prayer End-Insert
+Insert_section eu.li.chrysbasil.Section13.baptized End-Insert
+	Insert_section Lectionary_Epistle_Daily End-Insert
+	Insert_section Lectionary_Gospel_Daily.Alleluia End-Insert	
+	Insert_section eu.li.chrysbasil.Section14 End-Insert
+	Insert_section Lectionary_Gospel_Daily.Lesson End-Insert
+	Insert_section eu.li.chrysbasil.Section19 End-Insert
+	Insert_section eu.li.chrysbasil.Section20 End-Insert
+	Insert_section eu.li.chrysbasil.Section21.chrys End-Insert
+	Insert_section eu.li.chrysbasil.Section22.chrys End-Insert
+	Section Part_13_2_Megalynarion
+		Title role desig sid euLI.Key1328.title End-Title
+		Title role mode sid pe.d121_gr_GR_cog.peLI.TheotokosHymn.mode End-Title
+		Hymn sid pe.d121_gr_GR_cog.peLI.TheotokosHymn.text End-Hymn
+	End-Section
+	Insert_section eu.li.chrysbasil.Section24.chrys End-Insert
+	Insert_section eu.li.chrysbasil.Section25.chrys End-Insert
+	Insert_section eu.li.chrysbasil.Section26 End-Insert
+	Section Part_15_1_CommunionHymn
+		Actor sid Choir End-Actor
+		Title role desig sid euLI.Key1500.title End-Title
+		Hymn sid pe.d121_gr_GR_cog.peLI.CommunionHymn.text End-Hymn
+	End-Section
+//	Insert_section eu.li.chrysbasil.Section28 End-Insert
+//	Insert_section eu.li.chrysbasil.Section29 End-Insert
+	Insert_section eu.li.chrysbasil.Section30 End-Insert
+	Insert_section eu.li.chrysbasil.Section31 End-Insert
+	Insert_section eu.li.chrysbasil.Section32 End-Insert
+	// Insert_section eu.li.chrysbasil.Section33 End-Insert
+	Insert_section eu.li.chrysbasil.Section34.chrys End-Insert
+	Insert_section eu.li.chrysbasil.Section35.chrys End-Insert
+	Insert_section eu.li.chrysbasil.Section36.comno End-Insert
+	
+End-Template
