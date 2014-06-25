@@ -1,34 +1,7 @@
 Template se.bug.b19 
 
 	import client_gr_GR_cog.*
-	import eu.lichrysbasil_gr_GR_cog.*
-	import ho.s03_gr_GR_cog.*
-	import ho.s07_gr_GR_cog.*
-	import ho.s10_gr_GR_cog.*	
-//	import me.m00.d00_gr_GR_cog.*
-//	import pe.d000_gr_GR_cog.*
-//	import tr.d000_gr_GR_cog.*
-
-	import da.*
-	import oc.*
-//	import pe.*
-//	import tr.*
-
-	//Templates
-	import VespersParts.*
-	import MatinsParts.*
-	import kTheotokos.*  //Katavasia
-	import LectionaryReadings.*
-	import LiturgyChrysBasil.*
-	import Litanies.*
 	
-	import actors_gr_GR_cog.*
-	import dismissals_gr_GR_cog.*
-	import misc_gr_GR_cog.*
-	import prayers_gr_GR_cog.*
-	import rubrical_gr_GR_cog.*
-	import template.titles_gr_GR_cog.*
-	import titles_gr_GR_cog.*
 		
 	import iTags.*
 	import bTags.*
@@ -36,36 +9,37 @@ Template se.bug.b19
 
 	Head 
 		Set_Date month 7 day 6 End_Date
-			Page_Header_Even
-				center @lookup sid ma.pdf.header sid d.on lang L1 @date lang L1
-			End_Page_Header_Even
-			Page_Header_Odd
-				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
-			End_Page_Header_Odd
-			Page_Footer_Even
-				center @pageNbr
-			End_Page_Footer_Even
-			Page_Footer_Odd
-				center @pageNbr
-			End_Page_Footer_Odd
-		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
-
-	Preface Covers
-		Insert_template ematins.cover.ma End-Insert
-		Insert_template ematins.credits End-Insert
-	End-Preface
 
 	Hymn sid oc.m3.d1_gr_GR_cog.ocVE.Apolytikion.text End-Hymn
 		
+		/* set eclipse to snc
+		  set pref.html_snc.ares to the following:
+		  
+			media.v1.preferred = "gr_GR_snc"
+			media.v1.fallback = "gr_GR_cog"
+			media.v2.preferred = "en_US_snc"
+			media.v2.fallback = "en_US_dedes"
+		 
+		 the snc media maps do not contain the above key
+		 so the anticipated result is for the media link to come from the cog and dedes maps
+		 but that is not happening
+		 
+		 
+		 Media for the following hymn exists only in the media_en_US_snc.ares media map
+		 The generated result is correct and what is anticipated
+		 */ 
+	
+	Hymn sid cl.Apolytikion1.text End-Hymn
 	
 	
 	
 	
 	
-	
-	
-	
+	/* so there seems to be a problem with preferred and default in media maps
+	 * 
+	 * 
+	 */
 	
 	
 	
