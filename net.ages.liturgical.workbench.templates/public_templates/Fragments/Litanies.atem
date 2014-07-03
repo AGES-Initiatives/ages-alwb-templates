@@ -396,9 +396,12 @@ Template Litanies
 		Dialog <i> sid res04p </> End-Dialog
 	End-Section
 
-	Section Supplication_deacon //Matins etc
+	Section Supplication_deacon
 		Actor sid Deacon End-Actor
-		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid meInsert1 rid meInsert2 sid sup15 sid sup99 End-Dialog	
+		when-movable-cycle-day-is 36, 50, 57 use:
+			Insert_section Supplication_Triodion End-Insert
+			otherwise use: Insert_section Supplication_Menaion End-Insert
+		end-when
 		Actor sid Choir End-Actor
 		Dialog sid res01 <r>sid Twelve </> End-Dialog
 		Actor sid Priest End-Actor
@@ -407,9 +410,12 @@ Template Litanies
 		Dialog sid res04 End-Dialog
 	End-Section
 
-	Section Supplication_priest //Matins etc
+	Section Supplication_priest
 		Actor sid Priest End-Actor
-		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid meInsert1 rid meInsert2 sid sup15 sid sup99 End-Dialog	
+		when-movable-cycle-day-is 36, 50, 57 use:
+			Insert_section Supplication_Triodion End-Insert
+			otherwise use: Insert_section Supplication_Menaion End-Insert
+		end-when
 		Actor sid Choir End-Actor
 		Dialog sid res01 <r>sid Twelve </> End-Dialog
 		Actor sid Priest End-Actor
@@ -418,9 +424,9 @@ Template Litanies
 		Dialog sid res04 End-Dialog
 	End-Section
 
-	Section Supplication_nomenaion //Matins etc
+	Section Supplication_Plain_deacon
 		Actor sid Deacon End-Actor
-		Dialog  sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid sup15 sid sup99  End-Dialog	
+		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid sup15 sid sup99  End-Dialog	
 		Actor sid Choir End-Actor
 		Dialog sid res01 <r>sid Twelve </> End-Dialog
 		Actor sid Priest End-Actor
@@ -429,16 +435,60 @@ Template Litanies
 		Dialog sid res04 End-Dialog
 	End-Section
 
-	Section Supplication_Triodion //Matins etc
-		Actor sid Deacon End-Actor
+	Section Supplication_Plain_priest
+		Actor sid Priest End-Actor
+		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid sup15 sid sup99  End-Dialog	
+		Actor sid Choir End-Actor
+		Dialog sid res01 <r>sid Twelve </> End-Dialog
+		Actor sid Priest End-Actor
+		Dialog sid exc07 End-Dialog
+		Actor sid Choir End-Actor
+		Dialog sid res04 End-Dialog
+	End-Section
+
+	Section Supplication_Triodion
 		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid trInsert1 rid trInsert2 sid sup15 sid sup99 End-Dialog	
-		Actor sid Choir End-Actor
-		Dialog sid res01 <r>sid Twelve </> End-Dialog
-		Actor sid Priest End-Actor
-		Dialog sid exc07 End-Dialog
-		Actor sid Choir End-Actor
-		Dialog sid res04 End-Dialog
 	End-Section
+
+	Section Supplication_Menaion
+		when-date-is
+			Aug 15 use: Insert_section Supplication_Theotokos End-Insert
+			Sep 8 use: Insert_section Supplication_Theotokos End-Insert
+			Nov 21 use: Insert_section Supplication_Theotokos End-Insert
+			Dec 26 use: Insert_section Supplication_Theotokos End-Insert
+			Nov 8 use: Insert_section Supplication_Angels End-Insert
+			Jan 7 use: Insert_section Supplication_Forerunner End-Insert
+			Feb 24 use: Insert_section Supplication_Forerunner End-Insert
+			May 25 use: Insert_section Supplication_Forerunner End-Insert
+			Jun 24 use: Insert_section Supplication_Forerunner End-Insert
+			Jul 25 use: Insert_section Supplication_JoakimAnna End-Insert
+			Aug 29 use: Insert_section Supplication_Forerunner End-Insert
+			Aug 31 use: Insert_section Supplication_Theotokos End-Insert
+			Sep 23 use: Insert_section Supplication_Forerunner End-Insert
+			Jun 30 use: Insert_section Supplication_Apostles End-Insert
+			otherwise use: Insert_section Supplication_Saints End-Insert
+		end-when
+	End-Section
+
+	Section Supplication_Angels
+		Dialog sid sup00 sid sup01 sid sup02 sid sup03 rid meInsert2 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid sup15 sid sup99 End-Dialog	
+	End-Section
+	Section Supplication_Apostles
+		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 rid meInsert2 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid sup15 sid sup99 End-Dialog	
+	End-Section
+	Section Supplication_Forerunner
+		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 rid meInsert2 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid sup15 sid sup99 End-Dialog	
+	End-Section
+	Section Supplication_JoakimAnna
+		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid meInsert2 sid sup15 sid sup99 End-Dialog	
+	End-Section
+	Section Supplication_Saints
+		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid meInsert1 rid meInsert2 sid sup15 sid sup99 End-Dialog	
+	End-Section
+	Section Supplication_Theotokos
+		Dialog sid sup00 sid sup01 rid meInsert2 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid sup15 sid sup99 End-Dialog	
+	End-Section
+
 
 	Section Litany_SoulSaturday
 		Actor sid Deacon End-Actor
