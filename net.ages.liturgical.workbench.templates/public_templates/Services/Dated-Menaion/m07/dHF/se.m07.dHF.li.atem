@@ -38,6 +38,7 @@ Status Final
 	import roles.*
 
 	Head 
+		Set_Date month 7 day 13 year 2014 End_Date
 			Page_Header_Even
 				center @lookup sid li.pdf.header sid d.on lang L1 @date lang L1
 			End_Page_Header_Even
@@ -81,10 +82,34 @@ Status Final
 		Insert_section eu.li.chrysbasil.Section12.default.single End-Insert
 		Insert_section eu.li.chrysbasil.Section13.prayer End-Insert
 		Insert_section eu.li.chrysbasil.Section13.holygod End-Insert
-		Insert_section Lectionary_Epistle_Menaion End-Insert
+		Section Epistle
+			Section Prokeimenon
+				Title role desig sid TaAnagnosmata End-Title
+				Title role desig sid OApostolos End-Title
+				Title <inr>sid le.ep.me.m07.dHF_gr_GR_cog.lemeLI.Epistle.title </> End-Title
+				Actor sid Deacon End-Actor
+				Dialog sid exc19 End-Dialog
+				Actor sid Reader End-Actor
+				Insert_section rid_EpistleProkeimena_Menaion.me_ep_title_mode End-Insert
+				Insert_section rid_EpistleProkeimena_Menaion.me_ep_prokeimenon_verse End-Insert
+			End-Section
+			Section Lesson
+				Actor sid Deacon End-Actor
+				Dialog sid exc17 End-Dialog		
+				Actor sid Reader End-Actor
+				Dialog sid epi01a sid le.ep.me.m07.dHF_gr_GR_cog.lemeLI.Epistle.book sid epi01b End-Dialog
+				Actor sid Deacon End-Actor
+				Dialog sid exc19 End-Dialog
+				Actor sid Reader End-Actor
+				Title role chapverse sid le.ep.me.m07.dHF_gr_GR_cog.lemeLI.Epistle.chapverse End-Title		
+				Reading sid le.ep.me.m07.dHF_gr_GR_cog.lemeLI.Epistle.text End-Reading
+				Actor sid Priest End-Actor
+				Dialog sid epi02 End-Dialog	
+			End-Section	
+		End-Section
 		Insert_section Lectionary_Gospel_Menaion.Alleluia End-Insert
 		Insert_section eu.li.chrysbasil.Section14 End-Insert
-		Section Lesson
+		Section Gospel
 			Title role desig sid ToEvangelion End-Title
 			Title <inr>rid meShortCommemoration1.text</> End-Title
 			Actor sid Deacon End-Actor
@@ -104,7 +129,7 @@ Status Final
 			Dialog sid euLI.Key0705.text End-Dialog
 			Actor sid Choir End-Actor						
 			Dialog sid DoxaSoiKyrie End-Dialog	
-			End-Section
+		End-Section
 	End-Section
 	Section Section03
 		Insert_section eu.li.chrysbasil.Section19 End-Insert
