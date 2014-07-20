@@ -27,22 +27,30 @@ Status Review
 	Section Com_Yes //use this whenever there IS an explicit commemoration
 		Section part1
 			when-date-is
-				Aug 15 use: Insert_section Section02 End-Insert
-				Sep 8 use: Insert_section Section02 End-Insert
-				Nov 21 use: Insert_section Section02 End-Insert
-				Dec 26 use: Insert_section Section02 End-Insert
-				Aug 1 use: Insert_section Section03 End-Insert
-				Sep 14 use: Insert_section Section03 End-Insert
-				Nov 8 use: Insert_section Section04 End-Insert
 				Jan 7 use: Insert_section Section05 End-Insert
 				Feb 24 use: Insert_section Section05 End-Insert
 				May 25 use: Insert_section Section05 End-Insert
 				Jun 24 use: Insert_section Section05 End-Insert
+				Jun 30 use: Insert_section Section06 End-Insert
+				Jul 13 thru 19 use:
+					when-name-of-day-is Sunday
+						use: Insert_section Section10 End-Insert
+					end-when
 				Jul 25 use: Insert_section Section08 End-Insert
+				Aug 1 use: Insert_section Section03 End-Insert
+				Aug 15 use: Insert_section Section02 End-Insert
 				Aug 29 use: Insert_section Section05 End-Insert
 				Aug 31 use: Insert_section Section02 End-Insert
+				Sep 8 use: Insert_section Section02 End-Insert
+				Sep 14 use: Insert_section Section03 End-Insert
 				Sep 23 use: Insert_section Section05 End-Insert
-				Jun 30 use: Insert_section Section06 End-Insert
+				Oct 11 thru 17 use:
+					when-name-of-day-is Sunday
+						use: Insert_section Section11 End-Insert
+					end-when
+				Nov 8 use: Insert_section Section04 End-Insert
+				Nov 21 use: Insert_section Section02 End-Insert
+				Dec 26 use: Insert_section Section02 End-Insert
 				otherwise use: 
 					when-movable-cycle-day-is 1 thru 57 use: Insert_section Section09 End-Insert
 						otherwise use: Insert_section Section07 End-Insert
@@ -182,5 +190,13 @@ Status Review
 			45 use: Dialog sid dis00 rid trDismissal sid dis01 sid dis02 sid dis03 rid meInsert2 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08 <r>sid cl.localpatronsaint1.dismissal</> sid dis09 sid dis10 sid dis89 End-Dialog 
 		end-when
 	End-Section	
+
+	Section Section10 //HolyFathersJuly
+		Dialog sid dis00 sid dis00.resurrection sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08 <r>sid cl.localpatronsaint1.dismissal</> sid dis09 sid me.m07.dHF_gr_GR_cog.meInsert1 sid me.m07.dHF_gr_GR_cog.meInsert2 sid dis10 sid dis89 End-Dialog 
+	End-Section
+	
+	Section Section11 //HolyFathersOctober
+		Dialog sid dis00 sid dis00.resurrection sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08 <r>sid cl.localpatronsaint1.dismissal</> sid dis09 sid me.m10.dHF_gr_GR_cog.meInsert1 sid me.m10.dHF_gr_GR_cog.meInsert2 sid dis10 sid dis89 End-Dialog 
+	End-Section
 	
 End-Template

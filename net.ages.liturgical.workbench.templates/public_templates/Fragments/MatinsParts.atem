@@ -145,6 +145,26 @@ End-Section
 		Hymn rid ocVE.ApolTheotokionVM.text End-Hymn
 	End-Section
 
+	Section SunKathisma1_CombinedMenaion
+		Title role desig sid Kathisma1 End-Title
+		Title role mixed  <Tmode>rid ocMA.Kathisma11.mode </><Tmelody>rid ocMA.Kathisma11.melody</> End-Title
+		Hymn rid ocMA.Kathisma11.text End-Hymn
+		Title role mixed sid Doxa <Tdesig>sid TouAgiou</>End-Title
+		Title role mixed <Tmode>rid meMA.Kathisma11.mode </><Tmelody>rid meMA.Kathisma11.melody</> End-Title
+		Hymn rid meMA.Kathisma11.text End-Hymn
+		Title role mixed sid KaiNyn <Tdesig>sid Theotokion</> End-Title
+		Title role mixed  <Tmode>rid ocVE.ApolTheotokionVM.mode </><Tmelody>rid ocVE.ApolTheotokionVM.melody</> End-Title
+		Hymn rid ocVE.ApolTheotokionVM.text End-Hymn
+	End-Section
+
+	Section SunKathisma1_compute //to be copied
+		when-mode-of-week-is M8 use: //set M to mode of Menaion Apolytikion
+			Insert_section SunKathisma1 End-Insert
+			otherwise use:
+				Insert_section SunKathisma1_WhenSaint End-Insert
+		end-when
+	End-Section	
+
 	Section SunKathisma1_WithFeast //copied, sids must be set to feast date
 		Actor sid Choir End-Actor
 		Title role desig sid Kathisma1 End-Title
@@ -245,6 +265,17 @@ End-Section
 		Title role mixed sid KaiNyn <Tdesig>sid EkTouMinaiou</> End-Title
 		Title role mixed  <Tmode>sid meMA.Kathisma21.mode </><Tmelody>sid meMA.Kathisma21.melody</> End-Title
 		Hymn rid meMA.Kathisma21.text End-Hymn
+	End-Section
+
+	Section SunKathisma2_CombinedMenaion
+		Title role desig sid Kathisma2 End-Title
+		Title role mixed  <Tmode>rid ocMA.Kathisma21.mode </><Tmelody>rid ocMA.Kathisma21.melody</> End-Title
+		Hymn rid ocMA.Kathisma21.text End-Hymn
+		Title role mixed sid Doxa <Tdesig>sid TouAgiou</>End-Title
+		Title role mixed <Tmode>rid meMA.Kathisma21.mode </><Tmelody>rid meMA.Kathisma21.melody</> End-Title
+		Hymn rid meMA.Kathisma21.text End-Hymn
+		Title role mixed sid KaiNyn <Tdesig>sid Theotokion</> End-Title
+		Hymn rid meMA.Kathisma2T.text End-Hymn
 	End-Section
 
 	Section ResurrectionalEvlogetaria
@@ -638,12 +669,14 @@ End-Section
 		Reading sid psa50.text <Trubric>sid psa50.version</> End-Reading
 	End-Section
 
-	Section Kontakion_Oikos_Synaxarion
-		Actor sid Reader End-Actor
-		Title role desig sid Kontakion End-Title
-		Reading End-Reading
-		Title role desig sid OOikos End-Title
-		Reading End-Reading
+	Section Sunday_Kontakion_Oikos_Synaxarion
+		Section part1
+			Actor sid Reader End-Actor
+			Title role desig sid KontakionAnastasimon End-Title
+			Reading rid ocMA.Kontakion.text End-Reading
+			Title role desig sid OOikos End-Title
+			Reading rid ocMA.Oikos.text End-Reading
+			End-Section
 		Insert_section Synaxarion.Synaxarion End-Insert
 	End-Section
 
