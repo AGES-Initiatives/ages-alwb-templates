@@ -1,0 +1,204 @@
+Template se.m10.d26.ma
+
+Status Review
+
+	import ho.s03_gr_GR_cog.*
+	import me.m10.d26_gr_GR_cog.*
+
+	import da.*
+	import oc.*
+
+	//Templates
+	import MatinsParts.*
+	import kTheotokos.*  //Katavasia
+	import LectionaryReadings.*
+	import Litanies.*
+	
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 10 day 26 End_Date
+			Page_Header_Even
+				center @lookup sid ma.pdf.header sid d.on lang L1 @date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+		Preface Covers
+			Insert_template ematins.cover.ma End-Insert
+			Insert_template ematins.credits End-Insert
+		End-Preface
+
+when-name-of-day-is 
+	Sunday use:
+		Section Instance02 //Sunday
+			Section block1
+				Insert_section GITL.sunday End-Insert
+				Title role mixed sid Doxa <Tdesig> sid TouAgiou</>End-Title
+				Title role mixed <Tmode>sid meVE.Apolytikion1.mode</> <Tmelody>sid meVE.Apolytikion1.melody</> End-Title
+				Hymn sid meVE.Apolytikion1.text End-Hymn
+				Title role mixed sid KaiNyn <Tdesig>sid TouSeismou</><Tmode>sid meVE.Apolytikion2.mode</>End-Title
+				Hymn sid meVE.Apolytikion2.text End-Hymn
+			End-Section
+			Insert_section SunKathisma1_CombinedMenaion End-Insert
+			Insert_section SunKathisma2_CombinedMenaion End-Insert
+			Insert_section Instance01.block4 End-Insert
+			Insert_section ResurrectionalEvlogetaria End-Insert
+			Insert_section ShortLitany04 End-Insert	
+			Insert_section HypakoeAntiphonsProkeimenon End-Insert
+			Section block2
+				Actor sid Reader End-Actor
+				Title role desig sid KontakionAnastasimon End-Title
+				Reading rid ocMA.Kontakion.text End-Reading
+				Title role desig sid OOikos End-Title
+				Reading rid ocMA.Oikos.text End-Reading 
+				Title role desig sid Kontakion sid TouAgiou End-Title
+				Reading sid meMA.Kontakion1.text End-Reading
+				Title role desig sid OOikos End-Title
+				Reading sid meMA.Oikos1.text End-Reading 
+				Insert_section Synaxarion.Synaxarion End-Insert
+				Actor sid Choir End-Actor
+				Insert_section k_1345678 End-Insert
+			End-Section
+			Insert_section MatinsGospel_IntroP End-Insert
+			Insert_section MatinsGospel_EothinaP End-Insert
+			Insert_section Supplication_deacon End-Insert
+			Section block3
+				Insert_section Ode9_Intro End-Insert
+				Section MagnificatPart1_Mode //copy and set mode of Title and Media
+					Actor sid Choir End-Actor
+					Title role mixed <Tdesig>sid titles_gr_GR_cog.Megalynarion</> <Tmode>sid Mode4</> End-Title
+					Media sid oc.m4.d1_gr_GR_cog.ocMA.Magnificat.text End-Media// set mode
+				End-Section //Part1
+				Insert_section Magnificat.Part2_Verse123456 End-Insert
+				Insert_section k_9 End-Insert
+			End-Section
+			Insert_section ShortLitany10 End-Insert
+			Insert_section SunHITLExaposteilarion_menaion End-Insert
+			Insert_section SunLaudsRes1234 End-Insert
+			Section block4
+				Title role desig sid TouAgiou End-Title
+				Title role mixed <Tmode>sid meMA.Lauds1.mode</> <Tmelody>sid meMA.Lauds1.melody</> End-Title
+				Media sid meMA.LaudsSundayVerse1.text End-Media
+				Insert_section Lauds_Verse.v05 End-Insert
+				Hymn sid meMA.Lauds1.text media-off End-Hymn
+				Insert_section Lauds_Verse.v06 End-Insert
+				Hymn sid meMA.Lauds1.text media-off End-Hymn
+				Insert_section PsalmVerses.forGreatMartyrs.verse1 End-Insert
+				Hymn sid meMA.Lauds2.text media-off End-Hymn
+				Insert_section PsalmVerses.forGreatMartyrs.verse2 End-Insert
+				Hymn sid meMA.Lauds3.text media-off End-Hymn
+			End-Section
+				Title role mixed sid Doxa <Tdesig>sid TouAgiou</><Tmode>sid meMA.LaudsGlory.mode</>End-Title
+				Hymn sid meMA.LaudsGlory.text End-Hymn
+			Insert_section EothinonGloryBoth.part2 End-Insert
+		End-Section
+	
+		otherwise use:
+			Section Instance01 //Weekday
+				Section block1
+					Insert_section GITL.mode3 End-Insert
+					Title role desig sid Apolytikion End-Title
+					Title role mixed <Tmode>sid meVE.Apolytikion1.mode</> <Tmelody>sid meVE.Apolytikion1.melody</> End-Title
+					Hymn sid meVE.Apolytikion1.text End-Hymn
+					Title role mixed sid Doxa <Tdesig> sid ToAfto</>End-Title
+					Title role mixed sid KaiNyn <Tmode>sid meVE.Apolytikion2.mode</>End-Title
+					Hymn sid meVE.Apolytikion2.text End-Hymn
+				End-Section
+				Insert_section ShortLitany02 End-Insert
+				Section block2
+					Actor sid Choir End-Actor
+					Title role mixed <Tdesig> sid Kathisma1</> End-Title
+					Title role mixed <Tmode> sid meMA.Kathisma11.mode</> <Tmelody> sid meMA.Kathisma11.melody</> End-Title
+					Hymn sid meMA.Kathisma11.text End-Hymn
+					Title role mixed sid Doxa <Tdesig>sid Omoion</>End-Title
+					Hymn sid meMA.Kathisma12.text End-Hymn
+					Title role desig sid Theotokion sid Omoion End-Title
+					Title role mixed sid KaiNyn <Tdesig>sid Theotokion sid Omoion</>End-Title
+					Hymn sid meMA.Kathisma1T.text End-Hymn
+				End-Section
+				Section block3
+					Title role mixed <Tdesig> sid Kathisma2</> End-Title
+					Title role mixed <Tmode> sid meMA.Kathisma21.mode</> <Tmelody> sid meMA.Kathisma21.melody</> End-Title
+					Hymn sid meMA.Kathisma21.text End-Hymn
+					Title sid DoxaKaiNyn End-Title
+					Title role desig sid Theotokion sid Omoion End-Title
+					Hymn sid meMA.Kathisma2T.text End-Hymn
+				End-Section
+				Section block4
+					Title role desig sid Kathisma3 End-Title
+					Title role mixed <Tmode>sid meMA.Kathisma31.mode</> <Tmelody>sid meMA.Kathisma31.melody</> End-Title
+					Hymn sid meMA.Kathisma31.text End-Hymn
+					Title role mixed sid DoxaKaiNyn <Tdesig>sid Theotokion </>End-Title
+					Hymn sid meMA.Kathisma3T.text End-Hymn
+				End-Section
+				Insert_section Litanies.ShortLitany04 End-Insert	
+				Insert_section Antiphon1_Mode4 End-Insert
+				Insert_section me_Matins_Prokeimenon End-Insert
+				Insert_section MatinsGospel_IntroP End-Insert
+				Insert_section MatinsGospel_MenaionP End-Insert
+				Insert_section Supplication_deacon End-Insert
+				Section block5
+					Actor sid Reader End-Actor
+					Title role desig sid Kontakion End-Title
+					Title role mixed <Tmode>sid meMA.Kontakion1.mode</> <Tmelody> sid meMA.Kontakion1.melody </> End-Title
+					Reading sid meMA.Kontakion1.text End-Reading
+					Title role desig sid OOikos End-Title
+					Reading sid meMA.Oikos1.text End-Reading
+					Insert_section Synaxarion.Synaxarion End-Insert
+					Actor sid Choir End-Actor
+					Insert_section k_1345678 End-Insert
+					Insert_section Ode9_Intro End-Insert
+					Insert_section k_mode_mag_media End-Insert
+					Insert_section k_9 End-Insert
+					Insert_section Litanies.ShortLitany10 End-Insert	
+					Actor sid Choir End-Actor
+					Insert_section MeExaposteilarion End-Insert
+				End-Section
+				Section block6
+					Insert_section Lauds.Mode5 End-Insert
+					Title role mixed <Tmode> sid meMA.Lauds1.mode </> <Tmelody> sid meMA.Lauds1.melody </> End-Title
+					Media sid meMA.Lauds1.text End-Media
+					Insert_section Lauds_Verse.v03 End-Insert
+					Hymn sid meMA.Lauds1.text media-off End-Hymn
+					Insert_section Lauds_Verse.v04 End-Insert
+					Hymn sid meMA.Lauds1.text media-off End-Hymn
+					Media sid meMA.Lauds2.text End-Media
+					Insert_section Lauds_Verse.v05 End-Insert
+					Hymn sid meMA.Lauds2.text media-off End-Hymn
+					Media sid meMA.Lauds3.text End-Media
+					Insert_section Lauds_Verse.v06 End-Insert
+					Hymn sid meMA.Lauds3.text media-off End-Hymn
+					Title role mixed sid Doxa <Tmode>sid meMA.LaudsGlory.mode</> End-Title
+					Hymn sid meMA.LaudsGlory.text End-Hymn		
+					Title role mixed sid KaiNyn <Tdesig> sid Theotokion</> End-Title
+					Media sid oc.m4.d2_gr_GR_cog.ocMA.AposTheotokion.text End-Media
+					Hymn sid meMA.LaudsTheotokion.text media-off End-Hymn		
+					Insert_section GreatDoxology End-Insert
+					Title role desig sid Apolytikion End-Title
+					Title role mixed <Tmode>sid meVE.Apolytikion1.mode</> <Tmelody>sid meVE.Apolytikion1.melody</> End-Title
+					Hymn sid meVE.Apolytikion1.text End-Hymn
+				End-Section
+			End-Section
+end-when			
+
+End-Template
