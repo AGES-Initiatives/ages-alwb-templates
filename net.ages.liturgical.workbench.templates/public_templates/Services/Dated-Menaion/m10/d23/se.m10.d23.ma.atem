@@ -1,15 +1,14 @@
-Template se.m10.d18.ma
+Template se.m10.d23.ma
 
 Status Review
 
 	import ho.s03_gr_GR_cog.*
-	import me.m10.d18_gr_GR_cog.*
+	import me.m10.d23_gr_GR_cog.*
 
 	import da.*
 	import oc.*
 
 	//Templates
-	import ho.s15_m10.*
 	import MatinsParts.*
 	import kTheotokos.*  //Katavasia
 	import LectionaryReadings.*
@@ -28,7 +27,7 @@ Status Review
 	import roles.*
 
 	Head 
-		Set_Date month 10 day 18 End_Date
+		Set_Date month 10 day 23 year 2011 End_Date
 			Page_Header_Even
 				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
 			End_Page_Header_Even
@@ -54,12 +53,10 @@ when-name-of-day-is
 		Section Instance02 //Sunday
 			Section block1
 				Insert_section GITL.sunday End-Insert
-				Title role mixed sid Doxa <Tdesig> sid TouEvangelistou</>End-Title
-				Title role mode sid meVE.Apolytikion1.mode End-Title
-				Media sid meVE.Apolytikion1.text End-Media
-				Insert_section ho_Oct18.Apolytikion_1.hymn End-Insert
-				Title role mixed sid DoxaKaiNyn <Tdesig>sid Theotokion</>End-Title
-				Hymn sid oc.m3.d1_gr_GR_cog.ocVE.ApolTheotokionVM.text End-Hymn
+				Title role mixed sid Doxa <Tmode>sid meVE.Apolytikion1.mode</><Tdesig> sid TouApostolou</>End-Title
+				Hymn sid meVE.Apolytikion1.text End-Hymn
+				Title role mixed sid KaiNyn <Tdesig>sid Theotokion</>End-Title
+				Hymn sid oc.m4.d1_gr_GR_cog.ocVE.ApolTheotokionVM.text End-Hymn
 			End-Section
 			Insert_section ShortLitany02 End-Insert
 			Section SunKathisma1_compute
@@ -75,7 +72,7 @@ when-name-of-day-is
 			Insert_section HypakoeAntiphonsProkeimenon End-Insert
 			Section block2
 				Actor sid Reader End-Actor
-				Title role desig sid Kontakion sid TouEvangelistou End-Title
+				Title role desig sid Kontakion sid TouApostolou End-Title
 				Reading sid meMA.Kontakion1.text End-Reading
 				Title role desig sid OOikos End-Title
 				Reading sid meMA.Oikos1.text End-Reading 
@@ -97,9 +94,8 @@ when-name-of-day-is
 			Insert_section SunHITLExaposteilarion_menaion End-Insert
 			Insert_section SunLaudsRes1234 End-Insert
 			Section block4
-				Title role desig sid TouEvangelistou End-Title
+				Title role desig sid TouApostolou End-Title
 				Title role mixed <Tmode>sid meMA.Lauds1.mode</> <Tmelody>sid meMA.Lauds1.melody</> End-Title
-				Rubric sid meMA.Lauds1.note End-Rubric
 				Media sid meMA.LaudsSundayVerse1.text End-Media
 				Insert_section Lauds_Verse.v05 End-Insert
 				Hymn sid meMA.Lauds1.text media-off End-Hymn
@@ -116,13 +112,12 @@ when-name-of-day-is
 		otherwise use:
 			Section Instance01 //Weekday
 				Section block1
-					Insert_section GITL.mode3 End-Insert
+					Insert_section GITL.mode4 End-Insert
 					Title role mixed <Tdesig>sid Apolytikion</><Tmode>sid meVE.Apolytikion1.mode</>End-Title
-					Media sid meVE.Apolytikion1.name End-Media
-					Insert_section ho_Oct18.Apolytikion_1.hymn End-Insert
+					Hymn sid meVE.Apolytikion1.text End-Hymn
 					Title role mixed sid Doxa <Tdesig>sid ToAfto</>End-Title
 					Title role mixed sid KaiNyn <Tdesig>sid Theotokion</>End-Title
-					Hymn sid oc.m3.d1_gr_GR_cog.ocVE.ApolTheotokionVM.text End-Hymn
+					Hymn sid oc.m4.d1_gr_GR_cog.ocVE.ApolTheotokionVM.text End-Hymn
 				End-Section
 				Insert_section ShortLitany02 End-Insert
 				Section block2
@@ -130,9 +125,8 @@ when-name-of-day-is
 					Title role mixed <Tdesig> sid Kathisma1</> End-Title
 					Title role mixed <Tmode> sid meMA.Kathisma11.mode</> <Tmelody> sid meMA.Kathisma11.melody</> End-Title
 					Hymn sid meMA.Kathisma11.text End-Hymn
-					Title role mixed sid Doxa <Tdesig>sid Omoion</>End-Title
-					Hymn sid meMA.Kathisma12.text End-Hymn
-					Title role mixed sid KaiNyn <Tdesig>sid Theotokion sid Omoion</>End-Title
+					Title sid DoxaKaiNyn End-Title
+					Title role desig sid Theotokion sid Omoion End-Title
 					Hymn sid meMA.Kathisma1T.text End-Hymn
 				End-Section
 				Section block3
@@ -164,7 +158,6 @@ when-name-of-day-is
 				Section block6
 					Insert_section Lauds.Mode1 End-Insert
 					Title role mixed <Tmode> sid meMA.Lauds1.mode </> <Tmelody> sid meMA.Lauds1.melody </> End-Title
-					Rubric sid meMA.Lauds1.note End-Rubric
 					Media sid meMA.Lauds1.text End-Media
 					Insert_section Lauds_Verse.v03 End-Insert
 					Hymn sid meMA.Lauds1.text media-off End-Hymn
@@ -179,12 +172,10 @@ when-name-of-day-is
 					Title role mixed sid Doxa <Tmode>sid meMA.LaudsGlory.mode</> End-Title
 					Hymn sid meMA.LaudsGlory.text End-Hymn		
 					Title role mixed sid KaiNyn <Tdesig> sid Theotokion</> End-Title
-					Media sid oc.m8.d5_gr_GR_cog.ocMA.AposTheotokion.text End-Media
-					Hymn sid oc.m8.d5_gr_GR_cog.ocMA.AposTheotokion.text media-off End-Hymn		
+					Hymn sid oc.m1.d3_gr_GR_cog.ocVE.AposTheotokion.text media-off End-Hymn		
 					Insert_section GreatDoxology End-Insert
-					Title role desig sid Apolytikion End-Title
-					Title role mixed <Tmode>sid meVE.Apolytikion1.mode</> <Tmelody>sid meVE.Apolytikion1.melody</> End-Title
-					Insert_section ho_Oct18.Apolytikion_1.hymn End-Insert
+					Title role mixed <Tdesig>sid Apolytikion</><Tmode>sid meVE.Apolytikion1.mode</>End-Title
+					Hymn sid meVE.Apolytikion1.text End-Hymn
 				End-Section
 			End-Section
 end-when			
