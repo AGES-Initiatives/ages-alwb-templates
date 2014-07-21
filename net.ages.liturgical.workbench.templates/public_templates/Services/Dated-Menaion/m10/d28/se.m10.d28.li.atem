@@ -1,0 +1,148 @@
+Template se.m10.d28.li
+
+Status Review
+
+	import eu.lichrysbasil_gr_GR_cog.*
+	import ho.s10_gr_GR_cog.*	
+	import me.m10.d28a_gr_GR_cog.*
+
+	import da.*
+	import oc.*
+
+	//Templates
+	import LectionaryReadings.*
+	import LiturgyChrysBasil.*
+	import Litanies.*
+	
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 10 day 28 End_Date
+			Page_Header_Even
+				center @lookup sid li.pdf.header sid d.on lang L1 @date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	when-name-of-day-is 
+		Sunday use:	
+			Section Instance02 //Sunday
+				Insert_section Instance01.block1 End-Insert
+				Insert_section eu.li.chrysbasil.Section05.sunday End-Insert
+				Insert_section eu.li.chrysbasil.Section06 End-Insert
+				Insert_section eu.li.chrysbasil.Section07.sunday End-Insert
+				Insert_section eu.li.chrysbasil.Section08 End-Insert
+				Insert_section eu.li.chrysbasil.Section09.clergy End-Insert
+				Insert_section eu.li.chrysbasil.Section10.sunday End-Insert
+				Section block1l
+					Insert_section eu.li.chrysbasil.Section11.single End-Insert
+					Title role desig sid ApolytikionAnastasimon End-Title
+					Title role mode rid ocVE.Apolytikion.mode End-Title
+					Hymn rid ocVE.Apolytikion.text End-Hymn
+					Title role desig sid TisTheotokou End-Title
+					Title role mixed <Tmode>sid meVE.Apolytikion1.mode</> <Tmelody>sid meVE.Apolytikion1.melody</> End-Title
+					Hymn sid meVE.Apolytikion1.text End-Hymn
+					Insert_section eu.li.chrysbasil.Section11_opt End-Insert
+				End-Section
+				Insert_section Instance01.block4 End-Insert
+				Insert_section eu.li.chrysbasil.Section13.prayer End-Insert
+				Insert_section eu.li.chrysbasil.Section13.holygod End-Insert
+				Insert_section Lectionary_Epistle_Menaion End-Insert
+				Insert_section Lectionary_Gospel_Daily.Alleluia End-Insert
+				Insert_section eu.li.chrysbasil.Section14 End-Insert
+				Insert_section Lectionary_Gospel_Daily.Lesson End-Insert
+				Insert_section Instance01.block6 End-Insert
+				Insert_section eu.li.chrysbasil.Section27 End-Insert
+				Insert_section Instance01.block8 End-Insert
+			End-Section //Sunday
+		
+			otherwise use:
+				Section Instance01 //weekday
+					Section block1
+						Insert_section eu.li.chrysbasil.Section01 End-Insert
+						Insert_section eu.li.chrysbasil.Section02 End-Insert
+						Insert_section eu.li.chrysbasil.Section03 End-Insert
+						Insert_section eu.li.chrysbasil.Section04 End-Insert
+					End-Section
+					Section block2
+						Insert_section eu.li.chrysbasil.Section05.saint End-Insert
+						Insert_section eu.li.chrysbasil.Section06 End-Insert
+						Insert_section eu.li.chrysbasil.Section07.weekday End-Insert
+						Title role desig sid Apolytikion sid TisTheotokou End-Title
+						Title role mixed <Tmode>sid meVE.Apolytikion1.mode</> <Tmelody>sid meVE.Apolytikion1.melody</> End-Title
+						Hymn sid meVE.Apolytikion1.text End-Hymn
+						Insert_section eu.li.chrysbasil.Section08 End-Insert
+						Insert_section eu.li.chrysbasil.Section09.choir End-Insert
+						Insert_section eu.li.chrysbasil.Section10.weekday End-Insert
+					End-Section
+					Section block3
+						Actor sid Choir End-Actor
+						Title role desig sid Apolytikion sid TisTheotokou End-Title
+						Title role mixed <Tmode>sid meVE.Apolytikion1.mode</> <Tmelody>sid meVE.Apolytikion1.melody</> End-Title
+						Hymn sid meVE.Apolytikion1.text End-Hymn
+						Title role mixed <Tmode>sid meVE.Apolytikion2.mode</> <Tmelody>sid meVE.Apolytikion2.melody</> End-Title
+						Hymn sid meVE.Apolytikion2.text End-Hymn
+						Insert_section eu.li.chrysbasil.Section11_opt End-Insert
+					End-Section
+					Section block4
+						Title role desig sid Kontakion sid TisTheotokou End-Title
+						Title role mixed <Tmode>sid meLI.SeasonalKontakion.mode</><Tmelody>sid meLI.SeasonalKontakion.melody</>End-Title
+						Hymn sid meLI.SeasonalKontakion.text End-Hymn
+					End-Section
+					Section block5	
+						Insert_section eu.li.chrysbasil.Section13.prayer End-Insert
+						Insert_section eu.li.chrysbasil.Section13.holygod End-Insert
+						Insert_section Lectionary_Epistle_Menaion End-Insert
+						Insert_section Lectionary_Gospel_Menaion.Alleluia End-Insert
+						Insert_section eu.li.chrysbasil.Section14 End-Insert
+						Insert_section Lectionary_Gospel_Menaion.Lesson End-Insert
+					End-Section
+					Section block6
+						Insert_section eu.li.chrysbasil.Section19 End-Insert
+						Insert_section eu.li.chrysbasil.Section20 End-Insert
+						Insert_section eu.li.chrysbasil.Section21.chrys End-Insert
+						Insert_section eu.li.chrysbasil.Section22.chrys End-Insert
+						Insert_section eu.li.chrysbasil.Section23.chrys End-Insert
+						Insert_section eu.li.chrysbasil.Section24.chrys End-Insert
+						Insert_section eu.li.chrysbasil.Section25.chrys End-Insert
+						Insert_section eu.li.chrysbasil.Section26 End-Insert
+					End-Section
+					Section block7
+						Actor sid Choir End-Actor
+						Insert_section bk.ap.da.d4.communion_title End-Insert
+						Insert_section bk.ap.da.d4.communion_hymn End-Insert
+					End-Section
+					Section block8
+						Insert_section eu.li.chrysbasil.Section28 End-Insert
+						Insert_section eu.li.chrysbasil.Section29 End-Insert
+						Insert_section eu.li.chrysbasil.Section30 End-Insert
+						Insert_section eu.li.chrysbasil.Section31 End-Insert
+						Insert_section eu.li.chrysbasil.Section32 End-Insert
+						Insert_section eu.li.chrysbasil.Section33 End-Insert
+						Insert_section eu.li.chrysbasil.Section34.chrys End-Insert
+						Insert_section eu.li.chrysbasil.Section35.chrys End-Insert
+						Insert_section eu.li.chrysbasil.Section36.comyes End-Insert
+					End-Section
+				End-Section	
+	end-when
+
+End-Template
