@@ -1,0 +1,281 @@
+Template LentParts
+
+	import client_gr_GR_cog.*
+	import da.*
+	import eu.lipresanctified_gr_GR_cog.*
+	import hi.s01_gr_GR_cog.*
+	import ho.s03_gr_GR_cog.*
+	import ho.s10_gr_GR_cog.*
+	import le.pr.tr.*
+	import oc.*
+	import ps_gr_GR_cog.*
+
+	//Templates
+	import VespersParts.*
+	import MatinsParts.*
+	import LectionaryReadings.*
+	import eu.li.chrysbasil.*
+	import Litanies.*
+	
+	import actors_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Section Lent_GreatProkeimenon1
+		Title role mixed <Tdesig> sid Prokeimenon</> <Tmode> sid Mode8</> End-Title
+		Media sid hoVE.GreatProkeimenonLent1.text End-Media
+		Hymn sid psa68.v18.text sid psa68.v19a.text End-Hymn
+		Verse <bnr>sid vVerse</> sid psa68.v30b.text End-Verse
+		Hymn sid psa68.v18.text sid psa68.v19a.text End-Hymn
+		Verse <bnr>sid vVerse</> sid psa68.v33a.text End-Verse
+		Hymn sid psa68.v18.text sid psa68.v19a.text End-Hymn
+		Verse <bnr>sid vVerse</> sid psa68.v33b.text End-Verse
+		Hymn sid psa68.v18.text sid psa68.v19a.text End-Hymn
+	End-Section
+
+	Section Lent_GreatProkeimenon2
+		Title role mixed <Tdesig> sid Prokeimenon</> <Tmode> sid Mode8</> End-Title
+		Media sid hoVE.GreatProkeimenonLent2.text End-Media
+		Hymn sid psa60.v6balt.text End-Hymn
+		Verse <bnr> sid vVerse </>sid psa60.v3.text End-Verse
+		Hymn sid psa60.v6balt.text End-Hymn
+		Verse <bnr> sid vVerse </>sid psa60.v5b.text End-Verse
+		Hymn sid psa60.v6balt.text End-Hymn
+		Verse <bnr> sid vVerse </>sid psa60.v5b.text End-Verse
+		Hymn sid psa60.v9.text End-Hymn
+	End-Section
+
+	Section Lent_VespersReadings //readings no liturgy
+		Insert_section Lent_PresanctifiedReadings.Part1 End-Insert
+		Insert_section Lent_PresanctifiedReadings.Part2 End-Insert
+		Insert_section Lent_PresanctifiedReadings.Part3 End-Insert
+		Insert_section Lent_PresanctifiedReadings.Part5 End-Insert
+	End-Section
+	Section Lent_VespersReading3
+		Actor sid Reader End-Actor
+		Dialog sid hoVE.Reading_Intro.text1 rid lemcVE.Reading3.book sid hoVE.Reading_Intro.text2 End-Dialog
+		Actor sid PriestOrDeacon End-Actor
+		Dialog sid exc17 sid exc19 End-Dialog
+		Actor sid Reader End-Actor
+		Title role chapverse rid lemcVE.Reading3.chapverse End-Title
+		Reading rid lemcVE.Reading3.text End-Reading
+	End-Section
+
+	Section Lent_PresanctifiedReadings //Presanctified Readings
+		Section Part1
+			Actor sid PriestOrDeacon End-Actor
+			Dialog sid hiVE.Key0110.text End-Dialog
+		End-Section
+		Section Part2	
+			Actor sid Reader End-Actor
+			Title <b> sid Prokeimenon rid lemcVE.Prokeimenon1.mode rid lemcVE.Prokeimenon1.source</> End-Title
+			Dialog rid lemcVE.Prokeimenon1.text rid lemcVE.Prokeimenon1Verse.text End-Dialog
+		End-Section
+		Section Part3
+			Actor sid Reader End-Actor
+			Dialog sid hoVE.Reading_Intro.text1 rid lemcVE.Reading1.book sid hoVE.Reading_Intro.text2 End-Dialog
+			Actor sid PriestOrDeacon End-Actor
+			Dialog sid exc17 sid exc19 End-Dialog
+			Actor sid Reader End-Actor
+			Title role chapverse rid lemcVE.Reading1.chapverse End-Title
+			Reading rid lemcVE.Reading1.text End-Reading
+			Title <b> sid Prokeimenon rid lemcVE.Prokeimenon2.mode rid lemcVE.Prokeimenon2.source</> End-Title
+			Dialog rid lemcVE.Prokeimenon2.text rid lemcVE.Prokeimenon2Verse.text End-Dialog
+		End-Section
+		Section Part4
+			Rubric sid Sung End-Rubric
+			Dialog sid Kelefson End-Dialog
+			Actor sid Priest End-Actor
+			Dialog sid exc17 sid exc18 sid euPL.Key0701.text sid euPL.Key0702.text End-Dialog
+			Actor sid Reader End-Actor
+		End-Section
+		Section Part5
+			Dialog sid hoVE.Reading_Intro.text1 rid lemcVE.Reading2.book sid hoVE.Reading_Intro.text2 End-Dialog
+			Actor sid PriestOrDeacon End-Actor
+			Dialog sid exc17 sid exc19 End-Dialog
+			Actor sid Reader End-Actor
+			Title role chapverse rid lemcVE.Reading2.chapverse End-Title
+			Reading rid lemcVE.Reading2.text End-Reading
+		End-Section
+	End-Section
+	
+	Section HolySaturdayMorning_Prophecies //customize
+		Actor sid Reader End-Actor
+		Dialog sid hoVE.Reading_Intro.text1 rid lemcVE.Reading1.book sid hoVE.Reading_Intro.text2 End-Dialog
+		Actor sid PriestOrDeacon End-Actor
+		Dialog sid exc17 sid exc19 End-Dialog
+		Actor sid Reader End-Actor
+		Title role chapverse rid lemcVE.Reading1.chapverse End-Title
+		Reading rid lemcVE.Reading1.text End-Reading
+		Actor sid Reader End-Actor
+		Dialog sid hoVE.Reading_Intro.text1 rid lemcVE.Reading4.book sid hoVE.Reading_Intro.text2 End-Dialog
+		Actor sid PriestOrDeacon End-Actor
+		Dialog sid exc17 sid exc19 End-Dialog
+		Actor sid Reader End-Actor
+		Title role chapverse rid lemcVE.Reading4.chapverse End-Title
+		Reading rid lemcVE.Reading4.text End-Reading
+		Actor sid Reader End-Actor
+		Dialog sid hoVE.Reading_Intro.text1 rid lemcVE.Reading15.book sid hoVE.Reading_Intro.text2 End-Dialog
+		Actor sid PriestOrDeacon End-Actor
+		Dialog sid exc17 sid exc19 End-Dialog
+		Actor sid Reader End-Actor
+		Title role chapverse rid lemcVE.Reading15.chapverse End-Title
+		Reading rid lemcVE.Reading15.text End-Reading
+	End-Section
+	
+	Section Lent_Apolytikia
+		Actor sid Choir End-Actor
+		Title role mixed <Tdesig> sid Apolytikia </> <Tmode>sid hoVE.LentApolytikion1.mode </>End-Title
+		Hymn sid hoVE.LentApolytikion1.text End-Hymn
+		Hymn sid hoVE.LentApolytikion2.text End-Hymn
+		Title sid Doxa End-Title
+		Hymn sid hoVE.LentApolytikion3.text End-Hymn
+		Title sid KaiNyn End-Title
+		Hymn sid hoVE.LentApolytikion4.text End-Hymn
+	End-Section
+	
+	Section Lent_PostGospel
+		Title role desig sid IdiomelaTouTriodiou End-Title
+		Title role mixed sid Doxa <Tmode> sid tr.d001_gr_GR_cog.trMA.PostGospelGlory.mode</> End-Title
+		Hymn sid tr.d001_gr_GR_cog.trMA.PostGospelGlory.text End-Hymn
+		Title role mixed sid KaiNyn <Tmode> sid OAftos </> End-Title
+		Hymn sid tr.d001_gr_GR_cog.trMA.PostGospelBoth.text End-Hymn
+		Title role mixed <Tdesig> sid Idiomelon </> <Tmode> sid tr.d001_gr_GR_cog.trMA.PostGospelIdiomelon.mode </>End-Title
+		Media sid tr.d001_gr_GR_cog.trMA.PostGospelIdiomelon.text End-Media
+		Verse <bnr> sid vVerse </> sid ps_gr_GR_cog.psa50.v3.text End-Verse
+		Hymn sid tr.d001_gr_GR_cog.trMA.PostGospelIdiomelon.text media-off End-Hymn
+	End-Section 
+	
+
+	Section MatinsAlleluia
+		Title role mode rid ocMA.Alleluia.mode @day D7 End-Title
+		Media rid ocMA.Alleluia.text @day D7 End-Media
+		Section verses
+			Insert_section bk.ho.s03.Alleluia_Lent.verse_1 End-Insert
+			Para role chant sid Allilouia <r>sid Thrice</>End-Para
+			Insert_section bk.ho.s03.Alleluia_Lent.verse_2 End-Insert
+			Para role chant sid Allilouia <r>sid Thrice</>End-Para
+			Insert_section bk.ho.s03.Alleluia_Lent.verse_3 End-Insert
+			Para role chant sid Allilouia <r>sid Thrice</>End-Para
+			Insert_section bk.ho.s03.Alleluia_Lent.verse_4 End-Insert
+			Para role chant sid Allilouia <r>sid Thrice</>End-Para
+		End-Section
+	End-Section	
+		
+	Section Triadics
+		Title role desig sid YmnoiTriadikoi End-Title
+		Title role mode rid octrMA.Triadic1.mode End-Title
+		Hymn rid octrMA.Triadic1.text rid daMA.Triadic1Ending.text End-Hymn
+		Title sid Doxa End-Title
+		Hymn rid octrMA.Triadic2.text rid daMA.Triadic2Ending.text End-Hymn
+		Title sid KaiNyn End-Title
+		Hymn rid octrMA.Triadic3.text rid daMA.Triadic3Ending.text End-Hymn
+	End-Section
+	
+	Section Photagogics
+		Title role desig sid Fotagogika End-Title
+		Title role mode rid octrMA.Photagogic.mode End-Title
+		when-mode-of-week-is M6, M7 use:
+			Hymn rid daMA.Photagogic1Beginning.text rid octrMA.Photagogic.text End-Hymn
+			Hymn rid daMA.Photagogic2Beginning.text rid octrMA.Photagogic.text End-Hymn
+			Hymn rid daMA.Photagogic3Beginning.text rid octrMA.Photagogic.text End-Hymn
+			otherwise use:
+				Hymn rid octrMA.Photagogic.text rid daMA.Photagogic1Ending.text End-Hymn
+				Hymn rid octrMA.Photagogic.text rid daMA.Photagogic2Ending.text End-Hymn
+				Hymn rid octrMA.Photagogic.text rid daMA.Photagogic3Ending.text End-Hymn
+		end-when
+	End-Section
+
+	Section StEphraimPrayer
+		Title role desig sid EfchiTouAgiouEfraim End-Title
+		Para role prayer sid KyrieKaiDespota1.text End-Para
+		Para role prayer sid KyrieKaiDespota2.text End-Para
+		Para role prayer sid KyrieKaiDespota3.text End-Para
+		Para role prayer sid KyrieKaiDespota4.text End-Para
+	End-Section
+
+	Section IconsProcession
+		Title role desig sid tr.d029_gr_GR_cog.tr.IconsProcession.title End-Title
+		Actor sid Choir End-Actor
+		Title role mixed <Tdesig>sid Apolytikion</><Tmode>sid tr.d029_gr_GR_cog.trVE.Apolytikion1.mode</>End-Title
+		Hymn sid tr.d029_gr_GR_cog.trVE.Apolytikion1.text End-Hymn
+		Actor sid PriestOrDeacon End-Actor	
+		Dialog sid pet17 End-Dialog
+		Dialog <i>sid res06p</> End-Dialog
+		Dialog sid pet18 End-Dialog
+		Dialog <i>sid res06p</> End-Dialog
+		Dialog sid pet19a <r>sid cl.bishop1.rank sid cl.bishop1.name_p</> End-Dialog
+		Dialog <i>sid res06p</> End-Dialog
+		Dialog sid pet21 End-Dialog
+		Dialog <i>sid res06p</> End-Dialog
+		Actor sid HierarchOrPriest End-Actor
+		Dialog sid exc11 End-Dialog
+		Dialog <i>sid res04p</> End-Dialog
+		Actor sid Choir End-Actor
+		Title role mixed <Tdesig>sid Apolytikion</><Tmode>sid tr.d029_gr_GR_cog.trVE.Apolytikion1.mode</>End-Title
+		Hymn sid tr.d029_gr_GR_cog.trVE.Apolytikion1.text End-Hymn
+		Actor sid PriestOrDeacon End-Actor	
+		Dialog sid pet17 End-Dialog
+		Dialog <i>sid res06p</> End-Dialog
+		Dialog sid petSouls01 End-Dialog
+		Dialog <i>sid res16p</> End-Dialog
+		Actor sid HierarchOrPriest End-Actor
+		Dialog sid exc23 End-Dialog
+		Dialog <i>sid res04p</> End-Dialog
+		Actor sid Choir End-Actor
+		Title role mixed <Tdesig>sid Apolytikion</><Tmode>sid tr.d029_gr_GR_cog.trVE.Apolytikion1.mode</>End-Title
+		Hymn sid tr.d029_gr_GR_cog.trVE.Apolytikion1.text End-Hymn
+		Actor sid PriestOrDeacon End-Actor	
+		Dialog sid pet17 End-Dialog
+		Dialog <i>sid res06p</> End-Dialog
+		Dialog sid pet18 End-Dialog
+		Dialog <i>sid res06p</> End-Dialog
+		Dialog sid pet19a <r>sid cl.bishop1.rank sid cl.bishop1.name_p</> End-Dialog
+		Dialog <i>sid res06p</> End-Dialog
+		Dialog sid pet21 End-Dialog
+		Dialog <i>sid res06p</> End-Dialog
+		Actor sid HierarchOrPriest End-Actor
+		Dialog sid exc11 End-Dialog
+		Dialog <i>sid res04p</> End-Dialog
+		Actor sid Choir End-Actor
+		Title role mixed <Tdesig>sid Apolytikion</><Tmode>sid tr.d029_gr_GR_cog.trVE.Apolytikion1.mode</>End-Title
+		Hymn sid tr.d029_gr_GR_cog.trVE.Apolytikion1.text End-Hymn
+		Actor sid PriestOrDeacon End-Actor	
+		Dialog sid pet17 End-Dialog
+		Dialog <i>sid res06p</> End-Dialog
+		Dialog sid pet33 End-Dialog
+		Dialog <i>sid res06p</> End-Dialog
+		Dialog sid pet35 End-Dialog
+		Dialog <i>sid res06p</> End-Dialog
+		Actor sid HierarchOrPriest End-Actor
+		Dialog sid exc11a End-Dialog
+		Dialog <i>sid res04p</> End-Dialog
+		Actor sid Hierarch End-Actor
+		Title role desig sid tr.d029_gr_GR_cog.tr.Synodikon.title End-Title
+		Reading sid tr.d029_gr_GR_cog.tr.Synodikon1.text End-Reading
+		Reading sid tr.d029_gr_GR_cog.tr.Synodikon2.text End-Reading
+		Reading sid tr.d029_gr_GR_cog.tr.Synodikon3.text End-Reading
+		Reading sid tr.d029_gr_GR_cog.tr.Synodikon4.text End-Reading
+		Reading sid tr.d029_gr_GR_cog.tr.Synodikon5.text End-Reading
+		Dialog <i>sid res16p</> End-Dialog
+		Reading sid tr.d029_gr_GR_cog.tr.Synodikon6.text End-Reading
+		Dialog <i>sid res04p</> End-Dialog
+		Actor sid Choir End-Actor
+		Insert_section GreatProkeimenon1 End-Insert		
+	End-Section
+	
+	
+	
+	
+	
+	
+		
+	
+End-Template

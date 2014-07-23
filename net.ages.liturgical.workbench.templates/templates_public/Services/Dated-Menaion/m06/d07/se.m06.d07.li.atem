@@ -1,0 +1,33 @@
+Template se.m06.d07.li 
+
+Status Review
+
+import da.*
+import template.titles_gr_GR_cog.*
+
+	Head 
+		Set_Date month 6 day 7 End_Date
+			Page_Header_Even
+				center @lookup sid li.pdf.header sid d.on lang L1 @date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	when-movable-cycle-day-is 1 thru 127 use:
+			Insert_template mc.map.li End-Insert //adjust to appropriate service
+			otherwise use:
+		
+	end-when	
+	
+
+
+End-Template

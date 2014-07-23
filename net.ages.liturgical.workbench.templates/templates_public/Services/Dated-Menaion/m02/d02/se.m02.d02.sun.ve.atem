@@ -1,0 +1,184 @@
+Template se.m02.d02.sun.ve
+
+// Feast of Meeting on Sunday
+	
+	import client_gr_GR_cog.*
+	import ho.s10_gr_GR_cog.*
+	import me.m02.d02_gr_GR_cog.*
+	import oc.*
+	
+	import actors_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+	
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	//Imorted Templates
+	import Litanies.*
+	import VespersParts.*
+
+	Head 
+		Set_Date month 2 day 2 End_Date
+		Page_Header_Even 
+//			left @pageNbr 
+			center 
+				@lookup sid ve.pdf.header lang L1 
+//				@date lang L1
+		End_Page_Header_Even
+		Page_Header_Odd 
+			center 
+//				@text "Great Vespers"
+				@lookup sid meShortCommemoration1.text lang L1  
+//			right @pageNbr 
+		End_Page_Header_Odd
+		Page_Footer_Even
+			center @pageNbr
+		End_Page_Footer_Even
+		Page_Footer_Odd
+			center @pageNbr
+		End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+
+Insert_section Vespers_01 End-Insert
+
+Section Vespers_02_Sunday // LIHC Resurretional Stichera
+	Section LIHC 
+		Actor sid Choir End-Actor
+		Title role mode rid ocVE.Stichera1.mode End-Title
+		Hymn rid ocVE.LIHC1.text End-Hymn 
+		Hymn rid ocVE.LIHC2.text End-Hymn 
+	End-Section //LIHC
+	Section ResurrectionalStichera
+		Section Stichera_1234
+			Title role desig sid StichiraAnastasima End-Title
+			Media rid ocVE.Stichera1.text End-Media
+			Insert_section LIHC_Verse.v01 End-Insert
+			Hymn rid ocVE.Stichera1.text media-off End-Hymn
+			Media rid ocVE.Stichera2.text End-Media
+			Insert_section LIHC_Verse.v02 End-Insert
+			Hymn rid ocVE.Stichera2.text  media-off End-Hymn
+			Media rid ocVE.Stichera3.text End-Media
+			Insert_section LIHC_Verse.v03 End-Insert
+			Hymn rid ocVE.Stichera3.text  media-off End-Hymn
+			Media rid ocVE.Stichera4.text End-Media
+			Insert_section LIHC_Verse.v04 End-Insert
+			Hymn rid ocVE.Stichera4.text  media-off End-Hymn
+		End-Section //Stichera_1234
+	End-Section //ResurrectionalStichera
+End-Section //Vespers_02_Sunday
+
+Section Vespers_02_Menaion // LIHC 6 stich menaion thru Glory
+	Section Stichera
+		Title role desig sid TisEortis End-Title
+		Title role mixed <Tmode> sid meVE.Stichera01.mode </> <Tdesig>sid Idiomela </>End-Title
+		Insert_section LIHC_Verse.v05 End-Insert
+		Hymn sid 	meVE.Stichera01.text End-Hymn
+		Insert_section LIHC_Verse.v06 End-Insert
+		Hymn sid 	meVE.Stichera01.text End-Hymn
+		Insert_section LIHC_Verse.v07 End-Insert
+		Hymn sid 	meVE.Stichera02.text End-Hymn
+		Insert_section LIHC_Verse.v08 End-Insert
+		Hymn sid 	meVE.Stichera02.text End-Hymn
+		Insert_section LIHC_Verse.v09 End-Insert
+		Hymn sid 	meVE.Stichera03.text End-Hymn
+		Insert_section LIHC_Verse.v10 End-Insert
+		Hymn sid 	meVE.Stichera03.text End-Hymn
+		Title role mixed sid DoxaKaiNyn <Tmode> sid meVE.SticGlory.mode </>End-Title
+		Hymn sid meVE.SticGlory.text End-Hymn
+	End-Section //Stichera
+End-Section
+	
+Insert_section Vespers_03_entrance End-Insert
+
+Section Vespers_04_menaion 
+	Actor sid Reader End-Actor
+	Dialog sid hoVE.Reading_Intro.text1 sid meVE.Reading1.book sid hoVE.Reading_Intro.text2 End-Dialog
+	Actor sid PriestOrDeacon End-Actor
+	Dialog sid exc17 sid exc19 End-Dialog
+	Actor sid Reader End-Actor
+	Title role chapverse sid meVE.Reading1.chapverse End-Title
+	Reading sid meVE.Reading1.text End-Reading
+	Actor sid Reader End-Actor
+	Dialog sid hoVE.Reading_Intro.text1 sid meVE.Reading2.book sid hoVE.Reading_Intro.text2 End-Dialog
+	Actor sid PriestOrDeacon End-Actor
+	Dialog sid exc17 sid exc19 End-Dialog
+	Actor sid Reader End-Actor
+	Title role chapverse sid meVE.Reading2.chapverse End-Title
+	Reading sid meVE.Reading2.text End-Reading
+	Actor sid Reader End-Actor
+	Dialog sid hoVE.Reading_Intro.text1 sid meVE.Reading3.book sid hoVE.Reading_Intro.text2 End-Dialog
+	Actor sid PriestOrDeacon End-Actor
+	Dialog sid exc17 sid exc19 End-Dialog
+	Actor sid Reader End-Actor
+	Title role chapverse sid meVE.Reading3.chapverse End-Title
+	Reading sid meVE.Reading3.text End-Reading
+End-Section
+	
+Insert_section Vespers_05_Litanies End-Insert
+
+/* 
+Break line End_Break 
+	Section Vespers_LityAndArtoclasia //Part1
+		Title role desig sid ILitiKaiArtoklasia End-Title
+		Actor sid Choir End-Actor
+		Title role mode sid meVE.LityGlory.mode End-Title
+		Hymn sid meVE.LityGlory.text End-Hymn	 
+	End-Section // Part1
+	Insert_section Vespers_06_LityAndArtoclasia.Part2 End-Insert
+*/
+
+// Rest of Vespers		
+Section Vespers_07_ResrrectionalAposticha
+	Section Aposticha_1
+		Actor sid Choir End-Actor
+		Title role desig sid ApostichaAnastasima End-Title
+		Title role mode rid ocVE.Aposticha1.mode End-Title
+		Hymn rid ocVE.Aposticha1.text End-Hymn
+	End-Section
+	Section Aposticha_234
+		Media rid ocVE.Aposticha2.text End-Media
+		Insert_section bk.ho.s10.Aposticha.Saturday_Verse_1 End-Insert
+		Hymn rid ocVE.Aposticha2.text media-off End-Hymn
+		Media rid ocVE.Aposticha3.text End-Media
+		Insert_section bk.ho.s10.Aposticha.Saturday_Verse_2 End-Insert
+		Hymn rid ocVE.Aposticha3.text media-off End-Hymn
+		Media rid ocVE.Aposticha4.text End-Media
+		Insert_section bk.ho.s10.Aposticha.Saturday_Verse_3 End-Insert
+		Hymn rid ocVE.Aposticha4.text media-off End-Hymn
+	End-Section
+	Section AposGloryFeast
+		Title role mixed sid DoxaKaiNyn <Tdesig>sid TisEortis</> End-Title
+		Title role mode sid meVE.AposGlory.mode End-Title
+		Hymn sid meVE.AposGlory.text End-Hymn
+	End-Section
+End-Section
+	
+	
+	Insert_section Symeon_Trisagion End-Insert	
+	
+	Actor sid Choir End-Actor
+	Title role mixed <Tdesig> sid ApolytikionAnastasimon </> End-Title
+	Title role mixed <Tmode>rid ocVE.Apolytikion.mode </> <Tmelody>rid ocVE.Apolytikion.melody</>End-Title
+	Hymn rid ocVE.Apolytikion.text End-Hymn
+	Title role mixed sid Doxa <Tdesig> sid TisEortis</>End-Title
+	Title role mode sid meVE.Apolytikion1.mode End-Title
+	Hymn sid meVE.Apolytikion1.text End-Hymn
+	Title role mixed sid KaiNyn <Tdesig> sid ToAfto</>End-Title
+		
+//	Insert_section Vespers_Dismissal_AfterArto End-Insert
+	Insert_section Vespers_09 End-Insert
+	
+	Actor sid Priest End-Actor
+	Insert_section Dismissals.Com_No End-Insert
+	Dialog sid DiEfchonPateron.text End-Dialog
+	Actor sid People End-Actor
+	Dialog sid res04 End-Dialog
+	
+End-Template

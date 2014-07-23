@@ -1,0 +1,733 @@
+Template LectionaryGospelText
+
+	import eu.lichrysbasil_gr_GR_cog.*
+	import ho.s07_gr_GR_cog.*
+	import le.ep.mc.*
+	import le.ep.me.*
+	import le.go.lu.*
+	import le.go.mc.*
+	import le.go.me.*
+	import da.*
+	import oc.*
+
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+	
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+
+	
+	
+//	Set_Date month 12 day 21 year 2013 End_Date
+
+	Passthrough-Html "<tr><td><b>Service Date:</></td><td><b>Service Date:</></td></tr>" END-Passthrough-Html
+	Para ldp @Service_Date End-Para
+
+	Title role desig ldp @Lukan_Cycle_Week_Day End-Title
+	
+	Passthrough-Html "<tr><td><b>Day of movable cycle:</></td><td><b>Day of movable cycle:</></td></tr>" END-Passthrough-Html
+	Para ldp @Day_of_Movable_Cycle End-Para
+
+	Passthrough-Html "<tr><td><b>Day of Period:</></td><td><b>Day of Period:</></td></tr>" END-Passthrough-Html
+	Para ldp @Name_of_Period ldp @Day_of_Period End-Para
+
+	Passthrough-Html "<tr><td><b>Sunday after the Cross in current cycle was on:</></td><td><b>Sunday after the Cross in current cycle was on:</></td></tr>" END-Passthrough-Html	
+	Para ldp @Sunday_After_Elevation_Cross_Date End-Para
+	
+	Passthrough-Html "<tr><td><b>Lukan cycle begins on:</></td><td><b>Lukan cycle begins on:</></td></tr>" END-Passthrough-Html 
+	Para  ldp @Lukan_Cycle_Start_Date End-Para
+	
+	Passthrough-Html "<tr><td><b>Day of Lukan cycle:</></td><td><b>Day of Lukan cycle:</></td></tr>" END-Passthrough-Html
+	Para ldp @Lukan_Cycle_Elapsed_Days End-Para
+	
+	Passthrough-Html "<tr><td><b>Week of Lukan cycle:</></td><td><b>Week of Lukan cycle:</></td></tr>" END-Passthrough-Html
+	Para ldp @Lukan_Cycle_Week End-Para
+	
+	Passthrough-Html "<tr><td><b>Sundays before Triodion is:</></td><td><b>Sundays before Triodion is:</></td></tr>" END-Passthrough-Html
+	Para ldp @Sundays_Before_Triodion End-Para
+
+
+
+	Section Gospel_Text
+	 	when-date-is
+			Jul 13 thru 19 use: //Sun of Holy Fathers
+				when-name-of-day-is 
+					Sunday use: Reading sid le.go.me.m07.dHF_gr_GR_cog.lemeLI.Gospel.text End-Reading //JulyHF
+					otherwise use:
+						when-date-is
+							Jul 13 use: Reading sid le.go.me.m07.d13_gr_GR_cog.lemeLI.Gospel.text End-Reading //Menaion
+							Jul 14 use: Reading rid lemcLI.Gospel.text End-Reading //default
+							Jul 15 use: Reading sid le.go.me.m07.d15_gr_GR_cog.lemeLI.Gospel.text End-Reading //Menaion
+							Jul 16 use: Reading rid lemcLI.Gospel.text End-Reading //default
+							Jul 17 use: Reading sid le.go.me.m07.d17_gr_GR_cog.lemeLI.Gospel.text End-Reading //Menaion
+							Jul 18 use: Reading rid lemcLI.Gospel.text End-Reading //default
+							Jul 19 use: Reading rid lemcLI.Gospel.text End-Reading //default
+						end-when
+				end-when
+			Sep 7 thru 13 use: 
+				when-name-of-day-is  //Sat and Sun before Cross
+					Saturday use: Reading sid le.go.me.m09.dSatBC_gr_GR_cog.lemeLI.Gospel.text End-Reading //SatBC
+					Sunday use: Reading sid le.go.me.m09.dSunBC_gr_GR_cog.lemeLI.Gospel.text End-Reading //SunBC
+					otherwise use:
+						when-date-is 
+							Sep 7 use: Reading rid lemcLI.Gospel.text End-Reading //default
+							Sep 8 use: Reading sid le.go.me.m09.d08_gr_GR_cog.lemeLI.Gospel.text End-Reading //Menaion
+							Sep 9 use: Reading sid le.go.me.m09.d09_gr_GR_cog.lemeLI.Gospel.text End-Reading //Menaion
+							Sep 10 use: Reading sid le.go.me.m09.d10_gr_GR_cog.lemeLI.Gospel.text End-Reading //Menaion
+							Sep 11 use: Reading sid le.go.me.m09.d11_gr_GR_cog.lemeLI.Gospel.text End-Reading //Menaion
+							Sep 12 use: Reading sid le.go.me.m09.d12_gr_GR_cog.lemeLI.Gospel.text End-Reading //Menaion
+							Sep 13 use: Reading sid le.go.me.m09.d13_gr_GR_cog.lemeLI.Gospel.text End-Reading //Menaion
+						end-when
+				end-when
+			Sep 15 thru 21 use: 
+				when-name-of-day-is //Sat and Sun after Cross
+					Saturday use: Reading sid le.go.me.m09.dSatAC_gr_GR_cog.lemeLI.Gospel.text End-Reading //SepSatAC
+					Sunday use: Reading sid le.go.me.m09.dSunAC_gr_GR_cog.lemeLI.Gospel.text End-Reading //SepSunAC
+					otherwise use:
+						when-date-is
+							Sep 15 use: Reading rid lemcLI.Gospel.text End-Reading //default or Menaion
+							Sep 16 use: Reading rid lemcLI.Gospel.text End-Reading //default or Menaion
+							Sep 17 use: Reading rid lemcLI.Gospel.text End-Reading //default
+							Sep 18 use: Reading rid lemcLI.Gospel.text End-Reading //default
+							Sep 19 use: Reading rid lemcLI.Gospel.text End-Reading //default
+							Sep 20 use: Reading rid lemcLI.Gospel.text End-Reading //default or Menaion
+							Sep 21 use: Reading rid lemcLI.Gospel.text End-Reading //Leavetaking: Prokeimenon and Alleluia of the feast; Epistle and Gospel default
+						end-when
+				end-when
+			otherwise use:
+				Section DaysByNumber 
+					when-Lukan-Cycle-Day-is
+						7 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Reading sid le.go.lu.d007_gr_GR_cog.leluLI.Gospel.text End-Reading //2013
+								Sep 16 use: Reading sid le.go.lu.d007_gr_GR_cog.leluLI.Gospel.text End-Reading //2012
+								Sep 17 use: Reading sid le.go.lu.d007_gr_GR_cog.leluLI.Gospel.text End-Reading //2006
+								Sep 18 use: Reading sid le.go.lu.d007_gr_GR_cog.leluLI.Gospel.text End-Reading //2011
+								Sep 19 use: Reading sid le.go.me.m09.d26_gr_GR_cog.lemeLI.Gospel.text End-Reading //Sun Sep26 StJohn 2010
+								Sep 20 use: Reading sid le.go.lu.d007_gr_GR_cog.leluLI.Gospel.text End-Reading //2009
+								Sep 21 use: Reading sid le.go.lu.d007_gr_GR_cog.leluLI.Gospel.text End-Reading //2014
+							end-when
+						14 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Reading sid le.go.lu.d014_gr_GR_cog.leluLI.Gospel.text End-Reading //2013
+								Sep 16 use: Reading sid le.go.lu.d014_gr_GR_cog.leluLI.Gospel.text End-Reading //2012
+								Sep 17 use: Reading sid le.go.lu.d014_gr_GR_cog.leluLI.Gospel.text End-Reading //2006
+								Sep 18 use: Reading sid le.go.lu.d014_gr_GR_cog.leluLI.Gospel.text End-Reading //2011
+								Sep 19 use: Reading sid le.go.lu.d014_gr_GR_cog.leluLI.Gospel.text End-Reading //2010
+								Sep 20 use: Reading sid le.go.lu.d014_gr_GR_cog.leluLI.Gospel.text End-Reading //2009
+								Sep 21 use: Reading sid le.go.lu.d014_gr_GR_cog.leluLI.Gospel.text End-Reading //2014
+							end-when
+						21 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Reading sid le.go.lu.d021_gr_GR_cog.leluLI.Gospel.text End-Reading //2013
+								Sep 16 use: Reading sid le.go.lu.d021_gr_GR_cog.leluLI.Gospel.text End-Reading //2012
+								Sep 17 use: Reading sid le.go.lu.d021_gr_GR_cog.leluLI.Gospel.text End-Reading //2006
+								Sep 18 use: Reading sid le.go.lu.d021_gr_GR_cog.leluLI.Gospel.text End-Reading //2011
+								Sep 19 use: Reading sid le.go.lu.d021_gr_GR_cog.leluLI.Gospel.text End-Reading //2010
+								Sep 20 use: Reading sid le.go.lu.d028_gr_GR_cog.leluLI.Gospel.text End-Reading //2009
+								Sep 21 use: Reading sid le.go.lu.d028_gr_GR_cog.leluLI.Gospel.text End-Reading //2014
+							end-when
+						28 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Reading sid le.go.lu.d028_gr_GR_cog.leluLI.Gospel.text End-Reading //2013
+								Sep 16 use: Reading sid le.go.lu.d028_gr_GR_cog.leluLI.Gospel.text End-Reading //2012
+								Sep 17 use: Reading sid le.go.lu.d028_gr_GR_cog.leluLI.Gospel.text End-Reading //2006
+								Sep 18 use: Reading sid le.go.lu.d028_gr_GR_cog.leluLI.Gospel.text End-Reading //2011
+								Sep 19 use: Reading sid le.go.lu.d028_gr_GR_cog.leluLI.Gospel.text End-Reading //2010
+								Sep 20 use: Reading sid le.go.me.m10.d18_gr_GR_cog.lemeLI.Gospel.text End-Reading //Oct18 2009
+								Sep 21 use: Reading sid le.go.lu.d021_gr_GR_cog.leluLI.Gospel.text End-Reading //2014
+							end-when
+						35 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Reading sid le.go.lu.d042_gr_GR_cog.leluLI.Gospel.text End-Reading //2013
+								Sep 16 use: Reading sid le.go.lu.d042_gr_GR_cog.leluLI.Gospel.text End-Reading //2012
+								Sep 17 use: Reading sid le.go.lu.d042_gr_GR_cog.leluLI.Gospel.text End-Reading //2006
+								Sep 18 use: Reading sid le.go.lu.d042_gr_GR_cog.leluLI.Gospel.text End-Reading //2011
+								Sep 19 use: Reading sid le.go.lu.d042_gr_GR_cog.leluLI.Gospel.text End-Reading //2010
+								Sep 20 use: Reading sid le.go.lu.d042_gr_GR_cog.leluLI.Gospel.text End-Reading //2009
+								Sep 21 use: Reading sid le.go.lu.d042_gr_GR_cog.leluLI.Gospel.text End-Reading //2014
+							end-when
+						42 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Reading sid le.go.lu.d049_gr_GR_cog.leluLI.Gospel.text End-Reading //2013
+								Sep 16 use: Reading sid le.go.lu.d049_gr_GR_cog.leluLI.Gospel.text End-Reading //2012
+								Sep 17 use: Reading sid le.go.lu.d049_gr_GR_cog.leluLI.Gospel.text End-Reading //2006
+								Sep 18 use: Reading sid le.go.lu.d035_gr_GR_cog.leluLI.Gospel.text End-Reading //2011
+								Sep 19 use: Reading sid le.go.lu.d035_gr_GR_cog.leluLI.Gospel.text End-Reading //2010
+								Sep 20 use: Reading sid le.go.lu.d035_gr_GR_cog.leluLI.Gospel.text End-Reading //2009
+								Sep 21 use: Reading sid le.go.lu.d035_gr_GR_cog.leluLI.Gospel.text End-Reading //2014
+							end-when
+						49 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Reading sid le.go.lu.d035_gr_GR_cog.leluLI.Gospel.text End-Reading //2013
+								Sep 16 use: Reading sid le.go.lu.d035_gr_GR_cog.leluLI.Gospel.text End-Reading //2012
+								Sep 17 use: Reading sid le.go.lu.d035_gr_GR_cog.leluLI.Gospel.text End-Reading //2006
+								Sep 18 use: Reading sid le.go.lu.d049_gr_GR_cog.leluLI.Gospel.text End-Reading //2011
+								Sep 19 use: Reading sid le.go.lu.d049_gr_GR_cog.leluLI.Gospel.text End-Reading //2010
+								Sep 20 use: Reading sid le.go.lu.d049_gr_GR_cog.leluLI.Gospel.text End-Reading //2009
+								Sep 21 use: Reading sid le.go.lu.d049_gr_GR_cog.leluLI.Gospel.text End-Reading //2014
+							end-when
+						56 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Reading sid le.go.lu.d056_gr_GR_cog.leluLI.Gospel.text End-Reading //2013
+								Sep 16 use: Reading sid le.go.lu.d056_gr_GR_cog.leluLI.Gospel.text End-Reading //2012
+								Sep 17 use: Reading sid le.go.lu.d056_gr_GR_cog.leluLI.Gospel.text End-Reading //2006
+								Sep 18 use: Reading sid le.go.lu.d056_gr_GR_cog.leluLI.Gospel.text End-Reading //2011
+								Sep 19 use: Reading sid le.go.lu.d056_gr_GR_cog.leluLI.Gospel.text End-Reading //2010
+								Sep 20 use: Reading sid le.go.lu.d056_gr_GR_cog.leluLI.Gospel.text End-Reading //2009
+								Sep 21 use: Reading sid le.go.me.m11.d16_gr_GR_cog.lemeLI.Gospel.text End-Reading //Nov16 2014
+							end-when
+						63 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Reading sid le.go.lu.d063_gr_GR_cog.leluLI.Gospel.text End-Reading //2013
+								Sep 16 use: Reading sid le.go.lu.d063_gr_GR_cog.leluLI.Gospel.text End-Reading //2012
+								Sep 17 use: Reading sid le.go.lu.d063_gr_GR_cog.leluLI.Gospel.text End-Reading //2006
+								Sep 18 use: Reading sid le.go.lu.d063_gr_GR_cog.leluLI.Gospel.text End-Reading //2011
+								Sep 19 use: Reading sid le.go.me.m11.d21_gr_GR_cog.lemeLI.Gospel.text End-Reading //Sun Nov21 2010
+								Sep 20 use: Reading sid le.go.lu.d063_gr_GR_cog.leluLI.Gospel.text End-Reading //2009
+								Sep 21 use: Reading sid le.go.lu.d063_gr_GR_cog.leluLI.Gospel.text End-Reading //2014
+							end-when
+						70 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Reading sid le.go.lu.d091_gr_GR_cog.leluLI.Gospel.text End-Reading //2013
+								Sep 16 use: Reading sid le.go.lu.d091_gr_GR_cog.leluLI.Gospel.text End-Reading //2012
+								Sep 17 use: Reading sid le.go.lu.d091_gr_GR_cog.leluLI.Gospel.text End-Reading //2006
+								Sep 18 use: Reading sid le.go.lu.d091_gr_GR_cog.leluLI.Gospel.text End-Reading //2011
+								Sep 19 use: Reading sid le.go.lu.d091_gr_GR_cog.leluLI.Gospel.text End-Reading //2010
+								Sep 20 use: Reading sid le.go.lu.d091_gr_GR_cog.leluLI.Gospel.text End-Reading //2009
+								Sep 21 use: Reading sid le.go.me.m11.d30_gr_GR_cog.lemeLI.Gospel.text End-Reading //Nov30 2014
+							end-when
+						77 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Reading sid le.go.lu.d098_gr_GR_cog.leluLI.Gospel.text End-Reading //2013
+								Sep 16 use: Reading sid le.go.lu.d098_gr_GR_cog.leluLI.Gospel.text End-Reading //2012
+								Sep 17 use: Reading sid le.go.lu.d112_gr_GR_cog.leluLI.Gospel.text End-Reading //2006
+								Sep 18 use: Reading sid le.go.lu.d070_gr_GR_cog.leluLI.Gospel.text End-Reading //2011
+								Sep 19 use: Reading sid le.go.lu.d070_gr_GR_cog.leluLI.Gospel.text End-Reading //2010
+								Sep 20 use: Reading sid le.go.lu.d070_gr_GR_cog.leluLI.Gospel.text End-Reading //2009
+								Sep 21 use: Reading sid le.go.lu.d070_gr_GR_cog.leluLI.Gospel.text End-Reading //2014
+							end-when
+						84 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Reading sid le.go.lu.d070_gr_GR_cog.leluLI.Gospel.text End-Reading //2013
+								Sep 16 use: Reading sid le.go.lu.d070_gr_GR_cog.leluLI.Gospel.text End-Reading //2012
+								Sep 17 use: Reading sid le.go.lu.d070_gr_GR_cog.leluLI.Gospel.text End-Reading //2006
+								Sep 18 use: Reading sid le.go.lu.d077_gr_GR_cog.leluLI.Gospel.text End-Reading //2011
+								Sep 19 use: Reading sid le.go.lu.d077_gr_GR_cog.leluLI.Gospel.text End-Reading //2010
+								Sep 20 use: Reading sid le.go.lu.d077_gr_GR_cog.leluLI.Gospel.text End-Reading //2009
+								Sep 21 use: Reading sid le.go.lu.d077_gr_GR_cog.leluLI.Gospel.text End-Reading //2014
+							end-when
+						90 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: //2013
+								Sep 16 use: //2012
+								Sep 17 use: //2006
+								Sep 18 use: //2011
+								Sep 19 use: Reading sid le.go.me.m12.dSatBC_gr_GR_cog.lemeLI.Gospel.text End-Reading //2010
+								Sep 20 use: Reading sid le.go.me.m12.dSatBC_gr_GR_cog.lemeLI.Gospel.text End-Reading //2009
+								Sep 21 use: Reading sid le.go.me.m12.dSatBC_gr_GR_cog.lemeLI.Gospel.text End-Reading //2014
+							end-when
+						91 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Reading sid le.go.lu.d077_gr_GR_cog.leluLI.Gospel.text End-Reading //2013
+								Sep 16 use: Reading sid le.go.lu.d077_gr_GR_cog.leluLI.Gospel.text End-Reading //2012
+								Sep 17 use: Reading sid le.go.lu.d077_gr_GR_cog.leluLI.Gospel.text End-Reading //2006
+								Sep 18 use: Reading sid le.go.me.m12.dSunBC_gr_GR_cog.lemeLI.Gospel.text End-Reading //2011
+								Sep 19 use: Reading sid le.go.me.m12.dSunBC_gr_GR_cog.lemeLI.Gospel.text End-Reading //2010
+								Sep 20 use: Reading sid le.go.me.m12.dSunBC_gr_GR_cog.lemeLI.Gospel.text End-Reading //2009
+								Sep 21 use: Reading sid le.go.me.m12.dSunBC_gr_GR_cog.lemeLI.Gospel.text End-Reading //2014
+							end-when
+						97 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Reading sid le.go.me.m12.dSatBC_gr_GR_cog.lemeLI.Gospel.text End-Reading //2013
+								Sep 16 use: Reading sid le.go.me.m12.dSatBC_gr_GR_cog.lemeLI.Gospel.text End-Reading //2012
+								Sep 17 use: Reading sid le.go.me.m12.dSatBC_gr_GR_cog.lemeLI.Gospel.text End-Reading //2006
+								Sep 18 use: Reading sid le.go.me.m12.dSatBC_gr_GR_cog.lemeLI.Gospel.text End-Reading //2011
+								Sep 19 use: Reading sid le.go.me.m12.d25_gr_GR_cog.lemeLI.Gospel.text End-Reading //Sat Dec25 2010
+								Sep 20 use: Reading sid le.go.me.m12.dSatAC_gr_GR_cog.lemeLI.Gospel.text End-Reading //2009
+								Sep 21 use: Reading sid le.go.me.m12.dSatAC_gr_GR_cog.lemeLI.Gospel.text End-Reading //2014
+							end-when
+						98 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Reading sid le.go.me.m12.dSunBC_gr_GR_cog.lemeLI.Gospel.text End-Reading //2013
+								Sep 16 use: Reading sid le.go.me.m12.dSunBC_gr_GR_cog.lemeLI.Gospel.text End-Reading //2012
+								Sep 17 use: Reading sid le.go.me.m12.dSunBC_gr_GR_cog.lemeLI.Gospel.text End-Reading //2006
+								Sep 18 use: Reading sid le.go.me.m12.d25_gr_GR_cog.lemeLI.Gospel.text End-Reading //Sun Dec25 2011
+								Sep 19 use: Reading sid le.go.me.m12.dSunAC_gr_GR_cog.lemeLI.Gospel.text End-Reading //2010
+								Sep 20 use: Reading sid le.go.me.m12.dSunAC_gr_GR_cog.lemeLI.Gospel.text End-Reading //2009
+								Sep 21 use: Reading sid le.go.me.m12.dSunAC_gr_GR_cog.lemeLI.Gospel.text End-Reading //2014
+							end-when
+						104 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Reading sid le.go.me.m12.dSatAC_gr_GR_cog.lemeLI.Gospel.text End-Reading //2013
+								Sep 16 use: Reading sid le.go.me.m12.dSatAC_gr_GR_cog.lemeLI.Gospel.text End-Reading //2012
+								Sep 17 use: Reading sid le.go.me.m12.dSatAC_gr_GR_cog.lemeLI.Gospel.text End-Reading //2006
+								Sep 18 use: Reading sid le.go.me.m12.dSatBE_gr_GR_cog.lemeLI.Gospel.text End-Reading //Sat Dec31 2011
+								Sep 19 use: Reading sid le.go.me.m01.d01_gr_GR_cog.lemeLI.Gospel.text End-Reading //Sat Jan1 2010
+								Sep 20 use: Reading sid le.go.me.m12.dSatBE_gr_GR_cog.lemeLI.Gospel.text End-Reading //Sat Jan2 2009
+								Sep 21 use: Reading sid le.go.me.m12.dSatBE_gr_GR_cog.lemeLI.Gospel.text End-Reading //Sat Jan3 2014
+							end-when
+						105 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Reading sid le.go.me.m12.dSunAC_gr_GR_cog.lemeLI.Gospel.text End-Reading //2013
+								Sep 16 use: Reading sid le.go.me.m12.dSunAC_gr_GR_cog.lemeLI.Gospel.text End-Reading //2012
+								Sep 17 use: Reading sid le.go.me.m12.dSunBE_gr_GR_cog.lemeLI.Gospel.text End-Reading // Sun Dec31 2006
+								Sep 18 use: Reading sid le.go.me.m01.d01_gr_GR_cog.lemeLI.Gospel.text End-Reading //Sun Jan1 2011
+								Sep 19 use: Reading sid le.go.me.m12.dSunBE_gr_GR_cog.lemeLI.Gospel.text End-Reading //2010
+								Sep 20 use: Reading sid le.go.me.m12.dSunBE_gr_GR_cog.lemeLI.Gospel.text End-Reading //2009
+								Sep 21 use: Reading sid le.go.me.m12.dSunBE_gr_GR_cog.lemeLI.Gospel.text End-Reading //2014
+							end-when
+						111 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Reading sid le.go.me.m12.dSatBE_gr_GR_cog.lemeLI.Gospel.text End-Reading //2013
+								Sep 16 use: Reading sid le.go.me.m12.dSatBE_gr_GR_cog.lemeLI.Gospel.text End-Reading //2012
+								Sep 17 use: Reading sid le.go.me.m01.d06_gr_GR_cog.lemeLI.Gospel.text End-Reading // Sat Jan6 2006
+								Sep 18 use: Reading sid le.go.me.m01.d07_gr_GR_cog.lemeLI.Gospel.text End-Reading // Sat Jan7 2011
+								Sep 19 use: Reading sid le.go.me.m01.dSatAE_gr_GR_cog.lemeLI.Gospel.text End-Reading //Sat 2010
+								Sep 20 use: Reading sid le.go.me.m01.dSatAE_gr_GR_cog.lemeLI.Gospel.text End-Reading //Sat 2009
+								Sep 21 use: Reading sid le.go.me.m01.dSatAE_gr_GR_cog.lemeLI.Gospel.text End-Reading //Sat 2014
+							end-when
+						112 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Reading sid le.go.me.m12.dSunBE_gr_GR_cog.lemeLI.Gospel.text End-Reading //2013
+								Sep 16 use: Reading sid le.go.me.m01.d06_gr_GR_cog.lemeLI.Gospel.text End-Reading //Jan 6 2012
+								Sep 17 use: Reading sid le.go.me.m01.d07_gr_GR_cog.lemeLI.Gospel.text End-Reading // Sun Jan7 2006
+								Sep 18 use: Reading sid le.go.me.m01.dSunAE_gr_GR_cog.lemeLI.Gospel.text End-Reading //Sun Jan8 2011
+								Sep 19 use: Reading sid le.go.me.m01.dSunAE_gr_GR_cog.lemeLI.Gospel.text End-Reading //2010
+								Sep 20 use: Reading sid le.go.me.m01.dSunAE_gr_GR_cog.lemeLI.Gospel.text End-Reading //2009
+								Sep 21 use: Reading sid le.go.me.m01.dSunAE_gr_GR_cog.lemeLI.Gospel.text End-Reading //2014
+							end-when
+						118 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Reading sid le.go.me.m01.dSatAE_gr_GR_cog.lemeLI.Gospel.text End-Reading //2013
+								Sep 16 use: Reading sid le.go.me.m01.dSatAE_gr_GR_cog.lemeLI.Gospel.text End-Reading //2012
+								Sep 17 use: Reading sid le.go.me.m01.dSatAE_gr_GR_cog.lemeLI.Gospel.text End-Reading //Sat Jan13 2006
+								Sep 18 use: Reading sid le.go.me.m01.dSatAE_gr_GR_cog.lemeLI.Gospel.text End-Reading //Sat Jan14 2011
+								Sep 19 use: //2010
+								Sep 20 use: //2009
+								Sep 21 use: //2014
+							end-when
+						119 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Reading sid le.go.me.m01.dSunAE_gr_GR_cog.lemeLI.Gospel.text End-Reading //2013
+								Sep 16 use: Reading sid le.go.me.m01.dSunAE_gr_GR_cog.lemeLI.Gospel.text End-Reading //2012
+								Sep 17 use: Reading sid le.go.me.m01.dSunAE_gr_GR_cog.lemeLI.Gospel.text End-Reading //2006
+								Sep 18 use: //2011
+									when-sundays-before-triodion-is
+										1 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+										2 use: Reading sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun12
+										3 use: Reading sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun12
+										4 use: Reading sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun12
+										5 use: Reading sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun12
+										6 use: Reading sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun12
+									end-when
+								Sep 19 use: //2010
+									when-sundays-before-triodion-is
+										1 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+										2 use: Reading sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun12
+										3 use: Reading sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun12
+										4 use: Reading sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun12
+										5 use: Reading sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun12
+										6 use: Reading sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun12
+									end-when
+								Sep 20 use: //2009
+									when-sundays-before-triodion-is
+										1 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+										2 use: Reading sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun12
+										3 use: Reading sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun12
+										4 use: Reading sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun12
+										5 use: Reading sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun12
+										6 use: Reading sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun12
+									end-when
+								Sep 21 use: //2014
+									when-sundays-before-triodion-is
+										1 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+										2 use: Reading sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun12
+										3 use: Reading sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun12
+										4 use: Reading sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun12
+										5 use: Reading sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun12
+										6 use: Reading sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun12
+									end-when
+							end-when
+						126 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: //2013
+									when-sundays-before-triodion-is
+										1 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+										2 use: Reading sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun12
+										3 use: Reading sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun12
+										4 use: Reading sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun12
+										5 use: Reading sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun12
+										6 use: Reading sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun12
+									end-when
+								Sep 16 use: //2012
+									when-sundays-before-triodion-is
+										1 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+										2 use: Reading sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun12
+										3 use: Reading sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun12
+										4 use: Reading sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun12
+										5 use: Reading sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun12
+										6 use: Reading sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun12
+									end-when
+								Sep 17 use: //2006
+									when-sundays-before-triodion-is
+										1 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+										2 use: Reading sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun12
+										3 use: Reading sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun12
+										4 use: Reading sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun12
+										5 use: Reading sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun12
+										6 use: Reading sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun12
+									end-when
+								Sep 18 use: //2011
+									when-sundays-before-triodion-is
+										1 use: Reading rid lemcLI.Gospel.text End-Reading
+										2 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+										3 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+										4 use: Reading sid le.go.lu.d098_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun14
+										5 use: Reading sid le.go.lu.d098_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun14
+										6 use: Reading sid le.go.lu.d098_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun14
+									end-when
+								Sep 19 use: //2010
+									when-sundays-before-triodion-is
+										1 use: Reading rid lemcLI.Gospel.text End-Reading
+										2 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+										3 use: Reading sid le.go.lu.d098_gr_GR_cog.leluLI.Gospel.text End-Reading //Sun14
+										4 use: Reading sid le.go.lu.d098_gr_GR_cog.leluLI.Gospel.text End-Reading //Sun14
+										5 use: Reading sid le.go.lu.d098_gr_GR_cog.leluLI.Gospel.text End-Reading //Sun14
+										6 use: Reading sid le.go.lu.d098_gr_GR_cog.leluLI.Gospel.text End-Reading //Sun14
+									end-when
+								Sep 20 use: //2009
+									when-sundays-before-triodion-is
+										1 use: Reading rid lemcLI.Gospel.text End-Reading
+										2 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+										3 use: Reading sid le.go.lu.d098_gr_GR_cog.leluLI.Gospel.text End-Reading //Sun14
+										4 use: Reading sid le.go.lu.d098_gr_GR_cog.leluLI.Gospel.text End-Reading //Sun14
+										5 use: Reading sid le.go.lu.d098_gr_GR_cog.leluLI.Gospel.text End-Reading //Sun14
+										6 use: Reading sid le.go.lu.d098_gr_GR_cog.leluLI.Gospel.text End-Reading //Sun14
+									end-when
+								Sep 21 use: //2014
+									when-sundays-before-triodion-is
+										1 use: Reading rid lemcLI.Gospel.text End-Reading
+										2 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+										3 use: Reading sid le.go.lu.d098_gr_GR_cog.leluLI.Gospel.text End-Reading //Sun14
+										4 use: Reading sid le.go.lu.d098_gr_GR_cog.leluLI.Gospel.text End-Reading //Sun14
+										5 use: Reading sid le.go.lu.d098_gr_GR_cog.leluLI.Gospel.text End-Reading //Sun14
+										6 use: Reading sid le.go.lu.d098_gr_GR_cog.leluLI.Gospel.text End-Reading //Sun14
+									end-when
+							end-when
+						133 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: //2013
+									when-sundays-before-triodion-is
+										1 use: Reading rid lemcLI.Gospel.text End-Reading
+										2 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+										3 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+										4 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+										5 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+										6 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+									end-when
+								Sep 16 use: //2012
+									when-sundays-before-triodion-is
+										1 use: Reading rid lemcLI.Gospel.text End-Reading
+										2 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+										3 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+										4 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+										5 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+										6 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+									end-when
+								Sep 17 use: //2006
+									when-sundays-before-triodion-is
+										1 use: Reading rid lemcLI.Gospel.text End-Reading
+										2 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+										3 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+										4 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+										5 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+										6 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+									end-when
+								Sep 18 use: //2011
+									when-sundays-before-triodion-is
+										1 use: Reading rid lemcLI.Gospel.text End-Reading
+										2 use: Reading rid lemcLI.Gospel.text End-Reading
+										3 use: Reading sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.text End-Reading //SunMat17
+										4 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+										5 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+										6 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+									end-when
+								Sep 19 use: //2010
+									when-sundays-before-triodion-is
+										1 use: Reading rid lemcLI.Gospel.text End-Reading
+										2 use: Reading rid lemcLI.Gospel.text End-Reading
+										3 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+										4 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+										5 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+										6 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+									end-when
+								Sep 20 use: //2009
+									when-sundays-before-triodion-is
+										1 use: Reading rid lemcLI.Gospel.text End-Reading
+										2 use: Reading rid lemcLI.Gospel.text End-Reading
+										3 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+										4 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+										5 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+										6 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+									end-when
+								Sep 21 use: //2014
+									when-sundays-before-triodion-is
+										1 use: Reading rid lemcLI.Gospel.text End-Reading
+										2 use: Reading rid lemcLI.Gospel.text End-Reading
+										3 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+										4 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+										5 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+										6 use: Reading sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.text End-Reading	//Sun15
+									end-when
+							end-when
+						140 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: //2013
+									when-sundays-before-triodion-is
+										1 use: Reading rid lemcLI.Gospel.text End-Reading
+										2 use: Reading rid lemcLI.Gospel.text End-Reading
+										3 use: Reading sid le.go.me.m02.d02_gr_GR_cog.lemeLI.Gospel.text End-Reading //SunFeb2
+										4 use: Reading sid le.go.me.m02.d02_gr_GR_cog.lemeLI.Gospel.text End-Reading //SunFeb2
+										5 use: Reading sid le.go.me.m02.d02_gr_GR_cog.lemeLI.Gospel.text End-Reading //SunFeb2
+										6 use: Reading sid le.go.me.m02.d02_gr_GR_cog.lemeLI.Gospel.text End-Reading //SunFeb2
+									end-when
+								Sep 16 use: //2012
+									when-sundays-before-triodion-is
+										1 use: Reading rid lemcLI.Gospel.text End-Reading
+										2 use: Reading rid lemcLI.Gospel.text End-Reading
+										3 use: Reading sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat17
+										4 use: Reading sid le.go.mc.d232_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat16
+										5 use: Reading sid le.go.mc.d225_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat15
+										6 use: Reading sid le.go.mc.d218_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat14
+									end-when
+								Sep 17 use: //2006
+									when-sundays-before-triodion-is
+										1 use: Reading rid lemcLI.Gospel.text End-Reading
+										2 use: Reading rid lemcLI.Gospel.text End-Reading
+										3 use: Reading sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat17
+										4 use: Reading sid le.go.mc.d232_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat16
+										5 use: Reading sid le.go.mc.d225_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat15
+										6 use: Reading sid le.go.mc.d218_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat14
+									end-when
+								Sep 18 use: //2011
+									when-sundays-before-triodion-is
+										1 use: Reading rid lemcLI.Gospel.text End-Reading
+										2 use: Reading rid lemcLI.Gospel.text End-Reading
+										3 use: Reading rid lemcLI.Gospel.text End-Reading
+										4 use: Reading sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat17
+										5 use: Reading sid le.go.mc.d232_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat16
+										6 use: Reading sid le.go.mc.d225_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat15
+									end-when
+								Sep 19 use: //2010
+									when-sundays-before-triodion-is
+										1 use: Reading rid lemcLI.Gospel.text End-Reading
+										2 use: Reading rid lemcLI.Gospel.text End-Reading
+										3 use: Reading rid lemcLI.Gospel.text End-Reading
+										4 use: Reading sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat17
+										5 use: Reading sid le.go.mc.d232_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat16
+										6 use: Reading sid le.go.mc.d225_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat15
+									end-when
+								Sep 20 use: //2009
+									when-sundays-before-triodion-is
+										1 use: Reading rid lemcLI.Gospel.text End-Reading
+										2 use: Reading rid lemcLI.Gospel.text End-Reading
+										3 use: Reading rid lemcLI.Gospel.text End-Reading
+										4 use: Reading sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat17
+										5 use: Reading sid le.go.mc.d232_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat16
+										6 use: Reading sid le.go.mc.d225_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat15
+									end-when
+								Sep 21 use: //2014
+									when-sundays-before-triodion-is
+										1 use: Reading rid lemcLI.Gospel.text End-Reading
+										2 use: Reading rid lemcLI.Gospel.text End-Reading
+										3 use: Reading rid lemcLI.Gospel.text End-Reading
+										4 use: Reading sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat17
+										5 use: Reading sid le.go.mc.d232_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat16
+										6 use: Reading sid le.go.mc.d225_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat15
+									end-when
+							end-when
+						147 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: //2013
+									when-sundays-before-triodion-is
+										1 use: Reading rid lemcLI.Gospel.text End-Reading
+										2 use: Reading rid lemcLI.Gospel.text End-Reading
+										3 use: Reading rid lemcLI.Gospel.text End-Reading
+										4 use: Reading sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat17
+										5 use: Reading sid le.go.mc.d232_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat16
+										6 use: Reading sid le.go.mc.d225_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat15
+									end-when
+								Sep 16 use: //2012
+									when-sundays-before-triodion-is
+										1 use: Reading rid lemcLI.Gospel.text End-Reading
+										2 use: Reading rid lemcLI.Gospel.text End-Reading
+										3 use: Reading rid lemcLI.Gospel.text End-Reading
+										4 use: Reading sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat17
+										5 use: Reading sid le.go.mc.d232_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat16
+										6 use: Reading sid le.go.mc.d225_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat15
+									end-when
+								Sep 17 use: //2006
+									when-sundays-before-triodion-is
+										1 use: Reading rid lemcLI.Gospel.text End-Reading
+										2 use: Reading rid lemcLI.Gospel.text End-Reading
+										3 use: Reading rid lemcLI.Gospel.text End-Reading
+										4 use: Reading sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat17
+										5 use: Reading sid le.go.mc.d232_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat16
+										6 use: Reading sid le.go.mc.d225_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat15
+									end-when
+								Sep 18 use: //2011
+									when-sundays-before-triodion-is
+										1 use: Reading rid lemcLI.Gospel.text End-Reading
+										2 use: Reading rid lemcLI.Gospel.text End-Reading
+										3 use: Reading rid lemcLI.Gospel.text End-Reading
+										4 use: Reading rid lemcLI.Gospel.text End-Reading
+										5 use: Reading sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat17
+										6 use: Reading sid le.go.mc.d232_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat16
+									end-when
+								Sep 19 use: //2010
+									when-sundays-before-triodion-is
+										1 use: Reading rid lemcLI.Gospel.text End-Reading
+										2 use: Reading rid lemcLI.Gospel.text End-Reading
+										3 use: Reading rid lemcLI.Gospel.text End-Reading
+										4 use: Reading rid lemcLI.Gospel.text End-Reading
+										5 use: Reading sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat17
+										6 use: Reading sid le.go.mc.d232_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat16
+									end-when
+								Sep 20 use: //2009
+									when-sundays-before-triodion-is
+										1 use: Reading rid lemcLI.Gospel.text End-Reading
+										2 use: Reading rid lemcLI.Gospel.text End-Reading
+										3 use: Reading rid lemcLI.Gospel.text End-Reading
+										4 use: Reading rid lemcLI.Gospel.text End-Reading
+										5 use: Reading sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat17
+										6 use: Reading sid le.go.mc.d232_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat16
+									end-when
+								Sep 21 use: //2014
+									when-sundays-before-triodion-is
+										1 use: Reading rid lemcLI.Gospel.text End-Reading
+										2 use: Reading rid lemcLI.Gospel.text End-Reading
+										3 use: Reading rid lemcLI.Gospel.text End-Reading
+										4 use: Reading rid lemcLI.Gospel.text End-Reading
+										5 use: Reading sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat17
+										6 use: Reading sid le.go.mc.d232_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat16
+									end-when
+							end-when
+						154 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: //2013
+									when-sundays-before-triodion-is
+										1 use: Reading rid lemcLI.Gospel.text End-Reading
+										2 use: Reading rid lemcLI.Gospel.text End-Reading
+										3 use: Reading rid lemcLI.Gospel.text End-Reading
+										4 use: Reading rid lemcLI.Gospel.text End-Reading
+										5 use: Reading sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.text End-Reading //SunMat17
+										6 use: Reading sid le.go.mc.d232_gr_GR_cog.lemcLI.Gospel.text End-Reading //SunMat16
+									end-when
+								Sep 16 use: //2012
+									when-sundays-before-triodion-is
+										1 use: Reading rid lemcLI.Gospel.text End-Reading
+										2 use: Reading rid lemcLI.Gospel.text End-Reading
+										3 use: Reading rid lemcLI.Gospel.text End-Reading
+										4 use: Reading rid lemcLI.Gospel.text End-Reading
+										5 use: Reading sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.text End-Reading //SunMat17
+										6 use: Reading sid le.go.mc.d232_gr_GR_cog.lemcLI.Gospel.text End-Reading //SunMat16
+									end-when
+								Sep 17 use: //2006
+									when-sundays-before-triodion-is
+										1 use: Reading rid lemcLI.Gospel.text End-Reading
+										2 use: Reading rid lemcLI.Gospel.text End-Reading
+										3 use: Reading rid lemcLI.Gospel.text End-Reading
+										4 use: Reading rid lemcLI.Gospel.text End-Reading
+										5 use: Reading sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.text End-Reading //SunMat17
+										6 use: Reading sid le.go.mc.d232_gr_GR_cog.lemcLI.Gospel.text End-Reading //SunMat16
+									end-when
+								Sep 18 use: //2011
+									when-sundays-before-triodion-is
+										1 use: Reading rid lemcLI.Gospel.text End-Reading
+										2 use: Reading rid lemcLI.Gospel.text End-Reading
+										3 use: Reading rid lemcLI.Gospel.text End-Reading
+										4 use: Reading rid lemcLI.Gospel.text End-Reading
+										5 use: Reading rid lemcLI.Gospel.text End-Reading
+										6 use: Reading sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat17
+									end-when
+								Sep 19 use: //2010
+									when-sundays-before-triodion-is
+										1 use: Reading rid lemcLI.Gospel.text End-Reading
+										2 use: Reading rid lemcLI.Gospel.text End-Reading
+										3 use: Reading rid lemcLI.Gospel.text End-Reading
+										4 use: Reading rid lemcLI.Gospel.text End-Reading
+										5 use: Reading rid lemcLI.Gospel.text End-Reading
+										6 use: Reading sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat17
+									end-when
+								Sep 20 use: //2009
+									when-sundays-before-triodion-is
+										1 use: Reading rid lemcLI.Gospel.text End-Reading
+										2 use: Reading rid lemcLI.Gospel.text End-Reading
+										3 use: Reading rid lemcLI.Gospel.text End-Reading
+										4 use: Reading rid lemcLI.Gospel.text End-Reading
+										5 use: Reading rid lemcLI.Gospel.text End-Reading
+										6 use: Reading sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat17
+									end-when
+								Sep 21 use: //2014
+									when-sundays-before-triodion-is
+										1 use: Reading rid lemcLI.Gospel.text End-Reading
+										2 use: Reading rid lemcLI.Gospel.text End-Reading
+										3 use: Reading rid lemcLI.Gospel.text End-Reading
+										4 use: Reading rid lemcLI.Gospel.text End-Reading
+										5 use: Reading rid lemcLI.Gospel.text End-Reading
+										6 use: Reading sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat17
+									end-when
+							end-when
+						161 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: //2013
+									when-sundays-before-triodion-is
+										1 use: Reading rid lemcLI.Gospel.text End-Reading
+										2 use: Reading rid lemcLI.Gospel.text End-Reading
+										3 use: Reading rid lemcLI.Gospel.text End-Reading
+										4 use: Reading rid lemcLI.Gospel.text End-Reading
+										5 use: Reading rid lemcLI.Gospel.text End-Reading
+										6 use: Reading sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat17
+									end-when
+								Sep 16 use: //2012
+									when-sundays-before-triodion-is
+										1 use: Reading rid lemcLI.Gospel.text End-Reading
+										2 use: Reading rid lemcLI.Gospel.text End-Reading
+										3 use: Reading rid lemcLI.Gospel.text End-Reading
+										4 use: Reading rid lemcLI.Gospel.text End-Reading
+										5 use: Reading rid lemcLI.Gospel.text End-Reading
+										6 use: Reading sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.text End-Reading	//SunMat17
+									end-when
+								Sep 17 use: //2006
+									when-sundays-before-triodion-is
+										1 use: Reading rid lemcLI.Gospel.text End-Reading
+										2 use: Reading rid lemcLI.Gospel.text End-Reading
+										3 use: Reading rid lemcLI.Gospel.text End-Reading
+										4 use: Reading rid lemcLI.Gospel.text End-Reading
+										5 use: Reading rid lemcLI.Gospel.text End-Reading
+										6 use: Reading sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.text End-Reading //SunMat17
+									end-when
+							end-when
+						otherwise use: 
+							Section Defaults //default rids (Luke or Matt) when no override
+								when-movable-cycle-day-is 1 thru 127 //Triodion & Pentecostarion
+									use: 
+										Reading rid lemcLI.Gospel.text End-Reading 
+									otherwise use:
+										when-exists rid leluLI.Gospel.text 
+											use: Reading rid leluLI.Gospel.text End-Reading
+											otherwise use: Reading rid lemcLI.Gospel.text End-Reading
+										end-when
+								end-when
+							End-Section //Defaults
+						end-when //when-Lukan-Cycle-Day-is
+				End-Section //DaysByNumber
+		end-when //when-date-is
+	End-Section //Gospel_Text
+End-Template

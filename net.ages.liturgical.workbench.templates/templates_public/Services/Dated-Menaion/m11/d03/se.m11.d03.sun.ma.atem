@@ -1,0 +1,109 @@
+Template se.m11.d03.sun.ma
+// Sunday Menaion has 2 apolytikia, 2 exaposteilaria, and lauds
+
+	import ho.s03_gr_GR_cog.*
+	import oc.*
+	import eo.*
+	import he.ga_gr_GR_cog.*
+	import me.m11.d03_gr_GR_cog.*
+	import actors_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	
+	import prayers_gr_GR_cog.*
+	
+	import iTags.*
+	import bTags.*
+	import roles.*
+	
+
+	//Imorted Templates
+	import kTheotokos.*  //Katavasia
+	import MatinsParts.*
+	import Litanies.*
+	
+	
+	
+	Insert_section GITL.sunday End-Insert
+	Title role desig sid TonMartyron End-Title
+	Title role mixed <Tmode> sid OiMartyresSouKyrie.mode</> <Tmelody> sid OiMartyresSouKyrie.melody</> End-Title
+	Hymn sid OiMartyresSouKyrie.text End-Hymn
+	Title role mixed sid Doxa <Tdesig> sid TouAgiou</> End-Title
+	Title role mode sid me.m04.d23_gr_GR_cog.meVE.Apolytikion1.mode End-Title
+	Hymn sid me.m04.d23_gr_GR_cog.meVE.Apolytikion1.text End-Hymn
+	Title role mixed sid KaiNyn <Tdesig>sid Theotokion </> End-Title
+	Hymn sid oc.m4.d1_gr_GR_cog.ocVE.ApolTheotokionVM.text End-Hymn
+Break line End_Break
+	Insert_section ShortLitany02 End-Insert
+	
+		when-mode-of-week-is M4 use:
+	Insert_section SunKathisma1 End-Insert
+		otherwise use:
+	Insert_section SunKathisma1_WhenSaint End-Insert
+		end-when
+		
+	Insert_section SunKathisma2 End-Insert
+Break line End_Break
+	Insert_section ResurrectionalEvlogetaria End-Insert
+Break line End_Break
+	Insert_section ShortLitany04 End-Insert	
+	Insert_section HypakoeAntiphonsProkeimenon End-Insert
+Break line End_Break
+	Actor sid Reader End-Actor
+	Title role desig sid KontakionAnastasimon End-Title
+	Reading rid ocMA.Kontakion.text End-Reading
+	Title role desig sid OOikos End-Title
+	Reading rid ocMA.Oikos.text End-Reading 
+	Insert_section Synaxarion.Synaxarion End-Insert
+Break line End_Break
+	Actor sid Choir End-Actor
+	Insert_section k_1345678 End-Insert
+Break line End_Break
+	Insert_section MatinsGospel_IntroP End-Insert
+	Insert_section MatinsGospel_EothinaP End-Insert
+Break line End_Break
+	Insert_section Supplication_deacon End-Insert
+	Actor sid PriestOrDeacon End-Actor
+	Dialog sid exc15 End-Dialog
+Break line End_Break
+		Section MagnificatPart1_Mode //copy and set mode of Title and Media
+			Actor sid Choir End-Actor
+			Title role mixed <Tdesig>sid titles_gr_GR_cog.Megalynarion</> <Tmode>sid Mode4</> End-Title
+			Media sid oc.m4.d1_gr_GR_cog.ocMA.Magnificat.text End-Media// set mode
+		End-Section //Part1
+	Insert_section Magnificat.Part2_Verse123456 End-Insert
+	Insert_section k_9 End-Insert
+Break line End_Break
+	Insert_section ShortLitany10 End-Insert	
+	Insert_section SunHITLExaposteilarion_menaion.part1 End-Insert
+	Section MeExaposteilaria	
+		Title role desig sid TonMartyron End-Title
+		Title role mixed <Tmode> sid meMA.Exaposteilarion1.mode</> <Tmelody> sid meMA.Exaposteilarion1.melody</> End-Title
+		Hymn sid meMA.Exaposteilarion1.text End-Hymn
+		Title role desig sid TouAgiou End-Title
+		Title role mixed <Tmode> sid meMA.Exaposteilarion2.mode</> <Tmelody> sid meMA.Exaposteilarion2.melody</> End-Title
+		Hymn sid meMA.Exaposteilarion2.text End-Hymn
+		Title role desig sid Theotokion sid Omoion End-Title
+		Hymn sid meMA.ExapTheotokion.text End-Hymn	
+	End-Section
+Break line End_Break
+	Insert_section SunLaudsRes1234 End-Insert
+Break line End_Break
+	Title role desig sid TouAgiou End-Title
+	Title role mixed <Tmode>sid meMA.Lauds1.mode</> <Tmelody>sid meMA.Lauds1.melody</> End-Title
+	Media sid meMA.LaudsSundayVerse1.text End-Media
+	Insert_section Lauds_Verse.v05 End-Insert
+	Hymn sid meMA.Lauds1.text End-Hymn
+	Insert_section Lauds_Verse.v06 End-Insert
+	Hymn sid meMA.Lauds1.text End-Hymn
+	Verse sid meMA.LaudsSundayVerse1.text End-Verse
+	Hymn sid meMA.Lauds2.text End-Hymn
+	Verse sid meMA.LaudsSundayVerse2.text End-Verse
+	Hymn sid meMA.Lauds3.text End-Hymn
+
+	Insert_section EothinonGloryBoth End-Insert	
+
+
+
+End-Template

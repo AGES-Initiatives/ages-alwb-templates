@@ -1,0 +1,187 @@
+Template se.pe.d120.hli 
+
+Status Review
+
+//	import client_gr_GR_cog.*
+	import eu.lichrysbasil_gr_GR_cog.*
+	import ho.s07_gr_GR_cog.*
+	import pe.d120_gr_GR_cog.*
+	import ps_gr_GR_cog.*
+
+//	import da.*
+	import oc.*
+
+	//Templates
+	import bk.ap.mc.d120.*
+	import eu.li.chrysbasil.hierarchical.*
+	import LectionaryReadings.*
+	import hierarchical.*
+	import Litanies.*
+	
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 6 day 8 End_Date
+			Page_Header_Even
+				center @lookup sid li.pdf.header sid d.on lang L1 @date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+ 
+	Preface Covers
+		Insert_template ematins.cover.li End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	Insert_section Section01 End-Insert
+	Insert_section Section02 End-Insert
+	Section Antiphon1 //festal antiphons
+		Actor sid Choir End-Actor
+		Title role desig sid Antifonon1 End-Title
+		Title role mode sid Mode2 End-Title
+		Media sid hoLI.Antiphon1.text End-Media
+		Insert_section antiphon1.verse1 End-Insert
+		Hymn sid hoLI.Antiphon1.text media-off End-Hymn
+		Insert_section antiphon1.verse2 End-Insert
+		Hymn sid hoLI.Antiphon1.text media-off End-Hymn
+		Insert_section antiphon1.verse3 End-Insert
+		Hymn sid hoLI.Antiphon1.text media-off End-Hymn
+		Insert_section antiphon1.verse4 End-Insert
+		Hymn sid hoLI.Antiphon1.text media-off End-Hymn
+		Verse sid DoxaPatri.text sid KaiNynKaiAei.text End-Verse
+		Hymn sid hoLI.Antiphon1.text media-off End-Hymn
+	End-Section
+	Insert_section Section04 End-Insert
+	Section Antiphon2 //festal antiphons
+		Actor sid Choir End-Actor
+		Title role desig sid Antifonon2 End-Title
+		Title role mode sid Mode2 End-Title
+		Media sid peLI.Antiphon2.text End-Media
+		Insert_section antiphon2.verse1 End-Insert
+		Hymn sid peLI.Antiphon2.text media-off sid hoLI.Antiphon22.text media-off End-Hymn
+		Insert_section antiphon2.verse2 End-Insert
+		Hymn sid peLI.Antiphon2.text media-off sid hoLI.Antiphon22.text media-off End-Hymn
+		Insert_section antiphon3.verse1 End-Insert
+		Hymn sid peLI.Antiphon2.text media-off sid hoLI.Antiphon22.text media-off End-Hymn
+		Media sid hoLI.OnlyBegotten.text End-Media
+		Verse sid DoxaPatri.text End-Verse
+		Verse sid KaiNynKaiAei.text End-Verse
+		Hymn sid hoLI.OnlyBegotten.text media-off End-Hymn
+	End-Section
+	Insert_section Section06 End-Insert
+	Section Antiphon3
+		Actor sid Choir End-Actor
+		Title role desig sid Antifonon3 End-Title
+		Title role mode sid peVE.Apolytikion1.mode End-Title
+		Insert_section antiphon3.verse1 End-Insert
+		Insert_section antiphon3.verse2 End-Insert
+		Insert_section antiphon3.verse3 End-Insert
+		Insert_section antiphon3.verse4 End-Insert
+		Title role mixed <Tdesig> sid Apolytikion</> <Tmode>sid peVE.Apolytikion1.mode</>End-Title
+		Title role chapverse sid properties_gr_GR_cog.TGB End-Title
+		Hymn sid peVE.Apolytikion1.text End-Hymn
+	End-Section
+	Insert_section Section08 End-Insert
+	Insert_section Section09 End-Insert
+	Insert_section bk.ap.mc.d120.entrance End-Insert
+	Insert_section Section11 End-Insert
+	Title role mixed <Tdesig> sid Apolytikion</> <Tmode>sid peVE.Apolytikion1.mode</>End-Title
+	Title role chapverse sid properties_gr_GR_cog.TGB End-Title
+	Hymn sid peVE.Apolytikion1.text End-Hymn
+	Actor sid Choir End-Actor
+	Title role mixed <Tdesig> sid Apolytikion</> <Tmode>sid peVE.Apolytikion1.mode</>End-Title
+	Hymn sid peVE.Apolytikion1.text <inr>sid Twice media-off </>End-Hymn
+	Section seasonal_pentecostarion
+		Actor sid Clergy End-Actor
+		Title role desig sid Kontakion End-Title
+		Title role chapverse sid properties_gr_GR_cog.TGB End-Title
+		Title role mixed <Tmode> rid peLI.SeasonalKontakion.mode</> <Tmelody> rid peLI.SeasonalKontakion.melody</> End-Title
+		Hymn rid peLI.SeasonalKontakion.text End-Hymn
+	End-Section
+	Insert_section Section13.prayer End-Insert
+	Title role chapverse sid properties_gr_GR_cog.TGB End-Title
+	Insert_section Section13.baptized End-Insert
+	Insert_section Section13.fimi End-Insert
+	Insert_section Lectionary_Epistle_Daily End-Insert
+	Insert_section Lectionary_Gospel_Daily.Alleluia End-Insert
+	Insert_section Section14 End-Insert
+	Insert_section Lectionary_Gospel_Daily.Lesson End-Insert
+
+	Insert_section Section19 End-Insert
+	Insert_section Section20 End-Insert
+	Insert_section Section21.chrys End-Insert
+	Insert_section Section22.chrys End-Insert
+	Section Megalynarion
+		Title role desig sid euLI.Key1328.title End-Title
+		Title role mode sid peLI.TheotokosHymn.mode End-Title
+		Hymn sid peLI.TheotokosHymn.text End-Hymn
+	End-Section
+	Insert_section Section24.chrys End-Insert
+	Insert_section Section25.chrys End-Insert
+	Break line End_Break
+	Title role desig sid ho.s21_gr_GR_cog.hoPCPrayer.title End-Title
+//	Insert_section Section26 End-Insert
+	Break line End_Break
+	Section CommunionHymn
+		Actor sid Choir End-Actor
+		Title role desig sid euLI.Key1500.title End-Title
+		Hymn sid peLI.CommunionHymn.text End-Hymn
+	End-Section
+//	Insert_section Section28 End-Insert
+//	Insert_section Section29 End-Insert
+	Insert_section Section30 End-Insert
+	Section WeHaveSeen
+		//This hymn changes on feasts of the Lord
+		Actor sid Choir End-Actor
+		Title role mode sid peVE.Apolytikion1.mode End-Title
+		Hymn sid peVE.Apolytikion1.text End-Hymn
+	End-Section	
+	Insert_section Section32 End-Insert
+
+	Insert_section Section34.chrys End-Insert
+	Insert_section Section35.chrys.part1 End-Insert
+	Insert_section Section35.chrys.part2 End-Insert
+	Section Section34_part3
+		Actor sid Hierarch <Trubric>sid InALowVoice</> End-Actor 
+		Para role inaudible sid euLI.Key1704.text End-Para				
+		Actor sid Deacon End-Actor
+		Dialog sid pet00 End-Dialog		
+		Dialog <i> sid res06p </>End-Dialog
+		Dialog <i> sid res13p </>End-Dialog
+		Actor sid Hierarch End-Actor
+		Dialog sid pet37 End-Dialog	
+		Dialog <i> sid res04p</> End-Dialog
+		Dialog sid DoxaSoiChriste2 End-Dialog
+	End-Section
+	Section Section36_comno
+		Dialog sid dis00 sid peDismissal sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08 sid me.m01.d10_gr_GR_cog.meInsert1 sid me.m11.d13_gr_GR_cog.meInsert1 sid dis09 sid dis10 sid dis89 End-Dialog 
+		Actor sid Choir End-Actor
+		Hymn sid euLI.Key1706h.text End-Hymn
+		Actor sid Hierarch End-Actor
+		Dialog sid DiEfchonPateron.text End-Dialog
+		Dialog <i> sid res04p</> End-Dialog
+		Actor sid Clergy End-Actor
+		Dialog sid DiEfchonDespotou.text End-Dialog
+		Dialog <i> sid res04p</> End-Dialog
+	End-Section
+	
+End-Template
