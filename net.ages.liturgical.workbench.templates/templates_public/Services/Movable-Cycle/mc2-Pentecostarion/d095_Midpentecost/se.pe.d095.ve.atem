@@ -1,0 +1,128 @@
+Template se.pe.d095.ve 
+
+Status Review
+
+	import client_gr_GR_cog.*
+	import eu.lichrysbasil_gr_GR_cog.*
+	import ho.s03_gr_GR_cog.*
+	import ho.s07_gr_GR_cog.*
+	import ho.s10_gr_GR_cog.*	
+	import le.pr.pe.d095_gr_GR_cog.*
+	import pe.d095_gr_GR_cog.*
+
+	//Templates
+	import VespersParts.*
+	import PaschaParts.*
+	import Litanies.*
+	
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+	
+	Head 
+//		Set_Date month  day  End_Date
+			Page_Header_Even
+				center @lookup sid ve.pdf.header lang L1 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ve.pdf.header lang L2 
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+		Preface Covers
+			Insert_template ematins.cover.ve End-Insert
+			Insert_template ematins.credits End-Insert
+		End-Preface
+	
+	
+	Insert_section Vespers_01 End-Insert
+	Insert_section LIHC_Mode4 End-Insert
+	Section Section01
+		Title role mixed <Tmode> sid peVE.Stichera01.mode </> <Tmelody>sid peVE.Stichera01.melody </>End-Title
+		Media sid peVE.Stichera01.text End-Media
+		Insert_section LIHC_Verse.v05 End-Insert
+		Hymn sid peVE.Stichera01.text media-off End-Hymn
+		Insert_section LIHC_Verse.v06 End-Insert
+		Hymn sid peVE.Stichera01.text media-off End-Hymn
+		Media sid peVE.Stichera02.text End-Media
+		Insert_section LIHC_Verse.v07 End-Insert
+		Hymn sid peVE.Stichera02.text media-off End-Hymn
+		Insert_section LIHC_Verse.v08 End-Insert
+		Hymn sid peVE.Stichera02.text media-off End-Hymn
+		Media sid peVE.Stichera03.text End-Media
+		Insert_section LIHC_Verse.v09 End-Insert
+		Hymn sid peVE.Stichera03.text media-off End-Hymn
+		Insert_section LIHC_Verse.v10 End-Insert
+		Hymn sid peVE.Stichera03.text media-off End-Hymn
+		Title role mixed sid DoxaKaiNyn <Tmode> sid peVE.SticGlory.mode </>End-Title
+		Hymn sid peVE.SticGlory.text End-Hymn
+	End-Section
+	Insert_section Vespers_03_entrance End-Insert
+	Section Section02
+		Actor sid Reader End-Actor
+		Dialog sid hoVE.Reading_Intro.text1 sid lemcVE.Reading1.book sid hoVE.Reading_Intro.text2 End-Dialog
+		Actor sid PriestOrDeacon End-Actor
+		Dialog sid exc17 sid exc19 End-Dialog
+		Actor sid Reader End-Actor
+		Title role chapverse sid lemcVE.Reading1.chapverse End-Title
+		Reading sid lemcVE.Reading1.text <inr> sid lemcVE.Reading1.version</> End-Reading
+		Actor sid Reader End-Actor
+		Dialog sid hoVE.Reading_Intro.text1 sid lemcVE.Reading2.book sid hoVE.Reading_Intro.text2 End-Dialog
+		Actor sid PriestOrDeacon End-Actor
+		Dialog sid exc17 sid exc19 End-Dialog
+		Actor sid Reader End-Actor
+		Title role chapverse sid lemcVE.Reading2.chapverse End-Title
+		Reading sid lemcVE.Reading2.text <inr> sid lemcVE.Reading1.version</>End-Reading
+		Actor sid Reader End-Actor
+		Dialog sid hoVE.Reading_Intro.text1 sid lemcVE.Reading3.book sid hoVE.Reading_Intro.text2 End-Dialog
+		Actor sid PriestOrDeacon End-Actor
+		Dialog sid exc17 sid exc19 End-Dialog
+		Actor sid Reader End-Actor
+		Title role chapverse sid lemcVE.Reading3.chapverse End-Title
+		Reading sid lemcVE.Reading3.text <inr> sid lemcVE.Reading1.version</>End-Reading
+	End-Section
+	Insert_section Vespers_05_Litanies End-Insert
+	Section Section03
+		Section Part1
+			Title role desig sid Aposticha sid TisEortis End-Title		
+			Title role mixed <Tmode> sid peVE.Aposticha1.mode</> <Tmelody>sid peVE.Aposticha1.melody </>End-Title
+			Hymn sid peVE.Aposticha1.text End-Hymn
+			Title role mixed <Tmode> sid peVE.Aposticha2.mode</> <Tmelody>sid peVE.Aposticha2.melody </>End-Title
+			Media sid peVE.Aposticha2.text End-Media
+			Insert_section bk.pe.d095.festal_verse_1 End-Insert
+			Hymn sid peVE.Aposticha2.text media-off End-Hymn
+			Title role mixed <Tmode> sid peVE.Aposticha3.mode</> <Tmelody>sid peVE.Aposticha3.melody </>End-Title
+			Media sid peVE.Aposticha3.text End-Media
+			Insert_section bk.pe.d095.festal_verse_2 End-Insert
+			Hymn sid peVE.Aposticha3.text media-off End-Hymn
+		End-Section
+		Section Part2
+			Title sid DoxaKaiNyn End-Title
+			Title role mode sid peVE.AposGlory.mode End-Title
+			Hymn sid peVE.AposGlory.text End-Hymn
+		End-Section
+	End-Section
+	Section Section04
+		Insert_section Symeon_Trisagion End-Insert	
+		Actor sid Choir End-Actor
+		Title role mixed <Tdesig> sid Apolytikion </> <Tmode>sid peVE.Apolytikion1.mode </>End-Title
+		Hymn sid peVE.Apolytikion1.text <r> sid Thrice media-off</>End-Hymn
+	End-Section
+	Insert_section Vespers_09 End-Insert
+	Insert_section AfterPascha_End_ComYes End-Insert	
+
+End-Template

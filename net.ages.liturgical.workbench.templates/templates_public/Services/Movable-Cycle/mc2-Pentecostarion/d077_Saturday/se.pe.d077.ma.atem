@@ -1,0 +1,82 @@
+Template se.pe.d077.ma 
+
+Status Review
+
+	import client_gr_GR_cog.*
+	import eu.lichrysbasil_gr_GR_cog.*
+	import ho.s03_gr_GR_cog.*
+	import ho.s07_gr_GR_cog.*
+	import ho.s10_gr_GR_cog.*	
+	import pe.d077_gr_GR_cog.*
+
+
+	//Templates
+	import PaschaParts.*
+	import MatinsParts.*
+	import kPascha.*
+	import Litanies.*
+	
+	import actors_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+			Page_Header_Even
+				center @lookup sid ma.pdf.header lang L1 @lookup sid d.on lang L1 @date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ma.pdf.header lang L2 @lookup sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ma End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	Insert_section Pascha_Enarxis01_VM End-Insert
+	Insert_section Pascha_Enarxis02 End-Insert
+	Insert_section Pascha_Section04 End-Insert
+	Insert_section Pascha_Hypakoe End-Insert
+	Insert_section Pascha_Kontakion End-Insert
+	Actor sid Choir End-Actor
+	Insert_section k_1345678 End-Insert
+	Insert_section Pascha_Ode9 End-Insert
+	Insert_section Pascha_Section15 End-Insert
+	Section Pascha_Lauds
+		Insert_section Lauds.Mode8 End-Insert
+		Title role desig sid StichiraAnastasima End-Title
+		Rubric sid cl.pe.d073thru077.R001 End-Rubric
+		Media sid oc.m8.d1_gr_GR_cog.ocMA.Lauds1.text End-Media
+		Insert_section Lauds_Verse.v03 End-Insert
+		Hymn sid peMA.Lauds1.text media-off End-Hymn
+		Media sid oc.m8.d1_gr_GR_cog.ocMA.Lauds2.text End-Media
+		Insert_section Lauds_Verse.v04 End-Insert
+		Hymn sid peMA.Lauds2.text  media-off End-Hymn
+		Media sid oc.m8.d1_gr_GR_cog.ocMA.Lauds3.text End-Media
+		Insert_section Lauds_Verse.v05 End-Insert
+		Hymn sid peMA.Lauds3.text  media-off End-Hymn
+		Media sid oc.m8.d1_gr_GR_cog.ocMA.Lauds4.text End-Media
+		Insert_section Lauds_Verse.v06 End-Insert
+		Hymn sid peMA.Lauds4.text  media-off End-Hymn
+	End-Section
+	Insert_section Pascha_SticheraOfPascha End-Insert
+	Insert_section Pascha_Section18 End-Insert
+	Insert_section Pascha_Dismissal_Part1 End-Insert
+	Insert_section Pascha_Dismissal_Part2 End-Insert
+
+End-Template

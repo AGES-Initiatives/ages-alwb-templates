@@ -1,0 +1,88 @@
+Template rid_GospelAlleluia_Daily 
+
+Status Draft
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	import bk.ap.da.*
+
+//These sections compute the the title and alleluia for days of the week.
+//They are inserted in the templates LectionaryAlleluiaMode.atem and LectionaryAlleluiaVerses.atem
+
+	Section da_al_title
+			when-name-of-day-is 
+				Monday use: Insert_section d2.al_title End-Insert
+				Tuesday use: Insert_section d3.al_title End-Insert
+				Wednesday use: Insert_section d4.al_title End-Insert
+				Thursday use: Insert_section d5.al_title End-Insert
+				Friday use: Insert_section d6.al_title End-Insert
+				Saturday use: Insert_section d7.al_title End-Insert
+				Sunday use:
+					when-mode-of-week-is
+						M1 use: Insert_section d1.m1.al_title End-Insert
+						M2 use: Insert_section d1.m2.al_title End-Insert
+						M3 use: Insert_section d1.m3.al_title End-Insert
+						M4 use: Insert_section d1.m4.al_title End-Insert
+						M5 use: Insert_section d1.m5.al_title End-Insert
+						M6 use: Insert_section d1.m6.al_title End-Insert
+						M7 use: Insert_section d1.m7.al_title End-Insert
+						M8 use: Insert_section d1.m8.al_title End-Insert
+					end-when
+			end-when
+	End-Section
+
+	Section da_al_verse1
+		when-name-of-day-is 
+			Monday use: Insert_section d2.al_verse1 End-Insert
+			Tuesday use: Insert_section d3.al_verse1 End-Insert
+			Wednesday use: Insert_section d4.al_verse1 End-Insert
+			Thursday use: Insert_section d5.al_verse1 End-Insert
+			Friday use: Insert_section d6.al_verse1 End-Insert
+			Saturday use: Insert_section d7.al_verse1 End-Insert
+			Sunday use:
+				when-mode-of-week-is
+					M1 use: Insert_section d1.m1.al_verse1 End-Insert
+					M2 use: Insert_section d1.m2.al_verse1 End-Insert
+					M3 use: Insert_section d1.m3.al_verse1 End-Insert
+					M4 use: Insert_section d1.m4.al_verse1 End-Insert
+					M5 use: Insert_section d1.m5.al_verse1 End-Insert
+					M6 use: Insert_section d1.m6.al_verse1 End-Insert
+					M7 use: Insert_section d1.m7.al_verse1 End-Insert
+					M8 use: Insert_section d1.m8.al_verse1 End-Insert
+				end-when
+		end-when
+	End-Section
+
+	Section da_al_verse2
+		when-name-of-day-is 
+			Monday use: Insert_section d2.al_verse2 End-Insert
+			Tuesday use: Insert_section d3.al_verse2 End-Insert
+			Wednesday use: Insert_section d4.al_verse2 End-Insert
+			Thursday use: Insert_section d5.al_verse2 End-Insert
+			Friday use: Insert_section d6.al_verse2 End-Insert
+			Saturday use: Insert_section d7.al_verse2 End-Insert
+			Sunday use:
+				when-mode-of-week-is
+					M1 use: Insert_section d1.m1.al_verse2 End-Insert
+					M2 use: Insert_section d1.m2.al_verse2 End-Insert
+					M3 use: Insert_section d1.m3.al_verse2 End-Insert
+					M4 use: Insert_section d1.m4.al_verse2 End-Insert
+					M5 use: Insert_section d1.m5.al_verse2 End-Insert
+					M6 use: Insert_section d1.m6.al_verse2 End-Insert
+					M7 use: Insert_section d1.m7.al_verse2 End-Insert
+					M8 use: Insert_section d1.m8.al_verse2 End-Insert
+				end-when
+		end-when
+	End-Section
+
+End-Template

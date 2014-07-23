@@ -1,0 +1,127 @@
+Template se.m05.d02.wkd.li
+
+Status Review
+
+	import client_gr_GR_cog.*
+	import eu.lichrysbasil_gr_GR_cog.*
+	import ho.s07_gr_GR_cog.*
+	import me.m05.d02_gr_GR_cog.*
+
+	//Templates
+	import LectionaryReadings.*
+	import eu.li.chrysbasil.*
+	import Litanies.*
+	import PaschaParts.*
+	
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 5 day 2 End_Date
+			Page_Header_Even
+				center @lookup sid li.pdf.header sid d.on lang L1 @date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	when-movable-cycle-day-is 
+	
+	65 thru 72 use:
+	
+	73 , 74, 75, 77 use:
+	
+	76 use:
+	
+	78 use:
+	
+	79 thru 83 use: 		
+		Section Instance_05 //Thomas Post-feast
+			Insert_section eu.li.chrysbasil.Section01 End-Insert
+			Insert_section AfterPascha_Enarxis End-Insert
+			Insert_section eu.li.chrysbasil.Section02 End-Insert
+			Insert_section Pascha_Antiphon1 End-Insert
+			Insert_section eu.li.chrysbasil.Section04 End-Insert
+			Insert_section Pascha_Antiphon2 End-Insert
+			Insert_section eu.li.chrysbasil.Section06 End-Insert
+			Insert_section Pascha_Antiphon3 End-Insert
+			Insert_section eu.li.chrysbasil.Section08 End-Insert
+			Insert_section eu.li.chrysbasil.Section09.clergy End-Insert
+			Insert_section Pascha_EntranceHymn End-Insert
+			Section AfterEntrance
+				Title role mixed <Tdesig>sid Apolytikion sid TisEortis</><Tmode>sid pe.d078_gr_GR_cog.peVE.Apolytikion1.mode</> End-Title
+				Hymn sid pe.d078_gr_GR_cog.peVE.Apolytikion1.text End-Hymn
+				Title role desig sid Apolytikion sid TouAgiou End-Title
+				Title role mixed <Tmode>sid meVE.Apolytikion1.mode</> <Tmelody>sid meVE.Apolytikion1.melody</> End-Title
+				Hymn sid meVE.Apolytikion1.text End-Hymn
+	Insert_section eu.li.chrysbasil.Section11_opt End-Insert
+				Title role mixed <Tdesig>sid Kontakion sid TisEortis</><Tmode>sid pe.d078_gr_GR_cog.peLI.SeasonalKontakion.mode</>End-Title
+				Hymn sid pe.d078_gr_GR_cog.peLI.SeasonalKontakion.text End-Hymn
+			End-Section
+			Insert_section eu.li.chrysbasil.Section13.prayer End-Insert
+Insert_section eu.li.chrysbasil.Section13.holygod End-Insert
+			Insert_section Lectionary_Epistle_Menaion End-Insert
+			Insert_section Lectionary_Gospel_Menaion.Alleluia End-Insert
+			Insert_section eu.li.chrysbasil.Section14 End-Insert
+	Insert_section Lectionary_Gospel_Menaion.Lesson End-Insert
+			Insert_section eu.li.chrysbasil.Section19 End-Insert
+			Insert_section eu.li.chrysbasil.Section20 End-Insert
+			Insert_section eu.li.chrysbasil.Section21.chrys End-Insert
+			Insert_section eu.li.chrysbasil.Section22.chrys End-Insert
+			Insert_section eu.li.chrysbasil.Section23.chrys End-Insert
+			Insert_section eu.li.chrysbasil.Section24.chrys End-Insert
+			Insert_section eu.li.chrysbasil.Section25.chrys End-Insert
+			Insert_section eu.li.chrysbasil.Section26 End-Insert
+			Section CommunionHymn
+				Actor sid Choir End-Actor
+				Title role desig sid euLI.Key1500.title End-Title
+				Hymn sid da.d3_gr_GR_cog.daLI.CommunionHymn.text End-Hymn
+			End-Section
+		//	Insert_section eu.li.chrysbasil.Section28 End-Insert
+		//	Insert_section eu.li.chrysbasil.Section29 End-Insert
+			Insert_section eu.li.chrysbasil.Section30 End-Insert
+			Insert_section Pascha_AfterCommunion End-Insert
+			Insert_section eu.li.chrysbasil.Section32 End-Insert
+		// Insert_section eu.li.chrysbasil.Section33 End-Insert
+			Insert_section eu.li.chrysbasil.Section34.chrys End-Insert
+			Insert_section eu.li.chrysbasil.Section35.chrys End-Insert
+			Section Pascha_LiturgyEnd2
+				Actor sid Deacon End-Actor
+				Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text media-off End-Dialog
+				Dialog sid res06 sid res09 End-Dialog
+			End-Section
+			Insert_section AfterPascha_Liturgy_End_ComYes End-Insert
+		End-Section //Instance_05
+
+
+end-when
+
+
+
+
+
+
+
+
+
+
+
+
+
+End-Template

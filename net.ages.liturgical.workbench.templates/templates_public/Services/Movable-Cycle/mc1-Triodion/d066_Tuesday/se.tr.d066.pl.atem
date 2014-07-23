@@ -1,0 +1,165 @@
+Template se.tr.d066.pl
+
+Status Review
+
+	import client_gr_GR_cog.*
+	import eu.lichrysbasil_gr_GR_cog.*	
+	import eu.lipresanctified_gr_GR_cog.*
+	import hi.s01_gr_GR_cog.*
+	import ho.s10_gr_GR_cog.*
+	import le.pr.tr.d066_gr_GR_cog.*
+	import le.go.mc.d066_gr_GR_cog.*
+	import tr.d066_gr_GR_cog.*
+
+	//Templates
+	import eu.li.presanctified.*
+	import VespersParts.*
+	
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import poets_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+		Head 
+			Set_Date month 4 day 15 year 2014 End_Date
+				Page_Header_Even
+					center @lookup sid pl.pdf.header lang L1 @lookup sid hw.ofholymonday lang L1
+				End_Page_Header_Even
+				Page_Header_Odd
+					center @lookup sid pl.pdf.header lang L2 @lookup sid hw.ofholymonday lang L2
+				End_Page_Header_Odd
+				Page_Footer_Even
+					center @pageNbr
+				End_Page_Footer_Even
+				Page_Footer_Odd
+					center @pageNbr
+				End_Page_Footer_Odd
+			Set_Page_Number 1 End_Set_Page_Number
+		End_Head
+
+	Section ServiceTitle	
+		Title role desig sid pl.pdf.header sid hw.ofholymonday End-Title
+		Title <inr>sid ve.pdf.header sid hw.ofholytuesday </>End-Title 
+		Break line End_Break
+	End-Section
+	Insert_section Presanctified01 End-Insert
+	Insert_section LIHC_Mode1 End-Insert
+	Section Stichera
+		Title role mixed <Tmode>sid trVE.Stichera01.mode</><Tmelody>sid trVE.Stichera01.melody</> End-Title
+		Media sid trVE.Stichera01.text End-Media
+		Insert_section LIHC_Verse.v01 End-Insert
+		Hymn sid trVE.Stichera01.text media-off End-Hymn
+		Insert_section LIHC_Verse.v02 End-Insert
+		Hymn sid trVE.Stichera01.text media-off End-Hymn
+		Title role mixed <Tmode>sid trVE.Stichera02.mode</><Tmelody>sid trVE.Stichera02.melody</> End-Title
+		Media sid trVE.Stichera02.text End-Media
+		Insert_section LIHC_Verse.v03 End-Insert
+		Hymn sid trVE.Stichera02.text media-off End-Hymn
+		Insert_section LIHC_Verse.v04 End-Insert
+		Hymn sid trVE.Stichera02.text media-off End-Hymn
+		Title role mixed <Tmode>sid trVE.Stichera03.mode</><Tmelody>sid trVE.Stichera03.melody</> End-Title
+		Media sid trVE.Stichera03.text End-Media
+		Insert_section LIHC_Verse.v05 End-Insert
+		Hymn sid trVE.Stichera03.text media-off End-Hymn
+		Insert_section LIHC_Verse.v06 End-Insert
+		Hymn sid trVE.Stichera03.text media-off End-Hymn
+		Title role mixed <Tmode>sid trVE.Stichera04.mode</><Tmelody>sid trVE.Stichera04.melody</> End-Title
+		Media sid trVE.Stichera04.text End-Media
+		Insert_section LIHC_Verse.v07 End-Insert
+		Hymn sid trVE.Stichera04.text media-off End-Hymn
+		Insert_section LIHC_Verse.v08 End-Insert
+		Hymn sid trVE.Stichera04.text media-off End-Hymn
+		Title role mixed <Tmode>sid trVE.Stichera05.mode</><Tmelody>sid trVE.Stichera05.melody</> End-Title
+		Media sid trVE.Stichera05.text End-Media
+		Insert_section LIHC_Verse.v09 End-Insert
+		Hymn sid trVE.Stichera05.text media-off End-Hymn
+		Title role mixed <Tmode>sid trVE.Stichera06.mode</><Tmelody>sid trVE.Stichera06.melody</> End-Title
+		Media sid trVE.Stichera06.text End-Media
+		Insert_section LIHC_Verse.v10 End-Insert
+		Hymn sid trVE.Stichera06.text media-off End-Hymn
+		Title role mixed sid DoxaKaiNyn <Tmode> sid trVE.SticGlory.mode </>End-Title
+		Hymn sid trVE.SticGlory.text End-Hymn
+	End-Section
+	Insert_section Presanctified03 End-Insert
+	Section Lent_PresanctifiedReadings //Presanctified Readings
+		Section Part1
+			Actor sid PriestOrDeacon End-Actor
+			Dialog sid hiVE.Key0110.text End-Dialog
+		End-Section
+		Section Part2	
+			Actor sid Reader End-Actor
+			Title <b> sid Prokeimenon sid lemcVE.Prokeimenon1.mode sid lemcVE.Prokeimenon1.source</> End-Title
+			Dialog sid lemcVE.Prokeimenon1.text sid lemcVE.Prokeimenon1Verse.text End-Dialog
+		End-Section
+		Section Part3
+			Actor sid Reader End-Actor
+			Dialog sid hoVE.Reading_Intro.text1 sid lemcVE.Reading1.book sid hoVE.Reading_Intro.text2 End-Dialog
+			Actor sid PriestOrDeacon End-Actor
+			Dialog sid exc17 sid exc19 End-Dialog
+			Actor sid Reader End-Actor
+			Title role chapverse sid lemcVE.Reading1.chapverse End-Title
+			Reading sid lemcVE.Reading1.text End-Reading
+			Title <b> sid Prokeimenon sid lemcVE.Prokeimenon2.mode sid lemcVE.Prokeimenon2.source</> End-Title
+			Dialog sid lemcVE.Prokeimenon2.text sid lemcVE.Prokeimenon2Verse.text End-Dialog
+		End-Section
+		Section Part4
+			Rubric sid Sung End-Rubric
+			Dialog sid Kelefson End-Dialog
+			Actor sid Priest End-Actor
+			Dialog sid exc17 sid exc18 sid euPL.Key0701.text sid euPL.Key0702.text End-Dialog
+			Actor sid Reader End-Actor
+		End-Section
+		Section Part5
+			Dialog sid hoVE.Reading_Intro.text1 sid lemcVE.Reading2.book sid hoVE.Reading_Intro.text2 End-Dialog
+			Actor sid PriestOrDeacon End-Actor
+			Dialog sid exc17 sid exc19 End-Dialog
+			Actor sid Reader End-Actor
+			Title role chapverse sid lemcVE.Reading2.chapverse End-Title
+			Reading sid lemcVE.Reading2.text End-Reading
+		End-Section
+	End-Section
+	Insert_section Presanctified05 End-Insert
+	Section Gospel_Reading 
+		Title role desig sid ToEvangelion End-Title
+		Actor sid Deacon End-Actor
+		Dialog sid exc17 sid exc18 sid gos02 End-Dialog
+		Actor sid Priest End-Actor
+		Dialog sid pet31 End-Dialog
+		Dialog <i>sid res05p </>End-Dialog
+		Actor sid Deacon End-Actor
+		Dialog sid gos03a sid lemcVE.Gospel.book sid gos03b End-Dialog
+		Actor sid Priest End-Actor
+		Dialog sid exc19 End-Dialog
+		Dialog <i> sid DoxaSoiKyrieP </>End-Dialog	
+		Actor sid Deacon End-Actor
+		Title role chapverse sid lemcVE.Gospel.chapverse End-Title
+		Reading sid lemcVE.Gospel.text End-Reading
+		Actor sid Priest End-Actor
+		Dialog sid euLI.Key0705.text End-Dialog
+		Actor sid Choir End-Actor						
+		Dialog sid DoxaSoiKyrie End-Dialog	
+	End-Section	
+	Insert_section Presanctified06 End-Insert
+	Insert_section Presanctified08 End-Insert
+	Insert_section Presanctified09 End-Insert
+	Insert_section Presanctified10 End-Insert
+	Insert_section Presanctified11 End-Insert
+	Insert_section Presanctified12.Part1 End-Insert
+	Section Presanctified12_Part2
+		Dialog sid DoxaSoiChriste2 End-Dialog
+		Dialog sid dis00.bridegroom sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08 sid cl.localpatronsaint1.dismissal sid dis09 sid dis10 sid dis89 End-Dialog
+		Actor sid Priest End-Actor
+		Dialog sid DiEfchonPateron.text End-Dialog
+		Dialog <i> sid res04p</> End-Dialog
+	End-Section
+	
+
+End-Template
