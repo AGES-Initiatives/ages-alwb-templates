@@ -1,16 +1,16 @@
-Template se.m10.d13.li
+Template se.m11.d24.li 
 
 Status Review
 
 	import client_gr_GR_cog.*
 	import eu.lichrysbasil_gr_GR_cog.*
 	import ho.s07_gr_GR_cog.*
-	import me.m10.d13_gr_GR_cog.*
+	import me.m11.d24_gr_GR_cog.*
 
-	import da.*
 	import oc.*
 
 	//Templates
+	import bk.ap.me.m11.*
 	import LectionaryReadings.*
 	import Litanies.*
 	
@@ -27,7 +27,7 @@ Status Review
 	import roles.*
 
 	Head 
-		Set_Date month 10 day 13 End_Date
+		Set_Date month 11 day 24 year 2021 End_Date
 			Page_Header_Even
 				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
 			End_Page_Header_Even
@@ -43,17 +43,15 @@ Status Review
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
-	when-name-of-day-is
-		Sunday use:
-			Section Instance03
-				Insert_template se.m10.dHF.li End-Insert
-			End-Section
-		Saturday use:
-			Section Instance02
-			End-Section
-			
-			otherwise use:
-				Section Instance01
-				End-Section
-	end-when
+when-name-of-day-is
+	Sunday use:
+		Section Instance02 //Sunday
+			Insert_section se.m11.d22.li.Instance02 End-Insert
+		End-Section
+		
+	otherwise use:
+		Section Instance01 //weekday
+		End-Section	
+end-when
+
 End-Template
