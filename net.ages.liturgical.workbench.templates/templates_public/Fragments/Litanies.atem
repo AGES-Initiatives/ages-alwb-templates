@@ -399,7 +399,7 @@ Template Litanies
 	Section Supplication_deacon
 		Actor sid Deacon End-Actor
 		when-movable-cycle-day-is 36, 50, 57 use:
-			Insert_section Supplication_Triodion End-Insert
+			Insert_section supplication_09 End-Insert
 			otherwise use: Insert_section Supplication_Menaion End-Insert
 		end-when
 		Actor sid Choir End-Actor
@@ -413,7 +413,7 @@ Template Litanies
 	Section Supplication_priest
 		Actor sid Priest End-Actor
 		when-movable-cycle-day-is 36, 50, 57 use:
-			Insert_section Supplication_Triodion End-Insert
+			Insert_section supplication_09 End-Insert
 			otherwise use: Insert_section Supplication_Menaion End-Insert
 		end-when
 		Actor sid Choir End-Actor
@@ -446,96 +446,117 @@ Template Litanies
 		Dialog sid res04 End-Dialog
 	End-Section
 
-	Section Supplication_Triodion
-		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid trInsert1 rid trInsert2 sid sup15 sid sup99 End-Dialog	
-	End-Section
-
 	Section Supplication_Menaion
 		when-date-is
-			Jan 7 use: Insert_section Supplication_Forerunner End-Insert
-			Feb 24 use: Insert_section Supplication_Forerunner End-Insert
-			May 25 use: Insert_section Supplication_Forerunner End-Insert
-			Jun 30 use: Insert_section Supplication_Apostles End-Insert
-			Jun 24 use: Insert_section Supplication_Forerunner End-Insert
+			Jan 7 use: Insert_section supplication_05 End-Insert
+			Feb 24 use: Insert_section supplication_05 End-Insert
+			May 25 use: Insert_section supplication_05 End-Insert
+			Jun 30 use: Insert_section Supplication_06 End-Insert
+			Jun 24 use: Insert_section supplication_05 End-Insert
 			Jul 13 thru 19 use:
 				when-name-of-day-is Sunday
-					use: Insert_section Supplication_HolyFathersJuly End-Insert
+					use: Insert_section supplication_10 End-Insert
 				end-when
-			Jul 25 use: Insert_section Supplication_JoakimAnna End-Insert
-			Aug 15 use: Insert_section Supplication_Theotokos End-Insert
-			Aug 29 use: Insert_section Supplication_Forerunner End-Insert
-			Aug 31 use: Insert_section Supplication_Theotokos End-Insert
-			Sep 8 use: Insert_section Supplication_Theotokos End-Insert
-			Sep 14 use: Insert_section Supplication_CrossExaltation End-Insert
-			Sep 23 use: Insert_section Supplication_Forerunner End-Insert
+			Jul 25 use: Insert_section supplication_08 End-Insert
+			Aug 15 use: Insert_section supplication_02 End-Insert
+			Aug 29 use: Insert_section supplication_05 End-Insert
+			Aug 31 use: Insert_section supplication_02 End-Insert
+			Sep 8 use: Insert_section supplication_02 End-Insert
+			Sep 14 use: Insert_section supplication_03 End-Insert
+			Sep 23 use: Insert_section supplication_05 End-Insert
 			Oct 11 thru 17 use:
 				when-name-of-day-is Sunday use:
-					Insert_section Supplication_HolyFathersOctober End-Insert
+					Insert_section supplication_11 End-Insert
 				end-when
-			Oct 28 use: Insert_section Supplication_Theotokos_HolyProtection End-Insert
-			Nov 8 use: Insert_section Supplication_Angels End-Insert
-			Nov 9 use: Insert_section Supplication_StNektariosNov9 End-Insert
-			Nov 21 use: Insert_section Supplication_Theotokos End-Insert
-			Dec 9 use: Insert_section Supplication_Theotokos End-Insert
+			Oct 28 use: Insert_section supplication_12 End-Insert
+			Nov 8 use: Insert_section supplication_04 End-Insert
+			Nov 9 use: Insert_section supplication_13 End-Insert
+			Nov 21 use: Insert_section supplication_02 End-Insert
+			Dec 9 use: Insert_section supplication_02 End-Insert
 			Dec 11, 13, 14, 16 use:
 				when-name-of-day-is Sunday use:
-					Insert_section Supplication_Forefathers End-Insert
+					Insert_section supplication_14 End-Insert
 				end-when
 			Dec 12, 15, 17 use:
 				when-name-of-day-is Sunday use:
-					Insert_section Supplication_Forefathers121517 End-Insert
-				otherwise use: Insert_section Supplication_Saints End-Insert
+					Insert_section supplication_15 End-Insert
+				otherwise use: Insert_section supplication_07 End-Insert
 				end-when
 			Dec 18 thru 24 use:
 				when-name-of-day-is Sunday use:
-					Insert_section Supplication_SundayBeforeChristmas End-Insert
+					Insert_section supplication_16 End-Insert
 				end-when	
-			Dec 26 use: Insert_section Supplication_Theotokos End-Insert
-			otherwise use: Insert_section Supplication_Saints End-Insert
+			Dec 26 use: 
+				when-name-of-day-is
+					Sunday use: Insert_section supplication_17 End-Insert
+					otherwise use: Insert_section supplication_02 End-Insert
+				end-when
+			Dec 27 use: 
+				when-name-of-day-is
+					Sunday use: Insert_section supplication_18 End-Insert
+					otherwise use: Insert_section supplication_07 End-Insert
+				end-when
+			Dec 28 thru 31 use: 
+				when-name-of-day-is
+					Sunday use: Insert_section supplication_19 End-Insert
+				end-when
+			otherwise use: Insert_section supplication_07 End-Insert
 		end-when
 	End-Section
 
-	Section Supplication_Angels
-		Dialog sid sup00 sid sup01 sid sup02 sid sup03 rid meInsert2 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid sup15 sid sup99 End-Dialog	
-	End-Section
-	Section Supplication_Apostles
-		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 rid meInsert2 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid sup15 sid sup99 End-Dialog	
-	End-Section
-	Section Supplication_CrossExaltation
-		Dialog sid sup00 sid sup01 sid sup02 rid meInsert2 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid sup15 sid sup99 End-Dialog	
-	End-Section
-	Section Supplication_Forefathers
-		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid me.m12.dFF_gr_GR_cog.meInsert1 sid me.m12.dFF_gr_GR_cog.meInsert2 sid sup15 sid sup99 End-Dialog	
-	End-Section
-	Section Supplication_Forefathers121517
-		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid meInsert1 sid me.m12.dFF_gr_GR_cog.meInsert1 sid me.m12.dFF_gr_GR_cog.meInsert2 sid sup15 sid sup99 End-Dialog	
-	End-Section
-	Section Supplication_Forerunner
-		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 rid meInsert2 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid sup15 sid sup99 End-Dialog	
-	End-Section
-	Section Supplication_HolyFathersJuly
-		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid me.m07.dHF_gr_GR_cog.meInsert1 sid me.m07.dHF_gr_GR_cog.meInsert2 sid sup15 sid sup99 End-Dialog	
-	End-Section
-	Section Supplication_HolyFathersOctober
-		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid me.m10.dHF_gr_GR_cog.meInsert1 sid me.m10.dHF_gr_GR_cog.meInsert2 sid sup15 sid sup99 End-Dialog	
-	End-Section
-	Section Supplication_JoakimAnna
-		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid meInsert2 sid sup15 sid sup99 End-Dialog	
-	End-Section
-	Section Supplication_Saints
-		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid meInsert1 rid meInsert2 sid sup15 sid sup99 End-Dialog	
-	End-Section
-	Section Supplication_SundayBeforeChristmas
-		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid me.m12.dBC_gr_GR_cog.meInsert1 sid me.m12.dBC_gr_GR_cog.meInsert2 sid sup15 sid sup99 End-Dialog	
-	End-Section
-	Section Supplication_Theotokos
+	Section supplication_02 //Theotokos
 		Dialog sid sup00 sid sup01 rid meInsert2 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid sup15 sid sup99 End-Dialog	
 	End-Section
-	Section Supplication_Theotokos_HolyProtection
+	Section supplication_03 //Cross
+		Dialog sid sup00 sid sup01 sid sup02 rid meInsert2 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid sup15 sid sup99 End-Dialog	
+	End-Section
+	Section supplication_04 //Angels
+		Dialog sid sup00 sid sup01 sid sup02 sid sup03 rid meInsert2 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid sup15 sid sup99 End-Dialog	
+	End-Section
+	Section supplication_05 //Forerunner
+		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 rid meInsert2 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid sup15 sid sup99 End-Dialog	
+	End-Section
+	Section Supplication_06 //Apostles
+		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 rid meInsert2 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid sup15 sid sup99 End-Dialog	
+	End-Section
+	Section supplication_07 //Saint
+		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid meInsert1 rid meInsert2 sid sup15 sid sup99 End-Dialog	
+	End-Section
+	Section supplication_08 //Joakim and Anna
+		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid meInsert2 sid sup15 sid sup99 End-Dialog	
+	End-Section
+	Section supplication_09 //Triodion
+		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid trInsert1 rid trInsert2 sid sup15 sid sup99 End-Dialog	
+	End-Section
+	Section supplication_10 //HolyFathersJuly
+		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid me.m07.dHF_gr_GR_cog.meInsert1 sid me.m07.dHF_gr_GR_cog.meInsert2 sid sup15 sid sup99 End-Dialog	
+	End-Section
+	Section supplication_11 //HolyFathersOctober
+		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid me.m10.dHF_gr_GR_cog.meInsert1 sid me.m10.dHF_gr_GR_cog.meInsert2 sid sup15 sid sup99 End-Dialog	
+	End-Section
+	Section supplication_12 //HolyProtectionOctober
 		Dialog sid sup00 sid sup01 sid me.m10.d28a_gr_GR_cog.meInsert2 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid sup15 sid sup99 End-Dialog	
 	End-Section
-	Section Supplication_StNektariosNov9
+	Section supplication_13 //StNekariosNovember9
 		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid me.m11.d09b_gr_GR_cog.meInsert1 sid me.m11.d09b_gr_GR_cog.meInsert2 sid sup15 sid sup99 End-Dialog	
+	End-Section
+	Section supplication_14 //ForefathersDecember
+		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid me.m12.dFF_gr_GR_cog.meInsert1 sid me.m12.dFF_gr_GR_cog.meInsert2 sid sup15 sid sup99 End-Dialog	
+	End-Section
+	Section supplication_15 //ForefathersDecember121517
+		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid meInsert1 sid me.m12.dFF_gr_GR_cog.meInsert1 sid me.m12.dFF_gr_GR_cog.meInsert2 sid sup15 sid sup99 End-Dialog	
+	End-Section
+	Section supplication_16 //Sunday Before Xmas
+		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid me.m12.dBC_gr_GR_cog.meInsert1 sid me.m12.dBC_gr_GR_cog.meInsert2 sid sup15 sid sup99 End-Dialog	
+	End-Section
+	Section supplication_17 //SunAfterXmas26
+		Dialog sid sup00 sid sup01 sid me.m12.d26_gr_GR_cog.meInsert2 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid me.m12.dAC_gr_GR_cog.meInsert1 sid me.m12.dAC_gr_GR_cog.meInsert2 sid sup15 sid sup99 End-Dialog	
+	End-Section
+	Section supplication_18 //SunAfterXmas27
+		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid me.m12.d27_gr_GR_cog.meInsert1 sid me.m12.dAC_gr_GR_cog.meInsert1 sid me.m12.dAC_gr_GR_cog.meInsert2 sid sup15 sid sup99 End-Dialog	
+	End-Section
+	Section supplication_19 //SunAfterXmas28293031
+		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid me.m12.dAC_gr_GR_cog.meInsert1 sid me.m12.dAC_gr_GR_cog.meInsert2 sid sup15 sid sup99 End-Dialog	
 	End-Section
 
 
