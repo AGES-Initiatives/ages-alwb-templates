@@ -1,9 +1,9 @@
-Template se.m12.d30.ma 
+Template se.m12.d30.ve 
 
 Status Review
 
 	import client_gr_GR_cog.*
-	import ho.s03_gr_GR_cog.*
+	import ho.s10_gr_GR_cog.*	
 	import me.m12.d30_gr_GR_cog.*
 
 	import da.*
@@ -11,8 +11,6 @@ Status Review
 
 	//Templates
 	import VespersParts.*
-	import MatinsParts.*
-	import kChristmas.*  //Katavasia
 	import LectionaryReadings.*
 	import Litanies.*
 	
@@ -31,10 +29,10 @@ Status Review
 	Head 
 		Set_Date month 12 day 30 End_Date
 			Page_Header_Even
-				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore lang L2 
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore lang L2
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -46,18 +44,19 @@ Status Review
 	End_Head
 
 	Preface Covers
-		Insert_template ematins.cover.ma End-Insert
+		Insert_template ematins.cover.ve End-Insert
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
 	when-name-of-day-is
 		Sunday use:
 			Section Instance02 //Sunday
-				Insert_section se.m12.dAC.ma.Instance03 End-Insert
+				Insert_section se.m12.dAC.ve.Instance03 End-Insert
 			End-Section
 			
 		otherwise use:
 			Section Instance01 //weekday
 			End-Section
 	end-when				
+
 End-Template
