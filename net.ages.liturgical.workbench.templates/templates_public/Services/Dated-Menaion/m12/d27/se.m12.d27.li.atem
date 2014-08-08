@@ -1,0 +1,185 @@
+Template se.m12.d27.li 
+
+Status Review
+
+	import client_gr_GR_cog.*
+	import eu.lichrysbasil_gr_GR_cog.*
+	import ho.s07_gr_GR_cog.*
+	import le.ep.me.m12.dSunAC_gr_GR_cog.*
+	import le.go.me.m12.dSunAC_gr_GR_cog.*
+	import me.m12.d27_gr_GR_cog.*
+	import ps_gr_GR_cog.*
+
+	import da.*
+	import oc.*
+
+	//Templates
+	import bk.ap.me.m12.*
+	import LectionaryReadings.*
+	import Litanies.*
+	
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 12 day 27 End_Date
+			Page_Header_Even
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	when-name-of-day-is
+		Sunday use:
+			Section Instance02 //Sunday after Xmas
+				Section block1
+					Insert_section eu.li.chrysbasil.Section01 End-Insert
+					Insert_section eu.li.chrysbasil.Section02 End-Insert
+					Insert_section d25.antiphon1 End-Insert
+					Insert_section eu.li.chrysbasil.Section04 End-Insert
+					Insert_section d25.antiphon2 End-Insert
+					Insert_section eu.li.chrysbasil.Section06 End-Insert
+					Insert_section d25.antiphon3 End-Insert
+					Insert_section eu.li.chrysbasil.Section08 End-Insert
+					Insert_section eu.li.chrysbasil.Section09.clergy End-Insert
+				End-Section
+				Section block2
+					Insert_section eu.li.chrysbasil.Section10.sunday End-Insert
+					Insert_section eu.li.chrysbasil.Section11.single End-Insert
+					Title role desig sid ApolytikionAnastasimon End-Title
+					Title role mixed <Tmode> rid ocVE.Apolytikion.mode</> <Tmelody> rid ocVE.Apolytikion.melody</> End-Title
+					Hymn rid ocVE.Apolytikion.text End-Hymn
+					Title role mixed <Tdesig>sid TisEortis</><Tmode>sid me.m12.d25_gr_GR_cog.meVE.Apolytikion1.mode</>End-Title
+					Hymn sid me.m12.d25_gr_GR_cog.meVE.Apolytikion1.text End-Hymn
+					Title role mixed <Tdesig>sid TonTheopatoron</><Tmode>sid me.m12.dAC_gr_GR_cog.meVE.Apolytikion1.mode</>End-Title
+					Hymn sid me.m12.dAC_gr_GR_cog.meVE.Apolytikion1.text End-Hymn
+				End-Section
+				Section block3	
+					Title role desig sid TouProtomartyros End-Title
+					Title role mixed <Tmode>sid meVE.Apolytikion1.mode</><Tmelody>sid meVE.Apolytikion1.melody</>End-Title
+					Hymn sid meVE.Apolytikion1.text End-Hymn
+					Insert_section eu.li.chrysbasil.Section11_opt End-Insert
+					Insert_section eu.li.chrysbasil.Section12.seasonal_menaion.single End-Insert
+					Insert_section eu.li.chrysbasil.Section13.prayer End-Insert
+					Insert_section eu.li.chrysbasil.Section13.holygod End-Insert
+				End-Section
+				Insert_section Lectionary_Epistle_Menaion End-Insert
+				Insert_section Lectionary_Gospel_Menaion.Alleluia End-Insert
+				Insert_section eu.li.chrysbasil.Section14 End-Insert
+				Section block4
+					Title role desig sid ToEvangelion End-Title
+					Title <inr>sid lemeLI.Gospel.title</> End-Title
+					Actor sid Deacon End-Actor
+					Dialog sid exc17 sid exc18 sid gos02 End-Dialog
+					Actor sid Priest End-Actor
+					Dialog sid pet31 End-Dialog
+					Dialog <i>sid res05p </>End-Dialog
+					Actor sid Deacon End-Actor
+					Dialog sid gos03a sid lemeLI.Gospel.book sid gos03b End-Dialog		
+					Actor sid Priest End-Actor
+					Dialog sid exc19 End-Dialog
+					Dialog <i> sid DoxaSoiKyrieP </>End-Dialog	
+					Actor sid Deacon End-Actor
+					Title role chapverse sid lemeLI.Gospel.chapverse End-Title
+					Reading sid lemeLI.Gospel.text <Trubric>sid lemeLI.Gospel.version</>End-Reading
+					Actor sid Priest End-Actor
+					Dialog sid euLI.Key0705.text End-Dialog
+					Actor sid Choir End-Actor						
+					Dialog sid DoxaSoiKyrie End-Dialog	
+				End-Section
+				Section block5
+					Insert_section eu.li.chrysbasil.Section19 End-Insert
+					Insert_section eu.li.chrysbasil.Section20 End-Insert
+					Insert_section eu.li.chrysbasil.Section21.chrys End-Insert
+					Insert_section eu.li.chrysbasil.Section22.chrys End-Insert
+					Insert_section eu.li.chrysbasil.Section23.chrys End-Insert
+					Insert_section eu.li.chrysbasil.Section24.chrys End-Insert
+					Insert_section eu.li.chrysbasil.Section25.chrys End-Insert
+					Insert_section eu.li.chrysbasil.Section26 End-Insert
+					Insert_section eu.li.chrysbasil.Section27 End-Insert
+					Insert_section eu.li.chrysbasil.Section28 End-Insert
+					Insert_section eu.li.chrysbasil.Section29 End-Insert
+					Insert_section eu.li.chrysbasil.Section30 End-Insert
+				End-Section
+				Insert_section eu.li.chrysbasil.Section31 End-Insert
+				Section block6	
+					Insert_section eu.li.chrysbasil.Section32 End-Insert
+					Insert_section eu.li.chrysbasil.Section33 End-Insert
+					Insert_section eu.li.chrysbasil.Section34.chrys End-Insert
+					Insert_section eu.li.chrysbasil.Section35.chrys End-Insert
+					Insert_section eu.li.chrysbasil.Section36.comyes End-Insert
+				End-Section
+			End-Section
+			
+		otherwise use:
+			Section Instance01 
+				Insert_section Instance02.block1 End-Insert
+				Section block1
+					Title role desig sid Eisodikon sid psa109.title End-Title
+					Media sid me.m12.d25_gr_GR_cog.meLI.EntranceHymn.text End-Media
+					Hymn sid psa109.v3b.text sid psa109.v4a.text sid psa109.v4b.text sid hoLI.Antiphon21.text media-off sid me.m12.d25_gr_GR_cog.meLI.Antiphon2.text media-off End-Hymn
+					Actor sid Choir End-Actor
+					Dialog sid hoLI.Antiphon22.text End-Dialog
+					Insert_section eu.li.chrysbasil.Section11.single End-Insert
+					Title role mixed <Tdesig>sid Apolytikion sid TisEortis</><Tmode>sid me.m12.d25_gr_GR_cog.meVE.Apolytikion1.mode</>End-Title
+					Hymn sid me.m12.d25_gr_GR_cog.meVE.Apolytikion1.text End-Hymn
+				End-Section
+				Insert_section Instance02.block3 End-Insert
+				Insert_section Lectionary_Epistle_Menaion End-Insert
+				Insert_section Lectionary_Gospel_Menaion.Alleluia End-Insert
+				when-name-of-day-is
+					Saturday use:
+						Section Gospel
+							Title role desig sid ToEvangelion End-Title
+							Title <inr>sid le.go.me.m12.dSatAC_gr_GR_cog.lemeLI.Gospel.title</> End-Title
+							Actor sid Deacon End-Actor
+							Dialog sid exc17 sid exc18 sid gos02 End-Dialog
+							Actor sid Priest End-Actor
+							Dialog sid pet31 End-Dialog
+							Dialog <i>sid res05p </>End-Dialog
+							Actor sid Deacon End-Actor
+							Dialog sid gos03a sid le.go.me.m12.dSatAC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog		
+							Actor sid Priest End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog <i> sid DoxaSoiKyrieP </>End-Dialog	
+							Actor sid Deacon End-Actor
+							Title role chapverse sid le.go.me.m12.dSatAC_gr_GR_cog.lemeLI.Gospel.chapverse End-Title
+							Reading sid le.go.me.m12.dSatAC_gr_GR_cog.lemeLI.Gospel.text <Trubric>sid le.go.me.m12.dSatAC_gr_GR_cog.lemeLI.Gospel.version</>End-Reading
+							Actor sid Priest End-Actor
+							Dialog sid euLI.Key0705.text End-Dialog
+							Actor sid Choir End-Actor						
+							Dialog sid DoxaSoiKyrie End-Dialog	
+						End-Section
+					otherwise use:	
+						Insert_section Lectionary_Gospel_Menaion.Lesson End-Insert
+				end-when		
+				Insert_section Instance02.block5 End-Insert
+				Section block2
+					Actor sid Choir End-Actor
+					Insert_section bk.ap.da.d5.communion_title End-Insert
+					Insert_section bk.ap.da.d5.communion_hymn End-Insert
+				End-Section
+				Insert_section Instance02.block6 End-Insert
+			
+			End-Section
+			
+	end-when
+End-Template
