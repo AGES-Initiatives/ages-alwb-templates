@@ -42,7 +42,7 @@ Status Draft
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
-	Insert_section Section01 End-Insert
+	Insert_section bk.consecration.vespers.Section01 End-Insert
 	Section Section02 //client option
 		Title role desig sid TouAgiou End-Title
 		Title role mixed <Tmode>sid meVE.Stichera01.mode</> <Tmelody>sid meVE.Stichera01.melody</> End-Title
@@ -57,8 +57,9 @@ Status Draft
 		Title role mixed sid KaiNyn <Tmode> sid euVE.Stichera04.mode </>End-Title
 		Hymn sid euVE.Stichera04.text End-Hymn
 	End-Section
-	Insert_section Section03 End-Insert
-	Insert_section Section04 End-Insert
+	Insert_section Vespers_03_entrance End-Insert
+	Insert_section bk.consecration.vespers.Section04 End-Insert
+	Insert_section bk.consecration.vespers.Section05 End-Insert
 	Section Section05 //client option
 		Title role desig sid Aposticha sid TouAgiou End-Title		
 		Title role mixed <Tmode>sid meVE.Aposticha1.mode</> <Tmelody>sid meVE.Aposticha1.melody</>End-Title
@@ -73,13 +74,45 @@ Status Draft
 		Title role desig sid TonEnkainion End-Title
 		Hymn sid euVE.AposGlory.text End-Hymn
 	End-Section
-	Insert_section Section06 End-Insert
+	Insert_section bk.consecration.vespers.Section07 End-Insert
 	Section Section07 //client option
 		Actor sid Choir End-Actor
 		Title role desig sid Apolytikion sid TouAgiou End-Title
 		Title role mixed <Tmode>sid meVE.Apolytikion1.mode</> <Tmelody>sid meVE.Apolytikion1.melody</> End-Title
 		Hymn sid meVE.Apolytikion1.text media-off End-Hymn
 	End-Section
-	Insert_section Section08 End-Insert
+	Section Section09
+		Title role mixed sid DoxaKaiNyn <Tdesig>sid TonEnkainion</> End-Title
+		Title role mode sid euVE.Apolytikion.mode End-Title
+		Hymn sid euVE.Apolytikion.text End-Hymn 
+		Section Vespers_Dismissal_AfterArto	
+			Actor sid Deacon End-Actor
+			Dialog sid pet00 End-Dialog
+			Dialog <i>sid res01p </>End-Dialog	
+			Actor sid Priest End-Actor
+			Dialog sid pet37 End-Dialog
+			Dialog <i>sid res04p</>End-Dialog
+			Actor sid Hierarch End-Actor
+			Dialog sid StereosaiKyrios.text End-Dialog
+			Actor sid Reader End-Actor
+			Dialog sid res04 End-Dialog
+			Dialog sid TinTimioteran.text End-Dialog
+			Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
+			Dialog sid res01 <r>sid Thrice</> End-Dialog
+			Dialog sid res13 End-Dialog
+		End-Section
+		Section comyes
+			Actor sid Priest End-Actor
+			Insert_section Dismissals.Com_Yes End-Insert
+			Actor sid Choir End-Actor
+			Hymn sid eu.lichrysbasil_gr_GR_cog.euLI.Key1706h.text End-Hymn
+			Actor sid Hierarch End-Actor
+			Dialog sid DiEfchonPateron.text End-Dialog
+			Dialog <i> sid res04p</> End-Dialog
+			Actor sid Clergy End-Actor
+			Dialog sid DiEfchonDespotou.text End-Dialog
+			Dialog <i> sid res04p</> End-Dialog
+		End-Section
+	End-Section
 
 End-Template
