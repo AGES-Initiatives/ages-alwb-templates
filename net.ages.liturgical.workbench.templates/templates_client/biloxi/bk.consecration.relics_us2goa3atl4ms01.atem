@@ -1,0 +1,88 @@
+Template bk.consecration.relics_us2goa3atl4ms01 
+
+	import client_gr_GR_cog.*
+	import eu.consecration_gr_GR_cog.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+	
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	//Imorted Templates
+	import ho.s01.*
+	
+	Head 
+		Set_Date month 11 day 14 year 2014 End_Date
+		Template_Title @text "Reception of the Holy Relics" End_Title
+//		Template_Commemoration "" End_Template_Commemoration
+		Page_Header_Even 
+			center @text "Reception of the Holy Relics" 
+			left @pageNbr 
+		End_Page_Header_Even
+		Page_Header_Odd 
+			center @date 
+			right @pageNbr 
+		End_Page_Header_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+
+	Title role desig sid euCON.Key1000.title End-Title
+	Rubric sid euCON.R100 End-Rubric
+	Actor sid Hierarch End-Actor
+	Title role desig sid euCON.Key1001.title End-Title
+	Para role prayer sid euCON.Key1001.text <i>sid res04p</>End-Para
+	Title role desig sid euCON.Key1002.title End-Title
+	Para role prayer sid euCON.Key1002.text <i>sid res04p</>End-Para
+	Rubric sid euCON.R101 End-Rubric
+	Actor sid Hierarch End-Actor
+	Dialog sid enarxis01  <i>sid res04p</> End-Dialog	
+	Actor sid People End-Actor
+	Insert_section Trisagion_Prayers End-Insert	
+	Actor sid Hierarch End-Actor
+	Dialog sid exc20  <i> sid res04p</>End-Dialog
+	Actor sid Choir End-Actor
+	Rubric sid euCON.R102 End-Rubric
+	
+	// hymns of saints of relics
+	Title role desig sid cl.relics.saint1.Apolytikion.title End-Title
+	Title role mixed <Tmode>sid cl.relics.saint1.Apolytikion.mode</> <Tmelody>sid cl.relics.saint1.Apolytikion.melody</> End-Title
+	Hymn sid cl.relics.saint1.Apolytikion.text End-Hymn
+
+	Title role desig sid cl.relics.saint2.Apolytikion.title End-Title
+	Title role mixed <Tmode>sid cl.relics.saint2.Apolytikion.mode</> <Tmelody>sid cl.relics.saint2.Apolytikion.melody</> End-Title
+	Hymn sid cl.relics.saint2.Apolytikion.text End-Hymn
+
+	Title role desig sid cl.relics.saint3.Apolytikion.title End-Title
+	Title role mixed <Tmode>sid cl.relics.saint3.Apolytikion.mode</> <Tmelody>sid cl.relics.saint3.Apolytikion.melody</> End-Title
+	Hymn sid cl.relics.saint3.Apolytikion.text End-Hymn
+	
+	//hymn of local church
+	Title role desig sid cl.Apolytikion1.title End-Title
+	Title role mixed <Tmode> sid cl.Apolytikion1.mode</> <Tmelody> sid cl.Apolytikion1.melody</>End-Title
+	Hymn sid cl.Apolytikion1.text End-Hymn
+
+	Title role mode sid euCON.Key1003.mode End-Title
+	Verse sid DoxaPatri.text End-Verse
+	Hymn sid euCON.Key1003.text End-Hymn
+	
+	Title role mode sid euCON.Key1004.mode End-Title
+	Verse sid KaiNynKaiAei.text End-Verse
+	Hymn sid euCON.Key1004.text End-Hymn
+	
+	Title role desig sid Apolysis End-Title
+	Actor sid Hierarch End-Actor
+	Dialog sid DoxaSoiChriste2 End-Dialog
+	Dialog sid dis00 sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08 sid cl.relics.saint1 sid cl.relics.saint2 sid cl.relics.saint3 sid dis09 sid dis10 sid dis89 End-Dialog 
+	Dialog sid DiEfchonPateron.text End-Dialog
+	Actor sid People End-Actor
+	Dialog sid res04 End-Dialog
+
+End-Template
