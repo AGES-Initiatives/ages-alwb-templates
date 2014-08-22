@@ -2,12 +2,13 @@ Template bk.wedding
 
 Status Review
 
+	import client_gr_GR_cog.*
 	import eu.wedding_gr_GR_cog.*
 	import eu.lichrysbasil_gr_GR_cog.*
-	import client_gr_GR_cog.*
-	import le.ep.va.wedding_gr_GR_cog.*
 	import le.go.va.wedding_gr_GR_cog.*
 	import ps_gr_GR_cog.*
+	
+	import bk.ap.va.*
 
 	import actors_gr_GR_cog.*
 	import misc_gr_GR_cog.*
@@ -24,8 +25,8 @@ Head
 End_Head
 
 	Title role desig sid euWED.title End-Title
-	Title <inr>sid euWED.translator1 </>End-Title
-	Title <inr>sid euWED.translator2 </>End-Title
+	Title sid euWED.translator1 End-Title
+	Title sid euWED.translator2 End-Title
 	Break line End_Break
 	Title role desig sid euWED.Key0100.title End-Title
 	Actor sid Priest End-Actor
@@ -153,25 +154,29 @@ End_Head
 
 	Title role desig sid TaAnagnosmata End-Title
 	Actor sid Reader End-Actor
-	Title role desig sid Prokeimenon sid levaWED.EpistleProkeimenon.mode End-Title
-	Reading sid levaWED.EpistleProkeimenon.text End-Reading
+	Insert_section Wedding.ep_title End-Insert
 	Actor sid Priest End-Actor
 	Dialog sid exc19 End-Dialog
 	Actor sid Reader End-Actor
-	Reading sid levaWED.EpistleProkeimenonVerse.text End-Reading
+	Insert_section Wedding.ep_prokeimenon End-Insert
+	Insert_section Wedding.ep_verse End-Insert
 	Actor sid Priest End-Actor
 	Dialog sid exc17 End-Dialog
 	Actor sid Reader End-Actor
-	Reading sid epi01a sid levaWED.Epistle.book sid epi01b End-Reading
+	Dialog sid epi01a sid le.ep.va.wedding_gr_GR_cog.levaWED.Epistle.book sid epi01b End-Dialog
 	Actor sid Priest End-Actor
 	Dialog sid exc19 End-Dialog
 	Actor sid Reader End-Actor
-	Title role chapverse sid levaWED.Epistle.chapverse End-Title
-	Reading sid levaWED.Epistle.text End-Reading
+	Insert_section Wedding.ep_lesson End-Insert
 	Actor sid Priest End-Actor
 	Dialog sid epi02 End-Dialog
 
 	Actor sid Choir End-Actor
+	Insert_section Wedding.al_title End-Insert
+	Hymn sid Allilouia3.text End-Hymn
+	Insert_section Wedding.al_verse1 End-Insert
+	Hymn sid Allilouia3.text End-Hymn
+	Insert_section Wedding.al_verse1 End-Insert
 	Hymn sid Allilouia3.text End-Hymn
 	
 	Actor sid Priest End-Actor
