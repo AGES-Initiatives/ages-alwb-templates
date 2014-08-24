@@ -1,0 +1,63 @@
+Template cu.MatinsOrdinary_Pascha
+	
+	import ho.s03_gr_GR_cog.*
+	import pe.d00P_gr_GR_cog.*
+	import actors_gr_GR_cog.*
+	//import misc_gr_GR_cog.*
+	//import titles_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	//import prayers_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	
+	import iTags.*
+	import bTags.*
+	import roles.*
+	import rules.*
+
+
+Head 
+	Template_Title @text "Matins Ordinary - Pascha" End_Title
+End_Head
+	
+	Section Part1
+		Title role desig sid hoMA.title End-Title
+		Break line End_Break
+		Actor sid Priest End-Actor
+		Dialog sid enarxis01 End-Dialog
+		Actor sid Choir End-Actor
+		Dialog sid res04 End-Dialog
+		Actor sid Priest End-Actor
+		Title role mode sid pePA.ChristIsRisen.mode End-Title
+		Hymn sid pePA.ChristIsRisen.text End-Hymn
+		Actor sid Choir End-Actor
+		Hymn sid pePA.ChristIsRisen.text <inr>sid Twice media-off </>End-Hymn
+	End-Section
+	
+	Section Part2		
+		Actor sid Reader End-Actor
+//		Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+		Reading sid PanagiaTrias.text End-Reading
+		Reading sid res06 End-Reading
+		Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+		Reading sid PaterImon.text End-Reading
+		Actor sid Priest End-Actor
+		Dialog sid exc20 End-Dialog
+		Actor sid Reader End-Actor
+		Dialog sid res04 End-Dialog
+		Reading sid me.m09.d14_gr_GR_cog.meVE.Apolytikion1.text End-Reading
+		Verse sid DoxaPatri.text End-Verse
+		Reading sid me.m09.d14_gr_GR_cog.meMA.Kontakion1.text End-Reading
+		Verse sid KaiNynKaiAei.text End-Verse
+		Reading sid hoMA.Troparion3.text End-Reading
+	End-Section
+	
+	Insert_section cu.MatinsOrdinary.Part3 End-Insert
+	Insert_section cu.MatinsOrdinary.Part4 End-Insert
+	Insert_section cu.MatinsOrdinary.Part5 End-Insert
+	
+	
+	
+	
+						
+End-Template
