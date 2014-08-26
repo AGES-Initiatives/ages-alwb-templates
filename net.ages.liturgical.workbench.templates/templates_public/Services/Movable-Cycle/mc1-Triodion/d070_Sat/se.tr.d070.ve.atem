@@ -9,11 +9,11 @@ Status Review
 	import ho.s07_gr_GR_cog.*
 	import ho.s10_gr_GR_cog.*
 	import le.pr.tr.d070_gr_GR_cog.*
-	import le.ep.mc.d070_gr_GR_cog.*
 	import le.go.mc.d070_gr_GR_cog.*
 	import tr.d070_gr_GR_cog.*
 
 	//Templates
+	import bk.ap.mc.p6.*
 	import VespersParts.*
 	import LectionaryReadings.*
 	import LentParts.*
@@ -108,30 +108,28 @@ Status Review
 		Actor sid Deacon End-Actor	
 		Dialog sid exc19 End-Dialog
 		Actor sid Reader End-Actor
-		Title role mixed <Tdesig>sid Prokeimenon</> <Tmode>sid lemcVE.EpistleProkeimenon.mode</> End-Title 
-		Reading sid lemcVE.EpistleProkeimenon.text End-Reading 
-		Verse <bnr>sid vVerse</> sid lemcVE.EpistleProkeimenonVerse.text End-Verse
+		Insert_section Day_HolyFriday.vespers.ep_title End-Insert
+		Insert_section Day_HolyFriday.vespers.ep_prokeimenon End-Insert
 		Actor sid Deacon End-Actor
 		Dialog sid exc17 End-Dialog
 		Actor sid Reader End-Actor
-		Dialog sid epi01a sid lemcVE.Epistle.book sid epi01b End-Dialog
+		Dialog sid epi01a sid le.ep.mc.d070_gr_GR_cog.lemcVE.Epistle.book sid epi01b End-Dialog
 		Actor sid Deacon End-Actor
 		Dialog sid exc19 End-Dialog
 		Actor sid Reader End-Actor
-		Title role chapverse sid lemcVE.Epistle.chapverse End-Title
-		Reading sid lemcVE.Epistle.text End-Reading
+		Insert_section Day_HolyFriday.vespers.ep_lesson End-Insert
 		Actor sid Priest End-Actor
 		Dialog sid epi02 End-Dialog		
 	End-Section
 	Section Lectionary_Gospel_Alleluia_3Verses 
 		Actor sid Choir End-Actor
-		Title role desig sid Allilouia sid lemcVE.GospelAlleluia.mode End-Title 
+		Insert_section Day_HolyFriday.vespers.al_title End-Insert
 		Media sid hoLI.GospelAlleluia.text End-Media
-		Verse <bnr>sid vVerse1</> sid lemcVE.GospelAlleluiaVerse1.text End-Verse 
+		Insert_section Day_HolyFriday.vespers.al_verse1 End-Insert
 		Hymn sid hoLI.GospelAlleluia.text  media-off End-Hymn
-		Verse <bnr>sid vVerse2</> sid lemcVE.GospelAlleluiaVerse2.text End-Verse 
+		Insert_section Day_HolyFriday.vespers.al_verse2 End-Insert
 		Hymn sid hoLI.GospelAlleluia.text  media-off End-Hymn
-		Verse <bnr>sid vVerse3</>sid lemcVE.GospelAlleluiaVerse3.text End-Verse
+		Insert_section Day_HolyFriday.vespers.al_verse3 End-Insert
 		Hymn sid hoLI.GospelAlleluia.text  media-off End-Hymn
 	End-Section //Alleluia
 	Section Lectionary_Gospel_Reading 
