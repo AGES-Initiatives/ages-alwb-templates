@@ -2,6 +2,18 @@ Template rid_EpistleLessons_Menaion
 
 Status Review
 
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
 /* 
  These sections compute the Epistle book and lesson for menaion commemorations.
  * The source is the book templates in Apostolos.
@@ -9,6 +21,319 @@ They are to be inserted in LectionaryReadings.atem (Lectionary_Epistle_Menaion),
 to replace the three lines calling the Reading parts using rids. 
 These new sections will select the right book and lesson based on the "when statement," 
 */
+
+	Section me_ep_designation
+		when-date-is
+			Jan 1 use: Title <inr>sid TisEortis</>End-Title
+			Jan 2 thru 5 use:
+				when-name-of-day-is 
+					Saturday use: Title <inr>sid EkTouMinaiou</>End-Title
+					Sunday use: Title <inr>sid EkTouMinaiou</>End-Title
+					otherwise use:
+						when-date-is
+							Jan 2 use: Title <inr>sid EkTouMinaiou</>End-Title
+							Jan 4 use: Title <inr>sid EkTouMinaiou</>End-Title
+						end-when
+				end-when	
+			Jan 6 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Jan 7 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Jan 8, 9, 10, 12, 13 use:
+				when-name-of-day-is
+					Saturday use: Title <inr>sid EkTouMinaiou</>End-Title
+					Sunday use: Title <inr>sid EkTouMinaiou</>End-Title
+					otherwise use:
+						when-date-is
+							Jan 9 use: Title <inr>sid EkTouMinaiou</>End-Title
+							Jan 10 use: Title <inr>sid EkTouMinaiou</>End-Title
+						end-when
+				end-when			
+			Jan 11 use: 
+				when-name-of-day-is
+					Saturday use: Title <inr>sid EkTouMinaiou</>End-Title
+					Sunday use: Title <inr>sid EkTouMinaiou</>End-Title
+					otherwise use: Title <inr>sid EkTouMinaiou</>End-Title
+				end-when
+			Jan 14 use:
+				when-name-of-day-is
+					Saturday use: Title <inr>sid EkTouMinaiou</>End-Title
+					Sunday use: Title <inr>sid EkTouMinaiou</>End-Title
+					otherwise use: Title <inr>sid EkTouMinaiou</>End-Title
+				end-when
+			Jan 15 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Jan 16 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Jan 17 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Jan 18 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Jan 19 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Jan 20 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Jan 21 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Jan 22 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Jan 23 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Jan 24 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Jan 25 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Jan 27 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Jan 28 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Jan 29 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Jan 30 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Jan 31 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Feb 1 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Feb 2 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Feb 3 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Feb 6 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Feb 8 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Feb 9 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Feb 10 use:	Title <inr>sid EkTouMinaiou</>End-Title
+			Feb 11 use:	Title <inr>sid EkTouMinaiou</>End-Title
+			Feb 15 use:	Title <inr>sid EkTouMinaiou</>End-Title
+			Feb 17 use:	Title <inr>sid EkTouMinaiou</>End-Title
+			Feb 23 use:	Title <inr>sid EkTouMinaiou</>End-Title
+			Feb 24 use:	Title <inr>sid EkTouMinaiou</>End-Title
+			Feb 26 use:	Title <inr>sid EkTouMinaiou</>End-Title
+			Mar 9 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Mar 25 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Mar 26 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Mar 30 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Apr 1 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Apr 10 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Apr 23 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Apr 25 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Apr 29 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Apr 30 use: Title <inr>sid EkTouMinaiou</>End-Title
+			May 1 use: Title <inr>sid EkTouMinaiou</>End-Title
+			May 2 use: Title <inr>sid EkTouMinaiou</>End-Title
+			May 7 use: Title <inr>sid EkTouMinaiou</>End-Title
+			May 8 use: Title <inr>sid EkTouMinaiou</>End-Title
+			May 9 use: Title <inr>sid EkTouMinaiou</>End-Title
+			May 10 use: Title <inr>sid EkTouMinaiou</>End-Title
+			May 11 use: Title <inr>sid EkTouMinaiou</>End-Title
+			May 15 use: Title <inr>sid EkTouMinaiou</>End-Title
+			May 20 use: Title <inr>sid EkTouMinaiou</>End-Title
+			May 21 use: Title <inr>sid EkTouMinaiou</>End-Title
+			May 24 use: Title <inr>sid EkTouMinaiou</>End-Title
+			May 25 use: Title <inr>sid EkTouMinaiou</>End-Title
+			May 26 use: Title <inr>sid EkTouMinaiou</>End-Title
+			May 29 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Jun 2 use:	Title <inr>sid EkTouMinaiou</>End-Title
+			Jun 4 use:	Title <inr>sid EkTouMinaiou</>End-Title
+			Jun 8 use:	Title <inr>sid EkTouMinaiou</>End-Title
+			Jun 9 use:	Title <inr>sid EkTouMinaiou</>End-Title
+			Jun 11 use:	Title <inr>sid EkTouMinaiou</>End-Title
+			Jun 12 use:	Title <inr>sid EkTouMinaiou</>End-Title
+			Jun 14 use:	Title <inr>sid EkTouMinaiou</>End-Title
+		//	Jun 14 use:	Title <inr>sid EkTouMinaiou</>End-Title
+			Jun 17 use:	Title <inr>sid EkTouMinaiou</>End-Title
+			Jun 19 use:	Title <inr>sid EkTouMinaiou</>End-Title
+			Jun 24 use:	Title <inr>sid EkTouMinaiou</>End-Title
+			Jun 25 use:	Title <inr>sid EkTouMinaiou</>End-Title
+			Jun 26 use:	Title <inr>sid EkTouMinaiou</>End-Title
+			Jun 27 use:	Title <inr>sid EkTouMinaiou</>End-Title
+			Jun 28 use:	Title <inr>sid EkTouMinaiou</>End-Title
+			Jun 29 use:	Title <inr>sid EkTouMinaiou</>End-Title
+			Jun 30 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Jul 1 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Jul 2 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Jul 4 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Jul 8 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Jul 9 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Jul 11 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Jul 13 thru 19 use:
+				when-name-of-day-is Sunday 
+					use: Title <inr>sid EkTouMinaiou</>End-Title
+					otherwise use:
+						when-date-is
+							Jul 13 use: Title <inr>sid EkTouMinaiou</>End-Title
+							Jul 14 use: Title <inr>sid EkTouMinaiou</>End-Title
+							Jul 15 use: Title <inr>sid EkTouMinaiou</>End-Title
+						end-when
+				end-when		
+			Jul 20 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Jul 21 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Jul 22 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Jul 24 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Jul 25 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Jul 26 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Jul 27 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Jul 28 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Jul 29 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Jul 31 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Aug 1 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Aug 2 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Aug 3 use: Title <inr>sid EkTouMinaiou</>End-Title
+		//	Aug 4 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Aug 6 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Aug 7 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Aug 9 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Aug 10 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Aug 11 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Aug 13 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Aug 15 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Aug 16 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Aug 18 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Aug 20 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Aug 25 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Aug 26 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Aug 27 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Aug 29 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Aug 31 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Sep 1 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Sep 2 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Sep 3 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Sep 4 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Sep 5 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Sep 6 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Sep 7 thru 13 use:
+				when-name-of-day-is 
+					Saturday use: Title <inr>sid EkTouMinaiou</>End-Title
+					Sunday use: Title <inr>sid EkTouMinaiou</>End-Title
+					otherwise use:
+						when-date-is
+							Sep 7 use: Title <inr>sid EkTouMinaiou</>End-Title
+							Sep 8 use: Title <inr>sid EkTouMinaiou</>End-Title
+							Sep 9 use: Title <inr>sid EkTouMinaiou</>End-Title
+							Sep 13 use: Title <inr>sid EkTouMinaiou</>End-Title
+						end-when
+				end-when		
+			Sep 14 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Sep 15 thru 21 use:
+				when-name-of-day-is
+					Saturday use: Title <inr>sid EkTouMinaiou</>End-Title
+					Sunday use: Title <inr>sid EkTouMinaiou</>End-Title
+					otherwise use:
+						when-date-is
+							Sep 15 use: Title <inr>sid EkTouMinaiou</>End-Title
+							Sep 16 use: Title <inr>sid EkTouMinaiou</>End-Title
+							Sep 20 use: Title <inr>sid EkTouMinaiou</>End-Title
+						end-when
+				end-when		
+			Sep 22 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Sep 23 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Sep 24 use: Title <inr>sid EkTouMinaiou</>End-Title
+		//	Sep 24 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Sep 26 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Sep 27 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Sep 28 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Sep 29 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Sep 30 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Oct 1 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Oct 2 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Oct 3 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Oct 6 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Oct 7 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Oct 8 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Oct 9 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Oct 10 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Oct 11 thru 17 use:
+				when-name-of-day-is 
+					Sunday use: Title <inr>sid EkTouMinaiou</>End-Title
+					otherwise use:
+						when-date-is
+							Oct 11 use: Title <inr>sid EkTouMinaiou</>End-Title
+							Oct 12 use: Title <inr>sid EkTouMinaiou</>End-Title
+							Oct 13 use: Title <inr>sid EkTouMinaiou</>End-Title
+							Oct 14 use: Title <inr>sid EkTouMinaiou</>End-Title
+							Oct 15 use: Title <inr>sid EkTouMinaiou</>End-Title
+							Oct 16 use: Title <inr>sid EkTouMinaiou</>End-Title
+							Oct 17 use: Title <inr>sid EkTouMinaiou</>End-Title
+						end-when
+				end-when		
+			Oct 18 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Oct 19 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Oct 20 use: Title <inr>sid EkTouMinaiou</>End-Title
+	//		Oct 20 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Oct 21 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Oct 22 use: Title <inr>sid EkTouMinaiou</>End-Title
+	//		Oct 22 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Oct 23 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Oct 24 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Oct 25 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Oct 26 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Oct 28 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Nov 1 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Nov 2 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Nov 3 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Nov 4 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Nov 5 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Nov 6 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Nov 7 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Nov 8 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Nov 9 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Nov 10 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Nov 11 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Nov 12 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Nov 13 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Nov 14 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Nov 15 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Nov 16 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Nov 17 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Nov 18 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Nov 20 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Nov 21 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Nov 22 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Nov 23 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Nov 24 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Nov 25 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Nov 26 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Nov 27 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Nov 28 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Nov 29 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Nov 30 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Dec 1 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Dec 2 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Dec 3 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Dec 4 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Dec 5 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Dec 6 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Dec 7 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Dec 8 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Dec 9 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Dec 10 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Dec 11, 13, 14, 16, 17 use:
+				when-name-of-day-is 
+					Sunday use: Title <inr>sid EkTouMinaiou</>End-Title
+					otherwise use:
+						when-date-is
+							Dec 11 use: Title <inr>sid EkTouMinaiou</>End-Title
+							Dec 13 use: Title <inr>sid EkTouMinaiou</>End-Title
+							Dec 14 use: Title <inr>sid EkTouMinaiou</>End-Title
+							Dec 16 use: Title <inr>sid EkTouMinaiou</>End-Title
+							Dec 17 use: Title <inr>sid EkTouMinaiou</>End-Title
+						end-when
+				end-when	
+			Dec 12 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Dec 15 use: Title <inr>sid EkTouMinaiou</>End-Title
+		//	Dec 17 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Dec 18 thru 24 use:
+				when-name-of-day-is 
+					Saturday use: Title <inr>sid EkTouMinaiou</>End-Title
+					Sunday use: Title <inr>sid EkTouMinaiou</>End-Title
+					otherwise use:
+						when-date-is
+							Dec 20 use: Title <inr>sid EkTouMinaiou</>End-Title
+							Dec 22 use: Title <inr>sid EkTouMinaiou</>End-Title
+						end-when
+				end-when	
+			Dec 25 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Dec 26 use: 
+				when-name-of-day-is 
+					Sunday use: Title <inr>sid EkTouMinaiou</>End-Title
+					Monday use: Title <inr>sid EkTouMinaiou</>End-Title
+					otherwise use: Title <inr>sid EkTouMinaiou</>End-Title
+				end-when
+			Dec 27 use: Title <inr>sid EkTouMinaiou</>End-Title
+			Dec 28, 29 use:
+				when-name-of-day-is
+					Saturday use: Title <inr>sid EkTouMinaiou</>End-Title
+					Sunday use: Title <inr>sid EkTouMinaiou</>End-Title
+					otherwise use:
+						when-date-is
+							Dec 29 use: Title <inr>sid EkTouMinaiou</>End-Title
+						end-when
+				end-when		
+			Dec 30 thru 31 use:
+				when-name-of-day-is Sunday
+					use: Title <inr>sid EkTouMinaiou</>End-Title
+				end-when
+		end-when
+	End-Section
 
 	Section me_ep_book
 		when-date-is
