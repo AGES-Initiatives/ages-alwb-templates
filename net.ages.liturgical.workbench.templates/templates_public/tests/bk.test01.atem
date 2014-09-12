@@ -1,7 +1,6 @@
-Template test01 
+Template bk.test01 
 
 	import client_gr_GR_cog.*
-	import eu.lichrysbasil_gr_GR_cog.*
 	import ho.s03_gr_GR_cog.*
 	import ho.s07_gr_GR_cog.*
 	import ho.s10_gr_GR_cog.*	
@@ -32,7 +31,26 @@ Template test01
 	import iTags.*
 	import bTags.*
 	import roles.*
+ 	Head 
+ 		Set_Date month 9 day 14 End_Date
+ 			Page_Header_Even
+ 				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+ 			End_Page_Header_Even
+ 			Page_Header_Odd
+ 				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+ 			End_Page_Header_Odd
+ 			Page_Footer_Even
+ 				center @pageNbr
+ 			End_Page_Footer_Even
+ 			Page_Footer_Odd
+ 				center @pageNbr
+ 			End_Page_Footer_Odd
+ 		Set_Page_Number 1 End_Set_Page_Number
+ 	End_Head
+ 
+	Insert_section Lectionary_Gospel_Menaion.Lesson End-Insert
 
-	Title sid pe.d076_gr_GR_cog.peVE.Aposticha3.melody End-Title
+
+//	Insert_section rid_GospelLessons_Menaion.me_go_book End-Insert
 
 End-Template
