@@ -1,0 +1,176 @@
+Template se.m01.d06.vl
+
+Status Review
+
+	import client_gr_GR_cog.*
+	import ho.s10_gr_GR_cog.*	
+	import me.m01.d06_gr_GR_cog.*
+	import ps_gr_GR_cog.*
+
+	import da.*
+
+	//Templates
+	import VespersParts.*
+	import LectionaryReadings.*
+	import Litanies.*
+	
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 1 day 6 year 2015 End_Date
+			Page_Header_Even
+				center @lookup sid vl.pdf.header rid daVE.OnTheEveningBefore lang L2 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid vl.pdf.header rid daVE.OnTheEveningBefore lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	when-name-of-day-is
+		Tuesday, Wednesday, Thursday, Friday, Saturday use:
+			Section Instance01
+				Section block1
+					Actor sid Priest End-Actor
+					Dialog sid enarxis02 End-Dialog
+					Insert_section VespersParts.Vespers_01.Part2 End-Insert
+					Insert_section VespersParts.Vespers_01.Part3 End-Insert
+				End-Section	
+				Section block2
+					Insert_section LIHC_Mode2 End-Insert
+					Title role mixed<Tmode>sid meVE.Stichera01.mode</><Tmelody>sid meVE.Stichera01.melody</>End-Title
+					Media sid meVE.Stichera01.text End-Media
+					Insert_section LIHC_Verse.v05 End-Insert
+					Hymn sid meVE.Stichera01.text media-off End-Hymn
+					Title role mixed<Tmode>sid meVE.Stichera01.mode</><Tmelody>sid meVE.Stichera01.melody</>End-Title
+					Insert_section LIHC_Verse.v06 End-Insert
+					Hymn sid meVE.Stichera01.text media-off End-Hymn
+					Title role mixed <Tmode>sid meVE.Stichera02.mode</><Tmelody>sid meVE.Stichera02.melody</>End-Title
+					Media sid meVE.Stichera02.text End-Media
+					Insert_section LIHC_Verse.v07 End-Insert
+					Hymn sid meVE.Stichera02.text media-off End-Hymn
+					Title role mixed <Tmode>sid meVE.Stichera02.mode</><Tmelody>sid meVE.Stichera02.melody</>End-Title
+					Insert_section LIHC_Verse.v08 End-Insert
+					Hymn sid meVE.Stichera02.text media-off End-Hymn
+					Title role mixed <Tmode>sid meVE.Stichera03.mode</><Tmelody>sid meVE.Stichera03.melody</>End-Title
+					Media sid meVE.Stichera03.text End-Media
+					Insert_section LIHC_Verse.v09 End-Insert
+					Hymn sid meVE.Stichera03.text media-off End-Hymn
+					Title role mixed <Tmode>sid meVE.Stichera04.mode</><Tmelody>sid meVE.Stichera04.melody</>End-Title
+					Media sid meVE.Stichera04.text End-Media
+					Insert_section LIHC_Verse.v10 End-Insert
+					Hymn sid meVE.Stichera04.text media-off End-Hymn
+					Title role mixed sid DoxaKaiNyn <Tmode>sid meVE.SticGlory.mode</>End-Title
+					Hymn sid meVE.SticGlory.text End-Hymn
+				End-Section
+				Section block3
+					Insert_section Vespers_03_entrance.Part1 End-Insert					
+				End-Section
+				Section block4
+					Actor sid Reader End-Actor
+					Dialog sid hoVE.Reading_Intro.text1 sid le.pr.me.r12_gr_GR_cog.leprVE.reading.book sid hoVE.Reading_Intro.text2 End-Dialog
+					Actor sid PriestOrDeacon End-Actor
+					Dialog sid exc17 sid exc19 End-Dialog
+					Actor sid Reader End-Actor
+					Title role chapverse sid le.pr.me.r12_gr_GR_cog.leprVE.reading.chapverse End-Title
+					Reading sid le.pr.me.r12_gr_GR_cog.leprVE.reading.text <inr>sid le.pr.me.r12_gr_GR_cog.leprVE.reading.version</>End-Reading
+				End-Section
+				Section block5
+					Actor sid Choir End-Actor
+					Title role mode sid meVE.ProphecyTroparion1.mode End-Title
+					Hymn sid meVE.ProphecyTroparion1.text End-Hymn
+					Verse<bninr>sid vVerse</> sid psa66.v2a.text sid psa66.v2balt.text End-Verse
+					Hymn sid meVE.ProphecyTroparion1Refrain.text End-Hymn
+					Verse<bninr>sid vVerse</> sid psa66.v3.text End-Verse
+					Hymn sid meVE.ProphecyTroparion1Refrain.text End-Hymn
+					Verse<bninr>sid vVerse</> sid psa66.v4.text sid psa66.v7a.text End-Verse
+					Hymn sid meVE.ProphecyTroparion1Refrain.text End-Hymn
+					Verse<bninr>sid vVerse</> sid psa66.v7b.text sid psa66.v8.text End-Verse
+					Hymn sid meVE.ProphecyTroparion1Refrain.text End-Hymn
+					Verse sid DoxaPatri.text sid KaiNynKaiAei.text End-Verse
+					Hymn sid meVE.ProphecyTroparion1.text media-off End-Hymn
+				End-Section
+				Section block6
+					Actor sid Reader End-Actor
+					Dialog sid hoVE.Reading_Intro.text1 sid le.pr.me.r16_gr_GR_cog.leprVE.reading.book sid hoVE.Reading_Intro.text2 End-Dialog
+					Actor sid PriestOrDeacon End-Actor
+					Dialog sid exc17 sid exc19 End-Dialog
+					Actor sid Reader End-Actor
+					Title role chapverse sid le.pr.me.r16_gr_GR_cog.leprVE.reading.chapverse End-Title
+					Reading sid le.pr.me.r16_gr_GR_cog.leprVE.reading.text <inr>sid le.pr.me.r16_gr_GR_cog.leprVE.reading.version</>End-Reading
+				End-Section
+				Section block7	
+					Actor sid Choir End-Actor
+					Title role mode sid meVE.ProphecyTroparion2.mode End-Title
+					Hymn sid meVE.ProphecyTroparion2.text End-Hymn
+					Verse<bninr>sid vVerse</> sid psa92.v1b.text sid psa92.v1c.text End-Verse
+					Hymn sid meVE.ProphecyTroparion2Refrain.text End-Hymn
+					Verse<bninr>sid vVerse</> sid psa92.v3.text End-Verse
+					Hymn sid meVE.ProphecyTroparion2Refrain.text End-Hymn
+					Verse<bninr>sid vVerse</> sid psa92.v4.text sid psa92.v5a.text End-Verse
+					Hymn sid meVE.ProphecyTroparion2Refrain.text End-Hymn
+					Verse<bninr>sid vVerse</> sid psa92.v5b.text End-Verse
+					Hymn sid meVE.ProphecyTroparion2Refrain.text End-Hymn
+					Verse sid DoxaPatri.text sid KaiNynKaiAei.text End-Verse
+					Hymn sid meVE.ProphecyTroparion2.text media-off End-Hymn
+				End-Section
+				Section block8
+					Actor sid Reader End-Actor
+					Dialog sid hoVE.Reading_Intro.text1 sid le.pr.me.r17_gr_GR_cog.leprVE.reading.book sid hoVE.Reading_Intro.text2 End-Dialog
+					Actor sid PriestOrDeacon End-Actor
+					Dialog sid exc17 sid exc19 End-Dialog
+					Actor sid Reader End-Actor
+					Title role chapverse sid le.pr.me.r17_gr_GR_cog.leprVE.reading.chapverse End-Title
+					Reading sid le.pr.me.r17_gr_GR_cog.leprVE.reading.text <inr>sid le.pr.me.r17_gr_GR_cog.leprVE.reading.version</>End-Reading
+				End-Section
+				Insert_section eu.li.chrysbasil.Section13.prayer End-Insert
+				Insert_section eu.li.chrysbasil.Section13.holygod End-Insert
+				Insert_section Lectionary_Epistle_Menaion_Vespers End-Insert
+				Insert_section Lectionary_Gospel_Menaion_Vespers.Alleluia End-Insert
+				Insert_section eu.li.chrysbasil.Section14 End-Insert
+				Insert_section Lectionary_Gospel_Menaion_Vespers.Lesson End-Insert
+				Rubric sid ContinueBasilLiturgy End-Rubric
+				Break line End_Break
+				Insert_section eu.li.chrysbasil.Section19 End-Insert
+				Insert_section eu.li.chrysbasil.Section20 End-Insert
+				Insert_section eu.li.chrysbasil.Section21.basil End-Insert
+				Insert_section eu.li.chrysbasil.Section22.basil End-Insert
+				Insert_section eu.li.chrysbasil.Section23.basil End-Insert
+				Insert_section eu.li.chrysbasil.Section24.basil End-Insert
+				Insert_section eu.li.chrysbasil.Section25.basil End-Insert
+				Insert_section eu.li.chrysbasil.Section26 End-Insert
+				Insert_section eu.li.chrysbasil.Section27 End-Insert
+				Insert_section eu.li.chrysbasil.Section28 End-Insert
+				Insert_section eu.li.chrysbasil.Section29 End-Insert
+				Insert_section eu.li.chrysbasil.Section30 End-Insert
+				Insert_section eu.li.chrysbasil.Section31 End-Insert
+				Insert_section eu.li.chrysbasil.Section32 End-Insert
+				Insert_section eu.li.chrysbasil.Section33 End-Insert
+				Insert_section eu.li.chrysbasil.Section34.basil End-Insert
+				Insert_section eu.li.chrysbasil.Section35.basil End-Insert
+				Insert_section eu.li.chrysbasil.Section36.comno End-Insert
+			End-Section
+
+	end-when		
+End-Template
