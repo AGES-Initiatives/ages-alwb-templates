@@ -3,6 +3,7 @@ Template se.m01.d07.ve
 Status Draft
 
 	import client_gr_GR_cog.*
+	import hi.s01_gr_GR_cog.*
 	import ho.s10_gr_GR_cog.*	
 	import me.m01.d07_gr_GR_cog.*
 
@@ -27,7 +28,7 @@ Status Draft
 	import roles.*
 
 	Head 
-		Set_Date month 1 day 7 End_Date
+		Set_Date month 1 day 7 year 2015 End_Date
 			Page_Header_Even
 				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore lang L2 
 			End_Page_Header_Even
@@ -51,12 +52,32 @@ Status Draft
 	when-name-of-day-is
 		Sunday use:
 			Section Instance02 //Sunday
+				Insert_section Vespers_01 End-Insert
+				Insert_section Vespers_02_Sunday.LIHC_Stichera_1234 End-Insert
+				Insert_section Instance01.block1 End-Insert
+				Insert_section Vespers_BothNowFirstTheotokion End-Insert
+				Insert_section Vespers_03_entrance End-Insert
+				Insert_section Vespers_05_Litanies End-Insert
+				Insert_section Vespers_07_ResrrectionalAposticha.Aposticha_1 End-Insert
+				Insert_section Vespers_07_ResrrectionalAposticha.Aposticha_234 End-Insert
+				Insert_section Instance01.block5 End-Insert
+				Insert_section Vespers_08.part1 End-Insert
+				Section block1
+					Title role mixed sid Doxa <Tdesig>sid TouProdromou</>End-Title
+					Title role mode sid meVE.Apolytikion1.mode End-Title
+					Hymn sid meVE.Apolytikion1.text End-Hymn
+					Title role mixed sid KaiNyn <Tdesig>sid TisEortis</>End-Title
+					Title role mixed <Tmode>sid me.m01.d06_gr_GR_cog.meVE.Apolytikion1.mode</>End-Title
+					Hymn sid me.m01.d06_gr_GR_cog.meVE.Apolytikion1.text End-Hymn
+				End-Section
+				Insert_section Vespers_09 End-Insert
+				Insert_section Vespers_10_ComYes End-Insert
 			End-Section
 		otherwise use:
 			Section Instance01 //Weekday
 				Insert_section VespersParts.Vespers_01 End-Insert
+				Insert_section LIHC_Mode2 End-Insert
 				Section block1
-					Insert_section LIHC_Mode2 End-Insert
 					Title role desig sid Stichira sid TisEortis End-Title
 					Title role mixed<Tdesig>sid Idiomelon</><Tmode>sid meVE.Stichera01.mode</>End-Title
 					Media sid meVE.Stichera01.text End-Media
@@ -88,10 +109,15 @@ Status Draft
 					Title role mixed sid KaiNyn <Tmode>sid meVE.SticBoth.mode</>End-Title
 					Hymn sid meVE.SticBoth.text End-Hymn
 				End-Section
-				Insert_section Vespers_03_entrance End-Insert
+				Insert_section Vespers_03_entrance.Part1 End-Insert
+				Section block3
+					Actor sid Deacon End-Actor
+					Dialog sid hiVE.Key0109.text End-Dialog
+					Actor sid Choir End-Actor
+				End-Section
 				Insert_section GreatProkeimenon2 End-Insert
 				Insert_section Vespers_05_Litanies End-Insert
-				Section block3
+				Section block4
 					Actor sid Choir End-Actor
 					Title role desig sid Aposticha End-Title		
 					Title role mixed<Tmode>sid meVE.Aposticha1.mode</><Tmelody>sid meVE.Aposticha1.melody</>End-Title
@@ -103,14 +129,14 @@ Status Draft
 					Insert_section PsalmVerses.forEpiphany.verse2 End-Insert
 					Hymn sid meVE.Aposticha3.text media-off End-Hymn
 				End-Section
-				Section block4
+				Section block5
 					Title role mixed sid Doxa <Tmode>sid meVE.AposGlory.mode</>End-Title
 					Hymn sid meVE.AposGlory.text End-Hymn
 					Title role mixed sid KaiNyn <Tmode>sid meVE.AposBoth.mode</>End-Title
 					Hymn sid meVE.AposBoth.text End-Hymn
 				End-Section
 				Insert_section Symeon_Trisagion End-Insert	
-				Section block5
+				Section block6
 					Actor sid Choir End-Actor
 					Title role mixed <Tdesig>sid Apolytikion</><Tmode>sid me.m01.d06_gr_GR_cog.meVE.Apolytikion1.mode</>End-Title
 					Hymn sid me.m01.d06_gr_GR_cog.meVE.Apolytikion1.text End-Hymn
@@ -121,7 +147,6 @@ Status Draft
 				End-Section
 				Insert_section Vespers_09 End-Insert
 				Insert_section Dismissals.Com_Yes End-Insert
-				
 			End-Section
 	end-when			
 End-Template
