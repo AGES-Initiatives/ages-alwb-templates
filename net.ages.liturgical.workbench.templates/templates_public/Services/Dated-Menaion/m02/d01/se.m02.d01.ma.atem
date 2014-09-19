@@ -1,0 +1,188 @@
+Template se.m02.d01.ma 
+
+Status Review
+
+	import client_gr_GR_cog.*
+	import ho.s03_gr_GR_cog.*
+	import me.m02.d01_gr_GR_cog.*
+
+	import da.*
+	import oc.*
+	import tr.*
+
+	//Templates
+	import MatinsParts.*
+	import kMeeting.*  //Katavasia
+	import LectionaryReadings.*
+	import Litanies.*
+	
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 2 day 1 year 2015 End_Date
+			Page_Header_Even
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ma End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	when-triodion-day-is
+		1, 8, 15, 22 use:
+			Section Instance03 //Triodion Sunday
+				Insert_section Instance02.block1 End-Insert
+				Insert_section ShortLitany02 End-Insert
+				Insert_section SunKathisma1_WhenSaint End-Insert
+				Insert_section SunKathisma2 End-Insert			
+				Insert_section ResurrectionalEvlogetaria End-Insert
+				Insert_section ShortLitany04 End-Insert	
+				Insert_section HypakoeAntiphonsProkeimenon End-Insert
+				Insert_section Sunday_Kontakion_Oikos_Synaxarion.part1 End-Insert
+				Section block1		
+					Title role desig sid KontakionTouTriodiou End-Title
+					Title role mixed <Tmode>rid trMA.Kontakion.mode</><Tmelody>rid trMA.Kontakion.melody </> End-Title
+					Reading rid trMA.Kontakion.text End-Reading
+					Title role desig sid OOikos End-Title
+					Reading rid trMA.Oikos.text End-Reading
+				End-Section
+				Insert_section Synaxarion.Synaxarion End-Insert
+				Insert_section Instance02.block2 End-Insert
+				Section block2
+					Insert_section SunHITLExaposteilarion_triodion.part1 End-Insert
+					Insert_section SunHITLExaposteilarion_triodion.part2 End-Insert
+					Insert_section Instance02.block3 End-Insert
+				End-Section
+				Section block3
+					Insert_section Lauds_ModeOfWeek End-Insert
+					Title role desig sid StichiraAnastasima End-Title
+					Media rid ocMA.Lauds1.text End-Media
+					Insert_section Lauds_Verse.v01 End-Insert
+					Hymn rid ocMA.Lauds1.text media-off End-Hymn
+					Media rid ocMA.Lauds2.text End-Media
+					Insert_section Lauds_Verse.v02 End-Insert
+					Hymn rid ocMA.Lauds2.text  media-off End-Hymn
+					Media rid ocMA.Lauds3.text End-Media
+					Insert_section Lauds_Verse.v03 End-Insert
+					Hymn rid ocMA.Lauds3.text  media-off End-Hymn
+				End-Section
+				Section block4
+					when-triodion-day-is
+						1 use: Insert_section se.tr.d001.ma.Instance02 End-Insert
+						8 use: Insert_section se.tr.d008.ma.Instance02 End-Insert
+						15 use: Insert_section se.tr.d015.ma.Instance02 End-Insert
+						22 use: Insert_section se.tr.d022.ma.Instance02 End-Insert
+					end-when
+				End-Section
+				Section block5
+					Title role desig sid Proeortia End-Title
+					Title role mixed <Tmode>sid meMA.Aposticha1.mode</><Tmelody>sid meMA.Aposticha1.melody</>End-Title
+					Media sid meMA.LaudsSundayVerse1.text End-Media
+					Insert_section Lauds_Verse.v06 End-Insert
+					Hymn sid meMA.Aposticha1.text media-off End-Hymn
+					Insert_section PsalmVerses.forMeeting.verse1 End-Insert
+					Hymn sid meMA.Aposticha2.text media-off End-Hymn
+					Insert_section PsalmVerses.forMeeting.verse2 End-Insert
+					Hymn sid meMA.Aposticha3.text media-off End-Hymn
+				End-Section
+				Section block6
+					Title role mixed sid Doxa <Tdesig>sid TouTriodiou</> End-Title
+					Title role mode rid trMA.LaudsGlory.mode End-Title
+					Hymn rid trMA.LaudsGlory.text End-Hymn
+				End-Section
+				Insert_section EothinonGloryBoth.part2 End-Insert
+			End-Section
+			
+		16 thru 19 use:
+			Section Instance05 //Cheese Mon-Thur
+			End-Section
+		20 use:
+			Section Instance06 //Cheese Friday
+			End-Section
+		21 use:
+			Section Instance07 //Cheese Friday
+			End-Section
+		otherwise use:
+			when-name-of-day-is
+				Sunday use:
+					Section Instance02 //Sunday
+						Section block1
+							Insert_section GITL.sunday End-Insert
+							Title role mixed sid Doxa <Tdesig>sid TouAgiou</> End-Title
+							Title role mixed <Tmode>sid meVE.Apolytikion1.mode</><Tmelody>sid meVE.Apolytikion1.melody</>End-Title
+							Hymn sid meVE.Apolytikion1.text End-Hymn
+							Title role mixed sid KaiNyn <Tdesig>sid Proeortion</>End-Title
+							Title role mixed <Tmode>sid meVE.Apolytikion2.mode</><Tmelody>sid meVE.Apolytikion2.melody</>End-Title
+							Hymn sid meVE.Apolytikion2.text End-Hymn
+						End-Section
+						Insert_section ShortLitany02 End-Insert
+						Insert_section SunKathisma1_WhenSaint End-Insert
+						Insert_section SunKathisma2 End-Insert			
+						Insert_section ResurrectionalEvlogetaria End-Insert
+						Insert_section ShortLitany04 End-Insert	
+						Insert_section HypakoeAntiphonsProkeimenon End-Insert
+						Insert_section Sunday_Kontakion_Oikos_Synaxarion End-Insert			
+						Section block2
+							Actor sid Choir End-Actor
+							Insert_section k_1345678 End-Insert
+							Insert_section MatinsGospel_Intro End-Insert
+							Insert_section MatinsGospel_EothinaP End-Insert
+							Insert_section Supplication_deacon End-Insert
+							Insert_section Ode9_Intro End-Insert
+							Insert_section k_mode_mag_media End-Insert
+							Insert_section k_9 End-Insert
+							Insert_section ShortLitany10 End-Insert	
+						End-Section
+						Insert_section SunHITLExaposteilarion_menaion.part1 End-Insert
+						Section block3
+							Title role desig sid TouAgiou End-Title
+							Title role mixed <Tmode>sid meMA.Exaposteilarion1.mode</><Tmelody>sid meMA.Exaposteilarion1.melody</>End-Title
+							Hymn sid meMA.Exaposteilarion1.text End-Hymn
+							Title role desig sid Proeortion sid Omoion End-Title
+							Hymn sid meMA.Exaposteilarion2.text End-Hymn
+						End-Section
+						Insert_section SunLaudsRes1234 End-Insert		
+						Section block4
+							Title role desig sid Proeortia End-Title
+							Title role mixed <Tmode>sid meMA.Aposticha1.mode</><Tmelody>sid meMA.Aposticha1.melody</>End-Title
+							Media sid meMA.LaudsSundayVerse1.text End-Media
+							Insert_section Lauds_Verse.v05 End-Insert
+							Hymn sid meMA.Aposticha1.text media-off  End-Hymn
+							Insert_section Lauds_Verse.v06 End-Insert
+							Hymn sid meMA.Aposticha1.text media-off End-Hymn
+							Insert_section PsalmVerses.forMeeting.verse1 End-Insert
+							Hymn sid meMA.Aposticha2.text media-off End-Hymn
+							Insert_section PsalmVerses.forMeeting.verse2 End-Insert
+							Hymn sid meMA.Aposticha3.text media-off End-Hymn
+						End-Section
+						Insert_section EothinonGloryBoth End-Insert			
+					End-Section
+				otherwise use:
+					Section Instance01 //Weekday
+					End-Section				
+			end-when
+	end-when
+
+End-Template

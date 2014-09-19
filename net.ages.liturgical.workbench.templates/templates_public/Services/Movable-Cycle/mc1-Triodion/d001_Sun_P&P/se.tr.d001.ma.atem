@@ -1,11 +1,9 @@
 Template se.tr.d001.ma 
 
-Status Review
+Status Final
 
 	import client_gr_GR_cog.*
 	import ho.s03_gr_GR_cog.*
-	import ho.s07_gr_GR_cog.*
-	import ho.s10_gr_GR_cog.*	
 	import tr.d001_gr_GR_cog.*
 
 	import da.*
@@ -28,6 +26,28 @@ Status Review
 	import iTags.*
 	import bTags.*
 	import roles.*
+	
+		Head 
+//			Set_Date month  day  End_Date
+				Page_Header_Even
+					center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+				End_Page_Header_Even
+				Page_Header_Odd
+					center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+				End_Page_Header_Odd
+				Page_Footer_Even
+					center @pageNbr
+				End_Page_Footer_Even
+				Page_Footer_Odd
+					center @pageNbr
+				End_Page_Footer_Odd
+			Set_Page_Number 1 End_Set_Page_Number
+		End_Head
+	
+		Preface Covers
+			Insert_template ematins.cover.ma End-Insert
+			Insert_template ematins.credits End-Insert
+		End-Preface
 
 	Section Instance01
 		Insert_section SunGITL_NoSaint End-Insert
@@ -63,11 +83,7 @@ Status Review
 		Insert_section k_9 End-Insert
 		Insert_section ShortLitany10 End-Insert	
 		
-		Insert_section SunHITLExaposteilarion_menaion.part1 End-Insert
-		Title role desig sid TouTriodiou sid Omoion End-Title
-		Hymn sid trMA.Exaposteilarion1.text End-Hymn
-		Title role desig sid Theotokion sid Omoion End-Title
-		Hymn sid trMA.ExapTheotokion.text End-Hymn
+		Insert_section SunHITLExaposteilarion_triodion End-Insert
 		Insert_section SunLaudsRes1234 End-Insert
 		
 			Title role desig sid TouTriodiou End-Title

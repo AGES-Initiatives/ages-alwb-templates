@@ -764,6 +764,30 @@ End-Section
 			Hymn sid meMA.Exaposteilarion1.text End-Hymn
 	End-Section
 
+	Section SunHITLExaposteilarion_triodion
+		Section part1
+			Insert_section SunHITL End-Insert
+			Title role desig rid eo.title End-Title
+			Title role mixed<Tmode>rid eo.Exaposteilarion.mode</><Tmelody>rid eo.Exaposteilarion.melody</> End-Title
+			Hymn rid eo.Exaposteilarion.text End-Hymn
+		End-Section
+		Section part2
+			Title role desig sid TouTriodiou End-Title
+			Title role mixed<Tmode>rid trMA.Exaposteilarion1.mode</><Tmelody>rid trMA.Exaposteilarion1.melody</> End-Title
+			Hymn rid trMA.Exaposteilarion1.text End-Hymn
+			when-exists rid trMA.Exaposteilarion2.text use:
+				Title role mixed<Tmode>rid trMA.Exaposteilarion2.mode</><Tmelody>rid trMA.Exaposteilarion2.melody</> End-Title
+				Hymn rid trMA.Exaposteilarion2.text End-Hymn
+			end-when
+		End-Section
+		Section part3
+			when-exists rid trMA.ExapTheotokion.text use:
+				Title role desig sid Theotokion End-Title
+				Hymn rid trMA.ExapTheotokion.text End-Hymn
+			end-when
+		End-Section
+	End-Section
+	
 	Section MeExaposteilarion
 		when-name-of-day-is Sunday use:
 			Title role desig sid EkTouMinaiou End-Title
