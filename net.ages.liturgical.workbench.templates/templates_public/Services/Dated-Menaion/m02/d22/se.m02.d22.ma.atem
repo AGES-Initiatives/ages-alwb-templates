@@ -1,0 +1,73 @@
+Template se.m02.d22.ma 
+
+Status Review
+
+	import client_gr_GR_cog.*
+	import ho.s03_gr_GR_cog.*
+	import me.m02.d22_gr_GR_cog.*
+
+	import da.*
+	import oc.*
+	import tr.*
+
+	//Templates
+	import MatinsParts.*
+	import kTheotokos.*  //Katavasia
+	import LectionaryReadings.*
+	import Litanies.*
+	
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 2 day 22 year 2015 End_Date
+			Page_Header_Even
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ma End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	when-triodion-day-is
+		1 use: Insert_section se.tr.d001.ma.Instance01 End-Insert
+		8 use: Insert_section se.tr.d008.ma.Instance01 End-Insert
+		14 use: Insert_section se.tr.d014.ma.Instance01 End-Insert
+		15 use: Insert_section se.tr.d015.ma.Instance01 End-Insert
+		16 thru 20 use: //Cheese week
+		21 use: Insert_section se.tr.d021.ma.Instance01 End-Insert
+		22 use: Insert_section se.tr.d022.ma.Instance01 End-Insert
+		23 thru 27 use: //Lent week 1
+		28 use: Insert_section se.tr.d028.ma.Instance01 End-Insert
+		29 use: Insert_section se.tr.d029.ma.Instance01 End-Insert //Lent1
+		otherwise use:
+			when-name-of-day-is
+				Sunday use:
+				
+				otherwise use:
+				
+			end-when
+	end-when			
+
+End-Template
