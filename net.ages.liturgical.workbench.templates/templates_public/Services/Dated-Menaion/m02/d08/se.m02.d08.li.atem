@@ -1,0 +1,70 @@
+Template se.m02.d08.li 
+
+Status Review
+
+	import client_gr_GR_cog.*
+	import ho.s07_gr_GR_cog.*
+	import me.m02.d08_gr_GR_cog.*
+
+	import da.*
+	import oc.*
+	import tr.*
+
+	//Templates
+	import LectionaryReadings.*
+	import Litanies.*
+	
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 2 day 8 year 2015 End_Date
+			Page_Header_Even
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	when-triodion-day-is
+		1 use: Insert_section se.tr.d001.li.Instance01 End-Insert
+		8 use: Insert_section se.tr.d008.li.Instance01 End-Insert
+		13, 17 use: //leavetaking of Meeting
+		14 use:	Insert_section se.tr.d014.li.Instance01 End-Insert
+		15 use: Insert_section se.tr.d015.li.Instance01 End-Insert
+		16, 19 use:
+		18, 20 use:
+		21 use:
+		22 use: Insert_section se.tr.d022.li.Instance01 End-Insert
+		23 thru 26 use: 
+		27 use: 
+		28 use: Insert_section se.tr.d028.li.Instance01 End-Insert
+		otherwise use:
+			when-name-of-day-is
+				Sunday use:
+					Section Instance02 //Sunday
+					End-Section
+				otherwise use:
+					Section Instance01 //Weekday
+					End-Section				
+			end-when
+	end-when
+
+End-Template

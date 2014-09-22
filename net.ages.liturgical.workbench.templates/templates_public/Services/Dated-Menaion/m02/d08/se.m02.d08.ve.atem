@@ -1,0 +1,131 @@
+Template se.m02.d08.ve 
+
+Status Review
+
+	import client_gr_GR_cog.*
+	import ho.s10_gr_GR_cog.*	
+	import me.m02.d08_gr_GR_cog.*
+
+	import da.*
+	import oc.*
+	import tr.*
+
+	//Templates
+	import VespersParts.*
+	import Litanies.*
+	
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 2 day 8 year 2015 End_Date
+			Page_Header_Even
+				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore lang L2 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	when-triodion-day-is
+		1 use: Insert_section se.tr.d001.ve.Instance01 End-Insert
+		8 use: Insert_section se.tr.d008.ve.Instance01 End-Insert
+		13, 17 use: //leavetaking of Meeting
+		14 use:	Insert_section se.tr.d014.ve.Instance01 End-Insert
+		15 use: Insert_section se.tr.d015.ve.Instance01 End-Insert
+		16, 19 use:
+		18, 20 use:
+		21 use:
+		22 use: Insert_section se.tr.d022.ve.Instance01 End-Insert
+		23 thru 26 use: 
+		27 use: 
+		28 use: Insert_section se.tr.d028.ve.Instance01 End-Insert
+		otherwise use:
+			when-name-of-day-is
+				Sunday use:
+					Section Instance02 //Sunday
+						Insert_section Vespers_01 End-Insert
+						Insert_section Vespers_02_Sunday.LIHC_Stichera_1234 End-Insert
+						Section block1
+							Title role desig sid TisEortis End-Title
+							Title role mixed <Tmode>sid meVE.Stichera01.mode</><Tmelody>sid meVE.Stichera01.melody</>End-Title
+							Media sid me.m02.d02_gr_GR_cog.meVE.Stichera567.text End-Media
+							Insert_section LIHC_Verse.v05 End-Insert
+							Hymn sid me.m02.d02_gr_GR_cog.meVE.Stichera01.text media-off End-Hymn
+							Insert_section LIHC_Verse.v06 End-Insert
+							Hymn sid me.m02.d02_gr_GR_cog.meVE.Stichera02.text media-off End-Hymn
+							Insert_section LIHC_Verse.v07 End-Insert
+							Hymn sid me.m02.d02_gr_GR_cog.meVE.Stichera03.text media-off End-Hymn
+						End-Section
+						Section block2
+							Title role desig sid TouAgiou End-Title
+							Rubric sid cl.se.R001 End-Rubric
+							Title role mixed <Tmode>sid meVE.Stichera01.mode</><Tmelody>sid meVE.Stichera01.melody</>End-Title
+							Media sid meVE.Stichera01.text End-Media
+							Insert_section LIHC_Verse.v08 End-Insert
+							Hymn sid meVE.Stichera01.text media-off End-Hymn
+							Media sid meVE.Stichera05.text End-Media
+							Insert_section LIHC_Verse.v09 End-Insert
+							Hymn sid meVE.Stichera02.text media-off End-Hymn
+							Media sid meVE.Stichera06.text End-Media
+							Insert_section LIHC_Verse.v10 End-Insert
+							Hymn sid meVE.Stichera03.text media-off End-Hymn
+						End-Section
+						Section block3
+							Title role mixed sid Doxa <Tdesig>sid TouAgiou</>End-Title
+							Title role mode sid meVE.SticGlory.mode End-Title
+							Hymn sid meVE.SticGlory.text End-Hymn
+						End-Section
+						Insert_section Vespers_BothNowFirstTheotokion End-Insert
+						Insert_section Vespers_03_entrance End-Insert	
+						Insert_section Vespers_05_Litanies End-Insert
+						Insert_section Vespers_07_ResrrectionalAposticha.Aposticha_1 End-Insert	
+						Insert_section Vespers_07_ResrrectionalAposticha.Aposticha_234 End-Insert	
+						Section block4
+							Title role mixed sid Doxa <Tdesig>sid TouAgiou</>End-Title
+							Title role mode sid meVE.AposGlory.mode End-Title
+							Hymn sid meVE.AposGlory.text End-Hymn
+							Title role mixed sid KaiNyn <Tdesig>sid TisEortis</>End-Title
+							Title role mode sid meVE.SticBoth.mode End-Title
+							Hymn sid meVE.SticBoth.text End-Hymn
+						End-Section
+						Insert_section Vespers_08.part1 End-Insert	
+						Section block6
+							Title role mixed sid Doxa <Tdesig>sid TouAgiou</> End-Title
+							Title role mixed <Tmode>sid meVE.Apolytikion1.mode</><Tmelody>sid meVE.Apolytikion1.melody</>End-Title
+							Hymn sid meVE.Apolytikion1.text End-Hymn
+							Title role mixed sid KaiNyn <Tdesig>sid TisEortis</>End-Title
+							Title role mode sid me.m02.d02_gr_GR_cog.meVE.Apolytikion1.mode End-Title
+							Hymn sid me.m02.d02_gr_GR_cog.meVE.Apolytikion1.text End-Hymn
+						End-Section
+						Insert_section Vespers_09 End-Insert
+						Insert_section Vespers_10_ComYes End-Insert
+					End-Section
+				otherwise use:
+					Section Instance01 //Weekday
+					End-Section				
+			end-when
+	end-when
+
+End-Template

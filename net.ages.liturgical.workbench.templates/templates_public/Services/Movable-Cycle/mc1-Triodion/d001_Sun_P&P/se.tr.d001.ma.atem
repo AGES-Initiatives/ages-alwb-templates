@@ -57,35 +57,62 @@ Status Final
 		Insert_section ResurrectionalEvlogetaria End-Insert
 		Insert_section ShortLitany04 End-Insert	
 		Insert_section HypakoeAntiphonsProkeimenon End-Insert
-		
-		Actor sid Reader End-Actor
-		Title role desig sid KontakionAnastasimon End-Title
-		Reading rid ocMA.Kontakion.text End-Reading
-		Title role desig sid OOikos End-Title
-		Reading rid ocMA.Oikos.text End-Reading 
-		Title role desig sid KontakionTouTriodiou End-Title
-		Title role mixed <Tmode>sid trMA.Kontakion0.mode</><Tmelody>sid trMA.Kontakion0.melody </> End-Title
-		Reading sid trMA.Kontakion0.text End-Reading
-		Title role desig sid Eteron End-Title
-		Title role mixed <Tmode>sid trMA.Kontakion.mode</><Tmelody>sid trMA.Kontakion.melody </> End-Title
-		Reading sid trMA.Kontakion.text End-Reading
-		Title role desig sid OOikos End-Title
-		Reading sid trMA.Oikos.text End-Reading 
-		
+		Section block1
+			Actor sid Reader End-Actor
+			Title role desig sid KontakionAnastasimon End-Title
+			Reading rid ocMA.Kontakion.text End-Reading
+			Title role desig sid OOikos End-Title
+			Reading rid ocMA.Oikos.text End-Reading 
+			Title role desig sid KontakionTouTriodiou End-Title
+			Title role mixed <Tmode>sid trMA.Kontakion0.mode</><Tmelody>sid trMA.Kontakion0.melody </> End-Title
+			Reading sid trMA.Kontakion0.text End-Reading
+			Title role desig sid Eteron End-Title
+			Title role mixed <Tmode>sid trMA.Kontakion.mode</><Tmelody>sid trMA.Kontakion.melody </> End-Title
+			Reading sid trMA.Kontakion.text End-Reading
+			Title role desig sid OOikos End-Title
+			Reading sid trMA.Oikos.text End-Reading 
+		End-Section
 		Insert_section Synaxarion.Synaxarion End-Insert
-		Actor sid Choir End-Actor
-		Insert_section k_1345678 End-Insert
+		Section block2
+			Actor sid Choir End-Actor
+			when-date-is
+				Jan 11 thru 14 use: Insert_section kEpiphany.k2_1345678 End-Insert
+				Jan 15 thru 31 use: Insert_section kMeeting.k_1345678 End-Insert
+				Feb 1 thru 9 use: Insert_section kMeeting.k_1345678 End-Insert
+				otherwise use: Insert_section kTriodion14.k_1345678 End-Insert
+			end-when	
+		End-Section
 		Insert_section MatinsGospel_Intro End-Insert
 		Insert_section MatinsGospel_Eothina End-Insert
 		Insert_section Supplication_deacon End-Insert
 		Insert_section Ode9_Intro End-Insert
-		Insert_section k_mode_mag_media End-Insert
-		Insert_section k_9 End-Insert
+		Section block3
+			when-date-is
+				Jan 11 thru 14 use:
+					Title role mixed <Tdesig>sid Megalynarion</><Tmode>sid Mode2</> End-Title
+					Media sid oc.m2.d1_gr_GR_cog.ocMA.Magnificat.text End-Media
+				Jan 15 thru 31 use:
+					Title role mixed <Tdesig>sid Megalynarion</><Tmode>sid Mode3</> End-Title
+					Media sid oc.m3.d1_gr_GR_cog.ocMA.Magnificat.text End-Media
+				Feb 1 thru 9 use:
+					Title role mixed <Tdesig>sid Megalynarion</><Tmode>sid Mode3</> End-Title
+					Media sid oc.m3.d1_gr_GR_cog.ocMA.Magnificat.text End-Media
+				otherwise use:
+					Title role mixed <Tdesig>sid Megalynarion</><Tmode>sid Mode6</> End-Title
+					Media sid oc.m6.d1_gr_GR_cog.ocMA.Magnificat.text End-Media
+			end-when	
+			Insert_section MatinsParts.Magnificat.Part2_Verse123456 End-Insert
+			when-date-is
+				Jan 11 thru 14 use: Insert_section kEpiphany.k2_9 End-Insert
+				Jan 15 thru 31 use: Insert_section kMeeting.k_9 End-Insert
+				Feb 1 thru 9 use: Insert_section kMeeting.k_9 End-Insert
+				otherwise use: Insert_section kTriodion14.k_9 End-Insert
+			end-when
+		End-Section	
 		Insert_section ShortLitany10 End-Insert	
-		
 		Insert_section SunHITLExaposteilarion_triodion End-Insert
 		Insert_section SunLaudsRes1234 End-Insert
-		
+		Section block4
 			Title role desig sid TouTriodiou End-Title
 			Title role mixed <Tdesig>sid Idiomelon</><Tmode>sid trMA.Lauds1.mode</>End-Title
 			Media sid trMA.Lauds1.text End-Media
@@ -103,11 +130,12 @@ Status Final
 			Media sid trMA.Lauds4.text End-Media
 			Insert_section Lauds_Verse.v08 End-Insert
 			Hymn sid trMA.Lauds4.text End-Hymn
-		
+		End-Section
+		Section block5
 			Title role mixed sid Doxa <Tdesig>sid TouTriodiou</> End-Title
 			Title role mode sid trMA.LaudsGlory.mode End-Title
 			Hymn sid trMA.LaudsGlory.text End-Hymn
-		
+		End-Section
 		Insert_section EothinonGloryBoth.part2 End-Insert
 	End-Section
 
