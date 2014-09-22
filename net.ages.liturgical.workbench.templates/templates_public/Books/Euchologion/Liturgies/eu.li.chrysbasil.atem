@@ -6,8 +6,10 @@ Status Review
 	import eu.lichrysbasil_gr_GR_cog.*
 	import ho.s07_gr_GR_cog.* // antiphon refrains
 	import ho.s21_gr_GR_cog.* //for pre-communion prayers
-
+	import ps_gr_GR_cog.*
+	
 	import me.*
+	import oc.*
 	import pe.*
 	import tr.*
 
@@ -85,6 +87,12 @@ Status Review
 			Title role mode sid Mode2 End-Title
 			Insert_section Antiphon2.saint End-Insert
 		End-Section
+		Section weekday
+			Actor sid Choir End-Actor
+			Title role desig sid Antifonon2 End-Title
+			Title role mode sid Mode2 End-Title
+			Insert_section Antiphon2.weekday End-Insert
+		End-Section
 	End-Section
 
 	Section Section06
@@ -101,7 +109,19 @@ Status Review
 		Section sunday //antiphon 3 sunday
 			Actor sid Choir End-Actor
 			Title role desig sid Antifonon3 End-Title
-			Insert_section Antiphon3.sunday End-Insert
+			Title role mode rid ocVE.Apolytikion.mode @day D1 End-Title
+			Section v01
+				Verse <bnr>sid vVerse1</> sid psa117.v24.text End-Verse
+			End-Section
+			Section hymn
+				Title role desig sid ApolytikionAnastasimon End-Title
+				Title role mixed <Tmode>rid ocVE.Apolytikion.mode @day D1</><Tmelody>rid ocVE.Apolytikion.melody @day D1</>End-Title
+				Hymn rid ocVE.Apolytikion.text @day D1 End-Hymn
+			End-Section
+			Section v02
+				Verse <bnr>sid vVerse2</> sid psa68.v35.text End-Verse
+			End-Section
+			Hymn rid ocVE.Apolytikion.text media-off @day D1 End-Hymn
 		End-Section
 		Section weekday //antiphon 3 sunday
 			Actor sid Choir End-Actor
