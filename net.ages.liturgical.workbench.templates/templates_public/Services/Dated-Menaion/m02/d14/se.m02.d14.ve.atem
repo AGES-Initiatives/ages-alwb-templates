@@ -1,18 +1,17 @@
-Template se.m02.d15.ma 
+Template se.m02.d14.ve 
 
 Status Review
 
 	import client_gr_GR_cog.*
-	import ho.s03_gr_GR_cog.*
-	import me.m02.d15_gr_GR_cog.*
+	import ho.s10_gr_GR_cog.*	
+	import me.m02.d14_gr_GR_cog.*
 
 	import da.*
 	import oc.*
 	import tr.*
 
 	//Templates
-	import MatinsParts.*
-	import kTheotokos.*  //Katavasia
+	import VespersParts.*
 	import LectionaryReadings.*
 	import Litanies.*
 	
@@ -29,12 +28,12 @@ Status Review
 	import roles.*
 
 	Head 
-		Set_Date month 2 day 15 year 2015 End_Date
+		Set_Date month 2 day 14 year 2015 End_Date
 			Page_Header_Even
-				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore lang L2 
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore lang L2
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -46,21 +45,20 @@ Status Review
 	End_Head
 
 	Preface Covers
-		Insert_template ematins.cover.ma End-Insert
+		Insert_template ematins.cover.ve End-Insert
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
 	when-triodion-day-is
-		1 use: Insert_section se.tr.d001.ma.Instance01 End-Insert
-		8 use: Insert_section se.tr.d008.ma.Instance01 End-Insert
-		14 use: Insert_section se.tr.d014.ma.Instance01 End-Insert
-		15 use: Insert_section se.tr.d015.ma.Instance01 End-Insert
+		1 use: Insert_section se.tr.d001.ve.Instance01 End-Insert
+		8 use: Insert_section se.tr.d008.ve.Instance01 End-Insert
+		14 use: Insert_section se.tr.d014.ve.Instance01 End-Insert
+		15 use: Insert_section se.tr.d015.ve.Instance01 End-Insert
 		16 thru 20 use: //Cheese week
-		21 use: Insert_section se.tr.d021.ma.Instance01 End-Insert
-		22 use: Insert_section se.tr.d022.ma.Instance01 End-Insert
+		21 use: Insert_section se.tr.d021.ve.Instance01 End-Insert //SoS
+		22 use: Insert_section se.tr.d022.ve.Instance01 End-Insert //Cheese
 		23 thru 27 use: //Lent week 1
-		28 use: Insert_section se.tr.d028.ma.Instance01 End-Insert
-		29 use: Insert_section se.tr.d029.ma.Instance01 End-Insert //Lent1
+		28 use: Insert_section se.tr.d028.ve.Instance01 End-Insert //Sat1
 		otherwise use:
 			when-name-of-day-is
 				Sunday use:
