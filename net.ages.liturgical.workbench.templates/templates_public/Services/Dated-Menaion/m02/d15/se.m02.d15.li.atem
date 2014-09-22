@@ -43,24 +43,10 @@ Status Review
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
-	when-triodion-day-is
-		1 use: Insert_section se.tr.d001.li.Instance01 End-Insert
-		8 use: Insert_section se.tr.d008.li.Instance01 End-Insert
-		14 use: Insert_section se.tr.d014.li.Instance01 End-Insert
-		15 use: Insert_section se.tr.d015.li.Instance01 End-Insert
-		16 thru 20 use: //Cheese week
-		21 use: Insert_section se.tr.d021.li.Instance01 End-Insert
-		22 use: Insert_section se.tr.d022.li.Instance01 End-Insert
-		23 thru 27 use: //Lent week 1
-		28 use: Insert_section se.tr.d028.li.Instance01 End-Insert
-		29 use: Insert_section se.tr.d029.li.Instance01 End-Insert //Lent1
+	when-movable-cycle-day-is 1 thru 127 use:
+		Insert_template mc.map.li End-Insert
 		otherwise use:
-			when-name-of-day-is
-				Sunday use:
-				
-				otherwise use:
-				
-			end-when
-	end-when			
+		
+	end-when	
 
 End-Template
