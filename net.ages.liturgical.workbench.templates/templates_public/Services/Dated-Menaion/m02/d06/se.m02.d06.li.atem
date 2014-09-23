@@ -1,20 +1,17 @@
-Template se.m01.d11.li 
+Template se.m02.d06.li 
 
 Status Review 
 
 	import client_gr_GR_cog.*
-	import ho.s03_gr_GR_cog.*
 	import ho.s07_gr_GR_cog.*
-	import ho.s10_gr_GR_cog.*	
-	import me.m01.d11_gr_GR_cog.*
+	import me.m02.d06_gr_GR_cog.*
 	import ps_gr_GR_cog.*
-//	import tr.d000_gr_GR_cog.*
 
 	import da.*
 	import oc.*
 
 	//Templates
-	import bk.ap.me.m01.*
+	import bk.ap.me.m02.*
 	import LectionaryReadings.*
 	import Litanies.*
 	
@@ -31,7 +28,7 @@ Status Review
 	import roles.*
 
 	Head 
-		Set_Date month 1 day 11 year 2015 End_Date
+		Set_Date month 2 day 6 year 2015 End_Date
 			Page_Header_Even
 				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
 			End_Page_Header_Even
@@ -50,41 +47,30 @@ Status Review
 	when-name-of-day-is
 		Sunday use:
 			Section Instance02 //Sunday
+				Insert_section Instance01.block1 End-Insert
 				Section block1
-					Insert_section eu.li.chrysbasil.Section01 End-Insert
-					Insert_section eu.li.chrysbasil.Section02 End-Insert
-					Insert_section sections.d06.antiphon1 End-Insert
-					Insert_section eu.li.chrysbasil.Section04 End-Insert
-					Insert_section sections.d06.antiphon2 End-Insert
-					Insert_section eu.li.chrysbasil.Section06 End-Insert
-					Insert_section sections.d06.antiphon3 End-Insert
 					Insert_section eu.li.chrysbasil.Section08 End-Insert
 					Insert_section eu.li.chrysbasil.Section09.clergy End-Insert
-				End-Section
-				Section block2
-					Title role desig sid Eisodikon End-Title
-					Media sid me.m01.d06_gr_GR_cog.meLI.EntranceHymn.text End-Media
-					Hymn sid psa117.v26a.text sid psa117.v27a.text sid hoLI.Antiphon21.text media-off sid hoLI.Antiphon2s.text media-off End-Hymn
+					Media sid me.m02.d02_gr_GR_cog.meLI.EntranceHymn.text End-Media
+					Hymn sid psa97.v2alt.text sid hoLI.Antiphon21.text media-off sid hoLI.Antiphon2s.text media-off End-Hymn
 					Actor sid Choir End-Actor
 					Dialog sid hoLI.Antiphon22.text End-Dialog
-				End-Section
-				Insert_section eu.li.chrysbasil.Section11.single End-Insert
-				Section block3
+					Insert_section eu.li.chrysbasil.Section11.single End-Insert
 					Insert_section eu.li.chrysbasil.Section07.sunday.hymn End-Insert
-					Title role mixed <Tdesig>sid TisEortis</><Tmode> sid me.m01.d06_gr_GR_cog.meVE.Apolytikion1.mode</>End-Title
-					Hymn sid me.m01.d06_gr_GR_cog.meVE.Apolytikion1.text End-Hymn
-					Title role mixed <Tdesig>sid TouOsiou</><Tmode>sid meVE.Apolytikion1.mode</>End-Title
-					Insert_section bk.ho.s15_m01.ho_Jan11.Apolytikion_2.hymn End-Insert
+					Title role mixed <Tdesig>sid TisEortis</><Tmode>sid me.m02.d02_gr_GR_cog.meVE.Apolytikion1.mode</>End-Title
+					Hymn sid me.m02.d02_gr_GR_cog.meVE.Apolytikion1.text End-Hymn
+					Title role mixed <Tdesig>sid TouAgiou</><Tmode>sid meVE.Apolytikion1.mode</>End-Title
+					Hymn sid meVE.Apolytikion1.text End-Hymn
 					Insert_section eu.li.chrysbasil.Section11_opt End-Insert
 					Insert_section eu.li.chrysbasil.Section12.seasonal_menaion.single End-Insert
 					Insert_section eu.li.chrysbasil.Section13.prayer End-Insert
 					Insert_section eu.li.chrysbasil.Section13.holygod End-Insert
 				End-Section
 				Insert_section Lectionary_Epistle_Menaion End-Insert
-				Insert_section Lectionary_Gospel_Menaion.Alleluia End-Insert
+				Insert_section Lectionary_Gospel_Daily.Alleluia End-Insert
 				Insert_section eu.li.chrysbasil.Section14 End-Insert
-				Insert_section Lectionary_Gospel_Menaion.Lesson End-Insert
-				Section block4
+				Insert_section Lectionary_Gospel_Daily.Lesson End-Insert
+				Section block2
 					Insert_section eu.li.chrysbasil.Section19 End-Insert
 					Insert_section eu.li.chrysbasil.Section20 End-Insert
 					Insert_section eu.li.chrysbasil.Section21.chrys End-Insert
@@ -110,28 +96,29 @@ Status Review
 				Section block1
 					Insert_section eu.li.chrysbasil.Section01 End-Insert
 					Insert_section eu.li.chrysbasil.Section02 End-Insert
-					Insert_section sections.d06.antiphon1 End-Insert
+					Actor sid Choir End-Actor
+					Insert_section bk.ap.me.m02.sections.d02.antiphon1 End-Insert
 					Insert_section eu.li.chrysbasil.Section04 End-Insert
-					Insert_section sections.d06.antiphon2 End-Insert
+					Actor sid Choir End-Actor
+					Insert_section bk.ap.me.m02.sections.d02.antiphon2 End-Insert
 					Insert_section eu.li.chrysbasil.Section06 End-Insert
-					Insert_section sections.d06.antiphon3 End-Insert
-					Insert_section eu.li.chrysbasil.Section08 End-Insert
-					Insert_section eu.li.chrysbasil.Section09.clergy End-Insert
+					Actor sid Choir End-Actor
+					Insert_section bk.ap.me.m02.sections.d02.antiphon3 End-Insert
 				End-Section
 				Section block2
 					Title role desig sid Eisodikon End-Title
-					Media sid me.m01.d06_gr_GR_cog.meLI.EntranceHymn.text End-Media
-					Hymn sid psa117.v26a.text sid psa117.v27a.text sid hoLI.Antiphon21.text media-off sid me.m01.d06_gr_GR_cog.meLI.Antiphon2.text media-off End-Hymn
+					Media sid me.m02.d02_gr_GR_cog.meLI.EntranceHymn.text End-Media
+					Hymn sid psa97.v2alt.text sid hoLI.Antiphon21.text media-off sid me.m02.d02_gr_GR_cog.meLI.Antiphon2.text media-off End-Hymn
 					Actor sid Choir End-Actor
 					Dialog sid hoLI.Antiphon22.text End-Dialog
 				End-Section
 				Insert_section eu.li.chrysbasil.Section11.single End-Insert
 				Section block3
 					Title role desig sid Apolytikia End-Title
-					Title role mixed <Tdesig>sid TisEortis</><Tmode> sid me.m01.d06_gr_GR_cog.meVE.Apolytikion1.mode</>End-Title
-					Hymn sid me.m01.d06_gr_GR_cog.meVE.Apolytikion1.text End-Hymn
-					Title role mixed <Tdesig>sid TouOsiou</><Tmode>sid meVE.Apolytikion1.mode</>End-Title
-					Insert_section bk.ho.s15_m01.ho_Jan11.Apolytikion_2.hymn End-Insert
+					Title role mixed <Tdesig>sid TisEortis</><Tmode> sid me.m02.d02_gr_GR_cog.meVE.Apolytikion1.mode</>End-Title
+					Hymn sid me.m02.d02_gr_GR_cog.meVE.Apolytikion1.text End-Hymn
+					Title role mixed <Tdesig>sid TouAgiou</><Tmode>sid meVE.Apolytikion1.mode</>End-Title
+					Hymn sid meVE.Apolytikion1.text End-Hymn
 					Insert_section eu.li.chrysbasil.Section11_opt End-Insert
 					Insert_section eu.li.chrysbasil.Section12.seasonal_menaion.single End-Insert
 					Insert_section eu.li.chrysbasil.Section13.prayer End-Insert
