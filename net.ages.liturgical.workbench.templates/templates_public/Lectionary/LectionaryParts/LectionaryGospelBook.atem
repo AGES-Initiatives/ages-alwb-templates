@@ -1,27 +1,15 @@
 Template LectionaryGospelBook
 
-	import eu.lichrysbasil_gr_GR_cog.*
-	import ho.s07_gr_GR_cog.*
-	import le.ep.mc.*
-	import le.ep.me.*
+Status Draft
+
 	import le.go.lu.*
 	import le.go.mc.*
-	import le.go.me.*
-	import da.*
-	import oc.*
-
-	import actors_gr_GR_cog.*
-	import misc_gr_GR_cog.*
 	import prayers_gr_GR_cog.*
-	import rubrical_gr_GR_cog.*
-	import titles_gr_GR_cog.*
 	
 	import iTags.*
 	import bTags.*
 	import roles.*
 
-
-	
 	Section Gospel_Book
 	 	when-date-is
 			Jul 13 thru 19 use: //Sun of Holy Fathers
@@ -682,7 +670,7 @@ Template LectionaryGospelBook
 										5 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
 										6 use: Dialog sid gos03a sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog //SunMat17
 									end-when
-							end-when
+//							end-when
 						otherwise use: 
 							Section Defaults //default rids (Luke or Matt) when no override
 								when-movable-cycle-day-is 1 thru 127 //Triodion & Pentecostarion
@@ -695,7 +683,9 @@ Template LectionaryGospelBook
 										end-when
 								end-when
 							End-Section //Defaults
-						end-when //when-Lukan-Cycle-Day-is
+						end-when
+					otherwise use: Insert_section Defaults End-Insert		
+					end-when //when-Lukan-Cycle-Day-is
 				End-Section //DaysByNumber
 		end-when //when-date-is
 	End-Section //Gospel_Book

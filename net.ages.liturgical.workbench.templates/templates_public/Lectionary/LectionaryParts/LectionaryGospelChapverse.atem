@@ -1,56 +1,13 @@
 Template LectionaryGospelChapverse
 
-	import eu.lichrysbasil_gr_GR_cog.*
-	import ho.s07_gr_GR_cog.*
-	import le.ep.mc.*
-	import le.ep.me.*
+Status Draft
+
 	import le.go.lu.*
 	import le.go.mc.*
-	import le.go.me.*
-	import da.*
-	import oc.*
-
-	import actors_gr_GR_cog.*
-	import misc_gr_GR_cog.*
-	import prayers_gr_GR_cog.*
-	import rubrical_gr_GR_cog.*
-	import titles_gr_GR_cog.*
 	
 	import iTags.*
 	import bTags.*
 	import roles.*
-
-
-	
-	
-//	Set_Date month 12 day 21 year 2013 End_Date
-
-	Passthrough-Html "<tr><td><b>Service Date:</></td><td><b>Service Date:</></td></tr>" END-Passthrough-Html
-	Para ldp @Service_Date End-Para
-
-	Title role desig ldp @Lukan_Cycle_Week_Day End-Title
-	
-	Passthrough-Html "<tr><td><b>Day of movable cycle:</></td><td><b>Day of movable cycle:</></td></tr>" END-Passthrough-Html
-	Para ldp @Day_of_Movable_Cycle End-Para
-
-	Passthrough-Html "<tr><td><b>Day of Period:</></td><td><b>Day of Period:</></td></tr>" END-Passthrough-Html
-	Para ldp @Name_of_Period ldp @Day_of_Period End-Para
-
-	Passthrough-Html "<tr><td><b>Sunday after the Cross in current cycle was on:</></td><td><b>Sunday after the Cross in current cycle was on:</></td></tr>" END-Passthrough-Html	
-	Para ldp @Sunday_After_Elevation_Cross_Date End-Para
-	
-	Passthrough-Html "<tr><td><b>Lukan cycle begins on:</></td><td><b>Lukan cycle begins on:</></td></tr>" END-Passthrough-Html 
-	Para  ldp @Lukan_Cycle_Start_Date End-Para
-	
-	Passthrough-Html "<tr><td><b>Day of Lukan cycle:</></td><td><b>Day of Lukan cycle:</></td></tr>" END-Passthrough-Html
-	Para ldp @Lukan_Cycle_Elapsed_Days End-Para
-	
-	Passthrough-Html "<tr><td><b>Week of Lukan cycle:</></td><td><b>Week of Lukan cycle:</></td></tr>" END-Passthrough-Html
-	Para ldp @Lukan_Cycle_Week End-Para
-	
-	Passthrough-Html "<tr><td><b>Sundays before Triodion is:</></td><td><b>Sundays before Triodion is:</></td></tr>" END-Passthrough-Html
-	Para ldp @Sundays_Before_Triodion End-Para
-
 
 
 	Section Gospel_Chapverse
@@ -713,7 +670,7 @@ Template LectionaryGospelChapverse
 										5 use: Title role chapverse rid lemcLI.Gospel.chapverse End-Title
 										6 use: Title role chapverse sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.chapverse End-Title //SunMat17
 									end-when
-							end-when
+//							end-when
 						otherwise use: 
 							Section Defaults //default rids (Luke or Matt) when no override
 								when-movable-cycle-day-is 1 thru 127 //Triodion & Pentecostarion
@@ -726,7 +683,9 @@ Template LectionaryGospelChapverse
 										end-when
 								end-when
 							End-Section //Defaults
-						end-when //when-Lukan-Cycle-Day-is
+						end-when	
+					otherwise use: Insert_section Defaults End-Insert		
+					end-when //when-Lukan-Cycle-Day-is
 				End-Section //DaysByNumber
 		end-when //when-date-is
 	End-Section //Gospel_Chapverse
