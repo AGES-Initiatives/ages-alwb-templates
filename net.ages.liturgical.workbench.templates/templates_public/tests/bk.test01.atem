@@ -32,7 +32,7 @@ Template bk.test01
 	import bTags.*
 	import roles.*
  	Head 
- 		Set_Date month 9 day 14 End_Date
+ 		Set_Date month 3 day 1 year 2015 End_Date
  			Page_Header_Even
  				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
  			End_Page_Header_Even
@@ -48,9 +48,13 @@ Template bk.test01
  		Set_Page_Number 1 End_Set_Page_Number
  	End_Head
  
-	Insert_section Lectionary_Gospel_Menaion.Lesson End-Insert
-
-
-//	Insert_section rid_GospelLessons_Menaion.me_go_book End-Insert
+			Para ldp@Lukan_Cycle_Elapsed_Days End-Para
+			Para ldp@Sundays_Before_Triodion End-Para
+			Para ldp@Service_Date End-Para
+			Para ldp@Day_of_Movable_Cycle End-Para
+			
+			Insert_section Lectionary_Epistle_Daily End-Insert
+			Insert_section Lectionary_Gospel_Daily.Alleluia End-Insert
+			Insert_section Lectionary_Gospel_Daily.Lesson End-Insert
 
 End-Template
