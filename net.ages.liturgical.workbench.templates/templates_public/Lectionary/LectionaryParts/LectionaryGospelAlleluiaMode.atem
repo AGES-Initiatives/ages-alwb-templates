@@ -670,16 +670,18 @@ Status Draft
 										5 use: Insert_section da_al_title End-Insert
 										6 use: Insert_section da_al_title End-Insert //SunMat17
 									end-when
-							end-when
+//							end-when
 						otherwise use: 
-				Section Defaults 
-					when-movable-cycle-day-is //Triodion & Pentecostarion overrides
-						14, 15, 21, 22, 28, 29, 43, 56, 63, 64, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 95, 110, 113, 119, 120, 121, 122, 127 
-						use: Insert_section mc_al_title_mode End-Insert 
-						otherwise use: Insert_section da_al_title End-Insert //default when no override
-					end-when
-				End-Section //Defaults
-						end-when //when-Lukan-Cycle-Day-is
+							Section Defaults 
+								when-movable-cycle-day-is //Triodion & Pentecostarion overrides
+									14, 15, 21, 22, 28, 29, 43, 56, 63, 64, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 95, 110, 113, 119, 120, 121, 122, 127 
+									use: Insert_section mc_al_title_mode End-Insert 
+									otherwise use: Insert_section da_al_title End-Insert //default when no override
+								end-when
+							End-Section //Defaults
+						end-when
+					otherwise use: Insert_section Defaults End-Insert	
+					end-when //when-Lukan-Cycle-Day-is
 				End-Section //DaysByNumber
 		end-when //when-date-is
 	End-Section //Gospel_Alleluia_Mode
