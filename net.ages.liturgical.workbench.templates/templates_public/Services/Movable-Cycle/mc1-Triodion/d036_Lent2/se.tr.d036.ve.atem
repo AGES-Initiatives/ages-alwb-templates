@@ -1,75 +1,98 @@
-Template se.tr.d036.ve 
+Template se.tr.d036.ve
+
+Status Final
 
 	import client_gr_GR_cog.*
-	import ho.s03_gr_GR_cog.*
-	import ho.s07_gr_GR_cog.*
 	import ho.s10_gr_GR_cog.*	
 	import tr.d036_gr_GR_cog.*
 
+	import da.*
 	import oc.*
 
 	//Templates
 	import VespersParts.*
+	import LectionaryReadings.*
 	import Litanies.*
 	
 	import actors_gr_GR_cog.*
-	import template.titles_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
 	import misc_gr_GR_cog.*
 	import prayers_gr_GR_cog.*
 	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
 	import titles_gr_GR_cog.*
 		
 	import iTags.*
 	import bTags.*
 	import roles.*
 
-	Insert_section Vespers_01 End-Insert
-	Insert_section Vespers_02_Sunday.LIHC_Stichera_1234 End-Insert
-	Insert_section Vespers_02_Sunday.Stichera_56 End-Insert
-	Section Stichera_Triodion
-		Title role desig sid TouIerarchou End-Title
-		Title role mixed <Tmode>sid trVE.Stichera01.mode</><Tmelody>sid trVE.Stichera01.melody</>End-Title
-		Media sid trVE.Stichera01.text End-Media
-		Insert_section LIHC_Verse.v07 End-Insert
-		Hymn sid trVE.Stichera01.text media-off End-Hymn
-		Insert_section LIHC_Verse.v08 End-Insert
-		Hymn sid trVE.Stichera01.text media-off End-Hymn
-		Insert_section LIHC_Verse.v09 End-Insert
-		Hymn sid trVE.Stichera02.text media-off End-Hymn
-		Insert_section LIHC_Verse.v10 End-Insert
-		Hymn sid trVE.Stichera03.text media-off End-Hymn
-		Title role mixed sid Doxa <Tmode> sid trVE.SticGlory.mode </>End-Title
-		Hymn sid trVE.SticGlory.text End-Hymn
-	End-Section
-	Title role mixed sid KaiNyn <Tdesig>sid Theotokion</><Tmode>rid ocVE.SticTheotokion.mode</>End-Title	
-	Hymn rid ocVE.SticTheotokion.text End-Hymn
-	Insert_section Vespers_03_entrance End-Insert
-	Insert_section Vespers_05_Litanies End-Insert
-	Insert_section Vespers_07_ResrrectionalAposticha.Aposticha_1 End-Insert
-	Insert_section Vespers_07_ResrrectionalAposticha.Aposticha_234 End-Insert
-	Title role mixed sid Doxa <Tdesig>sid TouIerarchou</>End-Title
-	Title role mode sid trVE.AposGlory.mode End-Title
-	Hymn sid trVE.AposGlory.text End-Hymn
-	Title role mixed sid KaiNyn <Tdesig>sid Theotokion</>End-Title
-	Hymn sid trVE.AposTheotokion.text End-Hymn
-	Insert_section Symeon_Trisagion End-Insert	
-	Section Apolytikia
-		Actor sid Choir End-Actor
-		Title role mixed <Tdesig>sid ApolytikionAnastasimon</><Tmode>rid ocVE.Apolytikion.mode</>End-Title	
-		Hymn rid ocVE.Apolytikion.text End-Hymn
-		Title role mixed sid Doxa <Tdesig>sid TouIerarchou</>End-Title
-		Title role mode sid trVE.Apolytikion1.mode End-Title
-		Hymn sid trVE.Apolytikion1.text End-Hymn
-		Title role mixed sid KaiNyn <Tdesig>sid Theotokion</>End-Title
-		Hymn rid trVE.ApolTheotokion.text End-Hymn
-	End-Section
-	Insert_section Vespers_09 End-Insert
-	Section Vespers_FinalDismissal
-		Actor sid Priest End-Actor
-		Insert_section Dismissals.Com_Yes End-Insert
-		Dialog sid DiEfchonPateron.text End-Dialog
-		Actor sid People End-Actor
-		Dialog sid res04 End-Dialog
+	Head 
+//		Set_Date month 3 day 8 year 2015 End_Date
+			Page_Header_Even
+				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore lang L2 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	Section Instance01
+		Insert_section Vespers_01 End-Insert
+		Insert_section Vespers_02_Sunday.LIHC_Stichera_1234 End-Insert
+		Insert_section Vespers_02_Sunday.Stichera_56 End-Insert
+		Section block1
+			Title role desig sid TouIerarchou End-Title
+			Title role mixed <Tmode>sid trVE.Stichera01.mode</><Tmelody>sid trVE.Stichera01.melody</>End-Title
+			Media sid trVE.Stichera01.text End-Media
+			Insert_section LIHC_Verse.v07 End-Insert
+			Hymn sid trVE.Stichera01.text media-off End-Hymn
+			Insert_section LIHC_Verse.v08 End-Insert
+			Hymn sid trVE.Stichera01.text media-off End-Hymn
+			Media sid trVE.Stichera02.text End-Media
+			Insert_section LIHC_Verse.v09 End-Insert
+			Hymn sid trVE.Stichera02.text media-off End-Hymn
+			Media sid trVE.Stichera03.text End-Media
+			Insert_section LIHC_Verse.v10 End-Insert
+			Hymn sid trVE.Stichera03.text media-off End-Hymn
+		End-Section
+		Section block2
+			Title role mixed sid Doxa <Tmode> sid trVE.SticGlory.mode </>End-Title
+			Hymn sid trVE.SticGlory.text End-Hymn
+		End-Section
+		Insert_section Vespers_BothNowFirstTheotokion End-Insert
+		Insert_section Vespers_03_entrance End-Insert
+		Insert_section Vespers_05_Litanies End-Insert
+		Insert_section Vespers_07_ResrrectionalAposticha.Aposticha_1 End-Insert
+		Insert_section Vespers_07_ResrrectionalAposticha.Aposticha_234 End-Insert
+		Section bock3
+			Title role mixed sid Doxa <Tdesig>sid TouIerarchou</>End-Title
+			Title role mode sid trVE.AposGlory.mode End-Title
+			Hymn sid trVE.AposGlory.text End-Hymn
+			Title role mixed sid KaiNyn <Tdesig>sid Theotokion</>End-Title
+			Hymn sid oc.m8.d1_gr_GR_cog.ocVE.AposTheotokion.text End-Hymn
+		End-Section
+		Insert_section Vespers_08.part1 End-Insert
+		Section block4
+			Title role mixed sid Doxa <Tdesig>sid TouIerarchou</>End-Title
+			Title role mode sid trVE.Apolytikion1.mode End-Title
+			Hymn sid trVE.Apolytikion1.text End-Hymn
+			Title role mixed sid KaiNyn <Tdesig>sid Theotokion</>End-Title
+			Hymn sid oc.m8.d1_gr_GR_cog.ocVE.ApolTheotokionVM.text End-Hymn
+		End-Section
+		Insert_section Vespers_09 End-Insert
+		Insert_section Vespers_10_ComYes End-Insert
 	End-Section
 
 End-Template
