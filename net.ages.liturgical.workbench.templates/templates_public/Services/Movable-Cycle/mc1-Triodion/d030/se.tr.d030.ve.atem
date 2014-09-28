@@ -1,5 +1,7 @@
 Template se.tr.d030.ve
 
+Status Review
+
 	import client_gr_GR_cog.*
 	import hi.s01_gr_GR_cog.*
 	import ho.s10_gr_GR_cog.*	
@@ -9,6 +11,7 @@ Template se.tr.d030.ve
 	import oc.*
 
 	//Templates
+	import LentParts.*
 	import LentParts.*
 	import VespersParts.*
 	import Litanies.*
@@ -26,8 +29,8 @@ Template se.tr.d030.ve
 
 	Section Instance01
 		Insert_section Vespers_01 End-Insert
-		Insert_section LIHC_Mode4 End-Insert
-		Section Stichera_1234
+		Insert_section LIHC_ModeOfWeek End-Insert
+		Section block1
 			Title role desig sid Katanyktika End-Title
 			Title role mixed <Tmode>rid octrVE.Stichera1.mode</> <Tmelody>rid octrVE.Stichera1.melody</>End-Title
 			Insert_section LIHC_Verse.v01 End-Insert
@@ -38,8 +41,8 @@ Template se.tr.d030.ve
 			Hymn rid octrVE.Stichera3.text  media-off End-Hymn
 			Insert_section LIHC_Verse.v04 End-Insert
 			Hymn rid octrVE.Stichera4.text  media-off End-Hymn
-		End-Section //Stichera_1234
-		Section Stichera_567
+		End-Section
+		Section block2
 			Title role desig sid TouTriodiou End-Title
 			Title role mixed <Tmode>sid trVE.Stichera01.mode</> <Tmelody>sid trVE.Stichera01.melody</>End-Title
 			Media sid trVE.Stichera01.text End-Media
@@ -52,8 +55,8 @@ Template se.tr.d030.ve
 			Media sid trVE.Stichera03.text End-Media
 			Insert_section LIHC_Verse.v07 End-Insert
 			Hymn sid trVE.Stichera03.text  media-off End-Hymn
-		End-Section //Stichera_567
-		Section Stichera
+		End-Section
+		Section block3
 			Title role desig sid EkTouMinaiou End-Title
 			Title role mixed <Tmode> rid meVE.Stichera01.mode </> <Tmelody>rid meVE.Stichera01.melody </>End-Title
 			Insert_section LIHC_Verse.v08 End-Insert
@@ -64,37 +67,16 @@ Template se.tr.d030.ve
 			Hymn rid meVE.Stichera03.text End-Hymn
 			Title role mixed sid DoxaKaiNyn <Tdesig> sid Theotokion</>End-Title
 			Hymn rid meVE.SticTheotokion.text End-Hymn
-		End-Section //Stichera
-	
-		Section Vespers_03 // Entrance thru Prokeimenon
-			Actor sid Deacon End-Actor
-			Rubric sid InALowVoice End-Rubric
-			Dialog sid pet00 End-Dialog
-			Actor sid Priest End-Actor
-			Title role desig sid hiVE.Key0108.title End-Title
-			Para role inaudible <inr>sid InALowVoice</>sid hiVE.Key0108.text End-Para
-			Actor sid Deacon End-Actor
-			Dialog sid exc17 sid exc18 End-Dialog
-			Actor sid ClergyAndPeople End-Actor
-			Title role mode sid Mode2 End-Title
-			Hymn sid hoVE.FosIlaron.text End-Hymn
-			Actor sid PriestOrDeacon End-Actor
-			Dialog sid hiVE.Key0109.text End-Dialog
-			Actor sid Choir End-Actor
-			Insert_section Lent_GreatProkeimenon2 End-Insert
 		End-Section
-		
-		Section Vespers_05_Litanies // Ektenia 	
-			Insert_section Ektenia04 End-Insert
-			Actor sid Reader End-Actor
-			Reading sid hoVE.Prayer_Kataxioson.text End-Reading
-			Insert_section ComplementaryV End-Insert
-			Insert_section BowHeadsV End-Insert
-		End-Section
+		Insert_section Vespers_03_entrance.Part1 End-Insert
+		Insert_section Vespers_03_entrance.Part2 End-Insert
+		Insert_section Lent_GreatProkeimenon2 End-Insert
+		Insert_section Ektenia04 End-Insert
+		Insert_section Vespers_05_Litanies.part2 End-Insert
 	
 		Insert_section IconsProcession End-Insert
 	
-		Section Lent_Aposticha
+		Section block4
 			Title role desig sid Aposticha sid TouTriodiou End-Title		
 			Title role mixed <Tdesig> sid Idiomelon</> <Tmode>sid trVE.AposIdiomelon1.mode </>End-Title
 			Hymn sid trVE.AposIdiomelon1.text End-Hymn
@@ -107,10 +89,8 @@ Template se.tr.d030.ve
 			Title role mixed sid DoxaKaiNyn <Tdesig>sid Theotokion</> End-Title
 			Hymn sid trVE.AposTheotokion.text End-Hymn
 		End-Section
-		
 		Insert_section Symeon_Trisagion End-Insert	
 		Insert_section Lent_Apolytikia End-Insert
-		
 		Actor sid Reader End-Actor
 		Dialog sid res01 <r>sid Forty </>End-Dialog
 		Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
