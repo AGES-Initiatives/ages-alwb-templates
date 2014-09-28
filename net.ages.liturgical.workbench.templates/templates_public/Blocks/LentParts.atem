@@ -1,27 +1,34 @@
 Template LentParts
 
+Status Draft
+
 	import client_gr_GR_cog.*
-	import da.*
+	import eu.li.chrysbasil.*
 	import eu.lipresanctified_gr_GR_cog.*
 	import hi.s01_gr_GR_cog.*
 	import ho.s03_gr_GR_cog.*
 	import ho.s10_gr_GR_cog.*
-	import le.pr.tr.*
-	import oc.*
 	import ps_gr_GR_cog.*
+
+	import da.*
+	import oc.*
+	import me.*
+	import tr.*
+	import le.pr.tr.*
 
 	//Templates
 	import VespersParts.*
 	import MatinsParts.*
 	import LectionaryReadings.*
-	import eu.li.chrysbasil.*
 	import Litanies.*
 	
 	import actors_gr_GR_cog.*
-	import template.titles_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
 	import misc_gr_GR_cog.*
+	import poets_gr_GR_cog.*
 	import prayers_gr_GR_cog.*
 	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
 	import titles_gr_GR_cog.*
 		
 	import iTags.*
@@ -68,6 +75,133 @@ Template LentParts
 		Reading rid lemcVE.Reading3.text End-Reading
 	End-Section
 
+	Section Presanctified02_Wednesday //VespersHymns
+		Section Idiomela_Triodion
+			Title role desig sid TouTriodiou End-Title
+			Title role mixed <Tdesig> sid StichironIdiomelon</> <Tmode>rid trVE.AposIdiomelon1.mode</> End-Title
+			Media rid trVE.AposIdiomelon1.text End-Media
+			Insert_section LIHC_Verse.v01 End-Insert
+			Hymn rid trVE.AposIdiomelon1.text media-off End-Hymn
+			Insert_section LIHC_Verse.v02 End-Insert
+			Hymn rid trVE.AposIdiomelon1.text  media-off End-Hymn
+			Title role desig sid Martyrikon End-Title
+			Title role mixed <Tmode>rid trVE.AposMartyric.mode</><Tmelody>rid trVE.AposMartyric.melody</> End-Title
+			Media rid trVE.AposMartyric.text End-Media
+			Insert_section LIHC_Verse.v03 End-Insert
+			Hymn rid trVE.AposMartyric.text  media-off End-Hymn
+		End-Section
+		Section Stichera_Triodion
+			Title role desig sid StichiraProsomoia sid Iosif End-Title
+			Title role mixed <Tmode>rid trVE.Stichera01.mode</> <Tmelody>rid trVE.Stichera01.melody</> End-Title
+			Media rid trVE.Stichera01.text End-Media
+			Insert_section LIHC_Verse.v04 End-Insert
+			Hymn rid trVE.Stichera01.text  media-off End-Hymn
+			Media rid trVE.Stichera02.text End-Media
+			Insert_section LIHC_Verse.v05 End-Insert
+			Hymn rid trVE.Stichera02.text  media-off End-Hymn
+			Title role desig sid Eteron sid Theodorou End-Title
+			Title role mixed <Tmode>rid trVE.Stichera03.mode</> <Tmelody>rid trVE.Stichera03.melody</> End-Title
+			Media rid trVE.Stichera03.text End-Media
+			Insert_section LIHC_Verse.v06 End-Insert
+			Hymn rid trVE.Stichera03.text  media-off End-Hymn
+		End-Section
+		Section Stichera_Menaion
+			Title role desig sid TouMinaiou End-Title
+			Title<r>ldp @Service_Date</>End-Title
+			Title role mixed <Tmode>rid meVE.Stichera01.mode</> <Tmelody>rid meVE.Stichera01.melody</> End-Title
+			Media rid meVE.Stichera01.text End-Media
+			Insert_section LIHC_Verse.v07 End-Insert
+			Hymn rid meVE.Stichera01.text  media-off End-Hymn
+			Insert_section LIHC_Verse.v08 End-Insert
+			Hymn rid meVE.Stichera01.text  media-off End-Hymn
+			Media rid meVE.Stichera02.text End-Media
+			Insert_section LIHC_Verse.v09 End-Insert
+			Hymn rid meVE.Stichera02.text  media-off End-Hymn
+			Media rid meVE.Stichera03.text End-Media
+			Insert_section LIHC_Verse.v10 End-Insert
+			Hymn rid meVE.Stichera03.text  media-off End-Hymn
+		End-Section
+		Section GloryBoth
+			Title role mixed sid DoxaKaiNyn <Tdesig>sid Theotokion</>End-Title
+			Media rid meVE.SticTheotokion.text End-Media
+			Hymn rid meVE.SticTheotokion.text End-Hymn
+		End-Section
+	End-Section 
+	
+	Section Presanctified02_Friday //VespersHymns
+		Section Idiomela_Triodion
+			Title role desig sid TouTriodiou End-Title
+			Title role mixed <Tdesig> sid StichironIdiomelon</> <Tmode>rid trVE.AposIdiomelon1.mode</> End-Title
+			Media rid trVE.AposIdiomelon1.text End-Media
+			Insert_section LIHC_Verse.v01 End-Insert
+			Hymn rid trVE.AposIdiomelon1.text media-off End-Hymn
+			Insert_section LIHC_Verse.v02 End-Insert
+			Hymn rid trVE.AposIdiomelon1.text  media-off End-Hymn
+		End-Section
+		Section Stichera_Martyric
+			Title role desig sid Martyrika End-Title
+			Title role mode rid octrVE.Stichera1.mode End-Title
+			Media rid octrVE.Stichera1.text End-Media
+			Insert_section LIHC_Verse.v03 End-Insert
+			Hymn rid octrVE.Stichera1.text media-off End-Hymn
+			Media rid octrVE.Stichera2.text End-Media
+			Insert_section LIHC_Verse.v04 End-Insert
+			Hymn rid octrVE.Stichera2.text media-off End-Hymn
+			Media rid octrVE.Stichera3.text End-Media
+			Insert_section LIHC_Verse.v05 End-Insert
+			Hymn rid octrVE.Stichera3.text media-off End-Hymn
+			Media rid octrVE.Stichera4.text End-Media
+			Insert_section LIHC_Verse.v06 End-Insert
+			Hymn rid octrVE.Stichera4.text media-off End-Hymn
+		End-Section
+		Section Stichera_Menaion
+			Title role desig sid TouMinaiou End-Title
+			Title <r>ldp @Service_Date</>End-Title
+			Title role mixed <Tmode>rid meVE.Stichera01.mode</> <Tmelody>rid meVE.Stichera01.melody</> End-Title
+			Media rid meVE.Stichera01.text End-Media
+			Insert_section LIHC_Verse.v07 End-Insert
+			Hymn rid meVE.Stichera01.text  media-off End-Hymn
+			Insert_section LIHC_Verse.v08 End-Insert
+			Hymn rid meVE.Stichera01.text  media-off End-Hymn
+			Media rid meVE.Stichera02.text End-Media
+			Insert_section LIHC_Verse.v09 End-Insert
+			Hymn rid meVE.Stichera02.text  media-off End-Hymn
+			Media rid meVE.Stichera03.text End-Media
+			Insert_section LIHC_Verse.v10 End-Insert
+			Hymn rid meVE.Stichera03.text  media-off End-Hymn
+		End-Section
+		Section Glory
+			Title role mixed sid Doxa <Tdesig>sid Nekrosimon</>End-Title
+			Title role mode rid octrVE.SticGlory.mode End-Title
+			Hymn rid octrVE.SticGlory.text End-Hymn
+		End-Section
+		Insert_section Vespers_BothNowFirstTheotokion End-Insert
+	End-Section 
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	Section Lent_PresanctifiedReadings //Presanctified Readings
 		Section Part1
 			Actor sid PriestOrDeacon End-Actor
@@ -104,30 +238,6 @@ Template LentParts
 			Title role chapverse rid lemcVE.Reading2.chapverse End-Title
 			Reading rid lemcVE.Reading2.text End-Reading
 		End-Section
-	End-Section
-	
-	Section HolySaturdayMorning_Prophecies //customize
-		Actor sid Reader End-Actor
-		Dialog sid hoVE.Reading_Intro.text1 rid lemcVE.Reading1.book sid hoVE.Reading_Intro.text2 End-Dialog
-		Actor sid PriestOrDeacon End-Actor
-		Dialog sid exc17 sid exc19 End-Dialog
-		Actor sid Reader End-Actor
-		Title role chapverse rid lemcVE.Reading1.chapverse End-Title
-		Reading rid lemcVE.Reading1.text End-Reading
-		Actor sid Reader End-Actor
-		Dialog sid hoVE.Reading_Intro.text1 rid lemcVE.Reading4.book sid hoVE.Reading_Intro.text2 End-Dialog
-		Actor sid PriestOrDeacon End-Actor
-		Dialog sid exc17 sid exc19 End-Dialog
-		Actor sid Reader End-Actor
-		Title role chapverse rid lemcVE.Reading4.chapverse End-Title
-		Reading rid lemcVE.Reading4.text End-Reading
-		Actor sid Reader End-Actor
-		Dialog sid hoVE.Reading_Intro.text1 rid lemcVE.Reading15.book sid hoVE.Reading_Intro.text2 End-Dialog
-		Actor sid PriestOrDeacon End-Actor
-		Dialog sid exc17 sid exc19 End-Dialog
-		Actor sid Reader End-Actor
-		Title role chapverse rid lemcVE.Reading15.chapverse End-Title
-		Reading rid lemcVE.Reading15.text End-Reading
 	End-Section
 	
 	Section Lent_Apolytikia
