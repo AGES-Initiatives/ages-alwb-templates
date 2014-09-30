@@ -59,7 +59,7 @@ Status Draft
 		Hymn sid psa60.v9.text End-Hymn
 	End-Section
 
-	Section Presanctified02_Wednesday //VespersHymns
+	Section Presanctified02_MonTueWedThur //VespersHymns
 		Section Idiomela_Triodion
 			Title role desig sid TouTriodiou End-Title
 			Title role mixed <Tdesig> sid StichironIdiomelon</> <Tmode>rid trVE.AposIdiomelon1.mode</> End-Title
@@ -106,9 +106,16 @@ Status Draft
 			Hymn rid meVE.Stichera03.text  media-off End-Hymn
 		End-Section
 		Section GloryBoth
-			Title role mixed sid DoxaKaiNyn <Tdesig>sid Theotokion</>End-Title
-			Media rid meVE.SticTheotokion.text End-Media
-			Hymn rid meVE.SticTheotokion.text End-Hymn
+			when-name-of-day-is
+				Wednesday, Friday use:
+					Title role mixed sid DoxaKaiNyn <Tdesig>sid Stavrotheotokion</>End-Title
+					Media rid meVE.SticStavrotheotokion.text End-Media
+					Hymn rid meVE.SticStavrotheotokion.text End-Hymn
+				otherwise use:
+					Title role mixed sid DoxaKaiNyn <Tdesig>sid Theotokion</>End-Title
+					Media rid meVE.SticTheotokion.text End-Media
+					Hymn rid meVE.SticTheotokion.text End-Hymn
+			end-when		
 		End-Section
 	End-Section 
 	

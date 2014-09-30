@@ -1,0 +1,101 @@
+Template se.tr.d063.pl 
+
+Status Final
+
+	import client_gr_GR_cog.*
+	import ho.s10_gr_GR_cog.*	
+	import tr.d063_gr_GR_cog.*
+
+	import da.*
+	import oc.*
+
+	//Templates
+	import eu.li.presanctified.*
+	import LentParts.*
+	import VespersParts.*
+	
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 4 day 4 year 2015  End_Date
+			Page_Header_Even
+				center @lookup sid pl.pdf.header rid daVE.OnTheEveningBefore lang L2 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid pl.pdf.header rid daVE.OnTheEveningBefore lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	Section Instance01
+		Insert_section Presanctified01 End-Insert
+		Insert_section LIHC_Mode8 End-Insert
+	//	Stichologia
+		Insert_section Presanctified02_MonTueWedThur.Idiomela_Triodion End-Insert
+		Section block1
+			Title role desig sid TouLazarou End-Title
+			Title role mixed <Tdesig>sid Idiomelon</><Tmode>sid trVE.Stichera01.mode</>End-Title
+			Media sid trVE.Stichera01.text End-Media
+			Insert_section LIHC_Verse.v04 End-Insert
+			Hymn sid trVE.Stichera01.text  media-off End-Hymn
+			Insert_section LIHC_Verse.v05 End-Insert
+			Hymn sid trVE.Stichera01.text  media-off End-Hymn
+			Title role mixed <Tdesig>sid Idiomelon</><Tmode>sid trVE.Stichera02.mode</>End-Title
+			Media sid trVE.Stichera02.text End-Media
+			Insert_section LIHC_Verse.v06 End-Insert
+			Hymn sid trVE.Stichera02.text  media-off End-Hymn
+			Insert_section LIHC_Verse.v07 End-Insert
+			Hymn sid trVE.Stichera02.text  media-off End-Hymn
+			Title role mixed <Tdesig>sid Idiomelon</><Tmode>sid trVE.Stichera03.mode</>End-Title
+			Media sid trVE.Stichera03.text End-Media
+			Insert_section LIHC_Verse.v08 End-Insert
+			Hymn sid trVE.Stichera03.text  media-off End-Hymn
+			Title role mixed <Tdesig>sid Idiomelon</><Tmode>sid trVE.Stichera04.mode</>End-Title
+			Media sid trVE.Stichera04.text End-Media
+			Insert_section LIHC_Verse.v09 End-Insert
+			Hymn sid trVE.Stichera04.text  media-off End-Hymn
+			Title role mixed <Tdesig>sid Idiomelon</><Tmode>sid trVE.Stichera05.mode</>End-Title
+			Media sid trVE.Stichera05.text End-Media
+			Insert_section LIHC_Verse.v10 End-Insert
+			Hymn sid trVE.Stichera05.text  media-off End-Hymn
+		End-Section
+		Section block2
+			Title role mixed sid Doxa<Tmode>sid trVE.SticGlory.mode</>End-Title
+			Hymn sid trVE.SticGlory.text End-Hymn
+			Title role mixed sid KaiNyn<Tmode>sid trVE.SticBoth.mode</>End-Title
+			Hymn sid trVE.SticBoth.text End-Hymn
+		End-Section
+		Insert_section Presanctified03 End-Insert
+		Insert_section Lectionary_Triodion.Vespers_Readings End-Insert
+		Insert_section Presanctified05 End-Insert
+		Insert_section Presanctified06 End-Insert
+		Insert_section Presanctified07 End-Insert
+	//	Insert_section Presanctified08 End-Insert
+		Insert_section Presanctified09 End-Insert
+		Insert_section Presanctified10 End-Insert
+		Insert_section Presanctified11 End-Insert
+		Insert_section Presanctified12 End-Insert
+	End-Section
+
+End-Template
