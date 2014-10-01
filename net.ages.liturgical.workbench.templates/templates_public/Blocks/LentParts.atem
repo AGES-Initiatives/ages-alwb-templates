@@ -35,30 +35,35 @@ Status Draft
 	import bTags.*
 	import roles.*
 
-	Section Lent_GreatProkeimenon1
-		Title role mixed <Tdesig> sid Prokeimenon</> <Tmode> sid Mode8</> End-Title
-		Media sid hoVE.GreatProkeimenonLent1.text End-Media
-		Hymn sid psa68.v18.text sid psa68.v19a.text End-Hymn
-		Verse <bnr>sid vVerse</> sid psa68.v30b.text End-Verse
-		Hymn sid psa68.v18.text sid psa68.v19a.text End-Hymn
-		Verse <bnr>sid vVerse</> sid psa68.v33a.text End-Verse
-		Hymn sid psa68.v18.text sid psa68.v19a.text End-Hymn
-		Verse <bnr>sid vVerse</> sid psa68.v33b.text End-Verse
-		Hymn sid psa68.v18.text sid psa68.v19a.text End-Hymn
+	Section Lent_GreatProkeimenon
+		when-triodion-day-is
+			23, 37, 51 use:
+				Section block1
+					Title role mixed <Tdesig> sid Prokeimenon</> <Tmode> sid Mode8</> End-Title
+					Media sid hoVE.GreatProkeimenonLent1.text End-Media
+					Hymn sid psa68.v18.text sid psa68.v19a.text End-Hymn
+					Verse <bnr>sid vVerse</> sid psa68.v30b.text End-Verse
+					Hymn sid psa68.v18.text sid psa68.v19a.text End-Hymn
+					Verse <bnr>sid vVerse</> sid psa68.v33a.text End-Verse
+					Hymn sid psa68.v18.text sid psa68.v19a.text End-Hymn
+					Verse <bnr>sid vVerse</> sid psa68.v33b.text End-Verse
+					Hymn sid psa68.v18.text sid psa68.v19a.text End-Hymn
+				End-Section	
+			30, 44, 58 use:
+				Section block2
+					Title role mixed <Tdesig> sid Prokeimenon</> <Tmode> sid Mode8</> End-Title
+					Media sid hoVE.GreatProkeimenonLent2.text End-Media
+					Hymn sid psa60.v6balt.text End-Hymn
+					Verse <bnr> sid vVerse </>sid psa60.v3.text End-Verse
+					Hymn sid psa60.v6balt.text End-Hymn
+					Verse <bnr> sid vVerse </>sid psa60.v5b.text End-Verse
+					Hymn sid psa60.v6balt.text End-Hymn
+					Verse <bnr> sid vVerse </>sid psa60.v5b.text End-Verse
+					Hymn sid psa60.v9.text End-Hymn
+				End-Section	
+		end-when
 	End-Section
-
-	Section Lent_GreatProkeimenon2
-		Title role mixed <Tdesig> sid Prokeimenon</> <Tmode> sid Mode8</> End-Title
-		Media sid hoVE.GreatProkeimenonLent2.text End-Media
-		Hymn sid psa60.v6balt.text End-Hymn
-		Verse <bnr> sid vVerse </>sid psa60.v3.text End-Verse
-		Hymn sid psa60.v6balt.text End-Hymn
-		Verse <bnr> sid vVerse </>sid psa60.v5b.text End-Verse
-		Hymn sid psa60.v6balt.text End-Hymn
-		Verse <bnr> sid vVerse </>sid psa60.v5b.text End-Verse
-		Hymn sid psa60.v9.text End-Hymn
-	End-Section
-
+	
 	Section Presanctified02_MonTueWedThur //VespersHymns
 		Section Idiomela_Triodion
 			Title role desig sid TouTriodiou End-Title
@@ -168,6 +173,28 @@ Status Draft
 		End-Section
 		Insert_section Vespers_BothNowFirstTheotokion End-Insert
 	End-Section 
+
+	Section Triodion_Weekday_Vespers_Aposticha
+		Section part1
+			Actor sid Choir End-Actor
+			Title role desig sid Aposticha sid TouTriodiou End-Title		
+			Title role mixed <Tdesig> sid Idiomelon</> <Tmode>rid trVE.AposIdiomelon1.mode </>End-Title
+			Hymn rid trVE.AposIdiomelon1.text End-Hymn
+			Insert_section bk.ho.s10.Aposticha.Weekday_Verse_1 End-Insert
+			Hymn rid trVE.AposIdiomelon1.text media-off End-Hymn
+			Title role desig sid Martyrikon End-Title
+			Media rid trVE.AposMartyric.text End-Media
+			Insert_section bk.ho.s10.Aposticha.Weekday_Verse_2 End-Insert
+			Hymn rid trVE.AposMartyric.text media-off End-Hymn
+		End-Section
+		Section part2
+			Title role mixed sid DoxaKaiNyn <Tdesig>sid Theotokion</> End-Title
+			when-exists rid trVE.AposTheotokion.melody use:
+				Title role mixed <Tmode>rid trVE.AposTheotokion.mode</><Tmelody>rid trVE.AposTheotokion.melody</> End-Title
+			end-when	
+			Hymn rid trVE.AposTheotokion.text End-Hymn
+		End-Section
+	End-Section
 	
 	Section Lent_Apolytikia
 		Actor sid Choir End-Actor
@@ -178,6 +205,25 @@ Status Draft
 		Hymn sid hoVE.LentApolytikion3.text End-Hymn
 		Title sid KaiNyn End-Title
 		Hymn sid hoVE.LentApolytikion4.text End-Hymn
+	End-Section
+
+	Section Lent_Vespers_End_Sunday
+		Actor sid Reader End-Actor
+		Dialog sid res01 <r>sid Forty </>End-Dialog
+		Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
+		Dialog sid TinTimioteran.text End-Dialog
+		Dialog sid EnOnomatiKyriou.text End-Dialog
+		Actor sid Priest End-Actor
+		Dialog sid OOnEvlogitos.text End-Dialog
+		Actor sid Reader End-Actor
+		Dialog sid res04 End-Dialog
+		Dialog sid EpouranieVasilef.text sid res04 End-Dialog
+		Actor sid Priest End-Actor
+		Insert_section StEphraimPrayer End-Insert
+		Actor sid Reader End-Actor
+		Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
+		Dialog sid res06 End-Dialog
+		Dialog sid Evlogison End-Dialog
 	End-Section
 	
 	Section Lent_PostGospel
