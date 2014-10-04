@@ -48,8 +48,15 @@ Status Review
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-	when-movable-cycle-day-is 1 thru 127 use:
-		Insert_template mc.map.ve End-Insert
+	when-movable-cycle-day-is 
+		1 thru 12 use:
+			Insert_template mc.map.ve End-Insert
+		13 use:
+			Section Instance02
+			End-Section
+		14 use: Insert_section se.tr.d014.ve.Instance01 End-Insert	
+		15 thru 127 use:
+			Insert_template mc.map.ve End-Insert
 		otherwise use:
 		
 	end-when	
