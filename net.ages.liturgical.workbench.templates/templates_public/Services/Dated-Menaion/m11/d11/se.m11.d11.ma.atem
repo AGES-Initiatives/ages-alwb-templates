@@ -50,16 +50,23 @@ Status Draft
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
+	Title role desig ldp @Service_Date End-Title
+	Insert_section cu.MatinsOrdinary.Part1 End-Insert
+	Insert_section cu.MatinsOrdinary.Part2 End-Insert
+	Insert_section cu.MatinsOrdinary.Part3 End-Insert
+	Insert_section cu.MatinsOrdinary.Part4 End-Insert
+	Insert_section cu.MatinsOrdinary.Part5 End-Insert
+	
+
 			Section Instance01 //weekday
 				Insert_section GITL.mode4 End-Insert
 				Section block1
-					Actor sid Choir End-Actor
 					Title role desig sid Apolytikia End-Title
 					Insert_section ho.s15_m11.ho_Nov11.Apolytikion_1 End-Insert
 					Title role mixed sid Doxa <Tdesig> sid TouOsiou</> End-Title
 					Insert_section ho.s15_m11.ho_Nov11.Apolytikion_3.hymn End-Insert
 					Title role mixed sid KaiNyn <Tdesig>sid Theotokion</>End-Title
-					Hymn sid oc.m8.d1_gr_GR_cog.ocVE.ApolTheotokionVM.text End-Hymn
+					Hymn rid ocVE.ApolTheotokionVM.text @mode M8 End-Hymn
 				End-Section
 				Insert_section ShortLitany02 End-Insert	
 				Insert_section Octoechos_Kathismata_Weekday End-Insert
@@ -92,6 +99,75 @@ Status Draft
 					Hymn sid meMA.ExapTheotokion.text End-Hymn
 				End-Section
 				Section block5
+					Actor sid Reader End-Actor
+					Title role desig sid OiAinoi <Trubric>sid Read</> End-Title
+					Title role desig sid psa148.title End-Title
+					Reading sid psa148.text End-Reading
+					Title role desig sid psa149.title End-Title
+					Reading sid psa149.text End-Reading
+					Title role desig sid psa150.title End-Title
+					Reading sid psa150.text End-Reading
+					Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+				End-Section
+				Insert_section SmallDoxology_Matins End-Insert
+				Insert_section ComplementaryM End-Insert
+				Insert_section BowHeadsM End-Insert
+				Section block6
+					Actor sid Choir End-Actor
+					Title role desig sid Aposticha End-Title
+					Title role mixed <Tmode>rid ocMA.Aposticha1.mode</> <Tmelody>rid ocMA.Aposticha1.melody</> End-Title	
+					Hymn rid ocMA.Aposticha1.text End-Hymn
+					Media rid ocMA.Aposticha2.text End-Media
+					Insert_section PsalmVerses.forMatinsAposticha.verse1 End-Insert
+					Hymn rid ocMA.Aposticha2.text media-off End-Hymn
+					Media rid ocMA.Aposticha3.text End-Media
+					Insert_section PsalmVerses.forMatinsAposticha.verse1 End-Insert
+					Hymn rid ocMA.Aposticha3.text media-off End-Hymn
+				End-Section
+				Section block7
+					Title role desig sid TonMartyron sid EkTouMinaiou End-Title
+					Title role mixed <Tdesig>sid Idiomelon</><Tmode>sid meMA.Aposticha4.mode</>End-Title
+					Insert_section PsalmVerses.forMartyrs.verse2 End-Insert
+					Hymn sid meMA.Aposticha4.text End-Hymn
+				End-Section
+				Section block8	
+					Title role mixed sid Doxa <Tmode>sid meMA.AposGlory.mode</>End-Title
+					Hymn sid meMA.AposGlory.text End-Hymn
+					when-name-of-day-is
+						Wednesday, Friday use:
+							Title role mixed sid KaiNyn <Tdesig>sid Stavrotheotokion</>End-Title
+							Title role mixed<Tmode>sid meMA.AposStavrotheotokion.mode</>sid meMA.AposStavrotheotokion.melody<Tmelody></>End-Title
+							Hymn sid meMA.AposStavrotheotokion.text End-Hymn
+						otherwise use:
+							Title role mixed sid KaiNyn <Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid meMA.AposTheotokion.mode</>sid meMA.AposTheotokion.melody<Tmelody></>End-Title
+							Hymn sid meMA.AposTheotokion.text End-Hymn
+					end-when		
+				End-Section
+				Section block9
+					Actor sid Priest End-Actor
+					Insert_section bk.ho.s03.Weekday_End End-Insert
+					Actor sid Reader End-Actor
+					Insert_section bk.ho.s01.Trisagion_Prayers End-Insert
+					Actor sid Priest End-Actor
+					Dialog sid exc20 End-Dialog
+					Dialog <i>sid res04p</> End-Dialog
+				End-Section	
+				Section block1
+					Actor sid Choir End-Actor
+					Title role desig sid Apolytikia End-Title
+					Insert_section ho.s15_m11.ho_Nov11.Apolytikion_1 End-Insert
+					Title role mixed sid Doxa <Tdesig> sid TouOsiou</> End-Title
+					Insert_section ho.s15_m11.ho_Nov11.Apolytikion_3.hymn End-Insert
+					Title role mixed sid KaiNyn <Tdesig>sid Theotokion</>End-Title
+					Hymn rid ocMA.ApolTheotokion.text @mode M8 End-Hymn
+				End-Section
+				Insert_section Ektenia02 End-Insert
+				Insert_section Matins_Dismissal End-Insert
+			End-Section
+
+/*			Section Instance02
+				Section block5
 					Insert_section Lauds.Mode4 End-Insert
 					Title role mixed <Tmode> sid meVE.Aposticha1.mode </> <Tmelody> sid meVE.Aposticha1.melody </> End-Title
 					Media sid meVE.Aposticha1.text End-Media
@@ -118,5 +194,5 @@ Status Draft
 					Insert_section ho.s15_m11.ho_Nov11.Apolytikion_1 End-Insert
 				End-Section	
 			End-Section
-
+ */
 End-Template
