@@ -1,0 +1,134 @@
+Template se.me03.d24.ve 
+
+Status Draft
+
+	import client_gr_GR_cog.*
+	import ho.s10_gr_GR_cog.*	
+	import me.m03.d24_gr_GR_cog.*
+	import ps_gr_GR_cog.*
+
+	import da.*
+	import oc.*
+	import tr.*
+
+	//Templates
+	import VespersParts.*
+	import LentParts.*
+	import LectionaryReadings.*
+	import Litanies.*
+	
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import poets_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 3 day 24 year 2015 End_Date
+			Page_Header_Even
+				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore lang L2 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	when-triodion-day-is
+		52 use:
+			Section Instance18
+				Insert_section Vespers_01 End-Insert
+				Section block1
+					Insert_section LIHC_Mode3 End-Insert
+					Para role inaudible sid psa140.v3.text End-Para
+					Para role inaudible sid psa140.v4a.text End-Para
+					Para role inaudible sid psa140.v4b.text End-Para
+					Para role inaudible sid psa140.v5a.text End-Para
+					Para role inaudible sid psa140.v5b.text sid psa140.v6a.text End-Para
+					Para role inaudible sid psa140.v6b.text sid psa140.v7.text End-Para
+					Para role inaudible sid psa140.v8.text End-Para
+					Para role inaudible sid psa140.v9.text End-Para
+				End-Section
+				Section block2
+					Title role desig sid StichiraProsomoia sid Iosif End-Title
+					Title role mixed <Tmode>rid trVE.Stichera01.mode</> <Tmelody>rid trVE.Stichera01.melody</> End-Title
+					Media rid trVE.Stichera01.text End-Media
+					Verse sid psa140.v10.text End-Verse
+					Hymn rid trVE.Stichera01.text  media-off End-Hymn
+					Media rid trVE.Stichera02.text End-Media
+					Verse sid psa141.v2.text End-Verse
+					Hymn rid trVE.Stichera02.text  media-off End-Hymn
+					Title role desig sid Eteron sid Theodorou End-Title
+					Title role mixed <Tmode>rid trVE.Stichera03.mode</> <Tmelody>rid trVE.Stichera03.melody</> End-Title
+					Media rid trVE.Stichera03.text End-Media
+					Verse sid psa141.v3.text End-Verse
+					Hymn rid trVE.Stichera03.text  media-off End-Hymn
+				End-Section
+				Section block3
+					Title role desig sid Proeortia End-Title
+					Title role mixed <Tmode>sid meVE.Stichera01.mode</><Tmelody>sid meVE.Stichera01.melody</> End-Title
+					Media sid meVE.Stichera01.text End-Media
+					Verse sid psa141.v4a.text End-Verse
+					Hymn sid meVE.Stichera01.text  media-off End-Hymn
+					Media sid meVE.Stichera02.text End-Media
+					Verse sid psa141.v4b.text End-Verse
+					Hymn sid meVE.Stichera02.text  media-off End-Hymn
+					Media sid meVE.Stichera03.text End-Media
+					Verse sid psa141.v5a.text End-Verse
+					Hymn sid meVE.Stichera03.text  media-off End-Hymn
+				End-Section
+				Insert_section se.tr.d054.pl.Instance01.block4 End-Insert
+				Section block4
+					Title role mixed sid Doxa <Tdesig>sid Proeortion</><Tmode>sid meVE.SticGlory.mode</>End-Title
+					Hymn sid meVE.SticGlory.text End-Hymn
+				End-Section
+				Insert_section Vespers_03_no_entrance.Part1 End-Insert
+				Insert_section Lectionary_Triodion.Vespers_Readings End-Insert
+				Insert_section Vespers_05_Litanies.part2 End-Insert
+				Section block5
+					Title role desig sid TouTriodiou End-Title
+					Title role mixed <Tdesig> sid Idiomelon</><Tmode>rid trVE.AposIdiomelon1.mode</> End-Title
+					Media rid trVE.AposIdiomelon1.text End-Media
+					Hymn rid trVE.AposIdiomelon1.text media-off End-Hymn
+					Title role mixed <Tdesig> sid Idiomelon</><Tmode>rid trVE.AposIdiomelon2.mode</> End-Title
+					Media rid trVE.AposIdiomelon2.text End-Media
+					Insert_section PsalmVerses.forVespersAposticha.weekday.verse1 End-Insert
+					Hymn rid trVE.AposIdiomelon2.text media-off End-Hymn
+					Title role desig sid Martyrikon End-Title
+					Title role mixed <Tmode>rid trVE.AposMartyric.mode</><Tmelody>rid trVE.AposMartyric.melody</> End-Title
+					Media rid trVE.AposMartyric.text End-Media
+					Insert_section PsalmVerses.forVespersAposticha.weekday.verse2 End-Insert
+					Hymn rid trVE.AposMartyric.text  media-off End-Hymn
+				End-Section
+				Section block6
+					Title role mixed sid Doxa <Tdesig>sid Proeortion</><Tmode>sid meMA.AposGlory.mode</>End-Title
+					Hymn sid meMA.AposGlory.text End-Hymn
+				End-Section
+				Insert_section Symeon_Trisagion End-Insert
+				Actor sid Choir End-Actor
+				Title role mixed <Tdesig>sid Apolytikion</><Tmode>sid meVE.Apolytikion1.mode</>End-Title
+				Hymn sid meVE.Apolytikion1.text End-Hymn
+				Insert_section Lent_Vespers_End End-Insert				
+			End-Section
+			
+	end-when		
+
+End-Template

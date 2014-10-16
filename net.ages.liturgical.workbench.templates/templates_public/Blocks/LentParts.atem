@@ -207,23 +207,40 @@ Status Draft
 		Hymn sid hoVE.LentApolytikion4.text End-Hymn
 	End-Section
 
-	Section Lent_Vespers_End_Sunday
-		Actor sid Reader End-Actor
-		Dialog sid res01 <r>sid Forty </>End-Dialog
-		Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
-		Dialog sid TinTimioteran.text End-Dialog
-		Dialog sid EnOnomatiKyriou.text End-Dialog
-		Actor sid Priest End-Actor
-		Dialog sid OOnEvlogitos.text End-Dialog
-		Actor sid Reader End-Actor
-		Dialog sid res04 End-Dialog
-		Dialog sid EpouranieVasilef.text sid res04 End-Dialog
-		Actor sid Priest End-Actor
-		Insert_section StEphraimPrayer End-Insert
-		Actor sid Reader End-Actor
-		Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
-		Dialog sid res06 End-Dialog
-		Dialog sid Evlogison End-Dialog
+	Section Lent_Vespers_End
+		Section part1
+			Actor sid Reader End-Actor
+			Dialog sid res01 <r>sid Forty </>End-Dialog
+			Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
+			Dialog sid TinTimioteran.text End-Dialog
+			Dialog sid EnOnomatiKyriou.text End-Dialog
+			Actor sid Priest End-Actor
+			Dialog sid OOnEvlogitos.text End-Dialog
+			Dialog <i>sid res04p</> End-Dialog
+			Dialog sid EpouranieVasilef.text End-Dialog
+			Dialog <i>sid res04p</> End-Dialog
+			Insert_section StEphraimPrayer End-Insert
+		End-Section
+		when-name-of-day-is
+			Tuesday, Wednesday, Thursday, Friday, Saturday use:
+				Section part2
+					Actor sid Reader End-Actor
+					Reading sid res01 <r>sid Twelve</>End-Reading
+					Reading sid ho.s07_gr_GR_cog.hoTY.Key0501.text sid res04 End-Reading
+					Reading sid psa112.v2.text <r>sid Thrice</>End-Reading
+					Title role desig sid psa33.title End-Title
+					Reading sid psa33.text End-Reading
+					Title role desig sid psa144.title End-Title
+					Reading sid psa144.text End-Reading
+				End-Section
+		end-when				
+		Section part3
+			Actor sid Reader End-Actor
+			Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
+			Dialog sid res06 End-Dialog
+			Dialog sid Evlogison End-Dialog
+		End-Section
+		Insert_section Dismissals.Com_No End-Insert
 	End-Section
 	
 	Section Lent_PostGospel
@@ -234,7 +251,7 @@ Status Draft
 		Hymn sid tr.d001_gr_GR_cog.trMA.PostGospelBoth.text End-Hymn
 		Title role mixed <Tdesig> sid Idiomelon </> <Tmode> sid tr.d001_gr_GR_cog.trMA.PostGospelIdiomelon.mode </>End-Title
 		Media sid tr.d001_gr_GR_cog.trMA.PostGospelIdiomelon.text End-Media
-		Verse <bnr> sid vVerse </> sid ps_gr_GR_cog.psa50.v3.text End-Verse
+		Verse <bnr> sid vVerse </> sid psa50.v3.text End-Verse
 		Hymn sid tr.d001_gr_GR_cog.trMA.PostGospelIdiomelon.text media-off End-Hymn
 	End-Section 
 	
