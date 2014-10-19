@@ -1,14 +1,14 @@
 Template se.tr.d064.ve 
 
-Status Review
+Status Final
 
 	import client_gr_GR_cog.*
 	import eu.lichrysbasil_gr_GR_cog.*
-	import ho.s03_gr_GR_cog.*
-	import ho.s07_gr_GR_cog.*
 	import ho.s10_gr_GR_cog.*	
 	import le.pr.tr.d064_gr_GR_cog.*
 	import tr.d064_gr_GR_cog.*
+	
+	import da.*
 
 	//Templates
 	import LentParts.*
@@ -17,15 +17,37 @@ Status Review
 	
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
-	import template.titles_gr_GR_cog.*
 	import misc_gr_GR_cog.*
 	import prayers_gr_GR_cog.*
 	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
 	import titles_gr_GR_cog.*
 		
 	import iTags.*
 	import bTags.*
 	import roles.*
+
+	Head 
+		Set_Date month 4 day 5 year 2015 End_Date
+			Page_Header_Even
+				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore lang L2 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
 
 	Section Instance01
 		Insert_section Vespers_01 End-Insert
@@ -83,15 +105,6 @@ Status Review
 		End-Section
 		Insert_section Vespers_05_Litanies End-Insert
 		Section block3
-			Title role desig sid ILitiKaiArtoklasia End-Title
-			Actor sid Choir End-Actor
-			Title role mode sid trVE.Lity1.mode End-Title
-			Hymn sid trVE.Lity1.text End-Hymn 
-			Insert_section Ektenia03 End-Insert
-			Insert_section Vespers_06_LityAndArtoclasia.Part2 End-Insert
-			Insert_section Vespers_06_LityAndArtoclasia.Part3 End-Insert
-		End-Section
-		Section block4
 			Title role desig sid Aposticha End-Title		
 			Title role mixed <Tdesig> sid Idiomela</> <Tmode>sid trVE.Aposticha1.mode </>End-Title
 			Hymn sid trVE.Aposticha1.text End-Hymn
@@ -103,7 +116,7 @@ Status Review
 			Title role mode sid trVE.AposGlory.mode End-Title
 			Hymn sid trVE.AposGlory.text End-Hymn
 		End-Section
-		Section block5
+		Section block4
 			Insert_section Symeon_Trisagion End-Insert	
 			Actor sid Choir End-Actor
 			Title role mixed <Tdesig> sid Apolytikion </> <Tmode>sid trVE.Apolytikion1.mode </>End-Title
@@ -113,7 +126,7 @@ Status Review
 			Title role mixed sid KaiNyn <Tmode>sid trVE.Apolytikion2.mode</>End-Title
 			Hymn sid trVE.Apolytikion2.text End-Hymn
 		End-Section	
-		Insert_section Vespers_09_AfterArto End-Insert
+		Insert_section Vespers_09 End-Insert
 		Insert_section Vespers_10_ComYes End-Insert
 	End-Section
 End-Template
