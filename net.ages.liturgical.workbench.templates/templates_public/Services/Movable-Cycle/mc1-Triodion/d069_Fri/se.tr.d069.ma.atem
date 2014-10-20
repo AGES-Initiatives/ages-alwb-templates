@@ -1,6 +1,6 @@
 Template se.tr.d069.ma 
 
-Status Review
+Status Final
 
 	import client_gr_GR_cog.*
 	import ho.s03_gr_GR_cog.*
@@ -27,7 +27,7 @@ Status Review
 	import roles.*
 
 	Head 
-		Set_Date month 4 day 18 year 2014  End_Date
+		Set_Date month 4 day 10 year 2015 End_Date
 			Page_Header_Even
 				center @lookup sid ma.pdf.header lang L1 @lookup sid hw.ofholyfriday lang L1 @lookup sid d.delimiter lang L1 @lookup sid hw.passion lang L1 @lookup sid d.onThursdayEvening lang L1
 			End_Page_Header_Even
@@ -48,7 +48,11 @@ Status Review
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-Insert_template MatinsOrdinary_Lent End-Insert
+	Title role desig sid hw.pdf.cover End-Title
+	Title role desig sid hw.passion sid d.onThursdayEvening End-Title
+	Title <inr>sid ma.pdf.header sid hw.ofholyfriday </>End-Title 
+	Break line End_Break
+	Insert_template MatinsOrdinary_Lent End-Insert
 
 	Actor sid Choir End-Actor	
 	Title role mode sid trHW.Troparion.mode End-Title
@@ -322,10 +326,11 @@ Insert_template MatinsOrdinary_Lent End-Insert
 		Verse sid trHW.BeatitudesT.verse End-Verse
 		Hymn sid trHW.BeatitudesT.text End-Hymn	
 	
-		Title role mixed <Tdesig>sid Prokeimenon</> <Tmode>sid trHW.Prokeimenon.mode</> End-Title
-		Hymn sid trHW.Prokeimenon.text <r>sid Twice media-off </>End-Hymn
-		Verse sid trHW.ProkeimenonVerse1.text End-Verse
-		Hymn sid trHW.Prokeimenon.text End-Hymn
+		Title role mixed <Tdesig>sid Prokeimenon</><Tmode>sid Mode4</> End-Title
+		Media sid trHW.Prokeimenon.text End-Media
+		Hymn sid psa21.v19.text <r>sid Twice media-off </>End-Hymn
+		Verse sid psa21.v2.text End-Verse
+		Hymn sid psa21.v19.text End-Hymn
 	End-Section
 
 	Section GospelReading_07
@@ -342,11 +347,7 @@ Insert_template MatinsOrdinary_Lent End-Insert
 		Dialog <i>sid DoxaTiMakrothymiaP.text</> End-Dialog
 	End-Section 
 
-	Section Psalm50
-		Actor sid Reader End-Actor
-		Title role desig sid psa50.title End-Title
-		Reading sid psa50.text End-Reading
-	End-Section
+	Insert_section Psalm50_read End-Insert
 
 	Section GospelReading_08
 		Title role desig sid lemcHW.PassionGospel08.title End-Title
@@ -362,70 +363,67 @@ Insert_template MatinsOrdinary_Lent End-Insert
 		Dialog <i>sid DoxaTiMakrothymiaP.text</> End-Dialog
 	End-Section 
 
-	Section Canon_Exap
-		Section Ode5
-			Actor sid Choir End-Actor
-			Title role desig sid OKanon End-Title
-			Title role mixed <Tdesig>sid trMA.Ode5C1H.ode sid OEirmos </><Tmode>sid trMA.Ode5C1H.mode</>End-Title		
-			Media sid trMA.Ode5C1H.text End-Media
-			Para role heirmos sid trMA.Ode5C1H.text <r>sid Twice</>End-Para		
-			Verse sid DoxaSoiOTheosImon.text End-Verse
-			Hymn sid trMA.Ode5C11.text <r>sid Twice media-off </>End-Hymn
-			Title sid Doxa sid KaiNyn End-Title
-			Hymn sid trMA.Ode5C12.text <r>sid Twice media-off </>End-Hymn
-			Title role desig sid Katavasia End-Title
-			Hymn sid trMA.Ode5K.text End-Hymn
-		End-Section
-		Insert_section ShortLitany09 End-Insert
-		Section Kontakion
-			Actor sid Reader End-Actor
-			Title role mixed <Tdesig>sid Kontakion</><Tmode>sid trMA.Kontakion.mode</>End-Title
-			Reading sid trMA.Kontakion.text End-Reading
-			Title role desig sid OOikos End-Title
-			Reading sid trMA.Oikos.text End-Reading
-		End-Section
-		Insert_section Synaxarion End-Insert
-		Section Ode8
-			Actor sid Choir End-Actor
-			Title role desig sid trMA.Ode8C1H.ode sid OEirmos End-Title		
-			Media sid trMA.Ode8C1H.text End-Media
-			Para role heirmos sid trMA.Ode8C1H.text <r>sid Twice</>End-Para		
-			Verse sid DoxaSoiOTheosImon.text End-Verse
-			Hymn sid trMA.Ode8C11.text End-Hymn
-			Verse sid DoxaSoiOTheosImon.text End-Verse
-			Hymn sid trMA.Ode8C12.text End-Hymn
-			Title sid Doxa End-Title
-			Hymn sid trMA.Ode8C13.text End-Hymn
-			Title sid KaiNyn End-Title
-			Hymn sid trMA.Ode8C14.text End-Hymn
-			Title role desig sid Katavasia End-Title
-			Verse sid ps.bodes_gr_GR_cog.bode8.v19.text End-Verse
-			Hymn sid trMA.Ode8K.text End-Hymn
-		End-Section
-		Section Ode9
-			Actor sid Deacon End-Actor
-			Dialog sid exc15 End-Dialog
-			Actor sid Choir End-Actor	
-			Title role desig sid trMA.Ode9C1H.ode sid OEirmos End-Title
-			Media sid trMA.Ode9C1H.text End-Media
-			Para role heirmos sid trMA.Ode9C1H.text <r>sid Twice</>End-Para		
-			Verse sid DoxaSoiOTheosImon.text End-Verse
-			Hymn sid trMA.Ode9C11.text End-Hymn
-			Verse sid DoxaSoiOTheosImon.text End-Verse
-			Hymn sid trMA.Ode9C12.text End-Hymn
-			Title sid Doxa End-Title
-			Hymn sid trMA.Ode9C13.text End-Hymn
-			Title sid KaiNyn End-Title
-			Hymn sid trMA.Ode9C14.text End-Hymn
-			Title role desig sid Katavasia End-Title
-			Hymn sid trMA.Ode9K.text End-Hymn
-		End-Section
-		Insert_section ShortLitany10 End-Insert
-		Section Exaposteilarion
-			Actor sid Choir End-Actor
-			Title role mixed <Tdesig>sid Exaposteilarion</><Tmode>sid trMA.Exaposteilarion1.mode</>End-Title
-			Hymn sid trMA.Exaposteilarion1.text <r>sid Thrice media-off </>End-Hymn
-		End-Section
+	Section Ode5
+		Actor sid Choir End-Actor
+		Title role desig sid OKanon End-Title
+		Title role mixed <Tdesig>sid trMA.Ode5C1H.ode sid OEirmos </><Tmode>sid trMA.Ode5C1H.mode</>End-Title		
+		Media sid trMA.Ode5C1H.text End-Media
+		Para role heirmos sid trMA.Ode5C1H.text <r>sid Twice</>End-Para		
+		Verse sid DoxaSoiOTheosImon.text End-Verse
+		Hymn sid trMA.Ode5C11.text <r>sid Twice media-off </>End-Hymn
+		Title sid Doxa sid KaiNyn End-Title
+		Hymn sid trMA.Ode5C12.text <r>sid Twice media-off </>End-Hymn
+		Title role desig sid Katavasia End-Title
+		Hymn sid trMA.Ode5K.text End-Hymn
+	End-Section
+	Insert_section ShortLitany09 End-Insert
+	Section Kontakion
+		Actor sid Reader End-Actor
+		Title role mixed <Tdesig>sid Kontakion</><Tmode>sid trMA.Kontakion.mode</>End-Title
+		Reading sid trMA.Kontakion.text End-Reading
+		Title role desig sid OOikos End-Title
+		Reading sid trMA.Oikos.text End-Reading
+	End-Section
+	Insert_section Synaxarion End-Insert
+	Section Ode8
+		Actor sid Choir End-Actor
+		Title role desig sid trMA.Ode8C1H.ode sid OEirmos End-Title		
+		Media sid trMA.Ode8C1H.text End-Media
+		Para role heirmos sid trMA.Ode8C1H.text <r>sid Twice</>End-Para		
+		Verse sid DoxaSoiOTheosImon.text End-Verse
+		Hymn sid trMA.Ode8C11.text End-Hymn
+		Verse sid DoxaSoiOTheosImon.text End-Verse
+		Hymn sid trMA.Ode8C12.text End-Hymn
+		Title sid Doxa End-Title
+		Hymn sid trMA.Ode8C13.text End-Hymn
+		Title sid KaiNyn End-Title
+		Hymn sid trMA.Ode8C14.text End-Hymn
+		Title role desig sid Katavasia End-Title
+		Verse sid ps.bodes_gr_GR_cog.bode8.v19.text End-Verse
+		Hymn sid trMA.Ode8K.text End-Hymn
+	End-Section
+	Section Ode9
+		Insert_section Ode9_Intro End-Insert
+		Actor sid Choir End-Actor	
+		Title role desig sid trMA.Ode9C1H.ode sid OEirmos End-Title
+		Media sid trMA.Ode9C1H.text End-Media
+		Para role heirmos sid trMA.Ode9C1H.text <r>sid Twice</>End-Para		
+		Verse sid DoxaSoiOTheosImon.text End-Verse
+		Hymn sid trMA.Ode9C11.text End-Hymn
+		Verse sid DoxaSoiOTheosImon.text End-Verse
+		Hymn sid trMA.Ode9C12.text End-Hymn
+		Title sid Doxa End-Title
+		Hymn sid trMA.Ode9C13.text End-Hymn
+		Title sid KaiNyn End-Title
+		Hymn sid trMA.Ode9C14.text End-Hymn
+		Title role desig sid Katavasia End-Title
+		Hymn sid trMA.Ode9K.text End-Hymn
+	End-Section
+	Insert_section ShortLitany10 End-Insert
+	Section Exaposteilarion
+		Actor sid Choir End-Actor
+		Title role mixed <Tdesig>sid Exaposteilarion</><Tmode>sid trMA.Exaposteilarion1.mode</>End-Title
+		Hymn sid trMA.Exaposteilarion1.text <r>sid Thrice media-off </>End-Hymn
 	End-Section
 
 	Section GospelReading_09
@@ -547,7 +545,7 @@ Insert_template MatinsOrdinary_Lent End-Insert
 		Insert_section Ektenia02 End-Insert
 		Insert_section Matins_Dismissal.part1 End-Insert
 		Actor sid Priest End-Actor
-		Dialog sid dis00.passion sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08 <r>sid cl.localpatronsaint1.dismissal</> sid dis09  sid dis10 sid dis89 End-Dialog
+		Dialog sid dis00 sid dis00.passion sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08 <r>sid cl.localpatronsaint1.dismissal</> sid dis09  sid dis10 sid dis89 End-Dialog
 			Dialog sid DiEfchonPateron.text End-Dialog
 			Actor sid People End-Actor
 			Dialog sid res04 End-Dialog
