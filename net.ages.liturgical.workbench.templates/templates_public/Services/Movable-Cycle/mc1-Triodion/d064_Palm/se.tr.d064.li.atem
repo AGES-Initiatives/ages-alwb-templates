@@ -1,6 +1,6 @@
 Template se.tr.d064.li 
 
-Status Review
+Status Final
 
 	import client_gr_GR_cog.*
 	import eu.lichrysbasil_gr_GR_cog.*
@@ -30,78 +30,83 @@ Status Review
 	import bTags.*
 	import roles.*
 
-Section Instance01
-	Insert_section LiturgyChrysBasilParts.Section01 End-Insert
-	Insert_section LiturgyChrysBasilParts.Section02 End-Insert
-	Section Section03 //festal antiphons
-		Actor sid Choir End-Actor
-		Insert_section Day_PalmSunday.antiphon1 End-Insert
-	End-Section
-	Insert_section LiturgyChrysBasilParts.Section04 End-Insert
-	Section Section05 //festal antiphons
-		Actor sid Choir End-Actor
-		Insert_section Day_PalmSunday.antiphon2 End-Insert
-	End-Section
-	Insert_section LiturgyChrysBasilParts.Section06 End-Insert
-	Section Part_04_2_Antiphon3
-		Actor sid Choir End-Actor
-		Insert_section Day_PalmSunday.antiphon1 End-Insert
-	End-Section
-	Insert_section LiturgyChrysBasilParts.Section08 End-Insert
-	Insert_section LiturgyChrysBasilParts.Section09.clergy End-Insert
-	Insert_section LiturgyChrysBasilParts.Section10 End-Insert
-	Section Part_05_33_EntranceHymnFestal
-		Hymn sid trLI.EntranceHymn.text sid hoLI.Antiphon21.text sid trLI.Antiphon2.text media-off End-Hymn
-		Actor sid Choir End-Actor
-		Dialog sid hoLI.Antiphon22.text End-Dialog
-	End-Section
-	Section Part_05_4
-		Actor sid Choir End-Actor
-		Title role desig sid Apolytikion End-Title
-		Title role mixed <Tdesig> sid Apolytikion</> <Tmode>sid trVE.Apolytikion1.mode</>End-Title
-		Hymn sid trVE.Apolytikion1.text End-Hymn
-		Title role mode sid trVE.Apolytikion2.mode End-Title
-		Hymn sid trVE.Apolytikion2.text End-Hymn
-	End-Section
-	Section Part_05_6_SeasonalKontakion
-		Title role mixed <Tdesig> sid Kontakion</> <Tmode> sid trLI.SeasonalKontakion.mode</> End-Title
-		Hymn sid trLI.SeasonalKontakion.text End-Hymn
-	End-Section
-	Insert_section LiturgyChrysBasilParts.Section13.prayer End-Insert
-	Insert_section LiturgyChrysBasilParts.Section13.holygod End-Insert
-	Insert_section Lectionary_Epistle_Daily End-Insert
-	Insert_section Lectionary_Gospel_Daily.Alleluia End-Insert	
-	Insert_section LiturgyChrysBasilParts.Section14 End-Insert
-	Insert_section Lectionary_Gospel_Daily.Lesson End-Insert
-	Insert_section LiturgyChrysBasilParts.Section19 End-Insert
-	Insert_section LiturgyChrysBasilParts.Section20 End-Insert
-	Insert_section LiturgyChrysBasilParts.Section21.chrys End-Insert
-	Insert_section LiturgyChrysBasilParts.Section22.chrys End-Insert
-	Section Part_13_2_Megalynarion
-		Title role desig sid euLI.Key1328.title End-Title
-		Title role mode sid trLI.TheotokosHymn.mode End-Title
-		Hymn sid trLI.TheotokosHymn.text End-Hymn
-	End-Section
-	Insert_section LiturgyChrysBasilParts.Section24.chrys End-Insert
-	Insert_section LiturgyChrysBasilParts.Section25.chrys End-Insert
-	Insert_section LiturgyChrysBasilParts.Section26 End-Insert
-	Section Part_15_1_CommunionHymn
-		Actor sid Choir End-Actor
-		Insert_section Day_PalmSunday.communion_title End-Insert
-		Insert_section Day_PalmSunday.communion_hymn End-Insert
-	End-Section
-	Insert_section LiturgyChrysBasilParts.Section28 End-Insert
-	Insert_section LiturgyChrysBasilParts.Section29 End-Insert
-	Insert_section LiturgyChrysBasilParts.Section30 End-Insert
-	Section Part_15_5_WeHaveSeen
-		Actor sid Choir End-Actor
-		Title role mode sid trVE.Apolytikion1.mode End-Title
-		Hymn sid trVE.Apolytikion1.text End-Hymn
+	Head 
+//		Set_Date month 4 day 5 year 2015 End_Date
+			Page_Header_Even
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Section Instance01
+		Insert_section LiturgyChrysBasilParts.Section01 End-Insert
+		Insert_section LiturgyChrysBasilParts.Section02 End-Insert
+		Section block1 //festal antiphons
+			Actor sid Choir End-Actor
+			Insert_section Day_PalmSunday.antiphon1 End-Insert
+			Insert_section LiturgyChrysBasilParts.Section04 End-Insert
+			Actor sid Choir End-Actor
+			Insert_section Day_PalmSunday.antiphon2 End-Insert
+			Insert_section LiturgyChrysBasilParts.Section06 End-Insert
+			Actor sid Choir End-Actor
+			Insert_section Day_PalmSunday.antiphon3 End-Insert
+		End-Section
+		Insert_section LiturgyChrysBasilParts.Section08 End-Insert
+		Insert_section LiturgyChrysBasilParts.Section09.clergy End-Insert
+		Insert_section LiturgyChrysBasilParts.Section10 End-Insert
+		Insert_section LiturgyChrysBasilParts.Section11.single End-Insert
+		Section block2
+			Title role desig sid Apolytikion End-Title
+			Title role mixed <Tdesig> sid Apolytikion</> <Tmode>sid trVE.Apolytikion1.mode</>End-Title
+			Hymn sid trVE.Apolytikion1.text End-Hymn
+			Title role mode sid trVE.Apolytikion2.mode End-Title
+			Hymn sid trVE.Apolytikion2.text End-Hymn
+		End-Section
+		Insert_section LiturgyChrysBasilParts.Section12.seasonal_triodion.single End-Insert
+		Insert_section LiturgyChrysBasilParts.Section13.prayer End-Insert
+		Insert_section LiturgyChrysBasilParts.Section13.holygod End-Insert
+		Insert_section Lectionary_Epistle_Daily End-Insert
+		Insert_section Lectionary_Gospel_Daily.Alleluia End-Insert	
+		Insert_section LiturgyChrysBasilParts.Section14 End-Insert
+		Insert_section Lectionary_Gospel_Daily.Lesson End-Insert
+		Insert_section LiturgyChrysBasilParts.Section19 End-Insert
+		Insert_section LiturgyChrysBasilParts.Section20 End-Insert
+		Insert_section LiturgyChrysBasilParts.Section21.chrys End-Insert
+		Insert_section LiturgyChrysBasilParts.Section22.chrys End-Insert
+		Section block3
+			Title role desig sid euLI.Key1328.title End-Title
+			Title role mode sid trLI.TheotokosHymn.mode End-Title
+			Hymn sid trLI.TheotokosHymn.text End-Hymn
+		End-Section
+		Insert_section LiturgyChrysBasilParts.Section24.chrys End-Insert
+		Insert_section LiturgyChrysBasilParts.Section25.chrys End-Insert
+		Insert_section LiturgyChrysBasilParts.Section26 End-Insert
+		Section block4
+			Actor sid Choir End-Actor
+			Insert_section Day_PalmSunday.communion_title End-Insert
+			Insert_section Day_PalmSunday.communion_hymn End-Insert
+		End-Section
+		Insert_section LiturgyChrysBasilParts.Section28 End-Insert
+		Insert_section LiturgyChrysBasilParts.Section29 End-Insert
+		Insert_section LiturgyChrysBasilParts.Section30 End-Insert
+		Section block5
+			Actor sid Choir End-Actor
+			Title role mode sid trVE.Apolytikion1.mode End-Title
+			Hymn sid trVE.Apolytikion1.text End-Hymn
+		End-Section	
+		Insert_section LiturgyChrysBasilParts.Section32 End-Insert
+		Insert_section LiturgyChrysBasilParts.Section33 End-Insert
+		Insert_section LiturgyChrysBasilParts.Section34.chrys End-Insert
+		Insert_section LiturgyChrysBasilParts.Section35.chrys End-Insert
+		Insert_section LiturgyChrysBasilParts.Section36.comyes End-Insert
 	End-Section	
-	Insert_section LiturgyChrysBasilParts.Section32 End-Insert
-	Insert_section LiturgyChrysBasilParts.Section33 End-Insert
-	Insert_section LiturgyChrysBasilParts.Section34.chrys End-Insert
-	Insert_section LiturgyChrysBasilParts.Section35.chrys End-Insert
-	Insert_section LiturgyChrysBasilParts.Section36.comyes End-Insert
-End-Section	
 End-Template

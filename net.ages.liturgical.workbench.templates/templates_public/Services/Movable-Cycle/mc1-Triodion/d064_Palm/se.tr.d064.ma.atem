@@ -1,13 +1,14 @@
 Template se.tr.d064.ma 
 
-Status Review
+Status Final
 
 	import client_gr_GR_cog.*
 	import eu.lichrysbasil_gr_GR_cog.*
 	import hi.s17_gr_GR_cog.*
 	import ho.s03_gr_GR_cog.*
 	import ho.s07_gr_GR_cog.*
-	import ho.s10_gr_GR_cog.*	
+	import ho.s10_gr_GR_cog.*
+	import ps_gr_GR_cog.*
 	import tr.d064_gr_GR_cog.*
 
 	//Templates
@@ -26,15 +27,29 @@ Status Review
 	import bTags.*
 	import roles.*
 
-Head
-	Set_Date month 4 day 13 year 2014 End_Date
-End_Head
+	Head 
+//		Set_Date month 4 day 5 year 2015 End_Date
+			Page_Header_Even
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
 
-Preface covers
-	Insert_template ematins.cover.ma End-Insert
-End-Preface
+	Preface Covers
+		Insert_template ematins.cover.ma End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
 
-	Section Section01
+	Section block1
 		Insert_section GITL.mode1 End-Insert
 		Title role mixed <Tdesig> sid Apolytikion </> <Tmode>sid trVE.Apolytikion1.mode </>End-Title
 		Hymn sid trVE.Apolytikion1.text End-Hymn
@@ -43,7 +58,7 @@ End-Preface
 		Title role mixed sid KaiNyn <Tmode>sid trVE.Apolytikion2.mode</>End-Title
 		Hymn sid trVE.Apolytikion2.text End-Hymn
 	End-Section
-	Section Section02
+	Section block2
 		Insert_section ShortLitany02 End-Insert
 		Title role desig sid Kathisma1 End-Title
 		Title role mixed <Tmode>sid trMA.Kathisma11.mode</> <Tmelody>sid trMA.Kathisma11.melody</> End-Title
@@ -52,7 +67,7 @@ End-Preface
 		Title role mixed <Tmode>sid trMA.Kathisma12.mode</> <Tmelody>sid trMA.Kathisma12.melody</> End-Title
 		Hymn sid trMA.Kathisma12.text End-Hymn
 	End-Section
-	Section Section03
+	Section block3
 		Title role desig sid Kathisma2 End-Title
 		Title role mixed <Tmode>sid trMA.Kathisma21.mode</> <Tmelody>sid trMA.Kathisma21.melody</> End-Title
 		Hymn sid trMA.Kathisma21.text End-Hymn
@@ -60,19 +75,19 @@ End-Preface
 		Title role mixed <Tmode>sid trMA.Kathisma22.mode</> <Tmelody>sid trMA.Kathisma22.melody</> End-Title
 		Hymn sid trMA.Kathisma22.text End-Hymn
 	End-Section
-	Section Section04
+	Section block4
 		Title role desig sid Kathisma3 End-Title
 		Title role mixed <Tmode>sid trMA.Kathisma31.mode</> <Tmelody>sid trMA.Kathisma31.melody</> End-Title
 		Hymn sid trMA.Kathisma31.text End-Hymn
 		Title sid DoxaKaiNyn End-Title
 		Hymn sid trMA.Kathisma31.text media-off End-Hymn
 	End-Section
-	Section Section05
+	Section block5
 		Insert_section ShortLitany04 End-Insert	
 		Insert_section Antiphon1_Mode4 End-Insert
 		Insert_section mc_Matins_Prokeimenon End-Insert
 	End-Section
-	Section Section06
+	Section block6
 		Insert_section MatinsGospel_IntroP End-Insert
 		Insert_section MatinsGospel_MovableCycleP End-Insert
 		Insert_section Psalm50_read End-Insert
@@ -87,7 +102,7 @@ End-Preface
 		Hymn sid trMA.PostGospelIdiomelon.text media-off End-Hymn
 		Insert_section Supplication_deacon End-Insert
 	End-Section 
-	Section Section07
+	Section block7
 		Actor sid Reader End-Actor
 		Title role mixed <Tdesig>sid Ypakoi</><Tmode>sid trMA.Hypakoe.mode</> End-Title
 		Reading sid trMA.Hypakoe.text End-Reading
@@ -97,34 +112,32 @@ End-Preface
 		Reading sid trMA.Oikos.text End-Reading
 		Insert_section Synaxarion.Synaxarion End-Insert
 	End-Section
-	Section Section08
+	Section block8
 		Actor sid Choir End-Actor
 		Insert_section k_1345678 End-Insert
-		Actor sid PriestOrDeacon End-Actor
-		Dialog sid exc15 End-Dialog
+		Insert_section Ode9_Intro End-Insert
 		Actor sid Choir End-Actor
-		Section Ode_9
-			Title role desig sid Ode9 End-Title
-			Media sid trMA.Ode9C1H.text End-Media
-			Title role mixed <Tmode> sid trMA.Ode9C1H.mode </> <Tdesig> sid Heirmos </>End-Title
-			Hymn sid trMA.Ode9C1H.text media-off <r>sid Twice media-off </>End-Hymn
-			Title role desig sid Troparia End-Title
-			Verse sid DoxaSoiOTheosImon.text End-Verse
-			Hymn sid trMA.Ode9C11.text End-Hymn
-			Verse sid DoxaSoiOTheosImon.text End-Verse
-			Hymn sid trMA.Ode9C11.text End-Hymn
-			Verse sid DoxaPatri.text End-Verse
-			Hymn sid trMA.Ode9C12.text End-Hymn
-			Verse sid KaiNynKaiAei.text End-Verse
-			Hymn sid trMA.Ode9C13.text End-Hymn
-		End-Section
+		Title role desig sid Ode9 End-Title
+		Media sid trMA.Ode9C1H.text End-Media
+		Title role mixed <Tmode> sid trMA.Ode9C1H.mode </> <Tdesig> sid Heirmos </>End-Title
+		Hymn sid trMA.Ode9C1H.text media-off <r>sid Twice media-off </>End-Hymn
+		Title role desig sid Troparia End-Title
+		Verse sid DoxaSoiOTheosImon.text End-Verse
+		Hymn sid trMA.Ode9C11.text End-Hymn
+		Verse sid DoxaSoiOTheosImon.text End-Verse
+		Hymn sid trMA.Ode9C11.text End-Hymn
+		Verse sid DoxaPatri.text End-Verse
+		Hymn sid trMA.Ode9C12.text End-Hymn
+		Verse sid KaiNynKaiAei.text End-Verse
+		Hymn sid trMA.Ode9C13.text End-Hymn
 		Insert_section k_9 End-Insert
 		Insert_section ShortLitany10 End-Insert	
 	End-Section
-	Section Section09
+	Section block9
 		Actor sid Choir End-Actor
 		Title role mode sid Mode2 End-Title
-		Hymn sid trMA.Exaposteilarion1.text <r> sid Thrice media-off</>End-Hymn
+		Media sid trMA.Exaposteilarion1.text End-Media
+		Hymn sid psa98.v9balt.text media-off <r>sid Thrice media-off</>End-Hymn
 		Break line End_Break
 		Title role desig sid hiPR.Key0600.title End-Title
 		Title role desig sid hiPR.Key0601.title End-Title
@@ -137,7 +150,7 @@ End-Preface
 		Dialog <i>sid res04p</> End-Dialog
 		Break line End_Break
 	End-Section
-	Section Section10
+	Section block10
 		Actor sid Choir End-Actor
 		Insert_section Lauds.Mode4 End-Insert
 		Media sid trMA.Lauds1.text End-Media
@@ -159,7 +172,7 @@ End-Preface
 		Title role mixed sid Doxa sid KaiNyn <Tmode>sid trMA.LaudsGlory.mode</>End-Title
 		Hymn sid trMA.LaudsGlory.text End-Hymn
 	End-Section
-	Section Section11
+	Section block11
 		Insert_section GreatDoxology End-Insert
 		Title role mixed <Tdesig>sid Apolytikion</><Tmode>sid trVE.Apolytikion2.mode</>End-Title
 		Hymn sid trVE.Apolytikion2.text End-Hymn
