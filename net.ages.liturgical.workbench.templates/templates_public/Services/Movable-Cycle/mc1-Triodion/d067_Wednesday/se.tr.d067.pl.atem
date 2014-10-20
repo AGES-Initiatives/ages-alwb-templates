@@ -1,6 +1,6 @@
 Template se.tr.d067.pl
 
-Status Review
+Status Final 
 
 	import client_gr_GR_cog.*
 	import eu.lichrysbasil_gr_GR_cog.*	
@@ -27,7 +27,7 @@ Status Review
 	import roles.*
 
 		Head 
-			Set_Date month 4 day 16 year 2014 End_Date
+			Set_Date month 4 day 8 year 2015 End_Date
 				Page_Header_Even
 					center @lookup sid pl.pdf.header lang L1 @lookup sid hw.ofholytuesday lang L1
 				End_Page_Header_Even
@@ -43,16 +43,13 @@ Status Review
 			Set_Page_Number 1 End_Set_Page_Number
 		End_Head
 
-	Section ServiceTitle	
-		Title role desig sid pl.pdf.header sid hw.ofholytuesday End-Title
-		Title <inr>sid ve.pdf.header sid hw.ofholywednesday </>End-Title 
-		Break line End_Break
-	End-Section
-
+	Title role desig sid pl.pdf.header sid hw.ofholytuesday End-Title
+	Title <inr>sid ve.pdf.header sid hw.ofholywednesday </>End-Title 
+	Break line End_Break
 	Insert_section Presanctified01 End-Insert
 	Insert_section LIHC_Mode1 End-Insert
 	Insert_section LIHC_Stichologia.part1 End-Insert
-	Section Stichera
+	Section block1
 		Title role mixed <Tmode>sid trVE.Stichera01.mode</><Tmelody>sid trVE.Stichera01.melody</> End-Title
 		Media sid trVE.Stichera01.text End-Media
 		Insert_section LIHC_Verse.v01 End-Insert
@@ -91,39 +88,13 @@ Status Review
 	Insert_section Presanctified03 End-Insert
 	Insert_section Lectionary_Triodion.Vespers_Readings End-Insert
 	Insert_section Presanctified05 End-Insert
-	Section Gospel_Reading 
-		Title role desig sid ToEvangelion End-Title
-		Actor sid Deacon End-Actor
-		Dialog sid exc17 sid exc18 sid gos02 End-Dialog
-		Actor sid Priest End-Actor
-		Dialog sid pet31 End-Dialog
-		Dialog <i>sid res05p </>End-Dialog
-		Actor sid Deacon End-Actor
-		Dialog sid gos03a sid lemcVE.Gospel.book sid gos03b End-Dialog
-		Actor sid Priest End-Actor
-		Dialog sid exc19 End-Dialog
-		Dialog <i> sid DoxaSoiKyrieP </>End-Dialog	
-		Actor sid Deacon End-Actor
-		Title role chapverse sid lemcVE.Gospel.chapverse End-Title
-		Reading sid lemcVE.Gospel.text End-Reading
-		Actor sid Priest End-Actor
-		Dialog sid euLI.Key0705.text End-Dialog
-		Actor sid Choir End-Actor						
-		Dialog sid DoxaSoiKyrie End-Dialog	
-	End-Section	
+	Insert_section Lectionary_Triodion.Presanctified_Gospel_Reading End-Insert
 	Insert_section Presanctified06 End-Insert
 	Insert_section Presanctified08 End-Insert
 	Insert_section Presanctified09 End-Insert
 	Insert_section Presanctified10 End-Insert
 	Insert_section Presanctified11 End-Insert
 	Insert_section Presanctified12.part1 End-Insert
-	Section Presanctified12_Part2
-		Dialog sid DoxaSoiChriste2 End-Dialog
-		Dialog sid dis00.bridegroom sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08 sid cl.localpatronsaint1.dismissal sid dis09 sid dis10 sid dis89 End-Dialog
-		Actor sid Priest End-Actor
-		Dialog sid DiEfchonPateron.text End-Dialog
-		Dialog <i> sid res04p</> End-Dialog
-	End-Section
-	
+	Insert_section Dismissals.Com_Yes End-Insert
 
 End-Template
