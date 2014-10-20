@@ -1,11 +1,10 @@
 Template se.tr.d069.vl
 
-Status Review
+Status Final
 
 	import client_gr_GR_cog.*
 	import eu.lichrysbasil_gr_GR_cog.*
 	import hi.s01_gr_GR_cog.*
-//	import ho.s03_gr_GR_cog.*
 	import ho.s07_gr_GR_cog.*
 	import ho.s10_gr_GR_cog.*	
 	import le.go.mc.d069_gr_GR_cog.*
@@ -34,7 +33,7 @@ Status Review
 
 
 	Head 
-		Set_Date month 4 day 18 year 2014 End_Date
+		Set_Date month 4 day 10 year 2015 End_Date
 			Page_Header_Even
 				center @lookup sid vl.pdf.header lang L1 @lookup sid d.onThursdayMorning lang L1 
 			End_Page_Header_Even
@@ -55,7 +54,10 @@ Status Review
 		Insert_template ematins.credits End-Insert
 	End-Preface
 	
-	Section Section01
+	Title role desig sid vl.pdf.header sid hw.ofholythursday End-Title
+	Title <inr>sid ve.pdf.header sid hw.ofholyfriday </>End-Title 
+	Break line End_Break
+	Section block1
 		Actor sid Priest End-Actor
 		Dialog sid enarxis02 End-Dialog
 		Insert_section Vespers_01.Part2 End-Insert
@@ -92,30 +94,28 @@ Status Review
 	Insert_section Lectionary_Triodion.Vespers_Readings End-Insert
 	Insert_section LiturgyChrysBasilParts.Section13.prayer End-Insert
 	Insert_section LiturgyChrysBasilParts.Section13.holygod End-Insert
-	Section Part_07_1_Epistle 
-		Section Prokeimenon
-			Title role desig sid TaAnagnosmata End-Title
-			Title role desig sid OApostolos End-Title
-			Actor sid Deacon End-Actor
-			Dialog sid exc19 End-Dialog
-			Actor sid Reader End-Actor
-			Insert_section Day_HolyThursday.ep_title End-Insert
-			Insert_section Day_HolyThursday.ep_prokeimenon End-Insert
-		End-Section
-		Section Lesson
-			Actor sid Deacon End-Actor
-			Dialog sid exc17 End-Dialog		
-			Actor sid Reader End-Actor
-			Dialog sid epi01a sid le.ep.mc.d069_gr_GR_cog.lemcLI.Epistle.book sid epi01b End-Dialog
-			Actor sid Deacon End-Actor
-			Dialog sid exc19 End-Dialog
-			Actor sid Reader End-Actor
-			Insert_section Day_HolyThursday.ep_lesson End-Insert
-			Actor sid Priest End-Actor
-			Dialog sid epi02 End-Dialog
-		End-Section
-	End-Section //Epistle
-	Section Lectionary_Gospel_Alleluia_3Verses 
+	Section block2
+		Title role desig sid TaAnagnosmata End-Title
+		Title role desig sid OApostolos End-Title
+		Actor sid Deacon End-Actor
+		Dialog sid exc19 End-Dialog
+		Actor sid Reader End-Actor
+		Insert_section Day_HolyThursday.ep_title End-Insert
+		Insert_section Day_HolyThursday.ep_prokeimenon End-Insert
+	End-Section
+	Section block3
+		Actor sid Deacon End-Actor
+		Dialog sid exc17 End-Dialog		
+		Actor sid Reader End-Actor
+		Dialog sid epi01a sid le.ep.mc.d069_gr_GR_cog.lemcLI.Epistle.book sid epi01b End-Dialog
+		Actor sid Deacon End-Actor
+		Dialog sid exc19 End-Dialog
+		Actor sid Reader End-Actor
+		Insert_section Day_HolyThursday.ep_lesson End-Insert
+		Actor sid Priest End-Actor
+		Dialog sid epi02 End-Dialog
+	End-Section
+	Section block4 
 		Actor sid Choir End-Actor
 		Insert_section Day_HolyThursday.al_title End-Insert
 		Media sid hoLI.GospelAlleluia.text End-Media
@@ -126,7 +126,7 @@ Status Review
 		Insert_section Day_HolyThursday.al_verse3 End-Insert
 		Hymn sid hoLI.GospelAlleluia.text  media-off End-Hymn
 	End-Section //Alleluia
-	Section Lectionary_Gospel_Reading 
+	Section block5
 		Title role desig sid ToEvangelion End-Title
 		Actor sid Deacon End-Actor
 		Dialog sid exc17 sid exc18 sid gos02 End-Dialog
@@ -147,23 +147,19 @@ Status Review
 		Dialog sid DoxaSoiKyrie End-Dialog	
 	End-Section	
 	Insert_section LiturgyChrysBasilParts.Section19 End-Insert
-	Section Part_11_GreatEntrance
+	Section block6
 		Title role desig sid euLI.Key1100.title End-Title
 		Actor sid Choir End-Actor
 		Title role mode sid trLI.CherubicHymn.mode End-Title
 		Hymn sid trLI.CherubicHymnPart1.text End-Hymn	
-//		Rubric End-Rubric
 		Actor sid Priest <Trubric>sid InALowVoice</> End-Actor 
 		Para role inaudible sid euLI.Key1101.text End-Para
-//		Rubric End-Rubric
 		Actor sid Deacon End-Actor
 		Dialog sid euLI.Key1110.text End-Dialog		
 		Actor sid Choir End-Actor
 		Dialog sid res04 End-Dialog
-//		Rubric End-Rubric
 		Actor sid Choir End-Actor
 		Hymn sid trLI.CherubicHymnPart2.text End-Hymn		
-//		Rubric End-Rubric
 	End-Section
 	Insert_section LiturgyChrysBasilParts.Section21.basil End-Insert
 	Insert_section LiturgyChrysBasilParts.Section22.basil End-Insert
@@ -171,25 +167,25 @@ Status Review
 	Insert_section LiturgyChrysBasilParts.Section24.basil End-Insert
 	Insert_section LiturgyChrysBasilParts.Section25.basil End-Insert
 	Insert_section LiturgyChrysBasilParts.Section26 End-Insert
-	Section Part_15_1_CommunionHymn
+	Section block7
 		Actor sid Choir End-Actor
 		Title role desig sid euLI.Key1500.title End-Title
 		Hymn sid trLI.CommunionHymn.text End-Hymn
 	End-Section
-//	Insert_section LiturgyChrysBasilParts.Section28 End-Insert
-//	Insert_section LiturgyChrysBasilParts.Section29 End-Insert
+	Insert_section LiturgyChrysBasilParts.Section28 End-Insert
+	Insert_section LiturgyChrysBasilParts.Section29 End-Insert
 	Insert_section LiturgyChrysBasilParts.Section30 End-Insert
-	Section Part_15_5_WeHaveSeen
+	Section block8
 		Actor sid Choir End-Actor
 		Title role desig sid euLI.Key1531.text End-Title		
 		Hymn sid trLI.AfterCommunion.text End-Hymn
 	End-Section	
 	Insert_section LiturgyChrysBasilParts.Section32 End-Insert
-	// Insert_section LiturgyChrysBasilParts.Section33 End-Insert
+	Insert_section LiturgyChrysBasilParts.Section33 End-Insert
 	Insert_section LiturgyChrysBasilParts.Section34.basil End-Insert
 	Insert_section LiturgyChrysBasilParts.Section35.basil End-Insert
-	Section Part_17_2
-		Dialog sid dis00.holythursday sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06  sid dis07 sid dis08 <r>sid cl.localpatronsaint1.dismissal</> sid dis09 sid dis10 sid dis89 End-Dialog
+	Section block9
+		Dialog sid dis00 sid dis00.holythursday sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06  sid dis07 sid dis08 <r>sid cl.localpatronsaint1.dismissal</> sid dis09 sid dis10 sid dis89 End-Dialog
 		Actor sid Choir End-Actor
 		Hymn sid euLI.Key1706.text End-Hymn
 		Actor sid Priest End-Actor
@@ -197,5 +193,4 @@ Status Review
 		Dialog <i> sid res04p</> End-Dialog
 	End-Section
 	
-
 End-Template
