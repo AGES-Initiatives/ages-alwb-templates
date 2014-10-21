@@ -9,6 +9,7 @@ Status Review
 	import le.pr.tr.d070_gr_GR_cog.*
 	import le.ep.mc.d070_gr_GR_cog.*
 	import le.go.mc.d070_gr_GR_cog.*
+	import ps_gr_GR_cog.*
 	import tr.d070_gr_GR_cog.*
 
 	//Templates
@@ -53,14 +54,13 @@ Status Review
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-Insert_template cu.MatinsOrdinary End-Insert
-
-	Section Section01
-		Section GITL_Mode2
-			Actor sid Choir End-Actor
-//			Media sid trHW.GITL.text End-Media
-			Insert_section GITL.mode2 End-Insert
-		End-Section
+	Title role desig sid hw.pdf.cover End-Title
+	Title role desig sid hw.lamentation sid d.onFridayEvening End-Title
+	Title <inr>sid ma.pdf.header sid hw.ofholysaturday </>End-Title 
+	Break line End_Break
+	Insert_section cu.MatinsOrdinary.beginning End-Insert
+	Section block1
+		Insert_section GITL.mode2 End-Insert
 		Title role mixed <Tdesig>sid Apolytikia</> <Tmode> sid trVE.Apolytikion1.mode</> End-Title
 		Media sid trVE.Apolytikion2.text End-Media
 		Hymn sid trVE.Apolytikion1.text media-off End-Hymn
@@ -70,7 +70,7 @@ Insert_template cu.MatinsOrdinary End-Insert
 		Hymn sid trVE.Apolytikion3.text media-off End-Hymn
 	End-Section
 	Insert_section ShortLitany02 End-Insert
-	Section Section02
+	Section block2
 		Actor sid Choir End-Actor	
 		Title role desig sid Kathisma1 End-Title
 		Title role mixed <Tmode>sid trMA.Kathisma11.mode </> <Tmelody>sid trMA.Kathisma11.melody </>End-Title
@@ -81,7 +81,7 @@ Insert_template cu.MatinsOrdinary End-Insert
 		Hymn sid trMA.Kathisma13.text media-off End-Hymn
 	End-Section	
 	Insert_section Psalm50_read End-Insert
-	Section Section03
+	Section block3
 		Actor sid Choir End-Actor
 		Title role desig sid OKanon End-Title
 		Title role mixed <Tdesig>sid trMA.Ode1C1H.ode</><Tmode>sid trMA.Ode1C1H.mode</><Tdesig>sid OEirmos</>End-Title	
@@ -96,7 +96,8 @@ Insert_template cu.MatinsOrdinary End-Insert
 		Hymn sid trMA.Ode1C13.text End-Hymn
 		Title role desig sid Katavasia End-Title
 		Hymn sid trMA.Ode1K.text End-Hymn
-	
+	End-Section
+	Section block4
 		Title role mixed <Tdesig>sid trMA.Ode3C1H.ode</><Tdesig>sid OEirmos</>End-Title	
 		Media sid trMA.Ode3C1H.text End-Media
 		Para role heirmos sid trMA.Ode3C1H.text End-Para
@@ -109,16 +110,17 @@ Insert_template cu.MatinsOrdinary End-Insert
 		Hymn sid trMA.Ode3C13.text End-Hymn
 		Title role desig sid Katavasia End-Title
 		Hymn sid trMA.Ode3K.text End-Hymn
-		
-		Insert_section ShortLitany08 End-Insert
-
+	End-Section
+	Insert_section ShortLitany08 End-Insert
+	Section block5
 		Actor sid Choir End-Actor
 		Title role desig sid Kathisma1 End-Title
 		Title role mixed <Tmode>sid trMA.Ode3Kathisma1.mode</><Tmelody>sid trMA.Ode3Kathisma1.melody</>End-Title	
 		Hymn sid trMA.Ode3Kathisma1.text End-Hymn
 		Title sid DoxaKaiNyn End-Title
 		Hymn sid trMA.Ode3Kathisma1.text media-off End-Hymn
-	
+	End-Section
+	Section block6
 		Title role mixed <Tdesig>sid trMA.Ode4C1H.ode</><Tdesig>sid OEirmos</>End-Title	
 		Media sid trMA.Ode4C1H.text End-Media
 		Para role heirmos sid trMA.Ode4C1H.text End-Para
@@ -131,7 +133,8 @@ Insert_template cu.MatinsOrdinary End-Insert
 		Hymn sid trMA.Ode4C13.text End-Hymn
 		Title role desig sid Katavasia End-Title
 		Hymn sid trMA.Ode4K.text End-Hymn
-	
+	End-Section
+	Section block7
 		Title role mixed <Tdesig>sid trMA.Ode5C1H.ode</><Tdesig>sid OEirmos</>End-Title	
 		Media sid trMA.Ode5C1H.text End-Media
 		Para role heirmos sid trMA.Ode5C1H.text End-Para
@@ -144,7 +147,8 @@ Insert_template cu.MatinsOrdinary End-Insert
 		Hymn sid trMA.Ode5C13.text End-Hymn
 		Title role desig sid Katavasia End-Title
 		Hymn sid trMA.Ode5K.text End-Hymn
-	
+	End-Section
+	Section block8
 		Title role mixed <Tdesig>sid trMA.Ode6C1H.ode</><Tdesig>sid OEirmos</>End-Title	
 		Media sid trMA.Ode6C1H.text End-Media
 		Para role heirmos sid trMA.Ode6C1H.text End-Para
@@ -157,22 +161,22 @@ Insert_template cu.MatinsOrdinary End-Insert
 		Hymn sid trMA.Ode6C13.text End-Hymn
 		Title role desig sid Katavasia End-Title
 		Hymn sid trMA.Ode6K.text End-Hymn
-	
-		Insert_section ShortLitany09 End-Insert
-	
+	End-Section
+	Insert_section ShortLitany09 End-Insert
+	Section block9
 		Actor sid Reader End-Actor	
 		Title role desig sid Kontakion End-Title
 		Reading sid trMA.Kontakion.text End-Reading
 		Title role desig sid OOikos End-Title
 		Reading sid trMA.Oikos.text End-Reading
-		
 		Insert_section Synaxarion.from_Menaion End-Insert
 		Reading sid trMA.Synaxarion1.Com End-Reading
 		Title <i> sid trMA.Synaxarion1.Ver1 </>End-Title
 		Title <i> sid trMA.Synaxarion1.Ver2 </>End-Title
 		Break line End_Break
 		Reading sid trMA.Synaxarion.LastLine End-Reading
-		
+	End-Section
+	Section block10
 		Actor sid Choir End-Actor	
 		Title role mixed <Tdesig>sid trMA.Ode7C1H.ode</><Tdesig>sid OEirmos</>End-Title	
 		Media sid trMA.Ode7C1H.text End-Media
@@ -188,7 +192,8 @@ Insert_template cu.MatinsOrdinary End-Insert
 		Hymn sid trMA.Ode7C14.text End-Hymn
 		Title role desig sid Katavasia End-Title
 		Hymn sid trMA.Ode7K.text End-Hymn
-	
+	End-Section
+	Section block11
 		Title role desig sid trMA.Ode8C1H.ode sid OEirmos End-Title
 		Media sid trMA.Ode8C1H.text End-Media
 		Para role heirmos sid trMA.Ode8C1H.text End-Para
@@ -202,9 +207,9 @@ Insert_template cu.MatinsOrdinary End-Insert
 		Title role desig sid Katavasia End-Title
 		Verse sid ps.bodes_gr_GR_cog.bode8.v19.text End-Verse
 		Hymn sid trMA.Ode8K.text End-Hymn
-	
-		Actor sid Deacon End-Actor
-		Dialog sid exc15 End-Dialog
+	End-Section
+	Insert_section Ode9_Intro End-Insert
+	Section block12
 		Actor sid Choir End-Actor	
 		Title role desig sid trMA.Ode9C1H.ode sid OEirmos End-Title
 		Media sid trMA.Ode9C1H.text End-Media
@@ -219,162 +224,164 @@ Insert_template cu.MatinsOrdinary End-Insert
 		Title role desig sid Katavasia End-Title
 		Hymn sid trMA.Ode9K.text End-Hymn
 	End-Section	
-	Section Section05 
+	Section block13
 		Title role desig sid trHW.Encomia.title End-Title
 		Rubric sid cl.tr.d070.R301 End-Rubric
 		Title role mixed <Tdesig>sid trHW.Encomia100.title</><Tmode>sid trHW.Encomia100.mode</>End-Title	
-//		Title sid trHW.Encomia100Verse.text End-Title
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia101Verse.text End-Verse	
-		Hymn sid trHW.Encomia101.text End-Hymn	
+		Media sid trHW.Encomia101.text End-Media
+		Title sid psa118.v12.text End-Title
+		Verse <bnr>sid vVerse</>sid psa118.v1.text End-Verse	
+		Hymn sid trHW.Encomia101.text media-off End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia102Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v2.text End-Verse	
 		Hymn sid trHW.Encomia102.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia103Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v3.text End-Verse	
 		Hymn sid trHW.Encomia103.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia104Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v4.text End-Verse	
 		Hymn sid trHW.Encomia104.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia105Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v5.text End-Verse	
 		Hymn sid trHW.Encomia105.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia106Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v6.text End-Verse	
 		Hymn sid trHW.Encomia106.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia107Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v7.text End-Verse	
 		Hymn sid trHW.Encomia107.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia108Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v8.text End-Verse	
 		Hymn sid trHW.Encomia108.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia109Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v9.text End-Verse	
 		Hymn sid trHW.Encomia109.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia110Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v10.text End-Verse	
 		Hymn sid trHW.Encomia110.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia111Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v11.text End-Verse	
 		Hymn sid trHW.Encomia111.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia112Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v12.text End-Verse	
 		Hymn sid trHW.Encomia112.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia113Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v13.text End-Verse	
 		Hymn sid trHW.Encomia113.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia114Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v14.text End-Verse	
 		Hymn sid trHW.Encomia114.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia115Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v15.text End-Verse	
 		Hymn sid trHW.Encomia115.text End-Hymn	
 		
 		Rubric sid cl.tr.d070.R302 End-Rubric
 		Hymn sid trHW.Encomia101.text media-off End-Hymn	
 
-		Insert_section ShortLitany04 End-Insert
 	End-Section
-	Section Section06 
+	Insert_section ShortLitany04 End-Insert
+	Section block14
 		Title role mixed <Tdesig>sid trHW.Encomia200.title</><Tmode>sid trHW.Encomia200.mode</>End-Title	
 
 		Hymn sid trHW.Encomia201.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia202Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v73.text End-Verse	
 		Hymn sid trHW.Encomia202.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia203Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v74.text End-Verse	
 		Hymn sid trHW.Encomia203.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia204Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v75.text End-Verse	
 		Hymn sid trHW.Encomia204.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia205Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v76.text End-Verse	
 		Hymn sid trHW.Encomia205.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia206Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v77.text End-Verse	
 		Hymn sid trHW.Encomia206.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia207Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v78.text End-Verse	
 		Hymn sid trHW.Encomia207.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia208Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v79.text End-Verse	
 		Hymn sid trHW.Encomia208.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia209Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v80.text End-Verse	
 		Hymn sid trHW.Encomia209.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia210Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v81.text End-Verse	
 		Hymn sid trHW.Encomia210.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia211Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v82.text End-Verse	
 		Hymn sid trHW.Encomia211.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia212Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v83.text End-Verse	
 		Hymn sid trHW.Encomia212.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia213Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v84.text End-Verse	
 		Hymn sid trHW.Encomia213.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia214Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v85.text End-Verse	
 		Hymn sid trHW.Encomia214.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia215Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v86.text End-Verse	
 		Hymn sid trHW.Encomia215.text End-Hymn	
 		
 		Rubric sid cl.tr.d070.R302 End-Rubric
 		Hymn sid trHW.Encomia201.text media-off End-Hymn	
-
+	End-Section
+	Section block15
 		Actor sid Deacon End-Actor
 		Insert_section ShortLitany01 End-Insert
 		Actor sid Priest End-Actor
 		Dialog sid exc25 End-Dialog
 		Dialog <i> sid res04p </> End-Dialog
 	End-Section
-	Section Section07 
+	Section block16
 		Title role mixed <Tdesig>sid trHW.Encomia300.title</><Tmode>sid trHW.Encomia300.mode</>End-Title	
 
 		Hymn sid trHW.Encomia301.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia302Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v132.text End-Verse	
 		Hymn sid trHW.Encomia302.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia303Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v133.text End-Verse	
 		Hymn sid trHW.Encomia303.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia304Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v134.text End-Verse	
 		Hymn sid trHW.Encomia304.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia305Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v135.text End-Verse	
 		Hymn sid trHW.Encomia305.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia306Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v136.text End-Verse	
 		Hymn sid trHW.Encomia306.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia307Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v137.text End-Verse	
 		Hymn sid trHW.Encomia307.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia308Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v138.text End-Verse	
 		Hymn sid trHW.Encomia308.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia309Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v139.text End-Verse	
 		Hymn sid trHW.Encomia309.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia310Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v140.text End-Verse	
 		Hymn sid trHW.Encomia310.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia311Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v141.text End-Verse	
 		Hymn sid trHW.Encomia311.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia312Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v142.text End-Verse	
 		Hymn sid trHW.Encomia312.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia313Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v143.text End-Verse	
 		Hymn sid trHW.Encomia313.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia314Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v144.text End-Verse	
 		Hymn sid trHW.Encomia314.text End-Hymn	
 
-		//Verse <bnr>sid vVerse</>sid trHW.Encomia315Verse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid psa118.v145.text End-Verse	
 		Hymn sid trHW.Encomia315.text End-Hymn	
 		
 		Rubric sid cl.tr.d070.R303 End-Rubric
@@ -382,22 +389,23 @@ Insert_template cu.MatinsOrdinary End-Insert
 		
 		Hymn sid trHW.Encomia346.text End-Hymn	
 
-		Verse <bnr>sid vVerse</>sid trHW.Encomia3TrVerse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid DoxaPatri.text End-Verse	
 		Hymn sid trHW.Encomia3Tr.text End-Hymn	
 
-		Verse <bnr>sid vVerse</>sid trHW.Encomia3TVerse.text End-Verse	
+		Verse <bnr>sid vVerse</>sid KaiNynKaiAei.text End-Verse	
 		Hymn sid trHW.Encomia3T.text End-Hymn	
 		
 		Rubric sid cl.tr.d070.R302 End-Rubric
 		Hymn sid trHW.Encomia301.text media-off End-Hymn	
-
+	End-Section
+	Section block17
 		Actor sid Deacon End-Actor
 		Insert_section ShortLitany01 End-Insert
 		Actor sid Priest End-Actor
 		Dialog sid exc26 End-Dialog
 		Dialog <i> sid res04p </> End-Dialog
 	End-Section
-	Section Section08
+	Section block18
 		Actor sid Choir End-Actor
 		Title role desig sid hoMA.ResEvlog.title1 End-Title
 		Title role mode sid hoMA.ResEvlog1.mode End-Title
@@ -413,29 +421,25 @@ Insert_template cu.MatinsOrdinary End-Insert
 		Media sid trHW.Evlogetaria4.text End-Media
 		Verse sid hoMA.ResEvlogVerse.text End-Verse
 		Hymn sid hoMA.ResEvlog4.text End-Hymn
-		Title role mixed sid Doxa End-Title
 		Media sid trHW.Evlogetaria5.text End-Media
+		Title role mixed sid Doxa End-Title
 		Hymn sid hoMA.ResEvlog5.text End-Hymn
-		Title role mixed sid KaiNyn End-Title
 		Media sid trHW.Evlogetaria6.text End-Media
+		Title role mixed sid KaiNyn End-Title
 		Hymn sid hoMA.ResEvlog6.text End-Hymn
 		Media sid trHW.Evlogetaria7.text End-Media
 		Hymn sid hoMA.ResEvlog7.text <r>sid Thrice  media-off</> End-Hymn
 		Insert_section ShortLitany10 End-Insert
 	End-Section
-	Section Section09	
+	Section block19	
 		Actor sid Choir End-Actor	
 		Title role desig sid Exaposteilarion End-Title
 		Title role mixed <Tdesig>sid Exaposteilarion </> <Tmode>sid trMA.Exaposteilarion1.mode </>End-Title
-		Hymn sid trMA.Exaposteilarion1.text <r>sid Thrice media-off </>End-Hymn
+		Media sid trMA.Exaposteilarion1.text End-Media
+		Hymn sid psa98.v9balt.text <r>sid Thrice</>End-Hymn
 	End-Section
-	Section Section10	
-		Section Lauds_Mode2
-			Title role mixed <Tdesig> sid OiAinoi</> <Tmode>sid oc.m2.d1_gr_GR_cog.ocMA.Lauds1.mode</> End-Title
-			Media sid trHW.Lauds01.text End-Media
-			Hymn sid oc.m2.d1_gr_GR_cog.ocMA.Lauds01.text media-off End-Hymn
-			Hymn sid oc.m2.d1_gr_GR_cog.ocMA.Lauds02.text media-off End-Hymn
-		End-Section
+	Section block20
+		Insert_section Lauds.Mode2 End-Insert
 		Title role mixed <Tmode>sid trMA.Lauds1.mode </> <Tmelody>sid trMA.Lauds1.melody </>End-Title
 		Media sid trMA.Lauds1.text End-Media
 		Insert_section Lauds_Verse.v03 End-Insert
@@ -458,7 +462,7 @@ Insert_template cu.MatinsOrdinary End-Insert
 		Hymn sid trMA.LaudsTheotokion.text End-Hymn
 	End-Section
 	Insert_section GreatDoxology End-Insert
-	Section Section11
+	Section block21
 		Rubric sid cl.tr.d070.R304 End-Rubric
 		Actor sid Choir End-Actor
 		Hymn sid AgiosOTheos.text End-Hymn
@@ -502,7 +506,7 @@ Insert_template cu.MatinsOrdinary End-Insert
 		Dialog sid exc11 End-Dialog
 		Dialog <i> sid res04p </> End-Dialog
 	End-Section
-	Section Section12
+	Section block22
 		Rubric sid cl.tr.d070.R305 End-Rubric
 		Actor sid Priest End-Actor
 		Dialog sid exc19 sid pet31 sid exc17 End-Dialog	
@@ -513,86 +517,27 @@ Insert_template cu.MatinsOrdinary End-Insert
 		Hymn sid trVE.Apolytikion3.text media-off End-Hymn
 		Hymn sid trVE.Apolytikion1.text media-off End-Hymn
 	End-Section
-	Section Section13
-		Section Lectionary_Trithekti
-			Section TE_Troparion
-				Actor sid Choir End-Actor
-				Title role mixed <Tdesig>sid TroparionTisProfiteias</> <Tmode>sid trTE.Troparion.mode</>End-Title
-				Hymn sid trTE.Troparion.text End-Hymn
-				Title role mixed sid DoxaKaiNyn <Tdesig>sid ToAfto</>End-Title
-			End-Section
-			Section TE_Prophecy
-				Section Part1
-					Actor sid Reader End-Actor
-//					Title <b>sid Prokeimenon sid lemcTE.Prokeimenon1.mode sid lemcTE.Prokeimenon1.source </>End-Title
-//					Dialog sid lemcTE.Prokeimenon1.text End-Dialog
-//					Verse <bnr>sid vVerse</> sid lemcTE.Prokeimenon1Verse.text End-Verse
-					Actor sid Priest End-Actor
-					Dialog sid exc17 End-Dialog
-				End-Section
-				Section Part2
-					Actor sid Reader End-Actor
-					Dialog sid epi01a sid lemcTE.reading1.book sid epi01b End-Dialog
-					Actor sid Priest End-Actor
-					Dialog sid exc19 End-Dialog
-					Actor sid Reader End-Actor
-					Title role chapverse sid lemcTE.reading1.chapverse End-Title
-					Reading sid lemcTE.reading1.text End-Reading
-				End-Section
-			End-Section
-		End-Section //Lectionary_Trithekti
-		Section Lectionary_Epistle
-			Title role desig sid OApostolos End-Title
-			Actor sid Deacon End-Actor	
-			Dialog sid exc19 End-Dialog
-			Actor sid Reader End-Actor
-//			Title role mixed <Tdesig>sid Prokeimenon</> <Tmode>sid lemcLI.EpistleProkeimenon.mode</> End-Title 
-//			Reading sid lemcLI.EpistleProkeimenon.text End-Reading 
-//			Verse <bnr>sid vVerse</> sid lemcLI.EpistleProkeimenonVerse.text End-Verse
-			Actor sid Deacon End-Actor
-			Dialog sid exc17 End-Dialog
-			Actor sid Reader End-Actor
-			Dialog sid epi01a sid lemcLI.Epistle.book sid epi01b End-Dialog
-			Actor sid Deacon End-Actor
-			Dialog sid exc19 End-Dialog
-			Actor sid Reader End-Actor
-			Title role chapverse sid lemcLI.Epistle.chapverse End-Title
-			Reading sid lemcLI.Epistle.text End-Reading
-			Actor sid Priest End-Actor
-			Dialog sid epi02 End-Dialog		
-		End-Section //Lectionary_Epistle
-		Section Lectionary_Gospel_Alleluia_3Verses 
-			Actor sid Choir End-Actor
-			Insert_section Day_HolySaturday.matins.al_title End-Insert
-			Media sid hoLI.GospelAlleluia.text End-Media
-			Insert_section Day_HolySaturday.matins.al_verse1 End-Insert
-			Hymn sid hoLI.GospelAlleluia.text  media-off End-Hymn
-			Insert_section Day_HolySaturday.matins.al_verse2 End-Insert
-			Hymn sid hoLI.GospelAlleluia.text  media-off End-Hymn
-			Insert_section Day_HolySaturday.matins.al_verse3 End-Insert
-			Hymn sid hoLI.GospelAlleluia.text  media-off End-Hymn
-		End-Section //Alleluia
-		Section Lectionary_Gospel_Reading 
-			Title role desig sid ToEvangelion End-Title
-			Actor sid Deacon End-Actor
-			Dialog sid exc17 sid exc18 sid gos02 End-Dialog
-			Actor sid Priest End-Actor
-			Dialog sid pet31 End-Dialog
-			Dialog <i>sid res05p </>End-Dialog
-			Actor sid Deacon End-Actor
-			Dialog sid gos03a sid lemcLI.Gospel.book sid gos03b End-Dialog 
-			Actor sid Priest End-Actor
-			Dialog sid exc19 End-Dialog
-			Dialog <i> sid DoxaSoiKyrieP </>End-Dialog	
-			Actor sid Deacon End-Actor
-			Title role chapverse sid lemcLI.Gospel.chapverse End-Title 
-			Reading sid lemcLI.Gospel.text End-Reading 
-			Actor sid Priest End-Actor
-			Dialog sid euLI.Key0705.text End-Dialog
-			Actor sid Choir End-Actor						
-			Dialog sid DoxaSoiKyrie End-Dialog	
-		End-Section	//Lectionary_Gospel_Reading 
+	Section block23
+		Actor sid Choir End-Actor
+		Title role mixed <Tdesig>sid TroparionTisProfiteias</> <Tmode>sid trTE.Troparion.mode</>End-Title
+		Hymn sid trTE.Troparion.text End-Hymn
+		Title role mixed sid DoxaKaiNyn <Tdesig>sid ToAfto</>End-Title
+		Break line End_Break
+	End-Section	
+	Insert_section Lectionary_Triodion.Trithekti_Prophecy End-Insert
+	Insert_section LectionaryReadings.Lectionary_Epistle_Daily End-Insert
+	Section block24
+		Actor sid Choir End-Actor
+		Insert_section Day_HolySaturday.matins.al_title End-Insert
+		Media sid hoLI.GospelAlleluia.text End-Media
+		Insert_section Day_HolySaturday.matins.al_verse1 End-Insert
+		Hymn sid hoLI.GospelAlleluia.text  media-off End-Hymn
+		Insert_section Day_HolySaturday.matins.al_verse2 End-Insert
+		Hymn sid hoLI.GospelAlleluia.text  media-off End-Hymn
+		Insert_section Day_HolySaturday.matins.al_verse3 End-Insert
+		Hymn sid hoLI.GospelAlleluia.text  media-off End-Hymn
 	End-Section
+	Insert_section LectionaryReadings.Lectionary_Gospel_Daily End-Insert
 	Insert_section Ektenia02 End-Insert
 	Insert_section ComplementaryM End-Insert
 	Insert_section BowHeadsM End-Insert
