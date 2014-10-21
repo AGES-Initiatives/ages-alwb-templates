@@ -1,17 +1,19 @@
 Template se.tr.d071.vl
 
-Status Review
+Status Final
 
 	import client_gr_GR_cog.*
 	import eu.lichrysbasil_gr_GR_cog.*
 	import ho.s10_gr_GR_cog.*	
 	import le.pr.tr.d071_gr_GR_cog.*
 	import le.go.mc.dHS_gr_GR_cog.*
+	import oc.m1.d1_gr_GR_cog.*
 	import ps.bodes_gr_GR_cog.*
 	import tr.d071_gr_GR_cog.*
 
 	//Templates
 	import bk.ap.mc.p6.sections.*
+	import bk.ev.mc.p5.sections.*
 	import LentParts.*
 	import VespersParts.*
 	import LectionaryReadings.*
@@ -31,7 +33,7 @@ Status Review
 	import roles.*
 
 	Head 
-		Set_Date month 4 day 20 year 2014 End_Date
+		Set_Date month 4 day 12 year 2015 End_Date
 			Page_Header_Even
 				center @lookup sid vl.pdf.header lang L1 @lookup sid d.onSaturdayMorning lang L1 
 			End_Page_Header_Even
@@ -63,16 +65,16 @@ Status Review
 				Title role desig sid StichiraAnastasima End-Title
 				Media sid trVE.Stichera01.text End-Media
 				Insert_section LIHC_Verse.v03 End-Insert
-				Hymn sid trVE.Stichera01.text media-off End-Hymn
+				Hymn sid ocVE.Stichera1.text media-off End-Hymn
 				Media sid trVE.Stichera02.text End-Media
 				Insert_section LIHC_Verse.v04 End-Insert
-				Hymn sid trVE.Stichera02.text  media-off End-Hymn
+				Hymn sid ocVE.Stichera2.text media-off End-Hymn
 				Media sid trVE.Stichera03.text End-Media
 				Insert_section LIHC_Verse.v05 End-Insert
-				Hymn sid trVE.Stichera03.text  media-off End-Hymn
+				Hymn sid ocVE.Stichera3.text media-off End-Hymn
 				Media sid trVE.Stichera04.text End-Media
 				Insert_section LIHC_Verse.v06 End-Insert
-				Hymn sid trVE.Stichera04.text  media-off End-Hymn
+				Hymn sid ocVE.Stichera4.text media-off End-Hymn
 			End-Section
 			Section Stichera_5678
 				Title role mixed <Tmode> sid trVE.Stichera05.mode </> <Tdesig>sid Idiomela </>End-Title
@@ -102,21 +104,21 @@ Status Review
 			Dialog sid exc17 sid exc19 End-Dialog
 			Actor sid Reader End-Actor
 			Title role chapverse sid lemcVE.reading1.chapverse End-Title
-			Reading sid lemcVE.reading1.text End-Reading
+			Reading sid lemcVE.reading1.text <Trubric>sid lemcVE.reading1.version</>End-Reading
 			Actor sid Reader End-Actor
 			Dialog sid hoVE.Reading_Intro.text1 sid lemcVE.reading4.book sid hoVE.Reading_Intro.text2 End-Dialog
 			Actor sid PriestOrDeacon End-Actor
 			Dialog sid exc17 sid exc19 End-Dialog
 			Actor sid Reader End-Actor
 			Title role chapverse sid lemcVE.reading4.chapverse End-Title
-			Reading sid lemcVE.reading4.text End-Reading
+			Reading sid lemcVE.reading4.text<Trubric>sid lemcVE.reading4.version</> End-Reading
 			Actor sid Reader End-Actor
-			Dialog sid hoVE.Reading_Intro.text1 sid lemcVE.reading5.book sid hoVE.Reading_Intro.text2 End-Dialog
+			Dialog sid hoVE.Reading_Intro.text1 sid lemcVE.reading15.book sid hoVE.Reading_Intro.text2 End-Dialog
 			Actor sid PriestOrDeacon End-Actor
 			Dialog sid exc17 sid exc19 End-Dialog
 			Actor sid Reader End-Actor
-			Title role chapverse sid lemcVE.reading5.chapverse End-Title
-			Reading sid lemcVE.reading5.text End-Reading
+			Title role chapverse sid lemcVE.reading15.chapverse End-Title
+			Reading sid lemcVE.reading15.text<Trubric>sid lemcVE.reading15.version</> End-Reading
 		End-Section
 		
 		Section HymnOfThreeServants
@@ -166,8 +168,7 @@ Status Review
 		End-Section
 		
 		Insert_section LiturgyChrysBasilParts.Section13.prayer End-Insert
-	Insert_section LiturgyChrysBasilParts.Section13.baptized End-Insert
-	
+		Insert_section LiturgyChrysBasilParts.Section13.baptized End-Insert
 		Section Epistle
 			Section Prokeimenon
 				Title role desig sid TaAnagnosmata End-Title
@@ -182,7 +183,7 @@ Status Review
 				Actor sid Deacon End-Actor
 				Dialog sid exc17 End-Dialog		
 				Actor sid Reader End-Actor
-				Dialog sid epi01a sid le.ep.mc.dHS_gr_GR_cog.lemcLI.Epistle.book sid epi01b End-Dialog
+				Insert_section Day_HolySaturday.liturgy.ep_book End-Insert
 				Actor sid Deacon End-Actor
 				Dialog sid exc19 End-Dialog
 				Actor sid Reader End-Actor
@@ -202,13 +203,12 @@ Status Review
 			Dialog sid pet31 End-Dialog
 			Dialog <i>sid res05p </>End-Dialog
 			Actor sid Deacon End-Actor
-			Dialog sid gos03a sid lemcVE.Gospel.book sid gos03b End-Dialog
+			Insert_section Day_HolySaturday.vespers_liturgy.go_book End-Insert
 			Actor sid Priest End-Actor
 			Dialog sid exc19 End-Dialog
 			Dialog <i> sid DoxaSoiKyrieP </>End-Dialog	
 			Actor sid Deacon End-Actor
-			Title role chapverse sid lemcVE.Gospel.chapverse End-Title
-			Reading sid lemcVE.Gospel.text End-Reading
+			Insert_section Day_HolySaturday.vespers_liturgy.go_lesson End-Insert
 			Actor sid Priest End-Actor
 			Dialog sid euLI.Key0705.text End-Dialog
 			Actor sid Choir End-Actor						
@@ -221,19 +221,14 @@ Status Review
 			Actor sid Choir End-Actor
 			Title role mode sid trHW.CherubicHymn.mode End-Title
 			Hymn sid trHW.CherubicHymnPart1.text End-Hymn	
-	//		Rubric End-Rubric
 			Actor sid Priest <Trubric>sid InALowVoice</> End-Actor 
 			Para role inaudible sid euLI.Key1101.text End-Para
-	//		Rubric End-Rubric
 			Actor sid Deacon End-Actor
 			Dialog sid euLI.Key1110.text End-Dialog		
 			Actor sid Choir End-Actor
 			Dialog sid res04 End-Dialog
-	//		Rubric End-Rubric
 			Actor sid Choir End-Actor
 			Hymn sid trHW.CherubicHymnPart2.text End-Hymn		
-	//		Rubric End-Rubric
-			Media sid euLI.Key1102.text End-Media
 		End-Section
 		Insert_section LiturgyChrysBasilParts.Section21.basil End-Insert
 		Insert_section LiturgyChrysBasilParts.Section22.basil End-Insert
