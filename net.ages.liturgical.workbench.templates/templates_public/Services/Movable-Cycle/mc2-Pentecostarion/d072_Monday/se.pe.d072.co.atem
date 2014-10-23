@@ -1,0 +1,134 @@
+Template se.pe.d072.co 
+
+Status Final
+
+	import client_gr_GR_cog.*
+	import pe.d00P_gr_GR_cog.*
+
+	import da.*
+
+	//Templates
+	import Litanies.*
+	
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 4 day 13 year 2015 End_Date
+			Page_Header_Even
+				center @lookup sid co.pdf.header sid d.ontheeveof lang L2 @date lang L2
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid co.pdf.header sid d.ontheeveof lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+//		Insert_template ematins.cover.ma End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	Section Instance01
+		Title role desig sid co.smallcompline.header End-Title
+		Title role desig sid d.onSundayEvening sid pa.ofbrightweek End-Title
+		Break line End_Break
+		Section block1
+			Actor sid Priest End-Actor
+			Dialog sid enarxis01 End-Dialog
+			Dialog <i>sid res04p</> End-Dialog
+			Reading sid pePA.Hours1.text End-Reading
+			Actor sid Reader End-Actor
+			Reading sid pePA.Hours1.text<Trubric>sid Twice</>End-Reading
+			Reading sid pePA.Hours2.text<Trubric>sid Thrice</>End-Reading
+			Reading sid pePA.Hours3.text End-Reading
+			Reading sid pePA.Hours4.text End-Reading
+			Reading sid pePA.Hours5.text End-Reading
+			Title sid Doxa End-Title
+			Reading sid pePA.Hours6.text End-Reading
+			Title sid KaiNyn End-Title
+			Reading sid pePA.Hours7.text End-Reading
+			Reading sid res01<Trubric>sid Forty</>End-Reading
+			Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+			Reading sid TinTimioteran.text End-Reading
+			Reading sid EnOnomatiKyriou.text End-Reading
+			Actor sid Priest End-Actor
+			Reading sid DiEfchonPateron.text End-Reading
+			Actor sid Reader End-Actor
+			Reading sid res04 End-Reading
+		End-Section
+		Section block2
+			Reading sid pePA.Hours1.text<Trubric>sid Thrice</>End-Reading
+			Reading sid pePA.Hours2.text<Trubric>sid Thrice</>End-Reading
+			Reading sid pePA.Hours3.text End-Reading
+			Reading sid pePA.Hours4.text End-Reading
+			Reading sid pePA.Hours5.text End-Reading
+			Title sid Doxa End-Title
+			Reading sid pePA.Hours6.text End-Reading
+			Title sid KaiNyn End-Title
+			Reading sid pePA.Hours7.text End-Reading
+			Reading sid res01<Trubric>sid Forty</>End-Reading
+			Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+			Reading sid TinTimioteran.text End-Reading
+			Reading sid EnOnomatiKyriou.text End-Reading
+			Actor sid Priest End-Actor
+			Reading sid DiEfchonPateron.text End-Reading
+			Actor sid Reader End-Actor
+			Reading sid res04 End-Reading
+		End-Section
+		Section block3
+			Reading sid pePA.Hours1.text<Trubric>sid Thrice</>End-Reading
+			Reading sid pePA.Hours2.text<Trubric>sid Thrice</>End-Reading
+			Reading sid pePA.Hours3.text End-Reading
+			Reading sid pePA.Hours4.text End-Reading
+			Reading sid pePA.Hours5.text End-Reading
+			Title sid Doxa End-Title
+			Reading sid pePA.Hours6.text End-Reading
+			Title sid KaiNyn End-Title
+			Reading sid pePA.Hours7.text End-Reading
+			Reading sid res01<Trubric>sid Forty</>End-Reading
+			Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+			Reading sid TinTimioteran.text End-Reading
+			Reading sid EnOnomatiKyriou.text End-Reading
+			Actor sid Priest End-Actor
+			Reading sid DiEfchonPateron.text End-Reading
+			Actor sid Reader End-Actor
+			Reading sid res04 End-Reading
+		End-Section
+		Section block4	
+			Actor sid Priest End-Actor
+			Dialog sid pet00 End-Dialog
+			Dialog <i>sid res01p</>End-Dialog
+			Para role prayer sid pe.d121_gr_GR_cog.pePE.Prayer21.text sid pe.d121_gr_GR_cog.pePE.Prayer21.text End-Para
+			Actor sid Reader End-Actor
+			Dialog sid res04 End-Dialog
+		End-Section
+		Section block5
+			Dialog sid pePA.Hours1.text<Trubric>sid Thrice</>End-Dialog
+			Dialog sid res01 sid res01 sid res01 End-Dialog
+			Dialog sid Evlogison End-Dialog
+			Actor sid Priest End-Actor
+			Insert_section Dismissals.dismissal_01 End-Insert
+			Insert_section ho.s13.SmallCompline5.litany End-Insert
+			Actor sid Priest End-Actor
+			Dialog sid pePA.ChristIsRisen.text End-Dialog
+			Actor sid People End-Actor
+			Dialog sid PaschaDialog6.text End-Dialog
+		End-Section	
+	End-Section
+End-Template
