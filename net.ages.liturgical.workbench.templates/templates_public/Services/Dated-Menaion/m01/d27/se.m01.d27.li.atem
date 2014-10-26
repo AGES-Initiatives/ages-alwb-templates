@@ -1,0 +1,118 @@
+Template se.m01.d27.li
+
+Status Final
+
+	import ho.s10_gr_GR_cog.*	
+	import me.m01.d27_gr_GR_cog.*
+
+	import da.*
+	import oc.*
+
+	//Templates
+	import LectionaryReadings.*
+	import Litanies.*
+	
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 1 day 27 year 2015 End_Date
+			Page_Header_Even
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	when-triodion-day-is
+		1, 8, 15 use:
+			Section Instance03 //Triodion Sunday
+			End-Section
+		14 use: Insert_section se.tr.d014.li.Instance01 End-Insert
+		16, 17 use:
+			Section Instance05
+			End-Section
+		otherwise use:		
+			when-name-of-day-is 
+				Sunday use:
+					Section Instance02 //Sunday
+					End-Section
+				otherwise use:	
+					Section Instance01
+						Section block1
+							Insert_section LiturgyChrysBasilParts.Section01 End-Insert
+							Insert_section LiturgyChrysBasilParts.Section02 End-Insert
+							Insert_section LiturgyChrysBasilParts.Section03.sunday_saint End-Insert
+							Insert_section LiturgyChrysBasilParts.Section04 End-Insert
+						End-Section	
+						Section block2
+							Insert_section LiturgyChrysBasilParts.Section05.saint End-Insert
+							Insert_section LiturgyChrysBasilParts.Section06 End-Insert
+							Insert_section LiturgyChrysBasilParts.Section07.weekday End-Insert
+							Title role mode sid meVE.Apolytikion1.mode End-Title
+							Hymn sid meVE.Apolytikion1.text End-Hymn
+							Insert_section LiturgyChrysBasilParts.Section08 End-Insert
+							Insert_section LiturgyChrysBasilParts.Section09.clergy End-Insert
+							Insert_section LiturgyChrysBasilParts.Section10 End-Insert
+							Insert_section LiturgyChrysBasilParts.Section11.single End-Insert
+						End-Section
+						Section block3
+							Title role desig sid Apolytikion sid TouAgiou End-Title
+							Title role mode sid meVE.Apolytikion1.mode End-Title
+							Hymn sid meVE.Apolytikion1.text End-Hymn
+							Insert_section LiturgyChrysBasilParts.Section11_opt End-Insert
+							Insert_section LiturgyChrysBasilParts.Section12.seasonal_menaion.single End-Insert
+							Insert_section LiturgyChrysBasilParts.Section13.prayer End-Insert
+							Insert_section LiturgyChrysBasilParts.Section13.holygod End-Insert
+							Insert_section Lectionary_Epistle_Menaion End-Insert
+							Insert_section Lectionary_Gospel_Menaion.Alleluia End-Insert
+							Insert_section LiturgyChrysBasilParts.Section14 End-Insert
+							Insert_section Lectionary_Gospel_Menaion.Lesson End-Insert
+						End-Section
+						Section block4
+							Insert_section LiturgyChrysBasilParts.Section19 End-Insert
+							Insert_section LiturgyChrysBasilParts.Section20 End-Insert
+							Insert_section LiturgyChrysBasilParts.Section21.chrys End-Insert
+							Insert_section LiturgyChrysBasilParts.Section22.chrys End-Insert
+							Insert_section LiturgyChrysBasilParts.Section23.chrys End-Insert
+							Insert_section LiturgyChrysBasilParts.Section24.chrys End-Insert
+							Insert_section LiturgyChrysBasilParts.Section25.chrys End-Insert
+							Insert_section LiturgyChrysBasilParts.Section26 End-Insert
+						End-Section	
+						Section block5
+							Actor sid Choir End-Actor
+							Insert_section bk.ap.da.sections.d3.communion_title End-Insert
+							Insert_section bk.ap.da.sections.d3.communion_hymn End-Insert
+						End-Section
+						Section block6
+							Insert_section LiturgyChrysBasilParts.Section28 End-Insert
+							Insert_section LiturgyChrysBasilParts.Section29 End-Insert
+							Insert_section LiturgyChrysBasilParts.Section30 End-Insert
+							Insert_section LiturgyChrysBasilParts.Section31 End-Insert
+							Insert_section LiturgyChrysBasilParts.Section32 End-Insert
+							Insert_section LiturgyChrysBasilParts.Section33 End-Insert
+							Insert_section LiturgyChrysBasilParts.Section34.chrys End-Insert
+							Insert_section LiturgyChrysBasilParts.Section35.chrys End-Insert
+							Insert_section LiturgyChrysBasilParts.Section36.comyes End-Insert
+						End-Section	
+					End-Section
+			end-when
+	end-when		
+End-Template
