@@ -1,0 +1,265 @@
+Template KontakionSelector 
+
+Status Draft
+
+	import client_gr_GR_cog.*
+	import ho.s07_gr_GR_cog.*
+
+	import da.*
+	import me.*
+	import pe.*
+	import tr.*
+
+	//Templates
+	import LectionaryReadings.*
+	import Litanies.*
+	
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+//		Set_Date month  day  End_Date
+			Page_Header_Even
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Section SeasonalKontakion
+		when-movable-cycle-day-is
+			1, 8, 14, 15, 22, 29, 36, 43, 50, 56, 63, 64 use:
+				Title role desig sid Kontakion End-Title
+				Title role mixed<Tmode>rid trLI.SeasonalKontakion.mode</><Tmelody>rid trLI.SeasonalKontakion.melody</>End-Title
+				Hymn rid trLI.SeasonalKontakion.text End-Hymn
+			
+			2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 16, 17, 18, 19, 20, 21, 28, 35, 42, 49 use:
+				Title role mixed<Tdesig>sid Kontakion</><Tmode>sid Mode2</>End-Title
+				Hymn sid hoTY.Key0408.text End-Hymn
+
+			57 use:
+				when-date-is
+					Mar 1 thru 23 use: //O Champion
+						Title role desig sid Kontakion End-Title
+						Title role mixed<Tmode>sid tr.d050_gr_GR_cog.trLI.SeasonalKontakion.mode</><Tmelody>sid tr.d050_gr_GR_cog.trLI.SeasonalKontakion.melody</>End-Title
+						Hymn sid tr.d050_gr_GR_cog.trLI.SeasonalKontakion.text End-Hymn
+					Mar 24 thru 26 use: //Menaion
+						Title role desig sid Kontakion End-Title
+						Title role mixed<Tmode>rid meLI.SeasonalKontakion.mode</><Tmelody>rid meLI.SeasonalKontakion.melody</>End-Title
+						Hymn rid meLI.SeasonalKontakion.text End-Hymn
+					otherwise use: //O Protection
+						Title role desig sid Kontakion End-Title
+						Title role mixed<Tmode>rid trLI.SeasonalKontakion.mode</><Tmelody>rid trLI.SeasonalKontakion.melody</>End-Title
+						Hymn rid trLI.SeasonalKontakion.text End-Hymn
+				end-when
+				
+			71 thru 77 use: //Bright Week
+				Title role desig sid Kontakion End-Title
+				Title role mode sid pe.d00P_gr_GR_cog.pePA.SeasonalKontakion.mode End-Title
+				Hymn sid pe.d00P_gr_GR_cog.pePA.SeasonalKontakion.text End-Hymn
+				
+			78 use: //Thomas Sunday
+				Title role desig sid Kontakion End-Title
+				Title role mode sid pe.d00P_gr_GR_cog.pePA.SeasonalKontakion.mode End-Title
+				Hymn sid pe.d00P_gr_GR_cog.pePA.SeasonalKontakion.text End-Hymn
+				
+			79 thru 84 use: //Thomas Week
+				Title role desig sid Kontakion End-Title
+				Title role mode sid pe.d078_gr_GR_cog.peLI.SeasonalKontakion.mode End-Title
+				Hymn sid pe.d078_gr_GR_cog.peLI.SeasonalKontakion.text End-Hymn
+				
+			85 thru 94 use:
+				Title role desig sid Kontakion End-Title
+				Title role mode sid pe.d00P_gr_GR_cog.pePA.SeasonalKontakion.mode End-Title
+				Hymn sid pe.d00P_gr_GR_cog.pePA.SeasonalKontakion.text End-Hymn
+
+			95, 96, 97, 98, 100, 101, 102 use: //Mid-Pentecost
+				Title role desig sid Kontakion End-Title
+				Title role mixed<Tmode>sid pe.d095_gr_GR_cog.peLI.SeasonalKontakion.mode</><Tmelody>sid pe.d095_gr_GR_cog.peLI.SeasonalKontakion.melody</>End-Title
+				Hymn sid pe.d095_gr_GR_cog.peLI.SeasonalKontakion.text End-Hymn
+
+			99, 103, 104, 105, 106, 107, 108, 109 use:
+				Title role desig sid Kontakion End-Title
+				Title role mode sid pe.d00P_gr_GR_cog.pePA.SeasonalKontakion.mode End-Title
+				Hymn sid pe.d00P_gr_GR_cog.pePA.SeasonalKontakion.text End-Hymn
+
+			110 thru 118 use: //Ascension
+				Title role desig sid Kontakion End-Title
+				Title role mixed<Tmode>sid pe.d110_gr_GR_cog.peLI.SeasonalKontakion.mode</><Tmelody>sid pe.d110_gr_GR_cog.peLI.SeasonalKontakion.melody</>End-Title
+				Hymn sid pe.d110_gr_GR_cog.peLI.SeasonalKontakion.text End-Hymn
+
+			119 use: //SoS
+				Title role desig sid Kontakion End-Title
+				Title role mode sid tr.d014_gr_GR_cog.trLI.SeasonalKontakion.mode End-Title
+				Hymn sid tr.d014_gr_GR_cog.trLI.SeasonalKontakion.text End-Hymn
+			
+			120 thru 126 use: //Pentecost
+				Title role desig sid Kontakion End-Title
+				Title role mode sid pe.d120_gr_GR_cog.peLI.SeasonalKontakion.mode End-Title
+				Hymn sid pe.d120_gr_GR_cog.peLI.SeasonalKontakion.text End-Hymn
+
+			127 use: //All Saints
+				Title role desig sid Kontakion End-Title
+				Title role mixed<Tmode>sid pe.d127_gr_GR_cog.peLI.SeasonalKontakion.mode</><Tmelody>sid pe.d127_gr_GR_cog.peLI.SeasonalKontakion.melody</>End-Title
+				Hymn sid pe.d127_gr_GR_cog.peLI.SeasonalKontakion.text End-Hymn
+
+			otherwise use:
+				when-date-is
+						
+					Jan 1 use:
+						Title role desig sid Kontakion End-Title
+						Title role mixed<Tmode>sid me.m01.d01_gr_GR_cog.meLI.SeasonalKontakion.mode</><Tmelody>sid me.m01.d01_gr_GR_cog.meLI.SeasonalKontakion.melody</>End-Title
+						Hymn sid me.m01.d01_gr_GR_cog.meLI.SeasonalKontakion.text End-Hymn
+
+					Jan 2 thru 5 use:
+						Title role desig sid Kontakion End-Title
+						Title role mixed<Tmode>sid me.m01.d02_gr_GR_cog.meLI.SeasonalKontakion.mode</><Tmelody>sid me.m01.d02_gr_GR_cog.meLI.SeasonalKontakion.melody</>End-Title
+						Hymn sid me.m01.d02_gr_GR_cog.meLI.SeasonalKontakion.text End-Hymn
+
+					Jan 6 thru 14 use:
+						Title role desig sid Kontakion End-Title
+						Title role mixed<Tmode>sid me.m01.d06_gr_GR_cog.meLI.SeasonalKontakion.mode</><Tmelody>sid me.m01.d06_gr_GR_cog.meLI.SeasonalKontakion.melody</>End-Title
+						Hymn sid me.m01.d06_gr_GR_cog.meLI.SeasonalKontakion.text End-Hymn
+
+					Jan 15 thru 31 use:
+						Title role desig sid Kontakion End-Title
+						Title role mode sid me.m02.d02_gr_GR_cog.meLI.SeasonalKontakion.mode End-Title
+						Hymn sid me.m02.d02_gr_GR_cog.meLI.SeasonalKontakion.text End-Hymn
+
+					Feb 1 use:
+						Title role desig sid Kontakion End-Title
+						Title role mixed<Tmode>sid me.m02.d01_gr_GR_cog.meLI.SeasonalKontakion.mode</><Tmelody>sid me.m02.d01_gr_GR_cog.meLI.SeasonalKontakion.melody</>End-Title
+						Hymn sid me.m02.d01_gr_GR_cog.meLI.SeasonalKontakion.text End-Hymn
+
+					Jan 2 thru 9 use:
+						Title role desig sid Kontakion End-Title
+						Title role mode sid me.m02.d02_gr_GR_cog.meLI.SeasonalKontakion.mode End-Title
+						Hymn sid me.m02.d02_gr_GR_cog.meLI.SeasonalKontakion.text End-Hymn
+
+					Jul 2, 25 use:
+						Title role desig sid Kontakion End-Title
+						Title role mixed<Tmode>rid meLI.SeasonalKontakion.mode</><Tmelody>rid meLI.SeasonalKontakion.melody</>End-Title
+						Hymn rid meLI.SeasonalKontakion.text End-Hymn
+
+					Jul 27 thru 31 use:
+						Title role desig sid Kontakion End-Title
+						Title role mode sid me.m08.d06_gr_GR_cog.meLI.SeasonalKontakion.mode End-Title
+						Hymn sid me.m08.d06_gr_GR_cog.meLI.SeasonalKontakion.text End-Hymn
+						
+					Aug 1 use:
+						Title role desig sid Kontakion End-Title
+						Title role mixed<Tmode>sid me.m09.d14_gr_GR_cog.meLI.SeasonalKontakion.mode</><Tmelody>sid me.m09.d14_gr_GR_cog.meLI.SeasonalKontakion.melody</>End-Title
+						Hymn sid me.m09.d14_gr_GR_cog.meLI.SeasonalKontakion.text End-Hymn
+
+					Aug 2 thru 13 use:
+						Title role desig sid Kontakion End-Title
+						Title role mode sid me.m08.d06_gr_GR_cog.meLI.SeasonalKontakion.mode End-Title
+						Hymn sid me.m08.d06_gr_GR_cog.meLI.SeasonalKontakion.text End-Hymn
+						
+					Aug 14 use:
+						Title role desig sid Kontakion End-Title
+						Title role mixed<Tmode>sid me.m08.d14_gr_GR_cog.meLI.SeasonalKontakion.mode</><Tmelody>sid me.m08.d14_gr_GR_cog.meLI.SeasonalKontakion.melody</>End-Title
+						Hymn sid me.m08.d14_gr_GR_cog.meLI.SeasonalKontakion.text End-Hymn
+
+					Aug 15 thru 23 use:
+						Title role desig sid Kontakion End-Title
+						Title role mixed<Tmode>sid me.m08.d15_gr_GR_cog.meLI.SeasonalKontakion.mode</><Tmelody>sid me.m08.d15_gr_GR_cog.meLI.SeasonalKontakion.melody</>End-Title
+						Hymn sid me.m08.d15_gr_GR_cog.meLI.SeasonalKontakion.text End-Hymn
+
+					Aug 24 thru 30 use:
+						Title role desig sid Kontakion End-Title
+						Title role mixed<Tmode>sid me.m09.d08_gr_GR_cog.meLI.SeasonalKontakion.mode</><Tmelody>sid me.m09.d08_gr_GR_cog.meLI.SeasonalKontakion.melody</>End-Title
+						Hymn sid me.m09.d08_gr_GR_cog.meLI.SeasonalKontakion.text End-Hymn
+
+					Aug 31 use:
+						Title role desig sid Kontakion End-Title
+						Title role mixed<Tmode>sid me.m08.d31_gr_GR_cog.meLI.SeasonalKontakion.mode</><Tmelody>sid me.m08.d31_gr_GR_cog.meLI.SeasonalKontakion.melody</>End-Title
+						Hymn sid me.m08.d31_gr_GR_cog.meLI.SeasonalKontakion.text End-Hymn
+
+					Sep 1 use:
+						Title role desig sid Kontakion End-Title
+						Title role mixed<Tmode>sid me.m09.d01_gr_GR_cog.meLI.SeasonalKontakion.mode</><Tmelody>sid me.m09.d01_gr_GR_cog.meLI.SeasonalKontakion.melody</>End-Title
+						Hymn sid me.m09.d01_gr_GR_cog.meLI.SeasonalKontakion.text End-Hymn
+
+					Sep 7 use:
+						Title role desig sid Kontakion End-Title
+						Title role mixed<Tmode>sid me.m09.d07_gr_GR_cog.meLI.SeasonalKontakion.mode</><Tmelody>sid me.m09.d07_gr_GR_cog.meLI.SeasonalKontakion.melody</>End-Title
+						Hymn sid me.m09.d07_gr_GR_cog.meLI.SeasonalKontakion.text End-Hymn
+
+					Sep 8 thru 12 use:
+						Title role desig sid Kontakion End-Title
+						Title role mixed<Tmode>sid me.m09.d08_gr_GR_cog.meLI.SeasonalKontakion.mode</><Tmelody>sid me.m09.d08_gr_GR_cog.meLI.SeasonalKontakion.melody</>End-Title
+						Hymn sid me.m09.d08_gr_GR_cog.meLI.SeasonalKontakion.text End-Hymn
+
+					Sep 13 use:
+						Title role desig sid Kontakion End-Title
+						Title role mixed<Tmode>sid me.m09.d13_gr_GR_cog.meLI.SeasonalKontakion.mode</><Tmelody>sid me.m09.d13_gr_GR_cog.meLI.SeasonalKontakion.melody</>End-Title
+						Hymn sid me.m09.d13_gr_GR_cog.meLI.SeasonalKontakion.text End-Hymn
+
+					Sep 14 thru 21 use:
+						Title role desig sid Kontakion End-Title
+						Title role mixed<Tmode>sid me.m09.d14_gr_GR_cog.meLI.SeasonalKontakion.mode</><Tmelody>sid me.m09.d14_gr_GR_cog.meLI.SeasonalKontakion.melody</>End-Title
+						Hymn sid me.m09.d14_gr_GR_cog.meLI.SeasonalKontakion.text End-Hymn
+
+					Nov 8 thru 19 use:
+						Title role desig sid Kontakion End-Title
+						Title role mixed<Tmode>sid me.m11.d21_gr_GR_cog.meLI.SeasonalKontakion.mode</><Tmelody>sid me.m11.d21_gr_GR_cog.meLI.SeasonalKontakion.melody</>End-Title
+						Hymn sid me.m11.d21_gr_GR_cog.meLI.SeasonalKontakion.text End-Hymn
+
+					Nov 20 use:
+						Title role desig sid Kontakion End-Title
+						Title role mixed<Tmode>sid me.m11.d20_gr_GR_cog.meLI.SeasonalKontakion.mode</><Tmelody>sid me.m11.d20_gr_GR_cog.meLI.SeasonalKontakion.melody</>End-Title
+						Hymn sid me.m11.d20_gr_GR_cog.meLI.SeasonalKontakion.text End-Hymn
+
+					Nov 21 thru 25 use:
+						Title role desig sid Kontakion End-Title
+						Title role mixed<Tmode>sid me.m11.d21_gr_GR_cog.meLI.SeasonalKontakion.mode</><Tmelody>sid me.m11.d21_gr_GR_cog.meLI.SeasonalKontakion.melody</>End-Title
+						Hymn sid me.m11.d21_gr_GR_cog.meLI.SeasonalKontakion.text End-Hymn
+
+					Nov 26 thru 30 use:
+						Title role desig sid Kontakion End-Title
+						Title role mixed<Tmode>sid me.m12.d20_gr_GR_cog.meLI.SeasonalKontakion.mode</><Tmelody>sid me.m12.d20_gr_GR_cog.meLI.SeasonalKontakion.melody</>End-Title
+						Hymn sid me.m12.d20_gr_GR_cog.meLI.SeasonalKontakion.text End-Hymn
+
+					Dec 1 thru 8 use:
+						Title role desig sid Kontakion End-Title
+						Title role mixed<Tmode>sid me.m12.d20_gr_GR_cog.meLI.SeasonalKontakion.mode</><Tmelody>sid me.m12.d20_gr_GR_cog.meLI.SeasonalKontakion.melody</>End-Title
+						Hymn sid me.m12.d20_gr_GR_cog.meLI.SeasonalKontakion.text End-Hymn
+
+					Dec 9 use:
+						Title role desig sid Kontakion End-Title
+						Title role mixed<Tmode>sid me.m12.d09_gr_GR_cog.meLI.SeasonalKontakion.mode</><Tmelody>sid me.m12.d09_gr_GR_cog.meLI.SeasonalKontakion.melody</>End-Title
+						Hymn sid me.m12.d09_gr_GR_cog.meLI.SeasonalKontakion.text End-Hymn
+
+					Dec 10 thru 24 use:
+						Title role desig sid Kontakion End-Title
+						Title role mixed<Tmode>sid me.m12.d20_gr_GR_cog.meLI.SeasonalKontakion.mode</><Tmelody>sid me.m12.d20_gr_GR_cog.meLI.SeasonalKontakion.melody</>End-Title
+						Hymn sid me.m12.d20_gr_GR_cog.meLI.SeasonalKontakion.text End-Hymn
+
+					Dec 25 thru 31 use:
+						Title role desig sid Kontakion End-Title
+						Title role mixed<Tmode>sid me.m12.d25_gr_GR_cog.meLI.SeasonalKontakion.mode</><Tmelody>sid me.m12.d25_gr_GR_cog.meLI.SeasonalKontakion.melody</>End-Title
+						Hymn sid me.m12.d25_gr_GR_cog.meLI.SeasonalKontakion.text End-Hymn
+
+						
+				end-when
+		end-when		
+	End-Section
+End-Template
