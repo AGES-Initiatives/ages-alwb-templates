@@ -27,7 +27,7 @@ Status Draft
 	import roles.*
 
 	Head 
-//		Set_Date month  day  End_Date
+		Set_Date month 10 day 30 End_Date
 			Page_Header_Even
 				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
 			End_Page_Header_Even
@@ -42,6 +42,31 @@ Status Draft
 			End_Page_Footer_Odd
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
+
+	Section DailyKontakion
+		when-name-of-day-is
+			Monday use:
+				Title role desig sid Kontakion End-Title
+				Title role mode sid me.m11.d08_gr_GR_cog.meMA.Kontakion1.mode End-Title
+				Hymn sid me.m11.d08_gr_GR_cog.meMA.Kontakion1.text End-Hymn
+			Tuesday use:
+				Title role desig sid Kontakion End-Title
+				Title role mode sid me.m02.d24_gr_GR_cog.meMA.Kontakion1.mode End-Title
+				Hymn sid me.m02.d24_gr_GR_cog.meMA.Kontakion1.text End-Hymn
+			Wednesday, Friday use:
+				Title role desig sid Kontakion End-Title
+				Title role mixed<Tmode>sid me.m09.d14_gr_GR_cog.meLI.SeasonalKontakion.mode</><Tmelody>sid me.m09.d14_gr_GR_cog.meLI.SeasonalKontakion.melody</>End-Title
+				Hymn sid me.m09.d14_gr_GR_cog.meLI.SeasonalKontakion.text End-Hymn
+			Thursday use:
+				Title role desig sid Kontakion End-Title
+				Title role mixed<Tmode>sid me.m06.d29_gr_GR_cog.meMA.Kontakion1.mode</><Tmelody>sid me.m06.d29_gr_GR_cog.meMA.Kontakion1.melody</>End-Title
+				Hymn sid me.m06.d29_gr_GR_cog.meMA.Kontakion1.text End-Hymn
+			Saturday use:
+				Title role desig sid Kontakion End-Title
+				Title role mixed<Tmode>sid pe.d127_gr_GR_cog.peLI.SeasonalKontakion.mode</><Tmelody>sid pe.d127_gr_GR_cog.peLI.SeasonalKontakion.melody</>End-Title
+				Hymn sid pe.d127_gr_GR_cog.peLI.SeasonalKontakion.text End-Hymn
+		end-when	
+	End-Section
 
 	Section SeasonalKontakion
 		when-movable-cycle-day-is
@@ -122,7 +147,6 @@ Status Draft
 
 			otherwise use:
 				when-date-is
-						
 					Jan 1 use:
 						Title role desig sid Kontakion End-Title
 						Title role mixed<Tmode>sid me.m01.d01_gr_GR_cog.meLI.SeasonalKontakion.mode</><Tmelody>sid me.m01.d01_gr_GR_cog.meLI.SeasonalKontakion.melody</>End-Title
@@ -258,7 +282,9 @@ Status Draft
 						Title role mixed<Tmode>sid me.m12.d25_gr_GR_cog.meLI.SeasonalKontakion.mode</><Tmelody>sid me.m12.d25_gr_GR_cog.meLI.SeasonalKontakion.melody</>End-Title
 						Hymn sid me.m12.d25_gr_GR_cog.meLI.SeasonalKontakion.text End-Hymn
 
-						
+					otherwise use:
+						Title role mixed<Tdesig>sid Kontakion</><Tmode>sid Mode2</>End-Title
+						Hymn sid hoTY.Key0408.text End-Hymn
 				end-when
 		end-when		
 	End-Section
