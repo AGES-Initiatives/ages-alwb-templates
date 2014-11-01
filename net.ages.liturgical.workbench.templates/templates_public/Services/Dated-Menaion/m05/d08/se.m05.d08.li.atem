@@ -1,0 +1,183 @@
+Template se.m05.d08.li
+
+Status Draft
+
+	import client_gr_GR_cog.*
+	import ho.s07_gr_GR_cog.*
+	import me.m05.d08_gr_GR_cog.*
+
+	import da.*
+	import oc.*
+	import pe.*
+	import tr.*
+
+	//Templates
+	import LectionaryReadings.*
+	import Litanies.*
+	import PaschaParts.*
+	
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 5 day 8 year 2015 End_Date
+			Page_Header_Even
+				center @lookup sid li.pdf.header sid d.on lang L1 @date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	when-movable-cycle-day-is
+		71, 72 use:
+			Section Instance01
+			End-Section
+			
+		73, 74, 75, 77 use:
+			Section Instance02
+			End-Section
+			
+		76 use: //Bright Friday
+			Section Instance03
+			End-Section
+			
+		78 use: //Thomas Sunday
+			Section Instance04
+			End-Section
+			
+		79 thru 83 use: //Thomas week
+			Section Instance05
+			End-Section
+			
+		84 use: //Thomas Leavetaking
+			Section Instance06
+			End-Section
+			
+		85, 92, 99, 106 use: //Paschal Sundays
+			Section Instance07
+			End-Section
+			
+		86, 87, 88, 89, 90, 93, 103, 104, 107 use:
+			Section Instance08
+				Insert_section LiturgyChrysBasilParts.Section01 End-Insert
+				Insert_section AfterPascha_Enarxis End-Insert
+				Insert_section LiturgyChrysBasilParts.Section02 End-Insert
+				Insert_section Pascha_Antiphon1 End-Insert
+				Insert_section LiturgyChrysBasilParts.Section04 End-Insert
+				Insert_section Pascha_Antiphon2 End-Insert
+				Insert_section LiturgyChrysBasilParts.Section06 End-Insert
+				Insert_section Pascha_Antiphon3 End-Insert
+				Insert_section LiturgyChrysBasilParts.Section08 End-Insert
+				Insert_section LiturgyChrysBasilParts.Section09.clergy End-Insert
+				Insert_section LiturgyChrysBasilParts.Section10 End-Insert
+				Section AfterEntrance
+					when-movable-cycle-day-is 89 use: //2014
+						Title role mixed <Tdesig>sid ApolytikionAnastasimon</><Tmode>sid pe.d085_gr_GR_cog.peVE.Apolytikion1.mode</> End-Title
+						Hymn sid pe.d085_gr_GR_cog.peVE.Apolytikion1.text End-Hymn
+						Title role mixed <Tdesig>sid TonMyroforon</><Tmode>sid pe.d085_gr_GR_cog.peVE.Apolytikion3.mode</>End-Title
+						Hymn sid pe.d085_gr_GR_cog.peVE.Apolytikion3.text End-Hymn
+						Title role mixed <Tdesig>sid TouEvangelistou</><Tmode>sid meVE.Apolytikion1.mode</>End-Title
+						Hymn sid meVE.Apolytikion1.text End-Hymn
+						Insert_section LiturgyChrysBasilParts.Section11_opt End-Insert
+						Title role mixed <Tdesig>sid Kontakion sid TonMyroforon</><Tmode>sid pe.d085_gr_GR_cog.peLI.SeasonalKontakion.mode</>End-Title
+						Hymn sid pe.d085_gr_GR_cog.peLI.SeasonalKontakion.text End-Hymn
+					end-when
+				End-Section
+				Insert_section LiturgyChrysBasilParts.Section13.prayer End-Insert
+				Insert_section LiturgyChrysBasilParts.Section13.holygod End-Insert
+				Insert_section Lectionary_Epistle_Menaion End-Insert
+				Insert_section Lectionary_Gospel_Menaion.Alleluia End-Insert
+				Insert_section LiturgyChrysBasilParts.Section14 End-Insert
+				Insert_section Lectionary_Gospel_Menaion.Lesson End-Insert
+				Insert_section LiturgyChrysBasilParts.Section19 End-Insert
+				Insert_section LiturgyChrysBasilParts.Section20 End-Insert
+				Insert_section LiturgyChrysBasilParts.Section21.chrys End-Insert
+				Insert_section LiturgyChrysBasilParts.Section22.chrys End-Insert
+				Insert_section LiturgyChrysBasilParts.Section23.chrys End-Insert
+				Insert_section LiturgyChrysBasilParts.Section24.chrys End-Insert
+				Insert_section LiturgyChrysBasilParts.Section25.chrys End-Insert
+				Insert_section LiturgyChrysBasilParts.Section26 End-Insert
+				Section CommunionHymn
+					Actor sid Choir End-Actor
+					Title role desig sid Koinonikon End-Title
+					Hymn sid da.d5_gr_GR_cog.daLI.CommunionHymn.text End-Hymn
+				End-Section
+				Insert_section LiturgyChrysBasilParts.Section28 End-Insert
+				Insert_section LiturgyChrysBasilParts.Section29 End-Insert
+				Insert_section LiturgyChrysBasilParts.Section30 End-Insert
+				Insert_section Pascha_AfterCommunion End-Insert
+				Insert_section LiturgyChrysBasilParts.Section32 End-Insert
+				Insert_section LiturgyChrysBasilParts.Section33 End-Insert
+				Insert_section LiturgyChrysBasilParts.Section34.chrys End-Insert
+				Insert_section LiturgyChrysBasilParts.Section35.chrys End-Insert
+				Section Pascha_LiturgyEnd2
+					Actor sid Deacon End-Actor
+					Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text media-off End-Dialog
+					Dialog sid res06 sid res09 End-Dialog
+				End-Section
+				Insert_section AfterPascha_Liturgy_End_ComYes End-Insert
+			End-Section
+
+		91, 105 use: //Myr or Sam Leavetaking
+			Section Instance09
+			End-Section
+			
+		94, 108 use: //Par or Blind Leavetaking
+			Section Instance10
+			End-Section
+			
+		95 use: //Mid-Pentecost
+			Section Instance11
+			End-Section
+			
+		96, 97, 100, 101 use:
+			Section Instance12
+			End-Section
+			
+		102 use: //Mid-Pentecost Leavetaking
+			Section Instance13
+			End-Section
+			
+		109 use: //Pascha Leavetaking
+			Section Instance14
+			End-Section
+			
+		110 use: //Ascension
+			Section Instance15
+			End-Section
+			
+		111, 112, 114, 115, 116, 117 use:
+			Section Instance16
+			End-Section
+			
+		113 use: //Holy Fathers
+			Section Instance17
+			End-Section
+			
+		118 use: //Ascension Leavetaking
+			Section Instance18
+			End-Section
+	end-when
+		
+	
+	
+
+
+End-Template
