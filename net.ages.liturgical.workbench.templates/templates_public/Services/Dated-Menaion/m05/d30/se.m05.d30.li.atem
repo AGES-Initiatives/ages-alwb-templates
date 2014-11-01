@@ -1,10 +1,10 @@
-Template se.m05.d17.li 
+Template se.m05.d30.li 
 
 Status Final
 
 	import client_gr_GR_cog.*
 	import ho.s07_gr_GR_cog.*
-	import me.m05.d17_gr_GR_cog.*
+	import me.m05.d30_gr_GR_cog.*
 
 	import da.*
 	import oc.*
@@ -28,7 +28,7 @@ Status Final
 	import roles.*
 
 	Head 
-		Set_Date month 5 day 17 year 2015 End_Date
+		Set_Date month 5 day 30 year 2015 End_Date
 			Page_Header_Even
 				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
 			End_Page_Header_Even
@@ -44,13 +44,19 @@ Status Final
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
-	when-movable-cycle-day-is
-		80 thru 83 use: //Thomas week
-		84 use: //Thomas Saturday
-		85, 92, 95, 99, 102, 106, 109, 110, 113, 118, 119, 120, 121, 126, 127 use: Insert_template mc.map.li End-Insert
-		// various weekdays
-		108 use: //Leavetaking of Blindman
-		111, 112, 114, 115, 116, 117, 122, 123, 124, 125 use: 
+	when-movable-cycle-day-is 1 thru 127 use:
+		when-movable-cycle-day-is
+			95, 99, 102, 106, 109, 110, 113, 118, 119, 120, 121, 126, 127 use: Insert_template mc.map.li End-Insert
+			// various weekdays
+			108 use: //Leavetaking of Blindman
+			111, 112, 114, 115, 116, 117, 122, 123, 124, 125 use:
+		end-when
+	otherwise use:
+		when-name-of-day-is
+			Saturday use:
+			Sunday use:
+			otherwise use:
+		end-when
 	end-when	
 
 End-Template

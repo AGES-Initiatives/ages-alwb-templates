@@ -1,26 +1,24 @@
-Template se.m05.d25.sun.ma
+Template se.m05.d25.ma
 
-Status Review
+Status Draft
 
 	import client_gr_GR_cog.*
-	import eu.lichrysbasil_gr_GR_cog.*
-	import le.go.eo.w08_gr_GR_cog.*
 	import ho.s03_gr_GR_cog.*
 	import me.m05.d25_gr_GR_cog.*
-//	import pe.d000_gr_GR_cog.*
-//	import tr.d000_gr_GR_cog.*
 
-//	import da.*
-//	import oc.*
-//	import pe.*
-//	import tr.*
+	import da.*
+	import oc.*
+	import pe.*
+	import tr.*
 
 	//Templates
 	import MatinsParts.*
+	import LectionaryReadings.*
 	import Litanies.*
 	import PaschaParts.*
 	
 	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
 	import misc_gr_GR_cog.*
 	import prayers_gr_GR_cog.*
 	import rubrical_gr_GR_cog.*
@@ -48,16 +46,22 @@ Status Review
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
-		Preface Covers
-			Insert_template ematins.cover.ma End-Insert
-			Insert_template ematins.credits End-Insert
-		End-Preface
+	Preface Covers
+		Insert_template ematins.cover.ma End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
 
-	when-movable-cycle-day-is 
-	
-		106 use:
+	when-movable-cycle-day-is
+		88, 89, 90, 93, 103, 104, 107 use:
+			Section Instance01
+			End-Section
+			
+		91, 105 use:
+			Section Instance02
+			End-Section
 
-			Section Instance_03
+		92, 99, 106 use: //Paschal Sundays
+			Section Instance03
 				Section Section01
 					Insert_section GITL.mode5 End-Insert
 					Title role desig sid ApolytikionAnastasimon End-Title
@@ -155,15 +159,15 @@ Status Review
 				Section MG_2_Eothina //Used for Sunday Eothina
 					Section Part1
 						Actor sid Priest End-Actor
-						Dialog sid gos03a sid leeoMA.Gospel.book sid gos03b End-Dialog
+						Dialog sid gos03a sid le.go.eo.w08_gr_GR_cog.leeoMA.Gospel.book sid gos03b End-Dialog
 						Actor sid Deacon End-Actor
 						Dialog sid exc19 End-Dialog
 						Actor sid Choir End-Actor
 						Dialog sid DoxaSoiKyrie End-Dialog
 						Actor sid Priest End-Actor
-						Title role chapverse sid Eothinon sid leeoMA.Gospel.title End-Title
-						Title role chapverse sid leeoMA.Gospel.book sid leeoMA.Gospel.chapverse End-Title
-						Reading sid leeoMA.Gospel.text End-Reading
+						Title role chapverse sid Eothinon sid le.go.eo.w08_gr_GR_cog.leeoMA.Gospel.title End-Title
+						Title role chapverse sid le.go.eo.w08_gr_GR_cog.leeoMA.Gospel.book sid le.go.eo.w08_gr_GR_cog.leeoMA.Gospel.chapverse End-Title
+						Reading sid le.go.eo.w08_gr_GR_cog.leeoMA.Gospel.text <Trubric>sid le.go.eo.w08_gr_GR_cog.leeoMA.Gospel.version</>End-Reading
 					End-Section //Part1
 					Insert_section MatinsGospel_Eothina.Part2 End-Insert
 					Insert_section MatinsGospel_Eothina.Part3 End-Insert
@@ -234,10 +238,73 @@ Status Review
 					Hymn sid hoMA.SunTroparion1.text End-Hymn
 				End-Section
 			End-Section //Blindman
-	
+
+		94, 108 use:
+			Section Instance04
+			End-Section
+		
+		110 use:
+			Section Instance05
+			End-Section
+		
+		96, 97, 100, 101 use:
+			Section Instance06
+			End-Section
+		
+		98 use: //Mid-Pent Saturday
+			Section Instance06b
+			End-Section
+		
+		102 use: //Mid-Pent Leavetaking
+			Section Instance07
+			End-Section
+			
+		109 use: //Pascha Leavetaking
+			Section Instance08
+			End-Section
+		
+		110 use: //Ascension
+			Section Instance09
+			End-Section
+			
+		111, 112, 114, 115, 116, 117, 122, 123, 124, 125 use:
+			Section Instance10
+			End-Section
+		
+		113 use: //Holy Fathers
+			Section Instance11
+			End-Section
+		
+		118, 126 use: //Asc or Pent Leavetaking
+			Section Instance12
+			End-Section
+		
+		119 use: //SoS
+			Section Instance13
+			End-Section
+		
+		120 use: //Pentecost
+			Section Instance14
+			End-Section
+		
+		121 use: 
+			Section Instance15
+			End-Section
+		
+		127 use: //All-Saints
+			Section Instance16
+			End-Section
+		
 		otherwise use:
-	
-	
+			when-name-of-day-is
+				Sunday use:
+					Section Instance18
+					End-Section
+					
+				otherwise use:
+					Section Instance17
+					End-Section
+			end-when
 	end-when
 
 End-Template
