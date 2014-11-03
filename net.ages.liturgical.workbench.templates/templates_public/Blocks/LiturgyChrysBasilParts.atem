@@ -951,11 +951,98 @@ Status Review
 		Dialog sid euLI.Key1529.text End-Dialog
 	End-Section
 
-	Section Section31
-		//This hymn changes on feasts of the Lord
-		Actor sid Choir End-Actor
-		Title role mode sid Mode2 End-Title
-		Hymn sid euLI.Key1530.text End-Hymn
+	Section Section31 //do not use this on Easter Sunday pe.d071
+		when-movable-cycle-day-is
+			43 use:
+				Section lent3
+					Actor sid Choir End-Actor
+					Title role desig sid euLI.Key1531.text End-Title
+					Title role mode sid tr.d043_gr_GR_cog.trVE.Apolytikion1.mode End-Title
+					Hymn sid tr.d043_gr_GR_cog.trVE.Apolytikion1.text End-Hymn
+				End-Section
+			69 use:
+				Section holythursday
+					Actor sid Choir End-Actor
+					Title role desig sid euLI.Key1531.text End-Title		
+					Hymn sid tr.d069_gr_GR_cog.trLI.AfterCommunion.text End-Hymn
+				End-Section
+			71 use:
+				Section holysaturday
+					Actor sid Choir End-Actor
+					Title role desig sid euLI.Key1531.text End-Title
+					Title role mode sid tr.d071_gr_GR_cog.trHW.AfterCommunion.mode End-Title	
+					Hymn sid tr.d071_gr_GR_cog.trHW.AfterCommunion.text End-Hymn
+				End-Section
+			72 thru 109 use:
+				Section pascha
+					Actor sid Choir End-Actor
+					Title role desig sid euLI.Key1531.text End-Title
+					Title role mode sid pe.d00P_gr_GR_cog.pePA.AfterCommunion.mode End-Title
+					Hymn sid pe.d00P_gr_GR_cog.pePA.AfterCommunion.text End-Hymn
+				End-Section
+			110 thru 118 use:
+				Section ascension
+					Actor sid Choir End-Actor
+					Title role desig sid euLI.Key1531.text End-Title
+					Title role mode sid pe.d110_gr_GR_cog.peVE.Apolytikion1.mode End-Title
+					Hymn sid pe.d110_gr_GR_cog.peVE.Apolytikion1.text End-Hymn
+				End-Section
+			119 use:
+				Section souls
+					Actor sid Choir End-Actor
+					Title role desig sid euLI.Key1531.text End-Title
+					Title role mode sid tr.d014_gr_GR_cog.trVE.Apolytikion1.mode End-Title
+					Hymn sid tr.d014_gr_GR_cog.trVE.Apolytikion1.text End-Hymn
+					Rubric sid Or End-Rubric
+					Title role mode sid tr.d071_gr_GR_cog.trHW.AfterCommunion.mode End-Title	
+					Hymn sid tr.d071_gr_GR_cog.trHW.AfterCommunion.text End-Hymn
+				End-Section
+			120 use:
+				Section pentecost
+					Actor sid Choir End-Actor
+					Title role desig sid euLI.Key1531.text End-Title
+					Title role mode sid pe.d120_gr_GR_cog.peVE.Apolytikion1.mode End-Title
+					Hymn sid pe.d120_gr_GR_cog.peVE.Apolytikion1.text End-Hymn
+				End-Section
+			121 thru 127 use:
+				Section holyspirit
+					Actor sid Choir End-Actor
+					Title role mode sid Mode2 End-Title
+					Hymn sid euLI.Key1530.text End-Hymn
+				End-Section
+			otherwise use:
+				when-date-is
+					Jan 1 use: 
+						Actor sid Choir End-Actor
+						Title role desig sid euLI.Key1531.text End-Title
+						Title role mode sid me.m01.d01_gr_GR_cog.meVE.Apolytikion2.mode End-Title
+						Hymn sid me.m01.d01_gr_GR_cog.meVE.Apolytikion2.text End-Hymn
+					Jan 6, 7, 14 use:
+						Actor sid Choir End-Actor
+						Title role desig sid euLI.Key1531.text End-Title
+						Title role mode sid me.m01.d06_gr_GR_cog.meVE.Apolytikion1.mode End-Title
+						Hymn sid me.m01.d06_gr_GR_cog.meVE.Apolytikion1.text End-Hymn
+					Aug 6, 13 use:
+						Actor sid Choir End-Actor
+						Title role desig sid euLI.Key1531.text End-Title
+						Title role mode sid me.m08.d06_gr_GR_cog.meVE.Apolytikion1.mode End-Title
+						Hymn sid me.m08.d06_gr_GR_cog.meVE.Apolytikion1.text End-Hymn
+					Sep 14, 21 use:
+						Actor sid Choir End-Actor
+						Title role desig sid euLI.Key1531.text End-Title
+						Title role mode sid me.m09.d14_gr_GR_cog.meVE.Apolytikion1.mode End-Title
+						Hymn sid me.m09.d14_gr_GR_cog.meVE.Apolytikion1.text End-Hymn
+					Dec 25, 26, 31 use:
+						Actor sid Choir End-Actor
+						Title role desig sid euLI.Key1531.text End-Title
+						Title role mode sid me.m12.d25_gr_GR_cog.meVE.Apolytikion1.mode End-Title
+						Hymn sid me.m12.d25_gr_GR_cog.meVE.Apolytikion1.text End-Hymn
+					otherwise use:
+						Actor sid Choir End-Actor
+						Title role mode sid Mode2 End-Title
+						Hymn sid euLI.Key1530.text End-Hymn
+				end-when
+		end-when
 	End-Section	
 	
 	Section Section32
