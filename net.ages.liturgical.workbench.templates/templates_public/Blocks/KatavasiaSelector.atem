@@ -1,0 +1,697 @@
+Template KatavasiaSelector
+
+Status Final
+
+	import he.k_en_US_public.*
+
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+
+	import iTags.*
+	import bTags.*
+	import roles.*
+	import rules.*
+
+	Head 
+		Set_Date month 2 day 5 year 2010 End_Date
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ma End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	Section k_title
+		when-date-is 
+			Jan 15 thru 31 use: 
+				Title role cover4 sid Katavasia2 sid Meeting.title End-Title
+			Feb 1 use:
+				Title role cover4 sid Katavasia2 sid Meeting.title End-Title
+			Feb 2 thru 9 use: //calculates leavetaking of Meeting
+				when-movable-cycle-day-is
+					1 thru 13 use:
+						when-date-is
+							Feb 2 thru 9 use: Title role cover4 sid Katavasia2 sid Meeting.title End-Title
+						end-when
+					14 use:
+						when-date-is
+							Feb 2 thru 5 use: Title role cover4 sid Katavasia2 sid Meeting.title End-Title
+							Feb 6 thru 9 use: //no
+						end-when
+					15 use:
+						when-date-is
+							Feb 2 thru 6 use: Title role cover4 sid Katavasia2 sid Meeting.title End-Title
+							Feb 7 thru 9 use: //no
+						end-when
+					16 use:
+						when-date-is
+							Feb 2 thru 7 use: Title role cover4 sid Katavasia2 sid Meeting.title End-Title
+							Feb 8, 9 use: //no
+						end-when
+					17 use:
+						when-date-is
+							Feb 2 thru 8 use: Title role cover4 sid Katavasia2 sid Meeting.title End-Title
+							Feb 9 use: //no
+						end-when
+					18 use:
+						when-date-is
+							Feb 2 thru 5 use: Title role cover4 sid Katavasia2 sid Meeting.title End-Title
+							Feb 6 thru 9 use: //no
+						end-when
+					19 use:
+						when-date-is
+							Feb 2 thru 6 use: Title role cover4 sid Katavasia2 sid Meeting.title End-Title
+							Feb 7 thru 9 use: //no
+						end-when
+					20 use:
+						when-date-is
+							Feb 2 thru 5 use: Title role cover4 sid Katavasia2 sid Meeting.title End-Title
+							Feb 6 thru 9 use: //no
+						end-when
+					21 use:
+						when-date-is
+							Feb 2, 3 use: Title role cover4 sid Katavasia2 sid Meeting.title End-Title
+							Feb 4 thru 9 use: //no
+						end-when
+					22 use:
+						when-date-is
+							Feb 2 thru 7 use: Title role cover4 sid Katavasia2 sid Meeting.title End-Title
+							Feb 8, 9 use: Title role cover4 sid Katavasia2 sid Triodion14.title End-Title
+						end-when
+					23 use:
+						when-date-is
+							Feb 2 use: Title role cover4 sid Katavasia2 sid Meeting.title End-Title
+							Feb 3 thru 9 use: //no
+						end-when
+					otherwise use:
+						Title role cover4 sid Katavasia2 sid Meeting.title End-Title
+				end-when
+				
+			Mar 25 use:
+				Title role cover4 sid Katavasia2 sid Annunciation.title End-Title
+			
+			otherwise use:
+				Section Moveable
+					when-movable-cycle-day-is
+						1 use:
+							Title role cover4 sid Katavasia2 sid Triodion14.title End-Title
+						8 use:
+							Title role cover4 sid Katavasia2 sid Triodion2.title End-Title
+						15 use:
+							Title role cover4 sid Katavasia2 sid Triodion3.title End-Title
+						22 use:
+							Title role cover4 sid Katavasia2 sid Triodion14.title End-Title
+						29 use:
+							Title role cover4 sid Katavasia2 sid Lent1.title End-Title
+						36 use:
+							Title role cover4 sid Katavasia2 sid Theotokos.title End-Title
+						43	use:
+							Title role cover4 sid Katavasia2 sid Lent3.title End-Title
+						50, 57 use:
+							Title role cover4 sid Katavasia2 sid Theotokos.title End-Title
+						63 use:
+							Title role cover4 sid Katavasia2 sid Lazarus.title End-Title
+						64 use:
+							Title role cover4 sid Katavasia2 sid PalmSunday.title End-Title
+						71 thru 109 use:
+							when-pentecostarion-day-is	
+							95, 96, 97, 98, 100, 101, 102 use:
+								Title role cover4 sid Katavasia2 sid MidPentecost.title End-Title
+							106 thru 108 use:
+								Title role cover4 sid Katavasia2 sid Blindman.title End-Title
+							otherwise use:
+								Title role cover4 sid Katavasia2 sid Pascha.title End-Title
+							end-when
+						110 thru 126 use:
+							when-pentecostarion-day-is 
+							119 use: 
+								Title role cover4 sid Katavasia2 sid Triodion14.title End-Title
+							120, 126 use:
+								Title role cover4 sid Katavasia2 sid Pentecost12.title End-Title
+							otherwise use:
+								Title role cover4 sid Katavasia2 sid Pentecost2.title End-Title
+							end-when
+						127 use:
+							Title role cover4 sid Katavasia2 sid Theotokos.title End-Title
+							
+						otherwise use:
+							Section Immoveable
+								when-date-is 
+									Jan 1, 6, 14 use:
+										Title role cover4 sid Katavasia2 sid Epiphany12.title End-Title
+									Jan 2 thru 5 use:
+										Title role cover4 sid Katavasia2 sid Epiphany1.title End-Title
+									Jan 7 thru 13 use:
+										Title role cover4 sid Katavasia2 sid Epiphany2.title End-Title
+									Feb 10 thru 29 use:
+										Title role cover4 sid Katavasia2 sid Theotokos.title End-Title
+									Mar 1 thru 22 use:
+										Title role cover4 sid Katavasia2 sid Theotokos.title End-Title
+									Jul 4 thru 26 use:
+										Title role cover4 sid Katavasia2 sid Theotokos.title End-Title
+									Jul 27 thru 31 use:
+										Title role cover4 sid Katavasia2 sid Summer.title End-Title
+									Aug 1 use:
+										Title role cover4 sid Katavasia2 sid Cross.title End-Title
+									Aug 2 thru 5 use:
+										Title role cover4 sid Katavasia2 sid Summer.title End-Title
+									Aug 6 thru 13 use:
+										Title role cover4 sid Katavasia2 sid Cross.title End-Title
+									Aug 14 use:
+										Title role cover4 sid Katavasia2 sid TheotokosDormition.title End-Title
+									Aug 15 thru 21 use:
+										Title role cover4 sid Katavasia2 sid Dormition.title End-Title
+									Aug 24 thru 31 use:
+										Title role cover4 sid Katavasia2 sid Cross.title End-Title
+									Sep 1 thru 21 use:
+										Title role cover4 sid Katavasia2 sid Cross.title End-Title
+									Sep 22 thru 30 use:
+										Title role cover4 sid Katavasia2 sid Theotokos.title End-Title
+									Oct 1 thru 31 use:
+										Title role cover4 sid Katavasia2 sid Theotokos.title End-Title
+									Nov 1 thru 7 use:	
+										Title role cover4 sid Katavasia2 sid Theotokos.title End-Title
+									Nov 8 thru 20 use:
+										Title role cover4 sid Katavasia2 sid TheotokosEntry.title End-Title
+									Nov 21 thru 30 use:
+										Title role cover4 sid Katavasia2 sid Christmas1.title End-Title
+									Dec 1 thru 24 use:
+										Title role cover4 sid Katavasia2 sid Christmas1.title End-Title
+									Dec 25, 31 use: 
+										Title role cover4 sid Katavasia2 sid Christmas12.title End-Title
+									Dec 26 thru 30 use:
+										Title role cover4 sid Katavasia2 sid Christmas2.title End-Title
+								end-when
+							End-Section //Immovable
+
+					end-when	
+				End-Section //Movable
+		end-when
+	End-Section //k_title
+
+	Section k_1345678
+		when-date-is 
+			Jan 15 thru 31 use: 
+				Insert_section kMeeting.k_1345678 End-Insert
+			Feb 1 use: 
+				Insert_section kMeeting.k_1345678 End-Insert
+			Feb 2 thru 9 use: //calculates leavetaking of Meeting
+				when-movable-cycle-day-is
+					1 thru 13 use:
+						when-date-is
+							Feb 2 thru 9 use: Insert_section kMeeting.k_1345678 End-Insert
+						end-when
+					14 use:
+						when-date-is
+							Feb 2 thru 5 use: Insert_section kMeeting.k_1345678 End-Insert
+							Feb 6 thru 9 use: //no
+						end-when
+					15 use:
+						when-date-is
+							Feb 2 thru 6 use: Insert_section kMeeting.k_1345678 End-Insert
+							Feb 7 thru 9 use: //no
+						end-when
+					16 use:
+						when-date-is
+							Feb 2 thru 7 use: Insert_section kMeeting.k_1345678 End-Insert
+							Feb 8, 9 use: //no
+						end-when
+					17 use:
+						when-date-is
+							Feb 2 thru 8 use: Insert_section kMeeting.k_1345678 End-Insert
+							Feb 9 use: //no
+						end-when
+					18 use:
+						when-date-is
+							Feb 2 thru 5 use: Insert_section kMeeting.k_1345678 End-Insert
+							Feb 6 thru 9 use: //no
+						end-when
+					19 use:
+						when-date-is
+							Feb 2 thru 6 use: Insert_section kMeeting.k_1345678 End-Insert
+							Feb 7 thru 9 use: //no
+						end-when
+					20 use:
+						when-date-is
+							Feb 2 thru 5 use: Insert_section kMeeting.k_1345678 End-Insert
+							Feb 6 thru 9 use: //no
+						end-when
+					21 use:
+						when-date-is
+							Feb 2, 3 use: Insert_section kMeeting.k_1345678 End-Insert
+							Feb 4 thru 9 use: //no
+						end-when
+					22 use:
+						when-date-is
+							Feb 2 thru 7 use: Insert_section kMeeting.k_1345678 End-Insert
+							Feb 8, 9 use: Insert_section kTriodion14.k_1345678 End-Insert
+						end-when
+					23 use:
+						when-date-is
+							Feb 2 use: Insert_section kMeeting.k_1345678 End-Insert
+							Feb 3 thru 9 use: //no
+						end-when
+					otherwise use:
+						
+				end-when
+				
+			Mar 25 use: Insert_section kAnnunciation.k_1345678 End-Insert
+			
+			otherwise use:
+				Section Moveable
+					when-movable-cycle-day-is
+						1 use: Insert_section kTriodion14.k_1345678 End-Insert
+							
+						8 use: Insert_section kTriodion2.k_1345678 End-Insert
+							
+						15 use: Insert_section kTriodion3.k_1345678 End-Insert
+							
+						22 use: Insert_section kTriodion14.k_1345678 End-Insert
+							
+						29 use: Insert_section kLent1.k_1345678 End-Insert
+							
+						36 use: Insert_section kTheotokos.k_1345678 End-Insert
+							
+						43 use: Insert_section kLent3.k_1345678 End-Insert
+							
+						50, 57 use: Insert_section kTheotokos.k_1345678 End-Insert
+							
+						63 use: Insert_section kLazarus.k_1345678 End-Insert
+							
+						64 use: Insert_section kPalmSunday.k_1345678 End-Insert
+							
+						71 thru 109 use:
+							when-pentecostarion-day-is	
+							95, 96, 97, 98, 100, 101, 102 use:
+								Insert_section kMidPentecost.k_1345678 End-Insert
+							106 thru 108 use:
+								Insert_section kBlindman.k_1345678 End-Insert
+							otherwise use:
+								Insert_section kPascha.k_1345678 End-Insert
+							end-when
+						110 thru 126 use: 
+							when-pentecostarion-day-is 
+							119 use: Insert_section kTriodion14.k_1345678 End-Insert
+							120, 126 use: 
+								Insert_section kPentecost.k1and2_1345678 End-Insert
+							otherwise use:
+								Insert_section kPentecost.k2_1345678 End-Insert
+							end-when
+						127 use: Insert_section kTheotokos.k_1345678 End-Insert
+							
+						otherwise use:
+							Section Immoveable
+								when-date-is 
+									Jan 1, 6, 14 use:
+										Insert_section kEpiphany.k1and2_1345678 End-Insert
+									Jan 2 thru 5 use:
+										Insert_section kEpiphany.k1_1345678 End-Insert
+									Jan 7 thru 13 use:
+										Insert_section kEpiphany.k2_1345678 End-Insert
+									Feb 10 thru 29 use:
+										Insert_section kTheotokos.k_1345678 End-Insert
+									Mar 1 thru 22 use:
+										Insert_section kTheotokos.k_1345678 End-Insert
+									Jul 4 thru 26 use:
+										Insert_section kTheotokos.k_1345678 End-Insert
+									Jul 27 thru 31 use:
+										Insert_section kSummer.k_1345678 End-Insert
+									Aug 1 use:
+										Insert_section kCross.k_1345678 End-Insert
+									Aug 2 thru 5 use:
+										Insert_section kSummer.k_1345678 End-Insert
+									Aug 6 thru 13 use:
+										Insert_section kCross.k_1345678 End-Insert
+									Aug 14 use:
+										Insert_section kTheotokosDormition.k_1345678 End-Insert
+									Aug 15 thru 21 use:
+										Insert_section kDormition.k_1345678 End-Insert
+									Aug 24 thru 31 use:
+										Insert_section kCross.k_1345678 End-Insert
+									Sep 1, 2, 3, 4, 5, 6, 7, 8, 8, 10, 11, 12, 13, 15, 16, 17, 18, 19, 20 use:
+										Insert_section kCross.k_1345678 End-Insert
+									Sep 14, 21 use:
+										Insert_section kCross.k_1345678 End-Insert
+									Sep 22 thru 30 use:
+										Insert_section kTheotokos.k_1345678 End-Insert
+									Oct 1 thru 31 use:
+										Insert_section kTheotokos.k_1345678 End-Insert
+									Nov 1 thru 7 use:	
+										Insert_section kTheotokos.k_1345678 End-Insert
+									Nov 8 thru 20 use:
+										Insert_section kTheotokosEntry.k_1345678 End-Insert
+									Nov 21 thru 30 use:
+										Insert_section kChristmas.k1_1345678 End-Insert
+									Dec 1 thru 24 use:
+										Insert_section kChristmas.k1_1345678 End-Insert
+									Dec 25, 31 use: 
+										Insert_section kChristmas.k1and2_1345678 End-Insert
+									Dec 26 thru 30 use:
+										Insert_section kChristmas.k2_1345678 End-Insert
+								end-when
+							End-Section //Immovable
+
+					end-when	
+				End-Section //Movable
+		end-when
+	End-Section //k_1345678
+
+	Section k_mode_mag_media
+		when-date-is 
+			Jan 15 thru 31 use:
+				Insert_section kMeeting.k_mode_mag_media End-Insert
+			Feb 1 use:
+				Insert_section kMeeting.k_mode_mag_media End-Insert
+			Feb 2 thru 9 use: //calculates leavetaking of Meeting
+				when-movable-cycle-day-is
+					1 thru 13 use:
+						when-date-is
+							Feb 2 thru 9 use: Insert_section kMeeting.k_mode_mag_media End-Insert
+						end-when
+					14 use:
+						when-date-is
+							Feb 2 thru 5 use: Insert_section kMeeting.k_mode_mag_media End-Insert
+							Feb 6 thru 9 use: //no
+						end-when
+					15 use:
+						when-date-is
+							Feb 2 thru 6 use: Insert_section kMeeting.k_mode_mag_media End-Insert
+							Feb 7 thru 9 use: //no
+						end-when
+					16 use:
+						when-date-is
+							Feb 2 thru 7 use: Insert_section kMeeting.k_mode_mag_media End-Insert
+							Feb 8, 9 use: //no
+						end-when
+					17 use:
+						when-date-is
+							Feb 2 thru 8 use: Insert_section kMeeting.k_mode_mag_media End-Insert
+							Feb 9 use: //no
+						end-when
+					18 use:
+						when-date-is
+							Feb 2 thru 5 use: Insert_section kMeeting.k_mode_mag_media End-Insert
+							Feb 6 thru 9 use: //no
+						end-when
+					19 use:
+						when-date-is
+							Feb 2 thru 6 use: Insert_section kMeeting.k_mode_mag_media End-Insert
+							Feb 7 thru 9 use: //no
+						end-when
+					20 use:
+						when-date-is
+							Feb 2 thru 5 use: Insert_section kMeeting.k_mode_mag_media End-Insert
+							Feb 6 thru 9 use: //no
+						end-when
+					21 use:
+						when-date-is
+							Feb 2, 3 use: Insert_section kMeeting.k_mode_mag_media End-Insert
+							Feb 4 thru 9 use: //no
+						end-when
+					22 use:
+						when-date-is
+							Feb 2 thru 7 use: Insert_section kMeeting.k_mode_mag_media End-Insert
+							Feb 8, 9 use: Insert_section kTriodion14.k_mode_mag_media End-Insert
+						end-when
+					23 use:
+						when-date-is
+							Feb 2 use: Insert_section kMeeting.k_mode_mag_media End-Insert
+							Feb 3 thru 9 use: //no
+						end-when
+					otherwise use:
+						
+				end-when
+				
+			Mar 25 use: Insert_section kAnnunciation.k_mode_mag_media End-Insert
+			
+			otherwise use:
+				Section Moveable
+					when-movable-cycle-day-is
+						1 use: Insert_section kTriodion14.k_mode_mag_media End-Insert
+							
+						8 use: Insert_section kTriodion2.k_mode_mag_media End-Insert
+							
+						15 use: Insert_section kTriodion3.k_mode_mag_media End-Insert
+							
+						22 use: Insert_section kTriodion14.k_mode_mag_media End-Insert
+							
+						29 use: Insert_section kLent1.k_mode_mag_media End-Insert
+							
+						36 use: Insert_section kTheotokos.k_mode_mag_media End-Insert
+							
+						43 use: Insert_section kLent3.k_mode_mag_media End-Insert
+							
+						50, 57 use: Insert_section kTheotokos.k_mode_mag_media End-Insert
+							
+						63 use: Insert_section kLazarus.k_mode_mag_media End-Insert
+							
+						//64 use: Insert_section kPalmSunday.k_mode_mag_media End-Insert
+							
+						71 thru 109 use:
+							when-pentecostarion-day-is	
+							95, 96, 97, 98, 100, 101, 102 use:
+								Insert_section kMidPentecost.k_mode_mag_media End-Insert
+							106 thru 108 use:
+								Insert_section kBlindman.k_mode_mag_media End-Insert
+							otherwise use:
+								Insert_section kPascha.k_mode_mag_media End-Insert
+							end-when
+						110 thru 126 use: 
+							when-pentecostarion-day-is 
+							119 use: Insert_section kTriodion14.k_mode_mag_media End-Insert
+							120, 126 use: 
+							//	Insert_section kPentecost.k1and2_9 End-Insert
+							otherwise use:
+								Insert_section kPentecost.k_mode_mag_media End-Insert
+							end-when
+						127 use: Insert_section kTheotokos.k_mode_mag_media End-Insert
+							
+						otherwise use:
+							Section Immoveable
+								when-date-is 
+									Jan 1, 6, 14 use:
+									//	Insert_section kEpiphany.k1and2_9 End-Insert
+									Jan 2 thru 5 use:
+										Insert_section kEpiphany.k_mode_mag_media End-Insert
+									Jan 7 thru 13 use:
+										Insert_section kEpiphany.k_mode_mag_media End-Insert
+									Feb 10 thru 29 use:
+										Insert_section kTheotokos.k_mode_mag_media End-Insert
+									Mar 1 thru 22 use:
+										Insert_section kTheotokos.k_mode_mag_media End-Insert
+									Jul 4 thru 26 use:
+										Insert_section kTheotokos.k_mode_mag_media End-Insert
+									Jul 27 thru 31 use:
+										Insert_section kSummer.k_mode_mag_media End-Insert
+									Aug 1 use:
+										Insert_section kCross.k_mode_mag_media End-Insert
+									Aug 2 thru 5 use:
+										Insert_section kSummer.k_mode_mag_media End-Insert
+									Aug 6 thru 13 use:
+										Insert_section kCross.k_mode_mag_media End-Insert
+									Aug 14 use:
+										Insert_section kTheotokosDormition.k_mode_mag_media End-Insert
+									Aug 15 thru 21 use:
+										Insert_section kDormition.k_mode_mag_media End-Insert
+									Aug 24 thru 31 use:
+										Insert_section kCross.k_mode_mag_media End-Insert
+									Sep 1, 2, 3, 4, 5, 6, 7, 8, 8, 10, 11, 12, 13, 15, 16, 17, 18, 19, 20 use:
+										Insert_section kCross.k_mode_mag_media End-Insert
+									Sep 14, 21 use:
+										Insert_section kCross.k_mode_mag_media End-Insert
+									Sep 22 thru 30 use:
+										Insert_section kTheotokos.k_mode_mag_media End-Insert
+									Oct 1 thru 31 use:
+										Insert_section kTheotokos.k_mode_mag_media End-Insert
+									Nov 1 thru 7 use:	
+										Insert_section kTheotokos.k_mode_mag_media End-Insert
+									Nov 8 thru 20 use:
+										Insert_section kTheotokosEntry.k_mode_mag_media End-Insert
+									Nov 21 thru 30 use:
+										Insert_section kChristmas.k_mode_mag_media End-Insert
+									Dec 1 thru 24 use:
+										Insert_section kChristmas.k_mode_mag_media End-Insert
+									Dec 25, 31 use: 
+									//	Insert_section kChristmas.k1and2_9 End-Insert
+									Dec 26 thru 30 use:
+										Insert_section kChristmas.k_mode_mag_media End-Insert
+								end-when
+							End-Section //Immovable
+
+					end-when	
+				End-Section //Movable
+		end-when
+	End-Section //k_9
+
+	Section k_9
+		when-date-is 
+			Jan 15 thru 31 use:
+				Insert_section kMeeting.k_9 End-Insert
+			Feb 1 use:
+				Insert_section kMeeting.k_9 End-Insert
+			Feb 2 thru 9 use: //calculates leavetaking of Meeting
+				when-movable-cycle-day-is
+					1 thru 13 use:
+						when-date-is
+							Feb 2 thru 9 use: Insert_section kMeeting.k_9 End-Insert
+						end-when
+					14 use:
+						when-date-is
+							Feb 2 thru 5 use: Insert_section kMeeting.k_9 End-Insert
+							Feb 6 thru 9 use: //no
+						end-when
+					15 use:
+						when-date-is
+							Feb 2 thru 6 use: Insert_section kMeeting.k_9 End-Insert
+							Feb 7 thru 9 use: //no
+						end-when
+					16 use:
+						when-date-is
+							Feb 2 thru 7 use: Insert_section kMeeting.k_9 End-Insert
+							Feb 8, 9 use: //no
+						end-when
+					17 use:
+						when-date-is
+							Feb 2 thru 8 use: Insert_section kMeeting.k_9 End-Insert
+							Feb 9 use: //no
+						end-when
+					18 use:
+						when-date-is
+							Feb 2 thru 5 use: Insert_section kMeeting.k_9 End-Insert
+							Feb 6 thru 9 use: //no
+						end-when
+					19 use:
+						when-date-is
+							Feb 2 thru 6 use: Insert_section kMeeting.k_9 End-Insert
+							Feb 7 thru 9 use: //no
+						end-when
+					20 use:
+						when-date-is
+							Feb 2 thru 5 use: Insert_section kMeeting.k_9 End-Insert
+							Feb 6 thru 9 use: //no
+						end-when
+					21 use:
+						when-date-is
+							Feb 2, 3 use: Insert_section kMeeting.k_9 End-Insert
+							Feb 4 thru 9 use: //no
+						end-when
+					22 use:
+						when-date-is
+							Feb 2 thru 7 use: Insert_section kMeeting.k_9 End-Insert
+							Feb 8, 9 use: Insert_section kTriodion14.k_9 End-Insert
+						end-when
+					23 use:
+						when-date-is
+							Feb 2 use: Insert_section kMeeting.k_9 End-Insert
+							Feb 3 thru 9 use: //no
+						end-when
+					otherwise use:
+						
+				end-when
+				
+			Mar 25 use: Insert_section kAnnunciation.k_9 End-Insert
+			
+			otherwise use:
+				Section Moveable
+					when-movable-cycle-day-is
+						1 use: Insert_section kTriodion14.k_9 End-Insert
+							
+						8 use: Insert_section kTriodion2.k_9 End-Insert
+							
+						15 use: Insert_section kTriodion3.k_9 End-Insert
+							
+						22 use: Insert_section kTriodion14.k_9 End-Insert
+							
+						29 use: Insert_section kLent1.k_9 End-Insert
+							
+						36 use: Insert_section kTheotokos.k_9 End-Insert
+							
+						43 use: Insert_section kLent3.k_9 End-Insert
+							
+						50, 57 use: Insert_section kTheotokos.k_9 End-Insert
+							
+						63 use: Insert_section kLazarus.k_9 End-Insert
+							
+						64 use: Insert_section kPalmSunday.k_9 End-Insert
+							
+						71 thru 109 use:
+							when-pentecostarion-day-is	
+							95, 96, 97, 98, 100, 101, 102 use:
+								Insert_section kMidPentecost.k_9 End-Insert
+							106 thru 108 use:
+								Insert_section kBlindman.k_9 End-Insert
+							otherwise use:
+								Insert_section kPascha.k_9 End-Insert
+							end-when
+						110 thru 126 use: 
+							when-pentecostarion-day-is 
+							119 use: Insert_section kTriodion14.k_9 End-Insert
+							120, 126 use: 
+								Insert_section kPentecost.k1and2_9 End-Insert
+							otherwise use:
+								Insert_section kPentecost.k2_9 End-Insert
+							end-when
+						127 use: Insert_section kTheotokos.k_9 End-Insert
+							
+						otherwise use:
+							Section Immoveable
+								when-date-is 
+									Jan 1, 6, 14 use:
+										Insert_section kEpiphany.k1and2_9 End-Insert
+									Jan 2 thru 5 use:
+										Insert_section kEpiphany.k1_9 End-Insert
+									Jan 7 thru 13 use:
+										Insert_section kEpiphany.k2_9 End-Insert
+									Feb 10 thru 29 use:
+										Insert_section kTheotokos.k_9 End-Insert
+									Mar 1 thru 22 use:
+										Insert_section kTheotokos.k_9 End-Insert
+									Jul 4 thru 26 use:
+										Insert_section kTheotokos.k_9 End-Insert
+									Jul 27 thru 31 use:
+										Insert_section kSummer.k_9 End-Insert
+									Aug 1 use:
+										Insert_section kCross.k_9 End-Insert
+									Aug 2 thru 5 use:
+										Insert_section kSummer.k_9 End-Insert
+									Aug 6 thru 13 use:
+										Insert_section kCross.k_9 End-Insert
+									Aug 14 use:
+										Insert_section kTheotokosDormition.k_9 End-Insert
+									Aug 15 thru 21 use:
+										Insert_section kDormition.k_9 End-Insert
+									Aug 24 thru 31 use:
+										Insert_section kCross.k_9 End-Insert
+									Sep 1, 2, 3, 4, 5, 6, 7, 8, 8, 10, 11, 12, 13, 15, 16, 17, 18, 19, 20 use:
+										Insert_section kCross.k_9 End-Insert
+									Sep 14, 21 use:
+										Insert_section kCross.k_9 End-Insert
+										Insert_section kCross.k_92 End-Insert
+									Sep 22 thru 30 use:
+										Insert_section kTheotokos.k_9 End-Insert
+									Oct 1 thru 31 use:
+										Insert_section kTheotokos.k_9 End-Insert
+									Nov 1 thru 7 use:	
+										Insert_section kTheotokos.k_9 End-Insert
+									Nov 8 thru 20 use:
+										Insert_section kTheotokosEntry.k_9 End-Insert
+									Nov 21 thru 30 use:
+										Insert_section kChristmas.k1_9 End-Insert
+									Dec 1 thru 24 use:
+										Insert_section kChristmas.k1_9 End-Insert
+									Dec 25, 31 use: 
+										Insert_section kChristmas.k1and2_9 End-Insert
+									Dec 26 thru 30 use:
+										Insert_section kChristmas.k2_9 End-Insert
+								end-when
+							End-Section //Immovable
+
+					end-when	
+				End-Section //Movable
+		end-when
+	End-Section //k_9
+
+End-Template
