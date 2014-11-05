@@ -2,6 +2,9 @@ Template Selector_Eisodikon
 
 Status Draft
 
+	import ho.s07_gr_GR_cog.*
+	import ps_gr_GR_cog.*
+
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
 	import misc_gr_GR_cog.*
@@ -18,171 +21,159 @@ Status Draft
 		Set_Date month 1 day 31 year 2015 End_Date
 	End_Head
 
-	when-date-is
-		Feb 2 thru 9 use:
-			when-movable-cycle-day-is
-				1 thru 13 use:
-					when-date-is
-						Feb 2, 3, 9 use: 
-						Feb 4 thru 8 use:
-							when-name-of-day-is
-								Sunday use:
-								otherwise use:
+	Section SpecificDay
+			when-date-is
+				Jan 1 use: 
+					Media sid me.m01.d01_gr_GR_cog.meLI.EntranceHymn.text End-Media
+					when-name-of-day-is
+						Sunday use:
+							Hymn sid hoLI.EntranceHymn.text media-off sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2s.text media-off End-Hymn
+						otherwise use:
+							Hymn sid hoLI.EntranceHymn.text media-off sid hoLI.Antiphon21.text media-off sid me.m01.d01_gr_GR_cog.meLI.Antiphon2.text media-off End-Hymn
+					end-when				
+				Jan 6 use:
+					Media sid me.m01.d06_gr_GR_cog.meLI.EntranceHymn.text End-Media
+					Hymn sid psa117.v26a.text sid psa117.v27a.text sid hoLI.Antiphon21.text media-off sid me.m01.d06_gr_GR_cog.meLI.Antiphon2.text media-off End-Hymn
+				Jan 7 thru 14 use:
+					Media sid me.m01.d06_gr_GR_cog.meLI.EntranceHymn.text End-Media
+					when-name-of-day-is
+						Sunday use:
+							Hymn sid psa117.v26a.text sid psa117.v27a.text sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2s.text media-off End-Hymn
+						otherwise use:
+							Hymn sid psa117.v26a.text sid psa117.v27a.text sid hoLI.Antiphon21.text media-off sid me.m01.d06_gr_GR_cog.meLI.Antiphon2.text media-off End-Hymn
+					end-when
+				Feb 2 thru 9 use:
+					when-movable-cycle-day-is
+						1 thru 13 use:
+							when-date-is
+								Feb 2 thru 9 use:
+									Section meeting
+										Media sid me.m02.d02_gr_GR_cog.meLI.EntranceHymn.text End-Media
+										when-name-of-day-is
+											Sunday use:
+												Hymn sid psa97.v2alt.text sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2s.text media-off End-Hymn
+											otherwise use:
+												Hymn sid psa97.v2alt.text sid hoLI.Antiphon21.text media-off sid me.m02.d02_gr_GR_cog.meLI.Antiphon2.text media-off End-Hymn
+											end-when
+									End-Section
+							end-when
+						14 use:
+							when-date-is
+								Feb 2 thru 5 use: Insert_section meeting End-Insert
+							end-when
+						15 use:
+							when-date-is
+								Feb 2 thru 6 use: Insert_section meeting End-Insert
+							end-when
+						16 use:
+							when-date-is
+								Feb 2 thru 7 use: Insert_section meeting End-Insert
+							end-when
+						17 use:
+							when-date-is
+								Feb 2 thru 8 use: Insert_section meeting End-Insert
+							end-when
+						18 use:
+							when-date-is
+								Feb 2 thru 5 use: Insert_section meeting End-Insert
+							end-when
+						19 use:
+							when-date-is
+								Feb 2 thru 6 use: Insert_section meeting End-Insert
+							end-when
+						20 use:
+							when-date-is
+								Feb 2 thru 5 use: Insert_section meeting End-Insert
+							end-when
+						21 use:
+							when-date-is
+								Feb 2, 3 use: Insert_section meeting End-Insert
+							end-when
+						22 use:
+							when-date-is
+								Feb 2 thru 7 use: Insert_section meeting End-Insert
+							end-when
+						23 use:
+							when-date-is
+								Feb 2 use: Insert_section meeting End-Insert
 							end-when
 					end-when
-				14 use:
-					when-date-is
-						Feb 2, 3, 5 use: 
-						Feb 4 use:
+				Mar 25 use:
+					Media sid me.m03.d25_gr_GR_cog.meLI.EntranceHymn.text End-Media
+					when-name-of-day-is
+						Sunday use:
+							Hymn sid psa95.v2alt.text sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2s.text media-off End-Hymn
+						otherwise use:
+							Hymn sid psa95.v2alt.text sid hoLI.Antiphon21.text media-off sid me.m03.d25_gr_GR_cog.meLI.Antiphon2.text media-off End-Hymn
+					end-when
+				Aug 6 use:
+					Media sid me.m08.d06_gr_GR_cog.meLI.EntranceHymn.text End-Media
+					Hymn sid psa35.v10alt.text sid hoLI.Antiphon21.text media-off sid me.m08.d06_gr_GR_cog.meLI.Antiphon2.text media-off End-Hymn
+				Aug 7 thru 12 use:
+					Media sid me.m08.d06_gr_GR_cog.meLI.EntranceHymn.text End-Media
+					when-name-of-day-is
+						Sunday use:
+							Hymn sid psa35.v10alt.text sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2s.text media-off End-Hymn
+						otherwise use:
+							Hymn sid psa35.v10alt.text sid hoLI.Antiphon21.text media-off sid me.m08.d06_gr_GR_cog.meLI.Antiphon2.text media-off End-Hymn
+					end-when
+				Sep 13 use: 
+					Hymn sid hoLI.EntranceHymn.text media-off sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2s.text End-Hymn
+				Sep 14 use:
+					Media sid me.m09.d14_gr_GR_cog.meLI.EntranceHymn.text End-Media
+					Hymn sid psa98.v5a.text sid psa98.v5b.text sid hoLI.Antiphon21.text media-off sid me.m09.d14_gr_GR_cog.meLI.Antiphon2.text media-off End-Hymn
+				Sep 15 thru 21 use:
+					Media sid me.m09.d14_gr_GR_cog.meLI.EntranceHymn.text End-Media
+					when-name-of-day-is
+						Sunday use:
+							Hymn sid psa98.v5a.text sid psa98.v5b.text sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2s.text media-off End-Hymn
+						otherwise use:
+							Hymn sid psa98.v5a.text sid psa98.v5b.text sid hoLI.Antiphon21.text media-off sid me.m09.d14_gr_GR_cog.meLI.Antiphon2.text media-off End-Hymn
+					end-when		
+				Dec 25 use:
+					Media sid me.m12.d25_gr_GR_cog.meLI.EntranceHymn.text End-Media
+					Hymn sid psa109.v3b.text sid psa109.v4a.text sid psa109.v4b.text sid hoLI.Antiphon21.text media-off sid me.m12.d25_gr_GR_cog.meLI.Antiphon2.text media-off End-Hymn
+				Dec 26 thru 31 use:
+					Media sid me.m12.d25_gr_GR_cog.meLI.EntranceHymn.text End-Media
+					when-name-of-day-is
+						Sunday use:
+							Hymn sid psa109.v3b.text sid psa109.v4a.text sid psa109.v4b.text sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2s.text media-off End-Hymn
+						otherwise use:
+							Hymn sid psa109.v3b.text sid psa109.v4a.text sid psa109.v4b.text sid hoLI.Antiphon21.text media-off sid me.m12.d25_gr_GR_cog.meLI.Antiphon2.text media-off End-Hymn
+					end-when
+				otherwise use:
+					when-movable-cycle-day-is
+						64 use:
+							Media sid tr.d064_gr_GR_cog.trLI.EntranceHymn.text End-Media
+							Hymn sid psa117.v26a.text sid psa117.v27a.text sid hoLI.Antiphon21.text media-off sid tr.d064_gr_GR_cog.trLI.Antiphon2.text media-off End-Hymn
+						71 thru 109 use:
+							Media sid pe.d00P_gr_GR_cog.pePA.EntranceHymn.text End-Media
+							Hymn sid psa67.v27.text media-off sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2s.text media-off End-Hymn
+						110 thru 118 use:
+							Media sid pe.d110_gr_GR_cog.peLI.EntranceHymn.text End-Media
 							when-name-of-day-is
 								Sunday use:
+									Hymn sid psa46.v6.text sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2s.text media-off End-Hymn
 								otherwise use:
+									Hymn sid psa46.v6.text sid hoLI.Antiphon21.text media-off sid pe.d110_gr_GR_cog.peLI.Antiphon2.text media-off End-Hymn
 							end-when
-					end-when
-				15 use:
-					when-date-is
-						Feb 2, 3, 6 use: 
-						Feb 4 thru 5 use:
-							when-name-of-day-is
-								Sunday use:
-								otherwise use:
-							end-when
-					end-when
-				16 use:
-					when-date-is
-						Feb 2, 3, 7 use: 
-						Feb 4 thru 6 use:
-							when-name-of-day-is
-								Sunday use:
-								otherwise use:
-							end-when
-					end-when
-				17 use:
-					when-date-is
-						Feb 2, 3, 8 use: 
-						Feb 4 thru 7 use:
-							when-name-of-day-is
-								Sunday use:
-								otherwise use:
-							end-when
-					end-when
-				18 use:
-					when-date-is
-						Feb 2, 3, 5 use: 
-						Feb 4 use:
-							when-name-of-day-is
-								Sunday use:
-								otherwise use:
-							end-when
-					end-when
-				19 use:
-					when-date-is
-						Feb 2, 3, 6 use: 
-						Feb 4 thru 5 use:
-							when-name-of-day-is
-								Sunday use:
-								otherwise use:
-							end-when
-					end-when
-				20 use:
-					when-date-is
-						Feb 2, 3, 5 use: 
-						Feb 4 use:
-							when-name-of-day-is
-								Sunday use:
-								otherwise use:
-							end-when
-					end-when
-				21 use:
-					when-date-is
-						Feb 2, 3 use: 
-					end-when
-				22 use:
-					when-date-is
-						Feb 2, 3, 7 use: 
-						Feb 4 thru 6 use:
-							when-name-of-day-is
-								Sunday use:
-								otherwise use:
-							end-when
-					end-when
-				23 use:
-					when-date-is
-						Feb 2 use:
-					end-when
-			end-when
-		Mar 25 use:
-			otherwise use:
-				when-movable-cycle-day-is
-					29 use:
-					43 use:
-					64 use:
-					71 thru 77 use:
-					78, 84 use:
-					79 thru 83 use:
-					85 thru 109 use:
-					110 thru 118 use:
-					120 thru 126 use:
-					
+						119 use:
+							Media sid hoLI.EntranceHymn2w.text End-Media
+							Hymn sid hoLI.EntranceHymn.text media-off sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2w.text media-off End-Hymn
+						120 thru 126 use:
+							Media sid pe.d120_gr_GR_cog.peLI.EntranceHymn.text End-Media
+							Hymn sid psa20.v14.text sid pe.d120_gr_GR_cog.peLI.Antiphon2.text media-off End-Hymn
 					otherwise use:
-						when-date-is
-							Jan 1 use:
-							Jan 6, 7, 14 use:
-							Jan 8 thru 13 use:
-								when-name-of-day-is
-									Sunday use:
-									otherwise use:
-								end-when
-							Aug 6, 12 use:
-							Aug 7 thru 11 use:
-								when-name-of-day-is
-									Sunday use:
-									otherwise use:
-								end-when
-							Aug 15, 23 use:
-							Aug 16 thru 22 use:
-								when-name-of-day-is
-									Sunday use:
-									otherwise use:
-								end-when
-							Sep 1 use:
-							Sep 8, 12 use:
-							Sep 9 thru 11 use:
-								when-name-of-day-is
-									Sunday use:
-									otherwise use:
-								end-when
-							Sep 13 use:
-								when-name-of-day-is
-									Sunday use:
-									otherwise use:
-								end-when
-							Sep 14, 21 use:
-							Sep 15 thru 20 use:
-								when-name-of-day-is
-									Sunday use:
-									otherwise use:
-								end-when
-							Nov 21, 25 use:
-							Nov 22 thru 24 use:
-								when-name-of-day-is
-									Sunday use:
-									otherwise use:
-								end-when
-							Dec 25, 26, 31 use:
-							Dec 27 thru 30 use:
-								when-name-of-day-is
-									Sunday use:
-									otherwise use:
-								end-when
-							
+						when-name-of-day-is
+							Sunday use:
+								Hymn sid hoLI.EntranceHymn.text media-off sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2s.text End-Hymn
 							otherwise use:
-								when-name-of-day-is
-									Sunday use:
-									otherwise use:
-								end-when
-						end-when
+								Hymn sid hoLI.EntranceHymn.text media-off sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2w.text End-Hymn
+					end-when
 				end-when
-	end-when
+		end-when				
+		Actor sid Choir End-Actor
+		Dialog sid hoLI.Antiphon22.text End-Dialog
+	End-Section	
 
 End-Template
