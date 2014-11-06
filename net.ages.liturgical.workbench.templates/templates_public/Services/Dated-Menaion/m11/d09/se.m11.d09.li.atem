@@ -27,7 +27,7 @@ Status Final
 	import roles.*
 
 	Head 
-		Set_Date month 11 day 9 End_Date
+		Set_Date month 11 day 9 year 2014 End_Date
 			Page_Header_Even
 				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
 			End_Page_Header_Even
@@ -46,18 +46,17 @@ Status Final
 	when-name-of-day-is 
 		Sunday use:	
 			Section Instance02 //Sunday
-				Insert_section Instance01.block1 End-Insert
 				Section block1
-					Insert_section LiturgyChrysBasilParts.Section05.sunday End-Insert
-					Insert_section LiturgyChrysBasilParts.Section06 End-Insert
-					Insert_section LiturgyChrysBasilParts.Section07.sunday End-Insert
+					Insert_section LiturgyChrysBasilParts.Section01 End-Insert
+					Insert_section LiturgyChrysBasilParts.Section02 End-Insert
+					Insert_section Selector_Antiphons.SpecificDay End-Insert
 					Insert_section LiturgyChrysBasilParts.Section08 End-Insert
 					Insert_section LiturgyChrysBasilParts.Section09.clergy End-Insert
 					Insert_section LiturgyChrysBasilParts.Section10 End-Insert
-				End-Section
-				Section block2
 					Insert_section LiturgyChrysBasilParts.Section11.single End-Insert
 					Insert_section LiturgyChrysBasilParts.Section07.sunday.hymn End-Insert
+				End-Section
+				Section block2
 					Title role desig sid TouAgiou End-Title
 					Title role mixed <Tmode>sid meVE.Apolytikion1.mode</> <Tmelody>sid meVE.Apolytikion1.melody</> End-Title
 					Hymn sid meVE.Apolytikion1.text End-Hymn
@@ -65,14 +64,12 @@ Status Final
 					Insert_section LiturgyChrysBasilParts.Section12.single End-Insert
 					Insert_section LiturgyChrysBasilParts.Section13.prayer End-Insert
 					Insert_section LiturgyChrysBasilParts.Section13.holygod End-Insert
-					Insert_section Instance01.block4 End-Insert
+					Insert_section Lectionary_Epistle_Menaion End-Insert
 					Insert_section Lectionary_Gospel_Daily.Alleluia End-Insert
 					Insert_section LiturgyChrysBasilParts.Section14 End-Insert
 					Insert_section Lectionary_Gospel_Daily.Lesson End-Insert
 				End-Section
-				Insert_section Instance01.block7 End-Insert
-				Insert_section LiturgyChrysBasilParts.Section27 End-Insert
-				Insert_section Instance01.block8 End-Insert
+				Insert_section Instance01.block3 End-Insert
 			End-Section //Sunday
 		
 			otherwise use:
@@ -80,22 +77,16 @@ Status Final
 					Section block1
 						Insert_section LiturgyChrysBasilParts.Section01 End-Insert
 						Insert_section LiturgyChrysBasilParts.Section02 End-Insert
-						Insert_section LiturgyChrysBasilParts.Section03.sunday_saint End-Insert
-						Insert_section LiturgyChrysBasilParts.Section04 End-Insert
-					End-Section
-					Section block2
-						Insert_section LiturgyChrysBasilParts.Section05.saint End-Insert
-						Insert_section LiturgyChrysBasilParts.Section06 End-Insert
-						Insert_section LiturgyChrysBasilParts.Section07.no_verse End-Insert
+						Insert_section Selector_Antiphons.celebrated_saint End-Insert
 						Title role desig sid Apolytikion sid TouAgiou End-Title
 						Title role mixed <Tmode>sid meVE.Apolytikion1.mode</> <Tmelody>sid meVE.Apolytikion1.melody</> End-Title
 						Hymn sid meVE.Apolytikion1.text End-Hymn
 						Insert_section LiturgyChrysBasilParts.Section08 End-Insert
 						Insert_section LiturgyChrysBasilParts.Section09.choir End-Insert
 						Insert_section LiturgyChrysBasilParts.Section10 End-Insert
+						Insert_section LiturgyChrysBasilParts.Section11.single End-Insert
 					End-Section
-					Section block3
-						Actor sid Choir End-Actor
+					Section block2
 						Title role desig sid Apolytikion sid TouAgiou End-Title
 						Title role mixed <Tmode>sid meVE.Apolytikion1.mode</> <Tmelody>sid meVE.Apolytikion1.melody</> End-Title
 						Hymn sid meVE.Apolytikion1.text End-Hymn
@@ -103,79 +94,21 @@ Status Final
 						Insert_section LiturgyChrysBasilParts.Section12.single End-Insert
 						Insert_section LiturgyChrysBasilParts.Section13.prayer End-Insert
 						Insert_section LiturgyChrysBasilParts.Section13.holygod End-Insert
+						Insert_section Lectionary_Epistle_Menaion End-Insert
+						Insert_section Lectionary_Gospel_Menaion.Alleluia End-Insert
+						Insert_section LiturgyChrysBasilParts.Section14 End-Insert
+						Insert_section Lectionary_Gospel_Menaion.Lesson End-Insert
 					End-Section
-					Section block4
-						Section Prokeimenon
-							Title role desig sid TaAnagnosmata End-Title
-							Title role desig sid OApostolos End-Title
-							Title <inr>sid le.ep.me.m11.d09_gr_GR_cog.lemeLI.Epistle2.title </> End-Title
-							Actor sid Deacon End-Actor
-							Dialog sid exc19 End-Dialog
-							Actor sid Reader End-Actor
-							Insert_section rid_EpistleProkeimena_Menaion.me_ep_title_mode End-Insert
-							Insert_section rid_EpistleProkeimena_Menaion.me_ep_prokeimenon_verse End-Insert
-						End-Section
-						Section Lesson
-							Actor sid Deacon End-Actor
-							Dialog sid exc17 End-Dialog		
-							Actor sid Reader End-Actor
-							Dialog sid epi01a sid le.ep.me.m11.d09_gr_GR_cog.lemeLI.Epistle2.book sid epi01b End-Dialog
-							Actor sid Deacon End-Actor
-							Dialog sid exc19 End-Dialog
-							Actor sid Reader End-Actor
-							Title role chapverse sid le.ep.me.m11.d09_gr_GR_cog.lemeLI.Epistle2.chapverse End-Title		
-							Reading sid le.ep.me.m11.d09_gr_GR_cog.lemeLI.Epistle2.text sid le.ep.me.m11.d09_gr_GR_cog.lemeLI.Epistle2.version End-Reading
-							Actor sid Priest End-Actor
-							Dialog sid epi02 End-Dialog	
-						End-Section	
-					End-Section //Epistle_Menaion
-					Section block5
-						Actor sid Choir End-Actor
-						Insert_section me_al_title_mode End-Insert
-						Hymn sid hoLI.GospelAlleluia.text End-Hymn
-						Insert_section me_al_verse_1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text  media-off End-Hymn
-						Insert_section me_al_verse_2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text  media-off End-Hymn
-					End-Section
-					Insert_section LiturgyChrysBasilParts.Section14 End-Insert
-					Section block6
-						Title role desig sid ToEvangelion End-Title
-						Title <inr>rid meShortCommemoration1.text</> End-Title
-						Actor sid Deacon End-Actor
-						Dialog sid exc17 sid exc18 sid gos02 End-Dialog
-						Actor sid Priest End-Actor
-						Dialog sid pet31 End-Dialog
-						Dialog <i>sid res05p </>End-Dialog
-						Actor sid Deacon End-Actor
-						Dialog sid gos03a sid le.go.me.m11.d09_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog		
-						Actor sid Priest End-Actor
-						Dialog sid exc19 End-Dialog
-						Dialog <i> sid DoxaSoiKyrieP </>End-Dialog	
-						Actor sid Deacon End-Actor
-						Title role chapverse sid le.go.me.m11.d09_gr_GR_cog.lemeLI.Gospel.chapverse End-Title
-						Reading sid le.go.me.m11.d09_gr_GR_cog.lemeLI.Gospel.text <Trubric>sid le.go.me.m11.d09_gr_GR_cog.lemeLI.Gospel.version</>End-Reading
-						Actor sid Priest End-Actor
-						Dialog sid euLI.Key0705.text End-Dialog
-						Actor sid Choir End-Actor						
-						Dialog sid DoxaSoiKyrie End-Dialog	
-					End-Section
-					Section block7
+					Section block3
 						Insert_section LiturgyChrysBasilParts.Section19 End-Insert
 						Insert_section LiturgyChrysBasilParts.Section20 End-Insert
 						Insert_section LiturgyChrysBasilParts.Section21.chrys End-Insert
 						Insert_section LiturgyChrysBasilParts.Section22.chrys End-Insert
-						Insert_section LiturgyChrysBasilParts.Section23.chrys End-Insert
+						Insert_section LiturgyChrysBasilParts.Section23 End-Insert
 						Insert_section LiturgyChrysBasilParts.Section24.chrys End-Insert
 						Insert_section LiturgyChrysBasilParts.Section25.chrys End-Insert
 						Insert_section LiturgyChrysBasilParts.Section26 End-Insert
-					End-Section
-					Section Section28_CommumionHymn
-						Actor sid Choir End-Actor
-						Insert_section bk.ap.da.sections.d3.communion_title End-Insert
-						Insert_section bk.ap.da.sections.d3.communion_hymn End-Insert
-					End-Section
-					Section block8
+						Insert_section LiturgyChrysBasilParts.Section27 End-Insert
 						Insert_section LiturgyChrysBasilParts.Section28 End-Insert
 						Insert_section LiturgyChrysBasilParts.Section29 End-Insert
 						Insert_section LiturgyChrysBasilParts.Section30 End-Insert
