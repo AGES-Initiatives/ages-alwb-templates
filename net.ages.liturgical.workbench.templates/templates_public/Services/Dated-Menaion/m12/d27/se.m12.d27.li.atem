@@ -53,18 +53,14 @@ Status Final
 				Section block1
 					Insert_section LiturgyChrysBasilParts.Section01 End-Insert
 					Insert_section LiturgyChrysBasilParts.Section02 End-Insert
-					Insert_section d25.antiphon1 End-Insert
-					Insert_section LiturgyChrysBasilParts.Section04 End-Insert
-					Insert_section d25.antiphon2 End-Insert
-					Insert_section LiturgyChrysBasilParts.Section06 End-Insert
-					Insert_section d25.antiphon3 End-Insert
+					Insert_section Selector_Antiphons.SpecificDay End-Insert
 					Insert_section LiturgyChrysBasilParts.Section08 End-Insert
 					Insert_section LiturgyChrysBasilParts.Section09.clergy End-Insert
-				End-Section
-				Section block2
 					Insert_section LiturgyChrysBasilParts.Section10 End-Insert
 					Insert_section LiturgyChrysBasilParts.Section11.single End-Insert
 					Insert_section LiturgyChrysBasilParts.Section07.sunday.hymn End-Insert
+				End-Section
+				Section block2
 					Title role mixed <Tdesig>sid TisEortis</><Tmode>sid me.m12.d25_gr_GR_cog.meVE.Apolytikion1.mode</>End-Title
 					Hymn sid me.m12.d25_gr_GR_cog.meVE.Apolytikion1.text End-Hymn
 					Title role mixed <Tdesig>sid TonTheopatoron</><Tmode>sid me.m12.dAC_gr_GR_cog.meVE.Apolytikion1.mode</>End-Title
@@ -78,10 +74,10 @@ Status Final
 					Insert_section LiturgyChrysBasilParts.Section12.single End-Insert
 					Insert_section LiturgyChrysBasilParts.Section13.prayer End-Insert
 					Insert_section LiturgyChrysBasilParts.Section13.holygod End-Insert
+					Insert_section Lectionary_Epistle_Menaion End-Insert
+					Insert_section Lectionary_Gospel_Menaion.Alleluia End-Insert
+					Insert_section LiturgyChrysBasilParts.Section14 End-Insert
 				End-Section
-				Insert_section Lectionary_Epistle_Menaion End-Insert
-				Insert_section Lectionary_Gospel_Menaion.Alleluia End-Insert
-				Insert_section LiturgyChrysBasilParts.Section14 End-Insert
 				Section block4
 					Title role desig sid ToEvangelion End-Title
 					Title <inr>sid lemeLI.Gospel.title</> End-Title
@@ -103,12 +99,65 @@ Status Final
 					Actor sid Choir End-Actor						
 					Dialog sid DoxaSoiKyrie End-Dialog	
 				End-Section
-				Section block5
+				Insert_section Instance01.block3 End-Insert
+			End-Section
+			
+		otherwise use:
+			Section Instance01 
+				Section block1
+					Insert_section LiturgyChrysBasilParts.Section01 End-Insert
+					Insert_section LiturgyChrysBasilParts.Section02 End-Insert
+					Insert_section Selector_Antiphons.SpecificDay End-Insert
+					Insert_section LiturgyChrysBasilParts.Section08 End-Insert
+					Insert_section LiturgyChrysBasilParts.Section09.clergy End-Insert
+					Insert_section LiturgyChrysBasilParts.Section10 End-Insert
+					Insert_section LiturgyChrysBasilParts.Section11.single End-Insert
+					Title role mixed <Tdesig>sid Apolytikion sid TisEortis</><Tmode>sid me.m12.d25_gr_GR_cog.meVE.Apolytikion1.mode</>End-Title
+					Hymn sid me.m12.d25_gr_GR_cog.meVE.Apolytikion1.text End-Hymn
+				End-Section
+				Section block2	
+					Title role desig sid TouProtomartyros End-Title
+					Title role mixed <Tmode>sid meVE.Apolytikion1.mode</><Tmelody>sid meVE.Apolytikion1.melody</>End-Title
+					Hymn sid meVE.Apolytikion1.text End-Hymn
+					Insert_section LiturgyChrysBasilParts.Section11_opt End-Insert
+					Insert_section LiturgyChrysBasilParts.Section12.single End-Insert
+					Insert_section LiturgyChrysBasilParts.Section13.prayer End-Insert
+					Insert_section LiturgyChrysBasilParts.Section13.holygod End-Insert
+					Insert_section Lectionary_Epistle_Menaion End-Insert
+					Insert_section Lectionary_Gospel_Menaion.Alleluia End-Insert
+					when-name-of-day-is
+						Saturday use:
+							Section Gospel
+								Title role desig sid ToEvangelion End-Title
+								Title <inr>sid le.go.me.m12.dSatAC_gr_GR_cog.lemeLI.Gospel.title</> End-Title
+								Actor sid Deacon End-Actor
+								Dialog sid exc17 sid exc18 sid gos02 End-Dialog
+								Actor sid Priest End-Actor
+								Dialog sid pet31 End-Dialog
+								Dialog <i>sid res05p </>End-Dialog
+								Actor sid Deacon End-Actor
+								Dialog sid gos03a sid le.go.me.m12.dSatAC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog		
+								Actor sid Priest End-Actor
+								Dialog sid exc19 End-Dialog
+								Dialog <i> sid DoxaSoiKyrieP </>End-Dialog	
+								Actor sid Deacon End-Actor
+								Title role chapverse sid le.go.me.m12.dSatAC_gr_GR_cog.lemeLI.Gospel.chapverse End-Title
+								Reading sid le.go.me.m12.dSatAC_gr_GR_cog.lemeLI.Gospel.text <Trubric>sid le.go.me.m12.dSatAC_gr_GR_cog.lemeLI.Gospel.version</>End-Reading
+								Actor sid Priest End-Actor
+								Dialog sid euLI.Key0705.text End-Dialog
+								Actor sid Choir End-Actor						
+								Dialog sid DoxaSoiKyrie End-Dialog	
+							End-Section
+						otherwise use:	
+							Insert_section Lectionary_Gospel_Menaion.Lesson End-Insert
+					end-when
+				End-Section	
+				Section block3
 					Insert_section LiturgyChrysBasilParts.Section19 End-Insert
 					Insert_section LiturgyChrysBasilParts.Section20 End-Insert
 					Insert_section LiturgyChrysBasilParts.Section21.chrys End-Insert
 					Insert_section LiturgyChrysBasilParts.Section22.chrys End-Insert
-					Insert_section LiturgyChrysBasilParts.Section23.chrys End-Insert
+					Insert_section LiturgyChrysBasilParts.Section23 End-Insert
 					Insert_section LiturgyChrysBasilParts.Section24.chrys End-Insert
 					Insert_section LiturgyChrysBasilParts.Section25.chrys End-Insert
 					Insert_section LiturgyChrysBasilParts.Section26 End-Insert
@@ -116,63 +165,13 @@ Status Final
 					Insert_section LiturgyChrysBasilParts.Section28 End-Insert
 					Insert_section LiturgyChrysBasilParts.Section29 End-Insert
 					Insert_section LiturgyChrysBasilParts.Section30 End-Insert
-				End-Section
-				Insert_section LiturgyChrysBasilParts.Section31 End-Insert
-				Section block6	
+					Insert_section LiturgyChrysBasilParts.Section31 End-Insert
 					Insert_section LiturgyChrysBasilParts.Section32 End-Insert
 					Insert_section LiturgyChrysBasilParts.Section33 End-Insert
 					Insert_section LiturgyChrysBasilParts.Section34.chrys End-Insert
 					Insert_section LiturgyChrysBasilParts.Section35.chrys End-Insert
 					Insert_section LiturgyChrysBasilParts.Section36.comyes End-Insert
 				End-Section
-			End-Section
-			
-		otherwise use:
-			Section Instance01 
-				Insert_section Instance02.block1 End-Insert
-				Section block1
-					Insert_section LiturgyChrysBasilParts.Section10 End-Insert
-					Insert_section LiturgyChrysBasilParts.Section11.single End-Insert
-					Title role mixed <Tdesig>sid Apolytikion sid TisEortis</><Tmode>sid me.m12.d25_gr_GR_cog.meVE.Apolytikion1.mode</>End-Title
-					Hymn sid me.m12.d25_gr_GR_cog.meVE.Apolytikion1.text End-Hymn
-				End-Section
-				Insert_section Instance02.block3 End-Insert
-				Insert_section Lectionary_Epistle_Menaion End-Insert
-				Insert_section Lectionary_Gospel_Menaion.Alleluia End-Insert
-				when-name-of-day-is
-					Saturday use:
-						Section Gospel
-							Title role desig sid ToEvangelion End-Title
-							Title <inr>sid le.go.me.m12.dSatAC_gr_GR_cog.lemeLI.Gospel.title</> End-Title
-							Actor sid Deacon End-Actor
-							Dialog sid exc17 sid exc18 sid gos02 End-Dialog
-							Actor sid Priest End-Actor
-							Dialog sid pet31 End-Dialog
-							Dialog <i>sid res05p </>End-Dialog
-							Actor sid Deacon End-Actor
-							Dialog sid gos03a sid le.go.me.m12.dSatAC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog		
-							Actor sid Priest End-Actor
-							Dialog sid exc19 End-Dialog
-							Dialog <i> sid DoxaSoiKyrieP </>End-Dialog	
-							Actor sid Deacon End-Actor
-							Title role chapverse sid le.go.me.m12.dSatAC_gr_GR_cog.lemeLI.Gospel.chapverse End-Title
-							Reading sid le.go.me.m12.dSatAC_gr_GR_cog.lemeLI.Gospel.text <Trubric>sid le.go.me.m12.dSatAC_gr_GR_cog.lemeLI.Gospel.version</>End-Reading
-							Actor sid Priest End-Actor
-							Dialog sid euLI.Key0705.text End-Dialog
-							Actor sid Choir End-Actor						
-							Dialog sid DoxaSoiKyrie End-Dialog	
-						End-Section
-					otherwise use:	
-						Insert_section Lectionary_Gospel_Menaion.Lesson End-Insert
-				end-when		
-				Insert_section Instance02.block5 End-Insert
-				Section block2
-					Actor sid Choir End-Actor
-					Insert_section bk.ap.da.sections.d5.communion_title End-Insert
-					Insert_section bk.ap.da.sections.d5.communion_hymn End-Insert
-				End-Section
-				Insert_section Instance02.block6 End-Insert
-			
 			End-Section
 			
 	end-when
