@@ -76,63 +76,72 @@ Status Draft
 			
 		86, 87, 88, 89, 90, 93, 103, 104, 107 use:
 			Section Instance08
-				Insert_section LiturgyChrysBasilParts.Section01 End-Insert
-				Insert_section PentecostarionParts.AfterPascha_Enarxis End-Insert
-				Insert_section LiturgyChrysBasilParts.Section02 End-Insert
-				Insert_section PentecostarionParts.Pascha_Antiphon1 End-Insert
-				Insert_section LiturgyChrysBasilParts.Section04 End-Insert
-				Insert_section PentecostarionParts.Pascha_Antiphon2 End-Insert
-				Insert_section LiturgyChrysBasilParts.Section06 End-Insert
-				Insert_section PentecostarionParts.Pascha_Antiphon3 End-Insert
-				Insert_section LiturgyChrysBasilParts.Section08 End-Insert
-				Insert_section LiturgyChrysBasilParts.Section09.clergy End-Insert
-				Insert_section LiturgyChrysBasilParts.Section10 End-Insert
-				Section AfterEntrance
-					when-movable-cycle-day-is 89 use: //2014
-						Title role mixed <Tdesig>sid ApolytikionAnastasimon</><Tmode>sid pe.d085_gr_GR_cog.peVE.Apolytikion1.mode</> End-Title
-						Hymn sid pe.d085_gr_GR_cog.peVE.Apolytikion1.text End-Hymn
-						Title role mixed <Tdesig>sid TonMyroforon</><Tmode>sid pe.d085_gr_GR_cog.peVE.Apolytikion3.mode</>End-Title
-						Hymn sid pe.d085_gr_GR_cog.peVE.Apolytikion3.text End-Hymn
-						Title role mixed <Tdesig>sid TouEvangelistou</><Tmode>sid meVE.Apolytikion1.mode</>End-Title
-						Hymn sid meVE.Apolytikion1.text End-Hymn
-						Insert_section LiturgyChrysBasilParts.Section11_opt End-Insert
-						Title role mixed <Tdesig>sid Kontakion sid TonMyroforon</><Tmode>sid pe.d085_gr_GR_cog.peLI.SeasonalKontakion.mode</>End-Title
-						Hymn sid pe.d085_gr_GR_cog.peLI.SeasonalKontakion.text End-Hymn
+				Section block1
+					Insert_section LiturgyChrysBasilParts.Section01 End-Insert
+					Insert_section PentecostarionParts.AfterPascha_Enarxis End-Insert
+					Insert_section LiturgyChrysBasilParts.Section02 End-Insert
+					Insert_section Selector_Antiphons.SpecificDay End-Insert
+					Insert_section LiturgyChrysBasilParts.Section08 End-Insert
+					Insert_section LiturgyChrysBasilParts.Section09.clergy End-Insert
+					Insert_section LiturgyChrysBasilParts.Section10 End-Insert
+					Insert_section LiturgyChrysBasilParts.Section11.single End-Insert
+				End-Section
+				Section block2
+					when-movable-cycle-day-is 
+						86 thru 90 use:
+							Title role mixed <Tdesig>sid ApolytikionAnastasimon</><Tmode>sid pe.d085_gr_GR_cog.peVE.Apolytikion1.mode</> End-Title
+							Hymn sid pe.d085_gr_GR_cog.peVE.Apolytikion1.text End-Hymn
+							Title role mixed <Tdesig>sid TouEvangelistou</><Tmode>sid meVE.Apolytikion1.mode</>End-Title
+							Hymn sid meVE.Apolytikion1.text End-Hymn
+							Title role mixed <Tdesig>sid TonMyroforon</><Tmode>sid pe.d085_gr_GR_cog.peVE.Apolytikion3.mode</>End-Title
+							Hymn sid pe.d085_gr_GR_cog.peVE.Apolytikion3.text End-Hymn
+						93 use:
+							Title role mixed <Tdesig>sid ApolytikionAnastasimon</><Tmode>sid oc.m3.d1_gr_GR_cog.ocVE.Apolytikion.mode</>End-Title
+							Hymn sid oc.m3.d1_gr_GR_cog.ocVE.Apolytikion.text End-Hymn
+							Title role mixed <Tdesig>sid TouEvangelistou</><Tmode>sid meVE.Apolytikion1.mode</>End-Title
+							Hymn sid meVE.Apolytikion1.text End-Hymn
+						103, 104 use:
+							Title role mixed <Tdesig>sid ApolytikionAnastasimon</><Tmode>sid oc.m4.d1_gr_GR_cog.ocVE.Apolytikion.mode</>End-Title
+							Hymn sid oc.m4.d1_gr_GR_cog.ocVE.Apolytikion.text End-Hymn
+							Title role mixed <Tdesig>sid TouEvangelistou</><Tmode>sid meVE.Apolytikion1.mode</>End-Title
+							Hymn sid meVE.Apolytikion1.text End-Hymn
+						107 use:
+							Title role mixed <Tdesig>sid ApolytikionAnastasimon</><Tmode>sid oc.m5.d1_gr_GR_cog.ocVE.Apolytikion.mode</>End-Title
+							Hymn sid oc.m5.d1_gr_GR_cog.ocVE.Apolytikion.text End-Hymn
+							Title role mixed <Tdesig>sid TouEvangelistou</><Tmode>sid meVE.Apolytikion1.mode</>End-Title
+							Hymn sid meVE.Apolytikion1.text End-Hymn
 					end-when
 				End-Section
-				Insert_section LiturgyChrysBasilParts.Section13.prayer End-Insert
-				Insert_section LiturgyChrysBasilParts.Section13.holygod End-Insert
-				Insert_section Lectionary_Epistle_Menaion End-Insert
-				Insert_section Lectionary_Gospel_Menaion.Alleluia End-Insert
-				Insert_section LiturgyChrysBasilParts.Section14 End-Insert
-				Insert_section Lectionary_Gospel_Menaion.Lesson End-Insert
-				Insert_section LiturgyChrysBasilParts.Section19 End-Insert
-				Insert_section LiturgyChrysBasilParts.Section20 End-Insert
-				Insert_section LiturgyChrysBasilParts.Section21.chrys End-Insert
-				Insert_section LiturgyChrysBasilParts.Section22.chrys End-Insert
-				Insert_section LiturgyChrysBasilParts.Section23 End-Insert
-				Insert_section LiturgyChrysBasilParts.Section24.chrys End-Insert
-				Insert_section LiturgyChrysBasilParts.Section25.chrys End-Insert
-				Insert_section LiturgyChrysBasilParts.Section26 End-Insert
-				Section CommunionHymn
-					Actor sid Choir End-Actor
-					Title role desig sid Koinonikon End-Title
-					Hymn sid da.d5_gr_GR_cog.daLI.CommunionHymn.text End-Hymn
+				Section block3
+					Insert_section LiturgyChrysBasilParts.Section11_opt End-Insert
+					Insert_section LiturgyChrysBasilParts.Section12.single End-Insert
+					Insert_section LiturgyChrysBasilParts.Section13.prayer End-Insert
+					Insert_section LiturgyChrysBasilParts.Section13.holygod End-Insert
+					Insert_section Lectionary_Epistle_Menaion End-Insert
+					Insert_section Lectionary_Gospel_Menaion.Alleluia End-Insert
+					Insert_section LiturgyChrysBasilParts.Section14 End-Insert
+					Insert_section Lectionary_Gospel_Menaion.Lesson End-Insert
 				End-Section
-				Insert_section LiturgyChrysBasilParts.Section28 End-Insert
-				Insert_section LiturgyChrysBasilParts.Section29 End-Insert
-				Insert_section LiturgyChrysBasilParts.Section30 End-Insert
-				Insert_section LiturgyChrysBasilParts.Section31 End-Insert
-				Insert_section LiturgyChrysBasilParts.Section32 End-Insert
-				Insert_section LiturgyChrysBasilParts.Section33 End-Insert
-				Insert_section LiturgyChrysBasilParts.Section34.chrys End-Insert
-				Insert_section LiturgyChrysBasilParts.Section35.chrys End-Insert
-				Section Pascha_LiturgyEnd2
-					Actor sid Deacon End-Actor
-					Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text media-off End-Dialog
-					Dialog sid res06 sid res09 End-Dialog
+				Section block4
+					Insert_section LiturgyChrysBasilParts.Section19 End-Insert
+					Insert_section LiturgyChrysBasilParts.Section20 End-Insert
+					Insert_section LiturgyChrysBasilParts.Section21.chrys End-Insert
+					Insert_section LiturgyChrysBasilParts.Section22.chrys End-Insert
+					Insert_section LiturgyChrysBasilParts.Section23 End-Insert
+					Insert_section LiturgyChrysBasilParts.Section24.chrys End-Insert
+					Insert_section LiturgyChrysBasilParts.Section25.chrys End-Insert
+					Insert_section LiturgyChrysBasilParts.Section26 End-Insert
+					Insert_section LiturgyChrysBasilParts.Section27 End-Insert
+					Insert_section LiturgyChrysBasilParts.Section28 End-Insert
+					Insert_section LiturgyChrysBasilParts.Section29 End-Insert
+					Insert_section LiturgyChrysBasilParts.Section30 End-Insert
+					Insert_section LiturgyChrysBasilParts.Section31 End-Insert
+					Insert_section LiturgyChrysBasilParts.Section32 End-Insert
+					Insert_section LiturgyChrysBasilParts.Section33 End-Insert
+					Insert_section LiturgyChrysBasilParts.Section34.chrys End-Insert
+					Insert_section LiturgyChrysBasilParts.Section35.chrys End-Insert
+					Insert_section PentecostarionParts.AfterPascha_Liturgy_End_ComYes End-Insert
 				End-Section
-				Insert_section PentecostarionParts.AfterPascha_Liturgy_End_ComYes End-Insert
 			End-Section
 
 		91, 105 use: //Myr or Sam Leavetaking
@@ -149,6 +158,13 @@ Status Draft
 			
 		96, 97, 100, 101 use:
 			Section Instance12
+				Insert_section Instance08.block1 End-Insert
+					Title role mixed <Tdesig>sid Apolytikion sid TisEortis</><Tmode>sid pe.d095_gr_GR_cog.peVE.Apolytikion1.mode</>End-Title
+					Hymn sid pe.d095_gr_GR_cog.peVE.Apolytikion1.text End-Hymn
+					Title role mixed <Tdesig>sid TouEvangelistou</><Tmode>sid meVE.Apolytikion1.mode</>End-Title
+					Hymn sid meVE.Apolytikion1.text End-Hymn
+				Insert_section Instance08.block3 End-Insert
+				Insert_section Instance08.block4 End-Insert
 			End-Section
 			
 		102 use: //Mid-Pentecost Leavetaking
