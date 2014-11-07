@@ -1,17 +1,12 @@
 Template se.m05.d02.li
 
-Status Review
+Status Final
 
 	import client_gr_GR_cog.*
-	import eu.lichrysbasil_gr_GR_cog.*
-	import ho.s07_gr_GR_cog.*
 	import me.m05.d02_gr_GR_cog.*
 
 	//Templates
 	import LectionaryReadings.*
-	import LiturgyChrysBasilParts.*
-	import Litanies.*
-	import PaschaParts.*
 	
 	import actors_gr_GR_cog.*
 	import misc_gr_GR_cog.*
@@ -25,7 +20,7 @@ Status Review
 	import roles.*
 
 	Head 
-		Set_Date month 5 day 2 End_Date
+		Set_Date month 5 day 2 year 2015 End_Date
 			Page_Header_Even
 				center @lookup sid li.pdf.header sid d.on lang L1 @date lang L1
 			End_Page_Header_Even
@@ -59,62 +54,53 @@ Status Review
 			End-Section
 			
 		79 thru 83 use: 		
-			Section Instance_05 //Thomas Post-feast
-				Insert_section LiturgyChrysBasilParts.Section01 End-Insert
-				Insert_section PentecostarionParts.AfterPascha_Enarxis End-Insert
-				Insert_section LiturgyChrysBasilParts.Section02 End-Insert
-				Insert_section PentecostarionParts.Pascha_Antiphon1 End-Insert
-				Insert_section LiturgyChrysBasilParts.Section04 End-Insert
-				Insert_section PentecostarionParts.Pascha_Antiphon2 End-Insert
-				Insert_section LiturgyChrysBasilParts.Section06 End-Insert
-				Insert_section PentecostarionParts.Pascha_Antiphon3 End-Insert
-				Insert_section LiturgyChrysBasilParts.Section08 End-Insert
-				Insert_section LiturgyChrysBasilParts.Section09.clergy End-Insert
-				Insert_section LiturgyChrysBasilParts.Section10 End-Insert
-				Section AfterEntrance
+			Section Instance05 //Thomas Post-feast
+				Section block1
+					Insert_section LiturgyChrysBasilParts.Section01 End-Insert
+					Insert_section PentecostarionParts.AfterPascha_Enarxis End-Insert
+					Insert_section LiturgyChrysBasilParts.Section02 End-Insert
+					Insert_section Selector_Antiphons.SpecificDay End-Insert
+					Insert_section LiturgyChrysBasilParts.Section08 End-Insert
+					Insert_section LiturgyChrysBasilParts.Section09.clergy End-Insert
+					Insert_section LiturgyChrysBasilParts.Section10 End-Insert
+					Insert_section LiturgyChrysBasilParts.Section11.single End-Insert
+				End-Section
+				Section block2
 					Title role mixed <Tdesig>sid Apolytikion sid TisEortis</><Tmode>sid pe.d078_gr_GR_cog.peVE.Apolytikion1.mode</> End-Title
 					Hymn sid pe.d078_gr_GR_cog.peVE.Apolytikion1.text End-Hymn
 					Title role desig sid Apolytikion sid TouAgiou End-Title
-					Title role mixed <Tmode>sid meVE.Apolytikion1.mode</> <Tmelody>sid meVE.Apolytikion1.melody</> End-Title
+					Title role mixed<Tmode>sid meVE.Apolytikion1.mode</><Tmelody>sid meVE.Apolytikion1.melody</>End-Title
 					Hymn sid meVE.Apolytikion1.text End-Hymn
+				End-Section
+				Section block3
 					Insert_section LiturgyChrysBasilParts.Section11_opt End-Insert
-					Title role mixed <Tdesig>sid Kontakion sid TisEortis</><Tmode>sid pe.d078_gr_GR_cog.peLI.SeasonalKontakion.mode</>End-Title
-					Hymn sid pe.d078_gr_GR_cog.peLI.SeasonalKontakion.text End-Hymn
+					Insert_section LiturgyChrysBasilParts.Section12.single End-Insert
+					Insert_section LiturgyChrysBasilParts.Section13.prayer End-Insert
+					Insert_section LiturgyChrysBasilParts.Section13.holygod End-Insert
+					Insert_section Lectionary_Epistle_Menaion End-Insert
+					Insert_section Lectionary_Gospel_Menaion.Alleluia End-Insert
+					Insert_section LiturgyChrysBasilParts.Section14 End-Insert
+					Insert_section Lectionary_Gospel_Menaion.Lesson End-Insert
+					Insert_section LiturgyChrysBasilParts.Section19 End-Insert
+					Insert_section LiturgyChrysBasilParts.Section20 End-Insert
+					Insert_section LiturgyChrysBasilParts.Section21.chrys End-Insert
+					Insert_section LiturgyChrysBasilParts.Section22.chrys End-Insert
+					Insert_section LiturgyChrysBasilParts.Section23 End-Insert
+					Insert_section LiturgyChrysBasilParts.Section24.chrys End-Insert
+					Insert_section LiturgyChrysBasilParts.Section25.chrys End-Insert
+					Insert_section LiturgyChrysBasilParts.Section26 End-Insert
+					Insert_section LiturgyChrysBasilParts.Section27 End-Insert
+					Insert_section LiturgyChrysBasilParts.Section28 End-Insert
+					Insert_section LiturgyChrysBasilParts.Section29 End-Insert
+					Insert_section LiturgyChrysBasilParts.Section30 End-Insert
+					Insert_section LiturgyChrysBasilParts.Section31 End-Insert
+					Insert_section LiturgyChrysBasilParts.Section32 End-Insert
+					Insert_section LiturgyChrysBasilParts.Section33 End-Insert
+					Insert_section LiturgyChrysBasilParts.Section34.chrys End-Insert
+					Insert_section LiturgyChrysBasilParts.Section35.chrys End-Insert
+					Insert_section PentecostarionParts.AfterPascha_Liturgy_End_ComYes End-Insert
 				End-Section
-				Insert_section LiturgyChrysBasilParts.Section13.prayer End-Insert
-				Insert_section LiturgyChrysBasilParts.Section13.holygod End-Insert
-				Insert_section Lectionary_Epistle_Menaion End-Insert
-				Insert_section Lectionary_Gospel_Menaion.Alleluia End-Insert
-				Insert_section LiturgyChrysBasilParts.Section14 End-Insert
-				Insert_section Lectionary_Gospel_Menaion.Lesson End-Insert
-				Insert_section LiturgyChrysBasilParts.Section19 End-Insert
-				Insert_section LiturgyChrysBasilParts.Section20 End-Insert
-				Insert_section LiturgyChrysBasilParts.Section21.chrys End-Insert
-				Insert_section LiturgyChrysBasilParts.Section22.chrys End-Insert
-				Insert_section LiturgyChrysBasilParts.Section23 End-Insert
-				Insert_section LiturgyChrysBasilParts.Section24.chrys End-Insert
-				Insert_section LiturgyChrysBasilParts.Section25.chrys End-Insert
-				Insert_section LiturgyChrysBasilParts.Section26 End-Insert
-				Section CommunionHymn
-					Actor sid Choir End-Actor
-					Title role desig sid Koinonikon End-Title
-					Hymn sid da.d3_gr_GR_cog.daLI.CommunionHymn.text End-Hymn
-				End-Section
-				Insert_section LiturgyChrysBasilParts.Section28 End-Insert
-				Insert_section LiturgyChrysBasilParts.Section29 End-Insert
-				Insert_section LiturgyChrysBasilParts.Section30 End-Insert
-				Insert_section LiturgyChrysBasilParts.Section31 End-Insert
-				Insert_section LiturgyChrysBasilParts.Section32 End-Insert
-				Insert_section LiturgyChrysBasilParts.Section33 End-Insert
-				Insert_section LiturgyChrysBasilParts.Section34.chrys End-Insert
-				Insert_section LiturgyChrysBasilParts.Section35.chrys End-Insert
-				Section Pascha_LiturgyEnd2
-					Actor sid Deacon End-Actor
-					Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text media-off End-Dialog
-					Dialog sid res06 sid res09 End-Dialog
-				End-Section
-				Insert_section PentecostarionParts.AfterPascha_Liturgy_End_ComYes End-Insert
-			End-Section //Instance_05
+			End-Section //Instance05
 			
 		84 use: //Thomas Saturday
 			Section Instance06
@@ -130,6 +116,17 @@ Status Review
 			
 		91, 105 use: //Leavetaking of Myr and Sam
 			Section Instance09
+				Insert_section Instance05.block1 End-Insert
+				Section block1
+					Title role mixed <Tdesig>sid Apolytikia</><Tmode>sid pe.d085_gr_GR_cog.peVE.Apolytikion2.mode</> End-Title
+					Hymn sid pe.d085_gr_GR_cog.peVE.Apolytikion2.text End-Hymn
+					Hymn sid pe.d085_gr_GR_cog.peVE.Apolytikion1.text End-Hymn
+					Hymn sid pe.d085_gr_GR_cog.peVE.Apolytikion3.text End-Hymn
+					Title role desig sid TouAgiou End-Title
+					Title role mixed<Tmode>sid meVE.Apolytikion1.mode</><Tmelody>sid meVE.Apolytikion1.melody</>End-Title
+					Hymn sid meVE.Apolytikion1.text End-Hymn
+				End-Section
+				Insert_section Instance05.block3 End-Insert
 			End-Section
 			
 		94, 108 use: //Leavetaking of Par and Blind
