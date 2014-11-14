@@ -1,11 +1,9 @@
 Template se.pe.d106.ve 
 
-Status Review
+Status Final
 
 	import client_gr_GR_cog.*
-	import eu.lichrysbasil_gr_GR_cog.*
 	import ho.s10_gr_GR_cog.*	
-	import oc.m5.d1_gr_GR_cog.*
 	import pe.d106_gr_GR_cog.*
 
 	//Templates
@@ -24,7 +22,7 @@ Status Review
 	import roles.*
 
 	Head 
-		//Set_Date month  day  year  End_Date
+//		Set_Date month 5 day 17 year 2015 End_Date
 			Page_Header_Even
 				center @lookup sid peShortCommemoration1.text sid ve.pdf.header sid d.onSaturdayEvening lang L1 
 			End_Page_Header_Even
@@ -45,43 +43,36 @@ Status Review
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-	Insert_section Vespers_01 End-Insert
-	Insert_section Vespers_02_Sunday End-Insert
-	Section Section01
-		Title role desig sid Idiomela sid TouTyflou End-Title
-		Title role mode sid peVE.Stichera09.mode End-Title
-		Media sid peVE.Stichera09.text End-Media
-		Insert_section LIHC_Verse.v08 End-Insert
-		Hymn sid peVE.Stichera09.text media-off End-Hymn
-		Insert_section LIHC_Verse.v09 End-Insert
-		Hymn sid peVE.Stichera09.text media-off End-Hymn
-		Title role mode sid peVE.Stichera10.mode End-Title
-		Media sid peVE.Stichera10.text End-Media
-		Insert_section LIHC_Verse.v10 End-Insert
-		Hymn sid peVE.Stichera10.text End-Hymn
-		Title role mixed sid Doxa<Tmode>sid peVE.SticGlory.mode</>End-Title
-		Hymn sid peVE.SticGlory.text End-Hymn
-		Title role mixed sid KaiNyn<Tmode>sid ocVE.SticTheotokion.mode</>End-Title
-		Hymn sid ocVE.SticTheotokion.text End-Hymn
+	Section Instance01
+		Insert_section Vespers_01 End-Insert
+		Insert_section Vespers_02_Sunday End-Insert
+		Section Section01
+			Title role desig sid TouTyflou End-Title
+			Title role mixed<Tdesig>sid Idiomelon</><Tmode>sid peVE.Stichera09.mode</>End-Title
+			Media sid peVE.Stichera09.text End-Media
+			Insert_section LIHC_Verse.v08 End-Insert
+			Hymn sid peVE.Stichera09.text media-off End-Hymn
+			Insert_section LIHC_Verse.v09 End-Insert
+			Hymn sid peVE.Stichera09.text media-off End-Hymn
+			Title role mixed<Tdesig>sid Idiomelon</><Tmode>sid peVE.Stichera10.mode</>End-Title
+			Media sid peVE.Stichera10.text End-Media
+			Insert_section LIHC_Verse.v10 End-Insert
+			Hymn sid peVE.Stichera10.text media-off End-Hymn
+			Title role mixed sid Doxa<Tmode>sid peVE.SticGlory.mode</>End-Title
+			Hymn sid peVE.SticGlory.text End-Hymn
+		End-Section
+		Insert_section Vespers_BothNowFirstTheotokion_ModeOfWeek End-Insert
+		Insert_section Vespers_03_entrance End-Insert
+		Insert_section Vespers_05_Litanies End-Insert
+		Insert_section Vespers_07_ResrrectionalAposticha.Aposticha_1 End-Insert
+		Insert_section PentecostarionParts.Pascha_SticheraOfPascha End-Insert
+		Section Section02
+			Title role mixed sid Doxa<Tmode>sid peVE.AposGlory.mode</>End-Title
+			Hymn sid peVE.AposGlory.text End-Hymn
+		End-Section
+		Insert_section PentecostarionParts.AfterPascha_Doxasticon.BothNow End-Insert
+		Insert_section Vespers_08 End-Insert
+		Insert_section Vespers_09 End-Insert
+		Insert_section PentecostarionParts.AfterPascha_End_ComNo End-Insert
 	End-Section
-	Insert_section Vespers_03_entrance End-Insert
-	Insert_section Vespers_05_Litanies End-Insert
-	Insert_section Vespers_07_ResrrectionalAposticha.Aposticha_1 End-Insert
-	Insert_section PentecostarionParts.Pascha_SticheraOfPascha End-Insert
-	Section Section02
-		Title role mixed sid Doxa<Tmode>sid peVE.AposGlory.mode</>End-Title
-		Hymn sid peVE.AposGlory.text End-Hymn
-	End-Section
-	Insert_section PentecostarionParts.AfterPascha_Doxasticon.BothNow End-Insert
-	Section Section03
-		Insert_section Symeon_Trisagion End-Insert	
-		Actor sid Choir End-Actor
-		Title role mixed<Tdesig>sid Apolytikion</><Tmode>sid ocVE.Apolytikion.mode</>End-Title
-		Hymn sid ocVE.Apolytikion.text End-Hymn
-		Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
-		Hymn sid ocVE.ApolTheotokionVM.text End-Hymn
-	End-Section
-	Insert_section Vespers_09 End-Insert
-	Insert_section PentecostarionParts.AfterPascha_End_ComYes End-Insert
-	
 End-Template
