@@ -1,0 +1,105 @@
+Template se.pe.d099.ve 
+
+Status Final
+
+	import client_gr_GR_cog.*
+	import ho.s10_gr_GR_cog.*	
+	import oc.m4.d1_gr_GR_cog.*
+	import pe.d099_gr_GR_cog.*
+
+	//Templates
+	import VespersParts.*
+	import Litanies.*
+	
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 5 day 10 year 2015 End_Date
+			Page_Header_Even
+				center @lookup sid peShortCommemoration1.text sid ve.pdf.header sid d.onSaturdayEvening lang L1 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid peShortCommemoration1.text sid ve.pdf.header sid d.onSaturdayEvening lang L2 
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	Section Instance01
+		Insert_section Vespers_01 End-Insert
+		Insert_section Vespers_02_Sunday.LIHC_Stichera_1234 End-Insert
+		Section Section01
+			Title role desig sid Stichira sid TisEortis End-Title
+			Title role mixed<Tmode>sid peVE.Stichera05.mode</><Tmelody>sid peVE.Stichera05.melody</>End-Title
+			Media sid peVE.Stichera05.text End-Media
+			Insert_section LIHC_Verse.v05 End-Insert
+			Hymn sid peVE.Stichera05.text media-off End-Hymn
+			Media sid peVE.Stichera06.text End-Media
+			Insert_section LIHC_Verse.v06 End-Insert
+			Hymn sid peVE.Stichera06.text media-off End-Hymn
+			Media sid peVE.Stichera07.text End-Media
+			Insert_section LIHC_Verse.v07 End-Insert
+			Hymn sid peVE.Stichera07.text End-Hymn
+			Title role desig sid TisSamaritidos End-Title
+			Title role mixed<Tdesig>sid Idiomelon</><Tmode>sid peVE.Stichera08.mode</>End-Title
+			Media sid peVE.Stichera08.text End-Media
+			Insert_section LIHC_Verse.v08 End-Insert
+			Hymn sid peVE.Stichera08.text media-off End-Hymn
+			Title role mixed<Tdesig>sid Idiomelon</><Tmode>sid peVE.Stichera09.mode</>End-Title
+			Media sid peVE.Stichera09.text End-Media
+			Insert_section LIHC_Verse.v09 End-Insert
+			Hymn sid peVE.Stichera09.text media-off End-Hymn
+			Title role mixed<Tdesig>sid Idiomelon</><Tmode>sid peVE.Stichera10.mode</>End-Title
+			Media sid peVE.Stichera10.text End-Media
+			Insert_section LIHC_Verse.v10 End-Insert
+			Hymn sid peVE.Stichera10.text End-Hymn
+			Title role mixed sid Doxa<Tmode>sid peVE.SticGlory.mode</>End-Title
+			Hymn sid peVE.SticGlory.text End-Hymn
+			Title role mixed sid KaiNyn<Tmode>sid ocVE.SticTheotokion.mode</>End-Title
+			Hymn sid ocVE.SticTheotokion.text End-Hymn
+		End-Section
+		Insert_section Vespers_03_entrance End-Insert
+		Insert_section Vespers_05_Litanies End-Insert
+		Insert_section Vespers_07_ResrrectionalAposticha.Aposticha_1 End-Insert
+		Insert_section PentecostarionParts.Pascha_SticheraOfPascha End-Insert
+		Section Section02
+			Title role mixed sid Doxa<Tdesig>sid TisSamaritidos</>End-Title
+			Title role mode sid peVE.AposGlory.mode End-Title
+			Hymn sid peVE.AposGlory.text End-Hymn
+			Title role mixed sid KaiNyn<Tdesig>sid TisEortis</>End-Title
+			Title role mode sid pe.d095_gr_GR_cog.peVE.AposGlory.mode End-Title
+			Hymn sid pe.d095_gr_GR_cog.peVE.AposGlory.text End-Hymn
+		End-Section
+		Section Section03
+			Insert_section Symeon_Trisagion End-Insert	
+			Actor sid Choir End-Actor
+			Title role desig sid ApolytikionAnastasimon End-Title
+			Title role mode sid ocVE.Apolytikion.mode End-Title
+			Hymn sid ocVE.Apolytikion.text End-Hymn
+			Title sid DoxaKaiNyn End-Title
+			Title role mixed<Tdesig>sid TisEortis</><Tmode>sid pe.d095_gr_GR_cog.peVE.Apolytikion1.mode</>End-Title
+			Hymn sid pe.d095_gr_GR_cog.peVE.Apolytikion1.text End-Hymn
+		End-Section
+		Insert_section Vespers_09 End-Insert
+		Insert_section PentecostarionParts.AfterPascha_End_ComNo End-Insert
+	End-Section
+End-Template
