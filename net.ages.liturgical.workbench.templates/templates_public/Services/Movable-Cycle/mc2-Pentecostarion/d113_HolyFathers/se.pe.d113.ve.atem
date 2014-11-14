@@ -1,0 +1,150 @@
+Template se.pe.d113.ve 
+
+Status Review
+
+	import client_gr_GR_cog.*
+	import ho.s10_gr_GR_cog.*	
+	import le.pr.pe.d113_gr_GR_cog.*
+	import oc.m6.d1_gr_GR_cog.*
+	import pe.d113_gr_GR_cog.*
+
+	//Templates
+	import VespersParts.*
+	import Litanies.*
+	
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+//		Set_Date month 5 day 24 year 2015 End_Date
+			Page_Header_Even
+				center @lookup sid peShortCommemoration1.text sid ve.pdf.header sid d.onSaturdayEvening lang L1 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid peShortCommemoration1.text sid ve.pdf.header sid d.onSaturdayEvening lang L2 
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	Section Instance01
+		Insert_section Vespers_01 End-Insert
+		Section Section01
+			Insert_section LIHC_ModeOfWeek End-Insert
+			Insert_section LIHC_Stichologia.part1 End-Insert
+			Title role desig sid StichiraAnastasima End-Title
+			Media sid ocVE.Stichera1.text End-Media
+			Insert_section LIHC_Verse.v01 End-Insert
+			Hymn sid ocVE.Stichera1.text media-off End-Hymn
+			Media sid ocVE.Stichera2.text End-Media
+			Insert_section LIHC_Verse.v02 End-Insert
+			Hymn sid ocVE.Stichera2.text  media-off End-Hymn
+			Media sid ocVE.Stichera3.text End-Media
+			Insert_section LIHC_Verse.v03 End-Insert
+			Hymn sid ocVE.Stichera3.text  media-off End-Hymn
+		End-Section
+		Section Section02
+			Title role desig sid TisEortis End-Title
+			Rubric sid cl.se.R001 End-Rubric
+			Title role mixed<Tdesig>sid Idiomelon</><Tmode>sid pe.d110_gr_GR_cog.peVE.Stichera01.mode</>End-Title
+			Media sid pe.d110_gr_GR_cog.peVE.Stichera01.text End-Media
+			Insert_section LIHC_Verse.v04 End-Insert
+			Hymn sid pe.d110_gr_GR_cog.peVE.Stichera01.text media-off End-Hymn
+			Title role mixed<Tdesig>sid Idiomelon</><Tmode>sid pe.d110_gr_GR_cog.peVE.Stichera02.mode</>End-Title
+			Media sid pe.d110_gr_GR_cog.peVE.Stichera02.text End-Media
+			Insert_section LIHC_Verse.v05 End-Insert
+			Hymn sid pe.d110_gr_GR_cog.peVE.Stichera02.text media-off End-Hymn
+			Title role mixed<Tdesig>sid Idiomelon</><Tmode>sid pe.d110_gr_GR_cog.peVE.Stichera03.mode</>End-Title
+			Media sid pe.d110_gr_GR_cog.peVE.Stichera03.text End-Media
+			Insert_section LIHC_Verse.v06 End-Insert
+			Hymn sid pe.d110_gr_GR_cog.peVE.Stichera03.text media-off End-Hymn
+		End-Section
+		Section Section03
+			Title role desig sid TonPateron End-Title
+			Title role mixed<Tmode>sid peVE.Stichera07.mode</><Tmelody>sid peVE.Stichera07.melody</>End-Title
+			Media sid peVE.Stichera07.text End-Media
+			Insert_section LIHC_Verse.v07 End-Insert
+			Hymn sid peVE.Stichera07.text media-off End-Hymn
+			Media sid peVE.Stichera08.text End-Media
+			Insert_section LIHC_Verse.v08 End-Insert
+			Hymn sid peVE.Stichera08.text media-off End-Hymn
+			Media sid peVE.Stichera09.text End-Media
+			Insert_section LIHC_Verse.v09 End-Insert
+			Hymn sid peVE.Stichera09.text media-off End-Hymn
+			Media sid peVE.Stichera10.text End-Media
+			Insert_section LIHC_Verse.v10 End-Insert
+			Hymn sid peVE.Stichera10.text End-Hymn
+		End-Section
+		Section Section04
+			Title role mixed sid Doxa<Tmode>sid peVE.SticGlory.mode</>End-Title
+			Hymn sid peVE.SticGlory.text End-Hymn
+		End-Section
+		Insert_section Vespers_BothNowFirstTheotokion_ModeOfWeek End-Insert
+		Insert_section Vespers_03_entrance End-Insert
+		Section Section05
+			Actor sid Reader End-Actor
+			Dialog sid hoVE.Reading_Intro.text1 sid lemcVE.reading1.book sid hoVE.Reading_Intro.text2 End-Dialog
+			Actor sid PriestOrDeacon End-Actor
+			Dialog sid exc17 sid exc19 End-Dialog
+			Actor sid Reader End-Actor
+			Title role chapverse sid lemcVE.reading1.chapverse End-Title
+			Reading sid lemcVE.reading1.text<Trubric>sid lemcVE.reading1.version</>End-Reading
+			Actor sid Reader End-Actor
+			Dialog sid hoVE.Reading_Intro.text1 sid lemcVE.reading2.book sid hoVE.Reading_Intro.text2 End-Dialog
+			Actor sid PriestOrDeacon End-Actor
+			Dialog sid exc17 sid exc19 End-Dialog
+			Actor sid Reader End-Actor
+			Title role chapverse sid lemcVE.reading2.chapverse End-Title
+			Reading sid lemcVE.reading2.text<Trubric>sid lemcVE.reading2.version</>End-Reading
+			Actor sid Reader End-Actor
+			Dialog sid hoVE.Reading_Intro.text1 sid lemcVE.reading3.book sid hoVE.Reading_Intro.text2 End-Dialog
+			Actor sid PriestOrDeacon End-Actor
+			Dialog sid exc17 sid exc19 End-Dialog
+			Actor sid Reader End-Actor
+			Title role chapverse sid lemcVE.reading3.chapverse End-Title
+			Reading sid lemcVE.reading3.text<Trubric>sid lemcVE.reading3.version</>End-Reading
+		End-Section
+		Insert_section Vespers_05_Litanies End-Insert
+		Insert_section Vespers_07_ResrrectionalAposticha.Aposticha_1 End-Insert
+		Insert_section Vespers_07_ResrrectionalAposticha.Aposticha_234 End-Insert
+		Section Section06
+			Title role mixed sid Doxa<Tdesig>sid TonPateron</>End-Title
+			Title role mode sid peVE.AposGlory.mode End-Title
+			Hymn sid peVE.AposGlory.text End-Hymn
+		End-Section
+		Section Section07
+			Title role mixed sid KaiNyn End-Title
+			Title role mixed<Tdesig>sid TisEortis</><Tmode>sid peVE.AposBoth.mode</>End-Title
+			Hymn sid peVE.AposBoth.text End-Hymn
+		End-Section
+		Insert_section Vespers_08.part1 End-Insert
+		Section Section08
+			Title sid Doxa End-Title
+			Title role mixed<Tdesig>sid TonPateron</><Tmode>sid peVE.Apolytikion2.mode</>End-Title
+			Hymn sid peVE.Apolytikion2.text End-Hymn
+			Title sid KaiNyn End-Title
+			Title role mixed<Tdesig>sid TisEortis</><Tmode>sid pe.d110_gr_GR_cog.peVE.Apolytikion1.mode</>End-Title
+			Hymn sid pe.d110_gr_GR_cog.peVE.Apolytikion1.text End-Hymn
+		End-Section
+		Insert_section Vespers_09 End-Insert
+		Insert_section Vespers_10_ComNo End-Insert
+	End-Section
+End-Template
