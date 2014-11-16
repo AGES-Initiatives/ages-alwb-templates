@@ -3,9 +3,7 @@ Template se.tr.d014.ve
 Status Final
 
 	import client_gr_GR_cog.*
-	import hi.s01_gr_GR_cog.*
-	import ho.s10_gr_GR_cog.*
-	import le.go.os_gr_GR_cog.*
+	import eu.memorial_gr_GR_cog.*
 	import ps_gr_GR_cog.*
 	import tr.d014_gr_GR_cog.*
 
@@ -13,10 +11,8 @@ Status Final
 	import oc.*
 
 	//Templates
-	import LentParts.*
-	import VespersParts.*
-	import LectionaryReadings.*
 	import Litanies.*
+	import VespersParts.*
 	
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -55,7 +51,7 @@ Status Final
 	Section Instance01
 		Insert_section Vespers_01 End-Insert
 		Insert_section LIHC_ModeOfWeek End-Insert
-		Section block1
+		Section Section01
 			Title role mixed<Tdesig>sid Martyrika</><Tmode>rid ocVE.Stichera5.mode</>End-Title
 			Media rid octrVE.Stichera1.text End-Media
 			Insert_section LIHC_Verse.v05 End-Insert
@@ -67,7 +63,7 @@ Status Final
 			Insert_section LIHC_Verse.v07 End-Insert
 			Hymn rid octrVE.Stichera3.text media-off End-Hymn
 		End-Section
-		Section block2
+		Section Section02
 			Title role desig sid TouTriodiou End-Title
 			Title role mixed<Tmode>sid trVE.Stichera01.mode</><Tmelody>sid trVE.Stichera01.melody</>End-Title
 			Media sid trVE.Stichera01.text End-Media
@@ -80,16 +76,14 @@ Status Final
 			Insert_section LIHC_Verse.v10 End-Insert
 			Hymn sid trVE.Stichera03.text media-off End-Hymn
 		End-Section
-		Section block3
+		Section Section03
 			Title role mixed sid Doxa<Tmode>sid trVE.SticGlory.mode</>End-Title
 			Hymn sid trVE.SticGlory.text End-Hymn
 			Insert_section Vespers_BothNowFirstTheotokion_ModeOfWeek End-Insert
 		End-Section
-		Insert_section Vespers_03_no_entrance.Part1 End-Insert
-		Section block4
-			Actor sid Deacon End-Actor
-			Dialog sid hiVE.Key0109.text End-Dialog
-			Actor sid Choir End-Actor
+		Insert_section Vespers_03_no_entrance.part1 End-Insert
+		Insert_section Vespers_03_no_entrance.part2 End-Insert
+		Section Section04
 			Title role mode sid oc.m8.d7_gr_GR_cog.ocMA.Alleluia.mode End-Title
 			Hymn sid oc.m8.d7_gr_GR_cog.ocMA.Alleluia.text End-Hymn
 			Insert_section PsalmVerses.forDeceased.verse1 End-Insert
@@ -98,7 +92,7 @@ Status Final
 			Hymn sid oc.m8.d7_gr_GR_cog.ocMA.Alleluia.text media-off End-Hymn
 		End-Section
 		Insert_section Vespers_05_Litanies.part2 End-Insert
-		Section block5
+		Section Section05
 			Actor sid Choir End-Actor
 			Title role desig sid Aposticha End-Title
 			Title role mode rid octrVE.Stichera4.mode End-Title
@@ -116,7 +110,7 @@ Status Final
 				M5, M6, M7, M8 use: Hymn rid ocVE.Aposticha3.text End-Hymn
 			end-when
 		End-Section
-		Section block6
+		Section Section06
 			Title role mixed sid Doxa<Tmode>sid trVE.AposGlory.mode</>End-Title
 			Hymn sid trVE.AposGlory.text End-Hymn
 			Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
@@ -125,7 +119,7 @@ Status Final
 		End-Section
 		Insert_section bk.ho.s10.NynApolyeis End-Insert
 		Break line End_Break
-		Section block7
+		Section Section07
 			Actor sid Choir End-Actor
 			Title role desig sid NekrosimonKanona End-Title
 			Title role mixed<Tdesig>sid oc.m6.d7_gr_GR_cog.ocMA.OdeW1C21.ode</><Tmode>sid oc.m6.d7_gr_GR_cog.ocMA.OdeW1C21.mode</>End-Title
@@ -220,13 +214,13 @@ Status Final
 
 		Break line End_Break
 		
-		Section block8
+		Section Section08
 			Actor sid People End-Actor		
 			Insert_section bk.ho.s01.Trisagion_Prayers End-Insert
 			Actor sid Priest End-Actor
 			Dialog sid exc20<i>sid res04p</>End-Dialog
 		End-Section
-		Section block9
+		Section Section09
 			Actor sid Choir End-Actor
 			Title role desig sid Apolytikion End-Title
 			Title role mode sid trVE.Apolytikion1.mode End-Title
@@ -235,8 +229,20 @@ Status Final
 			Hymn sid trVE.Apolytikion2.text End-Hymn
 			Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
 			Hymn sid trVE.ApolTheotokion.text End-Hymn
-			Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
-			Hymn rid ocVE.ApolTheotokionVM.text End-Hymn
+		End-Section
+		Section Section10
+			Actor sid Choir End-Actor
+			Title role mixed<Tdesig>sid Troparia</><Tmode>sid euMEM.Key009.mode</>End-Title
+			Hymn sid euMEM.Key009.text End-Hymn
+			Hymn sid euMEM.Key010.text End-Hymn
+			Verse sid DoxaPatri.text End-Verse
+			Hymn sid euMEM.Key011.text End-Hymn
+			Verse sid KaiNynKaiAei.text End-Verse
+			Hymn sid euMEM.Key012.text End-Hymn
+			Insert_section Litany_SoulSaturday End-Insert
+			Actor sid Choir End-Actor
+			Title role mode sid euMEM.Key013.mode End-Title
+			Hymn sid euMEM.Key013.text<r>sid Thrice media-off</>End-Hymn
 		End-Section
 		Insert_section Ektenia02 End-Insert
 		Insert_section Vespers_09 End-Insert
