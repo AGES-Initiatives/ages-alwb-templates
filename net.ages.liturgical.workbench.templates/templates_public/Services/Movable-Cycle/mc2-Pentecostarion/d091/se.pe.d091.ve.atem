@@ -1,0 +1,120 @@
+Template se.pe.d091.ve 
+
+Status Draft
+
+	import client_gr_GR_cog.*
+	import ho.s10_gr_GR_cog.*	
+	import pe.d091_gr_GR_cog.*
+
+	import da.*
+	import oc.*
+	import me.*
+
+	//Templates
+	import LectionaryReadings.*
+	import Litanies.*
+	import VespersParts.*
+	
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 5 day 10 year 2014 End_Date
+			Page_Header_Even
+				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore lang L2 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	Section Instance01
+		Insert_section Vespers_01 End-Insert
+		Insert_section LIHC_Mode2 End-Insert
+		Insert_section LIHC_Stichologia End-Insert
+		Section Section01
+			Title role desig sid Stichira sid TonMyroforon End-Title
+			Title role mixed<Tdesig>sid Idiomelon</><Tmode>sid peVE.Stichera01.mode</>End-Title
+			Media sid peVE.Stichera01.text End-Media
+			Insert_section LIHC_Verse.v05 End-Insert
+			Hymn sid peVE.Stichera01.text media-off End-Hymn
+			Title role mixed<Tdesig>sid Idiomelon</><Tmode>sid peVE.Stichera02.mode</>End-Title
+			Media sid peVE.Stichera02.text End-Media
+			Insert_section LIHC_Verse.v06 End-Insert
+			Hymn sid peVE.Stichera02.text media-off End-Hymn
+			Title role mixed<Tdesig>sid Idiomelon</><Tmode>sid peVE.Stichera03.mode</>End-Title
+			Media sid peVE.Stichera03.text End-Media
+			Insert_section LIHC_Verse.v07 End-Insert
+			Hymn sid peVE.Stichera03.text media-off End-Hymn
+		End-Section
+		Insert_section Vespers_02_Menaion.stichera_3 End-Insert
+		Section Section02
+			Title role mixed sid Doxa<Tmode>sid pe.d085_gr_GR_cog.peVE.SticGlory.mode</>End-Title
+			Hymn sid pe.d085_gr_GR_cog.peVE.SticGlory.text End-Hymn
+		End-Section
+		Insert_section Vespers_BothNow_SticTheotokion.Mode2 End-Insert
+		Insert_section Vespers_03_no_entrance End-Insert
+		Insert_section Vespers_05_Litanies.part2 End-Insert
+		Section Section03
+			Actor sid Choir End-Actor
+			Title role desig sid Aposticha End-Title
+			Title role mixed<Tdesig>sid StichiraAnastasima</><Tmode>sid peVE.Aposticha1.mode</>End-Title
+			Hymn sid peVE.Aposticha1.text End-Hymn
+		End-Section
+		Section Section04
+			Insert_section PsalmVerses.forVespersAposticha.saturday.verse1 End-Insert
+			Hymn sid peVE.Aposticha2.text End-Hymn
+			Insert_section PsalmVerses.forVespersAposticha.saturday.verse2 End-Insert
+			Hymn sid peVE.Aposticha3.text End-Hymn
+			Insert_section PsalmVerses.forVespersAposticha.saturday.verse3 End-Insert
+			Hymn sid peVE.Aposticha4.text End-Hymn
+		End-Section
+		Section Section05
+			when-exists rid meVE.AposGlory.text use:
+				Title role mixed sid Doxa<Tdesig>sid TouMinaiou</>End-Title
+				Title role mode rid meVE.AposGlory.mode End-Title
+				Hymn rid meVE.AposGlory.text End-Hymn
+				Title role mixed sid KaiNyn<Tdesig>sid TonMyroforon</>End-Title
+			otherwise use:
+				Title role mixed sid DoxaKaiNyn<Tdesig>sid TonMyroforon</>End-Title
+			end-when
+			Title role mode sid peVE.AposGlory.mode End-Title
+			Hymn sid peVE.AposGlory.text End-Hymn
+		End-Section
+		Insert_section Symeon_Trisagion End-Insert	
+		Section Section06
+			Actor sid Choir End-Actor
+			Title role mixed<Tdesig>sid Apolytikia</><Tmode>sid pe.d085_gr_GR_cog.peVE.Apolytikion2.mode</>End-Title
+			Hymn sid pe.d085_gr_GR_cog.peVE.Apolytikion2.text End-Hymn
+			Title sid Doxa End-Title
+			Hymn sid pe.d085_gr_GR_cog.peVE.Apolytikion1.text End-Hymn
+			Title sid KaiNyn  End-Title
+			Hymn sid pe.d085_gr_GR_cog.peVE.Apolytikion3.text End-Hymn
+		End-Section
+		Insert_section Ektenia02 End-Insert
+		Insert_section Vespers_09 End-Insert
+		Insert_section PentecostarionParts.AfterPascha_End_ComYes End-Insert
+	End-Section
+	
+End-Template
