@@ -1,25 +1,11 @@
 Template se.pe.d119.li 
 
-Status Review
+Status Final
 
 	import client_gr_GR_cog.*
-	import eu.lichrysbasil_gr_GR_cog.*
-	import ho.s03_gr_GR_cog.*
-	import ho.s07_gr_GR_cog.*
-	import ho.s10_gr_GR_cog.*	
-	import le.ep.va.deceased_gr_GR_cog.*
-	import pe.d119_gr_GR_cog.*
-	import tr.d014_gr_GR_cog.*
-
-//import da.*
-//	import oc.*
-//	import pe.*
-//	import tr.*
 
 	//Templates
-	import bk.ap.mc.p0.sections.*
 	import LectionaryReadings.*
-	import Litanies.*
 	
 	import actors_gr_GR_cog.*
 	import misc_gr_GR_cog.*
@@ -33,7 +19,7 @@ Status Review
 	import roles.*
 
 		Head 
-//			Set_Date month  day  End_Date
+			Set_Date month 5 day 30 year 2015 End_Date
 				Page_Header_Even
 					center @lookup sid li.pdf.header sid d.on lang L1 @date lang L1
 				End_Page_Header_Even
@@ -49,56 +35,25 @@ Status Review
 			Set_Page_Number 1 End_Set_Page_Number
 		End_Head
 	
-	
 	Section Instance01	
 		Insert_section LiturgyChrysBasilParts.Section01 End-Insert
 		Insert_section LiturgyChrysBasilParts.Section02 End-Insert
-		Insert_section LiturgyChrysBasilParts.Section03.sunday_saint End-Insert
+		Insert_section LiturgyChrysBasilParts.Section03.weekday End-Insert
 		Insert_section LiturgyChrysBasilParts.Section04 End-Insert
-		Insert_section LiturgyChrysBasilParts.Section05.saint End-Insert
+		Insert_section LiturgyChrysBasilParts.Section05.weekday End-Insert
 		Insert_section LiturgyChrysBasilParts.Section06 End-Insert
 		Insert_section LiturgyChrysBasilParts.Section07.no_verse End-Insert
-		Section block1
-			Title role mode sid trVE.Apolytikion1.mode End-Title
-			Hymn sid trVE.Apolytikion1.text End-Hymn
-		End-Section
+		Insert_section se.tr.d014.li.Instance01.Section01 End-Insert
 		Insert_section LiturgyChrysBasilParts.Section08 End-Insert
 		Insert_section LiturgyChrysBasilParts.Section09.clergy End-Insert
 		Insert_section LiturgyChrysBasilParts.Section10 End-Insert
-		
-		Section HymnsAfterEntrance
-			Actor sid Choir End-Actor
-			Title role desig sid Apolytikion End-Title
-			Title role mode sid trVE.Apolytikion1.mode End-Title
-			Hymn sid trVE.Apolytikion1.text End-Hymn
+		Insert_section LiturgyChrysBasilParts.Section11.single End-Insert
+		Insert_section se.tr.d014.li.Instance01.Section02 End-Insert
 		Insert_section LiturgyChrysBasilParts.Section11_opt End-Insert
-			Section Part_05_6_SeasonalKontakion
-				Title role desig sid Kontakion End-Title
-				Title role mode sid trLI.SeasonalKontakion.mode End-Title
-				Hymn sid trLI.SeasonalKontakion.text End-Hymn
-			End-Section
-		End-Section	
+		Insert_section LiturgyChrysBasilParts.Section12.single End-Insert
 		Insert_section LiturgyChrysBasilParts.Section13.prayer End-Insert
 		Insert_section LiturgyChrysBasilParts.Section13.holygod End-Insert
-		Section Part_07_1_Epistle_Various
-			Title role desig sid TaAnagnosmata End-Title
-			Title role desig sid OApostolos End-Title
-			Actor sid Deacon End-Actor
-			Dialog sid exc19 End-Dialog
-			Actor sid Reader End-Actor
-			Insert_section Week_07.Day_Saturday.ep_title End-Insert
-			Insert_section Week_07.Day_Saturday.ep_prokeimenon End-Insert
-			Actor sid Deacon End-Actor
-			Dialog sid exc17 End-Dialog		
-			Actor sid Reader End-Actor
-			Insert_section Week_07.Day_Saturday.ep_book End-Insert
-			Actor sid Deacon End-Actor
-			Dialog sid exc19 End-Dialog
-			Actor sid Reader End-Actor
-			Insert_section Week_07.Day_Saturday.ep_lesson End-Insert
-			Actor sid Priest End-Actor
-			Dialog sid epi02 End-Dialog		
-		End-Section //Epistle_Various
+		Insert_section Lectionary_Epistle_Deceased End-Insert
 		Insert_section Lectionary_Gospel_Daily.Alleluia End-Insert
 		Insert_section LiturgyChrysBasilParts.Section14 End-Insert
 		Insert_section Lectionary_Gospel_Daily.Lesson End-Insert
@@ -118,31 +73,15 @@ Status Review
 		Insert_section LiturgyChrysBasilParts.Section32 End-Insert
 		Insert_section LiturgyChrysBasilParts.Section33 End-Insert
 		Insert_section LiturgyChrysBasilParts.Section34.chrys End-Insert
-		Section Section_17_1
-			Insert_section LiturgyChrysBasilParts.Section35.chrys.part1 End-Insert
-			Insert_section LiturgyChrysBasilParts.Section35.chrys.part2 End-Insert
-			Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
-			Para role inaudible sid euLI.Key1704.text End-Para				
-		End-Section
+		Insert_section LiturgyChrysBasilParts.Section35.chrys.part1 End-Insert
+		Insert_section LiturgyChrysBasilParts.Section35.chrys.part2 End-Insert
+		Insert_section LiturgyChrysBasilParts.Section35.chrys.part3 End-Insert
+		
 		Break line End_Break
-		Section SoS_Memorial
-			Title role desig sid eu.memorial_gr_GR_cog.euMEM.title End-Title
-			Actor sid Choir End-Actor
-			Insert_section bk.memorial.MemorialTroparia End-Insert
-			Insert_section Litany_SoulSaturday End-Insert
-			Title role mode sid eu.memorial_gr_GR_cog.euMEM.Key013.mode End-Title
-			Hymn sid eu.memorial_gr_GR_cog.euMEM.Key013.text<r>sid Thrice media-off</>End-Hymn
-		End-Section
+		Insert_section se.tr.d014.ve.Instance01.Section10 End-Insert
 		Break line End_Break
-		Section Section_End
-			Actor sid Deacon End-Actor
-			Dialog sid pet00 End-Dialog		
-			Dialog<i>sid res01p</>End-Dialog
-			Actor sid Priest End-Actor
-			Dialog sid pet37 End-Dialog	
-			Dialog<i>sid res04p</>End-Dialog
-			Dialog sid DoxaSoiChriste2 End-Dialog
+		
+		Insert_section LiturgyChrysBasilParts.Section35.chrys.part4 End-Insert
 		Insert_section LiturgyChrysBasilParts.Section36.comno End-Insert
-		End-Section
 	End-Section
 End-Template
