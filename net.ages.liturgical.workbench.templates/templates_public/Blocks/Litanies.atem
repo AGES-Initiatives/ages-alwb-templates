@@ -400,10 +400,8 @@ Template Litanies
 	Section Supplication_deacon
 		Actor sid Deacon End-Actor
 		when-movable-cycle-day-is 
-			36, 50, 57 use:
-				Insert_section supplication_09 End-Insert
-			78, 85, 92, 99, 106, 113, 120, 127 use:
-				Insert_section supplication_20 End-Insert
+			36, 50, 57 use: Insert_section supplication_09 End-Insert
+			78, 85, 113, 127 use: Insert_section supplication_20 End-Insert
 			otherwise use: Insert_section Supplication_Menaion End-Insert
 		end-when
 		Actor sid Choir End-Actor
@@ -416,8 +414,9 @@ Template Litanies
 
 	Section Supplication_priest
 		Actor sid Priest End-Actor
-		when-movable-cycle-day-is 36, 50, 57 use:
-			Insert_section supplication_09 End-Insert
+		when-movable-cycle-day-is 
+			36, 50, 57 use: Insert_section supplication_09 End-Insert
+			78, 85, 113, 127 use: Insert_section supplication_20 End-Insert
 			otherwise use: Insert_section Supplication_Menaion End-Insert
 		end-when
 		Actor sid Choir End-Actor
