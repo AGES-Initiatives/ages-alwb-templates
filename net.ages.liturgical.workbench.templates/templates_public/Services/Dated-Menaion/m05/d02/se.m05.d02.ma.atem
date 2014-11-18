@@ -1,16 +1,14 @@
 Template se.m05.d02.ma
 
-Status Review
+Status Final
 
 	import client_gr_GR_cog.*
-	import ho.s03_gr_GR_cog.*
 	import me.m05.d02_gr_GR_cog.*
-	import ps_gr_GR_cog.*
 	
 	//Templates
-	import MatinsParts.*
-	import KatavasiaSelector.*
 	import Litanies.*
+	import MatinsParts.*
+	import Selector_Katavasias.*
 	
 	import actors_gr_GR_cog.*
 	import misc_gr_GR_cog.*
@@ -40,10 +38,10 @@ Status Review
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
-		Preface Covers
-			Insert_template ematins.cover.ma End-Insert
-			Insert_template ematins.credits End-Insert
-		End-Preface
+	Preface Covers
+		Insert_template ematins.cover.ma End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
 
 	when-movable-cycle-day-is
 		65 thru 72 use:
@@ -64,7 +62,7 @@ Status Review
 			
 		79 thru 83 use:
 			Section Instance05 //Thomas Post-feast
-				Section Section01
+				Section block1
 					Insert_section GITL.mode3 End-Insert
 					Title role desig sid Apolytikion sid TouAgiou End-Title
 					Title role mixed<Tmode>sid meVE.Apolytikion1.mode</><Tmelody>sid meVE.Apolytikion1.melody</>End-Title
@@ -75,7 +73,7 @@ Status Review
 					Hymn sid pe.d078_gr_GR_cog.peVE.Apolytikion1.text End-Hymn
 					Insert_section ShortLitany02 End-Insert
 				End-Section
-				Section Section02
+				Section block2
 					Actor sid Choir End-Actor
 					Title role desig sid Kathisma1 End-Title
 					Title role mixed<Tmode>sid meMA.Kathisma11.mode</><Tmelody>sid meMA.Kathisma11.melody</>End-Title
@@ -84,7 +82,7 @@ Status Review
 					Title role mixed<Tmode>sid pe.d078_gr_GR_cog.peMA.Kathisma11.mode</><Tmelody>sid pe.d078_gr_GR_cog.peMA.Kathisma11.melody</>End-Title
 					Hymn sid pe.d078_gr_GR_cog.peMA.Kathisma11.text End-Hymn
 				End-Section
-				Section Section03
+				Section block3
 					Title role desig sid Kathisma2 End-Title
 					Title role mixed<Tmode>sid meMA.Kathisma21.mode</><Tmelody>sid meMA.Kathisma21.melody</>End-Title
 					Hymn sid meMA.Kathisma21.text End-Hymn
@@ -92,11 +90,8 @@ Status Review
 					Title role mixed<Tmode>sid pe.d078_gr_GR_cog.peMA.Kathisma21.mode</><Tmelody>sid pe.d078_gr_GR_cog.peMA.Kathisma21.melody</>End-Title
 					Hymn sid pe.d078_gr_GR_cog.peMA.Kathisma21.text End-Hymn
 				End-Section
-				Section Section04
-					Actor sid Reader End-Actor
-					Reading sid hoMA.SunPostGospel.text End-Reading
-					Title role desig sid psa50.title End-Title
-					Reading sid psa50.text End-Reading
+				Insert_section Psalm50_read End-Insert
+				Section block4
 					Title role desig sid Kontakion sid TisEortis End-Title
 					Reading sid pe.d078_gr_GR_cog.peMA.Kontakion1.text End-Reading
 					Title role desig sid Kontakion sid TouAgiou End-Title
@@ -105,19 +100,20 @@ Status Review
 					Reading sid meMA.Oikos1.text End-Reading
 					Insert_section Synaxarion.Synaxarion End-Insert
 				End-Section
-				Section Section05
-					Insert_section Selector_Katavasias.k_1345678 End-Insert
-					Insert_section Ode9_Intro End-Insert
-					Insert_section Selector_Katavasias.k_mode_mag_media End-Insert
-					Insert_section Selector_Katavasias.k_9 End-Insert
-					Insert_section ShortLitany10 End-Insert	
-					Title role desig sid Exaposteilarion sid TouAgiou End-Title
+				Insert_section k_1345678 End-Insert
+				Insert_section Ode9_Intro End-Insert
+				Insert_section k_mode_mag_media End-Insert
+				Insert_section k_9 End-Insert
+				Insert_section ShortLitany10 End-Insert	
+				Section block5
+					Title role desig sid Exaposteilaria End-Title
+					Title role desig sid TouAgiou End-Title
 					Title role mixed<Tmode>sid meMA.Exaposteilarion1.mode</><Tmelody>sid meMA.Exaposteilarion1.melody</>End-Title
 					Hymn sid meMA.Exaposteilarion1.text End-Hymn
 					Title role mixed<Tdesig>sid TisEortis</><Tmelody>sid Omoion</>End-Title
 					Hymn sid pe.d078_gr_GR_cog.peMA.Exaposteilarion1.text End-Hymn
 				End-Section
-				Section Section06
+				Section block6
 					Insert_section Lauds.Mode4 End-Insert
 					Title role mixed<Tmode>sid meMA.Lauds1.mode</><Tmelody>sid meMA.Lauds1.melody</>End-Title
 					Media sid meMA.Lauds1.text End-Media
@@ -131,18 +127,20 @@ Status Review
 					Media sid meMA.Lauds3.text End-Media
 					Insert_section Lauds_Verse.v06 End-Insert
 					Hymn sid meMA.Lauds3.text media-off End-Hymn
+				End-Section
+				Section block7
 					Title role mixed sid Doxa<Tmode>sid meMA.LaudsGlory.mode</>End-Title
 					Hymn sid meMA.LaudsGlory.text End-Hymn
 					Title role mixed sid KaiNyn<Tdesig>sid TisEortis</><Tmode>sid pe.d078_gr_GR_cog.peVE.LityGlory.mode</>End-Title
 					Hymn sid pe.d078_gr_GR_cog.peVE.LityGlory.text End-Hymn
 				End-Section
-				Section Section07
-					Insert_section GreatDoxology End-Insert
+				Insert_section GreatDoxology End-Insert
+				Section block8
 					Title role desig sid Apolytikion sid TouAgiou End-Title
 					Title role mixed<Tmode>sid meVE.Apolytikion1.mode</><Tmelody>sid meVE.Apolytikion1.melody</>End-Title
 					Hymn sid meVE.Apolytikion1.text End-Hymn
 				End-Section		
-			End-Section //Instance_05
+			End-Section //Instance05
 			
 		84 use: //Thomas Saturday
 			Section Instance06
@@ -156,10 +154,93 @@ Status Review
 			Section Instance08
 			End-Section
 			
-		91, 105 use: //Leavetaking of Myr and Sam
-			Section Instance09
+		91 use: //Leavetaking of Myr
+			Section Instance09_091
+				Insert_section GITL.mode2 End-Insert
+				Insert_section se.m05.d02.ve.Instance09.block4.pe091 End-Insert
+				Insert_section ShortLitany02 End-Insert
+				Section block1
+					Actor sid Choir End-Actor
+					Title role desig sid Kathisma1 End-Title
+					Title role mixed<Tmode>sid meMA.Kathisma11.mode</><Tmelody>sid meMA.Kathisma11.melody</>End-Title
+					Hymn sid meMA.Kathisma11.text End-Hymn
+					Title role mixed sid DoxaKaiNyn<Tdesig>sid TonMyroforon</>End-Title
+					Title role mixed<Tmode>sid pe.d089_gr_GR_cog.peMA.Kathisma21.mode</><Tmelody>sid pe.d089_gr_GR_cog.peMA.Kathisma21.melody</>End-Title
+					Hymn sid pe.d089_gr_GR_cog.peMA.Kathisma21.text End-Hymn
+				End-Section
+				Section block2
+					Title role desig sid Kathisma2 End-Title
+					Title role mixed<Tmode>sid meMA.Kathisma21.mode</><Tmelody>sid meMA.Kathisma21.melody</>End-Title
+					Hymn sid meMA.Kathisma21.text End-Hymn
+					Title role mixed sid DoxaKaiNyn<Tdesig>sid TonMyroforon</>End-Title
+					Title role mixed<Tmode>sid pe.d090_gr_GR_cog.peMA.Kathisma21.mode</><Tmelody>sid pe.d090_gr_GR_cog.peMA.Kathisma21.melody</>End-Title
+					Hymn sid pe.d090_gr_GR_cog.peMA.Kathisma21.text End-Hymn
+				End-Section
+				Insert_section Psalm50_read End-Insert
+				Section block3
+					Title role desig sid Kontakion sid TonMyroforon End-Title
+					Reading sid pe.d085_gr_GR_cog.peMA.Kontakion1.text End-Reading
+					Title role desig sid OOikos End-Title
+					Reading sid pe.d085_gr_GR_cog.peMA.Oikos1.text End-Reading
+					Title role desig sid Kontakion sid TouAgiou End-Title
+					Reading sid meMA.Kontakion1.text End-Reading
+					Title role desig sid OOikos End-Title
+					Reading sid meMA.Oikos1.text End-Reading
+					Insert_section Synaxarion.Synaxarion End-Insert
+				End-Section
+				Insert_section k_1345678 End-Insert
+				Insert_section Ode9_Intro End-Insert
+				Insert_section k_mode_mag_media End-Insert
+				Insert_section k_9 End-Insert
+				Insert_section ShortLitany10 End-Insert	
+				Section block4
+					Title role desig sid Exaposteilaria End-Title
+					Title role desig sid TouAgiou End-Title
+					Title role mixed<Tmode>sid meMA.Exaposteilarion1.mode</><Tmelody>sid meMA.Exaposteilarion1.melody</>End-Title
+					Hymn sid meMA.Exaposteilarion1.text End-Hymn
+					Title role desig sid TonMyroforon End-Title
+					Title role mixed<Tmode>sid pe.d085_gr_GR_cog.peMA.Exaposteilarion1.mode</><Tmelody>sid pe.d085_gr_GR_cog.peMA.Exaposteilarion1.melody</>End-Title
+					Hymn sid pe.d085_gr_GR_cog.peMA.Exaposteilarion1.text End-Hymn
+				End-Section
+				Section block5
+					Insert_section Lauds.Mode2 End-Insert
+					Title role desig sid StichiraAnastasima End-Title
+					Media sid oc.m2.d1_gr_GR_cog.ocMA.Lauds1.text End-Media
+					Insert_section Lauds_Verse.v01 End-Insert
+					Hymn sid oc.m2.d1_gr_GR_cog.ocMA.Lauds1.text media-off End-Hymn
+					Media sid oc.m2.d1_gr_GR_cog.ocMA.Lauds2.text End-Media
+					Insert_section Lauds_Verse.v02 End-Insert
+					Hymn sid oc.m2.d1_gr_GR_cog.ocMA.Lauds2.text  media-off End-Hymn
+					Media sid oc.m2.d1_gr_GR_cog.ocMA.Lauds3.text End-Media
+					Insert_section Lauds_Verse.v03 End-Insert
+					Hymn sid oc.m2.d1_gr_GR_cog.ocMA.Lauds3.text media-off End-Hymn
+				End-Section
+				Section block6
+					Title role desig sid TouAgiou End-Title
+					Title role mixed<Tmode>sid meMA.Lauds1.mode</><Tmelody>sid meMA.Lauds1.melody</>End-Title
+					Media sid meMA.Lauds456.text End-Media
+					Insert_section Lauds_Verse.v04 End-Insert
+					Hymn sid meMA.Lauds1.text media-off End-Hymn
+					Insert_section Lauds_Verse.v05 End-Insert
+					Hymn sid meMA.Lauds2.text media-off End-Hymn
+					Insert_section Lauds_Verse.v06 End-Insert
+					Hymn sid meMA.Lauds3.text media-off End-Hymn
+				End-Section
+				Section block7
+					Title role mixed sid Doxa<Tmode>sid meMA.LaudsGlory.mode</>End-Title
+					Hymn sid meMA.LaudsGlory.text End-Hymn
+					Title role mixed sid KaiNyn<Tdesig>sid TonMyroforon</>End-Title
+					Title role mode sid pe.d091_gr_GR_cog.peMA.LaudsGlory.mode End-Title
+					Hymn sid pe.d091_gr_GR_cog.peMA.LaudsGlory.text End-Hymn
+				End-Section
+				Insert_section GreatDoxology End-Insert
+				Insert_section Instance05.block8 End-Insert
 			End-Section
-			
+
+		105 use: //Leavetaking of Sam
+			Section Instance09_105
+			End-Section
+						
 		94, 108 use: //Leavetaking of Par and Blind
 			Section Instance10
 			End-Section
