@@ -318,6 +318,19 @@ Template PentecostarionParts
 		Hymn sid me.m11.d13_gr_GR_cog.meVE.Apolytikion1.text End-Hymn
 	End-Section
 	
+	Section Paschal_Dismissal_Intro
+		Section deacon
+			Actor sid Deacon End-Actor
+			Dialog sid pePA.ChristIsRisen.text media-off End-Dialog
+			Dialog sid res01<r>sid Thrice</>sid Evlogison End-Dialog
+		End-Section
+		Section reader
+			Actor sid Reader End-Actor
+			Dialog sid pePA.ChristIsRisen.text media-off End-Dialog
+			Dialog sid res01<r>sid Thrice</>sid Evlogison End-Dialog
+		End-Section
+	End-Section
+	
 	Section Pascha_Dismissal_Part1
 		Actor sid PriestOrDeacon End-Actor
 		Dialog sid exc17 End-Dialog
@@ -328,9 +341,9 @@ Template PentecostarionParts
 		Actor sid Reader End-Actor
 		Dialog sid res04 End-Dialog
 		Dialog sid pePA.Ode9H.text End-Dialog
-		Dialog sid pePA.ChristIsRisen.text End-Dialog
-		Dialog sid res01<r>sid Thrice</>sid Evlogison End-Dialog
+		Insert_section Paschal_Dismissal_Intro End-Insert
 	End-Section
+	
 	Section Pascha_Dismissal_Part2
 		Insert_section Dismissals.dismissal_01 End-Insert
 		Dialog sid PaschaDialog1.text End-Dialog
@@ -705,12 +718,8 @@ Template PentecostarionParts
 	End-Section
 
 	Section AfterPascha_Liturgy_End_ComNo
+		Insert_section Paschal_Dismissal_Intro.deacon End-Insert
 		Section part1
-			Actor sid Deacon End-Actor
-			Dialog sid pePA.ChristIsRisen.text media-off End-Dialog
-			Dialog sid res06 sid res09 End-Dialog
-		End-Section
-		Section part2
 			Insert_section Dismissals.dismissal_01 End-Insert
 			Actor sid Choir End-Actor
 			Hymn sid euLI.Key1706.text End-Hymn
@@ -719,7 +728,7 @@ Template PentecostarionParts
 			Dialog sid DiEfchonPateron.text End-Dialog
 			Dialog<i>sid res04p</>End-Dialog
 		End-Section
-		Section part3	
+		Section part2	
 			Rubric sid Or End-Rubric
 			Rubric sid cl.pe.d078.R002 End-Rubric
 			Actor sid Priest End-Actor
@@ -730,12 +739,8 @@ Template PentecostarionParts
 	End-Section
 	
 	Section AfterPascha_Liturgy_End_ComYes
+		Insert_section Paschal_Dismissal_Intro.deacon End-Insert
 		Section part1
-			Actor sid Deacon End-Actor
-			Dialog sid pePA.ChristIsRisen.text media-off End-Dialog
-			Dialog sid res06 sid res09 End-Dialog
-		End-Section
-		Section part2
 			Insert_section Dismissals.Com_Yes.part1 End-Insert
 			Actor sid Choir End-Actor
 			Hymn sid euLI.Key1706.text End-Hymn
@@ -744,7 +749,7 @@ Template PentecostarionParts
 			Dialog sid DiEfchonPateron.text End-Dialog
 			Dialog<i>sid res04p</>End-Dialog
 		End-Section
-		Section part3	
+		Section part2	
 			Rubric sid Or End-Rubric
 			Rubric sid cl.pe.d078.R002 End-Rubric
 			Actor sid Priest End-Actor
