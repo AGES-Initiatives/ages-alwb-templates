@@ -1,20 +1,26 @@
-Template se.m05.d20.ma 
+Template se.pe.d109.ma 
 
 Status Final
 
 	import client_gr_GR_cog.*
 	import ho.s03_gr_GR_cog.*
-	import me.m05.d20_gr_GR_cog.*
+	import ho.s07_gr_GR_cog.*
+	import ho.s10_gr_GR_cog.*	
+//	import me.m00.d00_gr_GR_cog.*
+//	import pe.d000_gr_GR_cog.*
+//	import tr.d000_gr_GR_cog.*
 
 	import da.*
-	import oc.*
-	import pe.*
-	import tr.*
+//	import oc.*
+//	import pe.*
+//	import tr.*
 
 	//Templates
-	import MatinsParts.*
 	import LectionaryReadings.*
 	import Litanies.*
+	import MatinsParts.*
+	import Selector_Katavasias.*
+	import VespersParts.*
 	
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -50,13 +56,14 @@ Status Final
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-	when-movable-cycle-day-is
-		83 use: //Thomas Friday
-		84 use: //Thomas Saturday
-		85, 92, 95, 99, 102, 106, 109, 110, 113, 118, 119, 120, 121, 126, 127 use: Insert_template mc.map.ma End-Insert
-		// various weekdays
-		108 use: //Leavetaking of Blindman
-		111, 112, 114, 115, 116, 117, 122, 123, 124, 125 use: 
-	end-when	
-		
+	Section Instance01
+		Insert_section PentecostarionParts.Pascha_Enarxis01_VM End-Insert
+		Insert_section se.pe.d071.ma.Instance01.block1 End-Insert
+		Insert_section se.pe.d071.ma.Instance01.block2 End-Insert
+		Insert_section se.pe.d071.ma.Instance01.block3 End-Insert
+		Insert_section se.pe.d071.ma.Instance01.block4 End-Insert
+		Insert_section PentecostarionParts.Pascha_SticheraOfPascha End-Insert
+		Insert_section PentecostarionParts.Pascha_Section18 End-Insert
+	End-Section
+	
 End-Template
