@@ -1,8 +1,9 @@
-Template se.m06.d01.li
+Template se.m06.d01.ve 
 
 Status Final
 
 	import client_gr_GR_cog.*
+	import ho.s10_gr_GR_cog.*	
 	import me.m06.d01_gr_GR_cog.*
 
 	import da.*
@@ -11,10 +12,11 @@ Status Final
 
 	//Templates
 	import LectionaryReadings.*
-	import LiturgyChrysBasilParts.*
 	import Litanies.*
+	import VespersParts.*
 	
 	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
 	import misc_gr_GR_cog.*
 	import prayers_gr_GR_cog.*
 	import rubrical_gr_GR_cog.*
@@ -28,10 +30,10 @@ Status Final
 	Head 
 		Set_Date month 6 day 1 year 2015 End_Date
 			Page_Header_Even
-				center @lookup sid li.pdf.header sid d.on lang L1 @date lang L1
+				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore lang L2 
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore lang L2
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -42,12 +44,15 @@ Status Final
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
+	Preface Covers
+		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
 	when-movable-cycle-day-is 1 thru 127 use:
-			Insert_template mc.map.li End-Insert //adjust to appropriate service
+			Insert_template mc.map.ve End-Insert //adjust to appropriate service
 			otherwise use:
 		
 	end-when	
-	
-
 
 End-Template
