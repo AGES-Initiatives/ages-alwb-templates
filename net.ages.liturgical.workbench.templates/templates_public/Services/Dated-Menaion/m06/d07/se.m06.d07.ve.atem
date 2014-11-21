@@ -1,4 +1,4 @@
-Template se.m06.d07.li 
+Template se.m06.d07.ve 
 
 Status Final
 
@@ -13,6 +13,7 @@ Status Final
 	//Templates
 	import LectionaryReadings.*
 	import Litanies.*
+	import VespersParts.*
 	
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -29,10 +30,10 @@ Status Final
 	Head 
 		Set_Date month 6 day 7 year 2015 End_Date
 			Page_Header_Even
-				center @lookup sid li.pdf.header sid d.on lang L1 @date lang L1
+				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore lang L2 
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore lang L2
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -43,12 +44,15 @@ Status Final
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
+	Preface Covers
+		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
 	when-movable-cycle-day-is 1 thru 127 use:
-			Insert_template mc.map.li End-Insert //adjust to appropriate service
+			Insert_template mc.map.ve End-Insert //adjust to appropriate service
 			otherwise use:
 		
 	end-when	
-	
-
 
 End-Template

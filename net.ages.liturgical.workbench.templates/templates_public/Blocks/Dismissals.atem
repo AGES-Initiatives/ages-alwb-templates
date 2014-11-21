@@ -20,9 +20,9 @@ Status Review
 	import bTags.*
 	import roles.*
 
-//	Head //for testing
-//		Set_Date month 12 day 28  End_Date
-//	End_Head
+	Head //for testing
+		Set_Date month 6 day 7 year 2015  End_Date
+	End_Head
 
 	Section Com_Yes //use this whenever there IS an explicit commemoration
 		Section part1
@@ -86,6 +86,7 @@ Status Review
 					when-movable-cycle-day-is 
 						21, 28, 36, 45, 50, 57, 63, 64, 65, 66, 67, 68, 70 use: Insert_section dismissal_09 End-Insert
 						113 use: Insert_section dismissal_20 End-Insert
+						127 use: Insert_section dismissal_21 End-Insert
 						otherwise use: Insert_section dismissal_07 End-Insert
 					end-when
 			end-when
@@ -112,7 +113,7 @@ Status Review
 			71 thru 127 use:
 				when-movable-cycle-day-is 
 					113 use: Insert_section dismissal_20 End-Insert 
-					127 use: Dialog sid dis00 sid dis00.resurrection sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 sid dis10 rid peInsert2 sid dis89 End-Dialog 
+					127 use: Insert_section dismissal_21 End-Insert 
 					otherwise use: Dialog sid dis00 rid peDismissal sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 sid dis10 sid dis89 End-Dialog 
 				end-when
 			otherwise use: 
@@ -128,7 +129,7 @@ Status Review
 	End-Section
 		
 	Section dismissal_02 //Theotokos
-		when-movable-cycle-day-is 71 thru 127 use:
+		when-movable-cycle-day-is 71 thru 126 use:
 			Dialog sid dis00 rid peDismissal sid dis01 sid dis02 rid meInsert2 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 sid dis10 sid dis89 End-Dialog 
 			otherwise use: 
 				when-name-of-day-is Sunday use: 
@@ -162,7 +163,7 @@ Status Review
 	End-Section
 		
 	Section dismissal_05 //Forerunner
-		when-movable-cycle-day-is 71 thru 127 use:
+		when-movable-cycle-day-is 71 thru 126 use:
 			Dialog sid dis00 rid peDismissal sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 rid meInsert2 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 sid dis10 sid dis89 End-Dialog 
 			otherwise use: 
 				when-name-of-day-is Sunday use: 
@@ -177,7 +178,7 @@ Status Review
 	End-Section
 		
 	Section dismissal_06 //Apostles
-		when-movable-cycle-day-is 71 thru 127 use:
+		when-movable-cycle-day-is 71 thru 126 use:
 			Dialog sid dis00 rid peDismissal sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 rid meInsert2 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 sid dis10 sid dis89 End-Dialog 
 			otherwise use: 
 				when-name-of-day-is Sunday use: 
@@ -192,7 +193,7 @@ Status Review
 	End-Section
 
 	Section dismissal_07 //Saint
-		when-movable-cycle-day-is 71 thru 127 use:
+		when-movable-cycle-day-is 71 thru 126 use:
 			when-movable-cycle-day-is 
 				85 use: Dialog sid dis00 sid dis00.resurrection sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 rid peInsert1 rid peInsert2 sid dis10 sid dis89 End-Dialog 
 				127 use: Dialog sid dis00 sid dis00.resurrection sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 rid meInsert1 sid dis10 rid peInsert2 sid dis89 End-Dialog 
@@ -280,6 +281,10 @@ Status Review
 
 	Section dismissal_20 //HolyFathersPentecostarion
 		Dialog sid dis00 sid dis00.resurrection sid dis00.andascension sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 sid pe.d113_gr_GR_cog.peInsert1 sid pe.d113_gr_GR_cog.peInsert2 sid dis10 sid dis89 End-Dialog 
+	End-Section
+	
+	Section dismissal_21 //AllSaints
+		Dialog sid dis00 sid dis00.resurrection sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 sid pe.d127_gr_GR_cog.peInsert1 sid pe.d127_gr_GR_cog.peInsert2 sid dis89 End-Dialog 
 	End-Section
 	
 
