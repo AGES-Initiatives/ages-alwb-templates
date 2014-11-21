@@ -1,0 +1,75 @@
+Template se.m06.d28.ma 
+
+Status Draft
+
+	import client_gr_GR_cog.*
+	import ho.s03_gr_GR_cog.*
+	import me.m06.d28_gr_GR_cog.*
+
+	import da.*
+	import oc.*
+	import pe.*
+
+	//Templates
+	import Litanies.*
+	import MatinsParts.*
+	import Selector_Katavasias.*
+	
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 6 day 28 year 2015 End_Date
+			Page_Header_Even
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ma End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	when-movable-cycle-day-is 122 thru 127 use:
+		when-movable-cycle-day-is 
+			126, 127 use:
+				Section Instance01
+					Insert_template mc.map.ve End-Insert
+				End-Section
+			otherwise use:
+				Section Instance02 //weekday in Pent
+				End-Section
+		end-when
+	otherwise use:	
+		when-name-of-day-is 
+			Monday, Tuesday, Wednesday, Thursday, Friday use:
+				Section Instance03
+				End-Section
+			Saturday use:
+				Section Instance04
+				End-Section
+			Sunday use:	
+				Section Instance05 //Sunday
+				End-Section
+		end-when
+	end-when
+End-Template
