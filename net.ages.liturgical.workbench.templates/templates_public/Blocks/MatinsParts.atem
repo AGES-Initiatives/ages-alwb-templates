@@ -945,10 +945,11 @@ End-Section
 	End-Section
 	
 	Section MeExaposteilarion
-		when-name-of-day-is Sunday use:
-			Title role desig sid EkTouMinaiou End-Title
-		otherwise use:	
-			Title role desig sid Exaposteilarion End-Title
+		when-name-of-day-is 
+			Sunday use: Title role desig sid EkTouMinaiou End-Title
+			otherwise use:
+				Actor sid Choir End-Actor
+				Title role desig sid Exaposteilarion End-Title
 		end-when
 		Title role mixed<Tmode>rid meMA.Exaposteilarion1.mode</><Tmelody>rid meMA.Exaposteilarion1.melody</>End-Title
 		Hymn rid meMA.Exaposteilarion1.text End-Hymn
@@ -960,9 +961,22 @@ End-Section
 			Title role mixed<Tmode>rid meMA.Exaposteilarion3.mode</><Tmelody>rid meMA.Exaposteilarion3.melody</>End-Title
 			Hymn rid meMA.Exaposteilarion3.text End-Hymn
 		end-when
-		when-exists rid meMA.ExapTheotokion.text use:
-			Title role desig sid Theotokion End-Title
-			Hymn rid meMA.ExapTheotokion.text End-Hymn
+		when-name-of-day-is
+			Monday, Tuesday, Thursday, Saturday, Sunday use:
+				when-exists rid meMA.ExapTheotokion.text use:
+					Title role desig sid Theotokion End-Title
+					Hymn rid meMA.ExapTheotokion.text End-Hymn
+				end-when
+			Wednesday, Friday use:
+				when-exists rid meMA.ExapStavrotheotokion.text use:
+					Title role desig sid Stavrotheotokion End-Title
+					Hymn rid meMA.ExapStavrotheotokion.text End-Hymn
+				otherwise use:
+					when-exists rid meMA.ExapTheotokion.text use:
+						Title role desig sid Theotokion End-Title
+						Hymn rid meMA.ExapTheotokion.text End-Hymn
+					end-when
+				end-when
 		end-when
 	End-Section
 
