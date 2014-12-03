@@ -863,20 +863,23 @@ Section Vespers_07_MenaionAposticha
 		Hymn sid meVE.Aposticha3.text End-Hymn
 	End-Section
 	Section glory
-		Title role mixed sid Doxa<Tdesig>sid TouMinaiou</>End-Title
-		Title role mode rid meVE.AposGlory.mode End-Title
+		Title role mixed sid Doxa<Tmode>rid meVE.AposGlory.mode</>End-Title
 		Hymn rid meVE.AposGlory.text End-Hymn
 	End-Section
-	Section both	
+	Section both
+		Title role mixed sid KaiNyn<Tmode>rid meVE.AposBoth.mode</>End-Title
+		Hymn rid meVE.AposBoth.text End-Hymn
+	End-Section
+	Section theotokion	
 		when-name-of-day-is 
-			Wednesday, Friday use: 
-				Title role mixed sid KaiNyn<Tdesig>sid Stavrotheotokion</>End-Title
-				when-exists rid meVE.AposStavrotheotokion.melody use: Title role melody rid meVE.AposStavrotheotokion.melody End-Title end-when
-				Hymn rid meVE.AposStavrotheotokion.text End-Hymn
 			Monday, Tuesday, Thursday, Saturday use:
 				Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
 				when-exists rid meVE.AposTheotokion.melody use: Title role melody rid meVE.AposTheotokion.melody End-Title end-when
 				Hymn rid meVE.AposTheotokion.text End-Hymn
+			Wednesday, Friday use: 
+				Title role mixed sid KaiNyn<Tdesig>sid Stavrotheotokion</>End-Title
+				when-exists rid meVE.AposStavrotheotokion.melody use: Title role melody rid meVE.AposStavrotheotokion.melody End-Title end-when
+				Hymn rid meVE.AposStavrotheotokion.text End-Hymn
 		end-when
 	End-Section
 End-Section
@@ -996,21 +999,33 @@ Section Vespers_AposTheotokion
 	End-Section
 End-Section
 
-Section Vespers_08 //Resurrectional
-	Section part1
+Section Vespers_08
+	Section not_resurrectional
+		Insert_section Symeon_Trisagion End-Insert	
+	End-Section
+	Section resurrectional_apolytikion
 		Insert_section Symeon_Trisagion End-Insert	
 		Actor sid Choir End-Actor
 		Title role desig sid ApolytikionAnastasimon End-Title
 		Title role mixed<Tmode>rid ocVE.Apolytikion.mode</><Tmelody>rid ocVE.Apolytikion.melody</>End-Title
 		Hymn rid ocVE.Apolytikion.text End-Hymn
 	End-Section
-	Section part2
+	Section resurrectional_apolytikion_theotokion
+		Insert_section Symeon_Trisagion End-Insert	
+		Actor sid Choir End-Actor
+		Title role desig sid ApolytikionAnastasimon End-Title
+		Title role mixed<Tmode>rid ocVE.Apolytikion.mode</><Tmelody>rid ocVE.Apolytikion.melody</>End-Title
+		Hymn rid ocVE.Apolytikion.text End-Hymn
 		Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
 		Hymn rid ocVE.ApolTheotokionVM.text End-Hymn
 	End-Section
 End-Section
 
 Section GloryBoth_ApolTheotokionVM
+	Section modeofweek
+		Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+		Hymn rid ocVE.ApolTheotokionVM.text End-Hymn
+	End-Section
 	Section mode1
 		Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
 		Hymn sid oc.m1.d1_gr_GR_cog.ocVE.ApolTheotokionVM.text End-Hymn
