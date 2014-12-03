@@ -1,0 +1,113 @@
+Template se.m07.d01.ve 
+
+Status Review
+
+	import client_gr_GR_cog.*
+	import ho.s10_gr_GR_cog.*	
+	import me.m07.d01_gr_GR_cog.*
+
+	import da.*
+	import oc.*
+	import pe.*
+
+	//Templates
+	import LectionaryReadings.*
+	import Litanies.*
+	import VespersParts.*
+	
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 7 day 1 year 2015 End_Date
+			Page_Header_Even
+				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore lang L2 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	when-movable-cycle-day-is
+		125 use:
+			Section Instance01 //Friday after Pentecost
+			End-Section
+			
+		126 use:
+			Section Instance02 //Saturday after Pentecost
+			End-Section
+			
+		127 use:
+			Section Instance03 //Sunday of All Saints
+			End-Section
+			
+		otherwise use:
+			when-name-of-day-is 
+				Sunday use:
+					Section Instance05 //Sunday
+					End-Section
+				
+				otherwise use:
+					Section Instance04 //Weekday
+						Insert_section Vespers_01 End-Insert
+						Insert_section LordIHaveCried.mode6.for6 End-Insert
+						Insert_section Vespers_02_Menaion.stichera_112233 End-Insert
+						Section block1
+							Title role mixed sid Doxa<Tmode>sid meVE.SticGlory.mode</>End-Title
+							Hymn sid meVE.SticGlory.text End-Hymn
+						End-Section
+						Insert_section Vespers_BothNow_SticTheotokion.mode6 End-Insert	
+						Insert_section Vespers_03_Entrance End-Insert	
+						Insert_section Vespers_04_Readings End-Insert	
+						Insert_section Vespers_05_Litanies End-Insert
+						Section block2
+							Title role desig sid Aposticha End-Title		
+							Title role mixed<Tmode>sid meVE.Aposticha1.mode</><Tmelody>sid meVE.Aposticha1.melody</>End-Title
+							Hymn sid meVE.Aposticha1.text End-Hymn
+							Media sid meVE.Aposticha2.text End-Media
+							Insert_section PsalmVerses.forUnmercenaries.verse1 End-Insert
+							Hymn sid meVE.Aposticha2.text media-off End-Hymn
+							Media sid meVE.Aposticha3.text End-Media
+							Insert_section PsalmVerses.forUnmercenaries.verse2 End-Insert
+							Hymn sid meVE.Aposticha3.text media-off End-Hymn
+						End-Section
+						Section block3
+							Title role mixed sid Doxa<Tmode>sid meVE.AposGlory.mode</>End-Title
+							Hymn sid meVE.AposGlory.text End-Hymn
+						End-Section
+						Insert_section Vespers_AposTheotokion.general.mode6_vine.unmercenaries End-Insert
+						Insert_section Symeon_Trisagion End-Insert	
+						Section block4
+							Actor sid Choir End-Actor
+							Title role mixed<Tdesig>sid Apolytikion</><Tmode>sid meVE.Apolytikion1.mode</>End-Title
+							Hymn sid meVE.Apolytikion1.text End-Hymn
+						End-Section
+						Insert_section GloryBoth_ApolTheotokionVM.mode8 End-Insert
+						Insert_section Vespers_09 End-Insert
+						Insert_section Vespers_10_ComYes End-Insert
+					End-Section
+			end-when
+	end-when
+
+End-Template
