@@ -321,6 +321,54 @@ End-Section
 		Hymn rid meMA.Kathisma2T.text End-Hymn
 	End-Section
 
+	Section Menaion_Kathismata
+		Section Kathisma1
+			Actor sid Choir End-Actor
+			Title role desig sid Kathisma1 End-Title
+			Title role mixed<Tmode>rid meMA.Kathisma11.mode</><Tmelody>rid meMA.Kathisma11.melody</>End-Title
+			Hymn rid meMA.Kathisma11.text End-Hymn
+			when-exists rid meMA.Kathisma12.text use:
+				Title role mixed<Tmode>rid meMA.Kathisma12.mode</><Tmelody>rid meMA.Kathisma12.melody</>End-Title
+				Hymn rid meMA.Kathisma12.text End-Hymn
+				Title sid KaiNyn End-Title
+			otherwise use:
+				Title sid DoxaKaiNyn End-Title
+			end-when
+			Title role desig sid Theotokion sid Omoion End-Title
+			Hymn rid meMA.Kathisma1T.text End-Hymn
+		End-Section
+		Section Kathisma2
+			Title role desig sid Kathisma2 End-Title
+			Title role mixed<Tmode>rid meMA.Kathisma21.mode</><Tmelody>rid meMA.Kathisma21.melody</>End-Title
+			Hymn rid meMA.Kathisma21.text End-Hymn
+			when-exists rid meMA.Kathisma22.text use:
+				Title role mixed<Tmode>rid meMA.Kathisma22.mode</><Tmelody>rid meMA.Kathisma22.melody</>End-Title
+				Hymn rid meMA.Kathisma22.text End-Hymn
+				Title sid KaiNyn End-Title
+			otherwise use:
+				Title sid DoxaKaiNyn End-Title
+			end-when
+			Title role desig sid Theotokion sid Omoion End-Title
+			Hymn rid meMA.Kathisma2T.text End-Hymn
+		End-Section
+		when-exists rid meMA.Kathisma31.text use:
+			Section Kathisma3
+				Title role desig sid Kathisma3 End-Title
+				Title role mixed<Tmode>rid meMA.Kathisma31.mode</><Tmelody>rid meMA.Kathisma31.melody</>End-Title
+				Hymn rid meMA.Kathisma31.text End-Hymn
+				when-exists rid meMA.Kathisma32.text use:
+					Title role mixed<Tmode>rid meMA.Kathisma32.mode</><Tmelody>rid meMA.Kathisma32.melody</>End-Title
+					Hymn rid meMA.Kathisma32.text End-Hymn
+					Title sid KaiNyn End-Title
+				otherwise use:
+					Title sid DoxaKaiNyn End-Title
+				end-when
+				Title role desig sid Theotokion sid Omoion End-Title
+				Hymn rid meMA.Kathisma3T.text End-Hymn
+			End-Section
+		end-when
+	End-Section
+	
 	Section Octoechos_Kathismata_Weekday
 		Actor sid Choir End-Actor
 		Section Kathisma1
@@ -785,15 +833,31 @@ End-Section
 		Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
 	End-Section
 
-	Section Sunday_Kontakion_Oikos_Synaxarion
+	Section Sunday_Kontakion_Oikos
+		Title role desig sid KontakionAnastasimon End-Title
+		Reading rid ocMA.Kontakion.text End-Reading
+		Title role desig sid OOikos End-Title
+		Reading rid ocMA.Oikos.text End-Reading
+	End-Section
+
+	Section Menaion_Kontakion_Oikos1
+		Title role desig sid Kontakion End-Title
 		Section part1
-			Actor sid Reader End-Actor
-			Title role desig sid KontakionAnastasimon End-Title
-			Reading rid ocMA.Kontakion.text End-Reading
+			Title role mixed<Tmode>rid meMA.Kontakion1.mode</><Tmelody>rid meMA.Kontakion1.melody</>End-Title
+			Reading rid meMA.Kontakion1.text End-Reading
 			Title role desig sid OOikos End-Title
-			Reading rid ocMA.Oikos.text End-Reading
+			Reading rid meMA.Oikos1.text End-Reading
 		End-Section
-		Insert_section Synaxarion.Synaxarion End-Insert
+	End-Section
+	
+	Section Menaion_Kontakion_Oikos2
+		Title role desig sid Kontakion End-Title
+		Section part1
+			Title role mixed<Tmode>rid meMA.Kontakion2.mode</><Tmelody>rid meMA.Kontakion2.melody</>End-Title
+			Reading rid meMA.Kontakion2.text End-Reading
+			Title role desig sid OOikos End-Title
+			Reading rid meMA.Oikos2.text End-Reading
+		End-Section
 	End-Section
 
 	Section Ode9_Intro
@@ -1138,7 +1202,34 @@ End-Section
 		Insert_section Lauds_Verse.v06 End-Insert
 		Hymn  End-Hymn
 	End-Section
-	
+
+	Section Lauds_Menaion
+		Section stichera_1123
+			Title role mixed<Tmode>rid meMA.Lauds1.mode</><Tmelody>rid meMA.Lauds1.melody</>End-Title
+			Media rid meMA.Lauds1.text End-Media
+			Insert_section Lauds_Verse.v03 End-Insert
+			Hymn rid meMA.Lauds1.text media-off End-Hymn
+			Insert_section Lauds_Verse.v04 End-Insert
+			Hymn rid meMA.Lauds1.text media-off End-Hymn
+			Media rid meMA.Lauds2.text End-Media
+			Insert_section Lauds_Verse.v05 End-Insert
+			Hymn rid meMA.Lauds2.text media-off End-Hymn
+			Media rid meMA.Lauds3.text End-Media
+			Insert_section Lauds_Verse.v06 End-Insert
+			Hymn rid meMA.Lauds3.text media-off End-Hymn
+		End-Section
+	End-Section
+
+	Section Lauds_Menaion_Glory
+		Title role mixed sid Doxa<Tmode>rid meMA.LaudsGlory.mode</>End-Title
+		Hymn rid meMA.LaudsGlory.text End-Hymn	
+	End-Section
+
+	Section Lauds_Menaion_GloryBoth
+		Title role mixed sid DoxaKaiNyn<Tmode>rid meMA.LaudsGlory.mode</>End-Title
+		Hymn rid meMA.LaudsGlory.text End-Hymn	
+	End-Section
+
 	Section LaudsTheotokion
 		Section mode1
 			Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
