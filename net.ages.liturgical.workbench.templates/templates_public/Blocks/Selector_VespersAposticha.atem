@@ -1,0 +1,159 @@
+Template Selector_VespersAposticha 
+
+Status Draft
+
+	import client_gr_GR_cog.*
+	import ho.s10_gr_GR_cog.*	
+
+	import da.*
+	import me.*
+	import oc.*
+	import pe.*
+	import tr.*
+
+	//Templates
+	import VespersParts.*
+	
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 1 day 18 year 2015 End_Date
+			Page_Header_Even
+				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore lang L2 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	Section Menaion
+		when-date-is
+			Jan 1 use: Insert_section hierarchs13idiomela End-Insert
+			Jan 2 use: Insert_section epiphanyprefeast34idiomela End-Insert
+			Jan 3, 4, 5 use: Insert_section epiphanyprefeast34prosomoia End-Insert
+			Jan 6 use: Insert_section epiphany12idiomela End-Insert
+			Jan 7 thru 13 use: Insert_section epiphany12prosomoia End-Insert
+			Jan 17 use: Insert_section devoutmen21prosomoia End-Insert
+			Jan 25 use: Insert_section hierarchs13prosomoia End-Insert
+			Jan 30 use: Insert_section hierarchs42prosomoia End-Insert
+		end-when
+	End-Section
+
+	Section Menaion_Sunday
+		when-date-is
+			Feb 2 use: 
+		end-when
+	End-Section
+
+	Section devoutmen21prosomoia
+		Title role mixed<Tmode>sid meVE.Aposticha1.mode</><Tmode>sid meVE.Aposticha1.melody</>End-Title
+		Hymn sid meVE.Aposticha1.text End-Hymn
+		Media sid meVE.Aposticha2.text End-Media
+		Insert_section PsalmVerses.forDevoutMen.verse2 End-Insert
+		Hymn sid meVE.Aposticha2.text media-off End-Hymn
+		Media sid meVE.Aposticha3.text End-Media
+		Insert_section PsalmVerses.forDevoutMen.verse1 End-Insert
+		Hymn sid meVE.Aposticha3.text media-off End-Hymn
+	End-Section
+	Section epiphanyprefeast34idiomela
+		Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid meVE.Aposticha1.mode</>End-Title
+		Hymn rid meVE.Aposticha1.text End-Hymn
+		Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid meVE.Aposticha2.mode</>End-Title
+		Media rid meVE.Aposticha2.text End-Media
+		Insert_section PsalmVerses.forEpiphany.verse3 End-Insert
+		Hymn rid meVE.Aposticha2.text End-Hymn
+		Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid meVE.Aposticha3.mode</>End-Title
+		Media rid meVE.Aposticha3.text End-Media
+		Insert_section PsalmVerses.forEpiphany.verse4 End-Insert
+		Hymn rid meVE.Aposticha3.text End-Hymn
+	End-Section
+	Section epiphanyprefeast34prosomoia
+		Title role mixed<Tmode>rid meVE.Aposticha1.mode</><Tmelody>rid meVE.Aposticha1.melody</>End-Title
+		Hymn rid meVE.Aposticha1.text End-Hymn
+		Media rid meVE.Aposticha2.text End-Media
+		Insert_section PsalmVerses.forEpiphany.verse3 End-Insert
+		Hymn rid meVE.Aposticha2.text media-off End-Hymn
+		Media rid meVE.Aposticha3.text End-Media
+		Insert_section PsalmVerses.forEpiphany.verse4 End-Insert
+		Hymn rid meVE.Aposticha3.text media-off End-Hymn
+	End-Section
+	Section epiphany12idiomela
+		Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid meVE.Aposticha1.mode</>End-Title
+		Hymn rid meVE.Aposticha1.text End-Hymn
+		Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid meVE.Aposticha2.mode</>End-Title
+		Media rid meVE.Aposticha2.text End-Media
+		Insert_section PsalmVerses.forEpiphany.verse1 End-Insert
+		Hymn rid meVE.Aposticha2.text End-Hymn
+		Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid meVE.Aposticha3.mode</>End-Title
+		Media rid meVE.Aposticha3.text End-Media
+		Insert_section PsalmVerses.forEpiphany.verse2 End-Insert
+		Hymn rid meVE.Aposticha3.text End-Hymn
+	End-Section
+	Section epiphany12prosomoia
+		Title role mixed<Tmode>rid meVE.Aposticha1.mode</><Tmelody>rid meVE.Aposticha1.melody</>End-Title
+		Hymn rid meVE.Aposticha1.text End-Hymn
+		Media rid meVE.Aposticha2.text End-Media
+		Insert_section PsalmVerses.forEpiphany.verse1 End-Insert
+		Hymn rid meVE.Aposticha2.text media-off End-Hymn
+		Media rid meVE.Aposticha3.text End-Media
+		Insert_section PsalmVerses.forEpiphany.verse2 End-Insert
+		Hymn rid meVE.Aposticha3.text media-off End-Hymn
+	End-Section
+	Section hierarchs13idiomela
+		Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid meVE.Aposticha1.mode</>End-Title
+		Hymn rid meVE.Aposticha1.text End-Hymn
+		Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid meVE.Aposticha2.mode</>End-Title
+		Media rid meVE.Aposticha2.text End-Media
+		Insert_section PsalmVerses.forHierarchs.verse1 End-Insert
+		Hymn rid meVE.Aposticha2.text End-Hymn
+		Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid meVE.Aposticha3.mode</>End-Title
+		Media rid meVE.Aposticha3.text End-Media
+		Insert_section PsalmVerses.forHierarchs.verse3 End-Insert
+		Hymn rid meVE.Aposticha3.text End-Hymn
+	End-Section
+	Section hierarchs13prosomoia
+		Title role mixed<Tmode>sid meVE.Aposticha1.mode</><Tmode>sid meVE.Aposticha1.melody</>End-Title
+		Hymn sid meVE.Aposticha1.text End-Hymn
+		Media sid meVE.Aposticha2.text End-Media
+		Insert_section PsalmVerses.forHierarchs.verse1 End-Insert
+		Hymn sid meVE.Aposticha2.text media-off End-Hymn
+		Media sid meVE.Aposticha3.text End-Media
+		Insert_section PsalmVerses.forHierarchs.verse3 End-Insert
+		Hymn sid meVE.Aposticha3.text media-off End-Hymn
+	End-Section
+	Section hierarchs42prosomoia
+		Title role mixed<Tmode>sid meVE.Aposticha1.mode</><Tmode>sid meVE.Aposticha1.melody</>End-Title
+		Hymn sid meVE.Aposticha1.text End-Hymn
+		Media sid meVE.Aposticha2.text End-Media
+		Insert_section PsalmVerses.forHierarchs.verse4 End-Insert
+		Hymn sid meVE.Aposticha2.text media-off End-Hymn
+		Media sid meVE.Aposticha3.text End-Media
+		Insert_section PsalmVerses.forHierarchs.verse2 End-Insert
+		Hymn sid meVE.Aposticha3.text media-off End-Hymn
+	End-Section
+
+
+
+End-Template
