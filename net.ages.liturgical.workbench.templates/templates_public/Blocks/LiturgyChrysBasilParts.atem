@@ -37,6 +37,13 @@ Status Review
 		Dialog<i>sid res04p</>End-Dialog
 	End-Section
 
+	Section Section01_VesperalLiturgy
+		Actor sid Priest End-Actor
+		Dialog sid euLI.Key0109.text End-Dialog
+		Insert_section VespersParts.Vespers_01.Part2 End-Insert
+		Insert_section VespersParts.Vespers_01.Part3 End-Insert
+	End-Section
+
 	Section Section02
 		Title role desig sid euLI.Key0200.text End-Title
 		Media sid euLI.Key0200.text End-Media
@@ -99,12 +106,6 @@ Status Review
 	
 	Section Section07
 		Section sunday //antiphon 3 sunday
-//			Actor sid Choir End-Actor
-//			Title role desig sid Antifonon3 End-Title
-//			Title role mode rid ocVE.Apolytikion.mode @day D1 End-Title
-//			Section v01
-//				Verse<bnr>sid vVerse1</>sid psa117.v24.text End-Verse
-//			End-Section
 			Section hymn
 				Title role desig sid ApolytikionAnastasimon End-Title
 				Title role mixed<Tmode>rid ocVE.Apolytikion.mode @day D1</><Tmelody>rid ocVE.Apolytikion.melody @day D1</>End-Title
@@ -115,10 +116,6 @@ Status Review
 			End-Section
 			Hymn rid ocVE.Apolytikion.text media-off @day D1 End-Hymn
 		End-Section
-//		Section no_verse 
-//			Actor sid Choir End-Actor
-//			Title role desig sid Antifonon3 End-Title
-//		End-Section
 	End-Section
 		
 	Section Section08 //entrance
@@ -157,70 +154,19 @@ Status Review
 			Title role desig sid YmnoiMetaTinMikranEisodon End-Title
 			Actor sid Clergy End-Actor
 		End-Section
+		Section festal
+			Insert_section Selector_FestalApolytikion.Apolytikion End-Insert
+		End-Section
+		Section festal_thrice
+			Insert_section Selector_FestalApolytikion.Apolytikion_Thrice End-Insert
+		End-Section
+		Section local
+			Title role desig sid cl.Apolytikion1.title End-Title
+			Title role mode sid cl.Apolytikion1.mode End-Title
+			Hymn sid cl.Apolytikion1.text End-Hymn		
+		End-Section
 	End-Section
 	
-	Section Section11_opt
-		Title role desig sid cl.Apolytikion1.title End-Title
-		Title role mode sid cl.Apolytikion1.mode End-Title
-		Hymn sid cl.Apolytikion1.text End-Hymn		
-	End-Section
-
-/*	
- * This section was replaced by the one below it
-	Section Section12 //Kontakion
-		Section default
-			Section single
-				Title role mixed<Tdesig>sid Kontakion</><Tmode>sid Mode2</>End-Title
-				Hymn sid hoTY.Key0408.text End-Hymn
-			End-Section
-			Section concelbration
-				Actor sid Clergy End-Actor
-				Title role mixed<Tdesig>sid Kontakion</><Tmode>sid Mode2</>End-Title
-				Hymn sid hoTY.Key0408.text End-Hymn
-			End-Section
-		End-Section
-		Section seasonal_menaion
-			Section single
-				Title role desig sid Kontakion End-Title
-				Title role mixed<Tmode>rid meLI.SeasonalKontakion.mode</><Tmelody>rid meLI.SeasonalKontakion.melody</>End-Title
-				Hymn rid meLI.SeasonalKontakion.text End-Hymn
-			End-Section
-			Section concelebration
-				Actor sid Clergy End-Actor
-				Title role desig sid Kontakion End-Title
-				Title role mixed<Tmode>rid meLI.SeasonalKontakion.mode</><Tmelody>rid meLI.SeasonalKontakion.melody</>End-Title
-				Hymn rid meLI.SeasonalKontakion.text End-Hymn
-			End-Section
-		End-Section
-		Section seasonal_triodion
-			Section single
-				Title role desig sid Kontakion End-Title
-				Title role mixed<Tmode>rid trLI.SeasonalKontakion.mode</><Tmelody>rid trLI.SeasonalKontakion.melody</>End-Title
-				Hymn rid trLI.SeasonalKontakion.text End-Hymn
-			End-Section
-			Section concelebration
-				Actor sid Clergy End-Actor
-				Title role desig sid Kontakion End-Title
-				Title role mixed<Tmode>rid trLI.SeasonalKontakion.mode</><Tmelody>rid trLI.SeasonalKontakion.melody</>End-Title
-				Hymn rid trLI.SeasonalKontakion.text End-Hymn
-			End-Section
-		End-Section
-		Section seasonal_pentecostarion
-			Section single
-				Title role desig sid Kontakion End-Title
-				Title role mixed<Tmode>rid peLI.SeasonalKontakion.mode</><Tmelody>rid peLI.SeasonalKontakion.melody</>End-Title
-				Hymn rid peLI.SeasonalKontakion.text End-Hymn
-			End-Section
-			Section concelebration
-				Actor sid Clergy End-Actor
-				Title role desig sid Kontakion End-Title
-				Title role mixed<Tmode>rid peLI.SeasonalKontakion.mode</><Tmelody>rid peLI.SeasonalKontakion.melody</>End-Title
-				Hymn rid peLI.SeasonalKontakion.text End-Hymn
-			End-Section
-		End-Section
-	End-Section
- */
- 
  	Section Section12
  		Section single
  			Insert_section Selector_Kontakion.SeasonalKontakion End-Insert
