@@ -91,8 +91,26 @@ Status Review
 					end-when
 			end-when
 		End-Section
-		Dialog sid DiEfchonPateron.text End-Dialog
-		Dialog<i>sid res04p</>End-Dialog
+		when-movable-cycle-day-is
+			71 thru 109 use:
+				Section paschaldismissal_part1
+					Rubric sid cl.pe.d078.R001 End-Rubric
+					Actor sid Priest End-Actor
+					Dialog sid DiEfchonPateron.text End-Dialog
+					Dialog<i>sid res04p</>End-Dialog
+				End-Section
+				Section paschaldismissal_part2	
+					Rubric sid Or End-Rubric
+					Rubric sid cl.pe.d078.R002 End-Rubric
+					Actor sid Priest End-Actor
+					Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text End-Dialog
+					Actor sid People End-Actor
+					Dialog sid PaschaDialog6.text End-Dialog
+				End-Section
+			otherwise use:
+				Dialog sid DiEfchonPateron.text End-Dialog
+				Dialog<i>sid res04p</>End-Dialog
+		end-when
 	End-Section
 
 	Section Com_No //use this whenever there is NO explicit commemoration
@@ -100,8 +118,26 @@ Status Review
 			Actor sid Priest End-Actor
 			Insert_section dismissal_01 End-Insert
 		End-Section
-		Dialog sid DiEfchonPateron.text End-Dialog
-		Dialog<i>sid res04p</>End-Dialog
+		when-movable-cycle-day-is
+			71 thru 109 use:
+				Section paschaldismissal_part1
+					Rubric sid cl.pe.d078.R001 End-Rubric
+					Actor sid Priest End-Actor
+					Dialog sid DiEfchonPateron.text End-Dialog
+					Dialog<i>sid res04p</>End-Dialog
+				End-Section
+				Section paschaldismissal_part2	
+					Rubric sid Or End-Rubric
+					Rubric sid cl.pe.d078.R002 End-Rubric
+					Actor sid Priest End-Actor
+					Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text End-Dialog
+					Actor sid People End-Actor
+					Dialog sid PaschaDialog6.text End-Dialog
+				End-Section
+			otherwise use:
+				Dialog sid DiEfchonPateron.text End-Dialog
+				Dialog<i>sid res04p</>End-Dialog
+		end-when
 	End-Section				
 
 // The sections below are referenced by the two above
