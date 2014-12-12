@@ -1,4 +1,4 @@
-Template MatinsParts
+Template MA
 
 	import client_gr_GR_cog.*	
 	import ho.s03_gr_GR_cog.*
@@ -26,6 +26,7 @@ Template MatinsParts
 	import roles.*
 	import rules.*
 
+/*
 	Section GITL
 		Section mode0
 			Hymn sid psa117.v27a.text sid psa117.v26a.text End-Hymn
@@ -149,38 +150,248 @@ Template MatinsParts
 		End-Section
 	End-Section
 
-	Section SunKathisma1
-		Actor sid Choir End-Actor
-		Title role desig sid Kathisma1 End-Title
-		Title role mixed <Tmode>rid ocMA.Kathisma11.mode</>	<Tmelody>rid ocMA.Kathisma11.melody</>End-Title
-		Hymn rid ocMA.Kathisma11.text End-Hymn
-		Title sid Doxa End-Title
-			when-exists rid ocMA.Kathisma12.melody use:
-		Title role melody rid ocMA.Kathisma12.melody End-Title
-			end-when
-		Hymn rid ocMA.Kathisma12.text End-Hymn
-		Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
-			when-exists rid ocMA.Kathisma13.melody use:
-		Title role melody rid ocMA.Kathisma13.melody End-Title
-			end-when
-		Hymn rid ocMA.Kathisma13.text End-Hymn
+ */
+
+
+
+
+	Section kathisma1
+		Section both
+			Section me
+				Section _1
+					Title role mixed sid KaiNyn<Tdesig>sid TouMinaiou</>End-Title
+					Section hymn
+						Title role mixed<Tmode>rid meMA.Kathisma11.mode</><Tmelody>rid meMA.Kathisma11.melody</>End-Title
+						Hymn rid meMA.Kathisma11.text End-Hymn
+					End-Section
+				End-Section
+				Section _2
+					Title role mixed sid KaiNyn<Tdesig>sid TouMinaiou</>End-Title
+					Section hymn
+						Title role mixed<Tmode>rid meMA.Kathisma12.mode</><Tmelody>rid meMA.Kathisma12.melody</>End-Title
+						Hymn rid meMA.Kathisma12.text End-Hymn
+					End-Section
+				End-Section
+				Section _t
+					Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+					Section hymn
+						Title role mixed<Tmode>rid meMA.Kathisma1T.mode</><Tmelody>rid meMA.Kathisma1T.melody</>End-Title
+						Hymn rid meMA.Kathisma1T.text End-Hymn
+					End-Section
+				End-Section
+			End-Section
+		End-Section
+		Section glory
+			Section me
+				Section _1
+					Title role mixed sid Doxa<Tdesig>sid TouMinaiou</>End-Title
+					Section hymn
+						Title role mixed<Tmode>rid meMA.Kathisma11.mode</><Tmelody>rid meMA.Kathisma11.melody</>End-Title
+						Hymn rid meMA.Kathisma11.text End-Hymn
+					End-Section
+				End-Section
+				Section _2
+					Title role mixed sid Doxa<Tdesig>sid TouMinaiou</>End-Title
+					Section hymn
+						Title role mixed<Tmode>rid meMA.Kathisma12.mode</><Tmelody>rid meMA.Kathisma12.melody</>End-Title
+						Hymn rid meMA.Kathisma12.text End-Hymn
+					End-Section
+				End-Section
+			End-Section
+		End-Section
+		Section gloryboth
+			Section me
+				Section _1
+					Title role mixed sid DoxaKaiNyn<Tdesig>sid TouMinaiou</>End-Title
+					Section hymn
+						Title role mixed<Tmode>rid meMA.Kathisma11.mode</><Tmelody>rid meMA.Kathisma11.melody</>End-Title
+						Hymn rid meMA.Kathisma11.text End-Hymn
+					End-Section
+				End-Section
+				Section _2
+					Title role mixed sid DoxaKaiNyn<Tdesig>sid TouMinaiou</>End-Title
+					Section hymn
+						Title role mixed<Tmode>rid meMA.Kathisma12.mode</><Tmelody>rid meMA.Kathisma12.melody</>End-Title
+						Hymn rid meMA.Kathisma12.text End-Hymn
+					End-Section
+				End-Section
+				Section _t
+					Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+					Section hymn
+						Title role mixed<Tmode>rid meMA.Kathisma1T.mode</><Tmelody>rid meMA.Kathisma1T.melody</>End-Title
+						Hymn rid meMA.Kathisma1T.text End-Hymn
+					End-Section
+				End-Section
+			End-Section
+			Section pe
+			End-Section
+		End-Section
+		Section me
+			Section _12t
+				Actor sid Choir End-Actor
+				Title role desig sid Kathisma1 End-Title
+				Title role mixed<Tmode>rid meMA.Kathisma11.mode</><Tmelody>rid meMA.Kathisma11.melody</>End-Title
+				Hymn rid meMA.Kathisma11.text End-Hymn
+				when-exists rid meMA.Kathisma12.text use:
+					Title role mixed<Tmode>rid meMA.Kathisma12.mode</><Tmelody>rid meMA.Kathisma12.melody</>End-Title
+					Hymn rid meMA.Kathisma12.text End-Hymn
+					Title sid KaiNyn End-Title
+				otherwise use:
+					Title sid DoxaKaiNyn End-Title
+				end-when
+				Title role desig sid Theotokion sid Omoion End-Title
+				Hymn rid meMA.Kathisma1T.text End-Hymn
+			End-Section
+			Section _1
+				Actor sid Choir End-Actor
+				Title role desig sid Kathisma1 End-Title
+				Section hymn
+					Title role mixed<Tmode>rid meMA.Kathisma11.mode</><Tmelody>rid meMA.Kathisma11.melody</>End-Title
+					Hymn rid meMA.Kathisma11.text End-Hymn
+				End-Section
+			End-Section
+			Section _2
+				Title sid Doxa End-Title
+				Section hymn
+					Title role mixed<Tmode>rid meMA.Kathisma12.mode</><Tmelody>rid meMA.Kathisma12.melody</>End-Title
+					Hymn rid meMA.Kathisma12.text End-Hymn
+				End-Section
+			End-Section
+			Section _t
+				when-exists rid meMA.Kathisma12.text use:
+					Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+				otherwise use:
+					Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+				end-when
+				Title role mixed<Tmode>rid meMA.Kathisma1T.mode</><Tmelody>rid meMA.Kathisma1T.melody</>End-Title
+				Hymn rid meMA.Kathisma1T.text End-Hymn
+			End-Section
+		End-Section
+		Section oc
+			Section sunday
+				Section _123
+					Actor sid Choir End-Actor
+					Title role desig sid Kathisma1 End-Title
+					Title role mixed <Tmode>rid ocMA.Kathisma11.mode</>	<Tmelody>rid ocMA.Kathisma11.melody</>End-Title
+					Hymn rid ocMA.Kathisma11.text End-Hymn
+					Title sid Doxa End-Title
+					when-exists rid ocMA.Kathisma12.melody use:
+						Title role melody rid ocMA.Kathisma12.melody End-Title
+					end-when
+					Hymn rid ocMA.Kathisma12.text End-Hymn
+					Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+					when-exists rid ocMA.Kathisma13.melody use:
+						Title role melody rid ocMA.Kathisma13.melody End-Title
+					end-when
+					Hymn rid ocMA.Kathisma13.text End-Hymn
+				End-Section
+				Section _12
+					Actor sid Choir End-Actor
+					Title role desig sid Kathisma1 End-Title
+					Title role mixed <Tmode>rid ocMA.Kathisma11.mode</><Tmelody>rid ocMA.Kathisma11.melody</>End-Title
+					Hymn rid ocMA.Kathisma11.text End-Hymn
+					Title sid Doxa End-Title 
+					when-exists rid ocMA.Kathisma12.melody use:
+						Title role melody rid ocMA.Kathisma12.melody End-Title
+					end-when
+					Hymn rid ocMA.Kathisma12.text End-Hymn
+				End-Section
+				Section _1
+					Actor sid Choir End-Actor
+					Title role desig sid Kathisma1 End-Title
+					Title role mixed <Tmode>rid ocMA.Kathisma11.mode</><Tmelody>rid ocMA.Kathisma11.melody</>End-Title
+					Hymn rid ocMA.Kathisma11.text End-Hymn
+				End-Section
+				Section _2
+					Title sid Doxa End-Title 
+					when-exists rid ocMA.Kathisma12.melody use:
+						Title role melody rid ocMA.Kathisma12.melody End-Title
+					end-when
+					Hymn rid ocMA.Kathisma12.text End-Hymn
+				End-Section
+				Section _3
+					Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+					when-exists rid ocMA.Kathisma13.melody use:
+						Title role melody rid ocMA.Kathisma13.melody End-Title
+					end-when
+					Hymn rid ocMA.Kathisma13.text End-Hymn
+				End-Section
+			End-Section
+			Section weekday
+				Title role desig sid Kathisma1 End-Title
+				Title role mixed<Tmode>rid ocMA.Kathisma11.mode</><Tmelody>rid ocMA.Kathisma11.melody</>End-Title
+				Hymn rid ocMA.Kathisma11.text End-Hymn
+				when-name-of-day-is
+					Monday, Tuesday use:
+						Verse<inr>sid vVerse</>sid psa37.v2.text End-Verse
+					Wednesday, Friday use:
+						Verse<inr>sid vVerse</>sid psa98.v5.text End-Verse
+					Thursday use:
+						Verse<inr>sid vVerse</>sid psa18.v5.text End-Verse
+				end-when	
+				when-exists rid ocMA.Kathisma12.melody use:
+					Title role melody rid ocMA.Kathisma12.melody End-Title
+				end-when
+				Hymn rid ocMA.Kathisma12.text End-Hymn
+				Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+				when-exists rid ocMA.Kathisma13.melody use:
+					Title role melody rid ocMA.Kathisma13.melody End-Title
+				end-when
+				Hymn rid ocMA.Kathisma13.text End-Hymn
+			End-Section
+		End-Section
+		Section pe
+		End-Section
 	End-Section
 
-	Section SunKathisma1_WhenSaint
-		Actor sid Choir End-Actor
-		Title role desig sid Kathisma1 End-Title
-		Title role mixed <Tmode>rid ocMA.Kathisma11.mode</><Tmelody>rid ocMA.Kathisma11.melody</>End-Title
-		Hymn rid ocMA.Kathisma11.text End-Hymn
-		Title sid Doxa End-Title 
-		when-exists rid ocMA.Kathisma12.melody use:
-			Title role melody rid ocMA.Kathisma12.melody End-Title
-		end-when
-		Hymn rid ocMA.Kathisma12.text End-Hymn
-		Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
-		when-exists rid ocVE.ApolTheotokionVM.melody use:
-			Title role mixed<Tmelody>rid ocVE.ApolTheotokionVM.melody</>End-Title
-		end-when
-		Hymn rid ocVE.ApolTheotokionVM.text End-Hymn
+	Section kathisma2
+		Section _123
+			Actor sid Choir End-Actor
+			Title role desig sid Kathisma2 End-Title
+			Title role mixed <Tmode>rid ocMA.Kathisma21.mode</>	<Tmelody>rid ocMA.Kathisma21.melody</>End-Title
+			Hymn rid ocMA.Kathisma21.text End-Hymn
+			Title sid Doxa End-Title
+			when-exists rid ocMA.Kathisma22.melody use:
+				Title role melody rid ocMA.Kathisma22.melody End-Title
+			end-when
+			Hymn rid ocMA.Kathisma22.text End-Hymn
+			Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+			when-exists rid ocMA.Kathisma23.melody use:
+				Title role melody rid ocMA.Kathisma23.melody End-Title
+			end-when
+			Hymn rid ocMA.Kathisma23.text End-Hymn
+		End-Section
+		Section _12
+			Actor sid Choir End-Actor
+			Title role desig sid Kathisma2 End-Title
+			Title role mixed <Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
+			Hymn rid ocMA.Kathisma21.text End-Hymn
+			Title sid Doxa End-Title 
+			when-exists rid ocMA.Kathisma22.melody use:
+				Title role melody rid ocMA.Kathisma22.melody End-Title
+			end-when
+			Hymn rid ocMA.Kathisma22.text End-Hymn
+		End-Section
+		Section _1
+			Actor sid Choir End-Actor
+			Title role desig sid Kathisma2 End-Title
+			Title role mixed <Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
+			Hymn rid ocMA.Kathisma21.text End-Hymn
+		End-Section
+		Section _2
+			Title sid Doxa End-Title 
+			when-exists rid ocMA.Kathisma22.melody use:
+				Title role melody rid ocMA.Kathisma22.melody End-Title
+			end-when
+			Hymn rid ocMA.Kathisma22.text End-Hymn
+		End-Section
+		Section _3
+			Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+			when-exists rid ocMA.Kathisma23.melody use:
+				Title role melody rid ocMA.Kathisma23.melody End-Title
+			end-when
+			Hymn rid ocMA.Kathisma23.text End-Hymn
+		End-Section
 	End-Section
 
 	Section SunKathisma1_CombinedMenaion
@@ -196,13 +407,6 @@ Template MatinsParts
 		Hymn rid ocVE.ApolTheotokionVM.text End-Hymn
 	End-Section
 
-	Section SunKathisma1_compute //to be copied
-		when-mode-of-week-is M8 use: //set M to mode of Menaion Apolytikion
-			Insert_section SunKathisma1 End-Insert
-			otherwise use:
-				Insert_section SunKathisma1_WhenSaint End-Insert
-		end-when
-	End-Section	
 
 	Section SunKathisma1_WithFeast //when copied, change rids to sids and set to feast date
 		Section part1
