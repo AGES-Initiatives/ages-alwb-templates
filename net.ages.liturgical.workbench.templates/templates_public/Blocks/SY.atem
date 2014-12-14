@@ -1,4 +1,4 @@
-Template Synaxarion
+Template SY
 
 	import properties_gr_GR_cog.*
 	import titles_gr_GR_cog.*
@@ -18,8 +18,62 @@ Template Synaxarion
 
 	Title ldp@Service_Date End-Title
 	Title ldp@Name_of_Period @Day_of_Movable_Cycle End-Title
+	
 	Section Synaxarion
-		Section from_Menaion
+		when-date-is
+			Jul 13 thru 19 use:
+				when-name-of-day-is 
+					Sunday use:
+						Insert_section me End-Insert
+						Insert_section sy.m07.dHF.Synaxarion_HolyFathers End-Insert
+					otherwise use:
+						Insert_section me End-Insert
+						Insert_section mc End-Insert
+				end-when
+			Oct 11 thru 17 use:
+				when-name-of-day-is 
+					Sunday use:
+						Insert_section me End-Insert
+						Insert_section sy.m10.dHF.Synaxarion_HolyFathers End-Insert
+					otherwise use:
+						Insert_section me End-Insert
+						Insert_section mc End-Insert
+				end-when
+			Dec 11 thru 17 use:
+				when-name-of-day-is 
+					Sunday use:
+						Insert_section me End-Insert
+						Insert_section sy.m12.dFF.Synaxarion End-Insert
+					otherwise use:
+						Insert_section me End-Insert
+						Insert_section mc End-Insert
+				end-when
+			Dec 18 thru 24 use:
+				when-name-of-day-is 
+					Sunday use:
+						Insert_section me End-Insert
+						Insert_section sy.m12.dBC.Synaxarion End-Insert
+					otherwise use:
+						Insert_section me End-Insert
+						Insert_section mc End-Insert
+				end-when
+			Dec 26 thru 31 use:
+				when-name-of-day-is 
+					Sunday use:
+						Insert_section me End-Insert
+						Insert_section sy.m12.dAC.Synaxarion End-Insert
+					otherwise use:
+						Insert_section me End-Insert
+						Insert_section mc End-Insert
+				end-when
+			otherwise use:
+				Insert_section me End-Insert
+				Insert_section mc End-Insert
+		end-when
+	End-Section
+	
+//	blocks
+		Section me
 			Title role desig sid Synaxarion End-Title
 			when-exists
 				rid S01.Com use:
@@ -226,11 +280,10 @@ Template Synaxarion
 					Reading rid S97.Com End-Reading
 				rid S98.Com use:
 					Reading rid S98.Com End-Reading
-	
 			end-when
-		End-Section //from_Menaion
+		End-Section //me
 		
-		Section from_Moveable
+		Section mc
 			when-exists 
 				rid trMA.Synaxarion1.Com use:
 					Reading rid trMA.Synaxarion1.Com End-Reading
@@ -243,7 +296,6 @@ Template Synaxarion
 				otherwise use:
 					Reading rid S99.LastLine End-Reading
 			end-when
-		End-Section //from_Moveable
-	End-Section	//Synaxarion
+		End-Section //mc
 	
 End-Template
