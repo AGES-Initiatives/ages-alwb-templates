@@ -9,7 +9,8 @@ Template bk.test01
 //	import tr.d000_gr_GR_cog.*
 
 	import da.*
-//	import oc.*
+	import me.*
+	import eo.*
 //	import pe.*
 //	import tr.*
 
@@ -46,6 +47,51 @@ Template bk.test01
  			End_Page_Footer_Odd
  		Set_Page_Number 1 End_Set_Page_Number
  	End_Head
+
+	Section me_
+		Section exap1_1
+			when-exists 
+				rid eo.Exaposteilarion.text use: Title role desig sid EkTouMinaiou End-Title
+				otherwise use: Actor sid Choir End-Actor
+			end-when
+			Title role desig sid Exaposteilarion End-Title
+			Section hymn
+				Title role mixed<Tmode>rid meMA.Exaposteilarion1.mode</><Tmelody>rid meMA.Exaposteilarion1.melody</>End-Title
+				Hymn rid meMA.Exaposteilarion1.text End-Hymn
+			End-Section
+		End-Section
+		Section exap2
+			Title role mixed<Tmode>rid meMA.Exaposteilarion2.mode</><Tmelody>rid meMA.Exaposteilarion2.melody</>End-Title
+			Hymn rid meMA.Exaposteilarion2.text End-Hymn
+		End-Section
+		Section exap3
+			Title role mixed<Tmode>rid meMA.Exaposteilarion3.mode</><Tmelody>rid meMA.Exaposteilarion3.melody</>End-Title
+			Hymn rid meMA.Exaposteilarion3.text End-Hymn
+		End-Section
+		Section theotokion
+			when-name-of-day-is
+				Monday, Tuesday, Thursday, Saturday, Sunday use:
+					Section exaptheotokion
+						Title role desig sid Theotokion End-Title
+						Title role mixed<Tmode>rid meMA.ExapTheotokion.mode</><Tmelody>rid meMA.ExapTheotokion.melody</>End-Title
+						Hymn rid meMA.ExapTheotokion.text End-Hymn
+					End-Section
+				Wednesday, Friday use:
+					when-exists rid meMA.ExapStavrotheotokion.text use:
+						Section exapstavrotheotokion
+							Title role desig sid Stavrotheotokion End-Title
+							Hymn rid meMA.ExapStavrotheotokion.text End-Hymn
+						End-Section
+					otherwise use:
+						when-exists rid meMA.ExapTheotokion.text use:
+							Insert_section exaptheotokion End-Insert
+						end-when
+					end-when
+			end-when
+		End-Section
+		
+		
+	End-Section
 
 
 End-Template
