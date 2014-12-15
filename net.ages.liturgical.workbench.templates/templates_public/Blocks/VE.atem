@@ -30,7 +30,11 @@ Status Review
 	import Litanies.*	
 	import LiturgicalPsalms.*
 
-	Section _01_Beginning // Enarxis thru Peace Litany
+	//Sections with names ending in __ require a selection
+	//Sections with names ending in _ have optional selections
+	//Sections with names not ending in _ have no options
+
+	Section _01_Beginning__ // Enarxis thru Peace Litany
 		Section presanctified
 			Actor sid Priest End-Actor
 			Dialog sid euPL.Key0201.text End-Dialog
@@ -174,8 +178,8 @@ Status Review
 		End-Section
 	End-Section // Enarxis thru Peace Litany
 
-	Section _02_Kekragaria
-		Section modeofweek
+	Section _02_Kekragaria__
+		Section modeofweek__
 			Section noStichologia
 				Insert_section VE.LIHC_ModeOfWeek End-Insert
 			End-Section
@@ -198,7 +202,7 @@ Status Review
 				Break line End_Break
 			End-Section
 		End-Section //LIHC
-		Section mode1
+		Section mode1__
 			Section noStichologia
 				Insert_section VE.LIHC_Mode1 End-Insert
 			End-Section
@@ -221,7 +225,7 @@ Status Review
 				Break line End_Break
 			End-Section
 		End-Section
-		Section mode2
+		Section mode2__
 			Section noStichologia
 				Insert_section VE.LIHC_Mode2 End-Insert
 			End-Section
@@ -244,7 +248,7 @@ Status Review
 				Break line End_Break
 			End-Section
 		End-Section
-		Section mode3
+		Section mode3__
 			Section noStichologia
 				Insert_section VE.LIHC_Mode3 End-Insert
 			End-Section
@@ -267,7 +271,7 @@ Status Review
 				Break line End_Break
 			End-Section
 		End-Section
-		Section mode4
+		Section mode4__
 			Section noStichologia
 				Insert_section VE.LIHC_Mode4 End-Insert
 			End-Section
@@ -290,7 +294,7 @@ Status Review
 				Break line End_Break
 			End-Section
 		End-Section
-		Section mode5
+		Section mode5__
 			Section noStichologia
 				Insert_section VE.LIHC_Mode5 End-Insert
 			End-Section
@@ -313,7 +317,7 @@ Status Review
 				Break line End_Break
 			End-Section
 		End-Section
-		Section mode6
+		Section mode6__
 			Section noStichologia
 				Insert_section VE.LIHC_Mode6 End-Insert
 			End-Section
@@ -336,7 +340,7 @@ Status Review
 				Break line End_Break
 			End-Section
 		End-Section
-		Section mode7
+		Section mode7__
 			Section noStichologia
 				Insert_section VE.LIHC_Mode7 End-Insert
 			End-Section
@@ -359,7 +363,7 @@ Status Review
 				Break line End_Break
 			End-Section
 		End-Section
-		Section mode8
+		Section mode8__
 			Section noStichologia
 				Insert_section VE.LIHC_Mode8 End-Insert
 			End-Section
@@ -384,9 +388,9 @@ Status Review
 		End-Section
 	End-Section
 
-	Section _03_Stichera
-		Section both
-			Section firsttheotokion
+	Section _03_Stichera__
+		Section both__
+			Section firsttheotokion__
 				Section modeofweek
 					Title role mixed sid KaiNyn<Tmode>rid ocVE.SticTheotokion.mode @day D1</>End-Title
 					Title role desig sid ToATheotokionTouIchou End-Title
@@ -489,11 +493,20 @@ Status Review
 					end-when	
 				End-Section
 			End-Section
-			Section me
-				Title sid KaiNyn End-Title
-				Section hymn
-					Title role mode rid meVE.SticBoth.mode End-Title
-					Hymn rid meVE.SticBoth.text End-Hymn
+			Section me__
+				Section bothasboth_
+					Title sid KaiNyn End-Title
+					Section hymn
+						Title role mode rid meVE.SticBoth.mode End-Title
+						Hymn rid meVE.SticBoth.text End-Hymn
+					End-Section
+				End-Section
+				Section gloryasboth_
+					Title sid KaiNyn End-Title
+					Section hymn
+						Title role mode rid meVE.SticGlory.mode End-Title
+						Hymn rid meVE.SticGlory.text End-Hymn
+					End-Section
 				End-Section
 			End-Section
 			Section metheotokion
@@ -518,15 +531,15 @@ Status Review
 						End-Section
 				end-when
 			End-Section	
-			Section pe
-				Section bothasboth
+			Section pe__
+				Section bothasboth_
 					Title sid KaiNyn End-Title
 					Section hymn
 						Title role mode rid peVE.SticBoth.mode End-Title
 						Hymn rid peVE.SticBoth.text End-Hymn
 					End-Section
 				End-Section
-				Section gloryasboth
+				Section gloryasboth_
 					Title sid KaiNyn End-Title
 					Section hymn
 						Title role mode rid peVE.SticGlory.mode End-Title
@@ -534,15 +547,15 @@ Status Review
 					End-Section
 				End-Section
 			End-Section
-			Section tr
-				Section bothasboth
+			Section tr__
+				Section bothasboth_
 					Title sid KaiNyn End-Title
 					Section hymn
 						Title role mode rid trVE.SticBoth.mode End-Title
 						Hymn rid trVE.SticBoth.text End-Hymn
 					End-Section
 				End-Section
-				Section gloryasboth
+				Section gloryasboth_
 					Title sid KaiNyn End-Title
 					Section hymn
 						Title role mode rid trVE.SticGlory.mode End-Title
@@ -551,16 +564,32 @@ Status Review
 				End-Section
 			End-Section
 		End-Section		
-		Section glory		
-			Section me
-				Title sid Doxa End-Title
-				Section hymn
-					Title role mode rid meVE.SticGlory.mode End-Title
-					Hymn rid meVE.SticGlory.text End-Hymn
+		Section glory__
+			Section me__
+				Section bothasglory_
+					Title sid Doxa End-Title
+					Section hymn
+						Title role mode rid meVE.SticBoth.mode End-Title
+						Hymn rid meVE.SticBoth.text End-Hymn
+					End-Section
+				End-Section
+				Section gloryasglory_
+					Title sid Doxa End-Title
+					Section hymn
+						Title role mode rid meVE.SticGlory.mode End-Title
+						Hymn rid meVE.SticGlory.text End-Hymn
+					End-Section
 				End-Section
 			End-Section
-			Section pe
-				Section gloryasglory
+			Section pe__
+				Section bothasglory_
+					Title sid Doxa End-Title
+					Section hymn
+						Title role mode rid peVE.SticBoth.mode End-Title
+						Hymn rid peVE.SticBoth.text End-Hymn
+					End-Section
+				End-Section
+				Section gloryasglory_
 					Title sid Doxa End-Title
 					Section hymn
 						Title role mode rid peVE.SticGlory.mode End-Title
@@ -568,8 +597,15 @@ Status Review
 					End-Section
 				End-Section
 			End-Section
-			Section tr
-				Section gloryasglory
+			Section tr__
+				Section bothasglory_
+					Title role mixed sid Doxa<Tdesig>sid TouTriodiou</>End-Title
+					Section hymn
+						Title role mode rid trVE.SticBoth.mode End-Title
+						Hymn rid trVE.SticBoth.text End-Hymn
+					End-Section
+				End-Section
+				Section gloryasglory_
 					Title role mixed sid Doxa<Tdesig>sid TouTriodiou</>End-Title
 					Section hymn
 						Title role mode rid trVE.SticGlory.mode End-Title
@@ -578,19 +614,28 @@ Status Review
 				End-Section
 			End-Section
 		End-Section
-		Section gloryboth
-			Section firsttheotokion 
+		Section gloryboth__
+			Section firsttheotokion
 				Section modeofweek
 					Title role mixed sid DoxaKaiNyn<Tmode>rid ocVE.SticTheotokion.mode @day D1</>End-Title
 					Title role desig sid ToATheotokionTouIchou End-Title
 					Hymn rid ocVE.SticTheotokion.text @day D1 End-Hymn
 				End-Section
 			End-Section
-			Section me
-				Title sid DoxaKaiNyn End-Title
-				Section hymn
-					Title role mode rid meVE.SticGlory.mode End-Title
-					Hymn rid meVE.SticGlory.text End-Hymn
+			Section me__
+				Section bothasgloryboth_
+					Title sid DoxaKaiNyn End-Title
+					Section hymn
+						Title role mode rid meVE.SticBoth.mode End-Title
+						Hymn rid meVE.SticBoth.text End-Hymn
+					End-Section
+				End-Section
+				Section gloryasgloryboth_
+					Title sid DoxaKaiNyn End-Title
+					Section hymn
+						Title role mode rid meVE.SticGlory.mode End-Title
+						Hymn rid meVE.SticGlory.text End-Hymn
+					End-Section
 				End-Section
 			End-Section
 			Section metheotokion
@@ -615,7 +660,7 @@ Status Review
 						End-Section
 				end-when
 			End-Section
-			Section pe
+			Section pe_
 				Title sid DoxaKaiNyn End-Title
 				Section hymn
 					Title role mode rid peVE.SticGlory.mode End-Title
@@ -623,7 +668,7 @@ Status Review
 				End-Section
 			End-Section
 		End-Section
-		Section me
+		Section me__
 			Section i_112as567
 				Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid meVE.Stichera01.mode</>End-Title
 				Media rid meVE.Stichera01.text End-Media
@@ -845,10 +890,10 @@ Status Review
 				Hymn rid meVE.Stichera06.text media-off End-Hymn
 			End-Section
 		End-Section
-		Section oc
-			Section sunday
+		Section oc__
+			Section sunday_
 				Section LIHC_s_1234
-					Insert_section _02_Kekragaria.modeofweek.for10 End-Insert
+					Insert_section _02_Kekragaria__.modeofweek__.for10 End-Insert
 					Title role mixed<Tdesig>sid StichiraAnastasima</><Tmode>rid ocVE.Stichera1.mode</>End-Title
 					Media rid ocVE.Stichera1.text End-Media
 					Insert_section VE.LIHC_Verse.v01 End-Insert
@@ -877,9 +922,9 @@ Status Review
 					Hymn rid ocVE.Stichera7.text  media-off End-Hymn
 				End-Section //Stichera_7
 			End-Section //VE._02_Sunday
-			Section weekday
+			Section weekday__
 				Section LIHC_p_123as567
-					Insert_section _02_Kekragaria.modeofweek.for6 End-Insert
+					Insert_section _02_Kekragaria__.modeofweek__.for6 End-Insert
 					Title role mixed<Tmode>rid ocVE.Stichera1.mode</><Tmelody>rid ocVE.Stichera1.melody</>End-Title
 					Media rid ocVE.Stichera1.text End-Media
 					Insert_section VE.LIHC_Verse.v05 End-Insert
@@ -892,13 +937,34 @@ Status Review
 					Hymn rid ocVE.Stichera3.text media-off End-Hymn
 				End-Section
 				Section p_456as8910
+					Title role mixed<Tmode>rid ocVE.Stichera4.mode</><Tmelody>rid ocVE.Stichera4.melody</>End-Title
+					Media rid ocVE.Stichera4.text End-Media
+					Insert_section VE.LIHC_Verse.v08 End-Insert
+					Hymn rid ocVE.Stichera4.text media-off End-Hymn
+					Media rid ocVE.Stichera2.text End-Media
+					Insert_section VE.LIHC_Verse.v09 End-Insert
+					Hymn rid ocVE.Stichera5.text media-off End-Hymn
+					Media rid ocVE.Stichera3.text End-Media
+					Insert_section VE.LIHC_Verse.v10 End-Insert
+					Hymn rid ocVE.Stichera6.text media-off End-Hymn
 				End-Section
 				Section LIHC_p_124as567
-					Insert_section _02_Kekragaria.modeofweek.for6 End-Insert
+					Insert_section _02_Kekragaria__.modeofweek__.for6 End-Insert
+					Title role mixed<Tmode>rid ocVE.Stichera1.mode</><Tmelody>rid ocVE.Stichera1.melody</>End-Title
+					Media rid ocVE.Stichera1.text End-Media
+					Insert_section VE.LIHC_Verse.v05 End-Insert
+					Hymn rid ocVE.Stichera1.text media-off End-Hymn
+					Media rid ocVE.Stichera2.text End-Media
+					Insert_section VE.LIHC_Verse.v06 End-Insert
+					Hymn rid ocVE.Stichera2.text media-off End-Hymn
+					Title role mixed<Tmode>rid ocVE.Stichera4.mode</><Tmelody>rid ocVE.Stichera4.melody</>End-Title
+					Media rid ocVE.Stichera4.text End-Media
+					Insert_section VE.LIHC_Verse.v07 End-Insert
+					Hymn rid ocVE.Stichera4.text media-off End-Hymn
 				End-Section
 			End-Section
 		End-Section
-		Section pe
+		Section pe__
 			Section i_112233as5678910
 				Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid peVE.Stichera01.mode</>End-Title
 				Media rid peVE.Stichera01.text End-Media
@@ -1145,7 +1211,7 @@ Status Review
 				Hymn rid peVE.Stichera04.text media-off End-Hymn		
 			End-Section
 		End-Section
-		Section tr
+		Section tr__
 			Section i_112as567
 				Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid trVE.Stichera01.mode</>End-Title
 				Insert_section VE.LIHC_Verse.v05 End-Insert
@@ -1170,7 +1236,7 @@ Status Review
 				Insert_section VE.LIHC_Verse.v10 End-Insert
 				Hymn rid trVE.Stichera02.text media-off End-Hymn
 			End-Section
-			Section onsunday
+			Section onsunday_
 				Section octr
 					Title role desig sid Stichira sid Katanyktika End-Title
 					Title role mixed<Tmode>rid octrVE.Stichera1.mode</><Tmelody>rid octrVE.Stichera1.melody</>End-Title
@@ -1267,10 +1333,10 @@ Status Review
 				Insert_section VE.LIHC_Verse.v10 End-Insert
 				Hymn rid trVE.Stichera04.text media-off End-Hymn
 			End-Section
-			Section pl
+			Section pl_
 			when-name-of-day-is
 				Monday, Tuesday, Wednesday, Thursday use:
-					Section montuewedthur
+					Section montuewedthur_
 						Section Idiomela_Triodion
 							Title role desig sid TouTriodiou End-Title
 							Title role mixed<Tdesig>sid StichironIdiomelon</><Tmode>rid trVE.AposIdiomelon1.mode</>End-Title
@@ -1342,7 +1408,7 @@ Status Review
 						End-Section
 					End-Section 
 				Friday use:
-					Section friday
+					Section friday_
 						Section Idiomela_Triodion
 							Title role desig sid TouTriodiou End-Title
 							Title role mixed<Tdesig>sid StichironIdiomelon</><Tmode>rid trVE.AposIdiomelon1.mode</>End-Title
@@ -1401,14 +1467,14 @@ Status Review
 							Title role mode rid octrVE.SticGlory.mode End-Title
 							Hymn rid octrVE.SticGlory.text End-Hymn
 						End-Section
-						Insert_section _03_Stichera.both.firsttheotokion.modeofweek End-Insert
+						Insert_section _03_Stichera__.both__.firsttheotokion__.modeofweek End-Insert
 					End-Section 
 			end-when
 			End-Section
 		End-Section
 	End-Section
 	
-	Section _04_Middle
+	Section _04_Middle__
 		Section entrance
 			when-date-is
 				Jan 6 use: Insert_section noprokeimenon End-Insert
@@ -1462,7 +1528,7 @@ Status Review
 		Insert_section Selector_VespersReadings.Section01 End-Insert
 	End-Section
 	
-	Section _06_Litanies
+	Section _06_Litanies__
 		Section fullektenia
 			Insert_section Ektenia01 End-Insert
 			Actor sid Reader End-Actor
@@ -1485,7 +1551,7 @@ Status Review
 		End-Section
 	End-Section
 	
-	Section _07_LityAndArtoclasia
+	Section _07_LityAndArtoclasia_
 		Section part1 //import this if used on date and hymn is Lity1. copy and change to sid when needed
 			Title role desig sid ILitiKaiArtoklasia End-Title
 			Actor sid Choir End-Actor
@@ -1515,8 +1581,8 @@ Status Review
 		End-Section 
 	End-Section // Lity and Artoclasia
 	
-	Section _08_Aposticha
-		Section both
+	Section _08_Aposticha__
+		Section both__
 			Section me
 				Title sid KaiNyn End-Title
 				Section hymn
@@ -1524,7 +1590,7 @@ Status Review
 					Hymn rid meVE.AposBoth.text End-Hymn
 				End-Section
 			End-Section
-			Section metheotokion	
+			Section metheotokion
 				when-name-of-day-is 
 					Monday, Tuesday, Thursday, Saturday use:
 						Section theotokion
@@ -1683,7 +1749,7 @@ Status Review
 				Hymn rid trVE.AposTheotokion.text End-Hymn
 			End-Section
 		End-Section
-		Section glory
+		Section glory__
 			Section me
 				Title sid Doxa End-Title
 				Section hymn
@@ -1708,7 +1774,7 @@ Status Review
 				End-Section
 			End-Section
 		End-Section
-		Section gloryboth
+		Section gloryboth__
 			Section me
 				Title sid DoxaKaiNyn End-Title
 				Section hymn
@@ -1731,7 +1797,7 @@ Status Review
 				End-Section
 			End-Section
 		End-Section
-		Section me
+		Section me__
 			Section only
 				Actor sid Choir End-Actor
 				Title role desig sid Aposticha End-Title		
@@ -1741,8 +1807,8 @@ Status Review
 				Insert_section Selector_VespersAposticha.Menaion End-Insert
 			End-Section
 		End-Section
-		Section oc
-			Section weekday
+		Section oc__
+			Section weekday_
 				Section aposticha
 					Actor sid Choir End-Actor
 					Title role desig sid Aposticha End-Title		
@@ -1767,7 +1833,7 @@ Status Review
 					Hymn rid ocVE.AposTheotokion.text End-Hymn
 				End-Section
 			End-Section
-			Section saturday
+			Section saturday_
 				Section aposticha
 					Actor sid Choir End-Actor
 					Title role desig sid Aposticha End-Title		
@@ -1789,18 +1855,14 @@ Status Review
 					Hymn rid ocVE.AposTheotokion.text End-Hymn
 				End-Section
 			End-Section
-			Section sunday
+			Section sunday_
 				Section aposticha1
 					Actor sid Choir End-Actor
 					Title role desig sid ApostichaAnastasima End-Title
 					Title role mode rid ocVE.Aposticha1.mode @day D1 End-Title
 					Hymn rid ocVE.Aposticha1.text @day D1 End-Hymn
 				End-Section
-				Section aposticha1234
-					Actor sid Choir End-Actor
-					Title role desig sid ApostichaAnastasima End-Title
-					Title role mode rid ocVE.Aposticha1.mode @day D1 End-Title
-					Hymn rid ocVE.Aposticha1.text End-Hymn
+				Section aposticha234
 					Media rid ocVE.Aposticha2.text @day D1 End-Media
 					Insert_section PsalmVerses.forVespersAposticha.saturday.verse1 End-Insert
 					Hymn rid ocVE.Aposticha2.text media-off @day D1 End-Hymn
@@ -1817,13 +1879,13 @@ Status Review
 				End-Section
 			End-Section
 		End-Section
-		Section pe
+		Section pe__
 			Section festal
 				Actor sid Choir End-Actor
 				Title role desig sid Aposticha End-Title
 				Insert_section Selector_VespersAposticha.Pentecostarion_Festal End-Insert
 			End-Section
-			Section saturday
+			Section saturday_
 				Section first
 					Actor sid Choir End-Actor
 					Title role desig sid Aposticha End-Title
@@ -1839,8 +1901,8 @@ Status Review
 				Hymn rid peVE.Aposticha4.text End-Hymn
 			End-Section
 		End-Section
-		Section tr
-			Section weekday
+		Section tr__
+			Section weekday_
 				Section idiomelamartyric
 					Actor sid Choir End-Actor
 					Title role desig sid Aposticha sid TouTriodiou End-Title		
@@ -1870,7 +1932,7 @@ Status Review
 		End-Section
 	End-Section
 	
-	Section _09_Apolytikion
+	Section _09_Apolytikion__
 		Section symeon_trisagion
 			Insert_section Symeon_Trisagion End-Insert	
 			Actor sid Choir End-Actor
@@ -1887,13 +1949,13 @@ Status Review
 			Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
 			Hymn rid ocVE.ApolTheotokionVM.text @day D1 End-Hymn
 		End-Section
-		Section glory
+		Section glory__
 			Section me
 				Title sid Doxa End-Title
 				Insert_section Selector_FestalApolytikion.Menaion End-Insert
 			End-Section
 		End-Section
-		Section both
+		Section both__
 			Section me
 				Title sid KaiNyn End-Title
 				Insert_section Selector_FestalApolytikion.Menaion End-Insert
@@ -1902,7 +1964,7 @@ Status Review
 				Title sid KaiNyn End-Title
 				Insert_section Selector_FestalApolytikion.Pentecostarion End-Insert
 			End-Section
-			Section primarytheotokion
+			Section primarytheotokion__
 				Section modeofweek
 					Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
 					Title role mixed<Tmode>rid ocVE.ApolTheotokionVM.mode @day D1</><Tmelody>rid ocVE.ApolTheotokionVM.melody @day D1</>End-Title
@@ -1949,10 +2011,10 @@ Status Review
 					Hymn sid oc.m8.d1_gr_GR_cog.ocVE.ApolTheotokionVM.text End-Hymn
 				End-Section
 			End-Section
-			Section theotokion
-				Section mode1
+			Section theotokion__
+				Section mode1_
 					when-name-of-day-is
-						Sunday use: Insert_section primarytheotokion.mode1 End-Insert
+						Sunday use: Insert_section primarytheotokion__.mode1 End-Insert
 						Monday use:
 							Section monday
 								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
@@ -1991,9 +2053,9 @@ Status Review
 							End-Section
 					end-when
 				End-Section
-				Section mode2
+				Section mode2_
 					when-name-of-day-is
-						Sunday use: Insert_section primarytheotokion.mode2 End-Insert
+						Sunday use: Insert_section primarytheotokion__.mode2 End-Insert
 						Monday use:
 							Section monday
 								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
@@ -2032,9 +2094,9 @@ Status Review
 							End-Section
 					end-when
 				End-Section
-				Section mode3
+				Section mode3_
 					when-name-of-day-is
-						Sunday use: Insert_section primarytheotokion.mode3 End-Insert
+						Sunday use: Insert_section primarytheotokion__.mode3 End-Insert
 						Monday use:
 							Section monday
 								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
@@ -2073,9 +2135,9 @@ Status Review
 							End-Section
 					end-when
 				End-Section
-				Section mode4
+				Section mode4_
 					when-name-of-day-is
-						Sunday use: Insert_section primarytheotokion.mode4 End-Insert
+						Sunday use: Insert_section primarytheotokion__.mode4 End-Insert
 						Monday use:
 							Section monday
 								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
@@ -2114,9 +2176,9 @@ Status Review
 							End-Section
 					end-when
 				End-Section
-				Section mode5
+				Section mode5_
 					when-name-of-day-is
-						Sunday use: Insert_section primarytheotokion.mode5 End-Insert
+						Sunday use: Insert_section primarytheotokion__.mode5 End-Insert
 						Monday use:
 							Section monday
 								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
@@ -2155,9 +2217,9 @@ Status Review
 							End-Section
 					end-when
 				End-Section
-				Section mode6
+				Section mode6_
 					when-name-of-day-is
-						Sunday use: Insert_section primarytheotokion.mode6 End-Insert
+						Sunday use: Insert_section primarytheotokion__.mode6 End-Insert
 						Monday use:
 							Section monday
 								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
@@ -2196,9 +2258,9 @@ Status Review
 							End-Section
 					end-when
 				End-Section
-				Section mode7
+				Section mode7_
 					when-name-of-day-is
-						Sunday use: Insert_section primarytheotokion.mode7 End-Insert
+						Sunday use: Insert_section primarytheotokion__.mode7 End-Insert
 						Monday use:
 							Section monday
 								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
@@ -2237,9 +2299,9 @@ Status Review
 							End-Section
 					end-when
 				End-Section
-				Section mode8
+				Section mode8_
 					when-name-of-day-is
-						Sunday use: Insert_section primarytheotokion.mode8 End-Insert
+						Sunday use: Insert_section primarytheotokion__.mode8 End-Insert
 						Monday use:
 							Section monday
 								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
@@ -2279,7 +2341,7 @@ Status Review
 					end-when
 				End-Section
 			End-Section
-			Section tr
+			Section tr_
 				Title sid KaiNyn End-Title
 				Section hymn
 					Title role mixed<Tmode>rid trVE.Apolytikion1.mode</><Tmelody>rid trVE.Apolytikion1.melody</>End-Title
@@ -2287,7 +2349,7 @@ Status Review
 				End-Section
 			End-Section
 		End-Section
-		Section gloryboth
+		Section gloryboth__
 			Section me
 				Title sid DoxaKaiNyn End-Title
 				Insert_section Selector_FestalApolytikion.Menaion End-Insert
@@ -2296,7 +2358,7 @@ Status Review
 				Title sid DoxaKaiNyn End-Title
 				Insert_section Selector_FestalApolytikion.Pentecostarion End-Insert
 			End-Section
-			Section primarytheotokion
+			Section primarytheotokion__
 				Section mode1
 					Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
 					Title role mixed<Tmode>sid oc.m1.d1_gr_GR_cog.ocVE.ApolTheotokionVM.mode</><Tmelody>sid oc.m1.d1_gr_GR_cog.ocVE.ApolTheotokionVM.melody</>End-Title
@@ -2338,15 +2400,15 @@ Status Review
 					Hymn sid oc.m8.d1_gr_GR_cog.ocVE.ApolTheotokionVM.text End-Hymn
 				End-Section
 			End-Section
-			Section theotokion
+			Section theotokion__
 				Section modeofweek
 					Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
 					Title role mixed<Tmode>rid ocVE.ApolTheotokionVM.mode</><Tmelody>rid ocVE.ApolTheotokionVM.melody</>End-Title
 					Hymn rid ocVE.ApolTheotokionVM.text End-Hymn
 				End-Section
-				Section mode1
+				Section mode1_
 					when-name-of-day-is
-						Sunday use: Insert_section primarytheotokion.mode1 End-Insert
+						Sunday use: Insert_section primarytheotokion__.mode1 End-Insert
 						Monday use:
 							Section monday
 								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
@@ -2385,9 +2447,9 @@ Status Review
 							End-Section
 					end-when
 				End-Section
-				Section mode2
+				Section mode2_
 					when-name-of-day-is
-						Sunday use: Insert_section primarytheotokion.mode2 End-Insert
+						Sunday use: Insert_section primarytheotokion__.mode2 End-Insert
 						Monday use:
 							Section monday
 								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
@@ -2426,9 +2488,9 @@ Status Review
 							End-Section
 					end-when
 				End-Section
-				Section mode3
+				Section mode3_
 					when-name-of-day-is
-						Sunday use: Insert_section primarytheotokion.mode3 End-Insert
+						Sunday use: Insert_section primarytheotokion__.mode3 End-Insert
 						Monday use:
 							Section monday
 								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
@@ -2467,9 +2529,9 @@ Status Review
 							End-Section
 					end-when
 				End-Section
-				Section mode4
+				Section mode4_
 					when-name-of-day-is
-						Sunday use: Insert_section primarytheotokion.mode4 End-Insert
+						Sunday use: Insert_section primarytheotokion__.mode4 End-Insert
 						Monday use:
 							Section monday
 								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
@@ -2508,9 +2570,9 @@ Status Review
 							End-Section
 					end-when
 				End-Section
-				Section mode5
+				Section mode5_
 					when-name-of-day-is
-						Sunday use: Insert_section primarytheotokion.mode5 End-Insert
+						Sunday use: Insert_section primarytheotokion__.mode5 End-Insert
 						Monday use:
 							Section monday
 								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
@@ -2549,9 +2611,9 @@ Status Review
 							End-Section
 					end-when
 				End-Section
-				Section mode6
+				Section mode6_
 					when-name-of-day-is
-						Sunday use: Insert_section primarytheotokion.mode6 End-Insert
+						Sunday use: Insert_section primarytheotokion__.mode6 End-Insert
 						Monday use:
 							Section monday
 								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
@@ -2590,9 +2652,9 @@ Status Review
 							End-Section
 					end-when
 				End-Section
-				Section mode7
+				Section mode7_
 					when-name-of-day-is
-						Sunday use: Insert_section primarytheotokion.mode7 End-Insert
+						Sunday use: Insert_section primarytheotokion__.mode7 End-Insert
 						Monday use:
 							Section monday
 								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
@@ -2631,9 +2693,9 @@ Status Review
 							End-Section
 					end-when
 				End-Section
-				Section mode8
+				Section mode8_
 					when-name-of-day-is
-						Sunday use: Insert_section primarytheotokion.mode8 End-Insert
+						Sunday use: Insert_section primarytheotokion__.mode8 End-Insert
 						Monday use:
 							Section monday
 								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
@@ -2674,7 +2736,7 @@ Status Review
 				End-Section
 			End-Section
 		End-Section	
-		Section me
+		Section me__
 			Section once
 				Insert_section Selector_FestalApolytikion.Menaion End-Insert
 			End-Section
@@ -2682,7 +2744,7 @@ Status Review
 				Insert_section Selector_FestalApolytikion.Menaion_Thrice End-Insert
 			End-Section
 		End-Section
-		Section pe
+		Section pe__
 			Section once
 				Insert_section Selector_FestalApolytikion.Pentecostarion End-Insert
 			End-Section
@@ -2690,7 +2752,7 @@ Status Review
 				Insert_section Selector_FestalApolytikion.Pentecostarion_Thrice End-Insert
 			End-Section
 		End-Section
-		Section tr
+		Section tr__
 			Section lent
 				Title role mixed<Tdesig>sid Apolytikia</><Tmode>sid hoVE.LentApolytikion1.mode</>End-Title
 				Hymn sid hoVE.LentApolytikion1.text End-Hymn
@@ -2703,7 +2765,7 @@ Status Review
 		End-Section
 	End-Section
 	
-	Section _10_End
+	Section _10_End__
 		Section afterartoklasia	
 			Actor sid PriestOrDeacon End-Actor
 			Dialog sid pet00 End-Dialog
@@ -2723,7 +2785,7 @@ Status Review
 			Insert_section Ektenia02 End-Insert
 			Insert_section noektenia End-Insert
 		End-Section
-		Section lent
+		Section lent_
 			Section part1
 				Actor sid Reader End-Actor
 				Dialog sid res01<r>sid Forty</>End-Dialog
@@ -2776,7 +2838,7 @@ Status Review
 		End-Section
 	End-Section
 	
-	Section _11_Dismissal
+	Section _11_Dismissal__
 		Section commemoration
 			Insert_section Dismissals.Com_Yes End-Insert
 		End-Section
