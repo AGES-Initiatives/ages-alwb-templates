@@ -11,8 +11,8 @@ Template bk.test01
 	import da.*
 	import me.*
 	import eo.*
-//	import pe.*
-//	import tr.*
+	import pe.*
+	import tr.*
 
 	//Templates
 	import MatinsParts.*
@@ -32,7 +32,7 @@ Template bk.test01
 	import bTags.*
 	import roles.*
  	Head 
- 		Set_Date month 2 day 15 year 2015 End_Date
+ 		Set_Date month 1 day 11 year 2014 End_Date
  			Page_Header_Even
  				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
  			End_Page_Header_Even
@@ -48,50 +48,6 @@ Template bk.test01
  		Set_Page_Number 1 End_Set_Page_Number
  	End_Head
 
-	Section me_
-		Section exap1_1
-			when-exists 
-				rid eo.Exaposteilarion.text use: Title role desig sid EkTouMinaiou End-Title
-				otherwise use: Actor sid Choir End-Actor
-			end-when
-			Title role desig sid Exaposteilarion End-Title
-			Section hymn
-				Title role mixed<Tmode>rid meMA.Exaposteilarion1.mode</><Tmelody>rid meMA.Exaposteilarion1.melody</>End-Title
-				Hymn rid meMA.Exaposteilarion1.text End-Hymn
-			End-Section
-		End-Section
-		Section exap2
-			Title role mixed<Tmode>rid meMA.Exaposteilarion2.mode</><Tmelody>rid meMA.Exaposteilarion2.melody</>End-Title
-			Hymn rid meMA.Exaposteilarion2.text End-Hymn
-		End-Section
-		Section exap3
-			Title role mixed<Tmode>rid meMA.Exaposteilarion3.mode</><Tmelody>rid meMA.Exaposteilarion3.melody</>End-Title
-			Hymn rid meMA.Exaposteilarion3.text End-Hymn
-		End-Section
-		Section theotokion
-			when-name-of-day-is
-				Monday, Tuesday, Thursday, Saturday, Sunday use:
-					Section exaptheotokion
-						Title role desig sid Theotokion End-Title
-						Title role mixed<Tmode>rid meMA.ExapTheotokion.mode</><Tmelody>rid meMA.ExapTheotokion.melody</>End-Title
-						Hymn rid meMA.ExapTheotokion.text End-Hymn
-					End-Section
-				Wednesday, Friday use:
-					when-exists rid meMA.ExapStavrotheotokion.text use:
-						Section exapstavrotheotokion
-							Title role desig sid Stavrotheotokion End-Title
-							Hymn rid meMA.ExapStavrotheotokion.text End-Hymn
-						End-Section
-					otherwise use:
-						when-exists rid meMA.ExapTheotokion.text use:
-							Insert_section exaptheotokion End-Insert
-						end-when
-					end-when
-			end-when
-		End-Section
-		
-		
-	End-Section
-
+	Insert_section MA._12_Exaposteilarion__.me_ End-Insert
 
 End-Template
