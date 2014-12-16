@@ -30,18 +30,22 @@ Status Review
 	import LectionaryReadings.*
 	import Litanies.*
 	
+	//Sections with names ending in __ require a selection
+	//Sections with names ending in _ have optional selections
+	//Sections with names not ending in _ have no options
 
-	Section Section01
-		Actor sid Priest End-Actor
-		Dialog sid euLI.Key0109.text End-Dialog
-		Dialog<i>sid res04p</>End-Dialog
-	End-Section
-
-	Section Section01_VesperalLiturgy
-		Actor sid Priest End-Actor
-		Dialog sid euLI.Key0109.text End-Dialog
-		Insert_section VE._01_Beginning__.vespers.introductorypsalm End-Insert
-		Insert_section VE._01_Beginning__.vespers.litany End-Insert
+	Section Section01__
+		Section daily
+			Actor sid Priest End-Actor
+			Dialog sid euLI.Key0109.text End-Dialog
+			Dialog<i>sid res04p</>End-Dialog
+		End-Section
+		Section vesperal
+			Actor sid Priest End-Actor
+			Dialog sid euLI.Key0109.text End-Dialog
+			Insert_section VE._01_Beginning__.vespers.introductorypsalm End-Insert
+			Insert_section VE._01_Beginning__.vespers.litany End-Insert
+		End-Section
 	End-Section
 
 	Section Section02
@@ -56,14 +60,10 @@ Status Review
 		Dialog<i>sid res04p</>End-Dialog
 	End-Section
 	
-	Section Section03
+	Section Section03__
 		Section antiphons_sundays_weekdays_feasts
 			Insert_section Selector_Antiphons.SpecificDay End-Insert
 		End-Section
-//		Section sunday_saint
-//			Actor sid Choir End-Actor
-//			Insert_section Antiphon1.sunday_saint End-Insert
-//		End-Section	
 		Section antiphons_celebrated_saint
 			Insert_section Selector_Antiphons.celebrated_saint End-Insert
 		End-Section	
@@ -79,7 +79,7 @@ Status Review
 		Dialog<i>sid res04p</>End-Dialog
 	End-Section
 	
-	Section Section05 //antiphon 2
+	Section Section05__ //antiphon 2
 		Section sunday
 			Actor sid Choir End-Actor
 			Insert_section Antiphon2.sunday End-Insert
@@ -104,8 +104,8 @@ Status Review
 		Dialog<i>sid res04p</>End-Dialog
 	End-Section
 	
-	Section Section07
-		Section sunday //antiphon 3 sunday
+	Section Section07__
+		Section sunday_ //antiphon 3 sunday
 			Section hymn
 				Title role desig sid ApolytikionAnastasimon End-Title
 				Title role mixed<Tmode>rid ocVE.Apolytikion.mode @day D1</><Tmelody>rid ocVE.Apolytikion.melody @day D1</>End-Title
@@ -130,7 +130,7 @@ Status Review
 		Dialog sid exc17 sid exc18 End-Dialog
 	End-Section
 	
-	Section Section09
+	Section Section09__
 		Section choir
 			Actor sid Choir End-Actor
 			Title role mixed<Tdesig>sid Eisodikon</><Tmode>sid Mode2</>End-Title
@@ -145,7 +145,7 @@ Status Review
 		Insert_section Selector_Eisodikon.SpecificDay End-Insert
 	End-Section	
 	
-	Section Section11
+	Section Section11__
 		Section single
 			Title role desig sid YmnoiMetaTinMikranEisodon End-Title
 			Actor sid Choir End-Actor
@@ -167,7 +167,7 @@ Status Review
 		End-Section
 	End-Section
 	
- 	Section Section12
+ 	Section Section12__
  		Section single
  			Insert_section Selector_Kontakion.SeasonalKontakion End-Insert
  		End-Section
@@ -177,7 +177,7 @@ Status Review
  		End-Section 	
  	End-Section
  		
-	Section Section13 //Trisagion
+	Section Section13_ //Trisagion
 		Section prayer
 			Actor sid Deacon End-Actor
 			Dialog sid pet00 End-Dialog
@@ -369,7 +369,7 @@ Status Review
 //		Rubric End-Rubric
 	End-Section
 	
-	Section Section21
+	Section Section21__
 		Section chrys
 			Title role desig sid euLI.Key1200.title End-Title
 			Media sid euLI.Key1200.text End-Media
@@ -468,7 +468,7 @@ Status Review
 		End-Section //LitanyAndCreed
 	End-Section				
 
-	Section Section22
+	Section Section22__
 		Section chrys
 			Title role desig sid euLI.Key1300.title End-Title	
 			Actor sid Deacon End-Actor
@@ -583,7 +583,7 @@ Status Review
 		Insert_section Selector_Megalynarion.AnyDay End-Insert
 	End-Section
 
-	Section Section24
+	Section Section24__
 		Section chrys
 			Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
 			Para role inaudible sid euLI.Key1329.text End-Para				
@@ -626,7 +626,7 @@ Status Review
 		End-Section		
 	End-Section
 
-	Section Section25
+	Section Section25__
 		Section chrys
 			Actor sid Deacon End-Actor
 			Dialog sid euLI.Key1401.text End-Dialog
@@ -915,7 +915,7 @@ Status Review
 		Hymn sid euLI.Key1603.text End-Hymn
 	End-Section   
 
-	Section Section34
+	Section Section34__
 		Section chrys
 			Actor sid Deacon End-Actor
 			Dialog sid euLI.Key1604.text End-Dialog
@@ -952,8 +952,8 @@ Status Review
 		End-Section
 	End-Section
 		
-	Section Section35
-		Section chrys
+	Section Section35__
+		Section chrys_
 			Section part1
 				Title role desig sid euLI.Key1700.title End-Title
 				Actor sid Priest End-Actor
@@ -990,7 +990,7 @@ Status Review
 				Dialog sid DoxaSoiChriste2 End-Dialog
 			End-Section
 		End-Section
-		Section basil
+		Section basil_
 			Section part1
 				Title role desig sid euLI.Key1700.title End-Title
 				Actor sid Priest End-Actor
@@ -1025,7 +1025,7 @@ Status Review
 		End-Section
 	End-Section
 
-	Section Section36
+	Section Section36__
 		Section comyes
 			Insert_section Dismissals.Com_Yes.part1 End-Insert
 			Actor sid Choir End-Actor
