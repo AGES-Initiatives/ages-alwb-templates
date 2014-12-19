@@ -162,6 +162,9 @@ Template MA
 					End-Section
 				End-Section
 			End-Section
+			Section primarytheotokion
+				Insert_section VE._09_Apolytikion__.both__.primarytheotokion__.modeofweek End-Insert
+			End-Section
 		End-Section
 		Section glory__
 			Section me__
@@ -310,6 +313,68 @@ Template MA
 			End-Section
 		End-Section
 		Section oc__
+			Section weekday123
+				Actor sid Choir End-Actor
+				Section Kathisma1
+					Title role desig sid Kathisma1 End-Title
+					Title role mixed<Tmode>rid ocMA.Kathisma11.mode</><Tmelody>rid ocMA.Kathisma11.melody</>End-Title
+					Hymn rid ocMA.Kathisma11.text End-Hymn
+					when-name-of-day-is
+						Monday, Tuesday use:
+							Verse<inr>sid vVerse</>sid psa37.v2.text End-Verse
+						Wednesday, Friday use:
+							Verse<inr>sid vVerse</>sid psa98.v5.text End-Verse
+						Thursday use:
+							Verse<inr>sid vVerse</>sid psa18.v5.text End-Verse
+					end-when	
+					when-exists rid ocMA.Kathisma12.melody use:
+						Title role melody rid ocMA.Kathisma12.melody End-Title
+					end-when
+					Hymn rid ocMA.Kathisma12.text End-Hymn
+					Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+					when-exists rid ocMA.Kathisma13.melody use:
+						Title role melody rid ocMA.Kathisma13.melody End-Title
+					end-when
+					Hymn rid ocMA.Kathisma13.text End-Hymn
+				End-Section
+				Section Kathisma2
+					Title role desig sid Kathisma2 End-Title
+					Title role mixed<Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
+					Hymn rid ocMA.Kathisma21.text End-Hymn
+					when-name-of-day-is
+						Monday, Tuesday use:
+							Verse<inr>sid vVerse</>sid psa118.v132.text End-Verse
+						Wednesday, Friday use:
+							Verse<inr>sid vVerse</>sid psa73.v12.text End-Verse
+						Thursday use:
+							Verse<inr>sid vVerse</>sid psa18.v2.text End-Verse
+					end-when	
+					when-exists rid ocMA.Kathisma22.melody use:
+						Title role melody rid ocMA.Kathisma22.melody End-Title
+					end-when
+					Hymn rid ocMA.Kathisma22.text End-Hymn
+					Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+					when-exists rid ocMA.Kathisma23.melody use:
+						Title role melody rid ocMA.Kathisma23.melody End-Title
+					end-when
+					Hymn rid ocMA.Kathisma23.text End-Hymn
+				End-Section
+				Section Kathisma3
+					Title role desig sid Kathisma3 End-Title
+					Title role mixed<Tmode>rid ocMA.Kathisma31.mode</><Tmelody>rid ocMA.Kathisma31.melody</>End-Title
+					Hymn rid ocMA.Kathisma31.text End-Hymn
+					Verse<inr>sid vVerse</>sid psa67.v36a.text End-Verse
+					when-exists rid ocMA.Kathisma32.melody use:
+						Title role melody rid ocMA.Kathisma32.melody End-Title
+					end-when
+					Hymn rid ocMA.Kathisma32.text End-Hymn
+					Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+					when-exists rid ocMA.Kathisma33.melody use:
+						Title role melody rid ocMA.Kathisma33.melody End-Title
+					end-when
+					Hymn rid ocMA.Kathisma33.text End-Hymn
+				End-Section		
+			End-Section
 			Section weekday
 				Actor sid Choir End-Actor
 				Title role desig sid Kathisma1 End-Title
@@ -396,6 +461,74 @@ Template MA
 						Title role melody rid ocMA.Kathisma13.melody End-Title
 					end-when
 					Hymn rid ocMA.Kathisma13.text End-Hymn
+				End-Section
+				Section lent
+					Actor sid Choir End-Actor
+					Title role desig sid Kathisma1 End-Title
+					Title role mixed <Tmode>rid ocMA.Kathisma11.mode</><Tmelody>rid ocMA.Kathisma11.melody</>End-Title
+					Hymn rid ocMA.Kathisma11.text End-Hymn
+					Title sid Doxa End-Title 
+						when-exists rid ocMA.Kathisma12.melody use:
+					Title role melody rid ocMA.Kathisma12.melody End-Title
+						end-when
+					Hymn rid ocMA.Kathisma12.text End-Hymn
+					Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+					when-mode-of-week-is 
+						M1 use:
+							when-triodion-day-is 43 use:
+								when-exists rid ocMA.Kathisma13.melody use:
+									Title role melody rid ocMA.Kathisma13.melody End-Title
+								end-when
+								Hymn rid ocMA.Kathisma13.text End-Hymn
+								otherwise use:
+									when-exists rid ocVE.ApolTheotokionVM.melody use:
+										Title role mixed<Tmelody>rid ocVE.ApolTheotokionVM.melody</>End-Title
+									end-when
+									Hymn rid ocVE.ApolTheotokionVM.text End-Hymn
+							end-when
+						M2 use:
+							when-triodion-day-is 29 use:
+								when-exists rid ocMA.Kathisma13.melody use:
+									Title role melody rid ocMA.Kathisma13.melody End-Title
+								end-when
+								Hymn rid ocMA.Kathisma13.text End-Hymn
+								otherwise use:
+									when-exists rid ocVE.ApolTheotokionVM.melody use:
+										Title role mixed<Tmelody>rid ocVE.ApolTheotokionVM.melody</>End-Title
+									end-when
+									Hymn rid ocVE.ApolTheotokionVM.text End-Hymn
+							end-when
+						M3, M4, M5, M6, M7 use:
+							when-exists rid ocVE.ApolTheotokionVM.melody use:
+								Title role mixed<Tmelody>rid ocVE.ApolTheotokionVM.melody</>End-Title
+							end-when
+							Hymn rid ocVE.ApolTheotokionVM.text End-Hymn
+						M8 use:
+							when-triodion-day-is 36, 50, 57 use:
+								when-exists rid ocMA.Kathisma13.melody use:
+									Title role melody rid ocMA.Kathisma13.melody End-Title
+								end-when
+								Hymn rid ocMA.Kathisma13.text End-Hymn
+								otherwise use:
+									when-exists rid ocVE.ApolTheotokionVM.melody use:
+										Title role mixed<Tmelody>rid ocVE.ApolTheotokionVM.melody</>End-Title
+									end-when
+									Hymn rid ocVE.ApolTheotokionVM.text End-Hymn
+							end-when
+					end-when			
+				End-Section
+				Section withfeast
+					Insert_section kath1112 End-Insert
+					Insert_section both__.feast End-Insert
+				End-Section
+				Section kath11m11
+					Actor sid Choir End-Actor
+					Title role desig sid Kathisma1 End-Title
+					Title role mixed <Tmode>rid ocMA.Kathisma11.mode</><Tmelody>rid ocMA.Kathisma11.melody</>End-Title
+					Hymn rid ocMA.Kathisma11.text End-Hymn
+					Title role mixed sid Doxa<Tdesig>sid TouMinaiou</>End-Title
+					Title role mixed<Tmode>rid meMA.Kathisma11.mode</><Tmelody>rid meMA.Kathisma11.melody</>End-Title
+					Hymn rid meMA.Kathisma11.text End-Hymn
 				End-Section
 			End-Section
 		End-Section
@@ -608,6 +741,20 @@ Template MA
 					end-when
 					Hymn rid ocMA.Kathisma23.text End-Hymn
 				End-Section
+				Section withfeast
+					Insert_section kath2122 End-Insert
+					Insert_section both__.feast End-Insert
+				End-Section
+				Section kath21m212t
+					Title role desig sid Kathisma2 End-Title
+					Title role mixed <Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
+					Hymn rid ocMA.Kathisma21.text End-Hymn
+					Title role mixed sid Doxa<Tdesig>sid TouMinaiou</>End-Title
+					Title role mixed<Tmode>rid meMA.Kathisma21.mode</><Tmelody>rid meMA.Kathisma21.melody</>End-Title
+					Hymn rid meMA.Kathisma21.text End-Hymn
+					Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+					Hymn rid meMA.Kathisma2T.text End-Hymn
+				End-Section
 			End-Section
 		End-Section
 	End-Section
@@ -714,62 +861,6 @@ Template MA
 		Hymn rid meMA.Kathisma11.text End-Hymn
 	End-Section
 	
-	Section SunKathisma1_Lent
-		Actor sid Choir End-Actor
-		Title role desig sid Kathisma1 End-Title
-		Title role mixed <Tmode>rid ocMA.Kathisma11.mode</><Tmelody>rid ocMA.Kathisma11.melody</>End-Title
-		Hymn rid ocMA.Kathisma11.text End-Hymn
-		Title sid Doxa End-Title 
-			when-exists rid ocMA.Kathisma12.melody use:
-		Title role melody rid ocMA.Kathisma12.melody End-Title
-			end-when
-		Hymn rid ocMA.Kathisma12.text End-Hymn
-		Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
-		when-mode-of-week-is 
-			M1 use:
-				when-triodion-day-is 43 use:
-					when-exists rid ocMA.Kathisma13.melody use:
-						Title role melody rid ocMA.Kathisma13.melody End-Title
-					end-when
-					Hymn rid ocMA.Kathisma13.text End-Hymn
-					otherwise use:
-						when-exists rid ocVE.ApolTheotokionVM.melody use:
-							Title role mixed<Tmelody>rid ocVE.ApolTheotokionVM.melody</>End-Title
-						end-when
-						Hymn rid ocVE.ApolTheotokionVM.text End-Hymn
-				end-when
-			M2 use:
-				when-triodion-day-is 29 use:
-					when-exists rid ocMA.Kathisma13.melody use:
-						Title role melody rid ocMA.Kathisma13.melody End-Title
-					end-when
-					Hymn rid ocMA.Kathisma13.text End-Hymn
-					otherwise use:
-						when-exists rid ocVE.ApolTheotokionVM.melody use:
-							Title role mixed<Tmelody>rid ocVE.ApolTheotokionVM.melody</>End-Title
-						end-when
-						Hymn rid ocVE.ApolTheotokionVM.text End-Hymn
-				end-when
-			M3, M4, M5, M6, M7 use:
-				when-exists rid ocVE.ApolTheotokionVM.melody use:
-					Title role mixed<Tmelody>rid ocVE.ApolTheotokionVM.melody</>End-Title
-				end-when
-				Hymn rid ocVE.ApolTheotokionVM.text End-Hymn
-			M8 use:
-				when-triodion-day-is 36, 50, 57 use:
-					when-exists rid ocMA.Kathisma13.melody use:
-						Title role melody rid ocMA.Kathisma13.melody End-Title
-					end-when
-					Hymn rid ocMA.Kathisma13.text End-Hymn
-					otherwise use:
-						when-exists rid ocVE.ApolTheotokionVM.melody use:
-							Title role mixed<Tmelody>rid ocVE.ApolTheotokionVM.melody</>End-Title
-						end-when
-						Hymn rid ocVE.ApolTheotokionVM.text End-Hymn
-				end-when
-		end-when			
-	End-Section
-
 	Section SunKathisma2_WithFeast //or, copied with sids set to feast date
 		Section part1
 			Actor sid Choir End-Actor
@@ -2376,12 +2467,33 @@ Template MA
 		End-Section
 	End-Section
 
+	Section _15_Litanies__
+		Section aftergreatdoxology
+			Insert_section Ektenia02 End-Insert
+			Insert_section ComplementaryM End-Insert
+			Insert_section BowHeadsM End-Insert
+		End-Section
+		Section aftersmalldoxology
+			Insert_section ComplementaryM End-Insert
+			Insert_section BowHeadsM End-Insert
+		End-Section
+	End-Section
 
-// section15 litany
+	Section _16_Aposticha
+	End-Section
 
-// section16 Aposticha
-
-// section17 Apolytikia
+	Section _17_Apolytikion__
+		Section itisgood_trisagion
+			Actor sid Priest End-Actor
+			Insert_section bk.ho.s03.Weekday_End End-Insert
+			Actor sid Reader End-Actor
+			Insert_section bk.ho.s01.Trisagion_Prayers End-Insert
+			Actor sid Priest End-Actor
+			Dialog sid exc20 End-Dialog
+			Dialog<i>sid res04p</>End-Dialog
+			Actor sid Choir End-Actor
+		End-Section	
+	End-Section
 
 	Section _18_End__  //needs work
 		Section ektenia
