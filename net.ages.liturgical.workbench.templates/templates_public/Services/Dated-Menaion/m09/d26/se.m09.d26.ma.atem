@@ -11,7 +11,6 @@ Status Final
 	import oc.*
 
 	//Templates
-	import MatinsParts.*
 	import LectionaryReadings.*
 	import Litanies.*
 	
@@ -62,8 +61,14 @@ Status Final
 					Hymn sid oc.m2.d1_gr_GR_cog.ocVE.ApolTheotokionVM.text End-Hymn
 				End-Section
 				Insert_section ShortLitany02 End-Insert
-				Insert_section SunKathisma1_CombinedMenaion End-Insert
-				Insert_section SunKathisma2_CombinedMenaion End-Insert
+				Insert_section MA._03_Kathisma1__.oc__.sunday__.kath11m11 End-Insert
+				when-mode-of-week-is //that of saint's Apolytikion
+					M2 use: 
+						Insert_section MA._03_Kathisma1__.both__.me__.kath1t_ End-Insert
+					otherwise use: 
+						Insert_section MA._03_Kathisma1__.both__.primarytheotokion End-Insert
+				end-when
+				Insert_section MA._04_Kathisma2__.oc__.sunday__.kath21m212t End-Insert
 				Insert_section Instance01.block4 End-Insert
 				Insert_section MA._07_Evlogetaria__.resurrectional End-Insert
 				Insert_section ShortLitany04 End-Insert	
