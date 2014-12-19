@@ -10,8 +10,8 @@ Status Final
 	import oc.*
 
 	//Templates
+	import bk.ho.s15_m12.*
 	import MatinsParts.*
-	import Selector_Katavasias.*
 	import LectionaryReadings.*
 	import Litanies.*
 	
@@ -51,19 +51,14 @@ Status Final
 	Section Instance01
 		Section block1
 			Insert_section MA._01_Beginning__.modeofweek End-Insert
-			Insert_section MA._02_Apolytikion__.sunday_ End-Insert
-			Title role mixed sid Doxa<Tdesig>sid ToAfto</>End-Title
-			Hymn rid ocVE.Apolytikion.text media-off End-Hymn
-			Title role mixed sid KaiNyn<Tdesig>sid TonPropatoron</><Tmode>sid meVE.Apolytikion1.mode</>End-Title
-			Hymn sid meVE.Apolytikion1.text End-Hymn
+			Insert_section MA._02_Apolytikion__.sunday11 End-Insert
+			Title role mixed sid KaiNyn<Tdesig>sid TonPropatoron</>End-Title
+			Insert_section ho_DecFF.Apolytikion_1.hymn End-Insert
 			Insert_section ShortLitany02 End-Insert
-			Section SunKathisma1_compute //to be copied
-				when-mode-of-week-is M2 use: //set M to mode of Menaion Apolytikion
-					Insert_section MA._03_Kathisma1__.oc__.sunday__.kath111213 End-Insert
-					otherwise use:
-						Insert_section SunKathisma1_WhenSaint End-Insert
-				end-when
-			End-Section	
+			when-mode-of-week-is //that of saint's Apolytikion
+				M2 use: Insert_section MA._03_Kathisma1__.oc__.sunday__.kath111213 End-Insert
+				otherwise use: Insert_section MA._03_Kathisma1__.oc__.sunday__.kath1112primarytheotokion End-Insert
+			end-when
 			Insert_section MA._04_Kathisma2__.oc__.sunday__.kath212223 End-Insert
 			Insert_section MA._07_Evlogetaria__.resurrectional End-Insert
 			Insert_section ShortLitany04 End-Insert	
@@ -71,7 +66,7 @@ Status Final
 		End-Section
 		Section block2
 			Actor sid Reader End-Actor
-			Insert_section MA._11_Kontakion__.sunday End-Insert
+			Insert_section MA._11_Kontakion__.first__.sunday End-Insert
 			Title role desig sid Kontakion sid TonPropatoron End-Title
 			Reading sid meMA.Kontakion1.text End-Reading
 			Title role desig sid OOikos End-Title
@@ -98,14 +93,14 @@ Status Final
 			Title role desig sid Theotokion sid Omoion End-Title
 			Hymn sid meMA.ExapTheotokion.text End-Hymn
 		End-Section
-		Insert_section SunLaudsRes1234 End-Insert		
+		Insert_section MA._13_Lauds__.oc__.sunday_.lauds_1234 End-Insert		
 		Section block5
 			Title role desig sid TonPropatoron End-Title
 			Title role mixed<Tmode>sid meMA.Lauds1.mode</><Tmelody>sid meMA.Lauds1.melody</>End-Title
 			Media sid meMA.LaudsSundayVerse1.text End-Media
-			Insert_section Lauds_Verse.v05 End-Insert
+			Insert_section PsalmVerses.forLauds.v05 End-Insert
 			Hymn sid meMA.Lauds1.text media-off  End-Hymn
-			Insert_section Lauds_Verse.v06 End-Insert
+			Insert_section PsalmVerses.forLauds.v06 End-Insert
 			Hymn sid meMA.Lauds1.text media-off End-Hymn
 			Insert_section PsalmVerses.forForefathers.verse1 End-Insert
 			Hymn sid meMA.Lauds2.text media-off End-Hymn
@@ -116,7 +111,7 @@ Status Final
 			Title role mixed sid Doxa<Tmode>sid meMA.LaudsGlory.mode</>End-Title
 			Hymn sid meMA.LaudsGlory.text End-Hymn
 		End-Section
-		Insert_section MA._13_Lauds__.glory__.eo_.theotokion End-Insert
+		Insert_section MA._13_Lauds__.both__.eotheotokion End-Insert
 		Insert_section MA._14_Doxology__.sunday End-Insert
 	End-Section
 

@@ -104,17 +104,34 @@ Template MA
 	End-Section
 	
 	Section _02_Apolytikion__
-		Section sunday_
+		Section sunday1
 			Title role desig sid ApolytikionAnastasimon End-Title
-			Section hymn
-				Title role mixed<Tmode>rid ocVE.Apolytikion.mode</><Tmelody>rid ocVE.Apolytikion.melody</>End-Title
-				Hymn rid ocVE.Apolytikion.text End-Hymn
-			End-Section
+			Title role mixed<Tmode>rid ocVE.Apolytikion.mode</><Tmelody>rid ocVE.Apolytikion.melody</>End-Title
+			Hymn rid ocVE.Apolytikion.text End-Hymn
+		End-Section
+		Section sunday11
+			Title role desig sid ApolytikionAnastasimon End-Title
+			Title role mixed<Tmode>rid ocVE.Apolytikion.mode</><Tmelody>rid ocVE.Apolytikion.melody</>End-Title
+			Hymn rid ocVE.Apolytikion.text End-Hymn
+			Title role mixed sid Doxa<Tdesig>sid ToAfto</>End-Title
+			Hymn rid ocVE.Apolytikion.text media-off End-Hymn
+		End-Section
+		Section sunday11t
+			Title role desig sid ApolytikionAnastasimon End-Title
+			Title role mixed<Tmode>rid ocVE.Apolytikion.mode</><Tmelody>rid ocVE.Apolytikion.melody</>End-Title
+			Hymn rid ocVE.Apolytikion.text End-Hymn
+			Title role mixed sid Doxa<Tdesig>sid ToAfto</>End-Title
+			Hymn rid ocVE.Apolytikion.text media-off End-Hymn
+			Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+			Hymn rid ocVE.ApolTheotokionVM.text @day D1 End-Hymn
 		End-Section
 	End-Section
 
 	Section _03_Kathisma1__
 		Section both__
+			Section feast
+				Insert_section Selector_FestalKathismata.kath1 End-Insert
+			End-Section
 			Section me__
 				Section kath11_
 					Title role mixed sid KaiNyn<Tdesig>sid TouMinaiou</>End-Title
@@ -128,6 +145,13 @@ Template MA
 					Section hymn
 						Title role mixed<Tmode>rid meMA.Kathisma12.mode</><Tmelody>rid meMA.Kathisma12.melody</>End-Title
 						Hymn rid meMA.Kathisma12.text End-Hymn
+					End-Section
+				End-Section
+				Section kath13_
+					Title role mixed sid KaiNyn<Tdesig>sid TouMinaiou</>End-Title
+					Section hymn
+						Title role mixed<Tmode>rid meMA.Kathisma13.mode</><Tmelody>rid meMA.Kathisma13.melody</>End-Title
+						Hymn rid meMA.Kathisma13.text End-Hymn
 					End-Section
 				End-Section
 				Section kath1t_
@@ -192,7 +216,17 @@ Template MA
 			End-Section
 		End-Section
 		Section me__
-			Section kath11o121t
+			Section kath11111t
+				Actor sid Choir End-Actor
+				Title role mixed<Tdesig>sid Kathisma1</>End-Title
+				Title role mixed<Tmode>rid meMA.Kathisma11.mode</><Tmelody>rid meMA.Kathisma11.melody</>End-Title
+				Hymn rid meMA.Kathisma11.text End-Hymn
+				Title role mixed sid Doxa<Tdesig>sid ToAfto</>End-Title
+				Hymn rid meMA.Kathisma11.text media-off End-Hymn
+				Title role mixed sid KaiNyn<Tdesig>sid Theotokion sid Omoion</>End-Title
+				Hymn rid meMA.Kathisma1T.text End-Hymn
+			End-Section
+			Section kath11o121t_
 				Actor sid Choir End-Actor
 				Title role desig sid Kathisma1 End-Title
 				Section hymns
@@ -327,6 +361,22 @@ Template MA
 					end-when
 					Hymn rid ocMA.Kathisma12.text End-Hymn
 				End-Section
+				Section kath1112primarytheotokion
+					Actor sid Choir End-Actor
+					Title role desig sid Kathisma1 End-Title
+					Title role mixed <Tmode>rid ocMA.Kathisma11.mode</><Tmelody>rid ocMA.Kathisma11.melody</>End-Title
+					Hymn rid ocMA.Kathisma11.text End-Hymn
+					Title sid Doxa End-Title 
+					when-exists rid ocMA.Kathisma12.melody use:
+						Title role melody rid ocMA.Kathisma12.melody End-Title
+					end-when
+					Hymn rid ocMA.Kathisma12.text End-Hymn
+					Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+					when-exists rid ocVE.ApolTheotokionVM.melody use:
+						Title role mixed<Tmelody>rid ocVE.ApolTheotokionVM.melody</>End-Title
+					end-when
+					Hymn rid ocVE.ApolTheotokionVM.text End-Hymn
+				End-Section
 				Section kath11
 					Actor sid Choir End-Actor
 					Title role desig sid Kathisma1 End-Title
@@ -355,6 +405,9 @@ Template MA
 
 	Section _04_Kathisma2__
 		Section both__
+			Section feast
+				Insert_section Selector_FestalKathismata.kath2 End-Insert
+			End-Section
 			Section me__
 				Section kath21_
 					Title role mixed sid KaiNyn<Tdesig>sid TouMinaiou</>End-Title
@@ -432,7 +485,16 @@ Template MA
 			End-Section
 		End-Section
 		Section me__
-			Section kath21o222t
+			Section kath21212t
+				Title role mixed<Tdesig>sid Kathisma2</>End-Title
+				Title role mixed<Tmode>rid meMA.Kathisma21.mode</><Tmelody>rid meMA.Kathisma21.melody</>End-Title
+				Hymn rid meMA.Kathisma21.text End-Hymn
+				Title role mixed sid Doxa<Tdesig>sid ToAfto</>End-Title
+				Hymn rid meMA.Kathisma21.text media-off End-Hymn
+				Title role mixed sid KaiNyn<Tdesig>sid Theotokion sid Omoion</>End-Title
+				Hymn rid meMA.Kathisma2T.text End-Hymn
+			End-Section
+			Section kath21o222t_
 				Title role desig sid Kathisma2 End-Title
 				Section hymns
 					Title role mixed<Tmode>rid meMA.Kathisma21.mode</><Tmelody>rid meMA.Kathisma21.melody</>End-Title
@@ -551,6 +613,11 @@ Template MA
 	End-Section
 
 	Section _05_Kathisma3__
+		Section both__
+			Section feast
+				Insert_section Selector_FestalKathismata.kath3 End-Insert
+			End-Section
+		End-Section
 		Section me__
 			Section kath3131_
 				Title role desig sid Kathisma3 End-Title
@@ -1160,6 +1227,7 @@ Template MA
 				Dialog sid exc06 End-Dialog
 				Actor sid Choir End-Actor
 				Dialog sid res04 End-Dialog
+				Title role mode sid Mode2 End-Title
 				Media sid hoMA.PreGospelHymn.text End-Media
 				Hymn sid psa150.v6a.text<r>sid Twice</>sid psa150.v6aalt.text End-Hymn
 			End-Section
@@ -1409,12 +1477,19 @@ Template MA
 	End-Section
 
 	Section _11_Kontakion__
-		Section me1_
-			Title role desig sid Kontakion End-Title
-			Section konoik_
+		Section first__
+			Section festal_
 				Section kontakion
+					Actor sid Reader End-Actor
+					Insert_section Selector_Kontakion.MatinsFestal End-Insert
+				End-Section
+			End-Section
+			Section me1_
+				Section kontakion
+					Actor sid Reader End-Actor
+					Title role desig sid Kontakion End-Title
 					Title role mixed<Tmode>rid meMA.Kontakion1.mode</><Tmelody>rid meMA.Kontakion1.melody</>End-Title
-					Reading rid meMA.Kontakion1.text End-Reading
+					Reading rid meMA.Kontakion1.text media-off End-Reading
 				End-Section
 				Title role desig sid OOikos End-Title
 				when-exists 
@@ -1430,11 +1505,10 @@ Template MA
 						Reading rid meMA.Oikos1.text End-Reading
 				end-when
 			End-Section
-		End-Section
-		Section me2_
-			Title role desig sid Kontakion End-Title
-			Section konoik_
+			Section me2_
 				Section kontakion
+					Actor sid Reader End-Actor
+					Title role desig sid Kontakion End-Title
 					Title role mixed<Tmode>rid meMA.Kontakion2.mode</><Tmelody>rid meMA.Kontakion2.melody</>End-Title
 					Reading rid meMA.Kontakion2.text End-Reading
 				End-Section
@@ -1450,13 +1524,12 @@ Template MA
 						Reading rid meMA.Oikos28.text End-Reading 
 					otherwise use:
 						Reading rid meMA.Oikos2.text End-Reading
-				end-when
+					end-when
 			End-Section
-		End-Section
-		Section pe_
-			Title role desig sid Kontakion End-Title
-			Section konoik_
+			Section pe_
 				Section kontakion
+					Actor sid Reader End-Actor
+					Title role desig sid Kontakion End-Title
 					Title role mixed<Tmode>rid peMA.Kontakion1.mode</><Tmelody>rid peMA.Kontakion1.melody</>End-Title
 					Reading rid peMA.Kontakion1.text End-Reading
 				End-Section
@@ -1474,17 +1547,17 @@ Template MA
 						Reading rid peMA.Oikos1.text End-Reading
 				end-when
 			End-Section
-		End-Section
-		Section sunday
-			Title role desig sid KontakionAnastasimon End-Title
-			Reading rid ocMA.Kontakion.text End-Reading
-			Title role desig sid OOikos End-Title
-			Reading rid ocMA.Oikos.text End-Reading
-		End-Section
-		Section tr_
-			Title role desig sid Kontakion End-Title
-			Section konoik_
+			Section sunday
+				Actor sid Reader End-Actor
+				Title role desig sid KontakionAnastasimon End-Title
+				Reading rid ocMA.Kontakion.text End-Reading
+				Title role desig sid OOikos End-Title
+				Reading rid ocMA.Oikos.text End-Reading
+			End-Section
+			Section tr_
 				Section kontakion
+					Actor sid Reader End-Actor
+					Title role desig sid Kontakion End-Title
 					Title role mixed<Tmode>rid trMA.Kontakion1.mode</><Tmelody>rid trMA.Kontakion1.melody</>End-Title
 					Reading rid trMA.Kontakion1.text End-Reading
 				End-Section
@@ -1501,6 +1574,102 @@ Template MA
 					otherwise use:
 						Reading rid trMA.Oikos1.text End-Reading
 				end-when
+			End-Section
+		End-Section
+		Section append__
+			Section me1_
+				Title role desig sid Kontakion End-Title
+				Section konoik_
+					Section kontakion
+						Title role mixed<Tmode>rid meMA.Kontakion1.mode</><Tmelody>rid meMA.Kontakion1.melody</>End-Title
+						Reading rid meMA.Kontakion1.text media-off End-Reading
+					End-Section
+					Title role desig sid OOikos End-Title
+					when-exists 
+						rid meMA.Oikos12.text use:
+							Para role readingzero rid meMA.Oikos12.text End-Para 
+							Para role readingzero rid meMA.Oikos13.text End-Para 
+							Para role readingzero rid meMA.Oikos14.text End-Para 
+							Para role readingzero rid meMA.Oikos15.text End-Para 
+							Para role readingzero rid meMA.Oikos16.text End-Para 
+							Para role readingzero rid meMA.Oikos17.text End-Para 
+							Reading rid meMA.Oikos18.text End-Reading 
+						otherwise use:
+							Reading rid meMA.Oikos1.text End-Reading
+					end-when
+				End-Section
+			End-Section
+			Section me2_
+				Title role desig sid Kontakion End-Title
+				Section konoik_
+					Section kontakion
+						Title role mixed<Tmode>rid meMA.Kontakion2.mode</><Tmelody>rid meMA.Kontakion2.melody</>End-Title
+						Reading rid meMA.Kontakion2.text media-off End-Reading
+					End-Section
+					Title role desig sid OOikos End-Title
+					when-exists 
+						rid meMA.Oikos22.text use:
+							Para role readingzero rid meMA.Oikos22.text End-Para 
+							Para role readingzero rid meMA.Oikos23.text End-Para 
+							Para role readingzero rid meMA.Oikos24.text End-Para 
+							Para role readingzero rid meMA.Oikos25.text End-Para 
+							Para role readingzero rid meMA.Oikos26.text End-Para 
+							Para role readingzero rid meMA.Oikos27.text End-Para 
+							Reading rid meMA.Oikos28.text End-Reading 
+						otherwise use:
+							Reading rid meMA.Oikos2.text End-Reading
+					end-when
+				End-Section
+			End-Section
+			Section pe_
+				Title role desig sid Kontakion End-Title
+				Section konoik_
+					Section kontakion
+						Title role mixed<Tmode>rid peMA.Kontakion1.mode</><Tmelody>rid peMA.Kontakion1.melody</>End-Title
+						Reading rid peMA.Kontakion1.text media-off End-Reading
+					End-Section
+					Title role desig sid OOikos End-Title
+					when-exists 
+						rid peMA.Oikos12.text use:
+							Para role readingzero rid peMA.Oikos12.text End-Para 
+							Para role readingzero rid peMA.Oikos13.text End-Para 
+							Para role readingzero rid peMA.Oikos14.text End-Para 
+							Para role readingzero rid peMA.Oikos15.text End-Para 
+							Para role readingzero rid peMA.Oikos16.text End-Para 
+							Para role readingzero rid peMA.Oikos17.text End-Para 
+							Reading rid peMA.Oikos18.text End-Reading 
+						otherwise use:
+							Reading rid peMA.Oikos1.text End-Reading
+					end-when
+				End-Section
+			End-Section
+			Section sunday
+				Title role desig sid KontakionAnastasimon End-Title
+				Reading rid ocMA.Kontakion.text End-Reading
+				Title role desig sid OOikos End-Title
+				Reading rid ocMA.Oikos.text End-Reading
+			End-Section
+			Section tr_
+				Title role desig sid Kontakion End-Title
+				Section konoik_
+					Section kontakion
+						Title role mixed<Tmode>rid trMA.Kontakion1.mode</><Tmelody>rid trMA.Kontakion1.melody</>End-Title
+						Reading rid trMA.Kontakion1.text media-off End-Reading
+					End-Section
+					Title role desig sid OOikos End-Title
+					when-exists 
+						rid trMA.Oikos12.text use:
+							Para role readingzero rid trMA.Oikos12.text End-Para 
+							Para role readingzero rid trMA.Oikos13.text End-Para 
+							Para role readingzero rid trMA.Oikos14.text End-Para 
+							Para role readingzero rid trMA.Oikos15.text End-Para 
+							Para role readingzero rid trMA.Oikos16.text End-Para 
+							Para role readingzero rid trMA.Oikos17.text End-Para 
+							Reading rid trMA.Oikos18.text End-Reading 
+						otherwise use:
+							Reading rid trMA.Oikos1.text End-Reading
+					end-when
+				End-Section
 			End-Section
 		End-Section
 	End-Section
@@ -1688,6 +1857,10 @@ Template MA
 
 	Section _13_Lauds__
 		Section both__
+			Section eotheotokion
+				Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+				Hymn sid hoMA.LaudsSunTheotokion.text End-Hymn
+			End-Section
 			Section me__
 				Section bothasboth_
 					Title sid KaiNyn End-Title
@@ -1791,7 +1964,35 @@ Template MA
 			Section tr
 			End-Section
 		End-Section
+		Section festal_as5678
+			Insert_section Selector_FestalLauds.me End-Insert
+		End-Section
 		Section me__
+			Section i_112345as123456
+				Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid meMA.Lauds1.mode</>End-Title
+				Media rid meMA.Lauds1.text End-Media
+				Insert_section PsalmVerses.forLauds.v01 End-Insert
+				Hymn rid meMA.Lauds1.text media-off End-Hymn
+				Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid meMA.Lauds1.mode</>End-Title
+				Insert_section PsalmVerses.forLauds.v02 End-Insert
+				Hymn rid meMA.Lauds1.text media-off End-Hymn
+				Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid meMA.Lauds2.mode</>End-Title
+				Media rid meMA.Lauds2.text End-Media
+				Insert_section PsalmVerses.forLauds.v03 End-Insert
+				Hymn rid meMA.Lauds2.text media-off End-Hymn
+				Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid meMA.Lauds3.mode</>End-Title
+				Media rid meMA.Lauds3.text End-Media
+				Insert_section PsalmVerses.forLauds.v04 End-Insert
+				Hymn rid meMA.Lauds3.text media-off End-Hymn
+				Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid meMA.Lauds4.mode</>End-Title
+				Media rid meMA.Lauds4.text End-Media
+				Insert_section PsalmVerses.forLauds.v05 End-Insert
+				Hymn rid meMA.Lauds4.text media-off End-Hymn
+				Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid meMA.Lauds5.mode</>End-Title
+				Media rid meMA.Lauds5.text End-Media
+				Insert_section PsalmVerses.forLauds.v06 End-Insert
+				Hymn rid meMA.Lauds5.text media-off End-Hymn
+			End-Section
 			Section i_1234as3456
 				Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid meMA.Lauds1.mode</>End-Title
 				Media rid meMA.Lauds1.text End-Media
@@ -1810,31 +2011,49 @@ Template MA
 				Insert_section PsalmVerses.forLauds.v06 End-Insert
 				Hymn rid meMA.Lauds4.text media-off End-Hymn
 			End-Section
-			Section i_123456as123456
-				Title role mixed<Tmode>sid meMA.Lauds1.mode</><Tmelody>sid meMA.Lauds1.melody</>End-Title
-				Media sid meMA.Lauds1.text End-Media
-				Insert_section PsalmVerses.forLauds.v01 End-Insert
-				Hymn sid meMA.Lauds1.text media-off End-Hymn
-				Title role mixed<Tmode>sid meMA.Lauds2.mode</><Tmelody>sid meMA.Lauds2.melody</>End-Title
-				Media sid meMA.Lauds2.text End-Media
-				Insert_section PsalmVerses.forLauds.v02 End-Insert
-				Hymn sid meMA.Lauds2.text media-off End-Hymn
-				Title role mixed<Tmode>sid meMA.Lauds3.mode</><Tmelody>sid meMA.Lauds3.melody</>End-Title
-				Media sid meMA.Lauds3.text End-Media
-				Insert_section PsalmVerses.forLauds.v03 End-Insert
-				Hymn sid meMA.Lauds3.text media-off End-Hymn
-				Title role mixed<Tmode>sid meMA.Lauds4.mode</><Tmelody>sid meMA.Lauds4.melody</>End-Title
-				Media sid meMA.Lauds4.text End-Media
-				Insert_section PsalmVerses.forLauds.v04 End-Insert
-				Hymn sid meMA.Lauds4.text media-off End-Hymn
-				Title role mixed<Tmode>sid meMA.Lauds5.mode</><Tmelody>sid meMA.Lauds5.melody</>End-Title
-				Media sid meMA.Lauds5.text End-Media
+			Section i_1234as56oneapostles12
+				Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid meMA.Lauds1.mode</>End-Title
+				Media rid meMA.Lauds1.text End-Media
 				Insert_section PsalmVerses.forLauds.v05 End-Insert
-				Hymn sid meMA.Lauds5.text media-off End-Hymn
-				Title role mixed<Tmode>sid meMA.Lauds6.mode</><Tmelody>sid meMA.Lauds6.melody</>End-Title
-				Media sid meMA.Lauds6.text End-Media
+				Hymn rid meMA.Lauds1.text media-off End-Hymn
+				Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid meMA.Lauds2.mode</>End-Title
+				Media rid meMA.Lauds2.text End-Media
 				Insert_section PsalmVerses.forLauds.v06 End-Insert
-				Hymn sid meMA.Lauds6.text media-off End-Hymn
+				Hymn rid meMA.Lauds2.text media-off End-Hymn
+				Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid meMA.Lauds3.mode</>End-Title
+				Media rid meMA.Lauds3.text End-Media
+				Insert_section PsalmVerses.forOneApostle.verse1 End-Insert
+				Hymn rid meMA.Lauds3.text media-off End-Hymn
+				Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid meMA.Lauds4.mode</>End-Title
+				Media rid meMA.Lauds4.text End-Media
+				Insert_section PsalmVerses.forOneApostle.verse2 End-Insert
+				Hymn rid meMA.Lauds4.text media-off End-Hymn
+			End-Section
+			Section i_123456as123456
+				Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid meMA.Lauds1.mode</>End-Title
+				Media rid meMA.Lauds1.text End-Media
+				Insert_section PsalmVerses.forLauds.v01 End-Insert
+				Hymn rid meMA.Lauds1.text media-off End-Hymn
+				Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid meMA.Lauds2.mode</>End-Title
+				Media rid meMA.Lauds2.text End-Media
+				Insert_section PsalmVerses.forLauds.v02 End-Insert
+				Hymn rid meMA.Lauds2.text media-off End-Hymn
+				Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid meMA.Lauds3.mode</>End-Title
+				Media rid meMA.Lauds3.text End-Media
+				Insert_section PsalmVerses.forLauds.v03 End-Insert
+				Hymn rid meMA.Lauds3.text media-off End-Hymn
+				Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid meMA.Lauds4.mode</>End-Title
+				Media rid meMA.Lauds4.text End-Media
+				Insert_section PsalmVerses.forLauds.v04 End-Insert
+				Hymn rid meMA.Lauds4.text media-off End-Hymn
+				Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid meMA.Lauds5.mode</>End-Title
+				Media rid meMA.Lauds5.text End-Media
+				Insert_section PsalmVerses.forLauds.v05 End-Insert
+				Hymn rid meMA.Lauds5.text media-off End-Hymn
+				Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid meMA.Lauds6.mode</>End-Title
+				Media rid meMA.Lauds6.text End-Media
+				Insert_section PsalmVerses.forLauds.v06 End-Insert
+				Hymn rid meMA.Lauds6.text media-off End-Hymn
 			End-Section
 			Section p_1123as3456
 				Title role mixed<Tmode>rid meMA.Lauds1.mode</><Tmelody>rid meMA.Lauds1.melody</>End-Title
@@ -1863,6 +2082,70 @@ Template MA
 				Hymn rid meMA.Lauds3.text media-off End-Hymn
 				Media rid meMA.Lauds4.text End-Media
 				Insert_section PsalmVerses.forLauds.v06 End-Insert
+				Hymn rid meMA.Lauds4.text media-off End-Hymn
+			End-Section
+			Section p_1234as56devoutmen21
+				Title role mixed<Tmode>rid meMA.Lauds1.mode</><Tmelody>rid meMA.Lauds1.melody</>End-Title
+				Media rid meMA.LaudsSundayVerse1.text End-Media
+				//Media rid meMA.Lauds1.text End-Media
+				Insert_section PsalmVerses.forLauds.v05 End-Insert
+				Hymn rid meMA.Lauds1.text media-off End-Hymn
+				//Media rid meMA.Lauds2.text End-Media
+				Insert_section PsalmVerses.forLauds.v06 End-Insert
+				Hymn rid meMA.Lauds2.text media-off End-Hymn
+				//Media rid meMA.Lauds3.text End-Media
+				Insert_section PsalmVerses.forDevoutMen.verse2 End-Insert
+				Hymn rid meMA.Lauds3.text media-off End-Hymn
+				//Media rid meMA.Lauds4.text End-Media
+				Insert_section PsalmVerses.forDevoutMen.verse1 End-Insert
+				Hymn rid meMA.Lauds4.text media-off End-Hymn
+			End-Section
+			Section p_1234as56hierarchs12
+				Title role mixed<Tmode>rid meMA.Lauds1.mode</><Tmelody>rid meMA.Lauds1.melody</>End-Title
+				Media rid meMA.LaudsSundayVerse1.text End-Media
+				//Media rid meMA.Lauds1.text End-Media
+				Insert_section PsalmVerses.forLauds.v05 End-Insert
+				Hymn rid meMA.Lauds1.text media-off End-Hymn
+				//Media rid meMA.Lauds2.text End-Media
+				Insert_section PsalmVerses.forLauds.v06 End-Insert
+				Hymn rid meMA.Lauds2.text media-off End-Hymn
+				//Media rid meMA.Lauds3.text End-Media
+				Insert_section PsalmVerses.forHierarchs.verse1 End-Insert
+				Hymn rid meMA.Lauds3.text media-off End-Hymn
+				//Media rid meMA.Lauds4.text End-Media
+				Insert_section PsalmVerses.forHierarchs.verse2 End-Insert
+				Hymn rid meMA.Lauds4.text media-off End-Hymn
+			End-Section
+			Section p_1234as56hierarchs13
+				Title role mixed<Tmode>rid meMA.Lauds1.mode</><Tmelody>rid meMA.Lauds1.melody</>End-Title
+				Media rid meMA.LaudsSundayVerse1.text End-Media
+				//Media rid meMA.Lauds1.text End-Media
+				Insert_section PsalmVerses.forLauds.v05 End-Insert
+				Hymn rid meMA.Lauds1.text media-off End-Hymn
+				//Media rid meMA.Lauds2.text End-Media
+				Insert_section PsalmVerses.forLauds.v06 End-Insert
+				Hymn rid meMA.Lauds2.text media-off End-Hymn
+				//Media rid meMA.Lauds3.text End-Media
+				Insert_section PsalmVerses.forHierarchs.verse1 End-Insert
+				Hymn rid meMA.Lauds3.text media-off End-Hymn
+				//Media rid meMA.Lauds4.text End-Media
+				Insert_section PsalmVerses.forHierarchs.verse3 End-Insert
+				Hymn rid meMA.Lauds4.text media-off End-Hymn
+			End-Section
+			Section p_1234as56hierarchs42
+				Title role mixed<Tmode>rid meMA.Lauds1.mode</><Tmelody>rid meMA.Lauds1.melody</>End-Title
+				Media rid meMA.LaudsSundayVerse1.text End-Media
+				//Media rid meMA.Lauds1.text End-Media
+				Insert_section PsalmVerses.forLauds.v05 End-Insert
+				Hymn rid meMA.Lauds1.text media-off End-Hymn
+				//Media rid meMA.Lauds2.text End-Media
+				Insert_section PsalmVerses.forLauds.v06 End-Insert
+				Hymn rid meMA.Lauds2.text media-off End-Hymn
+				//Media rid meMA.Lauds3.text End-Media
+				Insert_section PsalmVerses.forHierarchs.verse4 End-Insert
+				Hymn rid meMA.Lauds3.text media-off End-Hymn
+				//Media rid meMA.Lauds4.text End-Media
+				Insert_section PsalmVerses.forHierarchs.verse2 End-Insert
 				Hymn rid meMA.Lauds4.text media-off End-Hymn
 			End-Section
 		End-Section
@@ -1935,11 +2218,11 @@ Template MA
 					Title role mixed sid Doxa<Tmode>rid eo.Doxasticon.mode</>End-Title
 					Title role desig rid eo.title End-Title
 					Hymn rid eo.Doxasticon.text End-Hymn
-				End-Section //part01
+				End-Section
 				Section theotokion
 					Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
 					Hymn sid hoMA.LaudsSunTheotokion.text End-Hymn
-				End-Section //part02
+				End-Section
 			End-Section
 			Section me__
 				Section bothasglory_
@@ -2077,7 +2360,7 @@ Template MA
 			Reading sid hoMA.DoxologySmallIntro.text sid hoMA.SmallDoxology1.text sid hoMA.SmallDoxology1d sid hoMA.SmallDoxology2.text sid hoMA.SmallDoxology2d sid hoMA.SmallDoxology3.text End-Reading
 		End-Section
 		Section sunday
-			Insert_section GreatDoxology End-Insert
+			Insert_section MA._14_Doxology__.great End-Insert
 			Rubric sid R36 End-Rubric
 				when-mode-of-week-is 
 					M1, M2, M3, M4 use:
