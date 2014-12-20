@@ -1331,11 +1331,10 @@ Template MA
 				Title role chapverse sid Eothinon rid leeoMA.Gospel.title End-Title
 				Title role chapverse rid leeoMA.Gospel.book rid leeoMA.Gospel.chapverse End-Title
 				Reading rid leeoMA.Gospel.text<Trubric>rid leeoMA.Gospel.version</>End-Reading
-			End-Section //Part1
-			Section part2
 				Actor sid Choir End-Actor
 				Dialog sid DoxaSoiKyrie End-Dialog
-				Break line End_Break
+			End-Section //Part1
+			Section part2
 				Actor sid Reader End-Actor
 				Reading sid hoMA.SunPostGospel.text End-Reading	
 				Actor sid Choir End-Actor
@@ -1345,7 +1344,17 @@ Template MA
 				Insert_section LiturgicalPsalms.Psalm_50_Verses End-Insert
 			End-Section //Part2
 			when-triodion-day-is 1 thru 57 use:
-				Insert_section LentParts.Lent_PostGospel End-Insert
+				Section part3tr
+					Title role desig sid IdiomelaTouTriodiou End-Title
+					Title role mixed sid Doxa<Tmode>sid tr.d001_gr_GR_cog.trMA.PostGospelGlory.mode</>End-Title
+					Hymn sid tr.d001_gr_GR_cog.trMA.PostGospelGlory.text End-Hymn
+					Title role mixed sid KaiNyn<Tmode>sid OAftos</>End-Title
+					Hymn sid tr.d001_gr_GR_cog.trMA.PostGospelBoth.text End-Hymn
+					Title role mixed<Tdesig>sid Idiomelon</><Tmode>sid tr.d001_gr_GR_cog.trMA.PostGospelIdiomelon.mode</>End-Title
+					Media sid tr.d001_gr_GR_cog.trMA.PostGospelIdiomelon.text End-Media
+					Verse<bnr>sid vVerse</>sid psa50.v3.text End-Verse
+					Hymn sid tr.d001_gr_GR_cog.trMA.PostGospelIdiomelon.text media-off End-Hymn
+				End-Section 
 				otherwise use:
 					Section part3	
 						Title sid Doxa End-Title
@@ -1380,15 +1389,12 @@ Template MA
 				Insert_section LiturgicalPsalms.Psalm_50_Verses End-Insert
 			End-Section //Part2
 			when-triodion-day-is 1 thru 57 use:
-				Insert_section LentParts.Lent_PostGospel End-Insert
+				Section part3tr
+					Insert_section eothinon_.part3tr End-Insert
+				End-Section
 				otherwise use:
 					Section part3	
-						Title sid Doxa End-Title
-						Hymn sid hoMA.PostGospelApostles.text End-Hymn
-						Title sid KaiNyn End-Title
-						Hymn sid hoMA.PostGospelTheotokos.text End-Hymn
-						Verse<bnr>sid vVerse</>sid psa50.v3.text End-Verse
-						Hymn sid hoMA.SunPostGospelIdiomelon.text End-Hymn
+						Insert_section eothinon_.part3 End-Insert
 					End-Section
 			end-when
 		End-Section
@@ -1406,8 +1412,10 @@ Template MA
 				Actor sid Choir End-Actor
 				Dialog sid DoxaSoiKyrie End-Dialog
 			End-Section //Part1
-			Insert_section Psalm50_read End-Insert
 			Section part2
+				Insert_section Psalm50_read End-Insert
+			End-Section
+			Section part3
 				Actor sid Choir End-Actor
 				Title role mixed sid Doxa<Tmode>sid Mode2</>End-Title
 				Hymn rid meMA.PostGospelGlory.text End-Hymn
@@ -1431,8 +1439,10 @@ Template MA
 				Reading rid lemeMA.Gospel.text<Trubric>rid lemeMA.Gospel.version</>End-Reading
 				Dialog<i>sid DoxaSoiKyrieP</>End-Dialog
 			End-Section //Part1
-			Insert_section Psalm50_read End-Insert
 			Section part2
+				Insert_section Psalm50_read End-Insert
+			End-Section
+			Section part3
 				Actor sid Choir End-Actor
 				Title role mixed sid Doxa<Tmode>sid Mode2</>End-Title
 				Hymn rid meMA.PostGospelGlory.text End-Hymn
@@ -1444,7 +1454,7 @@ Template MA
 				Hymn rid meMA.PostGospelIdiomelon.text media-off End-Hymn
 			End-Section //Part2
 		End-Section
-		Section mc
+		Section mc_
 			Section part1
 				Actor sid Priest End-Actor
 				Dialog sid gos03a rid lemcMA.Gospel.book sid gos03b End-Dialog
@@ -1458,20 +1468,39 @@ Template MA
 				Actor sid Choir End-Actor
 				Dialog sid DoxaSoiKyrie End-Dialog
 			End-Section
-			Insert_section Psalm50_read End-Insert
 			Section part2
-				Actor sid Choir End-Actor
-				Media rid trMA.PostGospelGlory.text End-Media
-				Title role mixed sid Doxa<Tmode>rid trMA.PostGospelGlory.mode</>End-Title
-				Hymn rid trMA.PostGospelGlory.text media-off End-Hymn
-				Title role mixed sid KaiNyn<Tmode>sid OAftos</>End-Title
-				Hymn rid trMA.PostGospelBoth.text media-off End-Hymn
-				Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid trMA.PostGospelIdiomelon.mode</>End-Title
-				Verse<bnr>sid vVerse</>sid ps_gr_GR_cog.psa50.v3.text End-Verse
-				Hymn rid trMA.PostGospelIdiomelon.text media-off End-Hymn
+				Insert_section Psalm50_read End-Insert
+			End-Section
+			Section part3
+				when-movable-cycle-day-is
+					64 use:
+						Section tr
+							Actor sid Choir End-Actor
+							Media rid trMA.PostGospelGlory.text End-Media
+							Title role mixed sid Doxa<Tmode>rid trMA.PostGospelGlory.mode</>End-Title
+							Hymn rid trMA.PostGospelGlory.text media-off End-Hymn
+							Title role mixed sid KaiNyn<Tmode>sid OAftos</>End-Title
+							Hymn rid trMA.PostGospelBoth.text media-off End-Hymn
+							Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid trMA.PostGospelIdiomelon.mode</>End-Title
+							Verse<bnr>sid vVerse</>sid ps_gr_GR_cog.psa50.v3.text End-Verse
+							Hymn rid trMA.PostGospelIdiomelon.text media-off End-Hymn
+						End-Section 
+					71 thru 127 use:
+						Section pe
+							Actor sid Choir End-Actor
+							Media rid peMA.PostGospelGlory.text End-Media
+							Title role mixed sid Doxa<Tmode>rid peMA.PostGospelGlory.mode</>End-Title
+							Hymn rid peMA.PostGospelGlory.text media-off End-Hymn
+							Title role mixed sid KaiNyn<Tmode>sid OAftos</>End-Title
+							Hymn rid peMA.PostGospelBoth.text media-off End-Hymn
+							Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid peMA.PostGospelIdiomelon.mode</>End-Title
+							Verse<bnr>sid vVerse</>sid ps_gr_GR_cog.psa50.v3.text End-Verse
+							Hymn rid peMA.PostGospelIdiomelon.text media-off End-Hymn
+						End-Section
+				end-when
 			End-Section 
 		End-Section
-		Section mcP
+		Section mcP_
 			Section part1
 				Actor sid Priest End-Actor
 				Dialog sid gos03a rid lemcMA.Gospel.book sid gos03b End-Dialog
@@ -1483,17 +1512,11 @@ Template MA
 				Reading rid lemcMA.Gospel.text<Trubric>rid lemcMA.Gospel.version</>End-Reading
 				Dialog<i>sid DoxaSoiKyrieP</>End-Dialog
 			End-Section
-			Insert_section Psalm50_read End-Insert
 			Section part2
-				Actor sid Choir End-Actor
-				Media rid trMA.PostGospelGlory.text End-Media
-				Title role mixed sid Doxa<Tmode>rid trMA.PostGospelGlory.mode</>End-Title
-				Hymn rid trMA.PostGospelGlory.text media-off End-Hymn
-				Title role mixed sid KaiNyn<Tmode>sid OAftos</>End-Title
-				Hymn rid trMA.PostGospelBoth.text media-off End-Hymn
-				Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid trMA.PostGospelIdiomelon.mode</>End-Title
-				Verse<bnr>sid vVerse</>sid ps_gr_GR_cog.psa50.v3.text End-Verse
-				Hymn rid trMA.PostGospelIdiomelon.text media-off End-Hymn
+				Insert_section Psalm50_read End-Insert
+			End-Section
+			Section part3
+				Insert_section mc_.part3 End-Insert
 			End-Section 
 		End-Section
 	End-Section
@@ -1921,7 +1944,13 @@ Template MA
 				End-Section
 			End-Section
 		End-Section
-		Section tr_
+		Section tr__
+			Section exap111
+				Actor sid Choir End-Actor
+				Title role desig sid Exaposteilaria End-Title
+				Title role mixed<Tmode>rid trMA.Exaposteilarion1.mode</><Tmelody>rid trMA.Exaposteilarion1.melody</>End-Title
+				Hymn rid trMA.Exaposteilarion1.text<r>sid Thrice</>End-Hymn
+			End-Section
 			Section exap112
 				Actor sid Choir End-Actor
 				Title role desig sid Exaposteilaria End-Title
@@ -1965,7 +1994,6 @@ Template MA
 			end-when
 		End-Section
 	End-Section
-
 
 	Section _13_Lauds__
 		Section both__
@@ -2459,6 +2487,18 @@ Template MA
 		Section pe
 		End-Section
 		Section tr__
+			Section i_1122as3456
+				Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid trMA.Lauds1.mode</>End-Title
+				Media rid trMA.Lauds1.text End-Media
+				Insert_section PsalmVerses.forLauds.v03 End-Insert
+				Insert_section PsalmVerses.forLauds.v04 End-Insert
+				Hymn rid trMA.Lauds1.text media-off End-Hymn
+				Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid trMA.Lauds2.mode</>End-Title
+				Media rid trMA.Lauds2.text End-Media
+				Insert_section PsalmVerses.forLauds.v05 End-Insert
+				Insert_section PsalmVerses.forLauds.v06 End-Insert
+				Hymn rid trMA.Lauds2.text media-off End-Hymn
+			End-Section	
 			Section i_112234as123456
 				Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid trMA.Lauds1.mode</>End-Title
 				Media rid trMA.Lauds1.text End-Media
@@ -2558,7 +2598,59 @@ Template MA
 		End-Section
 	End-Section
 
-	Section _16_Aposticha
+	Section _16_Aposticha__
+		Section gloryboth__
+			Section tr_
+				Title sid DoxaKaiNyn End-Title
+				Section hymn
+					Title role mode rid trMA.AposGlory.mode End-Title
+					Hymn rid trMA.AposGlory.text End-Hymn
+				End-Section
+			End-Section
+		End-Section
+		Section tr__
+			Section weekday
+				Section part1
+					Actor sid Choir End-Actor
+					Title role desig sid Aposticha sid TouTriodiou End-Title		
+					Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid trMA.AposIdiomelon1.mode</>End-Title
+					Hymn rid trMA.AposIdiomelon1.text End-Hymn
+					when-movable-cycle-day-is
+						53 use:
+							Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid trMA.AposIdiomelon2.mode</>End-Title
+							Insert_section bk.ho.s10.Aposticha.Weekday_Verse_1 End-Insert
+							Hymn rid trMA.AposIdiomelon2.text End-Hymn
+						otherwise use:
+							Insert_section bk.ho.s10.Aposticha.Weekday_Verse_1 End-Insert
+							Hymn rid trMA.AposIdiomelon1.text media-off End-Hymn
+					end-when
+					Title role desig sid Martyrikon End-Title
+					Title role mixed<Tmode>rid trMA.AposMartyric.mode</><Tmelody>rid trMA.AposMartyric.melody</>End-Title
+					Media rid trMA.AposMartyric.text End-Media
+					Insert_section bk.ho.s10.Aposticha.Weekday_Verse_2 End-Insert
+					Hymn rid trMA.AposMartyric.text media-off End-Hymn
+				End-Section
+				Section part2
+					Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+					Title role mixed<Tmode>rid trMA.AposTheotokion.mode</><Tmelody>rid trMA.AposTheotokion.melody</>End-Title
+					Hymn rid trMA.AposTheotokion.text End-Hymn
+				End-Section
+			End-Section
+			Section i_matinsaposticha12idiomela
+				Actor sid Choir End-Actor
+				Title role desig sid Aposticha End-Title		
+				Title role mixed<Tmode>rid trMA.Aposticha1.mode</><Tmelody>rid trMA.Aposticha1.melody</>End-Title
+				Hymn rid trMA.Aposticha1.text End-Hymn
+				Title role mixed<Tmode>rid trMA.Aposticha2.mode</><Tmelody>rid trMA.Aposticha2.melody</>End-Title
+				Media rid trMA.Aposticha2.text End-Media
+				Insert_section PsalmVerses.forMatinsAposticha.verse1 End-Insert
+				Hymn rid trMA.Aposticha2.text media-off End-Hymn
+				Title role mixed<Tmode>rid trMA.Aposticha3.mode</><Tmelody>rid trMA.Aposticha3.melody</>End-Title
+				Media rid trMA.Aposticha3.text End-Media
+				Insert_section PsalmVerses.forMatinsAposticha.verse2 End-Insert
+				Hymn rid trMA.Aposticha3.text media-off End-Hymn
+			End-Section
+		End-Section
 	End-Section
 
 	Section _17_Apolytikion__
@@ -2572,12 +2664,47 @@ Template MA
 			Dialog<i>sid res04p</>End-Dialog
 			Actor sid Choir End-Actor
 		End-Section	
+		Section itisgood_trisagion_holyweek
+			Actor sid Priest End-Actor
+			Insert_section bk.ho.s03.Weekday_End End-Insert
+			Actor sid Reader End-Actor
+			Insert_section bk.ho.s01.Trisagion_Prayers End-Insert
+			Actor sid Priest End-Actor
+			Dialog sid exc20 End-Dialog
+			Dialog<i>sid res04p</>End-Dialog
+			Actor sid Reader End-Actor
+			Title role desig sid Kontakion End-Title
+			Reading rid trMA.Kontakion1.text End-Reading
+		End-Section	
 	End-Section
 
 	Section _18_End__  //needs work
 		Section ektenia
 			Insert_section Ektenia02 End-Insert
 			Insert_section noektenia End-Insert
+		End-Section
+		Section lent
+			Section part1
+				Dialog sid res01<r>sid Forty</>End-Dialog
+				Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
+				Dialog sid TinTimioteran.text End-Dialog
+				Dialog sid EnOnomatiKyriou.text End-Dialog
+				Actor sid Priest End-Actor
+				Dialog sid OOnEvlogitos.text End-Dialog
+				Dialog<i>sid res04p</>End-Dialog
+				Dialog sid EpouranieVasilef.text End-Dialog
+				Dialog<i>sid res04p</>End-Dialog
+				Insert_section LentParts.StEphraimPrayer End-Insert
+			End-Section
+			when-movable-cycle-day-is
+				65, 66, 67, 68, 69 use:
+					Section part2
+						Actor sid Reader End-Actor
+						Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
+						Dialog sid res06 End-Dialog
+						Dialog sid Evlogison End-Dialog
+					End-Section
+			end-when
 		End-Section
 		Section noektenia
 			Actor sid Deacon End-Actor
@@ -2608,26 +2735,6 @@ Template MA
 	End-Section
 
 
-
-
-//sectino19 dismissal
-	Section Matins_Dismissal
-		Section part1
-			Actor sid PriestOrDeacon End-Actor
-			Dialog sid exc17 End-Dialog
-			Dialog<i>sid EvlogisonP</>End-Dialog	
-			Actor sid Priest End-Actor
-			Dialog sid OOnEvlogitos.text<i>sid res04p</>End-Dialog
-			Dialog sid StereosaiKyrios.text End-Dialog
-			Actor sid Reader End-Actor
-			Dialog sid res04 End-Dialog
-			Dialog sid TinTimioteran.text End-Dialog
-			Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
-			Dialog sid res01<r>sid Thrice</>sid Evlogison End-Dialog
-		End-Section	
-		Insert_section Dismissals.Com_No End-Insert
-	End-Section
-
 //-----------------------
 //Blocks
 
@@ -2636,6 +2743,18 @@ Template MA
 		when-movable-cycle-day-is
 			63 use: Reading sid hoMA.SunPostGospel.text End-Reading
 			78 thru 110 use: Reading sid hoMA.SunPostGospel.text End-Reading
+		end-when
+		when-date-is
+			Sep 14 use: Reading sid hoMA.SunPostGospel.text End-Reading
+		end-when
+		when-name-of-day-is
+			Sunday use:
+				when-date-is
+					Feb 2 use: Reading sid hoMA.SunPostGospel.text End-Reading
+					Aug 15 use: Reading sid hoMA.SunPostGospel.text End-Reading
+					Sep 8 use: Reading sid hoMA.SunPostGospel.text End-Reading
+					Nov 21 use: Reading sid hoMA.SunPostGospel.text End-Reading
+				end-when
 		end-when			
 		Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
 	End-Section
