@@ -54,43 +54,16 @@ Status Review
 //		Insert_template ematins.credits End-Insert
 //	End-Preface
 
-
-
-
-	
-	Insert_section cu.MatinsOrdinary.beginning.Part1 End-Insert
-	
-	Section Part2		
-		Actor sid Reader End-Actor
-		Insert_section bk.ho.s01.Trisagion_Prayers End-Insert
-		Actor sid Priest End-Actor
-		Dialog sid exc20 End-Dialog
-		Actor sid Reader End-Actor
-		Dialog sid res04 End-Dialog
-		Reading sid res01<inr>sid Twelve</>End-Reading
-		Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
-		Reading sid DefteProskinisomen1 End-Reading
-		Reading sid DefteProskinisomen2 End-Reading
-		Reading sid DefteProskinisomen3 End-Reading
-		Title role desig sid psa19.title End-Title
-		Reading sid psa19.text End-Reading		
-		Title role desig sid psa20.title End-Title
-		Reading sid psa20.text End-Reading		
-		Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
-		Insert_section bk.ho.s01.Trisagion_Prayers End-Insert
-		Actor sid Priest End-Actor
-		Dialog sid exc20 End-Dialog
-		Actor sid Reader End-Actor
-		Dialog sid res04 End-Dialog
-		Reading sid me.m09.d14_gr_GR_cog.meVE.Apolytikion1.text End-Reading
-		Reading sid DoxaPatri.text End-Reading
-		Reading sid me.m09.d14_gr_GR_cog.meMA.Kontakion1.text End-Reading
-		Reading sid KaiNynKaiAei.text End-Reading
-		Reading sid hoMA.Troparion3.text End-Reading
+	Section Instance01
+		Insert_section MA._00_Ordinary__.part1__.normal End-Insert
+		when-name-of-day-is
+			Saturday, Sunday use:
+				Insert_section MA._00_Ordinary__.part2__.parish End-Insert
+			otherwise use:
+				Insert_section MA._00_Ordinary__.part2__.full End-Insert
+		end-when
+		Insert_section MA._00_Ordinary__.part3 End-Insert
+		Insert_section MA._00_Ordinary__.part4 End-Insert
+		Insert_section MA._00_Ordinary__.part5 End-Insert
 	End-Section
-	
-	Insert_section cu.MatinsOrdinary.beginning.Part3 End-Insert
-	Insert_section cu.MatinsOrdinary.beginning.Part4 End-Insert
-	Insert_section cu.MatinsOrdinary.beginning.Part5 End-Insert
-					
 End-Template

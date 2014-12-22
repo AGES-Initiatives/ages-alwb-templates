@@ -14,6 +14,7 @@ Status Review
 	import tr.*
 
 	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
 	import misc_gr_GR_cog.*
 	import prayers_gr_GR_cog.*
 	import rubrical_gr_GR_cog.*
@@ -349,24 +350,49 @@ Status Review
 		Dialog<i>sid res04p</>End-Dialog
 	End-Section //PrayerOfTheFaithful2
 		
-	Section Section20
-		Title role desig sid euLI.Key1100.title End-Title
-		Actor sid Choir End-Actor
-		Title role desig sid euLI.Key1102.title End-Title
-		Media sid euLI.Key1102.text End-Media
-		Hymn sid euLI.Key1102.text media-off sid euLI.Key1103.text End-Hymn	
-//		Rubric End-Rubric
-		Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
-		Para role inaudible sid euLI.Key1101.text End-Para
-//		Rubric End-Rubric
-		Actor sid Deacon End-Actor
-		Dialog sid euLI.Key1110.text End-Dialog		
-		Actor sid Choir End-Actor
-		Dialog sid res04 End-Dialog
-//		Rubric End-Rubric
-		Actor sid Choir End-Actor
-		Hymn sid euLI.Key1123.text End-Hymn		
-//		Rubric End-Rubric
+	Section Section20__
+		Section cherubic
+			Title role desig sid euLI.Key1100.title End-Title
+			Actor sid Choir End-Actor
+			Title role desig sid euLI.Key1102.title End-Title
+			Media sid euLI.Key1102.text End-Media
+			Hymn sid euLI.Key1102.text media-off sid euLI.Key1103.text End-Hymn	
+			Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
+			Para role inaudible sid euLI.Key1101.text End-Para
+			Actor sid Deacon End-Actor
+			Dialog sid euLI.Key1110.text End-Dialog		
+			Actor sid Choir End-Actor
+			Dialog sid res04 End-Dialog
+			Hymn sid euLI.Key1123.text End-Hymn		
+		End-Section
+		Section holythursday
+			Title role desig sid euLI.Key1100.title End-Title
+			Actor sid Choir End-Actor
+			Title role desig sid tr.d069_gr_GR_cog.trLI.CherubicHymn.title End-Title
+			Title role mode sid tr.d069_gr_GR_cog.trLI.CherubicHymn.mode End-Title
+			Hymn sid tr.d069_gr_GR_cog.trLI.CherubicHymnPart1.text End-Hymn	
+			Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
+			Para role inaudible sid euLI.Key1101.text End-Para
+			Actor sid Deacon End-Actor
+			Dialog sid euLI.Key1110.text End-Dialog		
+			Actor sid Choir End-Actor
+			Dialog sid res04 End-Dialog
+			Hymn sid tr.d069_gr_GR_cog.trLI.CherubicHymnPart2.text End-Hymn		
+		End-Section
+		Section holysaturday
+			Title role desig sid euLI.Key1100.title End-Title
+			Actor sid Choir End-Actor
+			Title role desig sid tr.d071_gr_GR_cog.trHW.CherubicHymn.title End-Title
+			Title role mode sid tr.d071_gr_GR_cog.trHW.CherubicHymn.mode End-Title
+			Hymn sid tr.d071_gr_GR_cog.trHW.CherubicHymnPart1.text End-Hymn	
+			Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
+			Para role inaudible sid euLI.Key1101.text End-Para
+			Actor sid Deacon End-Actor
+			Dialog sid euLI.Key1110.text End-Dialog		
+			Actor sid Choir End-Actor
+			Dialog sid res04 End-Dialog
+			Hymn sid tr.d071_gr_GR_cog.trHW.CherubicHymnPart2.text End-Hymn		
+		End-Section
 	End-Section
 	
 	Section Section21__
@@ -738,6 +764,15 @@ Status Review
 				Dec 25 use:
 					Insert_section bk.ap.da.sections.d1.communion_title End-Insert
 					Insert_section bk.ap.da.sections.d1.communion_hymn End-Insert
+				otherwise use:
+					when-movable-cycle-day-is
+						69 use:
+							Insert_section bk.ap.mc.p6.sections.Day_HolyThursday.communion_title End-Insert
+							Insert_section bk.ap.mc.p6.sections.Day_HolyThursday.communion_hymn End-Insert
+						71 use:
+							Insert_section bk.ap.mc.p6.sections.Day_HolySaturday.liturgy.communion_title End-Insert
+							Insert_section bk.ap.mc.p6.sections.Day_HolySaturday.liturgy.communion_hymn End-Insert
+					end-when
 			end-when
 		End-Section
 	End-Section
@@ -808,7 +843,7 @@ Status Review
 		Dialog sid euLI.Key1529.text End-Dialog
 	End-Section
 
-	Section Section31__ //do not use this on Easter Sunday pe.d071
+	Section Section31__
 		Section morning
 			when-movable-cycle-day-is
 				43 use:
@@ -830,20 +865,7 @@ Status Review
 						Title role mode sid tr.d064_gr_GR_cog.trVE.Apolytikion1.mode End-Title
 						Hymn sid tr.d064_gr_GR_cog.trVE.Apolytikion1.text End-Hymn
 					End-Section	
-				69 use:
-					Section holythursday
-						Actor sid Choir End-Actor
-						Title role desig sid euLI.Key1531.text End-Title		
-						Hymn sid tr.d069_gr_GR_cog.trLI.AfterCommunion.text End-Hymn
-					End-Section
-				71 use:
-					Section holysaturday
-						Actor sid Choir End-Actor
-						Title role desig sid euLI.Key1531.text End-Title
-						Title role mode sid tr.d071_gr_GR_cog.trHW.AfterCommunion.mode End-Title	
-						Hymn sid tr.d071_gr_GR_cog.trHW.AfterCommunion.text End-Hymn
-					End-Section
-				72 thru 109 use:
+				71 thru 109 use:
 					Section pascha
 						Actor sid Choir End-Actor
 						Title role desig sid euLI.Key1531.text End-Title
@@ -924,6 +946,22 @@ Status Review
 					Actor sid Choir End-Actor
 					Title role mode sid Mode2 End-Title
 					Hymn sid euLI.Key1530.text End-Hymn
+				otherwise use:
+					when-movable-cycle-day-is
+						69 use:
+							Section holythursday
+								Actor sid Choir End-Actor
+								Title role desig sid euLI.Key1531.text End-Title		
+								Hymn sid tr.d069_gr_GR_cog.trLI.AfterCommunion.text End-Hymn
+							End-Section
+						71 use:
+							Section holysaturday
+								Actor sid Choir End-Actor
+								Title role desig sid euLI.Key1531.text End-Title
+								Title role mode sid tr.d071_gr_GR_cog.trHW.AfterCommunion.mode End-Title	
+								Hymn sid tr.d071_gr_GR_cog.trHW.AfterCommunion.text End-Hymn
+							End-Section
+					end-when
 			end-when
 		End-Section
 	End-Section	
@@ -1068,6 +1106,14 @@ Status Review
 		End-Section
 		Section comno
 			Insert_section Dismissals.dismissal_01 End-Insert
+			Actor sid Choir End-Actor
+			Hymn sid euLI.Key1706.text End-Hymn
+			Actor sid Priest End-Actor
+			Dialog sid DiEfchonPateron.text End-Dialog
+			Dialog<i>sid res04p</>End-Dialog
+		End-Section
+		Section holythursdayliturgy
+			Dialog sid dis00 sid dis00.holythursday sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 sid dis10 sid dis89 End-Dialog
 			Actor sid Choir End-Actor
 			Hymn sid euLI.Key1706.text End-Hymn
 			Actor sid Priest End-Actor
