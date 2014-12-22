@@ -197,15 +197,28 @@ Template LectionaryReadings
 	End-Section
 
 	Section Lectionary_Gospel_Daily
-		Section Alleluia 
-			Actor sid Choir End-Actor
-			Insert_section Gospel_Alleluia_Mode End-Insert
-			Media sid hoLI.GospelAlleluia.text End-Media
-			Hymn sid hoLI.GospelAlleluia.text  media-off End-Hymn
-			Insert_section Gospel_Alleluia_Verse1 End-Insert
-			Hymn sid hoLI.GospelAlleluia.text  media-off End-Hymn
-			Insert_section Gospel_Alleluia_Verse2 End-Insert
-			Hymn sid hoLI.GospelAlleluia.text  media-off End-Hymn
+		Section Alleluia
+			when-movable-cycle-day-is
+				69, 70 use:
+					Actor sid Choir End-Actor
+					Insert_section Gospel_Alleluia_Mode End-Insert
+					Media sid hoLI.GospelAlleluia.text End-Media
+					Insert_section Gospel_Alleluia_Verse1 End-Insert
+					Hymn sid hoLI.GospelAlleluia.text  media-off End-Hymn
+					Insert_section Gospel_Alleluia_Verse2 End-Insert
+					Hymn sid hoLI.GospelAlleluia.text  media-off End-Hymn
+					Insert_section Gospel_Alleluia_Verse3 End-Insert
+					Hymn sid hoLI.GospelAlleluia.text  media-off End-Hymn
+				otherwise use:
+					Actor sid Choir End-Actor
+					Insert_section Gospel_Alleluia_Mode End-Insert
+					Media sid hoLI.GospelAlleluia.text End-Media
+					Hymn sid hoLI.GospelAlleluia.text  media-off End-Hymn
+					Insert_section Gospel_Alleluia_Verse1 End-Insert
+					Hymn sid hoLI.GospelAlleluia.text  media-off End-Hymn
+					Insert_section Gospel_Alleluia_Verse2 End-Insert
+					Hymn sid hoLI.GospelAlleluia.text  media-off End-Hymn
+			end-when
 		End-Section //Alleluia
 		Section Lesson 
 			Title role desig sid ToEvangelion End-Title
