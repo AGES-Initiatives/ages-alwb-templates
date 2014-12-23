@@ -823,24 +823,32 @@ Status Review
 		//Para role inaudible sid euLI.Key1525.text End-Para	*/
 	End-Section
 	
-	Section Section30
-		Actor sid Deacon End-Actor
-		Dialog sid euLI.Key1526.text End-Dialog
-		Dialog sid euLI.Key1527.text media-off End-Dialog
-		Actor sid Choir End-Actor
-		Title<r>sid euLI.Key1527.title</>End-Title
-		Media sid euLI.Key1527.text End-Media
-		when-movable-cycle-day-is 71 thru 109 use:
-			Title<r>sid pe.d00P_gr_GR_cog.pePA.Canon.text</>End-Title
-			Media sid pe.d00P_gr_GR_cog.pePA.Canon.text End-Media
-		end-when
-		when-date-is Aug 14 thru 22 use:
-			Title role desig sid other.dormitionencomia_gr_GR_cog.other.Encomia.title End-Title
-			Media sid other.dormitionencomia_gr_GR_cog.other.Encomia101.text End-Media
-		end-when
-		Break line End_Break
-		Actor sid Priest End-Actor
-		Dialog sid euLI.Key1529.text End-Dialog
+	Section Section30_
+		Section call
+			Actor sid Deacon End-Actor
+			Dialog sid euLI.Key1526.text End-Dialog
+			Dialog sid euLI.Key1527.text media-off End-Dialog
+		End-Section
+		Section hymns
+			Actor sid Choir End-Actor
+			Title<r>sid euLI.Key1527.title</>End-Title
+			Media sid euLI.Key1527.text End-Media
+		End-Section
+		Section seasonalhymns
+			when-movable-cycle-day-is 71 thru 109 use:
+				Title<r>sid pe.d00P_gr_GR_cog.pePA.Canon.text</>End-Title
+				Media sid pe.d00P_gr_GR_cog.pePA.Canon.text End-Media
+			end-when
+			when-date-is Aug 14 thru 22 use:
+				Title role desig sid other.dormitionencomia_gr_GR_cog.other.Encomia.title End-Title
+				Media sid other.dormitionencomia_gr_GR_cog.other.Encomia101.text End-Media
+			end-when
+		End-Section
+		Section end
+			Break line End_Break
+			Actor sid Priest End-Actor
+			Dialog sid euLI.Key1529.text End-Dialog
+		End-Section
 	End-Section
 
 	Section Section31__
