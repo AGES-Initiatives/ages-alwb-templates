@@ -180,6 +180,31 @@ Template LectionaryReadings
 		End-Section	
 	End-Section //Epistle_Menaion
 
+	Section Lectionary_Epistle_Triodion_Vespers //computes Holy Week
+		Section Prokeimenon
+			Title role desig sid TaAnagnosmata End-Title
+			Title role desig sid OApostolos End-Title
+			Actor sid Deacon End-Actor
+			Dialog sid exc19 End-Dialog
+			Actor sid Reader End-Actor
+			Insert_section rid_EpistleProkeimena_MovableCycle.mc_vespers_ep_title_mode End-Insert
+			Insert_section rid_EpistleProkeimena_MovableCycle.mc_vespers_ep_prokeimenon_verse End-Insert
+		End-Section
+		Section Lesson
+			Actor sid Deacon End-Actor
+			Dialog sid exc17 End-Dialog		
+			Actor sid Reader End-Actor
+			Insert_section Vespers_Epistle_Book End-Insert
+			Actor sid Deacon End-Actor
+			Dialog sid exc19 End-Dialog
+			Actor sid Reader End-Actor
+			Insert_section Vespers_Epistle_Chapverse End-Insert
+			Insert_section Vespers_Epistle_Text End-Insert
+			Actor sid Priest End-Actor
+			Dialog sid epi02 End-Dialog	
+		End-Section	
+	End-Section
+
 	Section Lectionary_Epistle_Monastic
 		Section Lesson
 			Actor sid Deacon End-Actor
@@ -198,27 +223,14 @@ Template LectionaryReadings
 
 	Section Lectionary_Gospel_Daily
 		Section Alleluia
-			when-movable-cycle-day-is
-				69, 70 use:
-					Actor sid Choir End-Actor
-					Insert_section Gospel_Alleluia_Mode End-Insert
-					Media sid hoLI.GospelAlleluia.text End-Media
-					Insert_section Gospel_Alleluia_Verse1 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text  media-off End-Hymn
-					Insert_section Gospel_Alleluia_Verse2 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text  media-off End-Hymn
-					Insert_section Gospel_Alleluia_Verse3 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text  media-off End-Hymn
-				otherwise use:
-					Actor sid Choir End-Actor
-					Insert_section Gospel_Alleluia_Mode End-Insert
-					Media sid hoLI.GospelAlleluia.text End-Media
-					Hymn sid hoLI.GospelAlleluia.text  media-off End-Hymn
-					Insert_section Gospel_Alleluia_Verse1 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text  media-off End-Hymn
-					Insert_section Gospel_Alleluia_Verse2 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text  media-off End-Hymn
-			end-when
+			Actor sid Choir End-Actor
+			Insert_section Gospel_Alleluia_Mode End-Insert
+			Media sid hoLI.GospelAlleluia.text End-Media
+			Hymn sid hoLI.GospelAlleluia.text  media-off End-Hymn
+			Insert_section Gospel_Alleluia_Verse1 End-Insert
+			Hymn sid hoLI.GospelAlleluia.text  media-off End-Hymn
+			Insert_section Gospel_Alleluia_Verse2 End-Insert
+			Hymn sid hoLI.GospelAlleluia.text  media-off End-Hymn
 		End-Section //Alleluia
 		Section Lesson 
 			Title role desig sid ToEvangelion End-Title
@@ -337,6 +349,41 @@ Template LectionaryReadings
 			Actor sid Deacon End-Actor
 			Title role chapverse rid lemeVE.Gospel.chapverse End-Title
 			Reading rid lemeVE.Gospel.text<Trubric>rid lemeVE.Gospel.version</>End-Reading
+			Actor sid Priest End-Actor
+			Dialog sid euLI.Key0705.text End-Dialog
+			Actor sid Choir End-Actor						
+			Dialog sid DoxaSoiKyrie End-Dialog	
+		End-Section
+	End-Section	
+	
+	Section Lectionary_Gospel_Triodion_Vespers //computes Holy Week
+		Section Alleluia
+			Actor sid Choir End-Actor
+			Insert_section Vespers_Gospel_Alleluia_Mode End-Insert
+			Media sid hoLI.GospelAlleluia.text End-Media
+			Insert_section Vespers_Gospel_Alleluia_Verse1 End-Insert
+			Hymn sid hoLI.GospelAlleluia.text  media-off End-Hymn
+			Insert_section Vespers_Gospel_Alleluia_Verse2 End-Insert
+			Hymn sid hoLI.GospelAlleluia.text  media-off End-Hymn
+			Insert_section Vespers_Gospel_Alleluia_Verse3 End-Insert
+			Hymn sid hoLI.GospelAlleluia.text  media-off End-Hymn
+		End-Section
+		Section Lesson
+			Title role desig sid ToEvangelion End-Title
+			Title<inr>rid lemcVE.Gospel.title</>End-Title
+			Actor sid Deacon End-Actor
+			Dialog sid exc17 sid exc18 sid gos02 End-Dialog
+			Actor sid Priest End-Actor
+			Dialog sid pet31 End-Dialog
+			Dialog<i>sid res05p</>End-Dialog
+			Actor sid Deacon End-Actor
+			Dialog sid gos03a rid lemcVE.Gospel.book sid gos03b End-Dialog		
+			Actor sid Priest End-Actor
+			Dialog sid exc19 End-Dialog
+			Dialog<i>sid DoxaSoiKyrieP</>End-Dialog	
+			Actor sid Deacon End-Actor
+			Title role chapverse rid lemcVE.Gospel.chapverse End-Title
+			Reading rid lemcVE.Gospel.text<Trubric>rid lemcVE.Gospel.version</>End-Reading
 			Actor sid Priest End-Actor
 			Dialog sid euLI.Key0705.text End-Dialog
 			Actor sid Choir End-Actor						
