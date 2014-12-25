@@ -29,7 +29,6 @@ Status Review
 	import bk.ap.da.sections.*
 	import bk.ho.s07.* //antiphon verses
 	import LectionaryReadings.*
-	import Litanies.*
 	
 	//Sections with names ending in __ require a selection
 	//Sections with names ending in _ have optional selections
@@ -40,6 +39,12 @@ Status Review
 			Actor sid Priest End-Actor
 			Dialog sid euLI.Key0109.text End-Dialog
 			Dialog<i>sid res04p</>End-Dialog
+			when-movable-cycle-day-is
+				71, 72, 73, 74, 75, 76, 77, 109 use:
+					Insert_section PENT.Pascha_Enarxis02 End-Insert
+				78 thru 108 use:
+					Insert_section PENT.AfterPascha_Enarxis End-Insert
+			end-when	
 		End-Section
 		Section vesperal
 			Actor sid Priest End-Actor
@@ -53,7 +58,7 @@ Status Review
 		Title role desig sid euLI.Key0200.text End-Title
 		Media sid euLI.Key0200.text End-Media
 		Actor sid Deacon End-Actor
-		Insert_section GreatLitany01 End-Insert
+		Insert_section LITANY.GreatLitany01 End-Insert
 		Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
 		Para role inaudible sid euLI.Key0201.text End-Para
 		Actor sid Priest End-Actor
@@ -72,7 +77,7 @@ Status Review
 
 	Section _04
 		Actor sid Deacon End-Actor
-		Insert_section ShortLitany01 End-Insert
+		Insert_section LITANY.ShortLitany01 End-Insert
 		Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
 		Para role inaudible sid euLI.Key0301.text End-Para
 		Actor sid Priest End-Actor
@@ -97,7 +102,7 @@ Status Review
 
 	Section _06
 		Actor sid Deacon End-Actor
-		Insert_section ShortLitany01 End-Insert
+		Insert_section LITANY.ShortLitany01 End-Insert
 		Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
 		Para role inaudible sid euLI.Key0401.text End-Para
 		Actor sid Priest End-Actor
