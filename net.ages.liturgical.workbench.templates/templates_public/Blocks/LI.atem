@@ -128,6 +128,13 @@ Status Review
 				Hymn rid meVE.Apolytikion2.text End-Hymn
 			End-Section
 		End-Section
+		Section pe_
+			Title role desig sid Apolytikion End-Title
+			Section hymn
+				Title role mixed<Tmode>rid peVE.Apolytikion1.mode</><Tmelody>rid peVE.Apolytikion1.melody</>End-Title
+				Hymn rid peVE.Apolytikion1.text End-Hymn
+			End-Section
+		End-Section
 		Section sunday_ //antiphon 3 sunday
 			Section hymn
 				Title role desig sid ApolytikionAnastasimon End-Title
@@ -649,7 +656,7 @@ Status Review
 	End-Section
 
 	Section _23__
-		Section megalynarion
+		Section chrys
 			Insert_section Selector_Megalynarion.AnyDay End-Insert
 		End-Section
 		Section basil
@@ -796,10 +803,10 @@ Status Review
 	End-Section
 	
 	Section _27_CommunionHymn__
-		Section morning
+		Section chrys
 			Insert_section Selector_CommunionHymn.SpecificDays End-Insert
 		End-Section
-		Section vesperal
+		Section basil
 			when-date-is
 				Jan 6 use:
 					Insert_section bk.ap.da.sections.d1.communion_title End-Insert
@@ -894,7 +901,7 @@ Status Review
 	End-Section
 
 	Section _31__
-		Section morning
+		Section chrys
 			when-movable-cycle-day-is
 				43 use:
 					Section lent3
@@ -986,16 +993,13 @@ Status Review
 					end-when
 			end-when
 		End-Section
-		Section vesperal
+		Section basil
 			when-date-is
-				Jan 6 use:
+				Jan 1 use: 
 					Actor sid Choir End-Actor
-					Title role mode sid Mode2 End-Title
-					Hymn sid euLI.Key1530.text End-Hymn
-				Dec 25 use:
-					Actor sid Choir End-Actor
-					Title role mode sid Mode2 End-Title
-					Hymn sid euLI.Key1530.text End-Hymn
+					Title role desig sid euLI.Key1531.text End-Title
+					Title role mode sid me.m01.d01_gr_GR_cog.meVE.Apolytikion2.mode End-Title
+					Hymn sid me.m01.d01_gr_GR_cog.meVE.Apolytikion2.text End-Hymn
 				otherwise use:
 					when-movable-cycle-day-is
 						69 use:
@@ -1011,6 +1015,10 @@ Status Review
 								Title role mode sid tr.d071_gr_GR_cog.trHW.AfterCommunion.mode End-Title	
 								Hymn sid tr.d071_gr_GR_cog.trHW.AfterCommunion.text End-Hymn
 							End-Section
+						otherwise use:
+							Actor sid Choir End-Actor
+							Title role mode sid Mode2 End-Title
+							Hymn sid euLI.Key1530.text End-Hymn
 					end-when
 			end-when
 		End-Section
