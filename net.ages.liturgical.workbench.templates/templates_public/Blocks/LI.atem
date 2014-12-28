@@ -42,7 +42,12 @@ Status Review
 				71, 72, 73, 74, 75, 76, 77, 109 use:
 					Insert_section PE.Pascha_Enarxis02 End-Insert
 				78 thru 108 use:
-					Insert_section PE.AfterPascha_Enarxis End-Insert
+					Section afterpascha
+						Actor sid Priest End-Actor
+						Insert_section PE.ChristIsRisen.once End-Insert
+						Actor sid Choir End-Actor
+						Insert_section PE.ChristIsRisen.twice End-Insert
+					End-Section
 			end-when	
 		End-Section
 		Section vesperal
@@ -111,7 +116,7 @@ Status Review
 	
 	Section _07_Apolytikia__
 		Section festal
-			Insert_section Selector_FestalApolytikion.Menaion End-Insert
+			Insert_section Selector_FestalApolytikion.Once End-Insert
 		End-Section
 		Section me1_
 			Title role desig sid Apolytikion End-Title
@@ -190,11 +195,13 @@ Status Review
 			Title role desig sid YmnoiMetaTinMikranEisodon End-Title
 			Actor sid Clergy End-Actor
 		End-Section
-		Section festal
-			Insert_section Selector_FestalApolytikion.Menaion End-Insert
-		End-Section
-		Section festal_thrice
-			Insert_section Selector_FestalApolytikion.Menaion_Thrice End-Insert
+		Section festal__
+			Section once
+				Insert_section Selector_FestalApolytikion.Once End-Insert
+			End-Section
+			Section thrice
+				Insert_section Selector_FestalApolytikion.Thrice End-Insert
+			End-Section
 		End-Section
 		Section local
 			Title role desig sid cl.Apolytikion1.title End-Title
@@ -213,6 +220,20 @@ Status Review
 			Section hymn
 				Title role mixed<Tmode>rid meVE.Apolytikion2.mode</><Tmelody>rid meVE.Apolytikion2.melody</>End-Title
 				Hymn rid meVE.Apolytikion2.text End-Hymn
+			End-Section
+		End-Section
+		Section tr1_
+			Title role desig sid Apolytikion End-Title
+			Section hymn
+				Title role mixed<Tmode>rid trVE.Apolytikion1.mode</><Tmelody>rid trVE.Apolytikion1.melody</>End-Title
+				Hymn rid trVE.Apolytikion1.text End-Hymn
+			End-Section
+		End-Section
+		Section tr2_
+			Title role desig sid Apolytikion End-Title
+			Section hymn
+				Title role mixed<Tmode>rid trVE.Apolytikion2.mode</><Tmelody>rid trVE.Apolytikion2.melody</>End-Title
+				Hymn rid trVE.Apolytikion2.text End-Hymn
 			End-Section
 		End-Section
 	End-Section
@@ -1152,30 +1173,94 @@ Status Review
 		End-Section
 	End-Section
 
-	Section _36__
-		Section comyes
-			Insert_section Selector_Dismissals.Com_Yes.part1 End-Insert
-			Actor sid Choir End-Actor
-			Hymn sid euLI.Key1706.text End-Hymn
-			Actor sid Priest End-Actor
-			Dialog sid DiEfchonPateron.text End-Dialog
-			Dialog<i>sid res04p</>End-Dialog
+	Section _36_Dismissal__
+		Section commemoration
+			when-movable-cycle-day-is
+				69 use:
+					Section holythursday
+						Dialog sid dis00 sid dis00.holythursday sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 sid dis10 sid dis89 End-Dialog
+						Actor sid Choir End-Actor
+						Hymn sid euLI.Key1706.text End-Hymn
+						Actor sid Priest End-Actor
+						Dialog sid DiEfchonPateron.text End-Dialog
+						Dialog<i>sid res04p</>End-Dialog
+					End-Section
+				71, 72, 73, 74, 75, 76, 77, 109 use:
+					Section pascha
+						Insert_section PE.Paschal_Dismissal_Intro.deacon End-Insert
+						Insert_section PE.Pascha_Dismissal_Part2_Menaion End-Insert
+					End-Section
+				78 thru 108 use:
+					Section afterpascha
+						Insert_section PE.Paschal_Dismissal_Intro.deacon End-Insert
+						Section part1
+							Insert_section Selector_Dismissals.Com_Yes.part1 End-Insert
+							Actor sid Choir End-Actor
+							Hymn sid euLI.Key1706.text End-Hymn
+							Actor sid Priest End-Actor
+							Rubric sid cl.pe.d078.R001 End-Rubric
+							Dialog sid DiEfchonPateron.text End-Dialog
+							Dialog<i>sid res04p</>End-Dialog
+						End-Section
+						Section part2	
+							Rubric sid Or End-Rubric
+							Rubric sid cl.pe.d078.R002 End-Rubric
+							Actor sid Priest End-Actor
+							Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text End-Dialog
+							Actor sid People End-Actor
+							Dialog sid PaschaDialog6.text End-Dialog
+						End-Section	
+					End-Section
+				otherwise use:
+					Section notpaschal
+						Insert_section Selector_Dismissals.Com_Yes.part1 End-Insert
+						Actor sid Choir End-Actor
+						Hymn sid euLI.Key1706.text End-Hymn
+						Actor sid Priest End-Actor
+						Dialog sid DiEfchonPateron.text End-Dialog
+						Dialog<i>sid res04p</>End-Dialog
+					End-Section
+			end-when
 		End-Section
-		Section comno
-			Insert_section Selector_Dismissals.dismissal_01 End-Insert
-			Actor sid Choir End-Actor
-			Hymn sid euLI.Key1706.text End-Hymn
-			Actor sid Priest End-Actor
-			Dialog sid DiEfchonPateron.text End-Dialog
-			Dialog<i>sid res04p</>End-Dialog
-		End-Section
-		Section holythursdayliturgy
-			Dialog sid dis00 sid dis00.holythursday sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 sid dis10 sid dis89 End-Dialog
-			Actor sid Choir End-Actor
-			Hymn sid euLI.Key1706.text End-Hymn
-			Actor sid Priest End-Actor
-			Dialog sid DiEfchonPateron.text End-Dialog
-			Dialog<i>sid res04p</>End-Dialog
+		Section nocommemoration
+			when-movable-cycle-day-is
+				71, 72, 73, 74, 75, 76, 77, 109 use:
+					Section pascha
+						Insert_section PE.Paschal_Dismissal_Intro.deacon End-Insert
+						Actor sid Priest End-Actor
+						Insert_section PE.Pascha_Dismissal_Part2 End-Insert
+					End-Section
+				78 thru 108 use:
+					Section afterpascha
+						Insert_section PE.Paschal_Dismissal_Intro.deacon End-Insert
+						Section part1
+							Insert_section Selector_Dismissals.dismissal_01 End-Insert
+							Actor sid Choir End-Actor
+							Hymn sid euLI.Key1706.text End-Hymn
+							Actor sid Priest End-Actor
+							Rubric sid cl.pe.d078.R001 End-Rubric
+							Dialog sid DiEfchonPateron.text End-Dialog
+							Dialog<i>sid res04p</>End-Dialog
+						End-Section
+						Section part2	
+							Rubric sid Or End-Rubric
+							Rubric sid cl.pe.d078.R002 End-Rubric
+							Actor sid Priest End-Actor
+							Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text End-Dialog
+							Actor sid People End-Actor
+							Dialog sid PaschaDialog6.text End-Dialog
+						End-Section	
+					End-Section
+				otherwise use:
+					Section notpaschal
+						Insert_section Selector_Dismissals.dismissal_01 End-Insert
+						Actor sid Choir End-Actor
+						Hymn sid euLI.Key1706.text End-Hymn
+						Actor sid Priest End-Actor
+						Dialog sid DiEfchonPateron.text End-Dialog
+						Dialog<i>sid res04p</>End-Dialog
+					End-Section
+			end-when
 		End-Section
 	End-Section
 	
