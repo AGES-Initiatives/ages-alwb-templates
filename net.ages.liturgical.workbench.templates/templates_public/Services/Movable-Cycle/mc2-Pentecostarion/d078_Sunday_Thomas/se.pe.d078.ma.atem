@@ -3,7 +3,6 @@ Template se.pe.d078.ma
 Status Final
 
 	import client_gr_GR_cog.*
-	import ho.s03_gr_GR_cog.*
 	import pe.d078_gr_GR_cog.*
 
 	//Templates
@@ -19,49 +18,41 @@ Status Final
 	import bTags.*
 	import roles.*
 
+	Head 
+		Set_Date month 4 day 19 year 2015 End_Date
+			Page_Header_Even
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ma End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
 	Section Instance01
-		Section Section01
-			Insert_section MA._01_Beginning__.mode7 End-Insert
-			Title role mixed<Tdesig>sid Apolytikion</><Tmode>sid peVE.Apolytikion1.mode</>End-Title
-			Hymn sid peVE.Apolytikion1.text<r>sid Thrice</>End-Hymn
-		End-Section
-		Section Section02
-			Insert_section LN.ShortLitany02 End-Insert
-			Title role desig sid Kathisma1 End-Title
-			Title role mixed<Tmode>sid peMA.Kathisma11.mode</><Tmelody>sid peMA.Kathisma11.melody</>End-Title
-			Hymn sid peMA.Kathisma11.text End-Hymn
-			Title role mixed sid DoxaKaiNyn<Tdesig>sid ToAfto</>End-Title
-			Hymn sid peMA.Kathisma11.text media-off End-Hymn
-		End-Section
-		Section Section03
-			Title role desig sid Kathisma2 End-Title
-			Title role mixed<Tmode>sid peMA.Kathisma21.mode</><Tmelody>sid peMA.Kathisma21.melody</>End-Title
-			Hymn sid peMA.Kathisma21.text End-Hymn
-			Title role mixed sid DoxaKaiNyn<Tdesig>sid ToAfto</>End-Title
-			Hymn sid peMA.Kathisma21.text media-off End-Hymn
-		End-Section
-		Section Section04
-			Title role desig sid Kathisma3 End-Title
-			Title role mixed<Tmode>sid peMA.Kathisma31.mode</><Tmelody>sid peMA.Kathisma31.melody</>End-Title
-			Hymn sid peMA.Kathisma31.text End-Hymn
-			Title role mixed sid DoxaKaiNyn<Tdesig>sid ToAfto</>End-Title
-			Hymn sid peMA.Kathisma31.text media-off End-Hymn
-		End-Section
-		Section Section05
-			Insert_section LN.ShortLitany04 End-Insert	
-			Insert_section MA._08_Antiphons__.mode41 End-Insert
-			Insert_section MA._08_Antiphons__.prokeimenon End-Insert
-		End-Section
-		Section Section06
-			Actor sid Reader End-Actor
-			Title role desig sid Ypakoi End-Title
-			Reading sid peMA.Hypakoe.text End-Reading
-			Title role desig sid Kontakion End-Title
-			Reading sid peMA.Kontakion1.text End-Reading
-			Title role desig sid OOikos End-Title
-			Reading sid peMA.Oikos1.text End-Reading
-			Insert_section SY.Synaxarion End-Insert
-		End-Section
+		Insert_section MA._01_Beginning__.mode7 End-Insert
+		Insert_section MA._02_Apolytikion__.festal__.thrice End-Insert
+		Insert_section LN.ShortLitany02 End-Insert
+		Insert_section MA._03_Kathisma1__.pe__.kath1111 End-Insert
+		Insert_section MA._04_Kathisma2__.pe__.kath2121 End-Insert
+		Insert_section MA._05_Kathisma3__.pe__.kath3131 End-Insert
+		Insert_section LN.ShortLitany04 End-Insert	
+		Insert_section MA._08_Antiphons__.mode41 End-Insert
+		Insert_section MA._08_Antiphons__.prokeimenon End-Insert
+		Insert_section MA._10_Canon__.Hypakoe__.pe End-Insert
+		Insert_section MA._11_Kontakion__.append__.pe_ End-Insert
+		Insert_section SY.Synaxarion End-Insert
 		Insert_section KA._1345678 End-Insert
 		Insert_section MA._09_Gospel__.introP_ End-Insert
 		Insert_section MA._09_Gospel__.mcP_.part1 End-Insert
@@ -69,7 +60,7 @@ Status Final
 		Insert_section MA._09_Gospel__.eothinonP_.part3 End-Insert
 		Insert_section LN.Supplication_Plain_deacon End-Insert
 		Insert_section MA._10_Canon__.Ode9_intro End-Insert
-		Section Section07
+		Section block1
 			Actor sid Choir End-Actor
 			Title role desig sid Ode9 End-Title
 			Media sid peMA.Ode9C1H.text End-Media
@@ -87,34 +78,12 @@ Status Final
 		End-Section
 		Insert_section KA._9 End-Insert
 		Insert_section LN.ShortLitany10 End-Insert	
-		Section Section08
-			Insert_section MA._12_Exaposteilarion__.intro_ End-Insert
-			Title role mixed<Tmode>sid peMA.Exaposteilarion1.mode</><Tmelody>sid peMA.Exaposteilarion1.melody</>End-Title
-			Hymn sid peMA.Exaposteilarion1.text<r>sid Twice media-off</>End-Hymn
-			Title role desig sid Eteron sid Omoion End-Title
-			Hymn sid peMA.Exaposteilarion2.text End-Hymn
-		End-Section
-		Section Section09
-			Insert_section MA._13_Lauds__.mode1 End-Insert
-			Title role mixed<Tmode>sid peMA.Lauds1.mode</><Tmelody>sid peMA.Lauds1.melody</>End-Title
-			Media sid peMA.Lauds1.text End-Media
-			Insert_section PsalmVerses.forLauds.v03 End-Insert
-			Hymn sid peMA.Lauds1.text media-off End-Hymn
-			Insert_section PsalmVerses.forLauds.v04 End-Insert
-			Hymn sid peMA.Lauds1.text media-off End-Hymn
-			Media sid peMA.Lauds2.text End-Media
-			Insert_section PsalmVerses.forLauds.v05 End-Insert
-			Hymn sid peMA.Lauds2.text media-off End-Hymn
-			Media sid peMA.Lauds3.text End-Media
-			Insert_section PsalmVerses.forLauds.v06 End-Insert
-			Hymn sid peMA.Lauds3.text media-off End-Hymn
-			Title role mixed sid DoxaKaiNyn<Tmode>sid peMA.LaudsGlory.mode</>End-Title
-			Hymn sid peMA.LaudsGlory.text End-Hymn
-		End-Section
-		Section Section10
-			Insert_section MA._14_Doxology__.great End-Insert
-			Title role mixed<Tdesig>sid Apolytikion</><Tmode>sid peVE.Apolytikion1.mode</>End-Title
-			Hymn sid peVE.Apolytikion1.text End-Hymn
-		End-Section
+		Insert_section MA._12_Exaposteilarion__.intro_ End-Insert
+		Insert_section MA._12_Exaposteilarion__.pe__.exap112_ End-Insert
+		Insert_section MA._13_Lauds__.mode1 End-Insert
+		Insert_section MA._13_Lauds__.pe__.p_1123as3456 End-Insert
+		Insert_section MA._13_Lauds__.gloryboth__.pe__.gloryasgloryboth_ End-Insert
+		Insert_section MA._14_Doxology__.great End-Insert
+		Insert_section MA._17_Apolytikion__.aftergreatdoxology__.pe_ End-Insert
 	End-Section
 End-Template
