@@ -82,17 +82,7 @@ Status Review
 		End-Section	
 	End-Section
 
-	Section _04
-		Actor sid Deacon End-Actor
-		Insert_section LN.ShortLitany01 End-Insert
-		Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
-		Para role inaudible sid euLI.Key0301.text End-Para
-		Actor sid Priest End-Actor
-		Dialog sid exc02 End-Dialog
-		Dialog<i>sid res04p</>End-Dialog
-	End-Section
-	
-	Section _05__ //antiphon 2
+/*	Section _05__ //antiphon 2
 		Section sunday
 			Actor sid Choir End-Actor
 			Insert_section Antiphon2.sunday End-Insert
@@ -106,17 +96,8 @@ Status Review
 			Insert_section Antiphon2.weekday End-Insert
 		End-Section
 	End-Section
-
-	Section _06
-		Actor sid Deacon End-Actor
-		Insert_section LN.ShortLitany01 End-Insert
-		Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
-		Para role inaudible sid euLI.Key0401.text End-Para
-		Actor sid Priest End-Actor
-		Dialog sid exc03 End-Dialog
-		Dialog<i>sid res04p</>End-Dialog
-	End-Section
-	
+ */
+ 
 	Section _07_Apolytikia__
 		Section festal
 			Insert_section Selector_FestalApolytikion.Once End-Insert
@@ -251,88 +232,13 @@ Status Review
  		End-Section 	
  	End-Section
  		
-	Section _13_ //Trisagion
-		Section prayer
-			Actor sid Deacon End-Actor
-			Dialog sid pet00 End-Dialog
-			Dialog<i>sid res01p</>End-Dialog
-			Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
-			Para role inaudible sid euLI.Key0601.text End-Para
-			Actor sid Priest End-Actor
-			Dialog sid exc05a End-Dialog
-			Actor sid Deacon End-Actor
-			Dialog sid exc05b End-Dialog
-			Actor sid Choir End-Actor
-			Dialog sid res04 End-Dialog	
+	Section _13_Trisagion__
+		Section chrys
+			Insert_section Selector_Trisagion.Chrysostom End-Insert
 		End-Section
-		when-date-is
-			Jan 6, 7 use:
-				Section baptized
-					Title role desig sid hoLI.OsoiEisChriston.title End-Title
-					Hymn sid hoLI.OsoiEisChriston.text<r>sid Thrice media-off</>End-Hymn	
-					Verse sid DoxaPatri.text sid KaiNynKaiAei.text End-Verse	
-					Para role hymnlinelast sid hoLI.OsoiEisChriston3.text sid hoLI.OsoiEisChriston4.text End-Para
-					Actor sid Deacon End-Actor
-					Dialog sid euLI.Key0602.text End-Dialog		
-					Actor sid Deacon<Trubric>sid InALowVoice</>End-Actor
-					Para role inaudible sid euLI.Key0603.text End-Para
-					Actor sid Priest End-Actor
-					Para role inaudible sid euLI.Key0604.text End-Para
-					Actor sid Deacon End-Actor
-					Para role inaudible sid euLI.Key0605.text End-Para
-					Actor sid Priest End-Actor
-					Para role inaudible sid euLI.Key0606.text End-Para
-					Actor sid Choir End-Actor
-					Hymn sid euLI.Key0602.text sid hoLI.OsoiEisChriston.text  media-off End-Hymn				
-				End-Section
-			Aug 1 use:
-				Section cross
-					Title role desig sid hoLI.TonStavronSou.title End-Title
-					Hymn sid hoLI.TonStavronSou.text<r>sid Thrice media-off</>End-Hymn	
-					Verse sid DoxaPatri.text sid KaiNynKaiAei.text End-Verse	
-					Para role hymnlinelast sid hoLI.TonStavronSou3.text sid hoLI.TonStavronSou4.text End-Para
-					Actor sid Deacon End-Actor
-					Dialog sid euLI.Key0602.text End-Dialog		
-					Actor sid Deacon<Trubric>sid InALowVoice</>End-Actor
-					Para role inaudible sid euLI.Key0603.text End-Para
-					Actor sid Priest End-Actor
-					Para role inaudible sid euLI.Key0604.text End-Para
-					Actor sid Deacon End-Actor
-					Para role inaudible sid euLI.Key0605.text End-Para
-					Actor sid Priest End-Actor
-					Para role inaudible sid euLI.Key0606.text End-Para
-					Actor sid Choir End-Actor
-					Hymn sid euLI.Key0602.text sid hoLI.TonStavronSou.text  media-off End-Hymn				
-				End-Section
-			Sep 14 use: Insert_section cross End-Insert
-			Dec 25, 26 use: Insert_section baptized End-Insert
-			
-			otherwise use:
-				when-movable-cycle-day-is
-					43 use: Insert_section cross End-Insert
-					63, 71, 72, 73, 74, 75, 76, 77, 109, 120, 121 use: Insert_section baptized End-Insert
-				otherwise use:
-					Section holygod	
-						Title role desig sid hoLI.TrisagiosHymn.title End-Title
-						Hymn sid hoLI.TrisagiosHymn.text<r>sid Thrice media-off</>End-Hymn	
-						Verse sid DoxaPatri.text sid KaiNynKaiAei.text End-Verse	
-						Para role hymnlinelast sid hoLI.TrisagiosHymn3.text sid hoLI.TrisagiosHymn4.text End-Para
-						Actor sid Deacon End-Actor
-						Dialog sid euLI.Key0602.text End-Dialog		
-						Actor sid Deacon<Trubric>sid InALowVoice</>End-Actor
-						Para role inaudible sid euLI.Key0603.text End-Para
-						Actor sid Priest End-Actor
-						Para role inaudible sid euLI.Key0604.text End-Para
-						Actor sid Deacon End-Actor
-						Para role inaudible sid euLI.Key0605.text End-Para
-						Actor sid Priest End-Actor
-						Para role inaudible sid euLI.Key0606.text End-Para
-						Actor sid Choir End-Actor
-						Hymn sid euLI.Key0602.text sid hoLI.TrisagiosHymn.text media-off End-Hymn	
-					End-Section
-				end-when
-		end-when
-				
+		Section basil
+			Insert_section Selector_Trisagion.Basil End-Insert
+		End-Section
 	End-Section	
 
 	Section _14 //prayer before gospel
@@ -340,91 +246,94 @@ Status Review
 		Para role inaudible sid euLI.Key0704.text End-Para
 	End-Section 
 
-	Section _15 
-		Actor sid Deacon End-Actor
-		Dialog sid pet15 End-Dialog
-		Dialog<i>sid res01p</>End-Dialog
-		Break line End_Break 
-		Dialog sid pet16 End-Dialog
-		Dialog<i>sid res01p</>End-Dialog
-		Break line End_Break 
-		Dialog sid pet17 End-Dialog
-		Dialog<i>sid res06p</>End-Dialog
-		Break line End_Break 
-		Dialog sid pet18 End-Dialog
-		Dialog sid pet19a<r>sid cl.bishop1.rank sid cl.bishop1.name_p</>End-Dialog
-		Dialog sid pet20 End-Dialog
-		Dialog sid pet21 End-Dialog
-		Dialog sid pet22 End-Dialog
-		Dialog sid pet23 End-Dialog
-		Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
-		Para role inaudible sid euLI.Key0801.text End-Para
-		Actor sid Priest End-Actor
-		Dialog sid exc11 End-Dialog
-		Dialog<i>sid res04p</>End-Dialog
-	End-Section	
+	Section _19_AfterGospel
+	/*
+		Section _15_Ektenia 
+			Actor sid Deacon End-Actor
+			Dialog sid pet15 End-Dialog
+			Dialog<i>sid res01p</>End-Dialog
+			Break line End_Break 
+			Dialog sid pet16 End-Dialog
+			Dialog<i>sid res01p</>End-Dialog
+			Break line End_Break 
+			Dialog sid pet17 End-Dialog
+			Dialog<i>sid res06p</>End-Dialog
+			Break line End_Break 
+			Dialog sid pet18 End-Dialog
+			Dialog sid pet19a<r>sid cl.bishop1.rank sid cl.bishop1.name_p</>End-Dialog
+			Dialog sid pet20 End-Dialog
+			Dialog sid pet21 End-Dialog
+			Dialog sid pet22 End-Dialog
+			Dialog sid pet23 End-Dialog
+			Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
+			Para role inaudible sid euLI.Key0801.text End-Para
+			Actor sid Priest End-Actor
+			Dialog sid exc11 End-Dialog
+			Dialog<i>sid res04p</>End-Dialog
+		End-Section	
+	
+		Section _16_Catechumens
+			Actor sid Deacon End-Actor
+			Dialog sid euLI.Key0901.text End-Dialog	
+			Dialog<i>sid res01p</>End-Dialog
+			Dialog sid euLI.Key0902.text End-Dialog	
+			Dialog<i>sid res01p</>End-Dialog
+			Dialog sid euLI.Key0903.text End-Dialog	
+			Dialog<i>sid res01p</>End-Dialog
+			Dialog sid euLI.Key0904.text End-Dialog	
+			Dialog<i>sid res01p</>End-Dialog
+			Dialog sid euLI.Key0905.text End-Dialog	
+			Dialog<i>sid res01p</>End-Dialog
+			Dialog sid euLI.Key0906.text End-Dialog	
+			Dialog<i>sid res01p</>End-Dialog
+			Dialog sid euLI.Key0907.text End-Dialog	
+			Dialog<i>sid res01p</>End-Dialog
+			Dialog sid euLI.Key0908.text End-Dialog	
+			Dialog<i>sid res03p</>End-Dialog
+			Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
+			Para role inaudible sid euLI.Key0909.text End-Para
+			Actor sid Priest End-Actor
+			Dialog sid euLI.Key0910.text End-Dialog
+			Dialog<i>sid res04p</>End-Dialog
+			Actor sid Deacon End-Actor
+			Dialog sid euLI.Key0911.text sid euLI.Key0912.text End-Dialog	
+		End-Section
+		
+		Section _17_FirstPrayerOfFaithful
+			Dialog sid pet14 End-Dialog
+			Dialog<i>sid res01p</>End-Dialog
+			Dialog sid pet12 End-Dialog
+			Dialog<i>sid res01p</>End-Dialog
+			Dialog sid exc17 End-Dialog
+			Title role desig sid euLI.Key1001.title End-Title
+			Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
+			Para role inaudible sid euLI.Key1001.text End-Para
+			Actor sid Priest  End-Actor 
+			Dialog sid exc01 End-Dialog
+			Dialog<i>sid res04p</>End-Dialog
+		End-Section
+			
+		Section _18_SortLitany
+			Actor sid Deacon End-Actor
+			Dialog sid pet14 End-Dialog
+			Dialog<i>sid res01p</>End-Dialog
+			Dialog sid pet12 End-Dialog
+			Dialog<i>sid res01p</>End-Dialog
+			Dialog sid exc17 End-Dialog
+		End-Section
+	 */	
+		Section _19_SecondPrayerOfFaithful
+			Title role desig sid euLI.Key1002.title End-Title
+			Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
+			Para role inaudible sid euLI.Key1002.text End-Para
+			Actor sid Priest  End-Actor 
+			Dialog sid euLI.Key1003.text End-Dialog
+			Dialog<i>sid res04p</>End-Dialog
+		End-Section //PrayerOfTheFaithful2
+	End-Section		
 
-	Section _16
-		Actor sid Deacon End-Actor
-		Dialog sid euLI.Key0901.text End-Dialog	
-		Dialog<i>sid res01p</>End-Dialog
-		Dialog sid euLI.Key0902.text End-Dialog	
-		Dialog<i>sid res01p</>End-Dialog
-		Dialog sid euLI.Key0903.text End-Dialog	
-		Dialog<i>sid res01p</>End-Dialog
-		Dialog sid euLI.Key0904.text End-Dialog	
-		Dialog<i>sid res01p</>End-Dialog
-		Dialog sid euLI.Key0905.text End-Dialog	
-		Dialog<i>sid res01p</>End-Dialog
-		Dialog sid euLI.Key0906.text End-Dialog	
-		Dialog<i>sid res01p</>End-Dialog
-		Dialog sid euLI.Key0907.text End-Dialog	
-		Dialog<i>sid res01p</>End-Dialog
-		Dialog sid euLI.Key0908.text End-Dialog	
-		Dialog<i>sid res03p</>End-Dialog
-		Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
-		Para role inaudible sid euLI.Key0909.text End-Para
-		Actor sid Priest End-Actor
-		Dialog sid euLI.Key0910.text End-Dialog
-		Dialog<i>sid res04p</>End-Dialog
-		Actor sid Deacon End-Actor
-		Dialog sid euLI.Key0911.text sid euLI.Key0912.text End-Dialog	
-	End-Section
-	
-	Section _17
-		Dialog sid pet14 End-Dialog
-		Dialog<i>sid res01p</>End-Dialog
-		Dialog sid pet12 End-Dialog
-		Dialog<i>sid res01p</>End-Dialog
-		Dialog sid exc17 End-Dialog
-		Title role desig sid euLI.Key1001.title End-Title
-		Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
-		Para role inaudible sid euLI.Key1001.text End-Para
-		Actor sid Priest  End-Actor 
-		Dialog sid exc01 End-Dialog
-		Dialog<i>sid res04p</>End-Dialog
-	End-Section
-		
-	Section _18
-		Actor sid Deacon End-Actor
-		Dialog sid pet14 End-Dialog
-		Dialog<i>sid res01p</>End-Dialog
-		Dialog sid pet12 End-Dialog
-		Dialog<i>sid res01p</>End-Dialog
-		Dialog sid exc17 End-Dialog
-	End-Section
-	
-	Section _19
-		Title role desig sid euLI.Key1002.title End-Title
-		Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
-		Para role inaudible sid euLI.Key1002.text End-Para
-		Actor sid Priest  End-Actor 
-		Dialog sid euLI.Key1003.text End-Dialog
-		Dialog<i>sid res04p</>End-Dialog
-	End-Section //PrayerOfTheFaithful2
-		
-	Section _20__
-		Section cherubic
+	Section _20_CherubicHymn__
+		Section chrys
 			Title role desig sid euLI.Key1100.title End-Title
 			Actor sid Choir End-Actor
 			Title role desig sid euLI.Key1102.title End-Title
@@ -438,33 +347,41 @@ Status Review
 			Dialog sid res04 End-Dialog
 			Hymn sid euLI.Key1123.text End-Hymn		
 		End-Section
-		Section holythursday
-			Title role desig sid euLI.Key1100.title End-Title
-			Actor sid Choir End-Actor
-			Title role desig sid tr.d069_gr_GR_cog.trLI.CherubicHymn.title End-Title
-			Title role mode sid tr.d069_gr_GR_cog.trLI.CherubicHymn.mode End-Title
-			Hymn sid tr.d069_gr_GR_cog.trLI.CherubicHymnPart1.text End-Hymn	
-			Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
-			Para role inaudible sid euLI.Key1101.text End-Para
-			Actor sid Deacon End-Actor
-			Dialog sid euLI.Key1110.text End-Dialog		
-			Actor sid Choir End-Actor
-			Dialog sid res04 End-Dialog
-			Hymn sid tr.d069_gr_GR_cog.trLI.CherubicHymnPart2.text End-Hymn		
-		End-Section
-		Section holysaturday
-			Title role desig sid euLI.Key1100.title End-Title
-			Actor sid Choir End-Actor
-			Title role desig sid tr.d071_gr_GR_cog.trHW.CherubicHymn.title End-Title
-			Title role mode sid tr.d071_gr_GR_cog.trHW.CherubicHymn.mode End-Title
-			Hymn sid tr.d071_gr_GR_cog.trHW.CherubicHymnPart1.text End-Hymn	
-			Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
-			Para role inaudible sid euLI.Key1101.text End-Para
-			Actor sid Deacon End-Actor
-			Dialog sid euLI.Key1110.text End-Dialog		
-			Actor sid Choir End-Actor
-			Dialog sid res04 End-Dialog
-			Hymn sid tr.d071_gr_GR_cog.trHW.CherubicHymnPart2.text End-Hymn		
+		Section basil
+			when-movable-cycle-day-is
+				69 use:
+					Section holythursday
+						Title role desig sid euLI.Key1100.title End-Title
+						Actor sid Choir End-Actor
+						Title role desig sid tr.d069_gr_GR_cog.trLI.CherubicHymn.title End-Title
+						Title role mode sid tr.d069_gr_GR_cog.trLI.CherubicHymn.mode End-Title
+						Hymn sid tr.d069_gr_GR_cog.trLI.CherubicHymnPart1.text End-Hymn	
+						Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
+						Para role inaudible sid euLI.Key1101.text End-Para
+						Actor sid Deacon End-Actor
+						Dialog sid euLI.Key1110.text End-Dialog		
+						Actor sid Choir End-Actor
+						Dialog sid res04 End-Dialog
+						Hymn sid tr.d069_gr_GR_cog.trLI.CherubicHymnPart2.text End-Hymn		
+					End-Section
+				71 use:
+					Section holysaturday
+						Title role desig sid euLI.Key1100.title End-Title
+						Actor sid Choir End-Actor
+						Title role desig sid tr.d071_gr_GR_cog.trHW.CherubicHymn.title End-Title
+						Title role mode sid tr.d071_gr_GR_cog.trHW.CherubicHymn.mode End-Title
+						Hymn sid tr.d071_gr_GR_cog.trHW.CherubicHymnPart1.text End-Hymn	
+						Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
+						Para role inaudible sid euLI.Key1101.text End-Para
+						Actor sid Deacon End-Actor
+						Dialog sid euLI.Key1110.text End-Dialog		
+						Actor sid Choir End-Actor
+						Dialog sid res04 End-Dialog
+						Hymn sid tr.d071_gr_GR_cog.trHW.CherubicHymnPart2.text End-Hymn		
+					End-Section
+				otherwise use:
+					Insert_section chrys End-Insert
+			end-when
 		End-Section
 	End-Section
 	
@@ -678,13 +595,12 @@ Status Review
 		End-Section
 	End-Section
 
-	Section _23__
+	Section _23_HymnToTheotokos__
 		Section chrys
-			Insert_section Selector_Megalynarion.AnyDay End-Insert
+			Insert_section Selector_Megalynarion.Chrysostom End-Insert
 		End-Section
 		Section basil
-			Title role desig sid Megalynarion End-Title
-			Hymn sid euLI.Key1328.basil.text End-Hymn
+			Insert_section Selector_Megalynarion.Basil End-Insert
 		End-Section
 	End-Section
 
@@ -827,26 +743,10 @@ Status Review
 	
 	Section _27_CommunionHymn__
 		Section chrys
-			Insert_section Selector_CommunionHymn.SpecificDays End-Insert
+			Insert_section Selector_CommunionHymn.Chrysostom End-Insert
 		End-Section
 		Section basil
-			when-date-is
-				Jan 6 use:
-					Insert_section bk.ap.da.sections.d1.communion_title End-Insert
-					Insert_section bk.ap.da.sections.d1.communion_hymn End-Insert
-				Dec 25 use:
-					Insert_section bk.ap.da.sections.d1.communion_title End-Insert
-					Insert_section bk.ap.da.sections.d1.communion_hymn End-Insert
-				otherwise use:
-					when-movable-cycle-day-is
-						69 use:
-							Insert_section bk.ap.mc.p6.sections.Day_HolyThursday.communion_title End-Insert
-							Insert_section bk.ap.mc.p6.sections.Day_HolyThursday.communion_hymn End-Insert
-						71 use:
-							Insert_section bk.ap.mc.p6.sections.Day_HolySaturday.liturgy.communion_title End-Insert
-							Insert_section bk.ap.mc.p6.sections.Day_HolySaturday.liturgy.communion_hymn End-Insert
-					end-when
-			end-when
+			Insert_section Selector_CommunionHymn.Basil End-Insert
 		End-Section
 	End-Section
 
@@ -916,23 +816,14 @@ Status Review
 				Media sid other.dormitionencomia_gr_GR_cog.other.Encomia101.text End-Media
 			end-when
 		End-Section
-		Section end
-			Break line End_Break
-			Actor sid Priest End-Actor
-			Dialog sid euLI.Key1529.text End-Dialog
-		End-Section
+		Break line End_Break
 	End-Section
 
-	Section _31__
+	Section _31_AfterCommunion__
 		Section chrys
+			Actor sid Priest End-Actor
+			Dialog sid euLI.Key1529.text End-Dialog
 			when-movable-cycle-day-is
-				43 use:
-					Section lent3
-						Actor sid Choir End-Actor
-						Title role desig sid euLI.Key1531.text End-Title
-						Title role mode sid tr.d043_gr_GR_cog.trVE.Apolytikion1.mode End-Title
-						Hymn sid tr.d043_gr_GR_cog.trVE.Apolytikion1.text End-Hymn
-					End-Section
 				63 use:
 					Section lazarus
 						Actor sid Choir End-Actor
@@ -1017,14 +908,51 @@ Status Review
 			end-when
 		End-Section
 		Section basil
+			Actor sid Priest End-Actor
+			Dialog sid euLI.Key1529.text End-Dialog
 			when-date-is
 				Jan 1 use: 
 					Actor sid Choir End-Actor
 					Title role desig sid euLI.Key1531.text End-Title
 					Title role mode sid me.m01.d01_gr_GR_cog.meVE.Apolytikion2.mode End-Title
 					Hymn sid me.m01.d01_gr_GR_cog.meVE.Apolytikion2.text End-Hymn
+				Jan 6 use:
+					when-name-of-day-is
+						Sunday, Monday use:
+							Actor sid Choir End-Actor
+							Title role desig sid euLI.Key1531.text End-Title
+							Title role mode sid me.m01.d06_gr_GR_cog.meVE.Apolytikion1.mode End-Title
+							Hymn sid me.m01.d06_gr_GR_cog.meVE.Apolytikion1.text End-Hymn
+						otherwise use:
+							Actor sid Choir End-Actor
+							Title role mode sid Mode2 End-Title
+							Hymn sid euLI.Key1530.text End-Hymn
+					end-when
+				Dec 25 use:
+					when-name-of-day-is
+						Sunday, Monday use:
+							Actor sid Choir End-Actor
+							Title role desig sid euLI.Key1531.text End-Title
+							Title role mode sid me.m12.d25_gr_GR_cog.meVE.Apolytikion1.mode End-Title
+							Hymn sid me.m12.d25_gr_GR_cog.meVE.Apolytikion1.text End-Hymn
+						otherwise use:
+							Actor sid Choir End-Actor
+							Title role mode sid Mode2 End-Title
+							Hymn sid euLI.Key1530.text End-Hymn
+					end-when
 				otherwise use:
 					when-movable-cycle-day-is
+						29, 36, 50, 57 use:
+							Actor sid Choir End-Actor
+							Title role mode sid Mode2 End-Title
+							Hymn sid euLI.Key1530.text End-Hymn
+						43 use:
+							Section lent3
+								Actor sid Choir End-Actor
+								Title role desig sid euLI.Key1531.text End-Title
+								Title role mode sid tr.d043_gr_GR_cog.trVE.Apolytikion1.mode End-Title
+								Hymn sid tr.d043_gr_GR_cog.trVE.Apolytikion1.text End-Hymn
+							End-Section
 						69 use:
 							Section holythursday
 								Actor sid Choir End-Actor
@@ -1038,10 +966,6 @@ Status Review
 								Title role mode sid tr.d071_gr_GR_cog.trHW.AfterCommunion.mode End-Title	
 								Hymn sid tr.d071_gr_GR_cog.trHW.AfterCommunion.text End-Hymn
 							End-Section
-						otherwise use:
-							Actor sid Choir End-Actor
-							Title role mode sid Mode2 End-Title
-							Hymn sid euLI.Key1530.text End-Hymn
 					end-when
 			end-when
 		End-Section
@@ -1151,9 +1075,9 @@ Status Review
 				Dialog<i>sid res01p</>End-Dialog
 				Actor sid Priest End-Actor
 					when-date-is Jan 1 use:
-				Dialog sid euLI.Key1702.basil.text End-Dialog
+						Dialog sid euLI.Key1702.basil.text End-Dialog
 					otherwise use:
-				Dialog sid euLI.Key1702.text End-Dialog
+						Dialog sid euLI.Key1702.text End-Dialog
 					end-when
 				Dialog<i>sid res04p</>End-Dialog
 			End-Section

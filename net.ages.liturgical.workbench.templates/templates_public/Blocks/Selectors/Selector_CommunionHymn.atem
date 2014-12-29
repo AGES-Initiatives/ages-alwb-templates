@@ -18,7 +18,44 @@ Status Final
 		Set_Date month 1 day 31 year 2015 End_Date
 	End_Head
 
-	Section SpecificDays
+	Section Basil
+		when-date-is
+			Jan 1 use:
+				Insert_section Selector_CommunionHymn.DayOfWeek.onSunday End-Insert
+			Jan 6 use:
+				when-name-of-day-is
+					Sunday, Monday use: 
+						Insert_section bk.ap.me.m01.sections.d06.communion_title End-Insert
+						Insert_section bk.ap.me.m01.sections.d06.communion_hymn End-Insert
+					otherwise use: 
+						Insert_section Selector_CommunionHymn.DayOfWeek.onSunday End-Insert
+				end-when
+			Dec 25 use:
+				when-name-of-day-is
+					Sunday, Monday use: 
+						Insert_section bk.ap.me.m12.sections.d25.communion_title End-Insert
+						Insert_section bk.ap.me.m12.sections.d25.communion_hymn End-Insert
+					otherwise use: 
+						Insert_section Selector_CommunionHymn.DayOfWeek.onSunday End-Insert
+				end-when
+			otherwise use:
+				when-movable-cycle-day-is
+					29, 36, 50, 57 use:
+						Insert_section Selector_CommunionHymn.DayOfWeek.onSunday End-Insert
+					43 use:
+						Insert_section bk.ap.da.sections.d6.communion2_title End-Insert
+						Insert_section bk.ap.da.sections.d6.communion2_hymn End-Insert
+					69 use:
+						Insert_section bk.ap.mc.p6.sections.Day_HolyThursday.communion_title End-Insert
+						Insert_section bk.ap.mc.p6.sections.Day_HolyThursday.communion_hymn End-Insert
+					71 use:
+						Insert_section bk.ap.mc.p6.sections.Day_HolySaturday.liturgy.communion_title End-Insert
+						Insert_section bk.ap.mc.p6.sections.Day_HolySaturday.liturgy.communion_hymn End-Insert
+				end-when
+		end-when
+	End-Section
+
+	Section Chrysostom
 		Actor sid Choir End-Actor
 		when-date-is
 			Feb 2 thru 9 use: //calculates leavetaking of Meeting
@@ -92,7 +129,7 @@ Status Final
 			otherwise use:
 				Section movable_cycle
 					when-movable-cycle-day-is
-						1, 8, 15, 22, 29, 36, 50, 57 use:
+						1, 8, 15, 22 use:
 							Insert_section bk.ap.da.sections.d1.communion_title End-Insert
 							Insert_section bk.ap.da.sections.d1.communion_hymn End-Insert
 						14 use:
@@ -101,9 +138,6 @@ Status Final
 						21, 28 use:
 							Insert_section bk.ap.da.sections.d3.communion_title End-Insert
 							Insert_section bk.ap.da.sections.d3.communion_hymn End-Insert
-						43 use:
-							Insert_section bk.ap.da.sections.d6.communion2_title End-Insert
-							Insert_section bk.ap.da.sections.d6.communion2_hymn End-Insert
 						63 use:
 							Insert_section bk.ap.mc.p5.sections.Day_Saturday_Lazarus.communion_title End-Insert
 							Insert_section bk.ap.mc.p5.sections.Day_Saturday_Lazarus.communion_hymn End-Insert
