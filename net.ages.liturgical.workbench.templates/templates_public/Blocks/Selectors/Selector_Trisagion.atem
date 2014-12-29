@@ -1,0 +1,152 @@
+Template Selector_Trisagion 
+
+Status Draft
+
+	import client_gr_GR_cog.*
+	import eu.lichrysbasil_gr_GR_cog.*
+	import ho.s07_gr_GR_cog.*
+//	import me.m00.d00_gr_GR_cog.*
+//	import pe.d000_gr_GR_cog.*
+//	import tr.d000_gr_GR_cog.*
+
+	import da.*
+//	import oc.*
+//	import pe.*
+//	import tr.*
+
+	//Templates
+//	import bk.ho.s15_m00.*
+	import LectionaryReadings.*
+	
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Section Basil
+		Insert_section prayer End-Insert
+		when-date-is
+			Jan 1 use:
+				Insert_section holygod End-Insert
+			Jan 6 use:
+				when-name-of-day-is
+					Sunday, Monday use:
+						Insert_section baptized End-Insert
+					otherwise use:
+						Insert_section holygod End-Insert
+				end-when
+			Dec 25 use:
+				when-name-of-day-is
+					Sunday, Monday use:
+						Insert_section baptized End-Insert
+					otherwise use:
+						Insert_section holygod End-Insert
+				end-when
+			otherwise use:
+				when-movable-cycle-day-is
+					29, 36, 50, 57, 69 use:
+						Insert_section holygod End-Insert
+					43 use:
+						Insert_section cross End-Insert
+				end-when
+		end-when		
+	End-Section	
+
+	Section Chrysostom
+		Insert_section prayer End-Insert
+		when-date-is
+			Jan 6, 7 use:
+				Insert_section baptized End-Insert
+			Aug 1 use:
+				Insert_section cross End-Insert
+			Sep 14 use:
+				Insert_section cross End-Insert
+			Dec 25, 26 use:
+				Insert_section baptized End-Insert
+			otherwise use:
+				when-movable-cycle-day-is
+					63, 71, 72, 73, 74, 75, 76, 77, 109, 120, 121 use:
+						Insert_section baptized End-Insert
+					otherwise use:
+						Insert_section holygod End-Insert
+				end-when
+		end-when
+	End-Section	
+
+	//blocks
+	Section prayer
+		Actor sid Deacon End-Actor
+		Dialog sid pet00 End-Dialog
+		Dialog<i>sid res01p</>End-Dialog
+		Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
+		Para role inaudible sid euLI.Key0601.text End-Para
+		Actor sid Priest End-Actor
+		Dialog sid exc05a End-Dialog
+		Actor sid Deacon End-Actor
+		Dialog sid exc05b End-Dialog
+		Actor sid Choir End-Actor
+		Dialog sid res04 End-Dialog	
+	End-Section
+	Section baptized
+		Title role desig sid hoLI.OsoiEisChriston.title End-Title
+		Hymn sid hoLI.OsoiEisChriston.text<r>sid Thrice media-off</>End-Hymn	
+		Verse sid DoxaPatri.text sid KaiNynKaiAei.text End-Verse	
+		Para role hymnlinelast sid hoLI.OsoiEisChriston3.text sid hoLI.OsoiEisChriston4.text End-Para
+		Actor sid Deacon End-Actor
+		Dialog sid euLI.Key0602.text End-Dialog		
+		Actor sid Deacon<Trubric>sid InALowVoice</>End-Actor
+		Para role inaudible sid euLI.Key0603.text End-Para
+		Actor sid Priest End-Actor
+		Para role inaudible sid euLI.Key0604.text End-Para
+		Actor sid Deacon End-Actor
+		Para role inaudible sid euLI.Key0605.text End-Para
+		Actor sid Priest End-Actor
+		Para role inaudible sid euLI.Key0606.text End-Para
+		Actor sid Choir End-Actor
+		Hymn sid euLI.Key0602.text sid hoLI.OsoiEisChriston.text  media-off End-Hymn				
+	End-Section
+	Section cross
+		Title role desig sid hoLI.TonStavronSou.title End-Title
+		Hymn sid hoLI.TonStavronSou.text<r>sid Thrice media-off</>End-Hymn	
+		Verse sid DoxaPatri.text sid KaiNynKaiAei.text End-Verse	
+		Para role hymnlinelast sid hoLI.TonStavronSou3.text sid hoLI.TonStavronSou4.text End-Para
+		Actor sid Deacon End-Actor
+		Dialog sid euLI.Key0602.text End-Dialog		
+		Actor sid Deacon<Trubric>sid InALowVoice</>End-Actor
+		Para role inaudible sid euLI.Key0603.text End-Para
+		Actor sid Priest End-Actor
+		Para role inaudible sid euLI.Key0604.text End-Para
+		Actor sid Deacon End-Actor
+		Para role inaudible sid euLI.Key0605.text End-Para
+		Actor sid Priest End-Actor
+		Para role inaudible sid euLI.Key0606.text End-Para
+		Actor sid Choir End-Actor
+		Hymn sid euLI.Key0602.text sid hoLI.TonStavronSou.text  media-off End-Hymn				
+	End-Section
+	Section holygod	
+		Title role desig sid hoLI.TrisagiosHymn.title End-Title
+		Hymn sid hoLI.TrisagiosHymn.text<r>sid Thrice media-off</>End-Hymn	
+		Verse sid DoxaPatri.text sid KaiNynKaiAei.text End-Verse	
+		Para role hymnlinelast sid hoLI.TrisagiosHymn3.text sid hoLI.TrisagiosHymn4.text End-Para
+		Actor sid Deacon End-Actor
+		Dialog sid euLI.Key0602.text End-Dialog		
+		Actor sid Deacon<Trubric>sid InALowVoice</>End-Actor
+		Para role inaudible sid euLI.Key0603.text End-Para
+		Actor sid Priest End-Actor
+		Para role inaudible sid euLI.Key0604.text End-Para
+		Actor sid Deacon End-Actor
+		Para role inaudible sid euLI.Key0605.text End-Para
+		Actor sid Priest End-Actor
+		Para role inaudible sid euLI.Key0606.text End-Para
+		Actor sid Choir End-Actor
+		Hymn sid euLI.Key0602.text sid hoLI.TrisagiosHymn.text media-off End-Hymn	
+	End-Section
+
+End-Template
