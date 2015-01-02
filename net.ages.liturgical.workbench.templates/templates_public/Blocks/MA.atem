@@ -1716,7 +1716,7 @@ Template MA
 					End-Section
 				otherwise use:
 					when-date-is 
-						Jan 1, 25, 27 use:
+						Jan 1, 10, 25, 27 use:
 							Section ps48_4_2 //ToStomaMou
 								Title role desig sid Prokeimenon sid psa48.title End-Title
 								Media rid meMA.Prokeimenon.text End-Media
@@ -1929,7 +1929,7 @@ Template MA
 	End-Section
 
 	Section _09_Gospel
-		Section introP_
+		Section introP
 			Actor sid Deacon End-Actor
 			Dialog sid pet00 End-Dialog
 			Dialog<i>sid res01p</>End-Dialog
@@ -2815,6 +2815,18 @@ Template MA
 				Insert_section PsalmVerses.forHierarchs.verse2 End-Insert
 				Hymn rid meMA.Lauds4.text media-off End-Hymn
 			End-Section
+			Section p_v1123as3456
+				Title<Trubric>sid EkTouEsperinou</>End-Title 
+				Title role mixed<Tmode>rid meVE.Stichera01.mode</><Tmelody>rid meVE.Stichera01.melody</>End-Title
+				Insert_section PsalmVerses.forLauds.v03 End-Insert
+				Hymn rid meVE.Stichera01.text media-off End-Hymn
+				Insert_section PsalmVerses.forLauds.v04 End-Insert
+				Hymn rid meVE.Stichera01.text media-off End-Hymn
+				Insert_section PsalmVerses.forLauds.v05 End-Insert
+				Hymn rid meVE.Stichera02.text media-off End-Hymn
+				Insert_section PsalmVerses.forLauds.v06 End-Insert
+				Hymn rid meVE.Stichera03.text media-off End-Hymn
+			End-Section
 		End-Section
 		Section modeofweek
 			Title role mixed<Tdesig>sid OiAinoi</><Tmode>rid ocMA.Lauds1.mode @day D1</>End-Title
@@ -3334,6 +3346,15 @@ Template MA
 
 	Section _16_Aposticha__
 		Section both__
+			Section me__
+				Section bothasboth_
+					Title sid KaiNyn End-Title
+					Section hymn
+						Title role mode rid meMA.AposBoth.mode End-Title
+						Hymn rid meMA.AposBoth.text End-Hymn
+					End-Section
+				End-Section
+			End-Section
 			Section tr__
 				Section bothasboth_
 					Title sid KaiNyn End-Title
@@ -3345,6 +3366,15 @@ Template MA
 			End-Section
 		End-Section
 		Section glory__
+			Section me__
+				Section gloryasglory_
+					Title sid Doxa End-Title
+					Section hymn
+						Title role mode rid meMA.AposGlory.mode End-Title
+						Hymn rid meMA.AposGlory.text End-Hymn
+					End-Section
+				End-Section
+			End-Section
 			Section tr__
 				Section gloryasglory_
 					Title sid Doxa End-Title
@@ -3676,7 +3706,7 @@ Template MA
 			Media rid meMA.PostGospelIdiomelon.text End-Media
 			Verse<bnr>sid vVerse</>sid psa50.v3.text End-Verse
 			Hymn rid meMA.PostGospelIdiomelon.text media-off End-Hymn
-		End-Section //Part2
+		End-Section
 		
 		Section PostGospel_eo
 				when-triodion-day-is 
