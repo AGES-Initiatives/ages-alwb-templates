@@ -1,0 +1,332 @@
+Template Selector_Liturgy_CommunionHymn
+
+Status Final
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+//	Head 
+//		Set_Date month 1 day 31 year 2015 End_Date
+//	End_Head
+
+
+	Section hymn
+//		Actor sid Choir End-Actor
+		when-date-is
+			Feb 2 thru 9 use: //calculates leavetaking of Meeting
+				when-movable-cycle-day-is
+					1 thru 13 use:
+						when-date-is
+							Feb 2, 9 use: Insert_section DayOfWeek.onWednesday  End-Insert
+							Feb 6 use: Insert_section DayOfWeek.onTuesday  End-Insert
+							otherwise use: Insert_section DayOfWeek End-Insert
+						end-when
+					14 use:
+						when-date-is
+							Feb 2, 5 use: Insert_section DayOfWeek.onWednesday End-Insert
+							otherwise use: Insert_section DayOfWeek End-Insert
+						end-when
+					15 use:
+						when-date-is
+							Feb 2, 6 use: Insert_section DayOfWeek.onWednesday End-Insert
+							otherwise use: Insert_section DayOfWeek End-Insert
+						end-when
+					16 use:
+						when-date-is
+							Feb 2, 7 use: Insert_section DayOfWeek.onWednesday End-Insert
+							Feb 6 use: Insert_section DayOfWeek.onTuesday  End-Insert
+							otherwise use: Insert_section DayOfWeek End-Insert
+						end-when
+					17 use:
+						when-date-is
+							Feb 2, 8 use: Insert_section DayOfWeek.onWednesday End-Insert
+							Feb 6 use: Insert_section DayOfWeek.onTuesday  End-Insert
+							otherwise use: Insert_section DayOfWeek End-Insert
+						end-when
+					18 use:
+						when-date-is
+							Feb 2, 5 use: Insert_section DayOfWeek.onWednesday End-Insert
+							otherwise use: Insert_section DayOfWeek End-Insert
+						end-when
+					19 use:
+						when-date-is
+							Feb 2, 6 use: Insert_section DayOfWeek.onWednesday End-Insert
+							otherwise use: Insert_section DayOfWeek End-Insert
+						end-when
+					20 use:
+						when-date-is
+							Feb 2, 5 use: Insert_section DayOfWeek.onWednesday End-Insert
+							otherwise use: Insert_section DayOfWeek End-Insert
+						end-when
+					21 use:
+						when-date-is
+							Feb 2, 3 use: Insert_section DayOfWeek.onWednesday End-Insert
+							otherwise use: Insert_section DayOfWeek End-Insert
+						end-when
+					22 use:
+						when-date-is
+							Feb 2, 7 use: Insert_section DayOfWeek.onWednesday End-Insert
+							Feb 6 use: Insert_section DayOfWeek.onTuesday  End-Insert
+							otherwise use: Insert_section DayOfWeek End-Insert
+						end-when
+					23 use:
+						when-date-is
+							Feb 2 use: Insert_section DayOfWeek.onWednesday End-Insert
+							otherwise use: Insert_section DayOfWeek End-Insert
+						end-when
+					otherwise use: Insert_section DayOfWeek.onWednesday End-Insert
+				end-when
+			Mar 25 use:
+				Section annunciation
+				//	Insert_section bk.ap.me.m03.sections.d25.communion_title End-Insert
+					Insert_section bk.ap.me.m03.sections.d25.communion_hymn End-Insert
+				End-Section
+			otherwise use:
+				Section movable_cycle
+					when-movable-cycle-day-is
+						1, 8, 15, 22 use:
+						//	Insert_section bk.ap.da.sections.d1.communion_title End-Insert
+							Insert_section bk.ap.da.sections.d1.communion_hymn End-Insert
+						14 use:
+						//	Insert_section bk.ap.da.sections.d7.communion2_title End-Insert
+							Insert_section bk.ap.da.sections.d7.communion2_hymn End-Insert
+						21, 28 use:
+						//	Insert_section bk.ap.da.sections.d3.communion_title End-Insert
+							Insert_section bk.ap.da.sections.d3.communion_hymn End-Insert
+						29, 36, 50, 57 use:
+							Insert_section DayOfWeek.onSunday End-Insert
+						43 use:
+						//	Insert_section bk.ap.da.sections.d6.communion2_title End-Insert
+							Insert_section bk.ap.da.sections.d6.communion2_hymn End-Insert
+						63 use:
+						//	Insert_section bk.ap.mc.p5.sections.Day_Saturday_Lazarus.communion_title End-Insert
+							Insert_section bk.ap.mc.p5.sections.Day_Saturday_Lazarus.communion_hymn End-Insert
+						64 use: //Palm
+						//	Insert_section bk.ap.mc.p6.sections.Day_PalmSunday.communion_title End-Insert
+							Insert_section bk.ap.mc.p6.sections.Day_PalmSunday.communion_hymn End-Insert
+						71, 72, 73, 74, 75, 76, 77, 85, 92, 99, 106, 109 use:
+							Section pascha
+							//	Insert_section bk.ap.mc.p0.sections.Day_Sunday01.communion_title End-Insert
+								Insert_section bk.ap.mc.p0.sections.Day_Sunday01.communion_hymn End-Insert
+							End-Section
+						78, 84 use:
+							Section thomas
+							//	Insert_section bk.ap.mc.p0.sections.Day_Sunday02.communion_title End-Insert
+								Insert_section bk.ap.mc.p0.sections.Day_Sunday02.communion_hymn End-Insert
+							End-Section
+						95, 102 use:
+							Section midpentecost
+							//	Insert_section bk.ap.mc.p0.sections.Week_04.Day_Wednesday.communion_title End-Insert
+								Insert_section bk.ap.mc.p0.sections.Week_04.Day_Wednesday.communion_hymn End-Insert
+							End-Section
+						110, 118 use:
+							Section ascension
+							//	Insert_section bk.ap.mc.p0.sections.Week_06.Day_Thursday.communion_title End-Insert
+								Insert_section bk.ap.mc.p0.sections.Week_06.Day_Thursday.communion_hymn End-Insert
+							End-Section
+						113 use:
+							Section holyfathers
+							//	Insert_section bk.ap.da.sections.d1.communion_title End-Insert
+								Insert_section bk.ap.da.sections.d1.communion_hymn End-Insert
+							End-Section
+						119 use:
+							Section souls
+							//	Insert_section bk.ap.da.sections.d7.communion2_title End-Insert
+								Insert_section bk.ap.da.sections.d7.communion2_hymn End-Insert
+							End-Section
+						120, 126 use:
+							Section pentecost
+							//	Insert_section bk.ap.mc.p0.sections.Day_Sunday08.communion_title End-Insert
+								Insert_section bk.ap.mc.p0.sections.Day_Sunday08.communion_hymn End-Insert
+							End-Section
+						121 use:
+							Section holyspirit
+							//	Insert_section bk.ap.mc.p1.sections.Week_01.Day_Monday.communion_title End-Insert
+								Insert_section bk.ap.mc.p1.sections.Week_01.Day_Monday.communion_hymn End-Insert
+							End-Section
+						127 use:
+							Section allsaints
+								when-date-is
+									Jun 24 use: Insert_section DayOfWeek.onTuesday End-Insert
+									Jun 29, 30 use: Insert_section DayOfWeek.onThursday End-Insert
+									Jul 1 use: Insert_section DayOfWeek.onWednesday End-Insert
+									otherwise use:
+									//	Insert_section bk.ap.da.sections.d7.communion_title End-Insert
+										Insert_section bk.ap.da.sections.d7.communion_hymn End-Insert
+								end-when
+							End-Section
+						otherwise use:
+							Section menaion
+								when-date-is
+									Jan 1 use: Insert_section DayOfWeek.onSunday End-Insert
+									Jan 6, 14 use:
+									//	Insert_section bk.ap.me.m01.sections.d06.communion_title End-Insert
+										Insert_section bk.ap.me.m01.sections.d06.communion_hymn End-Insert
+									Jan 7 use: Insert_section DayOfWeek.onTuesday End-Insert
+									Jan 10, 11, 17, 18, 20, 25, 27, 31 use: Insert_section Various.saints End-Insert
+									Jan 16 use: Insert_section Various.apostles End-Insert
+									Jan 30 use: Insert_section DayOfWeek.onThursday End-Insert
+									Feb 1, 6, 10, 24 use: Insert_section Various.saints End-Insert
+									Feb 2 use: Insert_section DayOfWeek.onWednesday End-Insert
+									//leavetaking of Meeting
+									Mar 9 use: Insert_section Various.saints End-Insert
+									Mar 26 use: Insert_section annunciation End-Insert
+									Apr 23 use: Insert_section Various.saints End-Insert
+									Apr 25, 30 use: Insert_section Various.apostles End-Insert
+									May 2, 25 use: Insert_section Various.saints End-Insert
+									May 8, 10 use: Insert_section DayOfWeek.onThursday End-Insert
+									May 21 use: Insert_section Various.apostles End-Insert
+									Jun 4 use: Insert_section Various.saints End-Insert
+									Jun 11 use: Insert_section Various.apostles End-Insert
+									Jun 24 use: Insert_section DayOfWeek.onTuesday End-Insert
+									Jun 29, 30 use: Insert_section DayOfWeek.onThursday End-Insert
+									Jul 1, 5, 7, 8, 11, 15, 17, 26, 27 use: Insert_section Various.saints End-Insert
+									Jul 2 use: Insert_section Various.theotokos End-Insert
+									Jul 13 use: Insert_section Various.angels End-Insert
+									Jul 20, 25 use: Insert_section Various.righteous End-Insert
+									Aug 1 use: Insert_section Various.cross End-Insert
+									Aug 2, 25 use: Insert_section Various.apostles End-Insert
+									Aug 6, 13 use:
+									//	Insert_section bk.ap.me.m08.sections.d06.communion_title End-Insert
+										Insert_section bk.ap.me.m08.sections.d06.communion_hymn End-Insert
+									Aug 15, 23 use: Insert_section DayOfWeek.onWednesday End-Insert
+									Aug 16 use: Insert_section DayOfWeek.onSunday End-Insert
+									Aug 29 use: Insert_section DayOfWeek.onTuesday End-Insert
+									Aug 31 use: Insert_section Various.theotokos End-Insert
+									Sep 1 use:
+									//	Insert_section bk.ap.me.m09.sections.d01.communion_title End-Insert
+										Insert_section bk.ap.me.m09.sections.d01.communion_hymn End-Insert
+									Sep 6 use: Insert_section Various.angels End-Insert
+									Sep 8, 12 use: Insert_section DayOfWeek.onWednesday End-Insert
+									Sep 9 use: Insert_section Various.righteous End-Insert
+									Sep 13 use: Insert_section Various.consecration End-Insert
+									Sep 14, 21 use:
+									//	Insert_section bk.ap.me.m09.sections.d14.communion_title End-Insert
+										Insert_section bk.ap.me.m09.sections.d14.communion_hymn End-Insert
+									Sep 16, 23, 24, 28 use: Insert_section Various.saints End-Insert
+									Sep 26 use: Insert_section DayOfWeek.onThursday End-Insert
+									Oct 6, 9, 18, 23 use: Insert_section Various.apostles End-Insert
+									Oct 26, 27 use: Insert_section Various.saints End-Insert
+									Oct 28 use: Insert_section DayOfWeek.onWednesday End-Insert
+									Nov 1, 3, 9, 13 use: Insert_section Various.saints End-Insert
+									Nov 8 use: Insert_section DayOfWeek.onMonday End-Insert
+									Nov 14 use: Insert_section Various.apostles End-Insert
+									Nov 16 use: Insert_section DayOfWeek.onThursday End-Insert
+									Nov 21, 25 use: Insert_section DayOfWeek.onWednesday End-Insert
+									Nov 30 use: Insert_section DayOfWeek.onThursday End-Insert
+									Dec 4, 5, 6, 12, 15 use: Insert_section Various.saints End-Insert
+									Dec 9 use: Insert_section Various.righteous End-Insert
+									Dec 25, 26, 31 use:
+									//	Insert_section bk.ap.me.m12.sections.d25.communion_title End-Insert
+										Insert_section bk.ap.me.m12.sections.d25.communion_hymn End-Insert
+									Dec 27 use: Insert_section Various.apostles End-Insert
+									
+									otherwise use: Insert_section DayOfWeek End-Insert
+								end-when
+							End-Section
+					end-when
+				End-Section
+		end-when
+	End-Section
+
+	Section DayOfWeek
+		when-name-of-day-is
+			Sunday use:
+				Section onSunday
+				//	Insert_section bk.ap.da.sections.d1.communion_title End-Insert
+					Insert_section bk.ap.da.sections.d1.communion_hymn End-Insert
+				End-Section
+			Monday use:
+				Section onMonday
+				//	Insert_section bk.ap.da.sections.d2.communion_title End-Insert
+					Insert_section bk.ap.da.sections.d2.communion_hymn End-Insert
+				End-Section
+			Tuesday use:
+				Section onTuesday
+				//	Insert_section bk.ap.da.sections.d3.communion_title End-Insert
+					Insert_section bk.ap.da.sections.d3.communion_hymn End-Insert
+				End-Section
+			Wednesday use:
+				Section onWednesday
+				//	Insert_section bk.ap.da.sections.d4.communion_title End-Insert
+					Insert_section bk.ap.da.sections.d4.communion_hymn End-Insert
+				End-Section
+			Thursday use:
+				Section onThursday
+				//	Insert_section bk.ap.da.sections.d5.communion_title End-Insert
+					Insert_section bk.ap.da.sections.d5.communion_hymn End-Insert
+				End-Section
+			Friday use:
+				Section onFriday
+				//	Insert_section bk.ap.da.sections.d6.communion_title End-Insert
+					Insert_section bk.ap.da.sections.d6.communion_hymn End-Insert
+				End-Section
+			Saturday use:
+				Section onSaturday
+				//	Insert_section bk.ap.da.sections.d7.communion2_title End-Insert
+					Insert_section bk.ap.da.sections.d7.communion2_hymn End-Insert
+				End-Section
+		end-when
+	End-Section
+	
+	Section Various
+		Section angels
+			when-name-of-day-is
+				Sunday use: Insert_section DayOfWeek.onSunday End-Insert
+				otherwise use: Insert_section DayOfWeek.onMonday End-Insert
+			end-when
+		End-Section
+		Section apostles
+			when-name-of-day-is
+				Sunday use: Insert_section DayOfWeek.onSunday End-Insert
+				otherwise use: Insert_section DayOfWeek.onThursday End-Insert
+			end-when
+		End-Section
+		Section consecration
+			when-name-of-day-is
+				Sunday use: Insert_section DayOfWeek.onSunday End-Insert
+				otherwise use:
+				//	Insert_section bk.ap.me.m09.sections.d13.communion_title End-Insert
+					Insert_section bk.ap.me.m09.sections.d13.communion_hymn End-Insert
+			end-when
+		End-Section
+		Section cross
+			when-name-of-day-is
+				Sunday use: Insert_section DayOfWeek.onSunday End-Insert
+				otherwise use:
+				//	Insert_section bk.ap.me.m09.sections.d14.communion_title End-Insert
+					Insert_section bk.ap.me.m09.sections.d14.communion_hymn End-Insert
+			end-when
+		End-Section
+		Section righteous
+			when-name-of-day-is
+				Sunday use: Insert_section DayOfWeek.onSunday End-Insert
+				otherwise use:
+				//	Insert_section bk.ap.da.sections.d7.communion_title End-Insert
+					Insert_section bk.ap.da.sections.d7.communion_hymn End-Insert
+			end-when
+		End-Section
+		Section saints
+			when-name-of-day-is
+				Sunday use: Insert_section DayOfWeek.onSunday End-Insert
+				otherwise use: Insert_section DayOfWeek.onTuesday End-Insert
+			end-when
+		End-Section
+		Section theotokos
+			when-name-of-day-is
+				Sunday use: Insert_section DayOfWeek.onSunday End-Insert
+				otherwise use: Insert_section DayOfWeek.onWednesday End-Insert
+			end-when
+		End-Section
+	End-Section
+
+End-Template
