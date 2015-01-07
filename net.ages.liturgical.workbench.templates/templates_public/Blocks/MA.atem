@@ -695,6 +695,16 @@ Template MA
 				Hymn rid meVE.Apolytikion2.text End-Hymn
 			End-Section
 		End-Section
+		Section pe12t
+			Actor sid Choir End-Actor
+			Title role desig sid Apolytikion End-Title
+			Title role mode rid peVE.Apolytikion1.mode End-Title
+			Hymn rid peVE.Apolytikion1.text End-Hymn
+			Title sid Doxa End-Title
+			Hymn rid peVE.Apolytikion2.text End-Hymn
+			Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+			Hymn rid peVE.ApolTheotokion.text End-Hymn
+		End-Section
 		Section resurrectional
 			Title role desig sid ApolytikionAnastasimon End-Title
 			Title role mixed<Tmode>rid ocVE.Apolytikion.mode</><Tmelody>rid ocVE.Apolytikion.melody</>End-Title
@@ -707,29 +717,36 @@ Template MA
 			Title role mixed sid Doxa<Tdesig>sid ToAfto</>End-Title
 			Hymn rid ocVE.Apolytikion.text media-off End-Hymn
 		End-Section
-		Section tr__
-			Section festal112 //palmsunday
-				Title role mixed<Tdesig>sid Apolytikion</><Tmode>rid trVE.Apolytikion1.mode</>End-Title
-				Hymn rid trVE.Apolytikion1.text End-Hymn
-				Title role mixed sid Doxa<Tdesig>sid ToAfto</>End-Title
-				Hymn rid trVE.Apolytikion1.text media-off End-Hymn
-				Title role mixed sid KaiNyn<Tmode>rid trVE.Apolytikion2.mode</>End-Title
-				Hymn rid trVE.Apolytikion2.text End-Hymn
-			End-Section	
-			Section once_
-				Title role desig sid Apolytikion End-Title
-				Section hymn
-					Title role mixed<Tmode>rid trVE.Apolytikion1.mode</><Tmelody>rid trVE.Apolytikion1.melody</>End-Title
-					Hymn rid trVE.Apolytikion1.text End-Hymn	
-				End-Section
+		Section tr1_
+			Title role desig sid Apolytikion End-Title
+			Section hymn
+				Title role mixed<Tmode>rid trVE.Apolytikion1.mode</><Tmelody>rid trVE.Apolytikion1.melody</>End-Title
+				Hymn rid trVE.Apolytikion1.text End-Hymn	
 			End-Section
-			Section thrice_
-				Title role desig sid Apolytikion End-Title
-				Section hymn
-					Title role mixed<Tmode>rid trVE.Apolytikion1.mode</><Tmelody>rid trVE.Apolytikion1.melody</>End-Title
-					Hymn rid trVE.Apolytikion1.text<r>sid Thrice</>End-Hymn	
-				End-Section
+		End-Section
+		Section tr111_
+			Title role desig sid Apolytikion End-Title
+			Section hymn
+				Title role mixed<Tmode>rid trVE.Apolytikion1.mode</><Tmelody>rid trVE.Apolytikion1.melody</>End-Title
+				Hymn rid trVE.Apolytikion1.text<r>sid Thrice</>End-Hymn	
 			End-Section
+		End-Section
+		Section tr112 //palmsunday
+			Title role mixed<Tdesig>sid Apolytikion</><Tmode>rid trVE.Apolytikion1.mode</>End-Title
+			Hymn rid trVE.Apolytikion1.text End-Hymn
+			Title role mixed sid Doxa<Tdesig>sid ToAfto</>End-Title
+			Hymn rid trVE.Apolytikion1.text media-off End-Hymn
+			Title role mixed sid KaiNyn<Tmode>rid trVE.Apolytikion2.mode</>End-Title
+			Hymn rid trVE.Apolytikion2.text End-Hymn
+		End-Section	
+		Section tr12t
+			Title role desig sid Apolytikion End-Title
+			Title role mode rid trVE.Apolytikion1.mode End-Title
+			Hymn rid trVE.Apolytikion1.text End-Hymn
+			Title sid Doxa End-Title
+			Hymn rid trVE.Apolytikion2.text End-Hymn
+			Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+			Hymn rid trVE.ApolTheotokion.text End-Hymn
 		End-Section
 	End-Section
 
@@ -1952,78 +1969,78 @@ Template MA
 				Insert_section LN.BeforeGospel End-Insert
 				Insert_section Selector_MatinsGospel.Section01 End-Insert
 				Insert_section MA.Psalm50_read End-Insert
-			otherwise use:
-				Section introP
-					Actor sid Deacon End-Actor
-					Dialog sid pet00 End-Dialog
-					Dialog<i>sid res01p</>End-Dialog
-					Actor sid Priest End-Actor
-					Dialog sid exc06 End-Dialog
-					Actor sid Choir End-Actor
-					Dialog sid res04 End-Dialog
-					Title role mode sid Mode2 End-Title
-					Media sid hoMA.PreGospelHymn.text End-Media
-					Hymn sid psa150.v6a.text<r>sid Twice</>sid psa150.v6aalt.text End-Hymn
-					Insert_section LN.BeforeGospel End-Insert
-				End-Section
-				Section matinsgospel
-					Actor sid Deacon End-Actor
-					Dialog sid exc17 sid exc18 sid gos02 End-Dialog
-					Actor sid Priest End-Actor
-					Dialog sid pet31 End-Dialog
-					Dialog<i>sid res05p</>End-Dialog
-					when-movable-cycle-day-is //sundays before new eo cycle begins
-						64 use: //palm sunday
-							Insert_section Selector_MatinsGospel.Section01 End-Insert
-							Insert_section MA.Psalm50_read End-Insert
-							Insert_section PostGospel_mc End-Insert
-						71 use: //pascha resurrection 
-							Insert_section Selector_MatinsGospel.Section01 End-Insert
-						78, 85, 92, 99, 106, 113 use:
-							Insert_section Selector_MatinsGospel.Section01 End-Insert
-							Insert_section Psalm50_chant End-Insert
-							Insert_section PostGospel_eo End-Insert
-						110, 120 use:
-							Insert_section Selector_MatinsGospel.Section01 End-Insert
-							Insert_section MA.Psalm50_read End-Insert
-							Insert_section PostGospel_mc End-Insert
-						otherwise use:
-						when-name-of-day-is
-							Sunday use:
-								when-date-is // dates when menaion gospel supercedes eothinon
-									Jan 6 use: 
-										Insert_section Selector_MatinsGospel.Section01 End-Insert
-										Insert_section MA.Psalm50_read End-Insert
-										Insert_section PostGospel_me End-Insert
-									Mar 25 use: 
-										Insert_section Selector_MatinsGospel.Section01 End-Insert
-										Insert_section MA.Psalm50_read End-Insert
-										Insert_section PostGospel_me End-Insert
-									Aug 6 use: 
-										Insert_section Selector_MatinsGospel.Section01 End-Insert
-										Insert_section MA.Psalm50_read End-Insert
-										Insert_section PostGospel_me End-Insert
-									Sep 14 use: 
-										Insert_section Selector_MatinsGospel.Section01 End-Insert
-										Insert_section MA.Psalm50_read End-Insert
-										Insert_section PostGospel_me End-Insert
-									Dec 25 use: 
-										Insert_section Selector_MatinsGospel.Section01 End-Insert
-										Insert_section MA.Psalm50_read End-Insert
-										Insert_section PostGospel_me End-Insert
-									otherwise use:
-										Insert_section LE._02_Gospel__.eothinon End-Insert
-										Insert_section Psalm50_chant End-Insert
-										Insert_section PostGospel_eo End-Insert
-								end-when
-							otherwise use:
+				otherwise use:
+					Section introP
+						Actor sid Deacon End-Actor
+						Dialog sid pet00 End-Dialog
+						Dialog<i>sid res01p</>End-Dialog
+						Actor sid Priest End-Actor
+						Dialog sid exc06 End-Dialog
+						Actor sid Choir End-Actor
+						Dialog sid res04 End-Dialog
+						Title role mode sid Mode2 End-Title
+						Media sid hoMA.PreGospelHymn.text End-Media
+						Hymn sid psa150.v6a.text<r>sid Twice</>sid psa150.v6aalt.text End-Hymn
+						Insert_section LN.BeforeGospel End-Insert
+					End-Section
+					Section matinsgospel
+						Actor sid Deacon End-Actor
+						Dialog sid exc17 sid exc18 sid gos02 End-Dialog
+						Actor sid Priest End-Actor
+						Dialog sid pet31 End-Dialog
+						Dialog<i>sid res05p</>End-Dialog
+						when-movable-cycle-day-is //sundays before new eo cycle begins
+							64 use: //palm sunday
 								Insert_section Selector_MatinsGospel.Section01 End-Insert
 								Insert_section MA.Psalm50_read End-Insert
-								Insert_section PostGospel_me End-Insert
+								Insert_section PostGospel_mc End-Insert
+							71 use: //pascha resurrection 
+								Insert_section Selector_MatinsGospel.Section01 End-Insert
+							78, 85, 92, 99, 106, 113 use:
+								Insert_section Selector_MatinsGospel.Section01 End-Insert
+								Insert_section Psalm50_chant End-Insert
+								Insert_section PostGospel_eo End-Insert
+							110, 120 use:
+								Insert_section Selector_MatinsGospel.Section01 End-Insert
+								Insert_section MA.Psalm50_read End-Insert
+								Insert_section PostGospel_mc End-Insert
+							otherwise use:
+							when-name-of-day-is
+								Sunday use:
+									when-date-is // dates when menaion gospel supercedes eothinon
+										Jan 6 use: 
+											Insert_section Selector_MatinsGospel.Section01 End-Insert
+											Insert_section MA.Psalm50_read End-Insert
+											Insert_section PostGospel_me End-Insert
+										Mar 25 use: 
+											Insert_section Selector_MatinsGospel.Section01 End-Insert
+											Insert_section MA.Psalm50_read End-Insert
+											Insert_section PostGospel_me End-Insert
+										Aug 6 use: 
+											Insert_section Selector_MatinsGospel.Section01 End-Insert
+											Insert_section MA.Psalm50_read End-Insert
+											Insert_section PostGospel_me End-Insert
+										Sep 14 use: 
+											Insert_section Selector_MatinsGospel.Section01 End-Insert
+											Insert_section MA.Psalm50_read End-Insert
+											Insert_section PostGospel_me End-Insert
+										Dec 25 use: 
+											Insert_section Selector_MatinsGospel.Section01 End-Insert
+											Insert_section MA.Psalm50_read End-Insert
+											Insert_section PostGospel_me End-Insert
+										otherwise use:
+											Insert_section LE._02_Gospel__.eothinon End-Insert
+											Insert_section Psalm50_chant End-Insert
+											Insert_section PostGospel_eo End-Insert
+									end-when
+								otherwise use:
+									Insert_section Selector_MatinsGospel.Section01 End-Insert
+									Insert_section MA.Psalm50_read End-Insert
+									Insert_section PostGospel_me End-Insert
+							end-when
 						end-when
-					end-when
-					
-				End-Section
+						
+					End-Section
 		end-when
 	End-Section
 
@@ -3674,12 +3691,39 @@ Template MA
 					Hymn rid meVE.Apolytikion2.text End-Hymn
 				End-Section
 			End-Section
-			Section pe_
+			Section pe1_
 				Title role desig sid Apolytikion End-Title
 				Section hymn
 					Title role mixed<Tmode>rid peVE.Apolytikion1.mode</><Tmelody>rid peVE.Apolytikion1.melody</>End-Title
 					Hymn rid peVE.Apolytikion1.text End-Hymn
 				End-Section
+			End-Section
+			Section tr1_
+				Title role desig sid Apolytikion End-Title
+				Section hymn
+					Title role mixed<Tmode>rid trVE.Apolytikion1.mode</><Tmelody>rid trVE.Apolytikion1.melody</>End-Title
+					Hymn rid trVE.Apolytikion1.text End-Hymn
+				End-Section
+			End-Section
+		End-Section
+		Section aftersmalldoxology__
+			Section pe12t
+				Title role desig sid Apolytikion End-Title
+				Title role mode rid peVE.Apolytikion1.mode End-Title
+				Hymn rid peVE.Apolytikion1.text End-Hymn
+				Title sid Doxa End-Title
+				Hymn rid peVE.Apolytikion2.text End-Hymn
+				Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+				Hymn rid peVE.ApolTheotokion.text End-Hymn
+			End-Section
+			Section tr12t
+				Title role desig sid Apolytikion End-Title
+				Title role mode rid trVE.Apolytikion1.mode End-Title
+				Hymn rid trVE.Apolytikion1.text End-Hymn
+				Title sid Doxa End-Title
+				Hymn rid trVE.Apolytikion2.text End-Hymn
+				Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+				Hymn rid trVE.ApolTheotokion.text End-Hymn
 			End-Section
 		End-Section
 		Section itisgood_trisagion
