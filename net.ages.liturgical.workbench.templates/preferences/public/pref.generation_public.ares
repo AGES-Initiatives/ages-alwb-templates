@@ -56,6 +56,38 @@ generate.tms.json = "no"
 	tms.json.key.set.include.text = "no"     // only language 1
 	tms.json.key.set.include.frequencies = "no" // include a count of the number of occurrences of this key in the template
 
+// ---------------------------------
+/**
+ * Version Designation
+ * 
+ * The rid and sid tags have an @ver flag.  If this flag is 
+ * present and display.version.text = yes, then the generator 
+ * will attempt a lookup of the version of the text.
+ * 
+ * For example, if the text is in a file with the domain en_US_dedes,
+ * the generator will see if version.designation in properties_en_US_dedes.ares
+ * has a value, e.g. version.designation = “Dedes".
+ * 
+ * Note that the version lookup only works for rids/sids within hymn, verse,
+ * reading, and para. 
+ * 
+ * Also, note below version.prefix, suffix, and delimiter.  
+ * If the text version is Dedes, and prefix = "(" and suffix = ")",
+ * the version will display as (Dedes).
+ * 
+ * In the event that there are multiple sids/rids within, for example, a
+ * hymn tag, and there are two versions, e.g. Dedes and Lash, the delimiter
+ * is used to separate the versions, e.g. (Dedes, Lash).
+ * 
+ * If there are multiple rids/sids from the same version, the
+ * version will only show once.  Also, note that the version will
+ * appear at the end of the paragraph, after all sids/rids have been
+ * evaluated.  
+ */
+display.version.text = "yes"
+version.prefix = " ("  // note the non-breaking space code before the (
+version.suffix = ")"
+version.delimiter = ","
 
 // ePub generation
 generate.file.epub = "no"  // if set to "no", the next three values are switched off
@@ -68,3 +100,4 @@ generate.file.resources = "yes"
 
 make.editable.html.v1 = "no" 
 make.editable.html.v2 = "no"
+
