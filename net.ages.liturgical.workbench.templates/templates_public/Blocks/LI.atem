@@ -40,7 +40,9 @@ Status Review
 			Dialog<i>sid res04p</>End-Dialog
 			when-movable-cycle-day-is
 				71, 72, 73, 74, 75, 76, 77, 109 use:
-					Insert_section PE.Pascha_Enarxis02 End-Insert
+					Section pascha
+						Insert_section PE.Pascha_Beginning End-Insert
+					End-Section
 				78 thru 108 use:
 					Section afterpascha
 						Actor sid Priest End-Actor
@@ -173,6 +175,50 @@ Status Review
 				Insert_section Selector_FestalApolytikion.Thrice End-Insert
 			End-Section
 		End-Section
+		Section hypakoe__
+			Section sunday__
+				Section modeofweek
+					Title role mixed<Tdesig>sid Ypakoi</><Tmode>rid ocMA.Hypakoe.mode</>End-Title
+					Hymn rid ocMA.Hypakoe.text @ver End-Hymn
+				End-Section
+				Section mode1
+					Title role mixed<Tdesig>sid Ypakoi</><Tmode>sid oc.m1.d1_gr_GR_cog.ocMA.Hypakoe.mode</>End-Title
+					Hymn sid oc.m1.d1_gr_GR_cog.ocMA.Hypakoe.text @ver End-Hymn
+				End-Section
+				Section mode2
+					Title role mixed<Tdesig>sid Ypakoi</><Tmode>sid oc.m2.d1_gr_GR_cog.ocMA.Hypakoe.mode</>End-Title
+					Hymn sid oc.m2.d1_gr_GR_cog.ocMA.Hypakoe.text @ver End-Hymn
+				End-Section
+				Section mode3
+					Title role mixed<Tdesig>sid Ypakoi</><Tmode>sid oc.m3.d1_gr_GR_cog.ocMA.Hypakoe.mode</>End-Title
+					Hymn sid oc.m3.d1_gr_GR_cog.ocMA.Hypakoe.text @ver End-Hymn
+				End-Section
+				Section mode4
+					Title role mixed<Tdesig>sid Ypakoi</><Tmode>sid oc.m4.d1_gr_GR_cog.ocMA.Hypakoe.mode</>End-Title
+					Hymn sid oc.m4.d1_gr_GR_cog.ocMA.Hypakoe.text @ver End-Hymn
+				End-Section
+				Section mode5
+					Title role mixed<Tdesig>sid Ypakoi</><Tmode>sid oc.m5.d1_gr_GR_cog.ocMA.Hypakoe.mode</>End-Title
+					Hymn sid oc.m5.d1_gr_GR_cog.ocMA.Hypakoe.text @ver End-Hymn
+				End-Section
+				Section mode6
+					Title role mixed<Tdesig>sid Ypakoi</><Tmode>sid oc.m6.d1_gr_GR_cog.ocMA.Hypakoe.mode</>End-Title
+					Hymn sid oc.m6.d1_gr_GR_cog.ocMA.Hypakoe.text @ver End-Hymn
+				End-Section
+				Section mode7
+					Title role mixed<Tdesig>sid Ypakoi</><Tmode>sid oc.m7.d1_gr_GR_cog.ocMA.Hypakoe.mode</>End-Title
+					Hymn sid oc.m7.d1_gr_GR_cog.ocMA.Hypakoe.text @ver End-Hymn
+				End-Section
+				Section mode8
+					Title role mixed<Tdesig>sid Ypakoi</><Tmode>sid oc.m8.d1_gr_GR_cog.ocMA.Hypakoe.mode</>End-Title
+					Hymn sid oc.m8.d1_gr_GR_cog.ocMA.Hypakoe.text @ver End-Hymn
+				End-Section
+			End-Section
+			Section pascha
+				Title role mixed<Tdesig>sid Ypakoi</><Tmode>sid pe.d00P_gr_GR_cog.pePA.Hypakoe.mode</>End-Title	
+				Hymn sid pe.d00P_gr_GR_cog.pePA.Hypakoe.text @ver End-Hymn
+			End-Section
+		End-Section
  		Section kontakion
  			Insert_section Selector_Kontakion.SeasonalKontakion End-Insert
  		End-Section
@@ -193,6 +239,21 @@ Status Review
 			Section hymn
 				Title role mixed<Tmode>rid meVE.Apolytikion2.mode</><Tmelody>rid meVE.Apolytikion2.melody</>End-Title
 				Hymn rid meVE.Apolytikion2.text @ver End-Hymn
+			End-Section
+		End-Section
+		Section pascha__
+			Section once
+				Insert_section PE.ChristIsRisen.once End-Insert
+			End-Section
+			Section thrice
+				Insert_section PE.ChristIsRisen.thrice End-Insert
+			End-Section
+		End-Section
+		Section pe_
+			Title role desig sid Apolytikion End-Title
+			Section hymn
+				Title role mixed<Tmode>rid peVE.Apolytikion1.mode</><Tmelody>rid peVE.Apolytikion1.melody</>End-Title
+				Hymn rid peVE.Apolytikion1.text @ver End-Hymn
 			End-Section
 		End-Section
 		Section sunday_
@@ -987,30 +1048,27 @@ Status Review
 					End-Section
 				71, 72, 73, 74, 75, 76, 77, 109 use:
 					Section pascha
-						Insert_section PE.Paschal_Dismissal_Intro.deacon End-Insert
-						Insert_section PE.Pascha_Dismissal_Part2_Menaion End-Insert
+						Section intro
+							Actor sid Deacon End-Actor
+							Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text media-off End-Dialog
+							Dialog sid res01<r>sid Thrice</>sid Evlogison End-Dialog
+						End-Section
+						Actor sid Priest End-Actor
+						Insert_section Selector_Dismissals.Com_Yes.part1 End-Insert
+						Actor sid Choir End-Actor
+						Hymn sid euLI.Key1706.text @ver End-Hymn
+						Actor sid Priest End-Actor
+						Insert_section Selector_Dismissals.Com_Yes.part2 End-Insert
 					End-Section
 				78 thru 108 use:
 					Section afterpascha
-						Insert_section PE.Paschal_Dismissal_Intro.deacon End-Insert
-						Section part1
-							Actor sid Priest End-Actor
-							Insert_section Selector_Dismissals.Com_Yes.part1 End-Insert
-							Actor sid Choir End-Actor
-							Hymn sid euLI.Key1706.text @ver End-Hymn
-							Actor sid Priest End-Actor
-							Rubric sid cl.pe.d078.R001 End-Rubric
-							Dialog sid DiEfchonPateron.text End-Dialog
-							Dialog<i>sid res04p</>End-Dialog
-						End-Section
-						Section part2	
-							Rubric sid Or End-Rubric
-							Rubric sid cl.pe.d078.R002 End-Rubric
-							Actor sid Priest End-Actor
-							Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text End-Dialog
-							Actor sid People End-Actor
-							Dialog sid PaschaDialog6.text End-Dialog
-						End-Section	
+						Insert_section pascha.intro End-Insert
+						Actor sid Priest End-Actor
+						Insert_section Selector_Dismissals.Com_Yes.part1 End-Insert
+						Actor sid Choir End-Actor
+						Hymn sid euLI.Key1706.text @ver End-Hymn
+						Actor sid Priest End-Actor
+						Insert_section Selector_Dismissals.Com_Yes.part2 End-Insert
 					End-Section
 				otherwise use:
 					Section notpaschal
@@ -1028,35 +1086,32 @@ Status Review
 			when-movable-cycle-day-is
 				71, 72, 73, 74, 75, 76, 77, 109 use:
 					Section pascha
-						Insert_section PE.Paschal_Dismissal_Intro.deacon End-Insert
-						Insert_section PE.Pascha_Dismissal_Part2 End-Insert
+						Section intro
+							Actor sid Deacon End-Actor
+							Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text media-off End-Dialog
+							Dialog sid res01<r>sid Thrice</>sid Evlogison End-Dialog
+						End-Section
+						Actor sid Priest End-Actor
+						Insert_section Selector_Dismissals.Com_No.part1 End-Insert
+						Actor sid Choir End-Actor
+						Hymn sid euLI.Key1706.text @ver End-Hymn
+						Actor sid Priest End-Actor
+						Insert_section Selector_Dismissals.Com_No.part2 End-Insert
 					End-Section
 				78 thru 108 use:
 					Section afterpascha
-						Insert_section PE.Paschal_Dismissal_Intro.deacon End-Insert
-						Section part1
-							Actor sid Priest End-Actor
-							Insert_section Selector_Dismissals.dismissal_01 End-Insert
-							Actor sid Choir End-Actor
-							Hymn sid euLI.Key1706.text @ver End-Hymn
-							Actor sid Priest End-Actor
-							Rubric sid cl.pe.d078.R001 End-Rubric
-							Dialog sid DiEfchonPateron.text End-Dialog
-							Dialog<i>sid res04p</>End-Dialog
-						End-Section
-						Section part2	
-							Rubric sid Or End-Rubric
-							Rubric sid cl.pe.d078.R002 End-Rubric
-							Actor sid Priest End-Actor
-							Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text End-Dialog
-							Actor sid People End-Actor
-							Dialog sid PaschaDialog6.text End-Dialog
-						End-Section	
+						Insert_section pascha.intro End-Insert
+						Actor sid Priest End-Actor
+						Insert_section Selector_Dismissals.Com_No.part1 End-Insert
+						Actor sid Choir End-Actor
+						Hymn sid euLI.Key1706.text @ver End-Hymn
+						Actor sid Priest End-Actor
+						Insert_section Selector_Dismissals.Com_No.part2 End-Insert
 					End-Section
 				otherwise use:
 					Section notpaschal
 						Actor sid Priest End-Actor
-						Insert_section Selector_Dismissals.dismissal_01 End-Insert
+						Insert_section Selector_Dismissals.Com_No.part1 End-Insert
 						Actor sid Choir End-Actor
 						Hymn sid euLI.Key1706.text @ver End-Hymn
 						Actor sid Priest End-Actor

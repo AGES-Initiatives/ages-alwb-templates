@@ -145,41 +145,58 @@ Status Review
 			Insert_section vespers.litany End-Insert
 		End-Section
 		Section vespers
-			Section enarxis
-				Actor sid Priest End-Actor
-				Dialog sid enarxis01 End-Dialog
-			End-Section
-			Section introductorypsalm
-				when-movable-cycle-day-is 78 thru 108 use:
-					Dialog<i>sid res04p</>End-Dialog
-					Actor sid Priest End-Actor
-					Title role mode sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.mode End-Title
-					Hymn sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text @ver End-Hymn
-					Actor sid Choir End-Actor
-					Hymn sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text @ver media-off End-Hymn
-					Hymn sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text @ver media-off End-Hymn
-					Actor sid Reader End-Actor
+			when-movable-cycle-day-is
+				72, 73, 74, 75, 76, 77, 109 use:
+					Section pascha
+						Actor sid Priest End-Actor
+						Dialog sid enarxis03 End-Dialog
+						Dialog<i>sid res04p</>End-Dialog
+						Insert_section PE.Pascha_Beginning End-Insert
+						Actor sid Deacon End-Actor
+						Insert_section LN.GreatLitany01 End-Insert
+						Actor sid Priest End-Actor
+						Dialog sid exc01<i>sid res04p</>End-Dialog
+					End-Section
 				otherwise use:
-					Actor sid Reader End-Actor
-					Dialog sid res04 End-Dialog
-					Reading sid DefteProskinisomen1 End-Reading
-					Reading sid DefteProskinisomen2 End-Reading
-					Reading sid DefteProskinisomen3 End-Reading
-				end-when
-				Media sid hoVE.Ps103.text End-Media
-				Insert_section Psalm_103_Paragraph End-Insert
-				Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
-				Reading sid Allilouia3.text sid DoxaSoiOTheos1<r>sid Thrice</>End-Reading
-				Reading sid IElpisImonKyrie End-Reading
-				Break line End_Break 
-			End-Section
-			Section litany
-				Actor sid Deacon End-Actor
-				Insert_section LN.GreatLitany01 End-Insert
-				Actor sid Priest End-Actor
-				Dialog sid exc01 End-Dialog
-				Dialog<i>sid res04p</>End-Dialog
-			End-Section //Part3
+					Section enarxis
+						Actor sid Priest End-Actor
+						Dialog sid enarxis01 End-Dialog
+					End-Section
+					Section introductorypsalm
+						when-movable-cycle-day-is 78 thru 108 use:
+							Dialog<i>sid res04p</>End-Dialog
+							Actor sid Priest End-Actor
+							Insert_section PE.ChristIsRisen.once End-Insert
+							Actor sid Choir End-Actor
+							Insert_section PE.ChristIsRisen.twice End-Insert
+							Actor sid Reader End-Actor
+						otherwise use:
+							Actor sid Reader End-Actor
+							Dialog sid res04 End-Dialog
+							Reading sid DefteProskinisomen1 End-Reading
+							Reading sid DefteProskinisomen2 End-Reading
+							Reading sid DefteProskinisomen3 End-Reading
+						end-when
+						Media sid hoVE.Ps103.text End-Media
+						Insert_section Psalm_103_Paragraph End-Insert
+						Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+						Reading sid Allilouia3.text sid DoxaSoiOTheos1<r>sid Thrice</>End-Reading
+						Reading sid IElpisImonKyrie End-Reading
+						Break line End_Break 
+					End-Section
+					Section litany
+						Actor sid Deacon End-Actor
+						when-movable-cycle-day-is
+							121 use:
+								Insert_section LN.GreatLitany_Vespers_HolySpirit01 End-Insert
+							otherwise use:
+								Insert_section LN.GreatLitany01 End-Insert
+						end-when
+						Actor sid Priest End-Actor
+						Dialog sid exc01 End-Dialog
+						Dialog<i>sid res04p</>End-Dialog
+					End-Section //Part3
+			end-when
 		End-Section
 	End-Section // Enarxis thru Peace Litany
 
@@ -1887,6 +1904,14 @@ Status Review
 	End-Section // Lity and Artoclasia
 	
 	Section _08_Aposticha__
+		Section append__
+			Section me
+				Insert_section Selector_VespersAposticha.me End-Insert
+			End-Section
+			Section pe
+				Insert_section Selector_VespersAposticha.mc End-Insert
+			End-Section
+		End-Section
 		Section both__
 			Section me_
 				Title sid KaiNyn End-Title
@@ -1910,6 +1935,13 @@ Status Review
 							Hymn rid meVE.AposStavrotheotokion.text @ver End-Hymn
 						End-Section
 				end-when
+			End-Section
+			Section pascha_
+				Title role mixed sid KaiNyn<Tdesig>sid TouPascha</>End-Title
+				Section hymn
+					Title role mode sid pe.d00P_gr_GR_cog.pePA.SticGlory.mode End-Title
+					Hymn sid pe.d00P_gr_GR_cog.pePA.SticGlory.text @ver End-Hymn
+				End-Section
 			End-Section
 			Section pe__
 				Section bothasboth_
@@ -2114,6 +2146,13 @@ Status Review
 					Hymn rid meVE.AposGlory.text @ver End-Hymn
 				End-Section
 			End-Section
+			Section pascha_
+				Title role mixed sid DoxaKaiNyn<Tdesig>sid TouPascha</>End-Title
+				Section hymn
+					Title role mode sid pe.d00P_gr_GR_cog.pePA.SticGlory.mode End-Title
+					Hymn sid pe.d00P_gr_GR_cog.pePA.SticGlory.text @ver End-Hymn
+				End-Section
+			End-Section
 			Section pe_
 				Title sid DoxaKaiNyn End-Title
 				Section hymn
@@ -2129,15 +2168,10 @@ Status Review
 				End-Section
 			End-Section
 		End-Section
-		Section me__
-			Section only
-				Actor sid Choir End-Actor
-				Title role desig sid Aposticha End-Title		
-				Insert_section Selector_VespersAposticha.me End-Insert
-			End-Section
-			Section append
-				Insert_section Selector_VespersAposticha.me End-Insert
-			End-Section
+		Section me
+			Actor sid Choir End-Actor
+			Title role desig sid Aposticha End-Title		
+			Insert_section Selector_VespersAposticha.me End-Insert
 		End-Section
 		Section oc__
 			Section weekday_
@@ -2212,6 +2246,9 @@ Status Review
 					Hymn rid ocVE.AposTheotokion.text @ver @day D1 End-Hymn	
 				End-Section
 			End-Section
+		End-Section
+		Section pascha
+			Insert_section PE.Pascha_SticheraOfPascha End-Insert
 		End-Section
 		Section pe__
 			Section festal
@@ -3107,6 +3144,17 @@ Status Review
 				Hymn rid meVE.Apolytikion2.text @ver End-Hymn
 			End-Section
 		End-Section
+		Section pascha__
+			Section once
+				Insert_section PE.ChristIsRisen.once End-Insert
+			End-Section
+			Section twice
+				Insert_section PE.ChristIsRisen.twice End-Insert
+			End-Section
+			Section thrice
+				Insert_section PE.ChristIsRisen.thrice End-Insert
+			End-Section
+		End-Section
 		Section pe12t
 			Title role desig sid Apolytikion End-Title
 			Title role mode rid peVE.Apolytikion1.mode End-Title
@@ -3149,7 +3197,7 @@ Status Review
 	
 	Section _10_End__
 		Section afterartoklasia	
-			Actor sid PriestOrDeacon End-Actor
+			Actor sid Deacon End-Actor
 			Dialog sid pet00 End-Dialog
 			Dialog<i>sid res01p</>End-Dialog	
 			Actor sid Priest End-Actor
@@ -3158,14 +3206,22 @@ Status Review
 			Dialog sid StereosaiKyrios.text End-Dialog
 			Actor sid Reader End-Actor
 			Dialog sid res04 End-Dialog
-			Dialog sid TinTimioteran.text End-Dialog
-			Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
-			Dialog sid res01<r>sid Thrice</>End-Dialog
-			Dialog sid Evlogison End-Dialog
+			when-movable-cycle-day-is
+				71, 72, 73, 74, 75, 76, 77, 109 use:
+					Dialog sid pePA.Ode9H.text End-Dialog
+				otherwise use:
+					Dialog sid TinTimioteran.text End-Dialog
+			end-when
+			when-movable-cycle-day-is 
+				71 thru 109 use:
+					Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text End-Dialog
+				otherwise use:
+					Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
+			end-when
 		End-Section
-		Section ektenia
+		Section ektenia_wisdom
 			Insert_section LN.Ektenia02 End-Insert
-			Insert_section noektenia End-Insert
+			Insert_section wisdom End-Insert
 		End-Section
 		Section lent_
 			Section part1
@@ -3201,7 +3257,7 @@ Status Review
 				Dialog sid Evlogison End-Dialog
 			End-Section
 		End-Section
-		Section noektenia
+		Section wisdom
 			Actor sid Deacon End-Actor
 			Dialog sid exc17 End-Dialog
 			Dialog<i>sid EvlogisonP</>End-Dialog	
@@ -3210,9 +3266,15 @@ Status Review
 			Dialog sid StereosaiKyrios.text End-Dialog
 			Actor sid Reader End-Actor
 			Dialog sid res04 End-Dialog
-			Dialog sid TinTimioteran.text End-Dialog
-			when-movable-cycle-day-is 71 thru 109 use:
-				Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text End-Dialog
+			when-movable-cycle-day-is
+				71, 72, 73, 74, 75, 76, 77, 109 use:
+					Dialog sid pe.d00P_gr_GR_cog.pePA.Ode9H.text End-Dialog
+				otherwise use:
+					Dialog sid TinTimioteran.text End-Dialog
+			end-when
+			when-movable-cycle-day-is 
+				71 thru 109 use:
+					Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text End-Dialog
 				otherwise use:
 					Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
 			end-when
