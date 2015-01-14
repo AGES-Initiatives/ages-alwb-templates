@@ -7,6 +7,7 @@ Template MA
 	import le.go.eo.*
 	import le.go.me.*
 	import le.go.mc.*
+	import pe.d00P_gr_GR_cog.*
 
 	import oc.*
 	import me.*
@@ -34,6 +35,18 @@ Template MA
 
 	Section _00_Ordinary__
 		Section part1__
+			Section afterpascha
+				Title role desig sid hoMA.title End-Title
+				Break line End_Break
+				Actor sid Priest End-Actor
+				Dialog sid enarxis01 End-Dialog
+				Actor sid Choir End-Actor
+				Dialog sid res04 End-Dialog
+				Actor sid Priest End-Actor
+				Insert_section PE.ChristIsRisen.once End-Insert
+				Actor sid Choir End-Actor
+				Insert_section PE.ChristIsRisen.twice End-Insert
+			End-Section
 			Section ascension
 				Title role desig sid hoMA.title End-Title
 				Break line End_Break
@@ -52,21 +65,25 @@ Template MA
 				Actor sid Priest End-Actor
 				Insert_section bk.ho.s01.Heavenly_King End-Insert
 			End-Section
-			Section pascha
-				Title role desig sid hoMA.title End-Title
-				Break line End_Break
-				Actor sid Priest End-Actor
-				Dialog sid enarxis01 End-Dialog
-				Actor sid Choir End-Actor
-				Dialog sid res04 End-Dialog
-				Actor sid Priest End-Actor
-				Title role mode sid pePA.ChristIsRisen.mode End-Title
-				Hymn sid pePA.ChristIsRisen.text @ver End-Hymn
-				Actor sid Choir End-Actor
-				Hymn sid pePA.ChristIsRisen.text<inr>sid Twice media-off</>End-Hymn
-			End-Section
 		End-Section
 		Section part2__
+			Section afterpascha
+				Actor sid Reader End-Actor
+				Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+				Reading sid PanagiaTrias.text End-Reading
+				Reading sid res06 End-Reading
+				Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+				Reading sid PaterImon.text End-Reading
+				Actor sid Priest End-Actor
+				Dialog sid exc20 End-Dialog
+				Actor sid Reader End-Actor
+				Dialog sid res04 End-Dialog
+				Reading sid me.m09.d14_gr_GR_cog.meVE.Apolytikion1.text End-Reading
+				Verse sid DoxaPatri.text End-Verse
+				Reading sid me.m09.d14_gr_GR_cog.meMA.Kontakion1.text End-Reading
+				Verse sid KaiNynKaiAei.text End-Verse
+				Reading sid hoMA.Troparion3.text End-Reading
+			End-Section
 			Section ascension		
 				Insert_section bk.ho.s01.Trisagion_Prayers End-Insert
 				Actor sid Priest End-Actor
@@ -118,23 +135,6 @@ Template MA
 				Reading sid DoxaPatri.text End-Reading
 				Reading sid me.m09.d14_gr_GR_cog.meMA.Kontakion1.text End-Reading
 				Reading sid KaiNynKaiAei.text End-Reading
-				Reading sid hoMA.Troparion3.text End-Reading
-			End-Section
-			Section pascha
-				Actor sid Reader End-Actor
-				Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
-				Reading sid PanagiaTrias.text End-Reading
-				Reading sid res06 End-Reading
-				Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
-				Reading sid PaterImon.text End-Reading
-				Actor sid Priest End-Actor
-				Dialog sid exc20 End-Dialog
-				Actor sid Reader End-Actor
-				Dialog sid res04 End-Dialog
-				Reading sid me.m09.d14_gr_GR_cog.meVE.Apolytikion1.text End-Reading
-				Verse sid DoxaPatri.text End-Verse
-				Reading sid me.m09.d14_gr_GR_cog.meMA.Kontakion1.text End-Reading
-				Verse sid KaiNynKaiAei.text End-Verse
 				Reading sid hoMA.Troparion3.text End-Reading
 			End-Section
 		End-Section
@@ -270,6 +270,16 @@ Template MA
 			Verse<bnr>sid vVerse1</>sid psa104.v1alt.text End-Verse
 			Verse<bnr>sid vVerse2</>sid psa117.v10.text End-Verse
 			Verse<bnr>sid vVerse3</>sid psa117.v23.text End-Verse
+		End-Section
+		Section pascha
+			Actor sid Priest End-Actor
+			Dialog sid enarxis03 End-Dialog
+			Dialog<i>sid res04p</>End-Dialog
+			Insert_section PE.Pascha_Beginning End-Insert
+			Actor sid Deacon End-Actor
+			Insert_section LN.GreatLitany01 End-Insert
+			Actor sid Priest End-Actor
+			Dialog sid exc01<i>sid res04p</>End-Dialog
 		End-Section
 	End-Section
 	
@@ -2027,39 +2037,39 @@ Template MA
 								Insert_section MA.Psalm50_read End-Insert
 								Insert_section PostGospel_mc End-Insert
 							otherwise use:
-							when-name-of-day-is
-								Sunday use:
-									when-date-is // dates when menaion gospel supercedes eothinon
-										Jan 6 use: 
-											Insert_section Selector_MatinsGospel.Section01 End-Insert
-											Insert_section MA.Psalm50_read End-Insert
-											Insert_section PostGospel_me End-Insert
-										Mar 25 use: 
-											Insert_section Selector_MatinsGospel.Section01 End-Insert
-											Insert_section MA.Psalm50_read End-Insert
-											Insert_section PostGospel_me End-Insert
-										Aug 6 use: 
-											Insert_section Selector_MatinsGospel.Section01 End-Insert
-											Insert_section MA.Psalm50_read End-Insert
-											Insert_section PostGospel_me End-Insert
-										Sep 14 use: 
-											Insert_section Selector_MatinsGospel.Section01 End-Insert
-											Insert_section MA.Psalm50_read End-Insert
-											Insert_section PostGospel_me End-Insert
-										Dec 25 use: 
-											Insert_section Selector_MatinsGospel.Section01 End-Insert
-											Insert_section MA.Psalm50_read End-Insert
-											Insert_section PostGospel_me End-Insert
-										otherwise use:
-											Insert_section LE._02_Gospel__.eothinon End-Insert
-											Insert_section Psalm50_chant End-Insert
-											Insert_section PostGospel_eo End-Insert
-									end-when
-								otherwise use:
-									Insert_section Selector_MatinsGospel.Section01 End-Insert
-									Insert_section MA.Psalm50_read End-Insert
-									Insert_section PostGospel_me End-Insert
-							end-when
+								when-name-of-day-is
+									Sunday use:
+										when-date-is // dates when menaion gospel supercedes eothinon
+											Jan 6 use: 
+												Insert_section Selector_MatinsGospel.Section01 End-Insert
+												Insert_section MA.Psalm50_read End-Insert
+												Insert_section PostGospel_me End-Insert
+											Mar 25 use: 
+												Insert_section Selector_MatinsGospel.Section01 End-Insert
+												Insert_section MA.Psalm50_read End-Insert
+												Insert_section PostGospel_me End-Insert
+											Aug 6 use: 
+												Insert_section Selector_MatinsGospel.Section01 End-Insert
+												Insert_section MA.Psalm50_read End-Insert
+												Insert_section PostGospel_me End-Insert
+											Sep 14 use: 
+												Insert_section Selector_MatinsGospel.Section01 End-Insert
+												Insert_section MA.Psalm50_read End-Insert
+												Insert_section PostGospel_me End-Insert
+											Dec 25 use: 
+												Insert_section Selector_MatinsGospel.Section01 End-Insert
+												Insert_section MA.Psalm50_read End-Insert
+												Insert_section PostGospel_me End-Insert
+											otherwise use:
+												Insert_section LE._02_Gospel__.eothinon End-Insert
+												Insert_section Psalm50_chant End-Insert
+												Insert_section PostGospel_eo End-Insert
+										end-when
+									otherwise use:
+										Insert_section Selector_MatinsGospel.Section01 End-Insert
+										Insert_section MA.Psalm50_read End-Insert
+										Insert_section PostGospel_me End-Insert
+								end-when
 						end-when
 						
 					End-Section
@@ -2068,6 +2078,11 @@ Template MA
 
 	Section _10_Canon__
 		Section Hypakoe__
+			Section pascha
+				Actor sid Reader End-Actor
+				Title role mixed<Tdesig>sid Ypakoi</><Tmode>sid pe.d00P_gr_GR_cog.pePA.Hypakoe.mode</>End-Title	
+				Reading sid pe.d00P_gr_GR_cog.pePA.Hypakoe.text End-Reading
+			End-Section
 			Section pe
 				Actor sid Reader End-Actor
 				Title role mixed<Tdesig>sid Ypakoi</><Tmode>rid peMA.Hypakoe.mode</>End-Title
@@ -2156,99 +2171,6 @@ Template MA
 	End-Section
 
 	Section _11_Kontakion__
-		Section festal_
-			Section kontakion
-				Actor sid Reader End-Actor
-				Insert_section Selector_Kontakion.MatinsFestal End-Insert
-			End-Section
-		End-Section
-		Section me1_
-			Section kontakion
-				Actor sid Reader End-Actor
-				Title role desig sid Kontakion End-Title
-				Title role mixed<Tmode>rid meMA.Kontakion1.mode</><Tmelody>rid meMA.Kontakion1.melody</>End-Title
-				Reading rid meMA.Kontakion1.text @ver End-Reading
-			End-Section
-			Title role desig sid OOikos End-Title
-			Reading rid meMA.Oikos1.text @ver End-Reading
-			when-exists 
-				rid meMA.Oikos12.text use:
-					Para role readingzero rid meMA.Oikos12.text End-Para 
-					Para role readingzero rid meMA.Oikos13.text End-Para 
-					Para role readingzero rid meMA.Oikos14.text End-Para 
-					Para role readingzero rid meMA.Oikos15.text End-Para 
-					Para role readingzero rid meMA.Oikos16.text End-Para 
-					Para role readingzero rid meMA.Oikos17.text End-Para 
-					Reading rid meMA.Oikos18.text End-Reading 
-			end-when
-		End-Section
-		Section me2_
-			Section kontakion
-				Actor sid Reader End-Actor
-				Title role desig sid Kontakion End-Title
-				Title role mixed<Tmode>rid meMA.Kontakion2.mode</><Tmelody>rid meMA.Kontakion2.melody</>End-Title
-				Reading rid meMA.Kontakion2.text @ver End-Reading
-			End-Section
-			Title role desig sid OOikos End-Title
-			Reading rid meMA.Oikos2.text @ver End-Reading
-			when-exists 
-				rid meMA.Oikos22.text use:
-					Para role readingzero rid meMA.Oikos22.text End-Para 
-					Para role readingzero rid meMA.Oikos23.text End-Para 
-					Para role readingzero rid meMA.Oikos24.text End-Para 
-					Para role readingzero rid meMA.Oikos25.text End-Para 
-					Para role readingzero rid meMA.Oikos26.text End-Para 
-					Para role readingzero rid meMA.Oikos27.text End-Para 
-					Reading rid meMA.Oikos28.text End-Reading 
-				end-when
-		End-Section
-		Section pe_
-			Section kontakion
-				Actor sid Reader End-Actor
-				Title role desig sid Kontakion End-Title
-				Title role mixed<Tmode>rid peMA.Kontakion1.mode</><Tmelody>rid peMA.Kontakion1.melody</>End-Title
-				Reading rid peMA.Kontakion1.text @ver End-Reading
-			End-Section
-			Title role desig sid OOikos End-Title
-			Reading rid peMA.Oikos1.text @ver End-Reading
-			when-exists 
-				rid peMA.Oikos12.text use:
-					Para role readingzero rid peMA.Oikos12.text End-Para 
-					Para role readingzero rid peMA.Oikos13.text End-Para 
-					Para role readingzero rid peMA.Oikos14.text End-Para 
-					Para role readingzero rid peMA.Oikos15.text End-Para 
-					Para role readingzero rid peMA.Oikos16.text End-Para 
-					Para role readingzero rid peMA.Oikos17.text End-Para 
-					Reading rid peMA.Oikos18.text End-Reading 
-			end-when
-		End-Section
-		Section sunday
-			Actor sid Reader End-Actor
-			Title role desig sid KontakionAnastasimon End-Title
-			Reading rid ocMA.Kontakion.text @ver End-Reading
-			Title role desig sid OOikos End-Title
-			Reading rid ocMA.Oikos.text @ver End-Reading
-		End-Section
-		Section tr_
-			Section kontakion
-				Actor sid Reader End-Actor
-				Title role desig sid Kontakion End-Title
-				Title role mixed<Tmode>rid trMA.Kontakion1.mode</><Tmelody>rid trMA.Kontakion1.melody</>End-Title
-				Reading rid trMA.Kontakion1.text @ver End-Reading
-			End-Section
-			Title role desig sid OOikos End-Title
-			Reading rid trMA.Oikos1.text @ver End-Reading
-			when-exists 
-				rid trMA.Oikos12.text use:
-					Para role readingzero rid trMA.Oikos12.text End-Para 
-					Para role readingzero rid trMA.Oikos13.text End-Para 
-					Para role readingzero rid trMA.Oikos14.text End-Para 
-					Para role readingzero rid trMA.Oikos15.text End-Para 
-					Para role readingzero rid trMA.Oikos16.text End-Para 
-					Para role readingzero rid trMA.Oikos17.text End-Para 
-					Reading rid trMA.Oikos18.text End-Reading 
-			end-when
-		End-Section
 		Section append__
 			Section me1_
 				Title role desig sid Kontakion End-Title
@@ -2290,6 +2212,15 @@ Template MA
 							Para role readingzero rid meMA.Oikos27.text End-Para 
 							Reading rid meMA.Oikos28.text End-Reading 
 					end-when
+				End-Section
+			End-Section
+			Section pascha_
+				Title role desig sid Kontakion sid TouPascha End-Title
+				Section konoik
+					Title role mode sid pe.d00P_gr_GR_cog.pePA.Kontakion.mode End-Title	
+					Reading sid pe.d00P_gr_GR_cog.pePA.Kontakion.text End-Reading
+					Title role desig sid OOikos End-Title
+					Reading sid pe.d00P_gr_GR_cog.pePA.Oikos.text End-Reading
 				End-Section
 			End-Section
 			Section pe_
@@ -2345,6 +2276,108 @@ Template MA
 					end-when
 				End-Section
 			End-Section
+		End-Section
+		Section festal_
+			Section kontakion
+				Actor sid Reader End-Actor
+				Insert_section Selector_Kontakion.MatinsFestal End-Insert
+			End-Section
+		End-Section
+		Section me1_
+			Section kontakion
+				Actor sid Reader End-Actor
+				Title role desig sid Kontakion End-Title
+				Title role mixed<Tmode>rid meMA.Kontakion1.mode</><Tmelody>rid meMA.Kontakion1.melody</>End-Title
+				Reading rid meMA.Kontakion1.text @ver End-Reading
+			End-Section
+			Title role desig sid OOikos End-Title
+			Reading rid meMA.Oikos1.text @ver End-Reading
+			when-exists 
+				rid meMA.Oikos12.text use:
+					Para role readingzero rid meMA.Oikos12.text End-Para 
+					Para role readingzero rid meMA.Oikos13.text End-Para 
+					Para role readingzero rid meMA.Oikos14.text End-Para 
+					Para role readingzero rid meMA.Oikos15.text End-Para 
+					Para role readingzero rid meMA.Oikos16.text End-Para 
+					Para role readingzero rid meMA.Oikos17.text End-Para 
+					Reading rid meMA.Oikos18.text End-Reading 
+			end-when
+		End-Section
+		Section me2_
+			Section kontakion
+				Actor sid Reader End-Actor
+				Title role desig sid Kontakion End-Title
+				Title role mixed<Tmode>rid meMA.Kontakion2.mode</><Tmelody>rid meMA.Kontakion2.melody</>End-Title
+				Reading rid meMA.Kontakion2.text @ver End-Reading
+			End-Section
+			Title role desig sid OOikos End-Title
+			Reading rid meMA.Oikos2.text @ver End-Reading
+			when-exists 
+				rid meMA.Oikos22.text use:
+					Para role readingzero rid meMA.Oikos22.text End-Para 
+					Para role readingzero rid meMA.Oikos23.text End-Para 
+					Para role readingzero rid meMA.Oikos24.text End-Para 
+					Para role readingzero rid meMA.Oikos25.text End-Para 
+					Para role readingzero rid meMA.Oikos26.text End-Para 
+					Para role readingzero rid meMA.Oikos27.text End-Para 
+					Reading rid meMA.Oikos28.text End-Reading 
+				end-when
+		End-Section
+		Section pascha_
+			Section kontakion
+				Actor sid Reader End-Actor
+				Title role mixed<Tdesig>sid Kontakion</><Tmode>sid pe.d00P_gr_GR_cog.pePA.Kontakion.mode</>End-Title	
+				Reading sid pe.d00P_gr_GR_cog.pePA.Kontakion.text End-Reading
+			End-Section
+			Title role desig sid OOikos End-Title
+			Reading sid pe.d00P_gr_GR_cog.pePA.Oikos.text End-Reading
+		End-Section
+		Section pe_
+			Section kontakion
+				Actor sid Reader End-Actor
+				Title role desig sid Kontakion End-Title
+				Title role mixed<Tmode>rid peMA.Kontakion1.mode</><Tmelody>rid peMA.Kontakion1.melody</>End-Title
+				Reading rid peMA.Kontakion1.text @ver End-Reading
+			End-Section
+			Title role desig sid OOikos End-Title
+			Reading rid peMA.Oikos1.text @ver End-Reading
+			when-exists 
+				rid peMA.Oikos12.text use:
+					Para role readingzero rid peMA.Oikos12.text End-Para 
+					Para role readingzero rid peMA.Oikos13.text End-Para 
+					Para role readingzero rid peMA.Oikos14.text End-Para 
+					Para role readingzero rid peMA.Oikos15.text End-Para 
+					Para role readingzero rid peMA.Oikos16.text End-Para 
+					Para role readingzero rid peMA.Oikos17.text End-Para 
+					Reading rid peMA.Oikos18.text End-Reading 
+			end-when
+		End-Section
+		Section sunday
+			Actor sid Reader End-Actor
+			Title role desig sid KontakionAnastasimon End-Title
+			Reading rid ocMA.Kontakion.text @ver End-Reading
+			Title role desig sid OOikos End-Title
+			Reading rid ocMA.Oikos.text @ver End-Reading
+		End-Section
+		Section tr_
+			Section kontakion
+				Actor sid Reader End-Actor
+				Title role desig sid Kontakion End-Title
+				Title role mixed<Tmode>rid trMA.Kontakion1.mode</><Tmelody>rid trMA.Kontakion1.melody</>End-Title
+				Reading rid trMA.Kontakion1.text @ver End-Reading
+			End-Section
+			Title role desig sid OOikos End-Title
+			Reading rid trMA.Oikos1.text @ver End-Reading
+			when-exists 
+				rid trMA.Oikos12.text use:
+					Para role readingzero rid trMA.Oikos12.text End-Para 
+					Para role readingzero rid trMA.Oikos13.text End-Para 
+					Para role readingzero rid trMA.Oikos14.text End-Para 
+					Para role readingzero rid trMA.Oikos15.text End-Para 
+					Para role readingzero rid trMA.Oikos16.text End-Para 
+					Para role readingzero rid trMA.Oikos17.text End-Para 
+					Reading rid trMA.Oikos18.text End-Reading 
+			end-when
 		End-Section
 	End-Section
 	
@@ -2471,6 +2504,31 @@ Template MA
 				End-Section
 			End-Section
 		End-Section
+		Section pascha__
+			Section first_
+				Actor sid Choir End-Actor
+				Title role desig sid Exaposteilarion sid TouPascha End-Title
+				Section hymn
+					Title role mixed<Tmode>sid pePA.Exaposteilarion.mode</><Tmelody>sid pePA.Exaposteilarion.melody</>End-Title
+					Hymn sid pePA.Exaposteilarion.text End-Hymn
+				End-Section
+			End-Section
+			Section last_
+				Title role desig sid Exaposteilarion sid TouPascha End-Title
+				Section hymn
+					Title role mixed<Tmode>sid pePA.Exaposteilarion.mode</><Tmelody>sid pePA.Exaposteilarion.melody</>End-Title
+					Hymn sid pePA.Exaposteilarion.text<r>sid Thrice media-off</>End-Hymn
+				End-Section
+			End-Section
+			Section thrice_
+				Actor sid Choir End-Actor
+				Title role desig sid Exaposteilarion sid TouPascha End-Title
+				Section hymn
+					Title role mixed<Tmode>sid pePA.Exaposteilarion.mode</><Tmelody>sid pePA.Exaposteilarion.melody</>End-Title
+					Hymn sid pePA.Exaposteilarion.text<r>sid Thrice media-off</>End-Hymn
+				End-Section
+			End-Section
+		End-Section	
 		Section pe__
 			Section exap1_
 				Actor sid Choir End-Actor
@@ -2597,6 +2655,13 @@ Template MA
 				End-Section	
 			End-Section
 			Section oc
+			End-Section
+			Section pascha_
+				Title role mixed sid KaiNyn<Tdesig>sid TouPascha</>End-Title
+				Section hymn
+					Title role mode sid pe.d00P_gr_GR_cog.pePA.SticGlory.mode End-Title
+					Hymn sid pe.d00P_gr_GR_cog.pePA.SticGlory.text @ver End-Hymn
+				End-Section
 			End-Section
 			Section pe__
 				Section bothasboth_
@@ -3020,7 +3085,7 @@ Template MA
 						Title role mode rid trMA.LaudsGlory.mode End-Title
 						Hymn rid trMA.LaudsGlory.text @ver End-Hymn
 					End-Section
-				End-Section	
+				End-Section
 			End-Section
 		End-Section
 		Section gloryboth__
@@ -3039,6 +3104,13 @@ Template MA
 						Hymn rid meMA.LaudsGlory.text @ver End-Hymn
 					End-Section
 				End-Section	
+			End-Section
+			Section pascha_
+				Title role mixed sid DoxaKaiNyn<Tdesig>sid TouPascha</>End-Title
+				Section hymn
+					Title role mode sid pe.d00P_gr_GR_cog.pePA.SticGlory.mode End-Title
+					Hymn sid pe.d00P_gr_GR_cog.pePA.SticGlory.text @ver End-Hymn
+				End-Section
 			End-Section
 			Section pe__
 				Section bothasgloryboth_
@@ -3190,6 +3262,9 @@ Template MA
 				Insert_section s_6as6 End-Insert
 				Insert_section s_78as78 End-Insert
 			End-Section
+		End-Section
+		Section pascha
+			Insert_section PE.Pascha_SticheraOfPascha End-Insert
 		End-Section
 		Section pe__
 			Section p_1123as3456
@@ -3463,6 +3538,39 @@ Template MA
 	End-Section
 
 	Section _14_Doxology__
+		Section apolytikion__
+			Section me1_
+				Title role desig sid Apolytikion End-Title
+				Section hymn
+					Title role mixed<Tmode>rid meVE.Apolytikion1.mode</><Tmelody>rid meVE.Apolytikion1.melody</>End-Title
+					Hymn rid meVE.Apolytikion1.text @ver End-Hymn
+				End-Section
+			End-Section
+			Section me2_
+				Title role desig sid Apolytikion End-Title
+				Section hymn
+					Title role mixed<Tmode>rid meVE.Apolytikion2.mode</><Tmelody>rid meVE.Apolytikion2.melody</>End-Title
+					Hymn rid meVE.Apolytikion2.text @ver End-Hymn
+				End-Section
+			End-Section
+			Section pascha
+				Insert_section PE.ChristIsRisen.thrice End-Insert
+			End-Section
+			Section pe1_
+				Title role desig sid Apolytikion End-Title
+				Section hymn
+					Title role mixed<Tmode>rid peVE.Apolytikion1.mode</><Tmelody>rid peVE.Apolytikion1.melody</>End-Title
+					Hymn rid peVE.Apolytikion1.text @ver End-Hymn
+				End-Section
+			End-Section
+			Section tr1_
+				Title role desig sid Apolytikion End-Title
+				Section hymn
+					Title role mixed<Tmode>rid trVE.Apolytikion1.mode</><Tmelody>rid trVE.Apolytikion1.melody</>End-Title
+					Hymn rid trVE.Apolytikion1.text @ver End-Hymn
+				End-Section
+			End-Section
+		End-Section
 		Section great
 			Insert_section GreatDoxology End-Insert
 		End-Section
@@ -3714,37 +3822,7 @@ Template MA
 		End-Section
 	End-Section
 
-	Section _17_Apolytikion__
-		Section aftergreatdoxology__
-			Section me1_
-				Title role desig sid Apolytikion End-Title
-				Section hymn
-					Title role mixed<Tmode>rid meVE.Apolytikion1.mode</><Tmelody>rid meVE.Apolytikion1.melody</>End-Title
-					Hymn rid meVE.Apolytikion1.text @ver End-Hymn
-				End-Section
-			End-Section
-			Section me2_
-				Title role desig sid Apolytikion End-Title
-				Section hymn
-					Title role mixed<Tmode>rid meVE.Apolytikion2.mode</><Tmelody>rid meVE.Apolytikion2.melody</>End-Title
-					Hymn rid meVE.Apolytikion2.text @ver End-Hymn
-				End-Section
-			End-Section
-			Section pe1_
-				Title role desig sid Apolytikion End-Title
-				Section hymn
-					Title role mixed<Tmode>rid peVE.Apolytikion1.mode</><Tmelody>rid peVE.Apolytikion1.melody</>End-Title
-					Hymn rid peVE.Apolytikion1.text @ver End-Hymn
-				End-Section
-			End-Section
-			Section tr1_
-				Title role desig sid Apolytikion End-Title
-				Section hymn
-					Title role mixed<Tmode>rid trVE.Apolytikion1.mode</><Tmelody>rid trVE.Apolytikion1.melody</>End-Title
-					Hymn rid trVE.Apolytikion1.text @ver End-Hymn
-				End-Section
-			End-Section
-		End-Section
+	Section _17_Apolytikia__
 		Section aftersmalldoxology__
 			Section pe12t
 				Title role desig sid Apolytikion End-Title
@@ -3792,9 +3870,9 @@ Template MA
 	End-Section
 
 	Section _18_End__ 
-		Section ektenia
+		Section ektenia_wisdom
 			Insert_section LN.Ektenia02 End-Insert
-			Insert_section noektenia End-Insert
+			Insert_section wisdom End-Insert
 		End-Section
 		Section lent_
 			Section part1
@@ -3819,7 +3897,7 @@ Template MA
 					End-Section
 			end-when
 		End-Section
-		Section noektenia
+		Section wisdom
 			Actor sid Deacon End-Actor
 			Dialog sid exc17 End-Dialog
 			Dialog<i>sid EvlogisonP</>End-Dialog	
@@ -3828,9 +3906,15 @@ Template MA
 			Dialog sid StereosaiKyrios.text End-Dialog
 			Actor sid Reader End-Actor
 			Dialog sid res04 End-Dialog
-			Dialog sid TinTimioteran.text End-Dialog
-			when-movable-cycle-day-is 71 thru 109 use:
-				Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text End-Dialog
+			when-movable-cycle-day-is
+				71, 72, 73, 74, 75, 76, 77, 109 use:
+					Dialog sid pe.d00P_gr_GR_cog.pePA.Ode9H.text End-Dialog
+				otherwise use:
+					Dialog sid TinTimioteran.text End-Dialog
+			end-when
+			when-movable-cycle-day-is 
+				71 thru 109 use:
+					Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text End-Dialog
 				otherwise use:
 					Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
 			end-when
