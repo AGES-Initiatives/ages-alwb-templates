@@ -10,8 +10,6 @@ Status Final
 	import me.*
 	import oc.*
 
-	//Templates
-	
 	import actors_gr_GR_cog.*
 	import template.titles_gr_GR_cog.*
 	import misc_gr_GR_cog.*
@@ -24,7 +22,7 @@ Status Final
 	import roles.*
 
 		Head 
-//			Set_Date month 5 day 21 year 2015 End_Date
+			Set_Date month 5 day 21 year 2015 End_Date
 				Page_Header_Even
 					center @lookup sid li.pdf.header sid d.on lang L1 @date lang L1
 				End_Page_Header_Even
@@ -45,42 +43,31 @@ Status Final
 		Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
 		Insert_section LI._04_Entrance__.clergy End-Insert
 		Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
-		Section block1
-			when-date-is
-				May 8 use:
-					Title role desig sid Apolytikia End-Title
-					Title role mixed<Tdesig>sid TisEortis</><Tmode>sid peVE.Apolytikion1.mode</>End-Title
-					Hymn sid peVE.Apolytikion1.text @ver End-Hymn
-					Title role desig sid TouApostolou End-Title
-					Title role mode rid meVE.Apolytikion1.mode End-Title
-					Hymn rid meVE.Apolytikion1.text @ver End-Hymn
-				May 21 use:
-					Title role desig sid Apolytikia End-Title
-					Title role mixed<Tdesig>sid TisEortis</><Tmode>sid peVE.Apolytikion1.mode</>End-Title
-					Hymn sid peVE.Apolytikion1.text @ver End-Hymn
-					Title role desig sid TonIsapostolon End-Title
-					Title role mode rid meVE.Apolytikion1.mode End-Title
-					Hymn rid meVE.Apolytikion1.text @ver End-Hymn
-				otherwise use:
-					Title role mixed<Tdesig>sid Apolytikion</><Tmode>sid peVE.Apolytikion1.mode</>End-Title
-					Hymn sid peVE.Apolytikion1.text<inr>sid Thrice media-off</>End-Hymn
-			end-when
-		End-Section
+		when-date-is
+			May 8, 21 use:
+				Title role desig sid Apolytikia End-Title
+				Insert_section LI._05_AfterEntranceHymns__.festal__.once End-Insert
+				Title role desig sid TouApostolou End-Title
+				Insert_section LI._05_AfterEntranceHymns__.me1_.hymn End-Insert
+			otherwise use:
+				Insert_section LI._05_AfterEntranceHymns__.festal__.thrice End-Insert
+		end-when
 		Insert_section LI._05_AfterEntranceHymns__.kontakion End-Insert
 		Insert_section LI._06_Trisagion__.chrys  End-Insert
-		Section block2
-			when-date-is 
-				May 8, 21 use: Insert_section LE._01_Epistle__.menaion End-Insert
-				otherwise use: Insert_section LE._01_Epistle__.daily_ End-Insert
-			end-when
-		End-Section
+		when-date-is 
+			May 8, 21 use: 
+				Insert_section LE._01_Epistle__.menaion End-Insert
+			otherwise use: 
+				Insert_section LE._01_Epistle__.daily_ End-Insert
+		end-when
 		Insert_section LE._02_Gospel__.daily_ End-Insert
 		Insert_section LI._08_Liturgy__.chrys End-Insert
-		Section block3
-			when-date-is
-				May 8, 21 use: Insert_section LI._09_Dismissal__.commemoration End-Insert
-				otherwise use: Insert_section LI._09_Dismissal__.nocommemoration End-Insert
-			end-when
-		End-Section
+		when-date-is
+			May 8, 21 use: 
+				Insert_section LI._09_Dismissal__.commemoration End-Insert
+			otherwise use: 
+				Insert_section LI._09_Dismissal__.nocommemoration End-Insert
+		end-when
 	End-Section
+
 End-Template
