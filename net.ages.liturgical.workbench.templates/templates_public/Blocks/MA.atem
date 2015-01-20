@@ -2434,11 +2434,113 @@ Template MA
 						End-Section
 				end-when
 			End-Section
+			Section me__
+				Section exap1_
+					Title role desig sid EkTouMinaiou End-Title
+					Section hymn
+						Title role mixed<Tmode>rid meMA.Exaposteilarion1.mode</><Tmelody>rid meMA.Exaposteilarion1.melody</>End-Title
+						Hymn rid meMA.Exaposteilarion1.text @ver End-Hymn
+					End-Section
+				End-Section
+				Section exap11_
+					Title role desig sid EkTouMinaiou End-Title
+					Section hymn
+						Title role mixed<Tmode>rid meMA.Exaposteilarion1.mode</><Tmelody>rid meMA.Exaposteilarion1.melody</>End-Title
+						Hymn rid meMA.Exaposteilarion1.text @ver <r>sid Twice media-off</>End-Hymn
+					End-Section
+				End-Section
+				Section exap123t_
+					Title role desig sid EkTouMinaiou End-Title
+						Section hymns
+							Title role mixed<Tmode>rid meMA.Exaposteilarion1.mode</><Tmelody>rid meMA.Exaposteilarion1.melody</>End-Title
+							Hymn rid meMA.Exaposteilarion1.text @ver End-Hymn
+							when-exists rid meMA.Exaposteilarion2.text use:
+								Title role desig sid Eteron End-Title
+								Title role mixed<Tmode>rid meMA.Exaposteilarion2.mode</><Tmelody>rid meMA.Exaposteilarion2.melody</>End-Title
+								Hymn rid meMA.Exaposteilarion2.text @ver End-Hymn
+							end-when
+							when-exists rid meMA.Exaposteilarion3.text use:
+								Title role desig sid Eteron End-Title
+								Title role mixed<Tmode>rid meMA.Exaposteilarion3.mode</><Tmelody>rid meMA.Exaposteilarion3.melody</>End-Title
+								Hymn rid meMA.Exaposteilarion3.text @ver End-Hymn
+							end-when
+						Section theotokion_
+							when-exists
+								rid meMA.ExapTheotokion.text use:
+									when-name-of-day-is
+										Monday, Tuesday, Thursday, Saturday, Sunday use:
+											Section exaptheotokion
+												Title role desig sid Theotokion End-Title
+												Title role mixed<Tmode>rid meMA.ExapTheotokion.mode</><Tmelody>rid meMA.ExapTheotokion.melody</>End-Title
+												Hymn rid meMA.ExapTheotokion.text @ver End-Hymn
+											End-Section
+										Wednesday, Friday use:
+											when-exists rid meMA.ExapStavrotheotokion.text use:
+												Section exapstavrotheotokion
+													Title role desig sid Stavrotheotokion End-Title
+													Hymn rid meMA.ExapStavrotheotokion.text @ver End-Hymn
+												End-Section
+											otherwise use:
+												when-exists rid meMA.ExapTheotokion.text use:
+													Insert_section exaptheotokion End-Insert
+												end-when
+											end-when
+									end-when
+							end-when
+						End-Section
+					End-Section
+				End-Section
+				Section exap2_
+					Title role desig sid Exaposteilarion End-Title
+					Section hymn
+						Title role mixed<Tmode>rid meMA.Exaposteilarion2.mode</><Tmelody>rid meMA.Exaposteilarion2.melody</>End-Title
+						Hymn rid meMA.Exaposteilarion2.text @ver End-Hymn
+					End-Section
+				End-Section
+				Section exap3_
+					Title role desig sid Exaposteilarion End-Title
+					Section hymn
+						Title role mixed<Tmode>rid meMA.Exaposteilarion3.mode</><Tmelody>rid meMA.Exaposteilarion3.melody</>End-Title
+						Hymn rid meMA.Exaposteilarion3.text @ver End-Hymn
+					End-Section
+				End-Section
+				Section theotokion_
+					when-exists
+						rid meMA.ExapTheotokion.text use:
+							when-name-of-day-is
+								Monday, Tuesday, Thursday, Saturday, Sunday use:
+									Section exaptheotokion
+										Title role desig sid Theotokion End-Title
+										Title role mixed<Tmode>rid meMA.ExapTheotokion.mode</><Tmelody>rid meMA.ExapTheotokion.melody</>End-Title
+										Hymn rid meMA.ExapTheotokion.text @ver End-Hymn
+									End-Section
+								Wednesday, Friday use:
+									when-exists rid meMA.ExapStavrotheotokion.text use:
+										Section exapstavrotheotokion
+											Title role desig sid Stavrotheotokion End-Title
+											Hymn rid meMA.ExapStavrotheotokion.text @ver End-Hymn
+										End-Section
+									otherwise use:
+										when-exists rid meMA.ExapTheotokion.text use:
+											Insert_section exaptheotokion End-Insert
+										end-when
+									end-when
+							end-when
+					end-when
+				End-Section
+			End-Section
 			Section pascha_
 				Title role desig sid Exaposteilarion sid TouPascha End-Title
 				Section hymn
 					Title role mixed<Tmode>sid pePA.Exaposteilarion.mode</><Tmelody>sid pePA.Exaposteilarion.melody</>End-Title
 					Hymn sid pePA.Exaposteilarion.text @ver End-Hymn
+				End-Section
+			End-Section
+			Section tr1_
+				Title role desig sid TouTriodiou End-Title
+				Section hymn
+					Title role mixed<Tmode>rid trMA.Exaposteilarion1.mode</><Tmelody>rid trMA.Exaposteilarion1.melody</>End-Title
+					Hymn rid trMA.Exaposteilarion1.text @ver End-Hymn
 				End-Section
 			End-Section
 			Section tr1o2ot_
@@ -2593,7 +2695,7 @@ Template MA
 		Section eome
 			Insert_section eo__.eoofweek_.exap End-Insert
 			when-exists rid meMA.Exaposteilarion1.text use: 
-				Insert_section MA._12_Exaposteilarion__.me__.exap123t_ End-Insert
+				Insert_section MA._12_Exaposteilarion__.append__.me__.exap123t_ End-Insert
 			otherwise use:
 				Title role desig sid Theotokion sid Omoion End-Title
 				Hymn rid eo.Theotokion.text @ver End-Hymn
@@ -2617,13 +2719,13 @@ Template MA
 			end-when
 		End-Section
 		Section me__
-			Section exap11_
+			Section exap1_
 				Actor sid Choir End-Actor
 				Title role desig sid Exaposteilarion End-Title
-				Section hymn
-					Title role mixed<Tmode>rid meMA.Exaposteilarion1.mode</><Tmelody>rid meMA.Exaposteilarion1.melody</>End-Title
-					Hymn rid meMA.Exaposteilarion1.text<r>sid Twice media-off</>End-Hymn
-				End-Section
+					Section hymn
+						Title role mixed<Tmode>rid meMA.Exaposteilarion1.mode</><Tmelody>rid meMA.Exaposteilarion1.melody</>End-Title
+						Hymn rid meMA.Exaposteilarion1.text @ver End-Hymn
+					End-Section
 			End-Section
 			Section exap111_
 				Actor sid Choir End-Actor
@@ -2642,33 +2744,30 @@ Template MA
 				Title role mixed<Tmode>rid meMA.Exaposteilarion2.mode</><Tmelody>rid meMA.Exaposteilarion2.melody</>End-Title
 				Hymn rid meMA.Exaposteilarion2.text @ver End-Hymn
 			End-Section
-			Section exap123t_
-				Section exap1_
-					when-name-of-day-is 
-						Sunday use: 
-							Title role desig sid EkTouMinaiou End-Title
-						otherwise use: 
-							Actor sid Choir End-Actor
-							Title role desig sid Exaposteilarion End-Title
-					end-when
-					Section hymn
+			Section exap123t
+				Section exap1
+					Actor sid Choir End-Actor
+					Title role desig sid Exaposteilarion End-Title
+					Section exap1
 						Title role mixed<Tmode>rid meMA.Exaposteilarion1.mode</><Tmelody>rid meMA.Exaposteilarion1.melody</>End-Title
 						Hymn rid meMA.Exaposteilarion1.text @ver End-Hymn
 					End-Section
 				End-Section
 				when-exists rid meMA.Exaposteilarion2.text use:
 					Section exap2
+						Title role desig sid Eteron End-Title
 						Title role mixed<Tmode>rid meMA.Exaposteilarion2.mode</><Tmelody>rid meMA.Exaposteilarion2.melody</>End-Title
 						Hymn rid meMA.Exaposteilarion2.text @ver End-Hymn
 					End-Section
 				end-when
 				when-exists rid meMA.Exaposteilarion3.text use:
 					Section exap3
+						Title role desig sid Eteron End-Title
 						Title role mixed<Tmode>rid meMA.Exaposteilarion3.mode</><Tmelody>rid meMA.Exaposteilarion3.melody</>End-Title
 						Hymn rid meMA.Exaposteilarion3.text @ver End-Hymn
 					End-Section
 				end-when
-				Section theotokion_
+				Section theotokion
 					when-exists
 						rid meMA.ExapTheotokion.text use:
 							when-name-of-day-is
@@ -2783,13 +2882,8 @@ Template MA
 			End-Section
 			Section exap1o2ot_
 				Section exap1_
-					when-exists 
-						rid eo.Exaposteilarion.text use: 
-							Title role desig sid TouTriodiou End-Title
-						otherwise use: 
-							Actor sid Choir End-Actor
-							Title role desig sid Exaposteilarion End-Title
-					end-when
+					Actor sid Choir End-Actor
+					Title role desig sid Exaposteilarion End-Title
 					Section hymn
 						Title role mixed<Tmode>rid trMA.Exaposteilarion1.mode</><Tmelody>rid trMA.Exaposteilarion1.melody</>End-Title
 						Hymn rid trMA.Exaposteilarion1.text @ver End-Hymn
