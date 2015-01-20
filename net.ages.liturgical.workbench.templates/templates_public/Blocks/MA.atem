@@ -2416,6 +2416,40 @@ Template MA
 	
 	Section _12_Exaposteilarion__
 		Section append__
+			Section pascha_
+				Title role desig sid Exaposteilarion sid TouPascha End-Title
+				Section hymn
+					Title role mixed<Tmode>sid pePA.Exaposteilarion.mode</><Tmelody>sid pePA.Exaposteilarion.melody</>End-Title
+					Hymn sid pePA.Exaposteilarion.text @ver End-Hymn
+				End-Section
+			End-Section
+			Section tr1o2ot_
+				Title role desig sid TouTriodiou End-Title
+				Section hymns_
+					Section exap1
+						Title role mixed<Tmode>rid trMA.Exaposteilarion1.mode</><Tmelody>rid trMA.Exaposteilarion1.melody</>End-Title
+						Hymn rid trMA.Exaposteilarion1.text @ver End-Hymn
+					End-Section
+					when-exists rid trMA.Exaposteilarion2.text use:
+						Section exap2_
+							Title role desig sid Eteron End-Title
+							Section hymn
+								Title role mixed<Tmode>rid trMA.Exaposteilarion2.mode</><Tmelody>rid trMA.Exaposteilarion2.melody</>End-Title
+								Hymn rid trMA.Exaposteilarion2.text @ver End-Hymn
+							End-Section
+						End-Section
+					end-when
+					when-exists rid trMA.ExapTheotokion.text use:
+						Section theotokion_
+							Section hymn
+								Title role desig sid Theotokion End-Title
+								Title role mixed<Tmode>rid trMA.ExapTheotokion.mode</><Tmelody>rid trMA.ExapTheotokion.melody</>End-Title
+								Hymn rid trMA.ExapTheotokion.text @ver End-Hymn
+							End-Section
+						End-Section
+					end-when
+				End-Section
+			End-Section
 		End-Section
 		Section intro_
 			Section part1
@@ -2651,15 +2685,8 @@ Template MA
 			End-Section
 		End-Section
 		Section pascha__
-			Section first_
-				Actor sid Choir End-Actor
-				Title role desig sid Exaposteilarion sid TouPascha End-Title
-				Section hymn
-					Title role mixed<Tmode>sid pePA.Exaposteilarion.mode</><Tmelody>sid pePA.Exaposteilarion.melody</>End-Title
-					Hymn sid pePA.Exaposteilarion.text @ver End-Hymn
-				End-Section
-			End-Section
 			Section once_
+				Actor sid Choir End-Actor
 				Title role desig sid Exaposteilarion sid TouPascha End-Title
 				Section hymn
 					Title role mixed<Tmode>sid pePA.Exaposteilarion.mode</><Tmelody>sid pePA.Exaposteilarion.melody</>End-Title
@@ -2767,15 +2794,15 @@ Template MA
 						End-Section
 					End-Section
 				end-when
-			when-exists rid trMA.ExapTheotokion.text use:
-				Section theotokion_
-					Section hymn
-						Title role desig sid Theotokion End-Title
-						Title role mixed<Tmode>rid trMA.ExapTheotokion.mode</><Tmelody>rid trMA.ExapTheotokion.melody</>End-Title
-						Hymn rid trMA.ExapTheotokion.text @ver End-Hymn
+				when-exists rid trMA.ExapTheotokion.text use:
+					Section theotokion_
+						Section hymn
+							Title role desig sid Theotokion End-Title
+							Title role mixed<Tmode>rid trMA.ExapTheotokion.mode</><Tmelody>rid trMA.ExapTheotokion.melody</>End-Title
+							Hymn rid trMA.ExapTheotokion.text @ver End-Hymn
+						End-Section
 					End-Section
-				End-Section
-			end-when
+				end-when
 			End-Section
 		End-Section
 	End-Section
