@@ -2178,6 +2178,12 @@ Template MA
 
 	Section _11_Kontakion__
 		Section append__
+			Section festal_
+				Section kontakion
+					Actor sid Reader End-Actor
+					Insert_section Selector_Kontakion.MatinsFestal End-Insert
+				End-Section
+			End-Section
 			Section me1_
 				Title role desig sid Kontakion End-Title
 				Section konoik_
@@ -2552,6 +2558,16 @@ Template MA
 					Insert_section Selector_FestalExaposteilarion.pe End-Insert
 				otherwise use:
 					Insert_section Selector_FestalExaposteilarion.me End-Insert
+			end-when
+		End-Section
+		Section festal2
+			when-movable-cycle-day-is
+				78 thru 84 use:
+					Section Thomas2
+						Title role desig sid TisEortis End-Title
+						Title role mixed<Tmode>sid pe.d078_gr_GR_cog.peMA.Exaposteilarion2.mode</><Tmelody>sid pe.d078_gr_GR_cog.peMA.Exaposteilarion2.melody</>End-Title
+						Hymn sid pe.d078_gr_GR_cog.peMA.Exaposteilarion2.text @ver End-Hymn
+					End-Section
 			end-when
 		End-Section
 		Section me__
@@ -3047,6 +3063,21 @@ Template MA
 				Insert_section PsalmVerses.forDevoutMen.verse1 End-Insert
 				Hymn rid meMA.Lauds4.text @ver media-off End-Hymn
 			End-Section
+			Section p_1234as56greatmartyrs12
+				Title role mixed<Tmode>rid meMA.Lauds1.mode</><Tmelody>rid meMA.Lauds1.melody</>End-Title
+				Media rid meMA.Lauds1.text End-Media
+				Insert_section PsalmVerses.forLauds.v05 End-Insert
+				Hymn rid meMA.Lauds1.text @ver media-off End-Hymn
+				Media rid meMA.Lauds2.text End-Media
+				Insert_section PsalmVerses.forLauds.v06 End-Insert
+				Hymn rid meMA.Lauds2.text @ver media-off End-Hymn
+				Media rid meMA.Lauds3.text End-Media
+				Insert_section PsalmVerses.forGreatMartyrs.verse1 End-Insert
+				Hymn rid meMA.Lauds3.text @ver media-off End-Hymn
+				Media rid meMA.Lauds4.text End-Media
+				Insert_section PsalmVerses.forGreatMartyrs.verse2 End-Insert
+				Hymn rid meMA.Lauds4.text @ver media-off End-Hymn
+			End-Section
 			Section p_1234as56hierarchs12
 				Title role mixed<Tmode>rid meMA.Lauds1.mode</><Tmelody>rid meMA.Lauds1.melody</>End-Title
 				Media rid meMA.LaudsSundayVerse1.text End-Media
@@ -3298,6 +3329,29 @@ Template MA
 				Verse rid meMA.LaudsSundayVerse2.text End-Verse
 				Hymn rid meMA.Lauds3.text @ver media-off End-Hymn
 			End-Section
+			Section p_123as6oneapostle12
+				Title role mixed<Tmode>rid meMA.Lauds1.mode</><Tmelody>rid meMA.Lauds1.melody</>End-Title
+				Rubric sid cl.se.R001 End-Rubric
+				Media rid meMA.Lauds456.text End-Media
+				Insert_section PsalmVerses.forLauds.v06 End-Insert
+				Hymn rid meMA.Lauds1.text @ver media-off End-Hymn
+				Insert_section PsalmVerses.forOneApostle.verse1 End-Insert
+				Hymn rid meMA.Lauds2.text @ver media-off End-Hymn
+				Insert_section PsalmVerses.forOneApostle.verse2 End-Insert
+				Hymn rid meMA.Lauds3.text @ver media-off End-Hymn
+			End-Section
+			Section p_1123as56oneapostle12
+				Title role mixed<Tmode>sid meMA.Lauds1.mode</><Tmelody>sid meMA.Lauds1.melody</>End-Title
+				Media sid meMA.LaudsSundayVerse1.text End-Media
+				Insert_section PsalmVerses.forLauds.v05 End-Insert
+				Hymn sid meMA.Lauds1.text @ver media-off End-Hymn
+				Insert_section PsalmVerses.forLauds.v06 End-Insert
+				Hymn sid meMA.Lauds1.text @ver media-off End-Hymn
+				Insert_section PsalmVerses.forOneApostle.verse1 End-Insert
+				Hymn sid meMA.Lauds2.text @ver media-off End-Hymn
+				Insert_section PsalmVerses.forOneApostle.verse2 End-Insert
+				Hymn sid meMA.Lauds3.text @ver media-off End-Hymn
+			End-Section
 			Section p_1123as56greatmartyrs1martyrs2
 				Title role mixed<Tmode>sid meMA.Lauds1.mode</><Tmelody>sid meMA.Lauds1.melody</>End-Title
 				Media sid meMA.LaudsSundayVerse1.text End-Media
@@ -3315,9 +3369,11 @@ Template MA
 			Section s_12as12
 				Insert_section modeofweek End-Insert
 				Title role desig sid StichiraAnastasima End-Title
+				Title role mixed<Tdesig>sid Stichiron</><Tmode>rid ocMA.Lauds1.mode</>End-Title
 				Media rid ocMA.Lauds1.text End-Media
 				Insert_section PsalmVerses.forLauds.v01 End-Insert
 				Hymn rid ocMA.Lauds1.text @ver media-off End-Hymn
+				Title role mixed<Tdesig>sid Stichiron</><Tmode>rid ocMA.Lauds2.mode</>End-Title
 				Media rid ocMA.Lauds2.text End-Media
 				Insert_section PsalmVerses.forLauds.v02 End-Insert
 				Hymn rid ocMA.Lauds2.text @ver  media-off End-Hymn
@@ -3325,11 +3381,14 @@ Template MA
 			Section s_123as123
 				Insert_section modeofweek End-Insert
 				Title role desig sid StichiraAnastasima End-Title
+				Title role mixed<Tdesig>sid Stichiron</><Tmode>rid ocMA.Lauds1.mode</>End-Title
 				Media rid ocMA.Lauds1.text End-Media
 				Insert_section PsalmVerses.forLauds.v01 End-Insert
 				Hymn rid ocMA.Lauds1.text @ver media-off End-Hymn
+				Title role mixed<Tdesig>sid Stichiron</><Tmode>rid ocMA.Lauds2.mode</>End-Title
 				Media rid ocMA.Lauds2.text End-Media
 				Insert_section PsalmVerses.forLauds.v02 End-Insert
+				Title role mixed<Tdesig>sid Stichiron</><Tmode>rid ocMA.Lauds3.mode</>End-Title
 				Hymn rid ocMA.Lauds2.text @ver  media-off End-Hymn
 				Media rid ocMA.Lauds3.text End-Media
 				Insert_section PsalmVerses.forLauds.v03 End-Insert
@@ -3338,15 +3397,19 @@ Template MA
 			Section s_1234as1234
 				Insert_section modeofweek End-Insert
 				Title role desig sid StichiraAnastasima End-Title
+				Title role mixed<Tdesig>sid Stichiron</><Tmode>rid ocMA.Lauds1.mode</>End-Title
 				Media rid ocMA.Lauds1.text End-Media
 				Insert_section PsalmVerses.forLauds.v01 End-Insert
 				Hymn rid ocMA.Lauds1.text @ver media-off End-Hymn
+				Title role mixed<Tdesig>sid Stichiron</><Tmode>rid ocMA.Lauds2.mode</>End-Title
 				Media rid ocMA.Lauds2.text End-Media
 				Insert_section PsalmVerses.forLauds.v02 End-Insert
 				Hymn rid ocMA.Lauds2.text @ver  media-off End-Hymn
+				Title role mixed<Tdesig>sid Stichiron</><Tmode>rid ocMA.Lauds3.mode</>End-Title
 				Media rid ocMA.Lauds3.text End-Media
 				Insert_section PsalmVerses.forLauds.v03 End-Insert
 				Hymn rid ocMA.Lauds3.text @ver  media-off End-Hymn
+				Title role mixed<Tdesig>sid Stichiron</><Tmode>rid ocMA.Lauds4.mode</>End-Title
 				Media rid ocMA.Lauds4.text End-Media
 				Insert_section PsalmVerses.forLauds.v04 End-Insert
 				Hymn rid ocMA.Lauds4.text @ver  media-off End-Hymn
@@ -3355,33 +3418,41 @@ Template MA
 				Insert_section modeofweek End-Insert
 				Title role desig sid StichiraAnastasima End-Title
 				Rubric sid cl.se.R001 End-Rubric
+				Title role mixed<Tdesig>sid Stichiron</><Tmode>rid ocMA.Lauds1.mode</>End-Title
 				Media rid ocMA.Lauds1.text End-Media
 				Insert_section PsalmVerses.forLauds.v03 End-Insert
 				Hymn rid ocMA.Lauds1.text @ver media-off End-Hymn
+				Title role mixed<Tdesig>sid Stichiron</><Tmode>rid ocMA.Lauds2.mode</>End-Title
 				Media rid ocMA.Lauds2.text End-Media
 				Insert_section PsalmVerses.forLauds.v04 End-Insert
 				Hymn rid ocMA.Lauds2.text @ver media-off End-Hymn
+				Title role mixed<Tdesig>sid Stichiron</><Tmode>rid ocMA.Lauds3.mode</>End-Title
 				Media rid ocMA.Lauds3.text End-Media
 				Insert_section PsalmVerses.forLauds.v05 End-Insert
 				Hymn rid ocMA.Lauds3.text @ver media-off End-Hymn
+				Title role mixed<Tdesig>sid Stichiron</><Tmode>rid ocMA.Lauds4.mode</>End-Title
 				Media rid ocMA.Lauds4.text End-Media
 				Insert_section PsalmVerses.forLauds.v06 End-Insert
 				Hymn rid ocMA.Lauds4.text @ver media-off End-Hymn
 			End-Section
 			Section s_5as5
+				Title role mixed<Tdesig>sid Stichiron</><Tmode>rid ocMA.Lauds5.mode</>End-Title
 				Media rid ocMA.Lauds5.text End-Media
 				Insert_section PsalmVerses.forLauds.v05 End-Insert
 				Hymn rid ocMA.Lauds5.text @ver  media-off End-Hymn
 			End-Section
 			Section s_6as6
+				Title role mixed<Tdesig>sid Stichiron</><Tmode>rid ocMA.Lauds6.mode</>End-Title
 				Media rid ocMA.Lauds6.text End-Media
 				Insert_section PsalmVerses.forLauds.v06 End-Insert
 				Hymn rid ocMA.Lauds6.text @ver  media-off End-Hymn
 			End-Section
 			Section s_78as78
+				Title role mixed<Tdesig>sid Stichiron</><Tmode>rid ocMA.Lauds7.mode</>End-Title
 				Media rid ocMA.Lauds7.text End-Media
 				Insert_section PsalmVerses.forLauds.v07 End-Insert
 				Hymn rid ocMA.Lauds7.text @ver  media-off End-Hymn
+				Title role mixed<Tdesig>sid Stichiron</><Tmode>rid ocMA.Lauds8.mode</>End-Title
 				Media rid ocMA.Lauds8.text End-Media
 				Insert_section PsalmVerses.forLauds.v08 End-Insert
 				Hymn rid ocMA.Lauds8.text @ver media-off End-Hymn
@@ -3443,6 +3514,17 @@ Template MA
 				Insert_section PsalmVerses.forLauds.v06 End-Insert
 				Hymn rid peMA.Lauds4.text @ver media-off End-Hymn
 			End-Section
+			Section p_567as345
+				Title role mixed<Tmode>rid peMA.Lauds5.mode</><Tmelody>rid peMA.Lauds5.melody</>End-Title
+				Rubric sid cl.se.R001 End-Rubric
+				Media rid peMA.Lauds5.text End-Media
+				Insert_section PsalmVerses.forLauds.v03 End-Insert
+				Hymn rid peMA.Lauds5.text @ver media-off End-Hymn
+				Insert_section PsalmVerses.forLauds.v04 End-Insert
+				Hymn rid peMA.Lauds6.text @ver media-off End-Hymn
+				Insert_section PsalmVerses.forLauds.v05 End-Insert
+				Hymn rid peMA.Lauds7.text @ver  media-off End-Hymn
+			End-Section
 			Section p_5678as56TheotokosFount12
 				Title role mixed<Tmode>rid pe.d076_gr_GR_cog.peMA.Lauds5.mode</><Tmelody>rid pe.d076_gr_GR_cog.peMA.Lauds5.melody</>End-Title
 				Media rid pe.d076_gr_GR_cog.peMA.Lauds5.text End-Media
@@ -3483,32 +3565,51 @@ Template MA
 				Insert_section PsalmVerses.forHolyFathers.verse2 End-Insert
 				Hymn rid peMA.Lauds8.text @ver media-off End-Hymn
 			End-Section
-			Section s_1234as1234
+			Section s_12as12
 				Title role desig sid StichiraAnastasima End-Title
+				Title role mixed<Tdesig>sid Stichiron</><Tmode>rid peMA.Lauds1.mode</>End-Title
 				Media rid peMA.Lauds1.text End-Media
 				Insert_section PsalmVerses.forLauds.v01 End-Insert
 				Hymn rid peMA.Lauds1.text @ver media-off End-Hymn
+				Title role mixed<Tdesig>sid Stichiron</><Tmode>rid peMA.Lauds2.mode</>End-Title
 				Media rid peMA.Lauds2.text End-Media
 				Insert_section PsalmVerses.forLauds.v02 End-Insert
 				Hymn rid peMA.Lauds2.text @ver  media-off End-Hymn
+			End-Section
+			Section s_1234as1234
+				Title role desig sid StichiraAnastasima End-Title
+				Title role mixed<Tdesig>sid Stichiron</><Tmode>rid peMA.Lauds1.mode</>End-Title
+				Media rid peMA.Lauds1.text End-Media
+				Insert_section PsalmVerses.forLauds.v01 End-Insert
+				Hymn rid peMA.Lauds1.text @ver media-off End-Hymn
+				Title role mixed<Tdesig>sid Stichiron</><Tmode>rid peMA.Lauds2.mode</>End-Title
+				Media rid peMA.Lauds2.text End-Media
+				Insert_section PsalmVerses.forLauds.v02 End-Insert
+				Hymn rid peMA.Lauds2.text @ver  media-off End-Hymn
+				Title role mixed<Tdesig>sid Stichiron</><Tmode>rid peMA.Lauds3.mode</>End-Title
 				Media rid peMA.Lauds3.text End-Media
 				Insert_section PsalmVerses.forLauds.v03 End-Insert
 				Hymn rid peMA.Lauds3.text @ver  media-off End-Hymn
+				Title role mixed<Tdesig>sid Stichiron</><Tmode>rid peMA.Lauds4.mode</>End-Title
 				Media rid peMA.Lauds4.text End-Media
 				Insert_section PsalmVerses.forLauds.v04 End-Insert
 				Hymn rid peMA.Lauds4.text @ver  media-off End-Hymn
 			End-Section
 			Section s_1234as3456
 				Title role desig sid StichiraAnastasima End-Title
+				Title role mixed<Tdesig>sid Stichiron</><Tmode>rid peMA.Lauds1.mode</>End-Title
 				Media rid peMA.Lauds1.text End-Media
 				Insert_section PsalmVerses.forLauds.v03 End-Insert
 				Hymn rid peMA.Lauds1.text @ver media-off End-Hymn
+				Title role mixed<Tdesig>sid Stichiron</><Tmode>rid peMA.Lauds2.mode</>End-Title
 				Media rid peMA.Lauds2.text End-Media
 				Insert_section PsalmVerses.forLauds.v04 End-Insert
 				Hymn rid peMA.Lauds2.text @ver  media-off End-Hymn
+				Title role mixed<Tdesig>sid Stichiron</><Tmode>rid peMA.Lauds3.mode</>End-Title
 				Media rid peMA.Lauds3.text End-Media
 				Insert_section PsalmVerses.forLauds.v05 End-Insert
 				Hymn rid peMA.Lauds3.text @ver  media-off End-Hymn
+				Title role mixed<Tdesig>sid Stichiron</><Tmode>rid peMA.Lauds4.mode</>End-Title
 				Media rid peMA.Lauds4.text End-Media
 				Insert_section PsalmVerses.forLauds.v06 End-Insert
 				Hymn rid peMA.Lauds4.text @ver  media-off End-Hymn
@@ -3758,6 +3859,9 @@ Template MA
 
 	Section _14_Doxology__
 		Section apolytikion__
+			Section feast
+				Insert_section Selector_FestalApolytikion.Once End-Insert
+			End-Section
 			Section me1_
 				Title role desig sid Apolytikion End-Title
 				Section hymn
@@ -4164,22 +4268,38 @@ Template MA
 		Section Psalm50_read
 			Actor sid Reader End-Actor
 			when-movable-cycle-day-is
-				63 use: Reading sid hoMA.SunPostGospel.text @ver End-Reading
-				78 thru 110 use: Reading sid hoMA.SunPostGospel.text @ver End-Reading
+				63 use: 
+					Reading sid hoMA.SunPostGospel.text @ver End-Reading
+					Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+				71 thru 77 use:
+					Reading sid hoMA.SunPostGospel.text @ver <r>sid Thrice</> End-Reading
+				78 thru 110 use: 
+					Reading sid hoMA.SunPostGospel.text @ver End-Reading
+					Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
 			end-when
 			when-date-is
-				Sep 14 use: Reading sid hoMA.SunPostGospel.text @ver End-Reading
+				Sep 14 use: 
+					Reading sid hoMA.SunPostGospel.text @ver End-Reading
+					Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
 			end-when
 			when-name-of-day-is
 				Sunday use:
 					when-date-is
-						Feb 2 use: Reading sid hoMA.SunPostGospel.text @ver End-Reading
-						Aug 15 use: Reading sid hoMA.SunPostGospel.text @ver End-Reading
-						Sep 8 use: Reading sid hoMA.SunPostGospel.text @ver End-Reading
-						Nov 21 use: Reading sid hoMA.SunPostGospel.text @ver End-Reading
+						Feb 2 use: 
+							Reading sid hoMA.SunPostGospel.text @ver End-Reading
+							Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+						Aug 15 use: 
+							Reading sid hoMA.SunPostGospel.text @ver End-Reading
+							Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+						Sep 8 use: 
+							Reading sid hoMA.SunPostGospel.text @ver End-Reading
+							Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+						Nov 21 use: 
+							Reading sid hoMA.SunPostGospel.text @ver End-Reading
+							Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
 					end-when
 			end-when			
-			Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+//			Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
 		End-Section
 
 		Section Psalm50_chant
@@ -4229,7 +4349,15 @@ Template MA
 			Hymn rid meMA.PostGospelBoth.text @ver End-Hymn
 			Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid meMA.PostGospelIdiomelon.mode</>End-Title
 			Media rid meMA.PostGospelIdiomelon.text End-Media
-			Verse<bnr>sid vVerse</>sid psa50.v3.text End-Verse
+			when-movable-cycle-day-is
+				71 thru 77 use:
+					when-date-is
+						Apr 23 use:
+							Verse<bnr>sid vVerse</>sid ps_gr_GR_cog.psa63.v11a.text sid ps_gr_GR_cog.psa63.v11b.text @ver End-Verse
+					end-when
+				otherwise use:
+					Verse<bnr>sid vVerse</>sid psa50.v3.text @ver End-Verse
+			end-when
 			Hymn rid meMA.PostGospelIdiomelon.text @ver media-off End-Hymn
 		End-Section
 		
