@@ -3793,6 +3793,19 @@ Template MA
 				Hymn rid peMA.Lauds3.text @ver  media-off End-Hymn
 			End-Section
 		End-Section
+		Section read__
+			Section all
+				Actor sid Reader End-Actor
+				Title role desig sid OiAinoi<Trubric>sid Read</>End-Title
+				Title role desig sid psa148.title End-Title
+				Reading sid psa148.text End-Reading
+				Title role desig sid psa149.title End-Title
+				Reading sid psa149.text End-Reading
+				Title role desig sid psa150.title End-Title
+				Reading sid psa150.text End-Reading
+				Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+			End-Section
+		End-Section
 		Section tr__
 			Section i_1122as3456_
 				Title role desig sid TouTriodiou End-Title
@@ -4102,6 +4115,18 @@ Template MA
 						Hymn rid meMA.AposBoth.text @ver End-Hymn
 					End-Section
 				End-Section
+				Section theotokion
+					when-name-of-day-is
+						Wednesday, Friday use:
+							Title role mixed sid KaiNyn<Tdesig>sid Stavrotheotokion</>End-Title
+							Title role mixed<Tmode>rid meMA.AposStavrotheotokion.mode</>rid meMA.AposStavrotheotokion.melody<Tmelody></>End-Title
+							Hymn rid meMA.AposStavrotheotokion.text @ver End-Hymn
+						otherwise use:
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>rid meMA.AposTheotokion.mode</>rid meMA.AposTheotokion.melody<Tmelody></>End-Title
+							Hymn rid meMA.AposTheotokion.text @ver End-Hymn
+					end-when
+				End-Section		
 			End-Section
 			Section pe__
 				Section theotokion_
@@ -4167,6 +4192,11 @@ Template MA
 						Hymn rid trMA.AposGlory.text @ver End-Hymn
 					End-Section
 				End-Section
+				Section theotokion
+					Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+					Title role mixed<Tmode>rid trMA.AposTheotokion.mode</><Tmelody>rid trMA.AposTheotokion.melody</>End-Title
+					Hymn rid trMA.AposTheotokion.text @ver End-Hymn
+				End-Section
 			End-Section
 		End-Section
 		Section me__
@@ -4193,6 +4223,20 @@ Template MA
 				Hymn rid meMA.Aposticha3.text @ver media-off End-Hymn
 			End-Section
 		End-Section
+		Section oc__
+			Section weekday
+				Actor sid Choir End-Actor
+				Title role desig sid Aposticha End-Title
+				Title role mixed<Tmode>rid ocMA.Aposticha1.mode</><Tmelody>rid ocMA.Aposticha1.melody</>End-Title	
+				Hymn rid ocMA.Aposticha1.text @ver End-Hymn
+				Media rid ocMA.Aposticha2.text End-Media
+				Insert_section PsalmVerses.forMatinsAposticha.verse1 End-Insert
+				Hymn rid ocMA.Aposticha2.text @ver media-off End-Hymn
+				Media rid ocMA.Aposticha3.text End-Media
+				Insert_section PsalmVerses.forMatinsAposticha.verse1 End-Insert
+				Hymn rid ocMA.Aposticha3.text @ver media-off End-Hymn
+			End-Section
+		End-Section
 		Section pe__
 			Section p_deceased2martyrs1
 				Actor sid Choir End-Actor
@@ -4209,31 +4253,24 @@ Template MA
 		End-Section
 		Section tr__
 			Section weekday
-				Section part1
-					Actor sid Choir End-Actor
-					Title role desig sid Aposticha sid TouTriodiou End-Title		
-					Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid trMA.AposIdiomelon1.mode</>End-Title
-					Hymn rid trMA.AposIdiomelon1.text @ver End-Hymn
-					when-movable-cycle-day-is
-						53 use:
-							Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid trMA.AposIdiomelon2.mode</>End-Title
-							Insert_section bk.ho.s10.Aposticha.Weekday_Verse_1 End-Insert
-							Hymn rid trMA.AposIdiomelon2.text @ver End-Hymn
-						otherwise use:
-							Insert_section bk.ho.s10.Aposticha.Weekday_Verse_1 End-Insert
-							Hymn rid trMA.AposIdiomelon1.text @ver media-off End-Hymn
-					end-when
-					Title role desig sid Martyrikon End-Title
-					Title role mixed<Tmode>rid trMA.AposMartyric.mode</><Tmelody>rid trMA.AposMartyric.melody</>End-Title
-					Media rid trMA.AposMartyric.text End-Media
-					Insert_section bk.ho.s10.Aposticha.Weekday_Verse_2 End-Insert
-					Hymn rid trMA.AposMartyric.text @ver media-off End-Hymn
-				End-Section
-				Section part2
-					Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
-					Title role mixed<Tmode>rid trMA.AposTheotokion.mode</><Tmelody>rid trMA.AposTheotokion.melody</>End-Title
-					Hymn rid trMA.AposTheotokion.text @ver End-Hymn
-				End-Section
+				Actor sid Choir End-Actor
+				Title role desig sid Aposticha sid TouTriodiou End-Title		
+				Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid trMA.AposIdiomelon1.mode</>End-Title
+				Hymn rid trMA.AposIdiomelon1.text @ver End-Hymn
+				when-movable-cycle-day-is
+					53 use:
+						Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid trMA.AposIdiomelon2.mode</>End-Title
+						Insert_section bk.ho.s10.Aposticha.Weekday_Verse_1 End-Insert
+						Hymn rid trMA.AposIdiomelon2.text @ver End-Hymn
+					otherwise use:
+						Insert_section bk.ho.s10.Aposticha.Weekday_Verse_1 End-Insert
+						Hymn rid trMA.AposIdiomelon1.text @ver media-off End-Hymn
+				end-when
+				Title role desig sid Martyrikon End-Title
+				Title role mixed<Tmode>rid trMA.AposMartyric.mode</><Tmelody>rid trMA.AposMartyric.melody</>End-Title
+				Media rid trMA.AposMartyric.text End-Media
+				Insert_section bk.ho.s10.Aposticha.Weekday_Verse_2 End-Insert
+				Hymn rid trMA.AposMartyric.text @ver media-off End-Hymn
 			End-Section
 			Section i_holythursday123idiomela
 				Actor sid Choir End-Actor	
@@ -4307,25 +4344,671 @@ Template MA
 	End-Section
 
 	Section _17_Apolytikia__
-		Section aftersmalldoxology__
-			Section pe12t
-				Title role desig sid Apolytikion End-Title
-				Title role mode rid peVE.Apolytikion1.mode End-Title
-				Hymn rid peVE.Apolytikion1.text @ver End-Hymn
-				Title sid Doxa End-Title
-				Hymn rid peVE.Apolytikion2.text @ver End-Hymn
-				Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
-				Hymn rid peVE.ApolTheotokion.text @ver End-Hymn
+		Section both__
+			Section theotokion__
+				Section mode1_
+					when-name-of-day-is
+						Monday use:
+							Section monday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m1.d2_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m1.d2_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m1.d2_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Tuesday use:
+							Section tuesday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m1.d3_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m1.d3_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m1.d3_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Wednesday use:
+							Section wednesday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m1.d4_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m1.d4_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m1.d4_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Thursday use:
+							Section thursday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m1.d5_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m1.d5_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m1.d5_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Friday use:
+							Section friday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m1.d6_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m1.d6_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m1.d6_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Saturday use:
+							Section saturday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m1.d1_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m1.d1_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m1.d1_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+					end-when
+				End-Section
+				Section mode2_
+					when-name-of-day-is
+						Monday use:
+							Section monday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m2.d2_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m2.d2_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m2.d2_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Tuesday use:
+							Section tuesday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m2.d3_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m2.d3_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m2.d3_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Wednesday use:
+							Section wednesday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m2.d4_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m2.d4_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m2.d4_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Thursday use:
+							Section thursday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m2.d5_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m2.d5_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m2.d5_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Friday use:
+							Section friday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m2.d6_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m2.d6_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m2.d6_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Saturday use:
+							Section saturday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m2.d1_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m2.d1_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m2.d1_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+					end-when
+				End-Section
+				Section mode3_
+					when-name-of-day-is
+						Monday use:
+							Section monday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m3.d2_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m3.d2_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m3.d2_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Tuesday use:
+							Section tuesday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m3.d3_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m3.d3_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m3.d3_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Wednesday use:
+							Section wednesday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m3.d4_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m3.d4_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m3.d4_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Thursday use:
+							Section thursday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m3.d5_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m3.d5_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m3.d5_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Friday use:
+							Section friday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m3.d6_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m3.d6_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m3.d6_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Saturday use:
+							Section saturday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m3.d1_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m3.d1_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m3.d1_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+					end-when
+				End-Section
+				Section mode4_
+					when-name-of-day-is
+						Monday use:
+							Section monday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m4.d2_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m4.d2_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m4.d2_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Tuesday use:
+							Section tuesday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m4.d3_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m4.d3_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m4.d3_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Wednesday use:
+							Section wednesday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m4.d4_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m4.d4_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m4.d4_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Thursday use:
+							Section thursday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m4.d5_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m4.d5_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m4.d5_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Friday use:
+							Section friday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m4.d6_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m4.d6_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m4.d6_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Saturday use:
+							Section saturday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m4.d1_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m4.d1_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m4.d1_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+					end-when
+				End-Section
+				Section mode5_
+					when-name-of-day-is
+						Monday use:
+							Section monday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m5.d2_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m5.d2_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m5.d2_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Tuesday use:
+							Section tuesday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m5.d3_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m5.d3_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m5.d3_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Wednesday use:
+							Section wednesday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m5.d4_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m5.d4_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m5.d4_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Thursday use:
+							Section thursday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m5.d5_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m5.d5_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m5.d5_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Friday use:
+							Section friday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m5.d6_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m5.d6_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m5.d6_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Saturday use:
+							Section saturday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m5.d1_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m5.d1_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m5.d1_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+					end-when
+				End-Section
+				Section mode6_
+					when-name-of-day-is
+						Monday use:
+							Section monday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m6.d2_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m6.d2_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m6.d2_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Tuesday use:
+							Section tuesday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m6.d3_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m6.d3_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m6.d3_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Wednesday use:
+							Section wednesday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m6.d4_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m6.d4_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m6.d4_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Thursday use:
+							Section thursday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m6.d5_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m6.d5_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m6.d5_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Friday use:
+							Section friday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m6.d6_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m6.d6_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m6.d6_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Saturday use:
+							Section saturday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m6.d1_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m6.d1_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m6.d1_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+					end-when
+				End-Section
+				Section mode7_
+					when-name-of-day-is
+						Monday use:
+							Section monday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m7.d2_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m7.d2_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m7.d2_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Tuesday use:
+							Section tuesday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m7.d3_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m7.d3_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m7.d3_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Wednesday use:
+							Section wednesday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m7.d4_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m7.d4_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m7.d4_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Thursday use:
+							Section thursday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m7.d5_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m7.d5_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m7.d5_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Friday use:
+							Section friday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m7.d6_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m7.d6_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m7.d6_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Saturday use:
+							Section saturday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m7.d1_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m7.d1_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m7.d1_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+					end-when
+				End-Section
+				Section mode8_
+					when-name-of-day-is
+						Monday use:
+							Section monday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m8.d2_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m8.d2_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m8.d2_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Tuesday use:
+							Section tuesday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m8.d3_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m8.d3_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m8.d3_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Wednesday use:
+							Section wednesday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m8.d4_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m8.d4_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m8.d4_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Thursday use:
+							Section thursday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m8.d5_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m8.d5_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m8.d5_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Friday use:
+							Section friday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m8.d6_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m8.d6_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m8.d6_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Saturday use:
+							Section saturday
+								Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m8.d1_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m8.d1_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m8.d1_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+					end-when
+				End-Section
 			End-Section
-			Section tr12t
-				Title role desig sid Apolytikion End-Title
-				Title role mode rid trVE.Apolytikion1.mode End-Title
-				Hymn rid trVE.Apolytikion1.text @ver End-Hymn
-				Title sid Doxa End-Title
-				Hymn rid trVE.Apolytikion2.text @ver End-Hymn
-				Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
-				Hymn rid trVE.ApolTheotokion.text @ver End-Hymn
+		End-Section
+		Section gloryboth__
+			Section theotokion__
+				Section mode1_
+					when-name-of-day-is
+						Monday use:
+							Section monday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m1.d2_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m1.d2_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m1.d2_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Tuesday use:
+							Section tuesday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m1.d3_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m1.d3_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m1.d3_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Wednesday use:
+							Section wednesday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m1.d4_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m1.d4_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m1.d4_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Thursday use:
+							Section thursday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m1.d5_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m1.d5_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m1.d5_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Friday use:
+							Section friday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m1.d6_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m1.d6_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m1.d6_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Saturday use:
+							Section saturday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m1.d1_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m1.d1_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m1.d1_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+					end-when
+				End-Section
+				Section mode2_
+					when-name-of-day-is
+						Monday use:
+							Section monday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m2.d2_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m2.d2_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m2.d2_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Tuesday use:
+							Section tuesday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m2.d3_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m2.d3_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m2.d3_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Wednesday use:
+							Section wednesday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m2.d4_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m2.d4_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m2.d4_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Thursday use:
+							Section thursday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m2.d5_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m2.d5_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m2.d5_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Friday use:
+							Section friday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m2.d6_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m2.d6_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m2.d6_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Saturday use:
+							Section saturday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m2.d1_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m2.d1_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m2.d1_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+					end-when
+				End-Section
+				Section mode3_
+					when-name-of-day-is
+						Monday use:
+							Section monday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m3.d2_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m3.d2_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m3.d2_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Tuesday use:
+							Section tuesday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m3.d3_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m3.d3_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m3.d3_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Wednesday use:
+							Section wednesday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m3.d4_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m3.d4_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m3.d4_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Thursday use:
+							Section thursday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m3.d5_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m3.d5_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m3.d5_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Friday use:
+							Section friday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m3.d6_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m3.d6_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m3.d6_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Saturday use:
+							Section saturday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m3.d1_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m3.d1_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m3.d1_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+					end-when
+				End-Section
+				Section mode4_
+					when-name-of-day-is
+						Monday use:
+							Section monday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m4.d2_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m4.d2_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m4.d2_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Tuesday use:
+							Section tuesday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m4.d3_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m4.d3_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m4.d3_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Wednesday use:
+							Section wednesday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m4.d4_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m4.d4_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m4.d4_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Thursday use:
+							Section thursday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m4.d5_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m4.d5_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m4.d5_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Friday use:
+							Section friday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m4.d6_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m4.d6_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m4.d6_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Saturday use:
+							Section saturday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m4.d1_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m4.d1_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m4.d1_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+					end-when
+				End-Section
+				Section mode5_
+					when-name-of-day-is
+						Monday use:
+							Section monday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m5.d2_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m5.d2_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m5.d2_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Tuesday use:
+							Section tuesday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m5.d3_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m5.d3_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m5.d3_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Wednesday use:
+							Section wednesday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m5.d4_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m5.d4_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m5.d4_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Thursday use:
+							Section thursday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m5.d5_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m5.d5_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m5.d5_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Friday use:
+							Section friday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m5.d6_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m5.d6_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m5.d6_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Saturday use:
+							Section saturday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m5.d1_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m5.d1_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m5.d1_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+					end-when
+				End-Section
+				Section mode6_
+					when-name-of-day-is
+						Monday use:
+							Section monday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m6.d2_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m6.d2_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m6.d2_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Tuesday use:
+							Section tuesday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m6.d3_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m6.d3_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m6.d3_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Wednesday use:
+							Section wednesday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m6.d4_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m6.d4_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m6.d4_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Thursday use:
+							Section thursday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m6.d5_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m6.d5_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m6.d5_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Friday use:
+							Section friday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m6.d6_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m6.d6_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m6.d6_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Saturday use:
+							Section saturday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m6.d1_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m6.d1_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m6.d1_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+					end-when
+				End-Section
+				Section mode7_
+					when-name-of-day-is
+						Monday use:
+							Section monday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m7.d2_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m7.d2_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m7.d2_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Tuesday use:
+							Section tuesday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m7.d3_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m7.d3_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m7.d3_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Wednesday use:
+							Section wednesday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m7.d4_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m7.d4_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m7.d4_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Thursday use:
+							Section thursday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m7.d5_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m7.d5_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m7.d5_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Friday use:
+							Section friday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m7.d6_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m7.d6_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m7.d6_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Saturday use:
+							Section saturday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m7.d1_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m7.d1_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m7.d1_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+					end-when
+				End-Section
+				Section mode8_
+					when-name-of-day-is
+						Monday use:
+							Section monday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m8.d2_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m8.d2_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m8.d2_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Tuesday use:
+							Section tuesday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m8.d3_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m8.d3_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m8.d3_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Wednesday use:
+							Section wednesday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m8.d4_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m8.d4_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m8.d4_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Thursday use:
+							Section thursday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m8.d5_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m8.d5_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m8.d5_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Friday use:
+							Section friday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m8.d6_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m8.d6_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m8.d6_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+						Saturday use:
+							Section saturday
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Title role mixed<Tmode>sid oc.m8.d1_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m8.d1_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+								Hymn sid oc.m8.d1_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+							End-Section
+					end-when
+				End-Section
 			End-Section
+		End-Section
+		Section pe12t
+			Title role desig sid Apolytikion End-Title
+			Title role mode rid peVE.Apolytikion1.mode End-Title
+			Hymn rid peVE.Apolytikion1.text @ver End-Hymn
+			Title sid Doxa End-Title
+			Hymn rid peVE.Apolytikion2.text @ver End-Hymn
+			Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+			Hymn rid peVE.ApolTheotokion.text @ver End-Hymn
+		End-Section
+		Section tr12t
+			Title role desig sid Apolytikion End-Title
+			Title role mode rid trVE.Apolytikion1.mode End-Title
+			Hymn rid trVE.Apolytikion1.text @ver End-Hymn
+			Title sid Doxa End-Title
+			Hymn rid trVE.Apolytikion2.text @ver End-Hymn
+			Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+			Hymn rid trVE.ApolTheotokion.text @ver End-Hymn
 		End-Section
 		Section itisgood_trisagion
 			Actor sid Priest End-Actor
@@ -4351,6 +5034,328 @@ Template MA
 			Title role desig sid Kontakion End-Title
 			Reading rid trMA.Kontakion1.text End-Reading
 		End-Section	
+		Section theotokion__
+			Section mode1_
+				when-name-of-day-is
+					Monday use:
+						Section monday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m1.d2_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m1.d2_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m1.d2_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Tuesday use:
+						Section tuesday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m1.d3_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m1.d3_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m1.d3_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Wednesday use:
+						Section wednesday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m1.d4_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m1.d4_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m1.d4_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Thursday use:
+						Section thursday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m1.d5_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m1.d5_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m1.d5_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Friday use:
+						Section friday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m1.d6_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m1.d6_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m1.d6_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Saturday use:
+						Section saturday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m1.d1_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m1.d1_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m1.d1_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+				end-when
+			End-Section
+			Section mode2_
+				when-name-of-day-is
+					Monday use:
+						Section monday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m2.d2_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m2.d2_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m2.d2_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Tuesday use:
+						Section tuesday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m2.d3_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m2.d3_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m2.d3_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Wednesday use:
+						Section wednesday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m2.d4_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m2.d4_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m2.d4_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Thursday use:
+						Section thursday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m2.d5_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m2.d5_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m2.d5_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Friday use:
+						Section friday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m2.d6_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m2.d6_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m2.d6_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Saturday use:
+						Section saturday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m2.d1_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m2.d1_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m2.d1_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+				end-when
+			End-Section
+			Section mode3_
+				when-name-of-day-is
+					Monday use:
+						Section monday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m3.d2_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m3.d2_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m3.d2_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Tuesday use:
+						Section tuesday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m3.d3_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m3.d3_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m3.d3_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Wednesday use:
+						Section wednesday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m3.d4_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m3.d4_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m3.d4_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Thursday use:
+						Section thursday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m3.d5_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m3.d5_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m3.d5_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Friday use:
+						Section friday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m3.d6_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m3.d6_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m3.d6_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Saturday use:
+						Section saturday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m3.d1_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m3.d1_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m3.d1_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+				end-when
+			End-Section
+			Section mode4_
+				when-name-of-day-is
+					Monday use:
+						Section monday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m4.d2_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m4.d2_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m4.d2_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Tuesday use:
+						Section tuesday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m4.d3_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m4.d3_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m4.d3_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Wednesday use:
+						Section wednesday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m4.d4_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m4.d4_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m4.d4_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Thursday use:
+						Section thursday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m4.d5_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m4.d5_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m4.d5_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Friday use:
+						Section friday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m4.d6_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m4.d6_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m4.d6_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Saturday use:
+						Section saturday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m4.d1_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m4.d1_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m4.d1_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+				end-when
+			End-Section
+			Section mode5_
+				when-name-of-day-is
+					Monday use:
+						Section monday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m5.d2_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m5.d2_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m5.d2_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Tuesday use:
+						Section tuesday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m5.d3_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m5.d3_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m5.d3_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Wednesday use:
+						Section wednesday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m5.d4_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m5.d4_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m5.d4_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Thursday use:
+						Section thursday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m5.d5_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m5.d5_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m5.d5_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Friday use:
+						Section friday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m5.d6_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m5.d6_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m5.d6_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Saturday use:
+						Section saturday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m5.d1_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m5.d1_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m5.d1_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+				end-when
+			End-Section
+			Section mode6_
+				when-name-of-day-is
+					Monday use:
+						Section monday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m6.d2_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m6.d2_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m6.d2_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Tuesday use:
+						Section tuesday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m6.d3_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m6.d3_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m6.d3_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Wednesday use:
+						Section wednesday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m6.d4_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m6.d4_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m6.d4_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Thursday use:
+						Section thursday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m6.d5_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m6.d5_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m6.d5_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Friday use:
+						Section friday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m6.d6_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m6.d6_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m6.d6_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Saturday use:
+						Section saturday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m6.d1_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m6.d1_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m6.d1_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+				end-when
+			End-Section
+			Section mode7_
+				when-name-of-day-is
+					Monday use:
+						Section monday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m7.d2_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m7.d2_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m7.d2_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Tuesday use:
+						Section tuesday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m7.d3_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m7.d3_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m7.d3_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Wednesday use:
+						Section wednesday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m7.d4_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m7.d4_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m7.d4_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Thursday use:
+						Section thursday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m7.d5_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m7.d5_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m7.d5_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Friday use:
+						Section friday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m7.d6_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m7.d6_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m7.d6_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Saturday use:
+						Section saturday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m7.d1_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m7.d1_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m7.d1_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+				end-when
+			End-Section
+			Section mode8_
+				when-name-of-day-is
+					Monday use:
+						Section monday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m8.d2_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m8.d2_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m8.d2_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Tuesday use:
+						Section tuesday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m8.d3_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m8.d3_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m8.d3_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Wednesday use:
+						Section wednesday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m8.d4_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m8.d4_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m8.d4_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Thursday use:
+						Section thursday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m8.d5_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m8.d5_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m8.d5_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Friday use:
+						Section friday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m8.d6_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m8.d6_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m8.d6_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+					Saturday use:
+						Section saturday
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed<Tmode>sid oc.m8.d1_gr_GR_cog.ocMA.ApolTheotokion.mode</><Tmelody>sid oc.m8.d1_gr_GR_cog.ocMA.ApolTheotokion.melody</>End-Title
+							Hymn sid oc.m8.d1_gr_GR_cog.ocMA.ApolTheotokion.text @ver End-Hymn
+						End-Section
+				end-when
+			End-Section
+		End-Section
 	End-Section
 
 	Section _18_End__ 
