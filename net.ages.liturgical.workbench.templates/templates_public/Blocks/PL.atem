@@ -358,6 +358,7 @@ Status Review
 								Insert_section VE.LIHC_Verse.v02 End-Insert
 								Hymn rid trVE.AposIdiomelon2.text @ver End-Hymn
 							otherwise use:
+								Title role mixed<Tdesig>sid StichironIdiomelon</><Tmode>rid trVE.AposIdiomelon1.mode</>End-Title
 								Insert_section VE.LIHC_Verse.v02 End-Insert
 								Hymn rid trVE.AposIdiomelon1.text @ver media-off End-Hymn
 						end-when
@@ -389,21 +390,30 @@ Status Review
 						Insert_section VE._03_Stichera__.me__.p_1123as78910 End-Insert
 					End-Section
 					Section GloryBoth
-						when-name-of-day-is
-							Wednesday, Friday use:
-								Section stavrotheotokion
-									Title role mixed sid DoxaKaiNyn<Tdesig>sid Stavrotheotokion</>End-Title
-									Title role mixed<Tmode>rid meVE.SticStavrotheotokion.mode</><Tmelody>rid meVE.SticStavrotheotokion.melody</>End-Title
-									Media rid meVE.SticStavrotheotokion.text End-Media
-									Hymn rid meVE.SticStavrotheotokion.text @ver End-Hymn
+						when-movable-cycle-day-is
+							47 use:
+								Section cross
+									Title role mixed sid DoxaKaiNyn <Tdesig>sid TouStavrou</>End-Title
+									Media rid trVE.SticGlory.text End-Media
+									Hymn rid trVE.SticGlory.text @ver End-Hymn
 								End-Section
 							otherwise use:
-								Section theotokion
-									Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
-									Title role mixed<Tmode>rid meVE.SticTheotokion.mode</><Tmelody>rid meVE.SticTheotokion.melody</>End-Title
-									Media rid meVE.SticTheotokion.text End-Media
-									Hymn rid meVE.SticTheotokion.text @ver End-Hymn
-								End-Section
+								when-name-of-day-is
+									Wednesday, Friday use:
+										Section stavrotheotokion
+											Title role mixed sid DoxaKaiNyn<Tdesig>sid Stavrotheotokion</>End-Title
+											Title role mixed<Tmode>rid meVE.SticStavrotheotokion.mode</><Tmelody>rid meVE.SticStavrotheotokion.melody</>End-Title
+											Media rid meVE.SticStavrotheotokion.text End-Media
+											Hymn rid meVE.SticStavrotheotokion.text @ver End-Hymn
+										End-Section
+									otherwise use:
+										Section theotokion
+											Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+											Title role mixed<Tmode>rid meVE.SticTheotokion.mode</><Tmelody>rid meVE.SticTheotokion.melody</>End-Title
+											Media rid meVE.SticTheotokion.text End-Media
+											Hymn rid meVE.SticTheotokion.text @ver End-Hymn
+										End-Section
+								end-when
 						end-when		
 					End-Section
 				End-Section 
