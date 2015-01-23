@@ -36,110 +36,63 @@ Status Review
 	//Sections with names not ending in _ have no options
 
 	Section _01_Beginning__ // Enarxis thru Peace Litany
-		Section presanctified
-			Actor sid Priest End-Actor
-			Dialog sid euPL.Key0201.text End-Dialog
-			Section part1
-				Actor sid Reader End-Actor
-				Dialog sid res04 End-Dialog
-				Reading sid DefteProskinisomen1 End-Reading
-				Reading sid DefteProskinisomen2 End-Reading
-				Reading sid DefteProskinisomen3 End-Reading
-				Media sid ps_gr_GR_cog.psa103.text End-Media
-				Insert_section Psalm_103_Paragraph End-Insert
-				Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
-				Reading sid Allilouia3.text sid DoxaSoiOTheos1<r>sid Thrice</>End-Reading
-				Reading sid IElpisImonKyrie End-Reading
-				Break line End_Break 
-				Actor sid Deacon End-Actor
-				Insert_section LN.GreatLitany01 End-Insert
-				Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
-				Title role desig sid euPL.Key0203.title End-Title
-				Para role inaudible sid euPL.Key0203.text End-Para
-				Actor sid Priest End-Actor
-				Dialog sid euPL.Key0204.text<i>sid res04p</>End-Dialog
-			End-Section 
-			Section part2
-				Actor sid Reader End-Actor
-				Title role desig sid euPL.Key0300.title End-Title
-				Title role desig sid psa119.title End-Title
-				Reading sid psa119.text @ver End-Reading
-				Title role desig sid psa120.title End-Title
-				Reading sid psa120.text @ver End-Reading
-				Title role desig sid psa121.title End-Title
-				Reading sid psa121.text @ver End-Reading
-				Title role desig sid psa122.title End-Title
-				Reading sid psa122.text @ver End-Reading
-				Title role desig sid psa123.title End-Title
-				Reading sid psa123.text @ver End-Reading
-				Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
-				Reading sid Allilouia3.text sid DoxaSoiOTheos1<r>sid Thrice</>End-Reading
-				Reading sid res06 End-Reading
-				Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+		Section Hierarchical__
+			Section vespers
+				when-movable-cycle-day-is
+					72, 73, 74, 75, 76, 77, 109 use:
+						Section pascha
+							Actor sid Hierarch End-Actor
+							Dialog sid enarxis03 End-Dialog
+							Dialog<i>sid res04p</>End-Dialog
+							Insert_section hPE.Pascha_Beginning End-Insert
+							Actor sid Deacon End-Actor
+							Insert_section LN.GreatLitany01 End-Insert
+							Actor sid Hierarch End-Actor
+							Dialog sid exc01<i>sid res04p</>End-Dialog
+						End-Section
+					otherwise use:
+						Section enarxis
+							Actor sid Priest End-Actor
+							Dialog sid enarxis01 End-Dialog
+						End-Section
+						Section introductorypsalm
+							when-movable-cycle-day-is 
+								78 thru 108 use:
+									Dialog<i>sid res04p</>End-Dialog
+									Actor sid Hierarch End-Actor
+									Insert_section PE.ChristIsRisen.once End-Insert
+									Actor sid Choir End-Actor
+									Insert_section PE.ChristIsRisen.twice End-Insert
+									Actor sid Hierarch End-Actor
+								otherwise use:
+									Actor sid Hierarch End-Actor
+									Dialog sid res04 End-Dialog
+									Reading sid DefteProskinisomen1 End-Reading
+									Reading sid DefteProskinisomen2 End-Reading
+									Reading sid DefteProskinisomen3 End-Reading
+							end-when
+							Media sid hoVE.Ps103.text End-Media
+							Insert_section Psalm_103_Paragraph End-Insert
+							Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+							Reading sid Allilouia3.text sid DoxaSoiOTheos1<r>sid Thrice</>End-Reading
+							Reading sid IElpisImonKyrie End-Reading
+							Break line End_Break 
+						End-Section
+						Section litany
+							Actor sid Deacon End-Actor
+							when-movable-cycle-day-is
+								121 use:
+									Insert_section LN.GreatLitany_Vespers_HolySpirit01 End-Insert
+								otherwise use:
+									Insert_section LN.GreatLitany01 End-Insert
+							end-when
+							Actor sid Priest End-Actor
+							Dialog sid exc01 End-Dialog
+							Dialog<i>sid res04p</>End-Dialog
+						End-Section //Part3
+				end-when
 			End-Section
-			Section part3
-				Actor sid Deacon End-Actor
-				Insert_section LN.ShortLitany01 End-Insert
-				Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
-				Title role desig sid euPL.Key0306.title End-Title
-				Para role inaudible sid euPL.Key0306.text End-Para
-				Actor sid Priest End-Actor
-				Dialog sid euPL.Key0307.text<i>sid res04p</>End-Dialog
-			End-Section
-			Section part4
-				Actor sid Reader End-Actor
-				Title role desig sid euPL.Key0400.title End-Title
-				Title role desig sid psa124.title End-Title
-				Reading sid psa124.text @ver End-Reading
-				Title role desig sid psa125.title End-Title
-				Reading sid psa125.text @ver End-Reading
-				Title role desig sid psa126.title End-Title
-				Reading sid psa126.text @ver End-Reading
-				Title role desig sid psa127.title End-Title
-				Reading sid psa127.text @ver End-Reading
-				Title role desig sid psa128.title End-Title
-				Reading sid psa128.text @ver End-Reading
-				Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
-				Reading sid Allilouia3.text sid DoxaSoiOTheos1<r>sid Thrice</>End-Reading
-				Reading sid res06 End-Reading
-				Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
-			End-Section
-			Section part5
-				Actor sid Deacon End-Actor
-				Insert_section LN.ShortLitany01 End-Insert
-				Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
-				Title role desig sid euPL.Key0406.title End-Title
-				Para role inaudible sid euPL.Key0406.text End-Para
-				Actor sid Priest End-Actor
-				Dialog sid euPL.Key0407.text<i>sid res04p</>End-Dialog
-			End-Section
-			Section part6
-				Actor sid Reader End-Actor
-				Title role desig sid euPL.Key0500.title End-Title
-				Title role desig sid psa129.title End-Title
-				Reading sid psa129.text @ver End-Reading
-				Title role desig sid psa130.title End-Title
-				Reading sid psa130.text @ver End-Reading
-				Title role desig sid psa131.title End-Title
-				Reading sid psa131.text @ver End-Reading
-				Title role desig sid psa132.title End-Title
-				Reading sid psa132.text @ver End-Reading
-				Title role desig sid psa133.title End-Title
-				Reading sid psa133.text @ver End-Reading
-				Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
-				Reading sid Allilouia3.text sid DoxaSoiOTheos1<r>sid Thrice</>End-Reading
-				Reading sid IElpisImonKyrie End-Reading
-			End-Section
-			Section part7
-				Actor sid Deacon End-Actor
-				Insert_section LN.ShortLitany01 End-Insert
-				Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
-				Title role desig sid euPL.Key0506.title End-Title
-				Para role inaudible sid euPL.Key0506.text End-Para
-				Actor sid Priest End-Actor
-				Dialog sid euPL.Key0507.text<i>sid res04p</>End-Dialog
-			End-Section
-		End-Section //presanctified
+		End-Section
 		Section liturgy
 			Actor sid Priest End-Actor
 			Dialog sid enarxis02 End-Dialog
@@ -203,6 +156,215 @@ Status Review
 	End-Section // Enarxis thru Peace Litany
 
 	Section _02_Kekragaria__
+		Section Hierarchical__
+			Section modeofweek__
+				Section noStichologia
+					Insert_section VE.hLIHC_ModeOfWeek End-Insert
+				End-Section
+				Section for6
+					Insert_section VE.hLIHC_ModeOfWeek End-Insert
+					Insert_section VE.LIHC_Stichologia.part1 End-Insert
+					Insert_section VE.LIHC_Stichologia.part2 End-Insert
+					Insert_section VE.LIHC_Stichologia.part3 End-Insert
+					Break line End_Break
+				End-Section
+				Section for8
+					Insert_section VE.hLIHC_ModeOfWeek End-Insert
+					Insert_section VE.LIHC_Stichologia.part1 End-Insert
+					Insert_section VE.LIHC_Stichologia.part2 End-Insert
+					Break line End_Break
+				End-Section
+				Section for10
+					Insert_section VE.hLIHC_ModeOfWeek End-Insert
+					Insert_section VE.LIHC_Stichologia.part1 End-Insert
+					Break line End_Break
+				End-Section
+			End-Section //LIHC
+			Section mode1__
+				Section noStichologia
+					Insert_section VE.hLIHC_Mode1 End-Insert
+				End-Section
+				Section for6
+					Insert_section VE.hLIHC_Mode1 End-Insert
+					Insert_section VE.LIHC_Stichologia.part1 End-Insert
+					Insert_section VE.LIHC_Stichologia.part2 End-Insert
+					Insert_section VE.LIHC_Stichologia.part3 End-Insert
+					Break line End_Break
+				End-Section
+				Section for8
+					Insert_section VE.hLIHC_Mode1 End-Insert
+					Insert_section VE.LIHC_Stichologia.part1 End-Insert
+					Insert_section VE.LIHC_Stichologia.part2 End-Insert
+					Break line End_Break
+				End-Section
+				Section for10
+					Insert_section VE.hLIHC_Mode1 End-Insert
+					Insert_section VE.LIHC_Stichologia.part1 End-Insert
+					Break line End_Break
+				End-Section
+			End-Section
+			Section mode2__
+				Section noStichologia
+					Insert_section VE.hLIHC_Mode2 End-Insert
+				End-Section
+				Section for6
+					Insert_section VE.hLIHC_Mode2 End-Insert
+					Insert_section VE.LIHC_Stichologia.part1 End-Insert
+					Insert_section VE.LIHC_Stichologia.part2 End-Insert
+					Insert_section VE.LIHC_Stichologia.part3 End-Insert
+					Break line End_Break
+				End-Section
+				Section for8
+					Insert_section VE.hLIHC_Mode2 End-Insert
+					Insert_section VE.LIHC_Stichologia.part1 End-Insert
+					Insert_section VE.LIHC_Stichologia.part2 End-Insert
+					Break line End_Break
+				End-Section
+				Section for10
+					Insert_section VE.hLIHC_Mode2 End-Insert
+					Insert_section VE.LIHC_Stichologia.part1 End-Insert
+					Break line End_Break
+				End-Section
+			End-Section
+			Section mode3__
+				Section noStichologia
+					Insert_section VE.hLIHC_Mode3 End-Insert
+				End-Section
+				Section for6
+					Insert_section VE.hLIHC_Mode3 End-Insert
+					Insert_section VE.LIHC_Stichologia.part1 End-Insert
+					Insert_section VE.LIHC_Stichologia.part2 End-Insert
+					Insert_section VE.LIHC_Stichologia.part3 End-Insert
+					Break line End_Break
+				End-Section
+				Section for8
+					Insert_section VE.hLIHC_Mode3 End-Insert
+					Insert_section VE.LIHC_Stichologia.part1 End-Insert
+					Insert_section VE.LIHC_Stichologia.part2 End-Insert
+					Break line End_Break
+				End-Section
+				Section for10
+					Insert_section VE.hLIHC_Mode3 End-Insert
+					Insert_section VE.LIHC_Stichologia.part1 End-Insert
+					Break line End_Break
+				End-Section
+			End-Section
+			Section mode4__
+				Section noStichologia
+					Insert_section VE.hLIHC_Mode4 End-Insert
+				End-Section
+				Section for6
+					Insert_section VE.hLIHC_Mode4 End-Insert
+					Insert_section VE.LIHC_Stichologia.part1 End-Insert
+					Insert_section VE.LIHC_Stichologia.part2 End-Insert
+					Insert_section VE.LIHC_Stichologia.part3 End-Insert
+					Break line End_Break
+				End-Section
+				Section for8
+					Insert_section VE.hLIHC_Mode4 End-Insert
+					Insert_section VE.LIHC_Stichologia.part1 End-Insert
+					Insert_section VE.LIHC_Stichologia.part2 End-Insert
+					Break line End_Break
+				End-Section
+				Section for10
+					Insert_section VE.hLIHC_Mode4 End-Insert
+					Insert_section VE.LIHC_Stichologia.part1 End-Insert
+					Break line End_Break
+				End-Section
+			End-Section
+			Section mode5__
+				Section noStichologia
+					Insert_section VE.hLIHC_Mode5 End-Insert
+				End-Section
+				Section for6
+					Insert_section VE.hLIHC_Mode5 End-Insert
+					Insert_section VE.LIHC_Stichologia.part1 End-Insert
+					Insert_section VE.LIHC_Stichologia.part2 End-Insert
+					Insert_section VE.LIHC_Stichologia.part3 End-Insert
+					Break line End_Break
+				End-Section
+				Section for8
+					Insert_section VE.hLIHC_Mode5 End-Insert
+					Insert_section VE.LIHC_Stichologia.part1 End-Insert
+					Insert_section VE.LIHC_Stichologia.part2 End-Insert
+					Break line End_Break
+				End-Section
+				Section for10
+					Insert_section VE.hLIHC_Mode5 End-Insert
+					Insert_section VE.LIHC_Stichologia.part1 End-Insert
+					Break line End_Break
+				End-Section
+			End-Section
+			Section mode6__
+				Section noStichologia
+					Insert_section VE.hLIHC_Mode6 End-Insert
+				End-Section
+				Section for6
+					Insert_section VE.hLIHC_Mode6 End-Insert
+					Insert_section VE.LIHC_Stichologia.part1 End-Insert
+					Insert_section VE.LIHC_Stichologia.part2 End-Insert
+					Insert_section VE.LIHC_Stichologia.part3 End-Insert
+					Break line End_Break
+				End-Section
+				Section for8
+					Insert_section VE.hLIHC_Mode6 End-Insert
+					Insert_section VE.LIHC_Stichologia.part1 End-Insert
+					Insert_section VE.LIHC_Stichologia.part2 End-Insert
+					Break line End_Break
+				End-Section
+				Section for10
+					Insert_section VE.hLIHC_Mode6 End-Insert
+					Insert_section VE.LIHC_Stichologia.part1 End-Insert
+					Break line End_Break
+				End-Section
+			End-Section
+			Section mode7__
+				Section noStichologia
+					Insert_section VE.hLIHC_Mode7 End-Insert
+				End-Section
+				Section for6
+					Insert_section VE.hLIHC_Mode7 End-Insert
+					Insert_section VE.LIHC_Stichologia.part1 End-Insert
+					Insert_section VE.LIHC_Stichologia.part2 End-Insert
+					Insert_section VE.LIHC_Stichologia.part3 End-Insert
+					Break line End_Break
+				End-Section
+				Section for8
+					Insert_section VE.hLIHC_Mode7 End-Insert
+					Insert_section VE.LIHC_Stichologia.part1 End-Insert
+					Insert_section VE.LIHC_Stichologia.part2 End-Insert
+					Break line End_Break
+				End-Section
+				Section for10
+					Insert_section VE.hLIHC_Mode7 End-Insert
+					Insert_section VE.LIHC_Stichologia.part1 End-Insert
+					Break line End_Break
+				End-Section
+			End-Section
+			Section mode8__
+				Section noStichologia
+					Insert_section VE.hLIHC_Mode8 End-Insert
+				End-Section
+				Section for6
+					Insert_section VE.hLIHC_Mode8 End-Insert
+					Insert_section VE.LIHC_Stichologia.part1 End-Insert
+					Insert_section VE.LIHC_Stichologia.part2 End-Insert
+					Insert_section VE.LIHC_Stichologia.part3 End-Insert
+					Break line End_Break
+				End-Section
+				Section for8
+					Insert_section VE.hLIHC_Mode8 End-Insert
+					Insert_section VE.LIHC_Stichologia.part1 End-Insert
+					Insert_section VE.LIHC_Stichologia.part2 End-Insert
+					Break line End_Break
+				End-Section
+				Section for10
+					Insert_section VE.hLIHC_Mode8 End-Insert
+					Insert_section VE.LIHC_Stichologia.part1 End-Insert
+					Break line End_Break
+				End-Section
+			End-Section
+		End-Section
 		Section modeofweek__
 			Section noStichologia
 				Insert_section VE.LIHC_ModeOfWeek End-Insert
@@ -1832,6 +1994,55 @@ Status Review
 	End-Section
 	
 	Section _04_Middle__
+		Section Hierarchical__
+			Section entrance
+				when-date-is
+					Jan 6 use: Insert_section noprokeimenon End-Insert
+					Dec 25 use: Insert_section noprokeimenon End-Insert
+					otherwise use:
+						when-movable-cycle-day-is
+							71 use: Insert_section noprokeimenon End-Insert
+							otherwise use:
+								Section noprokeimenon
+									Actor sid Deacon<Trubric>sid InALowVoice</>End-Actor
+									Dialog sid pet00 End-Dialog
+									Actor sid Hierarch<Trubric>sid InALowVoice</>End-Actor
+									Title role desig sid hiVE.Key0108.title End-Title
+									Para role inaudible sid hiVE.Key0108.text End-Para
+									Actor sid Deacon End-Actor
+									Dialog sid exc17 sid exc18 End-Dialog
+									Actor sid ClergyAndPeople End-Actor
+									Title role mode sid Mode2 End-Title
+									Hymn sid hoVE.FosIlaron.text @ver End-Hymn
+								End-Section
+								Insert_section Selector_VespersProkeimenon.Concelebration.EveningProkeimenon End-Insert
+						end-when
+				end-when
+			End-Section
+			Section noentrance
+				Break line End_Break
+				Rubric sid NoEntrance End-Rubric
+				Break line End_Break
+				Actor sid Hierarch End-Actor
+				Reading sid hoVE.FosIlaron.text End-Reading
+				when-movable-cycle-day-is
+					24, 25, 26, 27, 28, 31, 32, 33, 34, 35, 38, 39, 40, 41, 42, 45, 46, 47, 48, 49, 52, 53, 54, 55, 56, 59, 60, 61, 62, 63, 66, 67, 68 use:
+					otherwise use: Insert_section Selector_VespersProkeimenon.Concelebration.EveningProkeimenon End-Insert
+				end-when
+			End-Section
+			Section liturgy
+				Actor sid Deacon End-Actor
+				Rubric sid InALowVoice End-Rubric
+				Dialog sid pet00 End-Dialog
+				Actor sid Hierarch<Trubric>sid InALowVoice</>End-Actor
+				Title role desig sid hiVE.Key0108.title End-Title
+				Para role inaudible sid hiVE.Key0108.text End-Para
+				Actor sid Deacon End-Actor
+				Dialog sid exc17 sid exc18 End-Dialog
+				Actor sid Hierarch End-Actor
+				Reading sid hoVE.FosIlaron.text End-Reading
+			End-Section
+		End-Section
 		Section entrance
 			when-date-is
 				Jan 6 use: Insert_section noprokeimenon End-Insert
@@ -1852,7 +2063,7 @@ Status Review
 								Title role mode sid Mode2 End-Title
 								Hymn sid hoVE.FosIlaron.text @ver End-Hymn
 							End-Section
-							Insert_section Selector_VespersProkeimenon.EveningProkeimenon End-Insert
+							Insert_section Selector_VespersProkeimenon.Priest.EveningProkeimenon End-Insert
 					end-when
 			end-when
 		End-Section
@@ -1864,7 +2075,7 @@ Status Review
 			Reading sid hoVE.FosIlaron.text End-Reading
 			when-movable-cycle-day-is
 				24, 25, 26, 27, 28, 31, 32, 33, 34, 35, 38, 39, 40, 41, 42, 45, 46, 47, 48, 49, 52, 53, 54, 55, 56, 59, 60, 61, 62, 63, 66, 67, 68 use:
-				otherwise use: Insert_section Selector_VespersProkeimenon.EveningProkeimenon End-Insert
+				otherwise use: Insert_section Selector_VespersProkeimenon.Priest.EveningProkeimenon End-Insert
 			end-when
 		End-Section
 		Section liturgy
@@ -1891,6 +2102,33 @@ Status Review
 	End-Section
 	
 	Section _06_Litanies__
+		Section Hierarchical
+			Section fullektenia
+				Insert_section LN.Ektenia01 End-Insert
+				Actor sid Hierarch End-Actor
+				Reading sid hoVE.Prayer_Kataxioson.text @ver End-Reading
+				Dialog <i>sid res04p</>End-Dialog
+				Insert_section LN.ComplementaryV End-Insert
+				Insert_section LN.hBowHeadsV End-Insert
+			End-Section
+			Section lentenektenia
+				Insert_section LN.Ektenia04 End-Insert
+				Actor sid Hierarch End-Actor
+				Reading sid hoVE.Prayer_Kataxioson.text @ver End-Reading
+				Dialog <i>sid res04p</>End-Dialog
+				Insert_section LN.ComplementaryV End-Insert
+				Insert_section LN.hBowHeadsV End-Insert
+			End-Section
+			Section noektenia
+				Section prayer
+					Actor sid Hierarch End-Actor
+					Reading sid hoVE.Prayer_Kataxioson.text @ver End-Reading
+					Dialog <i>sid res04p</>End-Dialog
+				End-Section
+				Insert_section LN.ComplementaryV End-Insert
+				Insert_section LN.hBowHeadsV End-Insert
+			End-Section
+		End-Section
 		Section fullektenia
 			Insert_section LN.Ektenia01 End-Insert
 			Actor sid Reader End-Actor
@@ -1919,6 +2157,36 @@ Status Review
 	End-Section
 	
 	Section _07_LityAndArtoclasia_
+		Section Hierarchical
+			Section part1 //import this if used on date and hymn is Lity1. copy and change to sid when needed
+				Title role desig sid ILitiKaiArtoklasia End-Title
+				Actor sid Choir End-Actor
+				Title role mode rid meVE.Lity1.mode End-Title
+				Hymn rid meVE.Lity1.text @ver End-Hymn	 
+				Insert_section LN.Ektenia03 End-Insert
+			End-Section
+			Section part2
+				Actor sid Hierarch sid Or sid Choir End-Actor
+				Title role desig sid Apolytikion End-Title
+				Media sid hoVE.ArtoTheotokeParthene.text End-Media
+				Hymn sid hoVE.LentApolytikion1.text @ver media-off End-Hymn
+			End-Section
+			Section part3 
+				Actor sid Deacon End-Actor
+				Dialog sid pet00 End-Dialog
+				Dialog<i>sid res01p</>End-Dialog	
+				Actor sid Hierarch End-Actor
+				Dialog sid hoVE.ArtoPrayer1 End-Dialog	
+				Dialog sid hoVE.ArtoPrayer2 End-Dialog
+				Dialog<i>sid res04p</>End-Dialog	
+			
+				Actor sid Clergy End-Actor
+				Media sid hoVE.LityArtoHymn.text @ver End-Media
+				Insert_section Artoclasia.hymn_once End-Insert
+				Actor sid Choir End-Actor
+				Insert_section Artoclasia.hymn_twice End-Insert
+			End-Section 
+		End-Section
 		Section part1 //import this if used on date and hymn is Lity1. copy and change to sid when needed
 			Title role desig sid ILitiKaiArtoklasia End-Title
 			Actor sid Choir End-Actor
@@ -1927,9 +2195,10 @@ Status Review
 			Insert_section LN.Ektenia03 End-Insert
 		End-Section
 		Section part2
+			Actor sid Priest sid Or sid Choir End-Actor
 			Title role desig sid Apolytikion End-Title
 			Media sid hoVE.ArtoTheotokeParthene.text End-Media
-			Insert_section bk.ho.s10.Artoclasia.theotokion End-Insert
+			Hymn sid hoVE.LentApolytikion1.text @ver media-off End-Hymn
 		End-Section
 		Section part3 
 			Actor sid Deacon End-Actor
@@ -2412,19 +2681,37 @@ Status Review
 	End-Section
 	
 	Section _09_Apolytikion__
-		Section symeon_trisagion
-			Section symeon
-				Actor sid Priest End-Actor
-				Insert_section NynApolyeis.title End-Insert
-				Insert_section NynApolyeis.text End-Insert
+		Section symeon_trisagion__
+			Section Hierarchical
+				Section symeon
+					Actor sid Hierarch End-Actor
+					Insert_section NynApolyeis.title End-Insert
+					Insert_section NynApolyeis.text End-Insert
+				End-Section
+				Section trisagion
+					Actor sid Reader End-Actor
+					Dialog sid res07 End-Dialog
+					Actor sid People End-Actor		
+					Insert_section Trisagion_Prayers End-Insert
+					Actor sid Priest End-Actor
+					Para role prayer sid exc20<i>sid res04p</>End-Para
+				End-Section
+				Actor sid Choir End-Actor
 			End-Section
-			Section trisagion
-				Actor sid People End-Actor		
-				Insert_section Trisagion_Prayers End-Insert
-				Actor sid Priest End-Actor
-				Para role prayer sid exc20<i>sid res04p</>End-Para
+			Section Priest
+				Section symeon
+					Actor sid Priest End-Actor
+					Insert_section NynApolyeis.title End-Insert
+					Insert_section NynApolyeis.text End-Insert
+				End-Section
+				Section trisagion
+					Actor sid People End-Actor		
+					Insert_section Trisagion_Prayers End-Insert
+					Actor sid Priest End-Actor
+					Para role prayer sid exc20<i>sid res04p</>End-Para
+				End-Section
+				Actor sid Choir End-Actor
 			End-Section
-			Actor sid Choir End-Actor
 		End-Section
 		Section both__
 			Section festal
@@ -3420,6 +3707,112 @@ Status Review
 	End-Section
 	
 	Section _10_End__
+		Section Hierarchical__
+			Section afterartoklasia	
+				Actor sid Deacon End-Actor
+				Dialog sid pet00 End-Dialog
+				Dialog<i>sid res01p</>End-Dialog	
+				Actor sid Hierarch End-Actor
+				Dialog sid pet37 End-Dialog
+				Dialog<i>sid res04p</>End-Dialog
+				Dialog sid StereosaiKyrios.text End-Dialog
+				Actor sid Reader End-Actor
+				Dialog sid res04 End-Dialog
+				Actor sid Priest End-Actor
+				Dialog sid verse_Theotokos.text End-Dialog
+				Actor sid Reader End-Actor
+				when-movable-cycle-day-is
+					71, 72, 73, 74, 75, 76, 77, 109 use:
+						Dialog sid pePA.Ode9H.text End-Dialog
+					otherwise use:
+						Dialog sid TinTimioteran.text End-Dialog
+				end-when
+				Actor sid Priest End-Actor
+				Dialog sid DoxaSoiChriste2 End-Dialog
+				Actor sid Reader End-Actor
+				when-movable-cycle-day-is 
+					71 thru 109 use:
+						Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text End-Dialog
+					otherwise use:
+						Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
+				Dialog sid res01<r>sid Thrice</>sid res13 End-Dialog
+				end-when
+			End-Section
+			Section ektenia_wisdom
+				Insert_section LN.Ektenia02 End-Insert
+				Insert_section wisdom End-Insert
+			End-Section
+			Section lent_
+				Section part1
+					Actor sid Reader End-Actor
+					Dialog sid res01<r>sid Forty</>End-Dialog
+					Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
+					Dialog sid TinTimioteran.text End-Dialog
+					Dialog sid EnOnomatiKyriou.text End-Dialog
+					Actor sid Priest End-Actor
+					Dialog sid OOnEvlogitos.text End-Dialog
+					Dialog<i>sid res04p</>End-Dialog
+					Actor sid Hierarch End-Actor
+					Dialog sid EpouranieVasilef.text End-Dialog
+					Dialog<i>sid res04p</>End-Dialog
+					Actor sid Priest End-Actor
+					Insert_section TR.StEphraimPrayer End-Insert
+				End-Section
+				when-name-of-day-is
+					Tuesday, Wednesday, Thursday, Friday, Saturday use:
+						Section part2
+							Actor sid Reader End-Actor
+							Reading sid res01<r>sid Twelve</>End-Reading
+							Actor sid Hierarch End-Actor
+							Reading sid ho.s07_gr_GR_cog.hoTY.Key0501.text End-Reading
+							Actor sid Reader End-Actor
+							Reading sid res04 End-Reading
+							Reading sid psa112.v2.text<r>sid Thrice</>End-Reading
+							Title role desig sid psa33.title End-Title
+							Reading sid psa33.text End-Reading
+							Title role desig sid psa144.title End-Title
+							Reading sid psa144.text End-Reading
+						End-Section
+				end-when				
+				Section part3
+					Actor sid Reader End-Actor
+					Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
+					Dialog sid res06 End-Dialog
+					Dialog sid res13 End-Dialog
+				End-Section
+			End-Section
+			Section wisdom
+				Actor sid Deacon End-Actor
+				Dialog sid exc17 End-Dialog
+				Dialog<i>sid EvlogisonP</>End-Dialog	
+				Actor sid Priest End-Actor
+				Dialog sid OOnEvlogitos.text<i>sid res04p</>End-Dialog
+				Actor sid Hierarch End-Actor
+				Dialog sid StereosaiKyrios.text End-Dialog
+				Actor sid Reader End-Actor
+				Dialog sid res04 End-Dialog
+				Actor sid Priest End-Actor
+				Dialog sid verse_Theotokos.text End-Dialog
+				Actor sid Reader End-Actor
+				when-movable-cycle-day-is
+					71, 72, 73, 74, 75, 76, 77, 109 use:
+						Dialog sid pe.d00P_gr_GR_cog.pePA.Ode9H.text End-Dialog
+					otherwise use:
+						Dialog sid TinTimioteran.text End-Dialog
+				end-when
+				Actor sid Priest End-Actor
+				Dialog sid DoxaSoiChriste2 End-Dialog
+				Actor sid Reader End-Actor
+				when-movable-cycle-day-is 
+					71 thru 109 use:
+						Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text End-Dialog
+					otherwise use:
+						Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
+				end-when
+				Dialog sid res06 End-Dialog
+				Dialog sid res13 End-Dialog
+			End-Section
+		End-Section
 		Section afterartoklasia	
 			Actor sid Deacon End-Actor
 			Dialog sid pet00 End-Dialog
@@ -3430,18 +3823,25 @@ Status Review
 			Dialog sid StereosaiKyrios.text End-Dialog
 			Actor sid Reader End-Actor
 			Dialog sid res04 End-Dialog
+			Actor sid Priest End-Actor
+			Dialog sid verse_Theotokos.text End-Dialog
+			Actor sid Reader End-Actor
 			when-movable-cycle-day-is
 				71, 72, 73, 74, 75, 76, 77, 109 use:
 					Dialog sid pePA.Ode9H.text End-Dialog
 				otherwise use:
 					Dialog sid TinTimioteran.text End-Dialog
 			end-when
+			Actor sid Priest End-Actor
+			Dialog sid DoxaSoiChriste2 End-Dialog
+			Actor sid Reader End-Actor
 			when-movable-cycle-day-is 
 				71 thru 109 use:
 					Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text End-Dialog
 				otherwise use:
 					Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
 			end-when
+			Dialog sid res01<r>sid Thrice</>sid Evlogison End-Dialog
 		End-Section
 		Section ektenia_wisdom
 			Insert_section LN.Ektenia02 End-Insert
@@ -3617,6 +4017,77 @@ Status Review
 
 
 //blocks
+	Section LIHC_1
+		Hymn sid psa140.v1alt.text sid psa140.v0.text @ver End-Hymn
+	End-Section
+	Section LIHC_2
+		Hymn sid psa140.v2.text sid psa140.v0.text @ver End-Hymn
+	End-Section
+
+	Section LIHC_Stichologia
+		Section part1
+			Para role inaudible sid psa140.v3.text End-Para
+			Para role inaudible sid psa140.v4a.text End-Para
+			Para role inaudible sid psa140.v4b.text End-Para
+			Para role inaudible sid psa140.v5a.text End-Para
+			Para role inaudible sid psa140.v5b.text sid psa140.v6a.text End-Para
+			Para role inaudible sid psa140.v6b.text sid psa140.v7.text End-Para
+			Para role inaudible sid psa140.v8.text End-Para
+			Para role inaudible sid psa140.v9.text End-Para
+			Para role inaudible sid psa140.v10.text End-Para
+			Para role inaudible sid psa141.v2.text End-Para
+			Para role inaudible sid psa141.v3.text End-Para
+			Para role inaudible sid psa141.v4a.text End-Para
+			Para role inaudible sid psa141.v4b.text End-Para
+			Para role inaudible sid psa141.v5a.text End-Para
+			Para role inaudible sid psa141.v5b.text End-Para
+			Para role inaudible sid psa141.v6.text End-Para
+			Para role inaudible sid psa141.v7a.text End-Para
+			Para role inaudible sid psa141.v7b.text End-Para
+		End-Section
+		Section part2	
+			Para role inaudible sid psa141.v8a.text End-Para
+			Para role inaudible sid psa141.v8b.text End-Para
+		End-Section
+		Section part3	
+			Para role inaudible sid psa129.v1.text sid psa129.v2a.text End-Para
+			Para role inaudible sid psa129.v2b.text End-Para
+		End-Section
+	End-Section
+		
+	Section LIHC_Verses
+		Section v01
+			Verse sid psa141.v8a.text @ver End-Verse
+		End-Section
+		Section v02
+			Verse sid psa141.v8b.text @ver End-Verse
+		End-Section
+		Section v03
+			Verse sid psa129.v1.text sid psa129.v2a.text @ver End-Verse
+		End-Section
+		Section v04
+			Verse sid psa129.v2b.text @ver End-Verse
+		End-Section
+		Section v05
+			Verse sid psa129.v3.text sid psa129.v4.text @ver End-Verse
+		End-Section
+		Section v06
+			Verse sid psa129.v5.text sid psa129.v6a.text @ver End-Verse
+		End-Section
+		Section v07
+			Verse sid psa129.v6b.text @ver End-Verse
+		End-Section
+		Section v08
+			Verse sid psa129.v7.text sid psa129.v8.text @ver End-Verse
+		End-Section
+		Section v09
+			Verse sid psa116.v1.text @ver End-Verse
+		End-Section
+		Section v10
+			Verse sid psa116.v2.text @ver End-Verse
+		End-Section
+	End-Section
+
 	Section LIHC_ModeOfWeek
 		Actor sid Choir End-Actor
 		Title role mode rid ocVE.Stichera1.mode @day D1 End-Title
@@ -3690,76 +4161,97 @@ Status Review
 		Insert_section LIHC_2 End-Insert 
 	End-Section //LIHC
 
-	Section LIHC_1
-		Hymn sid psa140.v1alt.text sid psa140.v0.text @ver End-Hymn
-	End-Section
-	Section LIHC_2
-		Hymn sid psa140.v2.text sid psa140.v0.text @ver End-Hymn
-	End-Section
+	Section hLIHC_ModeOfWeek
+		Actor sid Chanter End-Actor
+		Dialog sid KelefsonDespotaAgie rid ocVE.Stichera1.mode @day D1 End-Dialog
+		Actor sid Choir End-Actor
+		Title role mode rid ocVE.Stichera1.mode @day D1 End-Title
+		Media rid ocVE.LIHC1.text @day D1 End-Media
+		Insert_section LIHC_1 End-Insert 
+		Media rid ocVE.LIHC2.text @day D1 End-Media 
+		Insert_section LIHC_2 End-Insert 
+	End-Section //LIHC
+	Section hLIHC_Mode1 
+		Actor sid Chanter End-Actor
+		Dialog sid KelefsonDespotaAgie sid Mode1 End-Dialog
+		Actor sid Choir End-Actor
+		Title role mode sid Mode1 End-Title
+		Media sid oc.m1.d1_gr_GR_cog.ocVE.LIHC1.text End-Media 
+		Insert_section LIHC_1 End-Insert 
+		Media sid oc.m1.d1_gr_GR_cog.ocVE.LIHC2.text End-Media 
+		Insert_section LIHC_2 End-Insert 
+	End-Section //LIHC
+	Section hLIHC_Mode2 
+		Actor sid Chanter End-Actor
+		Dialog sid KelefsonDespotaAgie sid Mode2 End-Dialog
+		Actor sid Choir End-Actor
+		Title role mode sid Mode2 End-Title
+		Media sid oc.m2.d1_gr_GR_cog.ocVE.LIHC1.text End-Media 
+		Insert_section LIHC_1 End-Insert 
+		Media sid oc.m2.d1_gr_GR_cog.ocVE.LIHC2.text End-Media 
+		Insert_section LIHC_2 End-Insert 
+	End-Section //LIHC
+	Section hLIHC_Mode3 
+		Actor sid Chanter End-Actor
+		Dialog sid KelefsonDespotaAgie sid Mode3 End-Dialog
+		Actor sid Choir End-Actor
+		Title role mode sid Mode3 End-Title
+		Media sid oc.m3.d1_gr_GR_cog.ocVE.LIHC1.text End-Media 
+		Insert_section LIHC_1 End-Insert 
+		Media sid oc.m3.d1_gr_GR_cog.ocVE.LIHC2.text End-Media 
+		Insert_section LIHC_2 End-Insert 
+	End-Section //LIHC
+	Section hLIHC_Mode4 
+		Actor sid Chanter End-Actor
+		Dialog sid KelefsonDespotaAgie sid Mode4 End-Dialog
+		Actor sid Choir End-Actor
+		Title role mode sid Mode4 End-Title
+		Media sid oc.m4.d1_gr_GR_cog.ocVE.LIHC1.text End-Media 
+		Insert_section LIHC_1 End-Insert 
+		Media sid oc.m4.d1_gr_GR_cog.ocVE.LIHC2.text End-Media 
+		Insert_section LIHC_2 End-Insert 
+	End-Section //LIHC
+	Section hLIHC_Mode5 
+		Actor sid Chanter End-Actor
+		Dialog sid KelefsonDespotaAgie sid Mode5 End-Dialog
+		Actor sid Choir End-Actor
+		Title role mode sid Mode5 End-Title
+		Media sid oc.m5.d1_gr_GR_cog.ocVE.LIHC1.text End-Media 
+		Insert_section LIHC_1 End-Insert 
+		Media sid oc.m5.d1_gr_GR_cog.ocVE.LIHC2.text End-Media 
+		Insert_section LIHC_2 End-Insert 
+	End-Section //LIHC
+	Section hLIHC_Mode6 
+		Actor sid Chanter End-Actor
+		Dialog sid KelefsonDespotaAgie sid Mode6 End-Dialog
+		Actor sid Choir End-Actor
+		Title role mode sid Mode6 End-Title
+		Media sid oc.m6.d1_gr_GR_cog.ocVE.LIHC1.text End-Media 
+		Insert_section LIHC_1 End-Insert 
+		Media sid oc.m6.d1_gr_GR_cog.ocVE.LIHC2.text End-Media 
+		Insert_section LIHC_2 End-Insert 
+	End-Section //LIHC
+	Section hLIHC_Mode7 
+		Actor sid Chanter End-Actor
+		Dialog sid KelefsonDespotaAgie sid Mode7 End-Dialog
+		Actor sid Choir End-Actor
+		Title role mode sid Mode7 End-Title
+		Media sid oc.m7.d1_gr_GR_cog.ocVE.LIHC1.text End-Media 
+		Insert_section LIHC_1 End-Insert 
+		Media sid oc.m7.d1_gr_GR_cog.ocVE.LIHC2.text End-Media 
+		Insert_section LIHC_2 End-Insert 
+	End-Section //LIHC
+	Section hLIHC_Mode8 
+		Actor sid Chanter End-Actor
+		Dialog sid KelefsonDespotaAgie sid Mode8 End-Dialog
+		Actor sid Choir End-Actor
+		Title role mode sid Mode8 End-Title
+		Media sid oc.m8.d1_gr_GR_cog.ocVE.LIHC1.text End-Media
+		Insert_section LIHC_1 End-Insert 
+		Media sid oc.m8.d1_gr_GR_cog.ocVE.LIHC2.text End-Media 
+		Insert_section LIHC_2 End-Insert 
+	End-Section //LIHC
 
-	Section LIHC_Stichologia
-		Section part1
-			Para role inaudible sid psa140.v3.text End-Para
-			Para role inaudible sid psa140.v4a.text End-Para
-			Para role inaudible sid psa140.v4b.text End-Para
-			Para role inaudible sid psa140.v5a.text End-Para
-			Para role inaudible sid psa140.v5b.text sid psa140.v6a.text End-Para
-			Para role inaudible sid psa140.v6b.text sid psa140.v7.text End-Para
-			Para role inaudible sid psa140.v8.text End-Para
-			Para role inaudible sid psa140.v9.text End-Para
-			Para role inaudible sid psa140.v10.text End-Para
-			Para role inaudible sid psa141.v2.text End-Para
-			Para role inaudible sid psa141.v3.text End-Para
-			Para role inaudible sid psa141.v4a.text End-Para
-			Para role inaudible sid psa141.v4b.text End-Para
-			Para role inaudible sid psa141.v5a.text End-Para
-			Para role inaudible sid psa141.v5b.text End-Para
-			Para role inaudible sid psa141.v6.text End-Para
-			Para role inaudible sid psa141.v7a.text End-Para
-			Para role inaudible sid psa141.v7b.text End-Para
-		End-Section
-		Section part2	
-			Para role inaudible sid psa141.v8a.text End-Para
-			Para role inaudible sid psa141.v8b.text End-Para
-		End-Section
-		Section part3	
-			Para role inaudible sid psa129.v1.text sid psa129.v2a.text End-Para
-			Para role inaudible sid psa129.v2b.text End-Para
-		End-Section
-	End-Section
-		
-	Section LIHC_Verses
-		Section v01
-			Verse sid psa141.v8a.text @ver End-Verse
-		End-Section
-		Section v02
-			Verse sid psa141.v8b.text @ver End-Verse
-		End-Section
-		Section v03
-			Verse sid psa129.v1.text sid psa129.v2a.text @ver End-Verse
-		End-Section
-		Section v04
-			Verse sid psa129.v2b.text @ver End-Verse
-		End-Section
-		Section v05
-			Verse sid psa129.v3.text sid psa129.v4.text @ver End-Verse
-		End-Section
-		Section v06
-			Verse sid psa129.v5.text sid psa129.v6a.text @ver End-Verse
-		End-Section
-		Section v07
-			Verse sid psa129.v6b.text @ver End-Verse
-		End-Section
-		Section v08
-			Verse sid psa129.v7.text sid psa129.v8.text @ver End-Verse
-		End-Section
-		Section v09
-			Verse sid psa116.v1.text @ver End-Verse
-		End-Section
-		Section v10
-			Verse sid psa116.v2.text @ver End-Verse
-		End-Section
-	End-Section
 
 	Section Symeon_Trisagion
 		Section Symeon
@@ -3774,6 +4266,5 @@ Status Review
 			Dialog sid exc20<i>sid res04p</>End-Dialog
 		End-Section
 	End-Section
-
 
 End-Template

@@ -22,215 +22,443 @@ Status Final
 		Set_Date month 6 day 7 year 2015 End_Date
 	End_Head
 
-	Section EveningProkeimenon
-		Section intro
-			Actor sid Deacon End-Actor
-			Dialog sid hi.s01_gr_GR_cog.hiVE.Key0109.text End-Dialog
-			Actor sid Choir End-Actor
+	Section Concelebration
+		Section EveningProkeimenon
+			Section intro
+				Actor sid Deacon End-Actor
+				Dialog sid hi.s01_gr_GR_cog.hiVE.Key0109.text End-Dialog
+				Actor sid Clergy End-Actor
+			End-Section
+			when-movable-cycle-day-is
+				14, 119 use: Insert_section Alleluia_Mode8 End-Insert
+				23, 37, 51 use: Insert_section LentProkeimenon1 End-Insert
+				30, 44, 58 use: Insert_section LentProkeimenon2 End-Insert
+				70 use: 
+					Section onGoodFriday
+						Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode4</>End-Title
+						Media rid tr.d070_gr_GR_cog.trVE.Prokeimenon.text End-Media
+						Hymn sid psa21.v19.text @ver End-Hymn
+						Actor sid Choir End-Actor
+						Hymn sid psa21.v19.text End-Hymn
+						Verse<bnr>sid vVerse</>sid psa21.v2.text End-Verse
+						Hymn sid psa21.v19.text End-Hymn
+					End-Section
+				72, 79, 121 use: Insert_section GreatProkeimenon1 End-Insert
+				73 use:
+					Section onBrightMonday
+						Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode7</>End-Title
+						Media sid hoVE.GreatProkeimenonOTheosImon.text End-Media
+						Hymn sid psa113.v11alt.text @ver End-Hymn
+						Actor sid Choir End-Actor
+						Verse<bnr>sid vVerse</>sid psa113.v1.text End-Verse
+						Hymn sid psa113.v11alt.text End-Hymn
+						Verse<bnr>sid vVerse</>sid psa113.v3.text End-Verse
+						Hymn sid psa113.v11alt.text End-Hymn
+						Verse<bnr>sid vVerse</>sid psa113.v5.text End-Verse
+						Hymn sid psa113.v11alt.text End-Hymn
+					End-Section
+				74 use:
+					Section onBrightTuesday
+						Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode8</>End-Title
+						Media sid pe.d074_gr_GR_cog.peVE.GreatProkeimenon.text End-Media
+						Hymn sid psa76.v2.text @ver End-Hymn
+						Actor sid Choir End-Actor
+						Verse<bnr>sid vVerse</>sid psa76.v3a.text End-Verse
+						Hymn sid psa76.v2.text End-Hymn
+						Verse<bnr>sid vVerse</>sid psa76.v3b.text End-Verse
+						Hymn sid psa76.v2.text End-Hymn
+						Verse<bnr>sid vVerse</>sid psa76.v14a.text sid psa76.v14b.text End-Verse
+						Hymn sid psa76.v2.text End-Hymn
+					End-Section
+				75 use:
+					Section onBrightWednesday
+						Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode7</>End-Title
+						Media sid pe.d075_gr_GR_cog.peVE.GreatProkeimenon.text End-Media
+						Hymn sid psa54.v2.text @ver End-Hymn
+						Actor sid Choir End-Actor
+						Verse<bnr>sid vVerse</>sid psa54.v3.text End-Verse
+						Hymn sid psa54.v2.text End-Hymn
+						Verse<bnr>sid vVerse</>sid psa54.v4b.text End-Verse
+						Hymn sid psa54.v2.text End-Hymn
+						Verse<bnr>sid vVerse</>sid psa54.v17.text End-Verse
+						Hymn sid psa54.v2.text End-Hymn
+					End-Section
+				76 use:
+					Section onBrightThursday
+						Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode7</>End-Title
+						Media sid pe.d076_gr_GR_cog.peVE.GreatProkeimenon.text End-Media
+						Hymn sid psa17.v2.text sid psa17.v3aalt.text @ver End-Hymn
+						Actor sid Choir End-Actor
+						Verse<bnr>sid vVerse</>sid psa17.v3b.text End-Verse
+						Hymn sid psa17.v2.text sid psa17.v3aalt.text End-Hymn
+						Verse<bnr>sid vVerse</>sid psa17.v4.text End-Verse
+						Hymn sid psa17.v2.text sid psa17.v3aalt.text End-Hymn
+						Verse<bnr>sid vVerse</>sid psa17.v7b.text End-Verse
+						Hymn sid psa17.v2.text sid psa17.v3aalt.text End-Hymn
+					End-Section
+				77 use:
+					Section onBrightFriday
+						Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode8</>End-Title
+						Media sid pe.d077_gr_GR_cog.peVE.GreatProkeimenon.text End-Media
+						Hymn sid psa68.v18.text sid psa68.v19a.text @ver End-Hymn
+						Actor sid Choir End-Actor
+						Verse<bnr>sid vVerse</>sid psa68.v30b.text End-Verse
+						Hymn sid psa68.v18.text sid psa68.v19a.text End-Hymn
+						Verse<bnr>sid vVerse</>sid psa68.v33a.text End-Verse
+						Hymn sid psa68.v18.text sid psa68.v19a.text End-Hymn
+						Verse<bnr>sid vVerse</>sid psa68.v33b.text End-Verse
+						Hymn sid psa68.v18.text sid psa68.v19a.text End-Hymn
+					End-Section
+				111 use: Insert_section GreatProkeimenon2 End-Insert
+				
+				otherwise use:
+					when-date-is
+						Jan 7 use: Insert_section GreatProkeimenon2 End-Insert
+						Aug 7 use: Insert_section GreatProkeimenon2 End-Insert
+						Sep 15 use: Insert_section GreatProkeimenon2 End-Insert
+						Dec 26 use: Insert_section GreatProkeimenon1 End-Insert
+						
+						otherwise use:
+							when-name-of-day-is 
+								Monday use:
+									Section onSunday
+										Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode8</>End-Title
+										Media sid hoVE.SundayProkeimenon.text End-Media
+										Hymn sid psa133.v1a.text @ver End-Hymn
+										Actor sid Choir End-Actor
+										Hymn sid psa133.v1a.text End-Hymn
+										Verse<bnr>sid vVerse</>sid psa133.v1b.text End-Verse
+										Hymn sid psa133.v1a.text End-Hymn
+									End-Section
+								Tuesday use:
+									Section onMonday
+										Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode4</>End-Title
+										Media sid hoVE.MondayProkeimenon.text End-Media
+										Hymn sid psa4.v4b.text @ver End-Hymn
+										Actor sid Choir End-Actor
+										Hymn sid psa4.v4b.text End-Hymn
+										Verse<bnr>sid vVerse</>sid psa4.v2a.text End-Verse
+										Hymn sid psa4.v4b.text End-Hymn
+									End-Section
+								Wednesday use:
+									Section onTuesday
+										Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode1</>End-Title
+										Media sid hoVE.TuesdayProkeimenon.text End-Media
+										Hymn sid psa22.v6alt.text @ver End-Hymn
+										Actor sid Choir End-Actor
+										Hymn sid psa22.v6alt.text End-Hymn
+										Verse<bnr>sid vVerse</>sid psa22.v1.text sid psa22.v2.text End-Verse
+										Hymn sid psa22.v6alt.text End-Hymn
+									End-Section
+								Thursday use:
+									Section onWednesday
+										Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode5</>End-Title
+										Media sid hoVE.WednesdayProkeimenon.text End-Media
+										Hymn sid psa53.v3alt.text @ver End-Hymn
+										Actor sid Choir End-Actor
+										Hymn sid psa53.v3alt.text End-Hymn
+										Verse<bnr>sid vVerse</>sid psa53.v4.text End-Verse
+										Hymn sid psa53.v3alt.text End-Hymn
+									End-Section
+								Friday use:
+									Section onThursday
+										Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode6</>End-Title
+										Media sid hoVE.ThursdayProkeimenon.text End-Media
+										Hymn sid psa120.v2.text @ver End-Hymn
+										Actor sid Choir End-Actor
+										Hymn sid psa120.v2.text End-Hymn
+										Verse<bnr>sid vVerse</>sid psa120.v1.text End-Verse
+										Hymn sid psa120.v2.text End-Hymn
+									End-Section
+								Saturday use:
+									Section onFriday
+										Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode7</>End-Title
+										Media sid hoVE.FridayProkeimenon.text End-Media
+										Hymn sid psa58.v10alt.text sid psa58.v11alt.text @ver End-Hymn
+										Actor sid Choir End-Actor
+										Hymn sid psa58.v10alt.text sid psa58.v11alt.text End-Hymn
+										Verse<bnr>sid vVerse</>sid psa58.v2.text End-Verse
+										Hymn sid psa58.v10alt.text sid psa58.v11alt.text End-Hymn
+									End-Section
+								Sunday use:
+									Section onSaturday
+										Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode6</>End-Title
+										Media sid hoVE.SaturdayProkeimenon.text End-Media
+										Hymn sid psa92.v1b.text @ver End-Hymn
+										Actor sid Choir End-Actor
+										Verse<bnr>sid vVerse</>sid psa92.v1c.text End-Verse
+										Hymn sid psa92.v1b.text End-Hymn
+										Verse<bnr>sid vVerse</>sid psa92.v1d.text End-Verse
+										Hymn sid psa92.v1b.text End-Hymn
+									End-Section
+							end-when
+					end-when
+			end-when			
 		End-Section
-		when-movable-cycle-day-is
-			14, 119 use: Insert_section Alleluia_Mode8 End-Insert
-			23, 37, 51 use: Insert_section LentProkeimenon1 End-Insert
-			30, 44, 58 use: Insert_section LentProkeimenon2 End-Insert
-			70 use: 
-				Section onGoodFriday
-					Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode4</>End-Title
-					Media rid tr.d070_gr_GR_cog.trVE.Prokeimenon.text End-Media
-					Hymn sid psa21.v19.text @ver <r>sid Twice</>End-Hymn
-					Verse<bnr>sid vVerse</>sid psa21.v2.text End-Verse
-					Hymn sid psa21.v19.text End-Hymn
-				End-Section
-			72, 79, 121 use: Insert_section GreatProkeimenon1 End-Insert
-			73 use:
-				Section onBrightMonday
-					Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode7</>End-Title
-					Media sid hoVE.GreatProkeimenonOTheosImon.text End-Media
-					Hymn sid psa113.v11alt.text @ver End-Hymn
-					Verse<bnr>sid vVerse</>sid psa113.v1.text End-Verse
-					Hymn sid psa113.v11alt.text End-Hymn
-					Verse<bnr>sid vVerse</>sid psa113.v3.text End-Verse
-					Hymn sid psa113.v11alt.text End-Hymn
-					Verse<bnr>sid vVerse</>sid psa113.v5.text End-Verse
-					Hymn sid psa113.v11alt.text End-Hymn
-				End-Section
-			74 use:
-				Section onBrightTuesday
-					Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode8</>End-Title
-					Media sid pe.d074_gr_GR_cog.peVE.GreatProkeimenon.text End-Media
-					Hymn sid psa76.v2.text @ver End-Hymn
-					Verse<bnr>sid vVerse</>sid psa76.v3a.text End-Verse
-					Hymn sid psa76.v2.text End-Hymn
-					Verse<bnr>sid vVerse</>sid psa76.v3b.text End-Verse
-					Hymn sid psa76.v2.text End-Hymn
-					Verse<bnr>sid vVerse</>sid psa76.v14a.text sid psa76.v14b.text End-Verse
-					Hymn sid psa76.v2.text End-Hymn
-				End-Section
-			75 use:
-				Section onBrightWednesday
-					Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode7</>End-Title
-					Media sid pe.d075_gr_GR_cog.peVE.GreatProkeimenon.text End-Media
-					Hymn sid psa54.v2.text @ver End-Hymn
-					Verse<bnr>sid vVerse</>sid psa54.v3.text End-Verse
-					Hymn sid psa54.v2.text End-Hymn
-					Verse<bnr>sid vVerse</>sid psa54.v4b.text End-Verse
-					Hymn sid psa54.v2.text End-Hymn
-					Verse<bnr>sid vVerse</>sid psa54.v17.text End-Verse
-					Hymn sid psa54.v2.text End-Hymn
-				End-Section
-			76 use:
-				Section onBrightThursday
-					Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode7</>End-Title
-					Media sid pe.d076_gr_GR_cog.peVE.GreatProkeimenon.text End-Media
-					Hymn sid psa17.v2.text sid psa17.v3aalt.text @ver End-Hymn
-					Verse<bnr>sid vVerse</>sid psa17.v3b.text End-Verse
-					Hymn sid psa17.v2.text sid psa17.v3aalt.text End-Hymn
-					Verse<bnr>sid vVerse</>sid psa17.v4.text End-Verse
-					Hymn sid psa17.v2.text sid psa17.v3aalt.text End-Hymn
-					Verse<bnr>sid vVerse</>sid psa17.v7b.text End-Verse
-					Hymn sid psa17.v2.text sid psa17.v3aalt.text End-Hymn
-				End-Section
-			77 use:
-				Section onBrightFriday
-					Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode8</>End-Title
-					Media sid pe.d077_gr_GR_cog.peVE.GreatProkeimenon.text End-Media
-					Hymn sid psa68.v18.text sid psa68.v19a.text @ver End-Hymn
-					Verse<bnr>sid vVerse</>sid psa68.v30b.text End-Verse
-					Hymn sid psa68.v18.text sid psa68.v19a.text End-Hymn
-					Verse<bnr>sid vVerse</>sid psa68.v33a.text End-Verse
-					Hymn sid psa68.v18.text sid psa68.v19a.text End-Hymn
-					Verse<bnr>sid vVerse</>sid psa68.v33b.text End-Verse
-					Hymn sid psa68.v18.text sid psa68.v19a.text End-Hymn
-				End-Section
-			111 use: Insert_section GreatProkeimenon2 End-Insert
-			
-			otherwise use:
-				when-date-is
-					Jan 7 use: Insert_section GreatProkeimenon2 End-Insert
-					Aug 7 use: Insert_section GreatProkeimenon2 End-Insert
-					Sep 15 use: Insert_section GreatProkeimenon2 End-Insert
-					Dec 26 use: Insert_section GreatProkeimenon1 End-Insert
-					
-					otherwise use:
-						when-name-of-day-is 
-							Monday use:
-								Section onSunday
-									Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode8</>End-Title
-									Media sid hoVE.SundayProkeimenon.text End-Media
-									Hymn sid psa133.v1a.text @ver <r>sid Twice media-off</>End-Hymn
-									Verse<bnr>sid vVerse</>sid psa133.v1b.text End-Verse
-									Hymn sid psa133.v1a.text End-Hymn
-								End-Section
-							Tuesday use:
-								Section onMonday
-									Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode4</>End-Title
-									Media sid hoVE.MondayProkeimenon.text End-Media
-									Hymn sid psa4.v4b.text @ver <r>sid Twice media-off</>End-Hymn
-									Verse<bnr>sid vVerse</>sid psa4.v2a.text End-Verse
-									Hymn sid psa4.v4b.text End-Hymn
-								End-Section
-							Wednesday use:
-								Section onTuesday
-									Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode1</>End-Title
-									Media sid hoVE.TuesdayProkeimenon.text End-Media
-									Hymn sid psa22.v6alt.text @ver <r>sid Twice media-off</>End-Hymn
-									Verse<bnr>sid vVerse</>sid psa22.v1.text sid psa22.v2.text End-Verse
-									Hymn sid psa22.v6alt.text End-Hymn
-								End-Section
-							Thursday use:
-								Section onWednesday
-									Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode5</>End-Title
-									Media sid hoVE.WednesdayProkeimenon.text End-Media
-									Hymn sid psa53.v3alt.text @ver <r>sid Twice media-off</>End-Hymn
-									Verse<bnr>sid vVerse</>sid psa53.v4.text End-Verse
-									Hymn sid psa53.v3alt.text End-Hymn
-								End-Section
-							Friday use:
-								Section onThursday
-									Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode6</>End-Title
-									Media sid hoVE.ThursdayProkeimenon.text End-Media
-									Hymn sid psa120.v2.text @ver <r>sid Twice media-off</>End-Hymn
-									Verse<bnr>sid vVerse</>sid psa120.v1.text End-Verse
-									Hymn sid psa120.v2.text End-Hymn
-								End-Section
-							Saturday use:
-								Section onFriday
-									Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode7</>End-Title
-									Media sid hoVE.FridayProkeimenon.text End-Media
-									Hymn sid psa58.v10alt.text sid psa58.v11alt.text @ver <r>sid Twice media-off</>End-Hymn
-									Verse<bnr>sid vVerse</>sid psa58.v2.text End-Verse
-									Hymn sid psa58.v10alt.text sid psa58.v11alt.text End-Hymn
-								End-Section
-							Sunday use:
-								Section onSaturday
-									Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode6</>End-Title
-									Media sid hoVE.SaturdayProkeimenon.text End-Media
-									Hymn sid psa92.v1b.text @ver End-Hymn
-									Verse<bnr>sid vVerse</>sid psa92.v1c.text End-Verse
-									Hymn sid psa92.v1b.text End-Hymn
-									Verse<bnr>sid vVerse</>sid psa92.v1d.text End-Verse
-									Hymn sid psa92.v1b.text End-Hymn
-								End-Section
-						end-when
-				end-when
-		end-when			
+		Section GreatProkeimenon1
+			Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode7</>End-Title
+			Media sid hoVE.GreatProkeimenonTisTheosMegas.text End-Media
+			Hymn sid psa76.v14b.text sid psa76.v15alt.text @ver End-Hymn
+			Actor sid Choir End-Actor
+			Verse<bnr>sid vVerse</>sid psa76.v15b.text End-Verse
+			Hymn sid psa76.v14b.text sid psa76.v15alt.text End-Hymn
+			Verse<bnr>sid vVerse</>sid psa76.v11.text End-Verse
+			Hymn sid psa76.v14b.text sid psa76.v15alt.text End-Hymn
+			Verse<bnr>sid vVerse</>sid psa76.v12.text End-Verse
+			Hymn sid psa76.v14b.text sid psa76.v15alt.text End-Hymn
+		End-Section
+		Section GreatProkeimenon2
+			Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode7</>End-Title
+			Media sid hoVE.GreatProkeimenonOTheosImon.text End-Media
+			Hymn sid psa113.v11alt.text @ver End-Hymn
+			Actor sid Choir End-Actor
+			Verse<bnr>sid vVerse</>sid psa113.v1.text End-Verse
+			Hymn sid psa113.v11alt.text End-Hymn
+			Verse<bnr>sid vVerse</>sid psa113.v3.text End-Verse
+			Hymn sid psa113.v11alt.text End-Hymn
+			Verse<bnr>sid vVerse</>sid psa113.v5.text End-Verse
+			Hymn sid psa113.v11alt.text End-Hymn
+		End-Section
+		Section LentProkeimenon1
+			Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode8</>End-Title
+			Media sid hoVE.GreatProkeimenonLent1.text End-Media
+			Hymn sid psa68.v18.text sid psa68.v19a.text @ver End-Hymn
+			Actor sid Choir End-Actor
+			Verse<bnr>sid vVerse</>sid psa68.v30b.text End-Verse
+			Hymn sid psa68.v18.text sid psa68.v19a.text End-Hymn
+			Verse<bnr>sid vVerse</>sid psa68.v33a.text End-Verse
+			Hymn sid psa68.v18.text sid psa68.v19a.text End-Hymn
+			Verse<bnr>sid vVerse</>sid psa68.v33b.text End-Verse
+			Hymn sid psa68.v18.text sid psa68.v19a.text End-Hymn
+		End-Section	
+		Section LentProkeimenon2
+			Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode8</>End-Title
+			Media sid hoVE.GreatProkeimenonLent2.text End-Media
+			Hymn sid psa60.v6balt.text @ver End-Hymn
+			Actor sid Choir End-Actor
+			Verse<bnr>sid vVerse</>sid psa60.v3.text End-Verse
+			Hymn sid psa60.v6balt.text End-Hymn
+			Verse<bnr>sid vVerse</>sid psa60.v5b.text End-Verse
+			Hymn sid psa60.v6balt.text End-Hymn
+			Verse<bnr>sid vVerse</>sid psa60.v9.text End-Verse
+			Hymn sid psa60.v6balt.text End-Hymn
+		End-Section	
+		Section Alleluia_Mode8
+			Title role mode sid oc.m8.d7_gr_GR_cog.ocMA.Alleluia.mode End-Title
+			Hymn sid oc.m8.d7_gr_GR_cog.ocMA.Alleluia.text @ver End-Hymn
+			Actor sid Choir End-Actor
+			Insert_section PsalmVerses.forDeceased.verse1 End-Insert
+			Hymn sid oc.m8.d7_gr_GR_cog.ocMA.Alleluia.text media-off End-Hymn
+			Insert_section PsalmVerses.forDeceased.verse3 End-Insert
+			Hymn sid oc.m8.d7_gr_GR_cog.ocMA.Alleluia.text media-off End-Hymn
+		End-Section
 	End-Section
 
-
-	Section GreatProkeimenon1
-		Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode7</>End-Title
-		Media sid hoVE.GreatProkeimenonTisTheosMegas.text End-Media
-		Hymn sid psa76.v14b.text sid psa76.v15alt.text @ver End-Hymn
-		Verse<bnr>sid vVerse</>sid psa76.v15b.text End-Verse
-		Hymn sid psa76.v14b.text sid psa76.v15alt.text End-Hymn
-		Verse<bnr>sid vVerse</>sid psa76.v11.text End-Verse
-		Hymn sid psa76.v14b.text sid psa76.v15alt.text End-Hymn
-		Verse<bnr>sid vVerse</>sid psa76.v12.text End-Verse
-		Hymn sid psa76.v14b.text sid psa76.v15alt.text End-Hymn
-	End-Section
-	
-	Section GreatProkeimenon2
-		Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode7</>End-Title
-		Media sid hoVE.GreatProkeimenonOTheosImon.text End-Media
-		Hymn sid psa113.v11alt.text @ver End-Hymn
-		Verse<bnr>sid vVerse</>sid psa113.v1.text End-Verse
-		Hymn sid psa113.v11alt.text End-Hymn
-		Verse<bnr>sid vVerse</>sid psa113.v3.text End-Verse
-		Hymn sid psa113.v11alt.text End-Hymn
-		Verse<bnr>sid vVerse</>sid psa113.v5.text End-Verse
-		Hymn sid psa113.v11alt.text End-Hymn
-	End-Section
-
-	Section LentProkeimenon1
-		Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode8</>End-Title
-		Media sid hoVE.GreatProkeimenonLent1.text End-Media
-		Hymn sid psa68.v18.text sid psa68.v19a.text @ver End-Hymn
-		Verse<bnr>sid vVerse</>sid psa68.v30b.text End-Verse
-		Hymn sid psa68.v18.text sid psa68.v19a.text End-Hymn
-		Verse<bnr>sid vVerse</>sid psa68.v33a.text End-Verse
-		Hymn sid psa68.v18.text sid psa68.v19a.text End-Hymn
-		Verse<bnr>sid vVerse</>sid psa68.v33b.text End-Verse
-		Hymn sid psa68.v18.text sid psa68.v19a.text End-Hymn
-	End-Section	
-
-	Section LentProkeimenon2
-		Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode8</>End-Title
-		Media sid hoVE.GreatProkeimenonLent2.text End-Media
-		Hymn sid psa60.v6balt.text @ver End-Hymn
-		Verse<bnr>sid vVerse</>sid psa60.v3.text End-Verse
-		Hymn sid psa60.v6balt.text End-Hymn
-		Verse<bnr>sid vVerse</>sid psa60.v5b.text End-Verse
-		Hymn sid psa60.v6balt.text End-Hymn
-		Verse<bnr>sid vVerse</>sid psa60.v9.text End-Verse
-		Hymn sid psa60.v6balt.text End-Hymn
-	End-Section	
-
-	Section Alleluia_Mode8
-		Title role mode sid oc.m8.d7_gr_GR_cog.ocMA.Alleluia.mode End-Title
-		Hymn sid oc.m8.d7_gr_GR_cog.ocMA.Alleluia.text @ver End-Hymn
-		Insert_section PsalmVerses.forDeceased.verse1 End-Insert
-		Hymn sid oc.m8.d7_gr_GR_cog.ocMA.Alleluia.text media-off End-Hymn
-		Insert_section PsalmVerses.forDeceased.verse3 End-Insert
-		Hymn sid oc.m8.d7_gr_GR_cog.ocMA.Alleluia.text media-off End-Hymn
+	Section Priest
+		Section EveningProkeimenon
+			Section intro
+				Actor sid Deacon End-Actor
+				Dialog sid hi.s01_gr_GR_cog.hiVE.Key0109.text End-Dialog
+				Actor sid Choir End-Actor
+			End-Section
+			when-movable-cycle-day-is
+				14, 119 use: Insert_section Alleluia_Mode8 End-Insert
+				23, 37, 51 use: Insert_section LentProkeimenon1 End-Insert
+				30, 44, 58 use: Insert_section LentProkeimenon2 End-Insert
+				70 use: 
+					Section onGoodFriday
+						Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode4</>End-Title
+						Media rid tr.d070_gr_GR_cog.trVE.Prokeimenon.text End-Media
+						Hymn sid psa21.v19.text @ver <r>sid Twice</>End-Hymn
+						Verse<bnr>sid vVerse</>sid psa21.v2.text End-Verse
+						Hymn sid psa21.v19.text End-Hymn
+					End-Section
+				72, 79, 121 use: Insert_section GreatProkeimenon1 End-Insert
+				73 use:
+					Section onBrightMonday
+						Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode7</>End-Title
+						Media sid hoVE.GreatProkeimenonOTheosImon.text End-Media
+						Hymn sid psa113.v11alt.text @ver End-Hymn
+						Verse<bnr>sid vVerse</>sid psa113.v1.text End-Verse
+						Hymn sid psa113.v11alt.text End-Hymn
+						Verse<bnr>sid vVerse</>sid psa113.v3.text End-Verse
+						Hymn sid psa113.v11alt.text End-Hymn
+						Verse<bnr>sid vVerse</>sid psa113.v5.text End-Verse
+						Hymn sid psa113.v11alt.text End-Hymn
+					End-Section
+				74 use:
+					Section onBrightTuesday
+						Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode8</>End-Title
+						Media sid pe.d074_gr_GR_cog.peVE.GreatProkeimenon.text End-Media
+						Hymn sid psa76.v2.text @ver End-Hymn
+						Verse<bnr>sid vVerse</>sid psa76.v3a.text End-Verse
+						Hymn sid psa76.v2.text End-Hymn
+						Verse<bnr>sid vVerse</>sid psa76.v3b.text End-Verse
+						Hymn sid psa76.v2.text End-Hymn
+						Verse<bnr>sid vVerse</>sid psa76.v14a.text sid psa76.v14b.text End-Verse
+						Hymn sid psa76.v2.text End-Hymn
+					End-Section
+				75 use:
+					Section onBrightWednesday
+						Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode7</>End-Title
+						Media sid pe.d075_gr_GR_cog.peVE.GreatProkeimenon.text End-Media
+						Hymn sid psa54.v2.text @ver End-Hymn
+						Verse<bnr>sid vVerse</>sid psa54.v3.text End-Verse
+						Hymn sid psa54.v2.text End-Hymn
+						Verse<bnr>sid vVerse</>sid psa54.v4b.text End-Verse
+						Hymn sid psa54.v2.text End-Hymn
+						Verse<bnr>sid vVerse</>sid psa54.v17.text End-Verse
+						Hymn sid psa54.v2.text End-Hymn
+					End-Section
+				76 use:
+					Section onBrightThursday
+						Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode7</>End-Title
+						Media sid pe.d076_gr_GR_cog.peVE.GreatProkeimenon.text End-Media
+						Hymn sid psa17.v2.text sid psa17.v3aalt.text @ver End-Hymn
+						Verse<bnr>sid vVerse</>sid psa17.v3b.text End-Verse
+						Hymn sid psa17.v2.text sid psa17.v3aalt.text End-Hymn
+						Verse<bnr>sid vVerse</>sid psa17.v4.text End-Verse
+						Hymn sid psa17.v2.text sid psa17.v3aalt.text End-Hymn
+						Verse<bnr>sid vVerse</>sid psa17.v7b.text End-Verse
+						Hymn sid psa17.v2.text sid psa17.v3aalt.text End-Hymn
+					End-Section
+				77 use:
+					Section onBrightFriday
+						Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode8</>End-Title
+						Media sid pe.d077_gr_GR_cog.peVE.GreatProkeimenon.text End-Media
+						Hymn sid psa68.v18.text sid psa68.v19a.text @ver End-Hymn
+						Verse<bnr>sid vVerse</>sid psa68.v30b.text End-Verse
+						Hymn sid psa68.v18.text sid psa68.v19a.text End-Hymn
+						Verse<bnr>sid vVerse</>sid psa68.v33a.text End-Verse
+						Hymn sid psa68.v18.text sid psa68.v19a.text End-Hymn
+						Verse<bnr>sid vVerse</>sid psa68.v33b.text End-Verse
+						Hymn sid psa68.v18.text sid psa68.v19a.text End-Hymn
+					End-Section
+				111 use: Insert_section GreatProkeimenon2 End-Insert
+				
+				otherwise use:
+					when-date-is
+						Jan 7 use: Insert_section GreatProkeimenon2 End-Insert
+						Aug 7 use: Insert_section GreatProkeimenon2 End-Insert
+						Sep 15 use: Insert_section GreatProkeimenon2 End-Insert
+						Dec 26 use: Insert_section GreatProkeimenon1 End-Insert
+						
+						otherwise use:
+							when-name-of-day-is 
+								Monday use:
+									Section onSunday
+										Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode8</>End-Title
+										Media sid hoVE.SundayProkeimenon.text End-Media
+										Hymn sid psa133.v1a.text @ver <r>sid Twice media-off</>End-Hymn
+										Verse<bnr>sid vVerse</>sid psa133.v1b.text End-Verse
+										Hymn sid psa133.v1a.text End-Hymn
+									End-Section
+								Tuesday use:
+									Section onMonday
+										Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode4</>End-Title
+										Media sid hoVE.MondayProkeimenon.text End-Media
+										Hymn sid psa4.v4b.text @ver <r>sid Twice media-off</>End-Hymn
+										Verse<bnr>sid vVerse</>sid psa4.v2a.text End-Verse
+										Hymn sid psa4.v4b.text End-Hymn
+									End-Section
+								Wednesday use:
+									Section onTuesday
+										Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode1</>End-Title
+										Media sid hoVE.TuesdayProkeimenon.text End-Media
+										Hymn sid psa22.v6alt.text @ver <r>sid Twice media-off</>End-Hymn
+										Verse<bnr>sid vVerse</>sid psa22.v1.text sid psa22.v2.text End-Verse
+										Hymn sid psa22.v6alt.text End-Hymn
+									End-Section
+								Thursday use:
+									Section onWednesday
+										Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode5</>End-Title
+										Media sid hoVE.WednesdayProkeimenon.text End-Media
+										Hymn sid psa53.v3alt.text @ver <r>sid Twice media-off</>End-Hymn
+										Verse<bnr>sid vVerse</>sid psa53.v4.text End-Verse
+										Hymn sid psa53.v3alt.text End-Hymn
+									End-Section
+								Friday use:
+									Section onThursday
+										Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode6</>End-Title
+										Media sid hoVE.ThursdayProkeimenon.text End-Media
+										Hymn sid psa120.v2.text @ver <r>sid Twice media-off</>End-Hymn
+										Verse<bnr>sid vVerse</>sid psa120.v1.text End-Verse
+										Hymn sid psa120.v2.text End-Hymn
+									End-Section
+								Saturday use:
+									Section onFriday
+										Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode7</>End-Title
+										Media sid hoVE.FridayProkeimenon.text End-Media
+										Hymn sid psa58.v10alt.text sid psa58.v11alt.text @ver <r>sid Twice media-off</>End-Hymn
+										Verse<bnr>sid vVerse</>sid psa58.v2.text End-Verse
+										Hymn sid psa58.v10alt.text sid psa58.v11alt.text End-Hymn
+									End-Section
+								Sunday use:
+									Section onSaturday
+										Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode6</>End-Title
+										Media sid hoVE.SaturdayProkeimenon.text End-Media
+										Hymn sid psa92.v1b.text @ver End-Hymn
+										Verse<bnr>sid vVerse</>sid psa92.v1c.text End-Verse
+										Hymn sid psa92.v1b.text End-Hymn
+										Verse<bnr>sid vVerse</>sid psa92.v1d.text End-Verse
+										Hymn sid psa92.v1b.text End-Hymn
+									End-Section
+							end-when
+					end-when
+			end-when			
+		End-Section
+		Section GreatProkeimenon1
+			Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode7</>End-Title
+			Media sid hoVE.GreatProkeimenonTisTheosMegas.text End-Media
+			Hymn sid psa76.v14b.text sid psa76.v15alt.text @ver End-Hymn
+			Verse<bnr>sid vVerse</>sid psa76.v15b.text End-Verse
+			Hymn sid psa76.v14b.text sid psa76.v15alt.text End-Hymn
+			Verse<bnr>sid vVerse</>sid psa76.v11.text End-Verse
+			Hymn sid psa76.v14b.text sid psa76.v15alt.text End-Hymn
+			Verse<bnr>sid vVerse</>sid psa76.v12.text End-Verse
+			Hymn sid psa76.v14b.text sid psa76.v15alt.text End-Hymn
+		End-Section
+		Section GreatProkeimenon2
+			Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode7</>End-Title
+			Media sid hoVE.GreatProkeimenonOTheosImon.text End-Media
+			Hymn sid psa113.v11alt.text @ver End-Hymn
+			Verse<bnr>sid vVerse</>sid psa113.v1.text End-Verse
+			Hymn sid psa113.v11alt.text End-Hymn
+			Verse<bnr>sid vVerse</>sid psa113.v3.text End-Verse
+			Hymn sid psa113.v11alt.text End-Hymn
+			Verse<bnr>sid vVerse</>sid psa113.v5.text End-Verse
+			Hymn sid psa113.v11alt.text End-Hymn
+		End-Section
+		Section LentProkeimenon1
+			Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode8</>End-Title
+			Media sid hoVE.GreatProkeimenonLent1.text End-Media
+			Hymn sid psa68.v18.text sid psa68.v19a.text @ver End-Hymn
+			Verse<bnr>sid vVerse</>sid psa68.v30b.text End-Verse
+			Hymn sid psa68.v18.text sid psa68.v19a.text End-Hymn
+			Verse<bnr>sid vVerse</>sid psa68.v33a.text End-Verse
+			Hymn sid psa68.v18.text sid psa68.v19a.text End-Hymn
+			Verse<bnr>sid vVerse</>sid psa68.v33b.text End-Verse
+			Hymn sid psa68.v18.text sid psa68.v19a.text End-Hymn
+		End-Section	
+		Section LentProkeimenon2
+			Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode8</>End-Title
+			Media sid hoVE.GreatProkeimenonLent2.text End-Media
+			Hymn sid psa60.v6balt.text @ver End-Hymn
+			Verse<bnr>sid vVerse</>sid psa60.v3.text End-Verse
+			Hymn sid psa60.v6balt.text End-Hymn
+			Verse<bnr>sid vVerse</>sid psa60.v5b.text End-Verse
+			Hymn sid psa60.v6balt.text End-Hymn
+			Verse<bnr>sid vVerse</>sid psa60.v9.text End-Verse
+			Hymn sid psa60.v6balt.text End-Hymn
+		End-Section	
+		Section Alleluia_Mode8
+			Title role mode sid oc.m8.d7_gr_GR_cog.ocMA.Alleluia.mode End-Title
+			Hymn sid oc.m8.d7_gr_GR_cog.ocMA.Alleluia.text @ver End-Hymn
+			Insert_section PsalmVerses.forDeceased.verse1 End-Insert
+			Hymn sid oc.m8.d7_gr_GR_cog.ocMA.Alleluia.text media-off End-Hymn
+			Insert_section PsalmVerses.forDeceased.verse3 End-Insert
+			Hymn sid oc.m8.d7_gr_GR_cog.ocMA.Alleluia.text media-off End-Hymn
+		End-Section
 	End-Section
 
 End-Template
