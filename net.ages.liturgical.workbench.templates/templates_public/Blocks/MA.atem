@@ -2001,87 +2001,207 @@ Template MA
 		End-Section
 	End-Section
 
-	Section _09_Gospel
-		when-movable-cycle-day-is
-			65 thru 68 use:
-				Insert_section LN.BeforeGospel End-Insert
-				Insert_section Selector_MatinsGospel.Section01 End-Insert
-				Insert_section MA.Psalm50_read End-Insert
-				otherwise use:
-					Section introP
-						Actor sid Deacon End-Actor
-						Dialog sid pet00 End-Dialog
-						Dialog<i>sid res01p</>End-Dialog
-						Actor sid Priest End-Actor
-						Dialog sid exc06 End-Dialog
-						Actor sid Choir End-Actor
-						Dialog sid res04 End-Dialog
-						Title role mode sid Mode2 End-Title
-						Media sid hoMA.PreGospelHymn.text @ver End-Media
-						Hymn sid psa150.v6a.text<r>sid Twice</>sid psa150.v6aalt.text @ver End-Hymn
-						Insert_section LN.BeforeGospel End-Insert
-					End-Section
-					Section matinsgospel
-						Actor sid Deacon End-Actor
-						Dialog sid exc17 sid exc18 sid gos02 End-Dialog
-						Actor sid Priest End-Actor
-						Dialog sid pet31 End-Dialog
-						Dialog<i>sid res05p</>End-Dialog
-						when-movable-cycle-day-is //sundays before new eo cycle begins
-							64 use: //palm sunday
-								Insert_section Selector_MatinsGospel.Section01 End-Insert
-								Insert_section MA.Psalm50_read End-Insert
-								Insert_section PostGospel_mc End-Insert
-							71 use: //pascha resurrection 
-								Insert_section Selector_MatinsGospel.Section01 End-Insert
-							78, 85, 92, 99, 106, 113 use:
-								Insert_section Selector_MatinsGospel.Section01 End-Insert
-								Insert_section Psalm50_chant End-Insert
-								Insert_section PostGospel_eo End-Insert
-							110, 120 use:
-								Insert_section Selector_MatinsGospel.Section01 End-Insert
-								Insert_section MA.Psalm50_read End-Insert
-								Insert_section PostGospel_mc End-Insert
-							otherwise use:
-								when-name-of-day-is
-									Sunday use:
-										when-date-is // dates when menaion gospel supercedes eothinon
-											Jan 6 use: 
-												Insert_section Selector_MatinsGospel.Section01 End-Insert
-												Insert_section MA.Psalm50_read End-Insert
-												Insert_section PostGospel_me End-Insert
-											Mar 25 use: 
-												Insert_section Selector_MatinsGospel.Section01 End-Insert
-												Insert_section MA.Psalm50_read End-Insert
-												Insert_section PostGospel_me End-Insert
-											Aug 6 use: 
-												Insert_section Selector_MatinsGospel.Section01 End-Insert
-												Insert_section MA.Psalm50_read End-Insert
-												Insert_section PostGospel_me End-Insert
-											Sep 14 use: 
-												Insert_section Selector_MatinsGospel.Section01 End-Insert
-												Insert_section MA.Psalm50_read End-Insert
-												Insert_section PostGospel_me End-Insert
-											Dec 25 use: 
-												Insert_section Selector_MatinsGospel.Section01 End-Insert
-												Insert_section MA.Psalm50_read End-Insert
-												Insert_section PostGospel_me End-Insert
-											otherwise use:
-												Insert_section LE._02_Gospel__.eothinon End-Insert
-												Insert_section Psalm50_chant End-Insert
-												Insert_section PostGospel_eo End-Insert
-										end-when
-									otherwise use:
-										Insert_section Selector_MatinsGospel.Section01 End-Insert
-										Insert_section MA.Psalm50_read End-Insert
-										Insert_section PostGospel_me End-Insert
-								end-when
-						end-when
-						
-					End-Section
-		end-when
+	Section _09_Gospel__
+		Section Hierarchical
+			when-movable-cycle-day-is
+				65 thru 68 use:
+					Insert_section LN.BeforeGospel_Hierarchical End-Insert
+					Insert_section Selector_MatinsGospel.Section01 End-Insert
+					Insert_section MA.Psalm50_read_Hierarchical End-Insert
+					otherwise use:
+						Section introP
+							Actor sid Deacon End-Actor
+							Dialog sid pet00 End-Dialog
+							Dialog<i>sid res01p</>End-Dialog
+							Actor sid Priest End-Actor
+							Dialog sid exc06 End-Dialog
+							Actor sid Choir End-Actor
+							Dialog sid res04 End-Dialog
+							Title role mode sid Mode2 End-Title
+							Media sid hoMA.PreGospelHymn.text @ver End-Media
+							Hymn sid psa150.v6a.text<r>sid Twice</>sid psa150.v6aalt.text @ver End-Hymn
+							Insert_section LN.BeforeGospel_Hierarchical End-Insert
+						End-Section
+						Section matinsgospel
+							when-movable-cycle-day-is //sundays before new eo cycle begins
+								64 use: //palm sunday
+									Insert_section Selector_MatinsGospel.Section01 End-Insert
+									Insert_section MA.Psalm50_read_Hierarchical End-Insert
+									Insert_section PostGospel_mc End-Insert
+								71 use: //pascha resurrection 
+									Insert_section Selector_MatinsGospel.Section01 End-Insert
+								78, 85, 92, 99, 106, 113 use:
+									Insert_section Selector_MatinsGospel.Section01 End-Insert
+									Insert_section Psalm50_chant_Hierarchical End-Insert
+									Insert_section PostGospel_eo End-Insert
+								110, 120 use:
+									Insert_section Selector_MatinsGospel.Section01 End-Insert
+									Insert_section MA.Psalm50_read_Hierarchical End-Insert
+									Insert_section PostGospel_mc End-Insert
+								otherwise use:
+									when-name-of-day-is
+										Sunday use:
+											when-date-is // dates when menaion gospel supercedes eothinon
+												Jan 6 use: 
+													Insert_section Selector_MatinsGospel.Section01 End-Insert
+													Insert_section MA.Psalm50_read_Hierarchical End-Insert
+													Insert_section PostGospel_me End-Insert
+												Mar 25 use: 
+													Insert_section Selector_MatinsGospel.Section01 End-Insert
+													Insert_section MA.Psalm50_read_Hierarchical End-Insert
+													Insert_section PostGospel_me End-Insert
+												Aug 6 use: 
+													Insert_section Selector_MatinsGospel.Section01 End-Insert
+													Insert_section MA.Psalm50_read_Hierarchical End-Insert
+													Insert_section PostGospel_me End-Insert
+												Sep 14 use: 
+													Insert_section Selector_MatinsGospel.Section01 End-Insert
+													Insert_section MA.Psalm50_read_Hierarchical End-Insert
+													Insert_section PostGospel_me End-Insert
+												Dec 25 use: 
+													Insert_section Selector_MatinsGospel.Section01 End-Insert
+													Insert_section MA.Psalm50_read_Hierarchical End-Insert
+													Insert_section PostGospel_me End-Insert
+												otherwise use:
+													Insert_section LE._02_Gospel__.eothinon End-Insert
+													Insert_section Psalm50_chant_Hierarchical End-Insert
+													Insert_section PostGospel_eo End-Insert
+											end-when
+										otherwise use:
+											Insert_section Selector_MatinsGospel.Section01 End-Insert
+											Insert_section MA.Psalm50_read_Hierarchical End-Insert
+											Insert_section PostGospel_me End-Insert
+									end-when
+							end-when
+						End-Section
+			end-when
+			End-Section
+		Section priest
+			when-movable-cycle-day-is
+				65 thru 68 use:
+					Insert_section LN.BeforeGospel End-Insert
+					Insert_section Selector_MatinsGospel.Section01 End-Insert
+					Insert_section MA.Psalm50_read End-Insert
+					otherwise use:
+						Section introP
+							Actor sid Deacon End-Actor
+							Dialog sid pet00 End-Dialog
+							Dialog<i>sid res01p</>End-Dialog
+							Actor sid Priest End-Actor
+							Dialog sid exc06 End-Dialog
+							Actor sid Choir End-Actor
+							Dialog sid res04 End-Dialog
+							Title role mode sid Mode2 End-Title
+							Media sid hoMA.PreGospelHymn.text @ver End-Media
+							Hymn sid psa150.v6a.text<r>sid Twice</>sid psa150.v6aalt.text @ver End-Hymn
+							Insert_section LN.BeforeGospel End-Insert
+						End-Section
+						Section matinsgospel
+							when-movable-cycle-day-is //sundays before new eo cycle begins
+								64 use: //palm sunday
+									Insert_section Selector_MatinsGospel.Section01 End-Insert
+									Insert_section MA.Psalm50_read End-Insert
+									Insert_section PostGospel_mc End-Insert
+								71 use: //pascha resurrection 
+									Insert_section Selector_MatinsGospel.Section01 End-Insert
+								78, 85, 92, 99, 106, 113 use:
+									Insert_section Selector_MatinsGospel.Section01 End-Insert
+									Insert_section Psalm50_chant End-Insert
+									Insert_section PostGospel_eo End-Insert
+								110, 120 use:
+									Insert_section Selector_MatinsGospel.Section01 End-Insert
+									Insert_section MA.Psalm50_read End-Insert
+									Insert_section PostGospel_mc End-Insert
+								otherwise use:
+									when-name-of-day-is
+										Sunday use:
+											when-date-is // dates when menaion gospel supercedes eothinon
+												Jan 6 use: 
+													Insert_section Selector_MatinsGospel.Section01 End-Insert
+													Insert_section MA.Psalm50_read End-Insert
+													Insert_section PostGospel_me End-Insert
+												Mar 25 use: 
+													Insert_section Selector_MatinsGospel.Section01 End-Insert
+													Insert_section MA.Psalm50_read End-Insert
+													Insert_section PostGospel_me End-Insert
+												Aug 6 use: 
+													Insert_section Selector_MatinsGospel.Section01 End-Insert
+													Insert_section MA.Psalm50_read End-Insert
+													Insert_section PostGospel_me End-Insert
+												Sep 14 use: 
+													Insert_section Selector_MatinsGospel.Section01 End-Insert
+													Insert_section MA.Psalm50_read End-Insert
+													Insert_section PostGospel_me End-Insert
+												Dec 25 use: 
+													Insert_section Selector_MatinsGospel.Section01 End-Insert
+													Insert_section MA.Psalm50_read End-Insert
+													Insert_section PostGospel_me End-Insert
+												otherwise use:
+													Insert_section LE._02_Gospel__.eothinon End-Insert
+													Insert_section Psalm50_chant End-Insert
+													Insert_section PostGospel_eo End-Insert
+											end-when
+										otherwise use:
+											Insert_section Selector_MatinsGospel.Section01 End-Insert
+											Insert_section MA.Psalm50_read End-Insert
+											Insert_section PostGospel_me End-Insert
+									end-when
+							end-when
+						End-Section
+			end-when
+		End-Section
 	End-Section
 
+	Section _09_NoGospel__
+		Section Hierarchical__
+			Section intro_psalm50 //weekday low commemoration
+				Actor sid Reader End-Actor
+				Reading sid res01<r>sid Thrice</>End-Reading
+				Reading sid DoxaKaiNyn End-Reading
+				Actor sid Hierarch End-Actor
+				Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+			End-Section
+			Section psalm50
+				Actor sid Hierarch End-Actor
+				when-movable-cycle-day-is
+					63 use: 
+						Reading sid hoMA.SunPostGospel.text @ver End-Reading
+						Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+					71 thru 77 use:
+						Reading sid hoMA.SunPostGospel.text @ver <r>sid Thrice</> End-Reading
+					78 thru 110 use:
+						Reading sid hoMA.SunPostGospel.text @ver End-Reading
+						Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+					otherwise use:
+						Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+				end-when
+			End-Section
+		End-Section
+		Section reader__
+			Section intro_psalm50 //weekday low commemoration
+				Actor sid Reader End-Actor
+				Reading sid res01<r>sid Thrice</>End-Reading
+				Reading sid DoxaKaiNyn End-Reading
+				Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+			End-Section
+			Section psalm50
+				Actor sid Reader End-Actor
+				when-movable-cycle-day-is
+					63 use: 
+						Reading sid hoMA.SunPostGospel.text @ver End-Reading
+						Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+					71 thru 77 use:
+						Reading sid hoMA.SunPostGospel.text @ver <r>sid Thrice</> End-Reading
+					78 thru 110 use:
+						Reading sid hoMA.SunPostGospel.text @ver End-Reading
+						Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+					otherwise use:
+						Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+				end-when
+			End-Section
+		End-Section
+	End-Section
+	
 	Section _10_Canon__
 		Section Hypakoe__
 			Section pascha
@@ -2180,7 +2300,6 @@ Template MA
 		Section append__
 			Section festal_
 				Section kontakion
-					Actor sid Reader End-Actor
 					Insert_section Selector_Kontakion.MatinsFestal End-Insert
 				End-Section
 			End-Section
@@ -2584,6 +2703,339 @@ Template MA
 					Section exap1
 						Title role mixed<Tmode>rid trMA.Exaposteilarion1.mode</><Tmelody>rid trMA.Exaposteilarion1.melody</>End-Title
 						Hymn rid trMA.Exaposteilarion1.text @ver End-Hymn
+					End-Section
+					when-exists rid trMA.Exaposteilarion2.text use:
+						Section exap2_
+							Title role desig sid Eteron End-Title
+							Section hymn
+								Title role mixed<Tmode>rid trMA.Exaposteilarion2.mode</><Tmelody>rid trMA.Exaposteilarion2.melody</>End-Title
+								Hymn rid trMA.Exaposteilarion2.text @ver End-Hymn
+							End-Section
+						End-Section
+					end-when
+					when-exists rid trMA.ExapTheotokion.text use:
+						Section theotokion_
+							Section hymn
+								Title role desig sid Theotokion End-Title
+								Title role mixed<Tmode>rid trMA.ExapTheotokion.mode</><Tmelody>rid trMA.ExapTheotokion.melody</>End-Title
+								Hymn rid trMA.ExapTheotokion.text @ver End-Hymn
+							End-Section
+						End-Section
+					end-when
+				End-Section
+			End-Section
+		End-Section
+		Section Hierarchical__
+			Section intro_
+				Section part1
+					Actor sid Hierarch<Trubric>sid InPlaceOfRightChoir</> End-Actor
+					Title role mode sid Mode2 End-Title
+					Media sid hoMA.SunExapVerse1.text End-Media
+					Hymn sid psa98.v9balt.text @ver <r>sid Thrice</>End-Hymn
+				End-Section
+				Hymn sid psa98.v5a.text End-Hymn
+				Hymn sid psa98.v5b.text End-Hymn
+			End-Section
+			Section eo__
+				Section eoofweek_
+					Section exap
+						Insert_section intro_ End-Insert
+						Title role desig rid eo.title End-Title
+						Title role mixed<Tmode>rid eo.Exaposteilarion.mode</><Tmelody>rid eo.Exaposteilarion.melody</>End-Title
+						Hymn rid eo.Exaposteilarion.text @ver End-Hymn
+					End-Section
+					Title role desig sid Theotokion sid Omoion End-Title
+					Hymn rid eo.Theotokion.text @ver End-Hymn
+				End-Section
+				Section eo01_
+					Section exap
+						Title role desig sid eo.e01_gr_GR_cog.eo.title End-Title
+						Title role mixed<Tmode>sid eo.e01_gr_GR_cog.eo.Exaposteilarion.mode</><Tmelody>sid eo.e01_gr_GR_cog.eo.Exaposteilarion.melody</>End-Title
+						Hymn sid eo.e01_gr_GR_cog.eo.Exaposteilarion.text @ver End-Hymn
+					End-Section
+					Title role desig sid Theotokion sid Omoion End-Title
+					Hymn sid eo.e01_gr_GR_cog.eo.Theotokion.text @ver End-Hymn
+				End-Section
+				Section eo02_
+					Section exap
+						Title role desig sid eo.e02_gr_GR_cog.eo.title End-Title
+						Title role mixed<Tmode>sid eo.e02_gr_GR_cog.eo.Exaposteilarion.mode</><Tmelody>sid eo.e02_gr_GR_cog.eo.Exaposteilarion.melody</>End-Title
+						Hymn sid eo.e02_gr_GR_cog.eo.Exaposteilarion.text @ver End-Hymn
+					End-Section
+					Title role desig sid Theotokion sid Omoion End-Title
+					Hymn sid eo.e02_gr_GR_cog.eo.Theotokion.text @ver End-Hymn
+				End-Section
+				Section eo03_
+					Section exap
+						Title role desig sid eo.e03_gr_GR_cog.eo.title End-Title
+						Title role mixed<Tmode>sid eo.e03_gr_GR_cog.eo.Exaposteilarion.mode</><Tmelody>sid eo.e03_gr_GR_cog.eo.Exaposteilarion.melody</>End-Title
+						Hymn sid eo.e03_gr_GR_cog.eo.Exaposteilarion.text @ver End-Hymn
+					End-Section
+					Title role desig sid Theotokion sid Omoion End-Title
+					Hymn sid eo.e03_gr_GR_cog.eo.Theotokion.text @ver End-Hymn
+				End-Section
+				Section eo04_
+					Section exap
+						Title role desig sid eo.e04_gr_GR_cog.eo.title End-Title
+						Title role mixed<Tmode>sid eo.e04_gr_GR_cog.eo.Exaposteilarion.mode</><Tmelody>sid eo.e04_gr_GR_cog.eo.Exaposteilarion.melody</>End-Title
+						Hymn sid eo.e04_gr_GR_cog.eo.Exaposteilarion.text @ver End-Hymn
+					End-Section
+					Title role desig sid Theotokion sid Omoion End-Title
+					Hymn sid eo.e04_gr_GR_cog.eo.Theotokion.text @ver End-Hymn
+				End-Section
+				Section eo05_
+					Section exap
+						Title role desig sid eo.e05_gr_GR_cog.eo.title End-Title
+						Title role mixed<Tmode>sid eo.e05_gr_GR_cog.eo.Exaposteilarion.mode</><Tmelody>sid eo.e05_gr_GR_cog.eo.Exaposteilarion.melody</>End-Title
+						Hymn sid eo.e05_gr_GR_cog.eo.Exaposteilarion.text @ver End-Hymn
+					End-Section
+					Title role desig sid Theotokion sid Omoion End-Title
+					Hymn sid eo.e05_gr_GR_cog.eo.Theotokion.text @ver End-Hymn
+				End-Section
+				Section eo06_
+					Section exap
+						Title role desig sid eo.e06_gr_GR_cog.eo.title End-Title
+						Title role mixed<Tmode>sid eo.e06_gr_GR_cog.eo.Exaposteilarion.mode</><Tmelody>sid eo.e06_gr_GR_cog.eo.Exaposteilarion.melody</>End-Title
+						Hymn sid eo.e06_gr_GR_cog.eo.Exaposteilarion.text @ver End-Hymn
+					End-Section
+					Title role desig sid Theotokion sid Omoion End-Title
+					Hymn sid eo.e06_gr_GR_cog.eo.Theotokion.text @ver End-Hymn
+				End-Section
+				Section eo07_
+					Section exap
+						Title role desig sid eo.e07_gr_GR_cog.eo.title End-Title
+						Title role mixed<Tmode>sid eo.e07_gr_GR_cog.eo.Exaposteilarion.mode</><Tmelody>sid eo.e07_gr_GR_cog.eo.Exaposteilarion.melody</>End-Title
+						Hymn sid eo.e07_gr_GR_cog.eo.Exaposteilarion.text @ver End-Hymn
+					End-Section
+					Title role desig sid Theotokion sid Omoion End-Title
+					Hymn sid eo.e07_gr_GR_cog.eo.Theotokion.text @ver End-Hymn
+				End-Section
+				Section eo08_
+					Section exap
+						Title role desig sid eo.e08_gr_GR_cog.eo.title End-Title
+						Title role mixed<Tmode>sid eo.e08_gr_GR_cog.eo.Exaposteilarion.mode</><Tmelody>sid eo.e08_gr_GR_cog.eo.Exaposteilarion.melody</>End-Title
+						Hymn sid eo.e08_gr_GR_cog.eo.Exaposteilarion.text @ver End-Hymn
+					End-Section
+					Title role desig sid Theotokion sid Omoion End-Title
+					Hymn sid eo.e08_gr_GR_cog.eo.Theotokion.text @ver End-Hymn
+				End-Section
+				Section eo09_
+					Section exap
+						Title role desig sid eo.e09_gr_GR_cog.eo.title End-Title
+						Title role mixed<Tmode>sid eo.e09_gr_GR_cog.eo.Exaposteilarion.mode</><Tmelody>sid eo.e09_gr_GR_cog.eo.Exaposteilarion.melody</>End-Title
+						Hymn sid eo.e09_gr_GR_cog.eo.Exaposteilarion.text @ver End-Hymn
+					End-Section
+					Title role desig sid Theotokion sid Omoion End-Title
+					Hymn sid eo.e09_gr_GR_cog.eo.Theotokion.text @ver End-Hymn
+				End-Section
+				Section eo10_
+					Section exap
+						Title role desig sid eo.e10_gr_GR_cog.eo.title End-Title
+						Title role mixed<Tmode>sid eo.e10_gr_GR_cog.eo.Exaposteilarion.mode</><Tmelody>sid eo.e10_gr_GR_cog.eo.Exaposteilarion.melody</>End-Title
+						Hymn sid eo.e10_gr_GR_cog.eo.Exaposteilarion.text @ver End-Hymn
+					End-Section
+					Title role desig sid Theotokion sid Omoion End-Title
+					Hymn sid eo.e10_gr_GR_cog.eo.Theotokion.text @ver End-Hymn
+				End-Section
+				Section eo11_
+					Section exap
+						Title role desig sid eo.e11_gr_GR_cog.eo.title End-Title
+						Title role mixed<Tmode>sid eo.e11_gr_GR_cog.eo.Exaposteilarion.mode</><Tmelody>sid eo.e11_gr_GR_cog.eo.Exaposteilarion.melody</>End-Title
+						Hymn sid eo.e11_gr_GR_cog.eo.Exaposteilarion.text @ver End-Hymn
+					End-Section
+					Title role desig sid Theotokion sid Omoion End-Title
+					Hymn sid eo.e11_gr_GR_cog.eo.Theotokion.text @ver End-Hymn
+				End-Section
+			End-Section
+			Section eome
+				Insert_section eo__.eoofweek_.exap End-Insert
+				when-exists rid meMA.Exaposteilarion1.text use: 
+					Insert_section MA._12_Exaposteilarion__.append__.me__.exap123t_ End-Insert
+				otherwise use:
+					Title role desig sid Theotokion sid Omoion End-Title
+					Hymn rid eo.Theotokion.text @ver End-Hymn
+				end-when
+			End-Section
+			Section festal
+				when-movable-cycle-day-is
+					70 use: 
+						Section holyfridaynight
+							Actor sid Hierarch<Trubric>sid InPlaceOfRightChoir</> End-Actor	
+							Title role mixed<Tdesig>sid Exaposteilarion</><Tmode>sid tr.d070_gr_GR_cog.trMA.Exaposteilarion1.mode</>End-Title
+							Media sid tr.d070_gr_GR_cog.trMA.Exaposteilarion1.text End-Media
+							Hymn sid psa98.v9balt.text<r>sid Thrice</>End-Hymn
+						End-Section
+					71 thru 127 use:
+						Actor sid Hierarch<Trubric>sid InPlaceOfRightChoir</> End-Actor	
+						Insert_section Selector_FestalExaposteilarion.pe End-Insert
+					otherwise use:
+						Actor sid Hierarch<Trubric>sid InPlaceOfRightChoir</> End-Actor	
+						Insert_section Selector_FestalExaposteilarion.me End-Insert
+				end-when
+			End-Section
+			Section me__
+				Section exap1_
+					Actor sid Hierarch<Trubric>sid InPlaceOfRightChoir</> End-Actor
+					Title role desig sid Exaposteilarion End-Title
+						Section hymn
+							Title role mixed<Tmode>rid meMA.Exaposteilarion1.mode</><Tmelody>rid meMA.Exaposteilarion1.melody</>End-Title
+							Hymn rid meMA.Exaposteilarion1.text @ver End-Hymn
+						End-Section
+				End-Section
+				Section exap111_
+					Actor sid Hierarch<Trubric>sid InPlaceOfRightChoir</> End-Actor
+					Title role desig sid Exaposteilarion End-Title
+					Section hymn
+						Title role mixed<Tmode>rid meMA.Exaposteilarion1.mode</><Tmelody>rid meMA.Exaposteilarion1.melody</>End-Title
+						Hymn rid meMA.Exaposteilarion1.text<r>sid Thrice media-off</>End-Hymn
+					End-Section
+				End-Section
+				Section exap12
+					Actor sid Hierarch<Trubric>sid InPlaceOfRightChoir</> End-Actor
+					Title role desig sid Exaposteilaria End-Title
+					Title role mixed<Tmode>rid meMA.Exaposteilarion1.mode</><Tmelody>rid meMA.Exaposteilarion1.melody</>End-Title
+					Hymn rid meMA.Exaposteilarion1.text @ver End-Hymn
+					Title role desig sid Eteron End-Title		
+					Title role mixed<Tmode>rid meMA.Exaposteilarion2.mode</><Tmelody>rid meMA.Exaposteilarion2.melody</>End-Title
+					Hymn rid meMA.Exaposteilarion2.text @ver End-Hymn
+				End-Section
+				Section exap123t
+					Section exap1
+						Actor sid Hierarch<Trubric>sid InPlaceOfRightChoir</> End-Actor
+						Title role desig sid Exaposteilarion End-Title
+						Section exap1
+							Title role mixed<Tmode>rid meMA.Exaposteilarion1.mode</><Tmelody>rid meMA.Exaposteilarion1.melody</>End-Title
+							Hymn rid meMA.Exaposteilarion1.text @ver End-Hymn
+						End-Section
+					End-Section
+					when-exists rid meMA.Exaposteilarion2.text use:
+						Section exap2
+							Title role desig sid Eteron End-Title
+							Title role mixed<Tmode>rid meMA.Exaposteilarion2.mode</><Tmelody>rid meMA.Exaposteilarion2.melody</>End-Title
+							Hymn rid meMA.Exaposteilarion2.text @ver End-Hymn
+						End-Section
+					end-when
+					when-exists rid meMA.Exaposteilarion3.text use:
+						Section exap3
+							Title role desig sid Eteron End-Title
+							Title role mixed<Tmode>rid meMA.Exaposteilarion3.mode</><Tmelody>rid meMA.Exaposteilarion3.melody</>End-Title
+							Hymn rid meMA.Exaposteilarion3.text @ver End-Hymn
+						End-Section
+					end-when
+					Section theotokion
+						when-exists
+							rid meMA.ExapTheotokion.text use:
+								when-name-of-day-is
+									Monday, Tuesday, Thursday, Saturday, Sunday use:
+										Section exaptheotokion
+											Title role desig sid Theotokion End-Title
+											Title role mixed<Tmode>rid meMA.ExapTheotokion.mode</><Tmelody>rid meMA.ExapTheotokion.melody</>End-Title
+											Hymn rid meMA.ExapTheotokion.text @ver End-Hymn
+										End-Section
+									Wednesday, Friday use:
+										when-exists rid meMA.ExapStavrotheotokion.text use:
+											Section exapstavrotheotokion
+												Title role desig sid Stavrotheotokion End-Title
+												Hymn rid meMA.ExapStavrotheotokion.text @ver End-Hymn
+											End-Section
+										otherwise use:
+											when-exists rid meMA.ExapTheotokion.text use:
+												Insert_section exaptheotokion End-Insert
+											end-when
+										end-when
+								end-when
+						end-when
+					End-Section
+				End-Section
+			End-Section
+			Section pascha__
+				Section once_
+					Actor sid Hierarch<Trubric>sid InPlaceOfRightChoir</> End-Actor
+					Title role desig sid Exaposteilarion sid TouPascha End-Title
+					Section hymn
+						Title role mixed<Tmode>sid pePA.Exaposteilarion.mode</><Tmelody>sid pePA.Exaposteilarion.melody</>End-Title
+						Hymn sid pePA.Exaposteilarion.text @ver End-Hymn
+					End-Section
+				End-Section
+				Section thrice_
+					Actor sid Hierarch<Trubric>sid InPlaceOfRightChoir</> End-Actor
+					Title role desig sid Exaposteilarion sid TouPascha End-Title
+					Section hymn
+						Title role mixed<Tmode>sid pePA.Exaposteilarion.mode</><Tmelody>sid pePA.Exaposteilarion.melody</>End-Title
+						Hymn sid pePA.Exaposteilarion.text<r>sid Thrice media-off</>End-Hymn
+					End-Section
+				End-Section
+			End-Section	
+			Section pe__
+				Section exap1
+					Actor sid Hierarch<Trubric>sid InPlaceOfRightChoir</> End-Actor
+					Title role desig sid Exaposteilarion End-Title
+					Section hymn
+						Title role mixed<Tmode>rid peMA.Exaposteilarion1.mode</><Tmelody>rid peMA.Exaposteilarion1.melody</>End-Title
+						Hymn rid peMA.Exaposteilarion1.text @ver End-Hymn
+					End-Section
+				End-Section
+				Section exap1t
+					Actor sid Hierarch<Trubric>sid InPlaceOfRightChoir</> End-Actor
+					Title role desig sid Exaposteilarion End-Title
+					Section hymns
+						Title role mixed<Tmode>rid peMA.Exaposteilarion1.mode</><Tmelody>rid peMA.Exaposteilarion1.melody</>End-Title
+						Hymn rid peMA.Exaposteilarion1.text @ver End-Hymn
+						Title role desig sid Theotokion sid Omoion End-Title
+						Hymn rid peMA.ExapTheotokion.text @ver End-Hymn
+					End-Section
+				End-Section
+				Section exap11
+					Actor sid Hierarch<Trubric>sid InPlaceOfRightChoir</> End-Actor
+					Title role desig sid Exaposteilarion End-Title
+					Section hymn
+						Title role mixed<Tmode>rid peMA.Exaposteilarion1.mode</><Tmelody>rid peMA.Exaposteilarion1.melody</>End-Title
+						Hymn rid peMA.Exaposteilarion1.text @ver <r>sid Twice media-off</>End-Hymn
+					End-Section
+				End-Section
+				Section exap111
+					Actor sid Hierarch<Trubric>sid InPlaceOfRightChoir</> End-Actor
+					Title role desig sid Exaposteilarion End-Title
+					Section hymn
+						Title role mixed<Tmode>rid peMA.Exaposteilarion1.mode</><Tmelody>rid peMA.Exaposteilarion1.melody</>End-Title
+						Hymn rid peMA.Exaposteilarion1.text @ver <r>sid Thrice media-off</>End-Hymn
+					End-Section
+				End-Section
+				Section exap112
+					Actor sid Hierarch<Trubric>sid InPlaceOfRightChoir</> End-Actor
+					Title role desig sid Exaposteilaria End-Title
+					Section hymns
+						Title role mixed<Tmode>rid peMA.Exaposteilarion1.mode</><Tmelody>rid peMA.Exaposteilarion1.melody</>End-Title
+						Hymn rid peMA.Exaposteilarion1.text<r>sid Twice media-off</>End-Hymn
+						Title role desig sid Eteron End-Title
+						Title role mixed<Tmode>rid peMA.Exaposteilarion2.mode</><Tmelody>rid peMA.Exaposteilarion2.melody</>End-Title
+						Hymn rid peMA.Exaposteilarion2.text @ver End-Hymn
+					End-Section
+				End-Section
+			End-Section
+			Section tr__
+				Section exap111
+					Actor sid Hierarch<Trubric>sid InPlaceOfRightChoir</> End-Actor
+					Title role desig sid Exaposteilaria End-Title
+					Title role mixed<Tmode>rid trMA.Exaposteilarion1.mode</><Tmelody>rid trMA.Exaposteilarion1.melody</>End-Title
+					Hymn rid trMA.Exaposteilarion1.text @ver <r>sid Thrice</>End-Hymn
+				End-Section
+				Section exap112
+					Actor sid Hierarch<Trubric>sid InPlaceOfRightChoir</> End-Actor
+					Title role desig sid Exaposteilaria End-Title
+					Title role mixed<Tmode>rid trMA.Exaposteilarion1.mode</><Tmelody>rid trMA.Exaposteilarion1.melody</>End-Title
+					Hymn rid trMA.Exaposteilarion1.text @ver <r>sid Twice</>End-Hymn
+					Title role desig sid Eteron sid Omoion End-Title
+					Hymn rid trMA.Exaposteilarion2.text @ver End-Hymn
+				End-Section
+				Section exap1o2ot
+					Section exap1_
+						Actor sid Hierarch<Trubric>sid InPlaceOfRightChoir</> End-Actor
+						Title role desig sid Exaposteilarion End-Title
+						Section hymn
+							Title role mixed<Tmode>rid trMA.Exaposteilarion1.mode</><Tmelody>rid trMA.Exaposteilarion1.melody</>End-Title
+							Hymn rid trMA.Exaposteilarion1.text @ver End-Hymn
+						End-Section
 					End-Section
 					when-exists rid trMA.Exaposteilarion2.text use:
 						Section exap2_
@@ -4071,6 +4523,13 @@ Template MA
 		Section great
 			Insert_section GreatDoxology End-Insert
 		End-Section
+		Section Hierarchical__
+			Section small
+				Actor sid Hierarch End-Actor
+				Title role desig sid hoMA.SmallDoxology.title<Trubric>sid Read</>End-Title
+				Reading sid hoMA.DoxologySmallIntro.text sid hoMA.SmallDoxology1.text sid hoMA.SmallDoxology1d sid hoMA.SmallDoxology2.text sid hoMA.SmallDoxology2d sid hoMA.SmallDoxology3.text End-Reading
+			End-Section
+		End-Section
 		Section small
 			Actor sid Reader End-Actor
 			Title role desig sid hoMA.SmallDoxology.title<Trubric>sid Read</>End-Title
@@ -4094,6 +4553,17 @@ Template MA
 	End-Section
 
 	Section _15_Litanies__
+		Section Hierarchical__
+			Section aftergreatdoxology
+				Insert_section LN.Ektenia02 End-Insert
+				Insert_section LN.ComplementaryM End-Insert
+				Insert_section LN.BowHeadsM_Hierarchical End-Insert
+			End-Section
+			Section aftersmalldoxology
+				Insert_section LN.ComplementaryM End-Insert
+				Insert_section LN.BowHeadsM_Hierarchical End-Insert
+			End-Section
+		End-Section
 		Section aftergreatdoxology
 			Insert_section LN.Ektenia02 End-Insert
 			Insert_section LN.ComplementaryM End-Insert
@@ -4344,6 +4814,34 @@ Template MA
 	End-Section
 
 	Section _17_Apolytikia__
+		Section Hierarchical__
+			Section itisgood_trisagion
+				Actor sid Hierarch End-Actor
+				Insert_section bk.ho.s03.Weekday_End End-Insert
+				Actor sid Reader End-Actor
+				Dialog sid res07 End-Dialog
+				Insert_section bk.ho.s01.Trisagion_Prayers End-Insert
+				Actor sid Priest End-Actor
+				Dialog sid exc20 End-Dialog
+				Dialog<i>sid res04p</>End-Dialog
+				Actor sid Choir End-Actor
+			End-Section	
+			Section itisgood_trisagion_holyweek_
+				Section part1
+					Actor sid Hierarch End-Actor
+					Insert_section bk.ho.s03.Weekday_End End-Insert
+					Actor sid Reader End-Actor
+					Dialog sid res07 End-Dialog
+					Insert_section bk.ho.s01.Trisagion_Prayers End-Insert
+					Actor sid Priest End-Actor
+					Dialog sid exc20 End-Dialog
+					Dialog<i>sid res04p</>End-Dialog
+				End-Section
+				Actor sid Reader End-Actor
+				Title role desig sid Kontakion End-Title
+				Reading rid trMA.Kontakion1.text End-Reading
+			End-Section	
+		End-Section
 		Section both__
 			Section theotokion__
 				Section mode1_
@@ -5358,7 +5856,62 @@ Template MA
 		End-Section
 	End-Section
 
-	Section _18_End__ 
+	Section _18_End__
+		Section Hierarchical__
+			Section ektenia_wisdom
+				Insert_section LN.Ektenia02 End-Insert
+				Insert_section wisdom End-Insert
+			End-Section
+			Section lent_
+				Section part1
+					Dialog sid res01<r>sid Forty</>End-Dialog
+					Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
+					Dialog sid TinTimioteran.text End-Dialog
+					Dialog sid EnOnomatiKyriou.text End-Dialog
+					Actor sid Priest End-Actor
+					Dialog sid OOnEvlogitos.text End-Dialog
+					Dialog<i>sid res04p</>End-Dialog
+					Actor sid Hierarch End-Actor
+					Dialog sid EpouranieVasilef.text End-Dialog
+					Dialog<i>sid res04p</>End-Dialog
+					Actor sid Priest End-Actor
+					Insert_section TR.StEphraimPrayer End-Insert
+				End-Section
+				when-movable-cycle-day-is
+					65, 66, 67, 68, 69 use:
+						Section part2
+							Actor sid Reader End-Actor
+							Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
+							Dialog sid res06 End-Dialog
+							Dialog sid res13 End-Dialog
+						End-Section
+				end-when
+			End-Section
+			Section wisdom
+				Actor sid Deacon End-Actor
+				Dialog sid exc17 End-Dialog
+				Dialog<i>sid EvlogisonP</>End-Dialog	
+				Actor sid Priest End-Actor
+				Dialog sid OOnEvlogitos.text<i>sid res04p</>End-Dialog
+				Actor sid Hierarch End-Actor
+				Dialog sid StereosaiKyrios.text End-Dialog
+				Actor sid Deacon End-Actor
+				Dialog sid res04 End-Dialog
+				when-movable-cycle-day-is
+					71, 72, 73, 74, 75, 76, 77, 109 use:
+						Dialog sid pe.d00P_gr_GR_cog.pePA.Ode9H.text End-Dialog
+					otherwise use:
+						Dialog sid TinTimioteran.text End-Dialog
+				end-when
+				when-movable-cycle-day-is 
+					71 thru 109 use:
+						Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text End-Dialog
+					otherwise use:
+						Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
+				end-when
+				Dialog sid res01<r>sid Thrice</>sid res13 End-Dialog
+			End-Section
+		End-Section
 		Section ektenia_wisdom
 			Insert_section LN.Ektenia02 End-Insert
 			Insert_section wisdom End-Insert
@@ -5412,6 +5965,82 @@ Template MA
 	End-Section
 
 	Section _19_Dismissal__
+		Section Hierarchical__
+			Section commemoration
+				when-movable-cycle-day-is
+					69 use:
+						Section holythursday
+							Actor sid Hierarch End-Actor
+							Dialog sid dis00 sid dis00.holythursday sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 sid dis10 sid dis89 End-Dialog
+							Dialog sid DiEfchonPateron.text End-Dialog
+							Dialog<i>sid res04p</>End-Dialog
+							Actor sid Clergy End-Actor
+							Dialog sid DiEfchonDespotou.text End-Dialog
+							Dialog<i>sid res04p</>End-Dialog
+						End-Section
+					71, 72, 73, 74, 75, 76, 77, 109 use:
+						Section pascha
+							Section intro
+								Actor sid Deacon End-Actor
+								Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text media-off End-Dialog
+								Dialog sid res01<r>sid Thrice</>sid Evlogison End-Dialog
+							End-Section
+							Actor sid Hierarch End-Actor
+							Insert_section Selector_Dismissals.Com_Yes.part1 End-Insert
+							Insert_section Selector_Dismissals.Com_Yes.part2 End-Insert
+						End-Section
+					78 thru 108 use:
+						Section afterpascha
+							Insert_section pascha.intro End-Insert
+							Actor sid Hierarch End-Actor
+							Insert_section Selector_Dismissals.Com_Yes.part1 End-Insert
+							Insert_section Selector_Dismissals.Com_Yes.part2 End-Insert
+						End-Section
+					otherwise use:
+						Section notpaschal
+							Actor sid Hierarch End-Actor
+							Insert_section Selector_Dismissals.Com_Yes.part1 End-Insert
+							Dialog sid DiEfchonPateron.text End-Dialog
+							Dialog<i>sid res04p</>End-Dialog
+							Actor sid Clergy End-Actor
+							Dialog sid DiEfchonDespotou.text End-Dialog
+							Dialog<i>sid res04p</>End-Dialog
+						End-Section
+				end-when
+			End-Section
+			Section nocommemoration
+				when-movable-cycle-day-is
+					71, 72, 73, 74, 75, 76, 77, 109 use:
+						Section pascha
+							Section intro
+								Actor sid Deacon End-Actor
+								Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text media-off End-Dialog
+								Dialog sid res01<r>sid Thrice</>sid Evlogison End-Dialog
+							End-Section
+							Actor sid Hierarch End-Actor
+							Insert_section Selector_Dismissals.Com_No.part1 End-Insert
+							Insert_section Selector_Dismissals.Com_No.part2 End-Insert
+						End-Section
+					78 thru 108 use:
+						Section afterpascha
+							Insert_section pascha.intro End-Insert
+							Actor sid Hierarch End-Actor
+							Insert_section Selector_Dismissals.Com_No.part1 End-Insert
+							Insert_section Selector_Dismissals.Com_No.part2 End-Insert
+						End-Section
+					otherwise use:
+						Section notpaschal
+							Actor sid Hierarch End-Actor
+							Insert_section Selector_Dismissals.Com_No.part1 End-Insert
+							Dialog sid DiEfchonPateron.text End-Dialog
+							Dialog<i>sid res04p</>End-Dialog
+							Actor sid Clergy End-Actor
+							Dialog sid DiEfchonDespotou.text End-Dialog
+							Dialog<i>sid res04p</>End-Dialog
+						End-Section
+				end-when
+			End-Section
+		End-Section
 		Section commemoration
 			Insert_section Selector_Dismissals.Com_Yes End-Insert
 		End-Section
@@ -5433,43 +6062,59 @@ Template MA
 
 		Section Psalm50_read
 			Actor sid Reader End-Actor
-			when-movable-cycle-day-is
-				63 use: 
-					Reading sid hoMA.SunPostGospel.text @ver End-Reading
-					Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
-				71 thru 77 use:
-					Reading sid hoMA.SunPostGospel.text @ver <r>sid Thrice</> End-Reading
-				78 thru 110 use: 
-					Reading sid hoMA.SunPostGospel.text @ver End-Reading
-					Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
-			end-when
-			when-date-is
-				Sep 14 use: 
-					Reading sid hoMA.SunPostGospel.text @ver End-Reading
-					Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
-			end-when
-			when-name-of-day-is
-				Sunday use:
-					when-date-is
-						Feb 2 use: 
-							Reading sid hoMA.SunPostGospel.text @ver End-Reading
-							Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
-						Aug 15 use: 
-							Reading sid hoMA.SunPostGospel.text @ver End-Reading
-							Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
-						Sep 8 use: 
-							Reading sid hoMA.SunPostGospel.text @ver End-Reading
-							Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
-						Nov 21 use: 
-							Reading sid hoMA.SunPostGospel.text @ver End-Reading
-							Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
-					end-when
-			end-when			
-//			Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+			Section texts
+				when-movable-cycle-day-is
+					63 use: 
+						Reading sid hoMA.SunPostGospel.text @ver End-Reading
+						Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+					71 thru 77 use:
+						Reading sid hoMA.SunPostGospel.text @ver <r>sid Thrice</> End-Reading
+					78 thru 110 use: 
+						Reading sid hoMA.SunPostGospel.text @ver End-Reading
+						Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+				end-when
+				when-date-is
+					Sep 14 use: 
+						Reading sid hoMA.SunPostGospel.text @ver End-Reading
+						Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+				end-when
+				when-name-of-day-is
+					Sunday use:
+						when-date-is
+							Feb 2 use: 
+								Reading sid hoMA.SunPostGospel.text @ver End-Reading
+								Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+							Aug 15 use: 
+								Reading sid hoMA.SunPostGospel.text @ver End-Reading
+								Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+							Sep 8 use: 
+								Reading sid hoMA.SunPostGospel.text @ver End-Reading
+								Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+							Nov 21 use: 
+								Reading sid hoMA.SunPostGospel.text @ver End-Reading
+								Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+						end-when
+				end-when			
+			End-Section
 		End-Section
 
+		Section Psalm50_read_Hierarchical
+			Actor sid Hierarch End-Actor
+			Insert_section Psalm50_read.texts End-Insert
+		End-Section
+		
 		Section Psalm50_chant
 			Actor sid Reader End-Actor
+			Reading sid hoMA.SunPostGospel.text @ver End-Reading
+			Actor sid Choir End-Actor
+			Title role desig sid psa50.title End-Title
+			Title role mixed<Tmode>sid Mode2</><Trubric>sid ITisEvdomados</>End-Title
+			Media sid hoMA.Psalm50.text End-Media
+			Insert_section LiturgicalPsalms.Psalm_50_Verses End-Insert
+		End-Section
+
+		Section Psalm50_chant_Hierarchical
+			Actor sid Hierarch End-Actor
 			Reading sid hoMA.SunPostGospel.text @ver End-Reading
 			Actor sid Choir End-Actor
 			Title role desig sid psa50.title End-Title
