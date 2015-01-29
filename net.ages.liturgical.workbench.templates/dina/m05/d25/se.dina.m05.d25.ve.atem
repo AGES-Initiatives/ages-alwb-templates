@@ -1,0 +1,186 @@
+Template se.dina.m05.d25.ve 
+
+Status Final
+
+	import client_gr_GR_cog.*
+	import ho.s10_gr_GR_cog.*	
+	import me.m05.d25_gr_GR_cog.*
+
+	import da.*
+	import oc.*
+	import pe.*
+
+	//Templates
+	import bk.ho.s15_m05.*
+	
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+
+	Head 
+		Set_Date month 5 day 25 End_Date
+			Page_Header_Even
+				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore lang L1 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	when-movable-cycle-day-is
+		88, 89, 90, 93, 103, 104, 107 use:
+			Section Instance01
+			End-Section
+			
+		91, 105 use:
+			Section Instance02
+			End-Section
+
+		92, 99, 106 use: //Paschal Sundays
+			Section Instance03
+				Insert_section VE._01_Beginning__.vespers End-Insert
+				Insert_section VE._03_Stichera__.oc__.sunday_.LIHC_s_1234 End-Insert
+				when-movable-cycle-day-is 
+					92 use:
+					99 use:
+					106 use:
+						Title role desig sid TouTyflou End-Title
+						Insert_section VE._03_Stichera__.pe__.i_910as56 End-Insert
+				end-when
+				Title role desig sid TouProdromou End-Title
+				Insert_section VE._03_Stichera__.me__.p_123as8910 End-Insert
+				Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_ End-Insert
+				Insert_section VE._03_Stichera__.both__.firsttheotokion__.modeofweek End-Insert
+				Insert_section VE._04_Middle__.entrance End-Insert
+				Insert_section VE._06_Litanies__.fullektenia End-Insert
+				Insert_section VE._08_Aposticha__.oc__.sunday_.aposticha1_ End-Insert
+				Insert_section VE._08_Aposticha__.pascha End-Insert
+				Title role mixed sid Doxa<Tdesig>sid TouProdromou</>End-Title
+				Insert_section VE._08_Aposticha__.glory__.me_.hymn End-Insert
+				when-movable-cycle-day-is
+					92 use:
+					99 use:
+					106 use: Insert_section VE._08_Aposticha__.both__.pe__.gloryasboth_ End-Insert
+				end-when
+				Insert_section VE._09_Apolytikion__.symeon_trisagion__.Priest End-Insert
+				Insert_section VE._09_Apolytikion__.resurrectional End-Insert	
+				Title role mixed sid Doxa<Tdesig>sid TouProdromou</><Tmode>sid meVE.Apolytikion1.mode</>End-Title
+				Hymn sid meVE.Apolytikion1.text @ver End-Hymn
+				Insert_section VE._09_Apolytikion__.both__.primarytheotokion__.mode4 End-Insert
+				Insert_section VE._10_End__.wisdom End-Insert
+				Insert_section VE._11_Dismissal__.commemoration End-Insert
+			End-Section
+
+		94, 108 use:
+			Section Instance04
+			End-Section
+		
+		110 use:
+			Section Instance05
+			End-Section
+		
+		96, 97, 100, 101 use:
+			Section Instance06
+			End-Section
+		
+		98 use: //Mid-Pent Saturday
+			Section Instance06b
+			End-Section
+		
+		102 use: //Mid-Pent Leavetaking
+			Section Instance07
+			End-Section
+			
+		109 use: //Pascha Leavetaking
+			Section Instance08
+			End-Section
+		
+		110 use: //Ascension
+			Section Instance09
+			End-Section
+			
+		111, 112, 115, 116, 117, 122, 123, 124, 125 use:
+		
+		114 use:
+			Section Instance10_114
+				Insert_section VE._01_Beginning__.vespers End-Insert
+				Insert_section VE._02_Kekragaria__.mode8__.for6 End-Insert
+				Insert_section VE._03_Stichera__.me__.p_123as567 End-Insert
+				Title role desig sid TonPateron End-Title
+				Insert_section VE._03_Stichera__.pe__.p_123as8910 End-Insert
+				Title role mixed sid Doxa<Tdesig>sid TouProdromou</>End-Title
+				Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_.hymn End-Insert
+				Title role mixed sid KaiNyn<Tdesig>sid TonPateron</>End-Title
+				Insert_section VE._03_Stichera__.both__.pe__.gloryasboth_.hymn End-Insert
+				Insert_section VE._04_Middle__.entrance End-Insert
+				Insert_section VE._06_Litanies__.fullektenia End-Insert
+				Insert_section VE._08_Aposticha__.me__.selector End-Insert
+				Insert_section VE._08_Aposticha__.glory__.me_ End-Insert
+				Title role mixed sid KaiNyn<Tdesig>sid TonPateron</>End-Title
+				Insert_section VE._08_Aposticha__.both__.pe__.gloryasboth_.hymn End-Insert
+				Insert_section VE._09_Apolytikion__.symeon_trisagion__.Priest End-Insert
+				Insert_section ho_May25.Apolytikion_1 End-Insert	
+				Title sid Doxa End-Title
+				Insert_section bk.ho.s17.ho_pe113.Apolytikion_2 End-Insert
+				Insert_section VE._09_Apolytikion__.both__.festal End-Insert
+				Insert_section VE._10_End__.wisdom End-Insert
+				Insert_section VE._11_Dismissal__.commemoration End-Insert
+			End-Section
+		
+		113 use: //Holy Fathers
+			Section Instance11
+			End-Section
+		
+		118, 126 use: //Asc or Pent Leavetaking
+			Section Instance12
+			End-Section
+		
+		119 use: //SoS
+			Section Instance13
+			End-Section
+		
+		120 use: //Pentecost
+			Section Instance14
+			End-Section
+		
+		121 use: 
+			Section Instance15
+			End-Section
+		
+		127 use: //All-Saints
+			Section Instance16
+			End-Section
+		
+		otherwise use:
+			when-name-of-day-is
+				Sunday use:
+					Section Instance18
+					End-Section
+					
+				otherwise use:
+					Section Instance17
+					End-Section
+			end-when
+	end-when
+End-Template

@@ -1,0 +1,183 @@
+Template se.dina.m05.d02.ve 
+
+Status Final
+
+	import client_gr_GR_cog.*
+	import ho.s10_gr_GR_cog.*	
+	import me.m05.d02_gr_GR_cog.*
+
+	import da.*
+	import oc.*
+	import pe.*
+
+	//Templates
+	import bk.ho.s15_m05.*
+	
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 5 day 2 End_Date
+			Page_Header_Even
+				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore lang L2 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	when-movable-cycle-day-is
+		65 thru 72 use:
+			Section Instance01
+			End-Section
+			
+		73, 74, 75, 77 use: //Bright Week
+			Section Instance02
+			End-Section
+			
+		76 use: //Bright Friday
+			Section Instance03
+			End-Section
+			
+		78 use: //Thomas Sunday
+			Section Instance04
+			End-Section
+			
+		79 thru 83 use:
+			Section Instance05
+			End-Section
+			
+		84 use: //Thomas Saturday
+			Section Instance06
+			End-Section
+			
+		85, 92, 99, 106 use: //Sundays of Pascha
+			Section Instance07
+			End-Section
+			
+		86, 87, 88, 89, 90, 93, 103, 104, 107 use:
+			Section Instance08
+			End-Section
+			
+		91, 105 use: //Leavetaking of Myr and Sam
+			Section Instance09
+				Insert_section VE._01_Beginning__.vespers End-Insert
+				when-movable-cycle-day-is
+					91 use: Insert_section VE._02_Kekragaria__.mode2__.for6 End-Insert
+					105 use: Insert_section VE._02_Kekragaria__.mode4__.for6 End-Insert
+				end-when
+				when-movable-cycle-day-is
+					91 use: 
+						Title role desig sid Stichira sid TonMyroforon End-Title
+						Insert_section VE._03_Stichera__.pe__.i_123as567 End-Insert
+//					105 use: 
+				end-when
+				Insert_section VE._03_Stichera__.me__.p_123as8910 End-Insert
+				Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_ End-Insert
+				Section block1
+					when-movable-cycle-day-is
+						91 use:
+							Title role mixed sid KaiNyn<Tmode>sid pe.d085_gr_GR_cog.peVE.SticGlory.mode</>End-Title
+							Hymn sid pe.d085_gr_GR_cog.peVE.SticGlory.text @ver End-Hymn
+						105 use:
+							Title role mixed sid KaiNyn<Tmode>sid pe.d099_gr_GR_cog.peVE.SticGlory.mode</>End-Title
+							Hymn sid pe.d099_gr_GR_cog.peVE.SticGlory.text @ver End-Hymn
+					end-when
+				End-Section
+				Insert_section VE._04_Middle__.entrance End-Insert
+				Insert_section VE._06_Litanies__.fullektenia End-Insert
+				Insert_section VE._08_Aposticha__.pe__.saturday_.first End-Insert	
+				Title role desig sid TouAgiou End-Title
+				Insert_section VE._08_Aposticha__.append__.me__.selector End-Insert	
+				Insert_section VE._08_Aposticha__.glory__.me_ End-Insert
+				Section block3
+					when-movable-cycle-day-is
+						91 use:
+							Title role mixed sid KaiNyn<Tdesig>sid TonMyroforon</>End-Title
+							Title role mode sid pe.d085_gr_GR_cog.peVE.AposGlory.mode End-Title
+							Hymn sid pe.d085_gr_GR_cog.peVE.AposGlory.text @ver End-Hymn
+						105 use: 
+							Title role mixed sid KaiNyn<Tdesig>sid TisSamaritidos</>End-Title
+							Title role mode sid pe.d099_gr_GR_cog.peVE.AposGlory.mode End-Title
+							Hymn sid pe.d099_gr_GR_cog.peVE.AposGlory.text @ver End-Hymn
+					end-when
+				End-Section
+				Insert_section VE._09_Apolytikion__.symeon_trisagion__.Priest End-Insert	
+				Section block4
+					when-movable-cycle-day-is
+						91 use:
+							Section pe091
+								Title role mixed<Tdesig>sid Apolytikia</><Tmode>sid pe.d085_gr_GR_cog.peVE.Apolytikion1.mode</>End-Title
+								Hymn sid pe.d085_gr_GR_cog.peVE.Apolytikion1.text @ver End-Hymn
+								Hymn sid pe.d085_gr_GR_cog.peVE.Apolytikion2.text @ver End-Hymn
+								Title role mixed sid Doxa<Tdesig>sid TouAgiou</>End-Title
+								Insert_section ho_May02.Apolytikion_1.hymn End-Insert
+								Title role mixed sid KaiNyn<Tdesig>sid TonMyroforon</>End-Title
+								Title role mode sid pe.d085_gr_GR_cog.peVE.Apolytikion3.mode End-Title
+								Hymn sid pe.d085_gr_GR_cog.peVE.Apolytikion3.text @ver End-Hymn
+							End-Section
+						105 use:
+							Section pe105
+								Insert_section VE._09_Apolytikion__.resurrectional End-Insert
+								Title role mixed sid Doxa<Tdesig>sid TouAgiou</>End-Title
+								Insert_section ho_May02.Apolytikion_1.hymn End-Insert
+								Insert_section VE._09_Apolytikion__.both__.primarytheotokion__.mode3 End-Insert
+							End-Section
+					end-when
+				End-Section
+				Insert_section VE._10_End__.wisdom End-Insert
+				Insert_section VE._11_Dismissal__.commemoration End-Insert
+			End-Section
+			
+		94, 108 use: //Leavetaking of Par and Blind
+			Section Instance10
+			End-Section
+			
+		95 use: //Wednesday Mid-Pentecost
+			Section Instance11
+			End-Section
+			
+		96, 97, 98, 100, 101 use: 
+			Section Instance12
+			End-Section
+			
+		95 use: //Leavetaking Mid-Pentecost
+			Section Instance13
+			End-Section
+			
+		109 use: //Leavetaking Pascha
+			Section Instance14
+			End-Section
+			
+		110 use: //Ascension
+			Section Instance15
+				Insert_section se.pe.d110.ve.Instance01 End-Insert
+			End-Section
+
+		111, 112 use:
+			Section Instance16
+			End-Section
+			
+	end-when		
+End-Template
