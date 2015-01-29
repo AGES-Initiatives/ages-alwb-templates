@@ -1,0 +1,177 @@
+Template se.dina.m05.d21.ve
+
+Status Final
+
+	import client_gr_GR_cog.*
+	import ho.s10_gr_GR_cog.*	
+	import me.m05.d21_gr_GR_cog.*
+
+	import da.*
+//	import oc.*
+	import pe.*
+
+	//Templates
+	import bk.ho.s15_m05.*
+	
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 5 day 21 End_Date
+			Page_Header_Even
+				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore lang L1 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+		Preface Covers
+			Insert_template ematins.cover.ve End-Insert
+			Insert_template ematins.credits End-Insert
+		End-Preface
+
+	when-movable-cycle-day-is 
+		84 use: //Thomas Saturday
+			Section Instance01
+			End-Section
+		
+		85, 92, 99, 106 use: //Paschal Sundays
+			Section Instance02
+			End-Section
+			
+		86, 87, 88, 89, 90, 93, 103, 104, 107 use:
+			Section Instance03
+			End-Section
+			
+		91, 105 use:
+			Section Instance04
+			End-Section
+		
+		94, 108 use:
+			Section Instance05
+			End-Section
+		
+		95 use: //Mid-Pentecost
+			Section Instance06
+			End-Section
+		
+		96, 97, 100, 101 use:
+			Section Instance07
+			End-Section
+		
+		98 use: //Mid-Pent Saturday
+			Section Instance07b
+			End-Section
+		
+		102 use: //Mid-Pent Leavetaking
+			Section Instance08
+				Insert_section VE._01_Beginning__.vespers End-Insert
+				Insert_section VE._02_Kekragaria__.mode4__.for6 End-Insert
+				Title role desig sid Stichira sid TisEortis End-Title
+				Insert_section VE._03_Stichera__.pe__.p_123as567 End-Insert
+				Title role desig sid Stichira sid TonIsapostolon End-Title
+				Insert_section VE._03_Stichera__.me__.p_123as8910 End-Insert
+				Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_ End-Insert
+				Insert_section VE._03_Stichera__.both__.pe__.gloryasboth_ End-Insert
+				Insert_section VE._04_Middle__.entrance End-Insert
+				Insert_section VE._05_Readings__.reader End-Insert
+				Insert_section VE._06_Litanies__.fullektenia End-Insert
+				Insert_section VE._08_Aposticha__.pe__.selector End-Insert
+				Title sid Doxa End-Title
+				Title role desig sid TonIsapostolon End-Title
+				Insert_section VE._08_Aposticha__.glory__.me_.hymn End-Insert
+				Title role mixed sid KaiNyn<Tdesig>sid TisEortis</>End-Title
+				Insert_section VE._08_Aposticha__.both__.pe__.gloryasboth_.hymn End-Insert
+				Insert_section VE._09_Apolytikion__.symeon_trisagion__.Priest End-Insert
+				Insert_section VE._09_Apolytikion__.festal__.once End-Insert	
+				Title sid Doxa End-Title
+				Title role desig sid TonIsapostolon End-Title
+				Insert_section ho_May21.Apolytikion_1.hymn End-Insert
+				Insert_section VE._09_Apolytikion__.both__.festal End-Insert	
+				Insert_section VE._10_End__.wisdom End-Insert
+				Insert_section VE._11_Dismissal__.commemoration End-Insert
+			End-Section //Instnace_08
+
+		109 use: //Pascha Leavetaking
+			Section Instance09
+			End-Section
+		
+		110 use: //Ascension
+			Section Instance10
+				Insert_section VE._01_Beginning__.vespers End-Insert
+				Insert_section VE._02_Kekragaria__.mode6__.for10 End-Insert
+				Title role desig sid TisEortis End-Title
+				Insert_section VE._03_Stichera__.pe__.i_112345as123456 End-Insert
+				Title role desig sid TonIsapostolon End-Title
+				Insert_section VE._03_Stichera__.me__.p_1123as78910 End-Insert
+				Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_ End-Insert
+				Title role mixed sid KaiNyn<Tdesig>sid TisEortis</>End-Title
+				Insert_section VE._03_Stichera__.gloryboth__.pe_.hymn End-Insert
+				Insert_section VE._04_Middle__.entrance End-Insert
+				Insert_section VE._05_Readings__.reader End-Insert
+				Insert_section VE._06_Litanies__.fullektenia End-Insert
+				Insert_section VE._08_Aposticha__.pe__.selector End-Insert
+				Title sid Doxa End-Title
+				Title role desig sid TonIsapostolon End-Title
+				Insert_section VE._08_Aposticha__.glory__.me_.hymn End-Insert
+				Title role mixed sid KaiNyn<Tdesig>sid TisEortis</>End-Title
+				Insert_section VE._08_Aposticha__.gloryboth__.pe_.hymn End-Insert
+				Insert_section VE._09_Apolytikion__.symeon_trisagion__.Priest End-Insert	
+				Insert_section VE._09_Apolytikion__.symeon_trisagion__.Priest End-Insert
+				Insert_section VE._09_Apolytikion__.festal__.once End-Insert	
+				Title sid Doxa End-Title
+				Title role desig sid TonIsapostolon End-Title
+				Insert_section ho_May21.Apolytikion_1.hymn End-Insert
+				Insert_section VE._09_Apolytikion__.both__.festal End-Insert	
+				Insert_section VE._10_End__.wisdom End-Insert
+				Insert_section VE._11_Dismissal__.commemoration End-Insert
+			End-Section
+			
+		111, 112, 114, 115, 116, 117, 122, 123, 124, 125 use:
+			Section Instance11
+			End-Section
+		
+		113 use: //Holy Fathers
+			Section Instance12
+			End-Section
+		
+		118, 126 use: //Asc or Pent Leavetaking
+			Section Instance13
+			End-Section
+		
+		119 use: //SoS
+			Section Instance14
+			End-Section
+		
+		120 use: //Pentecost
+			Section Instance15
+			End-Section
+		
+		121 use: 
+			Section Instance16
+			End-Section
+		
+		127 use: //All-Saints
+			Section Instance17
+			End-Section
+		
+		otherwise use: //Outside Pentecostarion
+		
+	end-when	
+End-Template

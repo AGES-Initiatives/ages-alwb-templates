@@ -1,0 +1,402 @@
+Template se.dina.m05.d21.ma
+
+Status Final
+
+	import client_gr_GR_cog.*
+	import ho.s03_gr_GR_cog.*
+	import me.m05.d21_gr_GR_cog.*
+	import ps_gr_GR_cog.*
+
+	import da.*
+	import oc.*
+	import pe.*
+
+	//Templates
+		
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 5 day 21 End_Date
+			Page_Header_Even
+				center @lookup sid ma.pdf.header sid d.on lang L1 @date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ma End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	when-movable-cycle-day-is 
+		84 use: //Thomas Saturday
+			Section Instance01
+			End-Section
+		
+		85, 92, 99, 106 use: //Paschal Sundays
+			Section Instance02
+			End-Section
+			
+		86, 87, 88, 89, 90, 93, 103, 104, 107 use:
+			Section Instance03
+			End-Section
+			
+		91, 105 use:
+			Section Instance04
+			End-Section
+		
+		94, 108 use:
+			Section Instance05
+			End-Section
+		
+		95 use: //Mid-Pentecost
+			Section Instance06
+			End-Section
+		
+		96, 97, 100, 101 use:
+			Section Instance07
+			End-Section
+		
+		98 use: //Mid-Pent Saturday
+			Section Instance07b
+			End-Section
+		
+		102 use: //Leave-taking of Mid-Pentecost
+			Section Instance08
+				Section block1
+					Insert_section MA._01_Beginning__.mode4 End-Insert
+					Title role mixed<Tdesig>sid Apolytikion sid TisEortis</><Tmode>sid pe.d095_gr_GR_cog.peVE.Apolytikion1.mode</>End-Title
+					Hymn sid pe.d095_gr_GR_cog.peVE.Apolytikion1.text @ver End-Hymn
+					Title role mixed sid Doxa<Tdesig>sid TonIsapostolon</>End-Title
+					Title role mode sid meVE.Apolytikion1.mode End-Title
+					Hymn sid meVE.Apolytikion1.text @ver End-Hymn
+					Title role mixed sid KaiNyn<Tdesig>sid TisEortis</><Tmode>sid pe.d095_gr_GR_cog.peVE.Apolytikion1.mode</>End-Title
+					Hymn sid pe.d095_gr_GR_cog.peVE.Apolytikion1.text @ver End-Hymn
+				End-Section
+				Insert_section LN.ShortLitany02 End-Insert
+				Section block2
+					Actor sid Choir End-Actor
+					Title role desig sid Kathisma1 End-Title
+					Title role mixed<Tmode>sid meMA.Kathisma11.mode</><Tmelody>sid meMA.Kathisma11.melody</>End-Title
+					Hymn sid meMA.Kathisma11.text @ver End-Hymn
+					Title role mixed sid DoxaKaiNyn<Tdesig>sid TisEortis</>End-Title
+					Title role mixed<Tmode>sid pe.d095_gr_GR_cog.peMA.Kathisma11.mode</><Tmelody>sid pe.d095_gr_GR_cog.peMA.Kathisma11.melody</>End-Title
+					Hymn sid pe.d095_gr_GR_cog.peMA.Kathisma11.text @ver End-Hymn
+					Title role desig sid Kathisma2 End-Title
+					Title role mixed<Tmode>sid meMA.Kathisma21.mode</><Tmelody>sid meMA.Kathisma21.melody</>End-Title
+					Hymn sid meMA.Kathisma21.text @ver End-Hymn
+					Title role mixed sid DoxaKaiNyn<Tdesig>sid TisEortis</>End-Title
+					Title role mixed<Tmode>sid pe.d095_gr_GR_cog.peMA.Kathisma21.mode</><Tmelody>sid pe.d095_gr_GR_cog.peMA.Kathisma21.melody</>End-Title
+					Hymn sid pe.d095_gr_GR_cog.peMA.Kathisma21.text @ver End-Hymn
+					Title role desig sid Kathisma3 End-Title
+					Title role mixed<Tmode>sid meMA.Kathisma31.mode</><Tmelody>sid meMA.Kathisma31.melody</>End-Title
+					Hymn sid meMA.Kathisma31.text @ver End-Hymn
+					Title role mixed sid DoxaKaiNyn<Tdesig>sid TisEortis</>End-Title
+					Title role mixed<Tmode>sid pe.d095_gr_GR_cog.peMA.Ode3Kathisma1.mode</><Tmelody>sid pe.d095_gr_GR_cog.peMA.Ode3Kathisma1.melody</>End-Title
+					Hymn sid pe.d095_gr_GR_cog.peMA.Ode3Kathisma1.text @ver End-Hymn
+				End-Section
+				Insert_section LN.ShortLitany04 End-Insert	
+				Insert_section MA._08_Antiphons__.mode41 End-Insert
+				Insert_section MA._08_Antiphons__.prokeimenon End-Insert
+				Insert_section MA._09_Gospel__.priest End-Insert
+				Insert_section LN.Supplication_deacon End-Insert
+				Section block3
+					Actor sid Reader End-Actor
+					Title role desig sid Kontakion sid TisEortis End-Title
+					Reading sid pe.d095_gr_GR_cog.peMA.Kontakion1.text End-Reading
+					Title role desig sid OOikos End-Title
+					Reading sid pe.d095_gr_GR_cog.peMA.Oikos1.text End-Reading
+					Title role desig sid Kontakion End-Title
+					Title role desig sid TonIsapostolon End-Title
+					Reading sid meMA.Kontakion1.text End-Reading
+					Title role desig sid OOikos End-Title
+					Reading sid meMA.Oikos1.text End-Reading
+					Insert_section SY.Synaxarion End-Insert
+				End-Section
+				Insert_section KA.choir__._1345678 End-Insert	
+				Insert_section MA._10_Canon__.Ode9_intro End-Insert
+				Section block4	
+					Actor sid Choir End-Actor
+					Title role desig sid Ode9 End-Title
+					Title role desig sid KanonA sid TisEortis End-Title
+					Media sid pe.d095_gr_GR_cog.peMA.Ode9C1H.text End-Media
+					Title role mixed<Tmode>sid pe.d095_gr_GR_cog.peMA.Ode9C1H.mode</><Tdesig>sid Heirmos</>End-Title
+					Para role heirmos sid pe.d095_gr_GR_cog.peMA.Ode9C1H.text<r>sid Twice</>End-Para
+					Verse sid DoxaSoiOTheosImon.text End-Verse
+					Hymn sid pe.d095_gr_GR_cog.peMA.Ode9C11.text @ver End-Hymn
+					Verse sid DoxaSoiOTheosImon.text End-Verse
+					Hymn sid pe.d095_gr_GR_cog.peMA.Ode9C12.text @ver End-Hymn
+					Verse sid DoxaSoiOTheosImon.text End-Verse
+					Hymn sid pe.d095_gr_GR_cog.peMA.Ode9C13.text @ver End-Hymn
+					Verse sid verse_Theotokos.text End-Verse
+					Title role desig sid Theotokion End-Title
+					Hymn sid pe.d095_gr_GR_cog.peMA.Ode9C1T.text @ver End-Hymn
+				End-Section
+				Section block5
+					Title role desig sid KanonB sid TisEortis End-Title
+					Media sid pe.d095_gr_GR_cog.peMA.Ode9C21.text End-Media
+					Title role mixed<Tmode>sid pe.d095_gr_GR_cog.peMA.Ode9C21.mode</><Tmelody>sid pe.d095_gr_GR_cog.peMA.Ode9C21.melody</>End-Title
+					Verse sid DoxaSoiOTheosImon.text End-Verse
+					Hymn sid pe.d095_gr_GR_cog.peMA.Ode9C21.text @ver media-off End-Hymn
+					Verse sid DoxaSoiOTheosImon.text End-Verse
+					Hymn sid pe.d095_gr_GR_cog.peMA.Ode9C22.text @ver End-Hymn
+					Verse sid DoxaSoiOTheosImon.text End-Verse
+					Hymn sid pe.d095_gr_GR_cog.peMA.Ode9C23.text @ver End-Hymn
+					Verse sid verse_Theotokos.text End-Verse
+					Title role desig sid Theotokion End-Title
+					Hymn sid pe.d095_gr_GR_cog.peMA.Ode9C2T.text @ver End-Hymn
+				End-Section
+				Section block6
+					Title role desig sid TonIsapostolon End-Title
+					Title role mixed<Tmode>sid meMA.Ode9C11.mode</><Tmelody>sid meMA.Ode9C11.melody</>End-Title
+					Media sid meMA.Ode9C11.text End-Media
+					Verse sid AgioiTouTheou.text End-Verse
+					Hymn sid meMA.Ode9C11.text @ver media-off End-Hymn
+					Verse sid AgioiTouTheou.text End-Verse
+					Hymn sid meMA.Ode9C12.text @ver End-Hymn
+					Title sid Doxa End-Title
+					Hymn sid meMA.Ode9C13.text @ver End-Hymn
+					Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+					Hymn sid meMA.Ode9C1T.text @ver End-Hymn
+				End-Section
+				Insert_section KA.choir__._9 End-Insert
+				Insert_section LN.ShortLitany10 End-Insert	
+				Section block7
+					Actor sid Choir End-Actor
+					Title role desig sid Exaposteilarion sid TisEortis End-Title
+					Title role mixed<Tmode>sid pe.d095_gr_GR_cog.peMA.Exaposteilarion1.mode</><Tmelody>sid pe.d095_gr_GR_cog.peMA.Exaposteilarion1.melody</>End-Title
+					Hymn sid pe.d095_gr_GR_cog.peMA.Exaposteilarion1.text @ver End-Hymn
+					Title role desig sid TonIsapostolon End-Title
+					Title role mixed<Tmode>sid meMA.Exaposteilarion1.mode</><Tmelody>sid meMA.Exaposteilarion1.melody</>End-Title
+					Hymn sid meMA.Exaposteilarion1.text @ver End-Hymn
+					Title role desig sid TisEortis End-Title
+					Title role mixed<Tmode>sid pe.d095_gr_GR_cog.peMA.Exaposteilarion1.mode</><Tmelody>sid pe.d095_gr_GR_cog.peMA.Exaposteilarion1.melody</>End-Title
+					Hymn sid pe.d095_gr_GR_cog.peMA.Exaposteilarion1.text @ver End-Hymn
+				End-Section
+				Section block8
+					Insert_section MA._13_Lauds__.mode4 End-Insert
+					Title role desig sid Stichira sid TisEortis End-Title
+					Media sid pe.d095_gr_GR_cog.peMA.Lauds123.text End-Media
+					Title role mixed<Tmode>sid pe.d095_gr_GR_cog.peMA.Lauds1.mode</><Tmelody>sid pe.d095_gr_GR_cog.peMA.Lauds1.melody</>End-Title
+					Insert_section PsalmVerses.forLauds.v01 End-Insert
+					Hymn sid pe.d095_gr_GR_cog.peMA.Lauds1.text @ver media-off End-Hymn
+					Insert_section PsalmVerses.forLauds.v02 End-Insert
+					Hymn sid pe.d095_gr_GR_cog.peMA.Lauds2.text @ver media-off End-Hymn
+					Insert_section PsalmVerses.forLauds.v03 End-Insert
+					Hymn sid pe.d095_gr_GR_cog.peMA.Lauds3.text @ver media-off End-Hymn
+				End-Section
+				Section block9
+					Title role desig sid TonIsapostolon End-Title
+					Title role mixed<Tmode>sid meMA.Lauds1.mode</><Tmelody>sid meMA.Lauds1.melody</>End-Title
+					Media sid meMA.Lauds456.text End-Media
+					Insert_section PsalmVerses.forLauds.v04 End-Insert
+					Hymn sid meMA.Lauds1.text @ver media-off End-Hymn
+					Insert_section PsalmVerses.forLauds.v05 End-Insert
+					Hymn sid meMA.Lauds2.text @ver media-off End-Hymn
+					Insert_section PsalmVerses.forLauds.v06 End-Insert
+					Hymn sid meMA.Lauds3.text @ver media-off End-Hymn
+					Title role mixed sid Doxa<Tmode>sid meMA.LaudsGlory.mode</>End-Title
+					Hymn sid meMA.LaudsGlory.text @ver End-Hymn
+				End-Section
+				Section block10
+					Title role mixed sid KaiNyn<Tdesig>sid TisEortis</><Tmode>sid pe.d095_gr_GR_cog.peMA.LaudsGlory.mode</>End-Title
+					Hymn sid pe.d095_gr_GR_cog.peMA.LaudsGlory.text @ver End-Hymn
+				End-Section
+				Insert_section MA._14_Doxology__.great End-Insert
+				Section block11
+					Title role mixed<Tdesig>sid Apolytikion sid TisEortis</><Tmode>sid pe.d095_gr_GR_cog.peVE.Apolytikion1.mode</>End-Title
+					Hymn sid pe.d095_gr_GR_cog.peVE.Apolytikion1.text @ver End-Hymn
+				End-Section
+			End-Section //Instance_08
+
+		109 use: //Pascha Leavetaking
+			Section Instance09
+			End-Section
+		
+		110 use: //Ascension
+			Section Instance10
+				Section block1
+					Insert_section MA._01_Beginning__.mode4 End-Insert
+					Title role desig sid Apolytikia End-Title
+					Title role mixed<Tdesig>sid TisEortis</><Tmode>rid peVE.Apolytikion1.mode</>End-Title
+					Hymn rid peVE.Apolytikion1.text @ver End-Hymn
+					Title sid Doxa End-Title
+					Title role desig sid TonIsapostolon End-Title
+					Title role mode sid meVE.Apolytikion1.mode End-Title
+					Hymn sid meVE.Apolytikion1.text @ver End-Hymn
+					Title sid KaiNyn End-Title
+					Title role mixed<Tdesig>sid TisEortis</><Tmode>rid peVE.Apolytikion1.mode</>End-Title
+					Hymn rid peVE.Apolytikion1.text @ver End-Hymn
+				End-Section
+				Insert_section LN.ShortLitany02 End-Insert
+				Section block2
+					Actor sid Choir End-Actor
+					Title role desig sid Kathisma1 End-Title
+					Title role desig sid TisEortis End-Title
+					Title role mixed<Tmode>rid peMA.Kathisma11.mode</><Tmelody>rid peMA.Kathisma11.melody</>End-Title
+					Hymn rid peMA.Kathisma11.text @ver End-Hymn
+					Title role mixed sid DoxaKaiNyn<Tdesig>sid ToAfto</>End-Title
+					Hymn rid peMA.Kathisma11.text @ver media-off End-Hymn
+				End-Section
+				Section block3
+					Title role desig sid Kathisma2 End-Title
+					Title role desig sid TonIsapostolon End-Title
+					Title role mixed<Tmode>sid meMA.Kathisma21.mode</><Tmelody>sid meMA.Kathisma21.melody</>End-Title
+					Hymn sid meMA.Kathisma21.text @ver End-Hymn
+					Title role mixed sid DoxaKaiNyn<Tdesig>sid TisEortis</>End-Title
+					Title role mixed<Tmode>rid peMA.Kathisma21.mode</><Tmelody>rid peMA.Kathisma21.melody</>End-Title
+					Hymn rid peMA.Kathisma21.text @ver End-Hymn
+					Title role desig sid Kathisma3 End-Title
+					Title role desig sid TonIsapostolon End-Title
+					Title role mixed<Tmode>sid meMA.Kathisma31.mode</><Tmelody>sid meMA.Kathisma31.melody</>End-Title
+					Hymn sid meMA.Kathisma31.text @ver End-Hymn
+					Title role mixed sid DoxaKaiNyn<Tdesig>sid TisEortis</>End-Title
+					Title role mixed<Tmode>rid peMA.Kathisma31.mode</><Tmelody>rid peMA.Kathisma31.melody</>End-Title
+					Hymn rid peMA.Kathisma31.text @ver End-Hymn
+				End-Section
+				Insert_section LN.ShortLitany04 End-Insert	
+				Insert_section MA._08_Antiphons__.mode41 End-Insert
+				Insert_section MA._08_Antiphons__.prokeimenon End-Insert
+				Insert_section MA._09_Gospel__.priest End-Insert
+				Insert_section LN.Supplication_deacon End-Insert
+				Section block4
+					Actor sid Reader End-Actor
+					Title role desig sid Kontakion sid TisEortis End-Title
+					Reading rid peMA.Kontakion1.text End-Reading
+					Title role desig sid OOikos End-Title
+					Reading rid peMA.Oikos1.text End-Reading
+					Title role desig sid Kontakion End-Title
+					Title role desig sid TonIsapostolon End-Title
+					Reading sid meMA.Kontakion1.text End-Reading
+					Title role desig sid OOikos End-Title
+					Reading sid meMA.Oikos1.text End-Reading
+					Insert_section SY.Synaxarion End-Insert
+				End-Section
+				Insert_section KA.choir__._1345678 End-Insert	
+				Insert_section MA._10_Canon__.Ode9_intro End-Insert
+				Section block5
+					Actor sid Choir End-Actor
+					Title role desig rid peMA.Ode9C1H.ode sid KanonA End-Title
+					Rubric sid cl.pe.d110.R001 End-Rubric
+					Media rid peMA.Ode9C1H.text End-Media
+					Title role mixed<Tmode>rid peMA.Ode9C1H.mode</><Tdesig>sid Heirmos</>End-Title
+					Para role heirmos rid peMA.Ode9C1H.text End-Para
+					Verse sid DoxaSoiOTheosImon.text End-Verse
+					Hymn rid peMA.Ode9C11.text @ver End-Hymn
+					Verse sid DoxaSoiOTheosImon.text End-Verse
+					Hymn rid peMA.Ode9C12.text @ver End-Hymn
+					Verse sid DoxaSoiOTheosImon.text End-Verse
+					Hymn rid peMA.Ode9C13.text @ver End-Hymn
+					Verse sid DoxaSoiOTheosImon.text End-Verse
+					Hymn rid peMA.Ode9C14.text @ver End-Hymn
+					Verse sid verse_Theotokos.text End-Verse
+					Title role desig sid Theotokion End-Title
+					Hymn rid peMA.Ode9C1T.text @ver End-Hymn
+				End-Section
+				Section block6
+					Title role desig sid KanonB End-Title
+					Title role mixed<Tmode>rid peMA.Ode9C21.mode</><Tmelody>rid peMA.Ode9C21.melody</>End-Title
+					Media rid peMA.Ode9C21.text End-Media
+					Verse rid peMA.Ode9C2M01.text End-Verse
+					Hymn rid peMA.Ode9C21.text @ver media-off End-Hymn
+					Verse rid peMA.Ode9C2M01.text End-Verse
+					Hymn rid peMA.Ode9C22.text @ver End-Hymn
+					Verse rid peMA.Ode9C2M01.text End-Verse
+					Hymn rid peMA.Ode9C23.text @ver End-Hymn
+					Verse rid peMA.Ode9C2M01.text End-Verse
+					Title role desig sid Theotokion End-Title
+					Hymn rid peMA.Ode9C2T.text @ver End-Hymn
+				End-Section
+				Insert_section Instance08.block6 End-Insert
+				Insert_section KA.choir__._9 End-Insert
+				Insert_section LN.ShortLitany10 End-Insert	
+				Section block7
+					Actor sid Choir End-Actor
+					Title role desig sid Exaposteilarion sid TisEortis End-Title
+					Title role mixed<Tmode>rid peMA.Exaposteilarion1.mode</><Tmelody>rid peMA.Exaposteilarion1.melody</>End-Title
+					Hymn rid peMA.Exaposteilarion1.text @ver End-Hymn
+					Title role desig sid TonIsapostolon End-Title
+					Title role mixed<Tmode>sid meMA.Exaposteilarion1.mode</><Tmelody>sid meMA.Exaposteilarion1.melody</>End-Title
+					Hymn sid meMA.Exaposteilarion1.text @ver End-Hymn
+					Title role desig sid TisEortis End-Title
+					Title role mixed<Tmode>rid peMA.Exaposteilarion1.mode</><Tmelody>rid peMA.Exaposteilarion1.melody</>End-Title
+					Hymn rid peMA.Exaposteilarion1.text @ver End-Hymn
+				End-Section
+				Section block8
+					Insert_section MA._13_Lauds__.mode4 End-Insert
+					Title role desig sid Stichira sid TisEortis End-Title
+					Media rid peMA.Lauds123.text End-Media
+					Title role mixed<Tmode>rid peMA.Lauds1.mode</><Tmelody>rid peMA.Lauds1.melody</>End-Title
+					Insert_section PsalmVerses.forLauds.v01 End-Insert
+					Hymn rid peMA.Lauds1.text @ver media-off End-Hymn
+					Insert_section PsalmVerses.forLauds.v02 End-Insert
+					Hymn rid peMA.Lauds2.text @ver media-off End-Hymn
+					Insert_section PsalmVerses.forLauds.v03 End-Insert
+					Hymn rid peMA.Lauds3.text @ver media-off End-Hymn
+				End-Section
+				Insert_section Instance08.block9 End-Insert
+				Section block9
+					Title sid KaiNyn End-Title
+					Title role mixed<Tdesig>sid TisEortis</><Tmode>rid peMA.LaudsGlory.mode</>End-Title
+					Hymn rid peMA.LaudsGlory.text @ver End-Hymn
+				End-Section
+				Insert_section MA._14_Doxology__.great End-Insert
+				Section block10
+					Title role desig sid Apolytikion End-Title
+					Title role mixed<Tdesig>sid TisEortis</><Tmode>rid peVE.Apolytikion1.mode</>End-Title
+					Hymn rid peVE.Apolytikion1.text @ver End-Hymn
+				End-Section
+			End-Section
+			
+		111, 112, 114, 115, 116, 117, 122, 123, 124, 125 use:
+			Section Instance11
+			End-Section
+		
+		113 use: //Holy Fathers
+			Section Instance12
+			End-Section
+		
+		118, 126 use: //Asc or Pent Leavetaking
+			Section Instance13
+			End-Section
+		
+		119 use: //SoS
+			Section Instance14
+			End-Section
+		
+		120 use: //Pentecost
+			Section Instance15
+			End-Section
+		
+		121 use: 
+			Section Instance16
+			End-Section
+		
+		127 use: //All-Saints
+			Section Instance17
+			End-Section
+		
+		otherwise use: //Outside Pentecostarion
+		
+	end-when
+
+End-Template
