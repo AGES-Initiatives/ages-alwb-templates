@@ -21,7 +21,7 @@ Status Review
 	import roles.*
 
 	Head //for testing
-		Set_Date month 6 day 7 year 2015  End_Date
+		Set_Date month 7 day 17 year 2015  End_Date
 	End_Head
 
 	Section Com_Yes //use this whenever there IS an explicit commemoration
@@ -34,8 +34,13 @@ Status Review
 				Jun 24 use: Insert_section dismissal_05 End-Insert
 				Jun 30 use: Insert_section dismissal_06 End-Insert
 				Jul 13 thru 19 use:
-					when-name-of-day-is Sunday
-						use: Insert_section dismissal_10 End-Insert
+					when-name-of-day-is 
+						Sunday use: 
+							Insert_section dismissal_10 End-Insert
+						otherwise use:
+							when-date-is Jul 17 use:
+								Insert_section dismissal_07 End-Insert
+							end-when
 					end-when
 				Jul 25 use: Insert_section dismissal_08 End-Insert
 				Aug 1 use: Insert_section dismissal_03 End-Insert
@@ -264,19 +269,22 @@ Status Review
 	End-Section
 
 	Section dismissal_07 //Saint
-		when-movable-cycle-day-is 71 thru 126 use:
-			when-movable-cycle-day-is 
-				85 use: Dialog sid dis00 sid dis00.resurrection sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 rid peInsert1 rid peInsert2 sid dis10 sid dis89 End-Dialog 
-				127 use: Dialog sid dis00 sid dis00.resurrection sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 rid meInsert1 sid dis10 rid peInsert2 sid dis89 End-Dialog 
-				otherwise use:
-					Dialog sid dis00 rid peDismissal sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 rid meInsert1 rid meInsert2 sid dis10 sid dis89 End-Dialog 
-			end-when
+		when-movable-cycle-day-is 
+			71 thru 126 use:
+				when-movable-cycle-day-is 
+					85 use: Dialog sid dis00 sid dis00.resurrection sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 rid peInsert1 rid peInsert2 sid dis10 sid dis89 End-Dialog 
+					127 use: Dialog sid dis00 sid dis00.resurrection sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 rid meInsert1 sid dis10 rid peInsert2 sid dis89 End-Dialog 
+					otherwise use:
+						Dialog sid dis00 rid peDismissal sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 rid meInsert1 rid meInsert2 sid dis10 sid dis89 End-Dialog 
+				end-when
 			otherwise use: 
-				when-name-of-day-is Sunday use: 
-					when-exists rid meDismissal use:
-						Dialog sid dis00 rid meDismissal sid dis00.andresurrection sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 rid meInsert1 rid meInsert2 sid dis10 sid dis89 End-Dialog 
-						otherwise use: Dialog sid dis00 sid dis00.resurrection sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 rid meInsert1 rid meInsert2 sid dis10 sid dis89 End-Dialog 
-					end-when	
+				when-name-of-day-is 
+					Sunday use: 
+						when-exists 
+							rid meDismissal use:
+								Dialog sid dis00 rid meDismissal sid dis00.andresurrection sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 rid meInsert1 rid meInsert2 sid dis10 sid dis89 End-Dialog 
+							otherwise use: Dialog sid dis00 sid dis00.resurrection sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 rid meInsert1 rid meInsert2 sid dis10 sid dis89 End-Dialog 
+						end-when	
 					otherwise use:
 						Dialog sid dis00 rid meDismissal sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 rid meInsert1 rid meInsert2 sid dis10 sid dis89 End-Dialog 
 				end-when
