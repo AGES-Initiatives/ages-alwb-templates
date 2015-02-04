@@ -1,17 +1,10 @@
-Template se.m01.d07.ve 
+Template se.m07.d20.ve 
 
-Status Review
+Status Final
 
 	import client_gr_GR_cog.*
-	import hi.s01_gr_GR_cog.*
-	import ho.s10_gr_GR_cog.*	
-	import me.m01.d07_gr_GR_cog.*
 
 	import da.*
-	import oc.*
-
-	//Templates
-	import bk.ho.s15_m01.*
 	
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -26,7 +19,7 @@ Status Review
 	import roles.*
 
 	Head 
-		Set_Date month 1 day 7 End_Date
+		Set_Date month 7 day 20 End_Date
 			Page_Header_Even
 				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore lang L2 
 			End_Page_Header_Even
@@ -47,57 +40,51 @@ Status Review
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-	when-name-of-day-is
+	when-name-of-day-is 
 		Sunday use:
-			Section Instance02 //Sunday
+			Section Instance02
 				Insert_section VE._01_Beginning__.vespers End-Insert
 				Insert_section VE._03_Stichera__.oc__.sunday_.LIHC_s_1234 End-Insert
-				Title role desig sid Stichira sid TisEortis End-Title
-				Insert_section VE._03_Stichera__.me__.i_123as567 End-Insert
-				Title role desig sid TouProdromou End-Title
-				Insert_section VE._03_Stichera__.me__.p_456as8910 End-Insert
+				Insert_section VE._03_Stichera__.me__.p_112233as5678910 End-Insert
 				Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_ End-Insert
 				Insert_section VE._03_Stichera__.both__.firsttheotokion__.modeofweek End-Insert
 				Insert_section VE._04_Middle__.entrance End-Insert
+				Insert_section VE._05_Readings__.reader End-Insert
 				Insert_section VE._06_Litanies__.fullektenia End-Insert
 				Insert_section VE._08_Aposticha__.oc__.sunday_.aposticha1_ End-Insert
 				Insert_section VE._08_Aposticha__.oc__.sunday_.aposticha234 End-Insert
 				Insert_section VE._08_Aposticha__.glory__.me_ End-Insert
-				Insert_section VE._08_Aposticha__.both__.me_ End-Insert
+				Insert_section VE._08_Aposticha__.both__.primarytheotokion__.mode6 End-Insert
 				Insert_section VE._09_Apolytikion__.symeon_trisagion__.Priest End-Insert
 				Section apolytikia
-					Insert_section VE._09_Apolytikion__.resurrectional End-Insert
-					Title role mixed sid Doxa<Tdesig>sid TouProdromou</>End-Title
-					Insert_section ho_Jan07.Apolytikion_2.hymn End-Insert
-					Insert_section VE._09_Apolytikion__.both__.festal End-Insert
-				End-Section	
-				Insert_section VE._10_End__.wisdom End-Insert
-				Insert_section VE._11_Dismissal__.commemoration End-Insert
-			End-Section
-		otherwise use:
-			Section Instance01 //Weekday
-				Insert_section VE._01_Beginning__.vespers End-Insert
-				Insert_section VE._02_Kekragaria__.mode2__.for6 End-Insert
-				Title role desig sid Stichira sid TisEortis End-Title
-				Insert_section VE._03_Stichera__.me__.i_123as567 End-Insert
-				Title role desig sid TouProdromou End-Title
-				Insert_section VE._03_Stichera__.me__.p_456as8910 End-Insert
-				Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_ End-Insert
-				Insert_section VE._03_Stichera__.both__.me__.bothasboth_ End-Insert
-				Insert_section VE._04_Middle__.entrance End-Insert
-				Insert_section VE._06_Litanies__.fullektenia End-Insert
-				Insert_section VE._08_Aposticha__.me__.selector End-Insert
-				Insert_section VE._08_Aposticha__.glory__.me_ End-Insert
-				Insert_section VE._08_Aposticha__.both__.me_ End-Insert
-				Insert_section VE._09_Apolytikion__.symeon_trisagion__.Priest End-Insert
-				Section apolytikia
-					Insert_section VE._09_Apolytikion__.festal__.once End-Insert	
-					Title role mixed sid Doxa<Tdesig>sid TouProdromou</>End-Title
-					Insert_section ho_Jan07.Apolytikion_2.hymn End-Insert
-					Insert_section VE._09_Apolytikion__.both__.festal End-Insert
+					Insert_section VE._09_Apolytikion__.resurrectional End-Insert	
+					Title role mixed sid Doxa<Tdesig>sid TouProfitou</>End-Title
+					Insert_section VE._09_Apolytikion__.me1_.hymn End-Insert
+					Insert_section VE._09_Apolytikion__.both__.primarytheotokion__.mode4 End-Insert
 				End-Section
 				Insert_section VE._10_End__.wisdom End-Insert
 				Insert_section VE._11_Dismissal__.commemoration End-Insert
 			End-Section
-	end-when			
+
+		otherwise use:
+			Section Instance01
+				Insert_section VE._01_Beginning__.vespers End-Insert
+				Insert_section VE._02_Kekragaria__.mode1__.for6 End-Insert
+				Insert_section VE._03_Stichera__.me__.p_112233as5678910 End-Insert
+				Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_ End-Insert
+				Insert_section VE._03_Stichera__.both__.firsttheotokion__.mode4_ End-Insert
+				Insert_section VE._04_Middle__.entrance End-Insert
+				Insert_section VE._05_Readings__.reader End-Insert
+				Insert_section VE._06_Litanies__.fullektenia End-Insert
+				Insert_section VE._08_Aposticha__.me__.p_prophets12 End-Insert
+				Insert_section VE._08_Aposticha__.glory__.me_ End-Insert
+				Insert_section VE._08_Aposticha__.both__.primarytheotokion__.mode6 End-Insert
+				Insert_section VE._09_Apolytikion__.symeon_trisagion__.Priest End-Insert
+				Insert_section VE._09_Apolytikion__.me1_ End-Insert
+				Insert_section VE._09_Apolytikion__.gloryboth__.primarytheotokion__.mode4 End-Insert
+				Insert_section VE._10_End__.wisdom End-Insert
+				Insert_section VE._11_Dismissal__.commemoration End-Insert
+			End-Section
+	end-when	
+
 End-Template
