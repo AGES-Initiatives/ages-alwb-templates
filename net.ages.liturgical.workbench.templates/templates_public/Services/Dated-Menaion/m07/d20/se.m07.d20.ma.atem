@@ -3,18 +3,8 @@ Template se.m07.d20.ma
 Status Final
 
 	import client_gr_GR_cog.*
-	import eu.lichrysbasil_gr_GR_cog.*
-	import ho.s03_gr_GR_cog.*
-	import ho.s07_gr_GR_cog.*
-	import ho.s10_gr_GR_cog.*	
 	import me.m07.d20_gr_GR_cog.*
-//	import pe.d000_gr_GR_cog.*
-//	import tr.d000_gr_GR_cog.*
-
-//	import da.*
-	import oc.*
-//	import pe.*
-//	import tr.*
+	import da.*
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -50,109 +40,57 @@ Status Final
 			Insert_template ematins.credits End-Insert
 		End-Preface
 
-when-name-of-day-is 
-	Sunday use:
-		Section Instance02 //Sunday
-			Section block1
+	when-name-of-day-is 
+		Sunday use:
+			Section Instance02 //Sunday
 				Insert_section MA._01_Beginning__.modeofweek End-Insert
 				Insert_section MA._02_Apolytikion__.resurrectional End-Insert
 				Title role mixed sid Doxa<Tdesig>sid TouProfitou</>End-Title
-				Title role mixed<Tmode>sid meVE.Apolytikion1.mode</><Tmelody>sid meVE.Apolytikion1.melody</>End-Title
-				Hymn sid meVE.Apolytikion1.text @ver End-Hymn
-				Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
-				Hymn sid oc.m4.d1_gr_GR_cog.ocVE.ApolTheotokionVM.text @ver End-Hymn
-			End-Section
-			Insert_section LN.ShortLitany02 End-Insert
-			when-mode-of-week-is 
-				M4 use: Insert_section MA._03_Kathisma1__.oc__.sunday__.kath111213 End-Insert
-				otherwise use: Insert_section MA._03_Kathisma1__.oc__.sunday__.kath1112primarytheotokion End-Insert
-			end-when
-			Insert_section MA._04_Kathisma2__.oc__.sunday__.kath212223 End-Insert
-			Insert_section MA._07_Evlogetaria__.resurrectional End-Insert
-			Insert_section LN.ShortLitany04 End-Insert	
-			Insert_section MA._08_Antiphons__.sunday_ End-Insert
-			Section block2
-				Actor sid Reader End-Actor
-				Title role desig sid KontakionAnastasimon End-Title
-				Reading rid ocMA.Kontakion.text End-Reading
-				Title role desig sid OOikos End-Title
-				Reading rid ocMA.Oikos.text End-Reading 
+				Insert_section MA._02_Apolytikion__.me1_.hymn End-Insert
+				Insert_section MA._02_Apolytikion__.both__.primarytheotokion__.mode4 End-Insert
+				Insert_section LN.ShortLitany02 End-Insert
+				when-mode-of-week-is 
+					M4 use: Insert_section MA._03_Kathisma1__.oc__.sunday__.kath111213 End-Insert
+					otherwise use: Insert_section MA._03_Kathisma1__.oc__.sunday__.kath1112primarytheotokion End-Insert
+				end-when
+				Insert_section MA._04_Kathisma2__.oc__.sunday__.kath212223 End-Insert
+				Insert_section MA._07_Evlogetaria__.resurrectional End-Insert
+				Insert_section LN.ShortLitany04 End-Insert	
+				Insert_section MA._08_Antiphons__.sunday_ End-Insert
+				Insert_section MA._11_Kontakion__.sunday End-Insert
 				Title role desig sid Kontakion sid TouProfitou End-Title
-				Reading sid meMA.Kontakion1.text End-Reading
-				Title role desig sid OOikos End-Title
-				Reading sid meMA.Oikos1.text End-Reading 
+				Insert_section MA._11_Kontakion__.append__.me1_.konoik_ End-Insert
 				Insert_section SY.Synaxarion End-Insert
 				Insert_section KA.choir__._1345678 End-Insert
-			End-Section
-			Insert_section MA._09_Gospel__.priest End-Insert
-			Insert_section LN.Supplication_deacon End-Insert
-			Section block3
+				Insert_section MA._09_Gospel__.priest End-Insert
+				Insert_section LN.Supplication_deacon End-Insert
 				Insert_section MA._10_Canon__.Ode9_intro End-Insert
 				Insert_section KA.choir__._mode_mag_media End-Insert
 				Insert_section KA.choir__._9 End-Insert
-			End-Section
-			Insert_section LN.ShortLitany10 End-Insert
-			Insert_section MA._12_Exaposteilarion__.eome End-Insert
-			Insert_section MA._13_Lauds__.oc__.s_1234as1234 End-Insert
-			Section block4
+				Insert_section LN.ShortLitany10 End-Insert
+				Insert_section MA._12_Exaposteilarion__.eome End-Insert
+				Insert_section MA._13_Lauds__.oc__.s_1234as1234 End-Insert
 				Title role desig sid TouProfitou End-Title
-				Title role mixed<Tmode>sid meMA.Lauds1.mode</><Tmelody>sid meMA.Lauds1.melody</>End-Title
-				Media sid meMA.LaudsSundayVerse1.text End-Media
-				Insert_section PsalmVerses.forLauds.v05 End-Insert
-				Hymn sid meMA.Lauds1.text @ver media-off End-Hymn
-				Insert_section PsalmVerses.forLauds.v06 End-Insert
-				Hymn sid meMA.Lauds1.text @ver media-off End-Hymn
-				Insert_section PsalmVerses.forProphets.verse1 End-Insert
-				Hymn sid meMA.Lauds2.text @ver media-off End-Hymn
-				Insert_section PsalmVerses.forProphets.verse2 End-Insert
-				Hymn sid meMA.Lauds3.text @ver media-off End-Hymn
+				Insert_section MA._13_Lauds__.me__.p_1123as56prophets12 End-Insert
+				Insert_section MA._13_Lauds__.glory__.eo_ End-Insert
+				Insert_section MA._14_Doxology__.sunday End-Insert
 			End-Section
-			Insert_section MA._14_Doxology__.sunday End-Insert
-		End-Section
-	
-		otherwise use:
-			Section Instance01 //weekday
-				Section block1
+		
+			otherwise use:
+				Section Instance01 //weekday
 					Insert_section MA._01_Beginning__.mode4 End-Insert
-					Title role desig sid Apolytikion End-Title
-					Title role mixed<Tmode>sid meVE.Apolytikion1.mode</><Tmelody>sid meVE.Apolytikion1.melody</>End-Title
-					Hymn sid meVE.Apolytikion1.text @ver End-Hymn
-					Title role mixed sid Doxa<Tdesig>sid ToAfto</>End-Title
-					Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
-					Hymn sid oc.m4.d1_gr_GR_cog.ocVE.ApolTheotokionVM.text @ver End-Hymn
-				End-Section
-				Insert_section LN.ShortLitany02 End-Insert
-				Section block2
-					Actor sid Choir End-Actor
-					Title role mixed<Tdesig>sid Kathisma1</>End-Title
-					Title role mixed<Tmode>sid meMA.Kathisma11.mode</><Tmelody>sid meMA.Kathisma11.melody</>End-Title
-					Hymn sid meMA.Kathisma11.text @ver End-Hymn
-					Title sid DoxaKaiNyn End-Title
-					Title role desig sid Theotokion sid Omoion End-Title
-					Hymn sid meMA.Kathisma1T.text @ver End-Hymn
-				End-Section
-				Section block3
-					//Actor sid Choir End-Actor
-					Title role mixed<Tdesig>sid Kathisma2</>End-Title
-					Title role mixed<Tmode>sid meMA.Kathisma21.mode</><Tmelody>sid meMA.Kathisma21.melody</>End-Title
-					Hymn sid meMA.Kathisma21.text @ver End-Hymn
-					Title sid DoxaKaiNyn End-Title
-					Title role desig sid Theotokion sid Omoion End-Title
-					Hymn sid meMA.Kathisma2T.text @ver End-Hymn
-				End-Section
-				Insert_section LN.ShortLitany04 End-Insert	
-				Rubric sid meR01 End-Rubric
-				Insert_section MA._08_Antiphons__.mode41 End-Insert
-				Insert_section MA._08_Antiphons__.prokeimenon End-Insert
-				Insert_section MA._09_Gospel__.priest End-Insert
-				Insert_section LN.Supplication_deacon End-Insert
-				Section block4
-					Actor sid Reader End-Actor
-					Title role desig sid Kontakion End-Title
-					Title role mixed<Tmode>sid meMA.Kontakion1.mode</><Tmelody>sid meMA.Kontakion1.melody</>End-Title
-					Reading sid meMA.Kontakion1.text End-Reading
-					Title role desig sid OOikos End-Title
-					Reading sid meMA.Oikos1.text End-Reading
+					Insert_section MA._02_Apolytikion__.me1gloryme1_.hymn End-Insert
+					Insert_section MA._02_Apolytikion__.both__.primarytheotokion__.mode4 End-Insert
+					Insert_section LN.ShortLitany02 End-Insert
+					Insert_section MA._03_Kathisma1__.me__.kath11o121t_ End-Insert
+					Insert_section MA._04_Kathisma2__.me__.kath21o222t_ End-Insert
+					Insert_section LN.ShortLitany04 End-Insert	
+					Rubric sid meR01 End-Rubric
+					Insert_section MA._08_Antiphons__.mode41 End-Insert
+					Insert_section MA._08_Antiphons__.prokeimenon End-Insert
+					Insert_section MA._09_Gospel__.priest End-Insert
+					Insert_section LN.Supplication_deacon End-Insert
+					Insert_section MA._11_Kontakion__.me1_ End-Insert
 					Insert_section SY.Synaxarion End-Insert
 					Insert_section KA.choir__._1345678 End-Insert
 					Insert_section MA._10_Canon__.Ode9_intro End-Insert
@@ -160,34 +98,12 @@ when-name-of-day-is
 					Insert_section KA.choir__._9 End-Insert
 					Insert_section LN.ShortLitany10 End-Insert	
 					Insert_section MA._12_Exaposteilarion__.me__.exap123t End-Insert
-				End-Section
-				Section block5
 					Insert_section MA._13_Lauds__.mode8 End-Insert
-					Title role mixed<Tmode>sid meMA.Lauds1.mode</><Tmelody>sid meMA.Lauds1.melody</>End-Title
-					Media sid meMA.Lauds1.text End-Media
-					Insert_section PsalmVerses.forLauds.v03 End-Insert
-					Hymn sid meMA.Lauds1.text @ver media-off End-Hymn
-					Insert_section PsalmVerses.forLauds.v04 End-Insert
-					Hymn sid meMA.Lauds1.text @ver media-off End-Hymn
-					Media sid meMA.Lauds2.text End-Media
-					Insert_section PsalmVerses.forLauds.v05 End-Insert
-					Hymn sid meMA.Lauds2.text @ver media-off End-Hymn
-					Media sid meMA.Lauds3.text End-Media
-					Insert_section PsalmVerses.forLauds.v06 End-Insert
-					Hymn sid meMA.Lauds3.text @ver media-off End-Hymn
-					Title role mixed sid Doxa<Tmode>sid meMA.LaudsGlory.mode</>End-Title
-					Hymn sid meMA.LaudsGlory.text @ver End-Hymn		
-					Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
-					Hymn sid meMA.LaudsTheotokion.text @ver End-Hymn		
+					Insert_section MA._13_Lauds__.me__.p_1123as3456 End-Insert
+					Insert_section MA._13_Lauds__.glory__.me__.gloryasglory_ End-Insert
+					Insert_section MA._13_Lauds__.both__.theotokion__.mode8 End-Insert
 					Insert_section MA._14_Doxology__.great End-Insert
-					Title role desig sid Apolytikion End-Title
-					Title role mixed<Tmode>sid meVE.Apolytikion1.mode</><Tmelody>sid meVE.Apolytikion1.melody</>End-Title
-					Hymn sid meVE.Apolytikion1.text @ver End-Hymn
+					Insert_section MA._14_Doxology__.apolytikion__.me1_ End-Insert
 				End-Section
-					
-			End-Section
-	
-end-when		
-
-
+	end-when		
 End-Template
