@@ -6216,30 +6216,51 @@ Template MA
 					78 thru 110 use: 
 						Reading sid hoMA.SunPostGospel.text @ver End-Reading
 						Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
-				end-when
-				when-date-is
-					Sep 14 use: 
+					113, 127 use:
 						Reading sid hoMA.SunPostGospel.text @ver End-Reading
 						Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
-				end-when
-				when-name-of-day-is
-					Sunday use:
-						when-date-is
-							Feb 2 use: 
-								Reading sid hoMA.SunPostGospel.text @ver End-Reading
-								Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
-							Aug 15 use: 
-								Reading sid hoMA.SunPostGospel.text @ver End-Reading
-								Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
-							Sep 8 use: 
-								Reading sid hoMA.SunPostGospel.text @ver End-Reading
-								Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
-							Nov 21 use: 
-								Reading sid hoMA.SunPostGospel.text @ver End-Reading
-								Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
-						end-when
-					otherwise use:
+					120 use:
 						Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+					otherwise use:
+						when-date-is
+							Sep 14 use: 
+								Reading sid hoMA.SunPostGospel.text @ver End-Reading
+								Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+							Feb 2 use:
+								when-name-of-day-is
+									Sunday use:
+										Reading sid hoMA.SunPostGospel.text @ver End-Reading
+										Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+									otherwise use:
+										Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+								end-when						
+							Aug 15 use: 
+								when-name-of-day-is
+									Sunday use:
+										Reading sid hoMA.SunPostGospel.text @ver End-Reading
+										Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+									otherwise use:
+										Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+								end-when						
+							Sep 8 use: 
+								when-name-of-day-is
+									Sunday use:
+										Reading sid hoMA.SunPostGospel.text @ver End-Reading
+										Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+									otherwise use:
+										Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+								end-when						
+							Nov 21 use: 
+								when-name-of-day-is
+									Sunday use:
+										Reading sid hoMA.SunPostGospel.text @ver End-Reading
+										Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+									otherwise use:
+										Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+								end-when						
+							otherwise use:
+								Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+						end-when	
 				end-when			
 			End-Section
 		End-Section
@@ -6294,6 +6315,7 @@ Template MA
 						Title role mixed sid KaiNyn<Tmode>sid OAftos</>End-Title
 						Hymn rid peMA.PostGospelBoth.text @ver media-off End-Hymn
 						Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid peMA.PostGospelIdiomelon.mode</>End-Title
+						Media rid peMA.PostGospelIdiomelon.text End-Media
 						Verse<bnr>sid vVerse</>sid ps_gr_GR_cog.psa50.v3.text End-Verse
 						Hymn rid peMA.PostGospelIdiomelon.text @ver media-off End-Hymn
 					End-Section
