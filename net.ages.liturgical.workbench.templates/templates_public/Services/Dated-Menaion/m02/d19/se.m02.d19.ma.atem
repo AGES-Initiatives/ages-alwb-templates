@@ -1,0 +1,79 @@
+Template se.m02.d19.ma 
+
+Status Final
+
+	import client_gr_GR_cog.*
+
+	import da.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 2 day 19 End_Date
+			Page_Header_Even
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ma End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+			when-name-of-day-is
+				Sunday use:
+					Section Instance02 //Sunday
+					End-Section
+				otherwise use:
+					Section Instance01
+						Insert_section cu.MatinsOrdinary.Instance01 End-Insert
+						Insert_section MA._01_Beginning__.mode5 End-Insert
+						Insert_section MA._02_Apolytikion__.me1gloryme1_.hymn End-Insert
+						Insert_section MA._02_Apolytikion__.both__.primarytheotokion__.mode5 End-Insert
+						Insert_section LN.ShortLitany02 End-Insert
+						Insert_section MA._03_Kathisma1__.me__.kath11111t End-Insert
+						Insert_section MA._04_Kathisma2__.me__.kath21o222t_.hymns End-Insert
+						Insert_section MA._05_Kathisma3__.me__.kath313t_ End-Insert
+						Insert_section LN.ShortLitany04 End-Insert	
+						Insert_section MA._08_Antiphons__.mode41 End-Insert
+						Insert_section MA._08_Antiphons__.prokeimenon End-Insert
+						Insert_section MA._09_Gospel__.priest End-Insert
+						Insert_section LN.Supplication_deacon End-Insert
+						Insert_section MA._11_Kontakion__.me1_ End-Insert
+						Insert_section SY.Synaxarion End-Insert
+						Insert_section KA.Hierarchical__._1345678 End-Insert
+						Insert_section MA._10_Canon__.Ode9_intro End-Insert
+						Insert_section KA.Hierarchical__._mode_mag_media End-Insert
+						Insert_section KA.Hierarchical__._9 End-Insert
+						Insert_section LN.ShortLitany10 End-Insert	
+						Insert_section MA._12_Exaposteilarion__.Hierarchical__.me__.exap123t End-Insert
+						Insert_section MA._13_Lauds__.mode1 End-Insert
+						Insert_section MA._13_Lauds__.me__.p_1123as3456 End-Insert
+						Insert_section MA._13_Lauds__.glory__.me__.gloryasglory_ End-Insert
+						Insert_section MA._13_Lauds__.both__.theotokion__.mode5 End-Insert
+						Insert_section MA._14_Doxology__.great End-Insert
+						Insert_section MA._14_Doxology__.apolytikion__.me1_ End-Insert
+					End-Section
+			end-when			
+
+End-Template
