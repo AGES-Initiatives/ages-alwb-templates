@@ -2137,7 +2137,10 @@ Template MA
 					Insert_section LN.BeforeGospel_Hierarchical End-Insert
 					Insert_section Selector_MatinsGospel.Section01 End-Insert
 					Insert_section MA.Psalm50_read_Hierarchical End-Insert
-					otherwise use:
+				71 use: 
+					Insert_section LN.BeforeGospel End-Insert
+					Insert_section Selector_MatinsGospel.Section01 End-Insert
+				otherwise use:
 						Section introP
 							Actor sid Deacon End-Actor
 							Dialog sid pet00 End-Dialog
@@ -2157,8 +2160,6 @@ Template MA
 									Insert_section Selector_MatinsGospel.Section01 End-Insert
 									Insert_section MA.Psalm50_read_Hierarchical End-Insert
 									Insert_section PostGospel_mc End-Insert
-								71 use: //pascha resurrection 
-									Insert_section Selector_MatinsGospel.Section01 End-Insert
 								78, 85, 92, 99, 106, 113 use:
 									Insert_section Selector_MatinsGospel.Section01 End-Insert
 									Insert_section Psalm50_chant_Hierarchical End-Insert
@@ -2211,72 +2212,73 @@ Template MA
 					Insert_section LN.BeforeGospel End-Insert
 					Insert_section Selector_MatinsGospel.Section01 End-Insert
 					Insert_section MA.Psalm50_read End-Insert
-					otherwise use:
-						Section introP
-							Actor sid Deacon End-Actor
-							Dialog sid pet00 End-Dialog
-							Dialog<i>sid res01p</>End-Dialog
-							Actor sid Priest End-Actor
-							Dialog sid exc06 End-Dialog
-							Actor sid Choir End-Actor
-							Dialog sid res04 End-Dialog
-							Title role mode sid Mode2 End-Title
-							Media sid hoMA.PreGospelHymn.text @ver End-Media
-							Hymn sid psa150.v6a.text<r>sid Twice</>sid psa150.v6aalt.text @ver End-Hymn
-							Insert_section LN.BeforeGospel End-Insert
-						End-Section
-						Section matinsgospel
-							when-movable-cycle-day-is //sundays before new eo cycle begins
-								64 use: //palm sunday
-									Insert_section Selector_MatinsGospel.Section01 End-Insert
-									Insert_section MA.Psalm50_read End-Insert
-									Insert_section PostGospel_mc End-Insert
-								71 use: //pascha resurrection 
-									Insert_section Selector_MatinsGospel.Section01 End-Insert
-								78, 85, 92, 99, 106, 113 use:
-									Insert_section Selector_MatinsGospel.Section01 End-Insert
-									Insert_section Psalm50_chant End-Insert
-									Insert_section PostGospel_eo End-Insert
-								110, 120 use:
-									Insert_section Selector_MatinsGospel.Section01 End-Insert
-									Insert_section MA.Psalm50_read End-Insert
-									Insert_section PostGospel_mc End-Insert
-								otherwise use:
-									when-name-of-day-is
-										Sunday use:
-											when-date-is // dates when menaion gospel supercedes eothinon
-												Jan 6 use: 
-													Insert_section Selector_MatinsGospel.Section01 End-Insert
-													Insert_section MA.Psalm50_read End-Insert
-													Insert_section PostGospel_me End-Insert
-												Mar 25 use: 
-													Insert_section Selector_MatinsGospel.Section01 End-Insert
-													Insert_section MA.Psalm50_read End-Insert
-													Insert_section PostGospel_me End-Insert
-												Aug 6 use: 
-													Insert_section Selector_MatinsGospel.Section01 End-Insert
-													Insert_section MA.Psalm50_read End-Insert
-													Insert_section PostGospel_me End-Insert
-												Sep 14 use: 
-													Insert_section Selector_MatinsGospel.Section01 End-Insert
-													Insert_section MA.Psalm50_read End-Insert
-													Insert_section PostGospel_me End-Insert
-												Dec 25 use: 
-													Insert_section Selector_MatinsGospel.Section01 End-Insert
-													Insert_section MA.Psalm50_read End-Insert
-													Insert_section PostGospel_me End-Insert
-												otherwise use:
-													Insert_section LE._02_Gospel__.eothinon End-Insert
-													Insert_section Psalm50_chant End-Insert
-													Insert_section PostGospel_eo End-Insert
-											end-when
-										otherwise use:
-											Insert_section Selector_MatinsGospel.Section01 End-Insert
-											Insert_section MA.Psalm50_read End-Insert
-											Insert_section PostGospel_me End-Insert
-									end-when
-							end-when
-						End-Section
+				71 use: 
+					Insert_section LN.BeforeGospel End-Insert
+					Insert_section Selector_MatinsGospel.Section01 End-Insert
+				otherwise use:
+					Section introP
+						Actor sid Deacon End-Actor
+						Dialog sid pet00 End-Dialog
+						Dialog<i>sid res01p</>End-Dialog
+						Actor sid Priest End-Actor
+						Dialog sid exc06 End-Dialog
+						Actor sid Choir End-Actor
+						Dialog sid res04 End-Dialog
+						Title role mode sid Mode2 End-Title
+						Media sid hoMA.PreGospelHymn.text @ver End-Media
+						Hymn sid psa150.v6a.text<r>sid Twice</>sid psa150.v6aalt.text @ver End-Hymn
+						Insert_section LN.BeforeGospel End-Insert
+					End-Section
+					Section matinsgospel
+						when-movable-cycle-day-is //sundays before new eo cycle begins
+							64 use: //palm sunday
+								Insert_section Selector_MatinsGospel.Section01 End-Insert
+								Insert_section MA.Psalm50_read End-Insert
+								Insert_section PostGospel_mc End-Insert
+							78, 85, 92, 99, 106, 113 use:
+								Insert_section Selector_MatinsGospel.Section01 End-Insert
+								Insert_section Psalm50_chant End-Insert
+								Insert_section PostGospel_eo End-Insert
+							110, 120 use:
+								Insert_section Selector_MatinsGospel.Section01 End-Insert
+								Insert_section MA.Psalm50_read End-Insert
+								Insert_section PostGospel_mc End-Insert
+							otherwise use:
+								when-name-of-day-is
+									Sunday use:
+										when-date-is // dates when menaion gospel supercedes eothinon
+											Jan 6 use: 
+												Insert_section Selector_MatinsGospel.Section01 End-Insert
+												Insert_section MA.Psalm50_read End-Insert
+												Insert_section PostGospel_me End-Insert
+											Mar 25 use: 
+												Insert_section Selector_MatinsGospel.Section01 End-Insert
+												Insert_section MA.Psalm50_read End-Insert
+												Insert_section PostGospel_me End-Insert
+											Aug 6 use: 
+												Insert_section Selector_MatinsGospel.Section01 End-Insert
+												Insert_section MA.Psalm50_read End-Insert
+												Insert_section PostGospel_me End-Insert
+											Sep 14 use: 
+												Insert_section Selector_MatinsGospel.Section01 End-Insert
+												Insert_section MA.Psalm50_read End-Insert
+												Insert_section PostGospel_me End-Insert
+											Dec 25 use: 
+												Insert_section Selector_MatinsGospel.Section01 End-Insert
+												Insert_section MA.Psalm50_read End-Insert
+												Insert_section PostGospel_me End-Insert
+											otherwise use:
+												Insert_section LE._02_Gospel__.eothinon End-Insert
+												Insert_section Psalm50_chant End-Insert
+												Insert_section PostGospel_eo End-Insert
+										end-when
+									otherwise use:
+										Insert_section Selector_MatinsGospel.Section01 End-Insert
+										Insert_section MA.Psalm50_read End-Insert
+										Insert_section PostGospel_me End-Insert
+								end-when
+						end-when
+					End-Section
 			end-when
 		End-Section
 	End-Section
