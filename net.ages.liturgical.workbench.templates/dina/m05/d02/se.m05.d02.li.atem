@@ -1,0 +1,231 @@
+Template se.m05.d02.li
+
+Status Final
+
+	import client_gr_GR_cog.*
+	import me.m05.d02_gr_GR_cog.*
+
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 5 day 2 End_Date
+			Page_Header_Even
+				center @lookup sid li.pdf.header sid d.on lang L1 @date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	when-movable-cycle-day-is
+		65 thru 72 use:
+			Section Instance01
+			End-Section
+			
+		73, 74, 75, 77 use: //Bright Week
+			Section Instance02
+			End-Section
+			
+		76 use: //Bright Friday
+			Section Instance03
+			End-Section
+			
+		78 use: //Thomas Sunday
+			Section Instance04
+			End-Section
+			
+		79 thru 83 use: 		
+			Section Instance05 //Thomas Post-feast
+				Section block1
+					Insert_section LI._01_Enarxis__.daily End-Insert
+					Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
+					Insert_section LI._04_Entrance__.clergy End-Insert
+					Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
+				End-Section
+				Section block2
+					Title role mixed<Tdesig>sid Apolytikion sid TisEortis</><Tmode>sid pe.d078_gr_GR_cog.peVE.Apolytikion1.mode</>End-Title
+					Hymn sid pe.d078_gr_GR_cog.peVE.Apolytikion1.text @ver End-Hymn
+					Title role desig sid Apolytikion sid TouAgiou End-Title
+					Title role mixed<Tmode>sid meVE.Apolytikion1.mode</><Tmelody>sid meVE.Apolytikion1.melody</>End-Title
+					Hymn sid meVE.Apolytikion1.text @ver End-Hymn
+				End-Section
+				Section block3
+					Insert_section LI._05_AfterEntranceHymns__.local End-Insert
+					Insert_section LI._05_AfterEntranceHymns__.kontakion End-Insert
+					Insert_section LI._06_Trisagion__.chrys End-Insert
+					Insert_section LE._01_Epistle__.menaion_ End-Insert
+					Insert_section LE._02_Gospel__.menaion_ End-Insert
+					Insert_section LI._08_Liturgy__.chrys End-Insert
+					Insert_section LI._09_Dismissal__.commemoration End-Insert
+				End-Section
+			End-Section //Instance05
+			
+		84 use: //Thomas Saturday
+			Section Instance06
+			End-Section
+			
+		85, 92, 99, 106 use: //Sundays of Pascha
+			Section Instance07
+			End-Section
+			
+		86, 87, 88, 89, 90, 93, 103, 104, 107 use:
+			Section Instance08
+			End-Section
+			
+		91, 105 use: //Leavetaking of Myr and Sam
+			Section Instance09
+				Insert_section Instance05.block1 End-Insert
+				Section block1
+					when-movable-cycle-day-is
+						91 use:
+							Title role mixed<Tdesig>sid Apolytikia</><Tmode>sid pe.d085_gr_GR_cog.peVE.Apolytikion2.mode</>End-Title
+							Hymn sid pe.d085_gr_GR_cog.peVE.Apolytikion1.text @ver End-Hymn
+							Hymn sid pe.d085_gr_GR_cog.peVE.Apolytikion2.text @ver End-Hymn
+							Hymn sid pe.d085_gr_GR_cog.peVE.Apolytikion3.text @ver End-Hymn
+						105 use:
+							Title role desig sid ApolytikionAnastasimon End-Title
+							Title role mode sid oc.m4.d1_gr_GR_cog.ocVE.Apolytikion.mode End-Title
+							Hymn sid oc.m4.d1_gr_GR_cog.ocVE.Apolytikion.text @ver End-Hymn
+					end-when
+					Title role desig sid TouAgiou End-Title
+					Title role mixed<Tmode>sid meVE.Apolytikion1.mode</><Tmelody>sid meVE.Apolytikion1.melody</>End-Title
+					Hymn sid meVE.Apolytikion1.text @ver End-Hymn
+				End-Section
+				Insert_section Instance05.block3 End-Insert
+			End-Section
+			
+		94, 108 use: //Leavetaking of Par and Blind
+			Section Instance10
+			End-Section
+			
+		95 use: //Wednesday Mid-Pentecost
+			Section Instance11
+			End-Section
+			
+		96, 97, 98, 100, 101 use: 
+			Section Instance12
+			End-Section
+			
+		95 use: //Leavetaking Mid-Pentecost
+			Section Instance13
+			End-Section
+			
+		109 use: //Leavetaking Pascha
+			Section Instance14
+			End-Section
+			
+		110 use: //Ascension
+			Section Instance15
+				Insert_section se.pe.d110.ve.Instance01 End-Insert
+			End-Section
+
+		111, 112 use:
+			Section Instance16
+			End-Section
+			
+	end-when		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	when-movable-cycle-day-is 
+	
+	65 thru 72 use:
+	
+	73 , 74, 75, 77 use:
+	
+	76 use:
+	
+	78 use:
+	
+	79 thru 83 use: 		
+		Section Instance_05 //Thomas Post-feast
+			Insert_section LI._01_Enarxis__.daily End-Insert
+			Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
+			Insert_section LI._04_Entrance__.clergy End-Insert
+			Section AfterEntrance
+				Title role mixed<Tdesig>sid Apolytikion sid TisEortis</><Tmode>sid pe.d078_gr_GR_cog.peVE.Apolytikion1.mode</>End-Title
+				Hymn sid pe.d078_gr_GR_cog.peVE.Apolytikion1.text @ver End-Hymn
+				Title role desig sid Apolytikion sid TouAgiou End-Title
+				Title role mixed<Tmode>sid meVE.Apolytikion1.mode</><Tmelody>sid meVE.Apolytikion1.melody</>End-Title
+				Hymn sid meVE.Apolytikion1.text @ver End-Hymn
+	Insert_section LI._05_AfterEntranceHymns__.local End-Insert
+				Title role mixed<Tdesig>sid Kontakion sid TisEortis</><Tmode>sid pe.d078_gr_GR_cog.peLI.SeasonalKontakion.mode</>End-Title
+				Hymn sid pe.d078_gr_GR_cog.peLI.SeasonalKontakion.text @ver End-Hymn
+			End-Section
+Insert_section LI._06_Trisagion__.chrys End-Insert
+			Insert_section LE._01_Epistle__.menaion_ End-Insert
+			Insert_section LE._02_Gospel__.menaion_ End-Insert
+			Insert_section LI._08_Liturgy__.chrys End-Insert
+			Section CommunionHymn
+				Actor sid Choir End-Actor
+				Title role desig sid Koinonikon End-Title
+				Hymn sid da.d3_gr_GR_cog.daLI.CommunionHymn.text @ver End-Hymn
+			End-Section
+			Section Pascha_LiturgyEnd2
+				Actor sid Deacon End-Actor
+				Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text media-off End-Dialog
+				Dialog sid res06 sid res09 End-Dialog
+			End-Section
+			Insert_section LI._09_Dismissal__.commemoration End-Insert
+		End-Section //Instance_05
+
+
+end-when
+
+
+
+
+
+
+
+
+
+
+
+
+
+End-Template

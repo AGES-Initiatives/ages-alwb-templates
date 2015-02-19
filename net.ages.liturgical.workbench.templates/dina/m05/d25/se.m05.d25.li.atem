@@ -1,0 +1,159 @@
+Template se.m05.d25.li
+
+Status Final
+
+	import client_gr_GR_cog.*
+	import ho.s07_gr_GR_cog.*
+	import me.m05.d25_gr_GR_cog.*
+
+	import da.*
+	import oc.*
+	import pe.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 5 day 25 End_Date
+			Page_Header_Even
+				center @lookup sid li.pdf.header sid d.on lang L1 @date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	when-movable-cycle-day-is
+		88, 89, 90, 93, 103, 104, 107 use:
+			Section Instance01
+			End-Section
+			
+		91, 105 use:
+			Section Instance02
+			End-Section
+
+		92, 99, 106 use: //Paschal Sundays
+			Section Instance03
+				when-movable-cycle-day-is 106 use:
+					Insert_section LI._01_Enarxis__.daily End-Insert
+					Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
+					Insert_section LI._04_Entrance__.clergy End-Insert
+					Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
+					Insert_section AP.resurrectional End-Insert
+					Title role desig sid TouProdromou End-Title
+					Insert_section AP.me1_.hymn End-Insert
+					Insert_section LI._05_AfterEntranceHymns__.local End-Insert
+					Insert_section LI._05_AfterEntranceHymns__.kontakion End-Insert
+					Insert_section LI._06_Trisagion__.chrys End-Insert
+					Insert_section LE._01_Epistle__.menaion_ End-Insert
+					Insert_section LE._02_Gospel__.daily_ End-Insert
+					Insert_section LI._08_Liturgy__.chrys End-Insert
+					Insert_section LI._09_Dismissal__.nocommemoration End-Insert
+				otherwise use:
+				end-when
+			End-Section
+
+		94, 108 use:
+			Section Instance04
+			End-Section
+		
+		110 use:
+			Section Instance05
+			End-Section
+		
+		96, 97, 100, 101 use:
+			Section Instance06
+			End-Section
+		
+		98 use: //Mid-Pent Saturday
+			Section Instance06_098
+			End-Section
+		
+		102 use: //Mid-Pent Leavetaking
+			Section Instance07
+			End-Section
+			
+		109 use: //Pascha Leavetaking
+			Section Instance08
+			End-Section
+		
+		110 use: //Ascension
+			Section Instance09
+			End-Section
+			
+		111, 112, 115, 116, 117, 122, 123, 124, 125 use:
+		
+		114 use:
+			Section Instance10_114
+				Insert_section LI._01_Enarxis__.daily End-Insert
+				Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
+				Insert_section LI._04_Entrance__.clergy End-Insert
+				Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
+				Insert_section AP.festal__.once End-Insert
+				Title role desig sid Apolytikion sid TisEortis End-Title
+				Title role mode sid pe.d110_gr_GR_cog.peVE.Apolytikion1.mode End-Title
+				Hymn sid pe.d110_gr_GR_cog.peVE.Apolytikion1.text @ver End-Hymn
+				Title role desig sid TouProdromou End-Title
+				Insert_section AP.me1_.hymn End-Insert
+				Insert_section LI._05_AfterEntranceHymns__.local End-Insert
+				Insert_section LI._05_AfterEntranceHymns__.kontakion End-Insert
+				Insert_section LI._06_Trisagion__.chrys End-Insert
+				Insert_section LE._01_Epistle__.menaion_ End-Insert
+				Insert_section LE._02_Gospel__.menaion_ End-Insert
+				Insert_section LI._08_Liturgy__.chrys End-Insert
+				Insert_section LI._09_Dismissal__.commemoration End-Insert
+			End-Section
+		
+		113 use: //Holy Fathers
+			Section Instance11
+			End-Section
+		
+		118, 126 use: //Asc or Pent Leavetaking
+			Section Instance12
+			End-Section
+		
+		119 use: //SoS
+			Section Instance13
+			End-Section
+		
+		120 use: //Pentecost
+			Section Instance14
+			End-Section
+		
+		121 use: 
+			Section Instance15
+			End-Section
+		
+		127 use: //All-Saints
+			Section Instance16
+			End-Section
+		
+		otherwise use:
+			when-name-of-day-is
+				Sunday use:
+					Section Instance18
+					End-Section
+					
+				otherwise use:
+					Section Instance17
+					End-Section
+			end-when
+	end-when
+
+End-Template
