@@ -1,0 +1,82 @@
+Template cu.vespers.ve 
+
+Status Final
+
+	import client_gr_GR_cog.*
+	import ho.s10_gr_GR_cog.*	
+	import me.m04.d25_gr_GR_cog.*
+
+	import da.*
+	import oc.*
+	import pe.*
+	import tr.*
+
+	//Templates
+	import bk.ho.s15_m04.*
+	
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 4 day 25 year 2015 End_Date
+			Page_Header_Even
+				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore lang L2 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	Section Instance11
+		Insert_section VE._01_Beginning__.Hierarchical__.vespers End-Insert
+		Insert_section VE._02_Kekragaria__.Hierarchical__.mode1__.for6 End-Insert
+		Title role desig sid TisEortis End-Title		
+		Insert_section VE._03_Stichera__.pe__.i_123as567 End-Insert
+		Title role desig sid TouEvangelistou End-Title
+		Insert_section VE._03_Stichera__.me__.p_123as8910 End-Insert
+		Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_ End-Insert
+		Insert_section VE._03_Stichera__.both__.pe__.gloryasboth_ End-Insert
+		Insert_section VE._04_Middle__.Hierarchical__.entrance End-Insert
+		Insert_section VE._06_Litanies__.Hierarchical__.fullektenia End-Insert
+		Actor sid Choir End-Actor
+		Title role desig sid Aposticha sid ToAnastasimon End-Title
+		Insert_section VE._08_Aposticha__.oc__.sunday_.aposticha1_ End-Insert
+		Title role desig sid TouEvangelistou End-Title
+		Insert_section VE._08_Aposticha__.append__.me__.selector End-Insert
+		Insert_section VE._08_Aposticha__.glory__.me_ End-Insert
+		Section block2	
+			Title role mixed sid KaiNyn<Tdesig>sid TisEortis</>End-Title
+			Title role mode sid pe.d078_gr_GR_cog.peVE.LityGlory.mode End-Title
+			Hymn sid pe.d078_gr_GR_cog.peVE.LityGlory.text @ver End-Hymn
+		End-Section	
+		Insert_section VE._09_Symeon_Trisagion__.Hierarchical End-Insert
+		Insert_section AP.festal__.once End-Insert
+		Title role mixed sid Doxa<Tdesig>sid TouEvangelistou</>End-Title
+		Insert_section AP.me1_.hymn End-Insert
+		Insert_section AP.both__.festal End-Insert
+		Insert_section VE._10_End__.Hierarchical__.wisdom End-Insert
+		Insert_section VE._11_Dismissal__.Hierarchical__.commemoration End-Insert
+	End-Section
+
+End-Template
