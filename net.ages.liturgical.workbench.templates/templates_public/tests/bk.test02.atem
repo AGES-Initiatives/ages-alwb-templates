@@ -4,6 +4,9 @@ Status Draft
 
 	import le.go.os_gr_GR_cog.*
 	import ps_gr_GR_cog.*
+	import da.*
+	import tr.*
+	import me.*
 
 	import key.descriptors_gr_GR_cog.*
 	
@@ -19,8 +22,36 @@ Status Draft
 	import bTags.*
 	import roles.*
 
+	Head 
+		Set_Date month 2 day 1 End_Date
+			Page_Header_Even
+				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore lang L2 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
 
 
+	Section Section01
+	Para ldp@Day_of_Movable_Cycle End-Para
+	Set_mcDay day 8 End_mcDay
+	Hymn rid trVE.SticGlory.text End-Hymn
 
+	Para ldp@Day_of_Movable_Cycle End-Para
+	Hymn rid meVE.Apolytikion1.text End-Hymn
+	End-Section
 
 End-Template
