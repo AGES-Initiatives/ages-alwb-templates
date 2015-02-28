@@ -1,26 +1,20 @@
 Template se.tr.d056.co 
 
+	import ho.s13.*
+	import ho.s22.*
+	
 	import client_gr_GR_cog.*
-	import eu.lichrysbasil_gr_GR_cog.*
-	import ho.s03_gr_GR_cog.*
-	import ho.s07_gr_GR_cog.*
-	import ho.s10_gr_GR_cog.*	
-//	import me.m00.d00_gr_GR_cog.*
-//	import pe.d000_gr_GR_cog.*
-	import tr.d056_gr_GR_cog.*
 
-//	import oc.*
-//	import pe.*
-//	import tr.*
+	import da.*
+	import tr.*
 
-	//Templates
-	import kTheotokos.*  //Katavasia
 	
 	import actors_gr_GR_cog.*
-	import template.titles_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
 	import misc_gr_GR_cog.*
 	import prayers_gr_GR_cog.*
 	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
 	import titles_gr_GR_cog.*
 		
 	import iTags.*
@@ -28,13 +22,27 @@ Template se.tr.d056.co
 	import roles.*
 
 
-	import ho.s13.*
-	import ho.s22.*
+	Head 
+		Set_Date month 3 day 28 End_Date
+		Page_Header_Even 
+			left @pageNbr 
+			center 
+				@lookup sid co.salutations.pdf.header lang L2
+//				@date 
+		End_Page_Header_Even
+		Page_Header_Odd 
+			center 
+				@lookup sid co.salutations.pdf.header lang L2
+//				@date 
+			right @pageNbr 
+		End_Page_Header_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
 	
 	Insert_section SmallCompline1 End-Insert
 		Actor sid Choir End-Actor
-		Title role mixed<Tdesig>sid Apolytikion</><Tmode>sid trVE.Apolytikion1.mode</>End-Title
-		Hymn sid trVE.Apolytikion1.text<r>sid Thrice media-off</>End-Hymn
+		Title role mixed<Tdesig>sid Apolytikion</><Tmode>rid trVE.Apolytikion1.mode</>End-Title
+		Hymn rid trVE.Apolytikion1.text<r>sid Thrice media-off</>End-Hymn
 	Insert_section Stasis1 End-Insert
 	Insert_section Canon.Ode1 End-Insert
 	Insert_section Canon.Ode3 End-Insert
