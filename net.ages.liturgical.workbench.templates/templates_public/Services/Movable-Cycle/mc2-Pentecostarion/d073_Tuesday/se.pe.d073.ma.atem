@@ -6,6 +6,7 @@ Status Final
 	import ho.s03_gr_GR_cog.*
 	import pe.d073_gr_GR_cog.*
 
+	import me.*
 
 	//Templates
 	import kPascha.*
@@ -22,7 +23,7 @@ Status Final
 	import roles.*
 
 	Head 
-		Set_Date month 4 day 14 End_Date
+//		Set_Date month 4 day 14 End_Date
 			Page_Header_Even
 				center @lookup sid ma.pdf.header lang L1 @lookup sid d.on lang L1 @date lang L1
 			End_Page_Header_Even
@@ -62,22 +63,15 @@ Status Final
 	End-Section
 	
 	Section Instance02 //with St Mark
+	Set_Date month 4 day 25 End_Date
 		Insert_section MA._01_Beginning__.pascha End-Insert
 		Insert_section MA._10_Canon__.hypakoe__.pascha End-Insert
 		Insert_section MA._11_Kontakion__.append__.pascha_ End-Insert
-		Section block1
-			Title role source sid sourceMenaion End-Title
-			Title role desig sid Kontakion sid TouEvangelistou End-Title
-			Title role mixed<Tmode>sid me.m04.d25_gr_GR_cog.meMA.Kontakion1.mode</><Tmelody>sid me.m04.d25_gr_GR_cog.meMA.Kontakion1.melody</>End-Title
-			Reading sid me.m04.d25_gr_GR_cog.meMA.Kontakion1.text @ver media-off End-Reading
-			Title role desig sid OOikos End-Title
-			Reading sid me.m04.d25_gr_GR_cog.meMA.Oikos1.text @ver End-Reading
-		End-Section
-		Insert_section SY.me End-Insert
-		Reading sid me.m04.d25_gr_GR_cog.meMA.Synaxarion.text End-Reading
-		Insert_section SY.mc End-Insert
+		Insert_section TI.k.s_._05_evangelist End-Insert
+		Insert_section MA._11_Kontakion__.append__.me1_.konoik_ End-Insert
+		Insert_section SY.Synaxarion End-Insert
 		Insert_section KA._1345678 End-Insert
-		Section block2
+		Section block1
 			Insert_section MA._10_Canon__.ode9_intro End-Insert
 			Title role source sid sourcePentecostarion End-Title
 			Actor sid Choir End-Actor
@@ -93,30 +87,29 @@ Status Final
 			Verse sid pe.d00P_gr_GR_cog.pePA.Ode9M04.text End-Verse
 			Hymn sid pe.d00P_gr_GR_cog.pePA.Ode92.text @ver End-Hymn
 		End-Section
-		Section block3
+		Section block2
 			Title role source sid sourceMenaion End-Title
 			Title role desig sid TouEvangelistou End-Title
-			Title role mixed<Tmode>sid me.m04.d25_gr_GR_cog.meMA.Ode9C11.mode</><Tmelody>sid me.m04.d25_gr_GR_cog.meMA.Ode9C11.melody</>End-Title
-			Media sid me.m04.d25_gr_GR_cog.meMA.Ode9C11.text End-Media
+			Title role mixed<Tmode>rid meMA.Ode9C11.mode</><Tmelody>rid meMA.Ode9C11.melody</>End-Title
+			Media rid meMA.Ode9C11.text End-Media
 			Verse sid ApostoleTouChristou.text End-Verse
-			Hymn sid me.m04.d25_gr_GR_cog.meMA.Ode9C11.text @ver media-off End-Hymn			
+			Hymn rid meMA.Ode9C11.text @ver media-off End-Hymn			
 			Verse sid ApostoleTouChristou.text End-Verse
-			Hymn sid me.m04.d25_gr_GR_cog.meMA.Ode9C12.text @ver End-Hymn			
+			Hymn rid meMA.Ode9C12.text @ver End-Hymn			
 			Title sid Doxa End-Title
-			Hymn sid me.m04.d25_gr_GR_cog.meMA.Ode9C13.text @ver End-Hymn			
+			Hymn rid meMA.Ode9C13.text @ver End-Hymn			
 			Title sid KaiNyn End-Title
-			Hymn sid me.m04.d25_gr_GR_cog.meMA.Ode9C1T.text @ver End-Hymn	
+			Hymn rid meMA.Ode9C1T.text @ver End-Hymn	
+			Title role desig sid Katavasia End-Title
+			Media sid pe.d00P_gr_GR_cog.pePA.Ode9K.text End-Media
+			Verse sid pe.d00P_gr_GR_cog.pePA.Ode9MKa.text End-Verse
+			Hymn sid pe.d00P_gr_GR_cog.pePA.Ode9K.text @ver media-off End-Hymn
+			Hymn sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text<r>sid Thrice media-off</>End-Hymn
+			Hymn sid hoMA.SunPostGospelIdiomelon.text @ver End-Hymn
 		End-Section
-		Insert_section KA.choir__._9 End-Insert
-		Insert_section PE.ChristIsRisen.thrice End-Insert
-		Hymn sid hoMA.SunPostGospelIdiomelon.text @ver End-Hymn
 		Insert_section MA._12_Exaposteilarion__.pascha__.once_ End-Insert
-		Section block4
-			Title role source sid sourceMenaion End-Title
-			Title role desig sid TouEvangelistou End-Title
-			Title role mixed<Tmode>sid me.m04.d25_gr_GR_cog.meMA.Exaposteilarion1.mode</><Tmelody>sid me.m04.d25_gr_GR_cog.meMA.Exaposteilarion1.melody</>End-Title
-			Hymn sid me.m04.d25_gr_GR_cog.meMA.Exaposteilarion1.text @ver End-Hymn
-		End-Section
+		Insert_section TI.s._05_evangelist End-Insert
+		Insert_section MA._12_Exaposteilarion__.append__.me__.exap1_.hymn End-Insert
 		Insert_section MA._12_Exaposteilarion__.append__.pascha_ End-Insert
 		when-movable-cycle-day-is 
 			72 use: Insert_section MA._13_Lauds__.mode2 End-Insert
@@ -126,27 +119,11 @@ Status Final
 			77 use: Insert_section MA._13_Lauds__.mode8 End-Insert
 		end-when
 		Insert_section MA._13_Lauds__.pe__.s_1234as1234 End-Insert
-		Section block5
-			Title role source sid sourceMenaion End-Title
-			Title role desig sid TouEvangelistou End-Title
-			Title role mixed<Tmode>sid me.m04.d25_gr_GR_cog.meMA.Lauds1.mode</><Tmelody>sid me.m04.d25_gr_GR_cog.meMA.Lauds1.melody</>End-Title
-			Media sid me.m04.d25_gr_GR_cog.meMA.LaudsSundayVerse1.text End-Media
-			Insert_section PsalmVerses.forLauds.v05 End-Insert
-			Hymn sid me.m04.d25_gr_GR_cog.meMA.Lauds1.text @ver media-off End-Hymn
-			Insert_section PsalmVerses.forLauds.v06 End-Insert
-			Hymn sid me.m04.d25_gr_GR_cog.meMA.Lauds1.text @ver media-off End-Hymn
-			Insert_section PsalmVerses.forOneApostle.verse1 End-Insert
-			Hymn sid me.m04.d25_gr_GR_cog.meMA.Lauds2.text @ver media-off End-Hymn
-			Insert_section PsalmVerses.forOneApostle.verse2 End-Insert
-			Hymn sid me.m04.d25_gr_GR_cog.meMA.Lauds3.text @ver media-off End-Hymn
-		End-Section
+		Insert_section TI.s._05_evangelist End-Insert
+		Insert_section MA._13_Lauds__.me__.p_1123as56oneapostle12 End-Insert
 		Insert_section MA._13_Lauds__.pascha End-Insert
-		Section block6
-			Title role source sid sourceMenaion End-Title
-			Title role mixed sid Doxa<Tdesig>sid TouEvangelistou</>End-Title
-			Title role mode sid me.m04.d25_gr_GR_cog.meMA.LaudsGlory.mode End-Title
-			Hymn sid me.m04.d25_gr_GR_cog.meMA.LaudsGlory.text @ver End-Hymn
-		End-Section
+		Insert_section TI.g.s_._05_evangelist End-Insert
+		Insert_section MA._13_Lauds__.glory__.me__.gloryasglory_.hymn End-Insert
 		Insert_section MA._13_Lauds__.both__.pascha_ End-Insert
 		Insert_section AP.pascha__.thrice End-Insert
 		Insert_section MA._18_End__.wisdom End-Insert

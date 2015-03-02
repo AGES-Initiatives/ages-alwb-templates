@@ -3,7 +3,7 @@ Template se.pe.d072.ve
 Status Final
 
 	import client_gr_GR_cog.*
-//	import me.m04.d23_gr_GR_cog.*
+	import me.*
 	
 	import actors_gr_GR_cog.*
 	import template.titles_gr_GR_cog.*
@@ -18,7 +18,7 @@ Status Final
 
 
 	Head 
-		Set_Date month 4 day 13 End_Date
+//		Set_Date month 4 day 13 End_Date
 			Page_Header_Even
 				center  @lookup sid pa.easter lang L1 @lookup sid d.delimiter lang L1 @lookup sid pa.agape lang L1
 			End_Page_Header_Even
@@ -57,6 +57,7 @@ Status Final
 	End-Section
 	
 	Section Instance02 //with St George
+	Set_Date month 4 day 23 End_Date
 		Insert_section VE._01_Beginning__.vespers End-Insert
 		when-movable-cycle-day-is 
 			72 use: Insert_section VE._02_Kekragaria__.mode2__.noStichologia End-Insert
@@ -66,55 +67,26 @@ Status Final
 			77 use: Insert_section VE._02_Kekragaria__.mode8__.noStichologia End-Insert
 		end-when
 		Insert_section VE._03_Stichera__.pe__.s_1234as3456 End-Insert
-		Section block1
-			Title role source sid sourceMenaion End-Title
-			Title role desig sid Stichira sid TouAgiou End-Title
-			Title role mixed<Tmode>sid me.m04.d23_gr_GR_cog.meVE.Stichera01.mode</><Tmelody>sid me.m04.d23_gr_GR_cog.meVE.Stichera01.melody</>End-Title
-			Insert_section VE.LIHC_Verses.v07 End-Insert
-			Hymn sid me.m04.d23_gr_GR_cog.meVE.Stichera01.text @ver media-off End-Hymn
-			Insert_section VE.LIHC_Verses.v08 End-Insert
-			Hymn sid me.m04.d23_gr_GR_cog.meVE.Stichera02.text @ver media-off End-Hymn
-			Insert_section VE.LIHC_Verses.v09 End-Insert
-			Hymn sid me.m04.d23_gr_GR_cog.meVE.Stichera03.text @ver media-off End-Hymn
-			Insert_section VE.LIHC_Verses.v10 End-Insert
-			Hymn sid me.m04.d23_gr_GR_cog.meVE.Stichera04.text @ver media-off End-Hymn
-		End-Section
-		Section block2
-			Title role source sid sourceMenaion End-Title
-			Title sid Doxa End-Title
-			Title role mode sid me.m04.d23_gr_GR_cog.meVE.SticGlory.mode End-Title
-			Hymn sid me.m04.d23_gr_GR_cog.meVE.SticGlory.text @ver End-Hymn
-		End-Section
+		Insert_section TI.st.s_._00_saint_.m End-Insert
+		Insert_section VE._03_Stichera__.me__.p_1234as78910 End-Insert
+		Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_ End-Insert
 		Insert_section VE._03_Stichera__.both__.pe__.bothasboth_ End-Insert
 		Insert_section VE._04_Middle__.entrance End-Insert
 		when-movable-cycle-day-is
 			72 use:
 				Insert_section PE.SundayVespersGospel End-Insert
 			otherwise use:
-				Section block3
-					Title role source sid sourceMenaion End-Title
-					Title role desig sid TaAnagnosmata End-Title
-					Insert_section LE._03_Prophetologion__.r38 End-Insert
-					Insert_section LE._03_Prophetologion__.r25 End-Insert
-					Insert_section LE._03_Prophetologion__.r26 End-Insert
-				End-Section
+				Insert_section VE._05_Readings__.reader End-Insert
 		end-when
 		Insert_section VE._06_Litanies__.fullektenia End-Insert
 		Insert_section VE._08_Aposticha__.pe__.s_1 End-Insert
 		Insert_section VE._08_Aposticha__.pascha End-Insert
-		Section block4
-			Title role source sid sourceMenaion End-Title
-			Title role mixed sid Doxa<Tdesig>sid TouAgiou</>End-Title
-			Title role mode sid me.m04.d23_gr_GR_cog.meVE.AposGlory.mode End-Title
-			Hymn sid me.m04.d23_gr_GR_cog.meVE.AposGlory.text @ver End-Hymn
-		End-Section
+		Insert_section TI.g.s_._00_saint_.m End-Insert
+		Insert_section VE._08_Aposticha__.glory__.me_.hymn End-Insert
 		Insert_section VE._08_Aposticha__.both__.pascha_ End-Insert
 		Insert_section AP.pascha__.twice End-Insert
-		Section block5
-			Title role desig sid TouAgiou End-Title
-			Title role mixed<Tmode>sid me.m04.d23_gr_GR_cog.meVE.Apolytikion1.mode</><Tmelody>sid me.m04.d23_gr_GR_cog.meVE.Apolytikion1.melody</>End-Title
-			Hymn sid me.m04.d23_gr_GR_cog.meVE.Apolytikion1.text @ver End-Hymn
-		End-Section
+		Insert_section TI.s._00_saint_.m End-Insert
+		Insert_section AP.me1_.hymn End-Insert
 		Insert_section AP.pascha__.once End-Insert
 		Insert_section VE._10_End__.wisdom End-Insert
 		Insert_section VE._11_Dismissal__.specificcommemoration__.brightweek_stgeorge End-Insert
