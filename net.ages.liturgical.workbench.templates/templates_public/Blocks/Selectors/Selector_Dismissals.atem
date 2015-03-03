@@ -57,7 +57,7 @@ Status Review
 					end-when
 				Oct 28 use: Insert_section dismissal_12 End-Insert
 				Nov 8 use: Insert_section dismissal_04 End-Insert
-				Nov 9 use: Insert_section dismissal_13 End-Insert
+//				Nov 9 use: Insert_section dismissal_13 End-Insert
 				Nov 21 use: Insert_section dismissal_02 End-Insert
 				Dec 9 use: Insert_section dismissal_02 End-Insert
 				Dec 11, 13, 14, 16 use:
@@ -123,14 +123,14 @@ Status Review
 						Dialog sid PaschaDialog6.text End-Dialog
 					End-Section
 				78 thru 108 use:
-					Section afterpascha_end_1
-						Rubric sid cl.pe.d078.R001 End-Rubric
-						Actor sid Priest End-Actor
-						Dialog sid DiEfchonPateron.text End-Dialog
-						Dialog<i>sid res04p</>End-Dialog
-					End-Section
+//					Section afterpascha_end_1
+//						Rubric sid cl.pe.d078.R001 End-Rubric
+//						Actor sid Priest End-Actor
+//						Dialog sid DiEfchonPateron.text End-Dialog
+//						Dialog<i>sid res04p</>End-Dialog
+//					End-Section
 					Section afterpascha_end_2	
-						Rubric sid Or End-Rubric
+//						Rubric sid Or End-Rubric
 						Rubric sid cl.pe.d078.R002 End-Rubric
 						Actor sid Priest End-Actor
 						Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text End-Dialog
@@ -154,7 +154,7 @@ Status Review
 				71, 72, 73, 74, 75, 76, 77, 109 use:
 					Insert_section Com_Yes.part2.pascha_end End-Insert
 				78 thru 108 use:
-					Insert_section Com_Yes.part2.afterpascha_end_1 End-Insert
+//					Insert_section Com_Yes.part2.afterpascha_end_1 End-Insert
 					Insert_section Com_Yes.part2.afterpascha_end_2 End-Insert
 				121 use:
 					Actor sid People End-Actor
@@ -165,6 +165,56 @@ Status Review
 			end-when
 		End-Section
 	End-Section				
+
+	Section Hierarchical
+		Section part2
+			when-movable-cycle-day-is
+				71, 72, 73, 74, 75, 76, 77, 109 use:
+					Section pascha_end
+						Actor sid Hierarch End-Actor
+						Dialog sid PaschaDialog1.text End-Dialog
+						Dialog sid PaschaDialog2.text End-Dialog
+						Actor sid People End-Actor
+						Dialog sid PaschaDialog3.text End-Dialog
+						Actor sid Hierarch End-Actor
+						Dialog sid PaschaDialog2.text End-Dialog
+						Actor sid People End-Actor
+						Dialog sid PaschaDialog3.text End-Dialog
+						Actor sid Hierarch End-Actor
+						Dialog sid PaschaDialog2.text End-Dialog
+						Actor sid People End-Actor
+						Dialog sid PaschaDialog3.text End-Dialog
+						Actor sid Hierarch End-Actor
+						Dialog sid PaschaDialog4.text End-Dialog
+						Actor sid People End-Actor
+						Dialog sid PaschaDialog5.text End-Dialog
+						Actor sid Hierarch End-Actor
+						Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text End-Dialog
+						Actor sid People End-Actor
+						Dialog sid PaschaDialog6.text End-Dialog
+					End-Section
+				78 thru 108 use:
+//					Section afterpascha_end_1
+//						Rubric sid cl.pe.d078.R001 End-Rubric
+//						Actor sid Priest End-Actor
+//						Dialog sid DiEfchonPateron.text End-Dialog
+//						Dialog<i>sid res04p</>End-Dialog
+//					End-Section
+					Section afterpascha_end_2	
+//						Rubric sid Or End-Rubric
+						Rubric sid cl.pe.d078.R002 End-Rubric
+//						Actor sid Hierarch End-Actor
+						Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text End-Dialog
+						Actor sid People End-Actor
+						Dialog sid PaschaDialog6.text End-Dialog
+					End-Section
+				otherwise use:
+					Dialog sid DiEfchonPateron.text End-Dialog
+					Dialog<i>sid res04p</>End-Dialog
+			end-when
+		End-Section
+	End-Section
+
 
 	Section Com_Specific__
 		Section brightweek_stgeorge
@@ -328,12 +378,12 @@ Status Review
 		end-when	
 	End-Section
 	
-	Section dismissal_13 //StNekariosNovember9
-		when-name-of-day-is Sunday use:
-			Dialog sid dis00 sid dis00.resurrection sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 sid me.m11.d09b_gr_GR_cog.meInsert1 sid me.m11.d09b_gr_GR_cog.meInsert2 sid dis10 sid dis89 End-Dialog 
-			otherwise use: Dialog sid dis00 sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 sid me.m11.d09b_gr_GR_cog.meInsert1 sid me.m11.d09b_gr_GR_cog.meInsert2 sid dis10 sid dis89 End-Dialog 
-		end-when	
-	End-Section
+//	Section dismissal_13 //StNekariosNovember9
+//		when-name-of-day-is Sunday use:
+//			Dialog sid dis00 sid dis00.resurrection sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 sid me.m11.d09b_gr_GR_cog.meInsert1 sid me.m11.d09b_gr_GR_cog.meInsert2 sid dis10 sid dis89 End-Dialog 
+//			otherwise use: Dialog sid dis00 sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 sid me.m11.d09b_gr_GR_cog.meInsert1 sid me.m11.d09b_gr_GR_cog.meInsert2 sid dis10 sid dis89 End-Dialog 
+//		end-when	
+//	End-Section
 
 	Section dismissal_14 //ForefathersDecember
 		Dialog sid dis00 sid dis00.resurrection sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 sid me.m12.dFF_gr_GR_cog.meInsert1 sid me.m12.dFF_gr_GR_cog.meInsert2 sid dis10 sid dis89 End-Dialog 
