@@ -2,7 +2,6 @@ Template bk.test01
 
 	import client_gr_GR_cog.*
 	import ho.s10_gr_GR_cog.*	
-	import me.m05.d02_gr_GR_cog.*
 
 	import da.*
 	import oc.*
@@ -24,7 +23,7 @@ Template bk.test01
 	import roles.*
 
 	Head 
-		Set_Date month 5 day 2 End_Date
+		Set_Date month 3 day 24 year 2015 End_Date
 			Page_Header_Even
 				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore lang L2 
 			End_Page_Header_Even
@@ -44,20 +43,10 @@ Template bk.test01
 		Insert_template ematins.cover.ve End-Insert
 		Insert_template ematins.credits End-Insert
 	End-Preface
+	
+	Para ldp @Day_of_Movable_Cycle End-Para
+	Insert_section MA._11_Kontakion__.append__.tr_.konoik_.kontakion End-Insert
+	Para sid tr.d054_gr_GR_cog.trMA.Kontakion1.text End-Para
 
-	when-movable-cycle-day-is
-		91, 105 use: //Leavetaking of Myr and Sam
-			Section Instance09
-					
-						when-movable-cycle-day-is
-							91 use:
-								Section block1
-								Set_mcDay day 85 End_mcDay
-									Insert_section VE._03_Stichera__.both__.pe__.gloryasboth_ End-Insert
-								Set_mcDay day 0 End_mcDay
-								End-Section
-						end-when
-			End-Section
-			
-	end-when		
+
 End-Template
