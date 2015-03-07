@@ -2,21 +2,8 @@ Template generator
 /**
  * Examples of regular expressions
  * 
- * se.m[0-1][0-9].d[0-3][0-9].(sun|sat).(ve|li|ma).atem
+ * se.m03.d(01|02|03).(ve|li|ma).atem
  * 	Generate using all templates that
- * 		Start with se
- * 		For any month 00 to 19 (needed in order to handle m09)
- * 		For any day 0-39 (needed in order to handle d09) 
- * 		With service day = sun or sat (as of June 2014 service templates are not day-specific)
- * 		For service type = ve or li or ma
- *
- * se.m03.d[0-3][0-9].(sun|sat|wkd).(ve|li|ma).atem
- * 	Generate using all templates that
- * 		Start with se
- * 		For month 03
- * 		For any month day
- * 		For service days sun or sat or wkd (as of June 2014 service templates are not day-specific)
- * 		For service types ve or li or ma
  * 
  * Note: Generation_Driver templates are applied only to the templates
  * that reside in the same project as the Generation_Driver template.
@@ -24,7 +11,7 @@ Template generator
 
 	Generation_Driver
 
-		Service_Regular_Expression "se.m(05).d(01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31).(ve|pl|co|em|ma|li|gh|vl|mo).atem"
+		Service_Regular_Expression "se.m(03).d(01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31).(co).atem"
 //		Service_Regular_Expression "se.m(02|03).d(01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31).(ve|pl|co|em|ma|li|gh|vl|mo).atem"
 //		Service_Regular_Expression "se.(tr|pe).d(065|066|067|068|069|070|071).(ve|pl|co|em|ma|li|gh|vl|mo).atem"
 		
