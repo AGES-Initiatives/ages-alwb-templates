@@ -8,6 +8,9 @@ Status Draft
 	import ho.s06_gr_GR_cog.*
 	import ho.s07_gr_GR_cog.*
 	import ho.s09_gr_GR_cog.*
+	import ho.s12_gr_GR_cog.*	
+	import ho.s13_gr_GR_cog.*
+	import ho.s22_gr_GR_cog.*
 	import le.go.os_gr_GR_cog.*
 	import le.pr.os_gr_GR_cog.*
 	import ps_gr_GR_cog.*
@@ -30,41 +33,231 @@ Status Draft
 	import bTags.*
 	import roles.*
 
-	Section Lent_h1
-		Title role desig sid hoH1.title End-Title
-		Insert_section HR._02_Psalms__.h1 End-Insert
-		Insert_section Selector_LentHoursTroparia.h1__.apolytikia End-Insert
-		Insert_section HR._03__.h1_lent End-Insert
-		Insert_section Selector_LentHoursTroparia.h1__.kontakia End-Insert
-		Insert_section HR._04__.h1369 End-Insert
-		when-name-of-day-is
-			Monday, Tuesday, Wednesday, Thursday, Friday use:
-				Insert_section HR._05_Lent__.h1 End-Insert
-		end-when
-		Insert_section HR._06_PrayerOfHour__.h1 End-Insert
-		Insert_section HR._07_Dismissal End-Insert
-	End-Section
-	
-	Section Lent_h3
-		Title role desig sid hoH3.title End-Title
-		Insert_section HR._01_Intro_ End-Insert
-		Insert_section HR._02_Psalms__.h3 End-Insert
-		Insert_section Selector_LentHoursTroparia.h3__.apolytikia End-Insert
-		Insert_section HR._03__.h3 End-Insert
-		Insert_section Selector_LentHoursTroparia.h3__.kontakia End-Insert
-		Insert_section HR._04__.h1369 End-Insert
-		when-name-of-day-is
-			Monday, Tuesday, Wednesday, Thursday, Friday use:
-				Insert_section HR._05_Lent__.h3 End-Insert
-		end-when
-		Insert_section HR._06_PrayerOfHour__.h3 End-Insert
+	Section smallcompline__
+		Section part1
+			Insert_section _01_Intro_ End-Insert
+			Reading sid res04 sid res01<r>sid Twelve</>End-Reading
+			Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+			Reading sid DefteProskinisomen1 End-Reading
+			Reading sid DefteProskinisomen2 End-Reading
+			Reading sid DefteProskinisomen3 End-Reading
+			Title role desig sid psa50.title End-Title
+			Reading sid	psa50.text End-Reading
+			Title role desig sid psa69.title End-Title
+			Reading sid	psa69.text End-Reading
+			Title role desig sid psa142.title End-Title
+			Reading sid	psa142.text End-Reading
+			Title role desig sid hoCO.Key0903.title End-Title
+			Reading sid	hoCO.Key0903.text sid hoCO.Key0904.text sid hoCO.Key0905.text sid hoCO.Key0906.text sid hoCO.Key0907.text End-Reading
+			Title role desig sid hoCO.Key0511.title End-Title
+			Reading sid hoCO.Key0511.text End-Reading
+			Reading sid AxionEstin.text End-Reading
+		End-Section
+		//canon
+		Section part2
+			Insert_section _01_Intro_.append.Trisagion_Prayers End-Insert
+		End-Section
+		//Kontakia
+		Section part3
+			Insert_section _04__.h1369 End-Insert
+		End-Section
+		Section part4
+			Dialog sid res01<r>sid Twelve</>End-Dialog
+			Title role desig sid hoCO.Key1101.title End-Title
+			Title<r>sid hoCO.Key1101.poet</>End-Title
+			Reading sid hoCO.Key1101.text End-Reading	
+			Title role desig sid hoCO.Key1102.title End-Title
+			Title<r>sid hoCO.Key1102.poet</>End-Title
+			Reading sid hoCO.Key1102.text End-Reading	
+			Reading sid hoCO.Key1103.text End-Reading	
+			Reading sid hoCO.Key1104.text End-Reading	
+			Reading sid hoCO.Key1105.text End-Reading
+		End-Section
+		Section part5
+		//	Actor sid Reader End-Actor
+			Reading sid hoSC.Key0202.text End-Reading
+			Title role desig sid hoSC.Key0200.title End-Title
+			Title<r>sid hoSC.Key0201.title</>End-Title
+			Reading sid hoSC.Key0201.text End-Reading
+			Reading sid hoSC.Key0203.text End-Reading
+		End-Section
+		Section part6
+		//	Actor sid Reader End-Actor
+			Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+			Reading sid res06 End-Reading
+			Reading sid Evlogison End-Reading
+			Actor sid Priest End-Actor
+			Dialog sid dis00 sid dis01 sid dis02 sid cl.localpatronsaint1.dismissal sid dis09 sid dis10 sid dis89 End-Dialog
+			Section litany
+				Dialog sid petCompline01 End-Dialog
+				Dialog<i>sid res01p</>End-Dialog
+				Dialog sid petCompline02 End-Dialog
+				Dialog sid petCompline03 sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
+				Dialog sid petCompline04 End-Dialog
+				Dialog sid petCompline05 End-Dialog
+				Dialog sid petCompline06 End-Dialog
+				Dialog sid petCompline07 End-Dialog
+				Dialog sid petCompline08 End-Dialog
+				Dialog sid petCompline09 End-Dialog
+				Dialog sid petCompline10 End-Dialog
+				Dialog sid petCompline11 End-Dialog
+				Dialog sid petCompline12 End-Dialog
+				Dialog sid petCompline13 End-Dialog
+				Dialog sid petCompline14 End-Dialog
+				Dialog sid petCompline15 End-Dialog
+			End-Section
+		End-Section
+		Section part7
+			when-movable-cycle-day-is 
+				28, 35, 42, 49 use:
+					Actor sid Choir End-Actor
+					Title role mode sid hoSA.LastHymn.mode End-Title
+					Hymn sid hoSA.LastHymn.text @ver End-Hymn
+				56 use:
+					Actor sid Chanter End-Actor
+					Title role mode sid trMA.Kontakion1.mode End-Title
+					Hymn sid trMA.Kontakion1.text @ver End-Hymn
+			end-when	
+		End-Section
+		Section part8
+			Actor sid Priest End-Actor
+			Dialog sid DiEfchonPateron.text End-Dialog
+			Dialog<i>sid res04p</>End-Dialog
+		End-Section
 	End-Section
 
+	Section h1__
+		Section beginning
+			Insert_section HR._01_Intro_.append End-Insert
+			Insert_section HR._02_Psalms__.h1 End-Insert
+			Reading sid DoxaPatri.text End-Reading
+		End-Section
+		Section middle
+			Insert_section HR._03__.h1 End-Insert
+		End-Section
+		Section end
+			Insert_section HR._04__.h1369 End-Insert
+			Insert_section HR._06_PrayerOfHour__.h1 End-Insert
+			Insert_section HR._07_Dismissal End-Insert
+		End-Section
+	End-Section
+	Section h3__
+		Section beginning
+			Insert_section HR._01_Intro_ End-Insert
+			Insert_section HR._02_Psalms__.h3 End-Insert
+			Reading sid DoxaPatri.text End-Reading
+		End-Section
+		Section middle
+			Insert_section HR._03__.h3 End-Insert
+		End-Section
+		Section end
+			Insert_section HR._04__.h1369 End-Insert
+			Insert_section HR._06_PrayerOfHour__.h3 End-Insert
+			Insert_section HR._07_Dismissal End-Insert
+		End-Section
+	End-Section
+	Section h6__
+		Section beginning
+			Insert_section HR._01_Intro_.append End-Insert
+			Insert_section HR._02_Psalms__.h6 End-Insert
+			Reading sid DoxaPatri.text End-Reading
+		End-Section
+		Section middle
+			Insert_section HR._03__.h6 End-Insert
+		End-Section
+		Section end
+			Insert_section HR._04__.h1369 End-Insert
+			Insert_section HR._06_PrayerOfHour__.h6 End-Insert
+			Insert_section HR._07_Dismissal End-Insert
+		End-Section
+	End-Section
+	Section h9__
+		Section beginning
+			Insert_section HR._01_Intro_ End-Insert
+			Insert_section HR._02_Psalms__.h9 End-Insert
+			Reading sid DoxaPatri.text End-Reading
+		End-Section
+		Section middle
+			Insert_section HR._03__.h9 End-Insert
+		End-Section
+		Section end
+			Insert_section HR._04__.h1369 End-Insert
+			Insert_section HR._06_PrayerOfHour__.h9 End-Insert
+			Insert_section HR._07_Dismissal End-Insert
+		End-Section
+	End-Section
+
+	Section Lent_h1__
+		Section append
+			Title role desig sid hoH1.title End-Title
+			Insert_section HR._02_Psalms__.h1 End-Insert
+			Insert_section Selector_LentHoursTroparia.h1__.apolytikia End-Insert
+			Insert_section HR._03__.h1_lent End-Insert
+			Insert_section Selector_LentHoursTroparia.h1__.kontakia End-Insert
+			Insert_section HR._04__.h1369 End-Insert
+			when-name-of-day-is
+				Monday, Tuesday, Wednesday, Thursday, Friday use:
+					Insert_section HR._05_Lent__.h1 End-Insert
+			end-when
+			Insert_section HR._06_PrayerOfHour__.h1 End-Insert
+			Insert_section HR._07_Dismissal End-Insert
+		End-Section
+		Section begin
+			Title role desig sid hoH1.title End-Title
+			Insert_section HR._01_Intro_ End-Insert
+			Insert_section HR._02_Psalms__.h1 End-Insert
+			Insert_section Selector_LentHoursTroparia.h1__.apolytikia End-Insert
+			Insert_section HR._03__.h1_lent End-Insert
+			Insert_section Selector_LentHoursTroparia.h1__.kontakia End-Insert
+			Insert_section HR._04__.h1369 End-Insert
+			when-name-of-day-is
+				Monday, Tuesday, Wednesday, Thursday, Friday use:
+					Insert_section HR._05_Lent__.h1 End-Insert
+			end-when
+			Insert_section HR._06_PrayerOfHour__.h1 End-Insert
+			Insert_section HR._07_Dismissal End-Insert
+		End-Section
+	End-Section
+	Section Lent_h3__
+		Section append
+			Title role desig sid hoH3.title End-Title
+			Insert_section HR._01_Intro_.append End-Insert
+			Insert_section HR._02_Psalms__.h3 End-Insert
+			Insert_section Selector_LentHoursTroparia.h3__.apolytikia End-Insert
+			Insert_section HR._03__.h3 End-Insert
+			Insert_section Selector_LentHoursTroparia.h3__.kontakia End-Insert
+			Insert_section HR._04__.h1369 End-Insert
+			when-name-of-day-is
+				Monday, Tuesday, Wednesday, Thursday, Friday use:
+					Insert_section HR._05_Lent__.h3 End-Insert
+			end-when
+			Insert_section HR._06_PrayerOfHour__.h3 End-Insert
+		End-Section
+		Section begin
+			Title role desig sid hoH3.title End-Title
+			Insert_section HR._01_Intro_ End-Insert
+			Insert_section HR._02_Psalms__.h3 End-Insert
+			Insert_section Selector_LentHoursTroparia.h3__.apolytikia End-Insert
+			Insert_section HR._03__.h3 End-Insert
+			Insert_section Selector_LentHoursTroparia.h3__.kontakia End-Insert
+			Insert_section HR._04__.h1369 End-Insert
+			when-name-of-day-is
+				Monday, Tuesday, Wednesday, Thursday, Friday use:
+					Insert_section HR._05_Lent__.h3 End-Insert
+			end-when
+			Insert_section HR._06_PrayerOfHour__.h3 End-Insert
+		End-Section
+	End-Section
 	Section Lent_h6
 		Title role desig sid hoH6.title End-Title
 		Insert_section HR._02_Psalms__.h6 End-Insert
 		Insert_section Selector_LentHoursTroparia.h6__.apolytikia End-Insert
-		Insert_section HR._03__.h6 End-Insert
+		Insert_section HR._03__.h6_lent.part1 End-Insert
+		when-name-of-day-is
+			Monday, Tuesday, Wednesday, Thursday, Friday use:
+				Insert_section HR._03__.prophecy End-Insert
+		end-when
+		Insert_section HR._03__.h6_lent.part2 End-Insert
 		Insert_section Selector_LentHoursTroparia.h6__.kontakia End-Insert
 		Insert_section HR._04__.h1369 End-Insert
 		when-name-of-day-is
@@ -74,44 +267,72 @@ Status Draft
 		Insert_section HR._06_PrayerOfHour__.h6 End-Insert
 		Insert_section HR._07_Dismissal End-Insert
 	End-Section
-
-	Section Lent_h9
-		when-name-of-day-is
-			Monday, Tuesday, Thursday use:
-				Section beforevespers
-					Title role desig sid hoH9.title End-Title
-					Insert_section HR._01_Intro_ End-Insert
-					Insert_section HR._02_Psalms__.h9 End-Insert
-					Insert_section Selector_LentHoursTroparia.h9__.apolytikia End-Insert
-					Insert_section HR._03__.h9 End-Insert
-					Insert_section Selector_LentHoursTroparia.h9__.kontakia End-Insert
-					Insert_section HR._04__.h9_lent End-Insert
-					Insert_section HR._05_Lent__.h9__.before_vespers End-Insert
-				End-Section
-			Wednesday, Friday use:
-				Section beforepresanctified
-					Title role desig sid hoH9.title End-Title
-					Insert_section HR._01_Intro_ End-Insert
-					Insert_section HR._02_Psalms__.h9 End-Insert
-					Insert_section Selector_LentHoursTroparia.h9__.apolytikia End-Insert
-					Insert_section HR._03__.h9 End-Insert
-					Insert_section Selector_LentHoursTroparia.h9__.kontakia End-Insert
-					Insert_section HR._04__.h9_lent End-Insert
-					Insert_section HR._05_Lent__.h9__.before_presanctified End-Insert
-					Insert_section HR._07_Dismissal End-Insert
-				End-Section
-			Saturday, Sunday use:
-				Section weekend
-					Insert_section HR._01_Intro_ End-Insert
-					Insert_section HR._02_Psalms__.h9 End-Insert
-					Insert_section Selector_LentHoursTroparia.h9__.apolytikia End-Insert
-					Insert_section HR._03__.h9 End-Insert
-					Insert_section Selector_LentHoursTroparia.h9__.kontakia End-Insert
-					Insert_section HR._04__.h1369 End-Insert
-					Insert_section HR._06_PrayerOfHour__.h9 End-Insert
-					Insert_section HR._07_Dismissal End-Insert
-				End-Section
-		end-when
+	Section Lent_h9__
+		Section append
+			when-name-of-day-is
+				Monday, Tuesday, Thursday use:
+					Section beforevespers
+						Title role desig sid hoH9.title End-Title
+						Insert_section HR._01_Intro_.append End-Insert
+						Insert_section HR._02_Psalms__.h9 End-Insert
+						Insert_section Selector_LentHoursTroparia.h9__.apolytikia End-Insert
+						Insert_section HR._03__.h9 End-Insert
+						Insert_section Selector_LentHoursTroparia.h9__.kontakia End-Insert
+						Insert_section HR._04__.h9_lent End-Insert
+						Insert_section HR._05_Lent__.h9__.before_vespers End-Insert
+					End-Section
+				Wednesday, Friday use:
+					Section beforepresanctified
+						Title role desig sid hoH9.title End-Title
+						Insert_section HR._01_Intro_.append End-Insert
+						Insert_section HR._02_Psalms__.h9 End-Insert
+						Insert_section Selector_LentHoursTroparia.h9__.apolytikia End-Insert
+						Insert_section HR._03__.h9 End-Insert
+						Insert_section Selector_LentHoursTroparia.h9__.kontakia End-Insert
+						Insert_section HR._04__.h9_lent End-Insert
+						Insert_section HR._05_Lent__.h9__.before_presanctified End-Insert
+						Insert_section HR._07_Dismissal End-Insert
+					End-Section
+			end-when
+		End-Section
+		Section begin
+			when-name-of-day-is
+				Monday, Tuesday, Thursday use:
+					Section beforevespers
+						Title role desig sid hoH9.title End-Title
+						Insert_section HR._01_Intro_ End-Insert
+						Insert_section HR._02_Psalms__.h9 End-Insert
+						Insert_section Selector_LentHoursTroparia.h9__.apolytikia End-Insert
+						Insert_section HR._03__.h9 End-Insert
+						Insert_section Selector_LentHoursTroparia.h9__.kontakia End-Insert
+						Insert_section HR._04__.h9_lent End-Insert
+						Insert_section HR._05_Lent__.h9__.before_vespers End-Insert
+					End-Section
+				Wednesday, Friday use:
+					Section beforepresanctified
+						Title role desig sid hoH9.title End-Title
+						Insert_section HR._01_Intro_ End-Insert
+						Insert_section HR._02_Psalms__.h9 End-Insert
+						Insert_section Selector_LentHoursTroparia.h9__.apolytikia End-Insert
+						Insert_section HR._03__.h9 End-Insert
+						Insert_section Selector_LentHoursTroparia.h9__.kontakia End-Insert
+						Insert_section HR._04__.h9_lent End-Insert
+						Insert_section HR._05_Lent__.h9__.before_presanctified End-Insert
+						Insert_section HR._07_Dismissal End-Insert
+					End-Section
+				Saturday, Sunday use:
+					Section weekend
+						Insert_section HR._01_Intro_ End-Insert
+						Insert_section HR._02_Psalms__.h9 End-Insert
+						Insert_section Selector_LentHoursTroparia.h9__.apolytikia End-Insert
+						Insert_section HR._03__.h9 End-Insert
+						Insert_section Selector_LentHoursTroparia.h9__.kontakia End-Insert
+						Insert_section HR._04__.h1369 End-Insert
+						Insert_section HR._06_PrayerOfHour__.h9 End-Insert
+						Insert_section HR._07_Dismissal End-Insert
+					End-Section
+			end-when
+		End-Section
 	End-Section
 
 
@@ -418,7 +639,7 @@ Status Draft
 		Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
 		Reading sid res06 End-Reading
 		Reading sid Evlogison End-Reading
-		Insert_section Selector_Dismissals.Com_No End-Insert
+		Insert_section Selector_Dismissals.Com_Yes End-Insert
 	End-Section
 	Section _08_Typika_
 		Section psalms
