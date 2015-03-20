@@ -1,0 +1,94 @@
+Template se.m07.d27.li2
+
+Status Final
+
+	import eu.lichrysbasil_gr_GR_cog.*
+	import ho.s10_gr_GR_cog.*	
+	import me.m07.d27_gr_GR_cog.*
+
+	import da.*
+	import oc.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 7 day 27 year 2015 End_Date
+			Page_Header_Even
+				center @lookup sid li.pdf.header sid d.on lang L1 @date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Title role desig ldp@Service_Date End-Title
+	when-name-of-day-is 
+		Sunday use:	
+			Section Instance02 //Sunday
+				Insert_section vp.Selector_Liturgy_Antiphons._01_specific_day.antiphon1 End-Insert
+				Insert_section vp.Selector_Liturgy_Antiphons._01_specific_day.antiphon2 End-Insert
+			//	Insert_section vp.Selector_Liturgy_Antiphons._01_specific_day.antiphon2_refrain End-Insert
+				Insert_section vp.Selector_Liturgy_Antiphons._01_specific_day.antiphon3 End-Insert
+				Title role desig sid variables.info_gr_GR_cog.SmallEntrance.title End-Title
+				Insert_section Selector_Eisodikon.eisodikon_complete End-Insert
+				Title role desig sid variables.info_gr_GR_cog.HymnsAfterSmallEntrance.title End-Title
+				Insert_section se.m07.d27.li.Instance02.hymns End-Insert
+				Insert_section vp.Selector_Liturgy_Trisagion.Chrysostom End-Insert
+			//	Insert_section vp.Lectionary._01_Epistle__.daily_.prokeimenon End-Insert
+			//	Insert_section vp.Lectionary._01_Epistle__.daily_.lesson End-Insert
+				Insert_section vp.Lectionary._01_Epistle__.menaion_.prokeimenon End-Insert
+				Insert_section vp.Lectionary._01_Epistle__.menaion_.lesson End-Insert
+				Insert_section vp.Lectionary._02_Gospel__.daily_.alleluia End-Insert
+				Insert_section vp.Lectionary._02_Gospel__.daily_.lesson End-Insert
+			//	Insert_section vp.Lectionary._02_Gospel__.menaion_.alleluia End-Insert
+			//	Insert_section vp.Lectionary._02_Gospel__.menaion_.lesson End-Insert
+				Insert_section vp.Selector_Liturgy_Theotokos.hymn End-Insert
+				Insert_section vp.Selector_Liturgy_CommunionHymn.hymn End-Insert
+				Insert_section vp.Selector_Liturgy_After_Communion.hymn End-Insert
+			End-Section //Sunday
+		
+			otherwise use:
+				Section Instance01
+					Insert_section vp.Selector_Liturgy_Antiphons._02_celebrated_saint.antiphon1 End-Insert
+					Insert_section vp.Selector_Liturgy_Antiphons._02_celebrated_saint.antiphon2 End-Insert
+					Title role desig sid variables.info_gr_GR_cog.Antiphon3.title End-Title
+					Insert_section AP.me1_ End-Insert
+					Title role desig sid variables.info_gr_GR_cog.SmallEntrance.title End-Title
+					Insert_section Selector_Eisodikon.eisodikon_complete End-Insert
+					Title role desig sid variables.info_gr_GR_cog.HymnsAfterSmallEntrance.title End-Title
+					Insert_section AP.me1_ End-Insert
+					Insert_section LI._05_AfterEntranceHymns__.local End-Insert
+					Insert_section KO.seasonal End-Insert
+					Insert_section vp.Selector_Liturgy_Trisagion.Chrysostom End-Insert
+				//	Insert_section vp.Lectionary._01_Epistle__.daily_.prokeimenon End-Insert
+				//	Insert_section vp.Lectionary._01_Epistle__.daily_.lesson End-Insert
+					Insert_section vp.Lectionary._01_Epistle__.menaion_.prokeimenon End-Insert
+					Insert_section vp.Lectionary._01_Epistle__.menaion_.lesson End-Insert
+				//	Insert_section vp.Lectionary._02_Gospel__.daily_.alleluia End-Insert
+				//	Insert_section vp.Lectionary._02_Gospel__.daily_.lesson End-Insert
+					Insert_section vp.Lectionary._02_Gospel__.menaion_.alleluia End-Insert
+					Insert_section vp.Lectionary._02_Gospel__.menaion_.lesson End-Insert
+					Insert_section vp.Selector_Liturgy_Theotokos.hymn End-Insert
+					Insert_section vp.Selector_Liturgy_CommunionHymn.hymn End-Insert
+					Insert_section vp.Selector_Liturgy_After_Communion.hymn End-Insert
+				End-Section	
+	end-when
+
+End-Template
