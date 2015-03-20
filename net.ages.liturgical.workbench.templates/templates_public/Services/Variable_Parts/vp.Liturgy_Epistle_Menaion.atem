@@ -1,0 +1,663 @@
+Template vp.Liturgy_Epistle_Menaion 
+
+Status Review
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+//	Head 
+//		Set_Date month 1 day 11 year 2015 End_Date
+//	End_Head
+
+	Section Epistle_Info
+		when-date-is
+			Jan 1 use: Para role missalreading sid le.ep.me.m01.d01_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m01.d01_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m01.d01_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jan 2 thru 5 use:
+				when-name-of-day-is 
+					Saturday use: Para role missalreading sid le.ep.me.m12.dSatBE_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m12.dSatBE_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m12.dSatBE_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+					Sunday use: Para role missalreading sid le.ep.me.m12.dSunBE_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m12.dSunBE_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m12.dSunBE_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+					otherwise use:
+						when-date-is
+							Jan 2 use: Para role missalreading sid le.ep.me.m01.d02_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m01.d02_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m01.d02_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+							Jan 4 use: Para role missalreading sid le.ep.me.m01.d04_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m01.d04_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m01.d04_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+						end-when
+				end-when	
+			Jan 6 use: Para role missalreading sid le.ep.me.m01.d06_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m01.d06_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m01.d06_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jan 7 use: Para role missalreading sid le.ep.me.m01.d07_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m01.d07_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m01.d07_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jan 8, 9, 10, 12, 13 use:
+				when-name-of-day-is
+					Saturday use: Para role missalreading sid le.ep.me.m01.dSatAE_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m01.dSatAE_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m01.dSatAE_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+					Sunday use: Para role missalreading sid le.ep.me.m01.dSunAE_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m01.dSunAE_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m01.dSunAE_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+					otherwise use:
+						when-date-is
+							Jan 9 use: Para role missalreading sid le.ep.me.m01.d09_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m01.d09_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m01.d09_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+							Jan 10 use: Para role missalreading sid le.ep.me.m01.d10_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m01.d10_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m01.d10_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+						end-when
+				end-when			
+			Jan 11 use: 
+				when-name-of-day-is
+					Saturday use: Para role missalreading sid le.ep.me.m01.d11_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m01.d11_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m01.d11_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+					Sunday use: Para role missalreading sid le.ep.me.m01.d11_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m01.d11_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m01.d11_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+					otherwise use: Para role missalreading sid le.ep.me.m01.d11_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m01.d11_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m01.d11_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+				end-when
+			Jan 14 use:
+				when-name-of-day-is
+					Saturday use: Para role missalreading sid le.ep.me.m01.dSatAE_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m01.dSatAE_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m01.dSatAE_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+					Sunday use: Para role missalreading sid le.ep.me.m01.dSunAE_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m01.dSunAE_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m01.dSunAE_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+					otherwise use: Para role missalreading sid le.ep.me.m01.d14_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m01.d14_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m01.d14_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+				end-when
+			Jan 15 use: Para role missalreading sid le.ep.me.m01.d15_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m01.d15_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m01.d15_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jan 16 use: Para role missalreading sid le.ep.me.m01.d16_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m01.d16_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m01.d16_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jan 17 use: Para role missalreading sid le.ep.me.m01.d17_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m01.d17_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m01.d17_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jan 18 use: Para role missalreading sid le.ep.me.m01.d18_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m01.d18_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m01.d18_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jan 19 use: Para role missalreading sid le.ep.me.m01.d19_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m01.d19_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m01.d19_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jan 20 use: Para role missalreading sid le.ep.me.m01.d20_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m01.d20_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m01.d20_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jan 21 use: Para role missalreading sid le.ep.me.m01.d21_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m01.d21_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m01.d21_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jan 22 use: Para role missalreading sid le.ep.me.m01.d22_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m01.d22_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m01.d22_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jan 23 use: Para role missalreading sid le.ep.me.m01.d23_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m01.d23_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m01.d23_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jan 24 use: Para role missalreading sid le.ep.me.m01.d24_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m01.d24_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m01.d24_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jan 25 use: Para role missalreading sid le.ep.me.m01.d25_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m01.d25_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m01.d25_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jan 27 use: Para role missalreading sid le.ep.me.m01.d27_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m01.d27_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m01.d27_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jan 28 use: Para role missalreading sid le.ep.me.m01.d28_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m01.d28_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m01.d28_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jan 29 use: Para role missalreading sid le.ep.me.m01.d29_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m01.d29_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m01.d29_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jan 30 use: Para role missalreading sid le.ep.me.m01.d30_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m01.d30_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m01.d30_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jan 31 use: Para role missalreading sid le.ep.me.m01.d31_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m01.d31_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m01.d31_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Feb 1 use: Para role missalreading sid le.ep.me.m02.d01_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m02.d01_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m02.d01_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Feb 2 use: Para role missalreading sid le.ep.me.m02.d02_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m02.d02_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m02.d02_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Feb 3 use: Para role missalreading sid le.ep.me.m02.d03_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m02.d03_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m02.d03_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Feb 6 use: Para role missalreading sid le.ep.me.m02.d06_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m02.d06_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m02.d06_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Feb 8 use: Para role missalreading sid le.ep.me.m02.d08_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m02.d08_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m02.d08_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Feb 9 use: Para role missalreading sid le.ep.me.m02.d09_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m02.d09_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m02.d09_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Feb 10 use:	Para role missalreading sid le.ep.me.m02.d10_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m02.d10_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m02.d10_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Feb 11 use:	Para role missalreading sid le.ep.me.m02.d11_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m02.d11_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m02.d11_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Feb 15 use:	Para role missalreading sid le.ep.me.m02.d15_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m02.d15_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m02.d15_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Feb 17 use:	Para role missalreading sid le.ep.me.m02.d17_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m02.d17_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m02.d17_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Feb 23 use:	Para role missalreading sid le.ep.me.m02.d23_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m02.d23_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m02.d23_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Feb 24 use:	Para role missalreading sid le.ep.me.m02.d24_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m02.d24_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m02.d24_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Feb 26 use:	Para role missalreading sid le.ep.me.m02.d26_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m02.d26_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m02.d26_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Mar 9, 10 use: Para role missalreading sid le.ep.me.m03.d09_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m03.d09_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m03.d09_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Mar 25 use: Para role missalreading sid le.ep.me.m03.d25_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m03.d25_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m03.d25_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Mar 26 use: Para role missalreading sid le.ep.me.m03.d26_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m03.d26_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m03.d26_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Mar 30 use: Para role missalreading sid le.ep.me.m03.d30_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m03.d30_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m03.d30_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Apr 1 use: Para role missalreading sid le.ep.me.m04.d01_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m04.d01_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m04.d01_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Apr 10 use: Para role missalreading sid le.ep.me.m04.d10_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m04.d10_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m04.d10_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Apr 23 use: Para role missalreading sid le.ep.me.m04.d23_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m04.d23_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m04.d23_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Apr 25 use: Para role missalreading sid le.ep.me.m04.d25_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m04.d25_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m04.d25_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Apr 29 use: Para role missalreading sid le.ep.me.m04.d29_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m04.d29_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m04.d29_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Apr 30 use: Para role missalreading sid le.ep.me.m04.d30_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m04.d30_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m04.d30_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			May 1 use: Para role missalreading sid le.ep.me.m05.d01_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m05.d01_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m05.d01_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			May 2 use: Para role missalreading sid le.ep.me.m05.d02_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m05.d02_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m05.d02_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			May 7 use: Para role missalreading sid le.ep.me.m05.d07_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m05.d07_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m05.d07_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			May 8 use: Para role missalreading sid le.ep.me.m05.d08_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m05.d08_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m05.d08_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			May 9 use: Para role missalreading sid le.ep.me.m05.d09_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m05.d09_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m05.d09_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			May 10 use: Para role missalreading sid le.ep.me.m05.d10_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m05.d10_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m05.d10_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			May 11 use: Para role missalreading sid le.ep.me.m05.d11_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m05.d11_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m05.d11_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			May 15 use: Para role missalreading sid le.ep.me.m05.d15_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m05.d15_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m05.d15_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			May 20 use: Para role missalreading sid le.ep.me.m05.d20_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m05.d20_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m05.d20_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			May 21 use: Para role missalreading sid le.ep.me.m05.d25_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m05.d25_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m05.d25_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			May 24 use: Para role missalreading sid le.ep.me.m05.d24_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m05.d24_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m05.d24_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			May 25 use: Para role missalreading sid le.ep.me.m05.d25_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m05.d25_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m05.d25_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			May 26 use: Para role missalreading sid le.ep.me.m05.d26_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m05.d26_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m05.d26_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			May 29 use: Para role missalreading sid le.ep.me.m05.d29_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m05.d29_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m05.d29_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jun 2 use:	Para role missalreading sid le.ep.me.m06.d02_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m06.d02_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m06.d02_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jun 4 use:	Para role missalreading sid le.ep.me.m06.d04_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m06.d04_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m06.d04_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jun 8 use:	Para role missalreading sid le.ep.me.m06.d08_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m06.d08_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m06.d08_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jun 9 use:	Para role missalreading sid le.ep.me.m06.d09_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m06.d09_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m06.d09_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jun 11 use:	Para role missalreading sid le.ep.me.m06.d11_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m06.d11_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m06.d11_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jun 12 use:	Para role missalreading sid le.ep.me.m06.d12_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m06.d12_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m06.d12_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jun 14 use:	Para role missalreading sid le.ep.me.m06.d14_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m06.d14_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m06.d14_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+		//	Jun 14 use:	Para role missalreading sid le.ep.me.m06.d14_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m06.d14_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m06.d14_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jun 17 use:	Para role missalreading sid le.ep.me.m06.d17_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m06.d17_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m06.d17_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jun 19 use:	Para role missalreading sid le.ep.me.m06.d19_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m06.d19_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m06.d19_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jun 24 use:	Para role missalreading sid le.ep.me.m06.d24_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m06.d24_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m06.d24_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jun 25 use:	Para role missalreading sid le.ep.me.m06.d25_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m06.d25_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m06.d25_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jun 26 use:	Para role missalreading sid le.ep.me.m06.d26_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m06.d26_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m06.d26_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jun 27 use:	Para role missalreading sid le.ep.me.m06.d27_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m06.d27_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m06.d27_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jun 28 use:	Para role missalreading sid le.ep.me.m06.d28_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m06.d28_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m06.d28_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jun 29 use:	Para role missalreading sid le.ep.me.m06.d29_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m06.d29_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m06.d29_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jun 30 use: Para role missalreading sid le.ep.me.m06.d30_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m06.d30_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m06.d30_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jul 1 use: Para role missalreading sid le.ep.me.m07.d01_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m07.d01_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m07.d01_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jul 2 use: Para role missalreading sid le.ep.me.m07.d02_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m07.d02_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m07.d02_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jul 4 use: Para role missalreading sid le.ep.me.m07.d04_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m07.d04_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m07.d04_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jul 8 use: Para role missalreading sid le.ep.me.m07.d08_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m07.d08_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m07.d08_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jul 9 use: Para role missalreading sid le.ep.me.m07.d09_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m07.d09_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m07.d09_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jul 11 use: Para role missalreading sid le.ep.me.m07.d11_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m07.d11_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m07.d11_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jul 13 thru 19 use:
+				when-name-of-day-is Sunday 
+					use: Para role missalreading sid le.ep.me.m07.dHF_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m07.dHF_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m07.dHF_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+					otherwise use:
+						when-date-is
+							Jul 13 use: Para role missalreading sid le.ep.me.m07.d13_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m07.d13_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m07.d13_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+							Jul 14 use: Para role missalreading sid le.ep.me.m07.d14_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m07.d14_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m07.d14_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+							Jul 15 use: Para role missalreading sid le.ep.me.m07.d15_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m07.d15_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m07.d15_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+							Jul 17 use: Para role missalreading sid le.ep.me.m07.d17_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m07.d17_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m07.d17_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+							Jul 18 use: Para role missalreading sid le.ep.me.m07.d18_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m07.d18_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m07.d18_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+						end-when
+				end-when		
+			Jul 20 use: Para role missalreading sid le.ep.me.m07.d20_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m07.d20_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m07.d20_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jul 21 use: Para role missalreading sid le.ep.me.m07.d21_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m07.d21_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m07.d21_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jul 22 use: Para role missalreading sid le.ep.me.m07.d22_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m07.d22_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m07.d22_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jul 24 use: Para role missalreading sid le.ep.me.m07.d24_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m07.d24_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m07.d24_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jul 25 use: Para role missalreading sid le.ep.me.m07.d25_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m07.d25_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m07.d25_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+		//	Jul 26 use: Para role missalreading sid le.ep.me.m07.d26_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m07.d26_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m07.d26_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jul 26 use: Para role missalreading sid le.ep.me.m07.d26_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m07.d26_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m07.d26_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jul 27 use: Para role missalreading sid le.ep.me.m07.d27_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m07.d27_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m07.d27_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jul 28 use: Para role missalreading sid le.ep.me.m07.d28_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m07.d28_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m07.d28_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jul 29 use: Para role missalreading sid le.ep.me.m07.d29_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m07.d29_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m07.d29_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Jul 31 use: Para role missalreading sid le.ep.me.m07.d31_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m07.d31_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m07.d31_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Aug 1 use: Para role missalreading sid le.ep.me.m08.d01_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m08.d01_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m08.d01_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Aug 2 use: Para role missalreading sid le.ep.me.m08.d02_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m08.d02_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m08.d02_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Aug 3 use: Para role missalreading sid le.ep.me.m08.d03_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m08.d03_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m08.d03_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+		//	Aug 4 use: Para role missalreading sid le.ep.me.m08.d04_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m08.d04_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m08.d04_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Aug 6 use: Para role missalreading sid le.ep.me.m08.d06_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m08.d06_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m08.d06_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Aug 7 use: Para role missalreading sid le.ep.me.m08.d07_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m08.d07_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m08.d07_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Aug 9 use: Para role missalreading sid le.ep.me.m08.d09_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m08.d09_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m08.d09_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Aug 10 use: Para role missalreading sid le.ep.me.m08.d10_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m08.d10_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m08.d10_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Aug 11 use: Para role missalreading sid le.ep.me.m08.d11_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m08.d11_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m08.d11_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Aug 13 use: Para role missalreading sid le.ep.me.m08.d13_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m08.d13_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m08.d13_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Aug 15 use: Para role missalreading sid le.ep.me.m08.d15_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m08.d15_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m08.d15_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Aug 16 use: Para role missalreading sid le.ep.me.m08.d16_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m08.d16_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m08.d16_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Aug 18 use: Para role missalreading sid le.ep.me.m08.d18_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m08.d18_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m08.d18_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Aug 20 use: Para role missalreading sid le.ep.me.m08.d20_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m08.d20_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m08.d20_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Aug 25 use: Para role missalreading sid le.ep.me.m08.d25_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m08.d25_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m08.d25_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Aug 26 use: Para role missalreading sid le.ep.me.m08.d26_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m08.d26_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m08.d26_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Aug 27 use: Para role missalreading sid le.ep.me.m08.d27_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m08.d27_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m08.d27_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Aug 29 use: Para role missalreading sid le.ep.me.m08.d29_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m08.d29_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m08.d29_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Aug 31 use: Para role missalreading sid le.ep.me.m08.d31_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m08.d31_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m08.d31_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Sep 1 use: Para role missalreading sid le.ep.me.m09.d01_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m09.d01_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m09.d01_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+		//	Sep 1 use: Para role missalreading sid le.ep.me.m09.d01_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m09.d01_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m09.d01_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Sep 2 use: Para role missalreading sid le.ep.me.m09.d02_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m09.d02_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m09.d02_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+		//	Sep 2 use: Para role missalreading sid le.ep.me.m09.d02_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m09.d02_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m09.d02_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Sep 3 use: Para role missalreading sid le.ep.me.m09.d03_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m09.d03_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m09.d03_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+		//	Sep 3 use: Para role missalreading sid le.ep.me.m09.d03_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m09.d03_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m09.d03_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Sep 4 use: Para role missalreading sid le.ep.me.m09.d04_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m09.d04_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m09.d04_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Sep 5 use: Para role missalreading sid le.ep.me.m09.d05_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m09.d05_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m09.d05_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Sep 6 use: Para role missalreading sid le.ep.me.m09.d06_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m09.d06_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m09.d06_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Sep 7 thru 13 use:
+				when-name-of-day-is 
+					Saturday use: Para role missalreading sid le.ep.me.m09.dSatBC_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m09.dSatBC_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m09.dSatBC_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+					Sunday use: Para role missalreading sid le.ep.me.m09.dSunBC_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m09.dSunBC_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m09.dSunBC_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+					otherwise use:
+						when-date-is
+							Sep 7 use: Para role missalreading sid le.ep.me.m09.d07_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m09.d07_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m09.d07_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+							Sep 8 use: Para role missalreading sid le.ep.me.m09.d08_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m09.d08_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m09.d08_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+							Sep 9 use: Para role missalreading sid le.ep.me.m09.d09_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m09.d09_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m09.d09_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+							Sep 13 use: Para role missalreading sid le.ep.me.m09.d13_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m09.d13_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m09.d13_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+						end-when
+				end-when		
+			Sep 14 use: Para role missalreading sid le.ep.me.m09.d14_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m09.d14_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m09.d14_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Sep 15 thru 21 use:
+				when-name-of-day-is
+					Saturday use: Para role missalreading sid le.ep.me.m09.dSatAC_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m09.dSatAC_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m09.dSatAC_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+					Sunday use: Para role missalreading sid le.ep.me.m09.dSunAC_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m09.dSunAC_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m09.dSunAC_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+					otherwise use:
+						when-date-is
+							Sep 15 use: Para role missalreading sid le.ep.me.m09.d15_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m09.d15_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m09.d15_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+							Sep 16 use: Para role missalreading sid le.ep.me.m09.d16_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m09.d16_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m09.d16_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+							Sep 20 use: Para role missalreading sid le.ep.me.m09.d20_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m09.d20_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m09.d20_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+						end-when
+				end-when		
+			Sep 22 use: Para role missalreading sid le.ep.me.m09.d03_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m09.d03_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m09.d03_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Sep 23 use: Para role missalreading sid le.ep.me.m09.d23_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m09.d23_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m09.d23_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Sep 24 use: Para role missalreading sid le.ep.me.m09.d24_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m09.d24_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m09.d24_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+		//	Sep 24 use: Para role missalreading sid le.ep.me.m09.d24_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m09.d24_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m09.d24_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Sep 26 use: Para role missalreading sid le.ep.me.m09.d26_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m09.d26_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m09.d26_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Sep 27 use: Para role missalreading sid le.ep.me.m09.d27_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m09.d27_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m09.d27_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Sep 28 use: Para role missalreading sid le.ep.me.m09.d28_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m09.d28_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m09.d28_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Sep 29 use: Para role missalreading sid le.ep.me.m09.d29_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m09.d29_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m09.d29_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Sep 30 use: Para role missalreading sid le.ep.me.m09.d30_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m09.d30_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m09.d30_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Oct 1 use: Para role missalreading sid le.ep.me.m10.d01_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m10.d01_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m10.d01_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Oct 2 use: Para role missalreading sid le.ep.me.m10.d02_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m10.d02_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m10.d02_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Oct 3 use: Para role missalreading sid le.ep.me.m10.d03_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m10.d03_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m10.d03_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Oct 6 use: Para role missalreading sid le.ep.me.m10.d06_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m10.d06_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m10.d06_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Oct 7 use: Para role missalreading sid le.ep.me.m10.d07_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m10.d07_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m10.d07_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Oct 8 use: Para role missalreading sid le.ep.me.m10.d08_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m10.d08_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m10.d08_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Oct 9 use: Para role missalreading sid le.ep.me.m10.d09_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m10.d09_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m10.d09_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Oct 10 use: Para role missalreading sid le.ep.me.m10.d10_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m10.d10_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m10.d10_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Oct 11 thru 17 use:
+				when-name-of-day-is 
+					Sunday use: Para role missalreading sid le.ep.me.m10.dHF_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m10.dHF_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m10.dHF_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+					otherwise use:
+						when-date-is
+							Oct 11 use: Para role missalreading sid le.ep.me.m10.d11_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m10.d11_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m10.d11_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+							Oct 12 use: Para role missalreading sid le.ep.me.m10.d12_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m10.d12_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m10.d12_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+							Oct 13 use: Para role missalreading sid le.ep.me.m10.d13_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m10.d13_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m10.d13_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+							Oct 14 use: Para role missalreading sid le.ep.me.m10.d14_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m10.d14_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m10.d14_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+							Oct 15 use: Para role missalreading sid le.ep.me.m10.d15_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m10.d15_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m10.d15_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+							Oct 16 use: Para role missalreading sid le.ep.me.m10.d16_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m10.d16_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m10.d16_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+							Oct 17 use: Para role missalreading sid le.ep.me.m10.d17_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m10.d17_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m10.d17_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+						end-when
+				end-when		
+			Oct 18 use: Para role missalreading sid le.ep.me.m10.d18_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m10.d18_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m10.d18_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Oct 19 use: Para role missalreading sid le.ep.me.m10.d19_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m10.d19_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m10.d19_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Oct 20 use: Para role missalreading sid le.ep.me.m10.d20_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m10.d20_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m10.d20_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+	//		Oct 20 use: Para role missalreading sid le.ep.me.m10.d20_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m10.d20_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m10.d20_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Oct 21 use: Para role missalreading sid le.ep.me.m10.d21_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m10.d21_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m10.d21_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Oct 22 use: Para role missalreading sid le.ep.me.m10.d22_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m10.d22_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m10.d22_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+	//		Oct 22 use: Para role missalreading sid le.ep.me.m10.d22_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m10.d22_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m10.d22_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Oct 23 use: Para role missalreading sid le.ep.me.m10.d23_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m10.d23_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m10.d23_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Oct 24 use: Para role missalreading sid le.ep.me.m10.d24_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m10.d24_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m10.d24_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Oct 25 use: Para role missalreading sid le.ep.me.m10.d25_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m10.d25_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m10.d25_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Oct 26 use: Para role missalreading sid le.ep.me.m10.d26_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m10.d26_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m10.d26_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Oct 28 use: Para role missalreading sid le.ep.me.m10.d28_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m10.d28_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m10.d28_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Nov 1 use: Para role missalreading sid le.ep.me.m11.d01_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m11.d01_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m11.d01_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Nov 2 use: Para role missalreading sid le.ep.me.m11.d02_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m11.d02_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m11.d02_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Nov 3 use: Para role missalreading sid le.ep.me.m11.d03_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m11.d03_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m11.d03_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Nov 4 use: Para role missalreading sid le.ep.me.m11.d04_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m11.d04_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m11.d04_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Nov 5 use: Para role missalreading sid le.ep.me.m11.d05_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m11.d05_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m11.d05_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Nov 6 use: Para role missalreading sid le.ep.me.m11.d06_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m11.d06_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m11.d06_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Nov 7 use: Para role missalreading sid le.ep.me.m11.d07_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m11.d07_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m11.d07_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Nov 8 use: Para role missalreading sid le.ep.me.m11.d08_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m11.d08_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m11.d08_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Nov 9 use: Para role missalreading sid le.ep.me.m11.d09_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m11.d09_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m11.d09_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Nov 10 use: Para role missalreading sid le.ep.me.m11.d10_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m11.d10_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m11.d10_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Nov 11 use: Para role missalreading sid le.ep.me.m11.d11_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m11.d11_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m11.d11_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Nov 12 use: Para role missalreading sid le.ep.me.m11.d12_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m11.d12_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m11.d12_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Nov 13 use: Para role missalreading sid le.ep.me.m11.d13_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m11.d13_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m11.d13_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Nov 14 use: Para role missalreading sid le.ep.me.m11.d14_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m11.d14_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m11.d14_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Nov 15 use: Para role missalreading sid le.ep.me.m11.d15_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m11.d15_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m11.d15_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Nov 16 use: Para role missalreading sid le.ep.me.m11.d16_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m11.d16_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m11.d16_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Nov 17 use: Para role missalreading sid le.ep.me.m11.d17_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m11.d17_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m11.d17_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Nov 18 use: Para role missalreading sid le.ep.me.m11.d18_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m11.d18_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m11.d18_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Nov 20 use: Para role missalreading sid le.ep.me.m11.d20_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m11.d20_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m11.d20_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Nov 21 use: Para role missalreading sid le.ep.me.m11.d21_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m11.d21_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m11.d21_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Nov 22 use: Para role missalreading sid le.ep.me.m11.d22_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m11.d22_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m11.d22_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Nov 23 use: Para role missalreading sid le.ep.me.m11.d23_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m11.d23_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m11.d23_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Nov 24 use: Para role missalreading sid le.ep.me.m11.d24_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m11.d24_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m11.d24_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Nov 25 use: Para role missalreading sid le.ep.me.m11.d25_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m11.d25_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m11.d25_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Nov 26 use: Para role missalreading sid le.ep.me.m11.d26_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m11.d26_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m11.d26_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Nov 27 use: Para role missalreading sid le.ep.me.m11.d27_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m11.d27_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m11.d27_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Nov 28 use: Para role missalreading sid le.ep.me.m11.d28_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m11.d28_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m11.d28_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Nov 29 use: Para role missalreading sid le.ep.me.m11.d29_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m11.d29_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m11.d29_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Nov 30 use: Para role missalreading sid le.ep.me.m11.d30_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m11.d30_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m11.d30_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Dec 1 use: Para role missalreading sid le.ep.me.m12.d01_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m12.d01_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m12.d01_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Dec 2 use: Para role missalreading sid le.ep.me.m12.d02_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m12.d02_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m12.d02_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Dec 3 use: Para role missalreading sid le.ep.me.m12.d03_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m12.d03_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m12.d03_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Dec 4 use: Para role missalreading sid le.ep.me.m12.d04_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m12.d04_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m12.d04_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Dec 5 use: Para role missalreading sid le.ep.me.m12.d05_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m12.d05_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m12.d05_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Dec 6 use: Para role missalreading sid le.ep.me.m12.d06_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m12.d06_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m12.d06_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Dec 7 use: Para role missalreading sid le.ep.me.m12.d07_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m12.d07_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m12.d07_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Dec 8 use: Para role missalreading sid le.ep.me.m12.d08_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m12.d08_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m12.d08_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Dec 9 use: Para role missalreading sid le.ep.me.m12.d09_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m12.d09_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m12.d09_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Dec 10 use: Para role missalreading sid le.ep.me.m12.d10_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m12.d10_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m12.d10_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Dec 11, 13, 14, 16, 17 use:
+				when-name-of-day-is 
+					Sunday use: Para role missalreading sid le.ep.me.m12.dFF_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m12.dFF_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m12.dFF_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+					otherwise use:
+						when-date-is
+							Dec 11 use: Para role missalreading sid le.ep.me.m12.d11_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m12.d11_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m12.d11_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+							Dec 13 use: Para role missalreading sid le.ep.me.m12.d13_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m12.d13_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m12.d13_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+							Dec 14 use: Para role missalreading sid le.ep.me.m12.d14_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m12.d14_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m12.d14_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+							Dec 16 use: Para role missalreading sid le.ep.me.m12.d16_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m12.d16_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m12.d16_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+							Dec 17 use: Para role missalreading sid le.ep.me.m12.d17_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m12.d17_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m12.d17_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+						end-when
+				end-when	
+			Dec 12 use: Para role missalreading sid le.ep.me.m12.d12_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m12.d12_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m12.d12_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Dec 15 use: Para role missalreading sid le.ep.me.m12.d12_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m12.d12_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m12.d12_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+		//	Dec 17 use: Para role missalreading sid le.ep.me.m12.d17_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m12.d17_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m12.d17_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Dec 18 thru 24 use:
+				when-name-of-day-is 
+					Saturday use: Para role missalreading sid le.ep.me.m12.dSatBC_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m12.dSatBC_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m12.dSatBC_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+					Sunday use: Para role missalreading sid le.ep.me.m12.dSunBC_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m12.dSunBC_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m12.dSunBC_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+					otherwise use:
+						when-date-is
+							Dec 20 use: Para role missalreading sid le.ep.me.m12.d20_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m12.d20_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m12.d20_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+							Dec 22 use: Para role missalreading sid le.ep.me.m12.d22_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m12.d22_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m12.d22_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+						end-when
+				end-when	
+			Dec 25 use: Para role missalreading sid le.ep.me.m12.d25_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m12.d25_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m12.d25_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Dec 26 use: 
+				when-name-of-day-is 
+					Saturday use: Para role missalreading sid le.ep.me.m12.dSatAC_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m12.dSatAC_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m12.dSatAC_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+					Sunday use: Para role missalreading sid le.ep.me.m12.dSunAC_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m12.dSunAC_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m12.dSunAC_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+					Monday use: Para role missalreading sid le.ep.me.m12.dSunAC_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m12.dSunAC_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m12.dSunAC_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+					otherwise use: Para role missalreading sid le.ep.me.m12.d26_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m12.d26_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m12.d26_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+				end-when
+			Dec 27 use: Para role missalreading sid le.ep.me.m12.d27_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m12.d27_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m12.d27_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+			Dec 28, 29 use:
+				when-name-of-day-is
+					Saturday use: Para role missalreading sid le.ep.me.m12.dSatAC_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m12.dSatAC_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m12.dSatAC_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+					Sunday use: Para role missalreading sid le.ep.me.m12.dSunAC_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m12.dSunAC_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m12.dSunAC_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+					otherwise use:
+						when-date-is
+							Dec 29 use: Para role missalreading sid le.ep.me.m12.d29_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m12.d29_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m12.d29_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+						end-when
+				end-when		
+			Dec 30 thru 31 use:
+				when-name-of-day-is Sunday
+					use: Para role missalreading sid le.ep.me.m12.dSunBE_gr_GR_cog.lemeLI.Epistle.book<i>sid le.ep.me.m12.dSunBE_gr_GR_cog.lemeLI.Epistle.chapverse</><Tnumright>sid le.ep.me.m12.dSunBE_gr_GR_cog.lemeLI.Epistle.pagenumber</>End-Para
+				end-when
+		end-when
+	End-Section
+
+	Section Epistle_Lesson
+		when-date-is
+			Jan 1 use: Reading sid le.ep.me.m01.d01_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jan 2 thru 5 use:
+				when-name-of-day-is 
+					Saturday use: Reading sid le.ep.me.m12.dSatBE_gr_GR_cog.lemeLI.Epistle.text End-Reading
+					Sunday use: Reading sid le.ep.me.m12.dSunBE_gr_GR_cog.lemeLI.Epistle.text End-Reading
+					otherwise use:
+						when-date-is
+							Jan 2 use: Reading sid le.ep.me.m01.d02_gr_GR_cog.lemeLI.Epistle.text End-Reading
+							Jan 4 use: Reading sid le.ep.me.m01.d04_gr_GR_cog.lemeLI.Epistle.text End-Reading
+						end-when
+				end-when	
+			Jan 6 use: Reading sid le.ep.me.m01.d06_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jan 7 use: Reading sid le.ep.me.m01.d07_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jan 8, 9, 10, 12, 13 use:
+				when-name-of-day-is
+					Saturday use: Reading sid le.ep.me.m01.dSatAE_gr_GR_cog.lemeLI.Epistle.text End-Reading
+					Sunday use: Reading sid le.ep.me.m01.dSunAE_gr_GR_cog.lemeLI.Epistle.text End-Reading
+					otherwise use:
+						when-date-is
+							Jan 9 use: Reading sid le.ep.me.m01.d09_gr_GR_cog.lemeLI.Epistle.text End-Reading
+							Jan 10 use: Reading sid le.ep.me.m01.d10_gr_GR_cog.lemeLI.Epistle.text End-Reading
+						end-when
+				end-when			
+			Jan 11 use: 
+				when-name-of-day-is
+					Saturday use: Reading sid le.ep.me.m01.d11_gr_GR_cog.lemeLI.Epistle.text End-Reading
+					Sunday use: Reading sid le.ep.me.m01.d11_gr_GR_cog.lemeLI.Epistle.text End-Reading
+					otherwise use: Reading sid le.ep.me.m01.d11_gr_GR_cog.lemeLI.Epistle.text End-Reading
+				end-when
+			Jan 14 use:
+				when-name-of-day-is
+					Saturday use: Reading sid le.ep.me.m01.dSatAE_gr_GR_cog.lemeLI.Epistle.text End-Reading
+					Sunday use: Reading sid le.ep.me.m01.dSunAE_gr_GR_cog.lemeLI.Epistle.text End-Reading
+					otherwise use: Reading sid le.ep.me.m01.d14_gr_GR_cog.lemeLI.Epistle.text End-Reading
+				end-when
+			Jan 15 use: Reading sid le.ep.me.m01.d15_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jan 16 use: Reading sid le.ep.me.m01.d16_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jan 17 use: Reading sid le.ep.me.m01.d17_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jan 18 use: Reading sid le.ep.me.m01.d18_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jan 19 use: Reading sid le.ep.me.m01.d19_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jan 20 use: Reading sid le.ep.me.m01.d20_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jan 21 use: Reading sid le.ep.me.m01.d21_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jan 22 use: Reading sid le.ep.me.m01.d22_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jan 23 use: Reading sid le.ep.me.m01.d23_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jan 24 use: Reading sid le.ep.me.m01.d24_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jan 25 use: Reading sid le.ep.me.m01.d25_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jan 27 use: Reading sid le.ep.me.m01.d27_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jan 28 use: Reading sid le.ep.me.m01.d28_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jan 29 use: Reading sid le.ep.me.m01.d29_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jan 30 use: Reading sid le.ep.me.m01.d30_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jan 31 use: Reading sid le.ep.me.m01.d31_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Feb 1 use: Reading sid le.ep.me.m02.d01_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Feb 2 use: Reading sid le.ep.me.m02.d02_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Feb 3 use: Reading sid le.ep.me.m02.d03_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Feb 6 use: Reading sid le.ep.me.m02.d06_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Feb 8 use: Reading sid le.ep.me.m02.d08_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Feb 9 use: Reading sid le.ep.me.m02.d09_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Feb 10 use:	Reading sid le.ep.me.m02.d10_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Feb 11 use:	Reading sid le.ep.me.m02.d11_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Feb 15 use:	Reading sid le.ep.me.m02.d15_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Feb 17 use:	Reading sid le.ep.me.m02.d17_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Feb 23 use:	Reading sid le.ep.me.m02.d23_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Feb 24 use:	Reading sid le.ep.me.m02.d24_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Feb 26 use:	Reading sid le.ep.me.m02.d26_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Mar 9, 10 use: Reading sid le.ep.me.m03.d09_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Mar 25 use: Reading sid le.ep.me.m03.d25_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Mar 26 use: Reading sid le.ep.me.m03.d26_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Mar 30 use: Reading sid le.ep.me.m03.d30_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Apr 1 use: Reading sid le.ep.me.m04.d01_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Apr 10 use: Reading sid le.ep.me.m04.d10_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Apr 23 use: Reading sid le.ep.me.m04.d23_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Apr 25 use: Reading sid le.ep.me.m04.d25_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Apr 29 use: Reading sid le.ep.me.m04.d29_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Apr 30 use: Reading sid le.ep.me.m04.d30_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			May 1 use: Reading sid le.ep.me.m05.d01_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			May 2 use: Reading sid le.ep.me.m05.d02_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			May 7 use: Reading sid le.ep.me.m05.d07_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			May 8 use: Reading sid le.ep.me.m05.d08_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			May 9 use: Reading sid le.ep.me.m05.d09_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			May 10 use: Reading sid le.ep.me.m05.d10_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			May 11 use: Reading sid le.ep.me.m05.d11_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			May 15 use: Reading sid le.ep.me.m05.d15_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			May 20 use: Reading sid le.ep.me.m05.d20_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			May 21 use: Reading sid le.ep.me.m05.d25_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			May 24 use: Reading sid le.ep.me.m05.d24_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			May 25 use: Reading sid le.ep.me.m05.d25_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			May 26 use: Reading sid le.ep.me.m05.d26_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			May 29 use: Reading sid le.ep.me.m05.d29_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jun 2 use:	Reading sid le.ep.me.m06.d02_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jun 4 use:	Reading sid le.ep.me.m06.d04_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jun 8 use:	Reading sid le.ep.me.m06.d08_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jun 9 use:	Reading sid le.ep.me.m06.d09_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jun 11 use:	Reading sid le.ep.me.m06.d11_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jun 12 use:	Reading sid le.ep.me.m06.d12_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jun 14 use:	Reading sid le.ep.me.m06.d14_gr_GR_cog.lemeLI.Epistle.text End-Reading
+		//	Jun 14 use:	Reading sid le.ep.me.m06.d14_gr_GR_cog.lemeLI.Epistle2.text End-Reading
+			Jun 17 use:	Reading sid le.ep.me.m06.d17_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jun 19 use:	Reading sid le.ep.me.m06.d19_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jun 24 use:	Reading sid le.ep.me.m06.d24_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jun 25 use:	Reading sid le.ep.me.m06.d25_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jun 26 use:	Reading sid le.ep.me.m06.d26_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jun 27 use:	Reading sid le.ep.me.m06.d27_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jun 28 use:	Reading sid le.ep.me.m06.d28_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jun 29 use:	Reading sid le.ep.me.m06.d29_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jun 30 use: Reading sid le.ep.me.m06.d30_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jul 1 use: Reading sid le.ep.me.m07.d01_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jul 2 use: Reading sid le.ep.me.m07.d02_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jul 4 use: Reading sid le.ep.me.m07.d04_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jul 8 use: Reading sid le.ep.me.m07.d08_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jul 9 use: Reading sid le.ep.me.m07.d09_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jul 11 use: Reading sid le.ep.me.m07.d11_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jul 13 thru 19 use:
+				when-name-of-day-is Sunday 
+					use: Reading sid le.ep.me.m07.dHF_gr_GR_cog.lemeLI.Epistle.text End-Reading
+					otherwise use:
+						when-date-is
+							Jul 13 use: Reading sid le.ep.me.m07.d13_gr_GR_cog.lemeLI.Epistle.text End-Reading
+							Jul 14 use: Reading sid le.ep.me.m07.d14_gr_GR_cog.lemeLI.Epistle.text End-Reading
+							Jul 15 use: Reading sid le.ep.me.m07.d15_gr_GR_cog.lemeLI.Epistle.text End-Reading
+							Jul 17 use: Reading sid le.ep.me.m07.d17_gr_GR_cog.lemeLI.Epistle.text End-Reading
+							Jul 18 use: Reading sid le.ep.me.m07.d18_gr_GR_cog.lemeLI.Epistle.text End-Reading
+						end-when
+				end-when		
+			Jul 20 use: Reading sid le.ep.me.m07.d20_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jul 21 use: Reading sid le.ep.me.m07.d21_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jul 22 use: Reading sid le.ep.me.m07.d22_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jul 24 use: Reading sid le.ep.me.m07.d24_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jul 25 use: Reading sid le.ep.me.m07.d25_gr_GR_cog.lemeLI.Epistle.text End-Reading
+		//	Jul 26 use: Reading sid le.ep.me.m07.d26_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jul 26 use: Reading sid le.ep.me.m07.d26_gr_GR_cog.lemeLI.Epistle2.text End-Reading
+			Jul 27 use: Reading sid le.ep.me.m07.d27_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jul 28 use: Reading sid le.ep.me.m07.d28_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jul 29 use: Reading sid le.ep.me.m07.d29_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Jul 31 use: Reading sid le.ep.me.m07.d31_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Aug 1 use: Reading sid le.ep.me.m08.d01_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Aug 2 use: Reading sid le.ep.me.m08.d02_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Aug 3 use: Reading sid le.ep.me.m08.d03_gr_GR_cog.lemeLI.Epistle.text End-Reading
+		//	Aug 4 use: Reading sid le.ep.me.m08.d04_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Aug 6 use: Reading sid le.ep.me.m08.d06_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Aug 7 use: Reading sid le.ep.me.m08.d07_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Aug 9 use: Reading sid le.ep.me.m08.d09_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Aug 10 use: Reading sid le.ep.me.m08.d10_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Aug 11 use: Reading sid le.ep.me.m08.d11_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Aug 13 use: Reading sid le.ep.me.m08.d13_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Aug 15 use: Reading sid le.ep.me.m08.d15_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Aug 16 use: Reading sid le.ep.me.m08.d16_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Aug 18 use: Reading sid le.ep.me.m08.d18_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Aug 20 use: Reading sid le.ep.me.m08.d20_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Aug 25 use: Reading sid le.ep.me.m08.d25_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Aug 26 use: Reading sid le.ep.me.m08.d26_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Aug 27 use: Reading sid le.ep.me.m08.d27_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Aug 29 use: Reading sid le.ep.me.m08.d29_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Aug 31 use: Reading sid le.ep.me.m08.d31_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Sep 1 use: Reading sid le.ep.me.m09.d01_gr_GR_cog.lemeLI.Epistle.text End-Reading
+		//	Sep 1 use: Reading sid le.ep.me.m09.d01_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Sep 2 use: Reading sid le.ep.me.m09.d02_gr_GR_cog.lemeLI.Epistle.text End-Reading
+		//	Sep 2 use: Reading sid le.ep.me.m09.d02_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Sep 3 use: Reading sid le.ep.me.m09.d03_gr_GR_cog.lemeLI.Epistle.text End-Reading
+		//	Sep 3 use: Reading sid le.ep.me.m09.d03_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Sep 4 use: Reading sid le.ep.me.m09.d04_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Sep 5 use: Reading sid le.ep.me.m09.d05_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Sep 6 use: Reading sid le.ep.me.m09.d06_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Sep 7 thru 13 use:
+				when-name-of-day-is 
+					Saturday use: Reading sid le.ep.me.m09.dSatBC_gr_GR_cog.lemeLI.Epistle.text End-Reading
+					Sunday use: Reading sid le.ep.me.m09.dSunBC_gr_GR_cog.lemeLI.Epistle.text End-Reading
+					otherwise use:
+						when-date-is
+							Sep 7 use: Reading sid le.ep.me.m09.d07_gr_GR_cog.lemeLI.Epistle.text End-Reading
+							Sep 8 use: Reading sid le.ep.me.m09.d08_gr_GR_cog.lemeLI.Epistle.text End-Reading
+							Sep 9 use: Reading sid le.ep.me.m09.d09_gr_GR_cog.lemeLI.Epistle.text End-Reading
+							Sep 13 use: Reading sid le.ep.me.m09.d13_gr_GR_cog.lemeLI.Epistle.text End-Reading
+						end-when
+				end-when		
+			Sep 14 use: Reading sid le.ep.me.m09.d14_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Sep 15 thru 21 use:
+				when-name-of-day-is
+					Saturday use: Reading sid le.ep.me.m09.dSatAC_gr_GR_cog.lemeLI.Epistle.text End-Reading
+					Sunday use: Reading sid le.ep.me.m09.dSunAC_gr_GR_cog.lemeLI.Epistle.text End-Reading
+					otherwise use:
+						when-date-is
+							Sep 15 use: Reading sid le.ep.me.m09.d15_gr_GR_cog.lemeLI.Epistle.text End-Reading
+							Sep 16 use: Reading sid le.ep.me.m09.d16_gr_GR_cog.lemeLI.Epistle.text End-Reading
+							Sep 20 use: Reading sid le.ep.me.m09.d20_gr_GR_cog.lemeLI.Epistle.text End-Reading
+						end-when
+				end-when		
+			Sep 22 use: Reading sid le.ep.me.m09.d03_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Sep 23 use: Reading sid le.ep.me.m09.d23_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Sep 24 use: Reading sid le.ep.me.m09.d24_gr_GR_cog.lemeLI.Epistle.text End-Reading
+		//	Sep 24 use: Reading sid le.ep.me.m09.d24_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Sep 26 use: Reading sid le.ep.me.m09.d26_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Sep 27 use: Reading sid le.ep.me.m09.d27_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Sep 28 use: Reading sid le.ep.me.m09.d28_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Sep 29 use: Reading sid le.ep.me.m09.d29_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Sep 30 use: Reading sid le.ep.me.m09.d30_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Oct 1 use: Reading sid le.ep.me.m10.d01_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Oct 2 use: Reading sid le.ep.me.m10.d02_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Oct 3 use: Reading sid le.ep.me.m10.d03_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Oct 6 use: Reading sid le.ep.me.m10.d06_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Oct 7 use: Reading sid le.ep.me.m10.d07_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Oct 8 use: Reading sid le.ep.me.m10.d08_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Oct 9 use: Reading sid le.ep.me.m10.d09_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Oct 10 use: Reading sid le.ep.me.m10.d10_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Oct 11 thru 17 use:
+				when-name-of-day-is 
+					Sunday use: Reading sid le.ep.me.m10.dHF_gr_GR_cog.lemeLI.Epistle.text End-Reading
+					otherwise use:
+						when-date-is
+							Oct 11 use: Reading sid le.ep.me.m10.d11_gr_GR_cog.lemeLI.Epistle.text End-Reading
+							Oct 12 use: Reading sid le.ep.me.m10.d12_gr_GR_cog.lemeLI.Epistle.text End-Reading
+							Oct 13 use: Reading sid le.ep.me.m10.d13_gr_GR_cog.lemeLI.Epistle.text End-Reading
+							Oct 14 use: Reading sid le.ep.me.m10.d14_gr_GR_cog.lemeLI.Epistle.text End-Reading
+							Oct 15 use: Reading sid le.ep.me.m10.d15_gr_GR_cog.lemeLI.Epistle.text End-Reading
+							Oct 16 use: Reading sid le.ep.me.m10.d16_gr_GR_cog.lemeLI.Epistle.text End-Reading
+							Oct 17 use: Reading sid le.ep.me.m10.d17_gr_GR_cog.lemeLI.Epistle.text End-Reading
+						end-when
+				end-when		
+			Oct 18 use: Reading sid le.ep.me.m10.d18_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Oct 19 use: Reading sid le.ep.me.m10.d19_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Oct 20 use: Reading sid le.ep.me.m10.d20_gr_GR_cog.lemeLI.Epistle.text End-Reading
+	//		Oct 20 use: Reading sid le.ep.me.m10.d20_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Oct 21 use: Reading sid le.ep.me.m10.d21_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Oct 22 use: Reading sid le.ep.me.m10.d22_gr_GR_cog.lemeLI.Epistle.text End-Reading
+	//		Oct 22 use: Reading sid le.ep.me.m10.d22_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Oct 23 use: Reading sid le.ep.me.m10.d23_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Oct 24 use: Reading sid le.ep.me.m10.d24_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Oct 25 use: Reading sid le.ep.me.m10.d25_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Oct 26 use: Reading sid le.ep.me.m10.d26_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Oct 28 use: Reading sid le.ep.me.m10.d28_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Nov 1 use: Reading sid le.ep.me.m11.d01_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Nov 2 use: Reading sid le.ep.me.m11.d02_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Nov 3 use: Reading sid le.ep.me.m11.d03_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Nov 4 use: Reading sid le.ep.me.m11.d04_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Nov 5 use: Reading sid le.ep.me.m11.d05_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Nov 6 use: Reading sid le.ep.me.m11.d06_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Nov 7 use: Reading sid le.ep.me.m11.d07_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Nov 8 use: Reading sid le.ep.me.m11.d08_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Nov 9 use: Reading sid le.ep.me.m11.d09_gr_GR_cog.lemeLI.Epistle2.text End-Reading
+			Nov 10 use: Reading sid le.ep.me.m11.d10_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Nov 11 use: Reading sid le.ep.me.m11.d11_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Nov 12 use: Reading sid le.ep.me.m11.d12_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Nov 13 use: Reading sid le.ep.me.m11.d13_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Nov 14 use: Reading sid le.ep.me.m11.d14_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Nov 15 use: Reading sid le.ep.me.m11.d15_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Nov 16 use: Reading sid le.ep.me.m11.d16_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Nov 17 use: Reading sid le.ep.me.m11.d17_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Nov 18 use: Reading sid le.ep.me.m11.d18_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Nov 20 use: Reading sid le.ep.me.m11.d20_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Nov 21 use: Reading sid le.ep.me.m11.d21_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Nov 22 use: Reading sid le.ep.me.m11.d22_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Nov 23 use: Reading sid le.ep.me.m11.d23_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Nov 24 use: Reading sid le.ep.me.m11.d24_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Nov 25 use: Reading sid le.ep.me.m11.d25_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Nov 26 use: Reading sid le.ep.me.m11.d26_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Nov 27 use: Reading sid le.ep.me.m11.d27_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Nov 28 use: Reading sid le.ep.me.m11.d28_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Nov 29 use: Reading sid le.ep.me.m11.d29_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Nov 30 use: Reading sid le.ep.me.m11.d30_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Dec 1 use: Reading sid le.ep.me.m12.d01_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Dec 2 use: Reading sid le.ep.me.m12.d02_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Dec 3 use: Reading sid le.ep.me.m12.d03_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Dec 4 use: Reading sid le.ep.me.m12.d04_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Dec 5 use: Reading sid le.ep.me.m12.d05_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Dec 6 use: Reading sid le.ep.me.m12.d06_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Dec 7 use: Reading sid le.ep.me.m12.d07_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Dec 8 use: Reading sid le.ep.me.m12.d08_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Dec 9 use: Reading sid le.ep.me.m12.d09_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Dec 10 use: Reading sid le.ep.me.m12.d10_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Dec 11, 13, 14, 16, 17 use:
+				when-name-of-day-is 
+					Sunday use: Reading sid le.ep.me.m12.dFF_gr_GR_cog.lemeLI.Epistle.text End-Reading
+					otherwise use:
+						when-date-is
+							Dec 11 use: Reading sid le.ep.me.m12.d11_gr_GR_cog.lemeLI.Epistle.text End-Reading
+							Dec 13 use: Reading sid le.ep.me.m12.d13_gr_GR_cog.lemeLI.Epistle.text End-Reading
+							Dec 14 use: Reading sid le.ep.me.m12.d14_gr_GR_cog.lemeLI.Epistle.text End-Reading
+							Dec 16 use: Reading sid le.ep.me.m12.d16_gr_GR_cog.lemeLI.Epistle.text End-Reading
+							Dec 17 use: Reading sid le.ep.me.m12.d17_gr_GR_cog.lemeLI.Epistle.text End-Reading
+						end-when
+				end-when	
+			Dec 12 use: Reading sid le.ep.me.m12.d12_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Dec 15 use: Reading sid le.ep.me.m12.d12_gr_GR_cog.lemeLI.Epistle.text End-Reading
+		//	Dec 17 use: Reading sid le.ep.me.m12.d17b_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Dec 18 thru 24 use:
+				when-name-of-day-is 
+					Saturday use: Reading sid le.ep.me.m12.dSatBC_gr_GR_cog.lemeLI.Epistle.text End-Reading
+					Sunday use: Reading sid le.ep.me.m12.dSunBC_gr_GR_cog.lemeLI.Epistle.text End-Reading
+					otherwise use:
+						when-date-is
+							Dec 20 use: Reading sid le.ep.me.m12.d20_gr_GR_cog.lemeLI.Epistle.text End-Reading
+							Dec 22 use: Reading sid le.ep.me.m12.d22_gr_GR_cog.lemeLI.Epistle.text End-Reading
+						end-when
+				end-when	
+			Dec 25 use: Reading sid le.ep.me.m12.d25_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Dec 26 use: 
+				when-name-of-day-is 
+					Saturday use: Reading sid le.ep.me.m12.dSatAC_gr_GR_cog.lemeLI.Epistle.text End-Reading
+					Sunday use: Reading sid le.ep.me.m12.dSunAC_gr_GR_cog.lemeLI.Epistle.text End-Reading
+					Monday use: Reading sid le.ep.me.m12.dSunAC_gr_GR_cog.lemeLI.Epistle.text End-Reading
+					otherwise use: Reading sid le.ep.me.m12.d26_gr_GR_cog.lemeLI.Epistle.text End-Reading
+				end-when
+			Dec 27 use: Reading sid le.ep.me.m12.d27_gr_GR_cog.lemeLI.Epistle.text End-Reading
+			Dec 28, 29 use:
+				when-name-of-day-is
+					Saturday use: Reading sid le.ep.me.m12.dSatAC_gr_GR_cog.lemeLI.Epistle.text End-Reading
+					Sunday use: Reading sid le.ep.me.m12.dSunAC_gr_GR_cog.lemeLI.Epistle.text End-Reading
+					otherwise use:
+						when-date-is
+							Dec 29 use: Reading sid le.ep.me.m12.d29_gr_GR_cog.lemeLI.Epistle.text End-Reading
+						end-when
+				end-when		
+			Dec 30 thru 31 use:
+				when-name-of-day-is Sunday
+					use: Reading sid le.ep.me.m12.dSunBE_gr_GR_cog.lemeLI.Epistle.text End-Reading
+				end-when
+		end-when
+	End-Section
+
+
+
+End-Template

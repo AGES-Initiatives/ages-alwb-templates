@@ -1,0 +1,264 @@
+Template vp.Selector_Liturgy_Theotokos 
+
+Status Draft
+
+	import client_gr_GR_cog.*
+	import eu.lichrysbasil_gr_GR_cog.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+//	Head 
+//		Set_Date month 1 day 4 year 2015 End_Date
+//	End_Head
+
+	Section hymn
+//		Actor sid Choir End-Actor
+		Title role desig sid variables.info_gr_GR_cog.Theotokos.title End-Title
+		when-date-is
+			Feb 2 thru 9 use: //calculates leavetaking of Meeting
+				when-movable-cycle-day-is
+					1 thru 13 use:
+						when-date-is
+							Feb 2, 9 use: 
+								Section meeting
+								//	Title role desig sid Ode9 sid Heirmos End-Title
+								//	Title role mode sid me.m02.d02_gr_GR_cog.meLI.TheotokosHymn.mode End-Title
+								//	Media sid me.m02.d02_gr_GR_cog.meLI.TheotokosHymn.text @ver End-Media
+									Verse sid me.m02.d02_gr_GR_cog.meLI.TheotokosHymnVerse.text @ver End-Verse
+									Hymn sid me.m02.d02_gr_GR_cog.meLI.TheotokosHymn.text @ver media-off End-Hymn
+								End-Section
+							otherwise use: Insert_section default End-Insert
+						end-when
+					14 use:
+						when-date-is
+							Feb 2, 5 use: Insert_section meeting End-Insert
+							otherwise use: Insert_section default End-Insert
+						end-when
+					15 use:
+						when-date-is
+							Feb 2, 6 use: Insert_section meeting End-Insert
+							otherwise use: Insert_section default End-Insert
+						end-when
+					16 use:
+						when-date-is
+							Feb 2, 7 use: Insert_section meeting End-Insert
+							otherwise use: Insert_section default End-Insert
+						end-when
+					17 use:
+						when-date-is
+							Feb 2, 8 use: Insert_section meeting End-Insert
+							otherwise use: Insert_section default End-Insert
+						end-when
+					18 use:
+						when-date-is
+							Feb 2, 5 use: Insert_section meeting End-Insert
+							otherwise use: Insert_section default End-Insert
+						end-when
+					19 use:
+						when-date-is
+							Feb 2, 6 use: Insert_section meeting End-Insert
+							otherwise use: Insert_section default End-Insert
+						end-when
+					20 use:
+						when-date-is
+							Feb 2, 5 use: Insert_section meeting End-Insert
+							otherwise use: Insert_section default End-Insert
+						end-when
+					21 use:
+						when-date-is
+							Feb 2, 3 use: Insert_section meeting End-Insert
+							otherwise use: Insert_section default End-Insert
+						end-when
+					22 use:
+						when-date-is
+							Feb 2, 7 use: Insert_section meeting End-Insert
+							otherwise use: Insert_section default End-Insert
+						end-when
+					23 use:
+						when-date-is
+							Feb 2 use: Insert_section meeting End-Insert
+							otherwise use: Insert_section default End-Insert
+						end-when
+					otherwise use: Insert_section meeting End-Insert
+				end-when
+			Mar 25 use:
+				Section annunciation
+				//	Title role desig sid Ode9 sid Heirmos End-Title
+				//	Title role mode sid me.m03.d25_gr_GR_cog.meLI.TheotokosHymn.mode End-Title
+				//	Media sid me.m03.d25_gr_GR_cog.meLI.TheotokosHymn.text @ver End-Media 
+					Verse sid me.m03.d25_gr_GR_cog.meLI.TheotokosHymnVerse.text @ver End-Verse 
+					Hymn sid me.m03.d25_gr_GR_cog.meLI.TheotokosHymn.text @ver media-off End-Hymn
+				End-Section
+			otherwise use:
+				when-movable-cycle-day-is
+					29, 36, 43, 50, 57 use:
+						Hymn sid euLI.Key1328.basil.text @ver End-Hymn
+					63 use:
+						Section lazarus
+						//	Title role desig sid Megalynarion End-Title
+						//	Title role mode sid tr.d063_gr_GR_cog.trLI.TheotokosHymn.mode End-Title
+							Hymn sid tr.d063_gr_GR_cog.trLI.TheotokosHymn.text @ver End-Hymn
+						End-Section
+					64 use:
+						Section palmsunday
+						//	Title role desig sid Megalynarion End-Title
+						//	Title role mode sid tr.d064_gr_GR_cog.trLI.TheotokosHymn.mode End-Title
+							Hymn sid tr.d064_gr_GR_cog.trLI.TheotokosHymn.text @ver End-Hymn
+						End-Section
+					71, 72, 73, 74, 75, 76, 77, 85, 106, 109 use:
+						Section pascha
+						//	Title role desig sid Megalynarion End-Title
+						//	Title role mode sid pe.d00P_gr_GR_cog.pePA.TheotokosHymn.mode End-Title
+						//	Media sid pe.d00P_gr_GR_cog.pePA.TheotokosHymn.text @ver End-Media
+							Verse sid pe.d00P_gr_GR_cog.pePA.TheotokosHymnVerse.text @ver End-Verse
+							Hymn sid pe.d00P_gr_GR_cog.pePA.TheotokosHymn.text @ver media-off End-Hymn
+						End-Section
+					78, 84 use:
+						Section thomas
+						//	Title role desig sid Megalynarion End-Title
+						//	Title role mode sid pe.d078_gr_GR_cog.peLI.TheotokosHymn.mode End-Title
+							Hymn sid pe.d078_gr_GR_cog.peLI.TheotokosHymn.text @ver End-Hymn
+						End-Section
+					92 use:
+						Section theotokos1
+						//	Title role desig sid Megalynarion End-Title
+						//	Title role mode sid pe.d00P_gr_GR_cog.pePA.TheotokosHymn.mode End-Title
+						//	Media sid pe.d092_gr_GR_cog.peLI.TheotokosHymn.text @ver End-Media
+							Verse sid pe.d092_gr_GR_cog.peLI.TheotokosHymnVerse.text @ver End-Verse
+							Hymn sid pe.d092_gr_GR_cog.peLI.TheotokosHymn.text @ver media-off End-Hymn
+						End-Section
+					95, 102 use:
+						Section midpentecost
+						//	Title role desig sid Megalynarion End-Title
+						//	Title role mode sid pe.d095_gr_GR_cog.peLI.TheotokosHymn.mode End-Title
+							Hymn sid pe.d095_gr_GR_cog.peLI.TheotokosHymn.text @ver End-Hymn
+						End-Section
+					99 use:
+						Section theotokos2
+						//	Title role desig sid Megalynarion End-Title
+						//	Title role mode sid pe.d00P_gr_GR_cog.pePA.TheotokosHymn.mode End-Title
+						//	Media sid pe.d099_gr_GR_cog.peLI.TheotokosHymn.text @ver End-Media
+							Verse sid pe.d099_gr_GR_cog.peLI.TheotokosHymnVerse.text @ver End-Verse
+							Hymn sid pe.d099_gr_GR_cog.peLI.TheotokosHymn.text @ver media-off End-Hymn
+						End-Section
+					110, 118 use:
+						Section ascension
+						//	Title role desig sid Megalynarion End-Title
+						//	Title role mode sid pe.d110_gr_GR_cog.peLI.TheotokosHymn.mode End-Title
+							Hymn sid pe.d110_gr_GR_cog.peLI.TheotokosHymn.text @ver End-Hymn
+						End-Section
+					120 use:
+						Section pentecost
+						//	Title role desig sid Megalynarion End-Title
+						//	Title role mode sid pe.d120_gr_GR_cog.peLI.TheotokosHymn.mode End-Title
+							Hymn sid pe.d120_gr_GR_cog.peLI.TheotokosHymn.text @ver End-Hymn
+						End-Section
+					121, 126 use:
+						Section holyspirit
+						//	Title role desig sid Megalynarion End-Title
+						//	Title role mode sid pe.d121_gr_GR_cog.peLI.TheotokosHymn.mode End-Title
+							Hymn sid pe.d121_gr_GR_cog.peLI.TheotokosHymn.text @ver End-Hymn
+						End-Section
+				
+					otherwise use:
+						when-date-is
+							Jan 1 use:
+								Hymn sid euLI.Key1328.basil.text @ver End-Hymn
+							Jan 6 use:
+								Section epiphany1
+								//	Title role desig sid Ode9 sid Heirmos End-Title
+								//	Title role mode sid me.m01.d06_gr_GR_cog.meLI.TheotokosHymn.mode End-Title
+								//	Media sid me.m01.d06_gr_GR_cog.meLI.TheotokosHymn.text @ver End-Media 
+									Verse sid me.m01.d06_gr_GR_cog.meLI.TheotokosHymnVerse.text @ver End-Verse 
+									Hymn sid me.m01.d06_gr_GR_cog.meLI.TheotokosHymn.text @ver media-off End-Hymn
+								End-Section
+							Jan 7, 14 use: 
+								Section epiphany2
+								//	Title role desig sid Ode9 sid Heirmos End-Title
+								//	Title role mode sid me.m01.d07_gr_GR_cog.meLI.TheotokosHymn.mode End-Title
+								//	Media sid me.m01.d07_gr_GR_cog.meLI.TheotokosHymn.text @ver End-Media 
+									Verse sid me.m01.d07_gr_GR_cog.meLI.TheotokosHymnVerse.text @ver End-Verse 
+									Hymn sid me.m01.d07_gr_GR_cog.meLI.TheotokosHymn.text @ver media-off End-Hymn
+								End-Section
+							Aug 6, 13 use:
+								Section transfiguration
+								//	Title role desig sid Ode7 sid Troparion End-Title
+								//	Title role mode sid me.m08.d06_gr_GR_cog.meLI.TheotokosHymn.mode End-Title
+								//	Media sid me.m08.d06_gr_GR_cog.meLI.TheotokosHymn.text @ver End-Media 
+									Hymn sid me.m08.d06_gr_GR_cog.meLI.TheotokosHymn.text @ver media-off End-Hymn
+								End-Section
+							Aug 15, 23 use:
+								Section dormition
+								//	Title role desig sid Ode9 sid Heirmos End-Title
+								//	Title role mode sid me.m08.d15_gr_GR_cog.meLI.TheotokosHymn.mode End-Title
+								//	Media sid me.m08.d15_gr_GR_cog.meLI.TheotokosHymn.text @ver End-Media 
+									Verse sid me.m08.d15_gr_GR_cog.meLI.TheotokosHymnVerse.text @ver End-Verse 
+									Hymn sid me.m08.d15_gr_GR_cog.meLI.TheotokosHymn.text @ver media-off End-Hymn
+								End-Section
+							Sep 8, 12 use: 
+								Section nativity_of_theotokos
+								//	Title role desig sid Ode9 sid Heirmos End-Title
+								//	Title role mode sid me.m09.d08_gr_GR_cog.meLI.TheotokosHymn.mode End-Title
+								//	Media sid me.m09.d08_gr_GR_cog.meLI.TheotokosHymn.text @ver End-Media 
+									Hymn sid me.m09.d08_gr_GR_cog.meLI.TheotokosHymn.text @ver media-off End-Hymn
+								End-Section
+							Sep 14 use:
+								Section cross1
+								//	Title role desig sid Ode9 sid Heirmos End-Title
+								//	Title role mode sid me.m09.d14_gr_GR_cog.meLI.TheotokosHymn.mode End-Title
+								//	Media sid me.m09.d14_gr_GR_cog.meLI.TheotokosHymn.text @ver End-Media 
+									Hymn sid me.m09.d14_gr_GR_cog.meLI.TheotokosHymn.text @ver media-off End-Hymn
+								End-Section
+							Sep 21 use:
+								Section cross2
+								//	Title role desig sid Ode9 sid Heirmos End-Title
+								//	Title role mode sid me.m09.d21_gr_GR_cog.meLI.TheotokosHymn.mode End-Title
+								//	Media sid me.m09.d21_gr_GR_cog.meLI.TheotokosHymn.text @ver End-Media 
+									Hymn sid me.m09.d21_gr_GR_cog.meLI.TheotokosHymn.text @ver media-off End-Hymn
+								End-Section
+							Nov 21, 25 use:
+								Section entry
+								//	Title role desig sid Ode9 sid Heirmos End-Title
+								//	Title role mode sid me.m11.d21_gr_GR_cog.meLI.TheotokosHymn.mode End-Title
+								//	Media sid me.m11.d21_gr_GR_cog.meLI.TheotokosHymn.text @ver End-Media 
+									Verse sid me.m11.d21_gr_GR_cog.meLI.TheotokosHymnVerse.text @ver End-Verse 
+									Hymn sid me.m11.d21_gr_GR_cog.meLI.TheotokosHymn.text @ver media-off End-Hymn
+								End-Section
+							Dec 25 use:
+								Section christmas1
+								//	Title role desig sid Ode9 sid Heirmos End-Title
+								//	Title role mode sid me.m12.d25_gr_GR_cog.meLI.TheotokosHymn.mode End-Title
+								//	Media sid me.m12.d25_gr_GR_cog.meLI.TheotokosHymn.text @ver End-Media 
+									Verse sid me.m12.d25_gr_GR_cog.meLI.TheotokosHymnVerse.text @ver End-Verse 
+									Hymn sid me.m12.d25_gr_GR_cog.meLI.TheotokosHymn.text @ver media-off End-Hymn
+								End-Section
+							Dec 26, 31 use:
+								Section christmas2
+								//	Title role desig sid Ode9 sid Heirmos End-Title
+								//	Title role mode sid me.m12.d26_gr_GR_cog.meLI.TheotokosHymn.mode End-Title
+								//	Media sid me.m12.d26_gr_GR_cog.meLI.TheotokosHymn.text @ver End-Media 
+									Verse sid me.m12.d26_gr_GR_cog.meLI.TheotokosHymnVerse.text @ver End-Verse 
+									Hymn sid me.m12.d26_gr_GR_cog.meLI.TheotokosHymn.text @ver media-off End-Hymn
+								End-Section
+				
+					otherwise use:	
+						Section default
+						//	Title role desig sid Megalynarion End-Title
+							Hymn sid euLI.Key1328.text @ver End-Hymn
+						End-Section
+				end-when	
+			end-when
+		end-when
+	End-Section
+
+End-Template
