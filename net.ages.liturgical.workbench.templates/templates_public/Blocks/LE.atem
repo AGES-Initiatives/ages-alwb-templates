@@ -611,15 +611,20 @@ Template LE
 			End-Section	
 			Section triodion_ //computes Holy Week
 				Section alleluia
-					Actor sid Choir End-Actor
-					Insert_section Vespers_Gospel_Alleluia_Mode End-Insert
-					Media sid hoLI.GospelAlleluia.text media-off End-Media
-					Insert_section Vespers_Gospel_Alleluia_Verse1 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-					Insert_section Vespers_Gospel_Alleluia_Verse2 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-					Insert_section Vespers_Gospel_Alleluia_Verse3 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					when-movable-cycle-day-is
+						71 use:
+							Insert_section bk.ap.mc.p6.sections.Day_HolySaturday.liturgy.instead_of_alleluia End-Insert
+						otherwise use:
+							Actor sid Choir End-Actor
+							Insert_section Vespers_Gospel_Alleluia_Mode End-Insert
+							Media sid hoLI.GospelAlleluia.text media-off End-Media
+							Insert_section Vespers_Gospel_Alleluia_Verse1 End-Insert
+							Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+							Insert_section Vespers_Gospel_Alleluia_Verse2 End-Insert
+							Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+							Insert_section Vespers_Gospel_Alleluia_Verse3 End-Insert
+							Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					end-when
 				End-Section
 				Insert_section PrayerBeforeGospel End-Insert
 				Section lesson
