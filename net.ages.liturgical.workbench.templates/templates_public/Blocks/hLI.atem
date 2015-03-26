@@ -513,6 +513,7 @@ Status Review
 			Insert_section PreCommunionPrayers End-Insert
 			Insert_section Selector_CommunionHymn.Chrysostom End-Insert
 			Insert_section Communion End-Insert
+			Insert_section seasonalhymns_chrys End-Insert
 			Section _31_chrys
 				Actor sid Hierarch End-Actor
 				Dialog sid euLI.Key1529.text End-Dialog
@@ -837,6 +838,7 @@ Status Review
 			Insert_section PreCommunionPrayers End-Insert
 			Insert_section Selector_CommunionHymn.Basil End-Insert
 			Insert_section Communion End-Insert
+			Insert_section seasonalhymns_basil End-Insert
 			Section _31_basil
 				Actor sid Hierarch End-Actor
 				Dialog sid euLI.Key1529.text End-Dialog
@@ -1013,29 +1015,37 @@ Status Review
 				Para role inaudible sid euLI.Key1524.text End-Para	
 				// The following line may be here or after communion of the faithful			
 				//Para role inaudible sid euLI.Key1525.text End-Para	*/
+				Section call
+					Actor sid Deacon End-Actor
+					Dialog sid euLI.Key1526.text End-Dialog
+					Actor sid Clergy End-Actor
+					Dialog sid euLI.Key1527.text media-off End-Dialog
+				End-Section
+				Section hymns
+					Actor sid Choir End-Actor
+					Title<r>sid euLI.Key1527.title</>End-Title
+					Media sid euLI.Key1527.text End-Media
+				End-Section
 			End-Section
-			Section call
-				Actor sid Deacon End-Actor
-				Dialog sid euLI.Key1526.text End-Dialog
-				Actor sid Clergy End-Actor
-				Dialog sid euLI.Key1527.text media-off End-Dialog
-			End-Section
-			Section hymns
-				Actor sid Choir End-Actor
-				Title<r>sid euLI.Key1527.title</>End-Title
-				Media sid euLI.Key1527.text End-Media
-			End-Section
-			Section seasonalhymns
-				when-movable-cycle-day-is 71 thru 109 use:
+		End-Section
+
+		Section seasonalhymns_chrys
+			when-movable-cycle-day-is 
+				71 thru 109 use:
 					Title<r>sid pe.d00P_gr_GR_cog.pePA.Canon.text</>End-Title
 					Media sid pe.d00P_gr_GR_cog.pePA.Canon.text End-Media
-				end-when
-				when-date-is Aug 14 thru 22 use:
+			end-when
+			when-date-is 
+				Mar 25 use:
+					Passthrough-Html "<tr><td class='leftCell'></td><td class='rightCell'><div class='media-group'><a class='media-icon tip-doc2' href='../../m/en_public/me/m03/d25/ma/t/canon.pdf' target='FrameScore'><span class='media-icon'>Text of Annunciation Canon</span></a></div></td></tr>" 
+					END-Passthrough-Html					
+				Aug 14 thru 22 use:
 					Title role desig sid other.dormitionencomia_gr_GR_cog.other.Encomia.title End-Title
 					Media sid other.dormitionencomia_gr_GR_cog.other.Encomia101.text End-Media
-				end-when
-			End-Section
+			end-when
 			Break line End_Break
+		End-Section
+		Section seasonalhymns_basil
 		End-Section
 
 	Section _09_Dismissal__
