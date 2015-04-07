@@ -335,10 +335,139 @@ Template LN
 		End-Section
 		Section Ektenia03_part2
 			Actor sid Priest End-Actor
-			Dialog sid sup00a sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid meInsert1 rid meInsert2 sid sup15 End-Dialog
+			when-movable-cycle-day-is 
+				36, 50, 57 use: Insert_section ektenia_09 End-Insert
+				78, 85, 113 use: Insert_section ektenia_20 End-Insert
+				127 use: Insert_section ektenia_21 End-Insert
+				otherwise use: Insert_section LN.Ektenia_Menaion End-Insert
+			end-when
 			Dialog sid pet36 End-Dialog
 		End-Section
 	End-Section	
+
+		Section Ektenia_Menaion
+			when-date-is
+				Jan 7 use: Insert_section ektenia_05 End-Insert
+				Feb 24 use: Insert_section ektenia_05 End-Insert
+				Mar 25 use: Insert_section ektenia_02 End-Insert
+				May 25 use: Insert_section ektenia_05 End-Insert
+				Jun 30 use: Insert_section Supplication_06 End-Insert
+				Jun 24 use: Insert_section ektenia_05 End-Insert
+				Jul 13 thru 19 use:
+					when-name-of-day-is Sunday
+						use: Insert_section ektenia_10 End-Insert
+					end-when
+				Jul 22 use: Insert_section ektenia_07_with_me_alt1 End-Insert
+				Jul 25 use: Insert_section ektenia_08 End-Insert
+				Aug 15 use: Insert_section ektenia_02 End-Insert
+				Aug 29 use: Insert_section ektenia_05 End-Insert
+				Aug 31 use: Insert_section ektenia_02 End-Insert
+				Sep 8 use: Insert_section ektenia_02 End-Insert
+				Sep 14 use: Insert_section ektenia_03 End-Insert
+				Sep 23 use: Insert_section ektenia_05 End-Insert
+				Oct 11 thru 17 use:
+					when-name-of-day-is Sunday use:
+						Insert_section ektenia_11 End-Insert
+					end-when
+				Oct 28 use: Insert_section ektenia_12 End-Insert
+				Nov 8 use: Insert_section ektenia_04 End-Insert
+				Nov 21 use: Insert_section ektenia_02 End-Insert
+				Dec 9 use: Insert_section ektenia_02 End-Insert
+				Dec 11, 13, 14, 16 use:
+					when-name-of-day-is Sunday use:
+						Insert_section ektenia_14 End-Insert
+					end-when
+				Dec 12, 15, 17 use:
+					when-name-of-day-is Sunday use:
+						Insert_section ektenia_15 End-Insert
+					otherwise use: Insert_section ektenia_07 End-Insert
+					end-when
+				Dec 18 thru 24 use:
+					when-name-of-day-is Sunday use:
+						Insert_section ektenia_16 End-Insert
+					end-when	
+				Dec 26 use: 
+					when-name-of-day-is
+						Sunday use: Insert_section ektenia_17 End-Insert
+						otherwise use: Insert_section ektenia_02 End-Insert
+					end-when
+				Dec 27 use: 
+					when-name-of-day-is
+						Sunday use: Insert_section ektenia_18 End-Insert
+						otherwise use: Insert_section ektenia_07 End-Insert
+					end-when
+				Dec 28 thru 31 use: 
+					when-name-of-day-is
+						Sunday use: Insert_section ektenia_19 End-Insert
+					end-when
+				otherwise use: Insert_section ektenia_07 End-Insert
+			end-when
+		End-Section
+
+			Section ektenia_02 //Theotokos
+				Dialog sid sup00a sid sup01 rid meInsert2 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid sup15 End-Dialog	
+			End-Section
+			Section ektenia_03 //Cross
+				Dialog sid sup00a sid sup01 sid sup02 rid meInsert2 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid sup15 End-Dialog	
+			End-Section
+			Section ektenia_04 //Angels
+				Dialog sid sup00a sid sup01 sid sup02 sid sup03 rid meInsert2 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid sup15 End-Dialog	
+			End-Section
+			Section ektenia_05 //Forerunner
+				Dialog sid sup00a sid sup01 sid sup02 sid sup03 sid sup04 rid meInsert2 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid sup15 End-Dialog	
+			End-Section
+			Section Supplication_06 //Apostles
+				Dialog sid sup00a sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 rid meInsert2 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid sup15 End-Dialog	
+			End-Section
+			Section ektenia_07 //Saint
+				Dialog sid sup00a sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid meInsert1 rid meInsert2 sid sup15 End-Dialog	
+			End-Section
+			Section ektenia_07_with_me_alt1 //Saint both
+				Dialog sid sup00a sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid meInsert1 rid alt1.meInsert1 rid alt1.meInsert2 sid sup15 End-Dialog	
+			End-Section
+			Section ektenia_07_me_alt1 //Saint me_alt1 only
+				Dialog sid sup00a sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid alt1.meInsert1 rid alt1.meInsert2 sid sup15 End-Dialog	
+			End-Section
+			Section ektenia_08 //Joakim and Anna
+				Dialog sid sup00a sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid meInsert2 sid sup15 End-Dialog	
+			End-Section
+			Section ektenia_09 //Triodion
+				Dialog sid sup00a sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid trInsert1 rid trInsert2 sid sup15 End-Dialog	
+			End-Section
+			Section ektenia_10 //HolyFathersJuly
+				Dialog sid sup00a sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid me.m07.dHF_gr_GR_cog.meInsert1 sid me.m07.dHF_gr_GR_cog.meInsert2 sid sup15 End-Dialog	
+			End-Section
+			Section ektenia_11 //HolyFathersOctober
+				Dialog sid sup00a sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid me.m10.dHF_gr_GR_cog.meInsert1 sid me.m10.dHF_gr_GR_cog.meInsert2 sid sup15 End-Dialog	
+			End-Section
+			Section ektenia_12 //HolyProtectionOctober
+				Dialog sid sup00a sid sup01 sid me.m10.d28a_gr_GR_cog.meInsert2 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid sup15 End-Dialog	
+			End-Section
+
+			Section ektenia_14 //ForefathersDecember
+				Dialog sid sup00a sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid me.m12.dFF_gr_GR_cog.meInsert1 sid me.m12.dFF_gr_GR_cog.meInsert2 sid sup15 End-Dialog	
+			End-Section
+			Section ektenia_15 //ForefathersDecember121517
+				Dialog sid sup00a sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid meInsert1 sid me.m12.dFF_gr_GR_cog.meInsert1 sid me.m12.dFF_gr_GR_cog.meInsert2 sid sup15 End-Dialog	
+			End-Section
+			Section ektenia_16 //Sunday Before Xmas
+				Dialog sid sup00a sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid me.m12.dBC_gr_GR_cog.meInsert1 sid me.m12.dBC_gr_GR_cog.meInsert2 sid sup15 End-Dialog	
+			End-Section
+			Section ektenia_17 //SunAfterXmas26
+				Dialog sid sup00a sid sup01 sid me.m12.d26_gr_GR_cog.meInsert2 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid me.m12.dAC_gr_GR_cog.meInsert1 sid me.m12.dAC_gr_GR_cog.meInsert2 sid sup15 End-Dialog	
+			End-Section
+			Section ektenia_18 //SunAfterXmas27
+				Dialog sid sup00a sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid me.m12.d27_gr_GR_cog.meInsert1 sid me.m12.dAC_gr_GR_cog.meInsert1 sid me.m12.dAC_gr_GR_cog.meInsert2 sid sup15 End-Dialog	
+			End-Section
+			Section ektenia_19 //SunAfterXmas28293031
+				Dialog sid sup00a sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid me.m12.dAC_gr_GR_cog.meInsert1 sid me.m12.dAC_gr_GR_cog.meInsert2 sid sup15 End-Dialog	
+			End-Section
+			Section ektenia_20 //Pentecostarion
+				Dialog sid sup00a sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid peInsert1 rid peInsert2 sid sup15 End-Dialog	
+			End-Section
+			Section ektenia_21 //AllSaints
+				Dialog sid sup00a sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid peInsert1 rid peInsert2 End-Dialog	
+			End-Section
 
 	Section Ektenia04 //Shortened for Lent
 		Actor sid Deacon End-Actor
@@ -580,6 +709,7 @@ Template LN
 				when-name-of-day-is Sunday
 					use: Insert_section supplication_10 End-Insert
 				end-when
+			Jul 22 use: Insert_section supplication_07_with_me_alt1 End-Insert
 			Jul 25 use: Insert_section supplication_08 End-Insert
 			Aug 15 use: Insert_section supplication_02 End-Insert
 			Aug 29 use: Insert_section supplication_05 End-Insert
@@ -644,6 +774,12 @@ Template LN
 	End-Section
 	Section supplication_07 //Saint
 		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid meInsert1 rid meInsert2 sid sup15 sid sup99 End-Dialog	
+	End-Section
+	Section supplication_07_with_me_alt1 //Saint
+		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid meInsert1 rid alt1.meInsert1 rid alt1.meInsert2 sid sup15 sid sup99 End-Dialog	
+	End-Section
+	Section supplication_07_me_alt1 //Saint
+		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid alt1.meInsert1 rid alt1.meInsert2 sid sup15 sid sup99 End-Dialog	
 	End-Section
 	Section supplication_08 //Joakim and Anna
 		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid meInsert2 sid sup15 sid sup99 End-Dialog	
