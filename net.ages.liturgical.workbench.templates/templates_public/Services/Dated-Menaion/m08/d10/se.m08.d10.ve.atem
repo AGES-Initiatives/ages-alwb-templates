@@ -1,13 +1,6 @@
 Template se.m08.d10.ve 
 
-Status Final
-
-	import client_gr_GR_cog.*
-	import ho.s10_gr_GR_cog.*	
-	import me.m08.d10_gr_GR_cog.*
-
-	import da.*
-	import oc.*
+Status NA
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -24,10 +17,10 @@ Status Final
 	Head 
 		Set_Date month 8 day 10 End_Date
 			Page_Header_Even
-				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore lang L1 
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L1 
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore lang L2
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -45,56 +38,35 @@ Status Final
 
 	when-name-of-day-is 
 		Sunday use:	
-			Section Instance03 //Sunday
+			Section Instance02 //Sunday
 				Insert_section VE._01_Beginning__.vespers End-Insert
 				Insert_section VE._02_Kekragaria__.modeofweek__.for10 End-Insert
 				Insert_section VE._03_Stichera__.oc__.sunday_.s_1234 End-Insert
 				Insert_section VE._03_Stichera__.oc__.sunday_.s_56 End-Insert
-				Section block01
-					Title role desig sid TisEortis End-Title
-					Media sid me.m08.d06_gr_GR_cog.meVE.Stichera78910.text End-Media //for Stichera1234 on Sat eve.
-					Title role mixed<Tmode>sid me.m08.d06_gr_GR_cog.meVE.Stichera01.mode</><Tdesig>sid Idiomelon</>End-Title
-					Insert_section VE.LIHC_Verses.v07 End-Insert
-					Hymn sid me.m08.d06_gr_GR_cog.meVE.Stichera01.text @ver media-off End-Hymn
-					Title role mixed<Tmode>sid me.m08.d06_gr_GR_cog.meVE.Stichera02.mode</><Tdesig>sid Idiomelon</>End-Title
-					Insert_section VE.LIHC_Verses.v08 End-Insert
-					Hymn sid me.m08.d06_gr_GR_cog.meVE.Stichera02.text @ver media-off End-Hymn
-					Title role mixed<Tmode>sid me.m08.d06_gr_GR_cog.meVE.Stichera03.mode</><Tdesig>sid Idiomelon</>End-Title
-					Insert_section VE.LIHC_Verses.v09 End-Insert
-					Hymn sid me.m08.d06_gr_GR_cog.meVE.Stichera03.text @ver media-off End-Hymn
-					Title role mixed<Tmode>sid me.m08.d06_gr_GR_cog.meVE.Stichera04.mode</><Tdesig>sid Idiomelon</>End-Title
-					Insert_section VE.LIHC_Verses.v10 End-Insert
-					Hymn sid me.m08.d06_gr_GR_cog.meVE.Stichera04.text @ver media-off End-Hymn
-					Title role mixed sid Doxa<Tmode>sid me.m08.d06_gr_GR_cog.meVE.LityGlory.mode</>End-Title
-					Hymn sid me.m08.d06_gr_GR_cog.meVE.LityGlory.text @ver End-Hymn
-				End-Section
-				Insert_section VE._03_Stichera__.both__.firsttheotokion__.modeofweek End-Insert	
-				Insert_section VE._04_Middle__.entrance End-Insert	
-				Insert_section VE._06_Litanies__.fullektenia End-Insert
-				Insert_section VE._08_Aposticha__.oc__.sunday_.aposticha1_ End-Insert
-				Insert_section VE._08_Aposticha__.oc__.sunday_.aposticha234 End-Insert	
-				Section block02
-					Title role mixed sid DoxaKaiNyn<Tdesig>sid TisEortis</>End-Title
-					Title role mode sid me.m08.d06_gr_GR_cog.meVE.LityBoth.mode End-Title
-					Hymn sid me.m08.d06_gr_GR_cog.meVE.LityBoth.text @ver End-Hymn
-				End-Section
-				Section block03
-					Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert	
-					Title role desig sid ApolytikionAnastasimon End-Title
-					Title role mixed<Tmode>rid ocVE.Apolytikion.mode</><Tmelody>rid ocVE.Apolytikion.melody</>End-Title
-					Hymn rid ocVE.Apolytikion.text @ver End-Hymn
-					Title role mixed sid DoxaKaiNyn<Tdesig>sid TisEortis</>End-Title
-					Title role mode sid me.m08.d06_gr_GR_cog.meVE.Apolytikion1.mode End-Title
-					Hymn sid me.m08.d06_gr_GR_cog.meVE.Apolytikion1.text @ver End-Hymn
-				End-Section
-				Insert_section VE._10_End__.wisdom End-Insert
-				Insert_section VE._11_Dismissal__.nocommemoration End-Insert
+					Set_Date month 8 day 6 End_Date
+					Insert_section TI.f End-Insert
+					Insert_section VE._03_Stichera__.me__.i_1234as78910 End-Insert
+					Insert_section VE._07_Lity__.part2__.me__.glory_ End-Insert
+						Set_Date month 8 day 10 End_Date
+						Insert_section VE._03_Stichera__.both__.firsttheotokion__.modeofweek End-Insert	
+						Insert_section VE._04_Middle__.entrance End-Insert	
+						Insert_section VE._06_Litanies__.fullektenia End-Insert
+						Insert_section VE._08_Aposticha__.oc__.sunday_.aposticha1_ End-Insert
+						Insert_section VE._08_Aposticha__.oc__.sunday_.aposticha234 End-Insert
+							Set_Date month 8 day 6 End_Date
+							Insert_section TI.gb.f End-Insert
+							Insert_section VE._07_Lity__.part2__.me__.both_.hymn End-Insert
+								Set_Date month 8 day 10 End_Date
+								Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
+								Insert_section AP.res__.modeofweek End-Insert
+								Insert_section AP.gloryboth__.af End-Insert
+								Insert_section VE._10_End__.wisdom End-Insert
+								Insert_section VE._11_Dismissal__.nocommemoration End-Insert
+			End-Section
+		otherwise use:
+			Section Instance01
 			End-Section
 			
-		Saturday use:
-		
-			otherwise use:
-			
-		end-when
+	end-when
 
 End-Template
