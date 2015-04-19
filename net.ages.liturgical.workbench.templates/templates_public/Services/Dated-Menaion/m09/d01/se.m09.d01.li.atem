@@ -2,17 +2,6 @@ Template se.m09.d01.li
 
 Status Final 
 
-	import client_gr_GR_cog.*
-	import eu.lichrysbasil_gr_GR_cog.*
-	import ho.s07_gr_GR_cog.*
-	import me.m09.d01_gr_GR_cog.*
-
-	import da.*
-	import oc.*
-
-	//Templates
-	import bk.ap.me.m09.sections.*
-	
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
 	import misc_gr_GR_cog.*
@@ -42,65 +31,53 @@ Status Final
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
-when-name-of-day-is
-	Sunday use:
-			Section Instance02 //Sunday
-				Section block1
+	when-name-of-day-is
+		Sunday use:
+				Section Instance02 //Sunday
 					Insert_section LI._01_Enarxis__.daily End-Insert
 					Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
 					Insert_section LI._04_Entrance__.clergy End-Insert
 					Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
-					Insert_section AP.res__.modeofweek End-Insert
-				End-Section
-				Section block2
-					Title role desig sid TisIndiktou End-Title
-					Title role mode sid meVE.Apolytikion1.mode End-Title
-					Hymn sid meVE.Apolytikion1.text @ver End-Hymn
-					Title role desig sid TisTheotokou End-Title
-					Title role mode sid meVE.Apolytikion3.mode End-Title
-					Hymn sid meVE.Apolytikion3.text @ver End-Hymn
-					Title role desig sid TouOsiou End-Title
-					Title role mode sid meVE.Apolytikion2.mode End-Title
-					Hymn sid meVE.Apolytikion2.text @ver End-Hymn
-					Insert_section LI._05_AfterEntranceHymns__.local End-Insert
-					Insert_section KO.seasonal End-Insert
+					Section hymns
+						Insert_section AP.res__.modeofweek End-Insert
+						Insert_section TI.com.sep01 End-Insert
+						Insert_section AP.me1_.hymn End-Insert
+						Insert_section TI.s._16_theotokos End-Insert
+						Insert_section AP.me3_.hymn End-Insert
+						Insert_section TI.s._10_monastic_.m End-Insert
+						Insert_section AP.me2_.hymn End-Insert
+						Insert_section LI._05_AfterEntranceHymns__.local End-Insert
+						Insert_section KO.seasonal End-Insert
+					End-Section
 					Insert_section LI._06_Trisagion__.chrys End-Insert
 					Insert_section LE._01_Epistle__.menaion_ End-Insert
 					Insert_section LE._02_Gospel__.menaion_ End-Insert
-				End-Section
-				Insert_section Instance01.block3 End-Insert
-			End-Section //Sunday
-		
-		
-	otherwise use:
-		Section Instance01 //weekday
-			Section block1
+					Insert_section LI._08_Liturgy__.chrys End-Insert
+					Insert_section LI._09_Dismissal__.commemoration End-Insert
+				End-Section //Sunday
+			
+		otherwise use:
+			Section Instance01 //weekday
 				Insert_section LI._01_Enarxis__.daily End-Insert
 				Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
 				Insert_section LI._04_Entrance__.clergy End-Insert
 				Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
-			End-Section
-			Section block2
-				Title role desig sid TisIndiktou End-Title
-				Title role mode sid meVE.Apolytikion1.mode End-Title
-				Hymn sid meVE.Apolytikion1.text @ver End-Hymn
-				Title role desig sid TisTheotokou End-Title
-				Title role mode sid meVE.Apolytikion3.mode End-Title
-				Hymn sid meVE.Apolytikion3.text @ver End-Hymn
-				Title role desig sid TouOsiou End-Title
-				Title role mode sid meVE.Apolytikion2.mode End-Title
-				Hymn sid meVE.Apolytikion2.text @ver End-Hymn
-				Insert_section LI._05_AfterEntranceHymns__.local End-Insert
-				Insert_section KO.seasonal End-Insert
+				Section hymns
+					Insert_section TI.com.sep01 End-Insert
+					Insert_section AP.me1_.hymn End-Insert
+					Insert_section TI.s._16_theotokos End-Insert
+					Insert_section AP.me3_.hymn End-Insert
+					Insert_section TI.s._10_monastic_.m End-Insert
+					Insert_section AP.me2_.hymn End-Insert
+					Insert_section LI._05_AfterEntranceHymns__.local End-Insert
+					Insert_section KO.seasonal End-Insert
+				End-Section
 				Insert_section LI._06_Trisagion__.chrys End-Insert
 				Insert_section LE._01_Epistle__.menaion_ End-Insert
 				Insert_section LE._02_Gospel__.menaion_ End-Insert
-			End-Section
-			Section block3
 				Insert_section LI._08_Liturgy__.chrys End-Insert
 				Insert_section LI._09_Dismissal__.commemoration End-Insert
 			End-Section
+	end-when				
 
-		End-Section
-end-when				
 End-Template
