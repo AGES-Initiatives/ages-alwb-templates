@@ -1,141 +1,63 @@
 Template se.m11.d15.wkd.ve
 
-	import oc.*
-	
-	import hi.s01_gr_GR_cog.*
-	import ho.s10_gr_GR_cog.*
-	import me.m11.d15_gr_GR_cog.*
-	
-	import titles_gr_GR_cog.*
+Status Review
+
 	import actors_gr_GR_cog.*
-	import rubrical_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
 	import misc_gr_GR_cog.*
 	import prayers_gr_GR_cog.*
-
-	// Imported templates
-	import bk.ho.s01.*
-
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
 	import iTags.*
 	import bTags.*
 	import roles.*
+
+
+	Head 
+		Set_Date month 11 day 15 year 2016 End_Date
+			Page_Header_Even
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
 	
-
-Insert_section VE._01_Beginning__.vespers End-Insert
-Section Vespers_03_Menaion // LIHC 6 stich me thru Glory
-	Section LIHC //this section needs to be copied and mode set
-		Actor sid Choir End-Actor
-		Title role mode rid ocVE.Stichera1.mode End-Title
-		Insert_section VE.LIHC_1 End-Insert
-		Insert_section VE.LIHC_2 End-Insert
-	End-Section //LIHC
-	Section Stichera
-		Title role mixed<Tmode>rid ocVE.Stichera1.mode</><Tmelody>rid ocVE.Stichera1.melody</>End-Title
-		Insert_section VE.LIHC_Verses.v05 End-Insert
-		Hymn rid 	ocVE.Stichera1.text @ver End-Hymn
-		Insert_section VE.LIHC_Verses.v06 End-Insert
-		Hymn rid 	ocVE.Stichera2.text @ver End-Hymn
-		Insert_section VE.LIHC_Verses.v07 End-Insert
-		Hymn rid 	ocVE.Stichera3.text @ver End-Hymn
-		Title role mixed<Tmode>sid meVE.Stichera01.mode </><Tmelody>sid meVE.Stichera01.melody</>End-Title
-		Insert_section VE.LIHC_Verses.v08 End-Insert
-		Hymn sid meVE.Stichera01.text @ver End-Hymn
-		Insert_section VE.LIHC_Verses.v09 End-Insert
-		Hymn sid meVE.Stichera02.text @ver End-Hymn
-		Insert_section VE.LIHC_Verses.v10 End-Insert
-		Hymn sid meVE.Stichera03.text @ver End-Hymn
-		Title role mixed sid Doxa<Tmode>sid meVE.SticGlory.mode</>End-Title
-		Hymn sid meVE.SticGlory.text @ver End-Hymn
-			when-name-of-day-is Wednesday, Friday use:
-		Title role mixed sid KaiNyn<Tdesig>sid Stavrotheotokion</>End-Title
-		Title role mixed<Tmode>sid meVE.SticStavrotheotokion.mode </><Tmelody>sid meVE.SticStavrotheotokion.melody</>End-Title
-		Hymn sid meVE.SticStavrotheotokion.text @ver End-Hymn
-			otherwise use:
-			when-name-of-day-is Monday, Tuesday, Thursday use:
-		Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
-		Title role mixed<Tmode>sid meVE.SticTheotokion.mode </><Tmelody>sid meVE.SticTheotokion.melody</>End-Title
-		Hymn sid meVE.SticTheotokion.text @ver End-Hymn
-			end-when	
-			end-when
-	End-Section //Stichera
-End-Section
-
-Section Vespers_04_Middle 
-	Actor sid Reader End-Actor
-	Reading sid hoVE.FosIlaron.text End-Reading
-	
-	Actor sid PriestOrDeacon End-Actor
-	Dialog sid hiVE.Key0109.text End-Dialog
-	Actor sid Choir End-Actor
-	Insert_section Selector_VespersProkeimenon.Priest.EveningProkeimenon End-Insert
-End-Section
-Insert_section VE._06_Litanies__.noektenia End-Insert
-
-Section Aposticha
-	Title role desig sid Aposticha End-Title		
-	Title role mixed<Tmode>sid meVE.Aposticha1.mode</><Tmelody>sid meVE.Aposticha1.melody</>End-Title
-	Hymn sid meVE.Aposticha1.text @ver End-Hymn
-//	Verse sid  End-Verse
-	Hymn sid meVE.Aposticha2.text @ver End-Hymn
-//	Verse sid  End-Verse
-	Hymn sid meVE.Aposticha3.text @ver End-Hymn
-	Title role mixed sid Doxa<Tmode>sid meVE.AposGlory.mode</>End-Title
-	Hymn sid meVE.AposGlory.text @ver End-Hymn
-			when-name-of-day-is Wednesday, Friday use:
-		Title role mixed sid KaiNyn<Tdesig>sid Stavrotheotokion</>End-Title
-		Title role mixed<Tmode>sid meVE.AposStavrotheotokion.mode </><Tmelody>sid meVE.AposStavrotheotokion.melody</>End-Title
-		Hymn sid meVE.AposStavrotheotokion.text @ver End-Hymn
-			Monday, Tuesday, Thursday use:
-		Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
-		Title role mixed<Tmode>sid meVE.AposTheotokion.mode </><Tmelody>sid meVE.AposTheotokion.melody</>End-Title
-		Hymn sid meVE.AposTheotokion.text @ver End-Hymn
-			end-when
-End-Section
-	
-	Insert_section VE.Symeon_Trisagion End-Insert	
-
-	Actor sid Choir End-Actor
-	Title role mixed<Tdesig>sid Apolytikion</><Tmode>sid meVE.Apolytikion1.mode</>End-Title
-	Hymn sid meVE.Apolytikion1.text @ver End-Hymn
-
-		when-name-of-day-is Monday use:
-	Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
-	Title role mixed<Tmode>sid oc.m5.d2_gr_GR_cog.ocVE.ApolTheotokionVM.mode </><Tmelody>sid oc.m5.d2_gr_GR_cog.ocVE.ApolTheotokionVM.melody</>End-Title
-	Hymn sid oc.m5.d2_gr_GR_cog.ocVE.ApolTheotokionVM.text @ver End-Hymn	
-		Tuesday use:
-	Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
-	Title role mixed<Tmode>sid oc.m5.d3_gr_GR_cog.ocVE.ApolTheotokionVM.mode </><Tmelody>sid oc.m5.d3_gr_GR_cog.ocVE.ApolTheotokionVM.melody</>End-Title
-	Hymn sid oc.m5.d3_gr_GR_cog.ocVE.ApolTheotokionVM.text @ver End-Hymn	
-		Wednesday use:
-	Title role mixed sid DoxaKaiNyn<Tdesig>sid Stavrotheotokion</>End-Title
-	Title role mixed<Tmode>sid oc.m5.d4_gr_GR_cog.ocVE.ApolTheotokionVM.mode </><Tmelody>sid oc.m5.d4_gr_GR_cog.ocVE.ApolTheotokionVM.melody</>End-Title
-	Hymn sid oc.m5.d4_gr_GR_cog.ocVE.ApolTheotokionVM.text @ver End-Hymn	
-		Thursday use:
-	Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
-	Title role mixed<Tmode>sid oc.m5.d5_gr_GR_cog.ocVE.ApolTheotokionVM.mode </><Tmelody>sid oc.m5.d5_gr_GR_cog.ocVE.ApolTheotokionVM.melody</>End-Title
-	Hymn sid oc.m5.d5_gr_GR_cog.ocVE.ApolTheotokionVM.text @ver End-Hymn	
-		Friday use:
-	Title role mixed sid DoxaKaiNyn<Tdesig>sid Stavrotheotokion</>End-Title
-	Title role mixed<Tmode>sid oc.m5.d6_gr_GR_cog.ocVE.ApolTheotokionVM.mode </><Tmelody>sid oc.m5.d6_gr_GR_cog.ocVE.ApolTheotokionVM.melody</>End-Title
-	Hymn sid oc.m5.d6_gr_GR_cog.ocVE.ApolTheotokionVM.text @ver End-Hymn	
-		end-when
-
-Section Dismissal
-	Actor sid PriestOrDeacon End-Actor
-	Dialog sid exc17 End-Dialog
-	Dialog<i>sid EvlogisonP</>End-Dialog	
-	Actor sid Priest End-Actor
-	Dialog sid OOnEvlogitos.text<i>sid res04p</>End-Dialog
-	Dialog sid StereosaiKyrios.text End-Dialog
-	Actor sid Reader End-Actor
-	Dialog sid res04 End-Dialog
-	Dialog sid he.h.m6_gr_GR_cog.TinTimioteran.text End-Dialog
-	Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
-	Dialog sid res01<r>sid Thrice</>sid Evlogison End-Dialog
-	Actor sid Priest End-Actor
-	Insert_section VE._11_Dismissal__.commemoration End-Insert
-	Dialog sid DiEfchonPateron.text End-Dialog
-	Actor sid People End-Actor
-	Dialog sid res04 End-Dialog
-End-Section
-
+	Section weekday
+		Insert_section VE._01_Beginning__.vespers End-Insert
+		Insert_section VE._02_Kekragaria__.modeofweek__.for6 End-Insert
+		Insert_section VE._03_Stichera__.oc__.weekday__.p_124as567 End-Insert
+		Insert_section TI.s._09_martyr_.mp End-Insert
+		Insert_section VE._03_Stichera__.me__.p_123as8910 End-Insert
+		Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_ End-Insert
+		Insert_section VE._03_Stichera__.both__.metheotokion End-Insert
+		Insert_section VE._04_Middle__.noentrance End-Insert
+		Insert_section VE._06_Litanies__.noektenia End-Insert
+		Insert_section VE._08_Aposticha__.oc__.weekday_.aposticha End-Insert
+			Rubric sid Or End-Rubric
+			Title role collapsetop sid clps.alternative.top End-Title
+			Insert_section VE._08_Aposticha__.me__.p_martyrs12 End-Insert
+			Title role collapsebottom sid clps.alternative.bottom End-Title
+		Insert_section VE._08_Aposticha__.glory__.me__.gloryasglory_ End-Insert
+		Insert_section VE._08_Aposticha__.both__.metheotokion_ End-Insert	
+		Insert_section VE.Symeon_Trisagion End-Insert	
+		Insert_section AP.me1_ End-Insert
+		Insert_section AP.gloryboth__.theotokion__.mode5_ End-Insert
+		Insert_section VE._10_End__.ektenia_wisdom End-Insert
+		Insert_section VE._11_Dismissal__.commemoration End-Insert
+	End-Section
 End-Template
