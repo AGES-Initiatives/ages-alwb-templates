@@ -764,7 +764,7 @@ Status Review
 				when-name-of-day-is 
 					Monday, Tuesday, Thursday use:
 						Section theotokion
-							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</><Tmode>rid meVE.SticTheotokion.mode</>End-Title
 							when-exists rid meVE.SticTheotokion.melody use: Title role melody rid meVE.SticTheotokion.melody End-Title end-when
 							Hymn rid meVE.SticTheotokion.text @ver End-Hymn
 						End-Section
@@ -1258,7 +1258,7 @@ Status Review
 			Section p_1123as78910
 				Title role source0 sid sourceMenaion End-Title
 				Title role mixed<Tmode>rid meVE.Stichera01.mode</><Tmelody>rid meVE.Stichera01.melody</>End-Title
-				Rubric sid cl.se.R001 End-Rubric
+			//	Rubric sid cl.se.R001 End-Rubric
 				Insert_section VE.LIHC_Verses.v07 End-Insert
 				Hymn rid meVE.Stichera01.text @ver End-Hymn
 				Insert_section VE.LIHC_Verses.v08 End-Insert
@@ -1479,6 +1479,11 @@ Status Review
 			Section weekday__
 				Section p_123as567
 					Title role source sid sourceOctoechos End-Title
+					when-name-of-day-is
+						Monday, Tuesday, Saturday use: Title<Tdesig>sid StichiraDespotika</>End-Title
+						Wednesday, Friday use: Title<Tdesig>sid StichiraStavrosima</>End-Title
+						Thursday use: Title<Tdesig>sid StichiraApostolika</>End-Title
+					end-when
 					Title role mixed<Tmode>rid ocVE.Stichera1.mode</><Tmelody>rid ocVE.Stichera1.melody</>End-Title
 					Media rid ocVE.Stichera1.text End-Media
 					Insert_section VE.LIHC_Verses.v05 End-Insert
@@ -1492,6 +1497,12 @@ Status Review
 				End-Section
 				Section p_456as8910
 					Title role source sid sourceOctoechos End-Title
+					when-name-of-day-is
+						Monday use: Insert_section TI.st.s._03_bodiless End-Insert
+						Tuesday use: Insert_section TI.st.s._06_forerunner End-Insert
+						Wednesday, Friday, Saturday use: Insert_section TI.st.s._16_theotokos End-Insert
+						Thursday use: Title<Tdesig>sid StichiraTouAgiouNikolaou</>End-Title
+					end-when
 					Title role mixed<Tmode>rid ocVE.Stichera4.mode</><Tmelody>rid ocVE.Stichera4.melody</>End-Title
 					Media rid ocVE.Stichera4.text End-Media
 					Insert_section VE.LIHC_Verses.v08 End-Insert
@@ -1505,6 +1516,11 @@ Status Review
 				End-Section
 				Section p_124as567
 					Title role source sid sourceOctoechos End-Title
+					when-name-of-day-is
+						Monday, Tuesday, Saturday use: Title<Tdesig>sid StichiraDespotika</>End-Title
+						Wednesday, Friday use: Title<Tdesig>sid StichiraStavrosima</>End-Title
+						Thursday use: Title<Tdesig>sid StichiraApostolika</>End-Title
+					end-when
 					Title role mixed<Tmode>rid ocVE.Stichera1.mode</><Tmelody>rid ocVE.Stichera1.melody</>End-Title
 					Media rid ocVE.Stichera1.text End-Media
 					Insert_section VE.LIHC_Verses.v05 End-Insert
@@ -1512,6 +1528,12 @@ Status Review
 					Media rid ocVE.Stichera2.text End-Media
 					Insert_section VE.LIHC_Verses.v06 End-Insert
 					Hymn rid ocVE.Stichera2.text @ver media-off End-Hymn
+					when-name-of-day-is
+						Monday use: Insert_section TI.s._03_bodiless End-Insert
+						Tuesday use: Insert_section TI.s._06_forerunner End-Insert
+						Wednesday, Friday, Saturday use: Insert_section TI.s._16_theotokos End-Insert
+						Thursday use: Title<Tdesig>sid TouAgiouNikolaou</>End-Title
+					end-when
 					Title role mixed<Tmode>rid ocVE.Stichera4.mode</><Tmelody>rid ocVE.Stichera4.melody</>End-Title
 					Media rid ocVE.Stichera4.text End-Media
 					Insert_section VE.LIHC_Verses.v07 End-Insert
@@ -3516,6 +3538,34 @@ Status Review
 				Insert_section PsalmVerses.forTransfiguration.verse2 End-Insert
 				Hymn rid meVE.Aposticha3.text @ver media-off End-Hymn
 			End-Section
+			Section i_unmercenaries12
+				Title role source sid sourceMenaion End-Title
+				Actor sid Choir End-Actor
+				Title role desig sid Aposticha End-Title		
+				Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid meVE.Aposticha1.mode</>End-Title
+				Hymn rid meVE.Aposticha1.text @ver End-Hymn
+				Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid meVE.Aposticha2.mode</>End-Title
+				Media rid meVE.Aposticha2.text End-Media
+				Insert_section PsalmVerses.forUnmercenaries.verse1 End-Insert
+				Hymn rid meVE.Aposticha2.text @ver media-off End-Hymn
+				Title role mixed<Tdesig>sid Idiomelon</><Tmode>rid meVE.Aposticha3.mode</>End-Title
+				Media rid meVE.Aposticha3.text End-Media
+				Insert_section PsalmVerses.forUnmercenaries.verse2 End-Insert
+				Hymn rid meVE.Aposticha3.text @ver media-off End-Hymn
+			End-Section
+			Section p_angels12
+				Title role source sid sourceMenaion End-Title
+				Actor sid Choir End-Actor
+				Title role desig sid Aposticha End-Title		
+				Title role mixed<Tmode>rid meVE.Aposticha1.mode</><Tmelody>rid meVE.Aposticha1.melody</>End-Title
+				Hymn rid meVE.Aposticha1.text @ver End-Hymn
+				Media rid meVE.Aposticha2.text End-Media
+				Insert_section PsalmVerses.forAngels.verse1 End-Insert
+				Hymn rid meVE.Aposticha2.text @ver media-off End-Hymn
+				Media rid meVE.Aposticha3.text End-Media
+				Insert_section PsalmVerses.forAngels.verse2 End-Insert
+				Hymn rid meVE.Aposticha3.text @ver media-off End-Hymn
+			End-Section
 			Section p_apostles12
 				Title role source sid sourceMenaion End-Title
 				Actor sid Choir End-Actor
@@ -3698,6 +3748,19 @@ Status Review
 				Insert_section PsalmVerses.forHierarchs.verse2 End-Insert
 				Hymn rid meVE.Aposticha3.text @ver media-off End-Hymn
 			End-Section
+			Section p_martyrs12
+				Title role source sid sourceMenaion End-Title
+				Actor sid Choir End-Actor
+				Title role desig sid Aposticha End-Title		
+				Title role mixed<Tmode>rid meVE.Aposticha1.mode</><Tmelody>rid meVE.Aposticha1.melody</>End-Title
+				Hymn rid meVE.Aposticha1.text @ver End-Hymn
+				Media rid meVE.Aposticha2.text End-Media
+				Insert_section PsalmVerses.forMartyrs.verse1 End-Insert
+				Hymn rid meVE.Aposticha2.text @ver media-off End-Hymn
+				Media rid meVE.Aposticha3.text End-Media
+				Insert_section PsalmVerses.forMartyrs.verse2 End-Insert
+				Hymn rid meVE.Aposticha3.text @ver media-off End-Hymn
+			End-Section
 			Section p_martyrs13
 				Title role source sid sourceMenaion End-Title
 				Actor sid Choir End-Actor
@@ -3796,7 +3859,7 @@ Status Review
 					Title role source sid sourceOctoechos End-Title
 					Actor sid Choir End-Actor
 					Title role desig sid Aposticha End-Title		
-					Title role mixed<Tmode>rid ocVE.Aposticha1.mode</><Tmelody>sid ocVE.Aposticha1.melody</>End-Title
+					Title role mixed<Tmode>rid ocVE.Aposticha1.mode</><Tmelody>rid ocVE.Aposticha1.melody</>End-Title
 					Hymn rid ocVE.Aposticha1.text @ver End-Hymn
 					Insert_section PsalmVerses.forVespersAposticha.weekday.verse1 End-Insert
 					when-exists rid ocVE.Aposticha2.melody use: Title role melody rid ocVE.Aposticha2.melody End-Title end-when
