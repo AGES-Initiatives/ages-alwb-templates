@@ -2,11 +2,6 @@ Template se.pe.d099.ve
 
 Status Final
 
-	import client_gr_GR_cog.*
-	import ho.s10_gr_GR_cog.*	
-	import oc.m4.d1_gr_GR_cog.*
-	import pe.d099_gr_GR_cog.*
-
 	import actors_gr_GR_cog.*
 	import misc_gr_GR_cog.*
 	import prayers_gr_GR_cog.*
@@ -21,10 +16,10 @@ Status Final
 	Head 
 		Set_Date month 5 day 10 End_Date
 			Page_Header_Even
-				center @lookup sid peShortCommemoration1.text sid ve.pdf.header sid d.onSaturdayEvening lang L1 
+				center @lookup rid pe.peShortCommemoration1.text sid ve.pdf.header sid d.onSaturdayEvening lang L1 
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @lookup sid peShortCommemoration1.text sid ve.pdf.header sid d.onSaturdayEvening lang L2 
+				center @lookup rid pe.peShortCommemoration1.text sid ve.pdf.header sid d.onSaturdayEvening lang L2 
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -44,9 +39,9 @@ Status Final
 		Insert_section VE._01_Beginning__.vespers End-Insert
 		Insert_section VE._02_Kekragaria__.modeofweek__.for10 End-Insert
 		Insert_section VE._03_Stichera__.oc__.sunday_.s_1234 End-Insert
-		Title role desig sid TisMesopentikostis End-Title
+		Insert_section TI.pe._04_midpentecost End-Insert
 		Insert_section VE._03_Stichera__.pe__.p_567as567 End-Insert
-		Title role desig sid TisSamaritidos End-Title
+		Insert_section TI.pe._05_samaritan End-Insert
 		Insert_section VE._03_Stichera__.pe__.i_8910as8910 End-Insert
 		Insert_section VE._03_Stichera__.glory__.pe__.gloryasglory_ End-Insert
 		Insert_section VE._03_Stichera__.both__.firsttheotokion__.modeofweek End-Insert
@@ -54,13 +49,12 @@ Status Final
 		Insert_section VE._06_Litanies__.fullektenia End-Insert
 		Insert_section VE._08_Aposticha__.oc__.sunday_.aposticha1_ End-Insert
 		Insert_section VE._08_Aposticha__.pascha End-Insert
-		Title role mixed sid Doxa<Tdesig>sid TisSamaritidos</>End-Title
+		Insert_section TI.g.pe_._05_samaritan End-Insert
 		Insert_section VE._08_Aposticha__.glory__.pe__.gloryasglory_.hymn End-Insert
-		Section block1
-			Title role mixed sid KaiNyn End-Title
-			Title role mixed<Tdesig>sid TisMesopentikostis</><Tmode>sid pe.d095_gr_GR_cog.peVE.AposGlory.mode</>End-Title
-			Hymn sid pe.d095_gr_GR_cog.peVE.AposGlory.text @ver End-Hymn
-		End-Section
+			Set_mcDay day 95 End_mcDay
+			Insert_section TI.b.pe_._04_midpentecost End-Insert
+			Insert_section VE._08_Aposticha__.both__.pe__.gloryasboth_.hymn End-Insert
+		Set_mcDay day 99 End_mcDay
 		Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
 		Insert_section AP.res__.modeofweek End-Insert
 		Insert_section AP.gloryboth__.af End-Insert
