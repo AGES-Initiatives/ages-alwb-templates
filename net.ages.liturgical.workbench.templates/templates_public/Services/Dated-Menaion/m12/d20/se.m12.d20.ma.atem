@@ -1,9 +1,7 @@
-Template se.m12.d24.gh 
+Template se.m12.d20.ma 
 
 Status Final
 
-	import bk.me.m12.d24.*
-	
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
 	import misc_gr_GR_cog.*
@@ -17,12 +15,12 @@ Status Final
 	import roles.*
 
 	Head 
-		Set_Date month 12 day 24 End_Date
+		Set_Date month 12 day 20 End_Date
 			Page_Header_Even
-				center @lookup sid gh.pdf.header sid d.on lang L2 @date lang L2
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @lookup sid gh.pdf.header sid d.on lang L2 @date lang L2
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -33,15 +31,25 @@ Status Final
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
+	Preface Covers
+		Insert_template ematins.cover.ma End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
 	when-name-of-day-is
-		Monday, Tuesday, Wednesday, Thursday, Friday use:
-			Section Instance01		
-				Insert_section Section01 End-Insert
-				Insert_section Section02 End-Insert
-				Insert_section Section03 End-Insert
-				Insert_section Section04 End-Insert
-				Insert_section Section05 End-Insert
-			End-Section	
-	end-when
+		Sunday use:
+			Section Instance03 //Sunday
+				Insert_section se.m12.dBC.ma.Instance02 End-Insert
+			End-Section
+			
+		Saturday use:
+			Section Instance02 //Saturday
+			End-Section
+			
+		otherwise use:
+			Section Instance01 //weekday
+			End-Section
+	end-when					
+
 
 End-Template

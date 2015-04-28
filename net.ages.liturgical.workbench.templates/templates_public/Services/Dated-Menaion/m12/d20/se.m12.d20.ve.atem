@@ -1,4 +1,4 @@
-Template se.m12.d13.ma 
+Template se.m12.d20.ve
 
 Status Final
 
@@ -15,12 +15,12 @@ Status Final
 	import roles.*
 
 	Head 
-		Set_Date month 12 day 13 End_Date
+		Set_Date month 12 day 20 End_Date
 			Page_Header_Even
-				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -32,14 +32,14 @@ Status Final
 	End_Head
 
 	Preface Covers
-		Insert_template ematins.cover.ma End-Insert
+		Insert_template ematins.cover.ve End-Insert
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
 	when-name-of-day-is
 		Sunday use:
 			Section Instance03 //Sunday
-				Insert_section se.m12.dFF.ma.Instance01 End-Insert
+				Insert_section se.m12.dBC.ve.Instance02 End-Insert
 			End-Section
 			
 		Saturday use:
@@ -50,6 +50,5 @@ Status Final
 			Section Instance01 //weekday
 			End-Section
 	end-when					
-
 
 End-Template
