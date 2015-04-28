@@ -2,20 +2,6 @@ Template se.m12.d27.li
 
 Status Final
 
-	import client_gr_GR_cog.*
-	import eu.lichrysbasil_gr_GR_cog.*
-	import ho.s07_gr_GR_cog.*
-	import le.ep.me.m12.dSunAC_gr_GR_cog.*
-	import le.go.me.m12.dSunAC_gr_GR_cog.*
-	import me.m12.d27_gr_GR_cog.*
-	import ps_gr_GR_cog.*
-
-	import da.*
-	import oc.*
-
-	//Templates
-	import bk.ap.me.m12.sections.*
-	
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
 	import misc_gr_GR_cog.*
@@ -48,104 +34,46 @@ Status Final
 	when-name-of-day-is
 		Sunday use:
 			Section Instance02 //Sunday after Xmas
-				Section block1
-					Insert_section LI._01_Enarxis__.daily End-Insert
-					Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
-					Insert_section LI._04_Entrance__.clergy End-Insert
-					Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
+				Insert_section LI._01_Enarxis__.daily End-Insert
+				Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
+				Insert_section LI._04_Entrance__.clergy End-Insert
+				Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
+				Section hymns
 					Insert_section AP.res__.modeofweek End-Insert
-				End-Section
-				Section block2
-					Title role mixed<Tdesig>sid TisEortis</><Tmode>sid me.m12.d25_gr_GR_cog.meVE.Apolytikion1.mode</>End-Title
-					Hymn sid me.m12.d25_gr_GR_cog.meVE.Apolytikion1.text @ver End-Hymn
+					Insert_section AP.af End-Insert
 					Title role mixed<Tdesig>sid TonTheopatoron</><Tmode>sid me.m12.dAC_gr_GR_cog.meVE.Apolytikion1.mode</>End-Title
 					Hymn sid me.m12.dAC_gr_GR_cog.meVE.Apolytikion1.text @ver End-Hymn
-				End-Section
-				Section block3	
-					Title role desig sid TouProtomartyros End-Title
-					Title role mixed<Tmode>sid meVE.Apolytikion1.mode</><Tmelody>sid meVE.Apolytikion1.melody</>End-Title
-					Hymn sid meVE.Apolytikion1.text @ver End-Hymn
+					Insert_section TI.s._14_protomartyr_.m End-Insert
+					Insert_section AP.me1_.hymn End-Insert
 					Insert_section LI._05_AfterEntranceHymns__.local End-Insert
 					Insert_section KO.seasonal End-Insert
-					Insert_section LI._06_Trisagion__.chrys End-Insert
-					Insert_section LE._01_Epistle__.menaion_ End-Insert
-					Insert_section LE._02_Gospel__.menaion_.alleluia End-Insert
 				End-Section
-				Section block4
-					Title role desig sid ToEvangelion End-Title
-					Title<inr>sid lemeLI.Gospel.title</>End-Title
-					Actor sid Deacon End-Actor
-					Dialog sid exc17 sid exc18 sid gos02 End-Dialog
-					Actor sid Priest End-Actor
-					Dialog sid pet31 End-Dialog
-					Dialog<i>sid res05p</>End-Dialog
-					Actor sid Deacon End-Actor
-					Dialog sid gos03a sid lemeLI.Gospel.book sid gos03b End-Dialog		
-					Actor sid Priest End-Actor
-					Dialog sid exc19 End-Dialog
-					Dialog<i>sid DoxaSoiKyrieP</>End-Dialog	
-					Actor sid Deacon End-Actor
-					Title role chapverse sid lemeLI.Gospel.chapverse End-Title
-					Reading sid lemeLI.Gospel.text @ver End-Reading
-					Actor sid Priest End-Actor
-					Dialog sid euLI.Key0705.text End-Dialog
-					Actor sid Choir End-Actor						
-					Dialog sid DoxaSoiKyrie End-Dialog	
-				End-Section
-				Insert_section Instance01.block3 End-Insert
+				Insert_section LI._06_Trisagion__.chrys End-Insert
+				Insert_section LE._01_Epistle__.menaion_ End-Insert
+				Insert_section LE._02_Gospel__.menaion_ End-Insert
+				Insert_section LI._08_Liturgy__.chrys End-Insert
+				Insert_section LI._09_Dismissal__.commemoration End-Insert
 			End-Section
 			
 		otherwise use:
 			Section Instance01 
-				Section block1
-					Insert_section LI._01_Enarxis__.daily End-Insert
-					Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
-					Insert_section LI._04_Entrance__.clergy End-Insert
-					Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
-					Title role mixed<Tdesig>sid Apolytikion sid TisEortis</><Tmode>sid me.m12.d25_gr_GR_cog.meVE.Apolytikion1.mode</>End-Title
-					Hymn sid me.m12.d25_gr_GR_cog.meVE.Apolytikion1.text @ver End-Hymn
-				End-Section
-				Section block2	
-					Title role desig sid TouProtomartyros End-Title
-					Title role mixed<Tmode>sid meVE.Apolytikion1.mode</><Tmelody>sid meVE.Apolytikion1.melody</>End-Title
-					Hymn sid meVE.Apolytikion1.text @ver End-Hymn
+				Insert_section LI._01_Enarxis__.daily End-Insert
+				Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
+				Insert_section LI._04_Entrance__.clergy End-Insert
+				Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
+				Section hymns
+					Insert_section AP.af End-Insert
+					Insert_section TI.s._14_protomartyr_.m End-Insert
+					Insert_section AP.me1_.hymn End-Insert
 					Insert_section LI._05_AfterEntranceHymns__.local End-Insert
 					Insert_section KO.seasonal End-Insert
-					Insert_section LI._06_Trisagion__.chrys End-Insert
-					Insert_section LE._01_Epistle__.menaion_ End-Insert
-					Insert_section LE._02_Gospel__.menaion_.alleluia End-Insert
-					when-name-of-day-is
-						Saturday use:
-							Section Gospel
-								Title role desig sid ToEvangelion End-Title
-								Title<inr>sid le.go.me.m12.dSatAC_gr_GR_cog.lemeLI.Gospel.title</>End-Title
-								Actor sid Deacon End-Actor
-								Dialog sid exc17 sid exc18 sid gos02 End-Dialog
-								Actor sid Priest End-Actor
-								Dialog sid pet31 End-Dialog
-								Dialog<i>sid res05p</>End-Dialog
-								Actor sid Deacon End-Actor
-								Dialog sid gos03a sid le.go.me.m12.dSatAC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog		
-								Actor sid Priest End-Actor
-								Dialog sid exc19 End-Dialog
-								Dialog<i>sid DoxaSoiKyrieP</>End-Dialog	
-								Actor sid Deacon End-Actor
-								Title role chapverse sid le.go.me.m12.dSatAC_gr_GR_cog.lemeLI.Gospel.chapverse End-Title
-								Reading sid le.go.me.m12.dSatAC_gr_GR_cog.lemeLI.Gospel.text @ver End-Reading
-								Actor sid Priest End-Actor
-								Dialog sid euLI.Key0705.text End-Dialog
-								Actor sid Choir End-Actor						
-								Dialog sid DoxaSoiKyrie End-Dialog	
-							End-Section
-						otherwise use:	
-							Insert_section LE._02_Gospel__.menaion_.lesson End-Insert
-					end-when
 				End-Section	
-				Section block3
-					Insert_section LI._08_Liturgy__.chrys End-Insert
-					Insert_section LI._09_Dismissal__.commemoration End-Insert
-				End-Section
+				Insert_section LI._06_Trisagion__.chrys End-Insert
+				Insert_section LE._01_Epistle__.menaion_ End-Insert
+				Insert_section LE._02_Gospel__.menaion_ End-Insert
+				Insert_section LI._08_Liturgy__.chrys End-Insert
+				Insert_section LI._09_Dismissal__.commemoration End-Insert
 			End-Section
-			
 	end-when
+
 End-Template

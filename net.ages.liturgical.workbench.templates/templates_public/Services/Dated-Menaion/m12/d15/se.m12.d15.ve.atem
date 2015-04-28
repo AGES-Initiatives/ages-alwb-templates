@@ -1,6 +1,6 @@
-Template se.m12.d12.ve 
+Template se.m12.d15.ve 
 
-Status Final
+Status Review
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -15,7 +15,7 @@ Status Final
 	import roles.*
 
 	Head 
-		Set_Date month 12 day 12 End_Date
+		Set_Date month 12 day 15 End_Date
 			Page_Header_Even
 				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
 			End_Page_Header_Even
@@ -36,30 +36,29 @@ Status Final
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-	when-name-of-day-is
-		Sunday use:
-			Section Instance02
-			End-Section
+	when-name-of-day-is 
+		Sunday use:	
+			Section Instance02 //Sunday
+			End-Section //Sunday
+		
 		otherwise use:
-			Section Instance01
+			Section Instance01 //weekday
 				Insert_section VE._01_Beginning__.vespers End-Insert
 				Insert_section VE._02_Kekragaria__.mode5__.for6 End-Insert
 				Insert_section VE._03_Stichera__.me__.p_112233as5678910 End-Insert
 				Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_ End-Insert
-				Insert_section TI.b.bf End-Insert
-				Insert_section VE._03_Stichera__.both__.me__.bothasboth_.hymn End-Insert
-				Insert_section VE._04_Middle__.entrance End-Insert
-				Insert_section VE._05_Readings__.reader End-Insert
-				Insert_section VE._06_Litanies__.fullektenia End-Insert
-				Insert_section VE._08_Aposticha__.me__.p_devoutmen2hierarchs2 End-Insert
+				Insert_section VE._08_Aposticha__.both__.secondarytheotokion__.mode6_vine__.martyr End-Insert
+				Insert_section VE._04_Middle__.noentrance End-Insert
+				Insert_section VE._06_Litanies__.noektenia End-Insert
+				Insert_section VE._08_Aposticha__.me__.p_hierarchs2greatmartyrs1 End-Insert
 				Insert_section VE._08_Aposticha__.glory__.me__.gloryasglory_ End-Insert
-				Insert_section TI.b.bf End-Insert
-				Insert_section VE._08_Aposticha__.both__.me_.hymn End-Insert
+				Insert_section VE._08_Aposticha__.both__.secondarytheotokion__.mode8 End-Insert
 				Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
 				Insert_section AP.me1_ End-Insert
-				Insert_section AP.gloryboth__.primarytheotokion__.mode1 End-Insert
-				Insert_section VE._10_End__.wisdom End-Insert
+				Insert_section AP.gloryboth__.primarytheotokion__.mode5 End-Insert
+				Insert_section VE._10_End__.ektenia_wisdom End-Insert
 				Insert_section VE._11_Dismissal__.commemoration End-Insert
-			End-Section
+			End-Section	
 	end-when
+
 End-Template
