@@ -2554,17 +2554,74 @@ Template MA
 			End-Section
 		End-Section
 		Section ode3kathisma__
-			Section append__
-				Section pe__
-					Section kath1_
-						Actor sid Choir End-Actor
-						Title role desig sid Kathisma End-Title
-						Section hymn
-							Title role source0 sid sourcePentecostarion End-Title
-							Title role mixed<Tmode>sid pe.d095_gr_GR_cog.peMA.Ode3Kathisma1.mode</><Tmelody>sid pe.d095_gr_GR_cog.peMA.Ode3Kathisma1.melody</>End-Title
-							Hymn sid pe.d095_gr_GR_cog.peMA.Ode3Kathisma1.text @ver End-Hymn
-						End-Section
+			Section both__
+				Section alt1meT
+					when-exists
+						rid alt1.meMA.Ode3KathismaSt.text use:
+							when-name-of-day-is
+								Wednesday, Friday use:
+									Section stavrotheotokion
+										Title sid KaiNyn<Tdesig>sid Stavrotheotokion</>End-Title
+										Title<Tmode>rid alt1.meMA.Ode3KathismaSt.mode</><Tmelody>rid alt1.meMA.Ode3KathismaSt.melody</>End-Title
+										Hymn rid alt1.meMA.Ode3KathismaSt.text End-Hymn
+									End-Section
+								otherwise use:
+									Section theotokion
+										Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+										Title<Tmode>rid alt1.meMA.Ode3KathismaT.mode</><Tmelody>rid alt1.meMA.Ode3KathismaT.melody</>End-Title
+										Hymn rid alt1.meMA.Ode3KathismaT.text End-Hymn
+									End-Section
+							end-when
+						otherwise use: 
+							Insert_section theotokion End-Insert
+					end-when
+				End-Section
+				Section meT
+					when-exists
+						rid meMA.Ode3KathismaSt.text use:
+							when-name-of-day-is
+								Wednesday, Friday use:
+									Section stavrotheotokion
+										Title sid KaiNyn<Tdesig>sid Stavrotheotokion</>End-Title
+										Title<Tmode>rid meMA.Ode3KathismaSt.mode</><Tmelody>rid meMA.Ode3KathismaSt.melody</>End-Title
+										Hymn rid meMA.Ode3KathismaSt.text @ver End-Hymn
+									End-Section
+								otherwise use:
+									Section theotokion
+										Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+										Title<Tmode>rid meMA.Ode3KathismaT.mode</><Tmelody>rid meMA.Ode3KathismaT.melody</>End-Title
+										Hymn rid meMA.Ode3KathismaT.text @ver End-Hymn
+									End-Section
+							end-when
+						otherwise use: 
+							Insert_section theotokion End-Insert
+					end-when
+				End-Section
+			End-Section
+			Section glory__
+				Section alt1me1__
+					Title sid Doxa End-Title
+					Section hymn
+						Title role source0 sid sourceMenaion End-Title
+						Title role mixed<Tmode>rid alt1.meMA.Ode3Kathisma1.mode</><Tmelody>rid alt1.meMA.Ode3Kathisma1.melody</>End-Title
+						Hymn rid alt1.meMA.Ode3Kathisma1.text @ver End-Hymn
 					End-Section
+				End-Section
+			End-Section
+			Section me1__
+				Actor sid Choir End-Actor
+				Title role desig sid Kathisma End-Title
+				Section hymn
+					Title role source0 sid sourceMenaion End-Title
+					Title role mixed<Tmode>rid meMA.Ode3Kathisma1.mode</><Tmelody>rid meMA.Ode3Kathisma1.melody</>End-Title
+					Hymn rid meMA.Ode3Kathisma1.text @ver End-Hymn
+				End-Section
+			End-Section
+			Section append__
+				Section pe1
+					Title role source0 sid sourcePentecostarion End-Title
+					Title role mixed<Tmode>rid peMA.Ode3Kathisma1.mode</><Tmelody>rid peMA.Ode3Kathisma1.melody</>End-Title
+					Hymn rid peMA.Ode3Kathisma1.text @ver End-Hymn
 				End-Section
 			End-Section
 		End-Section
