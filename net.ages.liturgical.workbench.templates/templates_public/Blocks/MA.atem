@@ -656,9 +656,48 @@ Template MA
 		End-Section
 		Section oc__
 			Section weekday123
-				Title role source sid sourceOctoechos End-Title
-				Actor sid Choir End-Actor
-				Section Kathisma1
+				Insert_section weekday End-Insert
+				Insert_section _04_Kathisma2__.append__.oc__.weekday End-Insert
+				when-name-of-day-is Monday, Tuesday, Wednesday, Thursday, Friday use:
+					Insert_section _05_Kathisma3__.append__.oc End-Insert
+				end-when
+			End-Section
+			Section weekday
+			when-name-of-day-is
+				Saturday use:
+					Section saturday
+						Title role source sid sourceOctoechos End-Title
+						Actor sid Choir End-Actor
+						Title role desig sid Kathisma1 End-Title
+						when-mode-of-week-is
+							M1, M2, M3, M4 use:
+								Title role desig sid Martyrika End-Title
+								Title role mixed<Tmode>rid ocMA.Kathisma11.mode</><Tmelody>rid ocMA.Kathisma11.melody</>End-Title
+								Hymn rid ocMA.Kathisma11.text @ver End-Hymn
+								Verse<bnr>sid vVerse</>sid psa67.v36a.text @ver End-Verse
+								when-exists rid ocMA.Kathisma12.melody use: Title role melody rid ocMA.Kathisma12.melody End-Title end-when
+								Hymn rid ocMA.Kathisma12.text @ver End-Hymn
+								Verse<bnr>sid vVerse</>sid psa15.v3alt.text @ver End-Verse
+								when-exists rid ocMA.Kathisma13.melody use: Title role melody rid ocMA.Kathisma13.melody End-Title end-when
+								Hymn rid ocMA.Kathisma13.text @ver End-Hymn
+								Insert_section TI.gb.th End-Insert
+								when-exists rid ocMA.Kathisma14.melody use: Title role melody rid ocMA.Kathisma14.melody End-Title end-when
+								Hymn rid ocMA.Kathisma14.text @ver End-Hymn
+							M5, M6, M7, M8 use:
+								Title role desig sid Martyrika End-Title
+								Title role mixed<Tmode>rid ocMA.Kathisma11.mode</><Tmelody>rid ocMA.Kathisma11.melody</>End-Title
+								Hymn rid ocMA.Kathisma11.text @ver End-Hymn
+								Verse<bnr>sid vVerse</>sid psa67.v36a.text @ver End-Verse
+								when-exists rid ocMA.Kathisma12.melody use: Title role melody rid ocMA.Kathisma12.melody End-Title end-when
+								Hymn rid ocMA.Kathisma12.text @ver End-Hymn
+								Insert_section TI.gb.th End-Insert
+								when-exists rid ocMA.Kathisma13.melody use: Title role melody rid ocMA.Kathisma13.melody End-Title end-when
+								Hymn rid ocMA.Kathisma13.text @ver End-Hymn
+						end-when
+					End-Section
+				otherwise use:
+					Title role source sid sourceOctoechos End-Title
+					Actor sid Choir End-Actor
 					Title role desig sid Kathisma1 End-Title
 					when-name-of-day-is
 						Monday, Tuesday use:
@@ -687,105 +726,7 @@ Template MA
 						Title role melody rid ocMA.Kathisma13.melody End-Title
 					end-when
 					Hymn rid ocMA.Kathisma13.text @ver End-Hymn
-				End-Section
-				Section Kathisma2
-					Title role desig sid Kathisma2 End-Title
-					when-name-of-day-is
-						Monday, Tuesday use:
-							Title role desig sid Katanyktika End-Title
-						Wednesday, Friday use:
-							Title role desig sid Stavrosima End-Title
-						Thursday use:
-							Title role desig sid Apostolika End-Title
-					end-when	
-					Title role mixed<Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
-					Hymn rid ocMA.Kathisma21.text @ver End-Hymn
-					when-name-of-day-is
-						Monday, Tuesday use:
-							Verse<inr>sid vVerse</>sid psa118.v132.text End-Verse
-						Wednesday, Friday use:
-							Verse<inr>sid vVerse</>sid psa73.v12.text End-Verse
-						Thursday use:
-							Verse<inr>sid vVerse</>sid psa18.v2.text End-Verse
-					end-when	
-					when-exists rid ocMA.Kathisma22.melody use:
-						Title role melody rid ocMA.Kathisma22.melody End-Title
-					end-when
-					Hymn rid ocMA.Kathisma22.text @ver End-Hymn
-					Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
-					when-exists rid ocMA.Kathisma23.melody use:
-						Title role melody rid ocMA.Kathisma23.melody End-Title
-					end-when
-					Hymn rid ocMA.Kathisma23.text @ver End-Hymn
-				End-Section
-				Section Kathisma3
-					Title role desig sid Kathisma3 End-Title
-					when-name-of-day-is
-						Monday use:
-							Title role desig sid Katanyktika End-Title
-						Tuesday use:
-							when-mode-of-week-is
-								M1, M2, M3, M4, M8 use:
-									Title role desig sid Katanyktikon End-Title
-								M5, M6, M7 use:
-									Title role desig sid TouProdromou End-Title
-							end-when
-						Wednesday, Friday use:
-							Title role desig sid Stavrosima End-Title
-						Thursday use:
-							when-mode-of-week-is
-								M1, M2, M3, M4 use:
-									Title role desig sid TouAgiouNikolaou End-Title
-								M5, M6, M7, M8 use:
-									Title role desig sid Apostolikon End-Title
-							end-when
-					end-when	
-					Title role mixed<Tmode>rid ocMA.Kathisma31.mode</><Tmelody>rid ocMA.Kathisma31.melody</>End-Title
-					Hymn rid ocMA.Kathisma31.text @ver End-Hymn
-					Verse<inr>sid vVerse</>sid psa67.v36a.text End-Verse
-					Title role desig sid Martyrikon End-Title
-					when-exists rid ocMA.Kathisma32.melody use:
-						Title role melody rid ocMA.Kathisma32.melody End-Title
-					end-when
-					Hymn rid ocMA.Kathisma32.text @ver End-Hymn
-					Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
-					when-exists rid ocMA.Kathisma33.melody use:
-						Title role melody rid ocMA.Kathisma33.melody End-Title
-					end-when
-					Hymn rid ocMA.Kathisma33.text @ver End-Hymn
-				End-Section		
-			End-Section
-			Section weekday
-				Title role source sid sourceOctoechos End-Title
-				Actor sid Choir End-Actor
-				Title role desig sid Kathisma1 End-Title
-				when-name-of-day-is
-					Monday, Tuesday use:
-						Title role desig sid Katanyktika End-Title
-					Wednesday, Friday use:
-						Title role desig sid Stavrosima End-Title
-					Thursday use:
-						Title role desig sid Apostolika End-Title
-				end-when	
-				Title role mixed<Tmode>rid ocMA.Kathisma11.mode</><Tmelody>rid ocMA.Kathisma11.melody</>End-Title
-				Hymn rid ocMA.Kathisma11.text @ver End-Hymn
-				when-name-of-day-is
-					Monday, Tuesday use:
-						Verse<inr>sid vVerse</>sid psa37.v2.text End-Verse
-					Wednesday, Friday use:
-						Verse<inr>sid vVerse</>sid psa98.v5.text End-Verse
-					Thursday use:
-						Verse<inr>sid vVerse</>sid psa18.v5.text End-Verse
-				end-when	
-				when-exists rid ocMA.Kathisma12.melody use:
-					Title role melody rid ocMA.Kathisma12.melody End-Title
-				end-when
-				Hymn rid ocMA.Kathisma12.text @ver End-Hymn
-				Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
-				when-exists rid ocMA.Kathisma13.melody use:
-					Title role melody rid ocMA.Kathisma13.melody End-Title
-				end-when
-				Hymn rid ocMA.Kathisma13.text @ver End-Hymn
+			end-when
 			End-Section
 			Section sunday__
 				Section kath111213
@@ -1198,35 +1139,70 @@ Template MA
 			End-Section
 			Section oc__
 				Section weekday
-					Title role source sid sourceOctoechos End-Title
-					Title role desig sid Kathisma2 End-Title
-					when-name-of-day-is
-						Monday, Tuesday use:
-							Title role desig sid Katanyktika End-Title
-						Wednesday, Friday use:
-							Title role desig sid Stavrosima End-Title
-						Thursday use:
-							Title role desig sid Apostolika End-Title
-					end-when	
-					Title role mixed<Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
-					Hymn rid ocMA.Kathisma21.text @ver End-Hymn
-					when-name-of-day-is
-						Monday, Tuesday use:
-							Verse<inr>sid vVerse</>sid psa118.v132.text End-Verse
-						Wednesday, Friday use:
-							Verse<inr>sid vVerse</>sid psa73.v12.text End-Verse
-						Thursday use:
-							Verse<inr>sid vVerse</>sid psa18.v2.text End-Verse
-					end-when	
-					when-exists rid ocMA.Kathisma22.melody use:
-						Title role melody rid ocMA.Kathisma22.melody End-Title
-					end-when
-					Hymn rid ocMA.Kathisma22.text @ver End-Hymn
-					Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
-					when-exists rid ocMA.Kathisma23.melody use:
-						Title role melody rid ocMA.Kathisma23.melody End-Title
-					end-when
-					Hymn rid ocMA.Kathisma23.text @ver End-Hymn
+				when-name-of-day-is
+					Saturday use:
+						Section saturday
+							Title role source sid sourceOctoechos End-Title
+							Title role desig sid Kathisma2 End-Title
+							when-mode-of-week-is
+								M1, M2, M3, M4, M8 use:
+									Title role desig sid Martyrikon End-Title
+									Title role mixed<Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
+									Hymn rid ocMA.Kathisma21.text @ver End-Hymn
+									Verse<bnr>sid vVerse</>sid psa64.v5aalt.text @ver End-Verse
+									Title role desig sid Nekrosima End-Title
+									when-exists rid ocMA.Kathisma22.melody use: Title role melody rid ocMA.Kathisma22.melody End-Title end-when
+									Hymn rid ocMA.Kathisma22.text @ver End-Hymn
+									Verse<bnr>sid vVerse</>sid psa24.v13alt.text @ver End-Verse
+									when-exists rid ocMA.Kathisma23.melody use: Title role melody rid ocMA.Kathisma23.melody End-Title end-when
+									Hymn rid ocMA.Kathisma23.text @ver End-Hymn
+									Insert_section TI.gb.th End-Insert
+									when-exists rid ocMA.Kathisma24.melody use: Title role melody rid ocMA.Kathisma24.melody End-Title end-when
+									Hymn rid ocMA.Kathisma24.text @ver End-Hymn
+								M5, M6, M7 use:
+									Title role desig sid Martyrikon End-Title
+									Title role mixed<Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
+									Hymn rid ocMA.Kathisma21.text @ver End-Hymn
+									Verse<bnr>sid vVerse</>sid psa64.v5aalt.text @ver End-Verse
+									Title role desig sid Nekrosimon End-Title
+									when-exists rid ocMA.Kathisma22.melody use: Title role melody rid ocMA.Kathisma22.melody End-Title end-when
+									Hymn rid ocMA.Kathisma22.text @ver End-Hymn
+									Insert_section TI.gb.th End-Insert
+									when-exists rid ocMA.Kathisma23.melody use: Title role melody rid ocMA.Kathisma23.melody End-Title end-when
+									Hymn rid ocMA.Kathisma23.text @ver End-Hymn
+							end-when
+						End-Section
+					otherwise use:
+						Title role source sid sourceOctoechos End-Title
+						Title role desig sid Kathisma2 End-Title
+						when-name-of-day-is
+							Monday, Tuesday use:
+								Title role desig sid Katanyktika End-Title
+							Wednesday, Friday use:
+								Title role desig sid Stavrosima End-Title
+							Thursday use:
+								Title role desig sid Apostolika End-Title
+						end-when	
+						Title role mixed<Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
+						Hymn rid ocMA.Kathisma21.text @ver End-Hymn
+						when-name-of-day-is
+							Monday, Tuesday use:
+								Verse<inr>sid vVerse</>sid psa118.v132.text End-Verse
+							Wednesday, Friday use:
+								Verse<inr>sid vVerse</>sid psa73.v12.text End-Verse
+							Thursday use:
+								Verse<inr>sid vVerse</>sid psa18.v2.text End-Verse
+						end-when	
+						when-exists rid ocMA.Kathisma22.melody use:
+							Title role melody rid ocMA.Kathisma22.melody End-Title
+						end-when
+						Hymn rid ocMA.Kathisma22.text @ver End-Hymn
+						Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+						when-exists rid ocMA.Kathisma23.melody use:
+							Title role melody rid ocMA.Kathisma23.melody End-Title
+						end-when
+						Hymn rid ocMA.Kathisma23.text @ver End-Hymn
+				end-when
 				End-Section
 				Section sunday__
 					Section kath212223
@@ -1481,40 +1457,76 @@ Template MA
 		End-Section
 		Section oc__
 			Section weekday
-				Title role source sid sourceOctoechos End-Title
 				Actor sid Choir End-Actor
-				Title role desig sid Kathisma2 End-Title
 				when-name-of-day-is
-					Monday, Tuesday use:
-						Title role desig sid Katanyktika End-Title
-					Wednesday, Friday use:
-						Title role desig sid Stavrosima End-Title
-					Thursday use:
-						Title role desig sid Apostolika End-Title
-				end-when	
-				Title role mixed<Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
-				Hymn rid ocMA.Kathisma21.text @ver End-Hymn
-				when-name-of-day-is
-					Monday, Tuesday use:
-						Verse<inr>sid vVerse</>sid psa118.v132.text End-Verse
-					Wednesday, Friday use:
-						Verse<inr>sid vVerse</>sid psa73.v12.text End-Verse
-					Thursday use:
-						Verse<inr>sid vVerse</>sid psa18.v2.text End-Verse
-				end-when	
-				when-exists rid ocMA.Kathisma22.melody use:
-					Title role melody rid ocMA.Kathisma22.melody End-Title
+					Saturday use:
+						Section saturday
+							Title role source sid sourceOctoechos End-Title
+							Title role desig sid Kathisma2 End-Title
+							when-mode-of-week-is
+								M1, M2, M3, M4, M8 use:
+									Title role desig sid Martyrikon End-Title
+									Title role mixed<Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
+									Hymn rid ocMA.Kathisma21.text @ver End-Hymn
+									Verse<bnr>sid vVerse</>sid psa64.v5aalt.text @ver End-Verse
+									Title role desig sid Nekrosima End-Title
+									when-exists rid ocMA.Kathisma22.melody use: Title role melody rid ocMA.Kathisma22.melody End-Title end-when
+									Hymn rid ocMA.Kathisma22.text @ver End-Hymn
+									Verse<bnr>sid vVerse</>sid psa24.v13alt.text @ver End-Verse
+									when-exists rid ocMA.Kathisma23.melody use: Title role melody rid ocMA.Kathisma23.melody End-Title end-when
+									Hymn rid ocMA.Kathisma23.text @ver End-Hymn
+									Insert_section TI.gb.th End-Insert
+									when-exists rid ocMA.Kathisma24.melody use: Title role melody rid ocMA.Kathisma24.melody End-Title end-when
+									Hymn rid ocMA.Kathisma24.text @ver End-Hymn
+								M5, M6, M7 use:
+									Title role desig sid Martyrikon End-Title
+									Title role mixed<Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
+									Hymn rid ocMA.Kathisma21.text @ver End-Hymn
+									Verse<bnr>sid vVerse</>sid psa64.v5aalt.text @ver End-Verse
+									Title role desig sid Nekrosimon End-Title
+									when-exists rid ocMA.Kathisma22.melody use: Title role melody rid ocMA.Kathisma22.melody End-Title end-when
+									Hymn rid ocMA.Kathisma22.text @ver End-Hymn
+									Insert_section TI.gb.th End-Insert
+									when-exists rid ocMA.Kathisma23.melody use: Title role melody rid ocMA.Kathisma23.melody End-Title end-when
+									Hymn rid ocMA.Kathisma23.text @ver End-Hymn
+							end-when
+						End-Section
+					otherwise use:
+						Title role source sid sourceOctoechos End-Title
+						Title role desig sid Kathisma2 End-Title
+						when-name-of-day-is
+							Monday, Tuesday use:
+								Title role desig sid Katanyktika End-Title
+							Wednesday, Friday use:
+								Title role desig sid Stavrosima End-Title
+							Thursday use:
+								Title role desig sid Apostolika End-Title
+						end-when	
+						Title role mixed<Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
+						Hymn rid ocMA.Kathisma21.text @ver End-Hymn
+						when-name-of-day-is
+							Monday, Tuesday use:
+								Verse<inr>sid vVerse</>sid psa118.v132.text End-Verse
+							Wednesday, Friday use:
+								Verse<inr>sid vVerse</>sid psa73.v12.text End-Verse
+							Thursday use:
+								Verse<inr>sid vVerse</>sid psa18.v2.text End-Verse
+						end-when	
+						when-exists rid ocMA.Kathisma22.melody use:
+							Title role melody rid ocMA.Kathisma22.melody End-Title
+						end-when
+						Hymn rid ocMA.Kathisma22.text @ver End-Hymn
+						Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+						when-exists rid ocMA.Kathisma23.melody use:
+							Title role melody rid ocMA.Kathisma23.melody End-Title
+						end-when
+						Hymn rid ocMA.Kathisma23.text @ver End-Hymn
 				end-when
-				Hymn rid ocMA.Kathisma22.text @ver End-Hymn
-				Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
-				when-exists rid ocMA.Kathisma23.melody use:
-					Title role melody rid ocMA.Kathisma23.melody End-Title
-				end-when
-				Hymn rid ocMA.Kathisma23.text @ver End-Hymn
 			End-Section
 			Section sunday__
 				Section kath212223
 					Title role source sid sourceOctoechos End-Title
+					Actor sid Choir End-Actor
 					Title role desig sid Kathisma2 End-Title
 					Title role mixed <Tmode>rid ocMA.Kathisma21.mode</>	<Tmelody>rid ocMA.Kathisma21.melody</>End-Title
 					Hymn rid ocMA.Kathisma21.text @ver End-Hymn
@@ -4030,7 +4042,7 @@ Template MA
 				Section mode2
 					Title role source sid sourceOctoechos End-Title
 					Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
-					Hymn sid oc.m2.d3_gr_GR_cog.ocVE.AposTheotokion.text @ver End-Hymn
+					Hymn sid ho.s23_gr_GR_cog.hoCA.Troparion7.text @ver End-Hymn
 				End-Section
 				Section mode3
 					Title role source sid sourceOctoechos End-Title
