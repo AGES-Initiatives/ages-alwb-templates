@@ -35,6 +35,8 @@ Status Review
 
 	Section _01_Enarxis__
 		Section daily
+			Actor sid Deacon End-Actor
+			Dialog sid res08 End-Dialog
 			Actor sid Priest End-Actor
 			Dialog sid euLI.Key0109.text End-Dialog
 			Dialog<i>sid res04p</>End-Dialog
@@ -65,6 +67,8 @@ Status Review
 			End-Section
 		End-Section
 		Section vesperal
+			Actor sid Deacon End-Actor
+			Dialog sid res08 End-Dialog
 			Actor sid Priest End-Actor
 			Dialog sid euLI.Key0109.text End-Dialog
 			Insert_section VE._01_Beginning__.vespers.introductorypsalm End-Insert
@@ -74,10 +78,10 @@ Status Review
 
 	Section _02_Antiphons__
 		Section sundays_weekdays_feasts
-			Insert_section Selector_Antiphons.SpecificDay End-Insert
+			Insert_section Selector_Antiphons.hSpecificDay End-Insert
 		End-Section
 		Section celebrated_saint
-			Insert_section Selector_Antiphons.celebrated_saint End-Insert
+			Insert_section Selector_Antiphons.hcelebrated_saint End-Insert
 		End-Section	
 	End-Section
 
@@ -140,6 +144,37 @@ Status Review
 		Section basil
 			Insert_section Selector_Trisagion.hBasil End-Insert
 		End-Section
+	End-Section	
+
+	Section _07_Fimi
+		Actor sid Deacon End-Actor
+		Dialog sid euLI.Key0607.text End-Dialog
+		Actor sid Clergy End-Actor
+		Para role chant sid euLI.Key0607.text End-Para
+		Actor sid Deacon End-Actor
+		Dialog sid euLI.Key0607.text End-Dialog
+		Actor sid ChoirR End-Actor
+		Para role chant sid euLI.Key0607.text End-Para
+		Actor sid Deacon End-Actor
+		Dialog sid euLI.Key0607.text End-Dialog
+		Actor sid ChoirL End-Actor
+		Para role chant sid euLI.Key0607.text End-Para
+		Actor sid Deacon End-Actor
+		Dialog sid euLI.Key0608.text End-Dialog
+		Actor sid Clergy End-Actor
+		Para role chant sid euLI.Key0608.text End-Para
+		Actor sid Deacon<Trubric>sid Intoned</>End-Actor
+		Dialog sid client_gr_GR_cog.cl.bishop0.fimi.text End-Dialog	
+		Actor sid Clergy<Trubric>sid Sung</>End-Actor
+		Para role chant sid client_gr_GR_cog.cl.bishop0.fimi.text End-Para
+		Actor sid Deacon<Trubric>sid Intoned</>End-Actor
+		Dialog sid client_gr_GR_cog.cl.bishop1.fimi.text End-Dialog	
+		Actor sid Clergy<Trubric>sid Sung</>End-Actor
+		Para role chant sid client_gr_GR_cog.cl.bishop1.fimi.text End-Para
+		Actor sid ChoirR End-Actor
+		Para role chant sid client_gr_GR_cog.cl.bishop1.fimi.text End-Para
+//		Actor sid ChoirL End-Actor
+//		Para role chant sid client_gr_GR_cog.cl.bishop1.fimi.text End-Para
 	End-Section	
 
 		Section AfterGospel //inserted in _20_
