@@ -1,11 +1,7 @@
-Template se.m02.d19.ve 
+Template se.m02.d19.ve
 
 Status Final
 
-	import client_gr_GR_cog.*
-
-	import da.*
-	
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
 	import misc_gr_GR_cog.*
@@ -18,7 +14,7 @@ Status Final
 	import bTags.*
 	import roles.*
 	Head 
-		Set_Date month 2 day 19 End_Date
+		Set_Date month 2 day 19 year 2016 End_Date
 			Page_Header_Even
 				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
 			End_Page_Header_Even
@@ -39,31 +35,30 @@ Status Final
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-	Section Instance02
-	End-Section
-	
-	Section Instance01
-		Insert_section VE._01_Beginning__.Hierarchical__.vespers End-Insert
-		Insert_section VE._02_Kekragaria__.Hierarchical__.mode4__.for6 End-Insert
-		Insert_section VE._03_Stichera__.me__.p_123as567 End-Insert
-		Insert_section VE._03_Stichera__.me__.p_456as8910 End-Insert
-		Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_ End-Insert
-		Insert_section VE._03_Stichera__.both__.firsttheotokion__.mode5_ End-Insert
-		Insert_section VE._04_Middle__.Hierarchical__.entrance End-Insert
-		Title role desig sid TaAnagnosmata End-Title
-		Title role source sid sourceMenaion End-Title
-		Insert_section LE._04_hProphetologion__.r99 End-Insert
-		Insert_section LE._04_hProphetologion__.r25 End-Insert
-		Insert_section LE._04_hProphetologion__.r26 End-Insert
-		Insert_section VE._06_Litanies__.Hierarchical__.fullektenia End-Insert
-		Insert_section VE._08_Aposticha__.me__.p_women12 End-Insert
-		Insert_section VE._08_Aposticha__.glory__.me__.gloryasglory_ End-Insert
-		Insert_section VE._08_Aposticha__.both__.primarytheotokion__.mode8 End-Insert
-		Insert_section VE._09_Symeon_Trisagion__.Hierarchical End-Insert
-		Insert_section AP.me1_.hymn End-Insert
-		Insert_section AP.gloryboth__.primarytheotokion__.mode5 End-Insert
-		Insert_section VE._10_End__.Hierarchical__.wisdom End-Insert
-		Insert_section VE._11_Dismissal__.Hierarchical__.commemoration End-Insert
-	End-Section
+	when-name-of-day-is
+		Sunday use:
+			Section Instance02
+			End-Section
+		otherwise use:	
+			Section Instance01
+				Insert_section VE._01_Beginning__.vespers End-Insert
+				Insert_section VE._02_Kekragaria__.mode4__.for6 End-Insert
+				Insert_section VE._03_Stichera__.me__.p_123as567 End-Insert
+				Insert_section VE._03_Stichera__.me__.p_456as8910 End-Insert
+				Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_ End-Insert
+				Insert_section VE._03_Stichera__.both__.firsttheotokion__.mode5_ End-Insert
+				Insert_section VE._04_Middle__.entrance End-Insert
+				Insert_section VE._05_Readings__.reader End-Insert
+				Insert_section VE._06_Litanies__.fullektenia End-Insert
+				Insert_section VE._08_Aposticha__.me__.p_women12 End-Insert
+				Insert_section VE._08_Aposticha__.glory__.me__.gloryasglory_ End-Insert
+				Insert_section VE._08_Aposticha__.both__.primarytheotokion__.mode8 End-Insert
+				Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
+				Insert_section AP.me1_.hymn End-Insert
+				Insert_section AP.gloryboth__.primarytheotokion__.mode5 End-Insert
+				Insert_section VE._10_End__.Hierarchical__.wisdom End-Insert
+				Insert_section VE._11_Dismissal__.commemoration End-Insert
+			End-Section
+	end-when
 
 End-Template
