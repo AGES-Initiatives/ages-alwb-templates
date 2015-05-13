@@ -1,14 +1,6 @@
 Template se.m02.d14.ma 
 
-Status Final
-
-	import client_gr_GR_cog.*
-	import ho.s03_gr_GR_cog.*
-	import me.m02.d14_gr_GR_cog.*
-
-	import da.*
-	import oc.*
-	import tr.*
+Status Review
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -44,10 +36,45 @@ Status Final
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-	when-movable-cycle-day-is 1 thru 127 use:
-		Insert_template mc.map.ma End-Insert
+	when-movable-cycle-day-is
+		1 thru 127 use:
+			Insert_template mc.map.ma End-Insert
 		otherwise use:
-		
+			when-name-of-day-is
+				Sunday use:
+					Section Instance02
+						Insert_section MA._01_Beginning__.modeofweek End-Insert
+						Insert_section AP.res__.modeofweek End-Insert
+						Insert_section TI.g.s._10_monastic_.m End-Insert
+						Insert_section AP.ganame.Feb14_.afxentios_.hymn End-Insert
+						Insert_section AP.both__.primarytheotokion__.mode1 End-Insert
+						Insert_section MA._03_Kathisma1__.litany End-Insert
+						Insert_section MA._03_Kathisma1__.oc__.sunday__.whenmode1 End-Insert
+						Insert_section MA._04_Kathisma2__.append__.oc__.sunday__.kath212223 End-Insert
+						Insert_section MA._05_Kathisma3__.evlogetaria_res End-Insert
+						Insert_section MA._08_Antiphons__.sunday_ End-Insert
+						Insert_section MA._11_Kontakion__.sunday End-Insert
+						Insert_section SY.Synaxarion End-Insert
+						Insert_section KA.choir__._1345678 End-Insert
+						Insert_section MA._09_Gospel__.priest End-Insert
+						Insert_section MA._10_Canon__.ode9_intro End-Insert
+						Insert_section KA.choir__._mode_mag_media End-Insert
+						Insert_section KA.append__._9 End-Insert
+						Insert_section CA.litanies__.ode9 End-Insert
+						Insert_section MA._12_Exaposteilarion__.eo__.eoofweek_.exap End-Insert
+						Insert_section MA._12_Exaposteilarion__.append__.me__.exap123t End-Insert
+						Insert_section MA._13_Lauds__.modeofweek End-Insert
+						Insert_section MA._13_Lauds__.oc__.sunday End-Insert
+						Insert_section MA._13_Lauds__.glory__.eo_ End-Insert
+						Insert_section MA._14_Doxology__.sunday End-Insert
+					End-Section
+				Saturday use:
+					Section Instance03
+					End-Section
+				otherwise use:
+					Section Instance01
+					End-Section
+			end-when
 	end-when	
 
 End-Template

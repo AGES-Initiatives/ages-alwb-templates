@@ -105,7 +105,13 @@ Status Draft
 							Feb 2 use: Insert_section meeting End-Insert
 							otherwise use: Insert_section default End-Insert
 						end-when
-					otherwise use: Insert_section meeting End-Insert
+					otherwise use:
+						when-date-is
+							Feb 2, 9 use:
+								Insert_section meeting End-Insert
+							Feb 3 thru 8 use:
+								Insert_section default End-Insert
+						end-when
 				end-when
 			Mar 25 use:
 				Section annunciation
