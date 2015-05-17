@@ -1,8 +1,6 @@
-Template se.m07.d27.h6
+Template se.m03.d16.co
 
-Status NA
-
-	import da.*
+Status Final
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -17,12 +15,12 @@ Status NA
 	import roles.*
 
 	Head 
-		Set_Date month 7 day 27 End_Date
+		Set_Date month 3 day 16 year 2016 End_Date
 			Page_Header_Even
-				center @lookup sid h6.pdf.header sid d.on lang L2 @date lang L2
+				center @lookup sid co.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @lookup sid h6.pdf.header sid d.on lang L2 @date lang L2
+				center @lookup sid co.pdf.header rid da.daVE.OnTheEveningBefore lang L2
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -33,10 +31,10 @@ Status NA
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
-	Insert_section HR.h6__.beginning End-Insert
-	Insert_section se.m07.d27.h1.apolytikia End-Insert
-	Insert_section HR.h6__.middle End-Insert
-	Insert_section se.m07.d27.h1.kontakia End-Insert
-	Insert_section HR.h6__.end End-Insert
-	
+	when-movable-cycle-day-is 1 thru 127 use:
+		Insert_template mc.map.co End-Insert
+		otherwise use:
+		
+	end-when
+
 End-Template
