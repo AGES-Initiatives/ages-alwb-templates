@@ -23,6 +23,7 @@ Template MA
 	import poets_gr_GR_cog.*
 	import prayers_gr_GR_cog.*
 	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
 	import titles_gr_GR_cog.*
 
 	import iTags.*
@@ -2306,10 +2307,27 @@ Template MA
 						End-Section	
 				end-when
 			End-Section
+			Section gospel_position1
+				Title role bmc.eothinongospel.position1 sid bmc.tag End-Title
+				Title role emc.eothinongospel.position1 sid emc.tag End-Title
+			End-Section
 		End-Section
 	End-Section
 
 	Section _09_Gospel__
+		Section gospel_introP
+			Actor sid Deacon End-Actor
+			Dialog sid pet00 End-Dialog
+			Dialog<i>sid res01p</>End-Dialog
+			Actor sid Priest End-Actor
+			Dialog sid exc06 End-Dialog
+			Actor sid Choir End-Actor
+			Dialog sid res04 End-Dialog
+			Title role mode sid Mode2 End-Title
+			Media sid hoMA.PreGospelHymn.text @ver End-Media
+			Hymn sid psa150.v6a.text<r>sid Twice</>sid psa150.v6aalt.text @ver End-Hymn
+			Insert_section LN.BeforeGospel End-Insert
+		End-Section
 		Section Hierarchical
 			when-movable-cycle-day-is
 				65 thru 68 use:
@@ -2320,136 +2338,176 @@ Template MA
 					Insert_section LN.BeforeGospel End-Insert
 					Insert_section Selector_MatinsGospel.Section01 End-Insert
 				otherwise use:
-					Section introP
-						Actor sid Deacon End-Actor
-						Dialog sid pet00 End-Dialog
-						Dialog<i>sid res01p</>End-Dialog
-						Actor sid Priest End-Actor
-						Dialog sid exc06 End-Dialog
-						Actor sid Choir End-Actor
-						Dialog sid res04 End-Dialog
-						Title role mode sid Mode2 End-Title
-						Media sid hoMA.PreGospelHymn.text @ver End-Media
-						Hymn sid psa150.v6a.text<r>sid Twice</>sid psa150.v6aalt.text @ver End-Hymn
-						Insert_section LN.BeforeGospel_Hierarchical End-Insert
-					End-Section
 					Section matinsgospel
 						when-movable-cycle-day-is //sundays before new eo cycle begins
 							64 use: //palm sunday
+								Insert_section gospel_introP End-Insert
 								Insert_section Selector_MatinsGospel.Section01 End-Insert
 								Insert_section MA.Psalm50_read_Hierarchical End-Insert
 								Insert_section PostGospel_mc End-Insert
+								Insert_section LN.Supplication_Plain_deacon End-Insert
 							78, 85, 92, 99, 106, 113 use:
-								Insert_section Selector_MatinsGospel.Section01 End-Insert
-								Insert_section Psalm50_chant_Hierarchical End-Insert
-								Insert_section PostGospel_eo End-Insert
+								Title role bmc.eothinongospel sid bmc.tag End-Title
+									Insert_section gospel_introP End-Insert
+									Insert_section Selector_MatinsGospel.Section01 End-Insert
+									Insert_section Psalm50_chant_Hierarchical End-Insert
+									Insert_section PostGospel_eo End-Insert
+									when-date-is
+										May 21 use:
+											Insert_section LN.Supplication_deacon End-Insert
+										otherwise use:
+											Insert_section LN.Supplication_Plain_deacon End-Insert
+									end-when
+								Title role emc.eothinongospel sid emc.tag End-Title
 							110, 120 use:
+								Insert_section gospel_introP End-Insert
 								Insert_section Selector_MatinsGospel.Section01 End-Insert
 								Insert_section MA.Psalm50_read_Hierarchical End-Insert
 								Insert_section PostGospel_mc End-Insert
+								when-date-is
+									May 21 use:
+										Insert_section LN.Supplication_deacon End-Insert
+									otherwise use:
+										Insert_section LN.Supplication_Plain_deacon End-Insert
+								end-when
 							otherwise use:
 								when-name-of-day-is
 									Sunday use:
 										when-date-is // dates when menaion gospel supercedes eothinon
 											Jan 6 use: 
+												Insert_section gospel_introP End-Insert
 												Insert_section Selector_MatinsGospel.Section01 End-Insert
 												Insert_section MA.Psalm50_read_Hierarchical End-Insert
 												Insert_section PostGospel_me End-Insert
+												Insert_section LN.Supplication_Plain_deacon End-Insert
 											Mar 25 use: 
+												Insert_section gospel_introP End-Insert
 												Insert_section Selector_MatinsGospel.Section01 End-Insert
 												Insert_section MA.Psalm50_read_Hierarchical End-Insert
 												Insert_section PostGospel_me End-Insert
+												Insert_section LN.Supplication_deacon End-Insert
 											Aug 6 use: 
+												Insert_section gospel_introP End-Insert
 												Insert_section Selector_MatinsGospel.Section01 End-Insert
 												Insert_section MA.Psalm50_read_Hierarchical End-Insert
 												Insert_section PostGospel_me End-Insert
+												Insert_section LN.Supplication_Plain_deacon End-Insert
 											Sep 14 use: 
+												Insert_section gospel_introP End-Insert
 												Insert_section Selector_MatinsGospel.Section01 End-Insert
 												Insert_section MA.Psalm50_read_Hierarchical End-Insert
 												Insert_section PostGospel_me End-Insert
+												Insert_section LN.Supplication_deacon End-Insert
 											Dec 25 use: 
+												Insert_section gospel_introP End-Insert
 												Insert_section Selector_MatinsGospel.Section01 End-Insert
 												Insert_section MA.Psalm50_read_Hierarchical End-Insert
 												Insert_section PostGospel_me End-Insert
+												Insert_section LN.Supplication_Plain_deacon End-Insert
 											otherwise use:
-												Insert_section LE._02_Gospel__.eothinon End-Insert
-												Insert_section Psalm50_chant_Hierarchical End-Insert
-												Insert_section PostGospel_eo End-Insert
+												Title role bmc.eothinongospel sid bmc.tag End-Title
+													Insert_section gospel_introP End-Insert
+													Insert_section LE._02_Gospel__.eothinon End-Insert
+													Insert_section Psalm50_chant_Hierarchical End-Insert
+													Insert_section PostGospel_eo End-Insert
+													Insert_section LN.Supplication_deacon End-Insert
+												Title role emc.eothinongospel sid emc.tag End-Title
 										end-when
 									otherwise use:
+										Insert_section gospel_introP End-Insert
 										Insert_section Selector_MatinsGospel.Section01 End-Insert
 										Insert_section MA.Psalm50_read_Hierarchical End-Insert
 										Insert_section PostGospel_me End-Insert
+										Insert_section LN.Supplication_deacon End-Insert
 								end-when
 						end-when
-					End-Section
-					Section supplication
-						Insert_section LN.Supplication_deacon End-Insert
 					End-Section
 			end-when
 		End-Section
 		Section mealt1_priest
-			Section introP
-				Actor sid Deacon End-Actor
-				Dialog sid pet00 End-Dialog
-				Dialog<i>sid res01p</>End-Dialog
-				Actor sid Priest End-Actor
-				Dialog sid exc06 End-Dialog
-				Actor sid Choir End-Actor
-				Dialog sid res04 End-Dialog
-				Title role mode sid Mode2 End-Title
-				Media sid hoMA.PreGospelHymn.text @ver End-Media
-				Hymn sid psa150.v6a.text<r>sid Twice</>sid psa150.v6aalt.text @ver End-Hymn
-				Insert_section LN.BeforeGospel End-Insert
-			End-Section
 			Section matinsgospel
-				when-movable-cycle-day-is //sundays before new eo cycle begins
-					78, 85, 92, 99, 106, 113 use:
-						Insert_section Selector_MatinsGospel.Section01 End-Insert
-						Insert_section Psalm50_chant End-Insert
-						Insert_section PostGospel_eo End-Insert
-					110, 120 use:
-						Insert_section Selector_MatinsGospel.Section01 End-Insert
-						Insert_section MA.Psalm50_read End-Insert
-						Insert_section PostGospel_mc End-Insert
-					otherwise use:
-						when-name-of-day-is
-							Sunday use:
-								when-date-is // dates when menaion gospel supercedes eothinon
-									Jan 6 use: 
-										Insert_section Selector_MatinsGospel.Section01 End-Insert
-										Insert_section MA.Psalm50_read End-Insert
-										Insert_section PostGospel_me End-Insert
-									Mar 25 use: 
-										Insert_section Selector_MatinsGospel.Section01 End-Insert
-										Insert_section MA.Psalm50_read End-Insert
-										Insert_section PostGospel_me End-Insert
-									Aug 6 use: 
-										Insert_section Selector_MatinsGospel.Section01 End-Insert
-										Insert_section MA.Psalm50_read End-Insert
-										Insert_section PostGospel_me End-Insert
-									Sep 14 use: 
-										Insert_section Selector_MatinsGospel.Section01 End-Insert
-										Insert_section MA.Psalm50_read End-Insert
-										Insert_section PostGospel_me End-Insert
-									Dec 25 use: 
-										Insert_section Selector_MatinsGospel.Section01 End-Insert
-										Insert_section MA.Psalm50_read End-Insert
-										Insert_section PostGospel_me End-Insert
+						when-movable-cycle-day-is //sundays before new eo cycle begins
+							64 use: //palm sunday
+								Insert_section gospel_introP End-Insert
+								Insert_section Selector_MatinsGospel.Section01 End-Insert
+								Insert_section MA.Psalm50_read End-Insert
+								Insert_section PostGospel_mc End-Insert
+								Insert_section LN.Supplication_Plain_deacon End-Insert
+							78, 85, 92, 99, 106, 113 use:
+								Title role bmc.eothinongospel sid bmc.tag End-Title
+									Insert_section gospel_introP End-Insert
+									Insert_section Selector_MatinsGospel.Section01 End-Insert
+									Insert_section Psalm50_chant End-Insert
+									Insert_section PostGospel_eo End-Insert
+									when-date-is
+										May 21 use:
+											Insert_section LN.Supplication_deacon End-Insert
+										otherwise use:
+											Insert_section LN.Supplication_Plain_deacon End-Insert
+									end-when
+								Title role emc.eothinongospel sid emc.tag End-Title
+							110, 120 use:
+								Insert_section gospel_introP End-Insert
+								Insert_section Selector_MatinsGospel.Section01 End-Insert
+								Insert_section MA.Psalm50_read End-Insert
+								Insert_section PostGospel_mc End-Insert
+								when-date-is
+									May 21 use:
+										Insert_section LN.Supplication_deacon End-Insert
 									otherwise use:
-										Insert_section LE._02_Gospel__.eothinon End-Insert
-										Insert_section Psalm50_chant End-Insert
-										Insert_section PostGospel_eo End-Insert
+										Insert_section LN.Supplication_Plain_deacon End-Insert
 								end-when
 							otherwise use:
+								when-name-of-day-is
+									Sunday use:
+										when-date-is // dates when menaion gospel supersedes eothinon
+											Jan 6 use: 
+												Insert_section gospel_introP End-Insert
+												Insert_section Selector_MatinsGospel.Section01 End-Insert
+												Insert_section MA.Psalm50_read End-Insert
+												Insert_section PostGospel_me End-Insert
+												Insert_section LN.Supplication_Plain_deacon End-Insert
+											Mar 25 use: 
+												Insert_section gospel_introP End-Insert
+												Insert_section Selector_MatinsGospel.Section01 End-Insert
+												Insert_section MA.Psalm50_read End-Insert
+												Insert_section PostGospel_me End-Insert
+												Insert_section LN.Supplication_deacon End-Insert
+											Aug 6 use: 
+												Insert_section gospel_introP End-Insert
+												Insert_section Selector_MatinsGospel.Section01 End-Insert
+												Insert_section MA.Psalm50_read End-Insert
+												Insert_section PostGospel_me End-Insert
+												Insert_section LN.Supplication_Plain_deacon End-Insert
+											Sep 14 use: 
+												Insert_section gospel_introP End-Insert
+												Insert_section Selector_MatinsGospel.Section01 End-Insert
+												Insert_section MA.Psalm50_read End-Insert
+												Insert_section PostGospel_me End-Insert
+												Insert_section LN.Supplication_deacon End-Insert
+											Dec 25 use: 
+												Insert_section gospel_introP End-Insert
+												Insert_section Selector_MatinsGospel.Section01 End-Insert
+												Insert_section MA.Psalm50_read End-Insert
+												Insert_section PostGospel_me End-Insert
+												Insert_section LN.Supplication_Plain_deacon End-Insert
+											otherwise use:
+												Title role bmc.eothinongospel sid bmc.tag End-Title
+													Insert_section gospel_introP End-Insert
+													Insert_section LE._02_Gospel__.eothinon End-Insert
+													Insert_section Psalm50_chant End-Insert
+													Insert_section PostGospel_eo End-Insert
+													Insert_section LN.Supplication_deacon End-Insert
+												Title role emc.eothinongospel sid emc.tag End-Title
+										end-when
+							otherwise use:
+								Insert_section gospel_introP End-Insert
 								Insert_section Selector_MatinsGospel.Section01 End-Insert
 								Insert_section MA.Psalm50_read End-Insert
 								Insert_section PostGospel_mealt1 End-Insert
+								Insert_section LN.Supplication_deacon End-Insert
 						end-when
 				end-when
-			End-Section
-			Section supplication
-				Insert_section LN.Supplication_deacon End-Insert
 			End-Section
 		End-Section
 		Section priest
@@ -2462,37 +2520,29 @@ Template MA
 					Insert_section LN.BeforeGospel End-Insert
 					Insert_section Selector_MatinsGospel.Section01 End-Insert
 				otherwise use:
-					Section introP
-						Actor sid Deacon End-Actor
-						Dialog sid pet00 End-Dialog
-						Dialog<i>sid res01p</>End-Dialog
-						Actor sid Priest End-Actor
-						Dialog sid exc06 End-Dialog
-						Actor sid Choir End-Actor
-						Dialog sid res04 End-Dialog
-						Title role mode sid Mode2 End-Title
-						Media sid hoMA.PreGospelHymn.text @ver End-Media
-						Hymn sid psa150.v6a.text<r>sid Twice</>sid psa150.v6aalt.text @ver End-Hymn
-						Insert_section LN.BeforeGospel End-Insert
-					End-Section
 					Section matinsgospel
 						when-movable-cycle-day-is //sundays before new eo cycle begins
 							64 use: //palm sunday
+								Insert_section gospel_introP End-Insert
 								Insert_section Selector_MatinsGospel.Section01 End-Insert
 								Insert_section MA.Psalm50_read End-Insert
 								Insert_section PostGospel_mc End-Insert
 								Insert_section LN.Supplication_Plain_deacon End-Insert
 							78, 85, 92, 99, 106, 113 use:
-								Insert_section Selector_MatinsGospel.Section01 End-Insert
-								Insert_section Psalm50_chant End-Insert
-								Insert_section PostGospel_eo End-Insert
-								when-date-is
-									May 21 use:
-										Insert_section LN.Supplication_deacon End-Insert
-									otherwise use:
-										Insert_section LN.Supplication_Plain_deacon End-Insert
-								end-when
+								Title role bmc.eothinongospel sid bmc.tag End-Title
+									Insert_section gospel_introP End-Insert
+									Insert_section Selector_MatinsGospel.Section01 End-Insert
+									Insert_section Psalm50_chant End-Insert
+									Insert_section PostGospel_eo End-Insert
+									when-date-is
+										May 21 use:
+											Insert_section LN.Supplication_deacon End-Insert
+										otherwise use:
+											Insert_section LN.Supplication_Plain_deacon End-Insert
+									end-when
+								Title role emc.eothinongospel sid emc.tag End-Title
 							110, 120 use:
+								Insert_section gospel_introP End-Insert
 								Insert_section Selector_MatinsGospel.Section01 End-Insert
 								Insert_section MA.Psalm50_read End-Insert
 								Insert_section PostGospel_mc End-Insert
@@ -2505,39 +2555,48 @@ Template MA
 							otherwise use:
 								when-name-of-day-is
 									Sunday use:
-										when-date-is // dates when menaion gospel supercedes eothinon
+										when-date-is // dates when menaion gospel supersedes eothinon
 											Jan 6 use: 
+												Insert_section gospel_introP End-Insert
 												Insert_section Selector_MatinsGospel.Section01 End-Insert
 												Insert_section MA.Psalm50_read End-Insert
 												Insert_section PostGospel_me End-Insert
 												Insert_section LN.Supplication_Plain_deacon End-Insert
 											Mar 25 use: 
+												Insert_section gospel_introP End-Insert
 												Insert_section Selector_MatinsGospel.Section01 End-Insert
 												Insert_section MA.Psalm50_read End-Insert
 												Insert_section PostGospel_me End-Insert
 												Insert_section LN.Supplication_deacon End-Insert
 											Aug 6 use: 
+												Insert_section gospel_introP End-Insert
 												Insert_section Selector_MatinsGospel.Section01 End-Insert
 												Insert_section MA.Psalm50_read End-Insert
 												Insert_section PostGospel_me End-Insert
 												Insert_section LN.Supplication_Plain_deacon End-Insert
 											Sep 14 use: 
+												Insert_section gospel_introP End-Insert
 												Insert_section Selector_MatinsGospel.Section01 End-Insert
 												Insert_section MA.Psalm50_read End-Insert
 												Insert_section PostGospel_me End-Insert
 												Insert_section LN.Supplication_deacon End-Insert
 											Dec 25 use: 
+												Insert_section gospel_introP End-Insert
 												Insert_section Selector_MatinsGospel.Section01 End-Insert
 												Insert_section MA.Psalm50_read End-Insert
 												Insert_section PostGospel_me End-Insert
 												Insert_section LN.Supplication_Plain_deacon End-Insert
 											otherwise use:
-												Insert_section LE._02_Gospel__.eothinon End-Insert
-												Insert_section Psalm50_chant End-Insert
-												Insert_section PostGospel_eo End-Insert
-												Insert_section LN.Supplication_deacon End-Insert
+												Title role bmc.eothinongospel sid bmc.tag End-Title
+													Insert_section gospel_introP End-Insert
+													Insert_section LE._02_Gospel__.eothinon End-Insert
+													Insert_section Psalm50_chant End-Insert
+													Insert_section PostGospel_eo End-Insert
+													Insert_section LN.Supplication_deacon End-Insert
+												Title role emc.eothinongospel sid emc.tag End-Title
 										end-when
 									otherwise use:
+										Insert_section gospel_introP End-Insert
 										Insert_section Selector_MatinsGospel.Section01 End-Insert
 										Insert_section MA.Psalm50_read End-Insert
 										Insert_section PostGospel_me End-Insert
@@ -2623,6 +2682,21 @@ Template MA
 				Reading rid trMA.Hypakoe.text @ver End-Reading
 			End-Section
 		End-Section
+		Section litanies__
+			Section ode3
+				Title role bmc.ode3.litany sid bmc.tag End-Title
+				Insert_section LN.ShortLitany08 End-Insert
+				Title role emc.ode3.litany sid emc.tag End-Title
+			End-Section
+			Section ode6
+				Title role bmc.ode6.litany sid bmc.tag End-Title
+				Insert_section LN.ShortLitany09 End-Insert
+				Title role emc.ode6.litany sid emc.tag End-Title
+			End-Section
+			Section ode9
+				Insert_section LN.ShortLitany10 End-Insert
+			End-Section
+		End-Section
 		Section ode3kathisma__
 			Section both__
 				Section alt1meT
@@ -2633,13 +2707,13 @@ Template MA
 									Section stavrotheotokion
 										Title sid KaiNyn<Tdesig>sid Stavrotheotokion</>End-Title
 										Title<Tmode>rid alt1.meMA.Ode3KathismaSt.mode</><Tmelody>rid alt1.meMA.Ode3KathismaSt.melody</>End-Title
-										Hymn rid alt1.meMA.Ode3KathismaSt.text End-Hymn
+										Hymn rid alt1.meMA.Ode3KathismaSt.text @ver End-Hymn
 									End-Section
 								otherwise use:
 									Section theotokion
 										Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
 										Title<Tmode>rid alt1.meMA.Ode3KathismaT.mode</><Tmelody>rid alt1.meMA.Ode3KathismaT.melody</>End-Title
-										Hymn rid alt1.meMA.Ode3KathismaT.text End-Hymn
+										Hymn rid alt1.meMA.Ode3KathismaT.text @ver End-Hymn
 									End-Section
 							end-when
 						otherwise use: 
@@ -2669,7 +2743,7 @@ Template MA
 				End-Section
 			End-Section
 			Section glory__
-				Section alt1me1__
+				Section alt1me1_
 					Title sid Doxa End-Title
 					Section hymn
 						Title role source0 sid sourceMenaion End-Title
@@ -2678,13 +2752,99 @@ Template MA
 					End-Section
 				End-Section
 			End-Section
-			Section me1__
+			Section gloryboth__
+				Section meT
+					when-exists
+						rid meMA.Ode3KathismaSt.text use:
+							when-name-of-day-is
+								Wednesday, Friday use:
+									Section stavrotheotokion
+										Title sid DoxaKaiNyn<Tdesig>sid Stavrotheotokion</>End-Title
+										Title<Tmode>rid meMA.Ode3KathismaSt.mode</><Tmelody>rid meMA.Ode3KathismaSt.melody</>End-Title
+										Hymn rid meMA.Ode3KathismaSt.text @ver End-Hymn
+									End-Section
+								otherwise use:
+									Section theotokion
+										Title sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+										Title<Tmode>rid meMA.Ode3KathismaT.mode</><Tmelody>rid meMA.Ode3KathismaT.melody</>End-Title
+										Hymn rid meMA.Ode3KathismaT.text @ver End-Hymn
+									End-Section
+							end-when
+						otherwise use: 
+							Insert_section theotokion End-Insert
+					end-when
+				End-Section
+			End-Section
+			Section me1o2t
+				Title role bmc.ode3mekathisma sid bmc.tag End-Title
+				Actor sid Choir End-Actor
+				Title role desig sid Kathisma End-Title
+				Title role source0 sid sourceMenaion End-Title
+				Title role mixed<Tmode>rid meMA.Ode3Kathisma1.mode</><Tmelody>rid meMA.Ode3Kathisma1.melody</>End-Title
+				Hymn rid meMA.Ode3Kathisma1.text @ver End-Hymn
+				when-exists
+					rid meMA.Ode3Kathisma2.text use:
+						Title sid Doxa<Tdesig>sid Eteron</>End-Title
+						Title<Tmode>rid meMA.Ode3Kathisma2.mode</><Tmelody>rid meMA.Ode3Kathisma2.melody</>End-Title
+						Hymn rid meMA.Ode3Kathisma2.text End-Hymn
+						when-exists
+							rid meMA.Ode3KathismaSt.text use:
+								when-name-of-day-is
+									Wednesday, Friday use:
+										Section stavrotheotokion
+											Title sid KaiNyn<Tdesig>sid Stavrotheotokion</>End-Title
+											Title<Tmode>rid meMA.Ode3KathismaSt.mode</><Tmelody>rid meMA.Ode3KathismaSt.melody</>End-Title
+											Hymn rid meMA.Ode3KathismaSt.text @ver End-Hymn
+										End-Section
+									otherwise use:
+										Section theotokion
+											Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+											Title<Tmode>rid meMA.Ode3KathismaT.mode</><Tmelody>rid meMA.Ode3KathismaT.melody</>End-Title
+											Hymn rid meMA.Ode3KathismaT.text @ver End-Hymn
+										End-Section
+								end-when
+							otherwise use: 
+								Insert_section theotokion End-Insert
+						end-when
+					otherwise use:
+						when-exists
+							rid meMA.Ode3KathismaSt.text use:
+								when-name-of-day-is
+									Wednesday, Friday use:
+										Section stavrotheotokion
+											Title sid DoxaKaiNyn<Tdesig>sid Stavrotheotokion</>End-Title
+											Title<Tmode>rid meMA.Ode3KathismaSt.mode</><Tmelody>rid meMA.Ode3KathismaSt.melody</>End-Title
+											Hymn rid meMA.Ode3KathismaSt.text @ver End-Hymn
+										End-Section
+									otherwise use:
+										Section theotokion
+											Title sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+											Title<Tmode>rid meMA.Ode3KathismaT.mode</><Tmelody>rid meMA.Ode3KathismaT.melody</>End-Title
+											Hymn rid meMA.Ode3KathismaT.text @ver End-Hymn
+										End-Section
+								end-when
+							otherwise use: 
+								Insert_section theotokion End-Insert
+						end-when
+				end-when
+				Title role emc.ode3mekathisma sid emc.tag End-Title
+			End-Section
+			Section me1_
 				Actor sid Choir End-Actor
 				Title role desig sid Kathisma End-Title
 				Section hymn
 					Title role source0 sid sourceMenaion End-Title
 					Title role mixed<Tmode>rid meMA.Ode3Kathisma1.mode</><Tmelody>rid meMA.Ode3Kathisma1.melody</>End-Title
 					Hymn rid meMA.Ode3Kathisma1.text @ver End-Hymn
+				End-Section
+			End-Section
+			Section me2_
+				Actor sid Choir End-Actor
+				Title role desig sid Kathisma End-Title
+				Section hymn
+					Title role source0 sid sourceMenaion End-Title
+					Title role mixed<Tmode>rid meMA.Ode3Kathisma2.mode</><Tmelody>rid meMA.Ode3Kathisma2.melody</>End-Title
+					Hymn rid meMA.Ode3Kathisma2.text @ver End-Hymn
 				End-Section
 			End-Section
 			Section append__
@@ -2753,6 +2913,90 @@ Template MA
 				Title role mixed<Tdesig>sid titles_gr_GR_cog.Megalynarion</><Tmode>sid Mode8</>End-Title
 				Media sid oc.m8.d1_gr_GR_cog.ocMA.Magnificat.text End-Media
 				Insert_section Magnificat_Verses End-Insert
+			End-Section
+		End-Section
+		Section sunday__
+			Section oc_123tasGrGrGrTh_and_me1_123tasSmSmGB_with_kath_me1o2t_and_kont_oc
+				Section odes13
+					Title role bmc.ode1occanon1 sid bmc.tag End-Title
+						Insert_section CA.v.ode1.oc1.ti_sun_h12tas0GrGrTh End-Insert
+					Title role emc.ode1occanon1 sid emc.tag End-Title
+					Title role bmc.ode1mecanon1 sid bmc.tag End-Title
+						Insert_section TI.c.me End-Insert
+						Insert_section CA.v.ode1.append.me1.nt_123tasSmSmGB End-Insert
+					Title role emc.ode1mecanon1 sid emc.tag End-Title
+					Insert_section KA.append__._1 End-Insert
+					Title role bmc.ode3occanon1 sid bmc.tag End-Title
+						Insert_section CA.v.ode3.append.oc1.ti_sun_h12tas0GrGrTh End-Insert
+					Title role emc.ode3occanon1 sid emc.tag End-Title
+					Title role bmc.ode3mecanon1 sid bmc.tag End-Title
+						Insert_section TI.c.me End-Insert
+						Insert_section CA.v.ode3.append.me1.nt_123tasSmSmGB End-Insert
+					Title role emc.ode3mecanon1 sid emc.tag End-Title
+					Insert_section KA.append__._3 End-Insert
+				End-Section
+				Insert_section litanies__.ode3 End-Insert
+				Insert_section ode3kathisma__.me1o2t End-Insert
+				Section odes456
+					Title role bmc.ode4occanon1 sid bmc.tag End-Title
+						Insert_section CA.v.ode4.append.oc1.ti_sun_h12tas0GrGrTh End-Insert
+					Title role emc.ode4occanon1 sid emc.tag End-Title
+					Title role bmc.ode4mecanon1 sid bmc.tag End-Title
+						Insert_section TI.c.me End-Insert
+						Insert_section CA.v.ode4.append.me1.nt_123tasSmSmGB End-Insert
+					Title role emc.ode4mecanon1 sid emc.tag End-Title
+					Insert_section KA.append__._4 End-Insert
+					Title role bmc.ode5occanon1 sid bmc.tag End-Title
+						Insert_section CA.v.ode5.append.oc1.ti_sun_h12tas0GrGrTh End-Insert
+					Title role emc.ode5occanon1 sid emc.tag End-Title
+					Title role bmc.ode5mecanon1 sid bmc.tag End-Title
+						Insert_section TI.c.me End-Insert
+						Insert_section CA.v.ode5.append.me1.nt_123tasSmSmGB End-Insert
+					Title role emc.ode5mecanon1 sid emc.tag End-Title
+					Insert_section KA.append__._5 End-Insert
+					Title role bmc.ode6occanon1 sid bmc.tag End-Title
+						Insert_section CA.v.ode6.append.oc1.ti_sun_h12tas0GrGrTh End-Insert
+					Title role emc.ode6occanon1 sid emc.tag End-Title
+					Title role bmc.ode6mecanon1 sid bmc.tag End-Title
+						Insert_section TI.c.me End-Insert
+						Insert_section CA.v.ode6.append.me1.nt_123tasSmSmGB End-Insert
+					Title role emc.ode6mecanon1 sid emc.tag End-Title
+					Insert_section KA.append__._6 End-Insert
+				End-Section
+				Insert_section litanies__.ode6 End-Insert
+				Insert_section MA._11_Kontakion__.sunday End-Insert
+				Insert_section SY.Synaxarion End-Insert
+				Section odes78
+					Title role bmc.ode7occanon1 sid bmc.tag End-Title
+						Insert_section CA.v.ode7.oc1.ti_sun_h12tas0GrGrTh End-Insert
+					Title role emc.ode7occanon1 sid emc.tag End-Title
+					Title role bmc.ode7mecanon1 sid bmc.tag End-Title
+						Insert_section TI.c.me End-Insert
+					Insert_section CA.v.ode7.append.me1.nt_123tasSmSmGB End-Insert
+					Title role emc.ode7mecanon1 sid emc.tag End-Title
+						Insert_section KA.append__._7 End-Insert
+					Title role bmc.ode8occanon1 sid bmc.tag End-Title
+						Insert_section CA.v.ode8.append.oc1.ti_sun_h12tas0GrGrTh End-Insert
+					Title role emc.ode8occanon1 sid emc.tag End-Title
+					Title role bmc.ode8mecanon1 sid bmc.tag End-Title
+						Insert_section TI.c.me End-Insert
+						Insert_section CA.v.ode8.append.me1.nt_123tasSmSmGB End-Insert
+					Title role emc.ode8mecanon1 sid emc.tag End-Title
+					Insert_section KA.append__._8 End-Insert
+				End-Section
+				Section ode9
+					Title role bmc.ode9occanon1 sid bmc.tag End-Title
+						Insert_section ode9_intro End-Insert
+						Insert_section magnificat__.modeofweek End-Insert
+						Insert_section CA.v.ode9.append.oc1.ti_sun_h12tas0GrGrTh End-Insert
+					Title role emc.ode9occanon1 sid emc.tag End-Title
+					Title role bmc.ode9mecanon1 sid bmc.tag End-Title
+						Insert_section TI.c.me End-Insert
+						Insert_section CA.v.ode9.append.me1.nt_123tasSmSmGB End-Insert
+					Title role emc.ode9mecanon1 sid emc.tag End-Title
+					Insert_section KA.append__._9 End-Insert
+				End-Section
+				Insert_section litanies__.ode9 End-Insert
 			End-Section
 		End-Section
 	End-Section
@@ -5825,7 +6069,7 @@ Template MA
 							Title role mixed sid DoxaKaiNyn<Tdesig>sid Stavrotheotokion</>End-Title
 					end-when
 					Title role mixed<Tmode>rid ocMA.AposTheotokion.mode</><Tmelody>rid ocMA.AposTheotokion.melody</>End-Title
-					Hymn rid ocMA.AposTheotokion.text End-Hymn
+					Hymn rid ocMA.AposTheotokion.text @ver End-Hymn
 				End-Section
 			End-Section
 			Section pe__
