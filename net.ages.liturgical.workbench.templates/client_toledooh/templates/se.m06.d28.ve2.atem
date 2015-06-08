@@ -1,0 +1,76 @@
+Template se.m06.d28.ve2 
+
+Status Final
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 6 day 28 End_Date
+			Page_Header_Even
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L1 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	when-movable-cycle-day-is 122 thru 127 use:
+		when-movable-cycle-day-is 
+			126, 127 use:
+				Section Instance01
+					Insert_template mc.map.ve End-Insert
+				End-Section
+			otherwise use:
+				Section Instance02 //weekday in Pent
+				End-Section
+		end-when
+	otherwise use:	
+		when-name-of-day-is 
+			Monday, Tuesday, Wednesday, Thursday, Friday use:
+				Section Instance03
+				End-Section
+			Saturday use:
+				Section Instance04
+				End-Section
+			Sunday use:	
+				Section Instance05 //Sunday
+					Insert_section VE._01_Beginning__.Hierarchical__.vespers End-Insert
+					Insert_section VE._02_Kekragaria__.Hierarchical__.modeofweek__.noStichologia End-Insert
+					Insert_section VE._03_Stichera__.oc__.sunday_ End-Insert
+					Insert_section TI.s._00_saint_.mp End-Insert
+					Insert_section VE._03_Stichera__.me__.p_123as8910 End-Insert
+					Insert_section VE._03_Stichera__.gloryboth__.firsttheotokion.modeofweek End-Insert	
+					Insert_section VE._04_Middle__.Hierarchical__.entrance End-Insert	
+					Insert_section VE._06_Litanies__.Hierarchical__.fullektenia End-Insert
+					Insert_section VE._08_Aposticha__.oc__.sunday_ End-Insert
+					Insert_section VE._09_Symeon_Trisagion__.Hierarchical End-Insert
+					Insert_section AP.res__.modeofweek End-Insert
+					Insert_section AP.gloryboth__.primarytheotokion__.modeofweek End-Insert
+					Insert_section VE._10_End__.Hierarchical__.wisdom End-Insert
+					Insert_section VE._11_Dismissal__.Hierarchical__.nocommemoration End-Insert
+				End-Section
+		end-when
+	end-when
+End-Template
