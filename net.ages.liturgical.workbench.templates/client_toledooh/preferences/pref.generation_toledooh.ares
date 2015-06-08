@@ -1,0 +1,99 @@
+A_Resource_Whose_Name = pref.generation_toledooh
+
+// --- Convenient Settings for HTML--- these values go to pref.website
+	website.root = "toledooh/dcs"  //must be lowercase
+	media.copy = "no"  
+	
+// !!! CHECK MEDIA PATH  !!!
+
+// --- Convenient Settings for Website-- these values go to pref.website
+	generate.s.index = "no"
+	generate.b.index = "no"
+	generate.c.index = "no"
+
+// HTML generation
+	generate.file.html = "no" // if set to "no", the next three values are switched off
+	generate.file.html.version.v1 = "no" 	// e.g. Greek
+	generate.file.html.version.v2 = "no" 	// e.g. English
+	generate.file.html.version.v1v2 = "yes" // e.g. Greek-English
+
+// PDF generation
+	generate.file.pdf = "yes"  // if set to "no", the next three values are switched off
+	//To set output language: Ctr + Alt = P (must have Practically Macro)
+	// PDF Output in Greek and English
+	generate.file.pdf.version.v1 = "no"
+	generate.file.pdf.version.v2 = "no"
+	generate.file.pdf.version.v1v2 = "yes"
+	cover.version = ematinscovers_en_US_ematins.GE.text
+	page.columns.quantity = "1"
+	page.columns.gap = "0in"
+
+	pss.stylesheet = "toledooh" 
+	merge.pdf.media = "no"  //this setting goes to pref.website
+
+// ---------------------------------
+
+// ePub generation
+generate.file.epub = "no"  // if set to "no", the next three values are switched off
+generate.file.epub.version.v1 = "yes" // e.g. Greek
+generate.file.epub.version.v2 = "yes" 	// e.g. English
+generate.file.epub.version.v1v2 = "yes"  // e.g. Greek-English
+
+// TMS Json generation -- you must also generate HTML in order for this to work
+// Output is in a folder named 'tms_json'.  The json produced is for the 
+// Translation Management System (TMS)
+generate.tms.json = "no"
+tms.json.format.set.include.key = "yes"
+tms.json.format.set.include.tag = "no"   // partially implemented
+tms.json.format.set.include.class = "no" // partially implemented
+tms.json.format.set.include.text = "no"  // only language 1
+tms.json.key.set.include.text = "no"     // only language 1
+tms.json.key.set.include.frequencies = "no" // include a count of the number of occurrences of this key in the template
+
+// ---------------------------------
+/**
+ * Version Designation
+ * 
+ * The rid and sid tags have an @ver flag.  If this flag is 
+ * present and display.version.text = yes, then the generator 
+ * will attempt a lookup of the version of the text.
+ * 
+ * For example, if the text is in a file with the domain en_US_dedes,
+ * the generator will see if version.designation in properties_en_US_dedes.ares
+ * has a value, e.g. version.designation = “Dedes".
+ * 
+ * Note that the version lookup only works for rids/sids within hymn, verse,
+ * reading, and para. 
+ * 
+ * Also, note below version.prefix, suffix, and delimiter.  
+ * If the text version is Dedes, and prefix = "(" and suffix = ")",
+ * the version will display as (Dedes).
+ * 
+ * In the event that there are multiple sids/rids within, for example, a
+ * hymn tag, and there are two versions, e.g. Dedes and Lash, the delimiter
+ * is used to separate the versions, e.g. (Dedes, Lash).
+ * 
+ * If there are multiple rids/sids from the same version, the
+ * version will only show once.  Also, note that the version will
+ * appear at the end of the paragraph, after all sids/rids have been
+ * evaluated. 
+ * 
+ * The style is defined in css and pss for "versiondesignation"
+ */
+display.version.text.v1 = "no" //left side, i.e. Greek
+display.version.text.v2 = "no" //right side, i.e. English
+version.prefix = "("  // note the non-breaking space code before the (
+version.suffix = ")"
+version.delimiter = ","
+
+// ePub generation
+generate.file.epub = "no"  // if set to "no", the next three values are switched off
+generate.file.epub.version.v1 = "yes" // e.g. Greek
+generate.file.epub.version.v2 = "yes" 	// e.g. English
+generate.file.epub.version.v1v2 = "yes"  // e.g. Greek-English
+
+// Other generation
+generate.file.resources = "yes" 
+
+make.editable.html.v1 = "no" 
+make.editable.html.v2 = "no"
