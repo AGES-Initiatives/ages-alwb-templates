@@ -10,6 +10,7 @@ Template MA
 	import le.go.mc.*
 	import pe.d00P_gr_GR_cog.*
 
+	import da.*
 	import oc.*
 	import me.*
 	import eo.*
@@ -4925,6 +4926,34 @@ Template MA
 				end-when
 			End-Section
 		End-Section
+		Section weekday_
+			Section exap1
+				Title role source sid sourceHorologion End-Title
+				Actor sid Choir End-Actor
+				Title role desig sid Exaposteilarion End-Title
+				Title<Tmode>rid daMA.Exaposteilarion1.mode</><Tmelody>rid daMA.Exaposteilarion1.melody</>End-Title
+				Hymn rid daMA.Exaposteilarion1.text @ver End-Hymn
+			End-Section
+			when-name-of-day-is Saturday use:
+				Section exap2
+					Title role source sid sourceHorologion End-Title
+					Title role desig sid Eteron sid Nekrosimon End-Title
+					Title<Tmode>rid daMA.Exaposteilarion2.mode</><Tmelody>rid daMA.Exaposteilarion2.melody</>End-Title
+					Hymn rid daMA.Exaposteilarion2.text @ver End-Hymn
+				End-Section
+			end-when
+			Section theotokion
+				Title role source sid sourceHorologion End-Title
+				when-name-of-day-is
+					Wednesday, Friday use:
+						Title role desig sid Stavrotheotokion End-Title
+					otherwise use:
+						Title role desig sid Theotokion End-Title
+				end-when
+				Title<Tmode>rid daMA.ExapTheotokion.mode</><Tmelody>rid daMA.ExapTheotokion.melody</>End-Title
+				Hymn rid daMA.ExapTheotokion.text @ver End-Hymn
+			End-Section
+		End-Section
 	End-Section
 
 	Section _13_Lauds__
@@ -6046,6 +6075,37 @@ Template MA
 			Hymn sid psa148.v2alt.text @ver End-Hymn
 		End-Section
 		Section oc__
+			Section saturday_
+				Section stich_1234as3456
+					Title role source0 sid sourceOctoechos End-Title
+					Title role desig sid Martyrika End-Title
+					Title role mode rid ocMA.Lauds1.mode End-Title
+					Media rid ocMA.Lauds1.text End-Media
+					Insert_section PsalmVerses.forLauds.v03 End-Insert
+					Hymn rid ocMA.Lauds1.text @ver media-off End-Hymn
+					Media rid ocMA.Lauds2.text End-Media
+					Insert_section PsalmVerses.forLauds.v04 End-Insert
+					Hymn rid ocMA.Lauds2.text @ver media-off End-Hymn
+					Media rid ocMA.Lauds3.text End-Media
+					Insert_section PsalmVerses.forLauds.v05 End-Insert
+					Hymn rid ocMA.Lauds3.text @ver media-off End-Hymn
+					Media rid ocMA.Lauds4.text End-Media
+					Insert_section PsalmVerses.forLauds.v06 End-Insert
+					Hymn rid ocMA.Lauds4.text @ver media-off End-Hymn
+				End-Section
+				Section glory_both_
+					when-exists 
+						rid ocMA.Lauds5.text use:
+							Title sid Doxa<Tdesig>sid Nekrosimon</>End-Title
+							Hymn rid ocMA.Lauds5.text End-Hymn
+							Title sid KaiNyn<Tdesig>sid Theotokion</><Tmelody>rid ocMA.LaudsTheotokion.melody</>End-Title
+							Hymn rid ocMA.LaudsTheotokion.text End-Hymn
+						otherwise use:
+							Title sid DoxaKaiNyn<Tdesig>sid Theotokion</><Tmelody>rid ocMA.LaudsTheotokion.melody</>End-Title
+							Hymn rid ocMA.LaudsTheotokion.text End-Hymn
+					end-when
+				End-Section
+			End-Section
 			Section s_12as12
 				Title role desig sid StichiraAnastasima End-Title
 				Title role source0 sid sourceOctoechos End-Title
@@ -6739,18 +6799,6 @@ Template MA
 			End-Section
 		End-Section
 		Section gloryboth__
-			Section oc__
-				Section weekday
-					when-name-of-day-is
-						Monday, Tuesday, Thursday use:
-							Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
-						Wednesday, Friday use:
-							Title role mixed sid DoxaKaiNyn<Tdesig>sid Stavrotheotokion</>End-Title
-					end-when
-					Title role mixed<Tmode>rid ocMA.AposTheotokion.mode</><Tmelody>rid ocMA.AposTheotokion.melody</>End-Title
-					Hymn rid ocMA.AposTheotokion.text @ver End-Hymn
-				End-Section
-			End-Section
 			Section pe__
 				Section gloryasgloryboth_
 					Title sid DoxaKaiNyn End-Title
@@ -6803,19 +6851,63 @@ Template MA
 				Hymn rid meMA.Aposticha3.text @ver media-off End-Hymn
 			End-Section
 		End-Section
-		Section oc__
-			Section weekday
-				Title role source sid sourceOctoechos End-Title
-				Actor sid Choir End-Actor
-				Title role desig sid Aposticha End-Title
-				Title role mixed<Tmode>rid ocMA.Aposticha1.mode</><Tmelody>rid ocMA.Aposticha1.melody</>End-Title	
-				Hymn rid ocMA.Aposticha1.text @ver End-Hymn
-				Media rid ocMA.Aposticha2.text End-Media
-				Insert_section PsalmVerses.forMatinsAposticha.verse1 End-Insert
-				Hymn rid ocMA.Aposticha2.text @ver media-off End-Hymn
-				Media rid ocMA.Aposticha3.text End-Media
-				Insert_section PsalmVerses.forMatinsAposticha.verse1 End-Insert
-				Hymn rid ocMA.Aposticha3.text @ver media-off End-Hymn
+		Section oc_
+			Section aposticha
+				when-name-of-day-is
+					Monday, Tuesday, Wednesday, Thursday, Friday use:
+						Section montuewedthufri
+							Title role source sid sourceOctoechos End-Title
+							Actor sid Choir End-Actor
+							Title role desig sid Aposticha End-Title
+							Title role mixed<Tmode>rid ocMA.Aposticha1.mode</><Tmelody>rid ocMA.Aposticha1.melody</>End-Title	
+							Hymn rid ocMA.Aposticha1.text @ver End-Hymn
+							Media rid ocMA.Aposticha2.text End-Media
+							Insert_section PsalmVerses.forMatinsAposticha.verse1 End-Insert
+							Hymn rid ocMA.Aposticha2.text @ver media-off End-Hymn
+							Media rid ocMA.Aposticha3.text End-Media
+							Insert_section PsalmVerses.forMatinsAposticha.verse2 End-Insert
+							Hymn rid ocMA.Aposticha3.text @ver media-off End-Hymn
+						End-Section
+					Saturday use:
+						Section saturday
+							Title role source sid sourceOctoechos End-Title
+							Actor sid Choir End-Actor
+							Title role desig sid Aposticha End-Title
+							Title role mixed<Tmode>rid ocMA.Aposticha1.mode</><Tmelody>rid ocMA.Aposticha1.melody</>End-Title	
+							Hymn rid ocMA.Aposticha1.text @ver End-Hymn
+							Media rid ocMA.Aposticha2.text End-Media
+							Insert_section PsalmVerses.forDeceased.verse1 End-Insert
+							Hymn rid ocMA.Aposticha2.text @ver media-off End-Hymn
+							Media rid ocMA.Aposticha3.text End-Media
+							Insert_section PsalmVerses.forDeceased.verse2 End-Insert
+							Hymn rid ocMA.Aposticha3.text @ver media-off End-Hymn
+							when-exists rid ocMA.Aposticha4.text use:
+								Media rid ocMA.Aposticha4.text End-Media
+								Insert_section PsalmVerses.forDeceased.verse3 End-Insert
+								Hymn rid ocMA.Aposticha4.text @ver media-off End-Hymn
+							end-when
+						End-Section
+				end-when
+			End-Section
+			Section theotokion
+				when-name-of-day-is
+					Monday, Tuesday, Thursday use:
+						Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+						when-exists rid ocMA.AposTheotokion.melody use:
+							Title<Tmelody>rid ocMA.AposTheotokion.melody</>End-Title
+						end-when
+						Hymn rid ocMA.AposTheotokion.text @ver End-Hymn
+					Wednesday, Friday use:
+						Title role mixed sid DoxaKaiNyn<Tdesig>sid Stavrotheotokion</>End-Title
+						when-exists rid ocMA.AposTheotokion.melody use:
+							Title<Tmelody>rid ocMA.AposTheotokion.melody</>End-Title
+						end-when
+						Hymn rid ocMA.AposTheotokion.text @ver End-Hymn
+					Saturday use:
+						Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</><Tdesig>sid Omoion</>End-Title
+						Hymn rid ocMA.AposTheotokion.text @ver End-Hymn
+						Hymn rid ocMA.AposTheotokion.text @ver End-Hymn
+				end-when
 			End-Section
 		End-Section
 		Section pe__
