@@ -7795,28 +7795,34 @@ Template MA
 				end-when
 			End-Section
 			Section wisdom
-				Actor sid Deacon End-Actor
-				Dialog sid exc17 End-Dialog
-				Dialog<i>sid EvlogisonP</>End-Dialog	
-				Actor sid Priest End-Actor
-				Dialog sid OOnEvlogitos.text<i>sid res04p</>End-Dialog
-				Actor sid Hierarch End-Actor
-				Dialog sid StereosaiKyrios.text End-Dialog
-				Actor sid Deacon End-Actor
-				Dialog sid res04 End-Dialog
-				when-movable-cycle-day-is
-					71, 72, 73, 74, 75, 76, 77, 109 use:
-						Dialog sid pe.d00P_gr_GR_cog.pePA.Ode9H.text End-Dialog
-					otherwise use:
-						Dialog sid TinTimioteran.text End-Dialog
-				end-when
-				when-movable-cycle-day-is 
-					71 thru 109 use:
-						Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text End-Dialog
-					otherwise use:
-						Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
-				end-when
-				Dialog sid res01<r>sid Thrice</>sid res13 End-Dialog
+				Section part1
+					Actor sid Deacon End-Actor
+					Dialog sid exc17 End-Dialog
+					Dialog<i>sid EvlogisonP</>End-Dialog	
+					Actor sid Priest End-Actor
+					Dialog sid OOnEvlogitos.text<i>sid res04p</>End-Dialog
+					Actor sid Hierarch End-Actor
+					Dialog sid StereosaiKyrios.text End-Dialog
+					Dialog<i>sid res04p</>End-Dialog	
+				End-Section
+				Section part2
+					Actor sid Deacon End-Actor
+					when-movable-cycle-day-is
+						71, 72, 73, 74, 75, 76, 77, 109 use:
+							Dialog sid pe.d00P_gr_GR_cog.pePA.Ode9H.text End-Dialog
+						otherwise use:
+							Dialog sid TinTimioteran.text End-Dialog
+					end-when
+				End-Section
+				Section part3
+					when-movable-cycle-day-is 
+						71 thru 109 use:
+							Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text End-Dialog
+						otherwise use:
+							Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
+					end-when
+					Dialog sid res01<r>sid Thrice</>sid res13 End-Dialog
+				End-Section
 			End-Section
 		End-Section
 		Section ektenia_wisdom
@@ -7847,31 +7853,55 @@ Template MA
 			end-when
 		End-Section
 		Section wisdom
-			Actor sid Deacon End-Actor
-			Dialog sid exc17 End-Dialog
-			Dialog<i>sid EvlogisonP</>End-Dialog	
-			Actor sid Priest End-Actor
-			Dialog sid OOnEvlogitos.text<i>sid res04p</>End-Dialog
-			Dialog sid StereosaiKyrios.text End-Dialog
-			Actor sid Reader End-Actor
-			Dialog sid res04 End-Dialog
-			when-movable-cycle-day-is
-				71, 72, 73, 74, 75, 76, 77, 109 use:
-					Dialog sid pe.d00P_gr_GR_cog.pePA.Ode9H.text End-Dialog
-				otherwise use:
-					Dialog sid TinTimioteran.text End-Dialog
-			end-when
-			when-movable-cycle-day-is 
-				71 thru 109 use:
-					Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text End-Dialog
-				otherwise use:
-					Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
-			end-when
-			Dialog sid res01<r>sid Thrice</>sid Evlogison End-Dialog
+			Section part1
+				Actor sid Deacon End-Actor
+				Dialog sid exc17 End-Dialog
+				Dialog<i>sid EvlogisonP</>End-Dialog	
+				Actor sid Priest End-Actor
+				Dialog sid OOnEvlogitos.text<i>sid res04p</>End-Dialog
+				Dialog sid StereosaiKyrios.text End-Dialog
+				Actor sid Reader End-Actor
+				Dialog sid res04 End-Dialog
+			End-Section
+			Section part2
+				when-movable-cycle-day-is
+					71, 72, 73, 74, 75, 76, 77, 109 use:
+						Dialog sid pe.d00P_gr_GR_cog.pePA.Ode9H.text End-Dialog
+					otherwise use:
+						Dialog sid TinTimioteran.text End-Dialog
+				end-when
+			End-Section
+			Section part3
+				when-movable-cycle-day-is 
+					71 thru 109 use:
+						Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text End-Dialog
+					otherwise use:
+						Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
+				end-when
+				Dialog sid res01<r>sid Thrice</>sid Evlogison End-Dialog
+			End-Section
 		End-Section
 	End-Section
 
-	Section _19_Dismissal__
+	Section _19_End_Options
+		Section aftergreatdoxology_end_no_dismissal
+			Para role bmc_matins_end_no_dismissal sid mc.matins.end.no.dismissal End-Para
+				Insert_section _15_Litanies__.aftergreatdoxology End-Insert
+				Insert_section _18_End__.wisdom.part1 End-Insert
+				Insert_section _18_End__.wisdom.part2 End-Insert
+			Para role emc_matins_end_no_dismissal sid mc.tag End-Para
+		End-Section
+		Section aftergreatdoxology_end_before_dismissal
+			Para role bmc_matins_end_before_dismissal sid mc.matins.end.before.dismissal End-Para
+				Insert_section _15_Litanies__.aftergreatdoxology End-Insert
+				Insert_section _18_End__.wisdom.part1 End-Insert
+				Insert_section _18_End__.wisdom.part2 End-Insert
+				Insert_section _18_End__.wisdom.part3 End-Insert
+			Para role emc_matins_end_before_dismissal sid mc.tag End-Para
+		End-Section
+	End-Section
+
+	Section _20_Dismissal__
 		Section Hierarchical__
 			Section commemoration
 				when-movable-cycle-day-is
@@ -7977,7 +8007,17 @@ Template MA
 			End-Section
 		End-Section
 		Section commemoration
-			Insert_section Selector_Dismissals.Com_Yes End-Insert
+			Section part1
+			//	Para role bmc_matins_dismissal_open sid mc.matins.dismissal.open End-Para
+					Actor sid Priest End-Actor
+					Insert_section Selector_Dismissals.Com_Yes.part1 End-Insert
+			//	Para role emc_matins_dismissal_open sid mc.tag End-Para
+			End-Section
+			Section part2
+				Para role bmc_matins_close sid mc.matins.close End-Para
+					Insert_section Selector_Dismissals.Com_Yes.part2 End-Insert
+				Para role emc_matins_close sid mc.tag End-Para
+			End-Section
 		End-Section
 		Section holythursday
 			Actor sid Priest End-Actor
@@ -7994,7 +8034,17 @@ Template MA
 			Dialog sid res04 End-Dialog
 		End-Section
 		Section nocommemoration
-			Insert_section Selector_Dismissals.Com_No End-Insert
+			Section part1
+				Para role bmc_matins_dismissal sid mc.matins.dismissal End-Para
+					Actor sid Priest End-Actor
+					Insert_section Selector_Dismissals.Com_No.part1 End-Insert
+				Para role emc_matins_dismissal sid mc.tag End-Para
+			End-Section
+			Section part2
+				Para role bmc_matins_close sid mc.matins.close End-Para
+					Insert_section Selector_Dismissals.Com_No.part2 End-Insert
+				Para role emc_matins_close sid mc.tag End-Para
+			End-Section
 		End-Section
 		Section specificcommemoration__
 			Section brightweek_stgeorge
@@ -8006,7 +8056,7 @@ Template MA
 		End-Section
 	End-Section
 
-
+	
 //-----------------------
 //Blocks
 
