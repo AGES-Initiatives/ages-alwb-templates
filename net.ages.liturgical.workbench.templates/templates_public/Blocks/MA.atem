@@ -7904,78 +7904,40 @@ Template MA
 	Section _20_Dismissal__
 		Section Hierarchical__
 			Section commemoration
-				when-movable-cycle-day-is
-					69 use:
-						Section holythursday
-							Actor sid Hierarch End-Actor
-							Dialog sid dis00 sid dis00.holythursday sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 sid dis10 sid dis89 End-Dialog
-							Dialog sid DiEfchonPateron.text End-Dialog
-							Dialog<i>sid res04p</>End-Dialog
-							Actor sid Clergy End-Actor
-							Dialog sid DiEfchonDespotou.text End-Dialog
-							Dialog<i>sid res04p</>End-Dialog
-						End-Section
-					71, 72, 73, 74, 75, 76, 77, 109 use:
-						Section pascha
-							Section intro
-								Actor sid Deacon End-Actor
-								Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text media-off End-Dialog
-								Dialog sid res01<r>sid Thrice</>sid Evlogison End-Dialog
-							End-Section
-							Actor sid Hierarch End-Actor
-							Insert_section Selector_Dismissals.Com_Yes.part1 End-Insert
-							Insert_section Selector_Dismissals.Com_Yes.part2 End-Insert
-						End-Section
-					78 thru 108 use:
-						Section afterpascha
-							Insert_section pascha.intro End-Insert
-							Actor sid Hierarch End-Actor
-							Insert_section Selector_Dismissals.Com_Yes.part1 End-Insert
-							Insert_section Selector_Dismissals.Com_Yes.part2 End-Insert
-						End-Section
-					otherwise use:
-						Section notpaschal
-							Actor sid Hierarch End-Actor
-							Insert_section Selector_Dismissals.Com_Yes.part1 End-Insert
-							Dialog sid DiEfchonPateron.text End-Dialog
-							Dialog<i>sid res04p</>End-Dialog
-							Actor sid Clergy End-Actor
-							Dialog sid DiEfchonDespotou.text End-Dialog
-							Dialog<i>sid res04p</>End-Dialog
-						End-Section
-				end-when
+				Para role bmc_matins_dismissal sid mc.matins.dismissal End-Para
+					Actor sid Hierarch End-Actor
+					Insert_section Selector_Dismissals.Com_Yes.part1 End-Insert
+				Para role emc_matins_dismissal sid mc.tag End-Para
+				Para role bmc_matins_close sid mc.matins.close End-Para
+					Insert_section Selector_Dismissals.Hierarchical.part2 End-Insert
+				Para role emc_matins_close sid mc.tag End-Para
+			End-Section
+			Section holythursday
+				Actor sid Hierarch End-Actor
+				Dialog sid dis00 sid dis00.holythursday sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 sid dis10 sid dis89 End-Dialog
+				Dialog sid DiEfchonPateron.text End-Dialog
+				Dialog<i>sid res04p</>End-Dialog
+				Actor sid Clergy End-Actor
+				Dialog sid DiEfchonDespotou.text End-Dialog
+				Dialog<i>sid res04p</>End-Dialog
+			End-Section
+			Section holypassion
+				Actor sid Hierarch End-Actor
+				Dialog sid dis00 sid dis00.passion sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 sid dis10 sid dis89 End-Dialog
+				Dialog sid DiEfchonPateron.text End-Dialog
+				Dialog<i>sid res04p</>End-Dialog
+				Actor sid Clergy End-Actor
+				Dialog sid DiEfchonDespotou.text End-Dialog
+				Dialog<i>sid res04p</>End-Dialog
 			End-Section
 			Section nocommemoration
-				when-movable-cycle-day-is
-					71, 72, 73, 74, 75, 76, 77, 109 use:
-						Section pascha
-							Section intro
-								Actor sid Deacon End-Actor
-								Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text media-off End-Dialog
-								Dialog sid res01<r>sid Thrice</>sid Evlogison End-Dialog
-							End-Section
-							Actor sid Hierarch End-Actor
-							Insert_section Selector_Dismissals.Com_No.part1 End-Insert
-							Insert_section Selector_Dismissals.Com_No.part2 End-Insert
-						End-Section
-					78 thru 108 use:
-						Section afterpascha
-							Insert_section pascha.intro End-Insert
-							Actor sid Hierarch End-Actor
-							Insert_section Selector_Dismissals.Com_No.part1 End-Insert
-							Insert_section Selector_Dismissals.Com_No.part2 End-Insert
-						End-Section
-					otherwise use:
-						Section notpaschal
-							Actor sid Hierarch End-Actor
-							Insert_section Selector_Dismissals.Com_No.part1 End-Insert
-							Dialog sid DiEfchonPateron.text End-Dialog
-							Dialog<i>sid res04p</>End-Dialog
-							Actor sid Clergy End-Actor
-							Dialog sid DiEfchonDespotou.text End-Dialog
-							Dialog<i>sid res04p</>End-Dialog
-						End-Section
-				end-when
+				Para role bmc_matins_dismissal sid mc.matins.dismissal End-Para
+					Actor sid Hierarch End-Actor
+					Insert_section Selector_Dismissals.Com_No.part1 End-Insert
+				Para role emc_matins_dismissal sid mc.tag End-Para
+				Para role bmc_matins_close sid mc.matins.close End-Para
+					Insert_section Selector_Dismissals.Hierarchical.part2 End-Insert
+				Para role emc_matins_close sid mc.tag End-Para
 			End-Section
 			Section specificcommemoration__
 				Section brightweek_stgeorge
@@ -7989,7 +7951,7 @@ Template MA
 					Actor sid Choir End-Actor
 					Hymn sid euLI.Key1706h.text @ver End-Hymn
 					Actor sid Hierarch End-Actor
-					Insert_section Selector_Dismissals.Com_Yes.part2 End-Insert
+					Insert_section Selector_Dismissals.Hierarchical.part2 End-Insert
 				End-Section
 				Section brightweek_stmark
 					Section intro
@@ -8002,22 +7964,18 @@ Template MA
 					Actor sid Choir End-Actor
 					Hymn sid euLI.Key1706h.text @ver End-Hymn
 					Actor sid Hierarch End-Actor
-					Insert_section Selector_Dismissals.Com_Yes.part2 End-Insert
+					Insert_section Selector_Dismissals.Hierarchical.part2 End-Insert
 				End-Section
 			End-Section
 		End-Section
 		Section commemoration
-			Section part1
 				Para role bmc_matins_dismissal sid mc.matins.dismissal End-Para
 					Actor sid Priest End-Actor
 					Insert_section Selector_Dismissals.Com_Yes.part1 End-Insert
 				Para role emc_matins_dismissal sid mc.tag End-Para
-			End-Section
-			Section part2
 				Para role bmc_matins_close sid mc.matins.close End-Para
 					Insert_section Selector_Dismissals.Com_Yes.part2 End-Insert
 				Para role emc_matins_close sid mc.tag End-Para
-			End-Section
 		End-Section
 		Section holythursday
 			Actor sid Priest End-Actor
@@ -8034,17 +7992,13 @@ Template MA
 			Dialog sid res04 End-Dialog
 		End-Section
 		Section nocommemoration
-			Section part1
-				Para role bmc_matins_dismissal sid mc.matins.dismissal End-Para
-					Actor sid Priest End-Actor
-					Insert_section Selector_Dismissals.Com_No.part1 End-Insert
-				Para role emc_matins_dismissal sid mc.tag End-Para
-			End-Section
-			Section part2
-				Para role bmc_matins_close sid mc.matins.close End-Para
-					Insert_section Selector_Dismissals.Com_No.part2 End-Insert
-				Para role emc_matins_close sid mc.tag End-Para
-			End-Section
+			Para role bmc_matins_dismissal sid mc.matins.dismissal End-Para
+				Actor sid Priest End-Actor
+				Insert_section Selector_Dismissals.Com_No.part1 End-Insert
+			Para role emc_matins_dismissal sid mc.tag End-Para
+			Para role bmc_matins_close sid mc.matins.close End-Para
+				Insert_section Selector_Dismissals.Com_No.part2 End-Insert
+			Para role emc_matins_close sid mc.tag End-Para
 		End-Section
 		Section specificcommemoration__
 			Section brightweek_stgeorge
