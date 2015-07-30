@@ -2313,6 +2313,19 @@ Template MA
 	End-Section
 
 	Section _08_Gospel__
+		Section gospel_introH
+			Actor sid Deacon End-Actor
+			Dialog sid pet00 End-Dialog
+			Dialog<i>sid res01p</>End-Dialog
+			Actor sid Priest End-Actor
+			Dialog sid exc06 End-Dialog
+			Actor sid Choir End-Actor
+			Dialog sid res04 End-Dialog
+			Title role mode sid Mode2 End-Title
+			Media sid hoMA.PreGospelHymn.text @ver End-Media
+			Hymn sid psa150.v6a.text<r>sid Twice</>sid psa150.v6aalt.text @ver End-Hymn
+			Insert_section LN.BeforeGospel_Hierarchical End-Insert
+		End-Section
 		Section gospel_introP
 			Actor sid Deacon End-Actor
 			Dialog sid pet00 End-Dialog
@@ -2333,19 +2346,19 @@ Template MA
 					Insert_section Selector_MatinsGospel.Section01 End-Insert
 					Insert_section MA.Psalm50_read_Hierarchical End-Insert
 				71 use: 
-					Insert_section LN.BeforeGospel End-Insert
+					Insert_section LN.BeforeGospel_Hierarchical End-Insert
 					Insert_section Selector_MatinsGospel.Section01 End-Insert
 				otherwise use:
 					Section matinsgospel
 						when-movable-cycle-day-is //sundays before new eo cycle begins
 							64 use: //palm sunday
-								Insert_section gospel_introP End-Insert
+								Insert_section gospel_introH End-Insert
 								Insert_section Selector_MatinsGospel.Section01 End-Insert
 								Insert_section MA.Psalm50_read_Hierarchical End-Insert
 								Insert_section PostGospel_mc End-Insert
 								Insert_section LN.Supplication_Plain_deacon End-Insert
 							78, 85, 92, 99, 106, 113 use:
-								Insert_section gospel_introP End-Insert
+								Insert_section gospel_introH End-Insert
 								Insert_section Selector_MatinsGospel.Section01 End-Insert
 								Insert_section Psalm50_chant_Hierarchical End-Insert
 								Insert_section PostGospel_eo End-Insert
@@ -2356,7 +2369,7 @@ Template MA
 										Insert_section LN.Supplication_Plain_deacon End-Insert
 								end-when
 							110, 120 use:
-								Insert_section gospel_introP End-Insert
+								Insert_section gospel_introH End-Insert
 								Insert_section Selector_MatinsGospel.Section01 End-Insert
 								Insert_section MA.Psalm50_read_Hierarchical End-Insert
 								Insert_section PostGospel_mc End-Insert
@@ -2371,44 +2384,44 @@ Template MA
 									Sunday use:
 										when-date-is // dates when menaion gospel supercedes eothinon
 											Jan 6 use: 
-												Insert_section gospel_introP End-Insert
+												Insert_section gospel_introH End-Insert
 												Insert_section Selector_MatinsGospel.Section01 End-Insert
 												Insert_section MA.Psalm50_read_Hierarchical End-Insert
 												Insert_section PostGospel_me End-Insert
 												Insert_section LN.Supplication_Plain_deacon End-Insert
 											Mar 25 use: 
-												Insert_section gospel_introP End-Insert
+												Insert_section gospel_introH End-Insert
 												Insert_section Selector_MatinsGospel.Section01 End-Insert
 												Insert_section MA.Psalm50_read_Hierarchical End-Insert
 												Insert_section PostGospel_me End-Insert
 												Insert_section LN.Supplication_deacon End-Insert
 											Aug 6 use: 
-												Insert_section gospel_introP End-Insert
+												Insert_section gospel_introH End-Insert
 												Insert_section Selector_MatinsGospel.Section01 End-Insert
 												Insert_section MA.Psalm50_read_Hierarchical End-Insert
 												Insert_section PostGospel_me End-Insert
 												Insert_section LN.Supplication_Plain_deacon End-Insert
 											Sep 14 use: 
-												Insert_section gospel_introP End-Insert
+												Insert_section gospel_introH End-Insert
 												Insert_section Selector_MatinsGospel.Section01 End-Insert
 												Insert_section MA.Psalm50_read_Hierarchical End-Insert
 												Insert_section PostGospel_me End-Insert
 												Insert_section LN.Supplication_deacon End-Insert
 											Dec 25 use: 
-												Insert_section gospel_introP End-Insert
+												Insert_section gospel_introH End-Insert
 												Insert_section Selector_MatinsGospel.Section01 End-Insert
 												Insert_section MA.Psalm50_read_Hierarchical End-Insert
 												Insert_section PostGospel_me End-Insert
 												Insert_section LN.Supplication_Plain_deacon End-Insert
 											otherwise use:
-												Insert_section gospel_introP End-Insert
+												Insert_section gospel_introH End-Insert
 												Insert_section LE._02_Gospel__.eothinon End-Insert
 												Insert_section Psalm50_chant_Hierarchical End-Insert
 												Insert_section PostGospel_eo End-Insert
 												Insert_section LN.Supplication_deacon End-Insert
 										end-when
 									otherwise use:
-										Insert_section gospel_introP End-Insert
+										Insert_section gospel_introH End-Insert
 										Insert_section Selector_MatinsGospel.Section01 End-Insert
 										Insert_section MA.Psalm50_read_Hierarchical End-Insert
 										Insert_section PostGospel_me End-Insert
@@ -6300,7 +6313,7 @@ Template MA
 				Section eoofweek_
 					Section exap
 						Insert_section intro_ End-Insert
-						Title role source0 sid sourceOctoechos End-Title
+						Title role source sid sourceOctoechos End-Title
 						Title role desig rid eo.title End-Title
 						Title role mixed<Tmode>rid eo.Exaposteilarion.mode</><Tmelody>rid eo.Exaposteilarion.melody</>End-Title
 						Hymn rid eo.Exaposteilarion.text @ver End-Hymn
