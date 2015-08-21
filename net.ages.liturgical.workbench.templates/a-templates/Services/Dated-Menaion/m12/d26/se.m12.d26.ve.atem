@@ -1,0 +1,153 @@
+Template se.m12.d26.ve 
+
+Status Final
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 12 day 26 End_Date
+			Page_Header_Even
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	when-name-of-day-is 
+		Tuesday, Wednesday, Thursday, Friday, Saturday use:
+			Section Instance01
+				Insert_section VE._01_Beginning__.vespers End-Insert
+				Insert_section VE._02_Kekragaria__.mode2__.for6 End-Insert
+					Set_Date month 12 day 25 End_Date
+					Insert_section TI.stp.f End-Insert
+					Insert_section VE._03_Stichera__.me__.i_112234as5678910 End-Insert
+				Set_Date month 12 day 26 End_Date
+				Insert_section VE._03_Stichera__.gloryboth__.me__.gloryasgloryboth_ End-Insert
+				Insert_section VE._04_Middle__.entrance End-Insert
+				Insert_section VE._06_Litanies__.fullektenia End-Insert
+				Insert_section VE._08_Aposticha__.me__.i_christmas12 End-Insert
+				Insert_section VE._08_Aposticha__.gloryboth__.me__.gloryasgloryboth_ End-Insert
+				Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert	
+				Insert_section AP.f3 End-Insert
+				Insert_section VE._10_End__.wisdom End-Insert
+				Insert_section VE._11_Dismissal__.commemoration End-Insert
+			End-Section
+	
+		Sunday use:
+			Section Instance02 //Sunday (e.g. 2010)
+				Insert_section VE._01_Beginning__.vespers End-Insert
+				Insert_section VE._02_Kekragaria__.modeofweek__.for10 End-Insert
+				Insert_section VE._03_Stichera__.oc__.sunday_.s_1234 End-Insert
+				Insert_section TI.stp.f End-Insert
+				Insert_section VE._03_Stichera__.me__.i_123as567 End-Insert
+				Section block1
+					Title role desig sid Stichira sid TonTheopatoron End-Title
+					Title role mixed<Tmode>sid me.m12.dAC_gr_GR_cog.meVE.Stichera01.mode</><Tmelody>sid me.m12.dAC_gr_GR_cog.meVE.Stichera01.melody</>End-Title
+					Media sid me.m12.dAC_gr_GR_cog.meVE.Stichera01.text End-Media
+					Insert_section VE.LIHC_Verses.v08 End-Insert
+					Hymn sid me.m12.dAC_gr_GR_cog.meVE.Stichera01.text @ver media-off End-Hymn
+					Title role mixed<Tmode>sid me.m12.dAC_gr_GR_cog.meVE.Stichera02.mode</><Tmelody>sid me.m12.dAC_gr_GR_cog.meVE.Stichera02.melody</>End-Title
+					Media sid me.m12.dAC_gr_GR_cog.meVE.Stichera02.text End-Media
+					Insert_section VE.LIHC_Verses.v09 End-Insert
+					Hymn sid me.m12.dAC_gr_GR_cog.meVE.Stichera02.text @ver media-off End-Hymn
+					Title role mixed<Tmode>sid me.m12.dAC_gr_GR_cog.meVE.Stichera03.mode</><Tmelody>sid me.m12.dAC_gr_GR_cog.meVE.Stichera03.melody</>End-Title
+					Media sid me.m12.dAC_gr_GR_cog.meVE.Stichera03.text End-Media
+					Insert_section VE.LIHC_Verses.v10 End-Insert
+					Hymn sid me.m12.dAC_gr_GR_cog.meVE.Stichera03.text @ver media-off End-Hymn
+				End-Section
+				Section block2	
+					Title role mixed sid Doxa<Tmode>sid me.m12.dAC_gr_GR_cog.meVE.SticGlory.mode</>End-Title
+					Hymn sid me.m12.dAC_gr_GR_cog.meVE.SticGlory.text @ver End-Hymn
+				End-Section
+				Insert_section VE._03_Stichera__.both__.firsttheotokion__.modeofweek End-Insert
+				Insert_section VE._04_Middle__.entrance End-Insert	
+				Insert_section VE._06_Litanies__.fullektenia End-Insert
+				Insert_section VE._08_Aposticha__.oc__.sunday_.aposticha1_ End-Insert
+				Insert_section VE._08_Aposticha__.oc__.sunday_.aposticha234 End-Insert
+				Section block3
+					Title role mixed sid Doxa<Tmode>sid me.m12.dAC_gr_GR_cog.meVE.AposGlory.mode</>End-Title
+					Hymn sid me.m12.dAC_gr_GR_cog.meVE.AposGlory.text @ver End-Hymn
+				End-Section
+				Insert_section TI.b._ End-Insert
+				Insert_section VE._08_Aposticha__.glory__.me__.gloryasglory_.hymn End-Insert
+				Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
+				Insert_section AP.res__.modeofweek End-Insert	
+				Section block4
+					Title role mixed sid Doxa<Tdesig>sid TonTheopatoron</><Tmode>sid me.m12.dAC_gr_GR_cog.meVE.Apolytikion1.mode</>End-Title
+					Hymn sid me.m12.dAC_gr_GR_cog.meVE.Apolytikion1.text @ver End-Hymn
+				End-Section
+				Insert_section AP.both__.af End-Insert
+				Insert_section VE._10_End__.wisdom End-Insert
+				Insert_section VE._11_Dismissal__.commemoration End-Insert
+			End-Section
+
+		Monday use:
+			Section Instance03 //Monday (e.g. 2011)
+				Insert_section VE._01_Beginning__.vespers End-Insert
+				Insert_section VE.LIHC_Mode2 End-Insert
+				Insert_section VE._03_Stichera__.me__.i_123as567 End-Insert
+				Section block1
+					Title role desig sid Stichira sid TonTheopatoron End-Title
+					Title role mixed<Tmode>sid me.m12.dAC_gr_GR_cog.meVE.Stichera01.mode</><Tmelody>sid me.m12.dAC_gr_GR_cog.meVE.Stichera01.melody</>End-Title
+					Media sid me.m12.dAC_gr_GR_cog.meVE.Stichera01.text End-Media
+					Insert_section VE.LIHC_Verses.v08 End-Insert
+					Hymn sid me.m12.dAC_gr_GR_cog.meVE.Stichera01.text @ver media-off End-Hymn
+					Title role mixed<Tmode>sid me.m12.dAC_gr_GR_cog.meVE.Stichera02.mode</><Tmelody>sid me.m12.dAC_gr_GR_cog.meVE.Stichera02.melody</>End-Title
+					Media sid me.m12.dAC_gr_GR_cog.meVE.Stichera02.text End-Media
+					Insert_section VE.LIHC_Verses.v09 End-Insert
+					Hymn sid me.m12.dAC_gr_GR_cog.meVE.Stichera02.text @ver media-off End-Hymn
+					Title role mixed<Tmode>sid me.m12.dAC_gr_GR_cog.meVE.Stichera03.mode</><Tmelody>sid me.m12.dAC_gr_GR_cog.meVE.Stichera03.melody</>End-Title
+					Media sid me.m12.dAC_gr_GR_cog.meVE.Stichera03.text End-Media
+					Insert_section VE.LIHC_Verses.v10 End-Insert
+					Hymn sid me.m12.dAC_gr_GR_cog.meVE.Stichera03.text @ver media-off End-Hymn
+				End-Section
+				Section block2	
+					Title role mixed sid Doxa<Tmode>sid me.m12.dAC_gr_GR_cog.meVE.SticGlory.mode</>End-Title
+					Hymn sid me.m12.dAC_gr_GR_cog.meVE.SticGlory.text @ver End-Hymn
+				End-Section
+				Insert_section VE._03_Stichera__.both__.me__.gloryasboth_ End-Insert
+				Insert_section VE._04_Middle__.entrance End-Insert
+				Insert_section VE._06_Litanies__.fullektenia End-Insert
+				Insert_section VE._08_Aposticha__.me__.i_christmas12 End-Insert
+				Section block3
+					Title role mixed sid Doxa<Tmode>sid me.m12.dAC_gr_GR_cog.meVE.AposGlory.mode</>End-Title
+					Hymn sid me.m12.dAC_gr_GR_cog.meVE.AposGlory.text @ver End-Hymn
+				End-Section
+				Insert_section TI.b._ End-Insert
+				Insert_section VE._08_Aposticha__.glory__.me__.gloryasglory_.hymn End-Insert
+				Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
+				Insert_section AP.af End-Insert
+				Section block4
+					Title role mixed sid Doxa<Tdesig>sid TonTheopatoron</><Tmode>sid me.m12.dAC_gr_GR_cog.meVE.Apolytikion1.mode</>End-Title
+					Hymn sid me.m12.dAC_gr_GR_cog.meVE.Apolytikion1.text @ver End-Hymn
+				End-Section
+				Insert_section AP.both__.af End-Insert
+				Insert_section VE._10_End__.wisdom End-Insert
+				Insert_section VE._11_Dismissal__.commemoration End-Insert
+			End-Section
+	end-when		
+
+End-Template

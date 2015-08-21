@@ -1,0 +1,1013 @@
+Template rid_EpistleLessons_Menaion 
+
+Status Review
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 1 day 11 year 2015 End_Date
+	End_Head
+
+
+/* 
+ These sections compute the Epistle book and lesson for menaion commemorations.
+ * The source is the book templates in Apostolos.
+They are to be inserted in LectionaryReadings.atem (Lectionary_Epistle_Menaion), 
+to replace the three lines calling the Reading parts using rids. 
+These new sections will select the right book and lesson based on the "when statement," 
+*/
+
+	Section me_ep_designation
+		when-date-is
+			Jan 1 use: Title<inr>sid TisEortis</>End-Title
+			Jan 2 thru 5 use:
+				when-name-of-day-is 
+					Saturday use: Title<inr>sid daySaturday sid BeforeEpiphany</>End-Title
+					Sunday use: Title<inr>sid daySunday sid BeforeEpiphany</>End-Title
+					otherwise use:
+						when-date-is
+							Jan 2 use: Title<inr>sid TouAgiou</>End-Title
+							Jan 4 use: Title<inr>sid EkTouMinaiou</>End-Title
+						end-when
+				end-when	
+			Jan 6 use: Title<inr>sid TisEortis</>End-Title
+			Jan 7 use: Title<inr>sid TouProdromou</>End-Title
+			Jan 8, 9, 10, 12, 13 use:
+				when-name-of-day-is
+					Saturday use: Title<inr>sid daySaturday sid AfterEpiphany</>End-Title
+					Sunday use: Title<inr>sid daySunday sid AfterEpiphany</>End-Title
+					otherwise use:
+						when-date-is
+							Jan 9 use: Title<inr>sid TouMartyros</>End-Title
+							Jan 10 use: Title<inr>sid TouAgiou</>End-Title
+						end-when
+				end-when			
+			Jan 11 use: 
+				when-name-of-day-is
+					Saturday use: Title<inr>sid TouOsiou</>End-Title
+					Sunday use: Title<inr>sid TouOsiou</>End-Title
+					otherwise use: Title<inr>sid TouOsiou</>End-Title
+				end-when
+			Jan 14 use:
+				when-name-of-day-is
+					Saturday use: Title<inr>sid daySaturday sid AfterEpiphany</>End-Title
+					Sunday use: Title<inr>sid daySunday sid AfterEpiphany</>End-Title
+					otherwise use: Title<inr>sid TonOsion</>End-Title
+				end-when
+			Jan 15 use: Title<inr>sid TonOsion</>End-Title
+			Jan 16 use: Title<inr>sid TouApostolou</>End-Title
+			Jan 17 use: Title<inr>sid TouOsiou</>End-Title
+			Jan 18 use: Title<inr>sid TonAgion</>End-Title
+			Jan 19 use: Title<inr>sid TouOsiou</>End-Title
+			Jan 20 use: Title<inr>sid TouOsiou</>End-Title
+			Jan 21 use: Title<inr>sid TouOsiou</>End-Title
+			Jan 22 use: Title<inr>sid TouApostolou</>End-Title
+			Jan 23 use: Title<inr>sid TonAgion</>End-Title
+			Jan 24 use: Title<inr>sid TisOsias</>End-Title
+			Jan 25 use: Title<inr>sid TouAgiou</>End-Title
+			Jan 27 use: Title<inr>sid TouAgiou</>End-Title
+			Jan 28 use: Title<inr>sid TouOsiou</>End-Title
+			Jan 29 use: Title<inr>sid TouAgiou</>End-Title
+			Jan 30 use: Title<inr>sid TonIerarchon</>End-Title
+			Jan 31 use: Title<inr>sid TonAgion</>End-Title
+			Feb 1 use: Title<inr>sid TouMartyros</>End-Title
+			Feb 2 use: Title<inr>sid TisEortis</>End-Title
+			Feb 3 use: Title<inr>sid TouAgiou</>End-Title
+			Feb 6 use: Title<inr>sid TouAgiou</>End-Title
+			Feb 8 use: Title<inr>sid TouMartyros</>End-Title
+			Feb 9 use: Title<inr>sid TouMartyros</>End-Title
+			Feb 10 use:	Title<inr>sid TouIeromartyros</>End-Title
+			Feb 11 use:	Title<inr>sid TouIeromartyros</>End-Title
+			Feb 15 use:	Title<inr>sid TouApostolou</>End-Title
+			Feb 17 use:	Title<inr>sid TouMartyros</>End-Title
+			Feb 23 use:	Title<inr>sid TouIeromartyros</>End-Title
+			Feb 24 use:	Title<inr>sid TouProdromou</>End-Title
+			Feb 26 use:	Title<inr>sid TouAgiou</>End-Title
+			Mar 9, 10 use: Title<inr>sid TonMartyron</>End-Title
+			Mar 25 use: Title<inr>sid TisEortis</>End-Title
+			Mar 26 use: Title<inr>sid TouArchangelou</>End-Title
+			Mar 30 use: Title<inr>sid TouOsiou</>End-Title
+			Apr 1 use: Title<inr>sid TisOsias</>End-Title
+			Apr 10 use: Title<inr>sid TouIeromartyros</>End-Title
+			Apr 23 use: Title<inr>sid TouMartyros</>End-Title
+			Apr 25 use: Title<inr>sid TouEvangelistou</>End-Title
+			Apr 29 use: Title<inr>sid TonApostolon</>End-Title
+			Apr 30 use: Title<inr>sid TouApostolou</>End-Title
+			May 1 use: Title<inr>sid TouProfitou</>End-Title
+			May 2 use: Title<inr>sid TouAgiou</>End-Title
+			May 7 use: Title<inr>sid TouStavrou</>End-Title
+			May 8 use: Title<inr>sid TouEvangelistou</>End-Title
+			May 9 use: Title<inr>sid TouProfitou</>End-Title
+			May 10 use: Title<inr>sid TouApostolou</>End-Title
+			May 11 use: Title<inr>sid TouIeromartyros</>End-Title
+			May 15 use: Title<inr>sid TouOsiou</>End-Title
+			May 20 use: Title<inr>sid TouMartyros</>End-Title
+			May 21 use: Title<inr>sid TonIsapostolon</>End-Title
+			May 24 use: Title<inr>sid TouOsiou</>End-Title
+			May 25 use: Title<inr>sid TouProdromou</>End-Title
+			May 26 use: Title<inr>sid TouApostolou</>End-Title
+			May 29 use: Title<inr>sid TisAgias</>End-Title
+			Jun 2 use:	Title<inr>sid TouAgiou</>End-Title
+			Jun 4 use:	Title<inr>sid TouAgiou</>End-Title
+			Jun 8 use:	Title<inr>sid TouMartyros</>End-Title
+			Jun 9 use:	Title<inr>sid TouAgiou</>End-Title
+			Jun 11 use:	Title<inr>sid TonApostolon</>End-Title
+			Jun 12 use:	Title<inr>sid TonOsion</>End-Title
+			Jun 14 use:	Title<inr>sid TouProfitou</>End-Title
+		//	Jun 14 use:	Title<inr>sid TouAgiou</>End-Title
+			Jun 17 use:	Title<inr>sid TonMartyron</>End-Title
+			Jun 19 use:	Title<inr>sid TouApostolou</>End-Title
+			Jun 24 use:	Title<inr>sid TouProdromou</>End-Title
+			Jun 25 use:	Title<inr>sid TisAgias</>End-Title
+			Jun 26 use:	Title<inr>sid TouOsiou</>End-Title
+			Jun 27 use:	Title<inr>sid TouOsiou</>End-Title
+			Jun 28 use:	Title<inr>sid TonAgion</>End-Title
+			Jun 29 use:	Title<inr>sid TonApostolon</>End-Title
+			Jun 30 use: Title<inr>sid TonApostolon</>End-Title
+			Jul 1 use: Title<inr>sid TonAgion</>End-Title
+			Jul 2 use: Title<inr>sid TisTheotokou</>End-Title
+			Jul 4 use: Title<inr>sid TouAgiou</>End-Title
+			Jul 5 use: Title<inr>sid TouOsiou</>End-Title
+			Jul 8 use: Title<inr>sid TouMartyros</>End-Title
+			Jul 9 use: Title<inr>sid TouIeromartyros</>End-Title
+			Jul 11 use: Title<inr>sid TisAgias</>End-Title
+			Jul 12 use: Title<inr>sid TouOsiou</>End-Title
+			Jul 22 use: Title<inr>sid TouOsiou</>End-Title
+			Jul 13 thru 19 use:
+				when-name-of-day-is Sunday 
+					use: Title<inr>sid TonPateron</>End-Title
+					otherwise use:
+						when-date-is
+							Jul 13 use: Title<inr>sid TouArchangelou</>End-Title
+							Jul 14 use: Title<inr>sid TouApostolou</>End-Title
+							Jul 15 use: Title<inr>sid TonMartyron</>End-Title
+							Jul 17 use: Title<inr>sid TisAgias</>End-Title
+							Jul 18 use: Title<inr>sid TouAgiou</>End-Title
+						end-when
+				end-when		
+			Jul 20 use: Title<inr>sid TouProfitou</>End-Title
+			Jul 21 use: Title<inr>sid TonOsion</>End-Title
+			Jul 22 use: Title<inr>sid TisAgias</>End-Title
+			Jul 24 use: Title<inr>sid TisAgias</>End-Title
+			Jul 25 use: Title<inr>sid TisAgias</>End-Title
+		//	Jul 26 use: Title<inr>sid TouIeromartyros</>End-Title
+			Jul 26 use: Title<inr>sid TisAgias</>End-Title
+			Jul 27 use: Title<inr>sid TouMartyros</>End-Title
+			Jul 28 use: Title<inr>sid TonApostolon</>End-Title
+			Jul 29 use: Title<inr>sid TouMartyros</>End-Title
+			Jul 31 use: Title<inr>sid TouAgiou</>End-Title
+			Aug 1 use: Title<inr>sid TonAgion</>End-Title
+			Aug 2 use: Title<inr>sid TouProtomartyros</>End-Title
+			Aug 3 use: Title<inr>sid TonOsion</>End-Title
+		//	Aug 4 use: Title<inr>sid EkTouMinaiou</>End-Title
+			Aug 6 use: Title<inr>sid TisEortis</>End-Title
+			Aug 7 use: Title<inr>sid TouMartyros</>End-Title
+			Aug 9 use: Title<inr>sid TouApostolou</>End-Title
+			Aug 10 use: Title<inr>sid TouMartyros</>End-Title
+			Aug 11 use: Title<inr>sid TouMartyros</>End-Title
+			Aug 13 use: Title<inr>sid TouOsiou</>End-Title
+			Aug 15 use: Title<inr>sid TisEortis</>End-Title
+			Aug 16 use: Title<inr>sid EkTouMinaiou</>End-Title
+			Aug 18 use: Title<inr>sid TonMartyron</>End-Title
+			Aug 20 use: Title<inr>sid TouProfitou</>End-Title
+			Aug 25 use: Title<inr>sid TonApostolon</>End-Title
+			Aug 26 use: Title<inr>sid TonMartyron</>End-Title
+			Aug 27 use: Title<inr>sid TouOsiou</>End-Title
+			Aug 29 use: Title<inr>sid TouProdromou</>End-Title
+			Aug 31 use: Title<inr>sid TisTheotokou</>End-Title
+			Sep 1 use: Title<inr>sid TisIndiktou</>End-Title
+		//	Sep 1 use: Title<inr>sid TouOsiou</>End-Title
+			Sep 2 use: Title<inr>sid TouMartyros</>End-Title
+		//	Sep 2 use: Title<inr>sid TouAgiou</>End-Title
+			Sep 3 use: Title<inr>sid TouIeromartyros</>End-Title
+		//	Sep 3 use: Title<inr>sid TouOsiou</>End-Title
+			Sep 4 use: Title<inr>sid TouIeromartyros</>End-Title
+			Sep 5 use: Title<inr>sid TouProfitou</>End-Title
+			Sep 6 use: Title<inr>sid TouArchangelou</>End-Title
+			Sep 7 thru 13 use:
+				when-name-of-day-is 
+					Saturday use: Title<inr>sid daySaturday sid BeforeCross</>End-Title
+					Sunday use: Title<inr>sid daySunday sid BeforeCross</>End-Title
+					otherwise use:
+						when-date-is
+							Sep 7 use: Title<inr>sid TouMartyros</>End-Title
+							Sep 8 use: Title<inr>sid TisEortis</>End-Title
+							Sep 9 use: Title<inr>sid TonAgion</>End-Title
+							Sep 13 use: Title<inr>sid TonEnkainion</>End-Title
+						end-when
+				end-when		
+			Sep 14 use: Title<inr>sid TisEortis</>End-Title
+			Sep 15 thru 21 use:
+				when-name-of-day-is
+					Saturday use: Title<inr>sid daySaturday sid AfterCross</>End-Title
+					Sunday use: Title<inr>sid daySunday sid AfterCross</>End-Title
+					otherwise use:
+						when-date-is
+							Sep 15 use: Title<inr>sid TouMartyros</>End-Title
+							Sep 16 use: Title<inr>sid TisAgias</>End-Title
+							Sep 20 use: Title<inr>sid TonMartyron</>End-Title
+						end-when
+				end-when		
+			Sep 22 use: Title<inr>sid TouIeromartyros</>End-Title
+			Sep 23 use: Title<inr>sid TouProdromou</>End-Title
+			Sep 24 use: Title<inr>sid TisTheotokou</>End-Title
+		//	Sep 24 use: Title<inr>sid TisAgias</>End-Title
+			Sep 26 use: Title<inr>sid TouEvangelistou</>End-Title
+			Sep 27 use: Title<inr>sid TouMartyros</>End-Title
+			Sep 28 use: Title<inr>sid TouOsiou</>End-Title
+			Sep 29 use: Title<inr>sid TouOsiou</>End-Title
+			Sep 30 use: Title<inr>sid TouIeromartyros</>End-Title
+			Oct 1 use: Title<inr>sid TouApostolou</>End-Title
+			Oct 2 use: Title<inr>sid TouIeromartyros</>End-Title
+			Oct 3 use: Title<inr>sid TouIeromartyros</>End-Title
+			Oct 6 use: Title<inr>sid TouApostolou</>End-Title
+			Oct 7 use: Title<inr>sid TonMartyron</>End-Title
+			Oct 8 use: Title<inr>sid TisOsias</>End-Title
+			Oct 9 use: Title<inr>sid TouApostolou</>End-Title
+			Oct 10 use: Title<inr>sid TonMartyron</>End-Title
+			Oct 11 thru 17 use:
+				when-name-of-day-is 
+					Sunday use: Title<inr>sid TonPateron</>End-Title
+					otherwise use:
+						when-date-is
+							Oct 11 use: Title<inr>sid TouApostolou</>End-Title
+							Oct 12 use: Title<inr>sid TonMartyron</>End-Title
+							Oct 13 use: Title<inr>sid TonMartyron</>End-Title
+							Oct 14 use: Title<inr>sid TonMartyron</>End-Title
+							Oct 15 use: Title<inr>sid TouIeromartyros</>End-Title
+							Oct 16 use: Title<inr>sid TouMartyros</>End-Title
+							Oct 17 use: Title<inr>sid TouProfitou</>End-Title
+						end-when
+				end-when		
+			Oct 18 use: Title<inr>sid TouEvangelistou</>End-Title
+			Oct 19 use: Title<inr>sid TouProfitou</>End-Title
+			Oct 20 use: Title<inr>sid TouMartyros</>End-Title
+	//		Oct 20 use: Title<inr>sid TouOsiou</>End-Title
+			Oct 21 use: Title<inr>sid TouOsiou</>End-Title
+			Oct 22 use: Title<inr>sid TouAgiou</>End-Title
+	//		Oct 22 use: Title<inr>sid TonAgion</>End-Title
+			Oct 23 use: Title<inr>sid TouApostolou</>End-Title
+			Oct 24 use: Title<inr>sid TouMartyros</>End-Title
+			Oct 25 use: Title<inr>sid TonMartyron</>End-Title
+			Oct 26 use: Title<inr>sid TouMartyros</>End-Title
+			Oct 28 use: Title<inr>sid TisTheotokou</>End-Title
+			Nov 1 use: Title<inr>sid TonAgion</>End-Title
+			Nov 2 use: Title<inr>sid TonMartyron</>End-Title
+			Nov 3 use: Title<inr>sid TonMartyron</>End-Title
+			Nov 4 use: Title<inr>sid TouOsiou</>End-Title
+			Nov 5 use: Title<inr>sid TonMartyron</>End-Title
+			Nov 6 use: Title<inr>sid TouAgiou</>End-Title
+			Nov 7 use: Title<inr>sid TonMartyron</>End-Title
+			Nov 8 use: Title<inr>sid TonAsomaton</>End-Title
+			Nov 9 use: Title<inr>sid TouAgiou</>End-Title
+			Nov 10 use: Title<inr>sid TonApostolon</>End-Title
+			Nov 11 use: Title<inr>sid TonMartyron</>End-Title
+			Nov 12 use: Title<inr>sid TouAgiou</>End-Title
+			Nov 13 use: Title<inr>sid TouAgiou</>End-Title
+			Nov 14 use: Title<inr>sid TouApostolou</>End-Title
+			Nov 15 use: Title<inr>sid TonMartyron</>End-Title
+			Nov 16 use: Title<inr>sid TouEvangelistou</>End-Title
+			Nov 17 use: Title<inr>sid TouAgiou</>End-Title
+			Nov 18 use: Title<inr>sid TonMartyron</>End-Title
+			Nov 20 use: Title<inr>sid TouAgiou</>End-Title
+			Nov 21 use: Title<inr>sid TisEortis</>End-Title
+			Nov 22 use: Title<inr>sid TouApostolou</>End-Title
+			Nov 23 use: Title<inr>sid TonAgion</>End-Title
+			Nov 24 use: Title<inr>sid TonIerarchon</>End-Title
+			Nov 25 use: Title<inr>sid TisAgias</>End-Title
+			Nov 26 use: Title<inr>sid TouOsiou</>End-Title
+			Nov 27 use: Title<inr>sid TouMartyros</>End-Title
+			Nov 28 use: Title<inr>sid TouOsiomartyros</>End-Title
+			Nov 29 use: Title<inr>sid TonMartyron</>End-Title
+			Nov 30 use: Title<inr>sid TouApostolou</>End-Title
+			Dec 1 use: Title<inr>sid TouProfitou</>End-Title
+			Dec 2 use: Title<inr>sid TouProfitou</>End-Title
+			Dec 3 use: Title<inr>sid TouProfitou</>End-Title
+			Dec 4 use: Title<inr>sid TisAgias</>End-Title
+			Dec 5 use: Title<inr>sid TouOsiou</>End-Title
+			Dec 6 use: Title<inr>sid TouIerarchou</>End-Title
+			Dec 7 use: Title<inr>sid TouAgiou</>End-Title
+			Dec 8 use: Title<inr>sid TouOsiou</>End-Title
+			Dec 9 use: Title<inr>sid TisAgias</>End-Title
+			Dec 10 use: Title<inr>sid TonMartyron</>End-Title
+			Dec 11, 13, 14, 16, 17 use:
+				when-name-of-day-is 
+					Sunday use: Title<inr>sid daySunday sid TonPropatoron</>End-Title
+					otherwise use:
+						when-date-is
+							Dec 11 use: Title<inr>sid TouOsiou</>End-Title
+							Dec 13 use: Title<inr>sid TonMartyron</>End-Title
+							Dec 14 use: Title<inr>sid TonMartyron</>End-Title
+							Dec 16 use: Title<inr>sid TouAgiou</>End-Title
+							Dec 17 use: Title<inr>sid TonAgion</>End-Title
+						end-when
+				end-when	
+			Dec 12 use: Title<inr>sid TouAgiou</>End-Title
+			Dec 15 use: Title<inr>sid TouAgiou</>End-Title
+		//	Dec 17 use: Title<inr>sid TouAgiou</>End-Title
+			Dec 18 thru 24 use:
+				when-name-of-day-is 
+					Saturday use: Title<inr>sid daySaturday sid BeforeChristmas</>End-Title
+					Sunday use: Title<inr>sid daySunday sid BeforeChristmas</>End-Title
+					otherwise use:
+						when-date-is
+							Dec 20 use: Title<inr>sid TouIeromartyros</>End-Title
+							Dec 22 use: Title<inr>sid TisAgias</>End-Title
+						end-when
+				end-when	
+			Dec 25 use: Title<inr>sid TisEortis</>End-Title
+			Dec 26 use: 
+				when-name-of-day-is 
+					Saturday use: Title<inr>sid daySaturday sid AfterChristmas</>End-Title
+					Sunday use: Title<inr>sid daySunday sid AfterChristmas</>End-Title
+					Monday use: Title<inr>sid daySunday sid AfterChristmas</>End-Title
+					otherwise use: Title<inr>sid EkTouMinaiou</>End-Title
+				end-when
+			Dec 27 use: Title<inr>sid TouProtomartyros</>End-Title
+			Dec 28, 29 use:
+				when-name-of-day-is
+					Saturday use: Title<inr>sid daySaturday sid AfterChristmas</>End-Title
+					Sunday use: Title<inr>sid daySunday sid AfterChristmas</>End-Title
+					otherwise use:
+						when-date-is
+							Dec 29 use: Title<inr>sid TonAgion</>End-Title
+						end-when
+				end-when		
+			Dec 30 thru 31 use:
+				when-name-of-day-is Sunday
+					use: Title<inr>sid daySunday sid BeforeEpiphany</>End-Title
+				end-when
+		end-when
+	End-Section
+
+	Section me_ep_book
+		when-date-is
+			Jan 1 use: Insert_section bk.ap.me.m01.sections.d01.ep_book End-Insert
+			Jan 2 thru 5 use:
+				when-name-of-day-is 
+					Saturday use: Insert_section bk.ap.me.m12.sections.dSatBE.ep_book End-Insert
+					Sunday use: Insert_section bk.ap.me.m12.sections.dSunBE.ep_book End-Insert
+					otherwise use:
+						when-date-is
+							Jan 2 use: Insert_section bk.ap.me.m01.sections.d02.ep_book End-Insert
+							Jan 4 use: Insert_section bk.ap.me.m01.sections.d04.ep_book End-Insert
+						end-when
+				end-when	
+			Jan 6 use: Insert_section bk.ap.me.m01.sections.d06.ep_book End-Insert
+			Jan 7 use: Insert_section bk.ap.me.m01.sections.d07.ep_book End-Insert
+			Jan 8, 9, 10, 12, 13 use:
+				when-name-of-day-is
+					Saturday use: Insert_section bk.ap.me.m01.sections.dSatAE.ep_book End-Insert
+					Sunday use: Insert_section bk.ap.me.m01.sections.dSunAE.ep_book End-Insert
+					otherwise use:
+						when-date-is
+							Jan 9 use: Insert_section bk.ap.me.m01.sections.d09.ep_book End-Insert
+							Jan 10 use: Insert_section bk.ap.me.m01.sections.d10.ep_book End-Insert
+						end-when
+				end-when			
+			Jan 11 use: 
+				when-name-of-day-is
+					Saturday use: Insert_section bk.ap.me.m01.sections.d11.ep_book End-Insert
+					Sunday use: Insert_section bk.ap.me.m01.sections.d11.ep_book End-Insert
+					otherwise use: Insert_section bk.ap.me.m01.sections.d11.ep_book End-Insert
+				end-when
+			Jan 14 use:
+				when-name-of-day-is
+					Saturday use: Insert_section bk.ap.me.m01.sections.dSatAE.ep_book End-Insert
+					Sunday use: Insert_section bk.ap.me.m01.sections.dSunAE.ep_book End-Insert
+					otherwise use: Insert_section bk.ap.me.m01.sections.d14.ep_book End-Insert
+				end-when
+			Jan 15 use: Insert_section bk.ap.me.m01.sections.d15.ep_book End-Insert
+			Jan 16 use: Insert_section bk.ap.me.m01.sections.d16.ep_book End-Insert
+			Jan 17 use: Insert_section bk.ap.me.m01.sections.d17.ep_book End-Insert
+			Jan 18 use: Insert_section bk.ap.me.m01.sections.d18.ep_book End-Insert
+			Jan 19 use: Insert_section bk.ap.me.m01.sections.d19.ep_book End-Insert
+			Jan 20 use: Insert_section bk.ap.me.m01.sections.d20.ep_book End-Insert
+			Jan 21 use: Insert_section bk.ap.me.m01.sections.d21.ep_book End-Insert
+			Jan 22 use: Insert_section bk.ap.me.m01.sections.d22.ep_book End-Insert
+			Jan 23 use: Insert_section bk.ap.me.m01.sections.d23.ep_book End-Insert
+			Jan 24 use: Insert_section bk.ap.me.m01.sections.d24.ep_book End-Insert
+			Jan 25 use: Insert_section bk.ap.me.m01.sections.d25.ep_book End-Insert
+			Jan 27 use: Insert_section bk.ap.me.m01.sections.d27.ep_book End-Insert
+			Jan 28 use: Insert_section bk.ap.me.m01.sections.d28.ep_book End-Insert
+			Jan 29 use: Insert_section bk.ap.me.m01.sections.d29.ep_book End-Insert
+			Jan 30 use: Insert_section bk.ap.me.m01.sections.d30.ep_book End-Insert
+			Jan 31 use: Insert_section bk.ap.me.m01.sections.d31.ep_book End-Insert
+			Feb 1 use: Insert_section bk.ap.me.m02.sections.d01.ep_book End-Insert
+			Feb 2 use: Insert_section bk.ap.me.m02.sections.d02.ep_book End-Insert
+			Feb 3 use: Insert_section bk.ap.me.m02.sections.d03.ep_book End-Insert
+			Feb 6 use: Insert_section bk.ap.me.m02.sections.d06.ep_book End-Insert
+			Feb 8 use: Insert_section bk.ap.me.m02.sections.d08.ep_book End-Insert
+			Feb 9 use: Insert_section bk.ap.me.m02.sections.d09.ep_book End-Insert
+			Feb 10 use:	Insert_section bk.ap.me.m02.sections.d10.ep_book End-Insert
+			Feb 11 use:	Insert_section bk.ap.me.m02.sections.d11.ep_book End-Insert
+			Feb 15 use:	Insert_section bk.ap.me.m02.sections.d15.ep_book End-Insert
+			Feb 17 use:	Insert_section bk.ap.me.m02.sections.d17.ep_book End-Insert
+			Feb 23 use:	Insert_section bk.ap.me.m02.sections.d23.ep_book End-Insert
+			Feb 24 use:	Insert_section bk.ap.me.m02.sections.d24.ep_book End-Insert
+			Feb 26 use:	Insert_section bk.ap.me.m02.sections.d26.ep_book End-Insert
+			Mar 9, 10 use: Insert_section bk.ap.me.m03.sections.d09.ep_book End-Insert
+			Mar 25 use: Insert_section bk.ap.me.m03.sections.d25.ep_book End-Insert
+			Mar 26 use: Insert_section bk.ap.me.m03.sections.d26.ep_book End-Insert
+			Mar 30 use: Insert_section bk.ap.me.m03.sections.d30.ep_book End-Insert
+			Apr 1 use: Insert_section bk.ap.me.m04.sections.d01.ep_book End-Insert
+			Apr 10 use: Insert_section bk.ap.me.m04.sections.d10.ep_book End-Insert
+			Apr 23 use: Insert_section bk.ap.me.m04.sections.d23.ep_book End-Insert
+			Apr 25 use: Insert_section bk.ap.me.m04.sections.d25.ep_book End-Insert
+			Apr 29 use: Insert_section bk.ap.me.m04.sections.d29.ep_book End-Insert
+			Apr 30 use: Insert_section bk.ap.me.m04.sections.d30.ep_book End-Insert
+			May 1 use: Insert_section bk.ap.me.m05.sections.d01.ep_book End-Insert
+			May 2 use: Insert_section bk.ap.me.m05.sections.d02.ep_book End-Insert
+			May 7 use: Insert_section bk.ap.me.m05.sections.d07.ep_book End-Insert
+			May 8 use: Insert_section bk.ap.me.m05.sections.d08.ep_book End-Insert
+			May 9 use: Insert_section bk.ap.me.m05.sections.d09.ep_book End-Insert
+			May 10 use: Insert_section bk.ap.me.m05.sections.d10.ep_book End-Insert
+			May 11 use: Insert_section bk.ap.me.m05.sections.d11.ep_book End-Insert
+			May 15 use: Insert_section bk.ap.me.m05.sections.d15.ep_book End-Insert
+			May 20 use: Insert_section bk.ap.me.m05.sections.d20.ep_book End-Insert
+			May 21 use: Insert_section bk.ap.me.m05.sections.d25.ep_book End-Insert
+			May 24 use: Insert_section bk.ap.me.m05.sections.d24.ep_book End-Insert
+			May 25 use: Insert_section bk.ap.me.m05.sections.d25.ep_book End-Insert
+			May 26 use: Insert_section bk.ap.me.m05.sections.d26.ep_book End-Insert
+			May 29 use: Insert_section bk.ap.me.m05.sections.d29.ep_book End-Insert
+			Jun 2 use:	Insert_section bk.ap.me.m06.sections.d02.ep_book End-Insert
+			Jun 4 use:	Insert_section bk.ap.me.m06.sections.d04.ep_book End-Insert
+			Jun 8 use:	Insert_section bk.ap.me.m06.sections.d08.ep_book End-Insert
+			Jun 9 use:	Insert_section bk.ap.me.m06.sections.d09.ep_book End-Insert
+			Jun 11 use:	Insert_section bk.ap.me.m06.sections.d11.ep_book End-Insert
+			Jun 12 use:	Insert_section bk.ap.me.m06.sections.d12.ep_book End-Insert
+			Jun 14 use:	Insert_section bk.ap.me.m06.sections.d14a.ep_book End-Insert //Prophet
+		//	Jun 14 use:	Insert_section bk.ap.me.m06.sections.d14b.ep_book End-Insert //Hierarch
+			Jun 17 use:	Insert_section bk.ap.me.m06.sections.d17.ep_book End-Insert
+			Jun 19 use:	Insert_section bk.ap.me.m06.sections.d19.ep_book End-Insert
+			Jun 24 use:	Insert_section bk.ap.me.m06.sections.d24.ep_book End-Insert
+			Jun 25 use:	Insert_section bk.ap.me.m06.sections.d25.ep_book End-Insert
+			Jun 26 use:	Insert_section bk.ap.me.m06.sections.d26.ep_book End-Insert
+			Jun 27 use:	Insert_section bk.ap.me.m06.sections.d27.ep_book End-Insert
+			Jun 28 use:	Insert_section bk.ap.me.m06.sections.d28.ep_book End-Insert
+			Jun 29 use:	Insert_section bk.ap.me.m06.sections.d29.ep_book End-Insert
+			Jun 30 use: Insert_section bk.ap.me.m06.sections.d30.ep_book End-Insert
+			Jul 1 use: Insert_section bk.ap.me.m07.sections.d01.ep_book End-Insert
+			Jul 2 use: Insert_section bk.ap.me.m07.sections.d02.ep_book End-Insert
+			Jul 4 use: Insert_section bk.ap.me.m07.sections.d04.ep_book End-Insert
+			Jul 5 use: Insert_section bk.ap.me.m12.sections.d05.ep_book End-Insert
+			Jul 8 use: Insert_section bk.ap.me.m07.sections.d08.ep_book End-Insert
+			Jul 9 use: Insert_section bk.ap.me.m07.sections.d09.ep_book End-Insert
+			Jul 11 use: Insert_section bk.ap.me.m07.sections.d11.ep_book End-Insert
+			Jul 12 use: Insert_section bk.ap.me.m12.sections.d06.ep_book End-Insert
+			Jul 13 thru 19 use:
+				when-name-of-day-is Sunday 
+					use: Insert_section bk.ap.me.m07.sections.dHF.ep_book End-Insert
+					otherwise use:
+						when-date-is
+							Jul 13 use: Insert_section bk.ap.me.m07.sections.d13.ep_book End-Insert
+							Jul 14 use: Insert_section bk.ap.me.m07.sections.d14.ep_book End-Insert
+							Jul 15 use: Insert_section bk.ap.me.m07.sections.d15.ep_book End-Insert
+							Jul 17 use: Insert_section bk.ap.me.m07.sections.d17.ep_book End-Insert
+							Jul 18 use: Insert_section bk.ap.me.m07.sections.d18.ep_book End-Insert
+						end-when
+				end-when		
+			Jul 20 use: Insert_section bk.ap.me.m07.sections.d20.ep_book End-Insert
+			Jul 21 use: Insert_section bk.ap.me.m07.sections.d21.ep_book End-Insert
+			Jul 22 use: Insert_section bk.ap.me.m07.sections.d22.ep_book End-Insert
+			Jul 24 use: Insert_section bk.ap.me.m07.sections.d24.ep_book End-Insert
+			Jul 25 use: Insert_section bk.ap.me.m07.sections.d25.ep_book End-Insert
+		//	Jul 26 use: Insert_section bk.ap.me.m07.sections.d26a.ep_book End-Insert	//St Hermolaos
+			Jul 26 use: Insert_section bk.ap.me.m07.sections.d26b.ep_book End-Insert	//St Paraskevi
+			Jul 27 use: Insert_section bk.ap.me.m07.sections.d27.ep_book End-Insert
+			Jul 28 use: Insert_section bk.ap.me.m07.sections.d28.ep_book End-Insert
+			Jul 29 use: Insert_section bk.ap.me.m07.sections.d29.ep_book End-Insert
+			Jul 31 use: Insert_section bk.ap.me.m07.sections.d31.ep_book End-Insert
+			Aug 1 use: Insert_section bk.ap.me.m08.sections.d01.ep_book End-Insert
+			Aug 2 use: Insert_section bk.ap.me.m08.sections.d02.ep_book End-Insert
+			Aug 3 use: Insert_section bk.ap.me.m08.sections.d03.ep_book End-Insert
+		//	Aug 4 use: Insert_section bk.ap.me.m08.sections.d04.ep_book End-Insert
+			Aug 6 use: Insert_section bk.ap.me.m08.sections.d06.ep_book End-Insert
+			Aug 7 use: Insert_section bk.ap.me.m08.sections.d07.ep_book End-Insert
+			Aug 9 use: Insert_section bk.ap.me.m08.sections.d09.ep_book End-Insert
+			Aug 10 use: Insert_section bk.ap.me.m08.sections.d10.ep_book End-Insert
+			Aug 11 use: Insert_section bk.ap.me.m08.sections.d11.ep_book End-Insert
+			Aug 13 use: Insert_section bk.ap.me.m08.sections.d13.ep_book End-Insert
+			Aug 15 use: Insert_section bk.ap.me.m08.sections.d15.ep_book End-Insert
+			Aug 16 use: Insert_section bk.ap.me.m08.sections.d16.ep_book End-Insert
+			Aug 18 use: Insert_section bk.ap.me.m08.sections.d18.ep_book End-Insert
+			Aug 20 use: Insert_section bk.ap.me.m08.sections.d20.ep_book End-Insert
+			Aug 25 use: Insert_section bk.ap.me.m08.sections.d25.ep_book End-Insert
+			Aug 26 use: Insert_section bk.ap.me.m08.sections.d26.ep_book End-Insert
+			Aug 27 use: Insert_section bk.ap.me.m08.sections.d27.ep_book End-Insert
+			Aug 29 use: Insert_section bk.ap.me.m08.sections.d29.ep_book End-Insert
+			Aug 31 use: Insert_section bk.ap.me.m08.sections.d31.ep_book End-Insert
+			Sep 1 use: Insert_section bk.ap.me.m09.sections.d01.ep_book End-Insert
+		//	Sep 1 use: Insert_section bk.ap.me.m09.sections.d01.ep2_book End-Insert
+			Sep 2 use: Insert_section bk.ap.me.m09.sections.d02.ep_book End-Insert
+		//	Sep 2 use: Insert_section bk.ap.me.m09.sections.d02.ep2_book End-Insert
+			Sep 3 use: Insert_section bk.ap.me.m09.sections.d03.ep_book End-Insert
+		//	Sep 3 use: Insert_section bk.ap.me.m09.sections.d03.ep2_book End-Insert
+			Sep 4 use: Insert_section bk.ap.me.m09.sections.d04.ep_book End-Insert
+			Sep 5 use: Insert_section bk.ap.me.m09.sections.d05.ep_book End-Insert
+			Sep 6 use: Insert_section bk.ap.me.m09.sections.d06.ep_book End-Insert
+			Sep 7 thru 13 use:
+				when-name-of-day-is 
+					Saturday use: Insert_section bk.ap.me.m09.sections.dSatBC.ep_book End-Insert
+					Sunday use: Insert_section bk.ap.me.m09.sections.dSunBC.ep_book End-Insert
+					otherwise use:
+						when-date-is
+							Sep 7 use: Insert_section bk.ap.me.m09.sections.d07.ep_book End-Insert
+							Sep 8 use: Insert_section bk.ap.me.m09.sections.d08.ep_book End-Insert
+							Sep 9 use: Insert_section bk.ap.me.m09.sections.d09.ep_book End-Insert
+							Sep 13 use: Insert_section bk.ap.me.m09.sections.d13.ep_book End-Insert
+						end-when
+				end-when		
+			Sep 14 use: Insert_section bk.ap.me.m09.sections.d14.ep_book End-Insert
+			Sep 15 thru 21 use:
+				when-name-of-day-is
+					Saturday use: Insert_section bk.ap.me.m09.sections.dSatAC.ep_book End-Insert
+					Sunday use: Insert_section bk.ap.me.m09.sections.dSunAC.ep_book End-Insert
+					otherwise use:
+						when-date-is
+							Sep 15 use: Insert_section bk.ap.me.m09.sections.d15.ep_book End-Insert
+							Sep 16 use: Insert_section bk.ap.me.m09.sections.d16.ep_book End-Insert
+							Sep 20 use: Insert_section bk.ap.me.m09.sections.d20.ep_book End-Insert
+						end-when
+				end-when		
+			Sep 22 use: Insert_section bk.ap.me.m09.sections.d22.ep_book End-Insert
+			Sep 23 use: Insert_section bk.ap.me.m09.sections.d23.ep_book End-Insert
+			Sep 24 use: Insert_section bk.ap.me.m09.sections.d24.ep_book End-Insert //Theotokos icon
+		//	Sep 24 use: Insert_section bk.ap.me.m09.sections.d24.ep2_title End-Insert //St. Thecla
+			Sep 26 use: Insert_section bk.ap.me.m09.sections.d26.ep_book End-Insert
+			Sep 27 use: Insert_section bk.ap.me.m09.sections.d27.ep_book End-Insert
+			Sep 28 use: Insert_section bk.ap.me.m09.sections.d28.ep_book End-Insert
+			Sep 29 use: Insert_section bk.ap.me.m09.sections.d29.ep_book End-Insert
+			Sep 30 use: Insert_section bk.ap.me.m09.sections.d30.ep_book End-Insert
+			Oct 1 use: Insert_section bk.ap.me.m10.sections.d01.ep_book End-Insert
+			Oct 2 use: Insert_section bk.ap.me.m10.sections.d02.ep_book End-Insert
+			Oct 3 use: Insert_section bk.ap.me.m10.sections.d03.ep_book End-Insert
+			Oct 6 use: Insert_section bk.ap.me.m10.sections.d06.ep_book End-Insert
+			Oct 7 use: Insert_section bk.ap.me.m10.sections.d07.ep_book End-Insert
+			Oct 8 use: Insert_section bk.ap.me.m10.sections.d08.ep_book End-Insert
+			Oct 9 use: Insert_section bk.ap.me.m10.sections.d09.ep_book End-Insert
+			Oct 10 use: Insert_section bk.ap.me.m10.sections.d10.ep_book End-Insert
+			Oct 11 thru 17 use:
+				when-name-of-day-is 
+					Sunday use: Insert_section bk.ap.me.m10.sections.dHF.ep_book End-Insert
+					otherwise use:
+						when-date-is
+							Oct 11 use: Insert_section bk.ap.me.m10.sections.d11.ep_book End-Insert
+							Oct 12 use: Insert_section bk.ap.me.m10.sections.d12.ep_book End-Insert
+							Oct 13 use: Insert_section bk.ap.me.m10.sections.d13.ep_book End-Insert
+							Oct 14 use: Insert_section bk.ap.me.m10.sections.d14.ep_book End-Insert
+							Oct 15 use: Insert_section bk.ap.me.m10.sections.d15.ep_book End-Insert
+							Oct 16 use: Insert_section bk.ap.me.m10.sections.d16.ep_book End-Insert
+							Oct 17 use: Insert_section bk.ap.me.m10.sections.d17.ep_book End-Insert
+						end-when
+				end-when		
+			Oct 18 use: Insert_section bk.ap.me.m10.sections.d18.ep_book End-Insert
+			Oct 19 use: Insert_section bk.ap.me.m10.sections.d19.ep_book End-Insert
+			Oct 20 use: Insert_section bk.ap.me.m10.sections.d20.ep_book End-Insert //St Artemios
+	//		Oct 20 use: Insert_section bk.ap.me.m10.sections.d20.ep2_title End-Insert //St. Gerasimos
+			Oct 21 use: Insert_section bk.ap.me.m10.sections.d21.ep_book End-Insert
+			Oct 22 use: Insert_section bk.ap.me.m10.sections.d22.ep_book End-Insert //St Averkios
+	//		Oct 22 use: Insert_section bk.ap.me.m10.sections.d22.ep2_title End-Insert //Seven Children
+			Oct 23 use: Insert_section bk.ap.me.m10.sections.d23.ep_book End-Insert
+			Oct 24 use: Insert_section bk.ap.me.m10.sections.d24.ep_book End-Insert
+			Oct 25 use: Insert_section bk.ap.me.m10.sections.d25.ep_book End-Insert
+			Oct 26 use: Insert_section bk.ap.me.m10.sections.d26.ep_book End-Insert
+			Oct 28 use: Insert_section bk.ap.me.m10.sections.d28.ep_book End-Insert
+			Nov 1 use: Insert_section bk.ap.me.m11.sections.d01.ep_book End-Insert
+			Nov 2 use: Insert_section bk.ap.me.m11.sections.d02.ep_book End-Insert
+			Nov 3 use: Insert_section bk.ap.me.m11.sections.d03.ep_book End-Insert
+			Nov 4 use: Insert_section bk.ap.me.m11.sections.d04.ep_book End-Insert
+			Nov 5 use: Insert_section bk.ap.me.m11.sections.d05.ep_book End-Insert
+			Nov 6 use: Insert_section bk.ap.me.m11.sections.d06.ep_book End-Insert
+			Nov 7 use: Insert_section bk.ap.me.m11.sections.d07.ep_book End-Insert
+			Nov 8 use: Insert_section bk.ap.me.m11.sections.d08.ep_book End-Insert
+			Nov 9 use: Insert_section bk.ap.me.m11.sections.d09.ep_book End-Insert
+			Nov 10 use: Insert_section bk.ap.me.m11.sections.d10.ep_book End-Insert
+			Nov 11 use: Insert_section bk.ap.me.m11.sections.d11.ep_book End-Insert
+			Nov 12 use: Insert_section bk.ap.me.m11.sections.d12.ep_book End-Insert
+			Nov 13 use: Insert_section bk.ap.me.m11.sections.d13.ep_book End-Insert
+			Nov 14 use: Insert_section bk.ap.me.m11.sections.d14.ep_book End-Insert
+			Nov 15 use: Insert_section bk.ap.me.m11.sections.d15.ep_book End-Insert
+			Nov 16 use: Insert_section bk.ap.me.m11.sections.d16.ep_book End-Insert
+			Nov 17 use: Insert_section bk.ap.me.m11.sections.d17.ep_book End-Insert
+			Nov 18 use: Insert_section bk.ap.me.m11.sections.d18.ep_book End-Insert
+			Nov 20 use: Insert_section bk.ap.me.m11.sections.d20.ep_book End-Insert
+			Nov 21 use: Insert_section bk.ap.me.m11.sections.d21.ep_book End-Insert
+			Nov 22 use: Insert_section bk.ap.me.m11.sections.d22.ep_book End-Insert
+			Nov 23 use: Insert_section bk.ap.me.m11.sections.d23.ep_book End-Insert
+			Nov 24 use: Insert_section bk.ap.me.m11.sections.d24.ep_book End-Insert
+			Nov 25 use: Insert_section bk.ap.me.m11.sections.d25.ep_book End-Insert
+			Nov 26 use: Insert_section bk.ap.me.m11.sections.d26.ep_book End-Insert
+			Nov 27 use: Insert_section bk.ap.me.m11.sections.d27.ep_book End-Insert
+			Nov 28 use: Insert_section bk.ap.me.m11.sections.d28.ep_book End-Insert
+			Nov 29 use: Insert_section bk.ap.me.m11.sections.d29.ep_book End-Insert
+			Nov 30 use: Insert_section bk.ap.me.m11.sections.d30.ep_book End-Insert
+			Dec 1 use: Insert_section bk.ap.me.m12.sections.d01.ep_book End-Insert
+			Dec 2 use: Insert_section bk.ap.me.m12.sections.d02.ep_book End-Insert
+			Dec 3 use: Insert_section bk.ap.me.m12.sections.d03.ep_book End-Insert
+			Dec 4 use: Insert_section bk.ap.me.m12.sections.d04.ep_book End-Insert
+			Dec 5 use: Insert_section bk.ap.me.m12.sections.d05.ep_book End-Insert
+			Dec 6 use: Insert_section bk.ap.me.m12.sections.d06.ep_book End-Insert
+			Dec 7 use: Insert_section bk.ap.me.m12.sections.d07.ep_book End-Insert
+			Dec 8 use: Insert_section bk.ap.me.m12.sections.d08.ep_book End-Insert
+			Dec 9 use: Insert_section bk.ap.me.m12.sections.d09.ep_book End-Insert
+			Dec 10 use: Insert_section bk.ap.me.m12.sections.d10.ep_book End-Insert
+			Dec 11, 13, 14, 16, 17 use:
+				when-name-of-day-is 
+					Sunday use: Insert_section bk.ap.me.m12.sections.dFF.ep_book End-Insert
+					otherwise use:
+						when-date-is
+							Dec 11 use: Insert_section bk.ap.me.m12.sections.d11.ep_book End-Insert
+							Dec 13 use: Insert_section bk.ap.me.m12.sections.d13.ep_book End-Insert
+							Dec 14 use: Insert_section bk.ap.me.m12.sections.d14.ep_book End-Insert
+							Dec 16 use: Insert_section bk.ap.me.m12.sections.d16.ep_book End-Insert
+							Dec 17 use: Insert_section bk.ap.me.m12.sections.d17.ep_book End-Insert //Daniel
+						end-when
+				end-when	
+			Dec 12 use: Insert_section bk.ap.me.m12.sections.d12.ep_book End-Insert
+			Dec 15 use: Insert_section bk.ap.me.m12.sections.d12.ep_book End-Insert
+		//	Dec 17 use: Insert_section bk.ap.me.m12.sections.d17b.ep_book End-Insert //St Dionysios
+			Dec 18 thru 24 use:
+				when-name-of-day-is 
+					Saturday use: Insert_section bk.ap.me.m12.sections.dSatBC.ep_book End-Insert
+					Sunday use: Insert_section bk.ap.me.m12.sections.dSunBC.ep_book End-Insert
+					otherwise use:
+						when-date-is
+							Dec 20 use: Insert_section bk.ap.me.m12.sections.d20.ep_book End-Insert
+							Dec 22 use: Insert_section bk.ap.me.m12.sections.d22.ep_book End-Insert
+						end-when
+				end-when	
+			Dec 25 use: Insert_section bk.ap.me.m12.sections.d25.ep_book End-Insert
+			Dec 26 use: 
+				when-name-of-day-is 
+					Saturday use: Insert_section bk.ap.me.m12.sections.dSatAC.ep_book End-Insert
+					Sunday use: Insert_section bk.ap.me.m12.sections.dSunAC.ep_book End-Insert
+					Monday use: Insert_section bk.ap.me.m12.sections.dSunAC.ep_book End-Insert
+					otherwise use: Insert_section bk.ap.me.m12.sections.d26.ep_book End-Insert
+				end-when
+			Dec 27 use: Insert_section bk.ap.me.m12.sections.d27.ep_book End-Insert
+			Dec 28, 29 use:
+				when-name-of-day-is
+					Saturday use: Insert_section bk.ap.me.m12.sections.dSatAC.ep_book End-Insert
+					Sunday use: Insert_section bk.ap.me.m12.sections.dSunAC.ep_book End-Insert
+					otherwise use:
+						when-date-is
+							Dec 29 use: Insert_section bk.ap.me.m12.sections.d29.ep_book End-Insert
+						end-when
+				end-when		
+			Dec 30 thru 31 use:
+				when-name-of-day-is Sunday
+					use: Insert_section bk.ap.me.m12.sections.dSunBE.ep_book End-Insert	//Sun Before Epiphany
+				end-when
+		end-when
+	End-Section
+
+	Section me_ep_lesson
+		when-date-is
+			Jan 1 use: Insert_section bk.ap.me.m01.sections.d01.ep_lesson End-Insert
+			Jan 2 thru 5 use:
+				when-name-of-day-is 
+					Saturday use: Insert_section bk.ap.me.m12.sections.dSatBE.ep_lesson End-Insert
+					Sunday use: Insert_section bk.ap.me.m12.sections.dSunBE.ep_lesson End-Insert
+					otherwise use:
+						when-date-is
+							Jan 2 use: Insert_section bk.ap.me.m01.sections.d02.ep_lesson End-Insert
+							Jan 4 use: Insert_section bk.ap.me.m01.sections.d04.ep_lesson End-Insert
+						end-when
+				end-when	
+			Jan 6 use: Insert_section bk.ap.me.m01.sections.d06.ep_lesson End-Insert
+			Jan 7 use: Insert_section bk.ap.me.m01.sections.d07.ep_lesson End-Insert
+			Jan 8, 9, 10, 12, 13 use:
+				when-name-of-day-is
+					Saturday use: Insert_section bk.ap.me.m01.sections.dSatAE.ep_lesson End-Insert
+					Sunday use: Insert_section bk.ap.me.m01.sections.dSunAE.ep_lesson End-Insert
+					otherwise use:
+						when-date-is
+							Jan 9 use: Insert_section bk.ap.me.m01.sections.d09.ep_lesson End-Insert
+							Jan 10 use: Insert_section bk.ap.me.m01.sections.d10.ep_lesson End-Insert
+						end-when
+				end-when			
+			Jan 11 use: 
+				when-name-of-day-is
+					Saturday use: Insert_section bk.ap.me.m01.sections.d11.ep_lesson End-Insert
+					Sunday use: Insert_section bk.ap.me.m01.sections.d11.ep_lesson End-Insert
+					otherwise use: Insert_section bk.ap.me.m01.sections.d11.ep_lesson End-Insert
+				end-when
+			Jan 14 use:
+				when-name-of-day-is
+					Saturday use: Insert_section bk.ap.me.m01.sections.dSatAE.ep_lesson End-Insert
+					Sunday use: Insert_section bk.ap.me.m01.sections.dSunAE.ep_lesson End-Insert
+					otherwise use: Insert_section bk.ap.me.m01.sections.d14.ep_lesson End-Insert
+				end-when
+			Jan 15 use: Insert_section bk.ap.me.m01.sections.d15.ep_lesson End-Insert
+			Jan 16 use: Insert_section bk.ap.me.m01.sections.d16.ep_lesson End-Insert
+			Jan 17 use: Insert_section bk.ap.me.m01.sections.d17.ep_lesson End-Insert
+			Jan 18 use: Insert_section bk.ap.me.m01.sections.d18.ep_lesson End-Insert
+			Jan 19 use: Insert_section bk.ap.me.m01.sections.d19.ep_lesson End-Insert
+			Jan 20 use: Insert_section bk.ap.me.m01.sections.d20.ep_lesson End-Insert
+			Jan 21 use: Insert_section bk.ap.me.m01.sections.d21.ep_lesson End-Insert
+			Jan 22 use: Insert_section bk.ap.me.m01.sections.d22.ep_lesson End-Insert
+			Jan 23 use: Insert_section bk.ap.me.m01.sections.d23.ep_lesson End-Insert
+			Jan 24 use: Insert_section bk.ap.me.m01.sections.d24.ep_lesson End-Insert
+			Jan 25 use: Insert_section bk.ap.me.m01.sections.d25.ep_lesson End-Insert
+			Jan 27 use: Insert_section bk.ap.me.m01.sections.d27.ep_lesson End-Insert
+			Jan 28 use: Insert_section bk.ap.me.m01.sections.d28.ep_lesson End-Insert
+			Jan 29 use: Insert_section bk.ap.me.m01.sections.d29.ep_lesson End-Insert
+			Jan 30 use: Insert_section bk.ap.me.m01.sections.d30.ep_lesson End-Insert
+			Jan 31 use: Insert_section bk.ap.me.m01.sections.d31.ep_lesson End-Insert
+			Feb 1 use: Insert_section bk.ap.me.m02.sections.d01.ep_lesson End-Insert
+			Feb 2 use: Insert_section bk.ap.me.m02.sections.d02.ep_lesson End-Insert
+			Feb 3 use: Insert_section bk.ap.me.m02.sections.d03.ep_lesson End-Insert
+			Feb 6 use: Insert_section bk.ap.me.m02.sections.d06.ep_lesson End-Insert
+			Feb 8 use: Insert_section bk.ap.me.m02.sections.d08.ep_lesson End-Insert
+			Feb 9 use: Insert_section bk.ap.me.m02.sections.d09.ep_lesson End-Insert
+			Feb 10 use:	Insert_section bk.ap.me.m02.sections.d10.ep_lesson End-Insert
+			Feb 11 use:	Insert_section bk.ap.me.m02.sections.d11.ep_lesson End-Insert
+			Feb 15 use:	Insert_section bk.ap.me.m02.sections.d15.ep_lesson End-Insert
+			Feb 17 use:	Insert_section bk.ap.me.m02.sections.d17.ep_lesson End-Insert
+			Feb 23 use:	Insert_section bk.ap.me.m02.sections.d23.ep_lesson End-Insert
+			Feb 24 use:	Insert_section bk.ap.me.m02.sections.d24.ep_lesson End-Insert
+			Feb 26 use:	Insert_section bk.ap.me.m02.sections.d26.ep_lesson End-Insert
+			Mar 9, 10 use: Insert_section bk.ap.me.m03.sections.d09.ep_lesson End-Insert
+			Mar 25 use: Insert_section bk.ap.me.m03.sections.d25.ep_lesson End-Insert
+			Mar 26 use: Insert_section bk.ap.me.m03.sections.d26.ep_lesson End-Insert
+			Mar 30 use: Insert_section bk.ap.me.m03.sections.d30.ep_lesson End-Insert
+			Apr 1 use: Insert_section bk.ap.me.m04.sections.d01.ep_lesson End-Insert
+			Apr 10 use: Insert_section bk.ap.me.m04.sections.d10.ep_lesson End-Insert
+			Apr 23 use: Insert_section bk.ap.me.m04.sections.d23.ep_lesson End-Insert
+			Apr 25 use: Insert_section bk.ap.me.m04.sections.d25.ep_lesson End-Insert
+			Apr 29 use: Insert_section bk.ap.me.m04.sections.d29.ep_lesson End-Insert
+			Apr 30 use: Insert_section bk.ap.me.m04.sections.d30.ep_lesson End-Insert
+			May 1 use: Insert_section bk.ap.me.m05.sections.d01.ep_lesson End-Insert
+			May 2 use: Insert_section bk.ap.me.m05.sections.d02.ep_lesson End-Insert
+			May 7 use: Insert_section bk.ap.me.m05.sections.d07.ep_lesson End-Insert
+			May 8 use: Insert_section bk.ap.me.m05.sections.d08.ep_lesson End-Insert
+			May 9 use: Insert_section bk.ap.me.m05.sections.d09.ep_lesson End-Insert
+			May 10 use: Insert_section bk.ap.me.m05.sections.d10.ep_lesson End-Insert
+			May 11 use: Insert_section bk.ap.me.m05.sections.d11.ep_lesson End-Insert
+			May 15 use: Insert_section bk.ap.me.m05.sections.d15.ep_lesson End-Insert
+			May 20 use: Insert_section bk.ap.me.m05.sections.d20.ep_lesson End-Insert
+			May 21 use: Insert_section bk.ap.me.m05.sections.d25.ep_lesson End-Insert
+			May 24 use: Insert_section bk.ap.me.m05.sections.d24.ep_lesson End-Insert
+			May 25 use: Insert_section bk.ap.me.m05.sections.d25.ep_lesson End-Insert
+			May 26 use: Insert_section bk.ap.me.m05.sections.d26.ep_lesson End-Insert
+			May 29 use: Insert_section bk.ap.me.m05.sections.d29.ep_lesson End-Insert
+			Jun 2 use:	Insert_section bk.ap.me.m06.sections.d02.ep_lesson End-Insert
+			Jun 4 use:	Insert_section bk.ap.me.m06.sections.d04.ep_lesson End-Insert
+			Jun 8 use:	Insert_section bk.ap.me.m06.sections.d08.ep_lesson End-Insert
+			Jun 9 use:	Insert_section bk.ap.me.m06.sections.d09.ep_lesson End-Insert
+			Jun 11 use:	Insert_section bk.ap.me.m06.sections.d11.ep_lesson End-Insert
+			Jun 12 use:	Insert_section bk.ap.me.m06.sections.d12.ep_lesson End-Insert
+			Jun 14 use:	Insert_section bk.ap.me.m06.sections.d14a.ep_lesson End-Insert //Prophet
+		//	Jun 14 use:	Insert_section bk.ap.me.m06.sections.d14b.ep_lesson End-Insert //Hierarch
+			Jun 17 use:	Insert_section bk.ap.me.m06.sections.d17.ep_lesson End-Insert
+			Jun 19 use:	Insert_section bk.ap.me.m06.sections.d19.ep_lesson End-Insert
+			Jun 24 use:	Insert_section bk.ap.me.m06.sections.d24.ep_lesson End-Insert
+			Jun 25 use:	Insert_section bk.ap.me.m06.sections.d25.ep_lesson End-Insert
+			Jun 26 use:	Insert_section bk.ap.me.m06.sections.d26.ep_lesson End-Insert
+			Jun 27 use:	Insert_section bk.ap.me.m06.sections.d27.ep_lesson End-Insert
+			Jun 28 use:	Insert_section bk.ap.me.m06.sections.d28.ep_lesson End-Insert
+			Jun 29 use:	Insert_section bk.ap.me.m06.sections.d29.ep_lesson End-Insert
+			Jun 30 use: Insert_section bk.ap.me.m06.sections.d30.ep_lesson End-Insert
+			Jul 1 use: Insert_section bk.ap.me.m07.sections.d01.ep_lesson End-Insert
+			Jul 2 use: Insert_section bk.ap.me.m07.sections.d02.ep_lesson End-Insert
+			Jul 4 use: Insert_section bk.ap.me.m07.sections.d04.ep_lesson End-Insert
+			Jul 5 use: Insert_section bk.ap.me.m12.sections.d05.ep_lesson End-Insert
+			Jul 8 use: Insert_section bk.ap.me.m07.sections.d08.ep_lesson End-Insert
+			Jul 9 use: Insert_section bk.ap.me.m07.sections.d09.ep_lesson End-Insert
+			Jul 11 use: Insert_section bk.ap.me.m07.sections.d11.ep_lesson End-Insert
+			Jul 12 use: Insert_section bk.ap.me.m12.sections.d06.ep_lesson End-Insert
+			Jul 13 thru 19 use:
+				when-name-of-day-is Sunday 
+					use: Insert_section bk.ap.me.m07.sections.dHF.ep_lesson End-Insert
+					otherwise use:
+						when-date-is
+							Jul 13 use: Insert_section bk.ap.me.m07.sections.d13.ep_lesson End-Insert
+							Jul 14 use: Insert_section bk.ap.me.m07.sections.d14.ep_lesson End-Insert
+							Jul 15 use: Insert_section bk.ap.me.m07.sections.d15.ep_lesson End-Insert
+							Jul 17 use: Insert_section bk.ap.me.m07.sections.d17.ep_lesson End-Insert
+							Jul 18 use: Insert_section bk.ap.me.m07.sections.d18.ep_lesson End-Insert
+						end-when
+				end-when		
+			Jul 20 use: Insert_section bk.ap.me.m07.sections.d20.ep_lesson End-Insert
+			Jul 21 use: Insert_section bk.ap.me.m07.sections.d21.ep_lesson End-Insert
+			Jul 22 use: Insert_section bk.ap.me.m07.sections.d22.ep_lesson End-Insert
+			Jul 24 use: Insert_section bk.ap.me.m07.sections.d24.ep_lesson End-Insert
+			Jul 25 use: Insert_section bk.ap.me.m07.sections.d25.ep_lesson End-Insert
+		//	Jul 26 use: Insert_section bk.ap.me.m07.sections.d26a.ep_lesson End-Insert	//St Hermolaos
+			Jul 26 use: Insert_section bk.ap.me.m07.sections.d26b.ep_lesson End-Insert	//St Paraskevi
+			Jul 27 use: Insert_section bk.ap.me.m07.sections.d27.ep_lesson End-Insert
+			Jul 28 use: Insert_section bk.ap.me.m07.sections.d28.ep_lesson End-Insert
+			Jul 29 use: Insert_section bk.ap.me.m07.sections.d29.ep_lesson End-Insert
+			Jul 31 use: Insert_section bk.ap.me.m07.sections.d31.ep_lesson End-Insert
+			Aug 1 use: Insert_section bk.ap.me.m08.sections.d01.ep_lesson End-Insert
+			Aug 2 use: Insert_section bk.ap.me.m08.sections.d02.ep_lesson End-Insert
+			Aug 3 use: Insert_section bk.ap.me.m08.sections.d03.ep_lesson End-Insert
+		//	Aug 4 use: Insert_section bk.ap.me.m08.sections.d04.ep_lesson End-Insert
+			Aug 6 use: Insert_section bk.ap.me.m08.sections.d06.ep_lesson End-Insert
+			Aug 7 use: Insert_section bk.ap.me.m08.sections.d07.ep_lesson End-Insert
+			Aug 9 use: Insert_section bk.ap.me.m08.sections.d09.ep_lesson End-Insert
+			Aug 10 use: Insert_section bk.ap.me.m08.sections.d10.ep_lesson End-Insert
+			Aug 11 use: Insert_section bk.ap.me.m08.sections.d11.ep_lesson End-Insert
+			Aug 13 use: Insert_section bk.ap.me.m08.sections.d13.ep_lesson End-Insert
+			Aug 15 use: Insert_section bk.ap.me.m08.sections.d15.ep_lesson End-Insert
+			Aug 16 use: Insert_section bk.ap.me.m08.sections.d16.ep_lesson End-Insert
+			Aug 18 use: Insert_section bk.ap.me.m08.sections.d18.ep_lesson End-Insert
+			Aug 20 use: Insert_section bk.ap.me.m08.sections.d20.ep_lesson End-Insert
+			Aug 25 use: Insert_section bk.ap.me.m08.sections.d25.ep_lesson End-Insert
+			Aug 26 use: Insert_section bk.ap.me.m08.sections.d26.ep_lesson End-Insert
+			Aug 27 use: Insert_section bk.ap.me.m08.sections.d27.ep_lesson End-Insert
+			Aug 29 use: Insert_section bk.ap.me.m08.sections.d29.ep_lesson End-Insert
+			Aug 31 use: Insert_section bk.ap.me.m08.sections.d31.ep_lesson End-Insert
+			Sep 1 use: Insert_section bk.ap.me.m09.sections.d01.ep_lesson End-Insert
+		//	Sep 1 use: Insert_section bk.ap.me.m09.sections.d01.ep2_lesson End-Insert
+			Sep 2 use: Insert_section bk.ap.me.m09.sections.d02.ep_lesson End-Insert
+		//	Sep 2 use: Insert_section bk.ap.me.m09.sections.d02.ep2_lesson End-Insert
+			Sep 3 use: Insert_section bk.ap.me.m09.sections.d03.ep_lesson End-Insert
+		//	Sep 3 use: Insert_section bk.ap.me.m09.sections.d03.ep2_lesson End-Insert
+			Sep 4 use: Insert_section bk.ap.me.m09.sections.d04.ep_lesson End-Insert
+			Sep 5 use: Insert_section bk.ap.me.m09.sections.d05.ep_lesson End-Insert
+			Sep 6 use: Insert_section bk.ap.me.m09.sections.d06.ep_lesson End-Insert
+			Sep 7 thru 13 use:
+				when-name-of-day-is 
+					Saturday use: Insert_section bk.ap.me.m09.sections.dSatBC.ep_lesson End-Insert
+					Sunday use: Insert_section bk.ap.me.m09.sections.dSunBC.ep_lesson End-Insert
+					otherwise use:
+						when-date-is
+							Sep 7 use: Insert_section bk.ap.me.m09.sections.d07.ep_lesson End-Insert
+							Sep 8 use: Insert_section bk.ap.me.m09.sections.d08.ep_lesson End-Insert
+							Sep 9 use: Insert_section bk.ap.me.m09.sections.d09.ep_lesson End-Insert
+							Sep 13 use: Insert_section bk.ap.me.m09.sections.d13.ep_lesson End-Insert
+						end-when
+				end-when		
+			Sep 14 use: Insert_section bk.ap.me.m09.sections.d14.ep_lesson End-Insert
+			Sep 15 thru 21 use:
+				when-name-of-day-is
+					Saturday use: Insert_section bk.ap.me.m09.sections.dSatAC.ep_lesson End-Insert
+					Sunday use: Insert_section bk.ap.me.m09.sections.dSunAC.ep_lesson End-Insert
+					otherwise use:
+						when-date-is
+							Sep 15 use: Insert_section bk.ap.me.m09.sections.d15.ep_lesson End-Insert
+							Sep 16 use: Insert_section bk.ap.me.m09.sections.d16.ep_lesson End-Insert
+							Sep 20 use: Insert_section bk.ap.me.m09.sections.d20.ep_lesson End-Insert
+						end-when
+				end-when		
+			Sep 22 use: Insert_section bk.ap.me.m09.sections.d22.ep_lesson End-Insert
+			Sep 23 use: Insert_section bk.ap.me.m09.sections.d23.ep_lesson End-Insert
+			Sep 24 use: Insert_section bk.ap.me.m09.sections.d24.ep_lesson End-Insert //icon
+		//	Sep 24 use: Insert_section bk.ap.me.m09.sections.d24.ep2_title End-Insert //St. Thecla
+			Sep 26 use: Insert_section bk.ap.me.m09.sections.d26.ep_lesson End-Insert
+			Sep 27 use: Insert_section bk.ap.me.m09.sections.d27.ep_lesson End-Insert
+			Sep 28 use: Insert_section bk.ap.me.m09.sections.d28.ep_lesson End-Insert
+			Sep 29 use: Insert_section bk.ap.me.m09.sections.d29.ep_lesson End-Insert
+			Sep 30 use: Insert_section bk.ap.me.m09.sections.d30.ep_lesson End-Insert
+			Oct 1 use: Insert_section bk.ap.me.m10.sections.d01.ep_lesson End-Insert
+			Oct 2 use: Insert_section bk.ap.me.m10.sections.d02.ep_lesson End-Insert
+			Oct 3 use: Insert_section bk.ap.me.m10.sections.d03.ep_lesson End-Insert
+			Oct 6 use: Insert_section bk.ap.me.m10.sections.d06.ep_lesson End-Insert
+			Oct 7 use: Insert_section bk.ap.me.m10.sections.d07.ep_lesson End-Insert
+			Oct 8 use: Insert_section bk.ap.me.m10.sections.d08.ep_lesson End-Insert
+			Oct 9 use: Insert_section bk.ap.me.m10.sections.d09.ep_lesson End-Insert
+			Oct 10 use: Insert_section bk.ap.me.m10.sections.d10.ep_lesson End-Insert
+			Oct 11 thru 17 use:
+				when-name-of-day-is 
+					Sunday use: Insert_section bk.ap.me.m10.sections.dHF.ep_lesson End-Insert
+					otherwise use:
+						when-date-is
+							Oct 11 use: Insert_section bk.ap.me.m10.sections.d11.ep_lesson End-Insert
+							Oct 12 use: Insert_section bk.ap.me.m10.sections.d12.ep_lesson End-Insert
+							Oct 13 use: Insert_section bk.ap.me.m10.sections.d13.ep_lesson End-Insert
+							Oct 14 use: Insert_section bk.ap.me.m10.sections.d14.ep_lesson End-Insert
+							Oct 15 use: Insert_section bk.ap.me.m10.sections.d15.ep_lesson End-Insert
+							Oct 16 use: Insert_section bk.ap.me.m10.sections.d16.ep_lesson End-Insert
+							Oct 17 use: Insert_section bk.ap.me.m10.sections.d17.ep_lesson End-Insert
+						end-when
+				end-when		
+			Oct 18 use: Insert_section bk.ap.me.m10.sections.d18.ep_lesson End-Insert
+			Oct 19 use: Insert_section bk.ap.me.m10.sections.d19.ep_lesson End-Insert
+			Oct 20 use: Insert_section bk.ap.me.m10.sections.d20.ep_lesson End-Insert //St Artemios
+	//		Oct 20 use: Insert_section bk.ap.me.m10.sections.d20.ep2_title End-Insert //St. Gerasimos
+			Oct 21 use: Insert_section bk.ap.me.m10.sections.d21.ep_lesson End-Insert
+			Oct 22 use: Insert_section bk.ap.me.m10.sections.d22.ep_lesson End-Insert //St Averkios
+	//		Oct 22 use: Insert_section bk.ap.me.m10.sections.d22.ep2_title End-Insert //Seven Children
+			Oct 23 use: Insert_section bk.ap.me.m10.sections.d23.ep_lesson End-Insert
+			Oct 24 use: Insert_section bk.ap.me.m10.sections.d24.ep_lesson End-Insert
+			Oct 25 use: Insert_section bk.ap.me.m10.sections.d25.ep_lesson End-Insert
+			Oct 26 use: Insert_section bk.ap.me.m10.sections.d26.ep_lesson End-Insert
+			Oct 28 use: Insert_section bk.ap.me.m10.sections.d28.ep_lesson End-Insert
+			Nov 1 use: Insert_section bk.ap.me.m11.sections.d01.ep_lesson End-Insert
+			Nov 2 use: Insert_section bk.ap.me.m11.sections.d02.ep_lesson End-Insert
+			Nov 3 use: Insert_section bk.ap.me.m11.sections.d03.ep_lesson End-Insert
+			Nov 4 use: Insert_section bk.ap.me.m11.sections.d04.ep_lesson End-Insert
+			Nov 5 use: Insert_section bk.ap.me.m11.sections.d05.ep_lesson End-Insert
+			Nov 6 use: Insert_section bk.ap.me.m11.sections.d06.ep_lesson End-Insert
+			Nov 7 use: Insert_section bk.ap.me.m11.sections.d07.ep_lesson End-Insert
+			Nov 8 use: Insert_section bk.ap.me.m11.sections.d08.ep_lesson End-Insert
+			Nov 9 use: Insert_section bk.ap.me.m11.sections.d09.ep_lesson End-Insert
+			Nov 10 use: Insert_section bk.ap.me.m11.sections.d10.ep_lesson End-Insert
+			Nov 11 use: Insert_section bk.ap.me.m11.sections.d11.ep_lesson End-Insert
+			Nov 12 use: Insert_section bk.ap.me.m11.sections.d12.ep_lesson End-Insert
+			Nov 13 use: Insert_section bk.ap.me.m11.sections.d13.ep_lesson End-Insert
+			Nov 14 use: Insert_section bk.ap.me.m11.sections.d14.ep_lesson End-Insert
+			Nov 15 use: Insert_section bk.ap.me.m11.sections.d15.ep_lesson End-Insert
+			Nov 16 use: Insert_section bk.ap.me.m11.sections.d16.ep_lesson End-Insert
+			Nov 17 use: Insert_section bk.ap.me.m11.sections.d17.ep_lesson End-Insert
+			Nov 18 use: Insert_section bk.ap.me.m11.sections.d18.ep_lesson End-Insert
+			Nov 20 use: Insert_section bk.ap.me.m11.sections.d20.ep_lesson End-Insert
+			Nov 21 use: Insert_section bk.ap.me.m11.sections.d21.ep_lesson End-Insert
+			Nov 22 use: Insert_section bk.ap.me.m11.sections.d22.ep_lesson End-Insert
+			Nov 23 use: Insert_section bk.ap.me.m11.sections.d23.ep_lesson End-Insert
+			Nov 24 use: Insert_section bk.ap.me.m11.sections.d24.ep_lesson End-Insert
+			Nov 25 use: Insert_section bk.ap.me.m11.sections.d25.ep_lesson End-Insert
+			Nov 26 use: Insert_section bk.ap.me.m11.sections.d26.ep_lesson End-Insert
+			Nov 27 use: Insert_section bk.ap.me.m11.sections.d27.ep_lesson End-Insert
+			Nov 28 use: Insert_section bk.ap.me.m11.sections.d28.ep_lesson End-Insert
+			Nov 29 use: Insert_section bk.ap.me.m11.sections.d29.ep_lesson End-Insert
+			Nov 30 use: Insert_section bk.ap.me.m11.sections.d30.ep_lesson End-Insert
+			Dec 1 use: Insert_section bk.ap.me.m12.sections.d01.ep_lesson End-Insert
+			Dec 2 use: Insert_section bk.ap.me.m12.sections.d02.ep_lesson End-Insert
+			Dec 3 use: Insert_section bk.ap.me.m12.sections.d03.ep_lesson End-Insert
+			Dec 4 use: Insert_section bk.ap.me.m12.sections.d04.ep_lesson End-Insert
+			Dec 5 use: Insert_section bk.ap.me.m12.sections.d05.ep_lesson End-Insert
+			Dec 6 use: Insert_section bk.ap.me.m12.sections.d06.ep_lesson End-Insert
+			Dec 7 use: Insert_section bk.ap.me.m12.sections.d07.ep_lesson End-Insert
+			Dec 8 use: Insert_section bk.ap.me.m12.sections.d08.ep_lesson End-Insert
+			Dec 9 use: Insert_section bk.ap.me.m12.sections.d09.ep_lesson End-Insert
+			Dec 10 use: Insert_section bk.ap.me.m12.sections.d10.ep_lesson End-Insert
+			Dec 11, 13, 14, 16, 17 use:
+				when-name-of-day-is 
+					Sunday use: Insert_section bk.ap.me.m12.sections.dFF.ep_lesson End-Insert
+					otherwise use:
+						when-date-is
+							Dec 11 use: Insert_section bk.ap.me.m12.sections.d11.ep_lesson End-Insert
+							Dec 13 use: Insert_section bk.ap.me.m12.sections.d13.ep_lesson End-Insert
+							Dec 14 use: Insert_section bk.ap.me.m12.sections.d14.ep_lesson End-Insert
+							Dec 16 use: Insert_section bk.ap.me.m12.sections.d16.ep_lesson End-Insert
+							Dec 17 use: Insert_section bk.ap.me.m12.sections.d17.ep_lesson End-Insert //Daniel
+						end-when
+				end-when	
+			Dec 12 use: Insert_section bk.ap.me.m12.sections.d12.ep_lesson End-Insert
+			Dec 15 use: Insert_section bk.ap.me.m12.sections.d12.ep_lesson End-Insert
+		//	Dec 17 use: Insert_section bk.ap.me.m12.sections.d17b.ep_lesson End-Insert //St Dionysios
+			Dec 18 thru 24 use:
+				when-name-of-day-is 
+					Saturday use: Insert_section bk.ap.me.m12.sections.dSatBC.ep_lesson End-Insert
+					Sunday use: Insert_section bk.ap.me.m12.sections.dSunBC.ep_lesson End-Insert
+					otherwise use:
+						when-date-is
+							Dec 20 use: Insert_section bk.ap.me.m12.sections.d20.ep_lesson End-Insert
+							Dec 22 use: Insert_section bk.ap.me.m12.sections.d22.ep_lesson End-Insert
+						end-when
+				end-when	
+			Dec 25 use: Insert_section bk.ap.me.m12.sections.d25.ep_lesson End-Insert
+			Dec 26 use: 
+				when-name-of-day-is 
+					Saturday use: Insert_section bk.ap.me.m12.sections.dSatAC.ep_lesson End-Insert
+					Sunday use: Insert_section bk.ap.me.m12.sections.dSunAC.ep_lesson End-Insert
+					Monday use: Insert_section bk.ap.me.m12.sections.dSunAC.ep_lesson End-Insert
+					otherwise use: Insert_section bk.ap.me.m12.sections.d26.ep_lesson End-Insert
+				end-when
+			Dec 27 use: Insert_section bk.ap.me.m12.sections.d27.ep_lesson End-Insert
+			Dec 28, 29 use:
+				when-name-of-day-is
+					Saturday use: Insert_section bk.ap.me.m12.sections.dSatAC.ep_lesson End-Insert
+					Sunday use: Insert_section bk.ap.me.m12.sections.dSunAC.ep_lesson End-Insert
+					otherwise use:
+						when-date-is
+							Dec 29 use: Insert_section bk.ap.me.m12.sections.d29.ep_lesson End-Insert
+						end-when
+				end-when		
+			Dec 30 thru 31 use:
+				when-name-of-day-is Sunday
+					use: Insert_section bk.ap.me.m12.sections.dSunBE.ep_lesson End-Insert	//Sun Before Epiphany
+				end-when
+		end-when
+	End-Section
+
+
+//Epistle Readings for Vesperal Liturgies
+
+	Section me_vespers_ep_book //Epiphany and Christmas
+		when-date-is
+			Jan 6 use: Insert_section bk.ap.me.m01.sections.d05.vespers.ep_book End-Insert
+			Dec 25 use: Insert_section bk.ap.me.m12.sections.d24.ep_book End-Insert
+		end-when
+	End-Section	
+	
+	Section me_vespers_ep_lesson //Epiphany and Christmas
+		when-date-is
+			Jan 6 use: Insert_section bk.ap.me.m01.sections.d05.vespers.ep_lesson End-Insert
+			Dec 25 use: Insert_section bk.ap.me.m12.sections.d24.ep_lesson End-Insert
+		end-when
+	End-Section	
+End-Template

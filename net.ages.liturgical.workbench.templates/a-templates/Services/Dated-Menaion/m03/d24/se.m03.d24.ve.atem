@@ -1,0 +1,107 @@
+Template se.m03.d24.ve 
+
+Status NA
+
+	import client_gr_GR_cog.*
+	import me.m03.d24_gr_GR_cog.*
+	import ps_gr_GR_cog.*
+
+	import da.*
+	import oc.*
+	import tr.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import poets_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 3 day 24 End_Date
+			Page_Header_Even
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	when-triodion-day-is
+		52 use:
+			Section Instance18
+				Insert_section VE._01_Beginning__.vespers End-Insert
+				Section block1
+					Insert_section VE._02_Kekragaria__.mode3__.noStichologia End-Insert
+					Para role inaudible sid psa140.v3.text End-Para
+					Para role inaudible sid psa140.v4a.text End-Para
+					Para role inaudible sid psa140.v4b.text End-Para
+					Para role inaudible sid psa140.v5a.text End-Para
+					Para role inaudible sid psa140.v5b.text sid psa140.v6a.text End-Para
+					Para role inaudible sid psa140.v6b.text sid psa140.v7.text End-Para
+					Para role inaudible sid psa140.v8.text End-Para
+					Para role inaudible sid psa140.v9.text End-Para
+				End-Section
+				Section block2
+					Title role desig sid StichiraProsomoia sid Iosif End-Title
+					Title role mixed<Tmode>rid trVE.Stichera01.mode</><Tmelody>rid trVE.Stichera01.melody</>End-Title
+					Media rid trVE.Stichera01.text End-Media
+					Verse sid psa140.v10.text End-Verse
+					Hymn rid trVE.Stichera01.text @ver media-off End-Hymn
+					Media rid trVE.Stichera02.text End-Media
+					Verse sid psa141.v2.text End-Verse
+					Hymn rid trVE.Stichera02.text @ver media-off End-Hymn
+					Title role desig sid Eteron sid Theodorou End-Title
+					Title role mixed<Tmode>rid trVE.Stichera03.mode</><Tmelody>rid trVE.Stichera03.melody</>End-Title
+					Media rid trVE.Stichera03.text End-Media
+					Verse sid psa141.v3.text End-Verse
+					Hymn rid trVE.Stichera03.text @ver media-off End-Hymn
+				End-Section
+				Section block3
+					Title role desig sid Proeortia End-Title
+					Title role mixed<Tmode>sid meVE.Stichera01.mode</><Tmelody>sid meVE.Stichera01.melody</>End-Title
+					Media sid meVE.Stichera01.text End-Media
+					Verse sid psa141.v4a.text End-Verse
+					Hymn sid meVE.Stichera01.text @ver media-off End-Hymn
+					Media sid meVE.Stichera02.text End-Media
+					Verse sid psa141.v4b.text End-Verse
+					Hymn sid meVE.Stichera02.text @ver media-off End-Hymn
+					Media sid meVE.Stichera03.text End-Media
+					Verse sid psa141.v5a.text End-Verse
+					Hymn sid meVE.Stichera03.text @ver media-off End-Hymn
+				End-Section
+				Insert_section se.tr.d054.pl.Instance01.block4 End-Insert
+				Insert_section VE._03_Stichera__.gloryboth__.me__.gloryasgloryboth_ End-Insert
+				Insert_section VE._04_Middle__.noentrance End-Insert
+				Insert_section VE._05_Readings__.reader End-Insert
+				Insert_section VE._06_Litanies__.noektenia End-Insert
+				Insert_section VE._08_Aposticha__.tr__.weekday_.idiomelamartyric End-Insert
+				Title role mixed sid DoxaKaiNyn<Tdesig>sid Proeortion</>End-Title
+				Insert_section VE._08_Aposticha__.gloryboth__.me__.gloryasgloryboth_.hymn End-Insert
+				Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
+				Insert_section AP.me1_ End-Insert
+				Insert_section VE._10_End__.lent_ End-Insert				
+				Insert_section VE._11_Dismissal__.nocommemoration End-Insert
+			End-Section
+			
+	end-when		
+
+End-Template

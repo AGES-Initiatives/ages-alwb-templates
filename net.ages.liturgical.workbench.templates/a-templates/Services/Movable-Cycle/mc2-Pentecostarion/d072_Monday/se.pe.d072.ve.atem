@@ -1,0 +1,95 @@
+Template se.pe.d072.ve 
+
+Status Final
+
+	import client_gr_GR_cog.*
+	import me.*
+	
+	import actors_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+
+	Head 
+//		Set_Date month 4 day 13 End_Date
+			Page_Header_Even
+				center  @lookup sid pa.easter lang L1 @lookup sid d.delimiter lang L1 @lookup sid pa.agape lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center  @lookup sid pa.easter lang L2 @lookup sid d.delimiter lang L2 @lookup sid pa.agape lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	Section Instance01
+		Insert_section VE._01_Beginning__.vespers End-Insert
+		Insert_section VE._02_Kekragaria__.mode2__.noStichologia End-Insert
+		Insert_section VE._03_Stichera__.pe__.s_123456as5678910 End-Insert
+		Insert_section VE._03_Stichera__.glory__.pe__.gloryasglory_ End-Insert
+		Insert_section VE._03_Stichera__.both__.pe__.bothasboth_ End-Insert
+		Insert_section VE._04_Middle__.entrance End-Insert
+		Insert_section PE.SundayVespersGospel End-Insert
+		Insert_section VE._06_Litanies__.fullektenia End-Insert
+		Insert_section VE._08_Aposticha__.pe__.s_1 End-Insert
+		Insert_section VE._08_Aposticha__.pascha End-Insert
+		Insert_section VE._08_Aposticha__.gloryboth__.pascha_ End-Insert
+		Insert_section AP.pascha__.thrice End-Insert
+		Insert_section VE._10_End__.wisdom End-Insert
+		Insert_section VE._11_Dismissal__.nocommemoration End-Insert
+	End-Section
+	
+	Section Instance02 //with St George
+	Set_Date month 4 day 23 End_Date
+		Insert_section VE._01_Beginning__.vespers End-Insert
+		when-movable-cycle-day-is 
+			72 use: Insert_section VE._02_Kekragaria__.mode2__.noStichologia End-Insert
+			73 use: Insert_section VE._02_Kekragaria__.mode3__.noStichologia End-Insert
+			74 use: Insert_section VE._02_Kekragaria__.mode4__.noStichologia End-Insert
+			75 use: Insert_section VE._02_Kekragaria__.mode5__.noStichologia End-Insert
+			77 use: Insert_section VE._02_Kekragaria__.mode8__.noStichologia End-Insert
+		end-when
+		Insert_section VE._03_Stichera__.pe__.s_1234as3456 End-Insert
+		Insert_section TI.stp.s._00_saint_.m End-Insert
+		Insert_section VE._03_Stichera__.me__.p_1234as78910 End-Insert
+		Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_ End-Insert
+		Insert_section VE._03_Stichera__.both__.pe__.bothasboth_ End-Insert
+		Insert_section VE._04_Middle__.entrance End-Insert
+		when-movable-cycle-day-is
+			72 use:
+				Insert_section PE.SundayVespersGospel End-Insert
+			otherwise use:
+				Insert_section VE._05_Readings__.reader End-Insert
+		end-when
+		Insert_section VE._06_Litanies__.fullektenia End-Insert
+		Insert_section VE._08_Aposticha__.pe__.s_1 End-Insert
+		Insert_section VE._08_Aposticha__.pascha End-Insert
+		Insert_section TI.g.s._00_saint_.m End-Insert
+		Insert_section VE._08_Aposticha__.glory__.me__.gloryasglory_.hymn End-Insert
+		Insert_section VE._08_Aposticha__.both__.pascha_ End-Insert
+		Insert_section AP.pascha__.twice End-Insert
+		Insert_section TI.s._00_saint_.m End-Insert
+		Insert_section AP.me1_.hymn End-Insert
+		Insert_section AP.pascha__.once End-Insert
+		Insert_section VE._10_End__.wisdom End-Insert
+		Insert_section VE._11_Dismissal__.specificcommemoration__.brightweek_stgeorge End-Insert
+	End-Section
+
+End-Template

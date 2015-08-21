@@ -1,0 +1,761 @@
+Template HR 
+
+Status Draft
+
+	import client_gr_GR_cog.*
+	import ho.s04_gr_GR_cog.*
+	import ho.s05_gr_GR_cog.*
+	import ho.s06_gr_GR_cog.*
+	import ho.s07_gr_GR_cog.*
+	import ho.s09_gr_GR_cog.*
+	import ho.s12_gr_GR_cog.*	
+	import ho.s13_gr_GR_cog.*
+	import ho.s22_gr_GR_cog.*
+	import le.go.os_gr_GR_cog.*
+	import le.pr.os_gr_GR_cog.*
+	import ps_gr_GR_cog.*
+
+	import da.*
+	import me.*
+	import oc.*
+	import pe.*
+	import tr.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Section smallcompline__
+		Section part1
+			Insert_section _01_Intro_ End-Insert
+			Actor sid Reader End-Actor
+			Reading sid res04 sid res01<r>sid Twelve</>End-Reading
+			Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+			Reading sid DefteProskinisomen1 End-Reading
+			Reading sid DefteProskinisomen2 End-Reading
+			Reading sid DefteProskinisomen3 End-Reading
+			Title role desig sid psa50.title End-Title
+			Reading sid	psa50.text End-Reading
+			Title role desig sid psa69.title End-Title
+			Reading sid	psa69.text End-Reading
+			Title role desig sid psa142.title End-Title
+			Reading sid	psa142.text End-Reading
+			Title role desig sid hoCO.Key0903.title End-Title
+			Reading sid	hoCO.Key0903.text sid hoCO.Key0904.text sid hoCO.Key0905.text sid hoCO.Key0906.text sid hoCO.Key0907.text End-Reading
+			Title role desig sid hoCO.Key0511.title End-Title
+			Reading sid hoCO.Key0511.text End-Reading
+		End-Section
+		//canon
+		Section part2
+			Reading sid AxionEstin.text End-Reading
+			Insert_section _01_Intro_.append.Trisagion_Prayers End-Insert
+		End-Section
+		//Kontakia
+		Section part3
+			Insert_section _04__.h1369 End-Insert
+		End-Section
+		Section part4
+			Dialog sid res01 <r>sid Twelve</>End-Dialog
+			Verse sid hoSC.VerseBeforePrayerToTheotokos.text End-Verse
+			Title role desig sid hoCO.Key1101.title End-Title
+			Title<r>sid hoCO.Key1101.poet</>End-Title
+			Reading sid hoCO.Key1101.text End-Reading	
+			Title role desig sid hoCO.Key1102.title End-Title
+			Title<r>sid hoCO.Key1102.poet</>End-Title
+			Reading sid hoCO.Key1102.text End-Reading	
+			Reading sid hoCO.Key1103.text End-Reading	
+			Reading sid hoCO.Key1104.text End-Reading	
+			Reading sid hoCO.Key1105.text End-Reading
+		End-Section
+		Section part5
+		//	Actor sid Reader End-Actor
+			Reading sid hoSC.Key0202.text End-Reading
+			Title role desig sid hoSC.Key0200.title End-Title
+			Title<r>sid hoSC.Key0201.title</>End-Title
+			Reading sid hoSC.Key0201.text End-Reading
+			Reading sid hoSC.Key0203.text End-Reading
+		End-Section
+		Section part6
+		//	Actor sid Reader End-Actor
+			Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+			Reading sid res06 End-Reading
+			Reading sid Evlogison End-Reading
+			Actor sid Priest End-Actor
+			Dialog sid dis00 sid dis01 sid dis02 sid cl.localpatronsaint1.dismissal sid dis09 sid dis10 sid dis89 End-Dialog
+			Section litany
+				Dialog sid petCompline01 End-Dialog
+				Dialog<i>sid res01p</>End-Dialog
+				Dialog sid petCompline02 End-Dialog
+				Dialog sid petCompline03 sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
+				Dialog sid petCompline04 End-Dialog
+				Dialog sid petCompline05 End-Dialog
+				Dialog sid petCompline06 End-Dialog
+				Dialog sid petCompline07 End-Dialog
+				Dialog sid petCompline08 End-Dialog
+				Dialog sid petCompline09 End-Dialog
+				Dialog sid petCompline10 End-Dialog
+				Dialog sid petCompline11 End-Dialog
+				Dialog sid petCompline12 End-Dialog
+				Dialog sid petCompline13 End-Dialog
+				Dialog sid petCompline14 End-Dialog
+				Dialog sid petCompline15 End-Dialog
+			End-Section
+		End-Section
+		Section part7
+			when-movable-cycle-day-is 
+				28, 35, 42, 49 use:
+					Actor sid Choir End-Actor
+					Title role mode sid hoSA.LastHymn.mode End-Title
+					Hymn sid hoSA.LastHymn.text @ver End-Hymn
+				56 use:
+					Actor sid Chanter End-Actor
+					Title role mode sid hoSA.LastHymn.mode End-Title
+					Hymn sid hoSA.LastHymn.text @ver End-Hymn
+			end-when	
+		End-Section
+		Section part8
+			Actor sid Priest End-Actor
+			Dialog sid DiEfchonPateron.text End-Dialog
+			Dialog<i>sid res04p</>End-Dialog
+		End-Section
+	End-Section
+
+	Section h1__
+		Section beginning
+			Title role desig sid hoH1.title End-Title
+			Insert_section HR._02_Psalms__.h1 End-Insert
+			Reading sid DoxaPatri.text End-Reading
+		End-Section
+		Section middle
+			Insert_section HR._03__.h1 End-Insert
+		End-Section
+		Section end
+			Insert_section HR._04__.h1369 End-Insert
+			Insert_section HR._06_PrayerOfHour__.h1 End-Insert
+			Insert_section HR._07_Dismissal End-Insert
+		End-Section
+	End-Section
+	Section h3__
+		Section beginning
+			Title role desig sid hoH3.title End-Title
+			Insert_section HR._01_Intro_ End-Insert
+			Insert_section HR._02_Psalms__.h3 End-Insert
+			Reading sid DoxaPatri.text End-Reading
+		End-Section
+		Section middle
+			Insert_section HR._03__.h3 End-Insert
+		End-Section
+		Section end
+			Insert_section HR._04__.h1369 End-Insert
+			Insert_section HR._06_PrayerOfHour__.h3 End-Insert
+		End-Section
+	End-Section
+	Section h6__
+		Section beginning
+			Title role desig sid hoH6.title End-Title
+			Insert_section HR._02_Psalms__.h6 End-Insert
+			Reading sid DoxaPatri.text End-Reading
+		End-Section
+		Section middle
+			Insert_section HR._03__.h6 End-Insert
+		End-Section
+		Section end
+			Insert_section HR._04__.h1369 End-Insert
+			Insert_section HR._06_PrayerOfHour__.h6 End-Insert
+			Insert_section HR._07_Dismissal End-Insert
+		End-Section
+	End-Section
+	Section h9__
+		Section beginning
+			Title role desig sid hoH9.title End-Title
+			Insert_section HR._01_Intro_ End-Insert
+			Insert_section HR._02_Psalms__.h9 End-Insert
+			Reading sid DoxaPatri.text End-Reading
+		End-Section
+		Section middle
+			Insert_section HR._03__.h9 End-Insert
+		End-Section
+		Section end
+			Insert_section HR._04__.h1369 End-Insert
+			Insert_section HR._06_PrayerOfHour__.h9 End-Insert
+			Insert_section HR._07_Dismissal End-Insert
+		End-Section
+	End-Section
+
+	Section Lent_h1__
+		Section append
+			Title role desig sid hoH1.title End-Title
+			Insert_section HR._02_Psalms__.h1 End-Insert
+			Insert_section Selector_LentHoursTroparia.h1__.apolytikia End-Insert
+			Insert_section HR._03__.h1_lent End-Insert
+			Insert_section Selector_LentHoursTroparia.h1__.kontakia End-Insert
+			Insert_section HR._04__.h1369 End-Insert
+			when-name-of-day-is
+				Monday, Tuesday, Wednesday, Thursday, Friday use:
+					Insert_section HR._05_Lent__.h1 End-Insert
+			end-when
+			Insert_section HR._06_PrayerOfHour__.h1 End-Insert
+			Insert_section HR._07_Dismissal End-Insert
+		End-Section
+		Section begin
+			Title role desig sid hoH1.title End-Title
+			Insert_section HR._01_Intro_ End-Insert
+			Insert_section HR._02_Psalms__.h1 End-Insert
+			Insert_section Selector_LentHoursTroparia.h1__.apolytikia End-Insert
+			Insert_section HR._03__.h1_lent End-Insert
+			Insert_section Selector_LentHoursTroparia.h1__.kontakia End-Insert
+			Insert_section HR._04__.h1369 End-Insert
+			when-name-of-day-is
+				Monday, Tuesday, Wednesday, Thursday, Friday use:
+					Insert_section HR._05_Lent__.h1 End-Insert
+			end-when
+			Insert_section HR._06_PrayerOfHour__.h1 End-Insert
+			Insert_section HR._07_Dismissal End-Insert
+		End-Section
+	End-Section
+	Section Lent_h3__
+		Section append
+			Title role desig sid hoH3.title End-Title
+			Insert_section HR._01_Intro_.append End-Insert
+			Insert_section HR._02_Psalms__.h3 End-Insert
+			Insert_section Selector_LentHoursTroparia.h3__.apolytikia End-Insert
+			Insert_section HR._03__.h3 End-Insert
+			Insert_section Selector_LentHoursTroparia.h3__.kontakia End-Insert
+			Insert_section HR._04__.h1369 End-Insert
+			when-name-of-day-is
+				Monday, Tuesday, Wednesday, Thursday, Friday use:
+					Insert_section HR._05_Lent__.h3 End-Insert
+			end-when
+			Insert_section HR._06_PrayerOfHour__.h3 End-Insert
+		End-Section
+		Section begin
+			Title role desig sid hoH3.title End-Title
+			Insert_section HR._01_Intro_ End-Insert
+			Insert_section HR._02_Psalms__.h3 End-Insert
+			Insert_section Selector_LentHoursTroparia.h3__.apolytikia End-Insert
+			Insert_section HR._03__.h3 End-Insert
+			Insert_section Selector_LentHoursTroparia.h3__.kontakia End-Insert
+			Insert_section HR._04__.h1369 End-Insert
+			when-name-of-day-is
+				Monday, Tuesday, Wednesday, Thursday, Friday use:
+					Insert_section HR._05_Lent__.h3 End-Insert
+			end-when
+			Insert_section HR._06_PrayerOfHour__.h3 End-Insert
+		End-Section
+	End-Section
+	Section Lent_h6
+		Title role desig sid hoH6.title End-Title
+		Insert_section HR._02_Psalms__.h6 End-Insert
+		Insert_section Selector_LentHoursTroparia.h6__.apolytikia End-Insert
+		Insert_section HR._03__.h6_lent.part1 End-Insert
+		when-name-of-day-is
+			Monday, Tuesday, Wednesday, Thursday, Friday use:
+				Insert_section HR._03__.prophecy End-Insert
+		end-when
+		Insert_section HR._03__.h6_lent.part2 End-Insert
+		Insert_section Selector_LentHoursTroparia.h6__.kontakia End-Insert
+		Insert_section HR._04__.h1369 End-Insert
+		when-name-of-day-is
+			Monday, Tuesday, Wednesday, Thursday, Friday use:
+				Insert_section HR._05_Lent__.h6 End-Insert
+		end-when
+		Insert_section HR._06_PrayerOfHour__.h6 End-Insert
+		Insert_section HR._07_Dismissal End-Insert
+	End-Section
+	Section Lent_h9__
+		Section append
+			when-name-of-day-is
+				Monday, Tuesday, Thursday use:
+					Section beforevespers
+						Title role desig sid hoH9.title End-Title
+						Insert_section HR._01_Intro_.append End-Insert
+						Insert_section HR._02_Psalms__.h9 End-Insert
+						Insert_section Selector_LentHoursTroparia.h9__.apolytikia End-Insert
+						Insert_section HR._03__.h9 End-Insert
+						Insert_section Selector_LentHoursTroparia.h9__.kontakia End-Insert
+						Insert_section HR._04__.h9_lent End-Insert
+						Insert_section HR._05_Lent__.h9__.before_vespers End-Insert
+					End-Section
+				Wednesday, Friday use:
+					Section beforepresanctified
+						Title role desig sid hoH9.title End-Title
+						Insert_section HR._01_Intro_.append End-Insert
+						Insert_section HR._02_Psalms__.h9 End-Insert
+						Insert_section Selector_LentHoursTroparia.h9__.apolytikia End-Insert
+						Insert_section HR._03__.h9 End-Insert
+						Insert_section Selector_LentHoursTroparia.h9__.kontakia End-Insert
+						Insert_section HR._04__.h9_lent End-Insert
+						Insert_section HR._05_Lent__.h9__.before_presanctified End-Insert
+						Insert_section HR._07_Dismissal End-Insert
+					End-Section
+			end-when
+		End-Section
+		Section begin
+			when-name-of-day-is
+				Monday, Tuesday, Thursday use:
+					Section beforevespers
+						Title role desig sid hoH9.title End-Title
+						Insert_section HR._01_Intro_ End-Insert
+						Insert_section HR._02_Psalms__.h9 End-Insert
+						Insert_section Selector_LentHoursTroparia.h9__.apolytikia End-Insert
+						Insert_section HR._03__.h9 End-Insert
+						Insert_section Selector_LentHoursTroparia.h9__.kontakia End-Insert
+						Insert_section HR._04__.h9_lent End-Insert
+						Insert_section HR._05_Lent__.h9__.before_vespers End-Insert
+					End-Section
+				Wednesday, Friday use:
+					Section beforepresanctified
+						Title role desig sid hoH9.title End-Title
+						Insert_section HR._01_Intro_ End-Insert
+						Insert_section HR._02_Psalms__.h9 End-Insert
+						Insert_section Selector_LentHoursTroparia.h9__.apolytikia End-Insert
+						Insert_section HR._03__.h9 End-Insert
+						Insert_section Selector_LentHoursTroparia.h9__.kontakia End-Insert
+						Insert_section HR._04__.h9_lent End-Insert
+						Insert_section HR._05_Lent__.h9__.before_presanctified End-Insert
+						Insert_section HR._07_Dismissal End-Insert
+					End-Section
+				Saturday, Sunday use:
+					Section weekend
+						Insert_section HR._01_Intro_ End-Insert
+						Insert_section HR._02_Psalms__.h9 End-Insert
+						Insert_section Selector_LentHoursTroparia.h9__.apolytikia End-Insert
+						Insert_section HR._03__.h9 End-Insert
+						Insert_section Selector_LentHoursTroparia.h9__.kontakia End-Insert
+						Insert_section HR._04__.h1369 End-Insert
+						Insert_section HR._06_PrayerOfHour__.h9 End-Insert
+						Insert_section HR._07_Dismissal End-Insert
+					End-Section
+			end-when
+		End-Section
+	End-Section
+
+
+//Blocks  
+	Section _01_Intro_
+		Section enarxis
+			Actor sid Priest End-Actor
+			Dialog sid enarxis01 End-Dialog
+			Actor sid Reader End-Actor
+			Dialog sid res04 End-Dialog
+			Actor sid Priest End-Actor
+			Section Heavenly_King
+				Reading sid DoxaSoiOTheosImon.text End-Reading
+				Reading sid VasilefOuranie.text End-Reading
+			End-Section
+		End-Section
+		Section append
+			Actor sid Reader End-Actor
+			Section Trisagion_Prayers
+				Title role desig sid Trisagion End-Title
+				Reading sid AgiosOTheos.text<r>sid Thrice media-off</>End-Reading
+				Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+				Reading sid PanagiaTrias.text End-Reading
+				Reading sid res06 End-Reading
+				Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+				Reading sid PaterImon.text End-Reading
+				Actor sid Priest End-Actor
+				Dialog sid exc20<i>sid res04p</>End-Dialog
+			End-Section
+		End-Section	
+	End-Section
+	Section _02_Psalms__
+		Section h1
+			Actor sid Reader End-Actor
+			Reading sid DefteProskinisomen1 End-Reading
+			Reading sid DefteProskinisomen2 End-Reading
+			Reading sid DefteProskinisomen3 End-Reading
+			Title role desig sid psa5.title End-Title
+			Reading sid psa5.text @ver End-Reading
+			Title role desig sid psa89.title End-Title
+			Reading sid psa89.text @ver End-Reading
+			Title role desig sid psa100.title End-Title
+			Reading sid psa100.text @ver End-Reading
+			Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+			Reading sid Allilouia3.text sid DoxaSoiOTheos1<r>sid Thrice</>End-Reading
+			Reading sid res01<r>sid Thrice</>End-Reading
+		End-Section
+		Section h3
+			Actor sid Reader End-Actor
+			Reading sid res04 End-Reading
+			Reading sid res01<r>sid Twelve</>End-Reading
+			Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+			Reading sid DefteProskinisomen1 End-Reading
+			Reading sid DefteProskinisomen2 End-Reading
+			Reading sid DefteProskinisomen3 End-Reading
+			Title role desig sid psa16.title End-Title
+			Reading sid psa16.text @ver End-Reading
+			Title role desig sid psa24.title End-Title
+			Reading sid psa24.text @ver End-Reading
+			Title role desig sid psa50.title End-Title
+			Reading sid psa50.text @ver End-Reading
+			Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+			Reading sid Allilouia3.text sid DoxaSoiOTheos1<r>sid Thrice</>End-Reading
+			Reading sid res01<r>sid Thrice</>End-Reading
+		End-Section
+		Section h6
+			Actor sid Reader End-Actor
+			Reading sid DefteProskinisomen1 End-Reading
+			Reading sid DefteProskinisomen2 End-Reading
+			Reading sid DefteProskinisomen3 End-Reading
+			Title role desig sid psa53.title End-Title
+			Reading sid psa53.text @ver End-Reading
+			Title role desig sid psa90.title End-Title
+			Reading sid psa90.text @ver End-Reading
+			Title role desig sid psa78.title End-Title
+			Reading sid psa78.text @ver End-Reading
+			Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+			Reading sid Allilouia3.text sid DoxaSoiOTheos1<r>sid Thrice</>End-Reading
+			Reading sid res01<r>sid Thrice</>End-Reading
+		End-Section
+		Section h9
+			Actor sid Reader End-Actor
+			Reading sid res04 End-Reading
+			Reading sid res01<r>sid Twelve</>End-Reading
+			Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+			Reading sid DefteProskinisomen1 End-Reading
+			Reading sid DefteProskinisomen2 End-Reading
+			Reading sid DefteProskinisomen3 End-Reading
+			Title role desig sid psa83.title End-Title
+			Reading sid psa83.text @ver End-Reading
+			Title role desig sid psa84.title End-Title
+			Reading sid psa84.text @ver End-Reading
+			Title role desig sid psa85.title End-Title
+			Reading sid psa85.text @ver End-Reading
+			Reading sid psa85.v17.text End-Reading
+			Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+			Reading sid Allilouia3.text sid DoxaSoiOTheos1<r>sid Thrice</>End-Reading
+			Reading sid res01<r>sid Thrice</>End-Reading
+		End-Section
+	End-Section
+	Section _03__ //between apolytikia and kontakia
+		Section h1
+			Reading sid KaiNynKaiAei.text End-Reading
+			Title role desig sid Theotokion End-Title
+			Hymn sid hoH1.Theotokion.text @ver End-Hymn
+			Hymn sid psa118.v133.text End-Hymn
+			Reading sid psa118.v134.text End-Reading
+			Reading sid psa118.v135.text End-Reading
+			Reading sid psa70.v8alt.text End-Reading
+			Insert_section _01_Intro_.append.Trisagion_Prayers End-Insert
+			Actor sid Reader End-Actor
+			Dialog sid res04 End-Dialog
+		End-Section
+		Section h1_lent
+			Reading sid KaiNynKaiAei.text End-Reading
+			Title role desig sid Theotokion End-Title
+			Hymn sid hoH1.Theotokion.text @ver End-Hymn
+			when-movable-cycle-day-is
+				44, 46, 48 use:
+					Actor sid Choir End-Actor
+					Title role mode sid Mode2 End-Title
+					Hymn sid hoLI.TonStavronSou.text<r>sid Thrice</>End-Hymn
+				otherwise use:
+					Actor sid Choir End-Actor
+					Media sid hoH1.LentSungVerses.text End-Media
+					Hymn sid psa118.v133.text<r>sid Twice</>End-Hymn
+					Hymn sid psa118.v134.text<r>sid Twice</>End-Hymn
+					Hymn sid psa118.v135.text<r>sid Twice</>End-Hymn
+					Hymn sid psa70.v8alt.text @ver <r>sid Thrice</>End-Hymn
+			end-when
+			Actor sid Reader End-Actor
+			Insert_section _01_Intro_.append.Trisagion_Prayers End-Insert
+			Actor sid Reader End-Actor
+			Dialog sid res04 End-Dialog
+		End-Section
+		Section h3
+			Reading sid KaiNynKaiAei.text End-Reading
+			Title role desig sid Theotokion End-Title
+			Hymn sid hoH3.Theotokion.text @ver End-Hymn
+			Hymn sid psa67.v20alt.text @ver End-Hymn
+			Insert_section _01_Intro_.append.Trisagion_Prayers End-Insert
+			Actor sid Reader End-Actor
+			Dialog sid res04 End-Dialog
+		End-Section
+		Section h3_lent
+			Section part1
+				Reading sid KaiNynKaiAei.text End-Reading
+				Title role desig sid Theotokion End-Title
+				Hymn sid hoH3.Theotokion.text @ver End-Hymn
+			End-Section
+			Section part2
+				Hymn sid psa67.v20alt.text @ver End-Hymn
+				Insert_section _01_Intro_.append.Trisagion_Prayers End-Insert
+				Actor sid Reader End-Actor
+				Dialog sid res04 End-Dialog
+			End-Section
+		End-Section
+		Section h6
+			Reading sid KaiNynKaiAei.text End-Reading
+			Title role desig sid Theotokion End-Title
+			Hymn sid hoH6.Theotokion.text @ver End-Hymn
+			Hymn sid psa78.v8b.text sid psa78.v9.text @ver End-Hymn
+			Insert_section _01_Intro_.append.Trisagion_Prayers End-Insert
+			Actor sid Reader End-Actor
+			Dialog sid res04 End-Dialog
+		End-Section
+		Section h6_lent
+			Section part1
+				Reading sid KaiNynKaiAei.text End-Reading
+				Title role desig sid Theotokion End-Title
+				Hymn sid hoH6.Theotokion.text @ver End-Hymn
+			End-Section
+			Section part2
+				Hymn sid psa78.v8b.text sid psa78.v9.text @ver End-Hymn
+				Insert_section _01_Intro_.append.Trisagion_Prayers End-Insert
+				Actor sid Reader End-Actor
+				Dialog sid res04 End-Dialog
+			End-Section
+		End-Section
+		Section h9
+			Reading sid KaiNynKaiAei.text End-Reading
+			Title role desig sid Theotokion End-Title
+			Hymn sid hoH9.Theotokion.text @ver End-Hymn
+			Hymn sid leosH9.ho.s09.Key0001.text @ver End-Hymn
+			Insert_section _01_Intro_.append.Trisagion_Prayers End-Insert
+			Actor sid Reader End-Actor
+			Dialog sid res04 End-Dialog
+		End-Section
+		Section h9_lent
+			Section part1
+				Reading sid KaiNynKaiAei.text End-Reading
+				Title role desig sid Theotokion End-Title
+				Hymn sid hoH9.Theotokion.text @ver End-Hymn
+			End-Section
+			Section part2
+				Hymn sid leosH9.ho.s09.Key0001.text @ver End-Hymn
+				Insert_section _01_Intro_.append.Trisagion_Prayers End-Insert
+				Actor sid Reader End-Actor
+				Dialog sid res04 End-Dialog
+			End-Section
+		End-Section
+		Section prophecy
+			Insert_section TR.TroparionOfProphecy End-Insert
+			Insert_section Lectionary_Triodion.Trithekti_Prophecy End-Insert
+		End-Section
+	End-Section
+	Section _04__
+		Section h1369
+			Reading sid res01<r>sid Forty</>End-Reading
+			Reading sid OEnPantiKairo.text End-Reading
+			Reading sid res01<r>sid Thrice</>End-Reading	
+			Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+			Reading sid TinTimioteran.text End-Reading
+			Reading sid EnOnomatiKyriou.text End-Reading
+			Actor sid Priest End-Actor
+			Dialog sid OTheosOiktirisai.text End-Dialog
+			Actor sid Reader End-Actor
+			Dialog sid res04 End-Dialog
+		End-Section
+		Section h9_lent
+			Reading sid res01<r>sid Forty</>End-Reading
+			Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+			Reading sid TinTimioteran.text End-Reading
+			Reading sid EnOnomatiKyriou.text End-Reading
+			Actor sid Priest End-Actor
+			Reading sid DiEfchonPateron.text<i>sid res04p</>End-Reading
+			Actor sid Reader End-Actor
+			Dialog sid res04 End-Dialog
+		End-Section
+	End-Section
+	Section _05_Lent__
+		Section h1
+			Actor sid Priest End-Actor
+			Insert_section TR.StEphraimPrayer End-Insert
+			Actor sid Reader End-Actor
+			Insert_section HR._01_Intro_.append.Trisagion_Prayers End-Insert
+			Actor sid Reader End-Actor
+			Reading sid res04 sid res01<r>sid Twelve</>End-Reading
+		End-Section
+		Section h3
+			Actor sid Priest End-Actor
+			Insert_section TR.StEphraimPrayer End-Insert
+//				Actor sid Reader End-Actor
+//				Insert_section _01_Intro_.Trisagion_Prayers End-Insert
+//				Actor sid Reader End-Actor
+//				Reading sid res04 sid res01<r>sid Twelve</>End-Reading
+		End-Section
+		Section h6
+			Actor sid Priest End-Actor
+			Insert_section TR.StEphraimPrayer End-Insert
+//				Actor sid Reader End-Actor
+//				Insert_section _01_Intro_.Trisagion_Prayers End-Insert
+//				Actor sid Reader End-Actor
+//				Reading sid res04 sid res01<r>sid Twelve</>End-Reading
+		End-Section
+		Section h9__
+			Section before_vespers
+				Insert_section _06_PrayerOfHour__.h9 End-Insert
+				Insert_section _08_Typika_.beatitudes End-Insert
+				Insert_section _08_Typika_.prayers End-Insert
+				Insert_section _08_Typika_.kontakia End-Insert
+				Reading sid res01<r>sid Forty</>End-Reading
+				Reading sid OEnPantiKairo.text End-Reading
+				Reading sid res01<r>sid Thrice</>End-Reading	
+				Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+				Reading sid TinTimioteran.text End-Reading
+				Reading sid EnOnomatiKyriou.text End-Reading
+				Actor sid Priest End-Actor
+				Dialog sid OTheosOiktirisai.text End-Dialog
+				Actor sid Reader End-Actor
+				Dialog sid res04 End-Dialog
+				Actor sid Priest End-Actor
+				Insert_section TR.StEphraimPrayer End-Insert
+			End-Section
+			Section before_presanctified
+				Insert_section _06_PrayerOfHour__.h9 End-Insert
+				Insert_section _08_Typika_.beatitudes End-Insert
+				Insert_section _08_Typika_.prayers End-Insert
+				Insert_section _08_Typika_.kontakia End-Insert
+				Insert_section _08_Typika_.end_.prayers End-Insert
+			End-Section
+		End-Section
+	End-Section
+	Section _06_PrayerOfHour__
+		Section h1
+			Actor sid Priest End-Actor
+			Reading sid hoH1.Prayer.text<i>sid res04p</>End-Reading
+		End-Section
+		Section h3
+			Actor sid Priest End-Actor
+			Reading sid hoH3.Prayer.text<i>sid res04p</>End-Reading
+		End-Section
+		Section h6
+			Actor sid Priest End-Actor
+			Reading sid hoH6.Prayer.text<i>sid res04p</>End-Reading
+		End-Section
+		Section h9
+			Actor sid Priest End-Actor
+			Reading sid hoH9.Prayer.text<i>sid res04p</>End-Reading
+		End-Section
+	End-Section
+	Section _07_Dismissal
+		Actor sid Reader End-Actor
+		Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+		Reading sid res06 End-Reading
+		Reading sid Evlogison End-Reading
+		Insert_section Selector_Dismissals.Com_Yes End-Insert
+	End-Section
+	Section _08_Typika_
+		Section psalms
+			Actor sid Reader End-Actor
+			Title role desig sid hoTY.title End-Title
+			Title role desig sid psa102.title End-Title
+			Reading sid psa102.text @ver End-Reading
+			Reading sid DoxaToPatri.text End-Reading
+			Title role desig sid psa145.title End-Title
+			Reading sid psa145.text @ver End-Reading
+			Reading sid KaiNynKaiAei.text End-Reading
+			Reading sid hoLI.OnlyBegotten.text @ver End-Reading
+		End-Section
+		Section beatitudes
+			Actor sid Choir End-Actor
+			Title role desig sid leosTY.Beatitudes.title End-Title
+			Title role mode sid Mode8 End-Title
+			Media sid hoTY.Key0200.text End-Media
+			Hymn sid leosTY.Beatitudes_Intro.text sid leosTY.Beatitudes_v01.text<i>sid hoTY.Key0212.text</>End-Hymn
+			Hymn sid leosTY.Beatitudes_v02.text<i>sid hoTY.Key0212.text</>End-Hymn
+			Hymn sid leosTY.Beatitudes_v03.text<i>sid hoTY.Key0212.text</>End-Hymn
+			Hymn sid leosTY.Beatitudes_v04.text<i>sid hoTY.Key0212.text</>End-Hymn
+			Hymn sid leosTY.Beatitudes_v05.text<i>sid hoTY.Key0212.text</>End-Hymn
+			Hymn sid leosTY.Beatitudes_v06.text<i>sid hoTY.Key0212.text</>End-Hymn
+			Hymn sid leosTY.Beatitudes_v07.text<i>sid hoTY.Key0212.text</>End-Hymn
+			Hymn sid leosTY.Beatitudes_v08.text<i>sid hoTY.Key0212.text</>End-Hymn
+			Hymn sid leosTY.Beatitudes_v09.text<i>sid hoTY.Key0212.text</>End-Hymn
+			Hymn sid leosTY.Beatitudes_v10.text<i>sid hoTY.Key0212.text</>End-Hymn
+			Hymn sid DoxaPatri.text<i>sid hoTY.Key0212.text</>End-Hymn
+			Hymn sid KaiNynKaiAei.text<i>sid hoTY.Key0212.text</>End-Hymn
+			Para role chant sid hoTY.Key0212.text End-Para
+			Para role chant sid hoTY.Key0213.text End-Para
+			Para role chant sid hoTY.Key0214.text End-Para
+		End-Section
+		Section prayers
+			Actor sid Reader End-Actor
+			Hymn sid hoTY.Key0215.text @ver End-Hymn
+			Verse<inr>sid vVerse</>sid psa33.v6.text @ver End-Verse
+			Hymn sid hoTY.Key0215.text @ver End-Hymn
+			Title sid Doxa End-Title
+			Hymn sid hoTY.Key0216.text @ver End-Hymn
+			Title sid KaiNyn End-Title
+			Hymn sid Pistevo.text End-Hymn
+			Hymn sid hoTY.Key0217.text End-Hymn
+			Hymn sid PaterImon.text End-Hymn
+			Actor sid Priest End-Actor
+			Reading sid exc20 End-Reading
+			Actor sid Reader End-Actor
+			Reading sid res04 End-Reading
+		End-Section
+		Section kontakia
+			Hymn sid me.m08.d06_gr_GR_cog.meMA.Kontakion1.text @ver End-Hymn
+			when-name-of-day-is
+				Monday use:
+					Hymn sid me.m11.d08_gr_GR_cog.meMA.Kontakion1.text @ver End-Hymn
+				Tuesday use:
+					Hymn sid me.m02.d24_gr_GR_cog.meMA.Kontakion1.text @ver End-Hymn
+				Wednesday, Friday use:
+					Hymn sid me.m09.d14_gr_GR_cog.meMA.Kontakion1.text @ver End-Hymn
+				Thursday use:
+					Hymn sid me.m06.d29_gr_GR_cog.meMA.Kontakion1.text @ver End-Hymn
+					Hymn sid me.m12.d06_gr_GR_cog.meMA.Kontakion1.text @ver End-Hymn
+			end-when		
+			Hymn sid cl.Kontakion1.text @ver End-Hymn
+			Hymn rid trMA.Kontakion1.text @ver End-Hymn
+			Title sid Doxa End-Title
+			Hymn sid tr.d014_gr_GR_cog.trMA.Kontakion1.text @ver End-Hymn
+			when-name-of-day-is
+				Saturday use:
+					Title sid KaiNyn End-Title
+					Hymn sid pe.d127_gr_GR_cog.peMA.Kontakion1.text @ver End-Hymn
+				otherwise use:
+					Title sid KaiNyn End-Title
+					Hymn sid hoTY.Key0408.text @ver End-Hymn
+			end-when
+		End-Section
+		Section end_
+			Section prayers
+				Reading sid res01<r>sid Forty</>End-Reading
+				Reading sid OEnPantiKairo.text End-Reading
+				Reading sid res01<r>sid Thrice</>End-Reading	
+				Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+				Reading sid TinTimioteran.text End-Reading
+				Reading sid EnOnomatiKyriou.text End-Reading
+				Actor sid Priest End-Actor
+				Dialog sid OTheosOiktirisai.text End-Dialog
+				Actor sid Reader End-Actor
+				Dialog sid res04 End-Dialog
+				Actor sid Priest End-Actor
+				Insert_section TR.StEphraimPrayer End-Insert
+//				Actor sid Reader End-Actor
+//				Insert_section _01_Intro_.Trisagion_Prayers End-Insert
+				Actor sid Reader End-Actor
+				Reading sid res04 sid res01<r>sid Twelve</>End-Reading
+				Actor sid Priest End-Actor
+				Reading sid hoTY.Key0501.text End-Reading
+				Actor sid Reader End-Actor
+				Reading sid res04 End-Reading
+			End-Section
+			Section psalms_dismissal
+				Reading sid ps_gr_GR_cog.psa112.v2alt1.text<r>sid Thrice</>End-Reading
+				Title sid Doxa sid KaiNyn End-Title
+				Title role desig sid psa33.title End-Title
+				Reading sid psa33.text @ver End-Reading
+				Title role desig sid psa144.title End-Title
+				Reading sid psa144.text @ver End-Reading
+				Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+				Reading sid res06 End-Reading
+				Reading sid Evlogison End-Reading
+				Insert_section Selector_Dismissals.Com_No End-Insert
+			End-Section
+		End-Section
+			
+	End-Section
+
+End-Template

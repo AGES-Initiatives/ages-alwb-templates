@@ -1,0 +1,56 @@
+Template se.m01.d05.gh 
+
+Status Final
+
+	import client_gr_GR_cog.*
+	import ho.s03_gr_GR_cog.*
+	import ho.s07_gr_GR_cog.*
+	import ho.s10_gr_GR_cog.*	
+//	import me.m00.d00_gr_GR_cog.*
+//	import pe.d000_gr_GR_cog.*
+//	import tr.d000_gr_GR_cog.*
+
+	import da.*
+//	import oc.*
+//	import pe.*
+//	import tr.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+		Head 
+			Set_Date month 1 day 5 year 2016 End_Date
+				Page_Header_Even
+					center @lookup sid gh.pdf.header sid d.on lang L2 @date lang L2
+				End_Page_Header_Even
+				Page_Header_Odd
+					center @lookup sid gh.pdf.header sid d.on lang L2 @date lang L2
+				End_Page_Header_Odd
+				Page_Footer_Even
+					center @pageNbr
+				End_Page_Footer_Even
+				Page_Footer_Odd
+					center @pageNbr
+				End_Page_Footer_Odd
+			Set_Page_Number 1 End_Set_Page_Number
+		End_Head
+	
+
+	when-name-of-day-is
+		Monday, Tuesday, Wednesday, Thursday, Friday use:
+			Insert_section bk.me.m01.d05.Section01 End-Insert
+			Insert_section bk.me.m01.d05.Section02 End-Insert
+			Insert_section bk.me.m01.d05.Section03 End-Insert
+			Insert_section bk.me.m01.d05.Section04 End-Insert
+			Insert_section bk.me.m01.d05.Section05 End-Insert
+	end-when
+End-Template

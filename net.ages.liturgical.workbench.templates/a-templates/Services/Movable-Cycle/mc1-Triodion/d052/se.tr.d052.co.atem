@@ -1,0 +1,101 @@
+Template se.tr.d052.co 
+
+	import ho.s12_gr_GR_cog.*
+	import tr.d054_gr_GR_cog.*
+	import bk.ho.s12.*
+	import bk.ho.s13.*
+	import da.*
+	
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 3 day 24  End_Date
+			Page_Header_Even
+				center @lookup sid co.pdf.header sid d.ontheeveof lang L2 @date lang L2
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid co.pdf.header sid d.ontheeveof lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.co End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	when-date-is
+		Mar 24 use:
+			Section Instance02
+				Insert_section HR.smallcompline__.part1 End-Insert
+				Actor sid Choir End-Actor
+				Title role desig sid trGC.title End-Title
+				Title role name sid trGC.C1Poet End-Title
+				Insert_section tr.d54.Ode1 End-Insert
+				Insert_section tr.d54.Ode2 End-Insert
+				Insert_section tr.d54.Ode3 End-Insert
+				Insert_section tr.d54.Ode4 End-Insert
+				Insert_section tr.d54.Ode5 End-Insert
+				Insert_section tr.d54.Ode6 End-Insert
+				Insert_section tr.d54.Kontakion End-Insert
+				Insert_section tr.d54.Ode7 End-Insert
+				Insert_section tr.d54.Ode8 End-Insert
+				Insert_section tr.d54.Ode9 End-Insert
+				Insert_section HR.smallcompline__.part2 End-Insert
+				Set_mcDay day 54 End_mcDay
+				Insert_section TI.k._ End-Insert
+				Insert_section MA._11_Kontakion__.append__.tr_.konoik_nt_.kontakion_nt End-Insert
+				Set_mcDay day 52 End_mcDay
+				Insert_section HR.smallcompline__.part3 End-Insert
+				Insert_section GreatCompline_13 End-Insert
+				Insert_section GreatCompline_14 End-Insert
+				Insert_section HR.smallcompline__.part6 End-Insert
+				Insert_section HR.smallcompline__.part8 End-Insert
+			End-Section
+		otherwise use:
+			Section Instance01
+				Title role desig sid hoCO.Key0100.title End-Title
+				Insert_section GreatCompline_01 End-Insert
+				Insert_section GreatCompline_02 End-Insert
+				Insert_section GreatCompline_03 End-Insert
+				when-name-of-day-is 
+					Tuesday, Thursday use: Insert_section GreatCompline_04 End-Insert
+					Wednesday, Friday use: Insert_section GreatCompline_05 End-Insert
+				end-when	
+				Insert_section GreatCompline_06 End-Insert
+				Insert_section GreatCompline_07 End-Insert
+				Insert_section GreatCompline_08 End-Insert
+				Insert_section GreatCompline_09.Part1 End-Insert
+				Insert_section GreatCompline_09.Part2 End-Insert
+				Insert_section GreatCompline_09.Part3 End-Insert
+				Insert_section GreatCompline_10 End-Insert
+				Insert_section GreatCompline_11 End-Insert
+				Insert_section GreatCompline_12 End-Insert
+				Insert_section GreatCompline_13 End-Insert
+				Insert_section GreatCompline_14 End-Insert
+				Insert_section GreatCompline_15 End-Insert
+				Insert_section GreatCompline_16 End-Insert
+				when-name-of-day-is 
+					Tuesday, Thursday use: Insert_section GreatCompline_17.Part1 End-Insert
+					Wednesday, Friday use: Insert_section GreatCompline_17.Part3 End-Insert
+				end-when
+				Insert_section GreatCompline_18 End-Insert
+			End-Section
+	end-when
+End-Template

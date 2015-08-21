@@ -1,0 +1,93 @@
+Template se.m01.d06.vl
+
+Status Final
+
+	import me.m01.d06_gr_GR_cog.*
+	import ps_gr_GR_cog.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 1 day 6 year 2016 End_Date
+			Page_Header_Even
+				center @lookup sid vl.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid vl.pdf.header rid da.daVE.OnTheEveningBefore lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	when-name-of-day-is
+		Tuesday, Wednesday, Thursday, Friday, Saturday use:
+			Section Instance01
+				Insert_section LI._01_Enarxis__.vesperal End-Insert
+				Insert_section VE._02_Kekragaria__.mode2__.for6 End-Insert
+				Insert_section VE._03_Stichera__.me__.i_112234as5678910 End-Insert
+				Insert_section VE._03_Stichera__.gloryboth__.me__.gloryasgloryboth_ End-Insert
+				Insert_section VE._04_Middle__.entrance End-Insert					
+				Insert_section LE._03_Prophetologion__.r12 End-Insert
+				Section Section01
+					Actor sid Choir End-Actor
+					Title role mode sid meVE.ProphecyTroparion1.mode End-Title
+					Hymn sid meVE.ProphecyTroparion1.text @ver End-Hymn
+					Verse<bninr>sid vVerse</>sid psa66.v2a.text sid psa66.v2balt.text End-Verse
+					Hymn sid meVE.ProphecyTroparion1Refrain.text @ver End-Hymn
+					Verse<bninr>sid vVerse</>sid psa66.v3.text End-Verse
+					Hymn sid meVE.ProphecyTroparion1Refrain.text @ver End-Hymn
+					Verse<bninr>sid vVerse</>sid psa66.v4.text sid psa66.v7a.text End-Verse
+					Hymn sid meVE.ProphecyTroparion1Refrain.text @ver End-Hymn
+					Verse<bninr>sid vVerse</>sid psa66.v7b.text sid psa66.v8.text End-Verse
+					Hymn sid meVE.ProphecyTroparion1Refrain.text @ver End-Hymn
+					Verse sid DoxaPatri.text sid KaiNynKaiAei.text End-Verse
+					Hymn sid meVE.ProphecyTroparion1.text @ver media-off End-Hymn
+				End-Section
+				Insert_section LE._03_Prophetologion__.r16 End-Insert
+				Section Section02	
+					Actor sid Choir End-Actor
+					Title role mode sid meVE.ProphecyTroparion2.mode End-Title
+					Hymn sid meVE.ProphecyTroparion2.text @ver End-Hymn
+					Verse<bninr>sid vVerse</>sid psa92.v1b.text sid psa92.v1c.text End-Verse
+					Hymn sid meVE.ProphecyTroparion2Refrain.text @ver End-Hymn
+					Verse<bninr>sid vVerse</>sid psa92.v3.text End-Verse
+					Hymn sid meVE.ProphecyTroparion2Refrain.text @ver End-Hymn
+					Verse<bninr>sid vVerse</>sid psa92.v4.text sid psa92.v5a.text End-Verse
+					Hymn sid meVE.ProphecyTroparion2Refrain.text @ver End-Hymn
+					Verse<bninr>sid vVerse</>sid psa92.v5b.text End-Verse
+					Hymn sid meVE.ProphecyTroparion2Refrain.text @ver End-Hymn
+					Verse sid DoxaPatri.text sid KaiNynKaiAei.text End-Verse
+					Hymn sid meVE.ProphecyTroparion2.text @ver media-off End-Hymn
+				End-Section
+				Insert_section LE._03_Prophetologion__.r17 End-Insert
+				Insert_section LI._06_Trisagion__.basil End-Insert
+				Insert_section LE._01_Epistle__.vespers__.menaion_ End-Insert
+				Insert_section LE._02_Gospel__.vespers__.menaion_ End-Insert
+				Rubric sid ContinueBasilLiturgy End-Rubric
+				Break line End_Break
+				Insert_section LI._08_Liturgy__.basil End-Insert
+				Insert_section LI._09_Dismissal__.nocommemoration End-Insert
+			End-Section
+
+	end-when		
+End-Template

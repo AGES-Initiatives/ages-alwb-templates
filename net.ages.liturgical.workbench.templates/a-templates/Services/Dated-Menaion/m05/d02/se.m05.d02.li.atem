@@ -1,0 +1,149 @@
+Template se.m05.d02.li
+
+Status Final
+
+	import client_gr_GR_cog.*
+	import me.m05.d02_gr_GR_cog.*
+
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 5 day 2 End_Date
+			Page_Header_Even
+				center @lookup sid li.pdf.header sid d.on lang L1 @date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	when-movable-cycle-day-is
+		65 thru 72 use:
+			Section Instance01
+			End-Section
+			
+		73, 74, 75, 77 use: //Bright Week
+			Section Instance02
+			End-Section
+			
+		76 use: //Bright Friday
+			Section Instance03
+			End-Section
+			
+		78 use: //Thomas Sunday
+			Section Instance04
+			End-Section
+			
+		79 thru 83 use: 		
+			Section Instance05 //Thomas Post-feast
+				Insert_section LI._01_Enarxis__.daily End-Insert
+				Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
+				Insert_section LI._04_Entrance__.clergy End-Insert
+				Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
+				Section hymns
+					Insert_section AP.af End-Insert
+					Insert_section TI.s._00_saint_.m End-Insert
+					Insert_section AP.me1_.hymn End-Insert
+					Insert_section LI._05_AfterEntranceHymns__.local End-Insert
+					Insert_section KO.seasonal End-Insert
+				End-Section
+				Insert_section LI._06_Trisagion__.chrys End-Insert
+				Insert_section LE._01_Epistle__.menaion_ End-Insert
+				Insert_section LE._02_Gospel__.menaion_ End-Insert
+				Insert_section LI._08_Liturgy__.chrys End-Insert
+				Insert_section LI._09_Dismissal__.commemoration End-Insert
+			End-Section //Instance05
+			
+		84 use: //Thomas Saturday
+			Section Instance06
+			End-Section
+			
+		85, 92, 99, 106 use: //Sundays of Pascha
+			Section Instance07
+			End-Section
+			
+		86, 87, 88, 89, 90, 93, 103, 104, 107 use:
+			Section Instance08
+			End-Section
+			
+		91, 105 use: //Leavetaking of Myr and Sam
+			Section Instance09
+				Insert_section LI._01_Enarxis__.daily End-Insert
+				Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
+				Insert_section LI._04_Entrance__.clergy End-Insert
+				Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
+				Section hymns
+					when-movable-cycle-day-is
+						91 use:
+							Section block1
+							Set_mcDay day 85 End_mcDay
+								Insert_section TI.ap._ End-Insert
+								Insert_section AP.pe1_.hymn End-Insert
+								Insert_section AP.pe2_.hymn End-Insert
+								Insert_section AP.pe3_.hymn End-Insert
+							Set_mcDay day 0 End_mcDay
+							End-Section
+						105 use:
+							Insert_section AP.res__.modeofweek End-Insert
+					end-when
+					Insert_section TI.s._00_saint_.m End-Insert
+					Insert_section AP.me1_.hymn End-Insert
+					Insert_section LI._05_AfterEntranceHymns__.local End-Insert
+					Insert_section KO.seasonal End-Insert
+				End-Section
+				Insert_section LI._06_Trisagion__.chrys End-Insert
+				Insert_section LE._01_Epistle__.menaion_ End-Insert
+				Insert_section LE._02_Gospel__.menaion_ End-Insert
+				Insert_section LI._08_Liturgy__.chrys End-Insert
+				Insert_section LI._09_Dismissal__.commemoration End-Insert
+			End-Section
+			
+		94, 108 use: //Leavetaking of Par and Blind
+			Section Instance10
+			End-Section
+			
+		95 use: //Wednesday Mid-Pentecost
+			Section Instance11
+			End-Section
+			
+		96, 97, 98, 100, 101 use: 
+			Section Instance12
+			End-Section
+			
+		95 use: //Leavetaking Mid-Pentecost
+			Section Instance13
+			End-Section
+			
+		109 use: //Leavetaking Pascha
+			Section Instance14
+			End-Section
+			
+		110 use: //Ascension
+			Section Instance15
+				Insert_section se.pe.d110.li.Instance01 End-Insert
+			End-Section
+
+		111, 112 use:
+			Section Instance16
+			End-Section
+			
+	end-when		
+
+
+End-Template

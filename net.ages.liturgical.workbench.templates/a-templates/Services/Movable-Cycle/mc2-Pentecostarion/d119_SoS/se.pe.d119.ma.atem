@@ -1,0 +1,88 @@
+Template se.pe.d119.ma
+
+Status Final
+
+	import client_gr_GR_cog.*
+	import pe.*
+
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 5 day 30 End_Date
+			Page_Header_Even
+				center @lookup sid ma.pdf.header sid d.on lang L1 @date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ma End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+		
+	Section Instance01
+		Insert_section MA._01_Beginning__.alleluia__.mode8_deceased End-Insert
+		Insert_section AP.pe12t End-Insert
+		Insert_section MA._03_Kathisma1__.litany End-Insert
+		Insert_section MA._03_Kathisma1__.pe__.sos End-Insert
+		Insert_section MA._04_Kathisma2__.evlogetaria_sos End-Insert
+		Insert_section MA._04_Kathisma2__.litany_sos End-Insert
+		Insert_section MA._04_Kathisma2__.pe__.sos End-Insert
+		Insert_section MA._08_NoGospel__.reader__.psalm50 End-Insert
+		Insert_section MA._11_Kontakion__.append__.pe_ End-Insert
+		Insert_section SY.Synaxarion End-Insert
+		Section block1	
+			Title role desig sid OKanon End-Title
+			Rubric sid cl.pe.d119.R001 End-Rubric
+			Insert_section KA.choir__._1345678 End-Insert
+			Insert_section MA._10_Canon__.ode9_intro End-Insert
+			Insert_section KA.choir__._mode_mag_media End-Insert
+			Title role mixed<Tdesig>sid Ode9</><Tmode>rid peMA.Ode9C11.mode</>End-Title
+			Title role melody rid peMA.Ode9C11.melody End-Title
+			Title role desig sid Troparia End-Title
+			Media rid peMA.Ode9C11.text End-Media
+			Verse sid verse_God.text End-Verse
+			Hymn rid peMA.Ode9C11.text @ver media-off End-Hymn		
+			Verse sid verse_God.text End-Verse
+			Hymn rid peMA.Ode9C12.text @ver End-Hymn		
+			Title sid Doxa End-Title
+			Hymn rid peMA.Ode9C13.text @ver End-Hymn		
+			Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+			Hymn rid peMA.Ode9C1T.text @ver End-Hymn		
+			Insert_section KA.append__._9 End-Insert
+			Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+		End-Section
+		Insert_section MA._12_Exaposteilarion__.pe__.exap1t End-Insert
+		Insert_section MA._13_Lauds__.mode6 End-Insert
+		Insert_section MA._13_Lauds__.pe__.p_1234as3456 End-Insert
+		Insert_section MA._13_Lauds__.glory__.pe__.gloryasglory_ End-Insert
+		Insert_section MA._13_Lauds__.both__.pe__.bothasboth_ End-Insert
+		Insert_section MA._14_Doxology__.small End-Insert
+		Insert_section MA._15_Litanies__.aftersmalldoxology End-Insert
+		Insert_section MA._16_Aposticha__.pe__.p_deceased2martyrs1 End-Insert
+		Insert_section MA._16_Aposticha__.glory__.pe__.gloryasglory_ End-Insert
+		Insert_section MA._16_Aposticha__.both__.pe__.theotokion_ End-Insert
+		Insert_section MA._17_Apolytikia__.itisgood_trisagion End-Insert
+		Insert_section AP.pe12t End-Insert
+		Insert_section MA._18_End__.ektenia_wisdom End-Insert
+		Insert_section MA._20_Dismissal__.nocommemoration End-Insert
+	End-Section
+End-Template

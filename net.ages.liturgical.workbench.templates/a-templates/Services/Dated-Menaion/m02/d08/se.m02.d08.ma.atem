@@ -1,0 +1,92 @@
+Template se.m02.d08.ma 
+
+Status NA
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 2 day 8 End_Date
+			Page_Header_Even
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ma End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	when-triodion-day-is
+		1 use: 
+		8 use: 
+			Section Instance04
+				Insert_section MA._01_Beginning__.modeofweek End-Insert
+				Insert_section AP.resgloryres End-Insert
+				Insert_section AP.both__.af End-Insert
+				Insert_section MA._03_Kathisma1__.litany End-Insert
+				Insert_section MA._03_Kathisma1__.oc__.sunday__.withfeast End-Insert
+				Insert_section MA._04_Kathisma2__.append__.oc__.sunday__.withfeast End-Insert
+				Insert_section MA._05_Kathisma3__.evlogetaria_res End-Insert
+				Insert_section MA._07_Antiphons__.sunday_ End-Insert
+				Insert_section MA._11_Kontakion__.sunday End-Insert
+				Insert_section MA._11_Kontakion__.append__.tr_ End-Insert
+				Insert_section SY.Synaxarion End-Insert
+				Insert_section KA.choir__._1345678 End-Insert
+				Insert_section MA._08_Gospel__.priest End-Insert
+				Insert_section MA._10_Canon__.ode9_intro End-Insert
+				Insert_section KA.choir__._mode_mag_media End-Insert
+				Insert_section KA.append__._9 End-Insert
+				Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+				Insert_section MA._12_Exaposteilarion__.eo__.eoofweek_.exap End-Insert
+				Insert_section MA._12_Exaposteilarion__.append__.tr1 End-Insert
+				Insert_section MA._12_Exaposteilarion__.append__.festal End-Insert
+				Insert_section MA._13_Lauds__.modeofweek End-Insert
+				Insert_section MA._13_Lauds__.oc__.s_1234as1234 End-Insert
+				Insert_section MA._13_Lauds__.oc__.s_5as5 End-Insert
+				Insert_section MA._13_Lauds__.tr__.i_123as678_ End-Insert
+				Insert_section MA._13_Lauds__.glory__.tr__.gloryasglory_ End-Insert
+				Insert_section MA._13_Lauds__.both__.eotheotokion End-Insert
+				Insert_section MA._14_Doxology__.sunday End-Insert
+			End-Section
+		13, 17 use: //leavetaking of Meeting
+		14 use:	Insert_section se.tr.d014.ma.Instance01 End-Insert
+		15 use: Insert_section se.tr.d015.ma.Instance01 End-Insert
+		16, 19 use:
+		18, 20 use:
+		21 use:
+		22 use: Insert_section se.tr.d022.ma.Instance01 End-Insert
+		23 thru 26 use: 
+		27 use: 
+		28 use: Insert_section se.tr.d028.ma.Instance01 End-Insert
+		otherwise use:
+			when-name-of-day-is
+				Sunday use:
+					Section Instance02 //Sunday
+					End-Section
+				otherwise use:
+					Section Instance01 //Weekday
+					End-Section				
+			end-when
+	end-when
+
+End-Template

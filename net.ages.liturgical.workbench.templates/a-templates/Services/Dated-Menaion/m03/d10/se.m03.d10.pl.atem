@@ -1,0 +1,94 @@
+Template se.m03.d10.pl 
+
+Status NA
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 3 day 10 End_Date
+			Page_Header_Even
+				center @lookup sid pl.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid pl.pdf.header rid da.daVE.OnTheEveningBefore lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.pl End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	when-movable-cycle-day-is 
+//		26, 28, 33, 35, 40, 42, 47, 49, 54, 56, 61, 63 use:
+	//		Insert_template mc.map.ve End-Insert
+	
+		38 use:
+			Section Instance13
+				Insert_section PL._01_Beginning End-Insert
+				Insert_section PL._02_Kekragaria__.mode8__.for10 End-Insert
+				Insert_section PL._03_Stichera_.montuewedthur_.Idiomela_Triodion End-Insert
+				Insert_section PL._03_Stichera_.montuewedthur_.Stichera_Triodion End-Insert
+				Section block2
+					Title role desig sid TonMartyron End-Title
+					Title role mixed<Tdesig>sid Idiomela</><Tmode>sid me.m03.d09_gr_GR_cog.meVE.Stichera01.mode</>End-Title
+					Rubric sid client_gr_GR_cog.cl.se.R001 End-Rubric
+					Media sid me.m03.d09_gr_GR_cog.meVE.Stichera01.text End-Media
+					Insert_section VE.LIHC_Verses.v07 End-Insert
+					Hymn sid me.m03.d09_gr_GR_cog.meVE.Stichera01.text @ver media-off End-Hymn
+					Insert_section VE.LIHC_Verses.v08 End-Insert
+					Hymn sid me.m03.d09_gr_GR_cog.meVE.Stichera01.text @ver End-Hymn
+					Media sid me.m03.d09_gr_GR_cog.meVE.Stichera02.text End-Media
+					Insert_section VE.LIHC_Verses.v09 End-Insert
+					Hymn sid me.m03.d09_gr_GR_cog.meVE.Stichera02.text @ver End-Hymn
+					Media sid me.m03.d09_gr_GR_cog.meVE.Stichera03.text End-Media
+					Insert_section VE.LIHC_Verses.v10 End-Insert
+					Hymn sid me.m03.d09_gr_GR_cog.meVE.Stichera03.text @ver End-Hymn
+				End-Section
+				Section block3
+					Title role mixed sid Doxa<Tmode>sid me.m03.d09_gr_GR_cog.meVE.AposGlory.mode</>End-Title
+					Hymn sid me.m03.d09_gr_GR_cog.meVE.AposGlory.text @ver End-Hymn
+				End-Section
+				Section block4
+					Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+					Title role mixed<Tmode>sid oc.m6.d5_gr_GR_cog.ocMA.AposTheotokion.mode</><Tmelody>sid oc.m6.d5_gr_GR_cog.ocMA.AposTheotokion.melody</>End-Title
+					Hymn sid oc.m6.d5_gr_GR_cog.ocMA.AposTheotokion.text @ver End-Hymn
+				End-Section
+				Insert_section PL._04_Middle End-Insert
+				Insert_section PL._05_Readings End-Insert
+				Insert_section PL._06 End-Insert
+				Insert_section LE._01_Epistle__.menaion_ End-Insert
+				Insert_section LE._02_Gospel__.menaion_ End-Insert
+				Insert_section PL._07 End-Insert
+				Insert_section PL._08 End-Insert
+				Insert_section PL._09 End-Insert
+				Insert_section PL._11 End-Insert
+				Insert_section PL._12.part1 End-Insert
+				Section block6
+					Dialog sid DoxaSoiChriste2 End-Dialog
+					Dialog sid dis00 sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid client_gr_GR_cog.cl.localpatronsaint1.dismissal</>sid dis09 sid me.m03.d09_gr_GR_cog.meInsert1 sid me.m03.d09_gr_GR_cog.meInsert2 sid dis10 sid dis89 End-Dialog 
+					Insert_section PL._13 End-Insert
+					Actor sid Priest End-Actor
+					Dialog sid DiEfchonPateron.text End-Dialog
+					Dialog<i>sid res04p</>End-Dialog
+				End-Section
+			End-Section
+	end-when		
+End-Template

@@ -1,0 +1,93 @@
+Template se.m02.d02.ve 
+
+Status Final
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 2 day 2 year 2016 End_Date
+			Page_Header_Even
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	when-triodion-day-is
+		1, 8, 15, 22 use:
+			Section Instance03 //Triodion Sunday
+			End-Section
+		14 use: Insert_section Instance01 End-Insert
+		16 thru 21 use: Insert_section Instance01 End-Insert
+		23 use:
+			Section Instance07 //Week1 Monday
+			End-Section
+		otherwise use:
+			when-name-of-day-is
+				Sunday use:
+					Section Instance02 //Sunday
+						Insert_section VE._01_Beginning__.vespers End-Insert
+						Insert_section VE._02_Kekragaria__.modeofweek__.for10 End-Insert
+						Insert_section VE._03_Stichera__.oc__.sunday_.s_1234 End-Insert
+						Insert_section TI.f End-Insert
+						Insert_section VE._03_Stichera__.me__.i_112233as5678910 End-Insert
+						Insert_section VE._03_Stichera__.gloryboth__.me__.gloryasgloryboth_ End-Insert
+						Insert_section VE._04_Middle__.entrance End-Insert
+						Insert_section VE._05_Readings__.reader End-Insert
+						Insert_section VE._06_Litanies__.fullektenia End-Insert
+						Insert_section VE._08_Aposticha__.oc__.sunday_.aposticha1_ End-Insert
+						Insert_section VE._08_Aposticha__.oc__.sunday_.aposticha234 End-Insert
+						Insert_section TI.gb.f End-Insert
+						Insert_section VE._08_Aposticha__.gloryboth__.me__.gloryasgloryboth_.hymn End-Insert
+						Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
+						Insert_section AP.res__.modeofweek End-Insert	
+						Insert_section TI.g.f End-Insert
+						Insert_section AP.me1_.hymn End-Insert
+						Insert_section TI.b.r End-Insert
+						Insert_section AP.me1_.hymn End-Insert
+						Insert_section VE._10_End__.wisdom End-Insert
+						Insert_section VE._11_Dismissal__.nocommemoration End-Insert
+					End-Section
+				otherwise use:
+					Section Instance01 //Weekday
+						Insert_section VE._01_Beginning__.vespers End-Insert
+						Insert_section VE._02_Kekragaria__.mode1__.for6 End-Insert
+						Insert_section VE._03_Stichera__.me__.i_112233as5678910 End-Insert
+						Insert_section VE._03_Stichera__.gloryboth__.me__.gloryasgloryboth_ End-Insert
+						Insert_section VE._04_Middle__.entrance End-Insert
+						Insert_section VE._05_Readings__.reader End-Insert
+						Insert_section VE._06_Litanies__.fullektenia End-Insert
+						Insert_section VE._08_Aposticha__.me__.i_meeting12 End-Insert
+						Insert_section VE._08_Aposticha__.gloryboth__.me__.gloryasgloryboth_ End-Insert
+						Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
+						Insert_section AP.f3 End-Insert
+						Insert_section VE._10_End__.wisdom End-Insert
+						Insert_section VE._11_Dismissal__.nocommemoration End-Insert
+					End-Section				
+			end-when
+	end-when
+
+End-Template

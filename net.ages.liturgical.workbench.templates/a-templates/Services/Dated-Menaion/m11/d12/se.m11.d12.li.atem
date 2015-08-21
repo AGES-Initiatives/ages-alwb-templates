@@ -1,0 +1,89 @@
+Template se.m11.d12.li
+
+Status Draft
+
+	import eu.lichrysbasil_gr_GR_cog.*
+	import ho.s10_gr_GR_cog.*	
+	import me.m11.d12_gr_GR_cog.*
+
+	import da.*
+	import oc.*
+
+	//Templates
+//	import bk.ap.me.m11.sections.*
+	
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 11 day 12 End_Date
+			Page_Header_Even
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	when-name-of-day-is 
+		Sunday use:	
+			Section Instance02 //Sunday
+				Section block1
+					Insert_section LI._01_Enarxis__.daily End-Insert
+					Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
+					Insert_section LI._04_Entrance__.clergy End-Insert
+					Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
+					Insert_section AP.res__.modeofweek End-Insert
+				End-Section
+				Section block3
+					Insert_section ho.s15_m11.ho_Nov12.Apolytikion_1 End-Insert
+					Insert_section LI._05_AfterEntranceHymns__.local End-Insert
+					Insert_section KO.seasonal End-Insert
+					Insert_section LI._06_Trisagion__.chrys End-Insert
+					Insert_section LE._01_Epistle__.daily_ End-Insert
+					Insert_section LE._02_Gospel__.daily_ End-Insert
+				End-Section
+				Insert_section Instance01.block3 End-Insert
+			End-Section //Sunday
+		
+			otherwise use:
+				Section Instance01 //weekday
+					Section block1
+						Insert_section LI._01_Enarxis__.daily End-Insert
+						Insert_section LI._02_Antiphons__.celebrated_saint End-Insert
+						Insert_section ho.s15_m11.ho_Nov12.Apolytikion_1 End-Insert
+						Insert_section LI._04_Entrance__.choir End-Insert
+						Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
+					End-Section
+					Section block2
+						Insert_section ho.s15_m11.ho_Nov12.Apolytikion_1 End-Insert
+						Insert_section LI._05_AfterEntranceHymns__.local End-Insert
+						Insert_section KO.seasonal End-Insert
+						Insert_section LI._06_Trisagion__.chrys End-Insert
+						Insert_section LE._01_Epistle__.daily_ End-Insert
+						Insert_section LE._02_Gospel__.daily_ End-Insert
+					End-Section
+					Section block3
+						Insert_section LI._08_Liturgy__.chrys End-Insert
+						Insert_section LI._09_Dismissal__.commemoration End-Insert
+					End-Section
+				End-Section	
+	end-when
+
+End-Template

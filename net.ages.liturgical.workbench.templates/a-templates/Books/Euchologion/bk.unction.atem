@@ -1,0 +1,653 @@
+Template bk.unction
+
+Status Review
+	
+	import client_gr_GR_cog.*
+	import eu.unction_gr_GR_cog.*
+	import ho.s03_gr_GR_cog.*
+	import lectionaries_gr_GR_cog.*
+//	import le.go.va.unction_gr_GR_cog.*
+	import ps_gr_GR_cog.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+	
+	import bk.ap.va.sections.Unction.*
+	import bk.ho.s01.*
+
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+
+	Head 
+		Template_Title @text"Unction" End_Title
+		
+			Page_Header_Even
+				center @lookup sid unc.pdf.header lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid unc.pdf.header lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+
+
+	Title role desig sid euUNC.title End-Title
+	
+	Actor sid Priest End-Actor
+	Dialog sid enarxis02 End-Dialog
+	Actor sid Reader End-Actor
+	Insert_section Trisagion_Prayers End-Insert
+	Actor sid Priest End-Actor
+	Dialog sid exc20 End-Dialog
+	Actor sid Reader End-Actor
+	Reading sid res04 End-Reading
+	Reading sid res01<r>sid Twelve</>End-Reading
+	Para role readingzero sid DefteProskinisomen1 End-Para
+	Para role readingzero sid DefteProskinisomen2 End-Para
+	Reading sid DefteProskinisomen3 End-Reading
+	Title role desig sid psa142.title End-Title
+	Reading sid psa142.text End-Reading		
+	Actor sid Priest End-Actor
+	Insert_section LN.ShortLitany00 End-Insert
+	Dialog sid exc11<i>sid res04p</>End-Dialog
+	Actor sid Choir End-Actor
+	Title role mode sid Mode6 End-Title
+	Media sid euUNC.Key0100.text End-Media
+	Para role chant sid euUNC.Key0100.text End-Para
+	Para role chant sid euUNC.Key0100.text End-Para
+	Verse<bnr>sid vVerse1</>sid psa6.v2.text End-Verse
+	Para role chant sid euUNC.Key0100.text End-Para
+	Verse<bnr>sid vVerse2</>sid psa6.v3.text End-Verse
+	Para role chant sid euUNC.Key0100.text End-Para
+	Title role desig sid Troparia End-Title	 
+	Hymn sid euUNC.Key0103.text @ver End-Hymn
+	Verse sid DoxaPatri.text End-Verse
+	Hymn sid euUNC.Key0104.text @ver End-Hymn
+	Verse sid KaiNynKaiAei.text End-Verse
+	Hymn sid euUNC.Key0105.text @ver End-Hymn
+	Actor sid Reader End-Actor
+	Title role desig sid psa50.title End-Title
+	Reading sid psa50.text End-Reading		
+	
+	Actor sid Choir End-Actor
+	Title role desig sid OKanon End-Title
+	Title<r>sid euUNC.C1Acrostic.text</>End-Title
+	Title role mixed<Tmode>sid euUNC.Ode11.mode</><Tdesig>sid euUNC.Ode11.ode</><Tmelody>sid euUNC.Ode11.melody</>End-Title	
+	Media sid euUNC.Ode11.text End-Media
+	Verse sid euUNC.C1Verse.text End-Verse
+	Hymn sid euUNC.Ode11.text @ver media-off End-Hymn		
+	Verse sid euUNC.C1Verse.text End-Verse
+	Hymn sid euUNC.Ode12.text @ver End-Hymn		
+	Verse sid DoxaPatri.text End-Verse
+	Hymn sid euUNC.Ode13.text @ver End-Hymn		
+	Verse sid KaiNynKaiAei.text End-Verse	
+	Hymn sid euUNC.Ode1T.text @ver End-Hymn		
+	
+	Title role mixed<Tdesig>sid euUNC.Ode31.ode</><Tmelody>sid euUNC.Ode31.melody</>End-Title	
+	Media sid euUNC.Ode31.text End-Media
+	Verse sid euUNC.C1Verse.text End-Verse
+	Hymn sid euUNC.Ode31.text @ver media-off End-Hymn		
+	Verse sid euUNC.C1Verse.text End-Verse
+	Hymn sid euUNC.Ode32.text @ver End-Hymn		
+	Verse sid DoxaPatri.text End-Verse
+	Hymn sid euUNC.Ode33.text @ver End-Hymn		
+	Verse sid KaiNynKaiAei.text End-Verse	
+	Hymn sid euUNC.Ode3T.text @ver End-Hymn		
+	
+	Title role desig sid Kathisma End-Title
+	Title role mixed<Tdesig>sid euUNC.Kathisma11.mode</><Tmelody>sid euUNC.Kathisma11.melody</>End-Title	
+	Hymn sid euUNC.Kathisma11.text @ver End-Hymn
+	Title sid Doxa sid KaiNyn End-Title
+	Title role mixed<Tdesig>sid euUNC.Kathisma12.mode</><Tmelody>sid euUNC.Kathisma12.melody</>End-Title	
+	Hymn sid euUNC.Kathisma12.text @ver End-Hymn
+	
+	Title role mixed<Tdesig>sid euUNC.Ode41.ode</><Tmelody>sid euUNC.Ode41.melody</>End-Title	
+	Media sid euUNC.Ode41.text End-Media
+	Verse sid euUNC.C1Verse.text End-Verse
+	Hymn sid euUNC.Ode41.text @ver media-off End-Hymn		
+	Verse sid euUNC.C1Verse.text End-Verse
+	Hymn sid euUNC.Ode42.text @ver End-Hymn		
+	Verse sid DoxaPatri.text End-Verse
+	Hymn sid euUNC.Ode43.text @ver End-Hymn		
+	Verse sid KaiNynKaiAei.text End-Verse	
+	Hymn sid euUNC.Ode4T.text @ver End-Hymn		
+
+	Title role mixed<Tdesig>sid euUNC.Ode51.ode</><Tmelody>sid euUNC.Ode51.melody</>End-Title	
+	Media sid euUNC.Ode51.text End-Media
+	Verse sid euUNC.C1Verse.text End-Verse
+	Hymn sid euUNC.Ode51.text @ver media-off End-Hymn		
+	Verse sid euUNC.C1Verse.text End-Verse
+	Hymn sid euUNC.Ode52.text @ver End-Hymn		
+	Verse sid DoxaPatri.text End-Verse
+	Hymn sid euUNC.Ode53.text @ver End-Hymn		
+	Verse sid KaiNynKaiAei.text End-Verse	
+	Hymn sid euUNC.Ode5T.text @ver End-Hymn		
+
+	Title role mixed<Tdesig>sid euUNC.Ode61.ode</><Tmelody>sid euUNC.Ode61.melody</>End-Title	
+	Media sid euUNC.Ode61.text End-Media
+	Verse sid euUNC.C1Verse.text End-Verse
+	Hymn sid euUNC.Ode61.text @ver media-off End-Hymn		
+	Verse sid euUNC.C1Verse.text End-Verse
+	Hymn sid euUNC.Ode62.text @ver End-Hymn		
+	Verse sid DoxaPatri.text End-Verse
+	Hymn sid euUNC.Ode63.text @ver End-Hymn		
+	Verse sid KaiNynKaiAei.text End-Verse	
+	Hymn sid euUNC.Ode6T.text @ver End-Hymn		
+
+	Title role desig sid Kontakion End-Title
+	Title role mixed<Tdesig>sid euUNC.Kontakion.mode</><Tmelody>sid euUNC.Kontakion.melody</>End-Title	
+	Hymn sid euUNC.Kontakion.text @ver End-Hymn		
+
+	Title role mixed<Tdesig>sid euUNC.Ode71.ode</><Tmelody>sid euUNC.Ode71.melody</>End-Title	
+	Media sid euUNC.Ode71.text End-Media
+	Verse sid euUNC.C1Verse.text End-Verse
+	Hymn sid euUNC.Ode71.text @ver media-off End-Hymn		
+	Verse sid euUNC.C1Verse.text End-Verse
+	Hymn sid euUNC.Ode72.text @ver End-Hymn		
+	Verse sid DoxaPatri.text End-Verse
+	Hymn sid euUNC.Ode73.text @ver End-Hymn		
+	Verse sid KaiNynKaiAei.text End-Verse	
+	Hymn sid euUNC.Ode7T.text @ver End-Hymn		
+
+	Title role mixed<Tdesig>sid euUNC.Ode81.ode</><Tmelody>sid euUNC.Ode81.melody</>End-Title	
+	Media sid euUNC.Ode81.text End-Media
+	Verse sid euUNC.C1Verse.text End-Verse
+	Hymn sid euUNC.Ode81.text @ver media-off End-Hymn		
+	Verse sid euUNC.C1Verse.text End-Verse
+	Hymn sid euUNC.Ode82.text @ver End-Hymn		
+	Verse sid DoxaPatri.text End-Verse
+	Hymn sid euUNC.Ode83.text @ver End-Hymn		
+	Verse sid KaiNynKaiAei.text End-Verse	
+	Hymn sid euUNC.Ode8T.text @ver End-Hymn		
+
+	Title role mixed<Tdesig>sid euUNC.Ode91.ode</><Tmelody>sid euUNC.Ode91.melody</>End-Title	
+	Media sid euUNC.Ode91.text End-Media
+	Verse sid euUNC.C1Verse.text End-Verse
+	Hymn sid euUNC.Ode91.text @ver media-off End-Hymn		
+	Verse sid euUNC.C1Verse.text End-Verse
+	Hymn sid euUNC.Ode92.text @ver End-Hymn		
+	Verse sid DoxaPatri.text End-Verse
+	Hymn sid euUNC.Ode93.text @ver End-Hymn		
+	Verse sid KaiNynKaiAei.text End-Verse	
+	Hymn sid euUNC.Ode9T.text @ver End-Hymn		
+	
+	Hymn sid euUNC.Ode9End.text @ver End-Hymn
+	
+	Title role desig sid Exaposteilarion End-Title
+	Title role mixed<Tdesig>sid euUNC.Exaposteilarion.mode</><Tmelody>sid euUNC.Exaposteilarion.melody</>End-Title	
+	Hymn sid euUNC.Exaposteilarion.text @ver End-Hymn		
+	
+	Section Lauds
+		Title role mixed<Tdesig>sid OiAinoi</><Tmode>sid oc.m4.d1_gr_GR_cog.ocMA.Lauds1.mode</>End-Title
+		Media sid oc.m4.d1_gr_GR_cog.ocMA.MM.LaudsHeirmologic01.text End-Media
+		Hymn sid psa150.v6a.text sid psa148.v1alt.text @ver End-Hymn
+		Hymn sid psa148.v2alt.text @ver End-Hymn
+	End-Section
+	Title role desig sid StichiraProsomoia End-Title
+	Title role mixed<Tdesig>sid euUNC.Lauds1.mode</><Tmelody>sid euUNC.Lauds1.melody</>End-Title	
+	Media sid euUNC.Lauds1.text End-Media
+	Verse sid euUNC.C1Verse.text End-Verse
+	Hymn sid euUNC.Lauds1.text @ver media-off End-Hymn		
+	Verse sid euUNC.C1Verse.text End-Verse
+	Hymn sid euUNC.Lauds2.text @ver End-Hymn		
+	Verse sid DoxaPatri.text End-Verse
+	Hymn sid euUNC.Lauds3.text @ver End-Hymn		
+	Verse sid KaiNynKaiAei.text End-Verse	
+	Hymn sid euUNC.LaudsTheotokion.text @ver End-Hymn		
+	
+	Actor sid Reader End-Actor
+	Insert_section Trisagion_Prayers End-Insert
+	Actor sid Priest End-Actor
+	Dialog sid exc20 End-Dialog
+	Actor sid Choir End-Actor
+	Dialog sid res04 End-Dialog
+	Title role desig sid Troparion End-Title
+	Title role mixed<Tdesig>sid euUNC.Troparion.mode</><Tmelody>sid euUNC.Troparion.melody</>End-Title	
+	Hymn sid euUNC.Troparion.text @ver End-Hymn		
+		
+	Actor sid Deacon End-Actor
+	Dialog sid pet01 End-Dialog
+	Dialog sid res01p End-Dialog
+	Dialog sid pet02 End-Dialog
+	Dialog sid pet03 End-Dialog
+	Dialog sid pet04 End-Dialog
+	Dialog sid pet06a sid cl.bishop1.rank sid cl.bishop1.name_c sid pet06b End-Dialog
+	Dialog sid pet07S End-Dialog
+	Dialog sid petUnction01 End-Dialog
+	Dialog sid petUnction02 End-Dialog
+	Dialog sid petUnction03 End-Dialog
+	Dialog sid pet11 End-Dialog
+	Dialog sid pet12 End-Dialog
+	Dialog sid pet13 End-Dialog
+	Dialog sid res03p End-Dialog
+	Actor sid Priest End-Actor
+	Dialog sid exc01 End-Dialog
+	Dialog sid res04p End-Dialog
+
+	Actor sid Deacon End-Actor
+	Dialog sid pet00 End-Dialog
+	Dialog sid res01p End-Dialog
+	Actor sid Priest End-Actor
+	Para role prayer sid euUNC.Key0201.text End-Para
+	Dialog sid res04p End-Dialog
+
+	Actor sid Choir End-Actor
+	Media sid euUNC.Key0202.text End-Media		
+	Title role desig sid euUNC.Key0202.title End-Title
+	Title role mixed<Tdesig>sid euUNC.Troparion.mode</><Tmelody>sid euUNC.Troparion.melody</>End-Title	
+	Hymn sid euUNC.Troparion.text @ver media-off End-Hymn		
+	
+	Title role desig sid euUNC.Key0203.title End-Title
+	Title role mixed<Tdesig>sid pe.d106_gr_GR_cog.peMA.Kontakion1.mode</><Tmelody>sid pe.d106_gr_GR_cog.peMA.Kontakion1.melody</>End-Title	
+	Hymn sid pe.d106_gr_GR_cog.peMA.Kontakion1.text @ver media-off End-Hymn		
+
+	Title role desig sid euUNC.Key0204.title End-Title
+	Title role mixed<Tdesig>sid pe.d092_gr_GR_cog.peMA.Kontakion1.mode</><Tmelody>sid pe.d092_gr_GR_cog.peMA.Kontakion1.melody</>End-Title	
+	Hymn sid pe.d092_gr_GR_cog.peMA.Kontakion1.text @ver media-off End-Hymn		
+			
+	Title role desig sid euUNC.Key0205.title End-Title
+	Title role mixed<Tdesig>sid me.m10.d23_gr_GR_cog.meVE.Apolytikion1.mode</><Tmelody>sid me.m10.d23_gr_GR_cog.meVE.Apolytikion1.melody</>End-Title	
+	Hymn sid me.m10.d23_gr_GR_cog.meVE.Apolytikion1.text @ver media-off End-Hymn		
+			
+	Title role desig sid euUNC.Key0206.title End-Title
+	Title role mixed<Tdesig>sid me.m10.d23_gr_GR_cog.meMA.Kontakion1.mode</><Tmelody>sid me.m10.d23_gr_GR_cog.meMA.Kontakion1.melody</>End-Title	
+	Hymn sid me.m10.d23_gr_GR_cog.meMA.Kontakion1.text @ver media-off End-Hymn		
+
+	Title role desig sid euUNC.Key0207.title End-Title
+	Title role mixed<Tdesig>sid me.m12.d06_gr_GR_cog.meMA.Kontakion1.mode</><Tmelody>sid me.m12.d06_gr_GR_cog.meMA.Kontakion1.melody</>End-Title	
+	Hymn sid me.m12.d06_gr_GR_cog.meMA.Kontakion1.text @ver media-off End-Hymn		
+
+	Title role desig sid euUNC.Key0208.title End-Title
+	Title role mixed<Tdesig>sid me.m10.d26_gr_GR_cog.meVE.Apolytikion1.mode</><Tmelody>sid me.m10.d26_gr_GR_cog.meVE.Apolytikion1.melody</>End-Title	
+	Hymn sid me.m10.d26_gr_GR_cog.meVE.Apolytikion1.text @ver media-off End-Hymn		
+
+	Title role desig sid euUNC.Key0209.title End-Title
+	Title role mixed<Tdesig>sid me.m07.d27_gr_GR_cog.meVE.Apolytikion1.mode</><Tmelody>sid me.m07.d27_gr_GR_cog.meVE.Apolytikion1.melody</>End-Title	
+	Hymn sid me.m07.d27_gr_GR_cog.meVE.Apolytikion1.text @ver media-off End-Hymn		
+
+	Title role desig sid euUNC.Key0210.title End-Title
+	Title role mixed<Tdesig>sid me.m11.d01_gr_GR_cog.meVE.Apolytikion1.mode</><Tmelody>sid me.m11.d01_gr_GR_cog.meVE.Apolytikion1.melody</>End-Title	
+	Hymn sid me.m11.d01_gr_GR_cog.meVE.Apolytikion1.text @ver media-off End-Hymn		
+
+	Title role desig sid euUNC.Key0211.title End-Title
+	Title role mixed<Tdesig>sid me.m05.d08_gr_GR_cog.meMA.Kontakion1.mode</><Tmelody>sid me.m05.d08_gr_GR_cog.meMA.Kontakion1.melody</>End-Title	
+	Hymn sid me.m05.d08_gr_GR_cog.meMA.Kontakion1.text @ver media-off End-Hymn		
+
+	Title role desig sid euUNC.Key0212.title End-Title
+	Title role mixed<Tdesig>sid ho.s23_gr_GR_cog.hoCA.Kathisma11.mode</><Tmelody>sid ho.s23_gr_GR_cog.hoCA.Kathisma11.melody</>End-Title	
+	Hymn sid ho.s23_gr_GR_cog.hoCA.Kathisma11.text @ver media-off End-Hymn		
+
+	Title<r>sid lecLE.ordinal01a.uc sid lecAP.Apostolos.uc sid lecLE.ordinal01b.uc</>End-Title
+	Actor sid Deacon End-Actor
+	Dialog sid exc19 End-Dialog
+	Actor sid Reader End-Actor
+	Insert_section bk.ap.va.sections.forUnction.epistle1.ep_title End-Insert
+	Insert_section bk.ap.va.sections.forUnction.epistle1.ep_prokeimenon End-Insert
+	Insert_section bk.ap.va.sections.forUnction.epistle1.ep_verse End-Insert
+	Actor sid Deacon End-Actor
+	Dialog sid exc17 End-Dialog
+	Actor sid Reader End-Actor
+	Insert_section bk.ap.va.sections.forUnction.epistle1.ep_book End-Insert
+	Actor sid Deacon End-Actor
+	Dialog sid exc19 End-Dialog
+	Actor sid Reader End-Actor
+	Insert_section bk.ap.va.sections.forUnction.epistle1.ep_lesson End-Insert
+	Actor sid Priest End-Actor
+	Dialog sid epi02 End-Dialog
+	Actor sid Choir End-Actor
+	Para role chant sid Allilouia3.text End-Para
+	Insert_section bk.ev.va.sections.forUnction.gospel1.go_title End-Insert
+	Actor sid Deacon End-Actor
+	Dialog sid exc17 sid exc18 sid gos02 End-Dialog
+	Actor sid Priest End-Actor
+	Dialog sid pet31 End-Dialog
+	Dialog sid res05p End-Dialog
+	Actor sid Deacon End-Actor
+	Insert_section bk.ev.va.sections.forUnction.gospel1.go_book End-Insert
+	Actor sid Priest End-Actor
+	Dialog sid exc19 End-Dialog
+	Dialog sid DoxaSoiKyrieP End-Dialog	
+	Actor sid Deacon End-Actor
+	Insert_section bk.ev.va.sections.forUnction.gospel1.go_lesson End-Insert
+	Actor sid Priest End-Actor
+	Dialog sid eu.lichrysbasil_gr_GR_cog.euLI.Key0705.text End-Dialog
+	Actor sid Choir End-Actor						
+	Dialog sid DoxaSoiKyrie End-Dialog	
+	Section ShortSupplication
+		Actor sid Deacon End-Actor
+		Dialog sid pet17 End-Dialog
+		Dialog sid res06p End-Dialog
+		Dialog sid pet21d End-Dialog
+		Actor sid Priest End-Actor
+		Dialog sid exc11 End-Dialog
+		Dialog sid res04p End-Dialog
+	End-Section
+	Actor sid Deacon End-Actor
+	Dialog sid pet00 End-Dialog
+	Dialog sid res01p End-Dialog
+	Actor sid Priest End-Actor
+	Title role desig sid euUNC.Key0300.title End-Title
+	Para role prayerzero sid euUNC.Key0301.text End-Para
+	Para role prayerzero sid euUNC.Key0302.text End-Para
+	Para role prayer sid euUNC.Key0303.text End-Para
+//	Para role prayerzero sid euUNC.Key0304.text End-Para
+//	Para role prayer sid euUNC.Key0305.text End-Para
+	Dialog sid res04p End-Dialog
+	
+	Title<r>sid lecLE.ordinal02a.uc sid lecAP.Apostolos.uc sid lecLE.ordinal02b.uc</>End-Title
+	Actor sid Deacon End-Actor
+	Dialog sid exc19 End-Dialog
+	Actor sid Reader End-Actor
+	Insert_section bk.ap.va.sections.forUnction.epistle2.ep_title End-Insert
+	Insert_section bk.ap.va.sections.forUnction.epistle2.ep_prokeimenon End-Insert
+	Insert_section bk.ap.va.sections.forUnction.epistle2.ep_verse End-Insert
+	Actor sid Deacon End-Actor
+	Dialog sid exc17 End-Dialog
+	Actor sid Reader End-Actor
+	Insert_section bk.ap.va.sections.forUnction.epistle2.ep_book End-Insert
+	Actor sid Deacon End-Actor
+	Dialog sid exc19 End-Dialog
+	Actor sid Reader End-Actor
+	Insert_section bk.ap.va.sections.forUnction.epistle2.ep_lesson End-Insert
+	Actor sid Priest End-Actor
+	Dialog sid epi02 End-Dialog
+	Actor sid Choir End-Actor
+	Para role chant sid Allilouia3.text End-Para
+	Insert_section bk.ev.va.sections.forUnction.gospel2.go_title End-Insert
+	Actor sid Deacon End-Actor
+	Dialog sid exc17 sid exc18 sid gos02 End-Dialog
+	Actor sid Priest End-Actor
+	Dialog sid pet31 End-Dialog
+	Dialog sid res05p End-Dialog
+	Actor sid Deacon End-Actor
+	Insert_section bk.ev.va.sections.forUnction.gospel2.go_book End-Insert
+	Actor sid Priest End-Actor
+	Dialog sid exc19 End-Dialog
+	Dialog sid DoxaSoiKyrieP End-Dialog	
+	Actor sid Deacon End-Actor
+	Insert_section bk.ev.va.sections.forUnction.gospel2.go_lesson End-Insert
+	Actor sid Priest End-Actor
+	Dialog sid eu.lichrysbasil_gr_GR_cog.euLI.Key0705.text End-Dialog
+	Actor sid Choir End-Actor						
+	Dialog sid DoxaSoiKyrie End-Dialog	
+	Insert_section ShortSupplication End-Insert
+	Actor sid Deacon End-Actor
+	Dialog sid pet00 End-Dialog
+	Dialog sid res01p End-Dialog
+	Actor sid Priest End-Actor
+	Title role desig sid euUNC.Key0400.title End-Title
+	Para role prayerzero sid euUNC.Key0401.text End-Para
+	Para role prayer sid euUNC.Key0402.text End-Para
+	Dialog sid res04p End-Dialog
+	
+	Title<r>sid lecLE.ordinal03a.uc sid lecAP.Apostolos.uc sid lecLE.ordinal03b.uc</>End-Title
+	Actor sid Deacon End-Actor
+	Dialog sid exc19 End-Dialog
+	Actor sid Reader End-Actor
+	Insert_section bk.ap.va.sections.forUnction.epistle3.ep_title End-Insert
+	Insert_section bk.ap.va.sections.forUnction.epistle3.ep_prokeimenon End-Insert
+	Insert_section bk.ap.va.sections.forUnction.epistle3.ep_verse End-Insert
+	Actor sid Deacon End-Actor
+	Dialog sid exc17 End-Dialog
+	Actor sid Reader End-Actor
+	Insert_section bk.ap.va.sections.forUnction.epistle3.ep_book End-Insert
+	Actor sid Deacon End-Actor
+	Dialog sid exc19 End-Dialog
+	Actor sid Reader End-Actor
+	Insert_section bk.ap.va.sections.forUnction.epistle3.ep_lesson End-Insert
+	Actor sid Priest End-Actor
+	Dialog sid epi02 End-Dialog
+	Actor sid Choir End-Actor
+	Para role chant sid Allilouia3.text End-Para
+	Insert_section bk.ev.va.sections.forUnction.gospel3.go_title End-Insert
+	Actor sid Deacon End-Actor
+	Dialog sid exc17 sid exc18 sid gos02 End-Dialog
+	Actor sid Priest End-Actor
+	Dialog sid pet31 End-Dialog
+	Dialog sid res05p End-Dialog
+	Actor sid Deacon End-Actor
+	Insert_section bk.ev.va.sections.forUnction.gospel3.go_book End-Insert
+	Actor sid Priest End-Actor
+	Dialog sid exc19 End-Dialog
+	Dialog sid DoxaSoiKyrieP End-Dialog	
+	Actor sid Deacon End-Actor
+	Insert_section bk.ev.va.sections.forUnction.gospel3.go_lesson End-Insert
+	Actor sid Priest End-Actor
+	Dialog sid eu.lichrysbasil_gr_GR_cog.euLI.Key0705.text End-Dialog
+	Actor sid Choir End-Actor						
+	Dialog sid DoxaSoiKyrie End-Dialog	
+	Insert_section ShortSupplication End-Insert
+	Actor sid Deacon End-Actor
+	Dialog sid pet00 End-Dialog
+	Dialog sid res01p End-Dialog
+	Actor sid Priest End-Actor
+	Title role desig sid euUNC.Key0500.title End-Title
+	Para role prayerzero sid euUNC.Key0501.text End-Para
+	Para role prayer sid euUNC.Key0502.text End-Para
+	Dialog sid res04p End-Dialog
+	
+	Title<r>sid lecLE.ordinal04a.uc sid lecAP.Apostolos.uc sid lecLE.ordinal04b.uc</>End-Title
+	Actor sid Deacon End-Actor
+	Dialog sid exc19 End-Dialog
+	Actor sid Reader End-Actor
+	Insert_section bk.ap.va.sections.forUnction.epistle4.ep_title End-Insert
+	Insert_section bk.ap.va.sections.forUnction.epistle4.ep_prokeimenon End-Insert
+	Insert_section bk.ap.va.sections.forUnction.epistle4.ep_verse End-Insert
+	Actor sid Deacon End-Actor
+	Dialog sid exc17 End-Dialog
+	Actor sid Reader End-Actor
+	Insert_section bk.ap.va.sections.forUnction.epistle4.ep_book End-Insert
+	Actor sid Deacon End-Actor
+	Dialog sid exc19 End-Dialog
+	Actor sid Reader End-Actor
+	Insert_section bk.ap.va.sections.forUnction.epistle4.ep_lesson End-Insert
+	Actor sid Priest End-Actor
+	Dialog sid epi02 End-Dialog
+	Actor sid Choir End-Actor
+	Para role chant sid Allilouia3.text End-Para
+	Insert_section bk.ev.va.sections.forUnction.gospel4.go_title End-Insert
+	Actor sid Deacon End-Actor
+	Dialog sid exc17 sid exc18 sid gos02 End-Dialog
+	Actor sid Priest End-Actor
+	Dialog sid pet31 End-Dialog
+	Dialog sid res05p End-Dialog
+	Actor sid Deacon End-Actor
+	Insert_section bk.ev.va.sections.forUnction.gospel4.go_book End-Insert
+	Actor sid Priest End-Actor
+	Dialog sid exc19 End-Dialog
+	Dialog sid DoxaSoiKyrieP End-Dialog	
+	Actor sid Deacon End-Actor
+	Insert_section bk.ev.va.sections.forUnction.gospel4.go_lesson End-Insert
+	Actor sid Priest End-Actor
+	Dialog sid eu.lichrysbasil_gr_GR_cog.euLI.Key0705.text End-Dialog
+	Actor sid Choir End-Actor						
+	Dialog sid DoxaSoiKyrie End-Dialog	
+	Insert_section ShortSupplication End-Insert
+	Actor sid Deacon End-Actor
+	Dialog sid pet00 End-Dialog
+	Dialog sid res01p End-Dialog
+	Actor sid Priest End-Actor
+	Title role desig sid euUNC.Key0600.title End-Title
+	Para role prayerzero sid euUNC.Key0601.text End-Para
+	Para role prayer sid euUNC.Key0602.text End-Para
+	Dialog sid res04p End-Dialog
+
+	Title<r>sid lecLE.ordinal05a.uc sid lecAP.Apostolos.uc sid lecLE.ordinal05b.uc</>End-Title
+	Actor sid Deacon End-Actor
+	Dialog sid exc19 End-Dialog
+	Actor sid Reader End-Actor
+	Insert_section bk.ap.va.sections.forUnction.epistle5.ep_title End-Insert
+	Insert_section bk.ap.va.sections.forUnction.epistle5.ep_prokeimenon End-Insert
+	Insert_section bk.ap.va.sections.forUnction.epistle5.ep_verse End-Insert
+	Actor sid Deacon End-Actor
+	Dialog sid exc17 End-Dialog
+	Actor sid Reader End-Actor
+	Insert_section bk.ap.va.sections.forUnction.epistle5.ep_book End-Insert
+	Actor sid Deacon End-Actor
+	Dialog sid exc19 End-Dialog
+	Actor sid Reader End-Actor
+	Insert_section bk.ap.va.sections.forUnction.epistle5.ep_lesson End-Insert
+	Actor sid Priest End-Actor
+	Dialog sid epi02 End-Dialog
+	Actor sid Choir End-Actor
+	Para role chant sid Allilouia3.text End-Para
+	Insert_section bk.ev.va.sections.forUnction.gospel5.go_title End-Insert
+	Actor sid Deacon End-Actor
+	Dialog sid exc17 sid exc18 sid gos02 End-Dialog
+	Actor sid Priest End-Actor
+	Dialog sid pet31 End-Dialog
+	Dialog sid res05p End-Dialog
+	Actor sid Deacon End-Actor
+	Insert_section bk.ev.va.sections.forUnction.gospel5.go_book End-Insert
+	Actor sid Priest End-Actor
+	Dialog sid exc19 End-Dialog
+	Dialog sid DoxaSoiKyrieP End-Dialog	
+	Actor sid Deacon End-Actor
+	Insert_section bk.ev.va.sections.forUnction.gospel5.go_lesson End-Insert
+	Actor sid Priest End-Actor
+	Dialog sid eu.lichrysbasil_gr_GR_cog.euLI.Key0705.text End-Dialog
+	Actor sid Choir End-Actor						
+	Dialog sid DoxaSoiKyrie End-Dialog	
+	Insert_section ShortSupplication End-Insert
+	Actor sid Deacon End-Actor
+	Dialog sid pet00 End-Dialog
+	Dialog sid res01p End-Dialog
+	Actor sid Priest End-Actor
+	Title role desig sid euUNC.Key0700.title End-Title
+	Para role prayerzero sid euUNC.Key0701.text End-Para
+	Para role prayer sid euUNC.Key0702.text End-Para
+	Dialog sid res04p End-Dialog
+
+	Title<r>sid lecLE.ordinal06a.uc sid lecAP.Apostolos.uc sid lecLE.ordinal06b.uc</>End-Title
+	Actor sid Deacon End-Actor
+	Dialog sid exc19 End-Dialog
+	Actor sid Reader End-Actor
+	Insert_section bk.ap.va.sections.forUnction.epistle6.ep_title End-Insert
+	Insert_section bk.ap.va.sections.forUnction.epistle6.ep_prokeimenon End-Insert
+	Insert_section bk.ap.va.sections.forUnction.epistle6.ep_verse End-Insert
+	Actor sid Deacon End-Actor
+	Dialog sid exc17 End-Dialog
+	Actor sid Reader End-Actor
+	Insert_section bk.ap.va.sections.forUnction.epistle6.ep_book End-Insert
+	Actor sid Deacon End-Actor
+	Dialog sid exc19 End-Dialog
+	Actor sid Reader End-Actor
+	Insert_section bk.ap.va.sections.forUnction.epistle6.ep_lesson End-Insert
+	Actor sid Priest End-Actor
+	Dialog sid epi02 End-Dialog
+	Actor sid Choir End-Actor
+	Para role chant sid Allilouia3.text End-Para
+	Insert_section bk.ev.va.sections.forUnction.gospel6.go_title End-Insert
+	Actor sid Deacon End-Actor
+	Dialog sid exc17 sid exc18 sid gos02 End-Dialog
+	Actor sid Priest End-Actor
+	Dialog sid pet31 End-Dialog
+	Dialog sid res05p End-Dialog
+	Actor sid Deacon End-Actor
+	Insert_section bk.ev.va.sections.forUnction.gospel6.go_book End-Insert
+	Actor sid Priest End-Actor
+	Dialog sid exc19 End-Dialog
+	Dialog sid DoxaSoiKyrieP End-Dialog	
+	Actor sid Deacon End-Actor
+	Insert_section bk.ev.va.sections.forUnction.gospel6.go_lesson End-Insert
+	Actor sid Priest End-Actor
+	Dialog sid eu.lichrysbasil_gr_GR_cog.euLI.Key0705.text End-Dialog
+	Actor sid Choir End-Actor						
+	Dialog sid DoxaSoiKyrie End-Dialog	
+	Insert_section ShortSupplication End-Insert
+	Actor sid Deacon End-Actor
+	Dialog sid pet00 End-Dialog
+	Dialog sid res01p End-Dialog
+	Actor sid Priest End-Actor
+	Title role desig sid euUNC.Key0800.title End-Title
+	Para role prayer sid euUNC.Key0801.text End-Para
+	Dialog sid res04p End-Dialog
+
+	Title<r>sid lecLE.ordinal07a.uc sid lecAP.Apostolos.uc sid lecLE.ordinal07b.uc</>End-Title
+	Actor sid Deacon End-Actor
+	Dialog sid exc19 End-Dialog
+	Actor sid Reader End-Actor
+	Insert_section bk.ap.va.sections.forUnction.epistle7.ep_title End-Insert
+	Insert_section bk.ap.va.sections.forUnction.epistle7.ep_prokeimenon End-Insert
+	Insert_section bk.ap.va.sections.forUnction.epistle7.ep_verse End-Insert
+	Actor sid Deacon End-Actor
+	Dialog sid exc17 End-Dialog
+	Actor sid Reader End-Actor
+	Insert_section bk.ap.va.sections.forUnction.epistle7.ep_book End-Insert
+	Actor sid Deacon End-Actor
+	Dialog sid exc19 End-Dialog
+	Actor sid Reader End-Actor
+	Insert_section bk.ap.va.sections.forUnction.epistle7.ep_lesson End-Insert
+	Actor sid Priest End-Actor
+	Dialog sid epi02 End-Dialog
+	Actor sid Choir End-Actor
+	Para role chant sid Allilouia3.text End-Para
+	Insert_section bk.ev.va.sections.forUnction.gospel7.go_title End-Insert
+	Actor sid Deacon End-Actor
+	Dialog sid exc17 sid exc18 sid gos02 End-Dialog
+	Actor sid Priest End-Actor
+	Dialog sid pet31 End-Dialog
+	Dialog sid res05p End-Dialog
+	Actor sid Deacon End-Actor
+	Insert_section bk.ev.va.sections.forUnction.gospel7.go_book End-Insert
+	Actor sid Priest End-Actor
+	Dialog sid exc19 End-Dialog
+	Dialog sid DoxaSoiKyrieP End-Dialog	
+	Actor sid Deacon End-Actor
+	Insert_section bk.ev.va.sections.forUnction.gospel7.go_lesson End-Insert
+	Actor sid Priest End-Actor
+	Dialog sid eu.lichrysbasil_gr_GR_cog.euLI.Key0705.text End-Dialog
+	Actor sid Choir End-Actor						
+	Dialog sid DoxaSoiKyrie End-Dialog	
+	Insert_section ShortSupplication End-Insert
+	Actor sid Deacon End-Actor
+	Dialog sid pet00 End-Dialog
+	Dialog sid res01p End-Dialog
+	Actor sid Priest End-Actor
+	Title role desig sid euUNC.Key0900.title End-Title
+	Para role prayer sid euUNC.Key0901.text End-Para
+	Dialog sid res04p End-Dialog
+
+	Actor sid Deacon End-Actor
+	Dialog sid pet00 End-Dialog
+	Dialog sid res01p End-Dialog
+	Actor sid Priest End-Actor
+	Title role desig sid euUNC.Key1000.title End-Title
+	Para role prayerzero sid euUNC.Key1001.text End-Para
+	Para role prayer sid euUNC.Key1002.text End-Para
+	Dialog sid res04p End-Dialog
+	
+	Actor sid Priest End-Actor
+	Dialog sid DoxaSoiChriste2 End-Dialog
+	Actor sid Reader End-Actor
+	Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
+	Dialog sid res01<r>sid Thrice</>End-Dialog
+	Dialog sid res12 End-Dialog
+	Actor sid Priest End-Actor
+	Para role dialogzero sid dis01 sid dis02 sid dis03 sid dis09 sid euUNC.Key1004.text sid dis10 sid dis88 End-Para
+	Dialog sid DiEfchonPateron.text End-Dialog
+	Dialog sid res04p End-Dialog	
+	
+	Title role mode sid Mode4 End-Title
+	Hymn sid me.m11.d01_gr_GR_cog.meMA.LaudsGlory.text @ver End-Hymn
+	Title role mixed sid Doxa sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+	Title role mode sid Mode4 End-Title
+	Hymn sid oc.m4.d1_gr_GR_cog.ocVE.AposTheotokion.text @ver End-Hymn
+	
+	Para role inaudible sid euUNC.Key1100.text End-Para
+
+End-Template

@@ -1,0 +1,88 @@
+Template se.m05.d09.ma 
+
+Status Review
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 5 day 9 End_Date
+			Page_Header_Even
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ma End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+	
+	when-movable-cycle-day-is
+		72, 73, 74, 75, 76, 77, 78, 85, 92, 95, 99, 102, 109, 110, 118, 119 use:
+			Section Instance01
+			End-Section
+		79 thru 83 use:
+			Section Instance02
+			End-Section
+		84 use:
+			Section Instance03
+			End-Section 
+		98 use:
+			Section Instance04
+				Insert_section MA._01_Beginning__.mode2 End-Insert
+				Insert_section TI.a.s._13_prophet_.m End-Insert
+				Insert_section AP.ganame.May09__.isaiah_.hymn End-Insert
+				Insert_section TI.g.s._09_martyr_.m End-Insert
+				Insert_section AP.me2_.hymn End-Insert
+				Insert_section AP.both__.af End-Insert
+				Insert_section MA._03_Kathisma1__.litany End-Insert
+				Insert_section MA._03_Kathisma1__.pe__.kath11121t End-Insert
+				Insert_section MA._04_Kathisma2__.append__.pe__.kath2121 End-Insert
+				Insert_section MA._08_NoGospel__.reader__.psalm50 End-Insert
+					Set_mcDay day 95 End_mcDay
+					Insert_section MA._11_Kontakion__.append__.pe_ End-Insert
+				Set_mcDay day 0 End_mcDay
+				Insert_section SY.Synaxarion End-Insert
+				Insert_section KA.choir__._1345678 End-Insert
+				Insert_section MA._10_Canon__.ode9_intro End-Insert
+				Insert_section KA.choir__._mode_mag_media End-Insert
+				Insert_section KA.append__._9 End-Insert
+				Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+				Insert_section MA._12_Exaposteilarion__.festal End-Insert
+				Insert_section MA._13_Lauds__.mode3 End-Insert
+				Insert_section MA._13_Lauds__.pe__.s_1234as3456 End-Insert
+				Insert_section MA._13_Lauds__.gloryboth__.pe__.gloryasgloryboth_ End-Insert
+				Insert_section MA._14_Doxology__.small End-Insert
+				Insert_section MA._15_Litanies__.aftersmalldoxology End-Insert
+				Insert_section MA._16_Aposticha__.pe__.p_midpentecost12 End-Insert
+				Insert_section MA._16_Aposticha__.gloryboth__.pe__.gloryasgloryboth_ End-Insert
+				Insert_section MA._17_Apolytikia__.itisgood_trisagion End-Insert
+				Insert_section TI.a.s._13_prophet_.m End-Insert
+				Insert_section AP.ganame.May09__.isaiah_.hymn End-Insert
+				Insert_section TI.g.s._09_martyr_.m End-Insert
+				Insert_section AP.me2_.hymn End-Insert
+				Insert_section AP.both__.af End-Insert
+				Insert_section MA._18_End__.ektenia_wisdom End-Insert
+				Insert_section MA._20_Dismissal__.commemoration End-Insert
+			End-Section
+	end-when
+End-Template

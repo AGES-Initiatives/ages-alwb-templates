@@ -1,0 +1,71 @@
+Template se.m07.d02.ve 
+
+Status Final
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 7 day 2 End_Date
+			Page_Header_Even
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	when-movable-cycle-day-is
+		126 use:
+			Section Instance01
+			End-Section
+		127 use:
+			Section Instance02
+			End-Section
+		otherwise use:
+			when-name-of-day-is
+				Sunday use:
+					Section Instance04
+					End-Section
+				otherwise use:
+					Section Instance03
+						Insert_section VE._01_Beginning__.vespers End-Insert
+						Insert_section VE._02_Kekragaria__.mode4__.for6 End-Insert
+						Insert_section VE._03_Stichera__.me__.p_112233as5678910 End-Insert
+						Insert_section VE._03_Stichera__.gloryboth__.me__.gloryasgloryboth_ End-Insert
+						Insert_section VE._04_Middle__.entrance End-Insert
+						Insert_section VE._06_Litanies__.fullektenia End-Insert
+						Insert_section VE._08_Aposticha__.me__.p_dormition1theotokos2 End-Insert
+						Insert_section VE._08_Aposticha__.gloryboth__.me__.gloryasgloryboth_ End-Insert
+						Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
+						Insert_section AP.me1_ End-Insert
+						Insert_section TI.gb.r End-Insert
+						Insert_section AP.me1_.hymn End-Insert
+						Insert_section VE._10_End__.wisdom End-Insert
+						Insert_section VE._11_Dismissal__.commemoration End-Insert
+					End-Section
+			end-when
+	end-when
+	
+End-Template

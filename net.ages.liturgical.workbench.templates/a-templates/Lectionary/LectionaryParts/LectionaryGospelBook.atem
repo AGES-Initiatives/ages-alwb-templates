@@ -1,0 +1,723 @@
+Template LectionaryGospelBook
+
+Status Draft
+
+	import le.go.lu.*
+	import le.go.mc.*
+	import prayers_gr_GR_cog.*
+	
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Section Gospel_Book
+	 	when-date-is
+			Jul 13 thru 19 use: //Sun of Holy Fathers
+				when-name-of-day-is 
+					Sunday use: Dialog sid gos03a sid le.go.me.m07.dHF_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //JulyHF
+					otherwise use:
+						when-date-is
+							Jul 13 use: Dialog sid gos03a sid le.go.me.m07.d13_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //Menaion
+							Jul 14 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog //default
+							Jul 15 use: Dialog sid gos03a sid le.go.me.m07.d15_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //Menaion
+							Jul 16 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog //default
+							Jul 17 use: Dialog sid gos03a sid le.go.me.m07.d17_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //Menaion
+							Jul 18 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog //default
+							Jul 19 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog //default
+						end-when
+				end-when
+			Sep 7 thru 13 use: 
+				when-name-of-day-is  //Sat and Sun before Cross
+					Saturday use: Dialog sid gos03a sid le.go.me.m09.dSatBC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //SatBC
+					Sunday use: Dialog sid gos03a sid le.go.me.m09.dSunBC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //SunBC
+					otherwise use:
+						when-date-is 
+							Sep 7 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog //default
+							Sep 8 use: Dialog sid gos03a sid le.go.me.m09.d08_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //Menaion
+							Sep 9 use: Dialog sid gos03a sid le.go.me.m09.d09_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //Menaion
+							Sep 10 use: Dialog sid gos03a sid le.go.me.m09.d10_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //Menaion
+							Sep 11 use: Dialog sid gos03a sid le.go.me.m09.d11_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //Menaion
+							Sep 12 use: Dialog sid gos03a sid le.go.me.m09.d12_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //Menaion
+							Sep 13 use: Dialog sid gos03a sid le.go.me.m09.d13_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //Menaion
+						end-when
+				end-when
+			Sep 15 use:
+				when-name-of-day-is 
+					Saturday use: Dialog sid gos03a sid le.go.me.m09.dSatAC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //SepSatAC
+					Sunday use: Dialog sid gos03a sid le.go.me.m09.dSunAC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //SepSunAC
+					otherwise use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+				end-when
+			Sep 16 use:
+				when-name-of-day-is 
+					Saturday use: Dialog sid gos03a sid le.go.me.m09.dSatAC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //SepSatAC
+					Sunday use: Dialog sid gos03a sid le.go.me.m09.dSunAC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //SepSunAC
+					Monday use: Dialog sid gos03a rid leluLI.Gospel.book sid gos03b End-Dialog
+					otherwise use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+				end-when
+			Sep 17 use:
+				when-name-of-day-is 
+					Saturday use: Dialog sid gos03a sid le.go.me.m09.dSatAC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //SepSatAC
+					Sunday use: Dialog sid gos03a sid le.go.me.m09.dSunAC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //SepSunAC
+					Monday, Tuesday use: Dialog sid gos03a rid leluLI.Gospel.book sid gos03b End-Dialog
+					Wednesday, Thursday, Friday use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+				end-when
+			Sep 18 use:
+				when-name-of-day-is 
+					Saturday use: Dialog sid gos03a sid le.go.me.m09.dSatAC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //SepSatAC
+					Sunday use: Dialog sid gos03a sid le.go.me.m09.dSunAC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //SepSunAC
+					Monday, Tuesday, Wednesday use: Dialog sid gos03a rid leluLI.Gospel.book sid gos03b End-Dialog
+					Thursday, Friday use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+				end-when
+			Sep 19 use:
+				when-name-of-day-is //Sat and Sun after Cross
+					Saturday use: Dialog sid gos03a sid le.go.me.m09.dSatAC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //SepSatAC
+					Sunday use: Dialog sid gos03a sid le.go.me.m09.dSunAC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //SepSunAC
+					Monday, Tuesday, Wednesday, Thursday use: Dialog sid gos03a rid leluLI.Gospel.book sid gos03b End-Dialog
+					Friday use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+				end-when
+			Sep 20 use:
+				when-name-of-day-is //Sat and Sun after Cross
+					Saturday use: Dialog sid gos03a sid le.go.me.m09.dSatAC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //SepSatAC
+					Sunday use: Dialog sid gos03a sid le.go.me.m09.dSunAC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //SepSunAC
+					otherwise use: Dialog sid gos03a rid leluLI.Gospel.book sid gos03b End-Dialog
+				end-when
+			Sep 21 use:
+				when-name-of-day-is //Sat and Sun after Cross
+					Saturday use: Dialog sid gos03a sid le.go.me.m09.dSatAC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //SepSatAC
+					Sunday use: Dialog sid gos03a sid le.go.me.m09.dSunAC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //SepSunAC
+					otherwise use: Dialog sid gos03a rid leluLI.Gospel.book sid gos03b End-Dialog
+				end-when
+			otherwise use:
+				Section DaysByNumber 
+					when-Lukan-Cycle-Day-is
+						7 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Dialog sid gos03a sid le.go.lu.d007_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2013
+								Sep 16 use: Dialog sid gos03a sid le.go.lu.d007_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2012
+								Sep 17 use: Dialog sid gos03a sid le.go.lu.d007_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2006
+								Sep 18 use: Dialog sid gos03a sid le.go.lu.d007_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2011
+								Sep 19 use: Dialog sid gos03a sid le.go.me.m09.d26_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //Sun Sep26 StJohn 2010
+								Sep 20 use: Dialog sid gos03a sid le.go.lu.d007_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2009
+								Sep 21 use: Dialog sid gos03a sid le.go.lu.d007_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2014
+							end-when
+						14 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Dialog sid gos03a sid le.go.lu.d014_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2013
+								Sep 16 use: Dialog sid gos03a sid le.go.lu.d014_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2012
+								Sep 17 use: Dialog sid gos03a sid le.go.lu.d014_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2006
+								Sep 18 use: Dialog sid gos03a sid le.go.lu.d014_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2011
+								Sep 19 use: Dialog sid gos03a sid le.go.lu.d014_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2010
+								Sep 20 use: Dialog sid gos03a sid le.go.lu.d014_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2009
+								Sep 21 use: Dialog sid gos03a sid le.go.lu.d014_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2014
+							end-when
+						21 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Dialog sid gos03a sid le.go.lu.d021_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2013
+								Sep 16 use: Dialog sid gos03a sid le.go.lu.d021_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2012
+								Sep 17 use: Dialog sid gos03a sid le.go.lu.d021_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2006
+								Sep 18 use: Dialog sid gos03a sid le.go.lu.d021_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2011
+								Sep 19 use: Dialog sid gos03a sid le.go.lu.d021_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2010
+								Sep 20 use: Dialog sid gos03a sid le.go.lu.d028_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2009
+								Sep 21 use: Dialog sid gos03a sid le.go.lu.d028_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2014
+							end-when
+						28 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Dialog sid gos03a sid le.go.lu.d028_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2013
+								Sep 16 use: Dialog sid gos03a sid le.go.lu.d028_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2012
+								Sep 17 use: Dialog sid gos03a sid le.go.lu.d028_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2006
+								Sep 18 use: Dialog sid gos03a sid le.go.lu.d028_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2011
+								Sep 19 use: Dialog sid gos03a sid le.go.lu.d028_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2010
+								Sep 20 use: Dialog sid gos03a sid le.go.me.m10.d18_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //Oct18 2009
+								Sep 21 use: Dialog sid gos03a sid le.go.lu.d021_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2014
+							end-when
+						35 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Dialog sid gos03a sid le.go.lu.d042_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2013
+								Sep 16 use: Dialog sid gos03a sid le.go.lu.d042_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2012
+								Sep 17 use: Dialog sid gos03a sid le.go.lu.d042_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2006
+								Sep 18 use: Dialog sid gos03a sid le.go.lu.d042_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2011
+								Sep 19 use: Dialog sid gos03a sid le.go.lu.d042_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2010
+								Sep 20 use: Dialog sid gos03a sid le.go.lu.d042_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2009
+								Sep 21 use: Dialog sid gos03a sid le.go.lu.d042_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2014
+							end-when
+						42 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Dialog sid gos03a sid le.go.lu.d049_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2013
+								Sep 16 use: Dialog sid gos03a sid le.go.lu.d049_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2012
+								Sep 17 use: Dialog sid gos03a sid le.go.lu.d049_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2006
+								Sep 18 use: Dialog sid gos03a sid le.go.lu.d035_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2011
+								Sep 19 use: Dialog sid gos03a sid le.go.lu.d035_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2010
+								Sep 20 use: Dialog sid gos03a sid le.go.lu.d035_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2009
+								Sep 21 use: Dialog sid gos03a sid le.go.lu.d035_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2014
+							end-when
+						49 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Dialog sid gos03a sid le.go.lu.d035_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2013
+								Sep 16 use: Dialog sid gos03a sid le.go.lu.d035_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2012
+								Sep 17 use: Dialog sid gos03a sid le.go.lu.d035_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2006
+								Sep 18 use: Dialog sid gos03a sid le.go.lu.d049_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2011
+								Sep 19 use: Dialog sid gos03a sid le.go.lu.d049_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2010
+								Sep 20 use: Dialog sid gos03a sid le.go.lu.d049_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2009
+								Sep 21 use: Dialog sid gos03a sid le.go.lu.d049_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2014
+							end-when
+						56 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Dialog sid gos03a sid le.go.lu.d056_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2013
+								Sep 16 use: Dialog sid gos03a sid le.go.lu.d056_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2012
+								Sep 17 use: Dialog sid gos03a sid le.go.lu.d056_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2006
+								Sep 18 use: Dialog sid gos03a sid le.go.lu.d056_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2011
+								Sep 19 use: Dialog sid gos03a sid le.go.lu.d056_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2010
+								Sep 20 use: Dialog sid gos03a sid le.go.lu.d056_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2009
+								Sep 21 use: Dialog sid gos03a sid le.go.me.m11.d16_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //Nov16 2014
+							end-when
+						63 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Dialog sid gos03a sid le.go.lu.d063_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2013
+								Sep 16 use: Dialog sid gos03a sid le.go.lu.d063_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2012
+								Sep 17 use: Dialog sid gos03a sid le.go.lu.d063_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2006
+								Sep 18 use: Dialog sid gos03a sid le.go.lu.d063_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2011
+								Sep 19 use: Dialog sid gos03a sid le.go.me.m11.d21_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //Sun Nov21 2010
+								Sep 20 use: Dialog sid gos03a sid le.go.lu.d063_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2009
+								Sep 21 use: Dialog sid gos03a sid le.go.lu.d063_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2014
+							end-when
+						70 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Dialog sid gos03a sid le.go.lu.d091_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2013
+								Sep 16 use: Dialog sid gos03a sid le.go.lu.d091_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2012
+								Sep 17 use: Dialog sid gos03a sid le.go.lu.d091_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2006
+								Sep 18 use: Dialog sid gos03a sid le.go.lu.d091_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2011
+								Sep 19 use: Dialog sid gos03a sid le.go.lu.d091_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2010
+								Sep 20 use: Dialog sid gos03a sid le.go.lu.d091_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2009
+								Sep 21 use: Dialog sid gos03a sid le.go.me.m11.d30_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //Nov30 2014
+							end-when
+						77 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Dialog sid gos03a sid le.go.lu.d098_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2013
+								Sep 16 use: Dialog sid gos03a sid le.go.lu.d098_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2012
+								Sep 17 use: Dialog sid gos03a sid le.go.lu.d112_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2006
+								Sep 18 use: Dialog sid gos03a sid le.go.lu.d070_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2011
+								Sep 19 use: Dialog sid gos03a sid le.go.lu.d070_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2010
+								Sep 20 use: Dialog sid gos03a sid le.go.lu.d070_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2009
+								Sep 21 use: Dialog sid gos03a sid le.go.lu.d070_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2014
+							end-when
+						84 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Dialog sid gos03a sid le.go.lu.d070_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2013
+								Sep 16 use: Dialog sid gos03a sid le.go.lu.d070_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2012
+								Sep 17 use: Dialog sid gos03a sid le.go.lu.d070_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2006
+								Sep 18 use: Dialog sid gos03a sid le.go.lu.d077_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2011
+								Sep 19 use: Dialog sid gos03a sid le.go.lu.d077_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2010
+								Sep 20 use: Dialog sid gos03a sid le.go.lu.d077_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2009
+								Sep 21 use: Dialog sid gos03a sid le.go.lu.d077_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2014
+							end-when
+						90 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog //2013
+								Sep 16 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog //2012
+								Sep 17 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog //2006
+								Sep 18 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog //2011
+								Sep 19 use: Dialog sid gos03a sid le.go.me.m12.dSatBC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //2010
+								Sep 20 use: Dialog sid gos03a sid le.go.me.m12.dSatBC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //2009
+								Sep 21 use: Dialog sid gos03a sid le.go.me.m12.dSatBC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //2014
+							end-when
+						91 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Dialog sid gos03a sid le.go.lu.d077_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2013
+								Sep 16 use: Dialog sid gos03a sid le.go.lu.d077_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2012
+								Sep 17 use: Dialog sid gos03a sid le.go.lu.d077_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //2006
+								Sep 18 use: Dialog sid gos03a sid le.go.me.m12.dSunBC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //2011
+								Sep 19 use: Dialog sid gos03a sid le.go.me.m12.dSunBC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //2010
+								Sep 20 use: Dialog sid gos03a sid le.go.me.m12.dSunBC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //2009
+								Sep 21 use: Dialog sid gos03a sid le.go.me.m12.dSunBC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //2014
+							end-when
+						97 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Dialog sid gos03a sid le.go.me.m12.dSatBC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //2013
+								Sep 16 use: Dialog sid gos03a sid le.go.me.m12.dSatBC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //2012
+								Sep 17 use: Dialog sid gos03a sid le.go.me.m12.dSatBC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //2006
+								Sep 18 use: Dialog sid gos03a sid le.go.me.m12.dSatBC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //2011
+								Sep 19 use: Dialog sid gos03a sid le.go.me.m12.d25_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //Sat Dec25 2010
+								Sep 20 use: Dialog sid gos03a sid le.go.me.m12.dSatAC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //2009
+								Sep 21 use: Dialog sid gos03a sid le.go.me.m12.dSatAC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //2014
+							end-when
+						98 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Dialog sid gos03a sid le.go.me.m12.dSunBC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //2013
+								Sep 16 use: Dialog sid gos03a sid le.go.me.m12.dSunBC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //2012
+								Sep 17 use: Dialog sid gos03a sid le.go.me.m12.dSunBC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //2006
+								Sep 18 use: Dialog sid gos03a sid le.go.me.m12.d25_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //Sun Dec25 2011
+								Sep 19 use: Dialog sid gos03a sid le.go.me.m12.dSunAC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //2010
+								Sep 20 use: Dialog sid gos03a sid le.go.me.m12.dSunAC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //2009
+								Sep 21 use: Dialog sid gos03a sid le.go.me.m12.dSunAC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //2014
+							end-when
+						104 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Dialog sid gos03a sid le.go.me.m12.dSatAC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //2013
+								Sep 16 use: Dialog sid gos03a sid le.go.me.m12.dSatAC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //2012
+								Sep 17 use: Dialog sid gos03a sid le.go.me.m12.dSatAC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //2006
+								Sep 18 use: Dialog sid gos03a sid le.go.me.m12.dSatBE_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //Sat Dec31 2011
+								Sep 19 use: Dialog sid gos03a sid le.go.me.m01.d01_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //Sat Jan1 2010
+								Sep 20 use: Dialog sid gos03a sid le.go.me.m12.dSatBE_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //Sat Jan2 2009
+								Sep 21 use: Dialog sid gos03a sid le.go.me.m12.dSatBE_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //Sat Jan3 2014
+							end-when
+						105 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Dialog sid gos03a sid le.go.me.m12.dSunAC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //2013
+								Sep 16 use: Dialog sid gos03a sid le.go.me.m12.dSunAC_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //2012
+								Sep 17 use: Dialog sid gos03a sid le.go.me.m12.dSunBE_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog // Sun Dec31 2006
+								Sep 18 use: Dialog sid gos03a sid le.go.me.m01.d01_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //Sun Jan1 2011
+								Sep 19 use: Dialog sid gos03a sid le.go.me.m12.dSunBE_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //2010
+								Sep 20 use: Dialog sid gos03a sid le.go.me.m12.dSunBE_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //2009
+								Sep 21 use: Dialog sid gos03a sid le.go.me.m12.dSunBE_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //2014
+							end-when
+						111 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Dialog sid gos03a sid le.go.me.m12.dSatBE_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //2013
+								Sep 16 use: Dialog sid gos03a sid le.go.me.m12.dSatBE_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //2012
+								Sep 17 use: Dialog sid gos03a sid le.go.me.m01.d06_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog // Sat Jan6 2006
+								Sep 18 use: Dialog sid gos03a sid le.go.me.m01.d07_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog // Sat Jan7 2011
+								Sep 19 use: Dialog sid gos03a sid le.go.me.m01.dSatAE_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //Sat 2010
+								Sep 20 use: Dialog sid gos03a sid le.go.me.m01.dSatAE_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //Sat 2009
+								Sep 21 use: Dialog sid gos03a sid le.go.me.m01.dSatAE_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //Sat 2014
+							end-when
+						112 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Dialog sid gos03a sid le.go.me.m12.dSunBE_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //2013
+								Sep 16 use: Dialog sid gos03a sid le.go.me.m01.d06_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //Jan 6 2012
+								Sep 17 use: Dialog sid gos03a sid le.go.me.m01.d07_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog // Sun Jan7 2006
+								Sep 18 use: Dialog sid gos03a sid le.go.me.m01.dSunAE_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //Sun Jan8 2011
+								Sep 19 use: Dialog sid gos03a sid le.go.me.m01.dSunAE_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //2010
+								Sep 20 use: Dialog sid gos03a sid le.go.me.m01.dSunAE_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //2009
+								Sep 21 use: Dialog sid gos03a sid le.go.me.m01.dSunAE_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //2014
+							end-when
+						118 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Dialog sid gos03a sid le.go.me.m01.dSatAE_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //2013
+								Sep 16 use: Dialog sid gos03a sid le.go.me.m01.dSatAE_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //2012
+								Sep 17 use: Dialog sid gos03a sid le.go.me.m01.dSatAE_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //Sat Jan13 2006
+								Sep 18 use: Dialog sid gos03a sid le.go.me.m01.dSatAE_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //Sat Jan14 2011
+								Sep 19 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog //2010
+								Sep 20 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog //2009
+								Sep 21 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog //2014
+							end-when
+						119 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: Dialog sid gos03a sid le.go.me.m01.dSunAE_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //2013
+								Sep 16 use: Dialog sid gos03a sid le.go.me.m01.dSunAE_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //2012
+								Sep 17 use: Dialog sid gos03a sid le.go.me.m01.dSunAE_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //2006
+								Sep 18 use: //2011
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+										2 use: Dialog sid gos03a sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun12
+										3 use: Dialog sid gos03a sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun12
+										4 use: Dialog sid gos03a sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun12
+										5 use: Dialog sid gos03a sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun12
+										6 use: Dialog sid gos03a sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun12
+									end-when
+								Sep 19 use: //2010
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+										2 use: Dialog sid gos03a sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun12
+										3 use: Dialog sid gos03a sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun12
+										4 use: Dialog sid gos03a sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun12
+										5 use: Dialog sid gos03a sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun12
+										6 use: Dialog sid gos03a sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun12
+									end-when
+								Sep 20 use: //2009
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+										2 use: Dialog sid gos03a sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun12
+										3 use: Dialog sid gos03a sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun12
+										4 use: Dialog sid gos03a sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun12
+										5 use: Dialog sid gos03a sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun12
+										6 use: Dialog sid gos03a sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun12
+									end-when
+								Sep 21 use: //2014
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+										2 use: Dialog sid gos03a sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun12
+										3 use: Dialog sid gos03a sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun12
+										4 use: Dialog sid gos03a sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun12
+										5 use: Dialog sid gos03a sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun12
+										6 use: Dialog sid gos03a sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun12
+									end-when
+							end-when
+						126 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: //2013
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+										2 use: Dialog sid gos03a sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun12
+										3 use: Dialog sid gos03a sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun12
+										4 use: Dialog sid gos03a sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun12
+										5 use: Dialog sid gos03a sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun12
+										6 use: Dialog sid gos03a sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun12
+									end-when
+								Sep 16 use: //2012
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+										2 use: Dialog sid gos03a sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun12
+										3 use: Dialog sid gos03a sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun12
+										4 use: Dialog sid gos03a sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun12
+										5 use: Dialog sid gos03a sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun12
+										6 use: Dialog sid gos03a sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun12
+									end-when
+								Sep 17 use: //2006
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+										2 use: Dialog sid gos03a sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun12
+										3 use: Dialog sid gos03a sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun12
+										4 use: Dialog sid gos03a sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun12
+										5 use: Dialog sid gos03a sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun12
+										6 use: Dialog sid gos03a sid le.go.lu.d084_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun12
+									end-when
+								Sep 18 use: //2011
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										2 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+										3 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+										4 use: Dialog sid gos03a sid le.go.lu.d098_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun14
+										5 use: Dialog sid gos03a sid le.go.lu.d098_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun14
+										6 use: Dialog sid gos03a sid le.go.lu.d098_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun14
+									end-when
+								Sep 19 use: //2010
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										2 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+										3 use: Dialog sid gos03a sid le.go.lu.d098_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //Sun14
+										4 use: Dialog sid gos03a sid le.go.lu.d098_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //Sun14
+										5 use: Dialog sid gos03a sid le.go.lu.d098_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //Sun14
+										6 use: Dialog sid gos03a sid le.go.lu.d098_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //Sun14
+									end-when
+								Sep 20 use: //2009
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										2 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+										3 use: Dialog sid gos03a sid le.go.lu.d098_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //Sun14
+										4 use: Dialog sid gos03a sid le.go.lu.d098_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //Sun14
+										5 use: Dialog sid gos03a sid le.go.lu.d098_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //Sun14
+										6 use: Dialog sid gos03a sid le.go.lu.d098_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //Sun14
+									end-when
+								Sep 21 use: //2014
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										2 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+										3 use: Dialog sid gos03a sid le.go.lu.d098_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //Sun14
+										4 use: Dialog sid gos03a sid le.go.lu.d098_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //Sun14
+										5 use: Dialog sid gos03a sid le.go.lu.d098_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //Sun14
+										6 use: Dialog sid gos03a sid le.go.lu.d098_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog //Sun14
+									end-when
+							end-when
+						133 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: //2013
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										2 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+										3 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+										4 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+										5 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+										6 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+									end-when
+								Sep 16 use: //2012
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										2 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+										3 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+										4 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+										5 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+										6 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+									end-when
+								Sep 17 use: //2006
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										2 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+										3 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+										4 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+										5 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+										6 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+									end-when
+								Sep 18 use: //2011
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										2 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										3 use: Dialog sid gos03a sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog //SunMat17
+										4 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+										5 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+										6 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+									end-when
+								Sep 19 use: //2010
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										2 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										3 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+										4 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+										5 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+										6 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+									end-when
+								Sep 20 use: //2009
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										2 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										3 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+										4 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+										5 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+										6 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+									end-when
+								Sep 21 use: //2014
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										2 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										3 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+										4 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+										5 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+										6 use: Dialog sid gos03a sid le.go.lu.d105_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog	//Sun15
+									end-when
+							end-when
+						140 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: //2013
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										2 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										3 use: Dialog sid gos03a sid le.go.me.m02.d02_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //SunFeb2
+										4 use: Dialog sid gos03a sid le.go.me.m02.d02_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //SunFeb2
+										5 use: Dialog sid gos03a sid le.go.me.m02.d02_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //SunFeb2
+										6 use: Dialog sid gos03a sid le.go.me.m02.d02_gr_GR_cog.lemeLI.Gospel.book sid gos03b End-Dialog //SunFeb2
+									end-when
+								Sep 16 use: //2012
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										2 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										3 use: Dialog sid gos03a sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat17
+										4 use: Dialog sid gos03a sid le.go.mc.d232_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat16
+										5 use: Dialog sid gos03a sid le.go.mc.d225_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat15
+										6 use: Dialog sid gos03a sid le.go.mc.d218_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat14
+									end-when
+								Sep 17 use: //2006
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										2 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										3 use: Dialog sid gos03a sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat17
+										4 use: Dialog sid gos03a sid le.go.mc.d232_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat16
+										5 use: Dialog sid gos03a sid le.go.mc.d225_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat15
+										6 use: Dialog sid gos03a sid le.go.mc.d218_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat14
+									end-when
+								Sep 18 use: //2011
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										2 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										3 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										4 use: Dialog sid gos03a sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat17
+										5 use: Dialog sid gos03a sid le.go.mc.d232_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat16
+										6 use: Dialog sid gos03a sid le.go.mc.d225_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat15
+									end-when
+								Sep 19 use: //2010
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										2 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										3 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										4 use: Dialog sid gos03a sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat17
+										5 use: Dialog sid gos03a sid le.go.mc.d232_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat16
+										6 use: Dialog sid gos03a sid le.go.mc.d225_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat15
+									end-when
+								Sep 20 use: //2009
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										2 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										3 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										4 use: Dialog sid gos03a sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat17
+										5 use: Dialog sid gos03a sid le.go.mc.d232_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat16
+										6 use: Dialog sid gos03a sid le.go.mc.d225_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat15
+									end-when
+								Sep 21 use: //2014
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										2 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										3 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										4 use: Dialog sid gos03a sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat17
+										5 use: Dialog sid gos03a sid le.go.mc.d232_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat16
+										6 use: Dialog sid gos03a sid le.go.mc.d225_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat15
+									end-when
+							end-when
+						147 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: //2013
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										2 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										3 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										4 use: Dialog sid gos03a sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat17
+										5 use: Dialog sid gos03a sid le.go.mc.d232_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat16
+										6 use: Dialog sid gos03a sid le.go.mc.d225_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat15
+									end-when
+								Sep 16 use: //2012
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										2 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										3 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										4 use: Dialog sid gos03a sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat17
+										5 use: Dialog sid gos03a sid le.go.mc.d232_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat16
+										6 use: Dialog sid gos03a sid le.go.mc.d225_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat15
+									end-when
+								Sep 17 use: //2006
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										2 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										3 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										4 use: Dialog sid gos03a sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat17
+										5 use: Dialog sid gos03a sid le.go.mc.d232_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat16
+										6 use: Dialog sid gos03a sid le.go.mc.d225_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat15
+									end-when
+								Sep 18 use: //2011
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										2 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										3 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										4 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										5 use: Dialog sid gos03a sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat17
+										6 use: Dialog sid gos03a sid le.go.mc.d232_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat16
+									end-when
+								Sep 19 use: //2010
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										2 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										3 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										4 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										5 use: Dialog sid gos03a sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat17
+										6 use: Dialog sid gos03a sid le.go.mc.d232_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat16
+									end-when
+								Sep 20 use: //2009
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										2 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										3 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										4 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										5 use: Dialog sid gos03a sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat17
+										6 use: Dialog sid gos03a sid le.go.mc.d232_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat16
+									end-when
+								Sep 21 use: //2014
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										2 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										3 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										4 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										5 use: Dialog sid gos03a sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat17
+										6 use: Dialog sid gos03a sid le.go.mc.d232_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat16
+									end-when
+							end-when
+						154 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: //2013
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										2 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										3 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										4 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										5 use: Dialog sid gos03a sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog //SunMat17
+										6 use: Dialog sid gos03a sid le.go.mc.d232_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog //SunMat16
+									end-when
+								Sep 16 use: //2012
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										2 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										3 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										4 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										5 use: Dialog sid gos03a sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog //SunMat17
+										6 use: Dialog sid gos03a sid le.go.mc.d232_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog //SunMat16
+									end-when
+								Sep 17 use: //2006
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										2 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										3 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										4 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										5 use: Dialog sid gos03a sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog //SunMat17
+										6 use: Dialog sid gos03a sid le.go.mc.d232_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog //SunMat16
+									end-when
+								Sep 18 use: //2011
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										2 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										3 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										4 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										5 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										6 use: Dialog sid gos03a sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat17
+									end-when
+								Sep 19 use: //2010
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										2 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										3 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										4 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										5 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										6 use: Dialog sid gos03a sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat17
+									end-when
+								Sep 20 use: //2009
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										2 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										3 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										4 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										5 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										6 use: Dialog sid gos03a sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat17
+									end-when
+								Sep 21 use: //2014
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										2 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										3 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										4 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										5 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										6 use: Dialog sid gos03a sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat17
+									end-when
+							end-when
+						161 use:
+							when-Sunday-after-Elevation-of-Cross-is
+								Sep 15 use: //2013
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										2 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										3 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										4 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										5 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										6 use: Dialog sid gos03a sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat17
+									end-when
+								Sep 16 use: //2012
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										2 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										3 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										4 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										5 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										6 use: Dialog sid gos03a sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog	//SunMat17
+									end-when
+								Sep 17 use: //2006
+									when-sundays-before-triodion-is
+										1 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										2 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										3 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										4 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										5 use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										6 use: Dialog sid gos03a sid le.go.mc.d239_gr_GR_cog.lemcLI.Gospel.book sid gos03b End-Dialog //SunMat17
+									end-when
+//							end-when
+						otherwise use: 
+							Section Defaults //default rids (Luke or Matt) when no override
+								when-movable-cycle-day-is 1 thru 127 //Triodion & Pentecostarion
+									use: 
+										Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog 
+									otherwise use:
+										when-exists rid leluLI.Gospel.text 
+											use: Dialog sid gos03a rid leluLI.Gospel.book sid gos03b End-Dialog
+											otherwise use: Dialog sid gos03a rid lemcLI.Gospel.book sid gos03b End-Dialog
+										end-when
+								end-when
+							End-Section //Defaults
+						end-when
+					otherwise use: Insert_section Defaults End-Insert		
+					end-when //when-Lukan-Cycle-Day-is
+				End-Section //DaysByNumber
+		end-when //when-date-is
+	End-Section //Gospel_Book
+End-Template

@@ -1,0 +1,62 @@
+Template se.pe.d077.ve 
+
+Status Final
+
+	import client_gr_GR_cog.*
+	import hi.s01_gr_GR_cog.*
+	import ho.s10_gr_GR_cog.*	
+	import pe.d077_gr_GR_cog.*
+
+	//Templates
+	import pe.d077.*
+	
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 4 day 18 End_Date
+			Page_Header_Even
+				center @lookup sid ve.pdf.header lang L1 @lookup sid d.ontheeveof lang L1 @date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ve.pdf.header lang L2 @lookup sid d.ontheeveof lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	Section Instance01
+		Insert_section VE._01_Beginning__.vespers End-Insert
+		Insert_section VE._02_Kekragaria__.mode8__.noStichologia End-Insert
+		Insert_section VE._03_Stichera__.pe__.s_123456as5678910 End-Insert
+		Insert_section VE._03_Stichera__.glory__.pe__.gloryasglory_ End-Insert
+		Insert_section VE._03_Stichera__.both__.pe__.bothasboth_ End-Insert
+		Insert_section VE._04_Middle__.entrance End-Insert
+		Insert_section VE._06_Litanies__.fullektenia End-Insert
+		Insert_section VE._08_Aposticha__.pe__.s_1 End-Insert
+		Insert_section VE._08_Aposticha__.pascha End-Insert
+		Insert_section VE._08_Aposticha__.gloryboth__.pascha_ End-Insert
+		Insert_section AP.pascha__.thrice End-Insert
+		Insert_section VE._10_End__.wisdom End-Insert
+		Insert_section VE._11_Dismissal__.nocommemoration End-Insert
+	End-Section
+
+End-Template

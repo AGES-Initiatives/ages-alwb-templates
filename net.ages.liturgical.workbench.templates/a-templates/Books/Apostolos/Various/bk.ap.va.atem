@@ -1,0 +1,496 @@
+Template bk.ap.va 
+
+Status Draft
+
+	import ho.s07_gr_GR_cog.*
+	import lectionaries_gr_GR_cog.*
+	import le.ep.va.baptism_gr_GR_cog.*
+	import le.ep.va.consecration_gr_GR_cog.*
+	import le.ep.va.deceased_gr_GR_cog.*
+	import le.ep.va.dooropening_gr_GR_cog.*
+	import le.ep.va.funeral_gr_GR_cog.*
+	import le.ep.va.unction_gr_GR_cog.*
+	import le.ep.va.water_gr_GR_cog.*
+	import le.ep.va.wedding_gr_GR_cog.*
+	import ps_gr_GR_cog.*
+	import ps.bodes_gr_GR_cog.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+Section sections
+	Title role desig sid lecAP.EpistlesVarious.uc End-Title
+	
+	Break line End_Break
+	
+	Section forBaptism
+		Title role desig sid lecLE.forBaptism.uc End-Title
+		Section ep_title
+			Title<r>sid Prokeimenon sid Mode4 sid psa26.title</>End-Title
+		End-Section
+		Section ep_prokeimenon
+			Para role readingzero sid psa26.v1a.text End-Para
+		End-Section
+		Section ep_verse
+			Verse<bnr>sid vVerse</>sid psa26.v1b.text End-Verse
+		End-Section
+		Section ep_book
+			Dialog sid epi01a sid levaBAP.Epistle.book sid epi01b End-Dialog
+		End-Section
+		Section ep_lesson
+			Title role chapverse sid levaBAP.Epistle.chapverse End-Title		
+			Reading sid levaBAP.Epistle.text @ver End-Reading
+		End-Section
+		Section al_title
+			Title role desig sid Allilouia sid Mode6 sid psa44.title End-Title
+			Media sid hoLI.GospelAlleluia6.text End-Media
+		End-Section
+		Section al_verse1
+			Verse<bnr>sid vVerse1</>sid psa44.v2a.text End-Verse
+		End-Section
+		Section al_verse2
+			Verse<bnr>sid vVerse2</>sid psa44.v2b.text End-Verse
+		End-Section
+	End-Section
+
+	Break line End_Break
+
+	Section forWedding
+		Title role desig sid lecLE.forWedding.uc End-Title
+		Section ep_title
+			Title<r>sid Prokeimenon sid Mode8 sid psa20.title</>End-Title
+		End-Section
+		Section ep_prokeimenon
+			Para role readingzero sid psa20.v4balt.text End-Para
+		End-Section
+		Section ep_verse
+			Verse<bnr>sid vVerse</>sid psa20.v5alt.text End-Verse
+		End-Section
+		Section ep_book	
+			Dialog sid epi01a sid levaWED.Epistle.book sid epi01b End-Dialog
+		End-Section
+		Section ep_lesson
+			Title role chapverse sid levaWED.Epistle.chapverse End-Title		
+			Reading sid levaWED.Epistle.text @ver End-Reading
+		End-Section
+		Section al_title
+			Title role desig sid Allilouia sid Mode8 sid psa11.title End-Title
+			Media sid hoLI.GospelAlleluia8.text End-Media
+		End-Section
+		Section al_verse1
+			Verse<bnr>sid vVerse1</>sid psa11.v8.text End-Verse
+		End-Section
+		Section al_verse2
+			Verse<bnr>sid vVerse2</>sid psa11.v2.text End-Verse
+		End-Section
+	End-Section
+
+	Break line End_Break
+
+	Section forFuneral
+		Title role desig sid lecLE.forFuneral.uc End-Title
+		Section ep_title
+			Title<r>sid Prokeimenon sid Mode3</>End-Title
+		End-Section
+		Section ep_prokeimenon
+			Reading sid eu.funeral_gr_GR_cog.euFUN.EpistleProkeimenon.text @ver End-Reading
+		End-Section
+		Section ep_verse
+			Verse<bnr>sid vVerse</>sid psa27.v1.text @ver End-Verse
+		End-Section
+		Section ep_book
+			Dialog sid epi01a sid levaFUN.Epistle.book sid epi01b End-Dialog
+		End-Section
+		Section ep_lesson
+			Title role chapverse sid levaFUN.Epistle.chapverse End-Title		
+			Reading sid levaFUN.Epistle.text @ver End-Reading
+		End-Section
+	End-Section
+
+	Break line End_Break
+
+	Section forDeceased1
+		Title role desig sid lecLE.forDeceased.uc End-Title
+		Section ep_title
+			Title<r>sid Prokeimenon sid Mode4 sid psa26.title</>End-Title
+		End-Section
+		Section ep_prokeimenon
+			Para role readingzero sid psa26.v1a.text End-Para
+		End-Section
+		Section ep_verse
+			Verse<bnr>sid vVerse</>sid psa26.v1b.text End-Verse
+		End-Section
+		Section ep_book
+			Dialog sid epi01a sid levaDEC.Epistle1.book sid epi01b End-Dialog
+		End-Section
+		Section ep_lesson
+			Title role chapverse sid levaDEC.Epistle1.chapverse End-Title		
+			Reading sid levaDEC.Epistle1.text @ver End-Reading
+		End-Section
+		Section al_title
+			Title role desig sid Allilouia sid Mode6 End-Title
+			Media sid hoLI.GospelAlleluia6.text End-Media
+		End-Section
+		Section al_verse1
+			Verse<bnr>sid vVerse1</>sid psa64.v5aalt.text End-Verse
+		End-Section
+		Section al_verse2
+			Verse<bnr>sid vVerse2</>sid psa101.v13alt.text End-Verse
+		End-Section
+	End-Section
+
+	Break line End_Break
+
+	Section forDeceased2
+		Title role desig sid lecAP.Another_epistle End-Title
+		Section ep_book
+			Dialog sid epi01a sid levaDEC.Epistle2.book sid epi01b End-Dialog
+		End-Section
+		Section ep_lesson
+			Title role chapverse sid levaDEC.Epistle2.chapverse End-Title		
+			Reading sid levaDEC.Epistle2.text @ver End-Reading
+		End-Section
+	End-Section
+
+	Break line End_Break
+
+	Section forDeceased3
+		Title role desig sid lecAP.Another_epistle End-Title
+		Section ep_book
+			Dialog sid epi01a sid levaDEC.Epistle3.book sid epi01b End-Dialog
+		End-Section
+		Section ep_lesson
+			Title role chapverse sid levaDEC.Epistle3.chapverse End-Title		
+			Reading sid levaDEC.Epistle3.text @ver End-Reading
+		End-Section
+	End-Section
+
+	Break line End_Break
+
+	Section forDeceased4
+		Title role desig sid lecAP.Another_epistle End-Title
+		Section ep_book
+			Dialog sid epi01a sid levaDEC.Epistle4.book sid epi01b End-Dialog
+		End-Section
+		Section ep_lesson
+			Title role chapverse sid levaDEC.Epistle4.chapverse End-Title		
+			Reading sid levaDEC.Epistle4.text @ver End-Reading
+		End-Section
+	End-Section
+
+	Break line End_Break
+
+	Section forSmallWater
+		Title role desig sid lecLE.forSmallWater.uc End-Title
+		Section ep_title
+			Title<r>sid Prokeimenon sid Mode4 sid psa26.title</>End-Title
+		End-Section
+		Section ep_prokeimenon
+			Para role readingzero sid psa26.v1a.text End-Para
+		End-Section
+		Section ep_verse
+			Verse<bnr>sid vVerse</>sid psa26.v1b.text End-Verse
+		End-Section
+		Section ep_book
+			Dialog sid epi01a sid levaSW.Epistle.book sid epi01b End-Dialog
+		End-Section
+		Section ep_lesson
+			Title role chapverse sid levaSW.Epistle.chapverse End-Title		
+			Reading sid levaSW.Epistle.text @ver End-Reading
+		End-Section
+		Section al_title
+			Title role desig sid Allilouia sid Mode6 sid psa44.title End-Title
+			Media sid hoLI.GospelAlleluia6.text End-Media
+		End-Section
+		Section al_verse1
+			Verse<bnr>sid vVerse1</>sid psa44.v2a.text End-Verse
+		End-Section
+		Section al_verse2
+			Verse<bnr>sid vVerse2</>sid psa44.v2b.text End-Verse
+		End-Section
+	End-Section
+
+	Break line End_Break
+
+	Section forConsecration
+		Title role desig sid lecLE.forConsecration.uc End-Title
+		Section ep1_title
+			Title<r>sid Prokeimenon sid Mode1 sid psa26.title</>End-Title
+		End-Section
+		Section ep1_prokeimenon
+			Para role readingzero sid psa26.v1a.text End-Para
+		End-Section
+		Section ep1_verse
+			Verse<bnr>sid vVerse</>sid psa26.v1b.text End-Verse
+		End-Section
+		Section ep1_book
+			Dialog sid epi01a sid levaCON.Epistle1.book sid epi01b End-Dialog
+		End-Section
+		Section ep1_lesson
+			Title role chapverse sid levaCON.Epistle1.chapverse End-Title		
+			Reading sid levaCON.Epistle1.text @ver End-Reading
+		End-Section
+		Break line End_Break
+		Title role desig sid levaCON.Epistle2.title End-Title
+		Section ep2_title
+			Title<r>sid Prokeimenon sid Mode3 sid psa44.title</>End-Title
+		End-Section
+		Section ep2_prokeimenon
+			Para role readingzero sid psa44.v15a.text End-Para
+		End-Section
+		Section ep2_verse
+			Verse<bnr>sid vVerse</>sid psa44.v15b.text End-Verse
+		End-Section
+		Section ep2_book
+			Dialog sid epi01a sid levaCON.Epistle2.book sid epi01b End-Dialog
+		End-Section
+		Section ep2_lesson
+			Title role chapverse sid levaCON.Epistle2.chapverse End-Title		
+			Reading sid levaCON.Epistle2.text @ver End-Reading
+		End-Section
+		Break line End_Break
+		Title role desig sid levaLI.Epistle.title End-Title
+		Section ep_title
+			Title<r>sid Prokeimenon sid Mode4 sid psa92.title</>End-Title
+		End-Section
+		Section ep_prokeimenon
+			Para role readingzero sid psa92.v5b.text End-Para
+		End-Section
+		Section ep_verse
+			Verse<bnr>sid vVerse</>sid psa92.v1b.text End-Verse
+		End-Section
+		Section ep_book
+			Dialog sid epi01a sid levaLI.Epistle.book sid epi01b End-Dialog
+		End-Section
+		Section ep_lesson
+			Title role chapverse sid levaLI.Epistle.chapverse End-Title		
+			Reading sid levaLI.Epistle.text @ver End-Reading
+		End-Section
+	End-Section
+
+	Break line End_Break
+
+	Section forDooropening
+		Title role desig sid lecLE.forDooropening.uc End-Title
+		Section ep_title
+			Title<r>sid Prokeimenon sid Mode2</>End-Title
+		End-Section
+		Section ep_prokeimenon
+			Para role readingzero sid psa67.v27.text End-Para
+		End-Section
+		Section ep_verse
+			Verse<bnr>sid vVerse</>sid psa25.v8.text End-Verse
+		End-Section
+		Section ep_book	
+			Dialog sid epi01a sid levaCDO.Epistle.book sid epi01b End-Dialog
+		End-Section
+		Section ep_lesson
+			Title role chapverse sid levaCDO.Epistle.chapverse End-Title		
+			Reading sid levaCDO.Epistle.text @ver End-Reading
+		End-Section
+	End-Section
+
+	Break line End_Break
+	
+	Section forUnction
+		Title role desig sid lecLE.forUnction.uc End-Title
+		Section epistle1
+			Title<r>sid lecLE.ordinal01a.uc sid lecAP.Apostolos.uc sid lecLE.ordinal01b.uc</>End-Title
+			Section ep_title
+				Title<r>sid Prokeimenon sid Mode1 sid psa32.title</>End-Title
+			End-Section
+			Section ep_prokeimenon
+				Para role readingzero sid psa32.v22.text End-Para
+			End-Section
+			Section ep_verse
+				Verse<bnr>sid vVerse</>sid psa32.v1.text End-Verse
+			End-Section
+			Section ep_book	
+				Dialog sid epi01a sid levaUNC.Epistle1.book sid epi01b End-Dialog
+			End-Section
+			Section ep_lesson
+				Title role chapverse sid levaUNC.Epistle1.chapverse End-Title		
+				Reading sid levaUNC.Epistle1.text @ver End-Reading
+			End-Section
+			Section al_title
+				Title role desig sid Allilouia sid Mode8 sid psa100.title End-Title
+				Media sid hoLI.GospelAlleluia8.text End-Media
+			End-Section
+			Section al_verse1
+				Verse<bnr>sid vVerse1</>sid psa100.v1.text End-Verse
+			End-Section
+		End-Section //epistle1
+		Break line End_Break
+		Section epistle2
+			Title<r>sid lecLE.ordinal02a.uc sid lecAP.Apostolos.uc sid lecLE.ordinal02b.uc</>End-Title
+			Section ep_title
+				Title<r>sid Prokeimenon sid Mode2 sid psa117.title</>End-Title
+			End-Section
+			Section ep_prokeimenon
+				Para role readingzero sid psa117.v14.text End-Para
+			End-Section
+			Section ep_verse
+				Verse<bnr>sid vVerse</>sid psa117.v18.text End-Verse
+			End-Section
+			Section ep_book	
+				Dialog sid epi01a sid levaUNC.Epistle2.book sid epi01b End-Dialog
+			End-Section
+			Section ep_lesson
+				Title role chapverse sid levaUNC.Epistle2.chapverse End-Title		
+				Reading sid levaUNC.Epistle2.text @ver End-Reading
+			End-Section
+			Section al_title
+				Title role desig sid Allilouia sid Mode5 sid psa88.title End-Title
+				Media sid hoLI.GospelAlleluia5.text End-Media
+			End-Section
+			Section al_verse1
+				Verse<bnr>sid vVerse1</>sid psa88.v2.text End-Verse
+			End-Section
+		End-Section //epistle2
+		Break line End_Break
+		Section epistle3
+			Title<r>sid lecLE.ordinal03a.uc sid lecAP.Apostolos.uc sid lecLE.ordinal03b.uc</>End-Title
+			Section ep_title
+				Title<r>sid Prokeimenon sid Mode3 sid psa26.title</>End-Title
+			End-Section
+			Section ep_prokeimenon
+				Para role readingzero sid psa26.v1a.text End-Para
+			End-Section
+			Section ep_verse
+				Verse<bnr>sid vVerse</>sid psa26.v1b.text End-Verse
+			End-Section
+			Section ep_book	
+				Dialog sid epi01a sid levaUNC.Epistle3.book sid epi01b End-Dialog
+			End-Section
+			Section ep_lesson
+				Title role chapverse sid levaUNC.Epistle3.chapverse End-Title		
+				Reading sid levaUNC.Epistle3.text @ver End-Reading
+			End-Section
+			Section al_title
+				Title role desig sid Allilouia sid Mode2 sid psa30.title End-Title
+				Media sid hoLI.GospelAlleluia2.text End-Media
+			End-Section
+			Section al_verse1
+				Verse<bnr>sid vVerse1</>sid psa30.v2.text End-Verse
+			End-Section
+		End-Section //epistle3
+		Break line End_Break
+		Section epistle4
+			Title<r>sid lecLE.ordinal04a.uc sid lecAP.Apostolos.uc sid lecLE.ordinal04b.uc</>End-Title
+			Section ep_title
+				Title<r>sid Prokeimenon sid Mode4</>End-Title
+			End-Section
+			Section ep_prokeimenon
+				Para role readingzero sid psa55.v10b.text End-Para
+			End-Section
+			Section ep_verse
+				Verse<bnr>sid vVerse</>sid psa142.v1.text End-Verse
+			End-Section
+			Section ep_book	
+				Dialog sid epi01a sid levaUNC.Epistle4.book sid epi01b End-Dialog
+			End-Section
+			Section ep_lesson
+				Title role chapverse sid levaUNC.Epistle4.chapverse End-Title		
+				Reading sid levaUNC.Epistle4.text @ver End-Reading
+			End-Section
+			Section al_title
+				Title role desig sid Allilouia sid Mode2 sid psa39.title End-Title
+				Media sid hoLI.GospelAlleluia2.text End-Media
+			End-Section
+			Section al_verse1
+				Verse<bnr>sid vVerse1</>sid psa39.v2a.text sid psa39.v2b.text End-Verse
+			End-Section
+		End-Section //epistle4
+		Break line End_Break
+		Section epistle5
+			Title<r>sid lecLE.ordinal05a.uc sid lecAP.Apostolos.uc sid lecLE.ordinal05b.uc</>End-Title
+			Section ep_title
+				Title<r>sid Prokeimenon sid Mode5 sid psa11.title</>End-Title
+			End-Section
+			Section ep_prokeimenon
+				Para role readingzero sid psa11.v8.text End-Para
+			End-Section
+			Section ep_verse
+				Verse<bnr>sid vVerse</>sid psa11.v2.text End-Verse
+			End-Section
+			Section ep_book	
+				Dialog sid epi01a sid levaUNC.Epistle5.book sid epi01b End-Dialog
+			End-Section
+			Section ep_lesson
+				Title role chapverse sid levaUNC.Epistle5.chapverse End-Title		
+				Reading sid levaUNC.Epistle5.text @ver End-Reading
+			End-Section
+			Section al_title
+				Title role desig sid Allilouia sid Mode5 sid psa88.title End-Title
+				Media sid hoLI.GospelAlleluia5.text End-Media
+			End-Section
+			Section al_verse1
+				Verse<bnr>sid vVerse1</>sid psa88.v2.text End-Verse
+			End-Section
+		End-Section //epistle5
+		Break line End_Break
+		Section epistle6
+			Title<r>sid lecLE.ordinal06a.uc sid lecAP.Apostolos.uc sid lecLE.ordinal06b.uc</>End-Title
+			Section ep_title
+				Title<r>sid Prokeimenon sid Mode4 sid psa50.title</>End-Title
+			End-Section
+			Section ep_prokeimenon
+				Para role readingzero sid psa50.v3.text End-Para
+			End-Section
+			Section ep_verse
+				Verse<bnr>sid vVerse</>sid psa50.v12.text End-Verse
+			End-Section
+			Section ep_book	
+				Dialog sid epi01a sid levaUNC.Epistle6.book sid epi01b End-Dialog
+			End-Section
+			Section ep_lesson
+				Title role chapverse sid levaUNC.Epistle6.chapverse End-Title		
+				Reading sid levaUNC.Epistle6.text @ver End-Reading
+			End-Section
+			Section al_title
+				Title role desig sid Allilouia sid Mode7 sid psa111.title End-Title
+				Media sid hoLI.GospelAlleluia7.text End-Media
+			End-Section
+			Section al_verse1
+				Verse<bnr>sid vVerse1</>sid psa111.v1.text End-Verse
+			End-Section
+		End-Section //epistle6
+		Break line End_Break
+		Section epistle7
+			Title<r>sid lecLE.ordinal07a.uc sid lecAP.Apostolos.uc sid lecLE.ordinal07b.uc</>End-Title
+			Section ep_title
+				Title<r>sid Prokeimenon sid Mode4 sid psa6.title</>End-Title
+			End-Section
+			Section ep_prokeimenon
+				Para role readingzero sid psa6.v2.text End-Para
+			End-Section
+			Section ep_verse
+				Verse<bnr>sid vVerse</>sid psa6.v3.text End-Verse
+			End-Section
+			Section ep_book	
+				Dialog sid epi01a sid levaUNC.Epistle7.book sid epi01b End-Dialog
+			End-Section
+			Section ep_lesson
+				Title role chapverse sid levaUNC.Epistle7.chapverse End-Title		
+				Reading sid levaUNC.Epistle7.text @ver End-Reading
+			End-Section
+			Section al_title
+				Title role desig sid Allilouia sid Mode2 sid psa19.title End-Title
+				Media sid hoLI.GospelAlleluia2.text End-Media
+			End-Section
+			Section al_verse1
+				Verse<bnr>sid vVerse1</>sid psa19.v2.text End-Verse
+			End-Section
+		End-Section //epistle7
+	End-Section //Unction
+End-Section
+End-Template

@@ -1,0 +1,50 @@
+Template ematins.cover.pl
+
+Status Final
+
+	import da.*
+	import oc.*
+	import me.*
+	import eo.*
+	import tr.*
+	import pe.*
+	
+//	import he.k_en_US_public.*
+	import ematinscovers_en_US_ematins.*
+
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+
+	import iTags.*
+	import bTags.*
+	import roles.*
+	import rules.*
+	
+	Switch-Version L2 End-Switch-Version
+	
+
+			Section Normal
+				Title role cover0 sid logo.text End-Title
+				Title role cover1 sid pl.pdf.cover End-Title 	//Service
+				Title role cover3 sid d.ontheeveof ldp @Service_Date End-Title 	
+			
+			
+				when-exists
+					rid trShortCommemoration1.text use:
+						Title role cover4 rid trShortCommemoration1.text End-Title	//Triodion
+					otherwise use:
+						Title role cover4 rid meShortCommemoration1.text End-Title	//Menaion
+				end-when
+				
+			//	Title role cover3 rid meShortCommemoration1.text End-Title	//to force Menaion when needed
+			End-Section //Normal
+	
+	Title role cover5 sid pref.generation_public.cover.version End-Title //GE or E
+	
+	Switch-Version Both End-Switch-Version	
+	
+End-Template

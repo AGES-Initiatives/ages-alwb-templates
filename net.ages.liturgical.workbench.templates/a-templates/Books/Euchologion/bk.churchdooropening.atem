@@ -1,0 +1,230 @@
+Template bk.churchdooropening 
+
+Status Draft
+
+	import client_gr_GR_cog.*
+	import eu.churchdooropening_gr_GR_cog.*
+	import eu.lichrysbasil_gr_GR_cog.*
+	import eu.smallwaterblessing_gr_GR_cog.*
+	import ho.s03_gr_GR_cog.*
+	import ho.s07_gr_GR_cog.*
+	import ho.s10_gr_GR_cog.*
+	import le.go.va.dooropening_gr_GR_cog.*
+	import pe.d120_gr_GR_cog.*
+	import ps_gr_GR_cog.*
+
+	import da.*
+
+	//Templates
+	import bk.ap.va.sections.*
+	import kTheotokos.*  //Katavasia
+	
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Template_Title @text "Thyranixia - Opening of the Church" End_Title
+			Page_Header_Even
+				center @text "Thyranixia - Opening of the Church"
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @text "Thyranixia - Opening of the Church"
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Section Section01
+		Title role desig sid euCDO.Key0100.title End-Title
+		Break line End_Break
+		Rubric sid euCDO.R101 End-Rubric
+		Actor sid Deacon End-Actor
+		Dialog sid res08 End-Dialog
+		Actor sid Hierarch End-Actor
+		Dialog sid enarxis01 End-Dialog
+		Actor sid Reader End-Actor
+		Dialog sid res04 End-Dialog
+		Title role desig sid psa83.title End-Title
+		Reading sid psa83.text<Trubric>sid psa83.version</>End-Reading
+	End-Section
+	Section Section02	
+		Insert_section MA._01_Beginning__.mode8 End-Insert
+		Title role desig sid euCDO.R102 End-Title
+		Title role mode sid peVE.Apolytikion1.mode End-Title
+		Hymn sid peVE.Apolytikion1.text @ver End-Hymn
+	End-Section
+	Section Section03	
+		Title sid Doxa End-Title
+		Title role desig sid cl.Apolytikion1.title End-Title
+		Title role mixed<Tmode>sid cl.Apolytikion1.mode</><Tmelody>sid cl.Apolytikion1.melody</>End-Title
+		Hymn sid cl.Apolytikion1.text @ver End-Hymn
+	End-Section
+	Section Section04	
+		Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+		Title role mode sid euSWB.Key0304.mode End-Title
+		Hymn sid euSWB.Key0304.text @ver End-Hymn
+		Hymn sid hoLI.TrisagiosHymn.text @ver media-off<r>sid Thrice</>End-Hymn
+		Verse sid DoxaPatri.text End-Verse
+		Verse sid KaiNynKaiAei.text End-Verse
+		Hymn sid hoLI.TrisagiosHymn3.text sid hoLI.TrisagiosHymn4.text @ver End-Hymn
+		Actor sid Deacon End-Actor
+		Dialog sid euLI.Key0602.text End-Dialog	
+		Actor sid Choir End-Actor
+		Hymn sid euLI.Key0602.text sid hoLI.TrisagiosHymn.text @ver media-off End-Hymn
+	End-Section
+	Section Section05
+		Title role desig sid TaAnagnosmata End-Title
+		Title role desig sid OApostolos End-Title
+		Actor sid Deacon End-Actor
+		Dialog sid exc19 End-Dialog
+		Actor sid Reader End-Actor
+		Insert_section forDooropening.ep_title End-Insert
+		Insert_section forDooropening.ep_prokeimenon End-Insert
+		Insert_section forDooropening.ep_verse End-Insert
+		Actor sid Deacon End-Actor
+		Dialog sid exc17 End-Dialog		
+		Actor sid Reader End-Actor
+		Insert_section forDooropening.ep_book End-Insert
+		Actor sid Deacon End-Actor
+		Dialog sid exc19 End-Dialog
+		Actor sid Reader End-Actor
+		Insert_section forDooropening.ep_lesson End-Insert
+		Actor sid Hierarch End-Actor
+		Dialog sid epi02 End-Dialog
+	End-Section
+	Section Section06
+		Actor sid Choir End-Actor
+		Hymn sid Allilouia3.text @ver End-Hymn
+	End-Section
+	Section Section07
+		Title role desig sid ToEvangelion End-Title
+		Actor sid Deacon End-Actor
+		Dialog sid exc17 sid exc18 sid gos02 End-Dialog
+		Actor sid Hierarch End-Actor
+		Dialog sid pet31 End-Dialog
+		Dialog<i>sid res05p</>End-Dialog
+		Actor sid Hierarch End-Actor
+		Dialog sid gos03a sid levaCDO.Gospel.book sid gos03b End-Dialog 
+		Actor sid Deacon End-Actor
+		Dialog sid exc19 End-Dialog
+		Dialog<i>sid DoxaSoiKyrieP</>End-Dialog	
+		Actor sid Hierarch End-Actor
+		Title role chapverse sid levaCDO.Gospel.chapverse End-Title 
+		Reading sid levaCDO.Gospel.text End-Reading 
+		Dialog<i>sid DoxaSoiKyrieP</>End-Dialog	
+	End-Section
+	Section Section08
+		Actor sid Deacon End-Actor
+		Dialog sid pet01 End-Dialog
+		Dialog<i>sid res01p</>End-Dialog
+		Dialog sid pet02 End-Dialog
+		Dialog<i>sid res01p</>End-Dialog
+		Dialog sid pet03 End-Dialog
+		Dialog<i>sid res01p</>End-Dialog
+		Dialog sid pet06a sid cl.bishop1.rank sid cl.bishop1.name_c sid pet06b End-Dialog //with client specific bishop's name
+		Dialog<i>sid res01p</>End-Dialog
+		Dialog sid pet07S End-Dialog
+		Dialog<i>sid res01p</>End-Dialog
+		Dialog sid pet08 End-Dialog
+		Dialog<i>sid res01p</>End-Dialog
+		Dialog sid pet09 End-Dialog
+		Dialog<i>sid res01p</>End-Dialog
+		Dialog sid pet10 End-Dialog
+		Dialog<i>sid res01p</>End-Dialog
+		Dialog sid petWater01 End-Dialog
+		Dialog<i>sid res01p</>End-Dialog
+		Dialog sid petWater02 End-Dialog
+		Dialog<i>sid res01p</>End-Dialog
+		Dialog sid petWater13 End-Dialog
+		Dialog<i>sid res01p</>End-Dialog
+		Dialog sid petConsecration01 End-Dialog
+		Dialog<i>sid res01p</>End-Dialog
+		Dialog sid pet11 End-Dialog
+		Dialog<i>sid res01p</>End-Dialog
+		Dialog sid pet12 End-Dialog
+		Dialog<i>sid res01p</>End-Dialog
+		Dialog sid pet13 End-Dialog
+		Dialog<i>sid res03p</>End-Dialog
+		Actor sid Priest End-Actor
+		Dialog sid exc01 End-Dialog
+		Dialog<i>sid res04p</>End-Dialog
+	End-Section
+	Section Section09
+		Actor sid Deacon End-Actor
+		Dialog sid pet00 End-Dialog
+		Dialog<i>sid res01p</>End-Dialog
+		Title role desig sid euCDO.Key0101.title End-Title
+		Rubric sid euCDO.R103 End-Rubric
+		Actor sid Hierarch End-Actor
+		Para role prayer sid euCDO.Key0102.text End-Para
+		Para role prayer sid exc28 End-Para
+		Dialog<i>sid res04p</>End-Dialog
+	End-Section
+	Section Section10
+		Rubric sid euCDO.R104 End-Rubric
+		Actor sid Hierarch End-Actor
+		Title role mode sid me.m09.d14_gr_GR_cog.meVE.Apolytikion1.mode End-Title
+		Hymn sid me.m09.d14_gr_GR_cog.meVE.Apolytikion1.text @ver End-Hymn
+		Break line End_Break
+		Rubric sid euCDO.R105 End-Rubric
+		Actor sid Hierarch End-Actor
+		Dialog sid psa23.v7.text End-Dialog		
+		Rubric sid euCDO.R106 End-Rubric
+		Dialog sid psa23.v8a.text End-Dialog
+		Actor sid Hierarch End-Actor
+		Dialog sid psa23.v8b.text End-Dialog
+		Dialog sid psa23.v7.text End-Dialog		
+		Rubric sid euCDO.R107 End-Rubric
+		Dialog sid psa23.v8a.text End-Dialog
+		Actor sid Hierarch End-Actor
+		Dialog sid psa23.v8b.text End-Dialog
+		Dialog sid psa23.v9.text End-Dialog		
+		Rubric sid euCDO.R108 End-Rubric
+		Dialog sid psa23.v10a.text End-Dialog
+		Actor sid Hierarch End-Actor
+		Dialog sid psa23.v10b.text End-Dialog
+	End-Section
+	Section Section11	
+		Rubric sid euCDO.R109 End-Rubric
+		Title role desig sid Kontakion sid TonEnkainion End-Title
+		Title role mixed<Tmode>sid me.m09.d13_gr_GR_cog.meMA.Kontakion1.mode</>sid me.m09.d13_gr_GR_cog.meMA.Kontakion1.melody<Tmelody></>End-Title
+		Hymn sid me.m09.d13_gr_GR_cog.meMA.Kontakion1.text @ver End-Hymn
+		Rubric sid euCDO.R110 End-Rubric
+		Title role desig sid cl.Apolytikion1.title End-Title
+		Title role mixed<Tmode>sid cl.Apolytikion1.mode</>sid cl.Apolytikion1.melody<Tmelody></>End-Title
+		Hymn sid cl.Apolytikion1.text @ver End-Hymn
+	End-Section
+	Section Section12
+		Actor sid Deacon End-Actor
+		Dialog sid pet00 End-Dialog
+		Dialog<i>sid res01p</>End-Dialog
+		Actor sid Hierarch End-Actor
+		Para role prayer sid euCDO.Key0103.text sid cl.consecration.name sid euCDO.Key0105.text End-Para
+		Para role prayer sid euCDO.Key0106.text End-Para
+		Dialog<i>sid res04p</>End-Dialog
+	End-Section
+	Section Section13
+		Title role desig sid Apolysis End-Title
+		Actor sid Hierarch End-Actor
+		Dialog sid DoxaSoiChriste2 End-Dialog
+		Insert_section Selector_Dismissals.Com_Yes End-Insert
+		Actor sid Priest End-Actor
+		Dialog sid DiEfchonDespotou.text End-Dialog
+		Dialog<i>sid res04p</>End-Dialog
+	End-Section
+
+End-Template

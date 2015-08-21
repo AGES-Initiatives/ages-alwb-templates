@@ -1,0 +1,117 @@
+Template se.m02.d06.ve 
+
+Status Review
+
+	import client_gr_GR_cog.*
+	import ho.s10_gr_GR_cog.*	
+	import me.m02.d06_gr_GR_cog.*
+
+	import da.*
+	import oc.*
+
+	//Templates
+	import bk.ho.s15_m02.*
+	
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 2 day 6 year 2016 End_Date
+			Page_Header_Even
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	when-name-of-day-is
+		Sunday use:
+			Section Instance02 //Sunday
+				Insert_section VE._01_Beginning__.vespers End-Insert
+				Insert_section VE._02_Kekragaria__.modeofweek__.for10 End-Insert
+				Insert_section VE._03_Stichera__.oc__.sunday_.s_1234 End-Insert
+				Set_Date month 2 day 2 End_Date
+					Title role desig sid TisEortis End-Title
+					Insert_section VE._03_Stichera__.me__.i_123as567 End-Insert
+				Set_Date month 2 day 6 End_Date
+				Section block2
+					Title role desig sid TouAgiou End-Title
+					Media sid meVE.Stichera8910.text End-Media
+					Rubric sid cl.se.R001 End-Rubric
+					Insert_section VE._03_Stichera__.me__.p_123as8910 End-Insert
+				End-Section
+				Section block3
+					Title role mixed sid Doxa<Tdesig>sid TisEortis</>End-Title
+					Title role mode sid me.m02.d02_gr_GR_cog.meVE.LityGlory.mode End-Title
+					Hymn sid me.m02.d02_gr_GR_cog.meVE.LityGlory.text @ver End-Hymn
+				End-Section
+				Insert_section VE._03_Stichera__.both__.firsttheotokion__.modeofweek End-Insert
+				Insert_section VE._04_Middle__.entrance End-Insert
+				Insert_section VE._05_Readings__.reader End-Insert
+				Insert_section VE._06_Litanies__.fullektenia End-Insert
+				Insert_section VE._08_Aposticha__.oc__.sunday_.aposticha1_ End-Insert
+				Insert_section VE._08_Aposticha__.oc__.sunday_.aposticha234 End-Insert	
+				Title role mixed sid Doxa<Tdesig>sid TouAgiou</>End-Title
+				Insert_section VE._08_Aposticha__.glory__.me__.gloryasglory_.hymn End-Insert	
+				Section block4
+					Title role mixed sid KaiNyn<Tdesig>sid TisEortis</>End-Title
+					Title role mode sid me.m02.d02_gr_GR_cog.meVE.LityBoth.mode End-Title
+					Hymn sid me.m02.d02_gr_GR_cog.meVE.LityBoth.text @ver End-Hymn
+				End-Section
+				Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
+				Section apolytikia
+					Insert_section AP.res__.modeofweek End-Insert
+					Title role mixed sid Doxa<Tdesig>sid TouAgiou</>End-Title
+					Insert_section ho_Feb06.Apolytikion_3.hymn End-Insert
+					Insert_section AP.both__.af End-Insert
+				End-Section
+				Insert_section VE._10_End__.wisdom End-Insert
+				Insert_section VE._11_Dismissal__.commemoration End-Insert
+			End-Section
+		otherwise use:
+			Section Instance01 //Weekday
+				Insert_section VE._01_Beginning__.vespers End-Insert
+				Insert_section VE._02_Kekragaria__.mode2__.for6 End-Insert
+				Insert_section VE._03_Stichera__.me__.p_123as567 End-Insert
+				Insert_section VE._03_Stichera__.me__.p_456as8910 End-Insert
+				Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_ End-Insert
+				Title role mixed sid KaiNyn<Tdesig>sid TisEortis</>End-Title
+				Insert_section VE._03_Stichera__.both__.me__.bothasboth_.hymn End-Insert
+				Insert_section VE._04_Middle__.entrance End-Insert
+				Insert_section VE._05_Readings__.reader End-Insert
+				Insert_section VE._06_Litanies__.fullektenia End-Insert
+				Insert_section VE._08_Aposticha__.me__.p_hierarchs12 End-Insert
+				Insert_section VE._08_Aposticha__.glory__.me__.gloryasglory_ End-Insert
+				Title role mixed sid KaiNyn<Tdesig>sid TisEortis</>End-Title
+				Insert_section VE._08_Aposticha__.both__.me_.hymn End-Insert
+				Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert	
+				Insert_section ho_Feb06.Apolytikion_3 End-Insert
+				Insert_section AP.gloryboth__.af End-Insert
+				Insert_section VE._10_End__.wisdom End-Insert
+				Insert_section VE._11_Dismissal__.commemoration End-Insert
+				
+			End-Section
+	end-when			
+End-Template

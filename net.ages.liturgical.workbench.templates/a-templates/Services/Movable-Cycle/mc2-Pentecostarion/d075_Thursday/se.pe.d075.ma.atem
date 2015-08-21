@@ -1,0 +1,62 @@
+Template se.pe.d075.ma 
+
+Status Final
+
+	import client_gr_GR_cog.*
+	import ho.s03_gr_GR_cog.*
+	import pe.d075_gr_GR_cog.*
+
+	//Templates
+	import kPascha.*
+	
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 4 day 16 End_Date
+			Page_Header_Even
+				center @lookup sid ma.pdf.header lang L1 @lookup sid d.on lang L1 @date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ma.pdf.header lang L2 @lookup sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ma End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	Section Instance01
+		Insert_section MA._01_Beginning__.pascha End-Insert
+		Insert_section MA._10_Canon__.hypakoe__.pascha End-Insert
+		Insert_section MA._11_Kontakion__.pascha_ End-Insert
+		Insert_section SY.Synaxarion End-Insert
+		Insert_section KA.choir__._1345678 End-Insert
+		Insert_section PE.Pascha_Ode9 End-Insert
+		Insert_section MA._12_Exaposteilarion__.pascha__.thrice_ End-Insert
+		Insert_section MA._13_Lauds__.mode5 End-Insert
+		Rubric sid cl.se.R001 End-Rubric
+		Insert_section MA._13_Lauds__.pe__.s_1234as3456 End-Insert
+		Insert_section MA._13_Lauds__.pascha End-Insert
+		Insert_section MA._13_Lauds__.gloryboth__.pascha_ End-Insert
+		Insert_section AP.pascha__.thrice End-Insert
+		Insert_section MA._18_End__.wisdom End-Insert
+		Insert_section MA._20_Dismissal__.nocommemoration End-Insert
+	End-Section
+End-Template

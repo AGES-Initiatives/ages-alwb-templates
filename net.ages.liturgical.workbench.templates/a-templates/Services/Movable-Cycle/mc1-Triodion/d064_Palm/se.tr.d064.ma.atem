@@ -1,0 +1,103 @@
+Template se.tr.d064.ma 
+
+Status Final
+
+	import client_gr_GR_cog.*
+	import eu.lichrysbasil_gr_GR_cog.*
+	import hi.s17_gr_GR_cog.*
+	import ho.s03_gr_GR_cog.*
+	import ho.s07_gr_GR_cog.*
+	import ho.s10_gr_GR_cog.*
+	import ps_gr_GR_cog.*
+	import tr.d064_gr_GR_cog.*
+
+	//Templates
+	import bk.ho.s16.*
+	
+	import actors_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 4 day 5 End_Date
+			Page_Header_Even
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ma End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	Section Instance01
+		Insert_section MA._01_Beginning__.mode1 End-Insert
+		Insert_section AP.tr112 End-Insert
+		Insert_section MA._03_Kathisma1__.litany End-Insert
+		Insert_section MA._03_Kathisma1__.tr__.kath1112 End-Insert
+		Insert_section MA._04_Kathisma2__.append__.tr__.kath2122 End-Insert
+		Insert_section MA._05_Kathisma3__.append__.tr__.kath3131_ End-Insert
+		Insert_section MA._07_Antiphons__.mode41_prokeimenon_ End-Insert
+		Insert_section MA._08_Gospel__.priest End-Insert
+		Insert_section MA._10_Canon__.hypakoe__.tr End-Insert
+		Insert_section MA._11_Kontakion__.append__.tr_ End-Insert
+		Insert_section SY.Synaxarion End-Insert
+		Insert_section KA.choir__._1345678 End-Insert
+		Insert_section MA._10_Canon__.ode9_intro End-Insert
+		Section block1
+			Actor sid Choir End-Actor
+			Title role desig sid Ode9 End-Title
+			Media sid trMA.Ode9C1H.text End-Media
+			Title role mixed<Tmode>sid trMA.Ode9C1H.mode</><Tdesig>sid Heirmos</>End-Title
+			Hymn sid trMA.Ode9C1H.text @ver media-off<r>sid Twice media-off</>End-Hymn
+			Title role desig sid Troparia End-Title
+			Verse sid verse_God.text End-Verse
+			Hymn sid trMA.Ode9C11.text @ver End-Hymn
+			Verse sid verse_God.text End-Verse
+			Hymn sid trMA.Ode9C11.text @ver End-Hymn
+			Verse sid DoxaPatri.text End-Verse
+			Hymn sid trMA.Ode9C12.text @ver End-Hymn
+			Verse sid KaiNynKaiAei.text End-Verse
+			Hymn sid trMA.Ode9C13.text @ver End-Hymn
+		End-Section
+		Insert_section KA.append__._9 End-Insert
+		Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+		Insert_section MA._12_Exaposteilarion__.intro_.part1 End-Insert
+		Section block2
+			Break line End_Break
+			Title role desig sid hiPR.Key0600.title End-Title
+			Title role desig sid hiPR.Key0601.title End-Title
+			Title role desig sid hiPR.Key0602.title End-Title
+			Actor sid PriestOrDeacon End-Actor
+			Dialog sid pet00 End-Dialog
+			Dialog<i>sid res01p</>End-Dialog
+			Actor sid Priest End-Actor
+			Para role prayer sid hiPR.Key0603.text End-Para
+			Dialog<i>sid res04p</>End-Dialog
+			Break line End_Break
+			Actor sid Choir End-Actor
+		End-Section
+		Insert_section MA._13_Lauds__.mode4 End-Insert
+		Insert_section MA._13_Lauds__.tr__.i_112234as123456_.hymns End-Insert
+		Insert_section MA._13_Lauds__.gloryboth__.tr__.gloryasgloryboth_ End-Insert
+		Insert_section MA._14_Doxology__.great End-Insert
+		Insert_section AP.tr2_ End-Insert
+	End-Section
+End-Template

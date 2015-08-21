@@ -1,0 +1,198 @@
+Template se.m04.d25.ve 
+
+Status Final
+
+	import client_gr_GR_cog.*
+	import ho.s10_gr_GR_cog.*	
+	import me.m04.d25_gr_GR_cog.*
+
+	import da.*
+	import oc.*
+	import pe.*
+	import tr.*
+
+	//Templates
+	import bk.ho.s15_m04.*
+	
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 4 day 25 End_Date
+			Page_Header_Even
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	when-movable-cycle-day-is
+		58 use:
+			Section Instance01
+			End-Section
+
+		59 use:
+			Section Instance02
+			End-Section
+
+		60 use:
+			Section Instance03
+			End-Section
+
+		61 use:
+			Section Instance04
+			End-Section
+
+		62 use:
+			Section Instance05
+			End-Section
+
+		63 thru 72 use:
+			Section Instance06
+			End-Section
+
+		73, 74, 75, 77 use:
+			Section Instance07
+				Insert_section VE._01_Beginning__.vespers End-Insert
+				when-movable-cycle-day-is 
+					73 use: Insert_section VE._02_Kekragaria__.mode3__.noStichologia End-Insert
+					74 use: Insert_section VE._02_Kekragaria__.mode4__.noStichologia End-Insert
+					75 use: Insert_section VE._02_Kekragaria__.mode5__.noStichologia End-Insert
+					77 use: Insert_section VE._02_Kekragaria__.mode8__.noStichologia End-Insert
+				end-when
+				Insert_section VE._03_Stichera__.pe__.s_1234as3456 End-Insert
+				Insert_section TI.s._05_evangelist End-Insert
+				Insert_section VE._03_Stichera__.me__.p_1234as78910 End-Insert
+				Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_ End-Insert
+				Insert_section VE._03_Stichera__.both__.pe__.bothasboth_ End-Insert
+				Insert_section VE._04_Middle__.entrance End-Insert
+				Insert_section VE._06_Litanies__.fullektenia End-Insert
+				Insert_section VE._08_Aposticha__.pe__.s_1 End-Insert
+				Insert_section VE._08_Aposticha__.pascha End-Insert
+				Insert_section TI.g.s._05_evangelist End-Insert
+				Insert_section VE._08_Aposticha__.glory__.me__.gloryasglory_.hymn End-Insert
+				Insert_section VE._08_Aposticha__.both__.pascha_ End-Insert
+				Insert_section PE.ChristIsRisen.twice End-Insert
+				Insert_section TI.a.s._05_evangelist End-Insert
+				Insert_section AP.me1_.hymn End-Insert
+				Insert_section PE.ChristIsRisen.once End-Insert
+				Insert_section VE._10_End__.wisdom End-Insert
+				Insert_section VE._11_Dismissal__.commemoration End-Insert
+			End-Section
+
+		76 use: //Bright Friday
+			Section Instance08
+				Insert_section VE._01_Beginning__.vespers End-Insert
+				Insert_section VE._02_Kekragaria__.mode6__.noStichologia End-Insert
+				Insert_section VE._03_Stichera__.pe__.s_1234as1234 End-Insert
+				Insert_section TI.s._16_theotokos End-Insert
+				Insert_section VE._03_Stichera__.pe__.p_8910as567 End-Insert
+				Insert_section TI.s._05_evangelist End-Insert
+				Insert_section VE._03_Stichera__.me__.p_123as8910 End-Insert
+				Insert_section VE._03_Stichera__.glory__.pe__.gloryasglory_ End-Insert
+				Insert_section VE._03_Stichera__.both__.firsttheotokion__.mode6_ End-Insert
+				Insert_section VE._04_Middle__.entrance End-Insert
+				Insert_section VE._06_Litanies__.fullektenia End-Insert
+				Insert_section VE._08_Aposticha__.pe__.s_1 End-Insert
+				Insert_section TI.s._16_theotokos End-Insert
+				Insert_section VE._08_Aposticha__.append__.pe__.p_theotokosfount12belt2 End-Insert
+				Insert_section TI.g.s._05_evangelist End-Insert
+				Insert_section VE._08_Aposticha__.glory__.me__.gloryasglory_.hymn End-Insert
+				Insert_section VE._08_Aposticha__.both__.pascha_ End-Insert
+				Insert_section AP.pascha__.twice End-Insert
+				Insert_section TI.a.s._05_evangelist End-Insert
+				Insert_section AP.me1_.hymn End-Insert
+				Insert_section AP.pascha__.once End-Insert
+				Insert_section VE._10_End__.wisdom End-Insert
+				Insert_section VE._11_Dismissal__.commemoration End-Insert
+			End-Section
+
+		78 use: //Thomas Sunday
+			Section Instance09
+			End-Section
+
+		79 thru 83 use:
+			Section Instance10
+			End-Section
+
+		84 use:
+			Section Instance11
+				Insert_section VE._01_Beginning__.vespers End-Insert
+				Insert_section VE._02_Kekragaria__.mode1__.for6 End-Insert
+				Insert_section TI.f End-Insert
+				Insert_section VE._03_Stichera__.pe__.i_123as567 End-Insert
+				Insert_section TI.s._05_evangelist End-Insert
+				Insert_section VE._03_Stichera__.me__.p_123as8910 End-Insert
+				Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_ End-Insert
+				Insert_section VE._03_Stichera__.both__.pe__.gloryasboth_ End-Insert
+				Insert_section VE._04_Middle__.entrance End-Insert
+				Insert_section VE._06_Litanies__.fullektenia End-Insert
+				Insert_section VE._08_Aposticha__.oc__.sunday_.aposticha1_ End-Insert
+				Insert_section TI.s._05_evangelist End-Insert
+				Insert_section VE._08_Aposticha__.append__.me__.p_oneapostle12 End-Insert
+				Insert_section VE._08_Aposticha__.glory__.me__.gloryasglory_ End-Insert
+					Set_mcDay day 78 End_mcDay
+					Insert_section TI.b.f End-Insert
+					Insert_section VE._07_Lity__.part2__.pe__.glory_.hymn End-Insert
+				Set_mcDay day 84 End_mcDay
+				Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
+				Insert_section AP.af End-Insert
+				Insert_section TI.g.s._05_evangelist End-Insert
+				Insert_section AP.me1_.hymn End-Insert
+				Insert_section AP.both__.af End-Insert
+				Insert_section VE._10_End__.wisdom End-Insert
+				Insert_section VE._11_Dismissal__.commemoration End-Insert
+			End-Section
+
+		85, 92, 99 use:
+			Section Instance12
+			End-Section
+
+		86, 87, 88, 89, 90, 93, 103, 104 use:
+			Section Instance13
+			End-Section
+
+		91, 105 use:
+			Section Instance14
+			End-Section
+
+		94 use:
+			Section Instance15
+			End-Section
+
+		95 use:
+			Section Instance16
+			End-Section
+
+		96, 97, 98, 100, 101 use:
+			Section Instance17
+			End-Section
+
+		102 use:
+			Section Instance18
+			End-Section
+
+	end-when
+End-Template

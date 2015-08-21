@@ -1,0 +1,69 @@
+Template se.tr.d070.ve 
+
+Status Final
+
+	import client_gr_GR_cog.*
+	import tr.d070_gr_GR_cog.*
+
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 4 day 11 End_Date
+			Page_Header_Even
+				center @lookup sid hw.removal lang L1 @lookup sid d.delimiter lang L1 @lookup sid ve.pdf.header lang L1 @lookup sid d.onFridayAfternoon lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid hw.removal lang L2 @lookup sid d.delimiter lang L2 @lookup sid ve.pdf.header lang L2 @lookup sid d.onFridayAfternoon lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+	
+	Section Instance01
+		Title role desig sid hw.pdf.cover End-Title
+		Title role desig sid hw.removal sid d.onFridayAfternoon End-Title
+		Title<inr>sid ve.pdf.header sid hw.ofholysaturday</>End-Title 
+		Break line End_Break
+		Insert_section VE._01_Beginning__.vespers End-Insert
+		Insert_section VE._02_Kekragaria__.mode1__.for6 End-Insert
+		Insert_section VE._03_Stichera__.tr__.i_112345as5678910 End-Insert
+		Insert_section VE._03_Stichera__.glory__.tr__.gloryasglory_ End-Insert
+		Insert_section VE._03_Stichera__.both__.tr__.bothasboth_ End-Insert
+		Insert_section VE._04_Middle__.entrance End-Insert
+		Insert_section VE._05_Readings__.reader End-Insert
+		Insert_section LE._01_Epistle__.vespers__.triodion_ End-Insert
+		Insert_section LE._02_Gospel__.vespers__.triodion_ End-Insert
+		Insert_section VE._06_Litanies__.fullektenia End-Insert
+		Insert_section VE._08_Aposticha__.tr__.p_holyweekfriday End-Insert
+		Insert_section VE._08_Aposticha__.gloryboth__.tr_ End-Insert
+		Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert	
+		Section block1
+			Title role mixed<Tdesig>sid Apolytikia</><Tmode>sid trVE.Apolytikion1.mode</>End-Title
+			Hymn sid trVE.Apolytikion1.text @ver End-Hymn
+			Hymn sid trVE.Apolytikion3.text @ver media-off End-Hymn
+		End-Section
+		Insert_section VE._10_End__.wisdom End-Insert
+		Insert_section VE._11_Dismissal__.commemoration End-Insert
+	End-Section
+End-Template

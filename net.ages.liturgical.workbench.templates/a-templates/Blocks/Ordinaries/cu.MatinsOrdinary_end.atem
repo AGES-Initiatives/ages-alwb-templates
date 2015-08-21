@@ -1,0 +1,33 @@
+Template cu.MatinsOrdinary_end 
+
+Status Final
+
+	import template.titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+		Head 
+			Template_Title @text "Matins Ordinary" End_Title
+			Page_Header_Even
+				center @lookup sid ma.pdf.header lang L1 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ma.pdf.header lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+			Set_Page_Number 1 End_Set_Page_Number
+		End_Head
+
+	Section Instance01
+		Insert_section MA._15_Litanies__.aftergreatdoxology End-Insert
+		Insert_section MA._18_End__.wisdom End-Insert
+		Insert_section MA._20_Dismissal__.commemoration End-Insert
+	End-Section
+End-Template

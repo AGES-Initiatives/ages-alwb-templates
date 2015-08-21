@@ -1,0 +1,226 @@
+Template se.tr.d068.ma
+
+Status Review
+
+	import client_gr_GR_cog.*
+	import da.d5_gr_GR_cog.*
+	import ho.s03_gr_GR_cog.*
+	import le.go.mc.d068_gr_GR_cog.*
+	import le.pr.tr.d068_gr_GR_cog.*
+	import tr.d068_gr_GR_cog.*
+
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head
+		Set_Date month 4 day 9 End_Date
+			Page_Header_Even
+				center @lookup sid ma.pdf.header lang L1 @lookup sid hw.ofholythursday lang L1 @lookup sid d.delimiter lang L1 @lookup sid hw.bridegroomservice lang L1 @lookup sid d.onWednesdayEvening lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ma.pdf.header lang L2 @lookup sid hw.ofholythursday lang L2 @lookup sid d.delimiter lang L2 @lookup sid hw.bridegroomservice lang L2 @lookup sid d.onWednesdayEvening lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ma End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	Section Instance01
+		Title role desig sid hw.pdf.cover End-Title
+		Title role desig sid hw.bridegroomservice sid d.onWednesdayEvening End-Title
+		Title<inr>sid ma.pdf.header sid hw.ofholythursday</>End-Title 
+		Break line End_Break
+		Insert_section MatinsOrdinary_Lent.Instance01 End-Insert
+		Section block1
+			Actor sid Choir End-Actor	
+			Title role mode sid trHW.Troparion.mode End-Title
+			Media sid trHW.Alleluia.text End-Media
+			Insert_section TR.MatinsAlleluia.verses End-Insert
+			Title role mixed<Tdesig>sid Troparion</><Tmode>sid trHW.Troparion.mode</>End-Title
+			Hymn sid trHW.Troparion.text<r>sid Thrice media-off</>End-Hymn
+		End-Section
+		Insert_section MA._08_Gospel__.priest End-Insert
+		Section block2
+			Actor sid Choir End-Actor
+			Title role desig sid OKanon End-Title
+			Title role desig sid trMA.C1Poet End-Title
+			Title role mixed<Tdesig>sid trMA.Ode1C1H.ode</><Tmode>sid trMA.Ode1C1H.mode</><Tdesig>sid OEirmos</>End-Title	
+			Media sid trMA.Ode1C1H.text End-Media
+			Para role heirmos sid trMA.Ode1C1H.text End-Para
+			Title role desig sid Troparia End-Title
+			Verse sid verse_God.text End-Verse
+			Hymn sid trMA.Ode1C11.text @ver End-Hymn
+			Title sid Doxa End-Title
+			Hymn sid trMA.Ode1C12.text @ver End-Hymn
+			Title sid KaiNyn End-Title
+			Hymn sid trMA.Ode1C13.text @ver End-Hymn
+			Title role desig sid Katavasia End-Title
+			Hymn sid trMA.Ode1K.text @ver End-Hymn
+		End-Section
+		Section block3
+			Title role mixed<Tdesig>sid trMA.Ode3C1H.ode</><Tdesig>sid OEirmos</>End-Title	
+			Media sid trMA.Ode3C1H.text End-Media
+			Para role heirmos sid trMA.Ode3C1H.text<r>sid Twice</>End-Para
+			Title role desig sid Troparia End-Title
+			Title sid Doxa End-Title
+			Hymn sid trMA.Ode3C11.text @ver End-Hymn
+			Title sid KaiNyn End-Title
+			Hymn sid trMA.Ode3C12.text @ver End-Hymn
+			Title role desig sid Katavasia End-Title
+			Hymn sid trMA.Ode3K.text @ver End-Hymn
+		End-Section
+		Insert_section LN.ShortLitany08 End-Insert
+		Section block4
+			Actor sid Choir End-Actor
+			Title role desig sid Kathisma1 End-Title
+			Title role mixed<Tmode>sid trMA.Ode3Kathisma1.mode</><Tmelody>sid trMA.Ode3Kathisma1.melody</>End-Title	
+			Hymn sid trMA.Ode3Kathisma1.text @ver End-Hymn
+			Title role mixed sid Doxa<Tmode>sid trMA.Ode3Kathisma2.mode</><Tmelody>sid trMA.Ode3Kathisma2.melody</>End-Title	
+			Hymn sid trMA.Ode3Kathisma2.text @ver End-Hymn
+			Title role mixed sid KaiNyn<Tmode>sid trMA.Ode3Kathisma3.mode</><Tmelody>sid trMA.Ode3Kathisma3.melody</>End-Title	
+			Hymn sid trMA.Ode3Kathisma3.text @ver End-Hymn
+		End-Section
+		Section block5
+			Title role mixed<Tdesig>sid trMA.Ode4C1H.ode</><Tdesig>sid OEirmos</>End-Title	
+			Media sid trMA.Ode4C1H.text End-Media
+			Para role heirmos sid trMA.Ode4C1H.text End-Para
+			Title role desig sid Troparia End-Title
+			Verse sid verse_God.text End-Verse
+			Hymn sid trMA.Ode4C11.text @ver End-Hymn
+			Title sid Doxa End-Title
+			Hymn sid trMA.Ode4C12.text @ver End-Hymn
+			Title sid KaiNyn End-Title
+			Hymn sid trMA.Ode4C13.text @ver End-Hymn
+			Title role desig sid Katavasia End-Title
+			Hymn sid trMA.Ode4K.text @ver End-Hymn
+		End-Section
+		Section block6
+			Title role mixed<Tdesig>sid trMA.Ode5C1H.ode</><Tdesig>sid OEirmos</>End-Title	
+			Media sid trMA.Ode5C1H.text End-Media
+			Para role heirmos sid trMA.Ode5C1H.text<r>sid Twice</>End-Para
+			Title role desig sid Troparia End-Title
+			Title sid Doxa End-Title
+			Hymn sid trMA.Ode5C11.text @ver End-Hymn
+			Title sid KaiNyn End-Title
+			Hymn sid trMA.Ode5C12.text @ver End-Hymn
+			Title role desig sid Katavasia End-Title
+			Hymn sid trMA.Ode5K.text @ver End-Hymn
+		End-Section
+		Section block7
+			Title role mixed<Tdesig>sid trMA.Ode6C1H.ode</><Tdesig>sid OEirmos</>End-Title	
+			Media sid trMA.Ode6C1H.text End-Media
+			Para role heirmos sid trMA.Ode6C1H.text<r>sid Twice</>End-Para
+			Title role desig sid Troparia End-Title
+			Title sid Doxa End-Title
+			Hymn sid trMA.Ode6C11.text @ver End-Hymn
+			Title sid KaiNyn End-Title
+			Hymn sid trMA.Ode6C12.text @ver End-Hymn
+			Title role desig sid Katavasia End-Title
+			Hymn sid trMA.Ode6K.text @ver End-Hymn
+		End-Section
+		Insert_section LN.ShortLitany09 End-Insert
+		Insert_section MA._11_Kontakion__.tr_ End-Insert
+		Section block8
+			Insert_section SY.me End-Insert
+			Reading sid trMA.Synaxarion.commemoration.text End-Reading
+			Title role desig sid trMA.Synaxarion.couplet1.title End-Title
+			Para role readingcenterzero sid trMA.Synaxarion.couplet1.verse1 End-Para
+			Para role readingcenter sid trMA.Synaxarion.couplet1.verse2 End-Para
+			Title role desig sid trMA.Synaxarion.couplet2.title End-Title
+			Para role readingcenterzero sid trMA.Synaxarion.couplet2.verse1 End-Para
+			Para role readingcenter sid trMA.Synaxarion.couplet2.verse2 End-Para
+			Title role desig sid trMA.Synaxarion.couplet3.title End-Title
+			Para role readingcenterzero sid trMA.Synaxarion.couplet3.verse1 End-Para
+			Para role readingcenterzero sid trMA.Synaxarion.couplet3.verse2 End-Para
+			Para role readingcenter sid trMA.Synaxarion.couplet3.verse3 End-Para
+			Title role desig sid trMA.Synaxarion.couplet4.title End-Title
+			Para role readingcenterzero sid trMA.Synaxarion.couplet4.verse1 End-Para
+			Para role readingcenter sid trMA.Synaxarion.couplet4.verse2 End-Para
+			Reading sid trMA.Synaxarion.lastline.text End-Reading
+		End-Section
+		Section block9	
+			Actor sid Choir End-Actor	
+			Title role mixed<Tdesig>sid trMA.Ode7C1H.ode</><Tdesig>sid OEirmos</>End-Title	
+			Media sid trMA.Ode7C1H.text End-Media
+			Para role heirmos sid trMA.Ode7C1H.text End-Para
+			Title role desig sid Troparia End-Title
+			Verse sid verse_God.text End-Verse
+			Hymn sid trMA.Ode7C11.text @ver End-Hymn
+			Title sid Doxa End-Title
+			Hymn sid trMA.Ode7C12.text @ver End-Hymn
+			Title sid KaiNyn End-Title
+			Hymn sid trMA.Ode7C13.text @ver End-Hymn
+			Title role desig sid Katavasia End-Title
+			Hymn sid trMA.Ode7K.text @ver End-Hymn
+		End-Section
+		Section block10
+			Title role desig sid trMA.Ode8C1H.ode sid OEirmos End-Title
+			Media sid trMA.Ode8C1H.text End-Media
+			Para role heirmos sid trMA.Ode8C1H.text End-Para
+			Title role desig sid Troparia End-Title
+			Verse sid verse_God.text End-Verse
+			Hymn sid trMA.Ode8C11.text @ver End-Hymn
+			Verse sid ps.bodes_gr_GR_cog.bode8.v18.text End-Verse
+			Hymn sid trMA.Ode8C12.text @ver End-Hymn
+			Title sid KaiNyn End-Title
+			Hymn sid trMA.Ode8C13.text @ver End-Hymn
+			Title role desig sid Katavasia End-Title
+			Verse sid ps.bodes_gr_GR_cog.bode8.v19.text End-Verse
+			Hymn sid trMA.Ode8K.text @ver End-Hymn
+		End-Section
+		Insert_section MA._10_Canon__.ode9_intro End-Insert
+		Section block11
+			Actor sid Choir End-Actor	
+			Title role desig sid trMA.Ode9C1H.ode sid OEirmos End-Title
+			Media sid trMA.Ode9C1H.text End-Media
+			Para role heirmos sid trMA.Ode9C1H.text End-Para
+			Title role desig sid Troparia End-Title
+			Verse sid verse_God.text End-Verse
+			Hymn sid trMA.Ode9C11.text @ver End-Hymn
+			Title sid Doxa End-Title
+			Hymn sid trMA.Ode9C12.text @ver End-Hymn
+			Title sid KaiNyn End-Title
+			Hymn sid trMA.Ode9C13.text @ver End-Hymn
+			Title role desig sid Katavasia End-Title
+			Hymn sid trMA.Ode9K.text @ver End-Hymn
+		End-Section
+		Insert_section LN.ShortLitany10 End-Insert
+		Insert_section MA._12_Exaposteilarion__.tr__.exap111 End-Insert
+		Insert_section MA._13_Lauds__.mode2 End-Insert
+		Insert_section MA._13_Lauds__.tr__.i_1234as3456_ End-Insert
+		Insert_section MA._13_Lauds__.gloryboth__.tr__.gloryasgloryboth_ End-Insert
+		Insert_section MA._14_Doxology__.small End-Insert
+		Insert_section MA._15_Litanies__.aftersmalldoxology End-Insert
+		Insert_section MA._16_Aposticha__.tr__.i_holythursday123idiomela End-Insert
+		Insert_section MA._16_Aposticha__.glory__.tr__.gloryasglory_ End-Insert
+		Insert_section MA._16_Aposticha__.both__.tr__.bothasboth_ End-Insert
+		Insert_section MA._17_Apolytikia__.itisgood_trisagion_holyweek_.part1 End-Insert
+		Section block16
+			Actor sid Choir End-Actor
+			Title role mixed<Tdesig>sid TroparionTisProfiteias</><Tmode>sid trTE.Troparion.mode</>End-Title
+			Hymn sid trTE.Troparion.text @ver End-Hymn
+			Title role mixed sid DoxaKaiNyn<Tdesig>sid ToAfto</>End-Title
+			Break line End_Break
+		End-Section
+		Insert_section Lectionary_Triodion.Trithekti_Prophecy End-Insert
+		Insert_section MA._18_End__.ektenia_wisdom End-Insert
+		Insert_section MA._20_Dismissal__.holythursday End-Insert
+	End-Section
+End-Template

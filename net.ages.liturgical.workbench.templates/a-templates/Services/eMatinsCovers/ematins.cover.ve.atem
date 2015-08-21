@@ -1,0 +1,102 @@
+Template ematins.cover.ve
+
+Status Final
+
+	import da.*
+	import oc.*
+	import me.*
+	import eo.*
+	import tr.*
+	import pe.*
+	
+	import he.k_en_US_public.*
+	import ematinscovers_en_US_ematins.*
+
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+
+	import iTags.*
+	import bTags.*
+	import roles.*
+	import rules.*
+	
+	Switch-Version L2 End-Switch-Version
+	
+
+	when-movable-cycle-day-is 
+	69 use:
+		Section hw_vl1
+			Title role cover0 sid logo.text End-Title
+			Title role cover1 sid hw.pdf.cover ldp @Service_Year End-Title 	//Service
+			Title role cover2 sid vl.pdf.cover sid d.onThursdayMorning End-Title
+			Title role cover4 sid ve.pdf.header sid d.of rid trShortCommemoration1.text End-Title	//Triodion
+		End-Section //hw_vl1
+
+	70 use:
+		Section hw_ve
+			Title role cover0 sid logo.text End-Title
+			Title role cover1 sid hw.pdf.cover ldp @Service_Year End-Title 	//Service
+			Title role cover2 sid hw.removal End-Title
+			Title role cover2 sid d.onFridayAfternoon End-Title
+			Title role cover4 sid ve.pdf.header sid d.of rid trShortCommemoration1.text End-Title	//Triodion
+		End-Section //hw_ve
+	71 use:
+		Section hw_vl2
+			Title role cover0 sid logo.text End-Title
+			Title role cover1 sid hw.pdf.cover ldp @Service_Year End-Title 	//Service
+			Title role cover2 sid vl.pdf.cover sid d.onSaturdayMorning End-Title
+			Title role cover4 sid ve.pdf.header sid d.of rid peShortCommemoration1.text End-Title	
+		End-Section //hw_vl2
+	72 use:
+		Section pa_ve1
+			Title role cover0 sid logo.text End-Title
+			Title role cover1 sid ve.pdf.cover End-Title 	//Service
+			Title role cover2 sid pa.pascha ldp @Service_Year sid d.delimiter sid pa.easter End-Title	//Date
+			Title role cover4 sid pa.agape End-Title
+		End-Section //pa_ve1
+	73 thru 76 use:
+		Section pa_ve2
+			Title role cover0 sid logo.text End-Title
+			Title role cover1 sid ve.pdf.cover End-Title 	//Service
+			Title role cover2 sid pa.brightweek ldp @Service_Year End-Title	//Date
+			Title role cover4 sid ve.pdf.header rid da.daVE.OnTheEveningBefore End-Title
+		End-Section //pa-ve2
+	120 use:
+		Section pentecost
+			Title role cover0 sid logo.text End-Title
+			Title role cover1 sid ve.pdf.cover End-Title 	//Service
+			Title role cover3 sid d.ontheeveof ldp @Service_Date End-Title 	
+			Title role cover4 rid peShortCommemoration1.text End-Title	//Pentecostarion
+		End-Section	
+		otherwise use:
+			Section Normal
+				Title role cover0 sid logo.text End-Title
+				Title role cover1 sid ve.pdf.cover End-Title 	//Service
+				Title role cover3 sid d.ontheeveof ldp @Service_Date End-Title 	
+			
+				when-name-of-day-is Sunday use:		//Sunday Mode
+					Title role cover4 rid ocVE.Apolytikion.mode End-Title
+				end-when
+			
+				when-exists
+					rid trShortCommemoration1.text use:
+						Title role cover4 rid trShortCommemoration1.text End-Title	//Triodion
+					rid peShortCommemoration1.text use:
+						Title role cover4 rid peShortCommemoration1.text End-Title	//Pentecostarion
+					otherwise use:
+						Title role cover4 rid meShortCommemoration1.text End-Title	//Menaion
+				end-when
+				
+			//	Title role cover3 rid meShortCommemoration1.text End-Title	//to force Menaion when needed
+			End-Section //Normal
+	end-when
+	
+	Title role cover5 sid pref.generation_public.cover.version End-Title //GE or E
+	
+	Switch-Version Both End-Switch-Version	
+	
+End-Template

@@ -1,0 +1,90 @@
+Template sb.vo.sun
+
+Status Draft
+
+	import client_gr_GR_cog.*
+	import eu.lichrysbasil_gr_GR_cog.*
+	import ho.s03_gr_GR_cog.*
+	import ho.s07_gr_GR_cog.*
+	import ho.s10_gr_GR_cog.*	
+//	import me.m00.d00_gr_GR_cog.*
+//	import pe.d000_gr_GR_cog.*
+//	import tr.d000_gr_GR_cog.*
+
+	import da.*
+	import me.*
+//	import oc.*
+//	import pe.*
+//	import tr.*
+
+	//Templates
+	import kTheotokos.*  //Katavasia
+	
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+
+	Head 
+		Set_Date month 6 day 15 End_Date
+			Page_Header_Even
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L1 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+		Preface Covers
+			Insert_template ematins.cover.ve End-Insert
+			Insert_template ematins.credits End-Insert
+		End-Preface
+
+//	Title role desig sid ve.pdf.header sid d.onSaturdayEvening End-Title
+//	Break line End_Break
+	Insert_section VE._01_Beginning__.vespers End-Insert
+	Break line End_Break
+	Rubric sid cl.sb.vo.sun.R001 End-Rubric
+	Break line End_Break
+	Title role desig sid Entrance End-Title
+	Insert_section VE._04_Middle__.entrance End-Insert
+	Break line End_Break
+	Rubric sid cl.sb.vo.sun.R003 End-Rubric
+	Break line End_Break
+	Title role desig sid Litanies End-Title
+	Insert_section VE._06_Litanies__ End-Insert
+	Break line End_Break
+	Rubric sid cl.sb.vo.sun.R005 End-Rubric
+	Break line End_Break
+	Insert_section VE.Symeon_Trisagion End-Insert	
+	Break line End_Break
+	Rubric sid cl.sb.vo.sun.R007 End-Rubric
+	Break line End_Break
+	Title role desig sid Apolysis End-Title
+	Insert_section VE._10_End__ End-Insert
+	Actor sid Priest End-Actor
+	Insert_section Selector_Dismissals.Com_Yes End-Insert
+	Actor sid People End-Actor
+	Dialog sid res04 End-Dialog
+	
+
+
+
+
+
+
+End-Template

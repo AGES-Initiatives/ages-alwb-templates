@@ -1,0 +1,68 @@
+Template se.pe.d113.ve 
+
+Status Final
+
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+//		Set_Date month 5 day 24 End_Date
+			Page_Header_Even
+				center @lookup rid pe.peShortCommemoration1.text sid ve.pdf.header sid d.onSaturdayEvening lang L1 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup rid pe.peShortCommemoration1.text sid ve.pdf.header sid d.onSaturdayEvening lang L2 
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	Section Instance01
+		Insert_section VE._01_Beginning__.vespers End-Insert
+		Insert_section VE._02_Kekragaria__.modeofweek__.for10 End-Insert
+		Insert_section VE._03_Stichera__.oc__.s_123as123 End-Insert
+		Set_mcDay day 110 End_mcDay
+			Insert_section TI.f End-Insert
+			Insert_section VE._03_Stichera__.pe__.i_123as456 End-Insert
+		Set_mcDay day 113 End_mcDay
+		Insert_section TI.pe._07_fathers End-Insert
+		Insert_section VE._03_Stichera__.pe__.p_78910as78910 End-Insert
+		Insert_section VE._03_Stichera__.glory__.pe__.gloryasglory_ End-Insert
+		Insert_section VE._03_Stichera__.both__.firsttheotokion__.modeofweek End-Insert
+		Insert_section VE._04_Middle__.entrance End-Insert
+		Insert_section VE._05_Readings__.reader End-Insert
+		Insert_section VE._06_Litanies__.fullektenia End-Insert
+		Insert_section VE._08_Aposticha__.oc__.sunday_.aposticha1_ End-Insert
+		Insert_section VE._08_Aposticha__.oc__.sunday_.aposticha234 End-Insert
+		Insert_section TI.g.pe._07_fathers End-Insert
+		Insert_section VE._08_Aposticha__.glory__.pe__.gloryasglory_.hymn End-Insert
+		Insert_section TI.b.f End-Insert
+		Insert_section VE._08_Aposticha__.both__.pe__.bothasboth_ End-Insert
+		Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
+		Insert_section AP.res__.modeofweek End-Insert
+		Insert_section TI.g.pe._07_fathers End-Insert
+		Insert_section AP.pe2_.hymn End-Insert
+		Insert_section AP.both__.af End-Insert
+		Insert_section VE._10_End__.wisdom End-Insert
+		Insert_section VE._11_Dismissal__.nocommemoration End-Insert
+	End-Section
+
+End-Template

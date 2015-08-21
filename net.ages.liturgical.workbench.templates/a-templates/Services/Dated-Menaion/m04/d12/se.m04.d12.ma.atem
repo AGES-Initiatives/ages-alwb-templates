@@ -1,0 +1,37 @@
+Template se.m04.d12.ma
+
+Status Final
+
+import template.titles_gr_GR_cog.*
+
+	Head 
+		Set_Date month 4 day 12 End_Date
+			Page_Header_Even
+				center @lookup sid ma.pdf.header lang L1 @lookup sid d.on lang L1 @date lang L1 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ma.pdf.header lang L2 @lookup sid d.on lang L2 @date lang L2 
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ma End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	when-movable-cycle-day-is
+		1 thru 64 use: Insert_template mc.map.ma End-Insert
+		65 thru 70 use: //Holy Week
+		71 thru 127 use: Insert_template mc.map.ma End-Insert
+		otherwise use:
+		
+	end-when		
+
+End-Template
