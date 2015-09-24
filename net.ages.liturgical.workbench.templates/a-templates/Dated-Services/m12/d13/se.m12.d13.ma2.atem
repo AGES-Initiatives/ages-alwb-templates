@@ -1,14 +1,6 @@
-Template se.m04.d14.co 
+Template se.m12.d13.ma2
 
-Status Final
-
-	import client_gr_GR_cog.*
-	import me.m04.d14_gr_GR_cog.*
-
-	import da.*
-//	import oc.*
-//	import pe.*
-//	import tr.*
+Status Review
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -23,12 +15,12 @@ Status Final
 	import roles.*
 
 	Head 
-		Set_Date month 4 day 14 End_Date
+		Set_Date month 12 day 13 End_Date
 			Page_Header_Even
-				center @lookup sid co.pdf.header sid d.ontheeveof lang L2 @date lang L2
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @lookup sid co.pdf.header sid d.ontheeveof lang L2 @date lang L2
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -40,12 +32,23 @@ Status Final
 	End_Head
 
 	Preface Covers
-		Insert_template ematins.cover.co End-Insert
+		Insert_template ematins.cover.ma End-Insert
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-	when-movable-cycle-day-is
-		72 thru 77 use: Insert_template mc.map.co End-Insert
-	end-when		
+	when-name-of-day-is
+		Sunday use:
+			Section Instance03 //Sunday
+				Insert_section se.m12.dFF.ma2.Instance01 End-Insert
+			End-Section
+			
+		Saturday use:
+			Section Instance02 //Saturday
+			End-Section
+			
+		otherwise use:
+			Section Instance01 //weekday
+			End-Section
+	end-when					
 
 End-Template
