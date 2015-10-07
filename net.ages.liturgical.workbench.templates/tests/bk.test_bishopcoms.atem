@@ -1,4 +1,7 @@
-Template bk.test_set_date 
+Template bk.test_bishopcoms
+
+//	import client.*
+	import client_gr_GR_cog.*
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -34,25 +37,19 @@ Template bk.test_set_date
 		Insert_template ematins.credits End-Insert
 	End-Preface
 	
-	Section test0
-		Para ldp @Service_Date End-Para
-	End-Section
-
 		Section test
-			Set_Date month 12 day 9 End_Date
-				Insert_section SY.Synaxarion End-Insert
-			Set_Date month 12 day 13 End_Date
-				Insert_section SY.Synaxarion End-Insert
-			Set_Date month 12 day 15 End_Date
-				Insert_section SY.Synaxarion End-Insert
-			Set_Date month 12 day 20 End_Date
-				Insert_section SY.Synaxarion End-Insert
-			Set_Date month 12 day 25 End_Date
-				Insert_section SY.Synaxarion End-Insert
-			Set_Date month 12 day 26 End_Date
-				Insert_section SY.Synaxarion End-Insert
-			Set_Date month 12 day 27 End_Date
-				Insert_section SY.Synaxarion End-Insert
+			Para sid client_gr_GR_cog.cl.double_commemoration.bishop1and2 End-Para
+			when-exists rid cl.double_commemoration.bishop1and2
+					use: Para rid cl.double_commemoration.bishop1and2 End-Para
+			end-when
 		End-Section
+
+
+		when-exists rid cl.double_commemoration.bishop1and2
+			use: Dialog sid pet06a sid cl.bishop1.rank sid cl.bishop1.name_c sid cl.bishop2.rank sid cl.bishop2.name_c sid pet06b End-Dialog //with client specific bishop's name
+			otherwise use: Dialog sid pet06a sid cl.bishop1.rank sid cl.bishop1.name_c sid pet06b End-Dialog //with client specific bishop's name
+		end-when
+
+
 		
 End-Template

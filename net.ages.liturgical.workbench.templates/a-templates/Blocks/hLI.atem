@@ -164,18 +164,36 @@ Status Review
 		Dialog sid euLI.Key0608.text End-Dialog
 		Actor sid Clergy End-Actor
 		Para role chant sid euLI.Key0608.text End-Para
-		Actor sid Deacon<Trubric>sid Intoned</>End-Actor
-		Dialog sid client_gr_GR_cog.cl.bishop0.fimi.text End-Dialog	
-		Actor sid Clergy<Trubric>sid Sung</>End-Actor
-		Para role chant sid client_gr_GR_cog.cl.bishop0.fimi.text End-Para
-		Actor sid Deacon<Trubric>sid Intoned</>End-Actor
-		Dialog sid client_gr_GR_cog.cl.bishop1.fimi.text End-Dialog	
-		Actor sid Clergy<Trubric>sid Sung</>End-Actor
-		Para role chant sid client_gr_GR_cog.cl.bishop1.fimi.text End-Para
-		Actor sid ChoirR End-Actor
-		Para role chant sid client_gr_GR_cog.cl.bishop1.fimi.text End-Para
-//		Actor sid ChoirL End-Actor
-//		Para role chant sid client_gr_GR_cog.cl.bishop1.fimi.text End-Para
+		
+		when-exists rid cl.double_commemoration.bishop1and2
+			use:
+				Section bishop1
+					Actor sid Deacon<Trubric>sid Intoned</>End-Actor
+					Dialog sid client_gr_GR_cog.cl.bishop1.fimi.text End-Dialog	
+					Actor sid Clergy<Trubric>sid Sung</>End-Actor
+					Para role chant sid client_gr_GR_cog.cl.bishop1.fimi.text End-Para
+					Actor sid ChoirR End-Actor
+					Para role chant sid client_gr_GR_cog.cl.bishop1.fimi.text End-Para
+			//		Actor sid ChoirL End-Actor
+			//		Para role chant sid client_gr_GR_cog.cl.bishop1.fimi.text End-Para
+				End-Section
+			otherwise use:
+				Section bishop0andbishop1
+					Actor sid Deacon<Trubric>sid Intoned</>End-Actor
+					Dialog sid client_gr_GR_cog.cl.bishop0.fimi.text End-Dialog	
+					Actor sid Clergy<Trubric>sid Sung</>End-Actor
+					Para role chant sid client_gr_GR_cog.cl.bishop0.fimi.text End-Para
+					Actor sid Deacon<Trubric>sid Intoned</>End-Actor
+					Dialog sid client_gr_GR_cog.cl.bishop1.fimi.text End-Dialog	
+					Actor sid Clergy<Trubric>sid Sung</>End-Actor
+					Para role chant sid client_gr_GR_cog.cl.bishop1.fimi.text End-Para
+					Actor sid ChoirR End-Actor
+					Para role chant sid client_gr_GR_cog.cl.bishop1.fimi.text End-Para
+			//		Actor sid ChoirL End-Actor
+			//		Para role chant sid client_gr_GR_cog.cl.bishop1.fimi.text End-Para
+				End-Section
+		end-when
+			
 	End-Section	
 
 		Section AfterGospel //inserted in _20_
@@ -866,10 +884,24 @@ Status Review
 			Section _24_chrys
 				Actor sid Hierarch<Trubric>sid InALowVoice</>End-Actor 
 				Para role inaudible sid euLI.Key1329.text End-Para				
-				Actor sid Hierarch End-Actor
-				Dialog sid euLI.Key1330a.text<r>sid cl.bishop0.rank sid cl.bishop0.name_p</>sid euLI.Key1330b.text End-Dialog				
-				Actor sid Clergy End-Actor
-				Dialog sid euLI.Key1330a.text<r>sid cl.bishop1.rank sid cl.bishop1.name_p</>sid euLI.Key1330b.text End-Dialog				
+
+				when-exists rid cl.double_commemoration.bishop1and2
+					use:
+						Section bishop1bishop2
+							Actor sid Hierarch End-Actor
+							Dialog sid euLI.Key1330a.text<r>sid cl.bishop1.rank sid cl.bishop1.name_p</>sid euLI.Key1330b.text End-Dialog				
+							Actor sid Clergy End-Actor
+							Dialog sid euLI.Key1330a.text<r>sid cl.bishop2.rank sid cl.bishop2.name_p</>sid euLI.Key1330b.text End-Dialog				
+						End-Section
+					otherwise use:
+						Section bishop0bishop1
+							Actor sid Hierarch End-Actor
+							Dialog sid euLI.Key1330a.text<r>sid cl.bishop0.rank sid cl.bishop0.name_p</>sid euLI.Key1330b.text End-Dialog				
+							Actor sid Clergy End-Actor
+							Dialog sid euLI.Key1330a.text<r>sid cl.bishop1.rank sid cl.bishop1.name_p</>sid euLI.Key1330b.text End-Dialog				
+						End-Section
+				end-when
+				
 				Actor sid Deacon End-Actor
 				Dialog sid euLI.Key1331.text End-Dialog				
 				Actor sid Choir End-Actor
