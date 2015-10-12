@@ -1,0 +1,157 @@
+Template Selector_MatinsOrdinary
+
+	Status Draft
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Section parish
+		when-movable-cycle-day-is
+			23 use:
+				Section cleanmonday
+					Insert_section MA._00_Ordinary__.part1__.normal End-Insert
+					Actor sid Reader End-Actor
+					Insert_section bk.ho.s01.Trisagion_Prayers End-Insert
+					Actor sid Priest End-Actor
+					Dialog sid exc20 End-Dialog
+					Actor sid Reader End-Actor
+					Dialog sid res04 End-Dialog
+					Dialog sid res01<r>sid Twelve</>End-Dialog
+					Dialog sid res04 sid EnOnomatiKyriou.text End-Dialog
+					Actor sid Priest End-Actor
+					Dialog sid enarxis03 End-Dialog
+					Actor sid Reader End-Actor
+					Dialog sid res04 End-Dialog				
+					Insert_section MA._00_Ordinary__.part3 End-Insert
+					Insert_section MA._00_Ordinary__.part4 End-Insert
+					Insert_section MA._00_Ordinary__.part5 End-Insert
+				End-Section
+			24 thru 69 use:
+				Section Instance01
+					when-name-of-day-is
+						Saturday, Sunday use:
+							Insert_section MA._00_Ordinary__.part2__.parish End-Insert
+						otherwise use:
+							Insert_section MA._00_Ordinary__.part2__.full End-Insert
+					end-when
+					Insert_section MA._00_Ordinary__.part3 End-Insert
+					Insert_section MA._00_Ordinary__.part4 End-Insert
+					Insert_section MA._00_Ordinary__.part5 End-Insert
+				End-Section
+			70 use:
+				Section Instance02
+					Insert_section MA._00_Ordinary__.part1__.normal End-Insert
+					Insert_section MA._00_Ordinary__.part2__.parish End-Insert
+					Insert_section MA._00_Ordinary__.part3 End-Insert
+					Insert_section MA._00_Ordinary__.part4 End-Insert
+					Insert_section MA._00_Ordinary__.part5 End-Insert
+					Break page End_Break
+				End-Section	
+			78 thru 108 use:
+				Section Instance03
+					Insert_section MA._00_Ordinary__.part1__.afterpascha End-Insert
+					Insert_section MA._00_Ordinary__.part2__.afterpascha End-Insert
+					Insert_section MA._00_Ordinary__.part3 End-Insert
+					Insert_section MA._00_Ordinary__.part4 End-Insert
+					Insert_section MA._00_Ordinary__.part5 End-Insert
+				End-Section
+			110 thru 149 use:
+				Section Instance04
+					Insert_section MA._00_Ordinary__.part1__.ascension End-Insert
+					Insert_section MA._00_Ordinary__.part2__.ascension End-Insert
+					Insert_section MA._00_Ordinary__.part3 End-Insert
+					Insert_section MA._00_Ordinary__.part4 End-Insert
+					Insert_section MA._00_Ordinary__.part5 End-Insert
+				End-Section
+			otherwise use:
+				Section Instance05_parish
+					Insert_section MA._00_Ordinary__.part1__.normal End-Insert
+					Insert_section MA._00_Ordinary__.part2__.parish End-Insert
+					Insert_section MA._00_Ordinary__.part3 End-Insert
+					Insert_section MA._00_Ordinary__.part4 End-Insert
+					Insert_section MA._00_Ordinary__.part5 End-Insert
+					Break page End_Break
+				End-Section	
+		end-when
+	End-Section
+
+	Section complete
+		when-movable-cycle-day-is
+			23 use:
+				Section cleanmonday
+					Insert_section MA._00_Ordinary__.part1__.normal End-Insert
+					Actor sid Reader End-Actor
+					Insert_section bk.ho.s01.Trisagion_Prayers End-Insert
+					Actor sid Priest End-Actor
+					Dialog sid exc20 End-Dialog
+					Actor sid Reader End-Actor
+					Dialog sid res04 End-Dialog
+					Dialog sid res01<r>sid Twelve</>End-Dialog
+					Dialog sid res04 sid EnOnomatiKyriou.text End-Dialog
+					Actor sid Priest End-Actor
+					Dialog sid enarxis03 End-Dialog
+					Actor sid Reader End-Actor
+					Dialog sid res04 End-Dialog				
+					Insert_section MA._00_Ordinary__.part3 End-Insert
+					Insert_section MA._00_Ordinary__.part4 End-Insert
+					Insert_section MA._00_Ordinary__.part5 End-Insert
+				End-Section
+			24 thru 69 use:
+				Section Instance01
+					when-name-of-day-is
+						Saturday, Sunday use:
+							Insert_section MA._00_Ordinary__.part2__.parish End-Insert
+						otherwise use:
+							Insert_section MA._00_Ordinary__.part2__.full End-Insert
+					end-when
+					Insert_section MA._00_Ordinary__.part3 End-Insert
+					Insert_section MA._00_Ordinary__.part4 End-Insert
+					Insert_section MA._00_Ordinary__.part5 End-Insert
+				End-Section
+			70 use:
+				Section Instance02
+					Insert_section MA._00_Ordinary__.part1__.normal End-Insert
+					Insert_section MA._00_Ordinary__.part2__.parish End-Insert
+					Insert_section MA._00_Ordinary__.part3 End-Insert
+					Insert_section MA._00_Ordinary__.part4 End-Insert
+					Insert_section MA._00_Ordinary__.part5 End-Insert
+					Break page End_Break
+				End-Section	
+			78 thru 108 use:
+				Section Instance03
+					Insert_section MA._00_Ordinary__.part1__.afterpascha End-Insert
+					Insert_section MA._00_Ordinary__.part2__.afterpascha End-Insert
+					Insert_section MA._00_Ordinary__.part3 End-Insert
+					Insert_section MA._00_Ordinary__.part4 End-Insert
+					Insert_section MA._00_Ordinary__.part5 End-Insert
+				End-Section
+			110 thru 149 use:
+				Section Instance04
+					Insert_section MA._00_Ordinary__.part1__.ascension End-Insert
+					Insert_section MA._00_Ordinary__.part2__.ascension End-Insert
+					Insert_section MA._00_Ordinary__.part3 End-Insert
+					Insert_section MA._00_Ordinary__.part4 End-Insert
+					Insert_section MA._00_Ordinary__.part5 End-Insert
+				End-Section
+			otherwise use:
+				Section Instance05_full
+					Insert_section MA._00_Ordinary__.part1__.normal End-Insert
+					Insert_section MA._00_Ordinary__.part2__.full End-Insert
+					Insert_section MA._00_Ordinary__.part3 End-Insert
+					Insert_section MA._00_Ordinary__.part4 End-Insert
+					Insert_section MA._00_Ordinary__.part5 End-Insert
+					Break page End_Break
+				End-Section	
+		end-when
+	End-Section
+
+End-Template
