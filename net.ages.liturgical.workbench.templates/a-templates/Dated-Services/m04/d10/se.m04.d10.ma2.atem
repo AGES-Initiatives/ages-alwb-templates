@@ -1,6 +1,6 @@
-Template se.m04.d17.co 
+Template se.m04.d10.ma2
 
-Status NA
+Status Final
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -15,12 +15,12 @@ Status NA
 	import roles.*
 
 	Head 
-		Set_Date month 4 day 17 End_Date
+		Set_Date month 4 day 10 year 2016 End_Date
 			Page_Header_Even
-				center @lookup sid co.pdf.header sid d.ontheeveof lang L2 @date lang L2
+				center @lookup sid ma.pdf.header lang L1 @lookup sid d.on lang L1 @date lang L1 
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @lookup sid co.pdf.header sid d.ontheeveof lang L2 @date lang L2
+				center @lookup sid ma.pdf.header lang L2 @lookup sid d.on lang L2 @date lang L2 
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -32,12 +32,16 @@ Status NA
 	End_Head
 
 	Preface Covers
-		Insert_template ematins.cover.co End-Insert
+		Insert_template ematins.cover.ma End-Insert
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
 	when-movable-cycle-day-is
-		72 thru 77 use: Insert_template mc.map.co End-Insert
+		1 thru 64 use: Insert_template mc.map.ma2 End-Insert
+		65 thru 70 use: //Holy Week
+		71 thru 127 use: Insert_template mc.map.ma2 End-Insert
+		otherwise use:
+		
 	end-when		
 
 End-Template
