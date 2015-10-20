@@ -1,0 +1,322 @@
+Template se.tr.d043.ma2
+
+Status Final
+
+	import client_gr_GR_cog.*
+	import ho.s07_gr_GR_cog.*
+	import tr.d043_gr_GR_cog.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+	import website.preferences.titles_en_US_alwb.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 4 day 3 year 2016 End_Date
+			Page_Header_Even
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ma End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	Section Instance01
+		Insert_section MA._01_Beginning__.modeofweek End-Insert
+		Insert_section se.tr.d043.ve.Instance01.apolytikia End-Insert
+		Insert_section MA._03_Kathisma1__.litany End-Insert
+		Insert_section MA._03_Kathisma1__.oc__.sunday__.lent End-Insert
+		Insert_section MA._04_Kathisma2__.append__.oc__.sunday__.kath212223 End-Insert
+		Title role desig sid Kathisma3 sid TouStavrou End-Title
+		Insert_section MA._05_Kathisma3__.append__.tr__.kath3131_.hymns End-Insert
+//		Insert_section ResEvlogitaria End-Insert
+		Insert_section MA._07_Antiphons__.sunday_ End-Insert
+
+		Section options
+				Section block01_eothinonposition1
+					Para role bmc_eothinongospel_position1 sid mc.eothinongospel.position1 End-Para
+						Insert_section MA._08_Gospel__.priest End-Insert
+					Para role emc_eothinongospel_position1 sid mc.tag End-Para
+				End-Section
+				Section block02_odes13
+					Para role bmc_ode1_tr_canon1 sid mc.ode1trcanon1 End-Para
+						Section tr043_hh1234trtas00GrGgGgGgGB
+							Title role source sid sourceTriodion End-Title
+							Actor sid Choir End-Actor
+							Insert_section TI.c.tr End-Insert
+							Media sid trMA.Ode1C11.text End-Media
+							Title<Tdesig>sid Ode1</><Tmode>sid Mode1</><Tdesig>sid Heirmos</>End-Title
+							Hymn sid he.h.m1_gr_GR_cog.OTheiotatosProetypose.text @ver media-off <r>sid Twice</>End-Hymn
+							Verse sid verse_Resurrection.text End-Verse
+							Hymn sid trMA.Ode1C11.text @ver media-off End-Hymn
+							Verse sid verse_God.text End-Verse
+							Hymn sid trMA.Ode1C12.text @ver End-Hymn
+							Verse sid verse_God.text End-Verse
+							Hymn sid trMA.Ode1C13.text @ver End-Hymn
+							Verse sid verse_God.text End-Verse
+							Hymn sid trMA.Ode1C14.text @ver End-Hymn
+							Title sid Doxa End-Title
+							Hymn sid trMA.Ode1C1Tr.text @ver End-Hymn
+							Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Hymn sid trMA.Ode1C1T.text @ver End-Hymn
+						End-Section
+					Para role emc_ode1_tr_canon1 sid mc.tag End-Para
+					Insert_section KA.append__._1 End-Insert
+					Para role bmc_ode3_tr_canon1 sid mc.ode3trcanon1 End-Para
+						Section tr043_hh1234trtas00GrGgGgGgGB
+							Media sid trMA.Ode3C11.text End-Media
+							Title<Tdesig>sid Ode3</><Tmode>sid Mode1</><Tdesig>sid Heirmos</>End-Title
+							Hymn sid he.h.m1_gr_GR_cog.StereosonDespotaChriste.text @ver media-off<r>sid Twice</>End-Hymn
+							Verse sid verse_Resurrection.text End-Verse
+							Hymn sid trMA.Ode3C11.text @ver media-off End-Hymn
+							Verse sid verse_God.text End-Verse
+							Hymn sid trMA.Ode3C12.text @ver End-Hymn
+							Verse sid verse_God.text End-Verse
+							Hymn sid trMA.Ode3C13.text @ver End-Hymn
+							Verse sid verse_God.text End-Verse
+							Hymn sid trMA.Ode3C14.text @ver End-Hymn
+							Title sid Doxa End-Title
+							Hymn sid trMA.Ode3C1Tr.text @ver End-Hymn
+							Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Hymn sid trMA.Ode3C1T.text @ver End-Hymn
+						End-Section
+					Para role emc_ode3_tr_canon1 sid mc.tag End-Para
+					Insert_section KA.append__._3 End-Insert
+					Insert_section MA._10_Canon__.litanies__.ode3 End-Insert
+				End-Section
+				Section block03_kontakionposition2
+					Para role bmc_kontakion_position2 sid mc.kontakion.position2 End-Para
+						Insert_section MA._11_Kontakion__.sunday End-Insert
+					Para role emc_kontakion_position2 sid mc.tag End-Para
+				End-Section
+				Section block04_ode3kathisma
+					Para role bmc_ode3_kathisma sid mc.ode3.kathisma End-Para
+						Insert_section MA._10_Canon__.ode3kathisma__.tr__.sunday End-Insert
+					Para role emc_ode3_kathisma sid mc.tag End-Para
+				End-Section
+				Section block05_odes456
+					Para role bmc_ode4_tr_canon1 sid mc.ode4trcanon1 End-Para
+						Section tr043_hh1234trtas00GrGgGgGgGB
+							Media sid trMA.Ode4C11.text End-Media
+							Title<Tdesig>sid Ode4</><Tmode>sid Mode1</><Tdesig>sid Heirmos</>End-Title
+							Hymn sid he.h.m1_gr_GR_cog.EpiStavrouSeDynate.text @ver media-off<r>sid Twice</>End-Hymn
+							Verse sid verse_Resurrection.text End-Verse
+							Hymn sid trMA.Ode4C11.text @ver media-off End-Hymn
+							Verse sid verse_God.text End-Verse
+							Hymn sid trMA.Ode4C12.text @ver End-Hymn
+							Verse sid verse_God.text End-Verse
+							Hymn sid trMA.Ode4C13.text @ver End-Hymn
+							Verse sid verse_God.text End-Verse
+							Hymn sid trMA.Ode4C14.text @ver End-Hymn
+							Title sid Doxa End-Title
+							Hymn sid trMA.Ode4C1Tr.text @ver End-Hymn
+							Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Hymn sid trMA.Ode4C1T.text @ver End-Hymn
+						End-Section
+					Para role emc_ode4_tr_canon1 sid mc.tag End-Para
+					Insert_section KA.append__._4 End-Insert
+					Para role bmc_ode5_tr_canon1 sid mc.ode5trcanon1 End-Para
+						Section tr043_hh1234trtas00GrGgGgGgGB
+							Media sid trMA.Ode5C11.text End-Media
+							Title<Tdesig>sid Ode5</><Tmode>sid Mode1</><Tdesig>sid Heirmos</>End-Title
+							Hymn sid he.h.m1_gr_GR_cog.OrthrizontesSeAnymnoumen.text @ver media-off<r>sid Twice</>End-Hymn
+							Verse sid verse_Resurrection.text End-Verse
+							Hymn sid trMA.Ode5C11.text @ver media-off End-Hymn
+							Verse sid verse_God.text End-Verse
+							Hymn sid trMA.Ode5C12.text @ver End-Hymn
+							Verse sid verse_God.text End-Verse
+							Hymn sid trMA.Ode5C13.text @ver End-Hymn
+							Verse sid verse_God.text End-Verse
+							Hymn sid trMA.Ode5C14.text @ver End-Hymn
+							Title sid Doxa End-Title
+							Hymn sid trMA.Ode5C1Tr.text @ver End-Hymn
+							Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Hymn sid trMA.Ode5C1T.text @ver End-Hymn
+						End-Section
+					Para role emc_ode5_tr_canon1 sid mc.tag End-Para
+					Insert_section KA.append__._5 End-Insert
+					Para role bmc_ode6_tr_canon1 sid mc.ode6trcanon1 End-Para
+						Section tr043_hh1234trtas00GrGgGgGgGB
+							Media sid trMA.Ode6C11.text End-Media
+							Title<Tdesig>sid Ode6</><Tmode>sid Mode1</><Tdesig>sid Heirmos</>End-Title
+							Hymn sid he.h.m1_gr_GR_cog.TonTyponTouTheiouStavrou.text @ver media-off End-Hymn
+							Verse sid verse_Resurrection.text End-Verse
+							Hymn sid trMA.Ode6C11.text @ver media-off End-Hymn
+							Verse sid verse_God.text End-Verse
+							Hymn sid trMA.Ode6C12.text @ver End-Hymn
+							Verse sid verse_God.text End-Verse
+							Hymn sid trMA.Ode6C13.text @ver End-Hymn
+							Verse sid verse_God.text End-Verse
+							Hymn sid trMA.Ode6C14.text @ver End-Hymn
+							Verse sid verse_God.text End-Verse
+							Hymn sid trMA.Ode6C15.text @ver End-Hymn
+							Title sid Doxa End-Title
+							Hymn sid trMA.Ode6C1Tr.text @ver End-Hymn
+							Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Hymn sid trMA.Ode6C1T.text @ver End-Hymn
+						End-Section
+					Para role emc_ode6_tr_canon1 sid mc.tag End-Para
+					Insert_section KA.append__._6 End-Insert
+					Insert_section MA._10_Canon__.litanies__.ode6 End-Insert
+				End-Section
+				Section block06_kontakionposition1
+					Para role bmc_kontakion_position1 sid mc.kontakion.position1 End-Para
+						Insert_section MA._11_Kontakion__.tr_ End-Insert
+						Insert_section SY.Synaxarion End-Insert
+					Para role emc_kontakion_position1 sid mc.tag End-Para
+				End-Section
+				Section block07_odes78
+					Para role bmc_ode7_tr_canon1 sid mc.ode7trcanon1 End-Para
+						Section tr043_hh1234trtas00GrGgGgGgGB
+							Actor sid Choir End-Actor
+							Media sid trMA.Ode7C11.text End-Media
+							Title<Tdesig>sid Ode7</><Tmode>sid Mode1</><Tdesig>sid Heirmos</>End-Title
+							Hymn sid he.h.m1_gr_GR_cog.FlogoseosOPaidas.text @ver media-off<r>sid Twice</>End-Hymn
+							Verse sid verse_Resurrection.text End-Verse
+							Hymn sid trMA.Ode7C11.text @ver media-off End-Hymn
+							Verse sid verse_God.text End-Verse
+							Hymn sid trMA.Ode7C12.text @ver End-Hymn
+							Verse sid verse_God.text End-Verse
+							Hymn sid trMA.Ode7C13.text @ver End-Hymn
+							Verse sid verse_God.text End-Verse
+							Hymn sid trMA.Ode7C14.text @ver End-Hymn
+							Title sid Doxa End-Title
+							Hymn sid trMA.Ode7C1Tr.text @ver End-Hymn
+							Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Hymn sid trMA.Ode7C1T.text @ver End-Hymn
+						End-Section
+					Para role emc_ode7_tr_canon1 sid mc.tag End-Para
+					Insert_section KA.append__._7 End-Insert
+					Para role bmc_ode8_tr_canon1 sid mc.ode8trcanon1 End-Para
+						Section tr043_hh1234trtas00GrGgGgGgGB
+							Media sid trMA.Ode8C11.text End-Media
+							Title<Tdesig>sid Ode8</><Tmode>sid Mode1</><Tdesig>sid Heirmos</>End-Title
+							Hymn sid he.h.m1_gr_GR_cog.CheirasEnToLakko.text @ver media-off End-Hymn
+							Verse sid verse_Resurrection.text End-Verse
+							Hymn sid trMA.Ode8C11.text @ver media-off End-Hymn
+							Verse sid verse_God.text End-Verse
+							Hymn sid trMA.Ode8C12.text @ver End-Hymn
+							Verse sid verse_God.text End-Verse
+							Hymn sid trMA.Ode8C13.text @ver End-Hymn
+							Verse sid verse_God.text End-Verse
+							Hymn sid trMA.Ode8C14.text @ver End-Hymn
+							Verse sid verse_God.text End-Verse
+							Hymn sid trMA.Ode8C15.text @ver End-Hymn
+							Title sid Doxa End-Title
+							Hymn sid trMA.Ode8C1Tr.text @ver End-Hymn
+							Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Hymn sid trMA.Ode8C1T.text @ver End-Hymn
+						End-Section
+					Para role emc_ode8_tr_canon1 sid mc.tag End-Para
+					Insert_section KA.append__._8 End-Insert
+				End-Section
+				Section block08_kontakionposition12
+					Para role bmc_kontakion_position12 sid mc.kontakion.position12 End-Para
+						Insert_section MA._11_Kontakion__.sunday End-Insert
+						Insert_section TI.k.tr End-Insert
+						Insert_section MA._11_Kontakion__.append__.tr_.konoik_nt_ End-Insert
+						Insert_section SY.Synaxarion End-Insert
+					Para role emc_kontakion_position12 sid mc.tag End-Para
+				End-Section
+				Section block09_katavasias1345678
+					Insert_section KA.choir__._1345678 End-Insert
+				End-Section
+				Section block10_eothinonposition2
+					Para role bmc_eothinongospel_position2 sid mc.eothinongospel.position2 End-Para
+						Insert_section MA._08_Gospel__.priest End-Insert
+					Para role emc_eothinongospel_position2 sid mc.tag End-Para
+				End-Section
+				Section block11_ode9
+					Insert_section MA._10_Canon__.ode9_intro End-Insert
+					Para role bmc_magnificat_modeofcanon sid mc.magnificat.modeofcanon End-Para
+						Insert_section MA._10_Canon__.magnificat__.mode1 End-Insert				
+					Para role emc_magnificat_modeofcanon sid mc.tag End-Para
+					Para role bmc_ode9_tr_canon1 sid mc.ode9trcanon1 End-Para
+						Section tr043_hh1234trtas00GrGgGgGgGB
+							Media sid trMA.Ode9C11.text End-Media
+							Title<Tdesig>sid Ode9</><Tmode>sid Mode1</><Tdesig>sid Heirmos</>End-Title
+							Hymn sid he.h.m1_gr_GR_cog.OMiterParthene.text @ver media-off End-Hymn
+							Verse sid verse_Resurrection.text End-Verse
+							Hymn sid trMA.Ode9C11.text @ver media-off End-Hymn
+							Verse sid verse_God.text End-Verse
+							Hymn sid trMA.Ode9C12.text @ver End-Hymn
+							Verse sid verse_God.text End-Verse
+							Hymn sid trMA.Ode9C13.text @ver End-Hymn
+							Verse sid verse_God.text End-Verse
+							Hymn sid trMA.Ode9C14.text @ver End-Hymn
+							Verse sid verse_God.text End-Verse
+							Hymn sid trMA.Ode9C15.text @ver End-Hymn
+							Title sid Doxa End-Title
+							Hymn sid trMA.Ode9C1Tr.text @ver End-Hymn
+							Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Hymn sid trMA.Ode9C1T.text @ver End-Hymn
+						End-Section
+					Para role emc_ode9_tr_canon1 sid mc.tag End-Para
+					Para role bmc_magnificat_modeofkatavasia sid mc.magnificat.modeofkatavasia End-Para
+						Insert_section MA._10_Canon__.magnificat__.modeofkatavasia End-Insert				
+					Para role emc_magnificat_modeofkatavasia sid mc.tag End-Para
+					Insert_section KA.append__._9 End-Insert
+				End-Section
+		End-Section
+
+
+
+		Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+		Insert_section MA._12_Exaposteilarion__.eo__.eoofweek_.exap End-Insert
+		Insert_section MA._12_Exaposteilarion__.append__.tr1o2ot_ End-Insert
+		Insert_section MA._13_Lauds__.modeofweek End-Insert
+		Insert_section MA._13_Lauds__.oc__.s_1234as1234 End-Insert
+		Insert_section MA._13_Lauds__.tr__.p_1123as5678_ End-Insert
+		Insert_section MA._13_Lauds__.glory__.tr__.gloryasglory_ End-Insert
+		Insert_section MA._13_Lauds__.both__.eotheotokion End-Insert
+		Insert_section MA._14_Doxology__.great End-Insert
+		
+		Section Veneration
+			Rubric sid cl.tr.d043.R001 End-Rubric
+			Actor sid Priest End-Actor
+			Dialog sid exc17 sid exc18 End-Dialog
+			Title role mode sid trVE.Apolytikion1.mode End-Title
+			Hymn sid trVE.Apolytikion1.text @ver End-Hymn
+			Actor sid Choir End-Actor
+			Hymn sid trVE.Apolytikion1.text<r>sid Twice media-off</>End-Hymn
+			Actor sid Priest End-Actor
+			Hymn sid hoLI.TonStavronSou.text @ver End-Hymn	
+			Actor sid Choir End-Actor
+			Hymn sid hoLI.TonStavronSou.text<r>sid Twice</>End-Hymn	
+			Rubric sid cl.tr.d043.R002 End-Rubric
+			Actor sid Choir End-Actor
+			Title role mode sid trMA.AdditionalIdiomelon1.mode End-Title
+			Hymn sid trMA.AdditionalIdiomelon1.text @ver End-Hymn
+			Title role mode sid trMA.AdditionalIdiomelon2.mode End-Title
+			Hymn sid trMA.AdditionalIdiomelon2.text @ver End-Hymn
+			Title role mode sid trMA.AdditionalIdiomelonGlory.mode End-Title
+			Hymn sid trMA.AdditionalIdiomelonGlory.text @ver End-Hymn
+			Title role mixed<Tmode>sid trMA.AdditionalIdiomelonBoth.mode</><Tmelody>sid trMA.AdditionalIdiomelonBoth.melody</>End-Title
+			Hymn sid trMA.AdditionalIdiomelonBoth.text @ver End-Hymn
+			Rubric sid cl.tr.d043.R003 End-Rubric
+			Actor sid Choir End-Actor
+			Hymn sid trVE.Apolytikion1.text @ver End-Hymn
+		End-Section
+	End-Section
+
+End-Template
