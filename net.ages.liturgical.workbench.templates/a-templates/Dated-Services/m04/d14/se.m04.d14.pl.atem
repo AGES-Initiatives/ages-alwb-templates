@@ -1,6 +1,6 @@
-Template se.m04.d14.co 
+Template se.m04.d14.pl
 
-Status NA
+Status Final
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -17,10 +17,10 @@ Status NA
 	Head 
 		Set_Date month 4 day 14 year 2016 End_Date
 			Page_Header_Even
-				center @lookup sid co.pdf.header sid d.ontheeveof lang L2 @date lang L2
+				center @lookup sid pl.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @lookup sid co.pdf.header sid d.ontheeveof lang L2 @date lang L2
+				center @lookup sid pl.pdf.header rid da.daVE.OnTheEveningBefore lang L2
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -32,12 +32,13 @@ Status NA
 	End_Head
 
 	Preface Covers
-		Insert_template ematins.cover.co End-Insert
+		Insert_template ematins.cover.pl End-Insert
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-	when-movable-cycle-day-is
-		72 thru 77 use: Insert_template mc.map.co End-Insert
-	end-when		
-
+	when-movable-cycle-day-is 
+		26, 28, 33, 35, 40, 42, 47, 49, 54, 56, 61, 63 use:
+			Insert_template mc.map.ve End-Insert
+	end-when
+			
 End-Template
