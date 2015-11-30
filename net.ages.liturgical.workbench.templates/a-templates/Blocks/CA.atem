@@ -9749,16 +9749,23 @@ Status Draft
 						Verse sid verse_SaintsM.text End-Verse
 						Hymn rid meMA.Ode9C11.text @ver media-off End-Hymn
 						Verse sid verse_SaintsM.text End-Verse
-						when-exists 
-							rid meMA.Ode9C13.text use:
+						when-exists
+							rid meMA.Ode9C1Tr.text use:
 								Hymn rid meMA.Ode9C12.text @ver End-Hymn
-								Title sid Doxa End-Title
-								Hymn rid meMA.Ode9C13.text @ver End-Hymn
+								Title sid Doxa<Tdesig>sid Triadikon</>End-Title
+								Hymn rid meMA.Ode9C1Tr.text @ver End-Hymn
 							otherwise use:
-								Hymn rid meMA.Ode9C11.text @ver End-Hymn
-								Title sid Doxa End-Title
-								Hymn rid meMA.Ode9C12.text @ver End-Hymn
-						end-when	
+								when-exists 
+									rid meMA.Ode9C13.text use:
+										Hymn rid meMA.Ode9C12.text @ver End-Hymn
+										Title sid Doxa End-Title
+										Hymn rid meMA.Ode9C13.text @ver End-Hymn
+									otherwise use:
+										Hymn rid meMA.Ode9C11.text @ver End-Hymn
+										Title sid Doxa End-Title
+										Hymn rid meMA.Ode9C12.text @ver End-Hymn
+								end-when	
+						end-when
 						Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
 						Hymn rid meMA.Ode9C1T.text @ver End-Hymn
 					End-Section
