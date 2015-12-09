@@ -283,7 +283,15 @@ Status Draft
 						Insert_section HR._03__.h9 End-Insert
 						Insert_section Selector_LentHoursTroparia.h9__.kontakia End-Insert
 						Insert_section HR._04__.h9_lent End-Insert
-						Insert_section HR._05_Lent__.h9__.before_vespers End-Insert
+						when-movable-cycle-day-is
+							54 use:
+								Section Thursday_of_Great_Canon
+									Insert_section HR._05_Lent__.h9__.before_presanctified End-Insert
+									Insert_section HR._07_Dismissal End-Insert
+								End-Section
+							otherwise use:			
+								Insert_section HR._05_Lent__.h9__.before_vespers End-Insert
+						end-when
 					End-Section
 				Wednesday, Friday use:
 					Section beforepresanctified
@@ -310,7 +318,15 @@ Status Draft
 						Insert_section HR._03__.h9 End-Insert
 						Insert_section Selector_LentHoursTroparia.h9__.kontakia End-Insert
 						Insert_section HR._04__.h9_lent End-Insert
-						Insert_section HR._05_Lent__.h9__.before_vespers End-Insert
+						when-movable-cycle-day-is
+							54 use:
+								Section Thursday_of_Great_Canon
+									Insert_section HR._05_Lent__.h9__.before_presanctified End-Insert
+									Insert_section HR._07_Dismissal End-Insert
+								End-Section
+							otherwise use:			
+								Insert_section HR._05_Lent__.h9__.before_vespers End-Insert
+						end-when
 					End-Section
 				Wednesday, Friday use:
 					Section beforepresanctified
@@ -707,7 +723,9 @@ Status Draft
 					Hymn sid me.m12.d06_gr_GR_cog.meMA.Kontakion1.text @ver End-Hymn
 			end-when		
 			Hymn sid cl.Kontakion1.text @ver End-Hymn
-			Hymn rid trMA.Kontakion1.text @ver End-Hymn
+			when-exists rid trMA.Kontakion1.text use:
+				Hymn rid trMA.Kontakion1.text @ver End-Hymn
+			end-when
 			Title sid Doxa End-Title
 			Hymn sid tr.d014_gr_GR_cog.trMA.Kontakion1.text @ver End-Hymn
 			when-name-of-day-is

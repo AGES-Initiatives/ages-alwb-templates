@@ -1,12 +1,13 @@
-Template se.m04.d22.wkd.ma
+Template se.m04.d23.pl
 
-Status Review
+Status Final
 
 	import actors_gr_GR_cog.*
-	import template.titles_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
 	import misc_gr_GR_cog.*
 	import prayers_gr_GR_cog.*
 	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
 	import titles_gr_GR_cog.*
 		
 	import iTags.*
@@ -14,12 +15,12 @@ Status Review
 	import roles.*
 
 	Head 
-		Set_Date month 4 day 22 End_Date
+		Set_Date month 4 day 23 year 2016 End_Date
 			Page_Header_Even
-				center @lookup sid ma.pdf.header lang L1 @lookup sid d.on lang L1 @date lang L1 
+				center @lookup sid pl.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @lookup sid ma.pdf.header lang L2 @lookup sid d.on lang L2 @date lang L2 
+				center @lookup sid pl.pdf.header rid da.daVE.OnTheEveningBefore lang L2
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -31,16 +32,13 @@ Status Review
 	End_Head
 
 	Preface Covers
-		Insert_template ematins.cover.ma End-Insert
+		Insert_template ematins.cover.pl End-Insert
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-	when-movable-cycle-day-is
-		1 thru 64 use: Insert_template mc.map.ma End-Insert
-		65 thru 70 use: //Holy Week
-		71 thru 127 use: Insert_template mc.map.ma End-Insert
-		otherwise use:
-		
-	end-when		
-
+	when-movable-cycle-day-is 
+		26, 28, 33, 35, 40, 42, 47, 49, 54, 55, 56, 61, 63 use:
+			Insert_template mc.map.ve End-Insert
+	end-when
+			
 End-Template

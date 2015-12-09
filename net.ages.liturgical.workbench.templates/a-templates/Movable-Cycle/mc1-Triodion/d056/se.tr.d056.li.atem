@@ -1,0 +1,60 @@
+Template se.tr.d056.li 
+
+Status Final
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 4 day 16 year 2016 End_Date
+			Page_Header_Even
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Section Instance01
+		Insert_section LI._01_Enarxis__.daily End-Insert
+		Insert_section LI._02_Antiphons__.celebrated_saint End-Insert
+		Insert_section AP.tr1_ End-Insert
+		Insert_section LI._04_Entrance__.clergy End-Insert
+		Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
+		Section hymns
+			Insert_section AP.tr1_ End-Insert
+			Insert_section KO.seasonal End-Insert
+		End-Section
+		Insert_section LI._06_Trisagion__.chrys  End-Insert
+		Insert_section LE._01_Epistle__.theotokos2 End-Insert
+		Section alleluia
+			Actor sid Choir End-Actor
+			Title role desig sid Allilouia sid Mode8 sid ps_gr_GR_cog.psa131.title End-Title
+			Media sid ho.s07_gr_GR_cog.hoLI.GospelAlleluia8.text End-Media
+			Hymn sid Allilouia3.text End-Hymn
+			Verse<bnr>sid vVerse1</>sid ps_gr_GR_cog.psa131.v8.text @ver End-Verse
+			Hymn sid Allilouia3.text media-off End-Hymn
+			Verse<bnr>sid vVerse1</>sid ps_gr_GR_cog.psa131.v1.text @ver End-Verse
+			Hymn sid Allilouia3.text media-off End-Hymn
+		End-Section
+		Insert_section LE._02_Gospel__.theotokos2.lesson End-Insert
+		Insert_section LI._08_Liturgy__.chrys End-Insert
+		Insert_section LI._09_Dismissal__.nocommemoration End-Insert
+	End-Section
+End-Template
