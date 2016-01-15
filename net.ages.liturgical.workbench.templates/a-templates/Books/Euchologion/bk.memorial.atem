@@ -2,9 +2,11 @@ Template bk.memorial
 
 Status Review
 
+	import eu.funeral_gr_GR_cog.*
 	import eu.memorial_gr_GR_cog.*
 
 	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
 	import titles_gr_GR_cog.*
 	import rubrical_gr_GR_cog.*
 	import misc_gr_GR_cog.*
@@ -34,6 +36,7 @@ End_Head
 
 	Title role desig sid euMEM.title End-Title
 Break line End_Break
+	Actor sid Choir End-Actor
 	Section FuneralEvlogitaria
 		Title role desig sid euMEM.Key001.title End-Title
 		Title role mode sid euMEM.Key001.mode End-Title
@@ -52,10 +55,10 @@ Break line End_Break
 		Hymn sid euMEM.Key006.text @ver End-Hymn
 		Hymn sid Allilouia3Doxa.text<r>sid Thrice media-off</>End-Hymn
 	End-Section
-Break line End_Break
+
 	Title role mixed<Tdesig>sid Kontakion</><Tmode>sid euMEM.Key008.mode</>End-Title
 	Hymn sid euMEM.Key008.text @ver End-Hymn
-Break line End_Break
+
 	Section MemorialTroparia
 		Title role mode sid euMEM.Key009.mode End-Title
 		Hymn sid euMEM.Key009.text @ver End-Hymn
@@ -65,9 +68,23 @@ Break line End_Break
 		Verse sid KaiNynKaiAei.text End-Verse
 		Hymn sid euMEM.Key012.text @ver End-Hymn
 	End-Section
-Break line End_Break
+	
+	Insert_section LN.Litany_Memorial End-Insert
+
+	Actor sid Priest End-Actor
+	Dialog sid DoxaSoiChriste2 End-Dialog
+	Dialog sid euFUN.Key1401.text sid dis01 sid euFUN.Key1402.text sid euFUN.Key1403.text sid euFUN.Key1404.text sid euFUN.Key1405.text sid euFUN.Key1406.text sid euFUN.Key1407.text sid euFUN.Key1408.text End-Dialog
+	Dialog sid euFUN.Key0107.text<r>sid Thrice</>End-Dialog
+//	Dialog sid euFUN.Key0108.text<r>sid Thrice</>End-Dialog
+	
+	Actor sid Choir End-Actor
 	Title role mode sid euMEM.Key013.mode End-Title
 	Hymn sid euMEM.Key013.text<r>sid Thrice media-off</>End-Hymn
+	
+	Actor sid Priest End-Actor
+	Dialog sid dis100 End-Dialog
+	Dialog<i>sid res04p</>End-Dialog
+
 Break line End_Break
 
 End-Template

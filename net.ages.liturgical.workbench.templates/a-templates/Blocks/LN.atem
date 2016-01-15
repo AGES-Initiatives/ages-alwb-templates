@@ -6,6 +6,7 @@ Template LN
 	
 	//import hi.s01_gr_GR_cog.*
 	import client_gr_GR_cog.*
+	import eu.funeral_gr_GR_cog.*
 
 	import prayers_gr_GR_cog.*
 	import actors_gr_GR_cog.*
@@ -377,9 +378,9 @@ Template LN
 		Section Ektenia03_part2
 			Actor sid Priest End-Actor
 			when-movable-cycle-day-is 
-				36, 50, 57 use: Insert_section ektenia_09 End-Insert
-				78, 85, 113 use: Insert_section ektenia_20 End-Insert
-				127 use: Insert_section ektenia_21 End-Insert
+				36, 50, 57 use: Insert_section commemorations.ektenia_09 End-Insert
+				78, 85, 113 use: Insert_section commemorations.ektenia_20 End-Insert
+				127 use: Insert_section commemorations.ektenia_21 End-Insert
 				otherwise use: Insert_section LN.Ektenia_Menaion End-Insert
 			end-when
 			Dialog sid pet36 End-Dialog
@@ -388,63 +389,64 @@ Template LN
 
 		Section Ektenia_Menaion
 			when-date-is
-				Jan 7 use: Insert_section ektenia_05 End-Insert
-				Feb 24 use: Insert_section ektenia_05 End-Insert
-				Mar 25 use: Insert_section ektenia_02 End-Insert
-				May 25 use: Insert_section ektenia_05 End-Insert
-				Jun 30 use: Insert_section Supplication_06 End-Insert
-				Jun 24 use: Insert_section ektenia_05 End-Insert
+				Jan 7 use: Insert_section commemorations.ektenia_05 End-Insert
+				Feb 24 use: Insert_section commemorations.ektenia_05 End-Insert
+				Mar 25 use: Insert_section commemorations.ektenia_02 End-Insert
+				May 25 use: Insert_section commemorations.ektenia_05 End-Insert
+				Jun 30 use: Insert_section commemorations.ektenia_06 End-Insert
+				Jun 24 use: Insert_section commemorations.ektenia_05 End-Insert
 				Jul 13 thru 19 use:
 					when-name-of-day-is Sunday
-						use: Insert_section ektenia_10 End-Insert
+						use: Insert_section commemorations.ektenia_10 End-Insert
 					end-when
-				Jul 22 use: Insert_section ektenia_07_with_alt1me1 End-Insert
-				Jul 25 use: Insert_section ektenia_08 End-Insert
-				Aug 15 use: Insert_section ektenia_02 End-Insert
-				Aug 29 use: Insert_section ektenia_05 End-Insert
-				Aug 31 use: Insert_section ektenia_02 End-Insert
-				Sep 8 use: Insert_section ektenia_02 End-Insert
-				Sep 14 use: Insert_section ektenia_03 End-Insert
-				Sep 23 use: Insert_section ektenia_05 End-Insert
+				Jul 22 use: Insert_section commemorations.ektenia_07_with_alt1me1 End-Insert
+				Jul 25 use: Insert_section commemorations.ektenia_08 End-Insert
+				Aug 15 use: Insert_section commemorations.ektenia_02 End-Insert
+				Aug 29 use: Insert_section commemorations.ektenia_05 End-Insert
+				Aug 31 use: Insert_section commemorations.ektenia_02 End-Insert
+				Sep 8 use: Insert_section commemorations.ektenia_02 End-Insert
+				Sep 14 use: Insert_section commemorations.ektenia_03 End-Insert
+				Sep 23 use: Insert_section commemorations.ektenia_05 End-Insert
 				Oct 11 thru 17 use:
 					when-name-of-day-is Sunday use:
-						Insert_section ektenia_11 End-Insert
+						Insert_section commemorations.ektenia_11 End-Insert
 					end-when
-				Oct 28 use: Insert_section ektenia_12 End-Insert
-				Nov 8 use: Insert_section ektenia_04 End-Insert
-				Nov 21 use: Insert_section ektenia_02 End-Insert
-				Dec 9 use: Insert_section ektenia_02 End-Insert
+				Oct 28 use: Insert_section commemorations.ektenia_12 End-Insert
+				Nov 8 use: Insert_section commemorations.ektenia_04 End-Insert
+				Nov 21 use: Insert_section commemorations.ektenia_02 End-Insert
+				Dec 9 use: Insert_section commemorations.ektenia_02 End-Insert
 				Dec 11, 13, 14, 16 use:
 					when-name-of-day-is Sunday use:
-						Insert_section ektenia_14 End-Insert
+						Insert_section commemorations.ektenia_14 End-Insert
 					end-when
 				Dec 12, 15, 17 use:
 					when-name-of-day-is Sunday use:
-						Insert_section ektenia_15 End-Insert
-					otherwise use: Insert_section ektenia_07 End-Insert
+						Insert_section commemorations.ektenia_15 End-Insert
+					otherwise use: Insert_section commemorations.ektenia_07 End-Insert
 					end-when
 				Dec 18 thru 24 use:
 					when-name-of-day-is Sunday use:
-						Insert_section ektenia_16 End-Insert
+						Insert_section commemorations.ektenia_16 End-Insert
 					end-when	
 				Dec 26 use: 
 					when-name-of-day-is
-						Sunday use: Insert_section ektenia_17 End-Insert
-						otherwise use: Insert_section ektenia_02 End-Insert
+						Sunday use: Insert_section commemorations.ektenia_17 End-Insert
+						otherwise use: Insert_section commemorations.ektenia_02 End-Insert
 					end-when
 				Dec 27 use: 
 					when-name-of-day-is
-						Sunday use: Insert_section ektenia_18 End-Insert
-						otherwise use: Insert_section ektenia_07 End-Insert
+						Sunday use: Insert_section commemorations.ektenia_18 End-Insert
+						otherwise use: Insert_section commemorations.ektenia_07 End-Insert
 					end-when
 				Dec 28 thru 31 use: 
 					when-name-of-day-is
-						Sunday use: Insert_section ektenia_19 End-Insert
+						Sunday use: Insert_section commemorations.ektenia_19 End-Insert
 					end-when
-				otherwise use: Insert_section ektenia_07 End-Insert
+				otherwise use: Insert_section commemorations.ektenia_07 End-Insert
 			end-when
 		End-Section
 
+		Section commemorations
 			Section ektenia_02 //Theotokos
 				Dialog sid sup00a sid sup01 rid meInsert2 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid sup15 End-Dialog	
 			End-Section
@@ -457,7 +459,7 @@ Template LN
 			Section ektenia_05 //Forerunner
 				Dialog sid sup00a sid sup01 sid sup02 sid sup03 sid sup04 rid meInsert2 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid sup15 End-Dialog	
 			End-Section
-			Section Supplication_06 //Apostles
+			Section ektenia_06 //Apostles
 				Dialog sid sup00a sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 rid meInsert2 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid sup15 End-Dialog	
 			End-Section
 			Section ektenia_07 //Saint
@@ -509,7 +511,8 @@ Template LN
 			Section ektenia_21 //AllSaints
 				Dialog sid sup00a sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid peInsert1 rid peInsert2 End-Dialog	
 			End-Section
-
+	End-Section
+	
 	Section Ektenia04 //Shortened for Lent
 		Actor sid Deacon End-Actor
 		Dialog sid pet15 End-Dialog
@@ -763,7 +766,7 @@ Template LN
 			Feb 24 use: Insert_section supplication_05 End-Insert
 			Mar 25 use: Insert_section supplication_02 End-Insert
 			May 25 use: Insert_section supplication_05 End-Insert
-			Jun 30 use: Insert_section Supplication_06 End-Insert
+			Jun 30 use: Insert_section supplication_06 End-Insert
 			Jun 24 use: Insert_section supplication_05 End-Insert
 			Jul 13 thru 19 use:
 				when-name-of-day-is Sunday
@@ -829,7 +832,7 @@ Template LN
 	Section supplication_05 //Forerunner
 		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 rid meInsert2 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid sup15 sid sup99 End-Dialog	
 	End-Section
-	Section Supplication_06 //Apostles
+	Section supplication_06 //Apostles
 		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 rid meInsert2 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid sup15 sid sup99 End-Dialog	
 	End-Section
 	Section supplication_07 //Saint
@@ -884,6 +887,27 @@ Template LN
 		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid peInsert1 rid peInsert2 sid sup99 End-Dialog	
 	End-Section
 
+	Section Litany_Memorial
+		Actor sid Deacon End-Actor
+		Dialog sid pet17 End-Dialog
+		Dialog<i>sid res06p</>End-Dialog
+		Dialog sid petFuneral01 End-Dialog
+		Dialog<i>sid res06p</>End-Dialog
+		Dialog sid petSouls02 End-Dialog
+		Dialog<i>sid res02p</>End-Dialog
+		Actor sid Deacon End-Actor
+		Dialog sid pet00 End-Dialog
+		Dialog<i>sid res01p</>End-Dialog
+		Actor sid Priest End-Actor
+		Dialog sid euFUN.Key0105.text End-Dialog
+		Actor sid Deacon End-Actor
+		Dialog sid pet00 End-Dialog
+		Dialog<i>sid res01p</>End-Dialog
+		Actor sid Priest End-Actor
+		Dialog sid euFUN.Key0106.text End-Dialog
+		Dialog<i>sid res04p</>End-Dialog
+	End-Section //Litany_Memorial
+	
 	Section Litany_SoulSaturday
 		Actor sid Deacon End-Actor
 		Dialog sid pet17 End-Dialog
