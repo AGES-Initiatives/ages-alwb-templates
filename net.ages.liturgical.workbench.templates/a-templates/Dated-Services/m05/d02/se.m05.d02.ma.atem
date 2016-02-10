@@ -39,11 +39,23 @@ Status Final
 	End-Preface
 
 	when-movable-cycle-day-is
-		65 thru 72 use:
+		65 thru 71 use:
 			Section Instance01
 			End-Section
 			
-		73, 74, 75, 77 use: //Bright Week
+		72 use: //Bright Monday - St. George
+			Section Instance01_Monday
+				Insert_section se.pe.d072.ma.Instance02.Part1 End-Insert
+					Set_Date month 5 day 2 End_Date
+					Insert_section SY.Different_Date__.Apr23_StGeorge End-Insert
+					Insert_section se.pe.d072.ma.Instance02.Part2 End-Insert
+			End-Section
+			
+		73 use: //Bright Tuesday - St. Mark
+			Section Instance01_Tuesday
+			End-Section
+			
+		74, 75, 77 use: //Bright Wed, Thu, Sat
 			Section Instance02
 			End-Section
 			
