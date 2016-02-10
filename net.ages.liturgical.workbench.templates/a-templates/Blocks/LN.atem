@@ -706,7 +706,11 @@ Template LN
 		Actor sid Deacon End-Actor
 		when-movable-cycle-day-is 
 			36, 50, 57 use: Insert_section supplication_09 End-Insert
-			78, 85, 113 use: Insert_section supplication_20 End-Insert
+			78, 85, 113 use: 
+				when-date-is
+					May 2, 8, 21 use: Insert_section supplication_07 End-Insert
+					otherwise use: Insert_section supplication_20 End-Insert
+				end-when
 			127 use: Insert_section supplication_21 End-Insert
 			otherwise use: Insert_section LN.Supplication_Menaion End-Insert
 		end-when
@@ -766,6 +770,7 @@ Template LN
 			Feb 24 use: Insert_section supplication_05 End-Insert
 			Mar 2 use: Insert_section supplication_07_alt1me1 End-Insert
 			Mar 25 use: Insert_section supplication_02 End-Insert
+			May 8 use: Insert_section supplication_07 End-Insert
 			May 25 use: Insert_section supplication_05 End-Insert
 			Jun 30 use: Insert_section supplication_06 End-Insert
 			Jun 24 use: Insert_section supplication_05 End-Insert
