@@ -1,6 +1,6 @@
-Template se.m05.d10.ma 
+Template se.m05.d22.li 
 
-Status NA
+Status Final
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -15,12 +15,12 @@ Status NA
 	import roles.*
 
 	Head 
-		Set_Date month 5 day 10 End_Date
+		Set_Date month 5 day 22 End_Date
 			Page_Header_Even
-				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -31,19 +31,14 @@ Status NA
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
-	Preface Covers
-		Insert_template ematins.cover.ma End-Insert
-		Insert_template ematins.credits End-Insert
-	End-Preface
-
 	when-movable-cycle-day-is
-		73 thru 78 use: Insert_template mc.map.ma End-Insert
-		85, 92, 95, 99, 102, 106, 109, 110, 113, 118, 119, 120 use: Insert_template mc.map.ma End-Insert
+		85, 92, 95, 99, 102, 106, 109, 110, 113, 118, 119, 120, 127 use: 
+			Insert_template mc.map.li End-Insert
 		79 thru 83 use: //Thomas week
 		84 use: //Thomas Saturday
 		// various weekdays
 		108 use: //OC Leavetaking of Blindman
 		111 use: //OC After Ascension
 	end-when	
-		
+
 End-Template
