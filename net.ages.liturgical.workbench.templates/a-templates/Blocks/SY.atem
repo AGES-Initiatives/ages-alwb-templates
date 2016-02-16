@@ -14,9 +14,9 @@ Template SY
 	import bTags.*
 	import roles.*
 
-	Head 
-		Set_Date month 12 day 20 year 2015 End_Date
-	End_Head
+//	Head 
+//		Set_Date month 5 day 25 year 2016 End_Date
+//	End_Head
 
 	Title ldp@Service_Date End-Title
 	Title ldp@Name_of_Period @Day_of_Movable_Cycle End-Title
@@ -415,104 +415,112 @@ Template SY
 		End-Section //me
 		
 		Section mc
-			when-movable-cycle-day-is
-				71 use: Title role desig sid Synaxarion End-Title
-			end-when
-			when-movable-cycle-day-is
-				1 thru 70 use:
-					when-exists rid trMA.Synaxarion.commemoration.text use:
+			Section block1
+				when-movable-cycle-day-is
+					71 use: Title role desig sid Synaxarion End-Title
+				end-when
+			End-Section
+			Section block2
+				when-movable-cycle-day-is
+					1 thru 70 use:
+						when-exists rid trMA.Synaxarion.commemoration.text use:
 							Title role chapverse sid TouTriodiou End-Title
-					end-when
-				71 thru 127 use:
-					when-exists rid peMA.Synaxarion.commemoration.text use:
+						end-when
+					71 thru 127 use:
+						when-exists rid peMA.Synaxarion.commemoration.text use:
 							Title role chapverse sid TouPenticostariou End-Title
-					end-when
-			end-when
-			when-movable-cycle-day-is
-				1, 65 use:
-					Reading rid trMA.Synaxarion.commemoration.text End-Reading
-					Para role titlezero rid trMA.Synaxarion.couplet1.title End-Para
-					Para role readingcenterzero rid trMA.Synaxarion.couplet1.verse1 End-Para
-					Para role readingcenter rid trMA.Synaxarion.couplet1.verse2 End-Para
-					Para role titlezero rid trMA.Synaxarion.couplet2.title End-Para
-					Para role readingcenterzero rid trMA.Synaxarion.couplet2.verse1 End-Para
-					Para role readingcenterzero rid trMA.Synaxarion.couplet2.verse2 End-Para
-					Para role readingcenter rid trMA.Synaxarion.couplet2.verse3 End-Para
-					Reading rid trMA.Synaxarion.lastline.text End-Reading
-				8, 14, 15, 21, 22, 28, 29, 36, 43, 54, 56, 57, 63, 64, 66, 67, 70 use:
-					Reading rid trMA.Synaxarion.commemoration.text End-Reading
-					Para role titlezero rid trMA.Synaxarion.couplet1.title End-Para
-					Para role readingcenterzero rid trMA.Synaxarion.couplet1.verse1 End-Para
-					Para role readingcenter rid trMA.Synaxarion.couplet1.verse2 End-Para
-					Reading rid trMA.Synaxarion.lastline.text End-Reading
-				50 use:
-					Reading rid trMA.Synaxarion.commemoration.text End-Reading
-					Para role titlezero rid trMA.Synaxarion.couplet1.title End-Para
-					Para role readingcenterzero rid trMA.Synaxarion.couplet1.verse1 End-Para
-					Para role readingcenter rid trMA.Synaxarion.couplet1.verse2 End-Para
-					Para role readingcenterzero rid trMA.Synaxarion.couplet2.verse1 End-Para
-					Para role readingcenter rid trMA.Synaxarion.couplet2.verse2 End-Para
-					Reading rid trMA.Synaxarion.lastline.text End-Reading
-				68 use:
-					Reading rid trMA.Synaxarion.commemoration.text End-Reading
-					Para role titlezero rid trMA.Synaxarion.couplet1.title End-Para
-					Para role readingcenterzero rid trMA.Synaxarion.couplet1.verse1 End-Para
-					Para role readingcenter rid trMA.Synaxarion.couplet1.verse2 End-Para
-					Para role titlezero rid trMA.Synaxarion.couplet2.title End-Para
-					Para role readingcenterzero rid trMA.Synaxarion.couplet2.verse1 End-Para
-					Para role readingcenter rid trMA.Synaxarion.couplet2.verse2 End-Para
-					Para role readingcenterzero rid trMA.Synaxarion.couplet3.verse1 End-Para
-					Para role readingcenterzero rid trMA.Synaxarion.couplet3.verse2 End-Para
-					Para role readingcenter rid trMA.Synaxarion.couplet3.verse3 End-Para
-					Para role titlezero rid trMA.Synaxarion.couplet4.title End-Para
-					Para role readingcenterzero rid trMA.Synaxarion.couplet4.verse1 End-Para
-					Para role readingcenter rid trMA.Synaxarion.couplet4.verse2 End-Para
-					Reading rid trMA.Synaxarion.lastline.text End-Reading
-				69 use:
-					Reading rid trMA.Synaxarion.commemoration.text End-Reading
-					Para role titlezero rid trMA.Synaxarion.couplet1.title End-Para
-					Para role readingcenterzero rid trMA.Synaxarion.couplet1.verse1 End-Para
-					Para role readingcenter rid trMA.Synaxarion.couplet1.verse2 End-Para
-					Para role titlezero rid trMA.Synaxarion.couplet2.title End-Para
-					Para role readingcenterzero rid trMA.Synaxarion.couplet2.verse1 End-Para
-					Para role readingcenter rid trMA.Synaxarion.couplet2.verse2 End-Para
-					Reading rid trMA.Synaxarion.lastline.text End-Reading
-				71, 76, 78, 85, 92, 95, 99, 106, 110, 121, 127 use:
-					Reading rid peMA.Synaxarion.commemoration.text End-Reading
-					Para role titlezero rid peMA.Synaxarion.couplet1.title End-Para
-					Para role readingcenterzero rid peMA.Synaxarion.couplet1.verse1 End-Para
-					Para role readingcenter rid peMA.Synaxarion.couplet1.verse2 End-Para
-					Reading rid peMA.Synaxarion.lastline.text End-Reading
-				113 use:
-					Reading rid peMA.Synaxarion.commemoration.text End-Reading
-					Para role titlezero rid peMA.Synaxarion.couplet1.title End-Para
-					Para role readingcenterzero rid peMA.Synaxarion.couplet1.verse1 End-Para
-					Para role readingcenter rid peMA.Synaxarion.couplet1.verse2 End-Para
-					Para role titlezero rid peMA.Synaxarion.couplet2.title End-Para
-					Para role readingcenterzero rid peMA.Synaxarion.couplet2.verse1 End-Para
-					Para role readingcenter rid peMA.Synaxarion.couplet2.verse2 End-Para
-					Reading rid peMA.Synaxarion.lastline.text End-Reading
-				119 use:
-					Reading rid peMA.Synaxarion.commemoration.text End-Reading
-					Reading rid peMA.Synaxarion.lastline.text End-Reading
-				120 use:
-					Reading rid peMA.Synaxarion.commemoration.text End-Reading
-					Para role titlezero rid peMA.Synaxarion.couplet1.title End-Para
-					Para role readingcenterzero rid peMA.Synaxarion.couplet1.verse1 End-Para
-					Para role readingcenter rid peMA.Synaxarion.couplet1.verse2 End-Para
-					Para role readingcenter rid peMA.Synaxarion.single1.text End-Para
-					Reading rid peMA.Synaxarion.lastline.text End-Reading
-				
-				otherwise use:
-					Reading rid S99.lastline.text End-Reading
-			end-when
-			when-movable-cycle-day-is
-				71, 72, 73, 74, 75, 76, 77, 109 use:
-					Section pascha	
-						Reading sid hoMA.SunPostGospel.text<r>sid Thrice</>End-Reading
-						Reading sid hoMA.SunPostGospelIdiomelon.text<r>sid Thrice</>End-Reading
-					End-Section
-			end-when
+						end-when
+				end-when
+			End-Section
+			Section block3
+				when-movable-cycle-day-is
+					1, 65 use:
+						Reading rid trMA.Synaxarion.commemoration.text End-Reading
+						Para role titlezero rid trMA.Synaxarion.couplet1.title End-Para
+						Para role readingcenterzero rid trMA.Synaxarion.couplet1.verse1 End-Para
+						Para role readingcenter rid trMA.Synaxarion.couplet1.verse2 End-Para
+						Para role titlezero rid trMA.Synaxarion.couplet2.title End-Para
+						Para role readingcenterzero rid trMA.Synaxarion.couplet2.verse1 End-Para
+						Para role readingcenterzero rid trMA.Synaxarion.couplet2.verse2 End-Para
+						Para role readingcenter rid trMA.Synaxarion.couplet2.verse3 End-Para
+						Reading rid trMA.Synaxarion.lastline.text End-Reading
+					8, 14, 15, 21, 22, 28, 29, 36, 43, 54, 56, 57, 63, 64, 66, 67, 70 use:
+						Reading rid trMA.Synaxarion.commemoration.text End-Reading
+						Para role titlezero rid trMA.Synaxarion.couplet1.title End-Para
+						Para role readingcenterzero rid trMA.Synaxarion.couplet1.verse1 End-Para
+						Para role readingcenter rid trMA.Synaxarion.couplet1.verse2 End-Para
+						Reading rid trMA.Synaxarion.lastline.text End-Reading
+					50 use:
+						Reading rid trMA.Synaxarion.commemoration.text End-Reading
+						Para role titlezero rid trMA.Synaxarion.couplet1.title End-Para
+						Para role readingcenterzero rid trMA.Synaxarion.couplet1.verse1 End-Para
+						Para role readingcenter rid trMA.Synaxarion.couplet1.verse2 End-Para
+						Para role readingcenterzero rid trMA.Synaxarion.couplet2.verse1 End-Para
+						Para role readingcenter rid trMA.Synaxarion.couplet2.verse2 End-Para
+						Reading rid trMA.Synaxarion.lastline.text End-Reading
+					68 use:
+						Reading rid trMA.Synaxarion.commemoration.text End-Reading
+						Para role titlezero rid trMA.Synaxarion.couplet1.title End-Para
+						Para role readingcenterzero rid trMA.Synaxarion.couplet1.verse1 End-Para
+						Para role readingcenter rid trMA.Synaxarion.couplet1.verse2 End-Para
+						Para role titlezero rid trMA.Synaxarion.couplet2.title End-Para
+						Para role readingcenterzero rid trMA.Synaxarion.couplet2.verse1 End-Para
+						Para role readingcenter rid trMA.Synaxarion.couplet2.verse2 End-Para
+						Para role readingcenterzero rid trMA.Synaxarion.couplet3.verse1 End-Para
+						Para role readingcenterzero rid trMA.Synaxarion.couplet3.verse2 End-Para
+						Para role readingcenter rid trMA.Synaxarion.couplet3.verse3 End-Para
+						Para role titlezero rid trMA.Synaxarion.couplet4.title End-Para
+						Para role readingcenterzero rid trMA.Synaxarion.couplet4.verse1 End-Para
+						Para role readingcenter rid trMA.Synaxarion.couplet4.verse2 End-Para
+						Reading rid trMA.Synaxarion.lastline.text End-Reading
+					69 use:
+						Reading rid trMA.Synaxarion.commemoration.text End-Reading
+						Para role titlezero rid trMA.Synaxarion.couplet1.title End-Para
+						Para role readingcenterzero rid trMA.Synaxarion.couplet1.verse1 End-Para
+						Para role readingcenter rid trMA.Synaxarion.couplet1.verse2 End-Para
+						Para role titlezero rid trMA.Synaxarion.couplet2.title End-Para
+						Para role readingcenterzero rid trMA.Synaxarion.couplet2.verse1 End-Para
+						Para role readingcenter rid trMA.Synaxarion.couplet2.verse2 End-Para
+						Reading rid trMA.Synaxarion.lastline.text End-Reading
+					71, 76, 78, 85, 92, 95, 99, 106, 110, 121, 127 use:
+						Reading rid peMA.Synaxarion.commemoration.text End-Reading
+						Para role titlezero rid peMA.Synaxarion.couplet1.title End-Para
+						Para role readingcenterzero rid peMA.Synaxarion.couplet1.verse1 End-Para
+						Para role readingcenter rid peMA.Synaxarion.couplet1.verse2 End-Para
+						Reading rid peMA.Synaxarion.lastline.text End-Reading
+					113 use:
+						Reading rid peMA.Synaxarion.commemoration.text End-Reading
+						Para role titlezero rid peMA.Synaxarion.couplet1.title End-Para
+						Para role readingcenterzero rid peMA.Synaxarion.couplet1.verse1 End-Para
+						Para role readingcenter rid peMA.Synaxarion.couplet1.verse2 End-Para
+						Para role titlezero rid peMA.Synaxarion.couplet2.title End-Para
+						Para role readingcenterzero rid peMA.Synaxarion.couplet2.verse1 End-Para
+						Para role readingcenter rid peMA.Synaxarion.couplet2.verse2 End-Para
+						Reading rid peMA.Synaxarion.lastline.text End-Reading
+					119 use:
+						Reading rid peMA.Synaxarion.commemoration.text End-Reading
+						Reading rid peMA.Synaxarion.lastline.text End-Reading
+					120 use:
+						Reading rid peMA.Synaxarion.commemoration.text End-Reading
+						Para role titlezero rid peMA.Synaxarion.couplet1.title End-Para
+						Para role readingcenterzero rid peMA.Synaxarion.couplet1.verse1 End-Para
+						Para role readingcenter rid peMA.Synaxarion.couplet1.verse2 End-Para
+						Para role readingcenter rid peMA.Synaxarion.single1.text End-Para
+						Reading rid peMA.Synaxarion.lastline.text End-Reading
+					
+					otherwise use:
+						Reading rid S99.lastline.text End-Reading
+				end-when
+			End-Section
+			Section block4
+				when-movable-cycle-day-is
+					71, 72, 73, 74, 75, 76, 77, 109 use:
+						Section pascha	
+							Reading sid hoMA.SunPostGospel.text<r>sid Thrice</>End-Reading
+							Reading sid hoMA.SunPostGospelIdiomelon.text<r>sid Thrice</>End-Reading
+						End-Section
+				end-when
+			End-Section
 		End-Section //mc
 	
 End-Template
