@@ -430,6 +430,67 @@ Template MA
 				End-Section
 			End-Section
 		End-Section
+		Section lent
+			Title role source sid sourceOctoechos End-Title
+			Actor sid Choir End-Actor
+			Title role desig sid Kathisma1 End-Title
+			when-name-of-day-is
+				Monday, Tuesday use:
+					Title role desig sid Katanyktika End-Title
+				Wednesday, Friday use:
+					Title role desig sid Stavrosima End-Title
+				Thursday use:
+					Title role desig sid Apostolika End-Title
+				Saturday use:
+					Title role desig sid Martyrika End-Title
+			end-when
+			Title<Tmode>rid octrMA.Kathisma11.mode</><Tmelody>rid octrMA.Kathisma11.melody</>End-Title
+			Hymn rid octrMA.Kathisma11.text @ver End-Hymn
+			when-name-of-day-is
+				Monday, Tuesday use: 
+					Verse<bnr>sid vVerse</>sid psa6.v2.text @ver End-Verse
+				Wednesday, Friday use: 
+					Verse<bnr>sid vVerse</>sid psa98.v5.text @ver End-Verse
+				Thursday use: 
+					Insert_section PsalmVerses.forApostles.verse1 End-Insert
+				Saturday use: 
+					Insert_section PsalmVerses.forMartyrs.verse1 End-Insert
+			end-when
+			when-exists rid octrMA.Kathisma12.melody use:
+				Title<Tmelody>rid octrMA.Kathisma12.melody</>End-Title
+			end-when
+			Hymn rid octrMA.Kathisma12.text @ver End-Hymn
+			when-name-of-day-is
+				Monday, Tuesday, Thursday use:
+					Title sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+					when-exists rid octrMA.Kathisma13.melody use:
+						Title<Tmelody>rid octrMA.Kathisma13.melody</>End-Title
+					end-when
+					Hymn rid octrMA.Kathisma13.text @ver End-Hymn
+				Wednesday, Friday use:
+					Title sid DoxaKaiNyn<Tdesig>sid Stavrotheotokion</>End-Title
+					when-exists rid octrMA.Kathisma13.melody use:
+						Title<Tmelody>rid octrMA.Kathisma13.melody</>End-Title
+					end-when
+					Hymn rid octrMA.Kathisma13.text @ver End-Hymn
+				Saturday use:
+					Insert_section PsalmVerses.forMartyrs.verse2 End-Insert
+					when-exists rid octrMA.Kathisma13.melody use:
+						Title<Tmelody>rid octrMA.Kathisma13.melody</>End-Title
+					end-when
+					Hymn rid octrMA.Kathisma13.text @ver End-Hymn
+					Title sid Doxa<Tdesig>sid Nekrosimon</>End-Title
+					when-exists rid octrMA.Kathisma14.melody use:
+						Title<Tmelody>rid octrMA.Kathisma14.melody</>End-Title
+					end-when
+					Hymn rid octrMA.Kathisma14.text @ver End-Hymn
+					Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+					when-exists rid octrMA.Kathisma1T.melody use:
+						Title<Tmelody>rid octrMA.Kathisma1T.melody</>End-Title
+					end-when
+					Hymn rid octrMA.Kathisma1T.text @ver End-Hymn
+			end-when
+		End-Section
 		Section me__
 			Section alt1__
 				Section kath11_
@@ -1137,6 +1198,20 @@ Template MA
 
 	Section _04_Kathisma2__
 		Section append__
+			Section lent
+				Title role source sid sourceTriodion End-Title
+				Title role desig sid Kathisma2 End-Title
+				Title<Tmode>rid trMA.Kathisma21.mode</><Tmelody>rid trMA.Kathisma21.melody</>End-Title
+				Hymn rid trMA.Kathisma21.text @ver End-Hymn
+				when-name-of-day-is
+					Monday, Tuesday, Thursday use:
+						Title sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+						Hymn rid trMA.Kathisma22.text @ver End-Hymn
+					Wednesday, Friday use:
+						Title sid DoxaKaiNyn<Tdesig>sid Stavrotheotokion</>End-Title
+						Hymn rid trMA.Kathisma22.text @ver End-Hymn
+				end-when
+			End-Section
 			Section me__
 				Section alt1__
 					Section kath21_
@@ -1501,7 +1576,7 @@ Template MA
 				End-Section
 			End-Section
 			Section tr__
-				Section kath2121
+				Section kath21gb21
 					Title role source sid sourceTriodion End-Title
 					Title role desig sid Kathisma2 End-Title
 					Title role mixed<Tmode>rid trMA.Kathisma21.mode</><Tmelody>rid trMA.Kathisma21.melody</>End-Title
@@ -1509,7 +1584,7 @@ Template MA
 					Title role mixed sid DoxaKaiNyn<Tdesig>sid ToAfto</>End-Title
 					Hymn rid trMA.Kathisma21.text @ver media-off End-Hymn
 				End-Section
-				Section kath2122
+				Section kath21gb22
 					Title role source sid sourceTriodion End-Title
 					Title role desig sid Kathisma2 End-Title
 					Title role mixed<Tmode>rid trMA.Kathisma21.mode</><Tmelody>rid trMA.Kathisma21.melody</>End-Title
@@ -1518,7 +1593,7 @@ Template MA
 					Title role mixed<Tmode>rid trMA.Kathisma22.mode</><Tmelody>rid trMA.Kathisma22.melody</>End-Title
 					Hymn rid trMA.Kathisma22.text @ver End-Hymn
 				End-Section
-				Section kath212223
+				Section kath21g22b23
 					Title role source sid sourceTriodion End-Title
 					Title role desig sid Kathisma2 End-Title
 					Title role mixed<Tmode>rid trMA.Kathisma21.mode</><Tmelody>rid trMA.Kathisma21.melody</>End-Title
@@ -1882,13 +1957,27 @@ Template MA
 					Title sid DoxaKaiNyn End-Title
 					Section hymn
 						Title role source0 sid sourcePentecostarion End-Title
-						Title role mixed<Tmode>rid peMA.Kathisma31.mode</><Tmelody>rid peMA.Kathisma31.melody</>End-Title
+						Title<Tmode>rid peMA.Kathisma31.mode</><Tmelody>rid peMA.Kathisma31.melody</>End-Title
 						Hymn rid peMA.Kathisma31.text @ver End-Hymn
 					End-Section
 				End-Section
 			End-Section
 		End-Section
 		Section append__
+			Section lent
+				Title role source sid sourceTriodion End-Title
+				Title role desig sid Kathisma3 End-Title
+				Title<Tmode>rid trMA.Kathisma31.mode</><Tmelody>rid trMA.Kathisma31.melody</>End-Title
+				Hymn rid trMA.Kathisma31.text @ver End-Hymn
+				when-name-of-day-is
+					Monday, Tuesday, Thursday use:
+						Title sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+						Hymn rid trMA.Kathisma32.text @ver End-Hymn
+					Wednesday, Friday use:
+						Title sid DoxaKaiNyn<Tdesig>sid Stavrotheotokion</>End-Title
+						Hymn rid trMA.Kathisma32.text @ver End-Hymn
+				end-when
+			End-Section
 			Section me__
 				Section alt1__
 					Section kath31_
@@ -8358,7 +8447,7 @@ Template MA
 				Section block11_ode9
 					Insert_section MA._10_Canon__.ode9_intro End-Insert
 					Para role bmc_magnificat_modeofcanon sid mc.magnificat.modeofcanon End-Para
-						Insert_section MA._10_Canon__.magnificat__.modeofcanon End-Insert
+						Insert_section MA._10_Canon__.magnificat__.modeofcanon__.me1 End-Insert
 					Para role emc_magnificat_modeofcanon sid mc.tag End-Para
 					Para role bmc_ode9_me_canon1 sid mc.ode9mecanon1 End-Para
 						Insert_section TI.c1.me End-Insert
@@ -9149,7 +9238,7 @@ Template MA
 				Section block11_ode9
 					Insert_section MA._10_Canon__.ode9_intro End-Insert
 					Para role bmc_magnificat_modeofcanon sid mc.magnificat.modeofcanon End-Para
-						Insert_section MA._10_Canon__.magnificat__.modeofcanon End-Insert
+						Insert_section MA._10_Canon__.magnificat__.modeofcanon__.me1 End-Insert
 					Para role emc_magnificat_modeofcanon sid mc.tag End-Para
 					Para role bmc_ode9_me_canon1 sid mc.ode9mecanon1 End-Para
 						Insert_section TI.c1.me End-Insert
@@ -9357,7 +9446,7 @@ Template MA
 				Section block11_ode9
 					Insert_section MA._10_Canon__.ode9_intro End-Insert
 					Para role bmc_magnificat_modeofcanon sid mc.magnificat.modeofcanon End-Para
-						Insert_section MA._10_Canon__.magnificat__.modeofcanon End-Insert
+						Insert_section MA._10_Canon__.magnificat__.modeofcanon__.me1 End-Insert
 					Para role emc_magnificat_modeofcanon sid mc.tag End-Para
 					Para role bmc_ode9_me_canon1 sid mc.ode9mecanon1 End-Para
 						Insert_section CA.v.ode9.append.me1.ti_hh123tas00GgGgGgTh End-Insert
@@ -9464,7 +9553,7 @@ Template MA
 				Section block11_ode9
 					Insert_section MA._10_Canon__.ode9_intro End-Insert
 					Para role bmc_magnificat_modeofcanon sid mc.magnificat.modeofcanon End-Para
-						Insert_section MA._10_Canon__.magnificat__.modeofcanon End-Insert
+						Insert_section MA._10_Canon__.magnificat__.modeofcanon__.me1 End-Insert
 					Para role emc_magnificat_modeofcanon sid mc.tag End-Para
 					Para role bmc_ode9_me_canon1 sid mc.ode9mecanon1 End-Para
 						Insert_section CA.v.ode9.append.me1.ti_hh1234as00ThThThTh End-Insert
@@ -9567,7 +9656,7 @@ Template MA
 				Section block11_ode9
 					Insert_section MA._10_Canon__.ode9_intro End-Insert
 					Para role bmc_magnificat_modeofcanon sid mc.magnificat.modeofcanon End-Para
-						Insert_section MA._10_Canon__.magnificat__.modeofcanon End-Insert
+						Insert_section MA._10_Canon__.magnificat__.modeofcanon__.me1 End-Insert
 					Para role emc_magnificat_modeofcanon sid mc.tag End-Para
 					Para role bmc_ode9_me_canon1 sid mc.ode9mecanon1 End-Para
 						Insert_section CA.v.ode9.append.me1.ti_hh1234as00ThThThTh End-Insert
@@ -9698,7 +9787,7 @@ Template MA
 				Section block11_ode9
 					Insert_section MA._10_Canon__.ode9_intro End-Insert
 					Para role bmc_magnificat_modeofcanon sid mc.magnificat.modeofcanon End-Para
-						Insert_section MA._10_Canon__.magnificat__.modeofcanon End-Insert
+						Insert_section MA._10_Canon__.magnificat__.modeofcanon__.me1 End-Insert
 					Para role emc_magnificat_modeofcanon sid mc.tag End-Para
 					Para role bmc_ode9_me_canon1 sid mc.ode9mecanon1 End-Para
 						Insert_section CA.v.ode9.append.me1.ti_hh1234as00ThThThTh End-Insert
@@ -10637,12 +10726,17 @@ Template MA
 			Actor sid Deacon End-Actor
 			Dialog sid exc15 End-Dialog
 		End-Section
+		Section ode9_end
+			Hymn sid AxionEstin.text End-Hymn
+		End-Section
 		Section magnificat__
-			Section modeofcanon
-				Title role desig sid Ode9 End-Title
-				Title role mixed<Tdesig>sid titles_gr_GR_cog.Megalynarion</><Tmode>rid meMA.Ode9C11.mode</>End-Title
-				Media sid hoMA.MM.Magnificat.text End-Media
-				Insert_section Magnificat_Verses End-Insert
+			Section modeofcanon__
+				Section me1
+					Title role desig sid Ode9 End-Title
+					Title role mixed<Tdesig>sid titles_gr_GR_cog.Megalynarion</><Tmode>rid meMA.Ode9C11.mode</>End-Title
+					Media sid hoMA.MM.Magnificat.text End-Media
+					Insert_section Magnificat_Verses End-Insert
+				End-Section
 			End-Section
 			Section modeofkatavasia
 				Insert_section KA.modemagmedia End-Insert
@@ -10952,6 +11046,12 @@ Template MA
 			Reading sid me.m10.dHF_gr_GR_cog.meMA.Kontakion1.text @ver End-Reading
 			Title role desig sid OOikos End-Title
 			Reading sid me.m10.dHF_gr_GR_cog.meMA.Oikos1.text @ver End-Reading 
+		End-Section
+		Section martyric
+			Title role source sid sourceTriodion End-Title
+			Actor sid Reader End-Actor
+			Title<Tdesig>sid Martyrikon</><Tmode>rid octrMA.Ode7Martyricon.mode</>End-Title
+			Reading rid octrMA.Ode7Martyricon.text @ver End-Reading
 		End-Section
 		Section me1_
 			Section kontakion
