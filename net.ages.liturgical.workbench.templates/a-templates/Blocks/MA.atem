@@ -4,11 +4,13 @@ Template MA
 	import eu.lichrysbasil_gr_GR_cog.*
 	import ho.s03_gr_GR_cog.*
 	import le.go.os_gr_GR_cog.*
+	import le.pr.os_gr_GR_cog.*
+	import pe.d00P_gr_GR_cog.*
 	import ps_gr_GR_cog.*
+
 	import le.go.eo.*
 	import le.go.me.*
 	import le.go.mc.*
-	import pe.d00P_gr_GR_cog.*
 
 	import da.*
 	import oc.*
@@ -225,6 +227,33 @@ Template MA
 				Hymn sid Allilouia3.text End-Hymn
 			End-Section
 		End-Section
+		Section lent__
+			Section alleluia
+				Actor sid Choir End-Actor
+				Title role mode rid ocVE.Apolytikion.mode @day D1 End-Title
+				Media rid ocMA.MM.Alleluia.text @day D7 End-Media
+				Section verses
+					Verse<bnr>sid vVerse1</>sid leosMA.LentAlleluiaVerse1.text @ver End-Verse	
+					Para role chant sid Allilouia3.text End-Para
+					Verse<bnr>sid vVerse2</>sid leosMA.LentAlleluiaVerse2.text @ver End-Verse	
+					Para role chant sid Allilouia3.text End-Para
+					Verse<bnr>sid vVerse3</>sid leosMA.LentAlleluiaVerse3.text @ver End-Verse	
+					Para role chant sid Allilouia3.text End-Para
+					Verse<bnr>sid vVerse4</>sid leosMA.LentAlleluiaVerse4.text @ver End-Verse	
+					Para role chant sid Allilouia3.text End-Para
+				End-Section
+			End-Section	
+			Section triadics
+				Title role source sid sourceHorologion End-Title
+				Title role desig sid TriadicHymns End-Title
+				Title role mode rid octrMA.Triadic1.mode End-Title
+				Hymn rid octrMA.Triadic1.text rid daMA.Triadic1Ending.text @ver End-Hymn
+				Title sid Doxa End-Title
+				Hymn rid octrMA.Triadic2.text rid daMA.Triadic2Ending.text @ver End-Hymn
+				Title sid KaiNyn End-Title
+				Hymn rid octrMA.Triadic3.text rid daMA.Triadic3Ending.text @ver End-Hymn
+			End-Section
+		End-Section
 		Section modeofweek
 			Actor sid Choir End-Actor
 			Title role mode rid ocVE.Apolytikion.mode @day D1 End-Title
@@ -305,7 +334,7 @@ Template MA
 		End-Section
 	End-Section
 	
-//	Section _02_
+//	Section _02_Lent
 //	End-Section
 
 	Section _03_Kathisma1__
@@ -12247,6 +12276,21 @@ Template MA
 				End-Section
 			End-Section
 		End-Section
+		Section photagogics
+			Title role source sid sourceHorologion End-Title
+			Actor sid Choir End-Actor
+			Title role desig sid PhotagogicHymns End-Title
+			Title role mode rid octrMA.Photagogic.mode End-Title
+			when-mode-of-week-is M6, M7 use:
+				Hymn rid daMA.Photagogic1Beginning.text rid octrMA.Photagogic.text @ver End-Hymn
+				Hymn rid daMA.Photagogic2Beginning.text rid octrMA.Photagogic.text @ver End-Hymn
+				Hymn rid daMA.Photagogic3Beginning.text rid octrMA.Photagogic.text @ver End-Hymn
+				otherwise use:
+					Hymn rid octrMA.Photagogic.text rid daMA.Photagogic1Ending.text @ver End-Hymn
+					Hymn rid octrMA.Photagogic.text rid daMA.Photagogic2Ending.text @ver End-Hymn
+					Hymn rid octrMA.Photagogic.text rid daMA.Photagogic3Ending.text @ver End-Hymn
+			end-when
+		End-Section
 		Section tr__
 			Section exap11
 				Title role source sid sourceTriodion End-Title
@@ -14643,59 +14687,65 @@ Template MA
 		End-Section
 	End-Section
 
-	Section _17_Apolytikia__
+	Section _17_ItIsGood_Trisagion__
 		Section Hierarchical__
-			Section itisgood_trisagion
-				Actor sid Hierarch End-Actor
-				Insert_section bk.ho.s03.Weekday_End End-Insert
-				Actor sid Reader End-Actor
-				Dialog sid res07 End-Dialog
-				Insert_section bk.ho.s01.Trisagion_Prayers End-Insert
-				Actor sid Priest End-Actor
-				Dialog sid exc20 End-Dialog
-				Dialog<i>sid res04p</>End-Dialog
-				Actor sid Choir End-Actor
-			End-Section	
-			Section itisgood_trisagion_holyweek_
+			Section holyweek_
 				Section part1
 					Actor sid Hierarch End-Actor
-					Insert_section bk.ho.s03.Weekday_End End-Insert
-					Actor sid Reader End-Actor
-					Dialog sid res07 End-Dialog
-					Insert_section bk.ho.s01.Trisagion_Prayers End-Insert
-					Actor sid Priest End-Actor
-					Dialog sid exc20 End-Dialog
-					Dialog<i>sid res04p</>End-Dialog
+					Insert_section itisgood_trisagion End-Insert
 				End-Section
 				Actor sid Reader End-Actor
 				Title role desig sid Kontakion End-Title
 				Reading rid trMA.Kontakion1.text End-Reading
 			End-Section	
+			Section lent_weekday
+				Actor sid Hierarch End-Actor
+				Insert_section itisgood_trisagion End-Insert
+				Actor sid Reader End-Actor
+				Reading sid hoMA.Apolytikion End-Reading
+			End-Section
+			Section not_lent
+				Actor sid Hierarch End-Actor
+				Insert_section MA._17_ItIsGood_Trisagion__.itisgood_trisagion End-Insert
+				Actor sid Choir End-Actor
+			End-Section	
 		End-Section
-		Section itisgood_trisagion
-			Actor sid Priest End-Actor
-			Insert_section bk.ho.s03.Weekday_End End-Insert
-			Actor sid Reader End-Actor
-			Insert_section bk.ho.s01.Trisagion_Prayers End-Insert
-			Actor sid Priest End-Actor
-			Dialog sid exc20 End-Dialog
-			Dialog<i>sid res04p</>End-Dialog
-			Actor sid Choir End-Actor
-		End-Section	
-		Section itisgood_trisagion_holyweek_
+		Section holyweek_
 			Section part1
 				Actor sid Priest End-Actor
-				Insert_section bk.ho.s03.Weekday_End End-Insert
-				Actor sid Reader End-Actor
-				Insert_section bk.ho.s01.Trisagion_Prayers End-Insert
-				Actor sid Priest End-Actor
-				Dialog sid exc20 End-Dialog
-				Dialog<i>sid res04p</>End-Dialog
+				Insert_section itisgood_trisagion End-Insert
 			End-Section
 			Actor sid Reader End-Actor
 			Title role desig sid Kontakion End-Title
 			Reading rid trMA.Kontakion1.text End-Reading
 		End-Section	
+		Section lent_weekday
+			Actor sid Priest End-Actor
+			Insert_section itisgood_trisagion End-Insert
+			Actor sid Reader End-Actor
+			Reading sid hoMA.Apolytikion End-Reading
+		End-Section
+		Section not_lent
+			Actor sid Priest End-Actor
+			Insert_section itisgood_trisagion End-Insert
+			Actor sid Choir End-Actor
+		End-Section
+		Section itisgood_trisagion
+			Reading sid psa91.v2.text sid psa91.v3.text End-Reading
+			Actor sid Reader End-Actor
+			Section prayers
+				Title role desig sid Trisagion End-Title
+				Reading sid AgiosOTheos.text<r>sid Thrice media-off</>End-Reading
+				Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+				Reading sid PanagiaTrias.text End-Reading
+				Reading sid res06 End-Reading
+				Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+				Reading sid PaterImon.text End-Reading
+			End-Section		
+			Actor sid Priest End-Actor
+			Dialog sid exc20 End-Dialog
+			Dialog<i>sid res04p</>End-Dialog
+		End-Section
 	End-Section
 
 	Section _18_End__
@@ -14786,6 +14836,11 @@ Template MA
 						Dialog sid Evlogison End-Dialog
 					End-Section
 			end-when
+		End-Section
+		Section rubrics__
+			Section begin_first_hour
+				Rubric sid R35 End-Rubric
+			End-Section
 		End-Section
 		Section wisdom
 			Section part1
