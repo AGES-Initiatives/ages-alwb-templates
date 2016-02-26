@@ -492,16 +492,16 @@ Template MA
 			when-name-of-day-is
 				Monday, Tuesday, Thursday use:
 					Title sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
-					when-exists rid octrMA.Kathisma13.melody use:
-						Title<Tmelody>rid octrMA.Kathisma13.melody</>End-Title
+					when-exists rid octrMA.Kathisma1T.melody use:
+						Title<Tmelody>rid octrMA.Kathisma1T.melody</>End-Title
 					end-when
-					Hymn rid octrMA.Kathisma13.text @ver End-Hymn
+					Hymn rid octrMA.Kathisma1T.text @ver End-Hymn
 				Wednesday, Friday use:
 					Title sid DoxaKaiNyn<Tdesig>sid Stavrotheotokion</>End-Title
-					when-exists rid octrMA.Kathisma13.melody use:
-						Title<Tmelody>rid octrMA.Kathisma13.melody</>End-Title
+					when-exists rid octrMA.Kathisma1T.melody use:
+						Title<Tmelody>rid octrMA.Kathisma1T.melody</>End-Title
 					end-when
-					Hymn rid octrMA.Kathisma13.text @ver End-Hymn
+					Hymn rid octrMA.Kathisma1T.text @ver End-Hymn
 				Saturday use:
 					Insert_section PsalmVerses.forMartyrs.verse2 End-Insert
 					when-exists rid octrMA.Kathisma13.melody use:
@@ -12280,15 +12280,16 @@ Template MA
 			Title role source sid sourceHorologion End-Title
 			Actor sid Choir End-Actor
 			Title role desig sid PhotagogicHymns End-Title
-			Title role mode rid octrMA.Photagogic.mode End-Title
-			when-mode-of-week-is M6, M7 use:
-				Hymn rid daMA.Photagogic1Beginning.text rid octrMA.Photagogic.text @ver End-Hymn
-				Hymn rid daMA.Photagogic2Beginning.text rid octrMA.Photagogic.text @ver End-Hymn
-				Hymn rid daMA.Photagogic3Beginning.text rid octrMA.Photagogic.text @ver End-Hymn
-				otherwise use:
-					Hymn rid octrMA.Photagogic.text rid daMA.Photagogic1Ending.text @ver End-Hymn
-					Hymn rid octrMA.Photagogic.text rid daMA.Photagogic2Ending.text @ver End-Hymn
-					Hymn rid octrMA.Photagogic.text rid daMA.Photagogic3Ending.text @ver End-Hymn
+			Title role mode rid octrMA.Photagogic.mode @day D2 End-Title
+			when-mode-of-week-is 
+				M1, M2, M3, M4, M5, M8 use:
+					Hymn rid octrMA.Photagogic.text @day D2 rid daMA.Photagogic1Ending.text @ver End-Hymn
+					Hymn rid octrMA.Photagogic.text @day D2 rid daMA.Photagogic2Ending.text @ver End-Hymn
+					Hymn rid octrMA.Photagogic.text @day D2 rid daMA.Photagogic3Ending.text @ver End-Hymn
+				M6, M7 use:
+					Hymn rid daMA.Photagogic1Beginning.text rid octrMA.Photagogic.text @ver @day D2 End-Hymn
+					Hymn rid daMA.Photagogic2Beginning.text rid octrMA.Photagogic.text @ver @day D2 End-Hymn
+					Hymn rid daMA.Photagogic3Beginning.text rid octrMA.Photagogic.text @ver @day D2 End-Hymn
 			end-when
 		End-Section
 		Section tr__
