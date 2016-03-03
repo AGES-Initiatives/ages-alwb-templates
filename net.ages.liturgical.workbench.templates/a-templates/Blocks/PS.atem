@@ -1,0 +1,967 @@
+Template PS 
+
+Status Review
+
+	import ps_gr_GR_cog.*
+	
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Section _01_Vespers__
+		Section full_kathisma
+			when-movable-cycle-day-is //lenten vespers not PL
+				24, 25, 27, 31, 32, 34, 38, 39, 41, 45, 46, 48, 59, 60, 62 
+				use: 
+					Insert_section Kathisma18 End-Insert
+					Insert_section end__.before_litany End-Insert
+					Insert_section LN.ShortLitany01 End-Insert
+					Break line End_Break
+				52 //week 5
+				use:
+				53 //week 5
+				use:
+				otherwise use:
+					when-name-of-day-is
+						Sunday use: 
+							Insert_section Kathisma01 End-Insert
+							Insert_section end__.before_litany End-Insert
+							Insert_section LN.ShortLitany01 End-Insert
+						Monday use:
+						Tuesday use: 
+						Wednesday use: 
+						Thursday use: 
+						Friday use: 
+						Saturday use: 
+					end-when
+			end-when
+		End-Section
+		Section kathisma1_stanza1
+			Actor sid Reader End-Actor
+			Insert_section Kathisma01.stanza1 End-Insert
+			Insert_section end__.before_litany End-Insert
+		End-Section
+	End-Section
+
+	Section Matins__
+		Section first
+		End-Section
+		Section second
+		End-Section
+	End-Section
+
+
+//blocks
+	Section intro
+		Actor sid Reader End-Actor
+		Reading sid res01<r>sid Thrice</>End-Reading
+		Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+	End-Section
+	Section middle
+		Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+		Reading sid Allilouia3.text sid DoxaSoiOTheos1<r>sid Thrice</>End-Reading
+		Reading sid res06 End-Reading
+		Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+	End-Section
+	Section end__
+		Section before_litany
+			Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+			Reading sid Allilouia3.text sid DoxaSoiOTheos1<r>sid Thrice</>End-Reading
+			Reading sid IElpisImonKyrie End-Reading
+		End-Section
+		Section no_litany
+			Insert_section middle End-Insert
+		End-Section
+	End-Section
+
+
+	Section Kathisma01
+		Title<Tdesig>sid kathisma_1.title</>End-Title
+		Section stanza1
+			Section Psalm_1_Verses
+				Title role desig sid psa1.title End-Title
+				Hymn sid psa1.v1.text End-Hymn
+				Reading sid psa1.v2.text End-Reading
+				Reading sid psa1.v3.text End-Reading
+				Reading sid psa1.v4.text End-Reading
+				Reading sid psa1.v5.text End-Reading
+				Reading sid psa1.v6.text @ver End-Reading
+			End-Section
+			Section Psalm_2_Verses
+				Title role desig sid psa2.title End-Title
+				Hymn sid psa2.v1.text End-Hymn
+				Reading sid psa2.v2.text End-Reading
+				Reading sid psa2.v3.text End-Reading
+				Reading sid psa2.v4.text End-Reading
+				Reading sid psa2.v5.text End-Reading
+				Reading sid psa2.v6.text End-Reading
+				Reading sid psa2.v7.text End-Reading
+				Reading sid psa2.v8.text End-Reading
+				Reading sid psa2.v9.text End-Reading
+				Reading sid psa2.v10.text End-Reading
+				Reading sid psa2.v11.text End-Reading
+				Reading sid psa2.v12.text @ver End-Reading
+			End-Section
+			Section Psalm_3_Verses
+				Title role desig sid psa3.title End-Title
+				Hymn sid psa3.v2.text End-Hymn
+				Reading sid psa3.v3.text End-Reading
+				Reading sid psa3.v4.text End-Reading
+				Reading sid psa3.v5.text End-Reading
+				Reading sid psa3.v6.text End-Reading
+				Reading sid psa3.v7.text End-Reading
+				Reading sid psa3.v8.text End-Reading
+				Reading sid psa3.v9.text @ver End-Reading
+			End-Section
+		End-Section
+		Insert_section middle End-Insert
+		Section stanza2
+			Section Psalm_4_Verses
+				Title role desig sid psa4.title End-Title
+				Hymn sid psa4.v2.text End-Hymn
+				Reading sid psa4.v3.text End-Reading
+				Reading sid psa4.v4.text End-Reading
+				Reading sid psa4.v5.text End-Reading
+				Reading sid psa4.v6.text End-Reading
+				Reading sid psa4.v7.text End-Reading
+				Reading sid psa4.v8.text End-Reading
+				Reading sid psa4.v9.text @ver End-Reading
+			End-Section
+			Section Psalm_5_Verses
+				Title role desig sid psa5.title End-Title
+				Hymn sid psa5.v2.text End-Hymn
+				Reading sid psa5.v3.text End-Reading
+				Reading sid psa5.v4.text End-Reading
+				Reading sid psa5.v5.text End-Reading
+				Reading sid psa5.v6.text End-Reading
+				Reading sid psa5.v7.text End-Reading
+				Reading sid psa5.v8.text End-Reading
+				Reading sid psa5.v9.text End-Reading
+				Reading sid psa5.v10.text End-Reading
+				Reading sid psa5.v11.text End-Reading
+				Reading sid psa5.v12.text End-Reading
+				Reading sid psa5.v13.text @ver End-Reading
+			End-Section
+			Section Psalm_6_Verses
+				Title role desig sid psa6.title End-Title
+				Hymn sid psa6.v2.text End-Hymn
+				Reading sid psa6.v3.text End-Reading
+				Reading sid psa6.v4.text End-Reading
+				Reading sid psa6.v5.text End-Reading
+				Reading sid psa6.v6.text End-Reading
+				Reading sid psa6.v7.text End-Reading
+				Reading sid psa6.v8.text End-Reading
+				Reading sid psa6.v9.text End-Reading
+				Reading sid psa6.v10.text End-Reading
+				Reading sid psa6.v11.text @ver End-Reading
+			End-Section
+		End-Section
+		Insert_section middle End-Insert
+		Section stanza3
+			Section Psalm_7_Verses
+				Title role desig sid psa7.title End-Title
+				Hymn sid psa7.v2.text End-Hymn
+				Reading sid psa7.v3.text End-Reading
+				Reading sid psa7.v4.text End-Reading
+				Reading sid psa7.v5.text End-Reading
+				Reading sid psa7.v6.text End-Reading
+				Reading sid psa7.v7.text End-Reading
+				Reading sid psa7.v8.text End-Reading
+				Reading sid psa7.v9.text End-Reading
+				Reading sid psa7.v10.text End-Reading
+				Reading sid psa7.v11.text End-Reading
+				Reading sid psa7.v12.text End-Reading
+				Reading sid psa7.v13.text End-Reading
+				Reading sid psa7.v14.text End-Reading
+				Reading sid psa7.v15.text End-Reading
+				Reading sid psa7.v16.text End-Reading
+				Reading sid psa7.v17.text End-Reading
+				Reading sid psa7.v18.text @ver End-Reading
+			End-Section
+			Section Psalm_8_Verses
+				Title role desig sid psa8.title End-Title
+				Hymn sid psa8.v2.text End-Hymn
+				Reading sid psa8.v3.text End-Reading
+				Reading sid psa8.v4.text End-Reading
+				Reading sid psa8.v5.text End-Reading
+				Reading sid psa8.v6.text End-Reading
+				Reading sid psa8.v7.text End-Reading
+				Reading sid psa8.v8.text End-Reading
+				Reading sid psa8.v9.text End-Reading
+				Reading sid psa8.v10.text @ver End-Reading
+			End-Section
+		End-Section
+	End-Section
+	
+	Section Kathisma02
+		Title role desig sid kathisma_2.title End-Title
+		Section stanza1	
+			Section Psalm_9_Verses
+				Title role desig sid psa9.title End-Title
+				Hymn sid psa9.v2.text End-Hymn
+				Reading sid psa9.v3.text End-Reading
+				Reading sid psa9.v4.text End-Reading
+				Reading sid psa9.v5.text End-Reading
+				Reading sid psa9.v6.text End-Reading
+				Reading sid psa9.v7.text End-Reading
+				Reading sid psa9.v8.text End-Reading
+				Reading sid psa9.v9.text End-Reading
+				Reading sid psa9.v10.text End-Reading
+				Reading sid psa9.v11.text End-Reading
+				Reading sid psa9.v12.text End-Reading
+				Reading sid psa9.v13.text End-Reading
+				Reading sid psa9.v14.text End-Reading
+				Reading sid psa9.v15.text End-Reading
+				Reading sid psa9.v16.text End-Reading
+				Reading sid psa9.v17.text End-Reading
+				Reading sid psa9.v18.text End-Reading
+				Reading sid psa9.v19.text End-Reading
+				Reading sid psa9.v20.text End-Reading
+				Reading sid psa9.v21.text End-Reading
+				Reading sid psa9.v22.text End-Reading
+				Reading sid psa9.v23.text End-Reading
+				Reading sid psa9.v24.text End-Reading
+				Reading sid psa9.v25.text End-Reading
+				Reading sid psa9.v26.text End-Reading
+				Reading sid psa9.v27.text End-Reading
+				Reading sid psa9.v28.text End-Reading
+				Reading sid psa9.v29.text End-Reading
+				Reading sid psa9.v30.text End-Reading
+				Reading sid psa9.v31.text End-Reading
+				Reading sid psa9.v32.text End-Reading
+				Reading sid psa9.v33.text End-Reading
+				Reading sid psa9.v34.text End-Reading
+				Reading sid psa9.v35.text End-Reading
+				Reading sid psa9.v36.text End-Reading
+				Reading sid psa9.v37.text End-Reading
+				Reading sid psa9.v38.text End-Reading
+				Reading sid psa9.v39.text @ver End-Reading
+			End-Section
+			Section Psalm_10_Verses
+				Title role desig sid psa10.title End-Title
+				Hymn sid psa10.v1.text End-Hymn
+				Reading sid psa10.v2.text End-Reading
+				Reading sid psa10.v3.text End-Reading
+				Reading sid psa10.v4.text End-Reading
+				Reading sid psa10.v5.text End-Reading
+				Reading sid psa10.v6.text End-Reading
+				Reading sid psa10.v7.text @ver End-Reading
+			End-Section
+		End-Section
+		Insert_section middle End-Insert
+		Section stanza2
+			Section Psalm_11_Verses
+				Title role desig sid psa11.title End-Title
+				Hymn sid psa11.v2.text End-Hymn
+				Reading sid psa11.v3.text End-Reading
+				Reading sid psa11.v4.text End-Reading
+				Reading sid psa11.v5.text End-Reading
+				Reading sid psa11.v6.text End-Reading
+				Reading sid psa11.v7.text End-Reading
+				Reading sid psa11.v8.text End-Reading
+				Reading sid psa11.v9.text @ver End-Reading
+			End-Section
+			Section Psalm_12_Verses
+				Title role desig sid psa12.title End-Title
+				Hymn sid psa12.v2.text End-Hymn
+				Reading sid psa12.v3.text End-Reading
+				Reading sid psa12.v4.text End-Reading
+				Reading sid psa12.v5.text End-Reading
+				Reading sid psa12.v6.text @ver End-Reading
+			End-Section
+			Section Psalm_13_Verses
+				Title role desig sid psa13.title End-Title
+				Hymn sid psa13.v1.text End-Hymn
+				Reading sid psa13.v2.text End-Reading
+				Reading sid psa13.v3.text End-Reading
+				Reading sid psa13.v4.text End-Reading
+				Reading sid psa13.v5.text End-Reading
+				Reading sid psa13.v6.text End-Reading
+				Reading sid psa13.v7.text @ver End-Reading
+			End-Section
+		End-Section
+		Insert_section middle End-Insert
+		Section stanza3
+			Section Psalm_14_Verses
+				Title role desig sid psa14.title End-Title
+				Hymn sid psa14.v1.text End-Hymn
+				Reading sid psa14.v2.text End-Reading
+				Reading sid psa14.v3.text End-Reading
+				Reading sid psa14.v4.text End-Reading
+				Reading sid psa14.v5.text @ver End-Reading
+			End-Section
+			Section Psalm_15_Verses
+				Title role desig sid psa15.title End-Title
+				Hymn sid psa15.v1.text End-Hymn
+				Reading sid psa15.v2.text End-Reading
+				Reading sid psa15.v3.text End-Reading
+				Reading sid psa15.v4.text End-Reading
+				Reading sid psa15.v5.text End-Reading
+				Reading sid psa15.v6.text End-Reading
+				Reading sid psa15.v7.text End-Reading
+				Reading sid psa15.v8.text End-Reading
+				Reading sid psa15.v9.text End-Reading
+				Reading sid psa15.v10.text End-Reading
+				Reading sid psa15.v11.text @ver End-Reading
+			End-Section
+			Section Psalm_16_Verses
+				Title role desig sid psa16.title End-Title
+				Hymn sid psa16.v1.text End-Hymn
+				Reading sid psa16.v2.text End-Reading
+				Reading sid psa16.v3.text End-Reading
+				Reading sid psa16.v4.text End-Reading
+				Reading sid psa16.v5.text End-Reading
+				Reading sid psa16.v6.text End-Reading
+				Reading sid psa16.v7.text End-Reading
+				Reading sid psa16.v8.text End-Reading
+				Reading sid psa16.v9.text End-Reading
+				Reading sid psa16.v10.text End-Reading
+				Reading sid psa16.v11.text End-Reading
+				Reading sid psa16.v12.text End-Reading
+				Reading sid psa16.v13.text End-Reading
+				Reading sid psa16.v14.text End-Reading
+				Reading sid psa16.v15.text @ver End-Reading
+			End-Section
+		End-Section
+	End-Section
+
+	Section Kathisma03
+		Title role desig sid kathisma_3.title End-Title
+		Section stanza1
+			Section Psalm_17_Verses
+				Title role desig sid psa17.title End-Title
+				Hymn sid psa17.v2.text End-Hymn
+				Reading sid psa17.v3.text End-Reading
+				Reading sid psa17.v4.text End-Reading
+				Reading sid psa17.v5.text End-Reading
+				Reading sid psa17.v6.text End-Reading
+				Reading sid psa17.v7.text End-Reading
+				Reading sid psa17.v8.text End-Reading
+				Reading sid psa17.v9.text End-Reading
+				Reading sid psa17.v10.text End-Reading
+				Reading sid psa17.v11.text End-Reading
+				Reading sid psa17.v12.text End-Reading
+				Reading sid psa17.v13.text End-Reading
+				Reading sid psa17.v14.text End-Reading
+				Reading sid psa17.v15.text End-Reading
+				Reading sid psa17.v16.text End-Reading
+				Reading sid psa17.v17.text End-Reading
+				Reading sid psa17.v18.text End-Reading
+				Reading sid psa17.v19.text End-Reading
+				Reading sid psa17.v20.text End-Reading
+				Reading sid psa17.v21.text End-Reading
+				Reading sid psa17.v22.text End-Reading
+				Reading sid psa17.v23.text End-Reading
+				Reading sid psa17.v24.text End-Reading
+				Reading sid psa17.v25.text End-Reading
+				Reading sid psa17.v26.text End-Reading
+				Reading sid psa17.v27.text End-Reading
+				Reading sid psa17.v28.text End-Reading
+				Reading sid psa17.v29.text End-Reading
+				Reading sid psa17.v30.text End-Reading
+				Reading sid psa17.v31.text End-Reading
+				Reading sid psa17.v32.text End-Reading
+				Reading sid psa17.v33.text End-Reading
+				Reading sid psa17.v34.text End-Reading
+				Reading sid psa17.v35.text End-Reading
+				Reading sid psa17.v36.text End-Reading
+				Reading sid psa17.v37.text End-Reading
+				Reading sid psa17.v38.text End-Reading
+				Reading sid psa17.v39.text End-Reading
+				Reading sid psa17.v40.text End-Reading
+				Reading sid psa17.v41.text End-Reading
+				Reading sid psa17.v42.text End-Reading
+				Reading sid psa17.v43.text End-Reading
+				Reading sid psa17.v44.text End-Reading
+				Reading sid psa17.v45.text End-Reading
+				Reading sid psa17.v46.text End-Reading
+				Reading sid psa17.v47.text End-Reading
+				Reading sid psa17.v48.text End-Reading
+				Reading sid psa17.v49.text End-Reading
+				Reading sid psa17.v50.text End-Reading
+				Reading sid psa17.v51.text @ver End-Reading
+			End-Section
+		End-Section
+		Insert_section middle End-Insert
+		Section stanza2
+			Section Psalm_18_Verses
+				Title role desig sid psa18.title End-Title
+				Hymn sid psa18.v2.text End-Hymn
+				Reading sid psa18.v3.text End-Reading
+				Reading sid psa18.v4.text End-Reading
+				Reading sid psa18.v5.text End-Reading
+				Reading sid psa18.v6.text End-Reading
+				Reading sid psa18.v7.text End-Reading
+				Reading sid psa18.v8.text End-Reading
+				Reading sid psa18.v9.text End-Reading
+				Reading sid psa18.v10.text End-Reading
+				Reading sid psa18.v11.text End-Reading
+				Reading sid psa18.v12.text End-Reading
+				Reading sid psa18.v13.text End-Reading
+				Reading sid psa18.v14.text End-Reading
+				Reading sid psa18.v15.text @ver End-Reading
+			End-Section
+			Section Psalm_19_Verses
+				Title role desig sid psa19.title End-Title
+				Hymn sid psa19.v2.text End-Hymn
+				Reading sid psa19.v3.text End-Reading
+				Reading sid psa19.v4.text End-Reading
+				Reading sid psa19.v5.text End-Reading
+				Reading sid psa19.v6.text End-Reading
+				Reading sid psa19.v7.text End-Reading
+				Reading sid psa19.v8.text End-Reading
+				Reading sid psa19.v9.text End-Reading
+				Reading sid psa19.v10.text @ver End-Reading
+			End-Section
+			Section Psalm_20_Verses
+				Title role desig sid psa20.title End-Title
+				Hymn sid psa20.v2.text End-Hymn
+				Reading sid psa20.v3.text End-Reading
+				Reading sid psa20.v4.text End-Reading
+				Reading sid psa20.v5.text End-Reading
+				Reading sid psa20.v6.text End-Reading
+				Reading sid psa20.v7.text End-Reading
+				Reading sid psa20.v8.text End-Reading
+				Reading sid psa20.v9.text End-Reading
+				Reading sid psa20.v10.text End-Reading
+				Reading sid psa20.v11.text End-Reading
+				Reading sid psa20.v12.text End-Reading
+				Reading sid psa20.v13.text End-Reading
+				Reading sid psa20.v14.text @ver End-Reading
+			End-Section
+		End-Section
+		Insert_section middle End-Insert
+		Section stanza3
+			Section Psalm_21_Verses
+				Title role desig sid psa21.title End-Title
+				Hymn sid psa21.v2.text End-Hymn
+				Reading sid psa21.v3.text End-Reading
+				Reading sid psa21.v4.text End-Reading
+				Reading sid psa21.v5.text End-Reading
+				Reading sid psa21.v6.text End-Reading
+				Reading sid psa21.v7.text End-Reading
+				Reading sid psa21.v8.text End-Reading
+				Reading sid psa21.v9.text End-Reading
+				Reading sid psa21.v10.text End-Reading
+				Reading sid psa21.v11.text End-Reading
+				Reading sid psa21.v12.text End-Reading
+				Reading sid psa21.v13.text End-Reading
+				Reading sid psa21.v14.text End-Reading
+				Reading sid psa21.v15.text End-Reading
+				Reading sid psa21.v16.text End-Reading
+				Reading sid psa21.v17.text End-Reading
+				Reading sid psa21.v18.text End-Reading
+				Reading sid psa21.v19.text End-Reading
+				Reading sid psa21.v20.text End-Reading
+				Reading sid psa21.v21.text End-Reading
+				Reading sid psa21.v22.text End-Reading
+				Reading sid psa21.v23.text End-Reading
+				Reading sid psa21.v24.text End-Reading
+				Reading sid psa21.v25.text End-Reading
+				Reading sid psa21.v26.text End-Reading
+				Reading sid psa21.v27.text End-Reading
+				Reading sid psa21.v28.text End-Reading
+				Reading sid psa21.v29.text End-Reading
+				Reading sid psa21.v30.text End-Reading
+				Reading sid psa21.v31.text End-Reading
+				Reading sid psa21.v32.text @ver End-Reading
+			End-Section
+			Section Psalm_22_Verses
+				Title role desig sid psa22.title End-Title
+				Hymn sid psa22.v1.text End-Hymn
+				Reading sid psa22.v2.text End-Reading
+				Reading sid psa22.v3.text End-Reading
+				Reading sid psa22.v4.text End-Reading
+				Reading sid psa22.v5.text End-Reading
+				Reading sid psa22.v6.text @ver End-Reading
+			End-Section
+			Section Psalm_23_Verses
+				Title role desig sid psa23.title End-Title
+				Hymn sid psa23.v1.text End-Hymn
+				Reading sid psa23.v2.text End-Reading
+				Reading sid psa23.v3.text End-Reading
+				Reading sid psa23.v4.text End-Reading
+				Reading sid psa23.v5.text End-Reading
+				Reading sid psa23.v6.text End-Reading
+				Reading sid psa23.v7.text End-Reading
+				Reading sid psa23.v8.text End-Reading
+				Reading sid psa23.v9.text End-Reading
+				Reading sid psa23.v10.text @ver End-Reading
+			End-Section
+		End-Section
+	End-Section
+
+	Section Kathisma04
+		Title role desig sid kathisma_4.title End-Title
+		Section stanza1
+			Section Psalm_24_Verses
+				Title role desig sid psa24.title End-Title
+				Hymn sid psa24.v1.text End-Hymn
+				Reading sid psa24.v2.text End-Reading
+				Reading sid psa24.v3.text End-Reading
+				Reading sid psa24.v4.text End-Reading
+				Reading sid psa24.v5.text End-Reading
+				Reading sid psa24.v6.text End-Reading
+				Reading sid psa24.v7.text End-Reading
+				Reading sid psa24.v8.text End-Reading
+				Reading sid psa24.v9.text End-Reading
+				Reading sid psa24.v10.text End-Reading
+				Reading sid psa24.v11.text End-Reading
+				Reading sid psa24.v12.text End-Reading
+				Reading sid psa24.v13.text End-Reading
+				Reading sid psa24.v14.text End-Reading
+				Reading sid psa24.v15.text End-Reading
+				Reading sid psa24.v16.text End-Reading
+				Reading sid psa24.v17.text End-Reading
+				Reading sid psa24.v18.text End-Reading
+				Reading sid psa24.v19.text End-Reading
+				Reading sid psa24.v20.text End-Reading
+				Reading sid psa24.v21.text End-Reading
+				Reading sid psa24.v22.text @ver End-Reading
+			End-Section
+			Section Psalm_25_Verses
+				Title role desig sid psa25.title End-Title
+				Hymn sid psa25.v1.text End-Hymn
+				Reading sid psa25.v2.text End-Reading
+				Reading sid psa25.v3.text End-Reading
+				Reading sid psa25.v4.text End-Reading
+				Reading sid psa25.v5.text End-Reading
+				Reading sid psa25.v6.text End-Reading
+				Reading sid psa25.v7.text End-Reading
+				Reading sid psa25.v8.text End-Reading
+				Reading sid psa25.v9.text End-Reading
+				Reading sid psa25.v10.text End-Reading
+				Reading sid psa25.v11.text End-Reading
+				Reading sid psa25.v12.text @ver End-Reading
+			End-Section
+			Section Psalm_26_Verses
+				Title role desig sid psa26.title End-Title
+				Hymn sid psa26.v1.text End-Hymn
+				Reading sid psa26.v2.text End-Reading
+				Reading sid psa26.v3.text End-Reading
+				Reading sid psa26.v4.text End-Reading
+				Reading sid psa26.v5.text End-Reading
+				Reading sid psa26.v6.text End-Reading
+				Reading sid psa26.v7.text End-Reading
+				Reading sid psa26.v8.text End-Reading
+				Reading sid psa26.v9.text End-Reading
+				Reading sid psa26.v10.text End-Reading
+				Reading sid psa26.v11.text End-Reading
+				Reading sid psa26.v12.text End-Reading
+				Reading sid psa26.v13.text End-Reading
+				Reading sid psa26.v14.text @ver End-Reading
+			End-Section
+		End-Section
+		Insert_section middle End-Insert
+		Section stanza2
+			Section Psalm_27_Verses
+				Title role desig sid psa27.title End-Title
+				Hymn sid psa27.v1.text End-Hymn
+				Reading sid psa27.v2.text End-Reading
+				Reading sid psa27.v3.text End-Reading
+				Reading sid psa27.v4.text End-Reading
+				Reading sid psa27.v5.text End-Reading
+				Reading sid psa27.v6.text End-Reading
+				Reading sid psa27.v7.text End-Reading
+				Reading sid psa27.v8.text End-Reading
+				Reading sid psa27.v9.text @ver End-Reading
+			End-Section
+			Section Psalm_28_Verses
+				Title role desig sid psa28.title End-Title
+				Hymn sid psa28.v1.text End-Hymn
+				Reading sid psa28.v3.text End-Reading
+				Reading sid psa28.v3.text End-Reading
+				Reading sid psa28.v4.text End-Reading
+				Reading sid psa28.v5.text End-Reading
+				Reading sid psa28.v6.text End-Reading
+				Reading sid psa28.v7.text End-Reading
+				Reading sid psa28.v8.text End-Reading
+				Reading sid psa28.v9.text End-Reading
+				Reading sid psa28.v10.text End-Reading
+				Reading sid psa28.v11.text @ver End-Reading
+			End-Section
+			Section Psalm_29_Verses
+				Title role desig sid psa29.title End-Title
+				Hymn sid psa29.v2.text End-Hymn
+				Reading sid psa29.v3.text End-Reading
+				Reading sid psa29.v4.text End-Reading
+				Reading sid psa29.v5.text End-Reading
+				Reading sid psa29.v6.text End-Reading
+				Reading sid psa29.v7.text End-Reading
+				Reading sid psa29.v8.text End-Reading
+				Reading sid psa29.v9.text End-Reading
+				Reading sid psa29.v10.text End-Reading
+				Reading sid psa29.v11.text End-Reading
+				Reading sid psa29.v12.text End-Reading
+				Reading sid psa29.v13.text @ver End-Reading
+			End-Section
+		End-Section
+		Insert_section middle End-Insert
+		Section stanza3
+			Section Psalm_30_Verses
+				Title role desig sid psa30.title End-Title
+				Hymn sid psa30.v2.text End-Hymn
+				Reading sid psa30.v3.text End-Reading
+				Reading sid psa30.v4.text End-Reading
+				Reading sid psa30.v5.text End-Reading
+				Reading sid psa30.v6.text End-Reading
+				Reading sid psa30.v7.text End-Reading
+				Reading sid psa30.v8.text End-Reading
+				Reading sid psa30.v9.text End-Reading
+				Reading sid psa30.v10.text End-Reading
+				Reading sid psa30.v11.text End-Reading
+				Reading sid psa30.v12.text End-Reading
+				Reading sid psa30.v13.text End-Reading
+				Reading sid psa30.v14.text End-Reading
+				Reading sid psa30.v15.text End-Reading
+				Reading sid psa30.v16.text End-Reading
+				Reading sid psa30.v17.text End-Reading
+				Reading sid psa30.v18.text End-Reading
+				Reading sid psa30.v19.text End-Reading
+				Reading sid psa30.v20.text End-Reading
+				Reading sid psa30.v21.text End-Reading
+				Reading sid psa30.v22.text End-Reading
+				Reading sid psa30.v23.text End-Reading
+				Reading sid psa30.v24.text End-Reading
+				Reading sid psa30.v25.text @ver End-Reading
+			End-Section
+			Section Psalm_31_Verses
+				Title role desig sid psa31.title End-Title
+				Hymn sid psa31.v1.text End-Hymn
+				Reading sid psa31.v2.text End-Reading
+				Reading sid psa31.v3.text End-Reading
+				Reading sid psa31.v4.text End-Reading
+				Reading sid psa31.v5.text End-Reading
+				Reading sid psa31.v6.text End-Reading
+				Reading sid psa31.v7.text End-Reading
+				Reading sid psa31.v8.text End-Reading
+				Reading sid psa31.v9.text End-Reading
+				Reading sid psa31.v10.text End-Reading
+				Reading sid psa31.v11.text @ver End-Reading
+			End-Section
+		End-Section
+	End-Section
+
+	Section Kathisma05
+		Title role desig sid kathisma_5.title End-Title
+		Section stanza1	
+			Section Psalm_32_Verses
+				Title role desig sid psa32.title End-Title
+				Hymn sid psa32.v1.text End-Hymn
+				Reading sid psa32.v2.text End-Reading
+				Reading sid psa32.v3.text End-Reading
+				Reading sid psa32.v4.text End-Reading
+				Reading sid psa32.v5.text End-Reading
+				Reading sid psa32.v6.text End-Reading
+				Reading sid psa32.v7.text End-Reading
+				Reading sid psa32.v8.text End-Reading
+				Reading sid psa32.v9.text End-Reading
+				Reading sid psa32.v10.text End-Reading
+				Reading sid psa32.v11.text End-Reading
+				Reading sid psa32.v12.text End-Reading
+				Reading sid psa32.v13.text End-Reading
+				Reading sid psa32.v14.text End-Reading
+				Reading sid psa32.v15.text End-Reading
+				Reading sid psa32.v16.text End-Reading
+				Reading sid psa32.v17.text End-Reading
+				Reading sid psa32.v18.text End-Reading
+				Reading sid psa32.v19.text End-Reading
+				Reading sid psa32.v20.text End-Reading
+				Reading sid psa32.v21.text End-Reading
+				Reading sid psa32.v22.text @ver End-Reading
+			End-Section
+			Section Psalm_33_Verses
+				Title role desig sid psa33.title End-Title
+				Hymn sid psa33.v2.text End-Hymn
+				Reading sid psa33.v3.text End-Reading
+				Reading sid psa33.v4.text End-Reading
+				Reading sid psa33.v5.text End-Reading
+				Reading sid psa33.v6.text End-Reading
+				Reading sid psa33.v7.text End-Reading
+				Reading sid psa33.v8.text End-Reading
+				Reading sid psa33.v9.text End-Reading
+				Reading sid psa33.v10.text End-Reading
+				Reading sid psa33.v11.text End-Reading
+				Reading sid psa33.v12.text End-Reading
+				Reading sid psa33.v13.text End-Reading
+				Reading sid psa33.v14.text End-Reading
+				Reading sid psa33.v15.text End-Reading
+				Reading sid psa33.v16.text End-Reading
+				Reading sid psa33.v17.text End-Reading
+				Reading sid psa33.v18.text End-Reading
+				Reading sid psa33.v19.text End-Reading
+				Reading sid psa33.v20.text End-Reading
+				Reading sid psa33.v21.text End-Reading
+				Reading sid psa33.v22.text End-Reading		
+				Reading sid psa33.v23.text @ver End-Reading		
+			End-Section
+		End-Section
+		Insert_section middle End-Insert
+		Section stanza2
+			Section Psalm_34_Verses
+				Title role desig sid psa34.title End-Title
+				Hymn sid psa34.v1.text End-Hymn
+				Reading sid psa34.v2.text End-Reading
+				Reading sid psa34.v3.text End-Reading
+				Reading sid psa34.v4.text End-Reading
+				Reading sid psa34.v5.text End-Reading
+				Reading sid psa34.v6.text End-Reading
+				Reading sid psa34.v7.text End-Reading
+				Reading sid psa34.v8.text End-Reading
+				Reading sid psa34.v9.text End-Reading
+				Reading sid psa34.v10.text End-Reading
+				Reading sid psa34.v11.text End-Reading
+				Reading sid psa34.v12.text End-Reading
+				Reading sid psa34.v13.text End-Reading
+				Reading sid psa34.v14.text End-Reading
+				Reading sid psa34.v15.text End-Reading
+				Reading sid psa34.v16.text End-Reading
+				Reading sid psa34.v17.text End-Reading
+				Reading sid psa34.v18.text End-Reading
+				Reading sid psa34.v19.text End-Reading
+				Reading sid psa34.v20.text End-Reading
+				Reading sid psa34.v21.text End-Reading
+				Reading sid psa34.v22.text End-Reading		
+				Reading sid psa34.v23.text End-Reading		
+				Reading sid psa34.v24.text End-Reading
+				Reading sid psa34.v25.text End-Reading
+				Reading sid psa34.v26.text End-Reading
+				Reading sid psa34.v27.text End-Reading
+				Reading sid psa34.v28.text @ver End-Reading
+			End-Section
+			Section Psalm_35_Verses
+				Title role desig sid psa35.title End-Title
+				Hymn sid psa35.v1.text End-Hymn
+				Reading sid psa35.v2.text End-Reading
+				Reading sid psa35.v3.text End-Reading
+				Reading sid psa35.v4.text End-Reading
+				Reading sid psa35.v5.text End-Reading
+				Reading sid psa35.v6.text End-Reading
+				Reading sid psa35.v7.text End-Reading
+				Reading sid psa35.v8.text End-Reading
+				Reading sid psa35.v9.text End-Reading
+				Reading sid psa35.v10.text End-Reading
+				Reading sid psa35.v11.text End-Reading
+				Reading sid psa35.v12.text End-Reading
+				Reading sid psa35.v13.text @ver End-Reading
+			End-Section
+		End-Section
+		Insert_section middle End-Insert
+		Section stanza3
+			Section Psalm_36_Verses
+				Title role desig sid psa36.title End-Title
+				Hymn sid psa36.v1.text End-Hymn
+				Reading sid psa36.v2.text End-Reading
+				Reading sid psa36.v3.text End-Reading
+				Reading sid psa36.v4.text End-Reading
+				Reading sid psa36.v5.text End-Reading
+				Reading sid psa36.v6.text End-Reading
+				Reading sid psa36.v7.text End-Reading
+				Reading sid psa36.v8.text End-Reading
+				Reading sid psa36.v9.text End-Reading
+				Reading sid psa36.v10.text End-Reading
+				Reading sid psa36.v11.text End-Reading
+				Reading sid psa36.v12.text End-Reading
+				Reading sid psa36.v13.text End-Reading
+				Reading sid psa36.v14.text End-Reading
+				Reading sid psa36.v15.text End-Reading
+				Reading sid psa36.v16.text End-Reading
+				Reading sid psa36.v17.text End-Reading
+				Reading sid psa36.v18.text End-Reading
+				Reading sid psa36.v19.text End-Reading
+				Reading sid psa36.v20.text End-Reading
+				Reading sid psa36.v21.text End-Reading
+				Reading sid psa36.v22.text End-Reading		
+				Reading sid psa36.v23.text End-Reading		
+				Reading sid psa36.v24.text End-Reading
+				Reading sid psa36.v25.text End-Reading
+				Reading sid psa36.v26.text End-Reading
+				Reading sid psa36.v27.text End-Reading
+				Reading sid psa36.v28.text End-Reading
+				Reading sid psa36.v29.text End-Reading
+				Reading sid psa36.v30.text End-Reading
+				Reading sid psa36.v31.text End-Reading
+				Reading sid psa36.v32.text End-Reading		
+				Reading sid psa36.v33.text End-Reading		
+				Reading sid psa36.v34.text End-Reading
+				Reading sid psa36.v35.text End-Reading
+				Reading sid psa36.v36.text End-Reading
+				Reading sid psa36.v37.text End-Reading
+				Reading sid psa36.v38.text End-Reading
+				Reading sid psa36.v39.text End-Reading
+				Reading sid psa36.v40.text @ver End-Reading
+			End-Section
+		End-Section
+	End-Section
+
+
+	Section Kathisma18
+		Title<Tdesig>sid kathisma_18.title</>End-Title
+		Section stanza1
+			Section Psalm_119_Verses
+				Title role desig sid psa119.title End-Title
+				Hymn sid psa119.v1.text End-Hymn
+				Reading sid psa119.v2.text End-Reading
+				Reading sid psa119.v3.text End-Reading
+				Reading sid psa119.v4.text End-Reading
+				Reading sid psa119.v5.text sid psa119.v6.text End-Reading
+				Reading sid psa119.v7.text End-Reading
+			End-Section
+			Section Psalm_120_Verses
+				Title role desig sid psa120.title End-Title
+				Hymn sid psa120.v1.text End-Hymn
+				Reading sid psa120.v2.text End-Reading
+				Reading sid psa120.v3.text End-Reading
+				Reading sid psa120.v4.text End-Reading
+				Reading sid psa120.v5.text End-Reading
+				Reading sid psa120.v6.text End-Reading
+				Reading sid psa120.v7.text End-Reading
+				Reading sid psa120.v8.text End-Reading
+			End-Section
+			Section Psalm_121_Verses
+				Title role desig sid psa121.title End-Title
+				Hymn sid psa121.v1.text End-Hymn
+				Reading sid psa121.v2.text End-Reading
+				Reading sid psa121.v3.text End-Reading
+				Reading sid psa121.v4.text End-Reading
+				Reading sid psa121.v5.text End-Reading
+				Reading sid psa121.v6.text End-Reading
+				Reading sid psa121.v7.text End-Reading
+				Reading sid psa121.v8.text End-Reading
+				Reading sid psa121.v9.text End-Reading
+			End-Section
+			Section Psalm_122_Verses
+				Title role desig sid psa122.title End-Title
+				Hymn sid psa122.v1.text End-Hymn
+				Reading sid psa122.v2.text End-Reading
+				Reading sid psa122.v3.text sid psa122.v4.text End-Reading
+			End-Section
+			Section Psalm_123_Verses
+				Title role desig sid psa123.title End-Title
+				Hymn sid psa123.v1.text End-Hymn
+				Reading sid psa123.v2.text End-Reading
+				Reading sid psa123.v3.text End-Reading
+				Reading sid psa123.v4.text End-Reading
+				Reading sid psa123.v5.text End-Reading
+				Reading sid psa123.v6.text End-Reading
+				Reading sid psa123.v7.text End-Reading
+				Reading sid psa123.v8.text End-Reading
+			End-Section
+		End-Section
+		Break line End_Break
+		Insert_section middle End-Insert
+		Section stanza2
+			Section Psalm_124_Verses
+				Title role desig sid psa124.title End-Title
+				Hymn sid psa124.v1.text End-Hymn
+				Reading sid psa124.v2.text End-Reading
+				Reading sid psa124.v3.text End-Reading
+				Reading sid psa124.v4.text End-Reading
+				Reading sid psa124.v5.text End-Reading
+			End-Section
+			Section Psalm_125_Verses
+				Title role desig sid psa125.title End-Title
+				Hymn sid psa125.v1.text End-Hymn
+				Reading sid psa125.v2a.text End-Reading
+				Reading sid psa125.v2b.text End-Reading
+				Reading sid psa125.v3.text End-Reading
+				Reading sid psa125.v4.text End-Reading
+				Reading sid psa125.v5.text End-Reading
+				Reading sid psa125.v6a.text End-Reading
+				Reading sid psa125.v6b.text End-Reading
+			End-Section
+			Section Psalm_126_Verses
+				Title role desig sid psa126.title End-Title
+				Hymn sid psa126.v1.text End-Hymn
+				Reading sid psa126.v2.text End-Reading
+				Reading sid psa126.v3.text End-Reading
+				Reading sid psa126.v4.text End-Reading
+				Reading sid psa126.v5.text End-Reading
+			End-Section
+			Section Psalm_127_Verses
+				Title role desig sid psa127.title End-Title
+				Hymn sid psa127.v1.text End-Hymn
+				Reading sid psa127.v2.text End-Reading
+				Reading sid psa127.v3.text End-Reading
+				Reading sid psa127.v4.text End-Reading
+				Reading sid psa127.v5.text End-Reading
+				Reading sid psa127.v6.text End-Reading
+			End-Section
+			Section Psalm_128_Verses
+				Title role desig sid psa128.title End-Title
+				Hymn sid psa128.v1.text End-Hymn
+				Reading sid psa128.v2.text End-Reading
+				Reading sid psa128.v3.text End-Reading
+				Reading sid psa128.v4.text End-Reading
+				Reading sid psa128.v5.text End-Reading
+				Reading sid psa128.v6.text End-Reading
+				Reading sid psa128.v7.text End-Reading
+				Reading sid psa128.v8.text End-Reading
+			End-Section
+		End-Section
+		Break line End_Break
+		Insert_section middle End-Insert
+		Section stanza3
+			Section Psalm_129_Verses
+				Title role desig sid psa129.title End-Title
+				Hymn sid psa129.v1.text sid psa129.v2a.text End-Hymn
+				Reading sid psa129.v2b.text End-Reading
+				Reading sid psa129.v3.text sid psa129.v4.text End-Reading
+				Reading sid psa129.v5.text sid psa129.v6a.text End-Reading
+				Reading sid psa129.v6b.text End-Reading
+				Reading sid psa129.v7.text sid psa129.v8.text End-Reading
+			End-Section
+			Section Psalm_130_Verses
+				Title role desig sid psa130.title End-Title
+				Hymn sid psa130.v1a.text End-Hymn
+				Reading sid psa130.v1b.text End-Reading
+				Reading sid psa130.v2.text End-Reading
+				Reading sid psa130.v3.text End-Reading
+			End-Section
+			Section Psalm_131_Verses
+				Title role desig sid psa131.title End-Title
+				Hymn sid psa131.v1.text End-Hymn
+				Reading sid psa131.v2.text End-Reading
+				Reading sid psa131.v3.text End-Reading
+				Reading sid psa131.v4.text End-Reading
+				Reading sid psa131.v5.text End-Reading
+				Reading sid psa131.v6.text End-Reading
+				Reading sid psa131.v7.text End-Reading
+				Reading sid psa131.v8.text End-Reading
+				Reading sid psa131.v9.text End-Reading
+				Reading sid psa131.v10.text End-Reading
+				Reading sid psa131.v11a.text End-Reading
+				Reading sid psa131.v11b.text End-Reading
+				Reading sid psa131.v12a.text End-Reading
+				Reading sid psa131.v12b.text End-Reading
+				Reading sid psa131.v13.text End-Reading
+				Reading sid psa131.v14.text End-Reading
+				Reading sid psa131.v15.text End-Reading
+				Reading sid psa131.v16.text End-Reading
+				Reading sid psa131.v17.text End-Reading
+				Reading sid psa131.v18.text End-Reading
+			End-Section
+			Section Psalm_133_Verses
+				Title role desig sid psa133.title End-Title
+				Hymn sid psa133.v1.text End-Hymn
+				Reading sid psa133.v2.text End-Reading
+				Reading sid psa133.v3.text End-Reading
+			End-Section
+			Section Psalm_133_Verses
+				Title role desig sid psa133.title End-Title
+				Hymn sid psa133.v1.text End-Hymn
+				Reading sid psa133.v2.text End-Reading
+				Reading sid psa133.v3.text End-Reading
+			End-Section
+		End-Section
+		Break line End_Break
+	End-Section
+End-Template

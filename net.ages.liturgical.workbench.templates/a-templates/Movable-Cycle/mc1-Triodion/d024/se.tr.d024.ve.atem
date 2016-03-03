@@ -1,0 +1,73 @@
+Template se.tr.d024.ve 
+
+Status Draft
+
+	import ps_gr_GR_cog.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+	
+	Head 
+		Set_Date month 3 day 15 End_Date
+			Page_Header_Even
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ma End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	Section Instance01
+		Insert_section VE._01_Beginning__.vespers End-Insert
+		Break page End_Break
+		Insert_section PS._01_Vespers__.full_kathisma End-Insert
+		Break page End_Break
+		Insert_section VE._02_Kekragaria__.mode2__.for6 End-Insert
+		Insert_section VE._03_Stichera__.tr__.p_123as567 End-Insert
+		Insert_section VE._03_Stichera__.me__.p_123as8910 End-Insert
+		Insert_section VE._03_Stichera__.gloryboth__.metheotokion End-Insert
+		Insert_section VE._04_Middle__.noentrance End-Insert
+		Insert_section VE._05_Readings__.reader End-Insert
+		Insert_section VE._06_Litanies__.noektenia End-Insert
+		Insert_section VE._08_Aposticha__.tr__.weekday_ End-Insert
+		Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
+		Insert_section AP.lent__.ve End-Insert
+		Insert_section VE._10_End__.lent_.part1 End-Insert
+		Section End_lent_part2
+			Actor sid Reader End-Actor
+			Reading sid res01<r>sid Twelve</>End-Reading
+			Reading sid ho.s07_gr_GR_cog.hoTY.Key0501.text sid res04 End-Reading
+			Reading sid psa112.v2.text<r>sid Thrice</>End-Reading
+			Title role desig sid psa33.title End-Title
+			Reading sid psa33.text End-Reading
+		//	Title role desig sid psa144.title End-Title
+		//	Reading sid psa144.text End-Reading
+		End-Section
+		Insert_section VE._10_End__.lent_.part3 End-Insert
+		Insert_section VE._11_Dismissal__.nocommemoration End-Insert
+	End-Section
+
+
+
+End-Template

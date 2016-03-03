@@ -1649,13 +1649,32 @@ Template MA
 					Title role desig sid Kathisma2 sid TouTriodiou End-Title
 					Title<Tmode>rid trMA.Kathisma21.mode</><Tmelody>rid trMA.Kathisma21.melody</>End-Title
 					Hymn rid trMA.Kathisma21.text @ver End-Hymn
-					when-name-of-day-is
-						Monday, Tuesday, Thursday use:
-							Title sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+					when-exists rid trMA.Kathisma23.text
+						use:
+							Title sid Doxa<Tdesig>sid Eteron</>End-Title
+							Title<Tmode>rid trMA.Kathisma22.mode</><Tmelody>rid trMA.Kathisma22.melody</>End-Title
 							Hymn rid trMA.Kathisma22.text @ver End-Hymn
-						Wednesday, Friday use:
-							Title sid DoxaKaiNyn<Tdesig>sid Stavrotheotokion</>End-Title
-							Hymn rid trMA.Kathisma22.text @ver End-Hymn
+							when-name-of-day-is
+								Monday, Tuesday, Thursday use:
+									Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+									Title<Tmode>rid trMA.Kathisma23.mode</><Tmelody>rid trMA.Kathisma23.melody</>End-Title
+									Hymn rid trMA.Kathisma23.text @ver End-Hymn
+								Wednesday, Friday use:
+									Title sid KaiNyn<Tdesig>sid Stavrotheotokion</>End-Title
+									Title<Tmode>rid trMA.Kathisma23.mode</><Tmelody>rid trMA.Kathisma23.melody</>End-Title
+									Hymn rid trMA.Kathisma23.text @ver End-Hymn
+							end-when
+						otherwise use:
+							when-name-of-day-is
+								Monday, Tuesday, Thursday use:
+									Title sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+									Title<Tmode>rid trMA.Kathisma22.mode</><Tmelody>rid trMA.Kathisma22.melody</>End-Title
+									Hymn rid trMA.Kathisma22.text @ver End-Hymn
+								Wednesday, Friday use:
+									Title sid DoxaKaiNyn<Tdesig>sid Stavrotheotokion</>End-Title
+									Title<Tmode>rid trMA.Kathisma22.mode</><Tmelody>rid trMA.Kathisma22.melody</>End-Title
+									Hymn rid trMA.Kathisma22.text @ver End-Hymn
+							end-when
 					end-when
 				End-Section
 			End-Section
