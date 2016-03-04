@@ -18,13 +18,13 @@ Status Review
 
 	Section _01_Vespers__
 		Section full_kathisma
+			Actor sid Reader End-Actor
 			when-movable-cycle-day-is //lenten vespers not PL
 				24, 25, 27, 31, 32, 34, 38, 39, 41, 45, 46, 48, 59, 60, 62 
 				use: 
 					Insert_section Kathisma18 End-Insert
 					Insert_section end__.before_litany End-Insert
 					Insert_section LN.ShortLitany01 End-Insert
-					Break line End_Break
 				52 //week 5
 				use:
 				53 //week 5
@@ -43,11 +43,17 @@ Status Review
 						Saturday use: 
 					end-when
 			end-when
+			Break line End_Break
 		End-Section
 		Section kathisma1_stanza1
 			Actor sid Reader End-Actor
 			Insert_section Kathisma01.stanza1 End-Insert
 			Insert_section end__.before_litany End-Insert
+			Insert_section LN.ShortLitany01 End-Insert
+		End-Section
+		Section notice
+			Rubric sid client_gr_GR_cog.cl.ho.s10.R002 End-Rubric 
+			Rubric sid client_gr_GR_cog.cl.ho.s10.R003 End-Rubric 
 		End-Section
 	End-Section
 
@@ -66,14 +72,16 @@ Status Review
 		Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
 	End-Section
 	Section middle
-		Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+		Title<Trubric>sid DoxaKaiNyn sid Allilouia</>End-Title
+		Hymn sid DoxaPatri.text sid KaiNynKaiAei.text End-Hymn
 		Reading sid Allilouia3.text sid DoxaSoiOTheos1<r>sid Thrice</>End-Reading
 		Reading sid res06 End-Reading
 		Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
 	End-Section
 	Section end__
 		Section before_litany
-			Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+			Title<Trubric>sid DoxaKaiNyn sid Allilouia</>End-Title
+			Hymn sid DoxaPatri.text sid KaiNynKaiAei.text End-Hymn
 			Reading sid Allilouia3.text sid DoxaSoiOTheos1<r>sid Thrice</>End-Reading
 			Reading sid IElpisImonKyrie End-Reading
 		End-Section
@@ -86,6 +94,7 @@ Status Review
 	Section Kathisma01
 		Title<Tdesig>sid kathisma_1.title</>End-Title
 		Section stanza1
+			Title<Trubric>sid Stasis1</>End-Title
 			Section Psalm_1_Verses
 				Title role desig sid psa1.title End-Title
 				Hymn sid psa1.v1.text End-Hymn
@@ -124,6 +133,7 @@ Status Review
 		End-Section
 		Insert_section middle End-Insert
 		Section stanza2
+			Title<Trubric>sid Stasis2</>End-Title
 			Section Psalm_4_Verses
 				Title role desig sid psa4.title End-Title
 				Hymn sid psa4.v2.text End-Hymn
@@ -166,6 +176,7 @@ Status Review
 		End-Section
 		Insert_section middle End-Insert
 		Section stanza3
+			Title<Trubric>sid Stasis3</>End-Title
 			Section Psalm_7_Verses
 				Title role desig sid psa7.title End-Title
 				Hymn sid psa7.v2.text End-Hymn
@@ -806,6 +817,7 @@ Status Review
 	Section Kathisma18
 		Title<Tdesig>sid kathisma_18.title</>End-Title
 		Section stanza1
+			Title<Trubric>sid Stasis1</>End-Title
 			Section Psalm_119_Verses
 				Title role desig sid psa119.title End-Title
 				Hymn sid psa119.v1.text End-Hymn
@@ -856,9 +868,9 @@ Status Review
 				Reading sid psa123.v8.text End-Reading
 			End-Section
 		End-Section
-		Break line End_Break
 		Insert_section middle End-Insert
 		Section stanza2
+			Title<Trubric>sid Stasis2</>End-Title
 			Section Psalm_124_Verses
 				Title role desig sid psa124.title End-Title
 				Hymn sid psa124.v1.text End-Hymn
@@ -907,9 +919,9 @@ Status Review
 				Reading sid psa128.v8.text End-Reading
 			End-Section
 		End-Section
-		Break line End_Break
 		Insert_section middle End-Insert
 		Section stanza3
+			Title<Trubric>sid Stasis3</>End-Title
 			Section Psalm_129_Verses
 				Title role desig sid psa129.title End-Title
 				Hymn sid psa129.v1.text sid psa129.v2a.text End-Hymn
@@ -962,6 +974,5 @@ Status Review
 				Reading sid psa133.v3.text End-Reading
 			End-Section
 		End-Section
-		Break line End_Break
 	End-Section
 End-Template

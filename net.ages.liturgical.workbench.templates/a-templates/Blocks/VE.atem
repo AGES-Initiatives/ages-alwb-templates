@@ -54,11 +54,11 @@ Status Review
 						Section enarxis
 							Actor sid Priest End-Actor
 							Dialog sid enarxis01 End-Dialog
+							Dialog<i>sid res04p</>End-Dialog
 						End-Section
 						Section introductorypsalm
 							when-movable-cycle-day-is 
 								78 thru 108 use:
-									Dialog<i>sid res04p</>End-Dialog
 									Actor sid Hierarch End-Actor
 									Insert_section PE.ChristIsRisen.once End-Insert
 									Actor sid Choir End-Actor
@@ -66,7 +66,6 @@ Status Review
 									Actor sid Hierarch End-Actor
 								otherwise use:
 									Actor sid Hierarch End-Actor
-									Dialog sid res04 End-Dialog
 									Reading sid DefteProskinisomen1 End-Reading
 									Reading sid DefteProskinisomen2 End-Reading
 									Reading sid DefteProskinisomen3 End-Reading
@@ -92,10 +91,19 @@ Status Review
 						End-Section //Part3
 				end-when
 			End-Section
+			Section lent_weekday
+				Rubric sid cl.ho.s10.R001 End-Rubric
+				Insert_section vespers End-Insert
+			End-Section
+		End-Section
+		Section lent_weekday
+			Rubric sid cl.ho.s10.R001 End-Rubric
+			Insert_section vespers End-Insert
 		End-Section
 		Section liturgy
 			Actor sid Priest End-Actor
 			Dialog sid enarxis02 End-Dialog
+			Dialog<i>sid res04p</>End-Dialog
 			Insert_section vespers.introductorypsalm End-Insert
 			Insert_section vespers.litany End-Insert
 		End-Section
@@ -116,10 +124,10 @@ Status Review
 					Section enarxis
 						Actor sid Priest End-Actor
 						Dialog sid enarxis01 End-Dialog
+						Dialog<i>sid res04p</>End-Dialog
 					End-Section
 					Section introductorypsalm
 						when-movable-cycle-day-is 78 thru 108 use:
-							Dialog<i>sid res04p</>End-Dialog
 							Actor sid Priest End-Actor
 							Insert_section PE.ChristIsRisen.once End-Insert
 							Actor sid Choir End-Actor
@@ -127,7 +135,6 @@ Status Review
 							Actor sid Reader End-Actor
 						otherwise use:
 							Actor sid Reader End-Actor
-							Dialog sid res04 End-Dialog
 							Reading sid DefteProskinisomen1 End-Reading
 							Reading sid DefteProskinisomen2 End-Reading
 							Reading sid DefteProskinisomen3 End-Reading
