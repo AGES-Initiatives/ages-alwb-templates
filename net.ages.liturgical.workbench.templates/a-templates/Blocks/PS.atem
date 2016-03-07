@@ -6,6 +6,7 @@ Status Review
 	
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
+	import lectionaries_gr_GR_cog.*
 	import misc_gr_GR_cog.*
 	import prayers_gr_GR_cog.*
 	import rubrical_gr_GR_cog.*
@@ -17,53 +18,1503 @@ Status Review
 	import roles.*
 
 	Section _01_Vespers__
-		Section full_kathisma
-			Actor sid Reader End-Actor
-			when-movable-cycle-day-is //lenten vespers not PL
-				24, 25, 27, 31, 32, 34, 38, 39, 41, 45, 46, 48, 59, 60, 62 
-				use: 
-					Insert_section Kathisma18 End-Insert
-					Insert_section end__.before_litany End-Insert
-					Insert_section LN.ShortLitany01 End-Insert
-				52 //week 5
-				use:
-				53 //week 5
-				use:
+		Section kathisma1_stanza1__
+			Section rubric
+				Rubric sid lecPS.rubric_kathisma11 End-Rubric
+			End-Section
+			Section actual
+				Actor sid Reader End-Actor
+				Insert_section Kathisma01.stanza1 End-Insert
+				Insert_section end__.before_litany End-Insert
+				Insert_section LN.ShortLitany01 End-Insert
+			End-Section
+		End-Section
+		Section kathisma
+			when-movable-cycle-day-is
+				24, 25, 27, 31, 32, 34, 38, 39, 41, 45, 46, 48, 59, 60, 62 use: 
+					Section lent12346
+						Actor sid Reader End-Actor
+						Insert_section Kathisma18 End-Insert
+						Insert_section end__.before_litany End-Insert
+						Insert_section LN.ShortLitany01 End-Insert
+					End-Section
+				26, 28, 33, 35, 40, 42, 47, 49, 56, 61, 63, 66, 67, 68 use:
+					Section presantified
+					//	Rubric sid lecPS.rubric_presanctified sid anum18 End-Rubric
+					End-Section
+				52 use: 
+					Section lent5_onMonday	
+						Actor sid Reader End-Actor
+						Insert_section Kathisma10 End-Insert
+						Insert_section end__.before_litany End-Insert
+						Insert_section LN.ShortLitany01 End-Insert
+					End-Section
+				53 use: 
+					Section lent5_onTuesday
+						Actor sid Reader End-Actor
+						Insert_section Kathisma19 End-Insert
+						Insert_section end__.before_litany End-Insert
+						Insert_section LN.ShortLitany01 End-Insert
+					End-Section
+				54 use: //presanctified
+					Section lent5_onWednesayPL
+					//	Rubric sid lecPS.rubric_presanctified sid anum18 End-Rubric
+					End-Section
+				55 use: //presanctified
+					Section lent5_onThursdayPL
+					//	Rubric sid lecPS.rubric_presanctified sid anum18 End-Rubric
+					End-Section
 				otherwise use:
 					when-name-of-day-is
 						Sunday use: 
-							Insert_section Kathisma01 End-Insert
-							Insert_section end__.before_litany End-Insert
-							Insert_section LN.ShortLitany01 End-Insert
-						Monday use:
+							Section onSaturday
+								Actor sid Reader End-Actor
+								Insert_section Kathisma01 End-Insert
+								Insert_section end__.before_litany End-Insert
+								Insert_section LN.ShortLitany01 End-Insert
+							End-Section
+						Monday use: 
+							Section onSunday
+								Rubric sid lecPS.rubric_nokathisma End-Rubric
+							End-Section
 						Tuesday use: 
+							Section onMonday
+								Actor sid Reader End-Actor
+								Insert_section Kathisma06 End-Insert
+								Insert_section end__.before_litany End-Insert
+								Insert_section LN.ShortLitany01 End-Insert
+							End-Section
 						Wednesday use: 
+							Section onTuesday
+								Actor sid Reader End-Actor
+								Insert_section Kathisma09 End-Insert
+								Insert_section end__.before_litany End-Insert
+								Insert_section LN.ShortLitany01 End-Insert
+							End-Section
 						Thursday use: 
+							Section onWednesday
+								Actor sid Reader End-Actor
+								Insert_section Kathisma12 End-Insert
+								Insert_section end__.before_litany End-Insert
+								Insert_section LN.ShortLitany01 End-Insert
+							End-Section
 						Friday use: 
+							Section onThursday
+								Actor sid Reader End-Actor
+								Insert_section Kathisma15 End-Insert
+								Insert_section end__.before_litany End-Insert
+								Insert_section LN.ShortLitany01 End-Insert
+							End-Section
 						Saturday use: 
-					end-when
+							Section onFriday
+								Actor sid Reader End-Actor
+								Insert_section Kathisma18 End-Insert
+								Insert_section end__.before_litany End-Insert
+								Insert_section LN.ShortLitany01 End-Insert
+							End-Section
+					end-when		
 			end-when
-			Break line End_Break
-		End-Section
-		Section kathisma1_stanza1
-			Actor sid Reader End-Actor
-			Insert_section Kathisma01.stanza1 End-Insert
-			Insert_section end__.before_litany End-Insert
-			Insert_section LN.ShortLitany01 End-Insert
 		End-Section
 		Section notice
 			Rubric sid client_gr_GR_cog.cl.ho.s10.R002 End-Rubric 
 			Rubric sid client_gr_GR_cog.cl.ho.s10.R003 End-Rubric 
 		End-Section
+		Section rubric
+			when-movable-cycle-day-is
+				24, 25, 27, 31, 32, 34, 38, 39, 41, 45, 46, 48, 59, 60, 62 use: 
+					Section lent12346
+						Rubric sid lecPS.rubric_kathisma sid anum18 sid lecPS.rubric_litany End-Rubric
+					End-Section
+				26, 28, 33, 35, 40, 42, 47, 49, 56, 61, 63, 66, 67, 68 use:
+					Section presantified
+						Rubric sid lecPS.rubric_presanctified sid anum18 End-Rubric
+					End-Section
+				52 use: 
+					Section lent5_onMonday	
+						Rubric sid lecPS.rubric_kathisma sid anum10 sid lecPS.rubric_litany End-Rubric
+					End-Section
+				53 use: 
+					Section lent5_onTuesday
+						Rubric sid lecPS.rubric_kathisma sid anum19 sid lecPS.rubric_litany End-Rubric
+					End-Section
+				54 use: //presanctified
+					Section lent5_onWednesayPL
+						Rubric sid lecPS.rubric_presanctified sid anum18 End-Rubric
+					End-Section
+				55 use: //presanctified
+					Section lent5_onThursdayPL
+						Rubric sid lecPS.rubric_presanctified sid anum18 End-Rubric
+					End-Section
+				otherwise use:
+					when-name-of-day-is
+						Sunday use: 
+							Section onSaturday
+								Rubric sid lecPS.rubric_kathisma sid anum1 sid lecPS.rubric_litany End-Rubric
+							End-Section
+						Monday use: 
+							Section onSunday
+								Rubric sid lecPS.rubric_nokathisma End-Rubric
+							End-Section
+						Tuesday use: 
+							Section onMonday
+								Rubric sid lecPS.rubric_kathisma sid anum6 sid lecPS.rubric_litany End-Rubric
+							End-Section
+						Wednesday use: 
+							Section onTuesday
+								Rubric sid lecPS.rubric_kathisma sid anum9 sid lecPS.rubric_litany End-Rubric
+							End-Section
+						Thursday use: 
+							Section onWednesday
+								Rubric sid lecPS.rubric_kathisma sid anum12 sid lecPS.rubric_litany End-Rubric
+							End-Section
+						Friday use: 
+							Section onThursday
+								Rubric sid lecPS.rubric_kathisma sid anum15 sid lecPS.rubric_litany End-Rubric
+							End-Section
+						Saturday use: 
+							Section onFriday
+								Rubric sid lecPS.rubric_kathisma sid anum18 sid lecPS.rubric_litany End-Rubric
+							End-Section
+					end-when		
+			end-when
+		End-Section
 	End-Section
 
-	Section Matins__
-		Section first
+	Section _02_Matins_1st__
+		Section kathisma__
+			Section has_litany
+				when-movable-cycle-day-is
+					65 use: 			
+						Section hw_monday
+							Actor sid Reader End-Actor
+							Insert_section intro End-Insert
+							Insert_section Kathisma04 End-Insert
+							Insert_section end__.before_litany End-Insert
+							Insert_section LN.ShortLitany01 End-Insert
+						End-Section
+					66 use: 			
+						Section hw_tuesday
+							Actor sid Reader End-Actor
+							Insert_section intro End-Insert
+							Insert_section Kathisma09 End-Insert
+							Insert_section end__.before_litany End-Insert
+							Insert_section LN.ShortLitany01 End-Insert
+						End-Section
+					67 use: 			
+						Section hw_wednesday
+							Actor sid Reader End-Actor
+							Insert_section intro End-Insert
+							Insert_section Kathisma14 End-Insert
+							Insert_section end__.before_litany End-Insert
+							Insert_section LN.ShortLitany01 End-Insert
+						End-Section
+					otherwise use:
+						when-name-of-day-is
+							Sunday use: 
+								Section sunday
+									Actor sid Reader End-Actor
+									Insert_section intro End-Insert
+									Insert_section Kathisma02 End-Insert
+									Insert_section end__.before_litany End-Insert
+									Insert_section LN.ShortLitany01 End-Insert
+								End-Section
+							Monday use: 
+								Section monday
+									Actor sid Reader End-Actor
+									Insert_section intro End-Insert
+									Insert_section Kathisma04 End-Insert
+									Insert_section end__.before_litany End-Insert
+									Insert_section LN.ShortLitany01 End-Insert
+								End-Section
+							Tuesday use: 
+								Section tuesday
+									Actor sid Reader End-Actor
+									Insert_section intro End-Insert
+									Insert_section Kathisma07 End-Insert
+									Insert_section end__.before_litany End-Insert
+									Insert_section LN.ShortLitany01 End-Insert
+								End-Section
+							Wednesday use: 
+								Section wednesday
+									Actor sid Reader End-Actor
+									Insert_section intro End-Insert
+									Insert_section Kathisma10 End-Insert
+									Insert_section end__.before_litany End-Insert
+									Insert_section LN.ShortLitany01 End-Insert
+								End-Section
+							Thursday use: 
+								Section thursday
+									Actor sid Reader End-Actor
+									Insert_section intro End-Insert
+									Insert_section Kathisma13 End-Insert
+									Insert_section end__.before_litany End-Insert
+									Insert_section LN.ShortLitany01 End-Insert
+								End-Section
+							Friday use: 
+								Section friday
+									Actor sid Reader End-Actor
+									Insert_section intro End-Insert
+									Insert_section Kathisma19 End-Insert
+									Insert_section end__.before_litany End-Insert
+									Insert_section LN.ShortLitany01 End-Insert
+								End-Section
+							Saturday use: 
+								Section saturday
+									Actor sid Reader End-Actor
+									Insert_section intro End-Insert
+									Insert_section Kathisma16 End-Insert
+									Insert_section end__.before_litany End-Insert
+									Insert_section LN.ShortLitany01 End-Insert
+								End-Section
+						end-when
+				end-when		
+			End-Section
+			Section no_litany
+				when-movable-cycle-day-is
+					23, 30, 37, 44, 51, 58 use: 
+						Section lent123456_monday
+							Actor sid Reader End-Actor
+							Insert_section intro End-Insert
+							Insert_section Kathisma04 End-Insert
+							Insert_section end__.no_litany End-Insert
+						End-Section
+					24, 31, 38, 45, 59 use: 
+						Section lent12346_tuesday
+							Actor sid Reader End-Actor
+							Insert_section intro End-Insert
+							Insert_section Kathisma10 End-Insert
+							Insert_section end__.no_litany End-Insert
+						End-Section
+					25, 32, 39, 46, 60 use: 
+						Section lent12346_wednesday
+							Actor sid Reader End-Actor
+							Insert_section intro End-Insert
+							Insert_section Kathisma19 End-Insert
+							Insert_section end__.no_litany End-Insert
+						End-Section
+					26, 33, 40, 47, 61 use: 
+						Section lent12346_thursday
+							Actor sid Reader End-Actor
+							Insert_section intro End-Insert
+							Insert_section Kathisma06 End-Insert
+							Insert_section end__.no_litany End-Insert
+						End-Section
+					27, 34, 41, 48, 55, 62 use: 
+						Section lent123456_friday
+							Actor sid Reader End-Actor
+							Insert_section intro End-Insert
+							Insert_section Kathisma13 End-Insert
+							Insert_section end__.no_litany End-Insert
+						End-Section
+					52 use: 
+						Section lent5_tuesday
+							Actor sid Reader End-Actor
+							Insert_section intro End-Insert
+							Insert_section Kathisma11 End-Insert
+							Insert_section end__.no_litany End-Insert
+						End-Section
+					53 use: 
+						Section lent5_wednesday
+							Actor sid Reader End-Actor
+							Insert_section intro End-Insert
+							Insert_section Kathisma20 End-Insert
+							Insert_section end__.no_litany End-Insert
+						End-Section
+					54 use: 
+						Section lent5_thursday
+							Actor sid Reader End-Actor
+							Insert_section intro End-Insert
+							Insert_section Kathisma08 End-Insert
+							Insert_section end__.no_litany End-Insert
+						End-Section
+				//	65 use: 			
+				//		Section hw_monday
+				//		End-Section
+				//	66 use: 			
+				//		Section hw_tuesday
+				//		End-Section
+				//	67 use: 			
+				//		Section hw_wednesday
+				//		End-Section
+					otherwise use:
+						when-name-of-day-is
+				//			Sunday use: 
+				//				Section sunday
+				//				End-Section
+							Monday use: 
+								Section monday
+									Actor sid Reader End-Actor
+									Insert_section intro End-Insert
+									Insert_section Kathisma04 End-Insert
+									Insert_section end__.no_litany End-Insert
+								End-Section
+							Tuesday use: 
+								Section tuesday
+									Actor sid Reader End-Actor
+									Insert_section intro End-Insert
+									Insert_section Kathisma07 End-Insert
+									Insert_section end__.no_litany End-Insert
+								End-Section
+							Wednesday use: 
+								Section wednesday
+									Actor sid Reader End-Actor
+									Insert_section intro End-Insert
+									Insert_section Kathisma10 End-Insert
+									Insert_section end__.no_litany End-Insert
+								End-Section
+							Thursday use: 
+								Section thursday
+									Actor sid Reader End-Actor
+									Insert_section intro End-Insert
+									Insert_section Kathisma13 End-Insert
+									Insert_section end__.no_litany End-Insert
+								End-Section
+							Friday use: 
+								Section friday
+									Actor sid Reader End-Actor
+									Insert_section intro End-Insert
+									Insert_section Kathisma19 End-Insert
+									Insert_section end__.no_litany End-Insert
+								End-Section
+							Saturday use: 
+								Section saturday
+									Actor sid Reader End-Actor
+									Insert_section intro End-Insert
+									Insert_section Kathisma16 End-Insert
+									Insert_section end__.no_litany End-Insert
+								End-Section
+						end-when		
+				end-when
+			End-Section
 		End-Section
-		Section second
+		Section rubric__
+			Section has_litany
+				when-movable-cycle-day-is
+					65 use: 			
+						Section hw_monday
+							Rubric sid lecPS.rubric_kathisma sid anum4 sid lecPS.rubric_litany End-Rubric
+						End-Section
+					66 use: 			
+						Section hw_tuesday
+							Rubric sid lecPS.rubric_kathisma sid anum9 sid lecPS.rubric_litany End-Rubric
+						End-Section
+					67 use: 			
+						Section hw_wednesday
+							Rubric sid lecPS.rubric_kathisma sid anum14 sid lecPS.rubric_litany End-Rubric
+						End-Section
+					otherwise use:
+						when-name-of-day-is
+							Sunday use: 
+								Section sunday
+									Rubric sid lecPS.rubric_kathisma sid anum2 sid lecPS.rubric_litany End-Rubric
+								End-Section
+							Monday use: 
+								Section monday
+									Rubric sid lecPS.rubric_kathisma sid anum4 sid lecPS.rubric_litany End-Rubric
+								End-Section
+							Tuesday use: 
+								Section tuesday
+									Rubric sid lecPS.rubric_kathisma sid anum7 sid lecPS.rubric_litany End-Rubric
+								End-Section
+							Wednesday use: 
+								Section wednesday
+									Rubric sid lecPS.rubric_kathisma sid anum10 sid lecPS.rubric_litany End-Rubric
+								End-Section
+							Thursday use: 
+								Section thursday
+									Rubric sid lecPS.rubric_kathisma sid anum13 sid lecPS.rubric_litany End-Rubric
+								End-Section
+							Friday use: 
+								Section friday
+									Rubric sid lecPS.rubric_kathisma sid anum19 sid lecPS.rubric_litany End-Rubric
+								End-Section
+							Saturday use: 
+								Section saturday
+									Rubric sid lecPS.rubric_kathisma sid anum16 sid lecPS.rubric_litany End-Rubric
+								End-Section
+						end-when
+					end-when		
+			End-Section
+			Section no_litany
+				when-movable-cycle-day-is
+					23, 30, 37, 44, 51, 58 use: 
+						Section lent123456_monday
+							Rubric sid lecPS.rubric_kathisma sid anum4 sid lecPS.rubric_nolitany End-Rubric
+						End-Section
+					24, 31, 38, 45, 59 use: 
+						Section lent12346_tuesday
+							Rubric sid lecPS.rubric_kathisma sid anum10 sid lecPS.rubric_nolitany End-Rubric
+						End-Section
+					25, 32, 39, 46, 60 use: 
+						Section lent12346_wednesday
+							Rubric sid lecPS.rubric_kathisma sid anum19 sid lecPS.rubric_nolitany End-Rubric
+						End-Section
+					26, 33, 40, 47, 61 use: 
+						Section lent12346_thursday
+							Rubric sid lecPS.rubric_kathisma sid anum6 sid lecPS.rubric_nolitany End-Rubric
+						End-Section
+					27, 34, 41, 48, 55, 62 use: 
+						Section lent123456_friday
+							Rubric sid lecPS.rubric_kathisma sid anum13 sid lecPS.rubric_nolitany End-Rubric
+						End-Section
+					52 use: 
+						Section lent5_tuesday
+							Rubric sid lecPS.rubric_kathisma sid anum11 sid lecPS.rubric_nolitany End-Rubric
+						End-Section						
+					53 use: 
+						Section lent5_wednesday
+							Rubric sid lecPS.rubric_kathisma sid anum20 sid lecPS.rubric_nolitany End-Rubric
+						End-Section
+					54 use: 
+						Section lent5_thursday
+							Rubric sid lecPS.rubric_kathisma sid anum8 sid lecPS.rubric_nolitany End-Rubric
+						End-Section
+					otherwise use:
+						when-name-of-day-is
+							Sunday use: 
+								Section sunday
+									Rubric sid lecPS.rubric_kathisma sid anum2 sid lecPS.rubric_nolitany End-Rubric
+								End-Section
+							Monday use: 
+								Section monday
+									Rubric sid lecPS.rubric_kathisma sid anum4 sid lecPS.rubric_nolitany End-Rubric
+								End-Section
+							Tuesday use: 
+								Section tuesday
+									Rubric sid lecPS.rubric_kathisma sid anum7 sid lecPS.rubric_nolitany End-Rubric
+								End-Section
+							Wednesday use: 
+								Section wednesday
+									Rubric sid lecPS.rubric_kathisma sid anum10 sid lecPS.rubric_nolitany End-Rubric
+								End-Section
+							Thursday use: 
+								Section thursday
+									Rubric sid lecPS.rubric_kathisma sid anum13 sid lecPS.rubric_nolitany End-Rubric
+								End-Section
+							Friday use: 
+								Section friday
+									Rubric sid lecPS.rubric_kathisma sid anum19 sid lecPS.rubric_nolitany End-Rubric
+								End-Section
+							Saturday use: 
+								Section saturday
+									Rubric sid lecPS.rubric_kathisma sid anum16 sid lecPS.rubric_nolitany End-Rubric
+								End-Section
+						end-when
+				end-when
+			End-Section
 		End-Section
 	End-Section
 
+	Section _03_Matins_2nd__
+		Section kathisma__
+			Section has_litany
+				when-movable-cycle-day-is
+					65 use: 			
+						Section hw_monday
+							Actor sid Reader End-Actor
+							Insert_section intro End-Insert
+							Insert_section Kathisma05 End-Insert
+							Insert_section end__.before_litany End-Insert
+							Insert_section LN.ShortLitany02 End-Insert
+						End-Section
+					66 use: 			
+						Section hw_tuesday
+							Actor sid Reader End-Actor
+							Insert_section intro End-Insert
+							Insert_section Kathisma10 End-Insert
+							Insert_section end__.before_litany End-Insert
+							Insert_section LN.ShortLitany02 End-Insert
+						End-Section
+					67 use: 			
+						Section hw_wednesday
+							Actor sid Reader End-Actor
+							Insert_section intro End-Insert
+							Insert_section Kathisma15 End-Insert
+							Insert_section end__.before_litany End-Insert
+							Insert_section LN.ShortLitany02 End-Insert
+						End-Section
+					otherwise use:
+						when-name-of-day-is
+							Sunday use: 
+								Section sunday
+									Actor sid Reader End-Actor
+									Insert_section intro End-Insert
+									Insert_section Kathisma03 End-Insert
+									Insert_section end__.before_litany End-Insert
+									Insert_section LN.ShortLitany02 End-Insert
+								End-Section
+							Monday use: 
+								Section monday
+									Actor sid Reader End-Actor
+									Insert_section intro End-Insert
+									Insert_section Kathisma05 End-Insert
+									Insert_section end__.before_litany End-Insert
+									Insert_section LN.ShortLitany02 End-Insert
+								End-Section
+							Tuesday use: 
+								Section tuesday
+									Actor sid Reader End-Actor
+									Insert_section intro End-Insert
+									Insert_section Kathisma08 End-Insert
+									Insert_section end__.before_litany End-Insert
+									Insert_section LN.ShortLitany02 End-Insert
+								End-Section
+							Wednesday use: 
+								Section wednesday
+									Actor sid Reader End-Actor
+									Insert_section intro End-Insert
+									Insert_section Kathisma11 End-Insert
+									Insert_section end__.before_litany End-Insert
+									Insert_section LN.ShortLitany02 End-Insert
+								End-Section
+							Thursday use: 
+								Section thursday
+									Actor sid Reader End-Actor
+									Insert_section intro End-Insert
+									Insert_section Kathisma14 End-Insert
+									Insert_section end__.before_litany End-Insert
+									Insert_section LN.ShortLitany02 End-Insert
+								End-Section
+							Friday use: 
+								Section friday
+									Actor sid Reader End-Actor
+									Insert_section intro End-Insert
+									Insert_section Kathisma20 End-Insert
+									Insert_section end__.before_litany End-Insert
+									Insert_section LN.ShortLitany02 End-Insert
+								End-Section
+							Saturday use: 
+								Section saturday
+									Actor sid Reader End-Actor
+									Insert_section intro End-Insert
+									Insert_section Kathisma17 End-Insert
+									Insert_section end__.before_litany End-Insert
+									Insert_section LN.ShortLitany02 End-Insert
+								End-Section
+						end-when
+				end-when		
+			End-Section
+			Section no_litany
+				when-movable-cycle-day-is
+					23, 30, 37, 44, 51, 58 use: 
+						Section lent123456_monday
+							Actor sid Reader End-Actor
+							Insert_section intro End-Insert
+							Insert_section Kathisma05 End-Insert
+							Insert_section end__.no_litany End-Insert
+						End-Section
+					24, 31, 38, 45, 59 use: 
+						Section lent12346_tuesday
+							Actor sid Reader End-Actor
+							Insert_section intro End-Insert
+							Insert_section Kathisma11 End-Insert
+							Insert_section end__.no_litany End-Insert
+						End-Section
+					25, 32, 39, 46, 60 use: 
+						Section lent12346_wednesday
+							Actor sid Reader End-Actor
+							Insert_section intro End-Insert
+							Insert_section Kathisma20 End-Insert
+							Insert_section end__.no_litany End-Insert
+						End-Section
+					26, 33, 40, 47, 61 use: 
+						Section lent12346_thursday
+							Actor sid Reader End-Actor
+							Insert_section intro End-Insert
+							Insert_section Kathisma07 End-Insert
+							Insert_section end__.no_litany End-Insert
+						End-Section
+					27, 34, 41, 48, 55, 62 use: 
+						Section lent123456_friday
+							Actor sid Reader End-Actor
+							Insert_section intro End-Insert
+							Insert_section Kathisma14 End-Insert
+							Insert_section end__.no_litany End-Insert
+						End-Section
+					52 use: 
+						Section lent5_tuesday
+							Actor sid Reader End-Actor
+							Insert_section intro End-Insert
+							Insert_section Kathisma12 End-Insert
+							Insert_section end__.no_litany End-Insert
+						End-Section
+					53 use: 
+						Section lent5_wednesday
+							Actor sid Reader End-Actor
+							Insert_section intro End-Insert
+							Insert_section Kathisma01 End-Insert
+							Insert_section end__.no_litany End-Insert
+						End-Section
+					54 use: 
+						Section lent5_thursday
+							Rubric sid lecPS.rubric_nokathisma End-Rubric
+						End-Section
+				//	65 use: 			
+				//		Section hw_monday
+				//		End-Section
+				//	66 use: 			
+				//		Section hw_tuesday
+				//		End-Section
+				//	67 use: 			
+				//		Section hw_wednesday
+				//		End-Section
+					otherwise use:
+						when-name-of-day-is
+				//			Sunday use: 
+				//				Section sunday
+				//				End-Section
+							Monday use: 
+								Section monday
+									Actor sid Reader End-Actor
+									Insert_section intro End-Insert
+									Insert_section Kathisma05 End-Insert
+									Insert_section end__.no_litany End-Insert
+								End-Section
+							Tuesday use: 
+								Section tuesday
+									Actor sid Reader End-Actor
+									Insert_section intro End-Insert
+									Insert_section Kathisma08 End-Insert
+									Insert_section end__.no_litany End-Insert
+								End-Section
+							Wednesday use: 
+								Section wednesday
+									Actor sid Reader End-Actor
+									Insert_section intro End-Insert
+									Insert_section Kathisma11 End-Insert
+									Insert_section end__.no_litany End-Insert
+								End-Section
+							Thursday use: 
+								Section thursday
+									Actor sid Reader End-Actor
+									Insert_section intro End-Insert
+									Insert_section Kathisma14 End-Insert
+									Insert_section end__.no_litany End-Insert
+								End-Section
+							Friday use: 
+								Section friday
+									Actor sid Reader End-Actor
+									Insert_section intro End-Insert
+									Insert_section Kathisma20 End-Insert
+									Insert_section end__.no_litany End-Insert
+								End-Section
+							Saturday use: 
+								Section saturday
+									Actor sid Reader End-Actor
+									Insert_section intro End-Insert
+									Insert_section Kathisma17 End-Insert
+									Insert_section end__.no_litany End-Insert
+								End-Section
+						end-when		
+				end-when
+			End-Section
+		End-Section
+		Section rubric__
+			Section has_litany
+				when-movable-cycle-day-is
+					65 use: 			
+						Section hw_monday
+							Rubric sid lecPS.rubric_kathisma sid anum5 sid lecPS.rubric_litany End-Rubric
+						End-Section
+					66 use: 			
+						Section hw_tuesday
+							Rubric sid lecPS.rubric_kathisma sid anum10 sid lecPS.rubric_litany End-Rubric
+						End-Section
+					67 use: 			
+						Section hw_wednesday
+							Rubric sid lecPS.rubric_kathisma sid anum15 sid lecPS.rubric_litany End-Rubric
+						End-Section
+					otherwise use:
+						when-name-of-day-is
+							Sunday use: 
+								Section sunday
+									Rubric sid lecPS.rubric_kathisma sid anum3 sid lecPS.rubric_litany End-Rubric
+								End-Section
+							Monday use: 
+								Section monday
+									Rubric sid lecPS.rubric_kathisma sid anum5 sid lecPS.rubric_litany End-Rubric
+								End-Section
+							Tuesday use: 
+								Section tuesday
+									Rubric sid lecPS.rubric_kathisma sid anum8 sid lecPS.rubric_litany End-Rubric
+								End-Section
+							Wednesday use: 
+								Section wednesday
+									Rubric sid lecPS.rubric_kathisma sid anum11 sid lecPS.rubric_litany End-Rubric
+								End-Section
+							Thursday use: 
+								Section thursday
+									Rubric sid lecPS.rubric_kathisma sid anum14 sid lecPS.rubric_litany End-Rubric
+								End-Section
+							Friday use: 
+								Section friday
+									Rubric sid lecPS.rubric_kathisma sid anum20 sid lecPS.rubric_litany End-Rubric
+								End-Section
+							Saturday use: 
+								Section saturday
+									Rubric sid lecPS.rubric_kathisma sid anum17 sid lecPS.rubric_litany End-Rubric
+								End-Section
+						end-when
+					end-when		
+			End-Section
+			Section no_litany
+				when-movable-cycle-day-is
+					23, 30, 37, 44, 51, 58 use: 
+						Section lent123456_monday
+							Rubric sid lecPS.rubric_kathisma sid anum5 sid lecPS.rubric_nolitany End-Rubric
+						End-Section
+					24, 31, 38, 45, 59 use: 
+						Section lent12346_tuesday
+							Rubric sid lecPS.rubric_kathisma sid anum11 sid lecPS.rubric_nolitany End-Rubric
+						End-Section
+					25, 32, 39, 46, 60 use: 
+						Section lent12346_wednesday
+							Rubric sid lecPS.rubric_kathisma sid anum20 sid lecPS.rubric_nolitany End-Rubric
+						End-Section
+					26, 33, 40, 47, 61 use: 
+						Section lent12346_thursday
+							Rubric sid lecPS.rubric_kathisma sid anum7 sid lecPS.rubric_nolitany End-Rubric
+						End-Section
+					27, 34, 41, 48, 55, 62 use: 
+						Section lent123456_friday
+							Rubric sid lecPS.rubric_kathisma sid anum14 sid lecPS.rubric_nolitany End-Rubric
+						End-Section
+					52 use: 
+						Section lent5_tuesday
+							Rubric sid lecPS.rubric_kathisma sid anum12 sid lecPS.rubric_nolitany End-Rubric
+						End-Section						
+					53 use: 
+						Section lent5_wednesday
+							Rubric sid lecPS.rubric_kathisma sid anum1 sid lecPS.rubric_nolitany End-Rubric
+						End-Section
+					54 use: 
+						Section lent5_thursday
+							Rubric sid lecPS.rubric_nokathisma End-Rubric
+						End-Section
+					otherwise use:
+						when-name-of-day-is
+							Sunday use: 
+								Section sunday
+									Rubric sid lecPS.rubric_kathisma sid anum3 sid lecPS.rubric_nolitany End-Rubric
+								End-Section
+							Monday use: 
+								Section monday
+									Rubric sid lecPS.rubric_kathisma sid anum5 sid lecPS.rubric_nolitany End-Rubric
+								End-Section
+							Tuesday use: 
+								Section tuesday
+									Rubric sid lecPS.rubric_kathisma sid anum8 sid lecPS.rubric_nolitany End-Rubric
+								End-Section
+							Wednesday use: 
+								Section wednesday
+									Rubric sid lecPS.rubric_kathisma sid anum11 sid lecPS.rubric_nolitany End-Rubric
+								End-Section
+							Thursday use: 
+								Section thursday
+									Rubric sid lecPS.rubric_kathisma sid anum14 sid lecPS.rubric_nolitany End-Rubric
+								End-Section
+							Friday use: 
+								Section friday
+									Rubric sid lecPS.rubric_kathisma sid anum20 sid lecPS.rubric_nolitany End-Rubric
+								End-Section
+							Saturday use: 
+								Section saturday
+									Rubric sid lecPS.rubric_kathisma sid anum17 sid lecPS.rubric_nolitany End-Rubric
+								End-Section
+						end-when
+				end-when
+			End-Section
+		End-Section
+	End-Section
+
+	Section _04_Matins_3rd__
+		Section kathisma__
+			Section has_litany
+				when-movable-cycle-day-is
+					65 use: 			
+						Section hw_monday
+							Actor sid Reader End-Actor
+							Insert_section intro End-Insert
+							Insert_section Kathisma06 End-Insert
+							Insert_section end__.before_litany End-Insert
+							Insert_section LN.ShortLitany03 End-Insert
+						End-Section
+					66 use: 			
+						Section hw_tuesday
+							Actor sid Reader End-Actor
+							Insert_section intro End-Insert
+							Insert_section Kathisma11 End-Insert
+							Insert_section end__.before_litany End-Insert
+							Insert_section LN.ShortLitany03 End-Insert
+						End-Section
+					67 use: 			
+						Section hw_wednesday
+							Actor sid Reader End-Actor
+							Insert_section intro End-Insert
+							Insert_section Kathisma16 End-Insert
+							Insert_section end__.before_litany End-Insert
+							Insert_section LN.ShortLitany03 End-Insert
+						End-Section
+					otherwise use:
+						when-name-of-day-is
+							Sunday use: 
+								Section sunday
+									Actor sid Reader End-Actor
+									Insert_section intro End-Insert
+									Insert_section Kathisma17 End-Insert
+							//		Insert_section end__.before_litany End-Insert
+							//		Insert_section LN.ShortLitany03 End-Insert
+								End-Section
+							Monday use: 
+								Section monday
+									Actor sid Reader End-Actor
+									Insert_section intro End-Insert
+									Insert_section Kathisma06 End-Insert
+									Insert_section end__.before_litany End-Insert
+									Insert_section LN.ShortLitany03 End-Insert
+								End-Section
+							Tuesday use: 
+								Section tuesday
+									Actor sid Reader End-Actor
+									Insert_section intro End-Insert
+									Insert_section Kathisma09 End-Insert
+									Insert_section end__.before_litany End-Insert
+									Insert_section LN.ShortLitany03 End-Insert
+								End-Section
+							Wednesday use: 
+								Section wednesday
+									Actor sid Reader End-Actor
+									Insert_section intro End-Insert
+									Insert_section Kathisma12 End-Insert
+									Insert_section end__.before_litany End-Insert
+									Insert_section LN.ShortLitany03 End-Insert
+								End-Section
+							Thursday use: 
+								Section thursday
+									Actor sid Reader End-Actor
+									Insert_section intro End-Insert
+									Insert_section Kathisma15 End-Insert
+									Insert_section end__.before_litany End-Insert
+									Insert_section LN.ShortLitany03 End-Insert
+								End-Section
+							Friday use: 
+								Section friday
+									//no reading
+								End-Section
+							Saturday use: 
+								Section saturday
+									//no reading
+								End-Section
+						end-when
+				end-when		
+			End-Section
+			Section no_litany
+				when-movable-cycle-day-is
+					23, 30, 37, 44, 51, 58 use: 
+						Section lent123456_monday
+							Actor sid Reader End-Actor
+							Insert_section intro End-Insert
+							Insert_section Kathisma06 End-Insert
+							Insert_section end__.no_litany End-Insert
+						End-Section
+					24, 31, 38, 45, 59 use: 
+						Section lent12346_tuesday
+							Actor sid Reader End-Actor
+							Insert_section intro End-Insert
+							Insert_section Kathisma12 End-Insert
+							Insert_section end__.no_litany End-Insert
+						End-Section
+					25, 32, 39, 46, 60 use: 
+						Section lent12346_wednesday
+							Actor sid Reader End-Actor
+							Insert_section intro End-Insert
+							Insert_section Kathisma01 End-Insert
+							Insert_section end__.no_litany End-Insert
+						End-Section
+					26, 33, 40, 47, 61 use: 
+						Section lent12346_thursday
+							Actor sid Reader End-Actor
+							Insert_section intro End-Insert
+							Insert_section Kathisma08 End-Insert
+							Insert_section end__.no_litany End-Insert
+						End-Section
+					27, 34, 41, 48, 55, 62 use: 
+						Section lent123456_friday
+							Actor sid Reader End-Actor
+							Insert_section intro End-Insert
+							Insert_section Kathisma15 End-Insert
+							Insert_section end__.no_litany End-Insert
+						End-Section
+					52 use: 
+						Section lent5_tuesday
+							Actor sid Reader End-Actor
+							Insert_section intro End-Insert
+							Insert_section Kathisma13 End-Insert
+							Insert_section end__.no_litany End-Insert
+						End-Section
+					53 use: 
+						Section lent5_wednesday
+							Actor sid Reader End-Actor
+							Insert_section intro End-Insert
+							Insert_section Kathisma02 End-Insert
+							Insert_section end__.no_litany End-Insert
+						End-Section
+					54 use: 
+						Section lent5_thursday
+							Rubric sid lecPS.rubric_nokathisma End-Rubric
+						End-Section
+				//	65 use: 			
+				//		Section hw_monday
+				//		End-Section
+				//	66 use: 			
+				//		Section hw_tuesday
+				//		End-Section
+				//	67 use: 			
+				//		Section hw_wednesday
+				//		End-Section
+					otherwise use:
+						when-name-of-day-is
+							Sunday use: 
+								Section sunday
+									Actor sid Reader End-Actor
+									Insert_section intro End-Insert
+									Insert_section Kathisma17 End-Insert
+								End-Section
+							Monday use: 
+								Section monday
+									Actor sid Reader End-Actor
+									Insert_section intro End-Insert
+									Insert_section Kathisma06 End-Insert
+									Insert_section end__.no_litany End-Insert
+								End-Section
+							Tuesday use: 
+								Section tuesday
+									Actor sid Reader End-Actor
+									Insert_section intro End-Insert
+									Insert_section Kathisma09 End-Insert
+									Insert_section end__.no_litany End-Insert
+								End-Section
+							Wednesday use: 
+								Section wednesday
+									Actor sid Reader End-Actor
+									Insert_section intro End-Insert
+									Insert_section Kathisma12 End-Insert
+									Insert_section end__.no_litany End-Insert
+								End-Section
+							Thursday use: 
+								Section thursday
+									Actor sid Reader End-Actor
+									Insert_section intro End-Insert
+									Insert_section Kathisma15 End-Insert
+									Insert_section end__.no_litany End-Insert
+								End-Section
+							Friday use: 
+								Section friday
+									//no reading
+								End-Section
+							Saturday use: 
+								Section saturday
+									//no reading
+								End-Section
+						end-when		
+				end-when
+			End-Section
+		End-Section
+		Section rubric__
+			Section has_litany
+				when-movable-cycle-day-is
+					65 use: 			
+						Section hw_monday
+							Rubric sid lecPS.rubric_kathisma sid anum6 sid lecPS.rubric_litany End-Rubric
+						End-Section
+					66 use: 			
+						Section hw_tuesday
+							Rubric sid lecPS.rubric_kathisma sid anum11 sid lecPS.rubric_litany End-Rubric
+						End-Section
+					67 use: 			
+						Section hw_wednesday
+							Rubric sid lecPS.rubric_kathisma sid anum16 sid lecPS.rubric_litany End-Rubric
+						End-Section
+					otherwise use:
+						when-name-of-day-is
+							Sunday use: 
+								Section sunday
+									Rubric sid lecPS.rubric_kathisma sid anum17 sid lecPS.rubric_litany End-Rubric
+								End-Section
+							Monday use: 
+								Section monday
+									Rubric sid lecPS.rubric_kathisma sid anum6 sid lecPS.rubric_litany End-Rubric
+								End-Section
+							Tuesday use: 
+								Section tuesday
+									Rubric sid lecPS.rubric_kathisma sid anum9 sid lecPS.rubric_litany End-Rubric
+								End-Section
+							Wednesday use: 
+								Section wednesday
+									Rubric sid lecPS.rubric_kathisma sid anum12 sid lecPS.rubric_litany End-Rubric
+								End-Section
+							Thursday use: 
+								Section thursday
+									Rubric sid lecPS.rubric_kathisma sid anum15 sid lecPS.rubric_litany End-Rubric
+								End-Section
+							Friday use: 
+								Section friday
+									Rubric sid lecPS.rubric_nokathisma End-Rubric
+								End-Section
+							Saturday use: 
+								Section saturday
+									Rubric sid lecPS.rubric_nokathisma End-Rubric
+								End-Section
+						end-when
+					end-when		
+			End-Section
+			Section no_litany
+				when-movable-cycle-day-is
+					23, 30, 37, 44, 51, 58 use: 
+						Section lent123456_monday
+							Rubric sid lecPS.rubric_kathisma sid anum6 sid lecPS.rubric_nolitany End-Rubric
+						End-Section
+					24, 31, 38, 45, 59 use: 
+						Section lent12346_tuesday
+							Rubric sid lecPS.rubric_kathisma sid anum12 sid lecPS.rubric_nolitany End-Rubric
+						End-Section
+					25, 32, 39, 46, 60 use: 
+						Section lent12346_wednesday
+							Rubric sid lecPS.rubric_kathisma sid anum1 sid lecPS.rubric_nolitany End-Rubric
+						End-Section
+					26, 33, 40, 47, 61 use: 
+						Section lent12346_thursday
+							Rubric sid lecPS.rubric_kathisma sid anum8 sid lecPS.rubric_nolitany End-Rubric
+						End-Section
+					27, 34, 41, 48, 55, 62 use: 
+						Section lent123456_friday
+							Rubric sid lecPS.rubric_kathisma sid anum15 sid lecPS.rubric_nolitany End-Rubric
+						End-Section
+					52 use: 
+						Section lent5_tuesday
+							Rubric sid lecPS.rubric_kathisma sid anum13 sid lecPS.rubric_nolitany End-Rubric
+						End-Section						
+					53 use: 
+						Section lent5_wednesday
+							Rubric sid lecPS.rubric_kathisma sid anum2 sid lecPS.rubric_nolitany End-Rubric
+						End-Section
+					54 use: 
+						Section lent5_thursday
+							Rubric sid lecPS.rubric_nokathisma End-Rubric
+						End-Section
+					otherwise use:
+						when-name-of-day-is
+							Sunday use: 
+								Section sunday
+									Rubric sid lecPS.rubric_kathisma sid anum17 End-Rubric
+								End-Section
+							Monday use: 
+								Section monday
+									Rubric sid lecPS.rubric_kathisma sid anum6 sid lecPS.rubric_nolitany End-Rubric
+								End-Section
+							Tuesday use: 
+								Section tuesday
+									Rubric sid lecPS.rubric_kathisma sid anum9 sid lecPS.rubric_nolitany End-Rubric
+								End-Section
+							Wednesday use: 
+								Section wednesday
+									Rubric sid lecPS.rubric_kathisma sid anum12 sid lecPS.rubric_nolitany End-Rubric
+								End-Section
+							Thursday use: 
+								Section thursday
+									Rubric sid lecPS.rubric_kathisma sid anum15 sid lecPS.rubric_nolitany End-Rubric
+								End-Section
+							Friday use: 
+								Section friday
+									Rubric sid lecPS.rubric_nokathisma End-Rubric
+								End-Section
+							Saturday use: 
+								Section saturday
+									Rubric sid lecPS.rubric_nokathisma End-Rubric
+								End-Section
+						end-when
+				end-when
+			End-Section
+		End-Section
+	End-Section
+
+	Section _05_Hour1__
+		Section kathisma
+			when-movable-cycle-day-is
+				23, 30, 37, 44, 51, 58 use: //none
+				24, 31, 38, 45, 59 use: 
+					Section tuesday12346
+						Insert_section intro End-Insert
+						Insert_section Kathisma13 End-Insert
+						Insert_section end__.no_litany End-Insert
+					End-Section
+				25, 32, 39, 46, 60 use: 
+					Section wednesday12346
+						Insert_section intro End-Insert
+						Insert_section Kathisma02 End-Insert
+						Insert_section end__.no_litany End-Insert
+					End-Section
+				26, 33, 40, 47, 61 use: 
+					Section thursday12346
+						Insert_section intro End-Insert
+						Insert_section Kathisma09 End-Insert
+						Insert_section end__.no_litany End-Insert
+					End-Section
+				27, 34, 41, 48, 55, 62 use: //none
+			end-when
+		End-Section
+		Section rubric
+			when-movable-cycle-day-is
+				23, 30, 37, 44, 51, 58 use: Rubric sid lecPS.rubric_nokathisma End-Rubric
+				24, 31, 38, 45, 59 use: 
+					Section tuesday12346
+						Rubric sid lecPS.rubric_kathisma sid anum13 End-Rubric
+					End-Section
+				25, 32, 39, 46, 60 use: 
+					Section wednesday12346
+						Rubric sid lecPS.rubric_kathisma sid anum2 End-Rubric
+					End-Section
+				26, 33, 40, 47, 61 use: 
+					Section thursday12346
+						Rubric sid lecPS.rubric_kathisma sid anum9 End-Rubric
+					End-Section
+				27, 34, 41, 48, 55, 62 use: Rubric sid lecPS.rubric_nokathisma End-Rubric
+			end-when
+		End-Section
+	End-Section
+
+	Section _06_Hour3__
+		Section kathisma
+			when-movable-cycle-day-is
+				23, 30, 37, 44, 51, 58, 65 use:
+					Section monday123456hw
+						Insert_section intro End-Insert
+						Insert_section Kathisma07 End-Insert
+						Insert_section end__.no_litany End-Insert
+					End-Section
+				24, 31, 38, 45, 59 use: 
+					Section tuesday12346
+						Insert_section intro End-Insert
+						Insert_section Kathisma14 End-Insert
+						Insert_section end__.no_litany End-Insert
+					End-Section
+				25, 32, 39, 46, 60 use: 
+					Section wednesday12346
+						Insert_section intro End-Insert
+						Insert_section Kathisma03 End-Insert
+						Insert_section end__.no_litany End-Insert
+					End-Section
+				26, 33, 40, 47, 61 use: 
+					Section thursday12346
+						Insert_section intro End-Insert
+						Insert_section Kathisma10 End-Insert
+						Insert_section end__.no_litany End-Insert
+					End-Section
+				27, 34, 41, 48, 55, 62 use:
+					Section friday123456
+						Insert_section intro End-Insert
+						Insert_section Kathisma19 End-Insert
+						Insert_section end__.no_litany End-Insert
+					End-Section
+				52 use:
+					Section tuesday5
+						Insert_section intro End-Insert
+						Insert_section Kathisma15 End-Insert
+						Insert_section end__.no_litany End-Insert
+					End-Section
+				53 use:
+					Section wednesday5
+						Insert_section intro End-Insert
+						Insert_section Kathisma04 End-Insert
+						Insert_section end__.no_litany End-Insert
+					End-Section
+				54 use:
+					Section thursday5
+						Insert_section intro End-Insert
+						Insert_section Kathisma09 End-Insert
+						Insert_section end__.no_litany End-Insert
+					End-Section
+				66 use:
+					Section tuesdayhw
+						Insert_section intro End-Insert
+						Insert_section Kathisma12 End-Insert
+						Insert_section end__.no_litany End-Insert
+					End-Section
+				67 use:
+					Section wednesdayhw
+						Insert_section intro End-Insert
+						Insert_section Kathisma19 End-Insert
+						Insert_section end__.no_litany End-Insert
+					End-Section
+			end-when
+		End-Section
+		Section rubric
+			when-movable-cycle-day-is
+				23, 30, 37, 44, 51, 58, 65 use:
+					Section monday123456hw
+						Rubric sid lecPS.rubric_kathisma sid anum7 End-Rubric
+					End-Section
+				24, 31, 38, 45, 59 use: 
+					Section tuesday12346
+						Rubric sid lecPS.rubric_kathisma sid anum14 End-Rubric
+					End-Section
+				25, 32, 39, 46, 60 use: 
+					Section wednesday12346
+						Rubric sid lecPS.rubric_kathisma sid anum3 End-Rubric
+					End-Section
+				26, 33, 40, 47, 61 use: 
+					Section thursday12346
+						Rubric sid lecPS.rubric_kathisma sid anum10 End-Rubric
+					End-Section
+				27, 34, 41, 48, 55, 62 use:
+					Section friday123456
+						Rubric sid lecPS.rubric_kathisma sid anum19 End-Rubric
+					End-Section
+				52 use:
+					Section tuesday5
+						Rubric sid lecPS.rubric_kathisma sid anum15 End-Rubric
+					End-Section
+				53 use:
+					Section wednesday5
+						Rubric sid lecPS.rubric_kathisma sid anum4 End-Rubric
+					End-Section
+				54 use:
+					Section thursday5
+						Rubric sid lecPS.rubric_kathisma sid anum9 End-Rubric
+					End-Section
+				66 use:
+					Section tuesdayhw
+						Rubric sid lecPS.rubric_kathisma sid anum12 End-Rubric
+					End-Section
+				67 use:
+					Section wednesdayhw
+						Rubric sid lecPS.rubric_kathisma sid anum19 End-Rubric
+					End-Section
+			end-when
+		End-Section
+	End-Section
+
+	Section _07_Hour6__
+		Section kathisma
+			when-movable-cycle-day-is
+				23, 30, 37, 44, 51, 58, 65 use:
+					Section monday123456hw
+						Insert_section intro End-Insert
+						Insert_section Kathisma08 End-Insert
+						Insert_section end__.no_litany End-Insert
+					End-Section
+				24, 31, 38, 45, 59 use: 
+					Section tuesday12346
+						Insert_section intro End-Insert
+						Insert_section Kathisma15 End-Insert
+						Insert_section end__.no_litany End-Insert
+					End-Section
+				25, 32, 39, 46, 60 use: 
+					Section wednesday12346
+						Insert_section intro End-Insert
+						Insert_section Kathisma04 End-Insert
+						Insert_section end__.no_litany End-Insert
+					End-Section
+				26, 33, 40, 47, 61 use: 
+					Section thursday12346
+						Insert_section intro End-Insert
+						Insert_section Kathisma11 End-Insert
+						Insert_section end__.no_litany End-Insert
+					End-Section
+				27, 34, 41, 48, 55, 62 use:
+					Section friday123456
+						Insert_section intro End-Insert
+						Insert_section Kathisma20 End-Insert
+						Insert_section end__.no_litany End-Insert
+					End-Section
+				52 use:
+					Section tuesday5
+						Insert_section intro End-Insert
+						Insert_section Kathisma16 End-Insert
+						Insert_section end__.no_litany End-Insert
+					End-Section
+				53 use:
+					Section wednesday5
+						Insert_section intro End-Insert
+						Insert_section Kathisma05 End-Insert
+						Insert_section end__.no_litany End-Insert
+					End-Section
+				54 use:
+					Section thursday5
+						Insert_section intro End-Insert
+						Insert_section Kathisma10 End-Insert
+						Insert_section end__.no_litany End-Insert
+					End-Section
+				66 use:
+					Section tuesdayhw
+						Insert_section intro End-Insert
+						Insert_section Kathisma13 End-Insert
+						Insert_section end__.no_litany End-Insert
+					End-Section
+				67 use:
+					Section wednesdayhw
+						Insert_section intro End-Insert
+						Insert_section Kathisma20 End-Insert
+						Insert_section end__.no_litany End-Insert
+					End-Section
+			end-when
+		End-Section
+		Section rubric
+			when-movable-cycle-day-is
+				23, 30, 37, 44, 51, 58, 65 use:
+					Section monday123456hw
+						Rubric sid lecPS.rubric_kathisma sid anum8 End-Rubric
+					End-Section
+				24, 31, 38, 45, 59 use: 
+					Section tuesday12346
+						Rubric sid lecPS.rubric_kathisma sid anum15 End-Rubric
+					End-Section
+				25, 32, 39, 46, 60 use: 
+					Section wednesday12346
+						Rubric sid lecPS.rubric_kathisma sid anum4 End-Rubric
+					End-Section
+				26, 33, 40, 47, 61 use: 
+					Section thursday12346
+						Rubric sid lecPS.rubric_kathisma sid anum11 End-Rubric
+					End-Section
+				27, 34, 41, 48, 55, 62 use:
+					Section friday123456
+						Rubric sid lecPS.rubric_kathisma sid anum20 End-Rubric
+					End-Section
+				52 use:
+					Section tuesday5
+						Rubric sid lecPS.rubric_kathisma sid anum16 End-Rubric
+					End-Section
+				53 use:
+					Section wednesday5
+						Rubric sid lecPS.rubric_kathisma sid anum5 End-Rubric
+					End-Section
+				54 use:
+					Section thursday5
+						Rubric sid lecPS.rubric_kathisma sid anum10 End-Rubric
+					End-Section
+				66 use:
+					Section tuesdayhw
+						Rubric sid lecPS.rubric_kathisma sid anum13 End-Rubric
+					End-Section
+				67 use:
+					Section wednesdayhw
+						Rubric sid lecPS.rubric_kathisma sid anum20 End-Rubric
+					End-Section
+			end-when
+		End-Section
+	End-Section
+
+	Section _08_Hour9__
+		Section kathisma
+			when-movable-cycle-day-is
+				23, 30, 37, 44, 51, 58, 65 use:
+					Section monday123456hw
+						Insert_section intro End-Insert
+						Insert_section Kathisma08 End-Insert
+						Insert_section end__.no_litany End-Insert
+					End-Section
+				24, 31, 38, 45, 59 use: 
+					Section tuesday12346
+						Insert_section intro End-Insert
+						Insert_section Kathisma15 End-Insert
+						Insert_section end__.no_litany End-Insert
+					End-Section
+				25, 32, 39, 46, 60 use: 
+					Section wednesday12346
+						Insert_section intro End-Insert
+						Insert_section Kathisma04 End-Insert
+						Insert_section end__.no_litany End-Insert
+					End-Section
+				26, 33, 40, 47, 61 use: 
+					Section thursday12346
+						Insert_section intro End-Insert
+						Insert_section Kathisma11 End-Insert
+						Insert_section end__.no_litany End-Insert
+					End-Section
+				27, 34, 41, 48, 55, 62 use:
+					Section friday123456
+						Insert_section intro End-Insert
+						Insert_section Kathisma20 End-Insert
+						Insert_section end__.no_litany End-Insert
+					End-Section
+				52 use:
+					Section tuesday5
+						Insert_section intro End-Insert
+						Insert_section Kathisma16 End-Insert
+						Insert_section end__.no_litany End-Insert
+					End-Section
+				53 use:
+					Section wednesday5
+						Insert_section intro End-Insert
+						Insert_section Kathisma05 End-Insert
+						Insert_section end__.no_litany End-Insert
+					End-Section
+				54 use:
+					Section thursday5
+						Insert_section intro End-Insert
+						Insert_section Kathisma10 End-Insert
+						Insert_section end__.no_litany End-Insert
+					End-Section
+				66 use:
+					Section tuesdayhw
+						Insert_section intro End-Insert
+						Insert_section Kathisma13 End-Insert
+						Insert_section end__.no_litany End-Insert
+					End-Section
+				67 use:
+					Section wednesdayhw
+						Insert_section intro End-Insert
+						Insert_section Kathisma20 End-Insert
+						Insert_section end__.no_litany End-Insert
+					End-Section
+			end-when
+		End-Section
+		Section rubric
+			when-movable-cycle-day-is
+				23, 30, 37, 44, 51, 58 use:
+					Section monday123456
+						Rubric sid lecPS.rubric_kathisma sid anum9 End-Rubric
+					End-Section
+				24, 31, 38, 45, 59 use: 
+					Section tuesday12346
+						Rubric sid lecPS.rubric_kathisma sid anum16 End-Rubric
+					End-Section
+				25, 32, 39, 46, 60 use: 
+					Section wednesday12346
+						Rubric sid lecPS.rubric_kathisma sid anum5 End-Rubric
+					End-Section
+				26, 33, 40, 47, 61 use: 
+					Section thursday12346
+						Rubric sid lecPS.rubric_kathisma sid anum12 End-Rubric
+					End-Section
+				27, 34, 41, 48, 55, 62 use:
+					Section friday123456
+						Rubric sid lecPS.rubric_nokathisma End-Rubric
+					End-Section
+				52 use:
+					Section tuesday5
+						Rubric sid lecPS.rubric_kathisma sid anum18 End-Rubric
+					End-Section
+				53 use:
+					Section wednesday5
+						Rubric sid lecPS.rubric_kathisma sid anum6 End-Rubric
+					End-Section
+				54 use:
+					Section thursday5
+						Rubric sid lecPS.rubric_kathisma sid anum11 End-Rubric
+					End-Section
+				66 use:
+					Section tuesdayhw
+						Rubric sid lecPS.rubric_nokathisma End-Rubric
+					End-Section
+				67 use:
+					Section wednesdayhw
+						Rubric sid lecPS.rubric_nokathisma End-Rubric
+					End-Section
+			end-when
+		End-Section
+	End-Section
 
 //blocks
 	Section intro
@@ -90,6 +1541,7 @@ Status Review
 		End-Section
 	End-Section
 
+//kathismata
 
 	Section Kathisma01
 		Title<Tdesig>sid kathisma_1.title</>End-Title
