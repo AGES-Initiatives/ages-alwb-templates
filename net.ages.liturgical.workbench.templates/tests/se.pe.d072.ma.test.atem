@@ -1,0 +1,63 @@
+Template se.pe.d072.ma.test 
+
+Status Final
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+	//	Set_Date month 5 day 2 End_Date
+			Page_Header_Even
+				center @lookup sid ma.pdf.header lang L1 @lookup sid d.on lang L1 @date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ma.pdf.header lang L2 @lookup sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ma End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	Section Instance02 //with St George
+	//The date in the invoking template is May 2, which is mc day 72
+	
+	//Set the date in line 43 to 4-23: 
+		//	Set_Date month 4 day 23 End_Date
+	//Setting date in line 43 changes date and mcDay to Apr. 23 / day 63.
+	//The change of the mcDay to correspond with the changed date was unexpected.
+	//Ideally it should only affect the date. 
+	//If they cannot be separated, I can work around it.
+	
+	//Set the mcDay in line 50 to 72:
+		//	Set_mcDay day 72 End_mcDay
+	//Setting mcDay in line 50 changes mcDay to 72, but does not affect the date.
+	//This was expected and is desirable.
+
+	//Reset the date to 0 or default. Currently there is no way to do this:
+		//	Set_Date month 0 day 0 End_Date
+	//Resetting the date in line 55 to 0 (or somehow) should return the date 
+	//to the date of the invoking template, in this case May 2.
+	
+		Para ldp @Service_Date End-Para
+		Para ldp @Day_of_Movable_Cycle End-Para
+	End-Section
+	
+End-Template
