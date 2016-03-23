@@ -1,24 +1,37 @@
-Template cu.MatinsOrdinary 
+Template matinsordinary_lent 
 
-Status Final
-
-	import ematinscovers_en_US_ematins.*	
+Status Review
+	
+	import client_gr_GR_cog.*
+	import eu.lichrysbasil_gr_GR_cog.*
 	import ho.s03_gr_GR_cog.*
+	import ho.s07_gr_GR_cog.*
+	import ho.s10_gr_GR_cog.*	
+//	import me.m00.d00_gr_GR_cog.*
+//	import pe.d000_gr_GR_cog.*
 	import ps_gr_GR_cog.*
+//	import tr.d000_gr_GR_cog.*
+
+//	import oc.*
+//	import pe.*
+//	import tr.*
+
+	//Templates
+	import kTheotokos.*  //Katavasia
 	
 	import actors_gr_GR_cog.*
 	import misc_gr_GR_cog.*
 	import prayers_gr_GR_cog.*
 	import rubrical_gr_GR_cog.*
 	import template.titles_gr_GR_cog.*
-	
+	import titles_gr_GR_cog.*
+		
 	import iTags.*
 	import bTags.*
 	import roles.*
 	import rules.*
 
 	Head 
-	Template_Title @text "Matins Ordinary" End_Title
 			Page_Header_Even
 				center @lookup sid ma.pdf.header lang L1 
 			End_Page_Header_Even
@@ -34,17 +47,21 @@ Status Final
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
+//	Preface Covers
+//		Insert_template ematins.cover.ma End-Insert
+//		Insert_template ematins.credits End-Insert
+//	End-Preface
+
 	Section Instance01
 		Insert_section MA._00_Ordinary__.part1__.normal End-Insert
-		Insert_section MA._00_Ordinary__.part2__.parish End-Insert
+		when-name-of-day-is
+			Saturday, Sunday use:
+				Insert_section MA._00_Ordinary__.part2__.parish End-Insert
+			otherwise use:
+				Insert_section MA._00_Ordinary__.part2__.full End-Insert
+		end-when
 		Insert_section MA._00_Ordinary__.part3 End-Insert
-		Break page End_Break
-		Insert_section MA._00_Ordinary__.part4 End-Insert
-		Break page End_Break
 		Insert_section MA._00_Ordinary__.part5 End-Insert
 		Insert_section MA._00_Ordinary__.part6 End-Insert
-		Break page End_Break
-	End-Section	
-	
-					
+	End-Section
 End-Template
