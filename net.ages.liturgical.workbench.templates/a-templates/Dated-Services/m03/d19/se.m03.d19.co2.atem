@@ -1,4 +1,4 @@
-Template se.m03.d19.co
+Template se.m03.d19.co2
 
 Status Final
 
@@ -17,10 +17,10 @@ Status Final
 	Head 
 		Set_Date month 3 day 19 End_Date
 			Page_Header_Even
-				center @lookup sid co.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
+				center @lookup sid co2.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @lookup sid co.pdf.header rid da.daVE.OnTheEveningBefore lang L2
+				center @lookup sid co2.pdf.header rid da.daVE.OnTheEveningBefore lang L2
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -30,6 +30,11 @@ Status Final
 			End_Page_Footer_Odd
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.co End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
 
 	when-movable-cycle-day-is 1 thru 127 use:
 		Insert_template mc.map.co End-Insert
