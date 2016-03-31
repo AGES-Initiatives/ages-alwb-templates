@@ -1,8 +1,9 @@
-Template se.pe.d120.ve 
+Template se.m06.d19.ve 
 
 Status Final
 
 	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
 	import misc_gr_GR_cog.*
 	import prayers_gr_GR_cog.*
 	import rubrical_gr_GR_cog.*
@@ -35,19 +36,11 @@ Status Final
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-	Section Instance01
-		Insert_section VE._01_Beginning__.vespers End-Insert
-		Insert_section VE._02_Kekragaria__.mode1__.for10 End-Insert
-		Insert_section VE._03_Stichera__.pe__.i_1123445678as12345678910 End-Insert
-		Insert_section VE._03_Stichera__.gloryboth__.pe_ End-Insert
-		Insert_section VE._04_Middle__.entrance End-Insert
-		Insert_section VE._05_Readings__.reader End-Insert
-		Insert_section VE._06_Litanies__.fullektenia End-Insert
-		Insert_section VE._08_Aposticha__.pe__.i_pentecost12 End-Insert
-		Insert_section VE._08_Aposticha__.gloryboth__.pe_ End-Insert
-		Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
-		Insert_section AP.f3 End-Insert	
-		Insert_section VE._10_End__.wisdom End-Insert
-		Insert_section VE._11_Dismissal__.nocommemoration End-Insert
-	End-Section
+	when-movable-cycle-day-is 1 thru 127 use:
+			Insert_template mc.map.ve End-Insert //adjust to appropriate service
+			otherwise use:
+		
+	end-when	
+	
+
 End-Template
