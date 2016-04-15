@@ -2,10 +2,6 @@ Template se.pe.d121.li
 
 Status Final
 
-	import client_gr_GR_cog.*
-
-	import da.*
-
 	import actors_gr_GR_cog.*
 	import misc_gr_GR_cog.*
 	import prayers_gr_GR_cog.*
@@ -18,7 +14,7 @@ Status Final
 	import roles.*
 
 	Head 
-		Set_Date month 6 day 1 End_Date
+		Set_Date month 6 day 20 End_Date
 			Page_Header_Even
 				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
 			End_Page_Header_Even
@@ -47,6 +43,8 @@ Status Final
 		Insert_section LE._01_Epistle__.daily_ End-Insert
 		Insert_section LE._02_Gospel__.daily_ End-Insert
 		Insert_section LI._08_Liturgy__.chrys End-Insert
-		Insert_section LI._09_Dismissal__.nocommemoration End-Insert
+			Set_mcDay day 122 End_mcDay //to avoid special vesperal dismissal
+			Insert_section LI._09_Dismissal__.nocommemoration End-Insert
+		Set_mcDay day 0 End_mcDay
 	End-Section
 End-Template

@@ -1,4 +1,4 @@
-Template se.m05.d22.ma 
+Template se.m06.d12.ma2 
 
 Status Final
 
@@ -15,9 +15,9 @@ Status Final
 	import roles.*
 
 	Head 
-		Set_Date month 5 day 22 End_Date
+		Set_Date month 6 day 12 End_Date
 			Page_Header_Even
-				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+				center @lookup sid ma.pdf.header sid d.on lang L1 @date lang L1
 			End_Page_Header_Even
 			Page_Header_Odd
 				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
@@ -36,14 +36,11 @@ Status Final
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-	when-movable-cycle-day-is
-		85, 92, 95, 99, 102, 106, 109, 110, 113, 118, 119, 120, 127 use: 
-			Insert_section mc.map.ma.Section01 End-Insert
-		79 thru 83 use: //Thomas week
-		84 use: //Thomas Saturday
-		// various weekdays
-		108 use: //OC Leavetaking of Blindman
-		111 use: //OC After Ascension
-	end-when	
+	when-movable-cycle-day-is 1 thru 127 use:
+			Insert_section mc.map.ma.Section02 End-Insert //adjust to appropriate service
+			otherwise use:
 		
+	end-when	
+	
+
 End-Template
