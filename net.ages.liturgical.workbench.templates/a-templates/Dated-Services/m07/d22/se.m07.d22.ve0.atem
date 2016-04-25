@@ -1,0 +1,63 @@
+Template se.m07.d22.ve0 
+
+Status NA
+
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 7 day 22 End_Date
+			Page_Header_Even
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	when-name-of-day-is
+		Sunday use:
+			Section Instance02
+			End-Section
+		otherwise use:
+			Section Instance01
+				Insert_section VE._01_Beginning__.vespers End-Insert
+				Insert_section VE._02_Kekragaria__.modeofweek__.for6 End-Insert
+				Insert_section VE._03_Stichera__.oc__.weekday__.p_123as567 End-Insert
+				Insert_section VE._03_Stichera__.me__.p_123as8910 End-Insert
+				Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_ End-Insert
+				Insert_section VE._03_Stichera__.both__.metheotokion End-Insert
+				Insert_section VE._04_Middle__.noentrance End-Insert
+				Insert_section VE._06_Litanies__.noektenia End-Insert
+				Insert_section VE._08_Aposticha__.me__.p_apostles1martyrs1 End-Insert
+				Insert_section VE._08_Aposticha__.glory__.me__.gloryasglory_ End-Insert
+				Insert_section VE._08_Aposticha__.both__.metheotokion_ End-Insert
+				Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
+				Insert_section AP.me1_ End-Insert
+				Insert_section AP.gloryboth__.theotokion__.mode1_ End-Insert
+				Insert_section VE._10_End__.ektenia_wisdom End-Insert
+				Insert_section VE._11_Dismissal__.commemoration End-Insert				
+			End-Section
+	end-when
+
+End-Template
