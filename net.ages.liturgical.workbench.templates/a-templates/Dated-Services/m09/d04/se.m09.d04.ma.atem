@@ -1,8 +1,9 @@
-Template se.m09.d27.ma
+Template se.m09.d04.ma 
 
-Status NA
+Status Final
 
 	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
 	import misc_gr_GR_cog.*
 	import prayers_gr_GR_cog.*
 	import rubrical_gr_GR_cog.*
@@ -14,9 +15,9 @@ Status NA
 	import roles.*
 
 	Head 
-		Set_Date month 9 day 27 End_Date
+		Set_Date month 9 day 4 End_Date
 			Page_Header_Even
-				center @lookup sid ma.pdf.header sid d.on lang L1 @date lang L1
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
 			End_Page_Header_Even
 			Page_Header_Odd
 				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
@@ -30,18 +31,18 @@ Status NA
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
-		Preface Covers
-			Insert_template ematins.cover.ma End-Insert
-			Insert_template ematins.credits End-Insert
-		End-Preface
+	Preface Covers
+		Insert_template ematins.cover.ma End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
 
-	when-name-of-day-is 
+	when-name-of-day-is
 		Sunday use:
-			Section Instance02 //Sunday
+			Section Instance02 //Sunday 
 				Insert_section MA._01_Beginning__.modeofweek End-Insert
 				Insert_section AP.res__.modeofweek End-Insert
-				Insert_section TI.g.s._09_martyr_.mp End-Insert
-				Insert_section AP.ga.martyrs_mode4_.hymn End-Insert
+				Insert_section TI.g.s._08_hieromartyr_.m End-Insert
+				Insert_section AP.ganame.Sep04__.babylas_.hymn End-Insert
 				Insert_section AP.both__.primarytheotokion__.mode4 End-Insert
 				Insert_section MA._03_Kathisma1__.litany End-Insert
 				Insert_section MA._03_Kathisma1__.oc__.sunday__.whenmode4 End-Insert
@@ -57,17 +58,16 @@ Status NA
 				Insert_section KA.append__._9 End-Insert
 				Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
 				Insert_section MA._12_Exaposteilarion__.eo__.eoofweek_.exap End-Insert
-				Insert_section TI.s._09_martyr_.mp End-Insert
+				Insert_section TI.s._08_hieromartyr_.m End-Insert
 				Insert_section MA._12_Exaposteilarion__.append__.me__.exap123t End-Insert
 				Insert_section MA._13_Lauds__.modeofweek End-Insert
 				Insert_section MA._13_Lauds__.oc__.sunday End-Insert
 				Insert_section MA._13_Lauds__.glory__.eo_ End-Insert
 				Insert_section MA._14_Doxology__.sunday End-Insert
 			End-Section
-		
 		otherwise use:
-			Section Instance01 //Weekday
+			Section Instance01
 			End-Section
-end-when			
+	end-when
 
 End-Template
