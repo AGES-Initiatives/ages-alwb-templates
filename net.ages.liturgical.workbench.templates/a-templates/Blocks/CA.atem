@@ -1216,7 +1216,13 @@ Status Draft
 						Hymn rid meMA.Ode1C1T.text @ver End-Hymn
 					End-Section
 					Section nt_123tasSwSwGB
-						Title role source0 sid sourceMenaion End-Title
+						when-exists rid meMA.C1.notice 
+							use: 
+								Rubric rid meMA.C1.notice End-Rubric
+								Title<Tdesig>sid OKanonTouMinaiou2</>End-Title
+							otherwise use: 
+								Title role source0 sid sourceMenaion End-Title
+						end-when
 						Title role mixed<Tmode>rid meMA.Ode1C11.mode</><Tmelody>rid meMA.Ode1C11.melody</>End-Title
 						Media rid meMA.Ode1C11.text End-Media
 						Verse sid verse_SaintW.text End-Verse
