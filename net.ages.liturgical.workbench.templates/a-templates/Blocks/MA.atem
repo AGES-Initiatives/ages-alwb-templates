@@ -3161,7 +3161,7 @@ Template MA
 				End-Section
 				Section block06_kontakionposition1
 					Para role bmc_kontakion_position1 sid mc.kontakion.position1 End-Para
-						Insert_section MA._11_Kontakion__.DecBC2 End-Insert
+						Insert_section MA._11_Kontakion__.DecBC End-Insert
 						Insert_section SY.Synaxarion End-Insert
 					Para role emc_kontakion_position1 sid mc.tag End-Para
 				End-Section
@@ -3177,7 +3177,7 @@ Template MA
 				End-Section
 				Section block08_kontakionposition12
 					Para role bmc_kontakion_position12 sid mc.kontakion.position12 End-Para
-						Insert_section MA._11_Kontakion__.DecBC2 End-Insert
+						Insert_section MA._11_Kontakion__.DecBC End-Insert
 						Insert_section MA._11_Kontakion__.append__.sunday End-Insert
 						Insert_section SY.Synaxarion End-Insert
 					Para role emc_kontakion_position12 sid mc.tag End-Para
@@ -11784,14 +11784,29 @@ Template MA
 				Insert_section Selector_Kontakion.MatinsFestal End-Insert
 			End-Section
 		End-Section
-		Section DecBC2
-			Title role source sid sourceMenaion End-Title
-			Actor sid Reader End-Actor
-			Title role desig sid Kontakion sid Proeortion End-Title
-			Title role mixed<Tmode>sid me.m12.dBC_gr_GR_cog.meMA.Kontakion2.mode</><Tmelody>sid me.m12.dBC_gr_GR_cog.meMA.Kontakion2.melody</>End-Title
-			Reading sid me.m12.dBC_gr_GR_cog.meMA.Kontakion2.text @ver End-Reading
-			Title role desig sid OOikos End-Title
-			Reading sid me.m12.dBC_gr_GR_cog.meMA.Oikos2.text @ver End-Reading 
+		Section DecBC
+			when-date-is
+				Dec 18, 19, 24 use:
+					Section DecBC1
+						Title role source sid sourceMenaion End-Title
+						Actor sid Reader End-Actor
+						Title role desig sid Kontakion sid TonPateron End-Title
+						Title role mixed<Tmode>sid me.m12.dBC_gr_GR_cog.meMA.Kontakion1.mode</><Tmelody>sid me.m12.dBC_gr_GR_cog.meMA.Kontakion1.melody</>End-Title
+						Reading sid me.m12.dBC_gr_GR_cog.meMA.Kontakion1.text @ver End-Reading
+						Title role desig sid OOikos End-Title
+						Reading sid me.m12.dBC_gr_GR_cog.meMA.Oikos1.text @ver End-Reading 
+					End-Section
+				Dec 20 thru 23 use:
+					Section DecBC2
+						Title role source sid sourceMenaion End-Title
+						Actor sid Reader End-Actor
+						Title role desig sid Kontakion sid Proeortion End-Title
+						Title role mixed<Tmode>sid me.m12.dBC_gr_GR_cog.meMA.Kontakion2.mode</><Tmelody>sid me.m12.dBC_gr_GR_cog.meMA.Kontakion2.melody</>End-Title
+						Reading sid me.m12.dBC_gr_GR_cog.meMA.Kontakion2.text @ver End-Reading
+						Title role desig sid OOikos End-Title
+						Reading sid me.m12.dBC_gr_GR_cog.meMA.Oikos2.text @ver End-Reading 
+					End-Section
+			end-when
 		End-Section
 		Section DecFF
 			Title role source sid sourceMenaion End-Title
@@ -12708,8 +12723,10 @@ Template MA
 					Title role mixed<Tmode>sid eo.e04_gr_GR_cog.eo.Exaposteilarion.mode</><Tmelody>sid eo.e04_gr_GR_cog.eo.Exaposteilarion.melody</>End-Title
 					Hymn sid eo.e04_gr_GR_cog.eo.Exaposteilarion.text @ver End-Hymn
 				End-Section
-				Title role desig sid Theotokion sid Omoion End-Title
-				Hymn sid eo.e04_gr_GR_cog.eo.Theotokion.text @ver End-Hymn
+				Section theotokion
+					Title role desig sid Theotokion sid Omoion End-Title
+					Hymn sid eo.e04_gr_GR_cog.eo.Theotokion.text @ver End-Hymn
+				End-Section
 			End-Section
 			Section eo05_
 				Section exap
