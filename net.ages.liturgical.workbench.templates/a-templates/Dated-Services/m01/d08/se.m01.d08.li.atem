@@ -1,4 +1,4 @@
-Template se.m01.d11.li 
+Template se.m01.d08.li
 
 Status Final
 
@@ -15,7 +15,7 @@ Status Final
 	import roles.*
 
 	Head 
-		Set_Date month 1 day 11 year 2017 End_Date
+		Set_Date month 1 day 8 year 2017 End_Date
 			Page_Header_Even
 				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
 			End_Page_Header_Even
@@ -41,8 +41,6 @@ Status Final
 				Section hymns
 					Insert_section AP.res__.modeofweek End-Insert
 					Insert_section AP.af End-Insert
-					Insert_section TI.s._10_monastic_.m End-Insert
-					Insert_section AP.ganame.Jan11__.theodosios_.hymn End-Insert
 					Insert_section LI._05_AfterEntranceHymns__.local End-Insert
 					Insert_section KO.seasonal End-Insert
 				End-Section
@@ -50,27 +48,12 @@ Status Final
 				Insert_section LE._01_Epistle__.menaion_ End-Insert
 				Insert_section LE._02_Gospel__.menaion_ End-Insert
 				Insert_section LI._08_Liturgy__.chrys End-Insert
-				Insert_section LI._09_Dismissal__.commemoration End-Insert
+				Insert_section LI._09_Dismissal__.nocommemoration End-Insert
 			End-Section
+			
 		otherwise use:
-			Section Instance01 //Weekdays
-				Insert_section LI._01_Enarxis__.daily End-Insert
-				Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
-				Insert_section LI._04_Entrance__.clergy End-Insert
-				Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
-				Section hymns
-					Insert_section AP.af End-Insert
-					Insert_section TI.s._10_monastic_.m End-Insert
-					Insert_section AP.ganame.Jan11__.theodosios_.hymn End-Insert
-					Insert_section LI._05_AfterEntranceHymns__.local End-Insert
-					Insert_section KO.seasonal End-Insert
-				End-Section
-				Insert_section LI._06_Trisagion__.chrys End-Insert
-				Insert_section LE._01_Epistle__.menaion_ End-Insert
-				Insert_section LE._02_Gospel__.menaion_ End-Insert
-				Insert_section LI._08_Liturgy__.chrys End-Insert
-				Insert_section LI._09_Dismissal__.commemoration End-Insert
-			End-Section
-	end-when			
+			Section Instance01 //weekday
+			End-Section	
+	end-when
 
 End-Template
