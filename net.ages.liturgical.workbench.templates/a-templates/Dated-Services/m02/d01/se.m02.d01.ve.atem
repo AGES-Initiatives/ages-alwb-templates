@@ -26,7 +26,7 @@ Status NA
 	import roles.*
 
 	Head 
-		Set_Date month 2 day 1 End_Date
+		Set_Date month 2 day 1 year 2015 End_Date
 			Page_Header_Even
 				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
 			End_Page_Header_Even
@@ -50,6 +50,7 @@ Status NA
 	when-triodion-day-is
 		1, 8, 15, 22 use:
 			Section Instance03 //Triodion Sunday
+				Insert_section TI.se.trme.ve End-Insert
 				Insert_section VE._01_Beginning__.vespers End-Insert
 				Insert_section VE._02_Kekragaria__.modeofweek__.for10 End-Insert
 				Insert_section VE._03_Stichera__.oc__.sunday_.s_1234 End-Insert
@@ -104,6 +105,7 @@ Status NA
 			when-name-of-day-is
 				Sunday use:
 					Section Instance02 //Sunday
+						Insert_section TI.se.me.ve End-Insert
 						Insert_section VE._01_Beginning__.vespers End-Insert
 						Insert_section VE._02_Kekragaria__.modeofweek__.for10 End-Insert
 						Insert_section VE._03_Stichera__.oc__.sunday_.s_1234 End-Insert
