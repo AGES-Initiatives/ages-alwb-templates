@@ -2,12 +2,6 @@ Template se.m09.d28.li
 
 Status NA
 
-	import client_gr_GR_cog.*
-	import eu.lichrysbasil_gr_GR_cog.*
-	import ho.s07_gr_GR_cog.*
-	import me.m09.d28_gr_GR_cog.*
-	import oc.*
-
 	import actors_gr_GR_cog.*
 	import template.titles_gr_GR_cog.*
 	import misc_gr_GR_cog.*
@@ -39,18 +33,18 @@ Status NA
 	when-name-of-day-is 
 		Sunday use:	
 			Section Instance02 //Sunday
+				Insert_section TI.se.me.li End-Insert
 				Insert_section LI._01_Enarxis__.daily End-Insert
 				Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
 				Insert_section LI._04_Entrance__.clergy End-Insert
 				Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
-				Insert_section AP.res__.modeofweek End-Insert
-				Section block1
-					Title role mixed<Tdesig>sid TouOsiou</><Tmode>sid Mode8</>End-Title
-					Media sid meVE.MM.GeneralApolytikion1.text End-Media
-					Insert_section ho.s15_m09.ho_Sep28.Apolytikion_01.hymn End-Insert
+				Section hymns
+					Insert_section AP.res__.modeofweek End-Insert
+					Insert_section TI.s._10_monastic_.m End-Insert
+					Insert_section AP.ganame.Sep28__.chariton_.hymn End-Insert
+					Insert_section LI._05_AfterEntranceHymns__.local End-Insert
+					Insert_section KO.seasonal End-Insert
 				End-Section
-				Insert_section LI._05_AfterEntranceHymns__.local End-Insert
-				Insert_section KO.seasonal End-Insert
 				Insert_section LI._06_Trisagion__.chrys End-Insert
 				Insert_section LE._01_Epistle__.daily_ End-Insert
 				Insert_section LE._02_Gospel__.daily_ End-Insert
