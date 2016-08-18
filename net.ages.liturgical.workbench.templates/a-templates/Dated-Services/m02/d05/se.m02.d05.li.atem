@@ -1,6 +1,6 @@
 Template se.m02.d05.li 
 
-Status NA
+Status Final
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -15,7 +15,7 @@ Status NA
 	import roles.*
 
 	Head 
-		Set_Date month 2 day 5 End_Date
+		Set_Date month 2 day 5 year 2017 End_Date
 			Page_Header_Even
 				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
 			End_Page_Header_Even
@@ -32,40 +32,21 @@ Status NA
 	End_Head
 
 	when-triodion-day-is
-		1 use: 
+		1 use: Insert_section se.tr.d001.li.Instance02 End-Insert
 		2 thru 7 use:
 		8 use: 
 		9 thru 12 use:
-		13, 17 use: //leavetaking of Meeting
+		13 use: //leavetaking of Meeting
 		14 use:	Insert_section se.tr.d014.li.Instance01 End-Insert
 		15 use: 
-		16, 19 use:
-		18, 20 use:
-		21 use:
-		22 use: 
-		23 thru 26 use: 
-		27 use: 
-		28 use: 
+		16 use: 
+		17, 19 use:
+		18 use:
+		20 use: //leavetaking of Meeting
 		otherwise use:
 			when-name-of-day-is
 				Sunday use:
 					Section Instance02 //Sunday
-						Insert_section TI.se.saf.li End-Insert
-						Insert_section LI._01_Enarxis__.daily End-Insert
-						Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
-						Insert_section LI._04_Entrance__.clergy End-Insert
-						Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
-						Section hymns
-							Insert_section AP.res__.modeofweek End-Insert
-							Insert_section AP.af End-Insert
-							Insert_section LI._05_AfterEntranceHymns__.local End-Insert
-							Insert_section KO.seasonal End-Insert
-						End-Section
-						Insert_section LI._06_Trisagion__.chrys  End-Insert
-						Insert_section LE._01_Epistle__.daily_ End-Insert
-						Insert_section LE._02_Gospel__.daily_ End-Insert
-						Insert_section LI._08_Liturgy__.chrys End-Insert
-						Insert_section LI._09_Dismissal__.nocommemoration End-Insert
 					End-Section
 				otherwise use:
 					Section Instance01 //Weekday
