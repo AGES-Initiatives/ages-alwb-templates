@@ -35,30 +35,35 @@ Status NA
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-	when-name-of-day-is
-		Sunday use:
-			Section Instance02
-			End-Section
-		otherwise use:	
-			Section Instance01
-				Insert_section VE._01_Beginning__.Hierarchical__.vespers End-Insert
-				Insert_section VE._02_Kekragaria__.Hierarchical__.mode4__.for6 End-Insert
-				Insert_section VE._03_Stichera__.me__.p_123as567 End-Insert
-				Insert_section VE._03_Stichera__.me__.p_456as8910 End-Insert
-				Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_ End-Insert
-				Insert_section VE._03_Stichera__.both__.firsttheotokion__.mode5_ End-Insert
-				Insert_section VE._04_Middle__.Hierarchical__.entrance End-Insert
-				Insert_section VE._05_Readings__.Hierarchical End-Insert
-				Insert_section VE._06_Litanies__.Hierarchical__.fullektenia End-Insert
-				Insert_section VE._08_Aposticha__.me__.p_women12 End-Insert
-				Insert_section VE._08_Aposticha__.glory__.me__.gloryasglory_ End-Insert
-				Insert_section VE._08_Aposticha__.both__.primarytheotokion__.mode8 End-Insert
-				Insert_section VE._09_Symeon_Trisagion__.Hierarchical End-Insert
-				Insert_section AP.me1_.hymn End-Insert
-				Insert_section AP.gloryboth__.primarytheotokion__.mode5 End-Insert
-				Insert_section VE._10_End__.Hierarchical__.wisdom End-Insert
-				Insert_section VE._11_Dismissal__.Hierarchical__.commemoration End-Insert
-			End-Section
+	when-movable-cycle-day-is
+		1, 8 use: Insert_section mc.map.ve.Section01 End-Insert
+		14 thru 40 use:	Insert_section mc.map.ve.Section01 End-Insert
+		otherwise use:
+			when-name-of-day-is
+				Sunday use:
+					Section Instance02
+					End-Section
+				otherwise use:	
+					Section Instance01
+						Insert_section VE._01_Beginning__.Hierarchical__.vespers End-Insert
+						Insert_section VE._02_Kekragaria__.Hierarchical__.mode4__.for6 End-Insert
+						Insert_section VE._03_Stichera__.me__.p_123as567 End-Insert
+						Insert_section VE._03_Stichera__.me__.p_456as8910 End-Insert
+						Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_ End-Insert
+						Insert_section VE._03_Stichera__.both__.firsttheotokion__.mode5_ End-Insert
+						Insert_section VE._04_Middle__.Hierarchical__.entrance End-Insert
+						Insert_section VE._05_Readings__.Hierarchical End-Insert
+						Insert_section VE._06_Litanies__.Hierarchical__.fullektenia End-Insert
+						Insert_section VE._08_Aposticha__.me__.p_women12 End-Insert
+						Insert_section VE._08_Aposticha__.glory__.me__.gloryasglory_ End-Insert
+						Insert_section VE._08_Aposticha__.both__.primarytheotokion__.mode8 End-Insert
+						Insert_section VE._09_Symeon_Trisagion__.Hierarchical End-Insert
+						Insert_section AP.me1_.hymn End-Insert
+						Insert_section AP.gloryboth__.primarytheotokion__.mode5 End-Insert
+						Insert_section VE._10_End__.Hierarchical__.wisdom End-Insert
+						Insert_section VE._11_Dismissal__.Hierarchical__.commemoration End-Insert
+					End-Section
+			end-when
 	end-when
-	
+		
 End-Template

@@ -1,14 +1,6 @@
 Template se.m02.d26.ve 
 
-Status NA
-
-	import client_gr_GR_cog.*
-	import ho.s10_gr_GR_cog.*	
-	import me.m02.d26_gr_GR_cog.*
-
-	import da.*
-	import oc.*
-	import tr.*
+Status Final
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -23,7 +15,7 @@ Status NA
 	import roles.*
 
 	Head 
-		Set_Date month 2 day 26 End_Date
+		Set_Date month 2 day 26 year 2017 End_Date
 			Page_Header_Even
 				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
 			End_Page_Header_Even
@@ -44,20 +36,20 @@ Status NA
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-	when-movable-cycle-day-is 26, 28, 33, 35, 40, 42, 47, 49, 54, 55, 56, 61, 63, 66, 67, 68, 69, 71
-		use: //do nothing
+	when-movable-cycle-day-is
+		1, 8 use: Insert_section mc.map.ve.Section01 End-Insert
+		14 thru 25 use: Insert_section mc.map.ve.Section01 End-Insert 
+		26, 28, 33, 35, 40, 42, 47 use: //do nothing. use pl
+		27, 29, 30, 31, 32, 34, 36, 37, 38, 39, 41, 43, 44, 45, 46 use:	Insert_section mc.map.ve.Section01 End-Insert
 		otherwise use:
-			when-movable-cycle-day-is
-				1 thru 25 
-					use: Insert_template mc.map.ve End-Insert
-				27, 29, 30, 31, 32, 34, 36, 37, 38, 39, 41, 43, 44, 45, 46, 48, 50, 51, 52, 53, 55, 57, 58, 59, 60, 62, 64, 65, 70 
-					use: Insert_template mc.map.ve End-Insert
-				72 thru 127
-					use: Insert_template mc.map.ve End-Insert
-				otherwise use:
-				
+			when-name-of-day-is
+				Sunday use:
+					Section Instance02
+					End-Section
+				otherwise use:	
+					Section Instance01
+					End-Section
 			end-when
-	end-when	
-	
-	
+	end-when
+
 End-Template
