@@ -25,11 +25,107 @@ Status Draft
 		Set_Date month 3 day 6 year 2017 End_Date
 	End_Head
 
+	
+
+
+
+
+	Section ve
+		Section me
+			Para<bnr>sid book.Menaion.name</>End-Para
+			Reading rid meDate.text End-Reading
+			Reading rid meCommemoration.text End-Reading
+		End-Section
+		Section ocme
+			Para<bnr>sid book.Octoechos.name</>End-Para
+			Insert_section mode_on_evening_before End-Insert
+			Para<bnr>sid book.Menaion.name</>End-Para
+			Reading rid meDate.text End-Reading
+			Reading rid meCommemoration.text End-Reading
+		End-Section
+		Section octr
+			Para<bnr>sid book.Octoechos.name</>End-Para
+			Insert_section mode_on_evening_before End-Insert
+			Para<bnr>sid book.Triodion.name</>End-Para
+			Reading rid trCommemoration.text End-Reading
+		End-Section
+		Section trmodeme
+			Para<bnr>sid book.Triodion.name</>End-Para
+			Insert_section mode_on_evening_before End-Insert
+			Para<bnr>sid book.Menaion.name</>End-Para
+			Reading rid meDate.text End-Reading
+			Reading rid meCommemoration.text End-Reading
+		End-Section
+		Section trme
+			Para<bnr>sid book.Triodion.name</>End-Para
+			Insert_section tr_vespers_on_day_before End-Insert
+			Para<bnr>sid book.Menaion.name</>End-Para
+			Reading rid meDate.text End-Reading
+			Reading rid meCommemoration.text End-Reading
+		End-Section
+	End-Section
+
+
+
+
+
+
+//blocks
+	Section on_evening_before
+		when-name-of-day-is
+			Sunday use: Reading sid OnSaturday sid Evening End-Reading
+			Monday use: Reading sid OnSunday sid Evening End-Reading
+			Tuesday use: Reading sid OnMonday sid Evening End-Reading
+			Wednesday use: Reading sid OnTuesday sid Evening End-Reading
+			Thursday use: Reading sid OnWednesday sid Evening End-Reading
+			Friday use: Reading sid OnThursday sid Evening End-Reading
+			Saturday use: Reading sid OnFriday sid Evening End-Reading
+		end-when
+	End-Section
+
+	Section mode_on_evening_before
+		when-name-of-day-is
+			Sunday use: Reading rid ocVE.Stichera1.mode sid OnSaturday sid Evening End-Reading
+			Monday use: Reading rid ocVE.Stichera1.mode sid OnSunday sid Evening End-Reading
+			Tuesday use: Reading rid ocVE.Stichera1.mode sid OnMonday sid Evening End-Reading
+			Wednesday use: Reading rid ocVE.Stichera1.mode sid OnTuesday sid Evening End-Reading
+			Thursday use: Reading rid ocVE.Stichera1.mode sid OnWednesday sid Evening End-Reading
+			Friday use: Reading rid ocVE.Stichera1.mode sid OnThursday sid Evening End-Reading
+			Saturday use: Reading rid ocVE.Stichera1.mode sid OnFriday sid Evening End-Reading
+		end-when
+	End-Section
+
 	Section tr_vespers_on_day_before
-		when-movable-cycle-day-is //of when name of day is
-			23, 30, 37, 44, 51, 58 use:
-				Section monday
-					Reading sid OnSunday sid Evening End-Reading
+		when-movable-cycle-day-is
+			23 use:
+				Section monday1
+					Reading sid tr.d022_gr_GR_cog.trCommemoration.text End-Reading
+					Reading sid OnSunday sid Evening sid eistonesperinon End-Reading
+				End-Section
+			30 use:
+				Section monday2
+					Reading sid FirstSunday sid ofLent End-Reading
+					Reading sid OnSunday sid Evening sid eistonesperinon End-Reading
+				End-Section
+			37 use:
+				Section monday3
+					Reading sid SecondSunday sid ofLent End-Reading
+					Reading sid OnSunday sid Evening sid eistonesperinon End-Reading
+				End-Section
+			44 use:
+				Section monday4
+					Reading sid ThirdSunday sid ofLent End-Reading
+					Reading sid OnSunday sid Evening sid eistonesperinon End-Reading
+				End-Section
+			51 use:
+				Section monday5
+					Reading sid FourthSunday sid ofLent End-Reading
+					Reading sid OnSunday sid Evening sid eistonesperinon End-Reading
+				End-Section
+			58 use:
+				Section monday6
+					Reading sid FifthSunday sid ofLent End-Reading
+					Reading sid OnSunday sid Evening sid eistonesperinon End-Reading
 				End-Section
 			24 use:
 				Section tuesday1
@@ -177,97 +273,6 @@ Status Draft
 				End-Section
 		end-when
 	
-	End-Section
-
-	
-
-	Break line End_Break
-	Break line End_Break
-	Break line End_Break
-
-
-	Para<bnr>sid book.Triodion.name</>End-Para
-	Reading sid OnMonday sid ofWeek1 sid eistonesperinon End-Reading
-	Para<bnr>sid book.Menaion.name</>End-Para
-	Reading rid meDate.text End-Reading
-	Reading rid meCommemoration.text End-Reading
-	Break line End_Break
-	Title<bnr>sid ve.html.tab</>End-Title
-
-
-	Para<bnr>sid book.Octoechos.name</>End-Para
-	Reading sid OnMonday.uc sid ofWeek1.uc sid EisTonEsperinon End-Reading
-	Para<bnr>sid book.Menaion.name</>End-Para
-	Reading rid meDate.text End-Reading
-	Reading rid meCommemoration.text End-Reading
-	Break line End_Break
-	Title<bnr>sid ve.html.tab</>End-Title
-
-
-
-	Section ve
-		Section me
-			Para<bnr>sid book.Menaion.name</>End-Para
-			Reading rid meDate.text End-Reading
-			Reading rid meCommemoration.text End-Reading
-		End-Section
-		Section ocme
-			Para<bnr>sid book.Octoechos.name</>End-Para
-			Insert_section mode_on_evening_before End-Insert
-			Para<bnr>sid book.Menaion.name</>End-Para
-			Reading rid meDate.text End-Reading
-			Reading rid meCommemoration.text End-Reading
-		End-Section
-		Section octr
-			Para<bnr>sid book.Octoechos.name</>End-Para
-			Insert_section mode_on_evening_before End-Insert
-			Para<bnr>sid book.Triodion.name</>End-Para
-			Reading rid trCommemoration.text End-Reading
-		End-Section
-		Section trmodeme
-			Para<bnr>sid book.Triodion.name</>End-Para
-			Insert_section mode_on_evening_before End-Insert
-			Para<bnr>sid book.Menaion.name</>End-Para
-			Reading rid meDate.text End-Reading
-			Reading rid meCommemoration.text End-Reading
-		End-Section
-		Section trme
-			Para<bnr>sid book.Triodion.name</>End-Para
-			Insert_section tr_vespers_on_day_before End-Insert
-			Para<bnr>sid book.Menaion.name</>End-Para
-			Reading rid meDate.text End-Reading
-			Reading rid meCommemoration.text End-Reading
-		End-Section
-	End-Section
-
-
-
-
-
-
-//blocks
-	Section on_evening_before
-		when-name-of-day-is
-			Sunday use: Reading sid OnSaturday sid Evening End-Reading
-			Monday use: Reading sid OnSunday sid Evening End-Reading
-			Tuesday use: Reading sid OnMonday sid Evening End-Reading
-			Wednesday use: Reading sid OnTuesday sid Evening End-Reading
-			Thursday use: Reading sid OnWednesday sid Evening End-Reading
-			Friday use: Reading sid OnThursday sid Evening End-Reading
-			Saturday use: Reading sid OnFriday sid Evening End-Reading
-		end-when
-	End-Section
-
-	Section mode_on_evening_before
-		when-name-of-day-is
-			Sunday use: Reading rid ocVE.Stichera1.mode sid OnSaturday sid Evening End-Reading
-			Monday use: Reading rid ocVE.Stichera1.mode sid OnSunday sid Evening End-Reading
-			Tuesday use: Reading rid ocVE.Stichera1.mode sid OnMonday sid Evening End-Reading
-			Wednesday use: Reading rid ocVE.Stichera1.mode sid OnTuesday sid Evening End-Reading
-			Thursday use: Reading rid ocVE.Stichera1.mode sid OnWednesday sid Evening End-Reading
-			Friday use: Reading rid ocVE.Stichera1.mode sid OnThursday sid Evening End-Reading
-			Saturday use: Reading rid ocVE.Stichera1.mode sid OnFriday sid Evening End-Reading
-		end-when
 	End-Section
 
 
