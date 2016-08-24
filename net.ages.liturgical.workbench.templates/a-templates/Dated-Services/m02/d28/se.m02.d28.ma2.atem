@@ -1,6 +1,6 @@
 Template se.m02.d28.ma2 
 
-Status Final
+Status NA
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -36,10 +36,18 @@ Status Final
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-	when-movable-cycle-day-is 1 thru 127 use:
-		Insert_section mc.map.ma.Section02 End-Insert
+	when-movable-cycle-day-is
+		1, 8 use: Insert_section mc.map.ma.Section02 End-Insert
+		14 thru 71 use: Insert_section mc.map.ma.Section02 End-Insert 
 		otherwise use:
+			when-name-of-day-is
+				Sunday use:
+					Section Instance02
+					End-Section
+				otherwise use:	
+					Section Instance01
+					End-Section
+			end-when
+	end-when
 		
-	end-when	
-
 End-Template

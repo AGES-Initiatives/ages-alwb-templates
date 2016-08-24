@@ -1,14 +1,6 @@
 Template se.m02.d27.ma 
 
-Status NA
-
-	import client_gr_GR_cog.*
-	import ho.s03_gr_GR_cog.*
-	import me.m02.d27_gr_GR_cog.*
-
-	import da.*
-	import oc.*
-	import tr.*
+Status Review
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -23,7 +15,7 @@ Status NA
 	import roles.*
 
 	Head 
-		Set_Date month 2 day 27 End_Date
+		Set_Date month 2 day 27 year 2017 End_Date
 			Page_Header_Even
 				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
 			End_Page_Header_Even
@@ -44,10 +36,18 @@ Status NA
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-	when-movable-cycle-day-is 1 thru 127 use:
-		Insert_section mc.map.ma.Section01 End-Insert
+	when-movable-cycle-day-is
+		1, 8 use: Insert_section mc.map.ma.Section01 End-Insert
+		14 thru 48 use: Insert_section mc.map.ma.Section01 End-Insert 
 		otherwise use:
+			when-name-of-day-is
+				Sunday use:
+					Section Instance02
+					End-Section
+				otherwise use:	
+					Section Instance01
+					End-Section
+			end-when
+	end-when
 		
-	end-when	
-
 End-Template
