@@ -976,6 +976,44 @@ Status Review
 					End-Section
 			end-when
 		End-Section
+		Section alt1me1_commemoration
+			when-movable-cycle-day-is
+				71, 72, 73, 74, 75, 76, 77, 109 use:
+					Section pascha
+						Section intro
+							Actor sid Deacon End-Actor
+							Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text media-off End-Dialog
+							Dialog sid res01<r>sid Thrice</>sid Evlogison End-Dialog
+						End-Section
+						Actor sid Priest End-Actor
+						Insert_section Selector_Dismissals.alt1me1_Com_Yes.part1 End-Insert
+						Actor sid Choir End-Actor
+						Hymn sid euLI.Key1706.text @ver End-Hymn
+						Actor sid Priest End-Actor
+						Insert_section Selector_Dismissals.Com_Yes.part2 End-Insert
+					End-Section
+				78 thru 108 use:
+					Section afterpascha
+						Insert_section pascha.intro End-Insert
+						Actor sid Priest End-Actor
+						Insert_section Selector_Dismissals.alt1me1_Com_Yes.part1 End-Insert
+						Actor sid Choir End-Actor
+						Hymn sid euLI.Key1706.text @ver End-Hymn
+						Actor sid Priest End-Actor
+						Insert_section Selector_Dismissals.Com_Yes.part2 End-Insert
+					End-Section
+				otherwise use:
+					Section notpaschal
+						Actor sid Priest End-Actor
+						Insert_section Selector_Dismissals.alt1me1_Com_Yes.part1 End-Insert
+						Actor sid Choir End-Actor
+						Hymn sid euLI.Key1706.text @ver End-Hymn
+						Actor sid Priest End-Actor
+						Dialog sid DiEfchonPateron.text End-Dialog
+						Dialog<i>sid res04p</>End-Dialog
+					End-Section
+			end-when
+		End-Section
 		Section nocommemoration
 			when-movable-cycle-day-is
 				71, 72, 73, 74, 75, 76, 77, 109 use:

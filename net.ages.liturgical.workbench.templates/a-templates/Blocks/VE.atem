@@ -858,6 +858,30 @@ Status Review
 			End-Section
 			Section me__
 				Section alt1__
+					Section eightmodedoxasticon_
+						Title sid DoxaKaiNyn End-Title
+						Section hymn
+							Title role source0 sid sourceMenaion End-Title
+							Title<Tmode>rid alt1.meVE.SticGlory1.mode</>End-Title
+							Hymn rid alt1.meVE.SticGlory1.text @ver End-Hymn
+							Title role mode rid alt1.meVE.SticGlory2.mode End-Title
+							Hymn rid alt1.meVE.SticGlory2.text @ver End-Hymn
+							Title role mode rid alt1.meVE.SticGlory3.mode End-Title
+							Hymn rid alt1.meVE.SticGlory3.text @ver End-Hymn
+							Title role mode rid alt1.meVE.SticGlory4.mode End-Title
+							Hymn rid alt1.meVE.SticGlory4.text @ver End-Hymn
+							Title role mode rid alt1.meVE.SticGlory5.mode End-Title
+							Hymn rid alt1.meVE.SticGlory5.text @ver End-Hymn
+							Title role mode rid alt1.meVE.SticGlory6.mode End-Title
+							Hymn rid alt1.meVE.SticGlory6.text @ver End-Hymn
+							Title role mode rid alt1.meVE.SticGlory7.mode End-Title
+							Hymn rid alt1.meVE.SticGlory7.text @ver End-Hymn
+							Title role mode rid alt1.meVE.SticGlory8.mode End-Title
+							Hymn rid alt1.meVE.SticGlory8.text @ver End-Hymn
+							Title role mode rid alt1.meVE.SticGlory9.mode End-Title
+							Hymn rid alt1.meVE.SticGlory9.text @ver End-Hymn
+						End-Section
+					End-Section
 					Section gloryasgloryboth_
 						Title sid DoxaKaiNyn End-Title
 						Section hymn
@@ -873,6 +897,30 @@ Status Review
 						Title role source0 sid sourceMenaion End-Title
 						Title role mode rid meVE.SticBoth.mode End-Title
 						Hymn rid meVE.SticBoth.text @ver End-Hymn
+					End-Section
+				End-Section
+				Section eightmodedoxasticon_
+					Title sid DoxaKaiNyn End-Title
+					Section hymn
+						Title role source0 sid sourceMenaion End-Title
+						Title<Tmode>rid meVE.SticGlory1.mode</>End-Title
+						Hymn rid meVE.SticGlory1.text @ver End-Hymn
+						Title role mode rid meVE.SticGlory2.mode End-Title
+						Hymn rid meVE.SticGlory2.text @ver End-Hymn
+						Title role mode rid meVE.SticGlory3.mode End-Title
+						Hymn rid meVE.SticGlory3.text @ver End-Hymn
+						Title role mode rid meVE.SticGlory4.mode End-Title
+						Hymn rid meVE.SticGlory4.text @ver End-Hymn
+						Title role mode rid meVE.SticGlory5.mode End-Title
+						Hymn rid meVE.SticGlory5.text @ver End-Hymn
+						Title role mode rid meVE.SticGlory6.mode End-Title
+						Hymn rid meVE.SticGlory6.text @ver End-Hymn
+						Title role mode rid meVE.SticGlory7.mode End-Title
+						Hymn rid meVE.SticGlory7.text @ver End-Hymn
+						Title role mode rid meVE.SticGlory8.mode End-Title
+						Hymn rid meVE.SticGlory8.text @ver End-Hymn
+						Title role mode rid meVE.SticGlory9.mode End-Title
+						Hymn rid meVE.SticGlory9.text @ver End-Hymn
 					End-Section
 				End-Section
 				Section gloryasgloryboth_
@@ -4991,6 +5039,47 @@ Status Review
 						End-Section
 				end-when
 			End-Section
+			Section alt1me1_commemoration
+				when-movable-cycle-day-is
+					71, 72, 73, 74, 75, 76, 77, 109 use:
+						Section pascha
+							Section intro
+								Actor sid Deacon End-Actor
+								Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text media-off End-Dialog
+								Dialog sid res01<r>sid Thrice</>sid Evlogison End-Dialog
+							End-Section
+							Actor sid Priest End-Actor
+							Insert_section Selector_Dismissals.alt1me1_Com_Yes.part1 End-Insert
+							Actor sid Choir End-Actor
+							Hymn sid euLI.Key1706h.text @ver End-Hymn
+							Actor sid Hierarch End-Actor
+							Insert_section Selector_Dismissals.Com_Yes.part2 End-Insert
+						End-Section
+					78 thru 108 use:
+						Section afterpascha
+							Insert_section pascha.intro End-Insert
+							Actor sid Priest End-Actor
+							Insert_section Selector_Dismissals.alt1me1_Com_Yes.part1 End-Insert
+							Actor sid Choir End-Actor
+							Hymn sid euLI.Key1706h.text @ver End-Hymn
+							Actor sid Hierarch End-Actor
+							Insert_section Selector_Dismissals.Hierarchical.part2.afterpascha_end_2 End-Insert
+						End-Section
+					otherwise use:
+						Section notpaschal
+							Actor sid Priest End-Actor
+							Insert_section Selector_Dismissals.alt1me1_Com_Yes.part1 End-Insert
+							Actor sid Choir End-Actor
+							Hymn sid euLI.Key1706h.text @ver End-Hymn
+							Actor sid Hierarch End-Actor
+							Dialog sid DiEfchonPateron.text End-Dialog
+							Dialog<i>sid res04p</>End-Dialog
+							Actor sid Clergy End-Actor
+							Dialog sid DiEfchonDespotou.text End-Dialog
+							Dialog<i>sid res04p</>End-Dialog
+						End-Section
+				end-when
+			End-Section
 			Section nocommemoration
 				when-movable-cycle-day-is
 					71, 72, 73, 74, 75, 76, 77, 109 use:
@@ -5063,6 +5152,9 @@ Status Review
 		End-Section
 		Section commemoration
 			Insert_section Selector_Dismissals.Com_Yes End-Insert
+		End-Section
+		Section alt1me1_commemoration
+			Insert_section Selector_Dismissals.alt1me1_Com_Yes End-Insert
 		End-Section
 		Section nocommemoration
 			Insert_section Selector_Dismissals.Com_No End-Insert
