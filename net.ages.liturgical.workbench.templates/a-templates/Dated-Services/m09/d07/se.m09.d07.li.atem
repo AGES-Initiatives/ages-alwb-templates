@@ -14,7 +14,7 @@ Status NA
 	import roles.*
 	
 	Head 
-	Set_Date month 9 day 7 End_Date
+		Set_Date month 9 day 7 End_Date
 			Page_Header_Even
 				center @lookup sid li.pdf.header sid d.on lang L1 @date lang L1
 			End_Page_Header_Even
@@ -55,6 +55,30 @@ Status NA
 		Saturday use:
 		
 		otherwise use:
+			Section Instance01 //weekday
+				Insert_section ST.li.alt1me1 End-Insert
+				Insert_section LI._01_Enarxis__.daily End-Insert
+				Insert_section LI._02_Antiphons__.celebrated_saint End-Insert
+				Insert_section AP.alt1me1_ End-Insert
+				Insert_section LI._04_Entrance__.clergy End-Insert
+				Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
+				Section hymns
+					Insert_section TI.a.bf End-Insert
+					Insert_section AP.me1_.hymn End-Insert
+					Insert_section TI.s._00_saint_.w End-Insert
+					Insert_section AP.alt1me1_.hymn End-Insert
+					Insert_section LI._05_AfterEntranceHymns__.local End-Insert
+					Insert_section KO.seasonal End-Insert
+				End-Section
+				Insert_section LI._06_Trisagion__.chrys End-Insert
+					Set_Date month 11 day 25 End_Date
+					Insert_section LE._01_Epistle__.menaion_ End-Insert
+					Set_Date month 12 day 4 End_Date
+					Insert_section LE._02_Gospel__.menaion_ End-Insert
+				Set_Date month 0 day 0 End_Date
+				Insert_section LI._08_Liturgy__.chrys End-Insert
+				Insert_section LI._09_Dismissal__.alt1me1_commemoration End-Insert
+			End-Section //Sunday
 			
 	end-when
 		

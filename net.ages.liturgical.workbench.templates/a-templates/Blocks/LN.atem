@@ -723,6 +723,27 @@ Template LN
 		Dialog<i>sid res04p</>End-Dialog
 	End-Section
 
+	Section Supplication_alt1me1_deacon
+		Actor sid Deacon End-Actor
+		when-movable-cycle-day-is 
+			36, 50, 57 use: Insert_section supplication_09 End-Insert
+			78, 85, 113 use: 
+				when-date-is
+					May 2, 8, 21 use: Insert_section supplication_07 End-Insert
+					otherwise use: Insert_section supplication_20 End-Insert
+				end-when
+			127 use: Insert_section supplication_21 End-Insert
+			otherwise use: Insert_section LN.Supplication_alt1me1 End-Insert
+		end-when
+		Actor sid Choir End-Actor
+		Dialog sid res01<r>sid Twelve</>End-Dialog
+		Actor sid Priest End-Actor
+		Dialog sid exc07 End-Dialog
+//		Actor sid Choir End-Actor
+//		Dialog sid res04 End-Dialog
+		Dialog<i>sid res04p</>End-Dialog
+	End-Section
+
 	Section Supplication_priest
 		Actor sid Priest End-Actor
 		when-movable-cycle-day-is 
@@ -764,6 +785,16 @@ Template LN
 		Dialog<i>sid res04p</>End-Dialog
 	End-Section
 
+	Section Supplication_alt1me1
+		when-date-is
+			Mar 2 use: Insert_section supplication_07_alt1me1 End-Insert
+			Jul 22 use: Insert_section supplication_07_alt1me1 End-Insert
+			Sep 3, 7, 17 use: Insert_section supplication_07_alt1me1 End-Insert
+			Oct 20 use: Insert_section supplication_07_alt1me1 End-Insert
+			Oct 28 use: Insert_section supplication_12 End-Insert
+			Dec 17 use:Insert_section supplication_07_alt1me1 End-Insert
+		end-when
+	End-Section
 	Section Supplication_Menaion
 		when-date-is
 			Jan 7 use: Insert_section supplication_05 End-Insert
@@ -793,7 +824,6 @@ Template LN
 			Oct 20 use: Insert_section supplication_07_alt1me1 End-Insert
 			Oct 28 use: Insert_section supplication_12 End-Insert
 			Nov 8 use: Insert_section supplication_04 End-Insert
-//			Nov 9 use: Insert_section supplication_13 End-Insert
 			Nov 21 use: Insert_section supplication_02 End-Insert
 			Dec 9 use: Insert_section supplication_02 End-Insert
 			Dec 11, 13, 14, 16 use:
