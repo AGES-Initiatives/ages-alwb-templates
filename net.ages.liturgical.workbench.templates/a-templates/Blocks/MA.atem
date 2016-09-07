@@ -8881,6 +8881,67 @@ Template MA
 				end-when
 			End-Section
 			Section me__
+				Section alt1__
+					Section exap12
+						Title role source sid sourceMenaion End-Title
+						Actor sid Hierarch<Trubric>sid InPlaceOfRightChoir</> End-Actor
+						Title role desig sid Exaposteilaria End-Title
+						Title role mixed<Tmode>rid alt1.meMA.Exaposteilarion1.mode</><Tmelody>rid alt1.meMA.Exaposteilarion1.melody</>End-Title
+						Hymn rid alt1.meMA.Exaposteilarion1.text @ver End-Hymn
+						Title role desig sid Eteron End-Title		
+						Title role mixed<Tmode>rid alt1.meMA.Exaposteilarion2.mode</><Tmelody>rid alt1.meMA.Exaposteilarion2.melody</>End-Title
+						Hymn rid alt1.meMA.Exaposteilarion2.text @ver End-Hymn
+					End-Section
+					Section exap123t
+						Section exap1
+							Actor sid Hierarch<Trubric>sid InPlaceOfRightChoir</> End-Actor
+							Title role desig sid Exaposteilarion End-Title
+							Section hymn
+								Title role source0 sid sourceMenaion End-Title
+								Title role mixed<Tmode>rid alt1.meMA.Exaposteilarion1.mode</><Tmelody>rid alt1.meMA.Exaposteilarion1.melody</>End-Title
+								Hymn rid alt1.meMA.Exaposteilarion1.text @ver End-Hymn
+							End-Section
+						End-Section
+						when-exists rid alt1.meMA.Exaposteilarion2.text use:
+							Section exap2
+								Title role desig sid Eteron End-Title
+								Title role mixed<Tmode>rid alt1.meMA.Exaposteilarion2.mode</><Tmelody>rid alt1.meMA.Exaposteilarion2.melody</>End-Title
+								Hymn rid alt1.meMA.Exaposteilarion2.text @ver End-Hymn
+							End-Section
+						end-when
+						when-exists rid alt1.meMA.Exaposteilarion3.text use:
+							Section exap3
+								Title role desig sid Eteron End-Title
+								Title role mixed<Tmode>rid alt1.meMA.Exaposteilarion3.mode</><Tmelody>rid alt1.meMA.Exaposteilarion3.melody</>End-Title
+								Hymn rid alt1.meMA.Exaposteilarion3.text @ver End-Hymn
+							End-Section
+						end-when
+						Section theotokion
+							when-exists
+								rid alt1.meMA.ExapTheotokion.text use:
+									when-name-of-day-is
+										Monday, Tuesday, Thursday, Saturday, Sunday use:
+											Section exaptheotokion
+												Title role desig sid Theotokion End-Title
+												Title role mixed<Tmode>rid alt1.meMA.ExapTheotokion.mode</><Tmelody>rid alt1.meMA.ExapTheotokion.melody</>End-Title
+												Hymn rid alt1.meMA.ExapTheotokion.text @ver End-Hymn
+											End-Section
+										Wednesday, Friday use:
+											when-exists rid alt1.meMA.ExapStavrotheotokion.text use:
+												Section exapstavrotheotokion
+													Title role desig sid Stavrotheotokion End-Title
+													Hymn rid alt1.meMA.ExapStavrotheotokion.text @ver End-Hymn
+												End-Section
+											otherwise use:
+												when-exists rid alt1.meMA.ExapTheotokion.text use:
+													Insert_section exaptheotokion End-Insert
+												end-when
+											end-when
+									end-when
+							end-when
+						End-Section
+					End-Section
+				End-Section
 				Section exap1_
 					Actor sid Hierarch<Trubric>sid InPlaceOfRightChoir</> End-Actor
 					Title role desig sid Exaposteilarion End-Title
