@@ -350,7 +350,7 @@ Template LN
 	End-Section
 	
 	Section Ektenia03 //for Lity
-		Section Ektenia03_part1
+		Section part1
 			Actor sid Deacon End-Actor
 			Media sid ho.s10_gr_GR_cog.hoVE.LityKyrieEleison.text End-Media
 			Dialog sid pet17 End-Dialog
@@ -375,7 +375,7 @@ Template LN
 			Dialog sid pet32 End-Dialog
 			Dialog<i>sid res03p</>End-Dialog
 		End-Section
-		Section Ektenia03_part2
+		Section part2
 			Actor sid Priest End-Actor
 			when-movable-cycle-day-is 
 				36, 50, 57 use: Insert_section commemorations.ektenia_09 End-Insert
@@ -383,6 +383,37 @@ Template LN
 				127 use: Insert_section commemorations.ektenia_21 End-Insert
 				otherwise use: Insert_section LN.Ektenia_Menaion End-Insert
 			end-when
+			Dialog sid pet36 End-Dialog
+		End-Section
+	End-Section	
+
+	Section Ektenia03_mealt1 //for Lity
+		Section part1
+			Insert_section Ektenia03.part1 End-Insert
+		End-Section
+		Section part2
+			Actor sid Priest End-Actor
+			Insert_section LN.Ektenia_mealt1 End-Insert
+			Dialog sid pet36 End-Dialog
+		End-Section
+	End-Section	
+	Section Ektenia03_me1mealt1 //for Lity
+		Section part1
+			Insert_section Ektenia03.part1 End-Insert
+		End-Section
+		Section part2
+			Actor sid Priest End-Actor
+			Insert_section LN.Ektenia_mealt1 End-Insert
+			Dialog sid pet36 End-Dialog
+		End-Section
+	End-Section	
+	Section Ektenia03_me1mealt2 //for Lity
+		Section part1
+			Insert_section Ektenia03.part1 End-Insert
+		End-Section
+		Section part2
+			Actor sid Priest End-Actor
+			Insert_section LN.Ektenia_with_mealt2 End-Insert
 			Dialog sid pet36 End-Dialog
 		End-Section
 	End-Section	
@@ -399,7 +430,7 @@ Template LN
 					when-name-of-day-is Sunday
 						use: Insert_section commemorations.ektenia_10 End-Insert
 					end-when
-				Jul 22 use: Insert_section commemorations.ektenia_07_with_alt1me1 End-Insert
+				Jul 22 use: Insert_section commemorations.ektenia_07_with_mealt1 End-Insert
 				Jul 25 use: Insert_section commemorations.ektenia_08 End-Insert
 				Aug 15 use: Insert_section commemorations.ektenia_02 End-Insert
 				Aug 29 use: Insert_section commemorations.ektenia_05 End-Insert
@@ -446,6 +477,23 @@ Template LN
 			end-when
 		End-Section
 
+		Section Ektenia_mealt1
+			when-date-is
+				Dec 2 use: Insert_section commemorations.ektenia_07_mealt1 End-Insert
+				Dec 17 use:
+					when-name-of-day-is Sunday 
+						use: Insert_section commemorations.ektenia_15_mealt1 End-Insert
+						otherwise use: Insert_section commemorations.ektenia_07_mealt1 End-Insert
+					end-when
+			end-when
+		End-Section
+
+		Section Ektenia_with_mealt2
+			when-date-is
+				Feb 6 use: Insert_section commemorations.ektenia_07_with_mealt2 End-Insert
+			end-when
+		End-Section
+
 		Section commemorations
 			Section ektenia_02 //Theotokos
 				Dialog sid sup00a sid sup01 rid meInsert2 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid sup15 End-Dialog	
@@ -465,10 +513,13 @@ Template LN
 			Section ektenia_07 //Saint
 				Dialog sid sup00a sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid meInsert1 rid meInsert2 sid sup15 End-Dialog	
 			End-Section
-			Section ektenia_07_with_alt1me1 //Saint both
+			Section ektenia_07_with_mealt1 //Saint both
 				Dialog sid sup00a sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid meInsert1 rid alt1.meInsert1 rid alt1.meInsert2 sid sup15 End-Dialog	
 			End-Section
-			Section ektenia_07_alt1me1 //Saint alt1me1 only
+			Section ektenia_07_with_mealt2 //Saint both
+				Dialog sid sup00a sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid meInsert1 rid alt2.meInsert1 rid alt2.meInsert2 sid sup15 End-Dialog	
+			End-Section
+			Section ektenia_07_mealt1 //Saint alt1me1 only
 				Dialog sid sup00a sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid alt1.meInsert1 rid alt1.meInsert2 sid sup15 End-Dialog	
 			End-Section
 			Section ektenia_08 //Joakim and Anna
@@ -490,8 +541,11 @@ Template LN
 			Section ektenia_14 //ForefathersDecember
 				Dialog sid sup00a sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid me.m12.dFF_gr_GR_cog.meInsert1 sid me.m12.dFF_gr_GR_cog.meInsert2 sid sup15 End-Dialog	
 			End-Section
-			Section ektenia_15 //ForefathersDecember121517
+			Section ektenia_15 //ForefathersDecember1215
 				Dialog sid sup00a sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid meInsert1 sid me.m12.dFF_gr_GR_cog.meInsert1 sid me.m12.dFF_gr_GR_cog.meInsert2 sid sup15 End-Dialog	
+			End-Section
+			Section ektenia_15_mealt1 //Forefathers_mealt1
+				Dialog sid sup00a sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid alt1.meInsert1 sid me.m12.dFF_gr_GR_cog.meInsert1 sid me.m12.dFF_gr_GR_cog.meInsert2 sid sup15 End-Dialog	
 			End-Section
 			Section ektenia_16 //Sunday Before Xmas
 				Dialog sid sup00a sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid me.m12.dBC_gr_GR_cog.meInsert1 sid me.m12.dBC_gr_GR_cog.meInsert2 sid sup15 End-Dialog	
