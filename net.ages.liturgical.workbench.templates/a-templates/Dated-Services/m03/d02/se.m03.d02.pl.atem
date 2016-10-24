@@ -1,7 +1,7 @@
-Template se.m03.d01.ma
+Template se.m03.d02.pl
 
-Status Review
-	
+Status Final
+
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
 	import misc_gr_GR_cog.*
@@ -15,12 +15,12 @@ Status Review
 	import roles.*
 
 	Head 
-		Set_Date month 3 day 1 year 2017 End_Date
+		Set_Date month 3 day 2 year 2017 End_Date
 			Page_Header_Even
-				center @lookup sid ma.pdf.header lang L1 @lookup sid d.on lang L1 @date lang L1 
+				center @lookup sid pl.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @lookup sid ma.pdf.header lang L2 @lookup sid d.on lang L2 @date lang L2 
+				center @lookup sid pl.pdf.header rid da.daVE.OnTheEveningBefore lang L2
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -32,14 +32,13 @@ Status Review
 	End_Head
 
 	Preface Covers
-		Insert_template ematins.cover.ma End-Insert
+		Insert_template ematins.cover.pl End-Insert
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-	when-movable-cycle-day-is 1 thru 127 use:
-		Insert_section mc.map.ma.Section01 End-Insert
-		otherwise use:
-		
+	when-movable-cycle-day-is 26, 28, 33, 35, 40, 42, 47, 49, 54, 55, 56, 61, 63 use:
+		Insert_template mc.map.ve End-Insert
+
 	end-when	
 
 End-Template
