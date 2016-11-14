@@ -1,4 +1,4 @@
-Template se.m03.d03.co
+Template se.m03.d02.h9 
 
 Status Final
 
@@ -15,12 +15,12 @@ Status Final
 	import roles.*
 
 	Head 
-		Set_Date month 3 day 3 year 2017 End_Date
+		Set_Date month 3 day 2 year 2017 End_Date
 			Page_Header_Even
-				center @lookup sid co.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
+				center @lookup sid h9.pdf.header sid d.on lang L2 @date lang L2
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @lookup sid co.pdf.header rid da.daVE.OnTheEveningBefore lang L2
+				center @lookup sid h9.pdf.header sid d.on lang L2 @date lang L2
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -31,10 +31,6 @@ Status Final
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
-	when-movable-cycle-day-is 1 thru 127 use:
-		Insert_template mc.map.co End-Insert
-		otherwise use:
-		
-	end-when
-	
+	Insert_section HR.Lent_h9__.begin End-Insert
+
 End-Template

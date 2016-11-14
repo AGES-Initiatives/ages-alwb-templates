@@ -1,0 +1,38 @@
+Template se.m03.d01.co
+
+Status Final
+
+	import template.titles_gr_GR_cog.*
+	
+	Head 
+		Set_Date month 3 day 1 year 2017 End_Date
+		Page_Header_Even 
+			left @pageNbr 
+			center 
+				@lookup sid co.pdf.header lang L2
+//				@date 
+		End_Page_Header_Even
+		Page_Header_Odd 
+			center 
+				@lookup sid co.pdf.header lang L2
+//				@date 
+			right @pageNbr 
+		End_Page_Header_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	when-movable-cycle-day-is
+		1, 8 use: Insert_section mc.map.co.Section01 End-Insert
+		14 thru 71 use: Insert_section mc.map.co.Section01 End-Insert 
+		otherwise use:
+			when-name-of-day-is
+				Sunday use:
+					Section Instance02
+					End-Section
+				otherwise use:	
+					Section Instance01
+					End-Section
+			end-when
+	end-when
+		
+End-Template
