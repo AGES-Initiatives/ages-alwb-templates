@@ -578,8 +578,13 @@ Status Review
 	Section _10 //Communion Hymn
 		Actor sid Choir End-Actor
 		Title role desig sid Koinonikon End-Title
-		Media sid euPL.Key1201.text End-Media
-		Hymn sid psa33.v9a.text @ver sid Allilouia End-Hymn
+		when-date-is
+			Feb 11, 25 use: Insert_section Selector_CommunionHymn.Various.saints End-Insert
+			Mar 10 use: Insert_section Selector_CommunionHymn.Various.saints End-Insert
+			otherwise use:
+				Media sid euPL.Key1201.text End-Media
+				Hymn sid psa33.v9a.text @ver sid Allilouia End-Hymn
+		end-when
 	End-Section
 
 	Section _11 //CommunionOfFaithful
