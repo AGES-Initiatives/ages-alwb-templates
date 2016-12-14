@@ -104,7 +104,13 @@ Status Final
 				Title role cover3 sid d.ontheeveof ldp @Service_Date End-Title 	
 			
 				when-name-of-day-is Sunday use:		//Sunday Mode
-					Title role cover4 rid ocVE.Apolytikion.mode End-Title
+					when-date-is
+						Jan 6 use: //leave blank
+						Mar 25 use: //leave blank
+						Aug 6 use: //leave blank
+						Dec 25 use: //leave blank
+						otherwise use: Title role cover4 rid ocVE.Apolytikion.mode End-Title
+					end-when
 				end-when
 			
 				when-exists
