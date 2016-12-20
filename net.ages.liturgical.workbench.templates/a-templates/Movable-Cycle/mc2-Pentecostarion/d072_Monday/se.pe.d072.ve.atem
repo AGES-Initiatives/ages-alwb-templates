@@ -17,7 +17,7 @@ Status NA
 	import roles.*
 
 	Head 
-		Set_Date month 5 day 2 End_Date
+		Set_Date month 4 day 17 year 2017 End_Date
 			Page_Header_Even
 				center  @lookup sid pa.easter lang L1 @lookup sid d.delimiter lang L1 @lookup sid pa.agape lang L1
 			End_Page_Header_Even
@@ -39,7 +39,7 @@ Status NA
 	End-Preface
 
 	Section Instance01
-		Insert_section TI.se.pe.ve End-Insert
+		Insert_section ST.ve.pe End-Insert
 		Insert_section VE._01_Beginning__.vespers End-Insert
 		Insert_section VE._02_Kekragaria__.mode2__.noStichologia End-Insert
 		Insert_section VE._03_Stichera__.pe__.s_123456as5678910 End-Insert
@@ -58,13 +58,15 @@ Status NA
 	
 	Section Instance02 //with St George
 		Section block1
-			Title<bnr>rid me.meDate.text</>End-Title
-			Title<r>rid pe.peCommemoration.text</>End-Title
-			Set_Date month 4 day 23 End_Date
-			Title<r>rid me.meCommemoration.text</>End-Title
+			Para<bnr>sid book.Pentecostarion.name</>End-Para
+			Insert_section Selector_ServiceTitle.pe_vespers_on_day_before End-Insert
+			Para<bnr>sid book.Menaion.name</>End-Para
+			Reading<bnr>sid me.m04.d23_gr_GR_cog.meDate.text</>End-Reading
+			Reading sid me.m04.d23_gr_GR_cog.meCommemoration.text End-Reading
 			Break line End_Break
 			Title<bnr>sid ve.html.tab</>End-Title
 		End-Section
+		Set_Date month 4 day 23 End_Date
 		Set_mcDay day 72 End_mcDay
 		Insert_section VE._01_Beginning__.vespers End-Insert
 		Insert_section VE._02_Kekragaria__.mode2__.noStichologia End-Insert
