@@ -32,6 +32,7 @@ Template LE
 	import LectionaryGospelAlleluiaMode.*
 	import LectionaryGospelAlleluiaVerse1.*
 	import LectionaryGospelAlleluiaVerse2.*
+	import LectionaryGospelTitle.*
 	import LectionaryGospelBook.*
 	import LectionaryGospelChapverse.*
 	import LectionaryGospelText.*
@@ -53,8 +54,12 @@ Template LE
 
 	Section _01_Epistle__
 		Section daily_ //computes
-			Section prokeimenon
+			Section title
 				Title role desig sid OApostolos End-Title
+				Insert_section Epistle_Title End-Insert
+			End-Section
+			Section prokeimenon
+			//	Title role desig sid OApostolos End-Title
 				Actor sid Deacon End-Actor	
 				Dialog sid exc19 End-Dialog
 				Actor sid Reader End-Actor
@@ -64,7 +69,7 @@ Template LE
 			Section lesson
 				Actor sid Deacon End-Actor
 				Dialog sid exc17 End-Dialog
-				Insert_section Epistle_Title End-Insert
+			//	Insert_section Epistle_Title End-Insert
 				Actor sid Reader End-Actor
 				Insert_section Epistle_Book End-Insert
 				Actor sid Deacon End-Actor
@@ -96,8 +101,12 @@ Template LE
 		End-Section	
 		Section Hierarchical__
 			Section daily_ //computes
-				Section prokeimenon
+				Section title
 					Title role desig sid OApostolos End-Title
+					Insert_section Epistle_Title End-Insert
+				End-Section
+				Section prokeimenon
+				//	Title role desig sid OApostolos End-Title
 					Actor sid Deacon End-Actor	
 					Dialog sid exc19 End-Dialog
 					Actor sid Reader End-Actor
@@ -107,7 +116,7 @@ Template LE
 				Section lesson
 					Actor sid Deacon End-Actor
 					Dialog sid exc17 End-Dialog
-					Insert_section Epistle_Title End-Insert
+				//	Insert_section Epistle_Title End-Insert
 					Actor sid Reader End-Actor
 					Insert_section Epistle_Book End-Insert
 					Actor sid Deacon End-Actor
@@ -161,9 +170,12 @@ Template LE
 				Dialog sid epi02 End-Dialog
 			End-Section	
 			Section menaion_ //computes
-				Section prokeimenon
+				Section title
 					Title role desig sid TaAnagnosmata End-Title
 					Title role desig sid OApostolos End-Title
+					Insert_section rid_EpistleLessons_Menaion.me_ep_designation End-Insert
+				End-Section
+				Section prokeimenon
 					Actor sid Deacon End-Actor
 					Dialog sid exc19 End-Dialog
 					Actor sid Reader End-Actor
@@ -173,7 +185,6 @@ Template LE
 				Section lesson
 					Actor sid Deacon End-Actor
 					Dialog sid exc17 End-Dialog		
-					Insert_section rid_EpistleLessons_Menaion.me_ep_designation End-Insert
 					Actor sid Reader End-Actor
 					Insert_section rid_EpistleLessons_Menaion.me_ep_book End-Insert
 					Actor sid Deacon End-Actor
@@ -259,6 +270,7 @@ Template LE
 					Dialog sid exc19 End-Dialog
 					Actor sid Reader End-Actor
 					Title role chapverse sid le.ep.ge.monastic_gr_GR_cog.legeLI.Epistle.chapverse End-Title
+					Title role small sid le.ep.mc.d308_gr_GR_cog.lemcLI.Epistle.title End-Title
 					Reading sid le.ep.ge.monastic_gr_GR_cog.legeLI.Epistle.text @ver End-Reading
 					Actor sid Hierarch End-Actor
 					Dialog sid epi02 End-Dialog		
@@ -312,9 +324,12 @@ Template LE
 			End-Section
 		End-Section	
 		Section menaion_ //computes
-			Section prokeimenon
+			Section title
 				Title role desig sid TaAnagnosmata End-Title
 				Title role desig sid OApostolos End-Title
+				Insert_section rid_EpistleLessons_Menaion.me_ep_designation End-Insert
+			End-Section
+			Section prokeimenon
 				Actor sid Deacon End-Actor
 				Dialog sid exc19 End-Dialog
 				Actor sid Reader End-Actor
@@ -324,7 +339,6 @@ Template LE
 			Section lesson
 				Actor sid Deacon End-Actor
 				Dialog sid exc17 End-Dialog		
-				Insert_section rid_EpistleLessons_Menaion.me_ep_designation End-Insert
 				Actor sid Reader End-Actor
 				Insert_section rid_EpistleLessons_Menaion.me_ep_book End-Insert
 				Actor sid Deacon End-Actor
@@ -459,6 +473,7 @@ Template LE
 				Dialog sid exc19 End-Dialog
 				Actor sid Reader End-Actor
 				Title role chapverse sid le.ep.ge.monastic_gr_GR_cog.legeLI.Epistle.chapverse End-Title
+				Title role small sid le.ep.mc.d308_gr_GR_cog.lemcLI.Epistle.title End-Title
 				Reading sid le.ep.ge.monastic_gr_GR_cog.legeLI.Epistle.text @ver End-Reading
 				Actor sid Priest End-Actor
 				Dialog sid epi02 End-Dialog		
@@ -538,10 +553,7 @@ Template LE
 			Insert_section PrayerBeforeGospel End-Insert
 			Section lesson 
 				Title role desig sid ToEvangelion End-Title
-				when-name-of-day-is 
-					Sunday use:	Title<inr>sid ForSunday</>End-Title
-					otherwise use: Title<inr>sid ForTheDay</>End-Title
-				end-when
+				Insert_section Gospel_Title End-Insert
 				Actor sid Deacon End-Actor
 				Dialog sid exc17 sid exc18 sid gos02 End-Dialog
 				Actor sid Priest End-Actor
@@ -617,6 +629,7 @@ Template LE
 				Insert_section hPrayerBeforeGospel End-Insert
 				Section lesson 
 					Title role desig sid ToEvangelion End-Title
+					Insert_section Gospel_Title End-Insert
 					Actor sid Deacon End-Actor
 					Dialog sid exc17 sid exc18 sid gos02 End-Dialog
 					Actor sid Hierarch End-Actor
