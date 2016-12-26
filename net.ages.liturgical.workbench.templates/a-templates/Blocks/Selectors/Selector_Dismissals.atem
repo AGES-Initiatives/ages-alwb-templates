@@ -161,6 +161,16 @@ Status Review
 		Insert_section Com_Yes.part2 End-Insert
 	End-Section
 
+	Section pealt1_Com_Yes 
+		Actor sid Priest End-Actor
+		Section part1
+			when-movable-cycle-day-is
+				73 use: Insert_section dismissal_07_pealt1 End-Insert
+			end-when
+		End-Section
+		Insert_section Com_Yes.part2 End-Insert
+	End-Section
+
 
 	Section Com_No //use this whenever there is NO explicit commemoration
 		Actor sid Priest End-Actor
@@ -411,6 +421,12 @@ Status Review
 						Dialog sid dis00 rid meDismissal sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 rid alt1.meInsert1 rid alt1.meInsert2 sid dis10 sid dis89 End-Dialog 
 				end-when
 		end-when			
+	End-Section
+
+	Section dismissal_07_pealt1
+		when-movable-cycle-day-is 
+			73 use: Dialog sid dis00 sid dis00.resurrection sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 rid alt1.peInsert1 rid alt1.peInsert2 sid dis10 sid dis89 End-Dialog 
+		end-when
 	End-Section
 	
 	Section dismissal_08 //Joakim and Anna

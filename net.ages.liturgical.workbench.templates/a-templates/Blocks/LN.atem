@@ -774,7 +774,7 @@ Template LN
 					otherwise use: Insert_section supplication_20 End-Insert
 				end-when
 			127 use: Insert_section supplication_21 End-Insert
-			otherwise use: Insert_section LN.Supplication_Menaion End-Insert
+			otherwise use: Insert_section LN.supplication_selector_menaion End-Insert
 		end-when
 		Actor sid Choir End-Actor
 		Dialog sid res01<r>sid Twelve</>End-Dialog
@@ -795,8 +795,20 @@ Template LN
 					otherwise use: Insert_section supplication_20 End-Insert
 				end-when
 			127 use: Insert_section supplication_21 End-Insert
-			otherwise use: Insert_section LN.Supplication_alt1me1 End-Insert
+			otherwise use: Insert_section LN.supplication_selector_alt1me1 End-Insert
 		end-when
+		Actor sid Choir End-Actor
+		Dialog sid res01<r>sid Twelve</>End-Dialog
+		Actor sid Priest End-Actor
+		Dialog sid exc07 End-Dialog
+//		Actor sid Choir End-Actor
+//		Dialog sid res04 End-Dialog
+		Dialog<i>sid res04p</>End-Dialog
+	End-Section
+
+	Section Supplication_alt1pe1_deacon
+		Actor sid Deacon End-Actor
+		Insert_section LN.supplication_selector_alt1pe1 End-Insert
 		Actor sid Choir End-Actor
 		Dialog sid res01<r>sid Twelve</>End-Dialog
 		Actor sid Priest End-Actor
@@ -812,7 +824,7 @@ Template LN
 			36, 50, 57 use: Insert_section supplication_09 End-Insert
 			78, 85, 113 use: Insert_section supplication_20 End-Insert
 			127 use: Insert_section supplication_21 End-Insert
-			otherwise use: Insert_section LN.Supplication_Menaion End-Insert
+			otherwise use: Insert_section LN.supplication_selector_menaion End-Insert
 		end-when
 		Actor sid Choir End-Actor
 		Dialog sid res01<r>sid Twelve</>End-Dialog
@@ -847,7 +859,7 @@ Template LN
 		Dialog<i>sid res04p</>End-Dialog
 	End-Section
 
-	Section Supplication_alt1me1
+	Section supplication_selector_alt1me1
 		when-date-is
 			Mar 2 use: Insert_section supplication_07_alt1me1 End-Insert
 			Jul 22 use: Insert_section supplication_07_alt1me1 End-Insert
@@ -857,7 +869,14 @@ Template LN
 			Dec 2, 17 use:Insert_section supplication_07_alt1me1 End-Insert
 		end-when
 	End-Section
-	Section Supplication_Menaion
+
+	Section supplication_selector_alt1pe1
+		when-movable-cycle-day-is
+			73 use: Insert_section supplication_07_alt1pe1 End-Insert
+		end-when
+	End-Section
+
+	Section supplication_selector_menaion
 		when-date-is
 			Jan 7 use: Insert_section supplication_05 End-Insert
 			Feb 24 use: Insert_section supplication_05 End-Insert
@@ -942,6 +961,9 @@ Template LN
 	End-Section
 	Section supplication_07_alt1me1 //Saint
 		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid alt1.meInsert1 rid alt1.meInsert2 sid sup15 sid sup99 End-Dialog	
+	End-Section
+	Section supplication_07_alt1pe1 //Saint
+		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid alt1.peInsert1 rid alt1.peInsert2 sid sup15 sid sup99 End-Dialog	
 	End-Section
 	Section supplication_08 //Joakim and Anna
 		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid meInsert2 sid sup15 sid sup99 End-Dialog	
