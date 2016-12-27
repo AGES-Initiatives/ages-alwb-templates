@@ -425,6 +425,16 @@ Template LN
 			Dialog sid pet36 End-Dialog
 		End-Section
 	End-Section	
+	Section Ektenia03_pealt1 //for Lity
+		Section part1
+			Insert_section Ektenia03.part1 End-Insert
+		End-Section
+		Section part2
+			Actor sid Priest End-Actor
+			Insert_section LN.Ektenia_pealt1 End-Insert
+			Dialog sid pet36 End-Dialog
+		End-Section
+	End-Section	
 
 		Section Ektenia_Menaion
 			when-date-is
@@ -502,6 +512,12 @@ Template LN
 			end-when
 		End-Section
 
+		Section Ektenia_pealt1
+			when-movable-cycle-day-is
+				73 use: Insert_section commemorations.ektenia_07_pealt1 End-Insert
+			end-when
+		End-Section
+		
 		Section commemorations
 			Section ektenia_02 //Theotokos
 				Dialog sid sup00a sid sup01 rid meInsert2 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 sid sup15 End-Dialog	
@@ -529,6 +545,9 @@ Template LN
 			End-Section
 			Section ektenia_07_mealt1 //Saint alt1me1 only
 				Dialog sid sup00a sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid alt1.meInsert1 rid alt1.meInsert2 sid sup15 End-Dialog	
+			End-Section
+			Section ektenia_07_pealt1 //Saint alt1pe1 only
+				Dialog sid sup00a sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid alt1.peInsert1 rid alt1.peInsert2 sid sup15 End-Dialog	
 			End-Section
 			Section ektenia_08 //Joakim and Anna
 				Dialog sid sup00a sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid meInsert2 sid sup15 End-Dialog	
