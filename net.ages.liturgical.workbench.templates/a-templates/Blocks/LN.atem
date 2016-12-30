@@ -357,7 +357,7 @@ Template LN
 		Dialog<i>sid res04p</>End-Dialog
 	End-Section
 	
-	Section Ektenia03 //for Lity
+	Section Ektenia03_me1 //for Lity
 		Section part1
 			Actor sid Deacon End-Actor
 			Media sid ho.s10_gr_GR_cog.hoVE.LityKyrieEleison.text End-Media
@@ -389,54 +389,53 @@ Template LN
 				36, 50, 57 use: Insert_section commemorations.ektenia_09 End-Insert
 				78, 85, 113 use: Insert_section commemorations.ektenia_20 End-Insert
 				127 use: Insert_section commemorations.ektenia_21 End-Insert
-				otherwise use: Insert_section LN.Ektenia_Menaion End-Insert
+				otherwise use: Insert_section LN.ektenia_menaion End-Insert
 			end-when
 			Dialog sid pet36 End-Dialog
 		End-Section
 	End-Section	
-
 	Section Ektenia03_mealt1 //for Lity
 		Section part1
-			Insert_section Ektenia03.part1 End-Insert
+			Insert_section Ektenia03_me1.part1 End-Insert
 		End-Section
 		Section part2
 			Actor sid Priest End-Actor
-			Insert_section LN.Ektenia_mealt1 End-Insert
+			Insert_section LN.ektenia_mealt1 End-Insert
 			Dialog sid pet36 End-Dialog
 		End-Section
 	End-Section	
 	Section Ektenia03_me1mealt1 //for Lity
 		Section part1
-			Insert_section Ektenia03.part1 End-Insert
+			Insert_section Ektenia03_me1.part1 End-Insert
 		End-Section
 		Section part2
 			Actor sid Priest End-Actor
-			Insert_section LN.Ektenia_mealt1 End-Insert
+			Insert_section LN.ektenia_mealt1 End-Insert
 			Dialog sid pet36 End-Dialog
 		End-Section
 	End-Section	
 	Section Ektenia03_me1mealt2 //for Lity
 		Section part1
-			Insert_section Ektenia03.part1 End-Insert
+			Insert_section Ektenia03_me1.part1 End-Insert
 		End-Section
 		Section part2
 			Actor sid Priest End-Actor
-			Insert_section LN.Ektenia_with_mealt2 End-Insert
+			Insert_section LN.ektenia_with_mealt2 End-Insert
 			Dialog sid pet36 End-Dialog
 		End-Section
 	End-Section	
 	Section Ektenia03_pealt1 //for Lity
 		Section part1
-			Insert_section Ektenia03.part1 End-Insert
+			Insert_section Ektenia03_me1.part1 End-Insert
 		End-Section
 		Section part2
 			Actor sid Priest End-Actor
-			Insert_section LN.Ektenia_pealt1 End-Insert
+			Insert_section LN.ektenia_pealt1 End-Insert
 			Dialog sid pet36 End-Dialog
 		End-Section
 	End-Section	
 
-		Section Ektenia_Menaion
+		Section ektenia_menaion
 			when-date-is
 				Jan 7 use: Insert_section commemorations.ektenia_05 End-Insert
 				Feb 24 use: Insert_section commemorations.ektenia_05 End-Insert
@@ -495,7 +494,7 @@ Template LN
 			end-when
 		End-Section
 
-		Section Ektenia_mealt1
+		Section ektenia_mealt1
 			when-date-is
 				Dec 2 use: Insert_section commemorations.ektenia_07_mealt1 End-Insert
 				Dec 17 use:
@@ -506,13 +505,13 @@ Template LN
 			end-when
 		End-Section
 
-		Section Ektenia_with_mealt2
+		Section ektenia_with_mealt2
 			when-date-is
 				Feb 6 use: Insert_section commemorations.ektenia_07_with_mealt2 End-Insert
 			end-when
 		End-Section
 
-		Section Ektenia_pealt1
+		Section ektenia_pealt1
 			when-movable-cycle-day-is
 				73 use: Insert_section commemorations.ektenia_07_pealt1 End-Insert
 			end-when
@@ -657,6 +656,34 @@ Template LN
 		Dialog<i>sid res06p</>End-Dialog
 		Dialog sid petCross05 End-Dialog
 		Dialog<i>sid res06p</>End-Dialog
+	End-Section
+
+	Section Ektenia08_vigil_lity_me1
+		Section part1
+			Insert_section Supplication_deacon End-Insert
+			Media sid ho.s10_gr_GR_cog.hoVE.LityKyrieEleison.text End-Media
+			Dialog<i>sid res06p</>End-Dialog
+			Dialog sid pet18 End-Dialog
+			Dialog<i>sid res06p</>End-Dialog
+			Dialog sid pet19a sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
+			Dialog<i>sid res06p</>End-Dialog
+			Dialog sid pet21a End-Dialog
+			Dialog<i>sid res06p</>End-Dialog
+			Dialog sid pet33 End-Dialog
+			Dialog<i>sid res06p</>End-Dialog
+			Dialog sid pet34 End-Dialog
+			Dialog<i>sid res06p</>End-Dialog
+			Actor sid Priest End-Actor
+			Dialog sid pet35 End-Dialog
+			Dialog sid exc11a End-Dialog
+			Dialog<i>sid res04p</>End-Dialog
+			Dialog sid pet31 End-Dialog
+			Dialog<i>sid res05p</>End-Dialog
+			Actor sid Deacon End-Actor
+			Dialog sid pet32 End-Dialog
+			Dialog<i>sid res03p</>End-Dialog
+		End-Section
+		Insert_section Ektenia03_me1.part2 End-Insert
 	End-Section
 
 	Section ComplementaryV //Vespers
@@ -898,6 +925,7 @@ Template LN
 	Section supplication_selector_menaion
 		when-date-is
 			Jan 7 use: Insert_section supplication_05 End-Insert
+			Jan 30 use: Insert_section supplication_07 End-Insert
 			Feb 24 use: Insert_section supplication_05 End-Insert
 			Mar 2 use: Insert_section supplication_07_alt1me1 End-Insert
 			Mar 25 use: Insert_section supplication_02 End-Insert
