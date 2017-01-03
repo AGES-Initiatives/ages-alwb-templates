@@ -195,9 +195,14 @@ Status Draft
 		Section append
 			Title role desig sid hoH1.title End-Title
 			Insert_section HR._02_Psalms__.h1 End-Insert
-			Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
-			Insert_section PS._05_Hour1__.rubric End-Insert
-			Rubric sid AndThen End-Rubric
+			when-name-of-day-is
+				Saturday, Sunday use:
+					Reading sid DoxaPatri.text End-Reading
+				otherwise use:
+					Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+					Insert_section PS._05_Hour1__.rubric End-Insert
+					Rubric sid AndThen End-Rubric
+			end-when
 			Insert_section Selector_LentHoursTroparia.h1__.apolytikia End-Insert
 			Insert_section HR._03__.h1_lent End-Insert
 			Insert_section Selector_LentHoursTroparia.h1__.kontakia End-Insert
@@ -233,9 +238,14 @@ Status Draft
 			Title role desig sid hoH3.title End-Title
 			Insert_section HR._01_Intro_.append End-Insert
 			Insert_section HR._02_Psalms__.h3 End-Insert
-			Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
-			Insert_section PS._06_Hour3__.rubric End-Insert
-			Rubric sid AndThen End-Rubric
+			when-name-of-day-is
+				Saturday, Sunday use:
+					Reading sid DoxaPatri.text End-Reading
+				otherwise use:
+					Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+					Insert_section PS._06_Hour3__.rubric End-Insert
+					Rubric sid AndThen End-Rubric
+			end-when
 			Insert_section Selector_LentHoursTroparia.h3__.apolytikia End-Insert
 			Insert_section HR._03__.h3 End-Insert
 			Insert_section Selector_LentHoursTroparia.h3__.kontakia End-Insert
@@ -267,9 +277,14 @@ Status Draft
 	Section Lent_h6
 		Title role desig sid hoH6.title End-Title
 		Insert_section HR._02_Psalms__.h6 End-Insert
-		Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
-		Insert_section PS._07_Hour6__.rubric End-Insert
-		Rubric sid AndThen End-Rubric
+			when-name-of-day-is
+				Saturday, Sunday use:
+					Reading sid DoxaPatri.text End-Reading
+				otherwise use:
+					Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+					Insert_section PS._07_Hour6__.rubric End-Insert
+					Rubric sid AndThen End-Rubric
+			end-when
 		Insert_section Selector_LentHoursTroparia.h6__.apolytikia End-Insert
 		Insert_section HR._03__.h6_lent.part1 End-Insert
 		when-name-of-day-is
@@ -368,6 +383,7 @@ Status Draft
 					Section weekend
 						Insert_section HR._01_Intro_ End-Insert
 						Insert_section HR._02_Psalms__.h9 End-Insert
+						Reading sid DoxaPatri.text End-Reading
 						Insert_section Selector_LentHoursTroparia.h9__.apolytikia End-Insert
 						Insert_section HR._03__.h9 End-Insert
 						Insert_section Selector_LentHoursTroparia.h9__.kontakia End-Insert
@@ -493,20 +509,29 @@ Status Draft
 			Reading sid KaiNynKaiAei.text End-Reading
 			Title role desig sid Theotokion End-Title
 			Hymn sid hoH1.Theotokion.text @ver End-Hymn
-			when-movable-cycle-day-is
-				44, 46, 48 use:
-					Actor sid Choir End-Actor
-					Title role mode sid Mode2 End-Title
-					Hymn sid hoLI.TonStavronSou.text<r>sid Thrice</>End-Hymn
+			when-name-of-day-is
+				Saturday, Sunday use:
+					Hymn sid psa118.v133.text End-Hymn
+					Reading sid psa118.v134.text End-Reading
+					Reading sid psa118.v135.text End-Reading
+					Reading sid psa70.v8alt.text End-Reading
 				otherwise use:
-					Actor sid Choir End-Actor
-					Media sid hoH1.LentSungVerses.text End-Media
-					Hymn sid psa118.v133.text<r>sid Twice</>End-Hymn
-					Hymn sid psa118.v134.text<r>sid Twice</>End-Hymn
-					Hymn sid psa118.v135.text<r>sid Twice</>End-Hymn
-					Hymn sid psa70.v8alt.text @ver <r>sid Thrice</>End-Hymn
+					when-movable-cycle-day-is
+						44, 46, 48 use:
+							Actor sid Choir End-Actor
+							Title role mode sid Mode2 End-Title
+							Hymn sid hoLI.TonStavronSou.text<r>sid Thrice</>End-Hymn
+							Actor sid Reader End-Actor
+						otherwise use:
+							Actor sid Choir End-Actor
+							Media sid hoH1.LentSungVerses.text End-Media
+							Hymn sid psa118.v133.text<r>sid Twice</>End-Hymn
+							Hymn sid psa118.v134.text<r>sid Twice</>End-Hymn
+							Hymn sid psa118.v135.text<r>sid Twice</>End-Hymn
+							Hymn sid psa70.v8alt.text @ver <r>sid Thrice</>End-Hymn
+							Actor sid Reader End-Actor
+					end-when
 			end-when
-			Actor sid Reader End-Actor
 			Insert_section _01_Intro_.append.Trisagion_Prayers End-Insert
 			Actor sid Reader End-Actor
 			Dialog sid res04 End-Dialog
