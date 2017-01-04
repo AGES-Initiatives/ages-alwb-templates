@@ -28,7 +28,8 @@ End_Head
 	Rubric sid hoCO.Key0100.rubric End-Rubric
 
 	Section GreatCompline_01	
-		Media sid hoCO.BookmarkPage01.text End-Media
+		Media sid hoCO.Bookmark1.text End-Media
+	//	Media sid hoCO.BookmarkPage01.text End-Media
 		Actor sid Priest End-Actor
 		Dialog sid enarxis01 End-Dialog
 		Dialog sid res04p End-Dialog
@@ -52,21 +53,21 @@ End_Head
 	
 	Section GreatCompline_02
 		Title role desig sid psa4.title End-Title
-		Reading sid	psa4.text End-Reading
+		Reading sid	psa4.text @ver End-Reading
 		Title role desig sid psa6.title End-Title
-		Reading sid	psa6.text End-Reading
+		Reading sid	psa6.text @ver End-Reading
 		Title role desig sid psa12.title End-Title
-		Reading sid	psa12.text End-Reading
+		Reading sid	psa12.text @ver End-Reading
 		Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
 		Reading sid Allilouia3.text sid DoxaSoiOTheos1<r>sid Thrice</>End-Reading
 		Reading sid res06 End-Reading
 		Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
 		Title role desig sid psa24.title End-Title
-		Reading sid	psa24.text End-Reading
+		Reading sid	psa24.text @ver End-Reading
 		Title role desig sid psa30.title End-Title
-		Reading sid	psa30.text End-Reading
+		Reading sid	psa30.text @ver End-Reading
 		Title role desig sid psa90.title End-Title
-		Reading sid	psa90.text End-Reading
+		Reading sid	psa90.text @ver End-Reading
 		Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
 		Reading sid Allilouia3.text sid DoxaSoiOTheos1<r>sid Thrice</>End-Reading
 		Reading sid res06 End-Reading
@@ -77,7 +78,7 @@ End_Head
 		Actor sid Choir End-Actor
 		Title role mode sid hoCO.Key0300.mode End-Title
 		Media sid hoCO.Key0301.text End-Media
-		Para role chant sid leosCO.Key0301.text sid leosCO.Key0302.text End-Para
+		Para role chant sid leosCO.Key0301.text sid leosCO.Key0302.text @ver End-Para
 		Para role chant sid leosCO.Key0303.text sid leosCO.Key0302.text End-Para
 		Para role chant sid leosCO.Key0304.text sid leosCO.Key0302.text End-Para
 		Para role chant sid leosCO.Key0305.text sid leosCO.Key0302.text End-Para
@@ -103,16 +104,16 @@ End_Head
 		Para role chant sid leosCO.Key0302.text End-Para
 		
 		Actor sid Reader<Trubric>sid Intoned</>End-Actor
-		Para role chant sid hoCO.Key0401.text End-Para
+		Para role chant sid hoCO.Key0401.text @ver End-Para
 		Verse sid DoxaPatri.text End-Verse
-		Para role chant sid hoCO.Key0402.text End-Para
+		Para role chant sid hoCO.Key0402.text @ver End-Para
 		Verse sid KaiNynKaiAei.text End-Verse
-		Para role chant sid hoCO.Key0403.text End-Para
+		Para role chant sid hoCO.Key0403.text @ver End-Para
 
 		Actor sid Choir End-Actor
 		Title role mode sid hoCO.Key0501.mode End-Title
 		Media sid hoCO.Key0501.text End-Media
-		Para role chant sid hoCO.Key0501.text End-Para		
+		Para role chant sid hoCO.Key0501.text @ver End-Para		
 		Para role chant sid hoCO.Key0502.text End-Para		
 		Para role chant sid hoCO.Key0503.text End-Para		
 		Para role chant sid hoCO.Key0504.text End-Para		
@@ -125,12 +126,12 @@ End_Head
 		
 		Actor sid Reader End-Actor
 		Title role desig sid hoCO.Key0511.title	End-Title
-		Reading sid hoCO.Key0511.text End-Reading
+		Reading sid hoCO.Key0511.text @ver End-Reading
 		
 		Actor sid Choir End-Actor
 		Title role mode sid hoCO.Key0601.mode End-Title
 		Media sid hoCO.Key0601.text End-Media
-		Para role chant sid hoCO.Key0601.text<r>sid Thrice</>End-Para
+		Para role chant sid hoCO.Key0601.text @ver <r>sid Thrice</>End-Para
 		Para role chant sid hoCO.Key0602.text<r>sid Twice</>End-Para
 		Para role chant sid hoCO.Key0603.text<r>sid Twice</>End-Para
 		Para role chant sid hoCO.Key0604.text<r>sid Twice</>End-Para
@@ -140,7 +141,13 @@ End_Head
 		Para role chant sid hoCO.Key0608.text<r>sid Twice</>End-Para
 		Para role chant sid hoCO.Key0609.text End-Para
 
-		Media sid hoCO.BookmarkPage07.text End-Media
+		when-name-of-day-is
+			Tuesday, Thursday use:
+				Media sid hoCO.Bookmark20.text End-Media
+			Wednesday, Friday use:
+				Media sid hoCO.Bookmark21.text End-Media
+		end-when
+	//	Media sid hoCO.BookmarkPage07.text End-Media
 		Actor sid Reader End-Actor
 		Insert_section Trisagion_Prayers End-Insert
 		Actor sid Priest End-Actor
@@ -153,11 +160,11 @@ End_Head
 	Section GreatCompline_04
 		Actor sid Reader<Trubric>sid Read</>End-Actor
 		Title role mode sid hoCO.Key0701.mode End-Title
-		Reading sid hoCO.Key0701.text End-Reading
+		Reading sid hoCO.Key0701.text @ver End-Reading
 		Title sid Doxa End-Title
-		Reading sid hoCO.Key0702.text End-Reading
+		Reading sid hoCO.Key0702.text @ver End-Reading
 		Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
-		Reading sid hoCO.Key0703.text End-Reading
+		Reading sid hoCO.Key0703.text @ver End-Reading
 	End-Section
 
 	Rubric sid hoCO.Key0704.rubric End-Rubric
@@ -165,13 +172,13 @@ End_Head
 	Section GreatCompline_05
 		Actor sid Reader End-Actor
 		Title role mode sid hoCO.Key0704.mode End-Title
-		Reading sid hoCO.Key0704.text End-Reading
+		Reading sid hoCO.Key0704.text @ver End-Reading
 		Verse<bnr>sid vVerse</>sid hoCO.Key0705.text End-Verse
-		Reading sid hoCO.Key0706.text End-Reading
+		Reading sid hoCO.Key0706.text @ver End-Reading
 		Title sid Doxa End-Title
-		Reading sid hoCO.Key0707.text End-Reading
+		Reading sid hoCO.Key0707.text @ver End-Reading
 		Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
-		Reading sid hoCO.Key0708.text End-Reading
+		Reading sid hoCO.Key0708.text @ver End-Reading
 	End-Section	
 		
 	Section GreatCompline_06
@@ -183,7 +190,7 @@ End_Head
 		Dialog sid DiEfchonPateron.text End-Dialog
 		Dialog<i>sid res04p</>End-Dialog
 		Title role desig sid hoCO.Key0709.title End-Title
-		Para role prayer sid hoCO.Key0709.text End-Para
+		Para role prayer sid hoCO.Key0709.text @ver End-Para
 		Actor sid Reader End-Actor
 		Dialog sid res04 End-Dialog
 		
@@ -191,12 +198,12 @@ End_Head
 		Reading sid DefteProskinisomen2 End-Reading
 		Reading sid DefteProskinisomen3 End-Reading
 		Title role desig sid psa50.title End-Title
-		Reading sid	psa50.text End-Reading
+		Reading sid	psa50.text @ver End-Reading
 		Title role desig sid psa101.title End-Title
-		Reading sid	psa101.text End-Reading
+		Reading sid	psa101.text @ver End-Reading
 		Actor sid Priest End-Actor
 		Title role desig sid hoCO.Key0803.title End-Title
-		Para role prayer sid hoCO.Key0803.text End-Para
+		Para role prayer sid hoCO.Key0803.text @ver End-Para
 		Dialog<i>sid res04p</>End-Dialog
 		Actor sid Reader End-Actor
 		Insert_section Trisagion_Prayers End-Insert
@@ -227,7 +234,7 @@ End_Head
 		Dialog sid DiEfchonPateron.text End-Dialog
 		Dialog<i>sid res04p</>End-Dialog
 		Title role desig sid hoCO.Key0807.title End-Title
-		Para role prayer sid hoCO.Key0807.text End-Para
+		Para role prayer sid hoCO.Key0807.text @ver End-Para
 		Actor sid Reader End-Actor
 		Dialog sid res04 End-Dialog
 	End-Section	
@@ -240,13 +247,13 @@ End_Head
 		End-Section
 		Section Part2
 		Title role desig sid psa69.title End-Title
-		Reading sid	psa69.text End-Reading
+		Reading sid	psa69.text @ver End-Reading
 		End-Section
 		Section Part3
 		Title role desig sid psa142.title End-Title
-		Reading sid	psa142.text End-Reading
+		Reading sid	psa142.text @ver End-Reading
 			Title role desig sid hoCO.Key0903.title End-Title
-			Reading sid hoCO.Key0903.text sid hoCO.Key0904.text sid hoCO.Key0905.text sid hoCO.Key0906.text sid hoCO.Key0907.text End-Reading 
+			Reading sid hoCO.Key0903.text sid hoCO.Key0904.text sid hoCO.Key0905.text sid hoCO.Key0906.text sid hoCO.Key0907.text @ver End-Reading 
 		End-Section
 	End-Section
 
@@ -293,10 +300,11 @@ End_Head
 	End-Section
 	
 	Section GreatCompline_12
-		Media sid hoCO.BookmarkPage15.text End-Media
+		Media sid hoCO.Bookmark3.text End-Media
+	//	Media sid hoCO.BookmarkPage15.text End-Media
 		Actor sid Reader End-Actor
 		Reading sid res01<r>sid Forty</>End-Reading
-		Reading sid hoCO.Key1015.text End-Reading
+		Reading sid hoCO.Key1015.text @ver End-Reading
 		Reading sid res06 End-Reading
 		Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
 		Reading sid TinTimioteran.text End-Reading
@@ -322,13 +330,13 @@ End_Head
 		Dialog sid res01<r>sid Twelve</>End-Dialog
 		Title role desig sid hoCO.Key1101.title End-Title
 		Title<r>sid hoCO.Key1101.poet</>End-Title
-		Reading sid hoCO.Key1101.text End-Reading	
+		Reading sid hoCO.Key1101.text @ver End-Reading	
 		Title role desig sid hoCO.Key1102.title End-Title
 		Title<r>sid hoCO.Key1102.poet</>End-Title
-		Reading sid hoCO.Key1102.text End-Reading	
-		Reading sid hoCO.Key1103.text End-Reading	
-		Reading sid hoCO.Key1104.text End-Reading	
-		Reading sid hoCO.Key1105.text End-Reading	
+		Reading sid hoCO.Key1102.text @ver End-Reading	
+		Reading sid hoCO.Key1103.text @ver End-Reading	
+		Reading sid hoCO.Key1104.text @ver End-Reading	
+		Reading sid hoCO.Key1105.text @ver End-Reading	
 	End-Section
 
 	Rubric sid hoCO.Key1201.rubric End-Rubric
@@ -409,7 +417,7 @@ End_Head
 	Rubric sid hoCO.Key1401.rubric End-Rubric
 
 	Section GreatCompline_19
-		Para role prayer sid hoCO.Key1401.text End-Para
+		Para role prayer sid hoCO.Key1401.text @ver End-Para
 	End-Section
 	
 End-Template
