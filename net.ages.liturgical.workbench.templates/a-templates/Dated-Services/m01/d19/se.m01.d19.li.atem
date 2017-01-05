@@ -1,0 +1,64 @@
+Template se.m01.d19.li
+
+Status NA
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 1 day 19 year 2017 End_Date
+			Page_Header_Even
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	when-name-of-day-is 
+		Sunday use:	
+			Section Instance02 //Sunday
+			End-Section //Sunday
+		
+		otherwise use:
+			Section Instance01 //weekday
+				Insert_section ST.li.me End-Insert
+				Insert_section LI._01_Enarxis__.daily End-Insert
+				Insert_section LI._02_Antiphons__.celebrated_saint End-Insert
+				Insert_section AP.ganame.Jan19__.makarios_ End-Insert
+				Insert_section LI._04_Entrance__.choir End-Insert
+				Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
+				Section hymns
+					Insert_section AP.ganame.Jan19__.makarios_ End-Insert
+					Insert_section LI._05_AfterEntranceHymns__.local End-Insert
+					Insert_section KO.seasonal End-Insert
+				End-Section
+				Insert_section LI._06_Trisagion__.chrys End-Insert
+				Insert_section LE._01_Epistle__.menaion_ End-Insert
+				Insert_section LE._02_Gospel__.monastic_ End-Insert
+				Insert_section LI._08_Liturgy__.chrys.part1 End-Insert
+					Set_Date month 1 day 17 End_Date
+					Insert_section Selector_CommunionHymn.Chrysostom End-Insert
+				Set_Date month 1 day 19 End_Date
+				Insert_section LI._08_Liturgy__.chrys.part2 End-Insert
+				Insert_section LI._09_Dismissal__.commemoration End-Insert
+			End-Section	
+	end-when
+
+End-Template
