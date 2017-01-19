@@ -718,7 +718,7 @@ Status Review
 						End-Section
 					Saturday use:
 						Section firsttheotokion
-							Title role source sid sourceMenaion End-Title
+							Title role source sid sourceOctoechos End-Title
 							Title role mixed sid KaiNyn<Tmode>rid ocVE.SticTheotokion.mode @day D1</>End-Title
 							Title role desig sid ToATheotokionTouIchou End-Title
 							Hymn rid ocVE.SticTheotokion.text @ver @day D1 End-Hymn
@@ -3615,13 +3615,13 @@ Status Review
 					Monday, Tuesday, Thursday, Saturday use:
 						Section theotokion
 							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
-							when-exists rid meVE.AposTheotokion.melody use: Title role melody rid meVE.AposTheotokion.melody End-Title end-when
+							Title<Tmode>rid meVE.AposTheotokion.mode</><Tmelody>rid meVE.AposTheotokion.melody</>End-Title
 							Hymn rid meVE.AposTheotokion.text @ver End-Hymn
 						End-Section
 					Wednesday, Friday use: 
 						Section stavrotheotokion
 							Title role mixed sid KaiNyn<Tdesig>sid Stavrotheotokion</>End-Title
-							when-exists rid meVE.AposStavrotheotokion.melody use: Title role melody rid meVE.AposStavrotheotokion.melody End-Title end-when
+							Title<Tmode>rid meVE.AposStavrotheotokion.mode</><Tmelody>rid meVE.AposStavrotheotokion.melody</>End-Title
 							Hymn rid meVE.AposStavrotheotokion.text @ver End-Hymn
 						End-Section
 				end-when
@@ -4742,9 +4742,11 @@ Status Review
 					Insert_section PsalmVerses.forVespersAposticha.friday.verse2 End-Insert
 					when-exists rid ocVE.Aposticha3.melody use: Title role melody rid ocVE.Aposticha3.melody End-Title end-when
 					Hymn rid ocVE.Aposticha3.text @ver End-Hymn
-					Insert_section PsalmVerses.forVespersAposticha.friday.verse3 End-Insert
-					when-exists rid ocVE.Aposticha4.melody use: Title role melody rid ocVE.Aposticha4.melody End-Title end-when
-					Hymn rid ocVE.Aposticha4.text @ver End-Hymn
+					when-exists rid ocVE.Aposticha4.melody use: 
+						Insert_section PsalmVerses.forVespersAposticha.friday.verse3 End-Insert
+						Title role melody rid ocVE.Aposticha4.melody End-Title
+						Hymn rid ocVE.Aposticha4.text @ver End-Hymn
+					end-when
 				End-Section
 				Section theotokion
 					Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
