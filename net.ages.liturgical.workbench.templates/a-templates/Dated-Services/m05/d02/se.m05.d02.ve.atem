@@ -1,6 +1,6 @@
 Template se.m05.d02.ve 
 
-Status Final
+Status Review
 
 	import client_gr_GR_cog.*
 	import ho.s10_gr_GR_cog.*	
@@ -88,11 +88,52 @@ Status Final
 			
 		86, 87, 88, 89, 90, 93, 103, 104, 107 use:
 			Section Instance08
+				Insert_section ST.ve.pe_me End-Insert
+				Insert_section VE._01_Beginning__.vespers End-Insert
+				when-movable-cycle-day-is
+					86 use: Insert_section VE._02_Kekragaria__.mode5__.for6 End-Insert
+					87 use: Insert_section VE._02_Kekragaria__.mode2__.for6 End-Insert
+					88 use: Insert_section VE._02_Kekragaria__.mode2__.for6 End-Insert
+					89 use: Insert_section VE._02_Kekragaria__.mode2__.for6 End-Insert
+					90 use: Insert_section VE._02_Kekragaria__.mode8__.for6 End-Insert
+				end-when
+				when-movable-cycle-day-is
+					86 thru 90 use:
+						Insert_section TI.stp.pe_._02_myrrhbearers End-Insert
+						Insert_section VE._03_Stichera__.pe__.i_123as567 End-Insert
+				end-when
+				Insert_section TI.s._00_saint_.m End-Insert
+				Insert_section VE._03_Stichera__.me__.p_123as8910 End-Insert
+				Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_ End-Insert
+				Insert_section TI.b.pe_._02_myrrhbearers End-Insert
+				Insert_section VE._03_Stichera__.both__.pe__.gloryasboth_.hymn End-Insert
+				Insert_section VE._04_Middle__.entrance End-Insert
+				Insert_section VE._06_Litanies__.fullektenia End-Insert
+				Insert_section VE._08_Aposticha__.me__.p_hierarchs12 End-Insert
+				Insert_section VE._08_Aposticha__.glory__.me__.gloryasglory_ End-Insert
+				Insert_section TI.b.pe_._02_myrrhbearers End-Insert
+				Insert_section VE._08_Aposticha__.both__.pe__.gloryasboth_.hymn End-Insert
+				Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert	
+				when-movable-cycle-day-is
+					86 thru 90 use:
+						Section block1
+							Set_mcDay day 85 End_mcDay
+								Insert_section TI.ap._ End-Insert
+								Insert_section AP.pe1_.hymn End-Insert
+								Insert_section TI.g.s._00_saint_.m End-Insert
+								Insert_section AP.me1_.hymn End-Insert
+								Insert_section TI.b.pe_._02_myrrhbearers End-Insert
+								Insert_section AP.pe3_.hymn End-Insert
+							Set_mcDay day 0 End_mcDay
+						End-Section
+				end-when
+				Insert_section VE._10_End__.wisdom End-Insert
+				Insert_section VE._11_Dismissal__.commemoration End-Insert
 			End-Section
 			
 		91, 105 use: //Leavetaking of Myr and Sam
 			Section Instance09
-				Insert_section TI.se.me.ve End-Insert
+				Insert_section ST.ve.pe_me End-Insert
 				Insert_section VE._01_Beginning__.vespers End-Insert
 				when-movable-cycle-day-is
 					91 use: Insert_section VE._02_Kekragaria__.mode2__.for6 End-Insert

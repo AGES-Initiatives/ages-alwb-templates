@@ -58,7 +58,7 @@ Status Final
 			
 		79 thru 83 use: 		
 			Section Instance05 //Thomas Post-feast
-				Insert_section TI.se.me.li End-Insert
+				Insert_section ST.li.pe_me End-Insert
 				Insert_section LI._01_Enarxis__.daily End-Insert
 				Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
 				Insert_section LI._04_Entrance__.clergy End-Insert
@@ -87,11 +87,40 @@ Status Final
 			
 		86, 87, 88, 89, 90, 93, 103, 104, 107 use:
 			Section Instance08
+				Insert_section ST.li.pe_me End-Insert
+				Insert_section LI._01_Enarxis__.daily End-Insert
+				Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
+				Insert_section LI._04_Entrance__.clergy End-Insert
+				Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
+				Section hymns
+					when-movable-cycle-day-is
+						86 thru 90 use:
+							Section block1
+								Set_mcDay day 85 End_mcDay
+									Insert_section TI.ap._ End-Insert
+									Insert_section AP.pe2_.hymn End-Insert
+									Insert_section AP.pe3_.hymn End-Insert
+								Set_mcDay day 0 End_mcDay
+							End-Section
+					end-when
+					Insert_section TI.s._00_saint_.m End-Insert
+					Insert_section AP.me1_.hymn End-Insert
+					Insert_section LI._05_AfterEntranceHymns__.local End-Insert
+					Insert_section TI.k.pe_._02_myrrhbearers End-Insert
+					Set_mcDay day 85 End_mcDay
+						Insert_section KO.pe1_.hymn End-Insert
+					Set_mcDay day 0 End_mcDay
+				End-Section
+				Insert_section LI._06_Trisagion__.chrys End-Insert
+				Insert_section LE._01_Epistle__.menaion_ End-Insert
+				Insert_section LE._02_Gospel__.menaion_ End-Insert
+				Insert_section LI._08_Liturgy__.chrys End-Insert
+				Insert_section LI._09_Dismissal__.commemoration End-Insert
 			End-Section
 			
 		91, 105 use: //Leavetaking of Myr and Sam
 			Section Instance09
-				Insert_section TI.se.me.li End-Insert
+				Insert_section ST.li.pe_me End-Insert
 				Insert_section LI._01_Enarxis__.daily End-Insert
 				Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
 				Insert_section LI._04_Entrance__.clergy End-Insert
