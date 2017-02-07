@@ -1,4 +1,4 @@
-Template se.m05.d24.ve 
+Template se.m05.d24.ma3 
 
 Status Final
 
@@ -17,10 +17,10 @@ Status Final
 	Head 
 		Set_Date month 5 day 24 End_Date
 			Page_Header_Even
-				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -32,17 +32,12 @@ Status Final
 	End_Head
 
 	Preface Covers
-		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.cover.ma End-Insert
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
 	when-movable-cycle-day-is
-		92, 95, 99, 102, 106, 109, 110, 113, 118, 119, 120, 121, 126, 127 use: Insert_section mc.map.ve.Section01 End-Insert
-		// various weekdays
-		108 use: //Leavetaking of Blindman
-		111, 112, 114, 115, 116, 117, 122, 123, 124, 125 use: 
-		
-		otherwise use: //OC outside Pentecostarion
+		109 use: Insert_section se.pe.d109.ma3.Instance01 End-Insert		
 	end-when	
 		
 End-Template

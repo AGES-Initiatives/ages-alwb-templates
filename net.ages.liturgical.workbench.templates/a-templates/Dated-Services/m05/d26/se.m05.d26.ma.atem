@@ -1,6 +1,6 @@
-Template se.m05.d24.ve 
+Template se.m05.d26.ma 
 
-Status Final
+Status Draft
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -15,9 +15,9 @@ Status Final
 	import roles.*
 
 	Head 
-		Set_Date month 5 day 24 End_Date
+		Set_Date month 5 day 26 End_Date
 			Page_Header_Even
-				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L1 
 			End_Page_Header_Even
 			Page_Header_Odd
 				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2
@@ -37,12 +37,32 @@ Status Final
 	End-Preface
 
 	when-movable-cycle-day-is
-		92, 95, 99, 102, 106, 109, 110, 113, 118, 119, 120, 121, 126, 127 use: Insert_section mc.map.ve.Section01 End-Insert
-		// various weekdays
-		108 use: //Leavetaking of Blindman
-		111, 112, 114, 115, 116, 117, 122, 123, 124, 125 use: 
-		
-		otherwise use: //OC outside Pentecostarion
+		89 thru 110 use: 
+			Section Instance01
+				Insert_section mc.map.ma.Section01 End-Insert
+			End-Section
+			
+		111 use: 
+			Section Instance02
+			End-Section
+			
+		112 thru 120 use:
+			Section Instance03
+				Insert_section mc.map.ma.Section01 End-Insert
+			End-Section
+			
+		121 use:
+			Section Instance04
+			End-Section
+			
+		122 thru 127 use:
+			Section Instance05
+				Insert_section mc.map.ma.Section01 End-Insert
+			End-Section
+			
+		otherwise use:
+			Section Instance06
+			End-Section
 	end-when	
-		
+
 End-Template
