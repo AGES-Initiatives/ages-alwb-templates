@@ -1,8 +1,9 @@
-Template se.m06.d05.ma2 
+Template se.m06.d04.ve 
 
 Status Final
 
 	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
 	import misc_gr_GR_cog.*
 	import prayers_gr_GR_cog.*
 	import rubrical_gr_GR_cog.*
@@ -14,12 +15,12 @@ Status Final
 	import roles.*
 
 	Head 
-		Set_Date month 6 day 5 End_Date
+		Set_Date month 6 day 4 End_Date
 			Page_Header_Even
-				center @lookup sid ma.pdf.header sid d.on lang L1 @date lang L1
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -31,14 +32,14 @@ Status Final
 	End_Head
 
 	Preface Covers
-		Insert_template ematins.cover.ma End-Insert
+		Insert_template ematins.cover.ve End-Insert
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
 	when-movable-cycle-day-is 1 thru 127 use:
-			Insert_section mc.map.ma.Section02 End-Insert //adjust to appropriate service
+			Insert_section mc.map.ve.Section01 End-Insert //adjust to appropriate service
 			otherwise use:
 		
 	end-when	
-	
+
 End-Template

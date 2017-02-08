@@ -1,0 +1,56 @@
+Template se.pe.d126.ve 
+
+Status NA
+
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 6 day 10 End_Date
+			Page_Header_Even
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L1 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	Section Instance01
+		Insert_section ST.ve.pe End-Insert
+		Set_mcDay day 120 End_mcDay
+			Insert_section VE._01_Beginning__.vespers End-Insert
+			Insert_section VE._02_Kekragaria__.mode1__.for8 End-Insert
+			Insert_section TI.stp.f End-Insert
+			Insert_section VE._03_Stichera__.pe__.i_12345678as345678910 End-Insert
+			Insert_section VE._03_Stichera__.gloryboth__.pe_ End-Insert
+			Insert_section VE._04_Middle__.entrance End-Insert
+			Insert_section VE._06_Litanies__.fullektenia End-Insert
+			Insert_section VE._08_Aposticha__.pe__.i_pentecost12 End-Insert
+			Insert_section VE._08_Aposticha__.gloryboth__.pe_ End-Insert
+			Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
+			Insert_section AP.f3 End-Insert	
+			Insert_section VE._10_End__.wisdom End-Insert
+		Set_mcDay day 120 End_mcDay
+		Insert_section VE._11_Dismissal__.nocommemoration End-Insert
+	End-Section
+End-Template
