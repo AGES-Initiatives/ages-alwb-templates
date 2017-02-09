@@ -1,6 +1,6 @@
 Template se.m06.d18.ve 
 
-Status NA
+Status Draft
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -36,11 +36,20 @@ Status NA
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-	when-movable-cycle-day-is 1 thru 127 use:
+	when-movable-cycle-day-is 
+		1 thru 127 use:
 			Insert_section mc.map.ve.Section01 End-Insert //adjust to appropriate service
-			otherwise use:
-		
+		otherwise use:
+			when-name-of-day-is
+				Sunday use:
+					Section Instance02
+						Insert_section ST.ve.oc_me End-Insert
+						
+					End-Section
+				otherwise use:
+					Section Instance01
+					End-Section
+			end-when
 	end-when	
-	
 
 End-Template
