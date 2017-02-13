@@ -1,0 +1,142 @@
+Template Selector_Lessons_Before_Triodion 
+
+	Status NA
+	
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+	
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+//	Head
+//		Set_Date month 2 day 4 year 2017 End_Date
+//	End_Head
+	
+	Section lesson_2017__
+		Section epistle
+			when-date-is
+				Jan 15, 22, 29 use:
+					Insert_section LE._01_Epistle__.daily_ End-Insert
+				Jan 16, 17, 18, 19, 20, 21, 23, 24, 25, 27, 28, 30, 31 use:
+					Insert_section LE._01_Epistle__.menaion_ End-Insert
+				Jan 26 use:
+					Section jan26
+						Set_mcDay day 316 End_mcDay
+							Insert_section LE._01_Epistle__.daily_ End-Insert
+						Set_mcDay day 0 End_mcDay
+					End-Section
+				Feb 1, 2, 3  use:
+					Insert_section LE._01_Epistle__.menaion_ End-Insert
+				Feb 4 use:
+					Insert_section LE._01_Epistle__.daily_ End-Insert
+					
+			end-when
+		End-Section
+		
+		Section gospel
+			when-date-is
+				Jan 15, 22, 29 use:
+					Insert_section LE._02_Gospel__.daily_ End-Insert
+				Jan 16, 17, 18, 20, 21, 23, 25, 27, 28, 30, 31 use:
+					Insert_section LE._02_Gospel__.menaion_ End-Insert
+				Jan 19 use:
+					Section jan19
+						Set_mcDay day 218 End_mcDay
+							Insert_section LE._02_Gospel__.daily_ End-Insert
+						Set_mcDay day 0 End_mcDay
+					End-Section
+				Jan 24 use:
+					Section jan24
+						Set_mcDay day 211 End_mcDay
+							Insert_section LE._02_Gospel__.daily_ End-Insert
+						Set_mcDay day 0 End_mcDay
+					End-Section
+				Jan 26 use:
+					Section jan26
+						Set_mcDay day 218 End_mcDay //probably should be 14th Sun of Luke instead
+							Insert_section LE._02_Gospel__.daily_ End-Insert
+						Set_mcDay day 0 End_mcDay
+					End-Section
+				Feb 1, 2, 3 use:
+					Insert_section LE._02_Gospel__.menaion_ End-Insert
+				Feb 4 use:
+					Section feb04
+						Insert_section LE._02_Gospel__.daily_.alleluia End-Insert
+						Insert_section LE.PrayerBeforeGospel End-Insert
+						Section lesson 
+							Title role desig sid ToEvangelion End-Title
+							Title role small sid le.go.lu.d111_gr_GR_cog.leluLI.Gospel.title End-Title
+							Actor sid Deacon End-Actor
+							Dialog sid exc17 sid exc18 sid gos02 End-Dialog
+							Actor sid Priest End-Actor
+							Dialog sid pet31 End-Dialog
+							Dialog<i>sid res05p</>End-Dialog
+							Actor sid Deacon End-Actor
+							Dialog sid gos03a sid le.go.lu.d111_gr_GR_cog.leluLI.Gospel.book sid gos03b End-Dialog
+							Actor sid Priest End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid DoxaSoiKyrieP</>End-Dialog	
+							Actor sid Deacon End-Actor
+							Title role chapverse sid le.go.lu.d111_gr_GR_cog.leluLI.Gospel.chapverse End-Title
+							Reading sid le.go.lu.d111_gr_GR_cog.leluLI.Gospel.text @ver End-Reading
+							Actor sid Priest End-Actor
+							Dialog sid eu.lichrysbasil_gr_GR_cog.euLI.Key0705.text End-Dialog
+							Actor sid Choir End-Actor						
+							Dialog sid DoxaSoiKyrie End-Dialog	
+						End-Section	//Lesson
+					End-Section
+			end-when
+		End-Section
+	End-Section
+
+
+	Section lessons_2018__
+		Section epistle
+			when-date-is
+				Jan 15, 16, 17, 18, 19, 20, 22, 23, 24, 25, 27 use:
+					Insert_section LE._01_Epistle__.menaion_ End-Insert
+				Jan 21 use:
+					Insert_section LE._01_Epistle__.daily_ End-Insert
+				Jan 26 use:
+					Section jan26
+						Set_Date month 1 day 19 year 2018 End_Date
+							Insert_section LE._01_Epistle__.daily_ End-Insert
+						Set_Date month 0 day 0 year 0 End_Date
+					End-Section
+			end-when
+		End-Section
+		
+		Section gospel
+			when-date-is
+				Jan 15, 16, 17, 18, 20, 22, 23, 25, 27 use:
+					Insert_section LE._02_Gospel__.menaion_ End-Insert
+				Jan 19 use:
+					Section jan19
+						Set_mcDay day 225 End_mcDay
+							Insert_section LE._02_Gospel__.daily_ End-Insert
+						Set_mcDay day 0 End_mcDay
+					End-Section
+				Jan 21 use:
+					Insert_section LE._02_Gospel__.daily_ End-Insert
+				Jan 24 use:
+					Section jan24
+						Set_Date month 1 day 3 year 2018 End_Date
+							Insert_section LE._02_Gospel__.daily_ End-Insert
+						Set_Date month 0 day 0 year 0 End_Date
+					End-Section
+				Jan 26 use:
+					Section jan26
+						Set_Date month 1 day 5 year 2018 End_Date
+							Insert_section LE._02_Gospel__.daily_ End-Insert
+						Set_Date month 0 day 0 year 0 End_Date
+					End-Section
+					
+			end-when
+		End-Section
+	End-Section	
+
+End-Template
