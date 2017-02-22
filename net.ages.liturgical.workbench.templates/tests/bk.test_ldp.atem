@@ -1,0 +1,45 @@
+Template bk.test_ldp
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 2 day 5 year 2017 End_Date
+			Page_Header_Even
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Section test
+		Para ldp @Service_Date End-Para
+		Para ldp @Day_of_Movable_Cycle End-Para
+		Break line End_Break
+		Set_Date month 3 day 6 End_Date
+		Para ldp @Service_Date End-Para
+		Para ldp @Day_of_Movable_Cycle End-Para
+		Break line End_Break
+		Set_mcDay day 0 End_mcDay	
+		Para ldp @Day_of_Movable_Cycle End-Para
+		Break line End_Break
+	End-Section
+		
+End-Template
