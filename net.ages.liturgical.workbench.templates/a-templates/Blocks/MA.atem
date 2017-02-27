@@ -260,6 +260,17 @@ Template MA
 
 	Section _01_Beginning__
 		Section alleluia__
+			Section mode2_deceased
+				Actor sid Choir End-Actor
+				Title role mode sid Mode2 End-Title
+				Media sid oc.m2.d7_gr_GR_cog.ocMA.MM.Alleluia.text End-Media
+				Hymn sid Allilouia3.text End-Hymn
+				Hymn sid Allilouia3.text End-Hymn
+				Insert_section PsalmVerses.forDeceased.verse1 End-Insert
+				Hymn sid Allilouia3.text End-Hymn
+				Insert_section PsalmVerses.forDeceased.verse3 End-Insert
+				Hymn sid Allilouia3.text End-Hymn
+			End-Section
 			Section mode8_deceased
 				Actor sid Choir End-Actor
 				Title role mode sid Mode8 End-Title
@@ -514,8 +525,9 @@ Template MA
 		End-Section
 		Section octr__
 			Section weekday
-				Title role source sid sourceOctoechos End-Title
+				Title role source sid sourceTriodion End-Title
 				Actor sid Choir End-Actor
+				Title<Tdesig>sid Kathisma1</>End-Title
 				when-name-of-day-is
 					Monday, Tuesday use:
 						Title<Tdesig>sid Kathisma1 sid Katanyktika</>End-Title
@@ -546,6 +558,8 @@ Template MA
 				Hymn rid octrMA.Kathisma1T.text @ver End-Hymn
 			End-Section
 			Section saturday_1v2g3bT
+				Title role source sid sourceTriodion End-Title
+				Actor sid Choir End-Actor
 				Title role desig sid Kathisma1 End-Title
 				Title<Tmode>rid octrMA.Kathisma11.mode</><Tmelody>rid octrMA.Kathisma11.melody</>End-Title
 				Hymn rid octrMA.Kathisma11.text @ver End-Hymn
@@ -565,7 +579,9 @@ Template MA
 				end-when	
 				Hymn rid octrMA.Kathisma1T.text @ver End-Hymn
 			End-Section
-			Section saturday_1v2v3g4bT
+			Section saturday_all
+				Title role source sid sourceTriodion End-Title
+				Actor sid Choir End-Actor
 				Title role desig sid Kathisma1 End-Title
 				Title<Tmode>rid octrMA.Kathisma11.mode</><Tmelody>rid octrMA.Kathisma11.melody</>End-Title
 				Hymn rid octrMA.Kathisma11.text @ver End-Hymn
@@ -2177,6 +2193,17 @@ Template MA
 				Title role melody rid trMA.Kathisma23.melody End-Title
 				Hymn rid trMA.Kathisma23.text @ver End-Hymn
 			End-Section
+			Section soul_saturdays
+				Title role source sid sourceTriodion End-Title
+				Actor sid Choir End-Actor
+				Title role desig sid Kathisma2 End-Title
+				Title role mode sid tr.d014_gr_GR_cog.trMA.Kathisma21.mode End-Title
+				Hymn sid tr.d014_gr_GR_cog.trMA.Kathisma21.text @ver End-Hymn
+				Title sid Doxa End-Title
+				Hymn sid tr.d014_gr_GR_cog.trMA.Kathisma21b.text @ver End-Hymn
+				Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+				Hymn sid tr.d014_gr_GR_cog.trMA.Kathisma22.text @ver End-Hymn
+			End-Section
 		End-Section
 	End-Section
 
@@ -2834,11 +2861,24 @@ Template MA
 												Insert_section PostGospel_me End-Insert
 												Insert_section LN.Supplication_Plain_deacon End-Insert
 											otherwise use:
-												Insert_section gospel_introH End-Insert
-												Insert_section LE._02_Gospel__.eothinon End-Insert
-												Insert_section Psalm50_chant_Hierarchical End-Insert
-												Insert_section PostGospel_eo End-Insert
-												Insert_section LN.Supplication_deacon End-Insert
+											when-movable-cycle-day-is
+												1, 8, 15, 22, 29, 36, 43, 50 use:
+													Section matinsgospel_sup_nocom
+														Insert_section gospel_introH End-Insert
+														Insert_section LE._02_Gospel__.eothinon End-Insert
+														Insert_section Psalm50_read_Hierarchical End-Insert
+														Insert_section PostGospel_eo End-Insert
+														Insert_section LN.Supplication_Plain_deacon End-Insert
+													End-Section
+												otherwise use:
+													Section matinsgospel_sup_com
+														Insert_section gospel_introH End-Insert
+														Insert_section LE._02_Gospel__.eothinon End-Insert
+														Insert_section Psalm50_read_Hierarchical End-Insert
+														Insert_section PostGospel_eo End-Insert
+														Insert_section LN.Supplication_deacon End-Insert
+													End-Section
+											end-when
 										end-when
 									otherwise use:
 										Insert_section gospel_introH End-Insert
@@ -2966,11 +3006,24 @@ Template MA
 												Insert_section PostGospel_me End-Insert
 												Insert_section LN.Supplication_Plain_deacon End-Insert
 											otherwise use:
-												Insert_section gospel_introP End-Insert
-												Insert_section LE._02_Gospel__.eothinon End-Insert
-												Insert_section Psalm50_chant End-Insert
-												Insert_section PostGospel_eo End-Insert
-												Insert_section LN.Supplication_deacon End-Insert
+											when-movable-cycle-day-is
+												1, 8, 15, 22, 29, 36, 43, 50 use:
+													Section matinsgospel_sup_nocom
+														Insert_section gospel_introP End-Insert
+														Insert_section LE._02_Gospel__.eothinon End-Insert
+														Insert_section Psalm50_chant End-Insert
+														Insert_section PostGospel_eo End-Insert
+														Insert_section LN.Supplication_Plain_deacon End-Insert
+													End-Section
+												otherwise use:
+													Section matinsgospel_sup_com
+														Insert_section gospel_introP End-Insert
+														Insert_section LE._02_Gospel__.eothinon End-Insert
+														Insert_section Psalm50_chant End-Insert
+														Insert_section PostGospel_eo End-Insert
+														Insert_section LN.Supplication_deacon End-Insert
+													End-Section
+											end-when
 										end-when
 									otherwise use:
 										Insert_section gospel_introP End-Insert
@@ -10135,14 +10188,6 @@ Template MA
 				Title<Tmode>rid daMA.Exaposteilarion1.mode</><Tmelody>rid daMA.Exaposteilarion1.melody</>End-Title
 				Hymn rid daMA.Exaposteilarion1.text @ver End-Hymn
 			End-Section
-			when-name-of-day-is Saturday use:
-				Section exap2
-					Title role source sid sourceHorologion End-Title
-					Title role desig sid Eteron sid Nekrosimon End-Title
-					Title<Tmode>rid daMA.Exaposteilarion2.mode</><Tmelody>rid daMA.Exaposteilarion2.melody</>End-Title
-					Hymn rid daMA.Exaposteilarion2.text @ver End-Hymn
-				End-Section
-			end-when
 			Section theotokion
 				Title role source sid sourceHorologion End-Title
 				when-name-of-day-is
@@ -11787,8 +11832,8 @@ Template MA
 		Section oc__
 			Section saturday_
 				Section stich_1234as3456
-					Title role source0 sid sourceOctoechos End-Title
 					Title role desig sid Martyrika End-Title
+					Title role source0 sid sourceOctoechos End-Title
 					Title role mode rid ocMA.Lauds1.mode End-Title
 					Media rid ocMA.Lauds1.text End-Media
 					Insert_section PsalmVerses.forLauds.v03 End-Insert
@@ -11807,12 +11852,12 @@ Template MA
 					when-exists 
 						rid ocMA.Lauds5.text use:
 							Title sid Doxa<Tdesig>sid Nekrosimon</>End-Title
-							Hymn rid ocMA.Lauds5.text End-Hymn
+							Hymn rid ocMA.Lauds5.text @ver End-Hymn
 							Title sid KaiNyn<Tdesig>sid Theotokion</><Tmelody>rid ocMA.LaudsTheotokion.melody</>End-Title
-							Hymn rid ocMA.LaudsTheotokion.text End-Hymn
+							Hymn rid ocMA.LaudsTheotokion.text @ver End-Hymn
 						otherwise use:
 							Title sid DoxaKaiNyn<Tdesig>sid Theotokion</><Tmelody>rid ocMA.LaudsTheotokion.melody</>End-Title
-							Hymn rid ocMA.LaudsTheotokion.text End-Hymn
+							Hymn rid ocMA.LaudsTheotokion.text @ver End-Hymn
 					end-when
 				End-Section
 			End-Section
@@ -12335,6 +12380,35 @@ Template MA
 					Hymn rid trMA.Lauds8.text @ver media-off End-Hymn
 				End-Section
 			End-Section
+			Section octr__
+				Section saturday_
+					Section stich_1234as3456
+						Title role desig sid Martyrika End-Title
+						Title role source0 sid sourceTriodion End-Title
+						Title role mode rid octrMA.Lauds1.mode End-Title
+						Media rid octrMA.Lauds1.text End-Media
+						Insert_section PsalmVerses.forLauds.v03 End-Insert
+						Hymn rid octrMA.Lauds1.text @ver media-off End-Hymn
+						Media rid octrMA.Lauds2.text End-Media
+						Insert_section PsalmVerses.forLauds.v04 End-Insert
+						Hymn rid octrMA.Lauds2.text @ver media-off End-Hymn
+						Media rid octrMA.Lauds3.text End-Media
+						Insert_section PsalmVerses.forLauds.v05 End-Insert
+						Hymn rid octrMA.Lauds3.text @ver media-off End-Hymn
+						Media rid octrMA.Lauds4.text End-Media
+						Insert_section PsalmVerses.forLauds.v06 End-Insert
+						Hymn rid octrMA.Lauds4.text @ver media-off End-Hymn
+					End-Section
+					Section glory_fordeceased
+						Title sid Doxa<Tdesig>sid Nekrosimon</>End-Title
+						Hymn rid octrMA.LaudsGlory.text @ver End-Hymn
+					End-Section
+					Section both_theotokion
+						Title sid KaiNyn<Tdesig>sid Theotokion</><Tmelody>rid octrMA.LaudsTheotokion.melody</>End-Title
+						Hymn rid octrMA.LaudsTheotokion.text @ver End-Hymn
+					End-Section
+				End-Section
+			End-Section
 			Section p_123as345
 				Title role desig sid TouTriodiou End-Title
 				Section hymns
@@ -12827,6 +12901,31 @@ Template MA
 				Media rid trMA.Aposticha4.text End-Media
 				Insert_section PsalmVerses.forMatinsAposticha.verse2 End-Insert
 				Hymn rid trMA.Aposticha4.text @ver media-off End-Hymn
+			End-Section
+			Section octr__
+				Section saturday
+					Title role source sid sourceTriodion End-Title
+					Actor sid Choir End-Actor
+					Title role desig sid Aposticha End-Title
+					Title<Tmode>rid octrMA.Aposticha1.mode</><Tmelody>rid octrMA.Aposticha1.melody</>End-Title	
+					Hymn rid octrMA.Aposticha1.text @ver End-Hymn
+					Media rid octrMA.Aposticha2.text End-Media
+					Insert_section PsalmVerses.forDeceased.verse1 End-Insert
+					Hymn rid octrMA.Aposticha2.text @ver media-off End-Hymn
+					Media rid octrMA.Aposticha3.text End-Media
+					Insert_section PsalmVerses.forDeceased.verse3 End-Insert
+					Hymn rid octrMA.Aposticha3.text @ver media-off End-Hymn
+					when-exists 
+						rid octrMA.AposGlory.text use:
+							Title sid Doxa End-Title
+							Hymn rid octrMA.AposGlory.text @ver media-off End-Hymn
+							Title sid KaiNyn<Tdesig>sid Theotokion</> End-Title
+							Hymn rid octrMA.AposTheotokion.text @ver media-off End-Hymn
+						otherwise use:
+							Title sid DoxaKaiNyn<Tdesig>sid Theotokion</> End-Title
+							Hymn rid octrMA.AposTheotokion.text @ver media-off End-Hymn
+					end-when
+				End-Section
 			End-Section
 		End-Section
 	End-Section

@@ -28,6 +28,20 @@ Status Final
 	Switch-Version L2 End-Switch-Version
 
 	when-movable-cycle-day-is 
+	35 use:
+		Section tr_35 //no katavasias
+			Title role cover0 sid logo.text End-Title
+			Title role cover1 sid ma.pdf.cover End-Title 	//Service
+			Title role cover2 ldp @Service_Date End-Title	//Date
+			when-exists
+				rid trShortCommemoration1.text use:
+					Title role cover4 rid trShortCommemoration1.text End-Title	//Triodion
+			//	rid peShortCommemoration1.text use:
+			//		Title role cover4 rid peShortCommemoration1.text End-Title	//Pentecostarion
+			//	otherwise use:
+			//		Title role cover4 rid meShortCommemoration1.text End-Title	//Menaion
+			end-when
+		End-Section
 	64 use:
 		Section tr_d064 //Palm Sunday
 			Title role cover0 sid logo.text End-Title

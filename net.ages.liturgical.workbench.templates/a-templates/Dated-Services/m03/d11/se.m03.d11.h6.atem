@@ -1,0 +1,67 @@
+Template se.m03.d11.h6
+
+Status NA
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 3 day 11 year 2017 End_Date
+			Page_Header_Even
+				center @lookup sid h6.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid h6.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+//this was prepared for a retreat
+	Insert_section ST.h6.ho_tr End-Insert
+	Insert_section HR._01_Intro_ End-Insert
+	Section Lent_h6
+	//	Title role desig sid hoH6.title End-Title
+		Insert_section HR._02_Psalms__.h6 End-Insert
+			when-name-of-day-is
+				Saturday, Sunday use:
+					Reading sid DoxaPatri.text End-Reading
+				otherwise use:
+					Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+					Insert_section PS._07_Hour6__.rubric End-Insert
+					Rubric sid AndThen End-Rubric
+			end-when
+		Insert_section Selector_LentHoursTroparia.h6__.apolytikia End-Insert
+		Insert_section HR._03__.h6_lent.part1 End-Insert
+		when-name-of-day-is
+			Monday, Tuesday, Wednesday, Thursday, Friday use:
+				Insert_section HR._03__.prophecy End-Insert
+				Break line End_Break
+		end-when
+		Insert_section HR._03__.h6_lent.part2 End-Insert
+		Insert_section Selector_LentHoursTroparia.h6__.kontakia End-Insert
+		Insert_section HR._04__.h1369 End-Insert
+		when-name-of-day-is
+			Monday, Tuesday, Wednesday, Thursday, Friday use:
+				Insert_section HR._05_Lent__.h6 End-Insert
+		end-when
+		Insert_section HR._06_PrayerOfHour__.h6 End-Insert
+	//	Rubric sid cl.ho.s06.R001 End-Rubric
+		Insert_section HR._07_Dismissal End-Insert
+	End-Section
+
+End-Template
