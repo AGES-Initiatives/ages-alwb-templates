@@ -30,17 +30,10 @@ Template bk.test_ldp
 	End_Head
 
 	Section test
+		Set_Date month 4 day 8 year 2015 End_Date
 		Para ldp @Service_Date End-Para //this should be the date in the Head, i.e. Sunday, February 5, 2017
 		Para ldp @Day_of_Movable_Cycle End-Para //this should be 1
-		Break line End_Break
-		Set_Date month 3 day 6 End_Date
-		Para ldp @Service_Date End-Para //this should be Monday, March 6, 2017
-		Para ldp @Day_of_Movable_Cycle End-Para //this should be 30
-		Break line End_Break
-		Set_mcDay day 0 End_mcDay //this should reset mcDay to the mcDay of the date in the Head, i.e. 1
-		Para ldp @Day_of_Movable_Cycle End-Para //this should be 1
-		Para ldp @Service_Date End-Para //this should still be March 6, since the date was not reset
-		Break line End_Break
+
 	End-Section
 		
 End-Template
