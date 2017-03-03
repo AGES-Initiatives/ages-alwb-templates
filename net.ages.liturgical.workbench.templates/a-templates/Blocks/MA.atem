@@ -2862,7 +2862,7 @@ Template MA
 												Insert_section LN.Supplication_Plain_deacon End-Insert
 											otherwise use:
 											when-movable-cycle-day-is
-												1, 8, 15, 22, 29, 36, 43, 50 use:
+												1, 8, 15, 22, 29, 43 use:
 													Section matinsgospel_sup_nocom
 														Insert_section gospel_introH End-Insert
 														Insert_section LE._02_Gospel__.eothinon End-Insert
@@ -2871,13 +2871,17 @@ Template MA
 														Insert_section LN.Supplication_Plain_deacon End-Insert
 													End-Section
 												otherwise use:
-													Section matinsgospel_sup_com
-														Insert_section gospel_introH End-Insert
-														Insert_section LE._02_Gospel__.eothinon End-Insert
-														Insert_section Psalm50_chant_Hierarchical End-Insert
-														Insert_section PostGospel_eo End-Insert
-														Insert_section LN.Supplication_deacon End-Insert
-													End-Section
+													when-date-is
+														Mar 26 use: Insert_section matinsgospel_sup_nocom End-Insert
+														otherwise use:
+															Section matinsgospel_sup_com
+																Insert_section gospel_introH End-Insert
+																Insert_section LE._02_Gospel__.eothinon End-Insert
+																Insert_section Psalm50_chant_Hierarchical End-Insert
+																Insert_section PostGospel_eo End-Insert
+																Insert_section LN.Supplication_deacon End-Insert
+															End-Section
+													end-when
 											end-when
 										end-when
 									otherwise use:
@@ -3007,7 +3011,7 @@ Template MA
 												Insert_section LN.Supplication_Plain_deacon End-Insert
 											otherwise use:
 											when-movable-cycle-day-is
-												1, 8, 15, 22, 29, 36, 43, 50 use:
+												1, 8, 15, 22, 29, 43 use:
 													Section matinsgospel_sup_nocom
 														Insert_section gospel_introP End-Insert
 														Insert_section LE._02_Gospel__.eothinon End-Insert
@@ -3016,13 +3020,17 @@ Template MA
 														Insert_section LN.Supplication_Plain_deacon End-Insert
 													End-Section
 												otherwise use:
-													Section matinsgospel_sup_com
-														Insert_section gospel_introP End-Insert
-														Insert_section LE._02_Gospel__.eothinon End-Insert
-														Insert_section Psalm50_chant End-Insert
-														Insert_section PostGospel_eo End-Insert
-														Insert_section LN.Supplication_deacon End-Insert
-													End-Section
+													when-date-is
+														Mar 26 use: Insert_section matinsgospel_sup_nocom End-Insert
+														otherwise use:
+															Section matinsgospel_sup_com
+																Insert_section gospel_introP End-Insert
+																Insert_section LE._02_Gospel__.eothinon End-Insert
+																Insert_section Psalm50_chant End-Insert
+																Insert_section PostGospel_eo End-Insert
+																Insert_section LN.Supplication_deacon End-Insert
+															End-Section
+													end-when
 											end-when
 										end-when
 									otherwise use:
@@ -3035,6 +3043,12 @@ Template MA
 						end-when
 					End-Section
 			end-when
+		End-Section
+		Section supplication__
+			Section deacon__
+			End-Section
+			Section priest__
+			End-Section
 		End-Section
 	End-Section
 
