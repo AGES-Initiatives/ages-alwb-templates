@@ -1,4 +1,4 @@
-Template se.m07.d16.ma
+Template se.m07.d16.ve 
 
 Status Final
 
@@ -16,10 +16,10 @@ Status Final
 	Head 
 		Set_Date month 7 day 16 End_Date
 			Page_Header_Even
-				center @lookup sid ma.pdf.header sid d.on lang L1 @date lang L1
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -30,20 +30,18 @@ Status Final
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
-		Preface Covers
-			Insert_template ematins.cover.ma End-Insert
-			Insert_template ematins.credits End-Insert
-		End-Preface
+	Preface Covers
+		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
 
 	when-name-of-day-is
 		Sunday use:
-			Insert_section se.m07.dHF.ma.Instance01 End-Insert
-		
-		Saturday use:
-		
-		
+			Section Instance02
+				Insert_section se.m07.dHF.ve.Instance02 End-Insert
+			End-Section
 		otherwise use:
-			
-	end-when		
-
+			Section Instance01
+			End-Section
+	end-when
 End-Template

@@ -1,8 +1,9 @@
-Template se.m07.d16.ma
+Template se.m07.d16.ma2
 
 Status Final
 
 	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
 	import misc_gr_GR_cog.*
 	import prayers_gr_GR_cog.*
 	import rubrical_gr_GR_cog.*
@@ -30,20 +31,19 @@ Status Final
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
-		Preface Covers
-			Insert_template ematins.cover.ma End-Insert
-			Insert_template ematins.credits End-Insert
-		End-Preface
+	Preface Covers
+		Insert_template ematins.cover.ma End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
 
-	when-name-of-day-is
+	when-name-of-day-is 
 		Sunday use:
-			Insert_section se.m07.dHF.ma.Instance01 End-Insert
-		
-		Saturday use:
-		
-		
-		otherwise use:
-			
-	end-when		
+			Section Instance02 //Sunday
+				Insert_section se.m07.dHF.ma2.Instance01 End-Insert
+			End-Section
+		otherwise use: //needs work
+			Section Instance01 //Weekday
+			End-Section
+	end-when			
 
 End-Template

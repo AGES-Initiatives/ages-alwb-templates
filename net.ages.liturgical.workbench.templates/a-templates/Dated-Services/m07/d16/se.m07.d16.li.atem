@@ -1,9 +1,9 @@
-Template se.m07.d16.ma
+Template se.m07.d16.li
 
 Status Final
 
 	import actors_gr_GR_cog.*
-	import misc_gr_GR_cog.*
+	import misc_gr_GR_cog.* 
 	import prayers_gr_GR_cog.*
 	import rubrical_gr_GR_cog.*
 	import template.titles_gr_GR_cog.*
@@ -16,10 +16,10 @@ Status Final
 	Head 
 		Set_Date month 7 day 16 End_Date
 			Page_Header_Even
-				center @lookup sid ma.pdf.header sid d.on lang L1 @date lang L1
+				center @lookup sid li.pdf.header sid d.on lang L1 @date lang L1
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -30,20 +30,15 @@ Status Final
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
-		Preface Covers
-			Insert_template ematins.cover.ma End-Insert
-			Insert_template ematins.credits End-Insert
-		End-Preface
-
-	when-name-of-day-is
-		Sunday use:
-			Insert_section se.m07.dHF.ma.Instance01 End-Insert
-		
-		Saturday use:
-		
-		
+when-name-of-day-is 
+	Sunday use:
+		Section Instance02 //Sunday
+			Insert_section se.m07.dHF.li.Instance01 End-Insert
+		End-Section
+	
 		otherwise use:
-			
-	end-when		
+			Section Instance01 //weekday
+			End-Section	
+	end-when
 
 End-Template
