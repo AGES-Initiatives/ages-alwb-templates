@@ -1,0 +1,81 @@
+Template se.m04.d27.li
+
+Status Final
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 4 day 27 End_Date
+			Page_Header_Even
+				center @lookup sid li.pdf.header lang L1 @lookup sid d.on lang L1 @date lang L1 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid li.pdf.header lang L2 @lookup sid d.on lang L2 @date lang L2 
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.li.mcandme End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	when-movable-cycle-day-is 
+		60, 61, 62, 65, 66, 67, 68, 69, 70 use: //do nothing 
+		63, 64 use: Insert_section mc.map.ma.Section01 End-Insert
+		71, 72, 73, 74, 75, 76, 77, 78, 85, 92, 95, 99, 102, 106 use: Insert_section mc.map.ma.Section01 End-Insert
+		79, 80, 81, 82, 83, 84, 86, 87, 88, 89, 90, 91, 93, 94, 96, 97, 98, 100, 101, 103, 104, 105 use:
+			Section Instance01_weekday
+				Insert_section ST.li.pe_me End-Insert
+				Insert_section LI._01_Enarxis__.daily End-Insert
+				Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
+				Insert_section LI._04_Entrance__.clergy End-Insert
+				Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
+				Section hymns
+					when-movable-cycle-day-is
+						79, 80, 81, 82, 83, 84, 96, 97, 98, 100, 101 use:
+							Insert_section AP.af End-Insert
+							Insert_section TI.s._08_hieromartyr_.m End-Insert
+							Insert_section AP.me1_.hymn End-Insert
+						86 thru 91 use:
+							Insert_section AP.pe2_ End-Insert
+							Insert_section AP.pe1_.hymn End-Insert
+							Insert_section TI.s._08_hieromartyr_.m End-Insert
+							Insert_section AP.me1_.hymn End-Insert
+							Insert_section TI.pe._02_myrrhbearers End-Insert
+							Insert_section AP.pe3_.hymn End-Insert
+						93,  94, 103, 104, 105 use:
+							Title<Tdesig>sid ApolytikionAnastasimon</>End-Title
+							Title<Tmode>rid oc.ocVE.Apolytikion.mode @day D1</><Tmelody>rid oc.ocVE.Apolytikion.melody @day D1</>End-Title
+							Hymn rid oc.ocVE.Apolytikion.text @day D1 End-Hymn
+							Insert_section TI.s._08_hieromartyr_.m End-Insert
+							Insert_section AP.me1_.hymn End-Insert
+					end-when
+					Insert_section LI._05_AfterEntranceHymns__.local End-Insert
+					Insert_section KO.seasonal End-Insert
+				End-Section
+				Insert_section LI._06_Trisagion__.chrys End-Insert
+				Insert_section LE._01_Epistle__.daily_ End-Insert
+				Insert_section LE._02_Gospel__.daily_ End-Insert
+				Insert_section LI._08_Liturgy__.chrys End-Insert
+				Insert_section LI._09_Dismissal__.nocommemoration End-Insert
+			End-Section
+	end-when
+
+End-Template

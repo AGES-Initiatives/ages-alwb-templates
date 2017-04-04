@@ -431,6 +431,35 @@ Status Review
 				End-Section
 			End-Section
 		End-Section
+		Section modeofpeday__
+			Section noStichologia
+				Insert_section Selector_ModeOfPeDay.LIHC_ModeOfPeDay End-Insert
+			End-Section
+			Section for6
+				Insert_section Selector_ModeOfPeDay.LIHC_ModeOfPeDay End-Insert
+				Title role bmc_collapse sid clps.stichologia.top End-Title
+					Insert_section Selector_ModeOfPeDay.stichologia_media_modeofpeday End-Insert
+					Insert_section VE.Stichologia.for_6 End-Insert
+				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Break line End_Break
+			End-Section
+			Section for8
+				Insert_section Selector_ModeOfPeDay.LIHC_ModeOfPeDay End-Insert
+				Title role bmc_collapse sid clps.stichologia.top End-Title
+					Insert_section Selector_ModeOfPeDay.stichologia_media_modeofpeday End-Insert
+					Insert_section VE.Stichologia.for_8 End-Insert
+				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Break line End_Break
+			End-Section
+			Section for10
+				Insert_section Selector_ModeOfPeDay.LIHC_ModeOfPeDay End-Insert
+				Title role bmc_collapse sid clps.stichologia.top End-Title
+					Insert_section Selector_ModeOfPeDay.stichologia_media_modeofpeday End-Insert
+					Insert_section VE.Stichologia.for_10 End-Insert
+				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Break line End_Break
+			End-Section
+		End-Section
 		Section modeofweek__
 			Section noStichologia
 				Insert_section VE.LIHC_ModeOfWeek End-Insert
@@ -459,7 +488,7 @@ Status Review
 				Title role emc_collapse sid clps.stichologia.bottom End-Title
 				Break line End_Break
 			End-Section
-		End-Section //LIHC
+		End-Section
 		Section mode1__
 			Section noStichologia
 				Insert_section VE.LIHC_Mode1 End-Insert
@@ -5099,22 +5128,6 @@ Status Review
 				Title role mode rid peVE.Aposticha1.mode End-Title
 				Hymn rid peVE.Aposticha1.text @ver End-Hymn
 			End-Section
-			Section saturday_
-				Section first
-					Title role source sid sourcePentecostarion End-Title
-					Actor sid Choir End-Actor
-					Title role desig sid Aposticha End-Title
-					Title role desig sid StichiraAnastasima End-Title
-					Title role mode rid peVE.Aposticha1.mode End-Title
-					Hymn rid peVE.Aposticha1.text @ver End-Hymn
-				End-Section
-				Insert_section PsalmVerses.forVespersAposticha.saturday.verse1 End-Insert
-				Hymn rid peVE.Aposticha2.text @ver End-Hymn
-				Insert_section PsalmVerses.forVespersAposticha.saturday.verse2 End-Insert
-				Hymn rid peVE.Aposticha3.text @ver End-Hymn
-				Insert_section PsalmVerses.forVespersAposticha.saturday.verse3 End-Insert
-				Hymn rid peVE.Aposticha4.text @ver End-Hymn
-			End-Section
 			Section soulsaturday
 				Title role source sid sourcePentecostarion End-Title
 				Actor sid Choir End-Actor
@@ -5128,6 +5141,66 @@ Status Review
 				Title role desig sid Eteron End-Title
 				Insert_section PsalmVerses.forDeceased.verse1 End-Insert
 				Hymn rid peVE.Aposticha3.text @ver End-Hymn
+			End-Section
+			Section weekday_
+				Title role source sid sourcePentecostarion End-Title
+				Actor sid Choir End-Actor
+				Title role desig sid Aposticha End-Title
+				when-name-of-day-is
+					Monday, Tuesday use:
+						Section monday_tuesday
+							Title<Tmode>rid peVE.Aposticha1.mode</>End-Title
+							Title<Tdesig>sid Anastasimon</>End-Title
+							Hymn rid peVE.Aposticha1.text @ver End-Hymn
+							Insert_section PsalmVerses.forVespersAposticha.weekday.verse1 End-Insert
+							Title<Tdesig>sid Katanyktikon</><Tmelody>rid peVE.Aposticha2.melody</>End-Title
+							Hymn rid peVE.Aposticha2.text @ver End-Hymn
+							Insert_section PsalmVerses.forVespersAposticha.weekday.verse2 End-Insert
+							Title<Tdesig>sid Martyrikon</><Tmelody>rid peVE.Aposticha3.melody</>End-Title
+							Hymn rid peVE.Aposticha3.text @ver End-Hymn
+						End-Section
+					Wednesday, Friday use:
+						Section wednesday_friday
+							Title<Tmode>rid peVE.Aposticha1.mode</>End-Title
+							Title<Tdesig>sid Stavrosimon</>End-Title
+							Hymn rid peVE.Aposticha1.text @ver End-Hymn
+							Insert_section PsalmVerses.forVespersAposticha.weekday.verse1 End-Insert
+							Title<Tdesig>sid Anastasimon</>End-Title
+							Hymn rid peVE.Aposticha2.text @ver End-Hymn
+							Insert_section PsalmVerses.forVespersAposticha.weekday.verse2 End-Insert
+							Title<Tdesig>sid Martyrikon</><Tmelody>rid peVE.Aposticha3.melody</>End-Title
+							Hymn rid peVE.Aposticha3.text @ver End-Hymn
+						End-Section
+					Thursday use:
+						Section thursday
+							Title<Tmode>rid peVE.Aposticha1.mode</>End-Title
+							Title<Tdesig>sid Anastasimon</>End-Title
+							Hymn rid peVE.Aposticha1.text @ver End-Hymn
+							Insert_section PsalmVerses.forApostles.verse1 End-Insert
+							Title<Tdesig>sid Apostolikon</><Tmelody>rid peVE.Aposticha2.melody</>End-Title
+							Hymn rid peVE.Aposticha2.text @ver End-Hymn
+							Insert_section PsalmVerses.forMartyrs.verse1 End-Insert
+							Title<Tdesig>sid Martyrikon</><Tmelody>rid peVE.Aposticha3.melody</>End-Title
+							Hymn rid peVE.Aposticha3.text @ver End-Hymn
+						End-Section
+					Saturday use:
+						Section saturday_
+							Section first
+								Title role source sid sourcePentecostarion End-Title
+								Actor sid Choir End-Actor
+								Title role desig sid Aposticha End-Title
+								Title role desig sid StichiraAnastasima End-Title
+								Title role mode rid peVE.Aposticha1.mode End-Title
+								Hymn rid peVE.Aposticha1.text @ver End-Hymn
+							End-Section
+							Insert_section PsalmVerses.forVespersAposticha.saturday.verse1 End-Insert
+							Hymn rid peVE.Aposticha2.text @ver End-Hymn
+							Insert_section PsalmVerses.forVespersAposticha.saturday.verse2 End-Insert
+							Hymn rid peVE.Aposticha3.text @ver End-Hymn
+							Insert_section PsalmVerses.forVespersAposticha.saturday.verse3 End-Insert
+							Hymn rid peVE.Aposticha4.text @ver End-Hymn
+						End-Section
+				end-when
 			End-Section
 		End-Section
 		Section tr__
@@ -5876,6 +5949,8 @@ Status Review
 			Verse sid psa116.v2.text @ver End-Verse
 		End-Section
 	End-Section
+
+	
 
 	Section LIHC_ModeOfWeek
 		Actor sid Choir End-Actor
