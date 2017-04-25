@@ -1,0 +1,58 @@
+Template bk.test_set_mc
+
+	Status NA
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 4 day 1 year 2017 End_Date
+			Page_Header_Even
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+
+	Section test
+		Para ldp @Service_Date End-Para //this should be April 1, 2017
+		Para ldp @Day_of_Movable_Cycle End-Para //this should be 56
+		Set_mcDay day 86 End_mcDay
+		Set_Date month 5 day 1 End_Date
+		Para ldp @Service_Date End-Para //this should be may 1, 2017
+		Para ldp @Day_of_Movable_Cycle End-Para //this should be 86
+		when-movable-cycle-day-is
+			86 use:
+				Section section01
+					Para ldp @Day_of_Movable_Cycle End-Para //this should be 86
+					Set_mcDay day 120 End_mcDay
+					Para ldp @Day_of_Movable_Cycle End-Para //this should be 120
+					Set_mcDay day 0 End_mcDay
+					Para ldp @Day_of_Movable_Cycle End-Para //this should be 56
+					Para ldp @Service_Date End-Para //this should be may 1, 2017
+					Set_Date month 0 day 0 End_Date
+					Para ldp @Service_Date End-Para //this should be april 1, 2017
+					Para ldp @Day_of_Movable_Cycle End-Para //this should be 56
+				End-Section
+		end-when
+	End-Section
+		
+End-Template

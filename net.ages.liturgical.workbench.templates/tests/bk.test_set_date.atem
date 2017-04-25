@@ -1,4 +1,6 @@
-Template bk.test_ldp
+Template bk.test_set_date
+
+	Status NA
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -13,7 +15,7 @@ Template bk.test_ldp
 	import roles.*
 
 	Head 
-		Set_Date month 2 day 5 year 2017 End_Date
+		Set_Date month 4 day 27 year 2017 End_Date
 			Page_Header_Even
 				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
 			End_Page_Header_Even
@@ -29,11 +31,15 @@ Template bk.test_ldp
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
-	Section test
-		Set_Date month 4 day 8 year 2015 End_Date
-		Para ldp @Service_Date End-Para //this should be the date in the Head, i.e. Sunday, February 5, 2017
-		Para ldp @Day_of_Movable_Cycle End-Para //this should be 1
 
+	Section test
+		Para ldp @Service_Date End-Para //this should be April 27, 2017
+		Set_Date month 4 day 8 year 2015 End_Date
+		Para ldp @Service_Date End-Para //this should be April 8, 2015
+//		Para ldp @Day_of_Movable_Cycle End-Para //this should be 67
+//		Set_Date month 0 day 0 End_Date 
+//		Para ldp @Service_Date End-Para //this should be the date in the Head, April 27, 2017
+//		Para ldp @Day_of_Movable_Cycle End-Para //this should be 82
 	End-Section
 		
 End-Template
