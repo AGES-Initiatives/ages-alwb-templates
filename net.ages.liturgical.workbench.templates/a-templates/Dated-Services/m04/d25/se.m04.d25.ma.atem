@@ -21,17 +21,12 @@ Status Final
 	Para ldp @Day_of_Movable_Cycle End-Para //should be 80
 	Para ldp @Service_Date End-Para
 	
-	when-movable-cycle-day-is
-		80 use:
-			Section Instance10
-					Para ldp @Day_of_Movable_Cycle End-Para // should be 80
-					Set_mcDay day 78 End_mcDay
-					Para ldp @Day_of_Movable_Cycle End-Para // should be 78
-					Set_mcDay day 0 End_mcDay
-					Para ldp @Day_of_Movable_Cycle End-Para // should be 80
-			End-Section
+
+	Section Instance10
+			Set_mcDay day 0 End_mcDay
+			Para ldp @Day_of_Movable_Cycle End-Para // should be 80
+	End-Section
 
 
-	end-when
 
 End-Template
