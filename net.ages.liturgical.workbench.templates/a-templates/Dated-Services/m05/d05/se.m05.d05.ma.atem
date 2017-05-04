@@ -32,18 +32,119 @@ Status NA
 	End_Head
 
 	Preface Covers
-		Insert_template ematins.cover.ma End-Insert
+		Insert_template ematins.cover.ma.nokatavasia End-Insert
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-	when-movable-cycle-day-is
-		69 thru 78 use: Insert_section mc.map.ma.Section01 End-Insert
-		85, 92, 95, 99, 102, 106, 109, 110 use: Insert_section mc.map.ma.Section01 End-Insert
-		79 thru 83 use: //Thomas week
-		84 use: //Thomas Saturday
-		// various weekdays
-		108 use: //OC Leavetaking of Blindman
-		111 use: //OC After Ascension
-	end-when	
+	when-movable-cycle-day-is 
+		68, 69, 70 use: //do nothing since em
+		71, 72, 73, 74, 75, 76, 77, 78, 85, 92, 95, 99, 102, 106, 109, 110, 113 use: Insert_section mc.map.ma.Section01 End-Insert
+		79, 80, 81, 82, 83, 84, 86, 87, 88, 89, 90, 91, 93, 94, 96, 97, 98, 100, 101, 103, 104, 105, 107, 108, 111, 112, 114, 115 use:
+			Section Instance01_weekday
+				Insert_section ST.ma.pe_me End-Insert
+				when-movable-cycle-day-is
+					79, 80, 81, 82, 83, 84, 96, 97, 98, 100, 101 use:
+						Insert_section MA._01_Beginning__.mode7 End-Insert
+						Insert_section AP.af End-Insert
+						Insert_section TI.g.s._00_saint_.w End-Insert
+						Insert_section AP.ga.womanmartyr_.hymn End-Insert
+						Insert_section AP.both__.af End-Insert
+					86, 87, 88, 89, 90, 91 use:
+						Section apol_myrrhbearers
+							Set_mcDay day 85 End_mcDay
+								Insert_section MA._01_Beginning__.mode2 End-Insert
+								Insert_section TI.ap End-Insert
+								Insert_section AP.pe2_.hymn End-Insert
+								Title<Tdesig>sid ToAnastasimon</>End-Title
+								Insert_section AP.pe1_.hymn End-Insert
+								Insert_section TI.g.s._00_saint_.w End-Insert
+								Insert_section AP.ga.womanmartyr_.hymn End-Insert
+								Insert_section TI.b.pe_._02_myrrhbearers End-Insert
+								Insert_section AP.pe3_.hymn End-Insert
+							Set_mcDay day 0  End_mcDay
+						End-Section
+					93,  94, 103, 104, 105, 107 use:
+						Insert_section MA._01_Beginning__.modeofweek End-Insert
+						Title<Tdesig>sid ApolytikionAnastasimon</>End-Title
+						Title<Tmode>rid oc.ocVE.Apolytikion.mode @day D1</><Tmelody>rid oc.ocVE.Apolytikion.melody @day D1</>End-Title
+						Hymn rid oc.ocVE.Apolytikion.text @day D1 End-Hymn
+						Insert_section TI.g.s._00_saint_.w End-Insert
+						Insert_section AP.ga.womanmartyr_.hymn End-Insert
+						Insert_section AP.both__.primarytheotokion__.mode4 End-Insert
+				end-when
+				Insert_section MA._03_Kathisma1__.litany End-Insert
+				Insert_section MA._03_Kathisma1__.pe__.weekday End-Insert
+				Insert_section TI.k2.f End-Insert
+				Insert_section MA._04_Kathisma2__.append__.pe__.kath21gb21_.nt End-Insert
+				Insert_section MA._08_NoGospel__.reader__.psalm50 End-Insert 
+				Insert_section MA._11_Kontakion__.append__.me1_ End-Insert
+				Insert_section SY.Synaxarion End-Insert
+				Insert_section MA._10_Canon__.ode9_intro End-Insert
+				Insert_section MA._10_Canon__.magnificat__.mode4 End-Insert
+				Section block1
+					Title<Tdesig>sid OEirmos</><Tmode>rid me.meMA.Ode9H.mode</>End-Title
+					Para role heirmos rid me.meMA.Ode9H.text @ver End-Para
+					Hymn sid AxionEstin.text @ver End-Hymn
+				End-Section
+				Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+				Insert_section MA._12_Exaposteilarion__.me__.exap1_ End-Insert
+				when-movable-cycle-day-is
+					79 thru 84 use:
+						Section exap_thomas
+							Set_mcDay day 78 End_mcDay
+								Insert_section TI.f End-Insert
+								Insert_section MA._12_Exaposteilarion__.append__.pe__.exap1 End-Insert
+							Set_mcDay day 0 End_mcDay
+						End-Section
+					86 thru 91 use:
+						Section exap_myrrhheares
+							Set_mcDay day 85 End_mcDay
+								Insert_section TI.pe._02_myrrhbearers End-Insert
+								Insert_section MA._12_Exaposteilarion__.append__.pe__.exap1 End-Insert
+							Set_mcDay day 0 End_mcDay
+						End-Section
+				end-when
+				Insert_section MA._13_Lauds__.modeofweek End-Insert
+				Insert_section MA._13_Lauds__.pe__.weekday_ End-Insert
+				Insert_section TI.gb.f End-Insert
+				Insert_section MA._13_Lauds__.gloryboth__.pe__.gloryasgloryboth_.hymn End-Insert
+				Insert_section MA._14_Doxology__.small End-Insert
+				Insert_section MA._15_Litanies__.aftersmalldoxology End-Insert
+				Insert_section MA._16_Aposticha__.pe__.weekday_ End-Insert
+				Insert_section MA._16_Aposticha__.gloryboth__.pe__.gloryasgloryboth_ End-Insert
+				Insert_section MA._17_ItIsGood_Trisagion__.not_lent End-Insert
+				Section endofma_apol
+					when-movable-cycle-day-is
+						79, 80, 81, 82, 83, 84, 96, 97, 98, 100, 101 use:
+							Insert_section AP.af End-Insert
+							Insert_section TI.g.s._00_saint_.w End-Insert
+							Insert_section AP.ga.womanmartyr_.hymn End-Insert
+							Insert_section AP.both__.af End-Insert
+						86, 87, 88, 89, 90, 91 use:
+							Section apol_myrrhbearers
+								Set_mcDay day 85 End_mcDay
+									Insert_section TI.ap End-Insert
+									Insert_section AP.pe2_.hymn End-Insert
+									Title<Tdesig>sid ToAnastasimon</>End-Title
+									Insert_section AP.pe1_.hymn End-Insert
+									Insert_section TI.g.s._00_saint_.w End-Insert
+									Insert_section AP.ga.womanmartyr_.hymn End-Insert
+									Insert_section TI.b.pe_._02_myrrhbearers End-Insert
+									Insert_section AP.pe3_.hymn End-Insert
+								Set_mcDay day 0  End_mcDay
+							End-Section
+						93,  94, 103, 104, 105, 107 use:
+							Title<Tdesig>sid ApolytikionAnastasimon</>End-Title
+							Title<Tmode>rid oc.ocVE.Apolytikion.mode @day D1</><Tmelody>rid oc.ocVE.Apolytikion.melody @day D1</>End-Title
+							Hymn rid oc.ocVE.Apolytikion.text @day D1 End-Hymn
+							Insert_section TI.g.s._00_saint_.w End-Insert
+							Insert_section AP.ga.womanmartyr_.hymn End-Insert
+							Insert_section AP.both__.primarytheotokion__.mode4 End-Insert
+					end-when
+				End-Section
+				Insert_section MA._18_End__.ektenia_wisdom End-Insert
+				Insert_section MA._20_Dismissal__.commemoration End-Insert						
+			End-Section
+	end-when
 		
 End-Template
