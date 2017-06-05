@@ -1,6 +1,6 @@
-Template se.m12.d11.ve 
+Template se.m12.d31.ma2 
 
-Status NA
+Status Draft
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -15,12 +15,12 @@ Status NA
 	import roles.*
 
 	Head 
-		Set_Date month 12 day 11 End_Date
+		Set_Date month 12 day 31 End_Date
 			Page_Header_Even
-				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -32,23 +32,18 @@ Status NA
 	End_Head
 
 	Preface Covers
-		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.cover.ma End-Insert
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
 	when-name-of-day-is
 		Sunday use:
-			Section Instance03 //Sunday
-				Insert_section se.m12.dFF.ve.Instance01 End-Insert
-			End-Section
-			
-		Saturday use:
-			Section Instance02 // Saturday
+			Section Instance02 //Sunday
+				Insert_section se.m12.dAC.ma2.Instance04 End-Insert
 			End-Section
 			
 		otherwise use:
 			Section Instance01 //weekday
 			End-Section
-	end-when		
-
+	end-when				
 End-Template
