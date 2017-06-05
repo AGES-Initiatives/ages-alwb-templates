@@ -8656,9 +8656,15 @@ Status Draft
 								Hymn rid meMA.Ode8C11.text @ver media-off End-Hymn
 								Title sid Doxa End-Title
 								Hymn rid meMA.Ode8C12.text @ver End-Hymn
-						end-when	
-						Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
-						Hymn rid meMA.Ode8C1T.text @ver End-Hymn
+						end-when
+						when-exists
+							rid meMA.Ode8C1T.text use:
+								Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+								Hymn rid meMA.Ode8C1T.text @ver End-Hymn
+							otherwise use:
+								Title sid KaiNyn<Tdesig>sid Triadikon</>End-Title
+								Hymn rid meMA.Ode8C1Tr.text @ver End-Hymn
+						end-when
 					End-Section
 					Section nt_123tasVVVTh
 						Title role source0 sid sourceMenaion End-Title
