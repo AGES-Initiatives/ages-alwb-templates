@@ -36,32 +36,49 @@ Status Review
 
 	Section _01_Enarxis__
 		Section daily
-			Actor sid Deacon End-Actor
-			Dialog sid res08 End-Dialog
-			Actor sid Priest End-Actor
-			Dialog sid euLI.Key0109.text End-Dialog
-			Dialog<i>sid res04p</>End-Dialog
-			when-movable-cycle-day-is
-				71, 72, 73, 74, 75, 76, 77, 109 use:
-					Section pascha
-						Insert_section PE.Pascha_Beginning End-Insert
-					End-Section
-				78 thru 108 use:
-					Section afterpascha
-						Actor sid Hierarch End-Actor
-						Title role mode sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.mode End-Title
-						Hymn sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text @ver End-Hymn
-						Actor sid Choir End-Actor
-						Title role mode sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.mode End-Title
-						Hymn sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text @ver End-Hymn
-						Hymn sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text @ver media-off End-Hymn
-					End-Section
-			end-when	
+			Section _01
+				Actor sid Deacon End-Actor
+				Dialog sid res08 End-Dialog
+				Actor sid Priest End-Actor
+				Dialog sid euLI.Key0109.text End-Dialog
+				Dialog<i>sid res04p</>End-Dialog
+				when-movable-cycle-day-is
+					71, 72, 73, 74, 75, 76, 77, 109 use:
+						Section pascha
+							Insert_section PE.Pascha_Beginning End-Insert
+						End-Section
+					78 thru 108 use:
+						Section afterpascha
+							Actor sid Hierarch End-Actor
+							Title role mode sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.mode End-Title
+							Hymn sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text @ver End-Hymn
+							Actor sid Choir End-Actor
+							Title role mode sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.mode End-Title
+							Hymn sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text @ver End-Hymn
+							Hymn sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text @ver media-off End-Hymn
+						End-Section
+				end-when
+			End-Section
 			Section _02
 				Title role desig sid euLI.Key0200.text End-Title
 				Media sid euLI.Key0200.text End-Media
 				Actor sid Deacon End-Actor
 				Insert_section LN.GreatLitany01 End-Insert
+				Actor sid Hierarch<Trubric>sid InALowVoice</>End-Actor 
+				Title role small sid euLI.Key0201.title End-Title
+				Para role inaudible sid euLI.Key0201.text End-Para
+				Actor sid Priest End-Actor
+				Dialog sid exc01 End-Dialog
+				Dialog<i>sid res04p</>End-Dialog
+			End-Section
+		End-Section
+		Section daily_double_commemoration
+			Insert_section daily._01 End-Insert
+			Section _02
+				Title role desig sid euLI.Key0200.text End-Title
+				Media sid euLI.Key0200.text End-Media
+				Actor sid Deacon End-Actor
+				Insert_section LN.GreatLitany01_double_commemoration End-Insert
 				Actor sid Hierarch<Trubric>sid InALowVoice</>End-Actor 
 				Title role small sid euLI.Key0201.title End-Title
 				Para role inaudible sid euLI.Key0201.text End-Para
@@ -118,9 +135,9 @@ Status Review
 			Insert_section EntrancePrayer End-Insert
 			Actor sid Clergy End-Actor
 			Title role mixed<Tdesig>sid Eisodikon</><Tmode>sid Mode2</>End-Title
-			Insert_section Selector_Eisodikon.eisodikon_part1 End-Insert
+			Insert_section Selector_Eisodikon.eisodikon_complete End-Insert
 			Actor sid Choir End-Actor
-			Dialog sid hoLI.Antiphon22.text End-Dialog
+			Insert_section Selector_Eisodikon.eisodikon_refrain End-Insert
 		End-Section
 	End-Section
 	
@@ -137,8 +154,8 @@ Status Review
  			Insert_section Selector_Kontakion.SeasonalKontakion End-Insert
  		End-Section
 		Section local
-			Title role desig sid cl.Apolytikion1.title End-Title
-			Title role mode sid cl.Apolytikion1.mode End-Title
+			Title<Tdesig>sid cl.Apolytikion1.title</>End-Title
+			Title<Tmode>sid cl.Apolytikion1.mode</><Tmelody>sid cl.Apolytikion1.melody</>End-Title
 			Hymn sid cl.Apolytikion1.text @ver End-Hymn		
 		End-Section
 	End-Section

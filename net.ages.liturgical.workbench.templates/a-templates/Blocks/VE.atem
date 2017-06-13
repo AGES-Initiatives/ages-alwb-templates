@@ -94,6 +94,62 @@ Status Review
 						End-Section //Part3
 				end-when
 			End-Section
+			Section vespers_double_commemoration
+				when-movable-cycle-day-is
+					72, 73, 74, 75, 76, 77, 109 use:
+						Section pascha
+							Actor sid Hierarch End-Actor
+							Dialog sid enarxis03 End-Dialog
+							Dialog<i>sid res04p</>End-Dialog
+							Insert_section hPE.Pascha_Beginning End-Insert
+							Actor sid Deacon End-Actor
+							Insert_section LN.GreatLitany01_double_commemoration End-Insert
+							Actor sid Hierarch End-Actor
+							Dialog sid exc01<i>sid res04p</>End-Dialog
+						End-Section
+					otherwise use:
+						Section enarxis
+							Actor sid Priest End-Actor
+							Dialog sid enarxis01 End-Dialog
+							Dialog<i>sid res04p</>End-Dialog
+						End-Section
+						Section introductorypsalm
+							when-movable-cycle-day-is 
+								78 thru 108 use:
+									Actor sid Hierarch End-Actor
+									Insert_section PE.ChristIsRisen.once End-Insert
+									Actor sid Choir End-Actor
+									Insert_section PE.ChristIsRisen.twice End-Insert
+									Actor sid Hierarch End-Actor
+								otherwise use:
+									Actor sid Hierarch End-Actor
+									Reading sid DefteProskinisomen1 End-Reading
+									Reading sid DefteProskinisomen2 End-Reading
+									Reading sid DefteProskinisomen3 End-Reading
+							end-when
+							Media sid hoVE.Ps103.text End-Media
+							Insert_section Psalm_103_Paragraph End-Insert
+							Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+							Reading sid Allilouia3.text sid DoxaSoiOTheos1<r>sid Thrice</>End-Reading
+							Reading sid IElpisImonKyrie End-Reading
+							Break page End_Break
+							Insert_section lamplighting_prayers End-Insert
+							Break page End_Break
+						End-Section
+						Section litany
+							Actor sid Deacon End-Actor
+							when-movable-cycle-day-is
+								121 use:
+									Insert_section LN.GreatLitany_Vespers_HolySpirit01_double_commemoration End-Insert
+								otherwise use:
+									Insert_section LN.GreatLitany01_double_commemoration End-Insert
+							end-when
+							Actor sid Priest End-Actor
+							Dialog sid exc01 End-Dialog
+							Dialog<i>sid res04p</>End-Dialog
+						End-Section //Part3
+				end-when
+			End-Section
 			Section lent_weekday
 				Rubric sid cl.ho.s10.R001 End-Rubric
 				Insert_section vespers End-Insert
@@ -3241,6 +3297,14 @@ Status Review
 		Section Hierarchical__
 			Section fullektenia
 				Insert_section LN.Ektenia01 End-Insert
+				Actor sid Hierarch End-Actor
+				Reading sid hoVE.Prayer_Kataxioson.text @ver End-Reading
+				Dialog <i>sid res04p</>End-Dialog
+				Insert_section LN.ComplementaryV End-Insert
+				Insert_section LN.hBowHeadsV End-Insert
+			End-Section
+			Section fullektenia_double_commemoration
+				Insert_section LN.Ektenia01_double_commemoration End-Insert
 				Actor sid Hierarch End-Actor
 				Reading sid hoVE.Prayer_Kataxioson.text @ver End-Reading
 				Dialog <i>sid res04p</>End-Dialog
