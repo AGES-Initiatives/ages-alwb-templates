@@ -1,0 +1,76 @@
+Template ematins.cover.me.ma
+
+Status NA
+
+	import da.*
+	import oc.*
+	import me.*
+	import eo.*
+	import tr.*
+	import pe.*
+	
+	import he.k_en_US_public.*
+	import ematinscovers_en_US_ematins.*
+
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+
+	import iTags.*
+	import bTags.*
+	import roles.*
+	import rules.*
+	
+	Switch-Version L2 End-Switch-Version
+
+		Section title
+			Title role cover0 sid logo.text End-Title
+			Title role cover1 sid ma.pdf.cover End-Title 	//Service
+			Title role cover2 ldp @Service_Date End-Title	//Date
+		End-Section 
+		Section commeoration
+			when-name-of-day-is
+				Sunday use:
+					when-date-is
+						Jul 13 thru 19 use:
+							Title role cover4 sid me.m07.dHF_gr_GR_cog.meCommemoration.text End-Title
+						Oct 11 thru 17 use:
+							Title role cover4 sid me.m10.dHF_gr_GR_cog.meCommemoration.text End-Title
+						Dec 11 thru 17 use:
+							Title role cover4 sid me.m12.dFF_gr_GR_cog.meCommemoration.text End-Title
+						Dec 18 thru 24 use:
+							Title role cover4 sid me.m12.dBC_gr_GR_cog.meCommemoration.text End-Title
+						Dec 26 thru 31 use:
+							Title role cover4 sid me.m12.dAC_gr_GR_cog.meCommemoration.text End-Title
+					end-when
+				otherwise use: 
+					when-date-is
+						Dec 17 use: 
+							Title role cover4 rid alt1.meShortCommemoration1.text End-Title
+							Insert_section KA._title End-Insert
+						otherwise use: 
+							Title role cover4 rid meCommemoration.text End-Title
+					end-when
+			end-when
+		End-Section
+		Section sudnay_mode_eothinon_katavasia
+			when-name-of-day-is 
+				Sunday use: 
+					Title role cover4 rid ocVE.Apolytikion.mode sid Eothinon ldp @Eothinon End-Title
+					Insert_section KA._title End-Insert	//Katavasia Moveable
+				otherwise use:
+					when-date-is
+						Jul 13, 17 use: Insert_section KA._title End-Insert
+						Dec 12, 15, 26, 27, 31 use: Insert_section KA._title End-Insert
+					end-when
+			end-when
+		End-Section
+
+		Title role cover5 sid pref.generation_public.cover.version End-Title //GE or E
+		
+	Switch-Version Both End-Switch-Version	
+
+End-Template
