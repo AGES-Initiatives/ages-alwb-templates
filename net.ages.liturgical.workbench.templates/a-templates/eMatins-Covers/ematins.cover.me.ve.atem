@@ -1,4 +1,4 @@
-Template ematins.cover.me.ma
+Template ematins.cover.me.ve
 
 Status NA
 
@@ -25,16 +25,16 @@ Status NA
 	import rules.*
 	
 //	Head
-//		Set_Date month 10 day 11 End_Date
+//		Set_Date month 10 day 15 End_Date
 //	End_Head
-	
+
 	Switch-Version L2 End-Switch-Version
 
 		Section title
 			Title role cover0 sid logo.text End-Title
-			Title role cover1 sid ma.pdf.cover End-Title 	//Service
-			Title role cover2 ldp @Service_Date End-Title	//Date
-		End-Section 
+			Title role cover1 sid ve.pdf.cover End-Title 	//Service
+			Title role cover3 sid d.ontheeveof ldp @Service_Date End-Title 	
+		End-Section
 		Section commeoration
 			when-name-of-day-is
 				Sunday use:
@@ -54,27 +54,19 @@ Status NA
 					when-date-is
 						Dec 17 use: 
 							Title role cover4 rid alt1.meShortCommemoration1.text End-Title
-							Insert_section KA._title End-Insert
 						otherwise use: 
 							Title role cover4 rid meCommemoration.text End-Title
 					end-when
 			end-when
 		End-Section
-		Section sudnay_mode_eothinon_katavasia
+		Section sudnay_mode
 			when-name-of-day-is 
 				Sunday use: 
-					Title role cover4 sid Anastasima rid ocVE.Apolytikion.mode sid Eothinon ldp @Eothinon End-Title
-					Insert_section KA._title End-Insert	//Katavasia Moveable
-				otherwise use:
-					when-date-is
-						Jul 13, 17 use: Insert_section KA._title End-Insert
-						Dec 12, 15, 26, 27, 31 use: Insert_section KA._title End-Insert
-					end-when
+					Title role cover4 sid Anastasima rid ocVE.Apolytikion.mode End-Title
 			end-when
 		End-Section
-
 		Title role cover5 sid pref.generation_public.cover.version End-Title //GE or E
-		
+	
 	Switch-Version Both End-Switch-Version	
-
+	
 End-Template
