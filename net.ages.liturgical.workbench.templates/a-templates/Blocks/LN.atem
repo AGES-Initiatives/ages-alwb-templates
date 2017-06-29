@@ -955,7 +955,7 @@ Template LN
 
 	Section Ektenia08_vigil_lity_me1
 		Section part1
-			Insert_section Supplication_deacon End-Insert
+			Insert_section Supplication_deacon.part1 End-Insert
 			Media sid ho.s10_gr_GR_cog.hoVE.LityKyrieEleison.text End-Media
 			Dialog<i>sid res06p</>End-Dialog
 			Dialog sid pet18 End-Dialog
@@ -983,7 +983,7 @@ Template LN
 
 	Section Ektenia08_Hierarchical_vigil_lity_me1
 		Section part1
-			Insert_section Supplication_deacon End-Insert
+			Insert_section Supplication_deacon.part1 End-Insert
 			Media sid ho.s10_gr_GR_cog.hoVE.LityKyrieEleison.text End-Media
 			Dialog<i>sid res06p</>End-Dialog
 			Dialog sid pet18 End-Dialog
@@ -1134,18 +1134,20 @@ Template LN
 	End-Section
 
 	Section Supplication_deacon
-		Actor sid Deacon End-Actor
-		when-movable-cycle-day-is 
-			36, 50, 57 use: Insert_section supplication_09 End-Insert
-			78, 85, 113 use: 
-				when-date-is
-					Apr 23 use: Insert_section supplication_07 End-Insert
-					May 2, 8, 21 use: Insert_section supplication_07 End-Insert
-					otherwise use: Insert_section supplication_20 End-Insert
-				end-when
-			127 use: Insert_section supplication_21 End-Insert
-			otherwise use: Insert_section LN.supplication_selector_menaion End-Insert
-		end-when
+		Section part1
+			Actor sid Deacon End-Actor
+			when-movable-cycle-day-is 
+				36, 50, 57 use: Insert_section supplication_09 End-Insert
+				78, 85, 113 use: 
+					when-date-is
+						Apr 23 use: Insert_section supplication_07 End-Insert
+						May 2, 8, 21 use: Insert_section supplication_07 End-Insert
+						otherwise use: Insert_section supplication_20 End-Insert
+					end-when
+				127 use: Insert_section supplication_21 End-Insert
+				otherwise use: Insert_section LN.supplication_selector_menaion End-Insert
+			end-when
+		End-Section
 		Actor sid Choir End-Actor
 		Dialog sid res01<r>sid Twelve</>End-Dialog
 		Actor sid Priest End-Actor
