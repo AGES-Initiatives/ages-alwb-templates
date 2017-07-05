@@ -1809,7 +1809,7 @@ Status Draft
 					Title role source sid sourceMenaion End-Title
 					Actor sid Choir End-Actor
 					Title role desig sid Ode1 End-Title
-					Insert_section TI.c.con End-Insert
+					Title<Tdesig>rid meMA.C1.title </>End-Title
 					Title<Tdesig>rid meMA.Ode1C1H.melody</><Tmode>rid meMA.Ode1C1H.mode</>End-Title
 					Media rid meMA.Ode1C1H.text End-Media
 					when-exists
@@ -1817,28 +1817,29 @@ Status Draft
 							Para role heirmos rid meMA.Ode1C1H.text @ver End-Para
 							Verse rid meMA.C1.verse End-Verse
 							Hymn rid meMA.Ode1C11.text @ver End-Hymn
-						otherwise use:
-							Para role heirmos rid meMA.Ode1C1H.text @ver<r>sid Twice</>End-Para
-					end-when
-					Verse rid meMA.C1.verse End-Verse
-					Hymn rid meMA.Ode1C11.text @ver media-off End-Hymn
-					when-exists 
-						rid meMA.Ode1C13.text use:
 							Verse rid meMA.C1.verse End-Verse
 							Hymn rid meMA.Ode1C12.text @ver End-Hymn
 							Verse rid meMA.C1.verse End-Verse
 							Hymn rid meMA.Ode1C13.text @ver End-Hymn
-						otherwise use:
-							Verse rid meMA.C1.verse End-Verse
-							Hymn rid meMA.Ode1C11.text @ver End-Hymn
-							Verse rid meMA.C1.verse End-Verse
-							Hymn rid meMA.Ode1C12.text @ver End-Hymn
-					end-when
-					when-exists
-						rid meMA.Ode1C14.text use:
 							Verse rid meMA.C1.verse End-Verse
 							Hymn rid meMA.Ode1C14.text @ver End-Hymn
-					end-when
+						otherwise use:
+							Para role heirmos rid meMA.Ode1C1H.text @ver<r>sid Twice</>End-Para
+							when-exists 
+								rid meMA.Ode1C13.text use:
+									Verse rid meMA.C1.verse End-Verse
+									Hymn rid meMA.Ode1C11.text @ver media-off End-Hymn
+									Verse rid meMA.C1.verse End-Verse
+									Hymn rid meMA.Ode1C12.text @ver End-Hymn
+									Verse rid meMA.C1.verse End-Verse
+									Hymn rid meMA.Ode1C13.text @ver End-Hymn
+								otherwise use:
+									Verse rid meMA.C1.verse End-Verse
+									Hymn rid meMA.Ode1C11.text @ver<r>sid Twice</>End-Hymn
+									Verse rid meMA.C1.verse End-Verse
+									Hymn rid meMA.Ode1C12.text @ver End-Hymn
+							end-when
+						end-when
 					Verse sid verse_Theotokos.text End-Verse
 					Title<Tdesig>sid Theotokion</>End-Title
 					Hymn rid meMA.Ode1C1T.text @ver media-off End-Hymn
