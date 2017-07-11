@@ -1,6 +1,7 @@
 Template bk.ho.s21
 
-	import ho.s21_gr_GR_cog.*	
+	import ho.s21_gr_GR_cog.*
+	import ps_gr_GR_cog.*	
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -12,6 +13,8 @@ Template bk.ho.s21
 	import iTags.*
 	import bTags.*
 	import roles.*
+	
+	import bk.ho.s01.*
 
 	Head 
 		Template_Title @text "Preparation for Holy Communion" End_Title
@@ -35,7 +38,27 @@ Template bk.ho.s21
 //		Insert_template ematins.credits End-Insert
 //	End-Preface
  
-	 Section canon
+	Section block1
+		Actor sid Priest End-Actor
+		Dialog sid enarxis01 End-Dialog
+		Dialog sid res04p End-Dialog
+		Actor sid Priest End-Actor
+		Insert_section Heavenly_King End-Insert
+		Actor sid Reader End-Actor
+		Dialog<i>sid res04p</>End-Dialog
+		Insert_section Trisagion_Prayers End-Insert	
+		Actor sid Priest End-Actor
+		Dialog sid exc20 End-Dialog
+		Actor sid Reader End-Actor
+		Reading sid res04 sid res01<r>sid Twelve</>End-Reading
+		Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+		Reading sid DefteProskinisomen1 End-Reading
+		Reading sid DefteProskinisomen2 End-Reading
+		Reading sid DefteProskinisomen3 End-Reading
+		Title role desig sid psa50.title End-Title
+		Reading sid psa50.text End-Reading
+	End-Section
+	Section canon
 		Title<Tdesig>sid hoCA.title</>End-Title
 		Section ode1
 			Title<Tdesig>sid Ode1</><Tmode>sid hoCA.Ode11.mode</><Tmelody>sid hoCA.Ode11.melody</>End-Title
@@ -128,5 +151,21 @@ Template bk.ho.s21
 			Hymn sid hoCA.Ode9T.text @ver End-Hymn
 		End-Section
 	End-Section
+	Section block2
+		Reading sid DefteProskinisomen1 End-Reading
+		Reading sid DefteProskinisomen2 End-Reading
+		Reading sid DefteProskinisomen3 End-Reading
+		Insert_section LiturgicalPsalms.Psalm_22_Paragraph End-Insert
+		Insert_section LiturgicalPsalms.Psalm_23_Paragraph End-Insert
+		Insert_section LiturgicalPsalms.Psalm_115_Paragraph End-Insert
+		Title<Trubric>sid DoxaKaiNyn sid Allilouia</>End-Title
+		Hymn sid DoxaPatri.text sid KaiNynKaiAei.text End-Hymn
+		Reading sid Allilouia3.text sid DoxaSoiOTheos1<r>sid Thrice</>End-Reading
+		Reading sid res06 End-Reading
+		Reading sid oc.m2.d2_gr_GR_cog.ocMA.Aposticha2.text End-Reading
+		Title sid Doxa End-Title
+		
+	End-Section	
+
 
 End-Template
