@@ -99,15 +99,85 @@ Status Review
 
 	Section _02_Antiphons__
 		Section sundays_weekdays_feasts
-			Insert_section Selector_Antiphons.hSpecificDay End-Insert
+			Section antiphon1
+				Insert_section Selector_Antiphons.antiphon1__.specific_day End-Insert
+				Insert_section short_litany_after_antiphon1 End-Insert
+			End-Section
+			Section antiphon2
+				Insert_section Selector_Antiphons.antiphon2__.specific_day End-Insert
+				Insert_section short_litany_after_antiphon2 End-Insert
+			End-Section
+				Insert_section Selector_Antiphons.antiphon3__.specific_day End-Insert
+			Section antiphon3
+			End-Section
 		End-Section
 		Section celebrated_saint
-			Insert_section Selector_Antiphons.hcelebrated_saint End-Insert
+			Section antiphon1
+				Insert_section Selector_Antiphons.antiphon1__.celebrated_saint End-Insert
+				Insert_section short_litany_after_antiphon1 End-Insert
+			End-Section
+			Section antiphon2
+				Insert_section Selector_Antiphons.antiphon2__.celebrated_saint End-Insert
+				Insert_section short_litany_after_antiphon2 End-Insert
+			End-Section
+			Section antiphon3
+				Insert_section Selector_Antiphons.antiphon3__.celebrated_saint End-Insert
+			End-Section
 		End-Section	
+		Section Psalm102
+			Actor sid Choir End-Actor
+			Title role desig sid psa102.title End-Title
+			Media sid hoLI.MM.Psalm102.text End-Media
+			Hymn sid psa102.v1a.text sid psa102.v0.text sid psa102.v1.text media-off End-Hymn
+			Reading sid psa102.v2.text End-Reading
+			Reading sid psa102.v3.text End-Reading
+			Reading sid psa102.v4.text End-Reading
+			Reading sid psa102.v5.text End-Reading
+			Reading sid psa102.v6.text End-Reading
+			Reading sid psa102.v7.text End-Reading
+			Reading sid psa102.v8.text End-Reading
+			Reading sid psa102.v9.text End-Reading
+			Reading sid psa102.v10.text End-Reading
+			Reading sid psa102.v11.text End-Reading
+			Reading sid psa102.v12.text End-Reading
+			Reading sid psa102.v13.text End-Reading
+			Reading sid psa102.v14.text End-Reading
+			Reading sid psa102.v15.text End-Reading
+			Reading sid psa102.v16.text End-Reading
+			Reading sid psa102.v17.text End-Reading
+			Reading sid psa102.v18.text End-Reading
+			Reading sid psa102.v19.text End-Reading
+			Reading sid psa102.v20.text End-Reading
+			Reading sid psa102.v21.text End-Reading
+			Reading sid psa102.v22.text End-Reading
+			Reading sid DoxaPatri.text End-Reading
+			Reading sid KaiNynKaiAei.text End-Reading
+			Reading sid psa102.v1.text sid psa102.v0.text End-Reading
+			Insert_section short_litany_after_antiphon1 End-Insert
+		End-Section
+		Section Psalm145
+			Actor sid Choir End-Actor
+			Title role desig sid psa145.title End-Title
+			Media sid hoLI.MM.Psalm145.text End-Media
+			Reading sid DoxaToPatri.text End-Reading
+			Hymn sid psa145.v1.text sid psa145.v2.text End-Hymn
+			Reading sid psa145.v3.text End-Reading
+			Reading sid psa145.v4a.text End-Reading
+			Reading sid psa145.v4b.text End-Reading
+			Reading sid psa145.v5.text End-Reading
+			Reading sid psa145.v6a.text End-Reading
+			Reading sid psa145.v6b.text sid psa145.v7a.text End-Reading
+			Reading sid psa145.v7b.text sid psa145.v8.text sid psa145.v9a.text End-Reading
+			Reading sid psa145.v9b.text End-Reading
+			Reading sid psa145.v10.text End-Reading
+			Verse sid KaiNynKaiAei.text End-Verse
+			Hymn sid hoLI.OnlyBegotten.text @ver End-Hymn
+			Insert_section short_litany_after_antiphon2 End-Insert
+		End-Section
 	End-Section
 
-	Section _03_Apolytikia__
-	End-Section
+//	Section _03_Beatitudes__
+//	End-Section
 		
 			Section EntrancePrayer //inserted in _04
 				Actor sid Hierarch<Trubric>sid InALowVoice</>End-Actor 
@@ -1347,6 +1417,28 @@ Status Review
 	End-Section
 
 	//blocks
+		Section short_litany_after_antiphon1
+			Title<Tdesig>sid euLI.Key0202.title</>End-Title
+			Actor sid Deacon End-Actor
+			Insert_section LN.ShortLitany00 End-Insert
+			Actor sid Hierarch<Trubric>sid InALowVoice</>End-Actor 
+			Title role small sid euLI.Key0301.title End-Title
+			Para role inaudible sid euLI.Key0301.text End-Para
+			Actor sid Priest End-Actor
+			Dialog sid exc02 End-Dialog
+			Dialog<i>sid res04p</>End-Dialog
+		End-Section
+		Section short_litany_after_antiphon2
+			Title<Tdesig>sid euLI.Key0202.title</>End-Title
+			Actor sid Deacon End-Actor
+			Insert_section LN.ShortLitany00 End-Insert
+			Actor sid Hierarch<Trubric>sid InALowVoice</>End-Actor 
+			Title role small sid euLI.Key0401.title End-Title
+			Para role inaudible sid euLI.Key0401.text End-Para
+			Actor sid Priest End-Actor
+			Dialog sid exc03 End-Dialog
+			Dialog<i>sid res04p</>End-Dialog
+		End-Section
 		Section PreCommunionPrayers //inserted in _27
 			Actor sid People End-Actor
 			Title role desig sid hoPCPrayer.title End-Title
