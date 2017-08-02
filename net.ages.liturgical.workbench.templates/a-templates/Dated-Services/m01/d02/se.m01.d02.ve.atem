@@ -1,0 +1,123 @@
+Template se.m01.d02.ve 
+
+Status Review
+
+	import me.m01.d02_gr_GR_cog.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head
+		Set_Date month 1 day 2 year 2018 End_Date
+			Page_Header_Even
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	when-name-of-day-is
+		Sunday use:
+			Section Instance02 //Sunday
+			End-Section
+		otherwise use:
+			Section Instance01
+				Insert_section ST.ve.me End-Insert
+				Insert_section VE._01_Beginning__.vespers End-Insert
+				Insert_section VE._02_Kekragaria__.mode4__.for6 End-Insert
+				Insert_section TI.bf End-Insert
+				Insert_section VE._03_Stichera__.me__.p_123as567 End-Insert
+				Insert_section TI.s._00_saint_.m End-Insert
+				Insert_section VE._03_Stichera__.me__.p_456as8910 End-Insert
+				Insert_section TI.gb.bf End-Insert
+				Insert_section VE._03_Stichera__.gloryboth__.me__.gloryasgloryboth_.hymn End-Insert
+				Insert_section VE._04_Middle__.noentrance End-Insert	
+				Insert_section VE._06_Litanies__.noektenia End-Insert
+				Insert_section VE._08_Aposticha__.me__.i_epiphanyprefeast34 End-Insert
+				Insert_section VE._08_Aposticha__.gloryboth__.me__.gloryasgloryboth_ End-Insert
+				Insert_section VE._09_Symeon_Trisagion__.Priest.symeon End-Insert
+				Section canon
+					Actor sid Choir End-Actor
+					Title<Tdesig>sid KanonProeortios</>End-Title
+					Title<Tdesig>sid meCO.C1.title</>End-Title
+					Title<Tdesig>sid meCO.Ode1C1H.ode</><Tmode>sid meCO.Ode1C1H.mode</><Tdesig>sid meCO.Ode1C1H.melody</>End-Title
+					Para role heirmos sid meCO.Ode1C1H.text @ver<r>sid Twice media-off</>End-Para
+					Title sid Doxa End-Title
+					Hymn sid meCO.Ode1C11.text @ver End-Hymn
+					Title sid KaiNyn End-Title
+					Hymn sid meCO.Ode1C12.text @ver End-Hymn
+
+					Title<Tdesig>sid meCO.Ode8C1H.ode</>End-Title
+					Title<Tdesig>sid meCO.C1.title</>End-Title
+					Title<Tmode>sid meCO.Ode8C1H.mode</><Tdesig>sid meCO.Ode8C1H.melody</>End-Title
+					Para role heirmos sid meCO.Ode8C1H.text @ver<r>sid Twice media-off</>End-Para
+					Verse sid meCO.C1.verse End-Verse
+					Hymn sid meCO.Ode8C11.text @ver End-Hymn
+					Verse sid meCO.C1.verse End-Verse
+					Hymn sid meCO.Ode8C12.text @ver End-Hymn
+
+					Title<Tdesig>sid meCO.C2.title</>End-Title
+					Title<Tmode>sid meCO.Ode8C21.mode</><Tmelody>sid meCO.Ode8C21.melody</>End-Title
+					Verse sid meCO.C2.verse End-Verse
+					Hymn sid meCO.Ode8C21.text @ver End-Hymn
+					Verse sid meCO.C2.verse End-Verse
+					Hymn sid meCO.Ode8C21.text @ver End-Hymn
+					Title sid Doxa End-Title
+					Hymn sid meCO.Ode8C22.text @ver End-Hymn
+					Title sid KaiNyn End-Title
+					Hymn sid meCO.Ode8C23.text @ver End-Hymn
+					Title<Tdesig>sid OEirmos</>End-Title
+					Para role heirmos sid meCO.Ode8C2H.text End-Para
+					
+					Title<Tdesig>sid meCO.Ode9C1H.ode</>End-Title
+					Title<Tdesig>sid meCO.C1.title</>End-Title
+					Title<Tmode>sid meCO.Ode9C1H.mode</><Tdesig>sid meCO.Ode9C1H.melody</>End-Title
+					Para role heirmos sid meCO.Ode9C1H.text @ver<r>sid Twice media-off</>End-Para
+					Verse sid meCO.C1.verse End-Verse
+					Hymn sid meCO.Ode9C11.text @ver End-Hymn
+					Verse sid meCO.C1.verse End-Verse
+					Hymn sid meCO.Ode9C12.text @ver End-Hymn
+
+					Title<Tdesig>sid meCO.C2.title</>End-Title
+					Title<Tmode>sid meCO.Ode9C21.mode</><Tmelody>sid meCO.Ode9C21.melody</>End-Title
+					Verse sid meCO.C2.verse End-Verse
+					Hymn sid meCO.Ode9C21.text @ver End-Hymn
+					Verse sid meCO.C2.verse End-Verse
+					Hymn sid meCO.Ode9C21.text @ver End-Hymn
+					Title sid Doxa End-Title
+					Hymn sid meCO.Ode9C22.text @ver End-Hymn
+					Title sid KaiNyn End-Title
+					Hymn sid meCO.Ode9C23.text @ver End-Hymn
+					Title<Tdesig>sid meCO.Ode9C2H.melody</>End-Title
+					Para role heirmos sid meCO.Ode9C2H.text @ver End-Para
+				End-Section
+				Insert_section VE._09_Symeon_Trisagion__.Priest.trisagion End-Insert
+				Insert_section AP.bf3 End-Insert
+				Insert_section VE._10_End__.ektenia_wisdom End-Insert
+				Insert_section VE._11_Dismissal__.nocommemoration End-Insert
+			End-Section
+	end-when		
+
+End-Template
