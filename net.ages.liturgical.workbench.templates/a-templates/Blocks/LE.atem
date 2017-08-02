@@ -17,6 +17,7 @@ Template LE
 	import tr.*
 
 	import actors_gr_GR_cog.*
+	import lectionaries_gr_GR_cog.*
 	import misc_gr_GR_cog.*
 	import prayers_gr_GR_cog.*
 	import rubrical_gr_GR_cog.*
@@ -349,7 +350,6 @@ Template LE
 				Dialog sid epi02 End-Dialog	
 			End-Section	
 		End-Section //Epistle_Menaion
-
 		Section mealt1_ //computes
 			Section prokeimenon
 				Title role desig sid TaAnagnosmata End-Title
@@ -374,7 +374,6 @@ Template LE
 				Dialog sid epi02 End-Dialog	
 			End-Section	
 		End-Section //Epistle_mealt1
-
 		Section vespers__
 			Section menaion_ //computes Ephiphany and Christmas Eve
 				Section prokeimenon
@@ -524,6 +523,30 @@ Template LE
 				Actor sid Priest End-Actor
 				Dialog sid epi02 End-Dialog
 			End-Section	
+		End-Section
+		Section skipped__ //before Triodion
+			Section jan03_2018 //sep081
+				Section title
+					Title role desig sid OApostolos End-Title
+					Title role small sid lecLE.SaturdayBeforeEpiphany End-Title
+				End-Section
+				Section prokeimenon
+					Insert_section daily_.prokeimenon End-Insert
+				End-Section
+				Section lesson
+					Actor sid Deacon End-Actor
+					Dialog sid exc17 End-Dialog		
+					Actor sid Reader End-Actor
+					Insert_section bk.ap.me.m12.sections.dSatBE.ep_book End-Insert
+					Actor sid Deacon End-Actor
+					Dialog sid exc19 End-Dialog
+					Actor sid Reader End-Actor
+					Insert_section bk.ap.me.m12.sections.dSatBE.ep_lesson End-Insert
+					Actor sid Priest End-Actor
+					Dialog sid epi02 End-Dialog
+				End-Section	
+			End-Section
+					
 		End-Section
 	End-Section
 
@@ -1094,6 +1117,32 @@ Template LE
 			Title role chapverse rid lemcCO.Gospel.chapverse End-Title 
 			Reading rid lemcCO.Gospel.text @ver End-Reading 
 			Dialog<i>sid DoxaSoiKyrieP</>End-Dialog	
+		End-Section
+		Section skipped__
+			Section jan03_2018
+				Insert_section daily_.alleluia End-Insert
+				Insert_section PrayerBeforeGospel End-Insert
+				Section lesson
+					Title role desig sid ToEvangelion End-Title
+					Title role small sid lecLE.SaturdayBeforeEpiphany End-Title
+					Actor sid Deacon End-Actor
+					Dialog sid exc17 sid exc18 sid gos02 End-Dialog
+					Actor sid Priest End-Actor
+					Dialog sid pet31 End-Dialog
+					Dialog<i>sid res05p</>End-Dialog
+					Actor sid Deacon End-Actor
+					Insert_section bk.ev.me.m12.sections.dSatBE.liturgy.go_book End-Insert
+					Actor sid Priest End-Actor
+					Dialog sid exc19 End-Dialog
+					Dialog<i>sid DoxaSoiKyrieP</>End-Dialog	
+					Actor sid Deacon End-Actor
+					Insert_section bk.ev.me.m12.sections.dSatBE.liturgy.go_lesson End-Insert
+					Actor sid Priest End-Actor
+					Dialog sid euLI.Key0705.text End-Dialog
+					Actor sid Choir End-Actor						
+					Dialog sid DoxaSoiKyrie End-Dialog	
+				End-Section
+			End-Section
 		End-Section
 	End-Section
 	
