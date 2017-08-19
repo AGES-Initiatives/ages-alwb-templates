@@ -1,0 +1,90 @@
+Template se.m02.d04.ve 
+
+Status Final
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 2 day 4 year 2018 End_Date
+			Page_Header_Even
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	when-triodion-day-is
+		1 use: //Insert_section se.tr.d001.ve.Instance02 End-Insert
+		2 thru 7 use:
+		8 use: 
+			Section Instance03_mc08
+				Insert_section ST.ve.oc_tr_meaf End-Insert
+				Insert_section VE._01_Beginning__.vespers End-Insert
+				Insert_section VE._02_Kekragaria__.modeofweek__.for10 End-Insert
+				Insert_section VE._03_Stichera__.oc__.sunday__.s_1234as1234 End-Insert
+				Insert_section se.tr.d008.ve.Instance02 End-Insert
+					Set_Date month 2 day 2 End_Date
+					Insert_section TI.stp.f End-Insert
+					Insert_section VE._03_Stichera__.me__.i_123as8910 End-Insert
+				Set_Date month 2 day 4 year 2018 End_Date
+				Insert_section TI.g.tr_ End-Insert
+				Insert_section VE._03_Stichera__.glory__.tr__.gloryasglory_.hymn End-Insert
+				Insert_section VE._03_Stichera__.both__.firsttheotokion__.modeofweek End-Insert
+				Insert_section VE._04_Middle__.entrance End-Insert
+				Insert_section VE._06_Litanies__.fullektenia End-Insert
+				Insert_section VE._08_Aposticha__.oc__.sunday__.aposticha1234 End-Insert
+				Insert_section TI.g.tr_ End-Insert
+				Insert_section VE._08_Aposticha__.glory__.tr_.hymn End-Insert
+					Set_Date month 2 day 2 End_Date
+					Insert_section TI.b.f End-Insert
+					Insert_section VE._07_Lity__.part2__.me__.both_.hymn End-Insert		
+				Set_Date month 2 day 4 year 2018 End_Date
+				Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
+				Insert_section AP.res__.modeofweek End-Insert
+				Insert_section AP.gloryboth__.af End-Insert	
+				Insert_section VE._10_End__.wisdom End-Insert
+				Insert_section VE._11_Dismissal__.nocommemoration End-Insert
+			End-Section
+		9 thru 12 use:
+		13 use: //leavetaking of Meeting
+		14 use:	Insert_section se.tr.d014.ve.Instance01 End-Insert
+		15 use: 
+		16 use: 
+		17, 19 use:
+		18 use:
+		20 use: //leavetaking of Meeting
+		otherwise use:
+			when-name-of-day-is
+				Sunday use:
+					Section Instance02 //Sunday
+					End-Section
+				otherwise use:
+					Section Instance01 //Weekday
+					End-Section				
+			end-when
+	end-when
+
+End-Template

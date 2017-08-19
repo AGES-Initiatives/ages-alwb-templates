@@ -1,4 +1,4 @@
-Template se.m02.d26.li 
+Template se.m02.d04.li 
 
 Status NA
 
@@ -15,7 +15,7 @@ Status NA
 	import roles.*
 
 	Head 
-		Set_Date month 2 day 26 year 2018 End_Date
+		Set_Date month 2 day 4 year 2018 End_Date
 			Page_Header_Even
 				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
 			End_Page_Header_Even
@@ -31,18 +31,27 @@ Status NA
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
-	when-movable-cycle-day-is
-		1, 8 use: Insert_section mc.map.li.Section01 End-Insert
-		14 thru 47 use:	Insert_section mc.map.li.Section01 End-Insert
+	when-triodion-day-is
+		1 use: Insert_section se.tr.d001.li.Instance02 End-Insert
+		2 thru 7 use:
+		8 use: 
+		9 thru 12 use:
+		13 use: //leavetaking of Meeting
+		14 use:	Insert_section se.tr.d014.li.Instance01 End-Insert
+		15 use: 
+		16 use: 
+		17, 19 use:
+		18 use:
+		20 use: //leavetaking of Meeting
 		otherwise use:
 			when-name-of-day-is
 				Sunday use:
 					Section Instance02 //Sunday
 					End-Section
 				otherwise use:
-					Section Instance01
-					End-Section
-			end-when			
+					Section Instance01 //Weekday
+					End-Section				
+			end-when
 	end-when
 
 End-Template
