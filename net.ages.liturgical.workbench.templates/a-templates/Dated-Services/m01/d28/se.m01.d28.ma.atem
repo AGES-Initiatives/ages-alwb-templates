@@ -1,8 +1,6 @@
 Template se.m01.d28.ma 
 
-Status NA
-
-	import client_gr_GR_cog.*
+Status Final
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -17,7 +15,7 @@ Status NA
 	import roles.*
 
 	Head
-		Set_Date month 1 day 28 year 2017 End_Date
+		Set_Date month 1 day 28 year 2018 End_Date
 			Page_Header_Even
 				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
 			End_Page_Header_Even
@@ -38,34 +36,53 @@ Status NA
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-			Section Instance01 //weekday
-				Insert_section ST.ma.me End-Insert
-			//	Insert_section ST.ma.oc_me End-Insert
-				Insert_section MA._01_Beginning__.mode8 End-Insert
-				Insert_section AP.ganame.Jan28__.ephraim_ End-Insert
-				Insert_section TI.g.r End-Insert
-				Insert_section AP.both__.theotokion__.mode8_ End-Insert
-				Insert_section MA._03_Kathisma1__.litany End-Insert
-			//	Insert_section MA._03_Kathisma1__.oc__.weekday123 End-Insert
-				Insert_section MA._08_NoGospel__.reader__.intro_psalm50 End-Insert
-				Insert_section MA._11_Kontakion__.append__.me1_ End-Insert
-				Insert_section SY.Synaxarion End-Insert
-			
-				Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
-				Insert_section KA.choir__._mode_mag_media End-Insert
-				Insert_section KA.append__._9 End-Insert
-				Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
-				Insert_section MA._12_Exaposteilarion__.me__.exap123t End-Insert
-				Insert_section MA._13_Lauds__.mode1 End-Insert
-				Insert_section TI.stp.s._10_monastic_.m End-Insert
-				Insert_section MA._13_Lauds__.me__.p_ve1123as3456 End-Insert
-				Insert_section MA._16_Aposticha__.glory__.me__.gloryasglory_ End-Insert
-				Insert_section MA._16_Aposticha__.both__.me__.theotokion End-Insert
-				Insert_section MA._14_Doxology__.great End-Insert
-				Insert_section AP.ganame.Jan28__.ephraim_ End-Insert
-				Insert_section MA._15_Litanies__.aftergreatdoxology End-Insert
-				Insert_section MA._18_End__.wisdom End-Insert
-				Insert_section MA._20_Dismissal__.commemoration End-Insert
-			End-Section
+	when-movable-cycle-day-is
+		1 use:
+			Insert_section se.tr.d001.ma.Instance01 End-Insert
+		8 use:
+			Insert_section se.tr.d008.ma.Instance01 End-Insert
+		14 use:
+			Insert_section se.tr.d014.ma.Instance01 End-Insert
+		15 use:
+			Insert_section se.tr.d015.ma.Instance01 End-Insert
+		16 thru 18 use:
+		
+		otherwise use:
+			when-name-of-day-is
+				Sunday use:
+					Section Instance02 //Sunday
+					End-Section
+				otherwise use:
+					Section Instance01 //Weekday
+						Insert_section ST.ma.me End-Insert
+					//	Insert_section ST.ma.oc_me End-Insert
+						Insert_section MA._01_Beginning__.mode8 End-Insert
+						Insert_section AP.ganame.Jan28__.ephraim_ End-Insert
+						Insert_section TI.g.r End-Insert
+						Insert_section AP.both__.theotokion__.mode8_ End-Insert
+						Insert_section MA._03_Kathisma1__.litany End-Insert
+					//	Insert_section MA._03_Kathisma1__.oc__.weekday123 End-Insert
+						Insert_section MA._08_NoGospel__.reader__.intro_psalm50 End-Insert
+						Insert_section MA._11_Kontakion__.append__.me1_ End-Insert
+						Insert_section SY.Synaxarion End-Insert
+					
+						Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
+						Insert_section KA.choir__._mode_mag_media End-Insert
+						Insert_section KA.append__._9 End-Insert
+						Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+						Insert_section MA._12_Exaposteilarion__.me__.exap123t End-Insert
+						Insert_section MA._13_Lauds__.mode1 End-Insert
+						Insert_section TI.stp.s._10_monastic_.m End-Insert
+						Insert_section MA._13_Lauds__.me__.p_ve1123as3456 End-Insert
+						Insert_section MA._16_Aposticha__.glory__.me__.gloryasglory_ End-Insert
+						Insert_section MA._16_Aposticha__.both__.me__.theotokion End-Insert
+						Insert_section MA._14_Doxology__.great End-Insert
+						Insert_section AP.ganame.Jan28__.ephraim_ End-Insert
+						Insert_section MA._15_Litanies__.aftergreatdoxology End-Insert
+						Insert_section MA._18_End__.wisdom End-Insert
+						Insert_section MA._20_Dismissal__.commemoration End-Insert
+					End-Section
+			end-when
+	end-when			
 
 End-Template
