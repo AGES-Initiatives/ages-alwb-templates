@@ -100,27 +100,33 @@ Status Review
 	Section _02_Antiphons__
 		Section sundays_weekdays_feasts
 			Section antiphon1
+				Actor sid Choir End-Actor
 				Insert_section Selector_Antiphons.antiphon1__.specific_day End-Insert
 				Insert_section short_litany_after_antiphon1 End-Insert
 			End-Section
 			Section antiphon2
+				Actor sid Choir End-Actor
 				Insert_section Selector_Antiphons.antiphon2__.specific_day End-Insert
 				Insert_section short_litany_after_antiphon2 End-Insert
 			End-Section
-				Insert_section Selector_Antiphons.antiphon3__.specific_day End-Insert
 			Section antiphon3
+				Actor sid Choir End-Actor
+				Insert_section Selector_Antiphons.antiphon3__.specific_day End-Insert
 			End-Section
 		End-Section
 		Section celebrated_saint
 			Section antiphon1
+				Actor sid Choir End-Actor
 				Insert_section Selector_Antiphons.antiphon1__.celebrated_saint End-Insert
 				Insert_section short_litany_after_antiphon1 End-Insert
 			End-Section
 			Section antiphon2
+				Actor sid Choir End-Actor
 				Insert_section Selector_Antiphons.antiphon2__.celebrated_saint End-Insert
 				Insert_section short_litany_after_antiphon2 End-Insert
 			End-Section
 			Section antiphon3
+				Actor sid Choir End-Actor
 				Insert_section Selector_Antiphons.antiphon3__.celebrated_saint End-Insert
 			End-Section
 		End-Section	
@@ -672,6 +678,7 @@ Status Review
 					Dialog sid euLI.Key1327.text End-Dialog				
 				End-Section
 				Section _23_basil_HymnToTheotokos
+					Actor sid Choir End-Actor
 					Insert_section Selector_Megalynarion.Basil End-Insert
 				End-Section
 				Section _24_basil
@@ -767,64 +774,9 @@ Status Review
 				Section _31_basil
 					Actor sid Hierarch End-Actor
 					Dialog sid euLI.Key1529.text End-Dialog
-					when-date-is
-						Jan 1 use: 
-							Actor sid Choir End-Actor
-							Title role desig sid euLI.Key1531.text End-Title
-							Title role mode sid me.m01.d01_gr_GR_cog.meVE.Apolytikion2.mode End-Title
-							Hymn sid me.m01.d01_gr_GR_cog.meVE.Apolytikion2.text @ver End-Hymn
-						Jan 6 use:
-							when-name-of-day-is
-								Sunday, Monday use:
-									Actor sid Choir End-Actor
-									Title role desig sid euLI.Key1531.text End-Title
-									Title role mode sid me.m01.d06_gr_GR_cog.meVE.Apolytikion1.mode End-Title
-									Hymn sid me.m01.d06_gr_GR_cog.meVE.Apolytikion1.text @ver End-Hymn
-								otherwise use:
-									Actor sid Choir End-Actor
-									Title role mode sid Mode2 End-Title
-									Hymn sid euLI.Key1530.text @ver End-Hymn
-							end-when
-						Dec 25 use:
-							when-name-of-day-is
-								Sunday, Monday use:
-									Actor sid Choir End-Actor
-									Title role desig sid euLI.Key1531.text End-Title
-									Title role mode sid me.m12.d25_gr_GR_cog.meVE.Apolytikion1.mode End-Title
-									Hymn sid me.m12.d25_gr_GR_cog.meVE.Apolytikion1.text @ver End-Hymn
-								otherwise use:
-									Actor sid Choir End-Actor
-									Title role mode sid Mode2 End-Title
-									Hymn sid euLI.Key1530.text @ver End-Hymn
-							end-when
-						otherwise use:
-							when-movable-cycle-day-is
-								29, 36, 50, 57 use:
-									Actor sid Choir End-Actor
-									Title role mode sid Mode2 End-Title
-									Hymn sid euLI.Key1530.text @ver End-Hymn
-								43 use:
-									Section lent3
-										Actor sid Choir End-Actor
-										Title role desig sid euLI.Key1531.text End-Title
-										Title role mode sid tr.d043_gr_GR_cog.trVE.Apolytikion1.mode End-Title
-										Hymn sid tr.d043_gr_GR_cog.trVE.Apolytikion1.text @ver End-Hymn
-									End-Section
-								69 use:
-									Section holythursday
-										Actor sid Choir End-Actor
-										Title role desig sid euLI.Key1531.text End-Title		
-										Hymn sid tr.d069_gr_GR_cog.trLI.AfterCommunion.text @ver End-Hymn
-									End-Section
-								71 use:
-									Section holysaturday
-										Actor sid Choir End-Actor
-										Title role desig sid euLI.Key1531.text End-Title
-										Title role mode sid tr.d071_gr_GR_cog.trHW.AfterCommunion.mode End-Title	
-										Hymn sid tr.d071_gr_GR_cog.trHW.AfterCommunion.text @ver End-Hymn
-									End-Section
-							end-when
-					end-when
+					Dialog sid euLI.Key1529.text End-Dialog
+					Actor sid Choir End-Actor
+					Insert_section Selector_AfterCommunion.Basil End-Insert
 				End-Section
 				Section _32
 					Actor sid Hierarch End-Actor 
@@ -1024,6 +976,7 @@ Status Review
 						Dialog sid euLI.Key1327.text End-Dialog				
 					End-Section
 					Section _23_chrys_HymnToTheotokos
+						Actor sid Choir End-Actor
 						Insert_section Selector_Megalynarion.Chrysostom End-Insert
 					End-Section
 					Section _24_chrys
@@ -1128,15 +1081,20 @@ Status Review
 				End-Section
 				Insert_section PreCommunionPrayers End-Insert
 			End-Section
-			Insert_section Selector_CommunionHymn.Chrysostom End-Insert
 			Section part2
+				Actor sid Choir End-Actor
+				Insert_section Selector_CommunionHymn.Chrysostom End-Insert
+			End-Section
+			Section part3
 				Insert_section Communion End-Insert
 				Insert_section seasonalhymns_chrys End-Insert
 				Section communion_upto_dismissal
 					Section _31_chrys
 						Actor sid Hierarch End-Actor
 						Dialog sid euLI.Key1529.text End-Dialog
-						Insert_section Selector_AfterCommunion.Section01 End-Insert
+						Title<Tdesig>sid eu.lichrysbasil_gr_GR_cog.euLI.Key1530.title</>End-Title
+						Actor sid Choir End-Actor
+						Insert_section Selector_AfterCommunion.Chrysostom End-Insert
 					End-Section
 					Section _32
 						Actor sid Hierarch End-Actor 
@@ -1267,13 +1225,13 @@ Status Review
 				Break line End_Break
 				Insert_section chrys.part1.cherubic_upto_communion._25_chrys End-Insert
 				Insert_section PreCommunionPrayers End-Insert
-				Insert_section Selector_CommunionHymn.Chrysostom End-Insert
+				Insert_section chrys.part2 End-Insert
 				Insert_section Communion End-Insert
 				Insert_section seasonalhymns_chrys End-Insert
-				Insert_section chrys.part2.communion_upto_dismissal._31_chrys End-Insert
-				Insert_section chrys.part2.communion_upto_dismissal._32 End-Insert
-				Insert_section chrys.part2.communion_upto_dismissal._34_chrys End-Insert
-				Insert_section chrys.part2.communion_upto_dismissal._35_chrys End-Insert
+				Insert_section chrys.part3.communion_upto_dismissal._31_chrys End-Insert
+				Insert_section chrys.part3.communion_upto_dismissal._32 End-Insert
+				Insert_section chrys.part3.communion_upto_dismissal._34_chrys End-Insert
+				Insert_section chrys.part3.communion_upto_dismissal._35_chrys End-Insert
 			End-Section
 		End-Section
 	End-Section
