@@ -1,0 +1,99 @@
+Template se.m12.dBC.li8 
+
+Status NA
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+			Page_Header_Even
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Section Instance01 //Dec 18, 19
+		Section block1
+			Para<bnr>sid book.Octoechos.name</>End-Para
+			Reading<bnr>rid oc.ocVE.Stichera1.mode</>End-Reading
+			Insert_section Selector_ServiceTitle.on_morning End-Insert
+			Para<bnr>sid book.Menaion.name</>End-Para
+			Reading<bnr>rid me.meDate.text</>End-Reading
+			Reading sid me.m12.dBC_gr_GR_cog.meCommemoration.text End-Reading
+			Break line End_Break
+			Title<bnr>sid li.html.tab</>End-Title
+			Insert_section ST.copyright_notice__.goa_liturgy_chrys End-Insert
+		End-Section
+	End-Section
+	
+	Section Instance02 //Dec 20-23
+		Section block1
+			Para<bnr>sid book.Octoechos.name</>End-Para
+			Reading<bnr>rid oc.ocVE.Stichera1.mode</>End-Reading
+			Insert_section Selector_ServiceTitle.on_morning End-Insert
+			Para<bnr>sid book.Menaion.name</>End-Para
+			Reading<bnr>rid me.meDate.text</>End-Reading
+			Reading sid me.m12.dBC_gr_GR_cog.meCommemoration.text End-Reading
+			Break line End_Break
+			Title<bnr>sid li.html.tab</>End-Title
+		End-Section
+	End-Section
+
+	Section Instance03 //Dec 24
+		Section block1
+			Para<bnr>sid book.Octoechos.name</>End-Para
+			Reading<bnr>rid oc.ocVE.Stichera1.mode</>End-Reading
+			Insert_section Selector_ServiceTitle.on_morning End-Insert
+			Para<bnr>sid book.Menaion.name</>End-Para
+			Reading<bnr>rid me.meDate.text</>End-Reading
+			Reading sid me.m12.dBC_gr_GR_cog.meCommemoration.text End-Reading
+			Break line End_Break
+			Title<bnr>sid li.html.tab</>End-Title
+		End-Section
+		Insert_section LI._10_Parts__._1_antiphons__.sundays_weekdays_feasts End-Insert
+			Break line End_Break
+			Break page End_Break
+		Insert_section LI._10_Parts__._2_typika__.rubrics End-Insert
+		Insert_section LI._10_Parts__._3_beatitudes__.festal__.decBC__.ode3_123tas5678 End-Insert
+		Insert_section LI._03_Beatitudes__.append__.festal__.decBC__.ode6c2_as910GB End-Insert
+			Break line End_Break
+			Break page End_Break
+		Insert_section LI._10_Parts__._4_entrance End-Insert
+			Break line End_Break
+		Title role desig sid YmnoiMetaTinMikranEisodon End-Title
+		Insert_section se.m12.dBC.li.Instance03.hymns End-Insert
+			Break line End_Break
+		Insert_section LI._10_Parts__._5_trisagionhymn__.chrys End-Insert
+			Break line End_Break
+		Insert_section LE._01_Epistle__.textonly__.menaion End-Insert
+			Break line End_Break
+		Insert_section LE._02_Gospel__.textonly__.menaion End-Insert
+			Break line End_Break
+		Title<Tdesig>sid YmnosEisTinTheotokon</>End-Title
+		Insert_section Selector_Megalynarion.Chrysostom End-Insert
+			Break line End_Break
+		Insert_section Selector_CommunionHymn.Chrysostom End-Insert
+			Break line End_Break
+		Title<Tdesig>sid eu.lichrysbasil_gr_GR_cog.euLI.Key1530.title</>End-Title
+		Insert_section Selector_AfterCommunion.Chrysostom End-Insert
+	End-Section
+
+End-Template
