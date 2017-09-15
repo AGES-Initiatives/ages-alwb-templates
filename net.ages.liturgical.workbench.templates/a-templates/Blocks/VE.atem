@@ -154,6 +154,45 @@ Status Review
 				Rubric sid cl.ho.s10.R001 End-Rubric
 				Insert_section vespers End-Insert
 			End-Section
+			Section introductorypsalm_no_prayers
+				when-movable-cycle-day-is 
+					78 thru 108 use:
+						Actor sid Hierarch End-Actor
+						Insert_section PE.ChristIsRisen.once End-Insert
+						Actor sid Choir End-Actor
+						Insert_section PE.ChristIsRisen.twice End-Insert
+						Actor sid Hierarch End-Actor
+					otherwise use:
+						Actor sid Hierarch End-Actor
+						Reading sid DefteProskinisomen1 End-Reading
+						Reading sid DefteProskinisomen2 End-Reading
+						Reading sid DefteProskinisomen3 End-Reading
+				end-when
+				Media sid hoVE.Ps103.text End-Media
+				Insert_section Psalm_103_Paragraph End-Insert
+				Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+				Reading sid Allilouia3.text sid DoxaSoiOTheos1<r>sid Thrice</>End-Reading
+				Reading sid IElpisImonKyrie End-Reading
+			End-Section
+		End-Section
+		Section introductorypsalm_no_prayers
+			when-movable-cycle-day-is 78 thru 108 use:
+				Actor sid Priest End-Actor
+				Insert_section PE.ChristIsRisen.once End-Insert
+				Actor sid Choir End-Actor
+				Insert_section PE.ChristIsRisen.twice End-Insert
+				Actor sid Reader End-Actor
+			otherwise use:
+				Actor sid Reader End-Actor
+				Reading sid DefteProskinisomen1 End-Reading
+				Reading sid DefteProskinisomen2 End-Reading
+				Reading sid DefteProskinisomen3 End-Reading
+			end-when
+			Media sid hoVE.Ps103.text End-Media
+			Insert_section Psalm_103_Paragraph End-Insert
+			Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+			Reading sid Allilouia3.text sid DoxaSoiOTheos1<r>sid Thrice</>End-Reading
+			Reading sid IElpisImonKyrie End-Reading
 		End-Section
 		Section lent_weekday
 			Rubric sid cl.ho.s10.R001 End-Rubric
