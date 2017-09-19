@@ -1,6 +1,6 @@
-Template se.m10.d02.li8
+Template se.m10.d03.li8
 
-Status Final
+Status Review
 
 	import actors_gr_GR_cog.*
 	import template.titles_gr_GR_cog.*
@@ -14,7 +14,7 @@ Status Final
 	import roles.*
 	
 	Head 
-	Set_Date month 10 day 2 End_Date
+	Set_Date month 10 day 3 End_Date
 			Page_Header_Even
 				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
 			End_Page_Header_Even
@@ -33,6 +33,23 @@ Status Final
 	when-name-of-day-is 
 		Sunday use:	
 			Section Instance02 //Sunday
+				Insert_section ST.li.oc_me End-Insert
+				Insert_section LI._01_Enarxis__.daily End-Insert
+				Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
+				Insert_section LI._04_Entrance__.clergy End-Insert
+				Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
+				Section hymns
+					Insert_section AP.res__.modeofweek End-Insert
+					Insert_section TI.s._08_hieromartyr_.m End-Insert
+					Insert_section AP.ganame.Oct03__.dionysios_.hymn End-Insert
+					Insert_section LI._05_AfterEntranceHymns__.local End-Insert
+					Insert_section KO.seasonal End-Insert
+				End-Section
+				Insert_section LI._06_Trisagion__.chrys End-Insert
+				Insert_section LE._01_Epistle__.daily_ End-Insert
+				Insert_section LE._02_Gospel__.daily_ End-Insert
+				Insert_section LI._08_Liturgy__.chrys End-Insert
+				Insert_section LI._09_Dismissal__.commemoration End-Insert
 			End-Section //Sunday
 		
 		Saturday use:
@@ -41,7 +58,7 @@ Status Final
 			Section Instance01
 				Insert_section ST.li.oc_me End-Insert
 				Insert_section LI._02_Antiphons__.celebrated_saint End-Insert
-				Insert_section AP.ganame.Oct02__.cyprian_ End-Insert
+					Insert_section AP.ganame.Oct03__.dionysios_ End-Insert
 					Break line End_Break
 					Break page End_Break
 				Insert_section LI._10_Parts__._2_typika__.rubrics End-Insert
@@ -51,7 +68,7 @@ Status Final
 				Insert_section LI._10_Parts__._4_entrance End-Insert
 					Break line End_Break
 				Title role desig sid YmnoiMetaTinMikranEisodon End-Title
-				Insert_section se.m10.d02.li.Instance01.hymns End-Insert
+				Insert_section se.m10.d03.li.Instance01.hymns End-Insert
 					Break line End_Break
 				Insert_section LI._10_Parts__._5_trisagionhymn__.chrys End-Insert
 					Break line End_Break
