@@ -10356,6 +10356,27 @@ Template MA
 				Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
 				Hymn sid hoMA.LaudsSunTheotokion.text @ver End-Hymn
 			End-Section
+			Section metheotokion
+				when-name-of-day-is 
+					Monday, Tuesday, Thursday, Saturday use:
+						Section theotokion
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title<Tmode>rid meMA.LaudsTheotokion.mode</><Tmelody>rid meMA.LaudsTheotokion.melody</>End-Title
+							Hymn rid meMA.LaudsTheotokion.text @ver End-Hymn
+						End-Section
+					Wednesday, Friday use: 
+						when-exists 
+							rid meMA.LaudsStavrotheotokion.text use:
+								Section stavrotheotokion
+									Title role mixed sid KaiNyn<Tdesig>sid Stavrotheotokion</>End-Title
+									Title<Tmode>rid meMA.LaudsStavrotheotokion.mode</><Tmelody>rid meMA.LaudsStavrotheotokion.melody</>End-Title
+									Hymn rid meMA.LaudsStavrotheotokion.text @ver End-Hymn
+								End-Section
+							otherwise use: 
+								Insert_section theotokion End-Insert
+						end-when
+				end-when
+			End-Section
 			Section me__
 				Section alt1__
 					Section bothasboth_
@@ -12938,6 +12959,27 @@ Template MA
 							Hymn rid meMA.AposTheotokion.text @ver End-Hymn
 					end-when
 				End-Section		
+			End-Section
+			Section metheotokion
+				when-name-of-day-is 
+					Monday, Tuesday, Thursday, Saturday use:
+						Section theotokion
+							Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title<Tmode>rid meMA.AposTheotokion.mode</><Tmelody>rid meMA.AposTheotokion.melody</>End-Title
+							Hymn rid meMA.AposTheotokion.text @ver End-Hymn
+						End-Section
+					Wednesday, Friday use: 
+						when-exists 
+							rid meMA.AposStavrotheotokion.text use:
+								Section stavrotheotokion
+									Title role mixed sid KaiNyn<Tdesig>sid Stavrotheotokion</>End-Title
+									Title<Tmode>rid meMA.AposStavrotheotokion.mode</><Tmelody>rid meMA.AposStavrotheotokion.melody</>End-Title
+									Hymn rid meMA.AposStavrotheotokion.text @ver End-Hymn
+								End-Section
+							otherwise use: 
+								Insert_section theotokion End-Insert
+						end-when
+				end-when
 			End-Section
 			Section pe__
 				Section theotokion_
