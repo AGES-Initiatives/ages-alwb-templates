@@ -1,4 +1,4 @@
-Template se.m12.d13.ve 
+Template se.m12.d08.ve 
 
 Status Review
 
@@ -15,7 +15,7 @@ Status Review
 	import roles.*
 
 	Head 
-		Set_Date month 12 day 13 End_Date
+		Set_Date month 12 day 8 End_Date
 			Page_Header_Even
 				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
 			End_Page_Header_Even
@@ -32,42 +32,37 @@ Status Review
 	End_Head
 
 	Preface Covers
-		Insert_template ematins.cover.me.ve End-Insert
+		Insert_template ematins.cover.ve End-Insert
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-	when-name-of-day-is
-		Sunday use:
+	when-name-of-day-is 
+		Sunday use:	
 			Section Instance03 //Sunday
-				Insert_section se.m12.dFF.ve.Instance01 End-Insert
 			End-Section
 			
 		Saturday use:
-			Section Instance02 // Saturday
-			End-Section
-			
+		
 		otherwise use:
 			Section Instance01 //Weekday
-				Insert_section ST.ve.me End-Insert
+				Insert_section ST.ve.oc_me End-Insert
 				Insert_section VE._01_Beginning__.vespers End-Insert
-				Insert_section VE._02_Kekragaria__.mode4__.for6 End-Insert
-				Insert_section TI.stp.s._00_saint_.mp End-Insert
+				Insert_section VE._02_Kekragaria__.mode1__.for6 End-Insert
+				Insert_section TI.stp.bf End-Insert
 				Insert_section VE._03_Stichera__.me__.p_123as567 End-Insert
-				Insert_section TI.additional.stp End-Insert
+				Insert_section TI.s._10_monastic_.m End-Insert
 				Insert_section VE._03_Stichera__.me__.p_456as8910 End-Insert
-				Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_ End-Insert
-				Insert_section VE._03_Stichera__.both__.metheotokion End-Insert
+				Insert_section VE._03_Stichera__.gloryboth__.metheotokion End-Insert
 				Insert_section VE._04_Middle__.noentrance End-Insert	
 				Insert_section VE._06_Litanies__.noektenia End-Insert
-				Insert_section VE._08_Aposticha__.me__.p_martyrs12 End-Insert
-				Insert_section VE._08_Aposticha__.glory__.me__.gloryasglory_ End-Insert
-				Insert_section VE._08_Aposticha__.both__.metheotokion End-Insert
+				Insert_section VE._08_Aposticha__.oc__.weekday_ End-Insert	
 				Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
-				Insert_section AP.ga.martyrs_mode4_ End-Insert
-				Insert_section AP.gloryboth__.theotokion__.mode4_ End-Insert
+				Insert_section AP.ganame.Dec08__.patapios_ End-Insert
+				Insert_section AP.gloryboth__.theotokion__.mode8_ End-Insert
 				Insert_section VE._10_End__.ektenia_wisdom End-Insert
-				Insert_section VE._11_Dismissal__.commemoration End-Insert
+				Insert_section VE._11_Dismissal__.nocommemoration End-Insert
 			End-Section
-	end-when		
+		
+	end-when
 
 End-Template
