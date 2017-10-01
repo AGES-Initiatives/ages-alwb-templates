@@ -267,8 +267,9 @@ Status NA
 					Section ti_H12Tas0V34
 						Title role source sid sourceOctoechos End-Title
 						Actor sid Choir End-Actor
+						Title<Tdesig>sid Ode1</>End-Title
 						Insert_section ocC1_title End-Insert
-						Title role desig sid Ode1 rid ocMA.OdeS1C1H.mode sid OEirmos End-Title
+						Title<Tmode>rid ocMA.OdeS1C1H.mode</><Tdesig>rid ocMA.OdeS1C1H.melody</>End-Title
 						Para role heirmos rid ocMA.OdeS1C1H.text @ver End-Para
 						Title role desig sid Troparia End-Title
 						Insert_section ocC1_verse2 End-Insert
@@ -340,6 +341,55 @@ Status NA
 		Section ode3
 			Section append
 				Section me1
+					Section ti_123Tas78910
+						Title<Tdesig>rid meMA.C1.title</>End-Title
+						Title role source0 sid sourceMenaion End-Title
+						Title<Tmode>rid meMA.Ode3C11.mode</><Tmelody>rid meMA.Ode3C11.melody</>End-Title
+						Insert_section bOde3.verse7 End-Insert
+						Hymn rid meMA.Ode3C11.text @ver End-Hymn
+						when-exists
+							rid meMA.Ode3C13.text use:
+								Insert_section bOde3.verse8 End-Insert
+								Hymn rid meMA.Ode3C12.text @ver End-Hymn
+								Insert_section bOde3.verse9 End-Insert
+								Hymn rid meMA.Ode3C13.text @ver End-Hymn
+							otherwise use:
+								Insert_section bOde3.verse8 End-Insert
+								Hymn rid meMA.Ode3C11.text @ver End-Hymn
+								Insert_section bOde3.verse9 End-Insert
+								Hymn rid meMA.Ode3C12.text @ver End-Hymn
+						end-when
+						Insert_section bOde3.verse10 End-Insert
+						Title<Tdesig>sid Theotokion</>End-Title
+						Hymn rid meMA.Ode3C1T.text @ver End-Hymn
+					End-Section
+					Section ti_123Tas1112GB
+						when-exists rid meMA.C1.notice 
+							use: 
+								Rubric rid meMA.C1.notice End-Rubric
+								Title<Tdesig>sid OKanonTouMinaiou2</>End-Title
+							otherwise use: 
+								Title<Tdesig>rid meMA.C1.title</>End-Title
+								Title role source0 sid sourceMenaion End-Title
+						end-when
+						Title<Tmode>rid meMA.Ode3C11.mode</><Tmelody>rid meMA.Ode3C11.melody</>End-Title
+						Insert_section bOde3.verse11 End-Insert
+						Hymn rid meMA.Ode3C11.text @ver End-Hymn
+						when-exists
+							rid meMA.Ode3C13.text use:
+								Insert_section bOde3.verse12 End-Insert
+								Hymn rid meMA.Ode3C12.text @ver End-Hymn
+								Title sid Doxa End-Title
+								Hymn rid meMA.Ode3C13.text @ver End-Hymn
+							otherwise use:
+								Insert_section bOde3.verse12 End-Insert
+								Hymn rid meMA.Ode3C11.text @ver End-Hymn
+								Title sid Doxa End-Title
+								Hymn rid meMA.Ode3C12.text @ver End-Hymn
+						end-when
+						Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+						Hymn rid meMA.Ode3C1T.text @ver End-Hymn
+					End-Section
 					Section ti_H1123Tas0V3456
 						when-exists rid meMA.C1.notice 
 							use: 
@@ -407,43 +457,121 @@ Status NA
 						end-when
 					End-Section
 				End-Section
+				Section me2
+					Section ti_123Tas1112GB
+						Title<Tdesig>rid meMA.C2.title</>End-Title
+						Title role source0 sid sourceMenaion End-Title
+						Title<Tmode>rid meMA.Ode3C21.mode</><Tmelody>rid meMA.Ode3C21.melody</>End-Title
+						Insert_section bOde3.verse11 End-Insert
+						Hymn rid meMA.Ode3C21.text @ver End-Hymn
+						when-exists
+							rid meMA.Ode3C23.text use:
+								Insert_section bOde3.verse12 End-Insert
+								Hymn rid meMA.Ode3C22.text @ver End-Hymn
+								Title sid Doxa End-Title
+								Hymn rid meMA.Ode3C23.text @ver End-Hymn
+							otherwise use:
+								Insert_section bOde3.verse12 End-Insert
+								Hymn rid meMA.Ode3C21.text @ver End-Hymn
+								Title sid Doxa End-Title
+								Hymn rid meMA.Ode3C22.text @ver End-Hymn
+						end-when
+						Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+						Hymn rid meMA.Ode3C2T.text @ver End-Hymn
+					End-Section
+				End-Section
 				Section oc1
 					Section sunday
 						Section ti_H12Tas0V34
 							Title role source sid sourceOctoechos End-Title
+							Title<Tdesig>sid Ode3</>End-Title
 							Insert_section ocC1_title End-Insert
-							Title role desig sid Ode3 rid ocMA.OdeS1C1H.mode sid OEirmos End-Title
-							Para role heirmos rid ocMA.OdeS1C1H.text @ver End-Para
+							Title<Tmode>rid ocMA.OdeS3C1H.mode</><Tdesig>rid ocMA.OdeS3C1H.melody</>End-Title
+							Para role heirmos rid ocMA.OdeS3C1H.text @ver End-Para
 							Title role desig sid Troparia End-Title
 							Insert_section ocC1_verse2 End-Insert
-							Hymn rid ocMA.OdeS1C11.text @ver End-Hymn
+							Hymn rid ocMA.OdeS3C11.text @ver End-Hymn
 							Insert_section bOde3.verse3 End-Insert
-							Hymn rid ocMA.OdeS1C12.text @ver End-Hymn
+							Hymn rid ocMA.OdeS3C12.text @ver End-Hymn
 							Insert_section bOde3.verse4 End-Insert
 							Title role desig sid Theotokion End-Title
-							Hymn rid ocMA.OdeS1C1T.text @ver End-Hymn
+							Hymn rid ocMA.OdeS3C1T.text @ver End-Hymn
 						End-Section
 					End-Section
 					Section weekday
 						Section ti_H1234Tas0V3456
 							Title role source sid sourceOctoechos End-Title
+							Title<Tdesig>sid Ode3</>End-Title
 							Insert_section ocC1_title End-Insert
-							Title role desig sid Ode3 rid ocMA.OdeW1C1H.mode sid OEirmos End-Title
+							Title<Tmode>rid ocMA.OdeW3C1H.mode</><Tdesig>rid ocMA.OdeW3C1H.melody</>End-Title
 							Insert_section bOde3.refrain End-Insert
-							Para role heirmos rid ocMA.OdeW1C1H.text @ver End-Para
+							Para role heirmos rid ocMA.OdeW3C1H.text @ver End-Para
 							Title role desig sid Troparia End-Title
 							Insert_section ocC1_verse2 End-Insert
-							Hymn rid ocMA.OdeW1C11.text @ver End-Hymn
+							Hymn rid ocMA.OdeW3C11.text @ver End-Hymn
 							Insert_section bOde3.verse3 End-Insert
-							Hymn rid ocMA.OdeW1C12.text @ver End-Hymn
+							Hymn rid ocMA.OdeW3C12.text @ver End-Hymn
 							Insert_section bOde3.verse4 End-Insert
-							Hymn rid ocMA.OdeW1C13.text @ver End-Hymn
+							Hymn rid ocMA.OdeW3C13.text @ver End-Hymn
 							Insert_section bOde3.verse5 End-Insert
-							Hymn rid ocMA.OdeW1C14.text @ver End-Hymn
+							Hymn rid ocMA.OdeW3C14.text @ver End-Hymn
 							Insert_section bOde3.verse6 End-Insert
 							Title role desig sid Theotokion End-Title
-							Hymn rid ocMA.OdeW1C1T.text @ver End-Hymn
+							Hymn rid ocMA.OdeW3C1T.text @ver End-Hymn
 						End-Section
+					End-Section
+				End-Section
+				Section oc2
+					Section sunday
+						Section ti_12Tas567
+							Title role source sid sourceOctoechos End-Title
+							Insert_section ocC2_title End-Insert
+							Title<Tmode>rid ocMA.OdeS3C21.mode</><Tmelody>rid ocMA.OdeS3C21.melody</>End-Title
+							Insert_section bOde3.verse5 End-Insert
+							Hymn rid ocMA.OdeS3C21.text @ver End-Hymn
+							Insert_section bOde3.verse6 End-Insert
+							Hymn rid ocMA.OdeS3C22.text @ver End-Hymn
+							Insert_section bOde3.verse7 End-Insert
+							Title role desig sid Theotokion End-Title
+							Hymn rid ocMA.OdeS3C2T.text @ver End-Hymn
+						End-Section
+					End-Section
+					Section weekday
+						Section ti_123Tas78910
+							Title role source sid sourceOctoechos End-Title
+							Insert_section ocC2_title End-Insert
+							Title<Tmode>rid ocMA.OdeW3C21.mode</><Tmelody>rid ocMA.OdeW3C21.melody</>End-Title
+							Insert_section bOde3.verse7 End-Insert
+							Hymn rid ocMA.OdeW3C21.text @ver End-Hymn
+							when-exists
+								rid ocMA.OdeW3C23.text use:
+									Insert_section bOde3.verse8 End-Insert
+									Hymn rid ocMA.OdeW3C22.text @ver End-Hymn
+									Insert_section bOde3.verse9 End-Insert
+									Hymn rid ocMA.OdeW3C23.text @ver End-Hymn
+								otherwise use:
+									Insert_section bOde3.verse8 End-Insert
+									Hymn rid ocMA.OdeW3C21.text @ver End-Hymn
+									Insert_section bOde3.verse9 End-Insert
+									Hymn rid ocMA.OdeW3C22.text @ver End-Hymn
+							end-when
+							Insert_section bOde3.verse10 End-Insert
+							Title role desig sid Theotokion End-Title
+							Hymn rid ocMA.OdeW3C2T.text @ver End-Hymn
+						End-Section
+					End-Section
+				End-Section
+				Section oc3_sunday
+					Section ti_123as8910
+						Title role source sid sourceOctoechos End-Title
+						Title<Tdesig>sid KanonTisTheotokou</>End-Title
+						Title<Tmode>rid ocMA.OdeS3C31.mode</><Tmelody>rid ocMA.OdeS3C31.melody</>End-Title
+						Insert_section bOde3.verse8 End-Insert
+						Hymn rid ocMA.OdeS3C31.text @ver End-Hymn
+						Insert_section bOde3.verse9 End-Insert
+						Hymn rid ocMA.OdeS3C32.text @ver End-Hymn
+						Insert_section bOde3.verse10 End-Insert
+						Hymn rid ocMA.OdeS3C33.text @ver End-Hymn
 					End-Section
 				End-Section
 				Section tr1
@@ -487,6 +615,55 @@ Status NA
 		Section ode4
 			Section append
 				Section me1
+					Section ti_123Tas78910
+						Title<Tdesig>rid meMA.C1.title</>End-Title
+						Title role source0 sid sourceMenaion End-Title
+						Title<Tmode>rid meMA.Ode4C11.mode</><Tmelody>rid meMA.Ode4C11.melody</>End-Title
+						Insert_section bOde4.verse7 End-Insert
+						Hymn rid meMA.Ode4C11.text @ver End-Hymn
+						when-exists
+							rid meMA.Ode4C13.text use:
+								Insert_section bOde4.verse8 End-Insert
+								Hymn rid meMA.Ode4C12.text @ver End-Hymn
+								Insert_section bOde4.verse9 End-Insert
+								Hymn rid meMA.Ode4C13.text @ver End-Hymn
+							otherwise use:
+								Insert_section bOde4.verse8 End-Insert
+								Hymn rid meMA.Ode4C11.text @ver End-Hymn
+								Insert_section bOde4.verse9 End-Insert
+								Hymn rid meMA.Ode4C12.text @ver End-Hymn
+						end-when
+						Insert_section bOde4.verse10 End-Insert
+						Title<Tdesig>sid Theotokion</>End-Title
+						Hymn rid meMA.Ode4C1T.text @ver End-Hymn
+					End-Section
+					Section ti_123Tas1112GB
+						when-exists rid meMA.C1.notice 
+							use: 
+								Rubric rid meMA.C1.notice End-Rubric
+								Title<Tdesig>sid OKanonTouMinaiou2</>End-Title
+							otherwise use: 
+								Title<Tdesig>rid meMA.C1.title</>End-Title
+								Title role source0 sid sourceMenaion End-Title
+						end-when
+						Title<Tmode>rid meMA.Ode4C11.mode</><Tmelody>rid meMA.Ode4C11.melody</>End-Title
+						Insert_section bOde4.verse11 End-Insert
+						Hymn rid meMA.Ode4C11.text @ver End-Hymn
+						when-exists
+							rid meMA.Ode4C13.text use:
+								Insert_section bOde4.verse12 End-Insert
+								Hymn rid meMA.Ode4C12.text @ver End-Hymn
+								Title sid Doxa End-Title
+								Hymn rid meMA.Ode4C13.text @ver End-Hymn
+							otherwise use:
+								Insert_section bOde4.verse12 End-Insert
+								Hymn rid meMA.Ode4C11.text @ver End-Hymn
+								Title sid Doxa End-Title
+								Hymn rid meMA.Ode4C12.text @ver End-Hymn
+						end-when
+						Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+						Hymn rid meMA.Ode4C1T.text @ver End-Hymn
+					End-Section
 					Section ti_H1123Tas0V3456
 						when-exists rid meMA.C1.notice 
 							use: 
@@ -554,6 +731,123 @@ Status NA
 						end-when
 					End-Section
 				End-Section
+				Section me2
+					Section ti_123Tas1112GB
+						Title<Tdesig>rid meMA.C2.title</>End-Title
+						Title role source0 sid sourceMenaion End-Title
+						Title<Tmode>rid meMA.Ode4C21.mode</><Tmelody>rid meMA.Ode4C21.melody</>End-Title
+						Insert_section bOde4.verse11 End-Insert
+						Hymn rid meMA.Ode4C21.text @ver End-Hymn
+						when-exists
+							rid meMA.Ode4C23.text use:
+								Insert_section bOde4.verse12 End-Insert
+								Hymn rid meMA.Ode4C22.text @ver End-Hymn
+								Title sid Doxa End-Title
+								Hymn rid meMA.Ode4C23.text @ver End-Hymn
+							otherwise use:
+								Insert_section bOde4.verse12 End-Insert
+								Hymn rid meMA.Ode4C21.text @ver End-Hymn
+								Title sid Doxa End-Title
+								Hymn rid meMA.Ode4C22.text @ver End-Hymn
+						end-when
+						Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+						Hymn rid meMA.Ode4C2T.text @ver End-Hymn
+					End-Section
+				End-Section
+				Section oc1
+					Section sunday
+						Section ti_H12Tas0V34
+							Title role source sid sourceOctoechos End-Title
+							Title<Tdesig>sid Ode4</>End-Title
+							Insert_section ocC1_title End-Insert
+							Title<Tmode>rid ocMA.OdeS4C1H.mode</><Tdesig>rid ocMA.OdeS4C1H.melody</>End-Title
+							Para role heirmos rid ocMA.OdeS4C1H.text @ver End-Para
+							Title role desig sid Troparia End-Title
+							Insert_section ocC1_verse2 End-Insert
+							Hymn rid ocMA.OdeS4C11.text @ver End-Hymn
+							Insert_section bOde4.verse3 End-Insert
+							Hymn rid ocMA.OdeS4C12.text @ver End-Hymn
+							Insert_section bOde4.verse4 End-Insert
+							Title role desig sid Theotokion End-Title
+							Hymn rid ocMA.OdeS4C1T.text @ver End-Hymn
+						End-Section
+					End-Section
+					Section weekday
+						Section ti_H1234Tas0V3456
+							Title role source sid sourceOctoechos End-Title
+							Title<Tdesig>sid Ode4</>End-Title
+							Insert_section ocC1_title End-Insert
+							Title<Tmode>rid ocMA.OdeW4C1H.mode</><Tdesig>rid ocMA.OdeW4C1H.melody</>End-Title
+							Insert_section bOde4.refrain End-Insert
+							Para role heirmos rid ocMA.OdeW4C1H.text @ver End-Para
+							Title role desig sid Troparia End-Title
+							Insert_section ocC1_verse2 End-Insert
+							Hymn rid ocMA.OdeW4C11.text @ver End-Hymn
+							Insert_section bOde4.verse3 End-Insert
+							Hymn rid ocMA.OdeW4C12.text @ver End-Hymn
+							Insert_section bOde4.verse4 End-Insert
+							Hymn rid ocMA.OdeW4C13.text @ver End-Hymn
+							Insert_section bOde4.verse5 End-Insert
+							Hymn rid ocMA.OdeW4C14.text @ver End-Hymn
+							Insert_section bOde4.verse6 End-Insert
+							Title role desig sid Theotokion End-Title
+							Hymn rid ocMA.OdeW4C1T.text @ver End-Hymn
+						End-Section
+					End-Section
+				End-Section
+				Section oc2
+					Section sunday
+						Section ti_12Tas567
+							Title role source sid sourceOctoechos End-Title
+							Insert_section ocC2_title End-Insert
+							Title<Tmode>rid ocMA.OdeS4C21.mode</><Tmelody>rid ocMA.OdeS4C21.melody</>End-Title
+							Insert_section bOde4.verse5 End-Insert
+							Hymn rid ocMA.OdeS4C21.text @ver End-Hymn
+							Insert_section bOde4.verse6 End-Insert
+							Hymn rid ocMA.OdeS4C22.text @ver End-Hymn
+							Insert_section bOde4.verse7 End-Insert
+							Title role desig sid Theotokion End-Title
+							Hymn rid ocMA.OdeS4C2T.text @ver End-Hymn
+						End-Section
+					End-Section
+					Section weekday
+						Section ti_123Tas78910
+							Title role source sid sourceOctoechos End-Title
+							Insert_section ocC2_title End-Insert
+							Title<Tmode>rid ocMA.OdeW4C21.mode</><Tmelody>rid ocMA.OdeW4C21.melody</>End-Title
+							Insert_section bOde4.verse7 End-Insert
+							Hymn rid ocMA.OdeW4C21.text @ver End-Hymn
+							when-exists
+								rid ocMA.OdeW4C23.text use:
+									Insert_section bOde4.verse8 End-Insert
+									Hymn rid ocMA.OdeW4C22.text @ver End-Hymn
+									Insert_section bOde4.verse9 End-Insert
+									Hymn rid ocMA.OdeW4C23.text @ver End-Hymn
+								otherwise use:
+									Insert_section bOde4.verse8 End-Insert
+									Hymn rid ocMA.OdeW4C21.text @ver End-Hymn
+									Insert_section bOde4.verse9 End-Insert
+									Hymn rid ocMA.OdeW4C22.text @ver End-Hymn
+							end-when
+							Insert_section bOde4.verse10 End-Insert
+							Title role desig sid Theotokion End-Title
+							Hymn rid ocMA.OdeW4C2T.text @ver End-Hymn
+						End-Section
+					End-Section
+				End-Section
+				Section oc3_sunday
+					Section ti_123as8910
+						Title role source sid sourceOctoechos End-Title
+						Title<Tdesig>sid KanonTisTheotokou</>End-Title
+						Title<Tmode>rid ocMA.OdeS4C31.mode</><Tmelody>rid ocMA.OdeS4C31.melody</>End-Title
+						Insert_section bOde4.verse8 End-Insert
+						Hymn rid ocMA.OdeS4C31.text @ver End-Hymn
+						Insert_section bOde4.verse9 End-Insert
+						Hymn rid ocMA.OdeS4C32.text @ver End-Hymn
+						Insert_section bOde4.verse10 End-Insert
+						Hymn rid ocMA.OdeS4C33.text @ver End-Hymn
+					End-Section
+				End-Section
 				Section tr1
 					Section ti_123Tas78910
 						Title role source sid sourceTriodion End-Title
@@ -595,6 +889,55 @@ Status NA
 		Section ode5
 			Section append
 				Section me1
+					Section ti_123Tas78910
+						Title<Tdesig>rid meMA.C1.title</>End-Title
+						Title role source0 sid sourceMenaion End-Title
+						Title<Tmode>rid meMA.Ode5C11.mode</><Tmelody>rid meMA.Ode5C11.melody</>End-Title
+						Insert_section bOde5.verse7 End-Insert
+						Hymn rid meMA.Ode5C11.text @ver End-Hymn
+						when-exists
+							rid meMA.Ode5C13.text use:
+								Insert_section bOde5.verse8 End-Insert
+								Hymn rid meMA.Ode5C12.text @ver End-Hymn
+								Insert_section bOde5.verse9 End-Insert
+								Hymn rid meMA.Ode5C13.text @ver End-Hymn
+							otherwise use:
+								Insert_section bOde5.verse8 End-Insert
+								Hymn rid meMA.Ode5C11.text @ver End-Hymn
+								Insert_section bOde5.verse9 End-Insert
+								Hymn rid meMA.Ode5C12.text @ver End-Hymn
+						end-when
+						Insert_section bOde5.verse10 End-Insert
+						Title<Tdesig>sid Theotokion</>End-Title
+						Hymn rid meMA.Ode5C1T.text @ver End-Hymn
+					End-Section
+					Section ti_123Tas1112GB
+						when-exists rid meMA.C1.notice 
+							use: 
+								Rubric rid meMA.C1.notice End-Rubric
+								Title<Tdesig>sid OKanonTouMinaiou2</>End-Title
+							otherwise use: 
+								Title<Tdesig>rid meMA.C1.title</>End-Title
+								Title role source0 sid sourceMenaion End-Title
+						end-when
+						Title<Tmode>rid meMA.Ode5C11.mode</><Tmelody>rid meMA.Ode5C11.melody</>End-Title
+						Insert_section bOde5.verse11 End-Insert
+						Hymn rid meMA.Ode5C11.text @ver End-Hymn
+						when-exists
+							rid meMA.Ode5C13.text use:
+								Insert_section bOde5.verse12 End-Insert
+								Hymn rid meMA.Ode5C12.text @ver End-Hymn
+								Title sid Doxa End-Title
+								Hymn rid meMA.Ode5C13.text @ver End-Hymn
+							otherwise use:
+								Insert_section bOde5.verse12 End-Insert
+								Hymn rid meMA.Ode5C11.text @ver End-Hymn
+								Title sid Doxa End-Title
+								Hymn rid meMA.Ode5C12.text @ver End-Hymn
+						end-when
+						Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+						Hymn rid meMA.Ode5C1T.text @ver End-Hymn
+					End-Section
 					Section ti_H1123Tas0V3456
 						when-exists rid meMA.C1.notice 
 							use: 
@@ -662,6 +1005,123 @@ Status NA
 						end-when
 					End-Section
 				End-Section
+				Section me2
+					Section ti_123Tas1112GB
+						Title<Tdesig>rid meMA.C2.title</>End-Title
+						Title role source0 sid sourceMenaion End-Title
+						Title<Tmode>rid meMA.Ode5C21.mode</><Tmelody>rid meMA.Ode5C21.melody</>End-Title
+						Insert_section bOde5.verse11 End-Insert
+						Hymn rid meMA.Ode5C21.text @ver End-Hymn
+						when-exists
+							rid meMA.Ode5C23.text use:
+								Insert_section bOde5.verse12 End-Insert
+								Hymn rid meMA.Ode5C22.text @ver End-Hymn
+								Title sid Doxa End-Title
+								Hymn rid meMA.Ode5C23.text @ver End-Hymn
+							otherwise use:
+								Insert_section bOde5.verse12 End-Insert
+								Hymn rid meMA.Ode5C21.text @ver End-Hymn
+								Title sid Doxa End-Title
+								Hymn rid meMA.Ode5C22.text @ver End-Hymn
+						end-when
+						Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+						Hymn rid meMA.Ode5C2T.text @ver End-Hymn
+					End-Section
+				End-Section
+				Section oc1
+					Section sunday
+						Section ti_H12Tas0V34
+							Title role source sid sourceOctoechos End-Title
+							Title<Tdesig>sid Ode5</>End-Title
+							Insert_section ocC1_title End-Insert
+							Title<Tmode>rid ocMA.OdeS5C1H.mode</><Tdesig>rid ocMA.OdeS5C1H.melody</>End-Title
+							Para role heirmos rid ocMA.OdeS5C1H.text @ver End-Para
+							Title role desig sid Troparia End-Title
+							Insert_section ocC1_verse2 End-Insert
+							Hymn rid ocMA.OdeS5C11.text @ver End-Hymn
+							Insert_section bOde5.verse3 End-Insert
+							Hymn rid ocMA.OdeS5C12.text @ver End-Hymn
+							Insert_section bOde5.verse4 End-Insert
+							Title role desig sid Theotokion End-Title
+							Hymn rid ocMA.OdeS5C1T.text @ver End-Hymn
+						End-Section
+					End-Section
+					Section weekday
+						Section ti_H1234Tas0V3456
+							Title role source sid sourceOctoechos End-Title
+							Title<Tdesig>sid Ode5</>End-Title
+							Insert_section ocC1_title End-Insert
+							Title<Tmode>rid ocMA.OdeW5C1H.mode</><Tdesig>rid ocMA.OdeW5C1H.melody</>End-Title
+							Insert_section bOde5.refrain End-Insert
+							Para role heirmos rid ocMA.OdeW5C1H.text @ver End-Para
+							Title role desig sid Troparia End-Title
+							Insert_section ocC1_verse2 End-Insert
+							Hymn rid ocMA.OdeW5C11.text @ver End-Hymn
+							Insert_section bOde5.verse3 End-Insert
+							Hymn rid ocMA.OdeW5C12.text @ver End-Hymn
+							Insert_section bOde5.verse4 End-Insert
+							Hymn rid ocMA.OdeW5C13.text @ver End-Hymn
+							Insert_section bOde5.verse5 End-Insert
+							Hymn rid ocMA.OdeW5C14.text @ver End-Hymn
+							Insert_section bOde5.verse6 End-Insert
+							Title role desig sid Theotokion End-Title
+							Hymn rid ocMA.OdeW5C1T.text @ver End-Hymn
+						End-Section
+					End-Section
+				End-Section
+				Section oc2
+					Section sunday
+						Section ti_12Tas567
+							Title role source sid sourceOctoechos End-Title
+							Insert_section ocC2_title End-Insert
+							Title<Tmode>rid ocMA.OdeS5C21.mode</><Tmelody>rid ocMA.OdeS5C21.melody</>End-Title
+							Insert_section bOde5.verse5 End-Insert
+							Hymn rid ocMA.OdeS5C21.text @ver End-Hymn
+							Insert_section bOde5.verse6 End-Insert
+							Hymn rid ocMA.OdeS5C22.text @ver End-Hymn
+							Insert_section bOde5.verse7 End-Insert
+							Title role desig sid Theotokion End-Title
+							Hymn rid ocMA.OdeS5C2T.text @ver End-Hymn
+						End-Section
+					End-Section
+					Section weekday
+						Section ti_123Tas78910
+							Title role source sid sourceOctoechos End-Title
+							Insert_section ocC2_title End-Insert
+							Title<Tmode>rid ocMA.OdeW5C21.mode</><Tmelody>rid ocMA.OdeW5C21.melody</>End-Title
+							Insert_section bOde5.verse7 End-Insert
+							Hymn rid ocMA.OdeW5C21.text @ver End-Hymn
+							when-exists
+								rid ocMA.OdeW5C23.text use:
+									Insert_section bOde5.verse8 End-Insert
+									Hymn rid ocMA.OdeW5C22.text @ver End-Hymn
+									Insert_section bOde5.verse9 End-Insert
+									Hymn rid ocMA.OdeW5C23.text @ver End-Hymn
+								otherwise use:
+									Insert_section bOde5.verse8 End-Insert
+									Hymn rid ocMA.OdeW5C21.text @ver End-Hymn
+									Insert_section bOde5.verse9 End-Insert
+									Hymn rid ocMA.OdeW5C22.text @ver End-Hymn
+							end-when
+							Insert_section bOde5.verse10 End-Insert
+							Title role desig sid Theotokion End-Title
+							Hymn rid ocMA.OdeW5C2T.text @ver End-Hymn
+						End-Section
+					End-Section
+				End-Section
+				Section oc3_sunday
+					Section ti_123as8910
+						Title role source sid sourceOctoechos End-Title
+						Title<Tdesig>sid KanonTisTheotokou</>End-Title
+						Title<Tmode>rid ocMA.OdeS5C31.mode</><Tmelody>rid ocMA.OdeS5C31.melody</>End-Title
+						Insert_section bOde5.verse8 End-Insert
+						Hymn rid ocMA.OdeS5C31.text @ver End-Hymn
+						Insert_section bOde5.verse9 End-Insert
+						Hymn rid ocMA.OdeS5C32.text @ver End-Hymn
+						Insert_section bOde5.verse10 End-Insert
+						Hymn rid ocMA.OdeS5C33.text @ver End-Hymn
+					End-Section
+				End-Section
 				Section tr1
 					Section ti_123Tas78910
 						Title role source sid sourceTriodion End-Title
@@ -703,6 +1163,88 @@ Status NA
 		Section ode6
 			Section append
 				Section me1
+					Section ti_123Tas78910
+						Title<Tdesig>rid meMA.C1.title</>End-Title
+						Title role source0 sid sourceMenaion End-Title
+						Title<Tmode>rid meMA.Ode6C11.mode</><Tmelody>rid meMA.Ode6C11.melody</>End-Title
+						Insert_section bOde6.verse7 End-Insert
+						Hymn rid meMA.Ode6C11.text @ver End-Hymn
+						when-exists
+							rid meMA.Ode6C13.text use:
+								Insert_section bOde6.verse8 End-Insert
+								Hymn rid meMA.Ode6C12.text @ver End-Hymn
+								Insert_section bOde6.verse9 End-Insert
+								Hymn rid meMA.Ode6C13.text @ver End-Hymn
+							otherwise use:
+								Insert_section bOde6.verse8 End-Insert
+								Hymn rid meMA.Ode6C11.text @ver End-Hymn
+								Insert_section bOde6.verse9 End-Insert
+								Hymn rid meMA.Ode6C12.text @ver End-Hymn
+						end-when
+						Insert_section bOde6.verse10 End-Insert
+						Title<Tdesig>sid Theotokion</>End-Title
+						Hymn rid meMA.Ode6C1T.text @ver End-Hymn
+					End-Section
+					Section ti_123Tas1112GB
+						when-exists rid meMA.C1.notice 
+							use: 
+								Rubric rid meMA.C1.notice End-Rubric
+								Title<Tdesig>sid OKanonTouMinaiou2</>End-Title
+							otherwise use: 
+								Title<Tdesig>rid meMA.C1.title</>End-Title
+								Title role source0 sid sourceMenaion End-Title
+						end-when
+						Title<Tmode>rid meMA.Ode6C11.mode</><Tmelody>rid meMA.Ode6C11.melody</>End-Title
+						Insert_section bOde6.verse11 End-Insert
+						Hymn rid meMA.Ode6C11.text @ver End-Hymn
+						when-exists
+							rid meMA.Ode6C13.text use:
+								Insert_section bOde6.verse12 End-Insert
+								Hymn rid meMA.Ode6C12.text @ver End-Hymn
+								Title sid Doxa End-Title
+								Hymn rid meMA.Ode6C13.text @ver End-Hymn
+							otherwise use:
+								Insert_section bOde6.verse12 End-Insert
+								Hymn rid meMA.Ode6C11.text @ver End-Hymn
+								Title sid Doxa End-Title
+								Hymn rid meMA.Ode6C12.text @ver End-Hymn
+						end-when
+						Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+						Hymn rid meMA.Ode6C1T.text @ver End-Hymn
+					End-Section
+					Section ti_H1123Tas0V3456
+						when-exists rid meMA.C1.notice 
+							use: 
+								Title<Tdesig>sid OKanonTouMinaiou2</>End-Title
+							otherwise use: 
+								Title role source sid sourceMenaion End-Title
+								Title<Tdesig>sid OKanonTouMinaiou</>End-Title
+						end-when
+						Title<Tdesig>rid meMA.Ode6C1H.ode</><Tmode>rid meMA.Ode6C1H.mode</><Tmelody>rid meMA.Ode6C1H.melody</>End-Title
+						Insert_section CA.bOde6.refrain End-Insert
+						Para role heirmos rid meMA.Ode6C1H.text @ver End-Para
+						Title<Tdesig>sid Troparia</>End-Title
+						Verse rid meMA.C1.verse End-Verse
+					//	Insert_section CA.verse__.me1 End-Insert
+						Hymn rid meMA.Ode6C11.text @ver End-Hymn
+						Insert_section CA.bOde6.verse3 End-Insert
+						Hymn rid meMA.Ode6C11.text @ver End-Hymn
+						Insert_section CA.bOde6.verse4 End-Insert
+						Hymn rid meMA.Ode6C12.text @ver End-Hymn
+						Insert_section CA.bOde6.verse5 End-Insert
+						when-exists rid meMA.Ode6C13.text 
+							use: Hymn rid meMA.Ode6C13.text @ver End-Hymn
+							otherwise use: Hymn rid meMA.Ode6C12.text @ver End-Hymn
+						end-when
+						Insert_section CA.bOde6.verse6 End-Insert
+						when-exists rid meMA.Ode6C1T.text 
+							use:
+								Insert_section TI.th._ End-Insert
+								Hymn rid meMA.Ode6C1T.text @ver End-Hymn
+							otherwise use:
+								Hymn rid meMA.Ode6C14.text @ver End-Hymn
+						end-when
+					End-Section
 					Section ti_H1123Tas0V1112GB
 						when-exists rid meMA.C1.notice 
 							use: 
@@ -737,9 +1279,291 @@ Status NA
 						end-when
 					End-Section
 				End-Section
+				Section me2
+					Section ti_123Tas1112GB
+						Title<Tdesig>rid meMA.C2.title</>End-Title
+						Title role source0 sid sourceMenaion End-Title
+						Title<Tmode>rid meMA.Ode6C21.mode</><Tmelody>rid meMA.Ode6C21.melody</>End-Title
+						Insert_section bOde6.verse11 End-Insert
+						Hymn rid meMA.Ode6C21.text @ver End-Hymn
+						when-exists
+							rid meMA.Ode6C23.text use:
+								Insert_section bOde6.verse12 End-Insert
+								Hymn rid meMA.Ode6C22.text @ver End-Hymn
+								Title sid Doxa End-Title
+								Hymn rid meMA.Ode6C23.text @ver End-Hymn
+							otherwise use:
+								Insert_section bOde6.verse12 End-Insert
+								Hymn rid meMA.Ode6C21.text @ver End-Hymn
+								Title sid Doxa End-Title
+								Hymn rid meMA.Ode6C22.text @ver End-Hymn
+						end-when
+						Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+						Hymn rid meMA.Ode6C2T.text @ver End-Hymn
+					End-Section
+				End-Section
+				Section oc1
+					Section sunday
+						Section ti_H12Tas0V34
+							Title role source sid sourceOctoechos End-Title
+							Title<Tdesig>sid Ode6</>End-Title
+							Insert_section ocC1_title End-Insert
+							Title<Tmode>rid ocMA.OdeS6C1H.mode</><Tdesig>rid ocMA.OdeS6C1H.melody</>End-Title
+							Para role heirmos rid ocMA.OdeS6C1H.text @ver End-Para
+							Title role desig sid Troparia End-Title
+							Insert_section ocC1_verse2 End-Insert
+							Hymn rid ocMA.OdeS6C11.text @ver End-Hymn
+							Insert_section bOde6.verse3 End-Insert
+							Hymn rid ocMA.OdeS6C12.text @ver End-Hymn
+							Insert_section bOde6.verse4 End-Insert
+							Title role desig sid Theotokion End-Title
+							Hymn rid ocMA.OdeS6C1T.text @ver End-Hymn
+						End-Section
+					End-Section
+					Section weekday
+						Section ti_H1234Tas0V3456
+							Title role source sid sourceOctoechos End-Title
+							Title<Tdesig>sid Ode6</>End-Title
+							Insert_section ocC1_title End-Insert
+							Title<Tmode>rid ocMA.OdeW6C1H.mode</><Tdesig>rid ocMA.OdeW6C1H.melody</>End-Title
+							Insert_section bOde6.refrain End-Insert
+							Para role heirmos rid ocMA.OdeW6C1H.text @ver End-Para
+							Title role desig sid Troparia End-Title
+							Insert_section ocC1_verse2 End-Insert
+							Hymn rid ocMA.OdeW6C11.text @ver End-Hymn
+							Insert_section bOde6.verse3 End-Insert
+							Hymn rid ocMA.OdeW6C12.text @ver End-Hymn
+							Insert_section bOde6.verse4 End-Insert
+							Hymn rid ocMA.OdeW6C13.text @ver End-Hymn
+							Insert_section bOde6.verse5 End-Insert
+							Hymn rid ocMA.OdeW6C14.text @ver End-Hymn
+							Insert_section bOde6.verse6 End-Insert
+							Title role desig sid Theotokion End-Title
+							Hymn rid ocMA.OdeW6C1T.text @ver End-Hymn
+						End-Section
+					End-Section
+				End-Section
+				Section oc2
+					Section sunday
+						Section ti_12Tas567
+							Title role source sid sourceOctoechos End-Title
+							Insert_section ocC2_title End-Insert
+							Title<Tmode>rid ocMA.OdeS6C21.mode</><Tmelody>rid ocMA.OdeS6C21.melody</>End-Title
+							Insert_section bOde6.verse5 End-Insert
+							Hymn rid ocMA.OdeS6C21.text @ver End-Hymn
+							Insert_section bOde6.verse6 End-Insert
+							Hymn rid ocMA.OdeS6C22.text @ver End-Hymn
+							Insert_section bOde6.verse7 End-Insert
+							Title role desig sid Theotokion End-Title
+							Hymn rid ocMA.OdeS6C2T.text @ver End-Hymn
+						End-Section
+					End-Section
+					Section weekday
+						Section ti_123Tas78910
+							Title role source sid sourceOctoechos End-Title
+							Insert_section ocC2_title End-Insert
+							Title<Tmode>rid ocMA.OdeW6C21.mode</><Tmelody>rid ocMA.OdeW6C21.melody</>End-Title
+							Insert_section bOde6.verse7 End-Insert
+							Hymn rid ocMA.OdeW6C21.text @ver End-Hymn
+							when-exists
+								rid ocMA.OdeW6C23.text use:
+									Insert_section bOde6.verse8 End-Insert
+									Hymn rid ocMA.OdeW6C22.text @ver End-Hymn
+									Insert_section bOde6.verse9 End-Insert
+									Hymn rid ocMA.OdeW6C23.text @ver End-Hymn
+								otherwise use:
+									Insert_section bOde6.verse8 End-Insert
+									Hymn rid ocMA.OdeW6C21.text @ver End-Hymn
+									Insert_section bOde6.verse9 End-Insert
+									Hymn rid ocMA.OdeW6C22.text @ver End-Hymn
+							end-when
+							Insert_section bOde6.verse10 End-Insert
+							Title role desig sid Theotokion End-Title
+							Hymn rid ocMA.OdeW6C2T.text @ver End-Hymn
+						End-Section
+					End-Section
+				End-Section
+				Section oc3_sunday
+					Section ti_123as8910
+						Title role source sid sourceOctoechos End-Title
+						Title<Tdesig>sid KanonTisTheotokou</>End-Title
+						Title<Tmode>rid ocMA.OdeS6C31.mode</><Tmelody>rid ocMA.OdeS6C31.melody</>End-Title
+						Insert_section bOde6.verse8 End-Insert
+						Hymn rid ocMA.OdeS6C31.text @ver End-Hymn
+						Insert_section bOde6.verse9 End-Insert
+						Hymn rid ocMA.OdeS6C32.text @ver End-Hymn
+						Insert_section bOde6.verse10 End-Insert
+						Hymn rid ocMA.OdeS6C33.text @ver End-Hymn
+					End-Section
+				End-Section
 			End-Section
 		End-Section
 		Section ode7
+			Section append
+				Section me1
+					Section ti_123Tas78910
+						Title<Tdesig>rid meMA.C1.title</>End-Title
+						Title role source0 sid sourceMenaion End-Title
+						Title<Tmode>rid meMA.Ode7C11.mode</><Tmelody>rid meMA.Ode7C11.melody</>End-Title
+						Insert_section bOde7.verse7 End-Insert
+						Hymn rid meMA.Ode7C11.text @ver End-Hymn
+						when-exists
+							rid meMA.Ode7C13.text use:
+								Insert_section bOde7.verse8 End-Insert
+								Hymn rid meMA.Ode7C12.text @ver End-Hymn
+								Insert_section bOde7.verse9 End-Insert
+								Hymn rid meMA.Ode7C13.text @ver End-Hymn
+							otherwise use:
+								Insert_section bOde7.verse8 End-Insert
+								Hymn rid meMA.Ode7C11.text @ver End-Hymn
+								Insert_section bOde7.verse9 End-Insert
+								Hymn rid meMA.Ode7C12.text @ver End-Hymn
+						end-when
+						Insert_section bOde7.verse10 End-Insert
+						Title<Tdesig>sid Theotokion</>End-Title
+						Hymn rid meMA.Ode7C1T.text @ver End-Hymn
+					End-Section
+					Section ti_123Tas1112GB
+						when-exists rid meMA.C1.notice 
+							use: 
+								Rubric rid meMA.C1.notice End-Rubric
+								Title<Tdesig>sid OKanonTouMinaiou2</>End-Title
+							otherwise use: 
+								Title<Tdesig>rid meMA.C1.title</>End-Title
+								Title role source0 sid sourceMenaion End-Title
+						end-when
+						Title<Tmode>rid meMA.Ode7C11.mode</><Tmelody>rid meMA.Ode7C11.melody</>End-Title
+						Insert_section bOde7.verse11 End-Insert
+						Hymn rid meMA.Ode7C11.text @ver End-Hymn
+						when-exists
+							rid meMA.Ode7C13.text use:
+								Insert_section bOde7.verse12 End-Insert
+								Hymn rid meMA.Ode7C12.text @ver End-Hymn
+								Title sid Doxa End-Title
+								Hymn rid meMA.Ode7C13.text @ver End-Hymn
+							otherwise use:
+								Insert_section bOde7.verse12 End-Insert
+								Hymn rid meMA.Ode7C11.text @ver End-Hymn
+								Title sid Doxa End-Title
+								Hymn rid meMA.Ode7C12.text @ver End-Hymn
+						end-when
+						Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+						Hymn rid meMA.Ode7C1T.text @ver End-Hymn
+					End-Section
+				End-Section
+				Section me2
+					Section ti_123Tas1112GB
+						Title<Tdesig>rid meMA.C2.title</>End-Title
+						Title role source0 sid sourceMenaion End-Title
+						Title<Tmode>rid meMA.Ode7C21.mode</><Tmelody>rid meMA.Ode7C21.melody</>End-Title
+						Insert_section bOde7.verse11 End-Insert
+						Hymn rid meMA.Ode7C21.text @ver End-Hymn
+						when-exists
+							rid meMA.Ode7C23.text use:
+								Insert_section bOde7.verse12 End-Insert
+								Hymn rid meMA.Ode7C22.text @ver End-Hymn
+								Title sid Doxa End-Title
+								Hymn rid meMA.Ode7C23.text @ver End-Hymn
+							otherwise use:
+								Insert_section bOde7.verse12 End-Insert
+								Hymn rid meMA.Ode7C21.text @ver End-Hymn
+								Title sid Doxa End-Title
+								Hymn rid meMA.Ode7C22.text @ver End-Hymn
+						end-when
+						Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+						Hymn rid meMA.Ode7C2T.text @ver End-Hymn
+					End-Section
+				End-Section
+				Section oc2
+					Section sunday
+						Section ti_12Tas567
+							Title role source sid sourceOctoechos End-Title
+							Insert_section ocC2_title End-Insert
+							Title role melody rid ocMA.OdeS7C21.melody End-Title
+							Insert_section bOde7.verse5 End-Insert
+							Hymn rid ocMA.OdeS7C21.text @ver End-Hymn
+							Insert_section bOde7.verse6 End-Insert
+							Hymn rid ocMA.OdeS7C22.text @ver End-Hymn
+							Insert_section bOde7.verse7 End-Insert
+							Title role desig sid Theotokion End-Title
+							Hymn rid ocMA.OdeS7C2T.text @ver End-Hymn
+						End-Section
+					End-Section
+					Section weekday
+						Section ti_123Tas78910
+							Title role source sid sourceOctoechos End-Title
+							Insert_section ocC2_title End-Insert
+							Title<Tmode>rid ocMA.OdeW7C21.mode</><Tmelody>rid ocMA.OdeW7C21.melody</>End-Title
+							Insert_section bOde7.verse7 End-Insert
+							Hymn rid ocMA.OdeW7C21.text @ver End-Hymn
+							when-exists
+								rid ocMA.OdeW7C23.text use:
+									Insert_section bOde7.verse8 End-Insert
+									Hymn rid ocMA.OdeW7C22.text @ver End-Hymn
+									Insert_section bOde7.verse9 End-Insert
+									Hymn rid ocMA.OdeW7C23.text @ver End-Hymn
+								otherwise use:
+									Insert_section bOde7.verse8 End-Insert
+									Hymn rid ocMA.OdeW7C21.text @ver End-Hymn
+									Insert_section bOde7.verse9 End-Insert
+									Hymn rid ocMA.OdeW7C22.text @ver End-Hymn
+							end-when
+							Insert_section bOde7.verse10 End-Insert
+							Title role desig sid Theotokion End-Title
+							Hymn rid ocMA.OdeW7C2T.text @ver End-Hymn
+						End-Section
+					End-Section
+				End-Section
+				Section oc3_sunday
+					Section ti_123as8910
+						Title role source sid sourceOctoechos End-Title
+						Title role desig sid KanonTisTheotokou End-Title
+						Title role melody rid ocMA.OdeS7C31.melody End-Title
+						Insert_section bOde7.verse8 End-Insert
+						Hymn rid ocMA.OdeS7C31.text @ver End-Hymn
+						Insert_section bOde7.verse9 End-Insert
+						Hymn rid ocMA.OdeS7C32.text @ver End-Hymn
+						Insert_section bOde7.verse10 End-Insert
+						Hymn rid ocMA.OdeS7C33.text @ver End-Hymn
+					End-Section
+				End-Section
+				Section tr1
+					Section ti_123Tas78910
+						Title role source sid sourceTriodion End-Title
+						Title<Tdesig>sid KanonATouTriodiou</>End-Title
+						Title<Tdesig>rid trMA.Ode7C11.ode</><Tmode>rid trMA.Ode7C11.mode</><Tmelody>rid trMA.Ode7C11.melody</>End-Title
+						Insert_section bOde7.verse7 End-Insert
+						Hymn rid trMA.Ode7C11.text @ver End-Hymn
+						Insert_section bOde7.verse8 End-Insert
+						Hymn rid trMA.Ode7C12.text @ver End-Hymn
+						Insert_section bOde7.verse9 End-Insert
+						Hymn rid trMA.Ode7C13.text @ver End-Hymn
+						Insert_section bOde7.verse10 End-Insert
+						Insert_section TI.th._ End-Insert
+						Hymn rid trMA.Ode7C1T.text @ver End-Hymn
+					End-Section
+				End-Section
+				Section tr2
+					Section ti_12TrTAas1112GBGg
+						Title<Tdesig>sid KanonBTouTriodiou</>End-Title
+						Title<Tdesig>rid trMA.Ode7C21.ode</><Tmode>rid trMA.Ode7C21.mode</><Tmelody>rid trMA.Ode7C21.melody</>End-Title
+						Insert_section bOde7.verse11 End-Insert
+						Hymn rid trMA.Ode7C21.text @ver End-Hymn
+						Insert_section bOde7.verse12 End-Insert
+						Hymn rid trMA.Ode7C22.text @ver End-Hymn
+						Title sid Doxa<Tdesig>sid Triadikon</>End-Title
+						Hymn rid trMA.Ode7C2Tr.text @ver End-Hymn
+						Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+						Hymn rid trMA.Ode7C2T.text @ver End-Hymn
+						Verse sid verse_God.text End-Verse
+						Hymn rid trMA.Ode7C2A1.text @ver End-Hymn
+						when-exists rid trMA.Ode7C2A2.text use:
+							Verse sid verse_God.text End-Verse
+							Hymn rid trMA.Ode7C2A1.text @ver End-Hymn
+						end-when
+					End-Section
+				End-Section
+			End-Section
 			Section me1
 				Section ti_H1123Tas0V1112GB
 						when-exists rid meMA.C1.notice 
@@ -777,10 +1601,102 @@ Status NA
 					end-when
 				End-Section
 			End-Section
+			Section oc1
+				Section sunday
+					Section ti_H12Tas0V34
+						Title role source sid sourceOctoechos End-Title
+						Actor sid Choir End-Actor
+						Title<Tdesig>sid Ode7</>End-Title
+						Insert_section ocC1_title End-Insert
+						Title<Tmode>rid ocMA.OdeS7C1H.mode</><Tdesig>rid ocMA.OdeS7C1H.melody</>End-Title
+						Para role heirmos rid ocMA.OdeS7C1H.text @ver End-Para
+						Title role desig sid Troparia End-Title
+						Insert_section ocC1_verse2 End-Insert
+						Hymn rid ocMA.OdeS7C11.text @ver End-Hymn
+						Insert_section bOde7.verse3 End-Insert
+						Hymn rid ocMA.OdeS7C12.text @ver End-Hymn
+						Insert_section bOde7.verse4 End-Insert
+						Title role desig sid Theotokion End-Title
+						Hymn rid ocMA.OdeS7C1T.text @ver End-Hymn
+					End-Section
+				End-Section
+				Section weekday
+					Section ti_H1234Tas123456
+						Title role source sid sourceOctoechos End-Title
+						Actor sid Choir End-Actor
+						Title<Tdesig>sid Ode7</>End-Title
+						Insert_section ocC1_title End-Insert
+						Title<Tmode>rid ocMA.OdeW7C1H.mode</><Tdesig>rid ocMA.OdeW7C1H.melody</>End-Title
+						Insert_section bOde7.refrain End-Insert
+						Para role heirmos rid ocMA.OdeW7C1H.text @ver End-Para
+						Title role desig sid Troparia End-Title
+						Insert_section ocC1_verse2 End-Insert
+						Hymn rid ocMA.OdeW7C11.text @ver End-Hymn
+						Insert_section bOde7.verse3 End-Insert
+						Hymn rid ocMA.OdeW7C12.text @ver End-Hymn
+						Insert_section bOde7.verse4 End-Insert
+						Hymn rid ocMA.OdeW7C13.text @ver End-Hymn
+						Insert_section bOde7.verse5 End-Insert
+						Hymn rid ocMA.OdeW7C14.text @ver End-Hymn
+						Insert_section bOde7.verse6 End-Insert
+						Title role desig sid Theotokion End-Title
+						Hymn rid ocMA.OdeW7C1T.text @ver End-Hymn
+					End-Section
+				End-Section
+			End-Section
 		End-Section
 		Section ode8
 			Section append
 				Section me1
+					Section ti_123Tas78910
+						Title<Tdesig>rid meMA.C1.title</>End-Title
+						Title role source0 sid sourceMenaion End-Title
+						Title<Tmode>rid meMA.Ode8C11.mode</><Tmelody>rid meMA.Ode8C11.melody</>End-Title
+						Insert_section bOde8.verse7 End-Insert
+						Hymn rid meMA.Ode8C11.text @ver End-Hymn
+						when-exists
+							rid meMA.Ode8C13.text use:
+								Insert_section bOde8.verse8 End-Insert
+								Hymn rid meMA.Ode8C12.text @ver End-Hymn
+								Insert_section bOde8.verse9 End-Insert
+								Hymn rid meMA.Ode8C13.text @ver End-Hymn
+							otherwise use:
+								Insert_section bOde8.verse8 End-Insert
+								Hymn rid meMA.Ode8C11.text @ver End-Hymn
+								Insert_section bOde8.verse9 End-Insert
+								Hymn rid meMA.Ode8C12.text @ver End-Hymn
+						end-when
+						Insert_section bOde8.verse10 End-Insert
+						Title<Tdesig>sid Theotokion</>End-Title
+						Hymn rid meMA.Ode8C1T.text @ver End-Hymn
+					End-Section
+					Section ti_123Tas1112GB
+						when-exists rid meMA.C1.notice 
+							use: 
+								Rubric rid meMA.C1.notice End-Rubric
+								Title<Tdesig>sid OKanonTouMinaiou2</>End-Title
+							otherwise use: 
+								Title<Tdesig>rid meMA.C1.title</>End-Title
+								Title role source0 sid sourceMenaion End-Title
+						end-when
+						Title<Tmode>rid meMA.Ode8C11.mode</><Tmelody>rid meMA.Ode8C11.melody</>End-Title
+						Insert_section bOde8.verse11 End-Insert
+						Hymn rid meMA.Ode8C11.text @ver End-Hymn
+						when-exists
+							rid meMA.Ode8C13.text use:
+								Insert_section bOde8.verse12 End-Insert
+								Hymn rid meMA.Ode8C12.text @ver End-Hymn
+								Title sid Doxa End-Title
+								Hymn rid meMA.Ode8C13.text @ver End-Hymn
+							otherwise use:
+								Insert_section bOde8.verse12 End-Insert
+								Hymn rid meMA.Ode8C11.text @ver End-Hymn
+								Title sid Doxa End-Title
+								Hymn rid meMA.Ode8C12.text @ver End-Hymn
+						end-when
+						Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+						Hymn rid meMA.Ode8C1T.text @ver End-Hymn
+					End-Section
 					Section ti_H1123Tas0V3456
 						when-exists rid meMA.C1.notice 
 							use: 
@@ -813,6 +1729,156 @@ Status NA
 							otherwise use:
 								Hymn rid meMA.Ode8C14.text @ver End-Hymn
 						end-when
+					End-Section
+					Section ti_H1123Tas0V1112GB
+						when-exists rid meMA.C1.notice 
+							use: 
+								Title<Tdesig>sid OKanonTouMinaiou2</>End-Title
+							otherwise use: 
+								Title role source sid sourceMenaion End-Title
+								Title<Tdesig>sid OKanonTouMinaiou</>End-Title
+						end-when
+						Title<Tdesig>rid meMA.Ode8C1H.ode</><Tmode>rid meMA.Ode8C1H.mode</><Tmelody>rid meMA.Ode8C1H.melody</>End-Title
+						Insert_section CA.bOde8.refrain End-Insert
+						Para role heirmos rid meMA.Ode8C1H.text @ver End-Para
+						Title<Tdesig>sid Troparia</>End-Title
+						Verse rid meMA.C1.verse End-Verse
+					//	Insert_section CA.verse__.me1 End-Insert
+						Hymn rid meMA.Ode8C11.text @ver End-Hymn
+						Insert_section CA.bOde8.verse11 End-Insert
+						Hymn rid meMA.Ode8C11.text @ver End-Hymn
+						Insert_section CA.bOde8.verse12 End-Insert
+						Hymn rid meMA.Ode8C12.text @ver End-Hymn
+						Title sid Doxa End-Title
+						when-exists rid meMA.Ode8C13.text 
+							use: Hymn rid meMA.Ode8C13.text @ver End-Hymn
+							otherwise use: Hymn rid meMA.Ode8C12.text @ver End-Hymn
+						end-when
+						when-exists rid meMA.Ode8C1T.text 
+							use:
+								Insert_section TI.b.th End-Insert
+								Hymn rid meMA.Ode8C1T.text @ver End-Hymn
+							otherwise use:
+								Insert_section TI.b._ End-Insert
+								Hymn rid meMA.Ode8C14.text @ver End-Hymn
+						end-when
+					End-Section
+				End-Section
+				Section me2
+					Section ti_123Tas1112GB
+						Title<Tdesig>rid meMA.C2.title</>End-Title
+						Title role source0 sid sourceMenaion End-Title
+						Title<Tmode>rid meMA.Ode8C21.mode</><Tmelody>rid meMA.Ode8C21.melody</>End-Title
+						Insert_section bOde8.verse11 End-Insert
+						Hymn rid meMA.Ode8C21.text @ver End-Hymn
+						when-exists
+							rid meMA.Ode8C23.text use:
+								Insert_section bOde8.verse12 End-Insert
+								Hymn rid meMA.Ode8C22.text @ver End-Hymn
+								Title sid Doxa End-Title
+								Hymn rid meMA.Ode8C23.text @ver End-Hymn
+							otherwise use:
+								Insert_section bOde8.verse12 End-Insert
+								Hymn rid meMA.Ode8C21.text @ver End-Hymn
+								Title sid Doxa End-Title
+								Hymn rid meMA.Ode8C22.text @ver End-Hymn
+						end-when
+						Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+						Hymn rid meMA.Ode8C2T.text @ver End-Hymn
+					End-Section
+				End-Section
+				Section oc1
+					Section sunday
+						Section ti_H12Tas0V34
+							Title role source sid sourceOctoechos End-Title
+							Title<Tdesig>sid Ode8</>End-Title
+							Insert_section ocC1_title End-Insert
+							Title<Tmode>rid ocMA.OdeS8C1H.mode</><Tdesig>rid ocMA.OdeS8C1H.melody</>End-Title
+							Para role heirmos rid ocMA.OdeS8C1H.text @ver End-Para
+							Title role desig sid Troparia End-Title
+							Insert_section ocC1_verse2 End-Insert
+							Hymn rid ocMA.OdeS8C11.text @ver End-Hymn
+							Insert_section bOde8.verse3 End-Insert
+							Hymn rid ocMA.OdeS8C12.text @ver End-Hymn
+							Insert_section bOde8.verse4 End-Insert
+							Title role desig sid Theotokion End-Title
+							Hymn rid ocMA.OdeS8C1T.text @ver End-Hymn
+						End-Section
+					End-Section
+					Section weekday
+						Section ti_H1234Tas0V3456
+							Title role source sid sourceOctoechos End-Title
+							Title<Tdesig>sid Ode8</>End-Title
+							Insert_section ocC1_title End-Insert
+							Title<Tmode>rid ocMA.OdeW8C1H.mode</><Tdesig>rid ocMA.OdeW8C1H.melody</>End-Title
+							Insert_section bOde8.refrain End-Insert
+							Para role heirmos rid ocMA.OdeW8C1H.text @ver End-Para
+							Title role desig sid Troparia End-Title
+							Insert_section ocC1_verse2 End-Insert
+							Hymn rid ocMA.OdeW8C11.text @ver End-Hymn
+							Insert_section bOde8.verse3 End-Insert
+							Hymn rid ocMA.OdeW8C12.text @ver End-Hymn
+							Insert_section bOde8.verse4 End-Insert
+							Hymn rid ocMA.OdeW8C13.text @ver End-Hymn
+							Insert_section bOde8.verse5 End-Insert
+							Hymn rid ocMA.OdeW8C14.text @ver End-Hymn
+							Insert_section bOde8.verse6 End-Insert
+							Title role desig sid Theotokion End-Title
+							Hymn rid ocMA.OdeW8C1T.text @ver End-Hymn
+						End-Section
+					End-Section
+				End-Section
+				Section oc2
+					Section sunday
+						Section ti_12Tas567
+							Title role source sid sourceOctoechos End-Title
+							Insert_section ocC2_title End-Insert
+							Title<Tmode>rid ocMA.OdeS8C21.mode</><Tmelody>rid ocMA.OdeS8C21.melody</>End-Title
+							Insert_section bOde8.verse5 End-Insert
+							Hymn rid ocMA.OdeS8C21.text @ver End-Hymn
+							Insert_section bOde8.verse6 End-Insert
+							Hymn rid ocMA.OdeS8C22.text @ver End-Hymn
+							Insert_section bOde8.verse7 End-Insert
+							Title role desig sid Theotokion End-Title
+							Hymn rid ocMA.OdeS8C2T.text @ver End-Hymn
+						End-Section
+					End-Section
+					Section weekday
+						Section ti_123Tas78910
+							Title role source sid sourceOctoechos End-Title
+							Insert_section ocC2_title End-Insert
+							Title<Tmode>rid ocMA.OdeW8C21.mode</><Tmelody>rid ocMA.OdeW8C21.melody</>End-Title
+							Insert_section bOde8.verse7 End-Insert
+							Hymn rid ocMA.OdeW8C21.text @ver End-Hymn
+							when-exists
+								rid ocMA.OdeW8C23.text use:
+									Insert_section bOde8.verse8 End-Insert
+									Hymn rid ocMA.OdeW8C22.text @ver End-Hymn
+									Insert_section bOde8.verse9 End-Insert
+									Hymn rid ocMA.OdeW8C23.text @ver End-Hymn
+								otherwise use:
+									Insert_section bOde8.verse8 End-Insert
+									Hymn rid ocMA.OdeW8C21.text @ver End-Hymn
+									Insert_section bOde8.verse9 End-Insert
+									Hymn rid ocMA.OdeW8C22.text @ver End-Hymn
+							end-when
+							Insert_section bOde8.verse10 End-Insert
+							Title role desig sid Theotokion End-Title
+							Hymn rid ocMA.OdeW8C2T.text @ver End-Hymn
+						End-Section
+					End-Section
+				End-Section
+				Section oc3_sunday
+					Section ti_123as8910
+						Title role source sid sourceOctoechos End-Title
+						Title<Tdesig>sid KanonTisTheotokou</>End-Title
+						Title<Tmode>rid ocMA.OdeS8C31.mode</><Tmelody>rid ocMA.OdeS8C31.melody</>End-Title
+						Insert_section bOde8.verse8 End-Insert
+						Hymn rid ocMA.OdeS8C31.text @ver End-Hymn
+						Insert_section bOde8.verse9 End-Insert
+						Hymn rid ocMA.OdeS8C32.text @ver End-Hymn
+						Insert_section bOde8.verse10 End-Insert
+						Hymn rid ocMA.OdeS8C33.text @ver End-Hymn
 					End-Section
 				End-Section
 				Section tr1
@@ -857,6 +1923,55 @@ Status NA
 		Section ode9
 			Section append
 				Section me1
+					Section ti_123Tas78910
+						Title<Tdesig>rid meMA.C1.title</>End-Title
+						Title role source0 sid sourceMenaion End-Title
+						Title<Tmode>rid meMA.Ode9C11.mode</><Tmelody>rid meMA.Ode9C11.melody</>End-Title
+						Insert_section bOde9.verse7 End-Insert
+						Hymn rid meMA.Ode9C11.text @ver End-Hymn
+						when-exists
+							rid meMA.Ode9C13.text use:
+								Insert_section bOde9.verse8 End-Insert
+								Hymn rid meMA.Ode9C12.text @ver End-Hymn
+								Insert_section bOde9.verse9 End-Insert
+								Hymn rid meMA.Ode9C13.text @ver End-Hymn
+							otherwise use:
+								Insert_section bOde9.verse8 End-Insert
+								Hymn rid meMA.Ode9C11.text @ver End-Hymn
+								Insert_section bOde9.verse9 End-Insert
+								Hymn rid meMA.Ode9C12.text @ver End-Hymn
+						end-when
+						Insert_section bOde9.verse10 End-Insert
+						Title<Tdesig>sid Theotokion</>End-Title
+						Hymn rid meMA.Ode9C1T.text @ver End-Hymn
+					End-Section
+					Section ti_123Tas1112GB
+						when-exists rid meMA.C1.notice 
+							use: 
+								Rubric rid meMA.C1.notice End-Rubric
+								Title<Tdesig>sid OKanonTouMinaiou2</>End-Title
+							otherwise use: 
+								Title<Tdesig>rid meMA.C1.title</>End-Title
+								Title role source0 sid sourceMenaion End-Title
+						end-when
+						Title<Tmode>rid meMA.Ode9C11.mode</><Tmelody>rid meMA.Ode9C11.melody</>End-Title
+						Insert_section bOde9.verse11 End-Insert
+						Hymn rid meMA.Ode9C11.text @ver End-Hymn
+						when-exists
+							rid meMA.Ode9C13.text use:
+								Insert_section bOde9.verse12 End-Insert
+								Hymn rid meMA.Ode9C12.text @ver End-Hymn
+								Title sid Doxa End-Title
+								Hymn rid meMA.Ode9C13.text @ver End-Hymn
+							otherwise use:
+								Insert_section bOde9.verse12 End-Insert
+								Hymn rid meMA.Ode9C11.text @ver End-Hymn
+								Title sid Doxa End-Title
+								Hymn rid meMA.Ode9C12.text @ver End-Hymn
+						end-when
+						Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+						Hymn rid meMA.Ode9C1T.text @ver End-Hymn
+					End-Section
 					Section ti_H1123Tas0V3456
 						when-exists rid meMA.C1.notice 
 							use: 
@@ -866,6 +1981,7 @@ Status NA
 								Title<Tdesig>sid OKanonTouMinaiou</>End-Title
 						end-when
 						Title<Tdesig>rid meMA.Ode9C1H.ode</><Tmode>rid meMA.Ode9C1H.mode</><Tmelody>rid meMA.Ode9C1H.melody</>End-Title
+						Insert_section CA.bOde9.refrain End-Insert
 						Para role heirmos rid meMA.Ode9C1H.text @ver End-Para
 						Title<Tdesig>sid Troparia</>End-Title
 						Verse rid meMA.C1.verse End-Verse
@@ -888,6 +2004,156 @@ Status NA
 							otherwise use:
 								Hymn rid meMA.Ode9C14.text @ver End-Hymn
 						end-when
+					End-Section
+					Section ti_H1123Tas0V1112GB
+						when-exists rid meMA.C1.notice 
+							use: 
+								Title<Tdesig>sid OKanonTouMinaiou2</>End-Title
+							otherwise use: 
+								Title role source sid sourceMenaion End-Title
+								Title<Tdesig>sid OKanonTouMinaiou</>End-Title
+						end-when
+						Title<Tdesig>rid meMA.Ode9C1H.ode</><Tmode>rid meMA.Ode9C1H.mode</><Tmelody>rid meMA.Ode9C1H.melody</>End-Title
+						Insert_section CA.bOde9.refrain End-Insert
+						Para role heirmos rid meMA.Ode9C1H.text @ver End-Para
+						Title<Tdesig>sid Troparia</>End-Title
+						Verse rid meMA.C1.verse End-Verse
+					//	Insert_section CA.verse__.me1 End-Insert
+						Hymn rid meMA.Ode9C11.text @ver End-Hymn
+						Insert_section CA.bOde9.verse11 End-Insert
+						Hymn rid meMA.Ode9C11.text @ver End-Hymn
+						Insert_section CA.bOde9.verse12 End-Insert
+						Hymn rid meMA.Ode9C12.text @ver End-Hymn
+						Title sid Doxa End-Title
+						when-exists rid meMA.Ode9C13.text 
+							use: Hymn rid meMA.Ode9C13.text @ver End-Hymn
+							otherwise use: Hymn rid meMA.Ode9C12.text @ver End-Hymn
+						end-when
+						when-exists rid meMA.Ode9C1T.text 
+							use:
+								Insert_section TI.b.th End-Insert
+								Hymn rid meMA.Ode9C1T.text @ver End-Hymn
+							otherwise use:
+								Insert_section TI.b._ End-Insert
+								Hymn rid meMA.Ode9C14.text @ver End-Hymn
+						end-when
+					End-Section
+				End-Section
+				Section me2
+					Section ti_123Tas1112GB
+						Title<Tdesig>rid meMA.C2.title</>End-Title
+						Title role source0 sid sourceMenaion End-Title
+						Title<Tmode>rid meMA.Ode9C21.mode</><Tmelody>rid meMA.Ode9C21.melody</>End-Title
+						Insert_section bOde9.verse11 End-Insert
+						Hymn rid meMA.Ode9C21.text @ver End-Hymn
+						when-exists
+							rid meMA.Ode9C23.text use:
+								Insert_section bOde9.verse12 End-Insert
+								Hymn rid meMA.Ode9C22.text @ver End-Hymn
+								Title sid Doxa End-Title
+								Hymn rid meMA.Ode9C23.text @ver End-Hymn
+							otherwise use:
+								Insert_section bOde9.verse12 End-Insert
+								Hymn rid meMA.Ode9C21.text @ver End-Hymn
+								Title sid Doxa End-Title
+								Hymn rid meMA.Ode9C22.text @ver End-Hymn
+						end-when
+						Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+						Hymn rid meMA.Ode9C2T.text @ver End-Hymn
+					End-Section
+				End-Section
+				Section oc1
+					Section sunday
+						Section ti_H12Tas0V34
+							Title role source sid sourceOctoechos End-Title
+							Title<Tdesig>sid Ode9</>End-Title
+							Insert_section ocC1_title End-Insert
+							Title<Tmode>rid ocMA.OdeS9C1H.mode</><Tdesig>rid ocMA.OdeS9C1H.melody</>End-Title
+							Para role heirmos rid ocMA.OdeS9C1H.text @ver End-Para
+							Title role desig sid Troparia End-Title
+							Insert_section ocC1_verse2 End-Insert
+							Hymn rid ocMA.OdeS9C11.text @ver End-Hymn
+							Insert_section bOde9.verse3 End-Insert
+							Hymn rid ocMA.OdeS9C12.text @ver End-Hymn
+							Insert_section bOde9.verse4 End-Insert
+							Title role desig sid Theotokion End-Title
+							Hymn rid ocMA.OdeS9C1T.text @ver End-Hymn
+						End-Section
+					End-Section
+					Section weekday
+						Section ti_H1234Tas0V3456
+							Title role source sid sourceOctoechos End-Title
+							Title<Tdesig>sid Ode9</>End-Title
+							Insert_section ocC1_title End-Insert
+							Title<Tmode>rid ocMA.OdeW9C1H.mode</><Tdesig>rid ocMA.OdeW9C1H.melody</>End-Title
+							Insert_section bOde9.refrain End-Insert
+							Para role heirmos rid ocMA.OdeW9C1H.text @ver End-Para
+							Title role desig sid Troparia End-Title
+							Insert_section ocC1_verse2 End-Insert
+							Hymn rid ocMA.OdeW9C11.text @ver End-Hymn
+							Insert_section bOde9.verse3 End-Insert
+							Hymn rid ocMA.OdeW9C12.text @ver End-Hymn
+							Insert_section bOde9.verse4 End-Insert
+							Hymn rid ocMA.OdeW9C13.text @ver End-Hymn
+							Insert_section bOde9.verse5 End-Insert
+							Hymn rid ocMA.OdeW9C14.text @ver End-Hymn
+							Insert_section bOde9.verse6 End-Insert
+							Title role desig sid Theotokion End-Title
+							Hymn rid ocMA.OdeW9C1T.text @ver End-Hymn
+						End-Section
+					End-Section
+				End-Section
+				Section oc2
+					Section sunday
+						Section ti_12Tas567
+							Title role source sid sourceOctoechos End-Title
+							Insert_section ocC2_title End-Insert
+							Title<Tmode>rid ocMA.OdeS9C21.mode</><Tmelody>rid ocMA.OdeS9C21.melody</>End-Title
+							Insert_section bOde9.verse5 End-Insert
+							Hymn rid ocMA.OdeS9C21.text @ver End-Hymn
+							Insert_section bOde9.verse6 End-Insert
+							Hymn rid ocMA.OdeS9C22.text @ver End-Hymn
+							Insert_section bOde9.verse7 End-Insert
+							Title role desig sid Theotokion End-Title
+							Hymn rid ocMA.OdeS9C2T.text @ver End-Hymn
+						End-Section
+					End-Section
+					Section weekday
+						Section ti_123Tas78910
+							Title role source sid sourceOctoechos End-Title
+							Insert_section ocC2_title End-Insert
+							Title<Tmode>rid ocMA.OdeW9C21.mode</><Tmelody>rid ocMA.OdeW9C21.melody</>End-Title
+							Insert_section bOde9.verse7 End-Insert
+							Hymn rid ocMA.OdeW9C21.text @ver End-Hymn
+							when-exists
+								rid ocMA.OdeW9C23.text use:
+									Insert_section bOde9.verse8 End-Insert
+									Hymn rid ocMA.OdeW9C22.text @ver End-Hymn
+									Insert_section bOde9.verse9 End-Insert
+									Hymn rid ocMA.OdeW9C23.text @ver End-Hymn
+								otherwise use:
+									Insert_section bOde9.verse8 End-Insert
+									Hymn rid ocMA.OdeW9C21.text @ver End-Hymn
+									Insert_section bOde9.verse9 End-Insert
+									Hymn rid ocMA.OdeW9C22.text @ver End-Hymn
+							end-when
+							Insert_section bOde9.verse10 End-Insert
+							Title role desig sid Theotokion End-Title
+							Hymn rid ocMA.OdeW9C2T.text @ver End-Hymn
+						End-Section
+					End-Section
+				End-Section
+				Section oc3_sunday
+					Section ti_123as8910
+						Title role source sid sourceOctoechos End-Title
+						Title<Tdesig>sid KanonTisTheotokou</>End-Title
+						Title<Tmode>rid ocMA.OdeS9C31.mode</><Tmelody>rid ocMA.OdeS9C31.melody</>End-Title
+						Insert_section bOde9.verse8 End-Insert
+						Hymn rid ocMA.OdeS9C31.text @ver End-Hymn
+						Insert_section bOde9.verse9 End-Insert
+						Hymn rid ocMA.OdeS9C32.text @ver End-Hymn
+						Insert_section bOde9.verse10 End-Insert
+						Hymn rid ocMA.OdeS9C33.text @ver End-Hymn
 					End-Section
 				End-Section
 				Section tr1
@@ -930,55 +2196,6 @@ Status NA
 		End-Section
 	End-Section
 
-/*	
-		0 = no verse (for heirmos)
-
-		G = Glory
-		
-		B = Both
-		
-		Ap = Apostle of Christ
-		
-		Aps = Apostles of Christ
-		
-		Ar = Archangel
-		
-		Ars = Archangels
-		
-		Ba = Baptist verse
-		
-		Cr = Cross verse
-		 
-		EAp = Evangelist with verse: Apostle of Christ
-		
-		Gc = Glory to Your Crucifixion 
-		
-		Gg = Glory to You, our God
-		
-		Gr = Glory to Your Resurrection
-		
-		M1 = Megalynarion and number
-		
-		Msm = Monastic saint
-
-		Msmp = Monastic saints
-
-		Msw = Monastic woman saint
-
-		Mswp = Monastic women saints
-
-		Sm	= Saint of God...
-		
-		Smp = Saints of God... 
-		
-		Sw = Woman saint of God
-
-		Swp = Woman saints of God
-
-		Th = Most holy Theotokos
-		
-		Tr = Holy Trinity, our God...
-*/
 	Section v
 		Section ode1
 			Section alt1me1
@@ -11593,6 +12810,11 @@ Status NA
 			End-Section
 		End-Section
 		Section ode8
+			Section me
+				Verse sid bode8.v19.text End-Verse
+				Title<Tdesig>sid OEirmos</><Tmode>rid meMA.Ode8H.mode</>End-Title
+				Para role heirmos rid meMA.Ode8H.text @ver End-Para
+			End-Section
 			Section me1
 				Verse sid bode8.v19.text End-Verse
 				Title<Tdesig>sid OEirmos</>End-Title
