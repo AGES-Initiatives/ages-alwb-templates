@@ -964,6 +964,26 @@ Template MA
 			End-Section
 		End-Section
 		Section oc__
+			Section weekday_for2
+				when-name-of-day-is
+					Monday, Wednesday, Thursday use:
+						Section kathismata1and3
+							Insert_section PS._02_Matins_1st__.rubric__.no_litany End-Insert
+							Insert_section weekday End-Insert
+							Insert_section PS._03_Matins_2nd__.rubric__.no_litany End-Insert
+							Actor sid Choir End-Actor
+							Insert_section _05_Kathisma3__.append__.oc End-Insert
+						End-Section
+					Tuesday, Friday use:
+						Section kathismata2and3
+							Insert_section PS._02_Matins_1st__.rubric__.no_litany End-Insert
+							Insert_section _04_Kathisma2__.oc__.weekday End-Insert
+							Insert_section PS._03_Matins_2nd__.rubric__.no_litany End-Insert
+							Actor sid Choir End-Actor
+							Insert_section _05_Kathisma3__.append__.oc End-Insert
+						End-Section
+				end-when
+			End-Section
 			Section weekday123
 				Insert_section PS._02_Matins_1st__.rubric__.no_litany End-Insert
 				Insert_section weekday End-Insert
@@ -1733,7 +1753,12 @@ Template MA
 							Title role melody rid ocMA.Kathisma22.melody End-Title
 						end-when
 						Hymn rid ocMA.Kathisma22.text @ver End-Hymn
-						Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+						when-name-of-day-is
+							Wednesday, Friday use:
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Stavrotheotokion</>End-Title
+							otherwise use:
+								Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+						end-when
 						when-exists rid ocMA.Kathisma23.melody use:
 							Title role melody rid ocMA.Kathisma23.melody End-Title
 						end-when
@@ -2451,7 +2476,12 @@ Template MA
 						Title role melody rid ocMA.Kathisma32.melody End-Title
 					end-when
 					Hymn rid ocMA.Kathisma32.text @ver End-Hymn
-					Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+					when-name-of-day-is
+						Wednesday, Friday use:
+							Title role mixed sid DoxaKaiNyn<Tdesig>sid Stavrotheotokion</>End-Title
+						otherwise use:
+							Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+					end-when
 					when-exists rid ocMA.Kathisma33.melody use:
 						Title role melody rid ocMA.Kathisma33.melody End-Title
 					end-when
