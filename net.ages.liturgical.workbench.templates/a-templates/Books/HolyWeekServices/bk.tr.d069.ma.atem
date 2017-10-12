@@ -1,0 +1,448 @@
+Template bk.tr.d069.ma
+
+Status NA
+
+	import client_gr_GR_cog.*
+	import ho.s03_gr_GR_cog.*
+	import le.go.mc.d069_gr_GR_cog.*
+	import ps_gr_GR_cog.*
+	import tr.d069_gr_GR_cog.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head
+		Set_Date month 4 day 14 year 2017 End_Date
+			Page_Header_Even
+				center @lookup sid ma.pdf.header lang L1 @lookup sid hw.ofholyfriday lang L1 @lookup sid d.delimiter lang L1 @lookup sid hw.passion lang L1 @lookup sid d.onThursdayEvening lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ma.pdf.header lang L2 @lookup sid hw.ofholyfriday lang L2 @lookup sid d.delimiter lang L2 @lookup sid hw.passion lang L2 @lookup sid d.onThursdayEvening lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ma End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	Section Instance01
+		Title role desig sid hw.pdf.cover End-Title
+		Title role desig sid hw.passion sid d.onThursdayEvening End-Title
+		Title<inr>sid ma.pdf.header sid hw.ofholyfriday</>End-Title 
+		Break line End_Break
+		Insert_section matinsordinary_lent.Instance01 End-Insert
+		Section block1
+			Actor sid Choir End-Actor	
+			Title role mode sid trHW.Troparion.mode End-Title
+			Media sid trHW.Alleluia.text End-Media
+			Insert_section MA._01_Beginning__.lent__.alleluia.verses End-Insert
+			Title role mixed<Tdesig>sid Troparion</><Tmode>sid trHW.Troparion.mode</>End-Title
+			Hymn sid trHW.Troparion.text<r>sid Thrice media-off</>End-Hymn
+		End-Section
+		Section GospelReading_01
+			Title role desig sid lemcHW.PassionGospel01.title End-Title
+			Insert_section LN.BeforeGospel End-Insert
+			Actor sid Priest End-Actor
+			Dialog sid gos03a sid lemcHW.PassionGospel01.book sid gos03b End-Dialog
+			Actor sid Deacon End-Actor
+			Dialog sid exc19 End-Dialog
+			Dialog<i>sid DoxaSoiKyrieP</>End-Dialog
+			Actor sid Priest End-Actor
+			Title role chapverse sid lemcHW.PassionGospel01.chapverse End-Title
+			Reading sid lemcHW.PassionGospel01.text End-Reading
+			Dialog<i>sid DoxaTiMakrothymiaP.text</>End-Dialog
+		End-Section 
+		Section Antiphons_123
+			Actor sid Choir End-Actor
+			Title role mixed<Tdesig>sid trHW.Antiphon01.title</><Tmode>sid trHW.Antiphon011.mode</>End-Title
+			Hymn sid trHW.Antiphon011.text @ver End-Hymn
+			Hymn sid trHW.Antiphon012.text @ver End-Hymn
+			Hymn sid trHW.Antiphon013.text @ver End-Hymn
+			Title role mixed sid Doxa sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+			Hymn sid trHW.Antiphon01T.text @ver End-Hymn
+			Title role mixed<Tdesig>sid trHW.Antiphon02.title</><Tmode>sid trHW.Antiphon021.mode</>End-Title
+			Hymn sid trHW.Antiphon021.text @ver End-Hymn
+			Hymn sid trHW.Antiphon022.text @ver End-Hymn
+			Title role mixed sid Doxa sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+			Hymn sid trHW.Antiphon02T.text @ver End-Hymn
+			Title role mixed<Tdesig>sid trHW.Antiphon03.title</><Tmode>sid trHW.Antiphon031.mode</>End-Title
+			Hymn sid trHW.Antiphon031.text @ver End-Hymn
+			Hymn sid trHW.Antiphon032.text @ver End-Hymn
+			Hymn sid trHW.Antiphon033.text @ver End-Hymn
+			Hymn sid trHW.Antiphon034.text @ver End-Hymn
+			Hymn sid trHW.Antiphon035.text @ver End-Hymn
+			Hymn sid trHW.Antiphon036.text @ver End-Hymn
+			Title role mixed sid Doxa sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+			Hymn sid trHW.Antiphon03T.text @ver End-Hymn
+			Title role desig sid Kathisma sid trHW.Antiphon03Kathisma.mode End-Title
+			Hymn sid trHW.Antiphon03Kathisma.text @ver End-Hymn
+		End-Section
+		Section GospelReading_02
+			Title role desig sid lemcHW.PassionGospel02.title End-Title
+			Insert_section LN.BeforeGospel End-Insert
+			Actor sid Priest End-Actor
+			Dialog sid gos03a sid lemcHW.PassionGospel02.book sid gos03b End-Dialog
+			Actor sid Deacon End-Actor
+			Dialog sid exc19 End-Dialog
+			Dialog<i>sid DoxaSoiKyrieP</>End-Dialog
+			Actor sid Priest End-Actor
+			Title role chapverse sid lemcHW.PassionGospel02.chapverse End-Title
+			Reading sid lemcHW.PassionGospel02.text End-Reading
+			Dialog<i>sid DoxaTiMakrothymiaP.text</>End-Dialog
+		End-Section 
+		Section Antiphons_456
+			Actor sid Choir End-Actor
+			Title role mixed<Tdesig>sid trHW.Antiphon04.title</><Tmode>sid trHW.Antiphon041.mode</>End-Title
+			Hymn sid trHW.Antiphon041.text @ver End-Hymn
+			Hymn sid trHW.Antiphon042.text @ver End-Hymn
+			Title role mode sid trHW.Antiphon043.mode End-Title
+			Hymn sid trHW.Antiphon043.text @ver End-Hymn
+			Title role mixed sid Doxa sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+			Hymn sid trHW.Antiphon04T.text @ver End-Hymn
+			Title role mixed<Tdesig>sid trHW.Antiphon05.title</><Tmode>sid trHW.Antiphon051.mode</>End-Title
+			Hymn sid trHW.Antiphon051.text @ver End-Hymn
+			Hymn sid trHW.Antiphon052.text @ver End-Hymn
+			Title role mixed sid Doxa sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+			Hymn sid trHW.Antiphon05T.text @ver End-Hymn
+			Title role mixed<Tdesig>sid trHW.Antiphon06.title</><Tmode>sid trHW.Antiphon061.mode</>End-Title
+			Hymn sid trHW.Antiphon061.text @ver End-Hymn
+			Hymn sid trHW.Antiphon062.text @ver End-Hymn
+			Hymn sid trHW.Antiphon063.text @ver End-Hymn
+			Title role mixed sid Doxa sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+			Hymn sid trHW.Antiphon06T.text @ver End-Hymn
+			Title role desig sid Kathisma sid trHW.Antiphon06Kathisma.mode End-Title
+			Hymn sid trHW.Antiphon06Kathisma.text @ver End-Hymn
+		End-Section
+		Section GospelReading_03
+			Title role desig sid lemcHW.PassionGospel03.title End-Title
+			Insert_section LN.BeforeGospel End-Insert
+			Actor sid Priest End-Actor
+			Dialog sid gos03a sid lemcHW.PassionGospel03.book sid gos03b End-Dialog
+			Actor sid Deacon End-Actor
+			Dialog sid exc19 End-Dialog
+			Dialog<i>sid DoxaSoiKyrieP</>End-Dialog
+			Actor sid Priest End-Actor
+			Title role chapverse sid lemcHW.PassionGospel03.chapverse End-Title
+			Reading sid lemcHW.PassionGospel03.text End-Reading
+			Dialog<i>sid DoxaTiMakrothymiaP.text</>End-Dialog
+		End-Section 
+		Section Antiphons_789
+			Actor sid Choir End-Actor
+			Title role mixed<Tdesig>sid trHW.Antiphon07.title</><Tmode>sid trHW.Antiphon071.mode</>End-Title
+			Hymn sid trHW.Antiphon071.text @ver End-Hymn
+			Hymn sid trHW.Antiphon072.text @ver End-Hymn
+			Title role mixed sid Doxa sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+			Hymn sid trHW.Antiphon07T.text @ver End-Hymn
+			Title role mixed<Tdesig>sid trHW.Antiphon08.title</><Tmode>sid trHW.Antiphon081.mode</>End-Title
+			Hymn sid trHW.Antiphon081.text @ver End-Hymn
+			Hymn sid trHW.Antiphon082.text @ver End-Hymn
+			Title role mixed sid Doxa sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+			Hymn sid trHW.Antiphon08T.text @ver End-Hymn
+			Title role mixed<Tdesig>sid trHW.Antiphon09.title</><Tmode>sid trHW.Antiphon091.mode</>End-Title
+			Hymn sid trHW.Antiphon091.text @ver End-Hymn
+			Hymn sid trHW.Antiphon092.text @ver End-Hymn
+			Title role mixed sid Doxa sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+			Hymn sid trHW.Antiphon09T.text @ver End-Hymn
+			Title role desig sid Kathisma sid trHW.Antiphon09Kathisma.mode End-Title
+			Hymn sid trHW.Antiphon09Kathisma.text @ver End-Hymn
+		End-Section
+		Section GospelReading_04
+			Title role desig sid lemcHW.PassionGospel04.title End-Title
+			Insert_section LN.BeforeGospel End-Insert
+			Actor sid Priest End-Actor
+			Dialog sid gos03a sid lemcHW.PassionGospel04.book sid gos03b End-Dialog
+			Actor sid Deacon End-Actor
+			Dialog sid exc19 End-Dialog
+			Dialog<i>sid DoxaSoiKyrieP</>End-Dialog
+			Actor sid Priest End-Actor
+			Title role chapverse sid lemcHW.PassionGospel04.chapverse End-Title
+			Reading sid lemcHW.PassionGospel04.text End-Reading
+			Dialog<i>sid DoxaTiMakrothymiaP.text</>End-Dialog
+		End-Section 
+		Section Antiphons_101112
+			Actor sid Choir End-Actor
+			Title role mixed<Tdesig>sid trHW.Antiphon10.title</><Tmode>sid trHW.Antiphon101.mode</>End-Title
+			Hymn sid trHW.Antiphon101.text @ver End-Hymn
+			Hymn sid trHW.Antiphon102.text @ver End-Hymn
+			Title role mixed sid Doxa sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+			Hymn sid trHW.Antiphon10T.text @ver End-Hymn
+			Title role mixed<Tdesig>sid trHW.Antiphon11.title</><Tmode>sid trHW.Antiphon111.mode</>End-Title
+			Hymn sid trHW.Antiphon111.text @ver End-Hymn
+			Hymn sid trHW.Antiphon112.text @ver End-Hymn
+			Hymn sid trHW.Antiphon113.text @ver End-Hymn
+			Title role mixed sid Doxa sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+			Hymn sid trHW.Antiphon11T.text @ver End-Hymn
+			Title role mixed<Tdesig>sid trHW.Antiphon12.title</><Tmode>sid trHW.Antiphon121.mode</>End-Title
+			Hymn sid trHW.Antiphon121.text @ver End-Hymn
+			Hymn sid trHW.Antiphon122.text @ver End-Hymn
+			Hymn sid trHW.Antiphon123.text @ver End-Hymn
+			Title role mixed sid Doxa sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+			Hymn sid trHW.Antiphon12T.text @ver End-Hymn
+			Title role desig sid Kathisma sid trHW.Antiphon12Kathisma.mode End-Title
+			Hymn sid trHW.Antiphon12Kathisma.text @ver End-Hymn
+		End-Section
+		Section GospelReading_05
+			Title role desig sid lemcHW.PassionGospel05.title End-Title
+			Insert_section LN.BeforeGospel End-Insert
+			Actor sid Priest End-Actor
+			Dialog sid gos03a sid lemcHW.PassionGospel05.book sid gos03b End-Dialog
+			Actor sid Deacon End-Actor
+			Dialog sid exc19 End-Dialog
+			Dialog<i>sid DoxaSoiKyrieP</>End-Dialog
+			Actor sid Priest End-Actor
+			Title role chapverse sid lemcHW.PassionGospel05.chapverse End-Title
+			Reading sid lemcHW.PassionGospel05.text End-Reading
+			Dialog<i>sid DoxaTiMakrothymiaP.text</>End-Dialog
+		End-Section 
+		Section Antiphons_131415
+			Actor sid Choir End-Actor
+			Title role mixed<Tdesig>sid trHW.Antiphon13.title</><Tmode>sid trHW.Antiphon131.mode</>End-Title
+			Hymn sid trHW.Antiphon131.text @ver End-Hymn
+			Hymn sid trHW.Antiphon132.text @ver End-Hymn
+			Title role mixed sid Doxa sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+			Hymn sid trHW.Antiphon13T.text @ver End-Hymn
+			Title role mixed<Tdesig>sid trHW.Antiphon14.title</><Tmode>sid trHW.Antiphon141.mode</>End-Title
+			Hymn sid trHW.Antiphon141.text @ver End-Hymn
+			Hymn sid trHW.Antiphon142.text @ver End-Hymn
+			Title role mixed sid Doxa sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+			Hymn sid trHW.Antiphon14T.text @ver End-Hymn
+			Title role desig sid trHW.Antiphon15.title End-Title
+			Rubric sid trHW.Antiphon151.rubric End-Rubric
+			Actor sid Priest End-Actor
+			Para role chant sid trHW.Antiphon1511.text<r>sid Thrice</>sid trHW.Antiphon1512.text sid trHW.Antiphon1513.text sid trHW.Antiphon1514.text sid trHW.Antiphon1515.text sid trHW.Antiphon1516.text sid trHW.Antiphon1517.text<r>sid Thrice</>sid trHW.Antiphon1518.text End-Para
+			Actor sid Choir End-Actor
+			Title role mode sid trHW.Antiphon151.mode End-Title
+			Media sid trHW.Antiphon151.text End-Media
+			Para role hymnlinefirst sid trHW.Antiphon1511.text End-Para
+			Para role readingzero sid trHW.Antiphon1511.text End-Para
+			Para role readingzero sid trHW.Antiphon1511.text End-Para
+			Para role readingzero sid trHW.Antiphon1512.text End-Para
+			Para role readingzero sid trHW.Antiphon1513.text End-Para
+			Para role readingzero sid trHW.Antiphon1514.text End-Para
+			Para role readingzero sid trHW.Antiphon1515.text End-Para
+			Para role readingzero sid trHW.Antiphon1516.text End-Para
+			Para role readingzero sid trHW.Antiphon1517.text End-Para
+			Para role readingzero sid trHW.Antiphon1517.text End-Para
+			Para role readingzero sid trHW.Antiphon1517.text sid trHW.Antiphon1518.text End-Para
+			Title role mode sid trHW.Antiphon152.mode End-Title
+			Hymn sid trHW.Antiphon152.text @ver End-Hymn
+			Hymn sid trHW.Antiphon153.text @ver End-Hymn
+			Title role mixed sid Doxa sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+			Hymn sid trHW.Antiphon15T.text @ver End-Hymn
+			Title role desig sid Kathisma sid trHW.Antiphon15Kathisma.mode End-Title
+			Hymn sid trHW.Antiphon15Kathisma.text @ver End-Hymn
+		End-Section
+		Section GospelReading_06
+			Title role desig sid lemcHW.PassionGospel06.title End-Title
+			Insert_section LN.BeforeGospel End-Insert
+			Actor sid Priest End-Actor
+			Dialog sid gos03a sid lemcHW.PassionGospel06.book sid gos03b End-Dialog
+			Actor sid Deacon End-Actor
+			Dialog sid exc19 End-Dialog
+			Dialog<i>sid DoxaSoiKyrieP</>End-Dialog
+			Actor sid Priest End-Actor
+			Title role chapverse sid lemcHW.PassionGospel06.chapverse End-Title
+			Reading sid lemcHW.PassionGospel06.text End-Reading
+			Dialog<i>sid DoxaTiMakrothymiaP.text</>End-Dialog
+		End-Section 
+		Section Beatitudes
+			Actor sid Choir End-Actor
+			Title role mixed<Tdesig>sid OiMakarismoi</><Tmode>sid trHW.Beatitudes01.mode</>End-Title
+			Media sid trHW.Beatitudes01.text End-Media
+			Insert_section bk.ho.s07.Beatitudes.v1 End-Insert
+			Insert_section bk.ho.s07.Beatitudes.v2 End-Insert
+			Insert_section bk.ho.s07.Beatitudes.v3 End-Insert
+			Hymn sid trHW.Beatitudes01.text @ver media-off End-Hymn	
+			Insert_section bk.ho.s07.Beatitudes.v4 End-Insert
+			Hymn sid trHW.Beatitudes02.text @ver End-Hymn	
+			Insert_section bk.ho.s07.Beatitudes.v5 End-Insert
+			Hymn sid trHW.Beatitudes03.text @ver End-Hymn	
+			Insert_section bk.ho.s07.Beatitudes.v6 End-Insert
+			Hymn sid trHW.Beatitudes04.text @ver End-Hymn	
+			Insert_section bk.ho.s07.Beatitudes.v7 End-Insert
+			Hymn sid trHW.Beatitudes05.text @ver End-Hymn	
+			Insert_section bk.ho.s07.Beatitudes.v8 End-Insert
+			Hymn sid trHW.Beatitudes06.text @ver End-Hymn	
+			Insert_section bk.ho.s07.Beatitudes.v9 End-Insert
+			Hymn sid trHW.Beatitudes07.text @ver End-Hymn	
+			Insert_section bk.ho.s07.Beatitudes.v10 End-Insert
+			Hymn sid trHW.Beatitudes08.text @ver End-Hymn	
+			Verse sid trHW.BeatitudesTr.verse End-Verse
+			Hymn sid trHW.BeatitudesTr.text @ver End-Hymn	
+			Verse sid trHW.BeatitudesT.verse End-Verse
+			Hymn sid trHW.BeatitudesT.text @ver End-Hymn	
+			Title role mixed<Tdesig>sid Prokeimenon</><Tmode>sid Mode4</>End-Title
+			Media sid trHW.Prokeimenon.text End-Media
+			Hymn sid psa21.v19.text<r>sid Twice media-off</>End-Hymn
+			Verse sid psa21.v2.text End-Verse
+			Hymn sid psa21.v19.text @ver End-Hymn
+		End-Section
+		Section GospelReading_07
+			Title role desig sid lemcHW.PassionGospel07.title End-Title
+			Insert_section LN.BeforeGospel End-Insert
+			Actor sid Priest End-Actor
+			Dialog sid gos03a sid lemcHW.PassionGospel07.book sid gos03b End-Dialog
+			Actor sid Deacon End-Actor
+			Dialog sid exc19 End-Dialog
+			Dialog<i>sid DoxaSoiKyrieP</>End-Dialog
+			Actor sid Priest End-Actor
+			Title role chapverse sid lemcHW.PassionGospel07.chapverse End-Title
+			Reading sid lemcHW.PassionGospel07.text End-Reading
+			Dialog<i>sid DoxaTiMakrothymiaP.text</>End-Dialog
+		End-Section 
+		Insert_section MA.Psalm50_read End-Insert
+		Section GospelReading_08
+			Title role desig sid lemcHW.PassionGospel08.title End-Title
+			Insert_section LN.BeforeGospel End-Insert
+			Actor sid Priest End-Actor
+			Dialog sid gos03a sid lemcHW.PassionGospel08.book sid gos03b End-Dialog
+			Actor sid Deacon End-Actor
+			Dialog sid exc19 End-Dialog
+			Dialog<i>sid DoxaSoiKyrieP</>End-Dialog
+			Actor sid Priest End-Actor
+			Title role chapverse sid lemcHW.PassionGospel08.chapverse End-Title
+			Reading sid lemcHW.PassionGospel08.text End-Reading
+			Dialog<i>sid DoxaTiMakrothymiaP.text</>End-Dialog
+		End-Section 
+		Section Ode5
+			Actor sid Choir End-Actor
+			Title role desig sid OKanon End-Title
+			Title role mixed<Tdesig>sid trMA.Ode5C1H.ode sid OEirmos</><Tmode>sid trMA.Ode5C1H.mode</>End-Title		
+			Media sid trMA.Ode5C1H.text End-Media
+			Para role heirmos sid trMA.Ode5C1H.text<r>sid Twice</>End-Para		
+			Verse sid verse_God.text End-Verse
+			Hymn sid trMA.Ode5C11.text<r>sid Twice media-off</>End-Hymn
+			Title sid Doxa sid KaiNyn End-Title
+			Hymn sid trMA.Ode5C12.text<r>sid Twice media-off</>End-Hymn
+			Title role desig sid Katavasia End-Title
+			Hymn sid trMA.Ode5K.text @ver End-Hymn
+		End-Section
+		Insert_section LN.ShortLitany09 End-Insert
+		Insert_section MA._11_Kontakion__.tr_ End-Insert
+		Title<Tdesig>sid Synaxarion</>End-Title
+		Insert_section SY.mc End-Insert
+		Section Ode8
+			Actor sid Choir End-Actor
+			Title role desig sid trMA.Ode8C1H.ode sid OEirmos End-Title		
+			Media sid trMA.Ode8C1H.text End-Media
+			Para role heirmos sid trMA.Ode8C1H.text<r>sid Twice</>End-Para		
+			Verse sid verse_God.text End-Verse
+			Hymn sid trMA.Ode8C11.text @ver End-Hymn
+			Verse sid verse_God.text End-Verse
+			Hymn sid trMA.Ode8C12.text @ver End-Hymn
+			Title sid Doxa End-Title
+			Hymn sid trMA.Ode8C13.text @ver End-Hymn
+			Title sid KaiNyn End-Title
+			Hymn sid trMA.Ode8C14.text @ver End-Hymn
+			Title role desig sid Katavasia End-Title
+			Verse sid ps_gr_GR_cog.bode8.v19.text End-Verse
+			Hymn sid trMA.Ode8K.text @ver End-Hymn
+		End-Section
+		Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
+		Section Ode9
+			Actor sid Choir End-Actor	
+			Title role desig sid trMA.Ode9C1H.ode sid OEirmos End-Title
+			Media sid trMA.Ode9C1H.text End-Media
+			Para role heirmos sid trMA.Ode9C1H.text<r>sid Twice</>End-Para		
+			Verse sid verse_God.text End-Verse
+			Hymn sid trMA.Ode9C11.text @ver End-Hymn
+			Verse sid verse_God.text End-Verse
+			Hymn sid trMA.Ode9C12.text @ver End-Hymn
+			Title sid Doxa End-Title
+			Hymn sid trMA.Ode9C13.text @ver End-Hymn
+			Title sid KaiNyn End-Title
+			Hymn sid trMA.Ode9C14.text @ver End-Hymn
+			Title role desig sid Katavasia End-Title
+			Hymn sid trMA.Ode9K.text @ver End-Hymn
+		End-Section
+		Insert_section LN.ShortLitany10 End-Insert
+		Insert_section MA._12_Exaposteilarion__.tr__.exap111 End-Insert
+		Section GospelReading_09
+			Title role desig sid lemcHW.PassionGospel09.title End-Title
+			Insert_section LN.BeforeGospel End-Insert
+			Actor sid Priest End-Actor
+			Dialog sid gos03a sid lemcHW.PassionGospel09.book sid gos03b End-Dialog
+			Actor sid Deacon End-Actor
+			Dialog sid exc19 End-Dialog
+			Dialog<i>sid DoxaSoiKyrieP</>End-Dialog
+			Actor sid Priest End-Actor
+			Title role chapverse sid lemcHW.PassionGospel09.chapverse End-Title
+			Reading sid lemcHW.PassionGospel09.text End-Reading
+			Dialog<i>sid DoxaTiMakrothymiaP.text</>End-Dialog
+		End-Section 
+		Insert_section MA._13_Lauds__.mode3 End-Insert
+		Insert_section MA._13_Lauds__.tr__.i_1123as3456 End-Insert
+		Insert_section TI.g._ End-Insert
+		Insert_section MA._13_Lauds__.glory__.tr__.gloryasglory_.hymn End-Insert
+		Insert_section MA._13_Lauds__.both__.tr__.bothasboth_ End-Insert
+		Section GospelReading_10
+			Title role desig sid lemcHW.PassionGospel10.title End-Title
+			Insert_section LN.BeforeGospel End-Insert
+			Actor sid Priest End-Actor
+			Dialog sid gos03a sid lemcHW.PassionGospel10.book sid gos03b End-Dialog
+			Actor sid Deacon End-Actor
+			Dialog sid exc19 End-Dialog
+			Dialog<i>sid DoxaSoiKyrieP</>End-Dialog
+			Actor sid Priest End-Actor
+			Title role chapverse sid lemcHW.PassionGospel10.chapverse End-Title
+			Reading sid lemcHW.PassionGospel10.text End-Reading
+			Dialog<i>sid DoxaTiMakrothymiaP.text</>End-Dialog
+		End-Section 
+		Insert_section MA._14_Doxology__.small End-Insert
+		Insert_section MA._15_Litanies__.aftersmalldoxology End-Insert
+		Section GospelReading_11
+			Title role desig sid lemcHW.PassionGospel11.title End-Title
+			Insert_section LN.BeforeGospel End-Insert
+			Actor sid Priest End-Actor
+			Dialog sid gos03a sid lemcHW.PassionGospel11.book sid gos03b End-Dialog
+			Actor sid Deacon End-Actor
+			Dialog sid exc19 End-Dialog
+			Dialog<i>sid DoxaSoiKyrieP</>End-Dialog
+			Actor sid Priest End-Actor
+			Title role chapverse sid lemcHW.PassionGospel11.chapverse End-Title
+			Reading sid lemcHW.PassionGospel11.text End-Reading
+			Dialog<i>sid DoxaTiMakrothymiaP.text</>End-Dialog
+		End-Section 
+		Insert_section MA._16_Aposticha__.tr__.i_holyfriday123idiomela End-Insert
+		Insert_section MA._16_Aposticha__.glory__.tr__.gloryasglory_ End-Insert
+		Insert_section MA._16_Aposticha__.both__.tr__.bothasboth_ End-Insert
+		Section GospelReading_12
+			Title role desig sid lemcHW.PassionGospel12.title End-Title
+			Insert_section LN.BeforeGospel End-Insert
+			Actor sid Deacon End-Actor
+			Dialog sid gos03a sid lemcHW.PassionGospel12.book sid gos03b End-Dialog
+			Actor sid PriestOrDeacon End-Actor
+			Dialog sid exc19 End-Dialog
+			Dialog<i>sid DoxaSoiKyrieP</>End-Dialog
+			Actor sid Deacon End-Actor
+			Title role chapverse sid lemcHW.PassionGospel12.chapverse End-Title
+			Reading sid lemcHW.PassionGospel12.text End-Reading
+			Dialog<i>sid DoxaSoiKyrieP</>End-Dialog
+		End-Section
+		Insert_section MA._17_ItIsGood_Trisagion__.holyweek_.part1 End-Insert
+		Section Apolytikion
+			Actor sid Choir End-Actor
+			Title role mixed<Tdesig>sid Apolytikion</><Tmode>sid trHW.Apolytikion1.mode</>End-Title
+			Hymn sid trHW.Apolytikion1.text<r>sid Thrice media-off</>End-Hymn
+		End-Section
+		Insert_section MA._18_End__.ektenia_wisdom End-Insert
+		Insert_section MA._20_Dismissal__.holypassion End-Insert
+	End-Section
+End-Template
