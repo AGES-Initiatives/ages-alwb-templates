@@ -10392,14 +10392,22 @@ Template MA
 		End-Section
 		Section weekday_
 			Section exap1
-				Title role source sid sourceHorologion End-Title
 				Actor sid Choir End-Actor
+				Title role source0 sid sourceHorologion End-Title
 				Title role desig sid Exaposteilarion End-Title
 				Title<Tmode>rid daMA.Exaposteilarion1.mode</><Tmelody>rid daMA.Exaposteilarion1.melody</>End-Title
 				Hymn rid daMA.Exaposteilarion1.text @ver End-Hymn
 			End-Section
+			when-exists rid daMA.Exaposteilarion2.text use:
+				Section exap2
+				//	Title role source sid sourceHorologion End-Title
+					Title role desig sid Eteron End-Title
+					Title<Tmode>rid daMA.Exaposteilarion2.mode</><Tmelody>rid daMA.Exaposteilarion2.melody</>End-Title
+					Hymn rid daMA.Exaposteilarion2.text @ver End-Hymn
+				End-Section
+			end-when
 			Section theotokion
-				Title role source sid sourceHorologion End-Title
+			//	Title role source sid sourceHorologion End-Title
 				when-name-of-day-is
 					Wednesday, Friday use:
 						Title role desig sid Stavrotheotokion End-Title
