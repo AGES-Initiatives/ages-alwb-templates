@@ -11279,10 +11279,16 @@ Template MA
 				Hymn rid meMA.Lauds4.text @ver media-off End-Hymn
 				Insert_section PsalmVerses.forLauds.v06 End-Insert
 				Hymn rid meMA.Lauds5.text @ver media-off End-Hymn
-				Title sid Doxa<Tdesig>sid Omoion</>End-Title
-				Hymn rid meMA.LaudsGlory.text @ver media-off End-Hymn
-				Title sid KaiNyn<Tdesig>sid Omoion</>End-Title
-				Hymn rid meMA.LaudsBoth.text @ver media-off End-Hymn
+				when-exists
+					rid meMA.LaudsBoth.text use:
+						Title sid Doxa<Tdesig>sid Omoion</>End-Title
+						Hymn rid meMA.LaudsGlory.text @ver media-off End-Hymn
+						Title sid KaiNyn<Tdesig>sid Omoion</>End-Title
+						Hymn rid meMA.LaudsBoth.text @ver media-off End-Hymn
+					otherwise use:
+						Title sid DoxaKaiNyn<Tdesig>sid Omoion</>End-Title
+						Hymn rid meMA.LaudsGlory.text @ver media-off End-Hymn
+				end-when
 			End-Section
 			Section p_1123as3456
 				Title role source0 sid sourceMenaion End-Title
@@ -11906,12 +11912,16 @@ Template MA
 				Media rid meMA.Lauds4.text End-Media
 				Insert_section PsalmVerses.forLauds.v06 End-Insert
 				Hymn rid meMA.Lauds4.text @ver media-off End-Hymn
-				Media rid meMA.LaudsGlory.text End-Media
-				Title sid Doxa<Tdesig>sid Omoion</>End-Title
-				Hymn rid meMA.LaudsGlory.text @ver media-off End-Hymn
-				Media rid meMA.LaudsBoth.text End-Media
-				Title sid KaiNyn<Tdesig>sid Omoion</>End-Title
-				Hymn rid meMA.LaudsBoth.text @ver media-off End-Hymn
+				when-exists
+					rid meMA.LaudsBoth.text use:
+						Title sid Doxa<Tdesig>sid Omoion</>End-Title
+						Hymn rid meMA.LaudsGlory.text @ver media-off End-Hymn
+						Title sid KaiNyn<Tdesig>sid Omoion</>End-Title
+						Hymn rid meMA.LaudsBoth.text @ver media-off End-Hymn
+					otherwise use:
+						Title sid DoxaKaiNyn<Tdesig>sid Omoion</>End-Title
+						Hymn rid meMA.LaudsGlory.text @ver media-off End-Hymn
+				end-when
 			End-Section
 			Section p_456as456
 				Title role source0 sid sourceMenaion End-Title
