@@ -1,0 +1,105 @@
+Template se.m02.d09.li 
+
+Status Final
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 2 day 9 year 2018 End_Date
+			Page_Header_Even
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	when-triodion-day-is
+		1 use: 
+		8 use: 
+			Section Instance04
+			End-Section
+		13 use: //leavetaking on Feb10
+			Section InstanceFeb10
+				Section block1
+					Para<bnr>sid book.Menaion.name</>End-Para
+					Reading<bnr>sid me.m02.d02_gr_GR_cog.meDate.text</>End-Reading
+					Reading sid me.m02.d02_gr_GR_cog.meCommemoration.text End-Reading
+					Reading<bnr>sid me.m02.d10_gr_GR_cog.meDate.text</>End-Reading
+					Reading sid me.m02.d10_gr_GR_cog.meCommemoration.text End-Reading
+					Break line End_Break
+					Title<bnr>sid li.html.tab</>End-Title
+				End-Section
+				Insert_section LI._01_Enarxis__.daily End-Insert
+				Set_Date month 2 day 2 year 2018 End_Date
+				Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
+				Insert_section LI._04_Entrance__.choir End-Insert
+				Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
+				Section hymns
+					Set_Date month 2 day 2 year 2018 End_Date
+					Insert_section TI.a.f End-Insert
+					Insert_section AP.me1_.hymn End-Insert
+					Set_Date month 2 day 10 year 2018 End_Date
+					Insert_section TI.s._00_saint_.m End-Insert
+					Insert_section AP.me1_.hymn End-Insert
+					Insert_section LI._05_AfterEntranceHymns__.local End-Insert
+					Set_Date month 2 day 2 year 2018 End_Date
+					Insert_section KO.seasonal End-Insert
+					Set_Date month 2 day 9 year 2018 End_Date
+				End-Section
+				Insert_section LI._06_Trisagion__.chrys End-Insert
+					Set_Date month 2 day 10 year 2018 End_Date
+					Insert_section LE._01_Epistle__.menaion_ End-Insert
+					Insert_section LE._02_Gospel__.menaion_ End-Insert
+					Set_Date month 2 day 2 year 2018 End_Date
+					Insert_section LI._08_Liturgy__.chrys End-Insert
+				Section block2
+					Actor sid Priest End-Actor
+					Insert_section Selector_Dismissals.dismissal_stharalambos End-Insert
+					Actor sid Choir End-Actor
+					Hymn sid eu.lichrysbasil_gr_GR_cog.euLI.Key1706.text @ver End-Hymn
+					Actor sid Priest End-Actor
+					Dialog sid DiEfchonPateron.text End-Dialog
+					Dialog<i>sid res04p</>End-Dialog
+				End-Section
+				Set_Date month 2 day 9 year 2018 End_Date
+			End-Section
+		14 use: Insert_section se.tr.d014.li.Instance01 End-Insert
+		15 use: Insert_section se.tr.d015.li.Instance01 End-Insert
+		16, 19 use:
+		17 use: //leavetaking of Meeting
+		18, 20 use:
+		21 use:
+		22 use: Insert_section se.tr.d022.li.Instance01 End-Insert
+		23 thru 26 use: 
+		27 use: 
+		28 use: Insert_section se.tr.d028.li.Instance01 End-Insert
+		otherwise use:
+			when-name-of-day-is
+				Sunday use:
+					Section Instance02 //Sunday
+					End-Section
+				otherwise use:
+					Section Instance01 //Weekday
+					End-Section				
+			end-when
+	end-when
+
+End-Template
