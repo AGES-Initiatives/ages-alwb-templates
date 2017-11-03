@@ -1,0 +1,178 @@
+Template se.m02.d09.ma 
+
+Status Final
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 2 day 9 year 2018 End_Date
+			Page_Header_Even
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ma End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	when-triodion-day-is
+		1 use: 
+		8 use: 
+			Section Instance04
+				Insert_section ST.ma.oc_tr_me2 End-Insert
+			End-Section
+		13 use:
+			Section InstanceFeb10
+				Section block1
+					Para<bnr>sid book.Menaion.name</>End-Para
+					Reading<bnr>sid me.m02.d02_gr_GR_cog.meDate.text</>End-Reading
+					Reading sid me.m02.d02_gr_GR_cog.meCommemoration.text End-Reading
+					Reading<bnr>sid me.m02.d10_gr_GR_cog.meDate.text</>End-Reading
+					Reading sid me.m02.d10_gr_GR_cog.meCommemoration.text End-Reading
+					Break line End_Break
+					Title<bnr>sid ma.html.tab</>End-Title
+				End-Section
+				Insert_section MA._01_Beginning__.mode1 End-Insert
+					Set_Date month 2 day 2 year 2018 End_Date
+					Insert_section AP.me1_ End-Insert
+					Set_Date month 2 day 10 year 2018 End_Date
+					Insert_section TI.g.s._00_saint_.m End-Insert
+					Insert_section AP.me1_.hymn End-Insert
+					Set_Date month 2 day 2 year 2018 End_Date
+					Insert_section TI.b.f End-Insert
+					Insert_section AP.me1_.hymn End-Insert
+				Insert_section MA._03_Kathisma1__.litany End-Insert
+					Set_Date month 2 day 10 year 2018 End_Date
+					Insert_section TI.k1.s._00_saint_.m End-Insert
+					Insert_section MA._03_Kathisma1__.me__.kath11_.hymn End-Insert
+					Set_Date month 2 day 2 year 2018 End_Date
+					Insert_section TI.gb.f End-Insert
+					Insert_section MA._03_Kathisma1__.me__.kath11_.hymn End-Insert
+					Set_Date month 2 day 10 year 2018 End_Date
+					Insert_section TI.k2.s._00_saint_.m End-Insert
+					Insert_section MA._04_Kathisma2__.append__.me__.kath21g22_.hymns End-Insert
+					Set_Date month 2 day 2 year 2018 End_Date
+					Insert_section TI.b.f End-Insert
+					Insert_section MA._04_Kathisma2__.me__.kath21_.hymn End-Insert
+					Set_Date month 2 day 10 year 2018 End_Date
+					Insert_section TI.k3.s._00_saint_.m End-Insert
+					Insert_section MA._05_Kathisma3__.append__.me__.kath31_.hymn End-Insert
+					Set_Date month 2 day 2 year 2018 End_Date
+					Insert_section TI.gb.f End-Insert
+					Insert_section MA._05_Kathisma3__.me__.kath31_.hymn End-Insert
+					Set_Date month 2 day 10 year 2018 End_Date
+					Insert_section MA._07_Antiphons__.mode41_prokeimenon_ End-Insert
+					Insert_section MA._08_Gospel__.priest End-Insert
+					Set_Date month 2 day 2 year 2018 End_Date
+					Insert_section MA._11_Kontakion__.me1_ End-Insert
+					Set_Date month 2 day 10 year 2018 End_Date
+					Insert_section TI.k.s._00_saint_.m End-Insert
+					Insert_section MA._11_Kontakion__.append__.me1_.konoik_nt End-Insert
+				Set_Date month 2 day 9 year 2018 End_Date
+				Insert_section SY.Synaxarion End-Insert
+					Set_Date month 2 day 2 year 2018 End_Date
+					Insert_section KA.choir__._1345678 End-Insert
+				Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
+					Section block1
+						Title role desig sid Ode9 End-Title
+						Title role mixed<Tdesig>sid Megalynaria</><Tmode>rid me.meMA.Ode9C1H.mode</>End-Title
+						Hymn rid me.meMA.Ode9C1M01.text End-Hymn
+						Para role chant rid me.meMA.Ode9C1M02.text End-Para
+						Para role chant rid me.meMA.Ode9C1M03.text End-Para
+						Para role chant rid me.meMA.Ode9C1M04.text End-Para
+						Para role chant rid me.meMA.Ode9C1M05.text End-Para
+						Para role chant rid me.meMA.Ode9C1M06.text End-Para
+						Para role chant rid me.meMA.Ode9C1M07.text End-Para
+						Para role chant rid me.meMA.Ode9C1M08.text End-Para
+						Para role chant rid me.meMA.Ode9C1M09.text End-Para
+						Para role chant rid me.meMA.Ode9C1M10.text End-Para
+					End-Section
+					Section nt_hh1123asM11M12M13M14MTrMTh
+						Title role source0 sid sourceMenaion End-Title
+						Title<Tdesig>rid me.meMA.Ode9C1H.ode</><Tdesig>rid me.meMA.Ode9C1H.melody</>End-Title
+						Media rid me.meMA.Ode9C1H.text End-Media
+						Verse rid me.meMA.Ode9C1M11.text End-Verse
+						Hymn rid me.meMA.Ode9C1H.text @ver media-off End-Hymn
+						Verse rid me.meMA.Ode9C1M12.text End-Verse
+						Hymn rid me.meMA.Ode9C1H.text @ver media-off End-Hymn
+						Title role desig sid Troparia End-Title
+						Verse rid me.meMA.Ode9C1M13.text End-Verse
+						Hymn rid me.meMA.Ode9C11.text @ver End-Hymn
+						Verse rid me.meMA.Ode9C1M14.text End-Verse
+						Hymn rid me.meMA.Ode9C11.text @ver End-Hymn
+						Verse rid me.meMA.Ode9C1MTr.text End-Verse
+						Hymn rid me.meMA.Ode9C12.text @ver End-Hymn
+						Verse rid me.meMA.Ode9C1MTh.text End-Verse
+						Hymn rid me.meMA.Ode9C13.text @ver End-Hymn
+					End-Section
+					Set_Date month 2 day 10 year 2018 End_Date
+					Insert_section TI.s._00_saint_.m End-Insert
+					Insert_section CA.v.ode9.append.me1.nt_123tasVVGB End-Insert
+					Set_Date month 2 day 2 year 2018 End_Date
+					Insert_section KA.append__._9 End-Insert
+				Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+					Insert_section TI.e.f End-Insert
+					Insert_section MA._12_Exaposteilarion__.me__.exap1_.hymn End-Insert
+					Set_Date month 2 day 10 year 2018 End_Date
+					Insert_section TI.s._00_saint_.m End-Insert
+					Insert_section MA._12_Exaposteilarion__.me__.exap1_.hymn End-Insert
+					Set_Date month 2 day 2 year 2018 End_Date
+					Insert_section TI.f End-Insert
+					Insert_section MA._12_Exaposteilarion__.me__.exap1_.hymn End-Insert
+				Insert_section MA._13_Lauds__.mode4 End-Insert
+					Insert_section TI.stp.f End-Insert
+					Insert_section MA._13_Lauds__.me__.p_123as123 End-Insert
+					Set_Date month 2 day 10 year 2018 End_Date
+					Insert_section TI.s._00_saint_.m End-Insert
+					Insert_section MA._13_Lauds__.me__.p_123as456 End-Insert
+					Insert_section MA._13_Lauds__.glory__.me__.gloryasglory_ End-Insert
+					Set_Date month 2 day 2 year 2018 End_Date
+					Insert_section TI.b.f End-Insert
+					Insert_section MA._13_Lauds__.both__.me__.gloryasboth_.hymn End-Insert
+				Insert_section MA._14_Doxology__.great End-Insert
+					Insert_section AP.me1_ End-Insert
+					Set_Date month 2 day 9 year 2018 End_Date
+			End-Section
+		14 use: Insert_section se.tr.d014.ma.Instance01 End-Insert
+		15 use: Insert_section se.tr.d015.ma.Instance01 End-Insert
+		16, 19 use:
+		17 use:
+		18, 20 use:
+		21 use:
+		22 use: Insert_section se.tr.d022.ma.Instance01 End-Insert
+		23 thru 26 use: 
+		27 use: 
+		28 use: Insert_section se.tr.d028.ma.Instance01 End-Insert
+		otherwise use:
+			when-name-of-day-is
+				Sunday use:
+					Section Instance02 //Sunday
+					End-Section
+				otherwise use:
+					Section Instance01 //Weekday
+					End-Section				
+			end-when
+	end-when
+
+End-Template

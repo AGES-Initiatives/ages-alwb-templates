@@ -1,0 +1,117 @@
+Template se.m02.d09.ve 
+
+Status Final
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 2 day 9 year 2018 End_Date
+			Page_Header_Even
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	when-triodion-day-is
+		1 use: 
+		8 use: 
+			Section Instance04
+			End-Section
+		13 use: 
+			Section InstanceFeb10
+				Section block1
+					Para<bnr>sid book.Menaion.name</>End-Para
+					Reading<bnr>sid me.m02.d02_gr_GR_cog.meDate.text</>End-Reading
+					Reading sid me.m02.d02_gr_GR_cog.meCommemoration.text End-Reading
+					Reading<bnr>sid me.m02.d10_gr_GR_cog.meDate.text</>End-Reading
+					Reading sid me.m02.d10_gr_GR_cog.meCommemoration.text End-Reading
+					Break line End_Break
+					Title<bnr>sid ve.html.tab</>End-Title
+				End-Section
+				Insert_section VE._01_Beginning__.vespers End-Insert
+				Insert_section VE._02_Kekragaria__.mode1__.for6 End-Insert
+					Set_Date month 2 day 2 year 2018 End_Date
+					Insert_section TI.stp.f End-Insert
+					Insert_section VE._03_Stichera__.me__.i_123as567 End-Insert
+					Set_Date month 2 day 10 year 2018 End_Date
+					Insert_section TI.s._00_saint_.m End-Insert
+					Insert_section VE._03_Stichera__.me__.p_123as8910 End-Insert
+					Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_ End-Insert
+					Set_Date month 2 day 2 year 2018 End_Date
+					Insert_section TI.b.f End-Insert
+					Insert_section VE._03_Stichera__.both__.me__.gloryasboth_.hymn End-Insert
+				Set_Date month 2 day 9 year 2018 End_Date
+				Insert_section VE._04_Middle__.entrance End-Insert
+					Set_Date month 2 day 10 year 2018 End_Date
+					Insert_section VE._05_Readings__.reader End-Insert
+					Insert_section VE._06_Litanies__.fullektenia End-Insert
+					Set_Date month 2 day 2 year 2018 End_Date
+					Insert_section VE._08_Aposticha__.me__.i_meeting12 End-Insert
+					Set_Date month 2 day 10 year 2018 End_Date
+					Insert_section TI.g.s._00_saint_.m End-Insert
+					Insert_section VE._08_Aposticha__.glory__.me__.gloryasglory_.hymn End-Insert
+					Set_Date month 2 day 2 year 2018 End_Date
+					Insert_section TI.b.f End-Insert
+					Insert_section VE._08_Aposticha__.both__.me__.gloryasboth_.hymn End-Insert
+					Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
+					Insert_section AP.me1_ End-Insert
+					Set_Date month 2 day 10 year 2018 End_Date
+					Insert_section TI.g.s._00_saint_.m End-Insert
+					Insert_section AP.me1_.hymn End-Insert
+					Set_Date month 2 day 2 year 2018 End_Date
+					Insert_section TI.b.f End-Insert
+					Insert_section AP.me1_.hymn End-Insert
+				Set_Date month 2 day 9 year 2018 End_Date
+				Insert_section VE._10_End__.wisdom End-Insert
+				Section block2
+					Actor sid Priest End-Actor
+					Insert_section Selector_Dismissals.dismissal_stharalambos End-Insert
+					Insert_section Selector_Dismissals.Com_Yes.part2.regular_end End-Insert
+				End-Section
+			End-Section
+		14 use: Insert_section se.tr.d014.ve.Instance01 End-Insert
+		15 use: Insert_section se.tr.d015.ve.Instance01 End-Insert
+		16, 19 use:
+		17 use: //leavetaking of Meeting
+		18, 20 use:
+		21 use:
+		22 use: Insert_section se.tr.d022.ve.Instance01 End-Insert
+		23 thru 26 use: 
+		27 use: 
+		28 use: Insert_section se.tr.d028.pl.Instance01 End-Insert
+		otherwise use:
+			when-name-of-day-is
+				Sunday use:
+					Section Instance02 //Sunday
+					End-Section
+				otherwise use:
+					Section Instance01 //Weekday
+					End-Section				
+			end-when
+	end-when
+
+End-Template
