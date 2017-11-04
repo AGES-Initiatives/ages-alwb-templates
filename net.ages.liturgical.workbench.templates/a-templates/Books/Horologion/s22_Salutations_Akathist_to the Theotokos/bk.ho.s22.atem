@@ -406,9 +406,18 @@ Template bk.ho.s22
 		when-movable-cycle-day-is 
 			28 use:
 				Section Week1
-					Actor sid Reader End-Actor
-					Title role desig sid Kontakion End-Title
-					Reading sid tr.d028_gr_GR_cog.trMA.Kontakion1.text @ver End-Reading
+					when-date-is
+						Feb 24 use:
+							Actor sid Reader End-Actor
+							Insert_section TI.k.s._06_forerunner End-Insert
+							Reading sid me.m02.d24_gr_GR_cog.meMA.Kontakion1.text @ver End-Reading
+							Insert_section TI.k.s._00_saint_.m End-Insert
+							Reading sid tr.d028_gr_GR_cog.trMA.Kontakion1.text @ver End-Reading
+						otherwise use:
+							Actor sid Reader End-Actor
+							Title role desig sid Kontakion End-Title
+							Reading sid tr.d028_gr_GR_cog.trMA.Kontakion1.text @ver End-Reading
+					end-when
 				End-Section
 			35, 42, 49 use:		
 				Section Weeks234

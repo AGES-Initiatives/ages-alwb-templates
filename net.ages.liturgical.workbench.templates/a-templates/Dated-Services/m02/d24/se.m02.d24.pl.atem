@@ -1,0 +1,73 @@
+Template se.m02.d24.pl
+
+Status Final
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 2 day 24 year 2018 End_Date
+			Page_Header_Even
+				center @lookup sid pl.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid pl.pdf.header rid da.daVE.OnTheEveningBefore lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.pl End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	when-movable-cycle-day-is 
+		26, 33, 40 use:
+			Section Instance09
+			End-Section
+		28 use:
+			Section Instance11
+				Insert_section ST.pl.tr_me End-Insert
+				Insert_section PL._01_Beginning End-Insert
+				Insert_section PL._02_Kekragaria__.mode5__.for10 End-Insert
+				Insert_section PL._03_Stichera_.friday_.Idiomela_Triodion End-Insert
+				Insert_section TI.s._06_forerunner End-Insert
+				Insert_section VE._03_Stichera__.me__.p_1123as3456 End-Insert
+				Title role desig sid TouAgiou End-Title
+				Insert_section VE._03_Stichera__.tr__.i_1234as78910 End-Insert
+				Insert_section VE._03_Stichera__.glory__.tr__.gloryasglory_ End-Insert
+				Insert_section VE._03_Stichera__.both__.firsttheotokion__.modeofweek End-Insert
+				Insert_section PL._04_Middle End-Insert
+				Insert_section PL._05_Readings End-Insert
+				Insert_section PL._06 End-Insert
+				Insert_section PL._07 End-Insert
+				Insert_section PL._08 End-Insert
+				Insert_section PL._09 End-Insert
+				Insert_section PL._10 End-Insert
+				Insert_section PL._11 End-Insert
+				Insert_section PL._12 End-Insert
+				Insert_section PL._13_commemoration End-Insert
+			End-Section
+		35, 42 use:
+			Section Instance15
+			End-Section
+		
+	end-when	
+	
+	
+End-Template

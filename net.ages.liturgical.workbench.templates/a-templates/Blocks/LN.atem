@@ -1311,6 +1311,12 @@ Template LN
 		Section part1
 			Actor sid Deacon End-Actor
 			when-movable-cycle-day-is 
+				28 use:
+					when-date-is
+					//	Feb 10 use: 
+						Feb 24 use: Insert_section supplication_09_05 End-Insert
+						otherwise use: Insert_section supplication_09 End-Insert
+					end-when
 				36, 50, 57 use: Insert_section supplication_09 End-Insert
 				78, 85, 113 use: 
 					when-date-is
@@ -1367,6 +1373,12 @@ Template LN
 	Section Supplication_priest
 		Actor sid Priest End-Actor
 		when-movable-cycle-day-is 
+			28 use:
+				when-date-is
+				//	Feb 10 use: 
+					Feb 24 use: Insert_section supplication_09_05 End-Insert
+					otherwise use: Insert_section supplication_09 End-Insert
+				end-when
 			36, 50, 57 use: Insert_section supplication_09 End-Insert
 			78, 85, 113 use: Insert_section supplication_20 End-Insert
 			127 use: Insert_section supplication_21 End-Insert
@@ -1518,6 +1530,9 @@ Template LN
 	End-Section
 	Section supplication_09 //Triodion
 		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12<r>sid cl.localpatronsaint1.supplication</>sid sup14 rid trInsert1 rid trInsert2 sid sup15 sid sup99 End-Dialog	
+	End-Section
+	Section supplication_09_05 //Triodion_and_Forerunner
+		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 rid meInsert2 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12<r>sid cl.localpatronsaint1.supplication</>sid sup14 rid trInsert1 rid trInsert2 sid sup15 sid sup99 End-Dialog	
 	End-Section
 	Section supplication_10 //HolyFathersJuly
 		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12<r>sid cl.localpatronsaint1.supplication</>sid sup14 sid me.m07.dHF_gr_GR_cog.meInsert1 sid me.m07.dHF_gr_GR_cog.meInsert2 sid sup15 sid sup99 End-Dialog	

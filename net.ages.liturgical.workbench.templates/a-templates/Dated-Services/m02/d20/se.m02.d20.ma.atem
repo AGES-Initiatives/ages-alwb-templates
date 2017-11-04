@@ -1,6 +1,6 @@
-Template se.m02.d25.ve 
+Template se.m02.d20.ma 
 
-Status Final
+Status Review
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -15,12 +15,12 @@ Status Final
 	import roles.*
 
 	Head 
-		Set_Date month 2 day 25 year 2018 End_Date
+		Set_Date month 2 day 20 year 2018 End_Date
 			Page_Header_Even
-				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -32,24 +32,22 @@ Status Final
 	End_Head
 
 	Preface Covers
-		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.cover.ma End-Insert
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
 	when-movable-cycle-day-is
-		1, 8 use: Insert_section mc.map.ve.Section01 End-Insert
-		14 thru 25 use: Insert_section mc.map.ve.Section01 End-Insert 
-		26, 28, 33, 35, 40, 42 use: //do nothing. use pl
-		27, 29, 30, 31, 32, 34, 36, 37, 38, 39, 41, 43, 44, 45, 46 use:	Insert_section mc.map.ve.Section01 End-Insert
+		1, 8 use: Insert_section mc.map.ma.Section01 End-Insert
+		14 thru 47 use:	Insert_section mc.map.ma.Section01 End-Insert
 		otherwise use:
 			when-name-of-day-is
 				Sunday use:
-					Section Instance02
+					Section Instance02 //Sunday
 					End-Section
-				otherwise use:	
+				otherwise use:
 					Section Instance01
 					End-Section
-			end-when
+			end-when			
 	end-when
 
 End-Template

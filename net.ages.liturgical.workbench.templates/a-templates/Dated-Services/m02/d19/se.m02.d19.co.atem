@@ -1,4 +1,4 @@
-Template se.m02.d24.co
+Template se.m02.d19.co
 
 Status Final
 
@@ -15,7 +15,7 @@ Status Final
 	import roles.*
 	
 	Head 
-		Set_Date month 2 day 24 year 2018 End_Date
+		Set_Date month 2 day 19 year 2018 End_Date
 		Page_Header_Even 
 			left @pageNbr 
 			center 
@@ -31,9 +31,17 @@ Status Final
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
-	when-movable-cycle-day-is 23 thru 127 use:
-		Insert_template mc.map.co End-Insert
+	when-movable-cycle-day-is
+		23 thru 48 use: Insert_section mc.map.co.Section01 End-Insert 
 		otherwise use:
-		
+			when-name-of-day-is
+				Sunday use:
+					Section Instance02
+					End-Section
+				otherwise use:	
+					Section Instance01
+					End-Section
+			end-when
 	end-when
+		
 End-Template
