@@ -1,6 +1,8 @@
 Template se.m03.d24.ma
 
-Status Draft
+Status Review
+
+	import tr.d056_gr_GR_cog.*
 	
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -36,10 +38,57 @@ Status Draft
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-//	when-movable-cycle-day-is 1 thru 127 use:
-//		Insert_section mc.map.ma.Section01 End-Insert
-//		otherwise use:
-		
-//	end-when	
+	when-movable-cycle-day-is 
+		56 use:
+			Section Instance22
+				Insert_section ST.ma.tr_me End-Insert
+				Insert_section MA._01_Beginning__.mode8 End-Insert
+				Insert_section AP.tr1_ End-Insert
+				Insert_section TI.g.r End-Insert
+				Insert_section AP.tr1_.hymn End-Insert
+				Insert_section TI.b.bf End-Insert
+				Insert_section AP.me1_.hymn End-Insert
+				Insert_section MA._03_Kathisma1__.litany End-Insert
+				Insert_section MA._10_Canon__.ode3kathisma__.tr__.kath1gb1 End-Insert
+				Insert_section MA._08_NoGospel__.reader__.psalm50 End-Insert
+				Insert_section TI.k.bf End-Insert
+				Insert_section MA._11_Kontakion__.append__.me1_.konoik_nt.kontakion_nt End-Insert
+				Section block1
+					Actor sid Choir End-Actor
+					Insert_section KO.seasonal End-Insert
+					Rubric sid client_gr_GR_cog.cl.tr.d056.R001 End-Rubric
+					Actor sid Priest End-Actor
+					Para role chant sid trAK.Oikos010a.text sid trAK.Oikos010b.text End-Para
+					Reading sid trAK.Oikos011.text End-Reading
+					Reading sid trAK.Oikos012.text End-Reading
+					Reading sid trAK.Oikos013.text End-Reading
+					Reading sid trAK.Oikos014.text End-Reading
+					Reading sid trAK.Oikos015.text End-Reading
+					Reading sid trAK.Oikos016.text End-Reading
+					Reading sid trAK.Oikos017.text End-Reading
+					Actor sid Choir End-Actor
+					Para role chant sid trAK.Refrain1.text End-Para
+				End-Section
+				Actor sid Reader End-Actor		
+				Insert_section SY.Synaxarion End-Insert
+				Insert_section KA.choir__._1345678 End-Insert
+				Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
+				Insert_section KA.choir__._mode_mag_media End-Insert
+				Insert_section KA.append__._9 End-Insert
+				Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+				Insert_section MA._12_Exaposteilarion__.tr__.exap1o2ot.exap1_ End-Insert
+				Insert_section TI.bf End-Insert
+				Insert_section MA._12_Exaposteilarion__.append__.me__.exap1 End-Insert
+				Insert_section MA._13_Lauds__.mode4 End-Insert
+				Insert_section TI.pr.s._16_theotokos End-Insert
+				Insert_section MA._13_Lauds__.tr__.p_1123as3456_.hymns End-Insert
+				Insert_section MA._13_Lauds__.gloryboth__.tr__.gloryasgloryboth_ End-Insert
+				Insert_section MA._14_Doxology__.great End-Insert
+				Insert_section TI.a.bf End-Insert
+				Insert_section AP.me1_.hymn End-Insert
+			End-Section
+		otherwise use:
+			Insert_section mc.map.ma.Section01 End-Insert
+	end-when	
 
 End-Template
