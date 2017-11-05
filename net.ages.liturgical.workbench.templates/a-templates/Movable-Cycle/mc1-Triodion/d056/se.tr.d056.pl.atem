@@ -1,6 +1,8 @@
 Template se.tr.d056.pl 
 
-Status Final
+Status NA
+
+	import tr.*
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -15,7 +17,7 @@ Status Final
 	import roles.*
 
 	Head 
-		Set_Date month 4 day 16 End_Date
+		Set_Date month 3 day 24 year 2018 End_Date
 			Page_Header_Even
 				center @lookup sid pl.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
 			End_Page_Header_Even
@@ -39,10 +41,24 @@ Status Final
 	Section Instance01
 		Insert_section ST.pl.tr End-Insert
 		Insert_section PL._01_Beginning End-Insert
-		Insert_section PL._02_Kekragaria__.mode6__.for10 End-Insert
-		Insert_section PL._03_Stichera_.montuewedthur_.Idiomela_Triodion End-Insert
+		Insert_section PL._02_Kekragaria__.mode6__.for6 End-Insert
+		Section Idiomela_Triodion
+			Title role desig sid TouTriodiou End-Title
+			Title role mixed<Tdesig>sid StichironIdiomelon</><Tmode>rid trVE.AposIdiomelon1.mode</>End-Title
+			Media rid trVE.AposIdiomelon1.text End-Media
+			Insert_section VE.LIHC_Verses.v05 End-Insert
+			Hymn rid trVE.AposIdiomelon1.text @ver media-off End-Hymn
+			Title role mixed<Tdesig>sid StichironIdiomelon</><Tmode>rid trVE.AposIdiomelon1.mode</>End-Title
+			Insert_section VE.LIHC_Verses.v06 End-Insert
+			Hymn rid trVE.AposIdiomelon1.text @ver media-off End-Hymn
+			Title role desig sid Martyrikon End-Title
+			Title role mixed<Tmode>rid trVE.AposMartyric.mode</><Tmelody>rid trVE.AposMartyric.melody</>End-Title
+			Media rid trVE.AposMartyric.text End-Media
+			Insert_section VE.LIHC_Verses.v07 End-Insert
+			Hymn rid trVE.AposMartyric.text @ver  media-off End-Hymn
+		End-Section
 		Insert_section TI.stp.s._16_theotokos End-Insert
-		Insert_section VE._03_Stichera__.tr__.p_1112233as45678910 End-Insert
+		Insert_section VE._03_Stichera__.tr__.p_123as8910 End-Insert
 		Insert_section VE._03_Stichera__.gloryboth__.tr_ End-Insert
 		Insert_section PL._04_Middle End-Insert
 		Insert_section PL._05_Readings End-Insert

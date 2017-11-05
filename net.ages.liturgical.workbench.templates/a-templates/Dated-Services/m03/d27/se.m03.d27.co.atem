@@ -1,0 +1,48 @@
+Template se.m03.d27.co
+
+Status Final
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+	
+	Head 
+		Set_Date month 3 day 27 year 2018 End_Date
+		Page_Header_Even 
+			left @pageNbr 
+			center 
+				@lookup sid co.pdf.header lang L2
+//				@date 
+		End_Page_Header_Even
+		Page_Header_Odd 
+			center 
+				@lookup sid co.pdf.header lang L2
+//				@date 
+			right @pageNbr 
+		End_Page_Header_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	when-movable-cycle-day-is
+		1, 8 use: Insert_section mc.map.co.Section01 End-Insert
+		14 thru 62 use: Insert_section mc.map.co.Section01 End-Insert 
+		otherwise use:
+			when-name-of-day-is
+				Sunday use:
+					Section Instance02
+					End-Section
+				otherwise use:	
+					Section Instance01
+					End-Section
+			end-when
+	end-when
+		
+End-Template

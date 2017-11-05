@@ -1,0 +1,39 @@
+Template se.m03.d03.co2
+
+Status Final
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+	
+	Head 
+		Set_Date month 3 day 3 year 2018 End_Date
+		Page_Header_Even 
+			left @pageNbr 
+			center 
+				@lookup sid co.salutations.pdf.header lang L2
+//				@date 
+		End_Page_Header_Even
+		Page_Header_Odd 
+			center 
+				@lookup sid co.salutations.pdf.header lang L2
+//				@date 
+			right @pageNbr 
+		End_Page_Header_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	when-movable-cycle-day-is 28, 35, 42, 49 use:
+		Insert_template mc.map.co End-Insert
+		otherwise use:
+		
+	end-when
+End-Template
