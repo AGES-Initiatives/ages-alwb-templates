@@ -1,6 +1,6 @@
 Template se.m03.d25.h9 
 
-Status NA
+Status Final
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -31,10 +31,29 @@ Status NA
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
-	Insert_section HR.h9__.beginning End-Insert
-	Insert_section AP.me1_ End-Insert
-	Insert_section HR.h9__.middle End-Insert
-	Insert_section KO.me1_ End-Insert
-	Insert_section HR.h9__.end End-Insert
+	when-movable-cycle-day-is
+		53 use:
+			Section Instance18
+				Insert_section Instance01 End-Insert
+			End-Section
+		57 use:
+			Section Instance22
+				Insert_section HR.h9__.beginning End-Insert
+				Insert_section AP.res__.modeofweek End-Insert
+				Insert_section TI.f End-Insert
+				Insert_section AP.me1_.hymn End-Insert
+				Insert_section HR.h9__.middle End-Insert
+				Insert_section KO.me1_ End-Insert
+				Insert_section HR.h9__.end End-Insert
+			End-Section
+		otherwise use:
+			Section Instance01
+				Insert_section HR.h9__.beginning End-Insert
+				Insert_section AP.me1_ End-Insert
+				Insert_section HR.h9__.middle End-Insert
+				Insert_section KO.me1_ End-Insert
+				Insert_section HR.h9__.end End-Insert
+			End-Section
+	end-when
 
 End-Template

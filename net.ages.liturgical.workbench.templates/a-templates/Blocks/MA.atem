@@ -1001,31 +1001,18 @@ Template MA
 							Title role source sid sourceOctoechos End-Title
 							Actor sid Choir End-Actor
 							Title role desig sid Kathisma1 End-Title
-							when-mode-of-week-is
-								M1, M2, M3, M4, M8 use:
-									Title role desig sid Martyrika End-Title
-									Title<Tmode>rid ocMA.Kathisma11.mode</><Tmelody>rid ocMA.Kathisma11.melody</>End-Title
-									Hymn rid ocMA.Kathisma11.text @ver End-Hymn
-									Verse<bnr>sid vVerse</>sid psa67.v36a.text @ver End-Verse
-									when-exists rid ocMA.Kathisma12.melody use: Title role melody rid ocMA.Kathisma12.melody End-Title end-when
-									Hymn rid ocMA.Kathisma12.text @ver End-Hymn
-									Verse<bnr>sid vVerse</>sid psa15.v3alt.text @ver End-Verse
-									when-exists rid ocMA.Kathisma13.melody use: Title role melody rid ocMA.Kathisma13.melody End-Title end-when
-									Hymn rid ocMA.Kathisma13.text @ver End-Hymn
-									Insert_section TI.gb.th End-Insert
-									when-exists rid ocMA.Kathisma14.melody use: Title role melody rid ocMA.Kathisma14.melody End-Title end-when
-									Hymn rid ocMA.Kathisma14.text @ver End-Hymn
-								M5, M6, M7 use:
-									Title role desig sid Martyrika End-Title
-									Title<Tmode>rid ocMA.Kathisma11.mode</><Tmelody>rid ocMA.Kathisma11.melody</>End-Title
-									Hymn rid ocMA.Kathisma11.text @ver End-Hymn
-									Verse<bnr>sid vVerse</>sid psa67.v36a.text @ver End-Verse
-									when-exists rid ocMA.Kathisma12.melody use: Title role melody rid ocMA.Kathisma12.melody End-Title end-when
-									Hymn rid ocMA.Kathisma12.text @ver End-Hymn
-									Insert_section TI.gb.th End-Insert
-									when-exists rid ocMA.Kathisma13.melody use: Title role melody rid ocMA.Kathisma13.melody End-Title end-when
-									Hymn rid ocMA.Kathisma13.text @ver End-Hymn
-							end-when
+							Title role desig sid Martyrika End-Title
+							Title<Tmode>rid ocMA.Kathisma11.mode</><Tmelody>rid ocMA.Kathisma11.melody</>End-Title
+							Hymn rid ocMA.Kathisma11.text @ver End-Hymn
+							Verse<bnr>sid vVerse</>sid psa67.v36a.text @ver End-Verse
+							when-exists rid ocMA.Kathisma12.melody use: Title role melody rid ocMA.Kathisma12.melody End-Title end-when
+							Hymn rid ocMA.Kathisma12.text @ver End-Hymn
+							Verse<bnr>sid vVerse</>sid psa15.v3alt.text @ver End-Verse
+							when-exists rid ocMA.Kathisma13.melody use: Title role melody rid ocMA.Kathisma13.melody End-Title end-when
+							Hymn rid ocMA.Kathisma13.text @ver End-Hymn
+							Insert_section TI.gb.th End-Insert
+							when-exists rid ocMA.Kathisma14.melody use: Title role melody rid ocMA.Kathisma14.melody End-Title end-when
+							Hymn rid ocMA.Kathisma14.text @ver End-Hymn
 						End-Section
 					otherwise use:
 						Title role source sid sourceOctoechos End-Title
@@ -11723,6 +11710,22 @@ Template MA
 				Insert_section PsalmVerses.forLauds.v06 End-Insert
 				Hymn rid meMA.Lauds4.text @ver media-off End-Hymn
 			End-Section
+			Section p_1234as56annunciation12
+				Title role source0 sid sourceMenaion End-Title
+				Title<Tmode>rid meMA.Lauds1.mode</><Tmelody>rid meMA.Lauds1.melody</>End-Title
+				Media rid meMA.MM.Lauds1234as5678.text End-Media
+				Insert_section PsalmVerses.forLauds.v05 End-Insert
+				Hymn rid meMA.Lauds1.text @ver media-off End-Hymn
+				Insert_section PsalmVerses.forLauds.v06 End-Insert
+				Hymn rid meMA.Lauds2.text @ver media-off End-Hymn
+				Insert_section PsalmVerses.forAnnunciation.verse1 End-Insert
+				Hymn rid meMA.Lauds3.text @ver media-off End-Hymn
+				Insert_section PsalmVerses.forAnnunciation.verse2 End-Insert
+				Hymn rid meMA.Lauds3.text @ver media-off End-Hymn
+				Rubric sid Or End-Rubric
+				Para role small rid meMA.Lauds4.note End-Para
+				Hymn rid meMA.Lauds4.text @ver media-off End-Hymn
+			End-Section
 			Section p_1234as56apostles12
 				Title role source0 sid sourceMenaion End-Title
 				Title<Tmode>rid meMA.Lauds1.mode</><Tmelody>rid meMA.Lauds1.melody</>End-Title
@@ -13482,20 +13485,22 @@ Template MA
 							Hymn rid ocMA.Aposticha3.text @ver media-off End-Hymn
 						End-Section
 					Saturday use:
-						Section saturday
-							Title role source sid sourceOctoechos End-Title
-							Actor sid Choir End-Actor
-							Title role desig sid Aposticha End-Title
-							Title<Tmode>rid ocMA.Aposticha1.mode</><Tmelody>rid ocMA.Aposticha1.melody</>End-Title	
-							Hymn rid ocMA.Aposticha1.text @ver End-Hymn
-							Media rid ocMA.Aposticha2.text End-Media
-							Insert_section PsalmVerses.forDeceased.verse1 End-Insert
-							when-exists rid ocMA.Aposticha2.melody use: Title<Tmelody>rid ocMA.Aposticha2.melody</>End-Title end-when 
-							Hymn rid ocMA.Aposticha2.text @ver media-off End-Hymn
-							Media rid ocMA.Aposticha3.text End-Media
-							Insert_section PsalmVerses.forDeceased.verse2 End-Insert
-							when-exists rid ocMA.Aposticha3.melody use: Title<Tmelody>rid ocMA.Aposticha3.melody</>End-Title end-when 
-							Hymn rid ocMA.Aposticha3.text @ver media-off End-Hymn
+						Section saturday_
+							Section aposticha123
+								Title role source sid sourceOctoechos End-Title
+								Actor sid Choir End-Actor
+								Title role desig sid Aposticha End-Title
+								Title<Tmode>rid ocMA.Aposticha1.mode</><Tmelody>rid ocMA.Aposticha1.melody</>End-Title	
+								Hymn rid ocMA.Aposticha1.text @ver End-Hymn
+								Media rid ocMA.Aposticha2.text End-Media
+								Insert_section PsalmVerses.forDeceased.verse1 End-Insert
+								when-exists rid ocMA.Aposticha2.melody use: Title<Tmelody>rid ocMA.Aposticha2.melody</>End-Title end-when 
+								Hymn rid ocMA.Aposticha2.text @ver media-off End-Hymn
+								Media rid ocMA.Aposticha3.text End-Media
+								Insert_section PsalmVerses.forDeceased.verse2 End-Insert
+								when-exists rid ocMA.Aposticha3.melody use: Title<Tmelody>rid ocMA.Aposticha3.melody</>End-Title end-when 
+								Hymn rid ocMA.Aposticha3.text @ver media-off End-Hymn
+							End-Section
 							when-exists rid ocMA.Aposticha4.text use:
 								Media rid ocMA.Aposticha4.text End-Media
 								Insert_section PsalmVerses.forDeceased.verse3 End-Insert

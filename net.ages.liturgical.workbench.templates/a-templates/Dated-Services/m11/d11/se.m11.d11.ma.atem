@@ -1,6 +1,6 @@
 Template se.m11.d11.ma 
 
-Status NA
+Status Review
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -36,11 +36,13 @@ Status NA
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-	Title role desig ldp @Service_Date End-Title
-//	Insert_section cu.matinsordinary.Instance01 End-Insert
-	
 
-			Section Instance01 //weekday
+	when-name-of-day-is
+		Sunday use:
+			Section Instance02
+			End-Section
+		Saturday use:
+			Section Instance03
 				Insert_section ST.ma.oc_me End-Insert
 				Insert_section MA._01_Beginning__.mode4 End-Insert
 				Insert_section AP.ga.martyrs_mode4_ End-Insert
@@ -51,11 +53,10 @@ Status NA
 				Insert_section MA._08_NoGospel__.reader__.psalm50 End-Insert
 				Insert_section MA._11_Kontakion__.append__.me2_ End-Insert
 				Insert_section SY.Synaxarion End-Insert
-				Rubric sid client_gr_GR_cog.cl.me.m11.d14.R002 End-Rubric
-				Insert_section KA.choir__._1345678 End-Insert
 				Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
-				Insert_section KA.choir__._mode_mag_media End-Insert
-				Insert_section KA.append__._9 End-Insert
+				Insert_section MA._10_Canon__.magnificat__.mode8 End-Insert
+				Insert_section CA.heirmos.ode9.me End-Insert
+				Insert_section MA._10_Canon__.ode9_end End-Insert
 				Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
 				Actor sid Choir End-Actor
 				Insert_section TI.e.s._09_martyr_.mp End-Insert
@@ -63,7 +64,8 @@ Status NA
 				Insert_section TI.s._10_monastic_.m End-Insert
 				Insert_section MA._12_Exaposteilarion__.append__.me__.exap2_ End-Insert
 				Insert_section MA._12_Exaposteilarion__.append__.me__.theotokion End-Insert
-				Insert_section MA._13_Lauds__.read__.all End-Insert
+				Insert_section MA._13_Lauds__.modeofweek End-Insert
+				Insert_section MA._13_Lauds__.oc__.saturday_ End-Insert
 				Insert_section MA._14_Doxology__.small End-Insert
 				Insert_section MA._15_Litanies__.aftersmalldoxology End-Insert
 				Insert_section MA._16_Aposticha__.oc_.aposticha End-Insert
@@ -79,7 +81,47 @@ Status NA
 				Insert_section MA._18_End__.ektenia_wisdom End-Insert
 				Insert_section MA._20_Dismissal__.commemoration End-Insert
 			End-Section
-
+		otherwise use:
+			Section Instance01 
+				Insert_section ST.ma.oc_me End-Insert
+				Insert_section MA._01_Beginning__.mode4 End-Insert
+				Insert_section AP.ga.martyrs_mode4_ End-Insert
+				Insert_section TI.g.s._10_monastic_.m End-Insert
+				Insert_section AP.ganame.Nov11__.theodore_.hymn End-Insert
+				Insert_section AP.both__.theotokion__.mode8_ End-Insert
+				Insert_section MA._03_Kathisma1__.oc__.weekday123 End-Insert
+				Insert_section MA._08_NoGospel__.reader__.psalm50 End-Insert
+				Insert_section MA._11_Kontakion__.append__.me2_ End-Insert
+				Insert_section SY.Synaxarion End-Insert
+				Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
+				Insert_section MA._10_Canon__.magnificat__.mode8 End-Insert
+				Insert_section CA.heirmos.ode9.me End-Insert
+				Insert_section MA._10_Canon__.ode9_end End-Insert
+				Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+				Actor sid Choir End-Actor
+				Insert_section TI.e.s._09_martyr_.mp End-Insert
+				Insert_section MA._12_Exaposteilarion__.me__.exap1_.hymn End-Insert
+				Insert_section TI.s._10_monastic_.m End-Insert
+				Insert_section MA._12_Exaposteilarion__.append__.me__.exap2_ End-Insert
+				Insert_section MA._12_Exaposteilarion__.append__.me__.theotokion End-Insert
+				Insert_section MA._13_Lauds__.read__.all End-Insert
+				Insert_section MA._14_Doxology__.append_small End-Insert
+				Insert_section MA._15_Litanies__.aftersmalldoxology End-Insert
+				Insert_section MA._16_Aposticha__.oc_.aposticha End-Insert
+				Insert_section TI.s._09_martyr_.mp End-Insert
+				Insert_section MA._16_Aposticha__.me__.i_4asmartyrs2 End-Insert
+				Insert_section MA._16_Aposticha__.glory__.me__.gloryasglory_ End-Insert
+				Insert_section MA._16_Aposticha__.both__.me__.theotokion End-Insert
+				Insert_section MA._17_ItIsGood_Trisagion__.not_lent End-Insert
+				Insert_section AP.ga.martyrs_mode4_ End-Insert
+				Insert_section TI.g.s._10_monastic_.m End-Insert
+				Insert_section AP.ganame.Nov11__.theodore_.hymn End-Insert
+				Insert_section AP.both__.endofmatins_theotokion__.mode8_ End-Insert
+				Insert_section MA._18_End__.ektenia_wisdom End-Insert
+				Insert_section MA._20_Dismissal__.commemoration End-Insert
+			End-Section
+	end-when
+	
 /*			Section Instance02
 				Section block5
 					Insert_section MA._13_Lauds__.mode4 End-Insert
