@@ -2,6 +2,8 @@ Template Selector_CommunionHymn
 
 Status Final
 
+	import ps_gr_GR_cog.*
+
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
 	import misc_gr_GR_cog.*
@@ -253,7 +255,15 @@ Status Final
 												Insert_section Various.saints End-Insert
 											otherwise use: Insert_section Various.saints End-Insert
 										end-when
-									Jan 16, 30 use: 
+									Jan 16 use: 
+										when-name-of-day-is
+											Sunday use:
+												Insert_section DayOfWeek.onSunday End-Insert
+												Rubric sid And End-Rubric
+												Insert_section Various.apostle End-Insert
+											otherwise use: Insert_section Various.apostle End-Insert
+										end-when
+									Jan 30 use: 
 										when-name-of-day-is
 											Sunday use:
 												Insert_section DayOfWeek.onSunday End-Insert
@@ -288,7 +298,7 @@ Status Final
 										end-when
 									Mar 26 use: Insert_section annunciation End-Insert
 									Apr 23 use: Insert_section Various.saints End-Insert
-									Apr 25, 30 use: Insert_section Various.apostles End-Insert
+									Apr 25, 30 use: Insert_section Various.apostle End-Insert
 									May 2, 25 use: Insert_section Various.saints End-Insert
 									May 8, 10 use: Insert_section DayOfWeek.onThursday End-Insert
 									May 21 use: Insert_section Various.apostles End-Insert
@@ -346,8 +356,8 @@ Status Final
 											Sunday use:
 												Insert_section DayOfWeek.onSunday End-Insert
 												Rubric sid And End-Rubric
-												Insert_section Various.apostles End-Insert
-											otherwise use: Insert_section Various.apostles End-Insert
+												Insert_section Various.apostle End-Insert
+											otherwise use: Insert_section Various.apostle End-Insert
 										end-when
 									Aug 6 use:
 										Insert_section bk.ap.me.m08.sections.d06.communion_title End-Insert
@@ -463,16 +473,16 @@ Status Final
 											Sunday use:
 												Insert_section DayOfWeek.onSunday End-Insert
 												Rubric sid And End-Rubric
-												Insert_section Various.apostles End-Insert
-											otherwise use: Insert_section Various.apostles End-Insert
+												Insert_section Various.apostle End-Insert
+											otherwise use: Insert_section Various.apostle End-Insert
 										end-when
 									Oct 6, 9, 18, 23 use: 
 										when-name-of-day-is
 											Sunday use:
 												Insert_section DayOfWeek.onSunday End-Insert
 												Rubric sid And End-Rubric
-												Insert_section Various.apostles End-Insert
-											otherwise use: Insert_section Various.apostles End-Insert
+												Insert_section Various.apostle End-Insert
+											otherwise use: Insert_section Various.apostle End-Insert
 										end-when
 									Oct 26 use:
 										when-name-of-day-is
@@ -508,8 +518,8 @@ Status Final
 											Sunday use:
 												Insert_section DayOfWeek.onSunday End-Insert
 												Rubric sid And End-Rubric
-												Insert_section Various.apostles End-Insert
-											otherwise use: Insert_section Various.apostles End-Insert
+												Insert_section Various.apostle End-Insert
+											otherwise use: Insert_section Various.apostle End-Insert
 										end-when
 									Nov 21, 25 use:
 										when-name-of-day-is
@@ -560,7 +570,7 @@ Status Final
 												Insert_section DayOfWeek.onSunday End-Insert
 												Rubric sid And End-Rubric
 												Insert_section Various.righteous End-Insert //for dAC
-											otherwise use: Insert_section Various.apostles End-Insert
+											otherwise use: Insert_section Various.apostle End-Insert
 										end-when
 									
 									otherwise use: Insert_section DayOfWeek End-Insert
@@ -669,6 +679,11 @@ Status Final
 	Section Various
 		Section angels
 			Insert_section DayOfWeek.onMonday End-Insert
+		End-Section
+		Section apostle
+			Insert_section bk.ap.da.sections.d5.communion_title End-Insert
+			Media sid da.d5_gr_GR_cog.daLI.CommunionHymnAlt.text End-Media
+			Hymn sid psa18.v5alt.text @ver sid Allilouia End-Hymn
 		End-Section
 		Section apostles
 			Insert_section DayOfWeek.onThursday End-Insert
