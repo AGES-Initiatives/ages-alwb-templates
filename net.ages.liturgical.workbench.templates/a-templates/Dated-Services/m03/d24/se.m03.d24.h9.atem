@@ -1,6 +1,6 @@
 Template se.m03.d24.h9 
 
-Status NA
+Status Final
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -31,6 +31,28 @@ Status NA
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
-	Insert_section HR.Lent_h9__.begin End-Insert
+	when-movable-cycle-day-is
+		56 use:
+			Section Instance22
+				Title role desig sid ho.s09_gr_GR_cog.hoH9.title End-Title
+				Insert_section HR._01_Intro_ End-Insert
+				Insert_section HR._02_Psalms__.h9 End-Insert
+				Reading sid DoxaPatri.text End-Reading
+				Insert_section TI.a.com.akathist End-Insert
+				Insert_section AP.NM.tr1_.hymn End-Insert
+				Insert_section TI.a.bf End-Insert
+				Insert_section AP.NM.me1_.hymn End-Insert
+				Insert_section HR._03__.h9 End-Insert
+				Insert_section TI.k.com.akathist End-Insert
+				Insert_section KO.NM.tr1_.hymn End-Insert
+				Insert_section TI.k.bf End-Insert
+				Insert_section KO.NM.me1_.hymn End-Insert
+				Insert_section HR._04__.h1369 End-Insert
+				Insert_section HR._06_PrayerOfHour__.h9 End-Insert
+				Insert_section HR._07_Dismissal End-Insert
+			End-Section
+		otherwise use:
+			Insert_section HR.Lent_h9__.begin End-Insert
+	end-when
 
 End-Template

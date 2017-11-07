@@ -1,6 +1,6 @@
-Template se.m03.d30.h9 
+Template se.m03.d31.li8
 
-Status Final
+Status Review
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -15,12 +15,12 @@ Status Final
 	import roles.*
 
 	Head 
-		Set_Date month 3 day 30 year 2018 End_Date
+		Set_Date month 3 day 31 year 2018 End_Date
 			Page_Header_Even
-				center @lookup sid h9.pdf.header sid d.on lang L2 @date lang L2
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @lookup sid h9.pdf.header sid d.on lang L2 @date lang L2
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -31,6 +31,10 @@ Status Final
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
-	Insert_section HR.Lent_h9__.begin End-Insert
+	when-movable-cycle-day-is 1 thru 127 use:
+		Insert_section mc.map.li.Section02 End-Insert
+		otherwise use:
+		
+	end-when	
 
 End-Template
