@@ -1,0 +1,44 @@
+Template se.m05.d28.li8 
+
+Status Draft
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 5 day 28 year 2018 End_Date
+			Page_Header_Even
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	when-movable-cycle-day-is
+		92, 95, 99, 102, 106, 109, 110, 113, 118, 119, 120, 121, 127 use: 
+			Insert_section mc.map.li.Section02 End-Insert
+		79 thru 83 use: //Thomas week
+		84 use: //Thomas Saturday
+		// various weekdays
+		108 use: //OC Leavetaking of Blindman
+		111 use: //OC After Ascension
+	end-when	
+
+End-Template

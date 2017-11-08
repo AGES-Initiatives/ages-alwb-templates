@@ -15,7 +15,7 @@ Status Final
 	import roles.*
 
 	Head 
-		Set_Date month 5 day 26 End_Date
+		Set_Date month 5 day 26 year 2018 End_Date
 			Page_Header_Even
 				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L1 
 			End_Page_Header_Even
@@ -37,78 +37,12 @@ Status Final
 	End-Preface
 
 	when-movable-cycle-day-is
-		89 thru 110 use: 
-			Section Instance01
-				Insert_section mc.map.ve.Section01 End-Insert
-			End-Section
-			
-		111 use: 
-			Section Instance02
-				Break line End_Break
-				Rubric rid me.meR001 End-Rubric
-				Break line End_Break
-				Section pe_me
-					Para<bnr>sid book.Pentecostarion.name</>End-Para
-					Insert_section Selector_ServiceTitle.pe_vespers_on_day_before End-Insert
-					Set_Date month 5 day 25 End_Date
-						Para<bnr>sid book.Menaion.name</>End-Para
-						Reading<bnr>rid me.meDate.text</>End-Reading
-						Reading rid me.meCommemoration.text End-Reading
-					Set_Date month 0 day 0 End_Date
-					Break line End_Break
-					Title<bnr>sid ve.html.tab</>End-Title
-				End-Section
-				Insert_section VE._01_Beginning__.vespers End-Insert
-				Insert_section VE._02_Kekragaria__.mode1__.for6 End-Insert
-				Insert_section TI.stp.f End-Insert
-				Insert_section VE._03_Stichera__.pe__.i_123as567 End-Insert
-				Set_Date month 5 day 25 End_Date
-					Insert_section TI.s._06_forerunner End-Insert
-					Insert_section VE._03_Stichera__.me__.p_123as8910 End-Insert
-					Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_ End-Insert
-				Set_Date month 0 day 0 End_Date
-				Insert_section TI.b.f End-Insert
-				Insert_section VE._03_Stichera__.both__.pe__.gloryasboth_.hymn End-Insert
-				Insert_section VE._04_Middle__.entrance End-Insert
-				Insert_section VE._06_Litanies__.fullektenia End-Insert
-				Set_Date month 5 day 25 End_Date
-					Insert_section VE._08_Aposticha__.me__.p_forerunner34 End-Insert
-					Insert_section VE._08_Aposticha__.glory__.me__.gloryasglory_ End-Insert
-				Set_Date month 0 day 0 End_Date
-				Insert_section TI.b.f End-Insert
-				Insert_section VE._08_Aposticha__.both__.pe__.gloryasboth_.hymn End-Insert				
-				Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
-				Set_Date month 5 day 25 End_Date
-					Insert_section AP.me1_ End-Insert
-				Set_Date month 0 day 0 End_Date
-				Insert_section AP.gloryboth__.af End-Insert
-				Insert_section VE._10_End__.wisdom End-Insert
-				Set_Date month 5 day 25 End_Date
-					Insert_section VE._11_Dismissal__.commemoration End-Insert
-				Set_Date month 0 day 0 End_Date
-			End-Section
-			
-		112 thru 120 use:
-			Section Instance03
-				Insert_section mc.map.ve.Section01 End-Insert
-			End-Section
-			
-		121 use:
-			Section Instance04
-				Break line End_Break
-				Rubric rid me.meR001 End-Rubric
-				Break line End_Break
-				
-			End-Section
-			
-		122 thru 127 use:
-			Section Instance05
-				Insert_section mc.map.ve.Section01 End-Insert
-			End-Section
-			
-		otherwise use:
-			Section Instance06
-			End-Section
+		83 use: //Thomas Friday
+		84 use: //Thomas Saturday
+		85, 92, 95, 99, 102, 106, 109, 110, 113, 118, 119, 120, 121, 126, 127 use: Insert_section mc.map.ve.Section01 End-Insert
+		// various weekdays
+		108 use: //Leavetaking of Blindman
+		111, 112, 114, 115, 116, 117, 122, 123, 124, 125 use: 
 	end-when	
 
 End-Template

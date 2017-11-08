@@ -1,0 +1,48 @@
+Template se.m05.d27.ma 
+
+Status Final
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 5 day 27 year 2018 End_Date
+			Page_Header_Even
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L1 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	when-movable-cycle-day-is
+		83 use: //Thomas Friday
+		84 use: //Thomas Saturday
+		85, 92, 95, 99, 102, 106, 109, 110, 113, 118, 119, 120, 121, 126, 127 use: Insert_section mc.map.ma.Section01 End-Insert
+		// various weekdays
+		108 use: //Leavetaking of Blindman
+		111, 112, 114, 115, 116, 117, 122, 123, 124, 125 use: 
+	end-when	
+
+End-Template
