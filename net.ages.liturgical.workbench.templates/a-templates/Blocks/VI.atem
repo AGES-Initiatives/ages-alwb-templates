@@ -38,6 +38,46 @@ Status Review
 	//Sections with names not ending in _ have no options
 
 	Section _01_Beginning__
+		Section Hierarchical__
+			Section with_anoixantaria
+				when-movable-cycle-day-is
+					72, 73, 74, 75, 76, 77, 109 use:
+						Section pascha //needs work
+							Actor sid Priest End-Actor
+							Dialog sid enarxis03 End-Dialog
+							Dialog<i>sid res04p</>End-Dialog
+							Insert_section PE.Pascha_Beginning End-Insert
+							Actor sid Deacon End-Actor
+							Insert_section LN.GreatLitany01 End-Insert
+							Actor sid Priest End-Actor
+							Dialog sid exc01<i>sid res04p</>End-Dialog
+						End-Section
+					otherwise use:
+						Insert_section with_anoixantaria.enarxis End-Insert
+						Section introductorypsalm
+							when-movable-cycle-day-is 78 thru 108 use:
+								Actor sid Hierarch End-Actor
+								Insert_section PE.ChristIsRisen.once End-Insert
+								Actor sid Choir End-Actor
+								Insert_section PE.ChristIsRisen.twice End-Insert
+								Actor sid Hierarch End-Actor
+							otherwise use:
+								Actor sid Hierarch End-Actor
+								Reading sid DefteProskinisomen1 End-Reading
+								Reading sid DefteProskinisomen2 End-Reading
+								Reading sid DefteProskinisomen3 End-Reading
+							end-when
+					//		Media sid hoVE.Ps103.text End-Media
+							Insert_section with_anoixantaria.introductorypsalm.Psalm_103_Verses End-Insert
+							Insert_section with_anoixantaria.introductorypsalm.anoixantaria End-Insert
+							Break page End_Break
+							Insert_section VE.lamplighting_prayers End-Insert
+							Break page End_Break
+						End-Section
+						Insert_section with_anoixantaria.litany End-Insert
+				end-when
+			End-Section
+		End-Section
 		Section with_anoixantaria
 			when-movable-cycle-day-is
 				72, 73, 74, 75, 76, 77, 109 use:
@@ -170,9 +210,19 @@ Status Review
 					Reading sid ps_gr_GR_cog.psa33.v10.text End-Reading
 				End-Section
 			End-Section	
-			Section part3_artoclasiahymn
-				Actor sid Choir End-Actor
-				Hymn sid psa33.v11.text @ver End-Hymn
+			Section part3_artoclasiahymn__
+				Section once_choir
+					Actor sid Choir End-Actor
+					Hymn sid psa33.v11.text @ver End-Hymn
+				End-Section
+				Section once_clergy
+					Actor sid Clergy End-Actor
+					Hymn sid psa33.v11.text @ver End-Hymn
+				End-Section
+				Section twice_choir
+					Actor sid Choir End-Actor
+					Hymn sid psa33.v11.text @ver <r>sid Twice</>End-Hymn
+				End-Section
 			End-Section
 			Section part4_end
 				Actor sid Deacon End-Actor
