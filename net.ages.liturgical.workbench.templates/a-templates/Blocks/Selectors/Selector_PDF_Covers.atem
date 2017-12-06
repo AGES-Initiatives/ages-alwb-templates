@@ -1,0 +1,56 @@
+Template Selector_PDF_Covers
+
+Status Draft
+
+	import client_gr_GR_cog.*
+	import da.*
+	import me.*
+	import oc.*
+	import pe.*
+	import tr.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 3 day 6 year 2017 End_Date
+	End_Head
+
+	Section mode_on_evening_before
+		when-name-of-day-is
+			Sunday use: Title role cover4 rid ocVE.Stichera1.mode sid OnSaturday sid Evening End-Title
+			Monday use: Title role cover4 rid ocVE.Stichera1.mode sid OnSunday sid Evening End-Title
+			Tuesday use: Title role cover4 rid ocVE.Stichera1.mode sid OnMonday sid Evening End-Title
+			Wednesday use: Title role cover4 rid ocVE.Stichera1.mode sid OnTuesday sid Evening End-Title
+			Thursday use: Title role cover4 rid ocVE.Stichera1.mode sid OnWednesday sid Evening End-Title
+			Friday use: Title role cover4 rid ocVE.Stichera1.mode sid OnThursday sid Evening End-Title
+			Saturday use: Title role cover4 rid ocVE.Stichera1.mode sid OnFriday sid Evening End-Title
+		end-when
+	End-Section
+	
+	Section on_evening_before
+		when-name-of-day-is
+			Sunday use: Title role cover4 sid d.onSaturdayEvening End-Title
+			Monday use: Title role cover4 sid d.onSundayEvening End-Title
+			Tuesday use: Title role cover4 sid d.onMondayEvening End-Title
+			Wednesday use: Title role cover4 sid d.onTuesdayEvening End-Title
+			Thursday use: Title role cover4 sid d.onWednesdayEvening End-Title
+			Friday use: Title role cover4 sid d.onThursdayEvening End-Title
+			Saturday use: Title role cover4 sid d.onFridayEvening End-Title
+		end-when
+	End-Section
+
+
+
+
+
+End-Template
