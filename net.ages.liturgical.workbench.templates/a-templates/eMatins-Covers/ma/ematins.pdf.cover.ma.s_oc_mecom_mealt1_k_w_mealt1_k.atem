@@ -1,11 +1,13 @@
-Template ematins.pdf.cover.ve.oc_me1_mealt1
+Template ematins.pdf.cover.ma.s_oc_mecom_mealt1_k_w_mealt1_k
 
 Status NA
 
 	import da.*
 	import oc.*
 	import me.*
-
+	import eo.*
+	
+	import he.k_en_US_public.*
 	import ematinscovers_en_US_ematins.*
 
 	import actors_gr_GR_cog.*
@@ -20,17 +22,24 @@ Status NA
 	import roles.*
 	import rules.*
 	
+//	Head
+//		Set_Date month 10 day 11 End_Date
+//	End_Head
+	
 	Switch-Version L2 End-Switch-Version
 
 		Section title
 			Title role cover0 sid logo.text End-Title
-			Title role cover1 sid ve.pdf.cover End-Title
-			Insert_section Selector_PDF_Covers.on_evening_before End-Insert
-			Title role cover3 sid d.for ldp @Service_Date End-Title 	
-		End-Section
-		Section modeofweek
-			Title role cover5 sid book.Octoechos.name sid d.delimiter rid ocVE.Stichera1.mode End-Title
-			Insert_section Selector_PDF_Covers.on_evening_before End-Insert
+			Title role cover1 sid ma.pdf.cover End-Title 	//Service
+			Title role cover3 sid d.for ldp @Service_Date End-Title	//Date
+		End-Section 
+		Section mode_eothinon
+			when-name-of-day-is 
+				Sunday use: 
+					Title role cover5 sid book.Octoechos.name sid d.delimiter rid ocVE.Stichera1.mode End-Title
+					Insert_section Selector_PDF_Covers.on_morning End-Insert
+					Title role cover4 sid Eothinon ldp @Eothinon End-Title
+			end-when
 		End-Section
 		Section commeoration
 			when-name-of-day-is
@@ -51,22 +60,20 @@ Status NA
 						Dec 26 thru 31 use:
 							Title role cover5 sid book.Menaion.name sid d.delimiter sid me.m12.dAC_gr_GR_cog.meDate.text End-Title
 							Title role cover4 sid me.m12.dAC_gr_GR_cog.meCommemoration.text End-Title
-						otherwise use: 
-							Title role cover5 sid book.Menaion.name sid d.delimiter rid meDate.text End-Title
-							Title role cover4 rid meShortCommemoration1.text End-Title
 					end-when
 					Title role cover5 sid book.MeSupplement.name sid d.delimiter rid meDate.text End-Title
 					Title role cover4 rid alt1.meShortCommemoration1.text End-Title
 				otherwise use: 
-					Title role cover5 sid book.Menaion.name sid d.delimiter rid meDate.text End-Title
-					Title role cover4 rid meShortCommemoration1.text End-Title
 					Title role cover5 sid book.MeSupplement.name sid d.delimiter End-Title
 					Title role cover4 rid alt1.meShortCommemoration1.text End-Title
 			end-when
 		End-Section
-		
+		Section katavasia
+			Insert_section KA._title End-Insert	//Katavasia Moveable
+		End-Section
+
 		Title role cover6 sid pref.generation_alwb.cover.version End-Title //GE or E
-	
+		
 	Switch-Version Both End-Switch-Version	
-	
+
 End-Template

@@ -1,4 +1,4 @@
-Template ematins.pdf.cover.ma.oc_me1_mealt1
+Template ematins.pdf.cover.ma.s_oc_mecom_k_w_me1_k
 
 Status NA
 
@@ -31,13 +31,13 @@ Status NA
 		Section title
 			Title role cover0 sid logo.text End-Title
 			Title role cover1 sid ma.pdf.cover End-Title 	//Service
-			Title role cover3 ldp @Service_Date End-Title	//Date
+			Title role cover3 sid d.for ldp @Service_Date End-Title	//Date
 		End-Section 
 		Section mode_eothinon
-			Title role cover5 sid book.Octoechos.name sid d.delimiter rid ocVE.Stichera1.mode End-Title
-			Insert_section Selector_PDF_Covers.on_morning End-Insert
 			when-name-of-day-is 
 				Sunday use: 
+					Title role cover5 sid book.Octoechos.name sid d.delimiter rid ocVE.Stichera1.mode End-Title
+					Insert_section Selector_PDF_Covers.on_morning End-Insert
 					Title role cover4 sid Eothinon ldp @Eothinon End-Title
 			end-when
 		End-Section
@@ -60,29 +60,17 @@ Status NA
 						Dec 26 thru 31 use:
 							Title role cover5 sid book.Menaion.name sid d.delimiter sid me.m12.dAC_gr_GR_cog.meDate.text End-Title
 							Title role cover4 sid me.m12.dAC_gr_GR_cog.meCommemoration.text End-Title
-						otherwise use: 
-							Title role cover5 sid book.Menaion.name sid d.delimiter rid meDate.text End-Title
-							Title role cover4 rid meShortCommemoration1.text End-Title
 					end-when
-					Title role cover5 sid book.MeSupplement.name sid d.delimiter rid meDate.text End-Title
-					Title role cover4 rid alt1.meShortCommemoration1.text End-Title
 				otherwise use: 
 					Title role cover5 sid book.Menaion.name sid d.delimiter rid meDate.text End-Title
 					Title role cover4 rid meShortCommemoration1.text End-Title
-					Title role cover5 sid book.MeSupplement.name sid d.delimiter End-Title
-					Title role cover4 rid alt1.meShortCommemoration1.text End-Title
 			end-when
 		End-Section
 		Section katavasia
-			Insert_section KA._title End-Insert	//Katavasia Moveable
+			Insert_section KA._title End-Insert
 		End-Section
 
-	Switch-Version Both End-Switch-Version	
-		Break line End_Break
-		Break line End_Break
-	Switch-Version L2 End-Switch-Version
-
-		Title role cover5 sid pref.generation_alwb.cover.version End-Title //GE or E
+		Title role cover6 sid pref.generation_alwb.cover.version End-Title //GE or E
 		
 	Switch-Version Both End-Switch-Version	
 
