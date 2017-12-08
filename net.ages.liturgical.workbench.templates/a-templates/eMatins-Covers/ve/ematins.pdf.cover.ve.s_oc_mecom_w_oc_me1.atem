@@ -1,0 +1,65 @@
+Template ematins.pdf.cover.ve.s_oc_mecom_w_oc_me1
+
+Status NA
+
+	import da.*
+	import oc.*
+	import me.*
+
+	import ematinscovers_en_US_ematins.*
+
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+
+	import iTags.*
+	import bTags.*
+	import roles.*
+	import rules.*
+	
+	Switch-Version L2 End-Switch-Version
+
+		Section title
+			Title role cover0 sid logo.text End-Title
+			Title role cover1 sid ve.pdf.cover End-Title 	//Service
+			Insert_section Selector_PDF_Covers.on_evening_before End-Insert
+			Title role cover3 sid d.for ldp @Service_Date End-Title 	
+		End-Section
+		Section modeofweek
+			Title role cover5 sid book.Octoechos.name sid d.delimiter rid ocVE.Stichera1.mode End-Title
+			Insert_section Selector_PDF_Covers.on_evening_before End-Insert
+		End-Section
+		Section commeoration
+			when-name-of-day-is
+				Sunday use:
+					when-date-is
+						Jul 13 thru 19 use:
+							Title role cover5 sid book.Menaion.name sid d.delimiter sid me.m07.dHF_gr_GR_cog.meDate.text End-Title
+							Title role cover4 sid me.m07.dHF_gr_GR_cog.meCommemoration.text End-Title
+						Oct 11 thru 17 use:
+							Title role cover5 sid book.Menaion.name sid d.delimiter sid me.m10.dHF_gr_GR_cog.meDate.text End-Title
+							Title role cover4 sid me.m10.dHF_gr_GR_cog.meCommemoration.text End-Title
+						Dec 11 thru 17 use:
+							Title role cover5 sid book.Menaion.name sid d.delimiter sid me.m12.dFF_gr_GR_cog.meDate.text End-Title
+							Title role cover4 sid me.m12.dFF_gr_GR_cog.meCommemoration.text End-Title
+						Dec 18 thru 24 use:
+							Title role cover5 sid book.Menaion.name sid d.delimiter sid me.m12.dBC_gr_GR_cog.meDate.text End-Title
+							Title role cover4 sid me.m12.dBC_gr_GR_cog.meCommemoration.text End-Title
+						Dec 26 thru 31 use:
+							Title role cover5 sid book.Menaion.name sid d.delimiter sid me.m12.dAC_gr_GR_cog.meDate.text End-Title
+							Title role cover4 sid me.m12.dAC_gr_GR_cog.meCommemoration.text End-Title
+					end-when
+				otherwise use: 
+					Title role cover5 sid book.Menaion.name sid d.delimiter rid meDate.text End-Title
+					Title role cover4 rid meShortCommemoration1.text End-Title
+			end-when
+		End-Section
+		
+		Title role cover6 sid pref.generation_alwb.cover.version End-Title //GE or E
+	
+	Switch-Version Both End-Switch-Version	
+	
+End-Template
