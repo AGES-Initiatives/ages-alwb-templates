@@ -1,11 +1,15 @@
-Template ematins.pdf.cover.ve.s_oc_me1_w_oc_me
+Template ematins.pdf.cover.ve.tr_s_oc_ome1_w_oc_me1
 
 Status NA
 
 	import da.*
 	import oc.*
 	import me.*
-
+	import eo.*
+	import tr.*
+	import pe.*
+	
+	import he.k_en_US_public.*
 	import ematinscovers_en_US_ematins.*
 
 	import actors_gr_GR_cog.*
@@ -21,6 +25,7 @@ Status NA
 	import rules.*
 	
 	Switch-Version L2 End-Switch-Version
+	
 
 		Section title
 			Title role cover0 sid logo.text End-Title
@@ -29,17 +34,26 @@ Status NA
 			Title role cover3 sid d.for ldp @Service_Date End-Title 	
 		End-Section
 		Section modeofweek
-			Title role cover5 sid book.Octoechos.name sid d.delimiter rid ocVE.Stichera1.mode End-Title
-			Insert_section ematins.pdf.cover.lookup.on_evening_before End-Insert
+			when-movable-cycle-day-is
+				1 thru 71 use:
+					Insert_section ematins.pdf.cover.lookup.tr_modeofweek_ve End-Insert
+				otherwise use:
+					Title role cover5 sid book.Octoechos.name sid d.delimiter rid ocVE.Stichera1.mode End-Title
+					Insert_section ematins.pdf.cover.lookup.on_evening_before End-Insert
+			end-when
+		End-Section
+		Section moveable
+			when-movable-cycle-day-is
+				1 thru 65 use:
+					Insert_section ematins.pdf.cover.lookup.tr_vespers_on_day_before End-Insert
+			end-when
 		End-Section
 		Section commeoration
-			when-name-of-day-is
-				Sunday use:
-					Title role cover5 sid book.Menaion.name sid d.delimiter rid meDate.text End-Title
-					Title role cover4 rid meShortCommemoration1.text End-Title
+			when-movable-cycle-day-is
+				1, 8, 14, 15, 21, 22, 28, 29, 36, 43, 50, 54, 56, 57, 63, 64 use:
 				otherwise use:
 					Title role cover5 sid book.Menaion.name sid d.delimiter rid meDate.text End-Title
-					Title role cover4 rid meCommemoration.text End-Title
+					Title role cover4 rid meShortCommemoration1.text End-Title
 			end-when
 		End-Section
 		

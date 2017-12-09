@@ -1,4 +1,4 @@
-Template ematins.pdf.cover.ma.s_oc_me1_k_w_me1_k
+Template ematins.pdf.cover.ve.tr_s_oc_me1_w_me1 // use starting Jan 24
 
 Status NA
 
@@ -6,6 +6,8 @@ Status NA
 	import oc.*
 	import me.*
 	import eo.*
+	import tr.*
+	import pe.*
 	
 	import he.k_en_US_public.*
 	import ematinscovers_en_US_ematins.*
@@ -22,35 +24,34 @@ Status NA
 	import roles.*
 	import rules.*
 	
-//	Head
-//		Set_Date month 10 day 11 End_Date
-//	End_Head
-	
 	Switch-Version L2 End-Switch-Version
 
 		Section title
 			Title role cover0 sid logo.text End-Title
-			Title role cover1 sid ma.pdf.cover End-Title 	//Service
-			Title role cover3 sid d.for ldp @Service_Date End-Title	//Date
-		End-Section 
-		Section mode_eothinon
-			when-name-of-day-is 
-				Sunday use: 
+			Title role cover1 sid ve.pdf.cover End-Title
+			Insert_section ematins.pdf.cover.lookup.on_evening_before End-Insert
+			Title role cover3 sid d.for ldp @Service_Date End-Title 	
+		End-Section
+		Section modeofweek
+			when-name-of-day-is
+				Sunday use:
 					Title role cover5 sid book.Octoechos.name sid d.delimiter rid ocVE.Stichera1.mode End-Title
-					Insert_section ematins.pdf.cover.lookup.on_morning End-Insert
-					Title role cover4 sid Eothinon ldp @Eothinon End-Title
+					Insert_section ematins.pdf.cover.lookup.on_evening_before End-Insert
+			end-when
+		End-Section
+		Section moveable
+			when-movable-cycle-day-is
+				1, 8, 15, 16, 17, 18, 19, 20, 21, 22, 28, 29, 36, 43, 50, 54, 56, 57, 63, 64 use:
+					Insert_section ematins.pdf.cover.lookup.tr_vespers_on_day_before End-Insert
 			end-when
 		End-Section
 		Section commeoration
 			Title role cover5 sid book.Menaion.name sid d.delimiter rid meDate.text End-Title
 			Title role cover4 rid meShortCommemoration1.text End-Title
 		End-Section
-		Section katavasia
-			Insert_section KA._title End-Insert	//Katavasia Moveable
-		End-Section
-
-		Title role cover6 sid pref.generation_alwb.cover.version End-Title //GE or E
 		
+		Title role cover6 sid pref.generation_alwb.cover.version End-Title
+	
 	Switch-Version Both End-Switch-Version	
-
+	
 End-Template
