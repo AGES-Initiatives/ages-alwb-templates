@@ -1,4 +1,4 @@
-Template ematins.pdf.cover.ve.tr_s_oc_ome1_w_oc_me1
+Template ematins.pdf.cover.ma.tr_s_oc_ome1_k_w_oc_me1
 
 Status NA
 
@@ -6,8 +6,6 @@ Status NA
 	import oc.*
 	import me.*
 	import eo.*
-	import tr.*
-	import pe.*
 	
 	import he.k_en_US_public.*
 	import ematinscovers_en_US_ematins.*
@@ -24,36 +22,51 @@ Status NA
 	import roles.*
 	import rules.*
 	
-	Switch-Version L2 End-Switch-Version
+//	Head
+//		Set_Date month 10 day 11 End_Date
+//	End_Head
 	
+	Switch-Version L2 End-Switch-Version
 
 		Section title
 			Title role cover0 sid logo.text End-Title
-			Title role cover1 sid ve.pdf.cover End-Title
-			Insert_section ematins.pdf.cover.lookup.on_evening_before End-Insert
-			Title role cover3 sid d.for ldp @Service_Date End-Title 	
-		End-Section
+			Title role cover1 sid ma.pdf.cover End-Title
+			Title role cover3 sid d.for ldp @Service_Date End-Title
+		End-Section 
 
 		when-movable-cycle-day-is
 			128 thru 365 use:
 				Section normal
-					Section modeofweek
+					Section mode_eothinon
 						Title role cover5 sid book.Octoechos.name sid d.delimiter rid ocVE.Stichera1.mode End-Title
-						Insert_section ematins.pdf.cover.lookup.on_evening_before End-Insert
+						Insert_section ematins.pdf.cover.lookup.on_morning End-Insert
+						when-name-of-day-is 
+							Sunday use: 
+								Title role cover4 sid Eothinon ldp @Eothinon End-Title
+						end-when
 					End-Section
 					Section commeoration
 						Title role cover5 sid book.Menaion.name sid d.delimiter rid meDate.text End-Title
 						Title role cover4 rid meShortCommemoration1.text End-Title
 					End-Section
+					Section katavasia
+						when-name-of-day-is
+							Sunday use:	Insert_section KA._title End-Insert
+						end-when
+					End-Section
 				End-Section
-				
-			1 thru 65 use:
+	
+			1 thru 63 use:
 				Section triodion_lent
-					Section modeofweek
-						Insert_section ematins.pdf.cover.lookup.tr_modeofweek_ve End-Insert
+					Section mode_eothinon
+						Insert_section ematins.pdf.cover.lookup.tr_modeofweek_ma End-Insert
+						when-name-of-day-is 
+							Sunday use: 
+								Title role cover4 sid Eothinon ldp @Eothinon End-Title
+						end-when
 					End-Section
 					Section moveable
-						Insert_section ematins.pdf.cover.lookup.tr_vespers_on_day_before End-Insert
+						Insert_section ematins.pdf.cover.lookup.tr_matins End-Insert
 					End-Section
 					Section commeoration
 						when-movable-cycle-day-is
@@ -63,13 +76,17 @@ Status NA
 								Title role cover4 rid meShortCommemoration1.text End-Title
 						end-when
 					End-Section
-
-
+					Section katavasia
+						when-movable-cycle-day-is
+							1, 8, 15, 22, 28, 29, 36, 43, 50, 56, 57, 63, 64 use:
+								Insert_section KA._title End-Insert
+						end-when
+					End-Section
 				End-Section
 		end-when
 
 		Title role cover6 sid pref.generation_alwb.cover.version End-Title
-	
+		
 	Switch-Version Both End-Switch-Version	
-	
+
 End-Template
