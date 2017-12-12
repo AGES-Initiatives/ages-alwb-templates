@@ -1,0 +1,88 @@
+Template ematins.pdf.cover.ve.tr_s_oc_mecom_w_me //Feb 3 thru 9
+
+Status NA
+
+	import da.*
+	import oc.*
+	import me.*
+	import eo.*
+	import tr.*
+	import pe.*
+	
+	import ematinscovers_en_US_ematins.*
+
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+
+	import iTags.*
+	import bTags.*
+	import roles.*
+	import rules.*
+	
+	Switch-Version L2 End-Switch-Version
+
+		Section title
+			Title role cover0 sid logo.text End-Title
+			Title role cover1 sid ve.pdf.cover End-Title
+			Insert_section ematins.pdf.cover.lookup.on_evening_before End-Insert
+			Title role cover3 sid d.for ldp @Service_Date End-Title 	
+		End-Section
+		
+		when-movable-cycle-day-is
+			128 thru 365 use:
+				Section normal
+					Section modeofweek
+						when-name-of-day-is
+							Sunday use:
+								Title role cover5 sid book.Octoechos.name sid d.delimiter rid ocVE.Stichera1.mode End-Title
+								Insert_section ematins.pdf.cover.lookup.on_evening_before End-Insert
+						end-when
+					End-Section
+					Section commeoration
+						when-name-of-day-is
+							Sunday use:
+								Insert_section ematins.pdf.cover.lookup.when_sunday_dates End-Insert
+							otherwise use:
+								Title role cover5 sid book.Menaion.name sid d.delimiter rid meDate.text End-Title
+								Title role cover4 rid meCommemoration.text End-Title
+						end-when
+					End-Section
+				End-Section
+				
+			1 thru 22 use:
+				Section triodion
+					Section modeofweek
+						when-name-of-day-is
+							Sunday use:
+								Title role cover5 sid book.Octoechos.name sid d.delimiter rid ocVE.Stichera1.mode End-Title
+								Insert_section ematins.pdf.cover.lookup.on_evening_before End-Insert
+						end-when
+					End-Section
+					Section moveable
+						when-movable-cycle-day-is
+							1, 8, 15, 21, 21, 22 use:
+								Insert_section ematins.pdf.cover.lookup.tr_vespers_on_day_before End-Insert
+						end-when
+					End-Section
+					Section commeoration
+						when-name-of-day-is
+							Sunday use:
+								Insert_section ematins.pdf.cover.lookup.when_sunday_dates End-Insert
+							otherwise use:
+								Title role cover5 sid book.Menaion.name sid d.delimiter rid meDate.text End-Title
+								Title role cover4 rid meShortCommemoration1.text End-Title
+						end-when
+					End-Section
+				End-Section
+
+		end-when
+		
+		Title role cover6 sid pref.generation_alwb.cover.version End-Title
+	
+	Switch-Version Both End-Switch-Version	
+	
+End-Template
