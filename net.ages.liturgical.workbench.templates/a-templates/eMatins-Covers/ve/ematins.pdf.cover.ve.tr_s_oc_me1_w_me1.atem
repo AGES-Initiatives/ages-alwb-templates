@@ -59,13 +59,17 @@ Status NA
 					End-Section
 					Section moveable
 						when-movable-cycle-day-is
-							1, 8, 15, 21, 21, 22 use:
+							1, 8, 14, 15, 21, 22 use:
 								Insert_section ematins.pdf.cover.lookup.tr_vespers_on_day_before End-Insert
 						end-when
 					End-Section
 					Section commeoration
-						Title role cover5 sid book.Menaion.name sid d.delimiter rid meDate.text End-Title
-						Title role cover4 rid meShortCommemoration1.text End-Title
+						when-movable-cycle-day-is
+							14 use:
+							otherwise use:
+								Title role cover5 sid book.Menaion.name sid d.delimiter rid meDate.text End-Title
+								Title role cover4 rid meShortCommemoration1.text End-Title
+						end-when
 					End-Section
 				End-Section
 
