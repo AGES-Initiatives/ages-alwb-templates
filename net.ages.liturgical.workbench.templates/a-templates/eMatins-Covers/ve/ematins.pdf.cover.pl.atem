@@ -1,0 +1,49 @@
+Template ematins.pdf.cover.pl
+
+Status NA
+
+	import ematinscovers_en_US_ematins.*
+
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+
+	import iTags.*
+	import bTags.*
+	import roles.*
+	import rules.*
+	
+	Switch-Version L2 End-Switch-Version
+	
+		Section title
+			Title role cover0 sid logo.text End-Title
+			Title role cover1 sid pl.pdf.cover End-Title
+			Insert_section ematins.pdf.cover.lookup.on_evening_before End-Insert
+			Title role cover3 sid d.for ldp @Service_Date End-Title 	
+		End-Section
+
+		Section lent
+			Section modeofweek
+				Insert_section ematins.pdf.cover.lookup.tr_modeofweek_ve End-Insert
+			End-Section
+			Section moveable
+				Insert_section ematins.pdf.cover.lookup.tr_vespers_on_day_before End-Insert
+			End-Section
+			Section commeoration
+				when-movable-cycle-day-is
+					54, 56, 63 use:
+					otherwise use:
+						Title role cover5 sid book.Menaion.name sid d.delimiter rid me.meDate.text End-Title
+						Title role cover4 rid me.meShortCommemoration1.text End-Title
+				end-when
+			End-Section
+		End-Section
+	
+		Title role cover5 sid pref.generation_alwb.cover.version End-Title
+	
+	Switch-Version Both End-Switch-Version	
+	
+End-Template

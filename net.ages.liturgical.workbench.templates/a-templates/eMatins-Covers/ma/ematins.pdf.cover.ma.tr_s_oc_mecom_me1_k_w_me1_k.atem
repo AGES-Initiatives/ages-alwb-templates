@@ -1,4 +1,4 @@
-Template ematins.pdf.cover.ma.tr_s_oc_me1_k_w_me1_k
+Template ematins.pdf.cover.ma.tr_s_oc_mecom_me1_k_w_me1_k
 
 Status NA
 
@@ -30,30 +30,38 @@ Status NA
 
 		Section title
 			Title role cover0 sid logo.text End-Title
-			Title role cover1 sid ma.pdf.cover End-Title
-			Title role cover3 sid d.for ldp @Service_Date End-Title
+			Title role cover1 sid ma.pdf.cover End-Title 	//Service
+			Title role cover3 sid d.for ldp @Service_Date End-Title	//Date
 		End-Section 
 
 		when-movable-cycle-day-is
 			128 thru 365 use:
 				Section normal
 					Section mode_eothinon
+						Title role cover5 sid book.Octoechos.name sid d.delimiter rid ocVE.Stichera1.mode End-Title
+						Insert_section ematins.pdf.cover.lookup.on_morning End-Insert
 						when-name-of-day-is 
 							Sunday use: 
-								Title role cover5 sid book.Octoechos.name sid d.delimiter rid ocVE.Stichera1.mode End-Title
-								Insert_section ematins.pdf.cover.lookup.on_morning End-Insert
 								Title role cover4 sid Eothinon ldp @Eothinon End-Title
 						end-when
 					End-Section
 					Section commeoration
-						Title role cover5 sid book.Menaion.name sid d.delimiter rid meDate.text End-Title
-						Title role cover4 rid meShortCommemoration1.text End-Title
+						when-name-of-day-is
+							Sunday use:
+								Insert_section ematins.pdf.cover.lookup.when_sunday_dates End-Insert
+								Title role cover5 sid book.Menaion.name sid d.delimiter rid meDate.text End-Title
+								Title role cover4 rid meShortCommemoration1.text End-Title
+							otherwise use: 
+								Title role cover5 sid book.Menaion.name sid d.delimiter rid meDate.text End-Title
+								Title role cover4 rid meShortCommemoration1.text End-Title
+						end-when
 					End-Section
 					Section katavasia
-						Insert_section KA._title End-Insert
+						when-name-of-day-is
+							Sunday use: Insert_section KA._title End-Insert
+						end-when
 					End-Section
 				End-Section
-	
 			1 thru 63 use:
 				Section triodion_lent
 					Section mode_eothinon
@@ -72,6 +80,8 @@ Status NA
 					End-Section
 					Section commeoration
 						when-movable-cycle-day-is
+							1, 8, 15, 21, 22, 28, 29, 36, 43, 50, 57 use:
+								Insert_section ematins.pdf.cover.lookup.when_sunday_dates End-Insert
 							14 use:
 							otherwise use:
 								Title role cover5 sid book.Menaion.name sid d.delimiter rid meDate.text End-Title
@@ -84,10 +94,11 @@ Status NA
 							otherwise use: Insert_section KA._title End-Insert
 						end-when
 					End-Section
+					
 				End-Section
 		end-when
 
-		Title role cover6 sid pref.generation_alwb.cover.version End-Title
+		Title role cover6 sid pref.generation_alwb.cover.version End-Title //GE or E
 		
 	Switch-Version Both End-Switch-Version	
 

@@ -1,0 +1,68 @@
+Template ematins.pdf.cover.ma.specific
+
+Status NA
+
+	import da.*
+	import oc.*
+	import me.*
+	import eo.*
+	import tr.*
+	import pe.*
+	
+	import he.k_en_US_public.*
+	import ematinscovers_en_US_ematins.*
+
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+
+	import iTags.*
+	import bTags.*
+	import roles.*
+	import rules.*
+	
+	Switch-Version L2 End-Switch-Version
+	
+
+		Section title
+			Title role cover0 sid logo.text End-Title
+			Title role cover1 sid ma.pdf.cover End-Title
+			Title role cover3 sid d.for ldp @Service_Date End-Title
+		End-Section
+
+		when-date-is
+			Feb 9 use:
+				when-movable-cycle-day-is
+					13 use:
+						Section commeoration
+							Title role cover5 sid book.Menaion.name sid d.delimiter sid me.m02.d02_gr_GR_cog.meDate.text End-Title
+							Rubric sid client_gr_GR_cog.cl.me.m02.d10.R001 End-Rubric
+							Title role cover4 sid me.m02.d09_gr_GR_cog.meShortCommemoration2.text End-Title
+							Title role cover5 sid book.Menaion.name sid d.delimiter sid me.m02.d10_gr_GR_cog.meDate.text End-Title
+							Title role cover4 sid me.m02.d10_gr_GR_cog.meShortCommemoration1.text End-Title
+						End-Section
+						Section katavasia
+							Insert_section KA._title End-Insert
+						End-Section
+				end-when
+			Feb 17 use:
+				when-movable-cycle-day-is
+					21 use:
+						Section moveable
+							Insert_section ematins.pdf.cover.lookup.tr_matins End-Insert
+						End-Section
+						Section commemoration
+							Title role cover5 sid book.Menaion.name sid d.delimiter rid meDate.text End-Title
+							Title role cover4 rid meShortCommemoration1.text End-Title
+						End-Section
+				end-when
+		end-when
+
+		Title role cover6 sid pref.generation_alwb.cover.version End-Title
+	
+	Switch-Version Both End-Switch-Version	
+	
+End-Template

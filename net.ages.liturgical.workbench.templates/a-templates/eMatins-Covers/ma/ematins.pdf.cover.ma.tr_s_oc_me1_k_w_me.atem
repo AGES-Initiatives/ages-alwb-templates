@@ -1,4 +1,4 @@
-Template ematins.pdf.cover.ma.tr_s_oc_me1_k_w_me1_k
+Template ematins.pdf.cover.ma.tr_s_oc_me1_k_w_me
 
 Status NA
 
@@ -47,10 +47,12 @@ Status NA
 					End-Section
 					Section commeoration
 						Title role cover5 sid book.Menaion.name sid d.delimiter rid meDate.text End-Title
-						Title role cover4 rid meShortCommemoration1.text End-Title
+						Title role cover4 rid meCommemoration.text End-Title
 					End-Section
 					Section katavasia
-						Insert_section KA._title End-Insert
+						when-name-of-day-is 
+							Sunday use: Insert_section KA._title End-Insert
+						end-when
 					End-Section
 				End-Section
 	
@@ -66,22 +68,23 @@ Status NA
 					End-Section
 					Section moveable
 						when-movable-cycle-day-is
-							1, 8, 14, 15, 21, 22, 28, 29, 36, 43, 50, 57 use:
+							1, 8, 15, 21, 22, 28, 29, 36, 43, 50, 57 use:
 								Insert_section ematins.pdf.cover.lookup.tr_matins End-Insert
 						end-when
 					End-Section
 					Section commeoration
-						when-movable-cycle-day-is
-							14 use:
-							otherwise use:
+						when-name-of-day-is 
+							Sunday use: 
 								Title role cover5 sid book.Menaion.name sid d.delimiter rid meDate.text End-Title
 								Title role cover4 rid meShortCommemoration1.text End-Title
+							otherwise use:
+							Title role cover5 sid book.Menaion.name sid d.delimiter rid meDate.text End-Title
+							Title role cover4 rid meCommemoration.text End-Title
 						end-when
 					End-Section
 					Section katavasia
-						when-movable-cycle-day-is
-							14 use:
-							otherwise use: Insert_section KA._title End-Insert
+						when-name-of-day-is 
+							Sunday use: Insert_section KA._title End-Insert
 						end-when
 					End-Section
 				End-Section
