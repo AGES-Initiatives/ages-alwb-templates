@@ -94,7 +94,13 @@ Status NA
 	Section on_evening_before
 		when-name-of-day-is
 			Sunday use: Title role cover4 sid d.onSaturdayEvening End-Title
-			Monday use: Title role cover4 sid d.onSundayEvening End-Title
+			Monday use: 
+				when-movable-cycle-day-is
+					72 use:
+						Title role cover4 sid OnSunday End-Title
+					otherwise use:
+						Title role cover4 sid d.onSundayEvening End-Title
+				end-when
 			Tuesday use: Title role cover4 sid d.onMondayEvening End-Title
 			Wednesday use: Title role cover4 sid d.onTuesdayEvening End-Title
 			Thursday use: Title role cover4 sid d.onWednesdayEvening End-Title
@@ -115,7 +121,7 @@ Status NA
 		end-when
 	End-Section
 
-	Section tr_vespers_on_day_before
+	Section mc_vespers_on_day_before
 		when-movable-cycle-day-is
 			1 use:
 				Section sunday01
@@ -172,7 +178,7 @@ Status NA
 			22 use:
 				Section sunday04
 					Para role cover5 sid book.Triodion.name sid d.delimiter sid tr.d022_gr_GR_cog.trCommemoration.text End-Para
-					Para role cover4 sid d.onSaturdayEvening End-Para
+					Para role cover4 sid d.onSaturdayEvening sid eistonesperinon End-Para
 				End-Section
 			23 use:
 				Section monday1
@@ -389,7 +395,6 @@ Status NA
 			64 use:
 				Section sunday6
 					Para role cover5 sid book.Triodion.name sid d.delimiter sid tr.d064_gr_GR_cog.trShortCommemoration1.text End-Para
-					Para role cover40 sid tr.d064_gr_GR_cog.trShortCommemoration1.text End-Para
 					Para role cover4 sid d.onSaturdayEvening End-Para
 				End-Section
 			65 use:
@@ -397,10 +402,76 @@ Status NA
 					Para role cover5 sid book.Triodion.name sid d.delimiter sid tr.d064_gr_GR_cog.trShortCommemoration1.text End-Para
 					Para role cover4 sid d.onSundayEvening sid eistonesperinon End-Para
 				End-Section
+			72 use:
+				Section monday1
+					Para role cover5 sid book.Pentecostarion.name sid d.delimiter sid pe.d071_gr_GR_cog.peShortCommemoration1.text End-Para
+					Para role cover4 sid eistonesperinon End-Para
+				End-Section
+			73 use:
+				Section tuesday1
+					Para role cover5 sid book.Pentecostarion.name sid d.delimiter sid OnMonday sid ofBrightWeek End-Para
+					Para role cover4 sid eistonesperinon End-Para
+				End-Section
+			74 use:
+				Section wednesday1
+					Para role cover5 sid book.Pentecostarion.name sid d.delimiter sid OnTuesday sid ofBrightWeek End-Para
+					Para role cover4 sid eistonesperinon End-Para
+				End-Section
+			75 use:
+				Section thursday1
+					Para role cover5 sid book.Pentecostarion.name sid d.delimiter sid OnWednesday sid ofBrightWeek End-Para
+					Para role cover4 sid eistonesperinon End-Para
+				End-Section
+			76 use:
+				Section friday1
+					Para role cover5 sid book.Pentecostarion.name sid d.delimiter sid OnThursday sid ofBrightWeek End-Para
+					Para role cover40 sid pe.d076_gr_GR_cog.peShortCommemoration1.text End-Para
+					Para role cover4 sid eistonesperinon End-Para
+				End-Section
+			77 use:
+				Section saturday1
+					Para role cover5 sid book.Pentecostarion.name sid d.delimiter sid OnFriday sid ofBrightWeek End-Para
+					Para role cover4 sid eistonesperinon End-Para
+				End-Section
+			78 use:
+				Section sunday2
+					Para role cover5 sid book.Pentecostarion.name sid d.delimiter sid pe.d078_gr_GR_cog.peShortCommemoration1.text End-Para
+					Para role cover4 sid d.onSaturdayEvening sid eistonesperinon End-Para
+				End-Section
+			79 use:
+				Section monday2
+					Para role cover5 sid book.Pentecostarion.name sid d.delimiter sid pe.d078_gr_GR_cog.peShortCommemoration1.text End-Para
+					Para role cover4 sid d.onSundayEvening sid eistonesperinon End-Para
+				End-Section
+			80 use:
+				Section tuesday2
+					Para role cover5 sid book.Pentecostarion.name sid d.delimiter sid OnMonday sid ofWeek2 End-Para
+					Para role cover4 sid eistonesperinon End-Para
+				End-Section
+			81 use:
+				Section wednesday2
+					Para role cover5 sid book.Pentecostarion.name sid d.delimiter sid OnTuesday sid ofWeek2 End-Para
+					Para role cover4 sid eistonesperinon End-Para
+				End-Section
+			82 use:
+				Section thursday2
+					Para role cover5 sid book.Pentecostarion.name sid d.delimiter sid OnWednesday sid ofWeek2 End-Para
+					Para role cover4 sid eistonesperinon End-Para
+				End-Section
+			83 use:
+				Section friday2
+					Para role cover5 sid book.Pentecostarion.name sid d.delimiter sid OnThursday sid ofWeek2 End-Para
+					Para role cover4 sid eistonesperinon End-Para
+				End-Section
+			84 use:
+				Section saturday2
+					Para role cover5 sid book.Pentecostarion.name sid d.delimiter sid OnFriday sid ofWeek2 End-Para
+					Para role cover4 sid eistonesperinon End-Para
+				End-Section
 		end-when
 	End-Section
 
-	Section tr_matins
+	Section mc_matins
 		when-movable-cycle-day-is
 			1 use:
 				Section sunday01
@@ -678,9 +749,79 @@ Status NA
 					Para role cover5 sid book.Triodion.name sid d.delimiter sid tr.d064_gr_GR_cog.trShortCommemoration1.text End-Para
 					Para role cover4 sid d.onSundayMorning sid eistonorthron End-Para
 				End-Section
+			71 use:
+				Section sunday1
+					Para role cover5 sid book.Pentecostarion.name sid d.delimiter sid pe.d071_gr_GR_cog.peShortCommemoration1.text End-Para
+					Para role cover4 sid eistonorthron End-Para
+				End-Section
+			72 use:
+				Section monday1
+					Para role cover5 sid book.Pentecostarion.name sid d.delimiter sid OnMonday sid ofBrightWeek End-Para
+					Para role cover4 sid eistonorthron End-Para
+				End-Section
+			73 use:
+				Section tuesday1
+					Para role cover5 sid book.Pentecostarion.name sid d.delimiter sid OnTuesday sid ofBrightWeek End-Para
+					Para role cover4 sid eistonorthron End-Para
+				End-Section
+			74 use:
+				Section wednesday1
+					Para role cover5 sid book.Pentecostarion.name sid d.delimiter sid OnWednesday sid ofBrightWeek End-Para
+					Para role cover4 sid eistonorthron End-Para
+				End-Section
+			75 use:
+				Section thursday1
+					Para role cover5 sid book.Pentecostarion.name sid d.delimiter sid OnThursday sid ofBrightWeek End-Para
+					Para role cover4 sid eistonorthron End-Para
+				End-Section
+			76 use:
+				Section friday1
+					Para role cover5 sid book.Pentecostarion.name sid d.delimiter sid OnFriday sid ofBrightWeek End-Para
+					Para role cover40 sid pe.d076_gr_GR_cog.peShortCommemoration1.text End-Para
+					Para role cover4 sid eistonorthron End-Para
+				End-Section
+			77 use:
+				Section saturday1
+					Para role cover5 sid book.Pentecostarion.name sid d.delimiter sid OnSaturday sid ofBrightWeek End-Para
+					Para role cover4 sid eistonorthron End-Para
+				End-Section
+			78 use:
+				Section sunday2
+					Para role cover5 sid book.Pentecostarion.name sid d.delimiter sid pe.d078_gr_GR_cog.peShortCommemoration1.text End-Para
+					Para role cover4 sid d.onSundayMorning sid eistonorthron End-Para
+				End-Section
+			79 use:
+				Section monday2
+					Para role cover5 sid book.Pentecostarion.name sid d.delimiter sid OnMonday sid ofWeek2 End-Para
+					Para role cover4 sid eistonorthron End-Para
+				End-Section
+			80 use:
+				Section tuesday2
+					Para role cover5 sid book.Pentecostarion.name sid d.delimiter sid OnTuesday sid ofWeek2 End-Para
+					Para role cover4 sid eistonorthron End-Para
+				End-Section
+			81 use:
+				Section wednesday2
+					Para role cover5 sid book.Pentecostarion.name sid d.delimiter sid OnWednesday sid ofWeek2 End-Para
+					Para role cover4 sid eistonorthron End-Para
+				End-Section
+			82 use:
+				Section thursday2
+					Para role cover5 sid book.Pentecostarion.name sid d.delimiter sid OnThursday sid ofWeek2 End-Para
+					Para role cover4 sid eistonorthron End-Para
+				End-Section
+			83 use:
+				Section friday2
+					Para role cover5 sid book.Pentecostarion.name sid d.delimiter sid OnFriday sid ofWeek2 End-Para
+					Para role cover4 sid eistonorthron End-Para
+				End-Section
+			84 use:
+				Section saturday2
+					Para role cover5 sid book.Pentecostarion.name sid d.delimiter sid OnSaturday sid ofWeek2 End-Para
+					Para role cover4 sid eistonorthron End-Para
+				End-Section
 		end-when
 	End-Section
-
 
 	Section tr_modeofweek_ve
 		when-movable-cycle-day-is
@@ -728,6 +869,7 @@ Status NA
 			59 thru 77 use:
 		end-when
 	End-Section
+
 	Section tr_modeofweek_ma
 		when-movable-cycle-day-is
 			1 thru 22 use:
@@ -772,4 +914,5 @@ Status NA
 				Insert_section on_morning End-Insert
 		end-when
 	End-Section
+
 End-Template
