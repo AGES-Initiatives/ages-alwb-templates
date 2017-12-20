@@ -1174,14 +1174,17 @@ Status Review
 						Dialog sid euLI.Key1702.text End-Dialog
 						Dialog<i>sid res04p</>End-Dialog
 						Actor sid Choir End-Actor
-						when-movable-cycle-day-is
-							71, 72, 73, 74, 75, 76, 77, 109 use:
-								Title role mode sid pe.d00P_gr_GR_cog.pePA.AfterCommunion2.mode End-Title
-								Hymn sid pe.d00P_gr_GR_cog.pePA.AfterCommunion2.text<r>sid Thrice media-off</>End-Hymn	
-							otherwise use:
-								Media sid euLI.Key1703.text End-Media
-								Hymn sid ps_gr_GR_cog.psa112.v2alt1.text<r>sid Thrice media-off</>End-Hymn
-						end-when
+						Section hymn
+							when-movable-cycle-day-is
+								71, 72, 73, 74, 75, 76, 77, 109 use:
+									Title role desig sid euLI.Key1703_pascha.text End-Title
+									Title role mode sid pe.d00P_gr_GR_cog.pePA.AfterCommunion2.mode End-Title
+									Hymn sid pe.d00P_gr_GR_cog.pePA.AfterCommunion2.text<r>sid Thrice media-off</>End-Hymn	
+								otherwise use:
+									Media sid euLI.Key1703.text End-Media
+									Hymn sid ps_gr_GR_cog.psa112.v2alt1.text<r>sid Thrice media-off</>End-Hymn
+							end-when
+						End-Section
 						Actor sid Hierarch<Trubric>sid InALowVoice</>End-Actor 
 						Para role inaudible sid euLI.Key1704.text End-Para
 						Actor sid Deacon End-Actor
