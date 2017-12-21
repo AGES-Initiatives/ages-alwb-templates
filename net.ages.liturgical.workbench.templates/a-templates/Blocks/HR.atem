@@ -58,6 +58,7 @@ Status Draft
 		Section part2
 			Actor sid Reader End-Actor
 			Insert_section _01_Intro_.append.Trisagion_Prayers End-Insert
+			Actor sid Reader End-Actor
 		End-Section
 		//Kontakia
 		Section part3
@@ -94,7 +95,7 @@ Status Draft
 			Reading sid res06 End-Reading
 			Reading sid Evlogison End-Reading
 			Actor sid Priest End-Actor
-			Dialog sid dis00 sid dis01 sid dis02 sid cl.localpatronsaint1.dismissal sid dis09 sid dis10 sid dis89 End-Dialog
+			Insert_section Selector_Dismissals.Short End-Insert
 			Section litany
 				Dialog sid petCompline01 End-Dialog
 				Dialog<i>sid res01p</>End-Dialog
@@ -147,6 +148,11 @@ Status Draft
 			Insert_section HR._06_PrayerOfHour__.h1 End-Insert
 			Insert_section HR._07_Dismissal End-Insert
 		End-Section
+		Section end_nocommemoration
+			Insert_section HR._04__.h1369 End-Insert
+			Insert_section HR._06_PrayerOfHour__.h1 End-Insert
+			Insert_section HR._07_Dismissal_nocommemoration End-Insert
+		End-Section
 		Section end_mealt1
 			Insert_section HR._04__.h1369 End-Insert
 			Insert_section HR._06_PrayerOfHour__.h1 End-Insert
@@ -182,6 +188,11 @@ Status Draft
 			Insert_section HR._06_PrayerOfHour__.h6 End-Insert
 			Insert_section HR._07_Dismissal End-Insert
 		End-Section
+		Section end_nocommemoration
+			Insert_section HR._04__.h1369 End-Insert
+			Insert_section HR._06_PrayerOfHour__.h6 End-Insert
+			Insert_section HR._07_Dismissal_nocommemoration End-Insert
+		End-Section
 		Section end_mealt1
 			Insert_section HR._04__.h1369 End-Insert
 			Insert_section HR._06_PrayerOfHour__.h6 End-Insert
@@ -202,6 +213,16 @@ Status Draft
 			Insert_section HR._04__.h1369 End-Insert
 			Insert_section HR._06_PrayerOfHour__.h9 End-Insert
 			Insert_section HR._07_Dismissal End-Insert
+		End-Section
+		Section end_nocommemoration
+			Insert_section HR._04__.h1369 End-Insert
+			Insert_section HR._06_PrayerOfHour__.h9 End-Insert
+			Insert_section HR._07_Dismissal_nocommemoration End-Insert
+		End-Section
+		Section end_mealt1
+			Insert_section HR._04__.h1369 End-Insert
+			Insert_section HR._06_PrayerOfHour__.h9 End-Insert
+			Insert_section HR._07_Dismissal_mealt1 End-Insert
 		End-Section
 	End-Section
 
@@ -226,7 +247,7 @@ Status Draft
 					Insert_section HR._05_Lent__.h1 End-Insert
 			end-when
 			Insert_section HR._06_PrayerOfHour__.h1 End-Insert
-			Insert_section HR._07_Dismissal End-Insert
+			Insert_section HR._07_Dismissal_nocommemoration End-Insert
 		End-Section
 		Section begin
 			Title role desig sid hoH1.title End-Title
@@ -244,7 +265,7 @@ Status Draft
 					Insert_section HR._05_Lent__.h1 End-Insert
 			end-when
 			Insert_section HR._06_PrayerOfHour__.h1 End-Insert
-			Insert_section HR._07_Dismissal End-Insert
+			Insert_section HR._07_Dismissal_nocommemoration End-Insert
 		End-Section
 	End-Section
 	Section Lent_h3__
@@ -315,7 +336,7 @@ Status Draft
 		end-when
 		Insert_section HR._06_PrayerOfHour__.h6 End-Insert
 		Rubric sid cl.ho.s06.R001 End-Rubric
-		Insert_section HR._07_Dismissal End-Insert
+		Insert_section HR._07_Dismissal_nocommemoration End-Insert
 	End-Section
 	Section Lent_h9__
 		Section append
@@ -349,7 +370,7 @@ Status Draft
 						Insert_section Selector_LentHoursTroparia.h9__.kontakia End-Insert
 						Insert_section HR._04__.h9_lent End-Insert
 						Insert_section HR._05_Lent__.h9__.before_presanctified End-Insert
-						Insert_section HR._07_Dismissal End-Insert
+						Insert_section HR._07_Dismissal_nocommemoration End-Insert
 					End-Section
 			end-when
 		End-Section
@@ -391,7 +412,7 @@ Status Draft
 						Insert_section Selector_LentHoursTroparia.h9__.kontakia End-Insert
 						Insert_section HR._04__.h9_lent End-Insert
 						Insert_section HR._05_Lent__.h9__.before_presanctified End-Insert
-						Insert_section HR._07_Dismissal End-Insert
+						Insert_section HR._07_Dismissal_nocommemoration End-Insert
 					End-Section
 				Saturday, Sunday use:
 					Section weekend
@@ -404,7 +425,7 @@ Status Draft
 						Insert_section Selector_LentHoursTroparia.h9__.kontakia End-Insert
 						Insert_section HR._04__.h1369 End-Insert
 						Insert_section HR._06_PrayerOfHour__.h9 End-Insert
-						Insert_section HR._07_Dismissal End-Insert
+						Insert_section HR._07_Dismissal_nocommemoration End-Insert
 					End-Section
 			end-when
 		End-Section
@@ -532,6 +553,12 @@ Status Draft
 					Reading sid psa70.v8alt.text End-Reading
 				otherwise use:
 					when-movable-cycle-day-is
+						18, 20 use:
+							Rubric sid Read End-Rubric
+							Hymn sid psa118.v133.text End-Hymn
+							Reading sid psa118.v134.text End-Reading
+							Reading sid psa118.v135.text End-Reading
+							Reading sid psa70.v8alt.text End-Reading
 						44, 46, 48 use:
 							Actor sid Choir End-Actor
 							Title role mode sid Mode2 End-Title
@@ -724,6 +751,13 @@ Status Draft
 		Reading sid res06 End-Reading
 		Reading sid Evlogison End-Reading
 		Insert_section Selector_Dismissals.Com_Yes End-Insert
+	End-Section
+	Section _07_Dismissal_nocommemoration
+		Actor sid Reader End-Actor
+		Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+		Reading sid res06 End-Reading
+		Reading sid Evlogison End-Reading
+		Insert_section Selector_Dismissals.Com_No End-Insert
 	End-Section
 	Section _07_Dismissal_mealt1
 		Actor sid Reader End-Actor

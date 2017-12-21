@@ -284,7 +284,12 @@ Status Review
 	End-Section	
 
 	Section Short
-		Dialog sid dis00 rid meDismissal sid dis01 sid dis02 sid cl.localpatronsaint1.dismissal sid dis09 sid dis10 sid dis89 End-Dialog
+		when-name-of-day-is
+			Sunday use:
+				Dialog sid dis00 sid dis00.resurrection sid dis01 sid dis02 sid cl.localpatronsaint1.dismissal sid dis09 sid dis10 sid dis89 End-Dialog
+			otherwise use:
+				Dialog sid dis00 rid meDismissal sid dis01 sid dis02 sid cl.localpatronsaint1.dismissal sid dis09 sid dis10 sid dis89 End-Dialog
+		end-when
 	End-Section
 // The sections below are referenced by the above
 // You can customize the listing of saints, but must do so for each section
