@@ -1,0 +1,92 @@
+Template cu.ocmc_guatamala_hymns 
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head
+		Set_Date month 4 day 7 year 2018 End_Date
+	End_Head
+
+	
+	Section daily_hymns
+		Section sunday //use this section for dates that allow res but not other daily
+			when-name-of-day-is Sunday use:
+				Insert_section AP.NM.res__.modeofweek End-Insert
+				Insert_section KO.NM.hypakoe__.sunday__.modeofweek End-Insert
+			end-when
+		End-Section
+		Section weekdays
+			when-name-of-day-is 
+				Monday use:
+					Insert_section TI.a.da End-Insert
+					Insert_section AP.NM.da__.dayofweek_.hymn End-Insert
+					Insert_section TI.k.da End-Insert
+					Insert_section Selector_Kontakion.NM.DailyKontakion.monday_.hymn End-Insert
+				Tuesday use:
+					Insert_section TI.a.da End-Insert
+					Insert_section AP.NM.da__.dayofweek_.hymn End-Insert
+					Insert_section TI.k.da End-Insert
+					Insert_section Selector_Kontakion.NM.DailyKontakion.tuesday_.hymn End-Insert
+				Wednesday use:
+					Insert_section TI.a.da End-Insert
+					Insert_section AP.NM.da__.dayofweek_.hymn End-Insert
+					Insert_section TI.k.da End-Insert
+					Insert_section Selector_Kontakion.NM.DailyKontakion.wednesday_.hymn End-Insert
+				Thursday use:
+					Insert_section TI.a.da End-Insert
+					Insert_section AP.NM.da__.dayofweek_.hymn End-Insert
+					Insert_section TI.k.da End-Insert
+					Insert_section Selector_Kontakion.NM.DailyKontakion.thursday_.hymn End-Insert
+				Friday use:
+					Insert_section TI.a.da End-Insert
+					Insert_section AP.NM.da__.dayofweek_.hymn End-Insert
+					Insert_section TI.k.da End-Insert
+					Insert_section Selector_Kontakion.NM.DailyKontakion.friday_.hymn End-Insert
+				Saturday use:
+					Insert_section TI.a.da End-Insert
+					Insert_section AP.NM.da__.dayofweek_.hymn End-Insert
+					Insert_section TI.k.da End-Insert
+					Insert_section Selector_Kontakion.NM.DailyKontakion.saturday_.hymn End-Insert
+				end-when
+		End-Section
+	End-Section
+	
+	
+	
+
+	Section mc_hymns
+		when-movable-cycle-day-is
+			65, 66, 67 use: 
+				Title role mixed<Tdesig>sid Troparion</><Tmode>sid tr.d065_gr_GR_cog.trHW.Troparion.mode</>End-Title
+				Hymn sid tr.d065_gr_GR_cog.trHW.Troparion.text sid da.d2_gr_GR_cog.daMA.Triadic3Ending.text @ver media-off End-Hymn
+			68, 69 use: 
+				Title role mixed<Tdesig>sid Troparion</><Tmode>sid tr.d068_gr_GR_cog.trHW.Troparion.mode</>End-Title
+				Hymn sid tr.d068_gr_GR_cog.trHW.Troparion.text @ver media-off End-Hymn
+			70 use:
+				Insert_section TI.a.tr.triodion End-Insert
+				Insert_section AP.NM.tr123_.hymns End-Insert
+			otherwise use:
+				when-exists
+					rid tr.trVE.Apolytikion1.text use:
+						Insert_section TI.a.tr.triodion End-Insert
+						Insert_section AP.NM.tr1_.hymn End-Insert
+				end-when
+		end-when
+
+		when-exists
+			rid tr.trMA.Kontakion1.text use:
+				Insert_section TI.k.tr.triodion End-Insert
+				Insert_section KO.NM.tr1_.hymn End-Insert
+		end-when
+	End-Section
+
+End-Template
