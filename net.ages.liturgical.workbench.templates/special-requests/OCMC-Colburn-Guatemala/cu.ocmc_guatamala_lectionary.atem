@@ -1,4 +1,4 @@
-Template cu.ocmc_guatamala_tr_lectionary
+Template cu.ocmc_guatamala_lectionary
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -15,6 +15,33 @@ Template cu.ocmc_guatamala_tr_lectionary
 //	Head
 //		Set_Date month 4 day 7 year 2018 End_Date
 //	End_Head
+
+	Section epDAgoDA
+		Insert_section LE._01_Epistle__.textonly__.daily End-Insert
+		Insert_section LE._02_Gospel__.textonly__.daily.lesson End-Insert
+	End-Section
+	
+	Section epMEgoME_epME_goDA
+		when-name-of-day-is
+			Sunday use:
+				Insert_section LE._01_Epistle__.textonly__.menaion End-Insert
+				Insert_section LE._02_Gospel__.textonly__.daily.lesson End-Insert
+			otherwise use:
+				Insert_section LE._01_Epistle__.textonly__.menaion End-Insert
+				Insert_section LE._02_Gospel__.textonly__.menaion.lesson End-Insert
+		end-when
+	End-Section
+
+	Section epMEgoME_epDA_goDA
+		when-name-of-day-is
+			Sunday use:
+				Insert_section LE._01_Epistle__.textonly__.daily End-Insert
+				Insert_section LE._02_Gospel__.textonly__.daily.lesson End-Insert
+			otherwise use:
+				Insert_section LE._01_Epistle__.textonly__.menaion End-Insert
+				Insert_section LE._02_Gospel__.textonly__.menaion.lesson End-Insert
+		end-when
+	End-Section
 
 	Section triodion_readings
 		when-movable-cycle-day-is
