@@ -39,6 +39,15 @@ Status NA
 	when-movable-cycle-day-is 1 thru 127 use:
 			Insert_section mc.map.ma.Section01 End-Insert //adjust to appropriate service
 			otherwise use:
+		when-name-of-day-is 
+			Sunday use:
+				Section Instance02
+				End-Section
+
+			otherwise use:
+				Section Instance01
+				End-Section
+		end-when
 		
 	end-when	
 	
