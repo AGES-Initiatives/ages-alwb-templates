@@ -263,6 +263,22 @@ Status Review
 						Hymn sid me.m02.d02_gr_GR_cog.meMA.Ode6C13.text @ver media-off End-Hymn
 					End-Section
 				End-Section
+				Section julHF__
+					Section ode6c1_as910GB
+						Title<Tdesig>sid me.m07.dHF_gr_GR_cog.meMA.C1.title</>End-Title
+						Title role source0 sid sourceMenaion End-Title
+						Title<Tdesig>sid me.m07.dHF_gr_GR_cog.meMA.Ode6C11.ode</><Tmode>sid me.m07.dHF_gr_GR_cog.meMA.Ode6C11.mode</><Tmelody>sid me.m07.dHF_gr_GR_cog.meMA.Ode6C11.melody</>End-Title
+				//		Media sid me.m07.dHF_gr_GR_cog.meLI.MM.Beatitudes.Ode6C1as910GB.text End-Media
+						Verse sid leosTY.Beatitudes_v09.text @ver End-Verse
+						Hymn sid me.m07.dHF_gr_GR_cog.meMA.Ode6C11.text @ver media-off End-Hymn
+						Verse sid leosTY.Beatitudes_v10.text @ver End-Verse
+						Hymn sid me.m07.dHF_gr_GR_cog.meMA.Ode6C11.text @ver media-off End-Hymn
+						Title sid Doxa End-Title
+						Hymn sid me.m07.dHF_gr_GR_cog.meMA.Ode6C12.text @ver media-off End-Hymn
+						Title sid KaiNyn End-Title
+						Hymn sid me.m07.dHF_gr_GR_cog.meMA.Ode6C1T.text @ver media-off End-Hymn
+					End-Section
+				End-Section
 				Section aug06__
 					Section ode6c1_as910GB
 						Title<Tdesig>sid me.m08.d06_gr_GR_cog.meMA.C1.title</>End-Title
@@ -2369,6 +2385,45 @@ Status Review
 					End-Section
 			end-when
 		End-Section
+		Section me1_mealt1_commemoration
+			when-movable-cycle-day-is
+				71, 72, 73, 74, 75, 76, 77, 109 use:
+					Section pascha
+						Section intro
+							Actor sid Deacon End-Actor
+							Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text media-off End-Dialog
+							Dialog sid res01<r>sid Thrice</>sid Evlogison End-Dialog
+						End-Section
+						Actor sid Priest End-Actor
+						Insert_section Selector_Dismissals.me1_mealt1_Com_Yes.part1 End-Insert
+						Actor sid Choir End-Actor
+						Hymn sid euLI.Key1706.text @ver End-Hymn
+						Actor sid Priest End-Actor
+						Insert_section Selector_Dismissals.Com_Yes.part2 End-Insert
+					End-Section
+				78 thru 108 use:
+					Section afterpascha
+						Insert_section pascha.intro End-Insert
+						Actor sid Priest End-Actor
+						Insert_section Selector_Dismissals.me1_mealt1_Com_Yes.part1 End-Insert
+						Actor sid Choir End-Actor
+						Hymn sid euLI.Key1706.text @ver End-Hymn
+						Actor sid Priest End-Actor
+						Insert_section Selector_Dismissals.Com_Yes.part2 End-Insert
+					End-Section
+				otherwise use:
+					Section notpaschal
+						Actor sid Priest End-Actor
+						Insert_section Selector_Dismissals.me1_mealt1_Com_Yes.part1 End-Insert
+						Actor sid Choir End-Actor
+						Hymn sid euLI.Key1706.text @ver End-Hymn
+						Actor sid Priest End-Actor
+						Dialog sid DiEfchonPateron.text End-Dialog
+						Dialog<i>sid res04p</>End-Dialog
+					End-Section
+			end-when
+		End-Section
+
 		Section pealt1_commemoration
 			when-movable-cycle-day-is
 				71, 72, 73, 74, 75, 76, 77, 109 use:
