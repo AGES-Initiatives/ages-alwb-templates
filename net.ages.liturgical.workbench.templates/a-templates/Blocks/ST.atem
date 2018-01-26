@@ -351,9 +351,7 @@ Status Draft
 			Para<bnr>sid book.Octoechos.name</>End-Para
 			Reading<bnr>rid ocVE.Stichera1.mode</>End-Reading
 			Insert_section on_morning End-Insert
-			Para<bnr>sid book.Menaion.name</>End-Para
-			Reading<bnr>rid meDate.text</>End-Reading
-			Reading sid daySunday sid AfterTheFeast End-Reading
+			Insert_section sunday_dates End-Insert
 			Break line End_Break
 			Title<bnr>sid li.html.tab</>End-Title
 			Insert_section copyright_notice__.goa_liturgy_chrys End-Insert
@@ -362,9 +360,9 @@ Status Draft
 			Para<bnr>sid book.Octoechos.name</>End-Para
 			Reading<bnr>rid ocVE.Stichera1.mode</>End-Reading
 			Insert_section on_morning End-Insert
+			Insert_section sunday_dates End-Insert
 			Para<bnr>sid book.Menaion.name</>End-Para
 			Reading<bnr>rid meDate.text</>End-Reading
-			Reading sid daySunday sid AfterTheFeast End-Reading
 			Reading rid meCommemoration.text End-Reading
 			Break line End_Break
 			Title<bnr>sid li.html.tab</>End-Title
@@ -422,8 +420,7 @@ Status Draft
 			Insert_section on_morning End-Insert
 			Para<bnr>sid book.Triodion.name</>End-Para
 			Reading rid trCommemoration.text End-Reading
-			Para<bnr>sid book.Menaion.name</>End-Para
-			Reading sid daySunday sid AfterTheFeast End-Reading
+			Insert_section sunday_dates End-Insert
 			Break line End_Break
 			Title<bnr>sid li.html.tab</>End-Title
 			Insert_section copyright_notice__.goa_liturgy_chrys End-Insert
@@ -617,8 +614,7 @@ Status Draft
 			Para<bnr>sid book.Octoechos.name</>End-Para
 			Reading<bnr>rid ocVE.Stichera1.mode</>End-Reading
 			Insert_section on_morning End-Insert
-			Para<bnr>sid book.Menaion.name</>End-Para
-			Reading sid daySunday sid AfterTheFeast End-Reading
+			Insert_section sunday_dates End-Insert
 			Break line End_Break
 			Title<bnr>sid ma.html.tab</>End-Title
 		End-Section
@@ -636,9 +632,9 @@ Status Draft
 			Para<bnr>sid book.Octoechos.name</>End-Para
 			Reading<bnr>rid ocVE.Stichera1.mode</>End-Reading
 			Insert_section on_morning End-Insert
+			Insert_section sunday_dates End-Insert
 			Para<bnr>sid book.Menaion.name</>End-Para
 			Reading<bnr>rid meDate.text</>End-Reading
-			Reading sid daySunday sid AfterTheFeast End-Reading
 			Reading rid meCommemoration.text End-Reading
 			Break line End_Break
 			Title<bnr>sid ma.html.tab</>End-Title
@@ -691,8 +687,7 @@ Status Draft
 			Insert_section on_morning End-Insert
 			Para<bnr>sid book.Triodion.name</>End-Para
 			Reading rid trCommemoration.text End-Reading
-			Para<bnr>sid book.Menaion.name</>End-Para
-			Reading sid daySunday sid AfterTheFeast End-Reading
+			Insert_section sunday_dates End-Insert
 			Break line End_Break
 			Title<bnr>sid ma.html.tab</>End-Title
 		End-Section
@@ -949,9 +944,7 @@ Status Draft
 			Para<bnr>sid book.Octoechos.name</>End-Para
 			Reading<bnr>rid ocVE.Stichera1.mode</>End-Reading
 			Insert_section on_evening_before End-Insert
-			Para<bnr>sid book.Menaion.name</>End-Para
-			Reading<bnr>rid meDate.text</>End-Reading
-			Reading sid daySunday sid AfterTheFeast End-Reading
+			Insert_section sunday_dates End-Insert
 			Break line End_Break
 			Title<bnr>sid ve.html.tab</>End-Title
 		End-Section
@@ -959,9 +952,9 @@ Status Draft
 			Para<bnr>sid book.Octoechos.name</>End-Para
 			Reading<bnr>rid ocVE.Stichera1.mode</>End-Reading
 			Insert_section on_evening_before End-Insert
+			Insert_section sunday_dates End-Insert
 			Para<bnr>sid book.Menaion.name</>End-Para
 			Reading<bnr>rid meDate.text</>End-Reading
-			Reading sid daySunday sid AfterTheFeast End-Reading
 			Reading rid meCommemoration.text End-Reading
 			Break line End_Break
 			Title<bnr>sid ve.html.tab</>End-Title
@@ -970,9 +963,9 @@ Status Draft
 			Para<bnr>sid book.Octoechos.name</>End-Para
 			Reading<bnr>rid ocVE.Stichera1.mode</>End-Reading
 			Insert_section on_evening_before End-Insert
+			Insert_section sunday_dates End-Insert
 			Para<bnr>sid book.Menaion.name</>End-Para
 			Reading<bnr>rid meDate.text</>End-Reading
-			Reading sid daySunday sid AfterTheFeast End-Reading
 			Reading rid meShortCommemoration1.text End-Reading
 			Break line End_Break
 			Title<bnr>sid ve.html.tab</>End-Title
@@ -1048,9 +1041,7 @@ Status Draft
 			Insert_section on_evening_before End-Insert
 			Para<bnr>sid book.Triodion.name</>End-Para
 			Insert_section tr_vespers_on_day_before End-Insert
-			Para<bnr>sid book.Menaion.name</>End-Para
-			Reading<bnr>rid meDate.text</>End-Reading
-			Reading sid daySunday sid AfterTheFeast End-Reading
+			Insert_section sunday_dates End-Insert
 			Break line End_Break
 			Title<bnr>sid ve.html.tab</>End-Title
 		End-Section
@@ -1156,6 +1147,77 @@ Status Draft
 			End-Section
 		End-Section
 	End-Section	
+
+	Section sunday_dates
+		when-date-is
+			Jan 7 thru 13 use:
+				Para<bnr>sid book.Menaion.name sid d.delimiter sid me.m01.d06_gr_GR_cog.meDate.text</>End-Para
+				Reading sid me.SundayAfterFeast End-Reading
+			Jan 14 use:
+				Para<bnr>sid book.Menaion.name sid d.delimiter sid me.m01.d06_gr_GR_cog.meDate.text</>End-Para
+				Reading sid me.m01.d14_gr_GR_cog.meShortCommemoration1.text End-Reading
+			Feb 3 thru 9 use:
+				when-movable-cycle-day-is
+					1, 8 use:
+						when-date-is
+							Feb 3 thru 8 use: 
+								Section meeting
+									Para<bnr>sid book.Menaion.name sid d.delimiter sid me.m02.d02_gr_GR_cog.meDate.text</>End-Para
+									Reading sid me.SundayAfterFeast End-Reading
+								End-Section
+							Feb 9 use: 
+								Section leavetaking_of_meeting
+									Para<bnr>sid book.Menaion.name sid d.delimiter sid me.m02.d02_gr_GR_cog.meDate.text</>End-Para
+									Reading sid me.m02.d09_gr_GR_cog.meShortCommemoration2.text End-Reading
+								End-Section
+						end-when
+					15 use:
+						when-date-is
+							Feb 3 thru 5 use: Insert_section meeting End-Insert
+							Feb 6 use: Insert_section leavetaking_of_meeting End-Insert
+						end-when
+					22 use:
+						when-date-is
+							Feb 3 thru 6 use: Insert_section meeting End-Insert
+							Feb 7 use: Insert_section leavetaking_of_meeting End-Insert
+							Feb 8, 9 use: //triodion
+						end-when
+					otherwise use:
+						when-date-is
+							Feb 3 thru 8 use: Insert_section meeting End-Insert
+							Feb 9 use: Insert_section leavetaking_of_meeting End-Insert
+						end-when
+				end-when
+			Jul 13 thru 19 use:
+				Para<bnr>sid book.Menaion.name sid d.delimiter sid me.m07.dHF_gr_GR_cog.meDate.text</>End-Para
+				Reading sid me.m07.dHF_gr_GR_cog.meCommemoration.text End-Reading
+			Aug 7 thru 13 use:
+				Para<bnr>sid book.Menaion.name sid d.delimiter sid me.m08.d06_gr_GR_cog.meDate.text</>End-Para
+				Reading sid me.SundayAfterFeast End-Reading
+			Aug 16 thru 22 use:
+				Para<bnr>sid book.Menaion.name sid d.delimiter sid me.m08.d15_gr_GR_cog.meDate.text</>End-Para
+				Reading sid me.SundayAfterFeast End-Reading
+			Sep 9 thru 11 use:
+				Para<bnr>sid book.Menaion.name sid d.delimiter sid me.m09.d08_gr_GR_cog.meDate.text</>End-Para
+				Reading sid me.SundayAfterFeast End-Reading
+			Oct 11 thru 17 use:
+				Para<bnr>sid book.Menaion.name sid d.delimiter sid me.m10.dHF_gr_GR_cog.meDate.text</>End-Para
+				Reading sid me.m10.dHF_gr_GR_cog.meCommemoration.text End-Reading
+			Nov 22 thru 24 use:
+				Para<bnr>sid book.Menaion.name sid d.delimiter sid me.m09.d08_gr_GR_cog.meDate.text</>End-Para
+				Reading sid me.SundayAfterFeast End-Reading
+			Dec 11 thru 17 use:
+				Para<bnr>sid book.Menaion.name sid d.delimiter sid me.m12.dFF_gr_GR_cog.meDate.text</>End-Para
+				Reading sid me.m12.dFF_gr_GR_cog.meCommemoration.text End-Reading
+			Dec 18 thru 24 use:
+				Para<bnr>sid book.Menaion.name sid d.delimiter sid me.m12.dBC_gr_GR_cog.meDate.text</>End-Para
+				Reading sid me.m12.dBC_gr_GR_cog.meCommemoration.text End-Reading
+			Dec 26 thru 31 use:
+				Para<bnr>sid book.Menaion.name sid d.delimiter sid me.m12.dAC_gr_GR_cog.meDate.text</>End-Para
+				Reading sid me.m12.dAC_gr_GR_cog.meCommemoration.text End-Reading
+		end-when
+	End-Section
+
 
 	Section copyright_notice__
 		Section goa_liturgy_chrys
