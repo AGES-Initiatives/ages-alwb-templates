@@ -399,7 +399,7 @@ Template MA
 		Section psalter
 		End-Section
 		Section litany
-			Insert_section LN.ShortLitany01 End-Insert
+			Insert_section LN.ShortLitany01_priest End-Insert
 		End-Section
 		Section both__
 			Section con
@@ -1957,7 +1957,7 @@ Template MA
 			Hymn sid hoMA.FuneralEvlog9.text<r>sid Thrice media-off</>End-Hymn
 		End-Section
 		Section litany
-			Insert_section LN.ShortLitany02 End-Insert
+			Insert_section LN.ShortLitany02_deacon End-Insert
 		End-Section
 		Section litany_sos
 			Insert_section LN.Litany_SoulSaturday End-Insert
@@ -2561,11 +2561,63 @@ Template MA
 		End-Section
 		Section psalter
 		End-Section
-		Section polyeleos
-			Title<Tdesig>sid OPolyeleos</>End-Title
-			Rubric sid psa134.title End-Rubric
-			Rubric sid psa135.title End-Rubric
-			Rubric sid eclog.title1 End-Rubric
+		Section polyeleos__
+			Section psalm_134
+				Actor sid Choir End-Actor
+				Title<Tdesig>sid OPolyeleos</>End-Title
+				Insert_section PS.Polyeleos_Psalm_134 End-Insert
+			End-Section
+			Section append__
+				Section psalm_134
+					Title<Tdesig>sid OPolyeleos</>End-Title
+					Insert_section PS.Polyeleos_Psalm_134 End-Insert
+				End-Section
+				Section psalm_135
+					Insert_section PS.Polyeleos_Psalm_135 End-Insert
+				End-Section
+				Section selected_verses__
+					Section annunciaition
+						Insert_section bk.ecloge.annunciation.Section01 End-Insert
+					End-Section
+					Section dormition
+						Insert_section bk.ecloge.dormition.Section01 End-Insert
+					End-Section
+					Section forerunner
+						Insert_section bk.ecloge.forerunner.Section01 End-Insert
+					End-Section
+					Section palm_sunday
+						Insert_section bk.ecloge.palm.Section01 End-Insert
+					End-Section
+					Section pentecost
+						Insert_section bk.ecloge.pentecost.Section01 End-Insert
+					End-Section
+					Section theotokos_birth
+						Insert_section bk.ecloge.theotokosbirth.Section01 End-Insert
+					End-Section
+					Section thomas_sunday
+						Insert_section bk.ecloge.thomas.Section01 End-Insert
+					End-Section
+					Section transfiguration
+						Insert_section bk.ecloge.transfiguration.Section01 End-Insert
+					End-Section
+				End-Section
+				Section glory_triadic
+					Title sid Doxa<Tdesig>sid Triadikon</>End-Title
+					Title<Tmode>sid oc.m1.d1_gr_GR_cog.ocLI.BeatitudesTr.mode</>End-Title
+					Hymn sid oc.m1.d1_gr_GR_cog.ocLI.BeatitudesTr.text End-Hymn
+				End-Section
+				Section both_theotokion
+					Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+					Title<Tmode>sid oc.m1.d1_gr_GR_cog.ocLI.BeatitudesT.mode</>End-Title
+					Hymn sid oc.m1.d1_gr_GR_cog.ocLI.BeatitudesT.text End-Hymn
+				End-Section
+			End-Section
+			Section titles
+				Title<Tdesig>sid OPolyeleos</>End-Title
+				Rubric sid psa134.title End-Rubric
+				Rubric sid psa135.title End-Rubric
+				Rubric sid eclog.title1 End-Rubric
+			End-Section
 		End-Section
 		Section evlogetaria_res
 			Title role desig sid hoMA.ResEvlog.title1 End-Title
@@ -2752,64 +2804,11 @@ Template MA
 			End-Section
 		End-Section
 		Section litany
-			Insert_section LN.ShortLitany03 End-Insert
+			Insert_section LN.ShortLitany03_deacon End-Insert
 		End-Section
 	End-Section
 
-	Section _06_Polyeleos__
-		Section psalm_134
-			Actor sid Choir End-Actor
-			Title<Tdesig>sid OPolyeleos</>End-Title
-			Insert_section PS.Polyeleos_Psalm_134 End-Insert
-		End-Section
-		Section append__
-			Section psalm_134
-				Title<Tdesig>sid OPolyeleos</>End-Title
-				Insert_section PS.Polyeleos_Psalm_134 End-Insert
-			End-Section
-			Section psalm_135
-				Insert_section PS.Polyeleos_Psalm_135 End-Insert
-			End-Section
-			Section selected_verses__
-				Section annunciaition
-					Insert_section bk.ecloge.annunciation.Section01 End-Insert
-				End-Section
-				Section dormition
-					Insert_section bk.ecloge.dormition.Section01 End-Insert
-				End-Section
-				Section forerunner
-					Insert_section bk.ecloge.forerunner.Section01 End-Insert
-				End-Section
-				Section palm_sunday
-					Insert_section bk.ecloge.palm.Section01 End-Insert
-				End-Section
-				Section pentecost
-					Insert_section bk.ecloge.pentecost.Section01 End-Insert
-				End-Section
-				Section theotokos_birth
-					Insert_section bk.ecloge.theotokosbirth.Section01 End-Insert
-				End-Section
-				Section thomas_sunday
-					Insert_section bk.ecloge.thomas.Section01 End-Insert
-				End-Section
-				Section transfiguration
-					Insert_section bk.ecloge.transfiguration.Section01 End-Insert
-				End-Section
-			End-Section
-			Section glory_triadic
-				Title sid Doxa<Tdesig>sid Triadikon</>End-Title
-				Title<Tmode>sid oc.m1.d1_gr_GR_cog.ocLI.BeatitudesTr.mode</>End-Title
-				Hymn sid oc.m1.d1_gr_GR_cog.ocLI.BeatitudesTr.text End-Hymn
-			End-Section
-			Section both_theotokion
-				Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
-				Title<Tmode>sid oc.m1.d1_gr_GR_cog.ocLI.BeatitudesT.mode</>End-Title
-				Hymn sid oc.m1.d1_gr_GR_cog.ocLI.BeatitudesT.text End-Hymn
-			End-Section
-		End-Section
-	End-Section
-
-	Section _07_Antiphons__
+	Section _06_Antiphons__
 		Section append__
 			Section mode41_mealt1_prokeimenon_
 				Section antiphon
@@ -2857,7 +2856,7 @@ Template MA
 		End-Section
 		Section mode41_prokeimenon_
 			Section litany
-				Insert_section LN.ShortLitany03 End-Insert
+				Insert_section LN.ShortLitany03_deacon End-Insert
 			End-Section
 			Section antiphon
 				Actor sid Choir End-Actor
@@ -2877,7 +2876,7 @@ Template MA
 		End-Section	
 		Section sunday_
 			Section litany
-				Insert_section LN.ShortLitany03 End-Insert
+				Insert_section LN.ShortLitany03_deacon End-Insert
 			End-Section
 			Section hypakoe
 				Title role source sid sourceOctoechos End-Title
@@ -2986,125 +2985,148 @@ Template MA
 		End-Section
 	End-Section
 
-	Section _08_Gospel__
-		Section gospel_introH
-			Actor sid Deacon End-Actor
-			Dialog sid pet00 End-Dialog
-			Dialog<i>sid res01p</>End-Dialog
-			Actor sid Priest End-Actor
-			Dialog sid exc06 End-Dialog
-			Actor sid Choir End-Actor
-			Dialog sid res04 End-Dialog
-			Title role mode sid Mode2 End-Title
-			Media sid hoMA.PreGospelHymn.text @ver End-Media
-			Hymn sid psa150.v6a.text<r>sid Twice</>sid psa150.v6aalt.text @ver End-Hymn
-			Insert_section LN.BeforeGospel_Hierarchical End-Insert
+	Section _07_Gospel__
+		Section no__
+			Section hierarch__
+				Section intro_psalm50
+					Actor sid Reader End-Actor
+					Reading sid res01<r>sid Thrice</>End-Reading
+					Reading sid DoxaKaiNyn End-Reading
+					Actor sid Hierarch End-Actor
+					Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+				End-Section
+				Section psalm50
+					Actor sid Hierarch End-Actor
+					when-movable-cycle-day-is
+						63 use: 
+							Reading sid hoMA.SunPostGospel.text @ver End-Reading
+							Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+						71 thru 77 use:
+							Reading sid hoMA.SunPostGospel.text @ver <r>sid Thrice</> End-Reading
+						78 thru 110 use:
+							Reading sid hoMA.SunPostGospel.text @ver End-Reading
+							Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+						otherwise use:
+							Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+					end-when
+				End-Section
+			End-Section
+			Section reader__
+				Section intro_psalm50
+					Actor sid Reader End-Actor
+					Reading sid res01<r>sid Thrice</>End-Reading
+					Reading sid DoxaKaiNyn End-Reading
+					Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+				End-Section
+				Section psalm50
+					Actor sid Reader End-Actor
+					when-movable-cycle-day-is
+						63 use: 
+							Reading sid hoMA.SunPostGospel.text @ver End-Reading
+							Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+						71 thru 77 use:
+							Reading sid hoMA.SunPostGospel.text @ver <r>sid Thrice</> End-Reading
+						78 thru 110 use:
+							Reading sid hoMA.SunPostGospel.text @ver End-Reading
+							Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+						otherwise use:
+							Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+					end-when
+				End-Section
+			End-Section
 		End-Section
-		Section gospel_introP
-			Actor sid Deacon End-Actor
-			Dialog sid pet00 End-Dialog
-			Dialog<i>sid res01p</>End-Dialog
-			Actor sid Priest End-Actor
-			Dialog sid exc06 End-Dialog
-			Actor sid Choir End-Actor
-			Dialog sid res04 End-Dialog
-			Title role mode sid Mode2 End-Title
-			Media sid hoMA.PreGospelHymn.text @ver End-Media
-			Hymn sid psa150.v6a.text<r>sid Twice</>sid psa150.v6aalt.text @ver End-Hymn
-			Insert_section LN.BeforeGospel End-Insert
+		Section yes__
+			Section hierarch__
+				Section eo
+					Insert_section Selector_MatinsGospel.gospel_hierarch_eo End-Insert
+				End-Section
+				Section mc
+					Insert_section Selector_MatinsGospel.gospel_hierarch_mc End-Insert
+				End-Section
+				Section me
+					Insert_section Selector_MatinsGospel.gospel_hierarch_me End-Insert
+				End-Section
+				Section mealt1
+					Insert_section Selector_MatinsGospel.gospel_hierarch_mealt1 End-Insert
+				End-Section
+				Section pealt1
+					Insert_section Selector_MatinsGospel.gospel_hierarch_pealt1 End-Insert
+				End-Section
+			End-Section
+			Section priest__
+				Section eo
+					Insert_section Selector_MatinsGospel.gospel_priest_eo End-Insert
+				End-Section
+				Section mc
+					Insert_section Selector_MatinsGospel.gospel_priest_mc End-Insert
+				End-Section
+				Section me
+					Insert_section Selector_MatinsGospel.gospel_priest_me End-Insert
+				End-Section
+				Section mealt1
+					Insert_section Selector_MatinsGospel.gospel_priest_mealt1 End-Insert
+				End-Section
+				Section pealt1
+					Insert_section Selector_MatinsGospel.gospel_priest_pealt1 End-Insert
+				End-Section
+			End-Section
 		End-Section
-		Section Hierarchical
-			Insert_section Selector_MatinsGospel.Hierarchical End-Insert
+
+		//current old ________________________________
+		Section Hierarchical_mcme
+			Insert_section Selector_MatinsGospel.Hierarchical_mcme End-Insert
 		End-Section
 		Section Hierarchical_mealt1
 			Insert_section Selector_MatinsGospel.Hierarchical_mealt1 End-Insert
 		End-Section
-		Section mealt1_priest
-			Section matinsgospel
-				Insert_section gospel_introP End-Insert
-//				Insert_section Selector_MatinsGospel.Section01 End-Insert
-				Insert_section Selector_MatinsGospel.Section02_mealt1 End-Insert
-				Insert_section MA.Psalm50_read End-Insert
-				Insert_section PostGospel_mealt1 End-Insert
-				Insert_section LN.Supplication_mealt1_deacon End-Insert
-			End-Section
+		Section priest_mcme
+			Insert_section Selector_MatinsGospel.priest_mcme End-Insert
 		End-Section
-		Section pealt1_priest
-			Section matinsgospel
-				Insert_section gospel_introP End-Insert
-				Insert_section Selector_MatinsGospel.Section03_pealt1 End-Insert
-				when-movable-cycle-day-is
-					72 thru 77 use:
-						Actor sid Reader End-Actor
-						Reading sid hoMA.SunPostGospel.text @ver End-Reading
-					otherwise use:
-						Insert_section MA.Psalm50_read End-Insert
-				end-when
-				Insert_section PostGospel_alt1pe1 End-Insert
-				Insert_section LN.Supplication_alt1pe1_deacon End-Insert
-			End-Section
+		Section priest_mealt1
+			Insert_section Selector_MatinsGospel.priest_mealt1 End-Insert
 		End-Section
-		Section priest
-			Insert_section Selector_MatinsGospel.priest End-Insert
-		End-Section
-/*		Section supplication__
-			Section deacon__
-			End-Section
-			Section priest__
-			End-Section
-		End-Section   */
 	End-Section
 
-	Section _08_NoGospel__
-		Section Hierarchical__
-			Section intro_psalm50 //weekday low commemoration
-				Actor sid Reader End-Actor
-				Reading sid res01<r>sid Thrice</>End-Reading
-				Reading sid DoxaKaiNyn End-Reading
-				Actor sid Hierarch End-Actor
-				Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+	Section _08_Supplication__
+		Section deacon__
+			Section mc
+				Insert_section LN.Supplication_deacon_mc End-Insert
 			End-Section
-			Section psalm50
-				Actor sid Hierarch End-Actor
-				when-movable-cycle-day-is
-					63 use: 
-						Reading sid hoMA.SunPostGospel.text @ver End-Reading
-						Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
-					71 thru 77 use:
-						Reading sid hoMA.SunPostGospel.text @ver <r>sid Thrice</> End-Reading
-					78 thru 110 use:
-						Reading sid hoMA.SunPostGospel.text @ver End-Reading
-						Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
-					otherwise use:
-						Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
-				end-when
+			Section me
+				Insert_section LN.Supplication_deacon_me End-Insert
+			End-Section
+			Section mealt1
+				Insert_section LN.Supplication_deacon_mealt1 End-Insert
+			End-Section
+			Section me1_mealt1
+				Insert_section LN.Supplication_deacon_me1_mealt1 End-Insert
+			End-Section
+			Section pealt1
+				Insert_section LN.Supplication_deacon_pealt1 End-Insert
+			End-Section
+			Section plain
+				Insert_section LN.Supplication_deacon_plain End-Insert
 			End-Section
 		End-Section
-		Section reader__
-			Section intro_psalm50 //weekday low commemoration
-				Actor sid Reader End-Actor
-				Reading sid res01<r>sid Thrice</>End-Reading
-				Reading sid DoxaKaiNyn End-Reading
-				Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
+		Section priest__
+			Section mc
+				Insert_section LN.Supplication_priest_mc End-Insert
 			End-Section
-			Section psalm50
-				Actor sid Reader End-Actor
-				when-movable-cycle-day-is
-					63 use: 
-						Reading sid hoMA.SunPostGospel.text @ver End-Reading
-						Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
-					71 thru 77 use:
-						Reading sid hoMA.SunPostGospel.text @ver <r>sid Thrice</> End-Reading
-					78 thru 110 use:
-						Reading sid hoMA.SunPostGospel.text @ver End-Reading
-						Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
-					otherwise use:
-						Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
-				end-when
+			Section me
+				Insert_section LN.Supplication_priest_me End-Insert
 			End-Section
-		End-Section
-		Section supplication //weekdays in Lent
-			Insert_section LN.Supplication_Plain_priest End-Insert
+			Section mealt1
+				Insert_section LN.Supplication_priest_mealt1 End-Insert
+			End-Section
+			Section me1_mealt1
+				Insert_section LN.Supplication_priest_me1_mealt1 End-Insert
+			End-Section
+			Section pealt1
+				Insert_section LN.Supplication_priest_pealt1 End-Insert
+			End-Section
+			Section plain
+				Insert_section LN.Supplication_priest_plain End-Insert
+			End-Section
 		End-Section
 	End-Section
 	
@@ -3113,7 +3135,7 @@ Template MA
 			Section oc_h12tas0GrGrTh_and_me1_1234asVVGB_with_kath_bf_and_konoik_oc
 				Section block01_eothinonposition1
 					Para role bmc_eothinongospel_position1 sid mc.eothinongospel.position1 End-Para
-						Insert_section MA._08_Gospel__.priest End-Insert
+						Insert_section MA._07_Gospel__.priest_mcme End-Insert
 					Para role emc_eothinongospel_position1 sid mc.tag End-Para
 				End-Section
 				Section block02_odes13
@@ -3206,7 +3228,7 @@ Template MA
 				End-Section
 				Section block10_eothinonposition2
 					Para role bmc_eothinongospel_position2 sid mc.eothinongospel.position2 End-Para
-						Insert_section MA._08_Gospel__.priest End-Insert
+						Insert_section MA._07_Gospel__.priest_mcme End-Insert
 					Para role emc_eothinongospel_position2 sid mc.tag End-Para
 				End-Section
 				Section block11_ode9
@@ -3230,7 +3252,7 @@ Template MA
 			Section oc_h12tas0GrGrTh_and_me1_1234asVVGB_with_konoik_me1_and_kath_me1o2t_and_konoik_oc
 				Section block01_eothinonposition1
 					Para role bmc_eothinongospel_position1 sid mc.eothinongospel.position1 End-Para
-						Insert_section MA._08_Gospel__.priest End-Insert
+						Insert_section MA._07_Gospel__.priest_mcme End-Insert
 					Para role emc_eothinongospel_position1 sid mc.tag End-Para
 				End-Section
 				Section block02_odes13
@@ -3325,7 +3347,7 @@ Template MA
 				End-Section
 				Section block10_eothinonposition2
 					Para role bmc_eothinongospel_position2 sid mc.eothinongospel.position2 End-Para
-						Insert_section MA._08_Gospel__.priest End-Insert
+						Insert_section MA._07_Gospel__.priest_mcme End-Insert
 					Para role emc_eothinongospel_position2 sid mc.tag End-Para
 				End-Section
 				Section block11_ode9
@@ -3349,7 +3371,7 @@ Template MA
 			Section oc_h12tas0GrGrTh_and_me1_123tasVVGB_with_konoik_me1_and_kath_me1o2t_and_konoik_oc
 				Section block01_eothinonposition1
 					Para role bmc_eothinongospel_position1 sid mc.eothinongospel.position1 End-Para
-						Insert_section MA._08_Gospel__.priest End-Insert
+						Insert_section MA._07_Gospel__.priest_mcme End-Insert
 					Para role emc_eothinongospel_position1 sid mc.tag End-Para
 				End-Section
 				Section block02_odes13
@@ -3444,7 +3466,7 @@ Template MA
 				End-Section
 				Section block10_eothinonposition2
 					Para role bmc_eothinongospel_position2 sid mc.eothinongospel.position2 End-Para
-						Insert_section MA._08_Gospel__.priest End-Insert
+						Insert_section MA._07_Gospel__.priest_mcme End-Insert
 					Para role emc_eothinongospel_position2 sid mc.tag End-Para
 				End-Section
 				Section block11_ode9
@@ -3468,7 +3490,7 @@ Template MA
 			Section oc_h12tas0GrGrTh_and_me1_123tasVVGB_with_kont_festal_and_kath_me1_and_GBm08d15kath21_and_konoik_oc
 				Section block01_eothinonposition1
 					Para role bmc_eothinongospel_position1 sid mc.eothinongospel.position1 End-Para
-						Insert_section MA._08_Gospel__.priest End-Insert
+						Insert_section MA._07_Gospel__.priest_mcme End-Insert
 					Para role emc_eothinongospel_position1 sid mc.tag End-Para
 				End-Section
 				Section block02_odes13
@@ -3568,7 +3590,7 @@ Template MA
 				End-Section
 				Section block10_eothinonposition2
 					Para role bmc_eothinongospel_position2 sid mc.eothinongospel.position2 End-Para
-						Insert_section MA._08_Gospel__.priest End-Insert
+						Insert_section MA._07_Gospel__.priest_mcme End-Insert
 					Para role emc_eothinongospel_position2 sid mc.tag End-Para
 				End-Section
 				Section block11_ode9
@@ -3592,7 +3614,7 @@ Template MA
 			Section oc_h12tas0GrGrTh_and_me1_123tasVVVTh_and_me2_123tasVVGB_with_kath_me1_and_konoik_oc
 				Section block01_eothinonposition1
 					Para role bmc_eothinongospel_position1 sid mc.eothinongospel.position1 End-Para
-						Insert_section MA._08_Gospel__.priest End-Insert
+						Insert_section MA._07_Gospel__.priest_mcme End-Insert
 					Para role emc_eothinongospel_position1 sid mc.tag End-Para
 				End-Section
 				Section block02_odes13
@@ -3710,7 +3732,7 @@ Template MA
 				End-Section
 				Section block10_eothinonposition2
 					Para role bmc_eothinongospel_position2 sid mc.eothinongospel.position2 End-Para
-						Insert_section MA._08_Gospel__.priest End-Insert
+						Insert_section MA._07_Gospel__.priest_mcme End-Insert
 					Para role emc_eothinongospel_position2 sid mc.tag End-Para
 				End-Section
 				Section block11_ode9
@@ -3738,7 +3760,7 @@ Template MA
 			Section oc_h12tas0GrGrTh_and_me1_123asVVV_and_me2_12tasVGB_with_kath_me1o2t_and_konoik_oc
 				Section block01_eothinonposition1
 					Para role bmc_eothinongospel_position1 sid mc.eothinongospel.position1 End-Para
-						Insert_section MA._08_Gospel__.priest End-Insert
+						Insert_section MA._07_Gospel__.priest_mcme End-Insert
 					Para role emc_eothinongospel_position1 sid mc.tag End-Para
 				End-Section
 				Section block02_odes13
@@ -3856,7 +3878,7 @@ Template MA
 				End-Section
 				Section block10_eothinonposition2
 					Para role bmc_eothinongospel_position2 sid mc.eothinongospel.position2 End-Para
-						Insert_section MA._08_Gospel__.priest End-Insert
+						Insert_section MA._07_Gospel__.priest_mcme End-Insert
 					Para role emc_eothinongospel_position2 sid mc.tag End-Para
 				End-Section
 				Section block11_ode9
@@ -3884,7 +3906,7 @@ Template MA
 			Section oc_h12tas0GrGrTh_and_me1_123tasVVVTh_and_me2_123tasVVGB_with_kath_me1o2t_and_konoik_oc
 				Section block01_eothinonposition1
 					Para role bmc_eothinongospel_position1 sid mc.eothinongospel.position1 End-Para
-						Insert_section MA._08_Gospel__.priest End-Insert
+						Insert_section MA._07_Gospel__.priest_mcme End-Insert
 					Para role emc_eothinongospel_position1 sid mc.tag End-Para
 				End-Section
 				Section block02_odes13
@@ -4002,7 +4024,7 @@ Template MA
 				End-Section
 				Section block10_eothinonposition2
 					Para role bmc_eothinongospel_position2 sid mc.eothinongospel.position2 End-Para
-						Insert_section MA._08_Gospel__.priest End-Insert
+						Insert_section MA._07_Gospel__.priest_mcme End-Insert
 					Para role emc_eothinongospel_position2 sid mc.tag End-Para
 				End-Section
 				Section block11_ode9
@@ -4030,7 +4052,8 @@ Template MA
 			Section oc_h12tas0GrGrTh_and_me1_123tasVVGB_with_kath_me1o2t_and_konoik_oc
 				Section block01_eothinonposition1
 					Para role bmc_eothinongospel_position1 sid mc.eothinongospel.position1 End-Para
-						Insert_section MA._08_Gospel__.priest End-Insert
+						Insert_section MA._07_Gospel__.yes__.priest__.eo End-Insert
+						Insert_section MA._08_Supplication__.deacon__.me End-Insert
 					Para role emc_eothinongospel_position1 sid mc.tag End-Para
 				End-Section
 				Section block02_odes13
@@ -4120,7 +4143,8 @@ Template MA
 				End-Section
 				Section block10_eothinonposition2
 					Para role bmc_eothinongospel_position2 sid mc.eothinongospel.position2 End-Para
-						Insert_section MA._08_Gospel__.priest End-Insert
+						Insert_section MA._07_Gospel__.yes__.priest__.eo End-Insert
+						Insert_section MA._08_Supplication__.deacon__.me End-Insert
 					Para role emc_eothinongospel_position2 sid mc.tag End-Para
 				End-Section
 				Section block11_ode9
@@ -4144,7 +4168,8 @@ Template MA
 			Section oc_h12tas0GrGrTh_and_mealt1_123tasVVGB_with_konoik_mealt1_and_kath_mealt1o2t_and_konoik_oc
 				Section block01_eothinonposition1
 					Para role bmc_eothinongospel_position1 sid mc.eothinongospel.position1 End-Para
-						Insert_section MA._08_Gospel__.priest End-Insert
+						Insert_section MA._07_Gospel__.yes__.priest__.eo End-Insert
+						Insert_section MA._08_Supplication__.deacon__.mealt1 End-Insert
 					Para role emc_eothinongospel_position1 sid mc.tag End-Para
 				End-Section
 				Section block02_odes13
@@ -4239,7 +4264,8 @@ Template MA
 				End-Section
 				Section block10_eothinonposition2
 					Para role bmc_eothinongospel_position2 sid mc.eothinongospel.position2 End-Para
-						Insert_section MA._08_Gospel__.priest End-Insert
+						Insert_section MA._07_Gospel__.yes__.priest__.eo End-Insert
+						Insert_section MA._08_Supplication__.deacon__.mealt1 End-Insert
 					Para role emc_eothinongospel_position2 sid mc.tag End-Para
 				End-Section
 				Section block11_ode9
@@ -4263,7 +4289,7 @@ Template MA
 			Section oc_h12tas0GrGrTh_and_me2_123tasVVGB_with_konoik_oc_and_kath_me1o2t_and_konoik_me1
 				Section block01_eothinonposition1
 					Para role bmc_eothinongospel_position1 sid mc.eothinongospel.position1 End-Para
-						Insert_section MA._08_Gospel__.priest End-Insert
+						Insert_section MA._07_Gospel__.priest_mcme End-Insert
 					Para role emc_eothinongospel_position1 sid mc.tag End-Para
 				End-Section
 				Section block02_odes13
@@ -4359,7 +4385,7 @@ Template MA
 				End-Section
 				Section block10_eothinonposition2
 					Para role bmc_eothinongospel_position2 sid mc.eothinongospel.position2 End-Para
-						Insert_section MA._08_Gospel__.priest End-Insert
+						Insert_section MA._07_Gospel__.priest_mcme End-Insert
 					Para role emc_eothinongospel_position2 sid mc.tag End-Para
 				End-Section
 				Section block11_ode9
@@ -4383,7 +4409,8 @@ Template MA
 			Section oc_h12tas0GrGrTh_and_me2_123tasVVGB_with_konoik_me1_and_kath_me1o2t_and_konoik_oc
 				Section block01_eothinonposition1
 					Para role bmc_eothinongospel_position1 sid mc.eothinongospel.position1 End-Para
-						Insert_section MA._08_Gospel__.priest End-Insert
+						Insert_section MA._07_Gospel__.yes__.priest__.eo End-Insert
+						Insert_section MA._08_Supplication__.deacon__.me End-Insert
 					Para role emc_eothinongospel_position1 sid mc.tag End-Para
 				End-Section
 				Section block02_odes13
@@ -4478,7 +4505,8 @@ Template MA
 				End-Section
 				Section block10_eothinonposition2
 					Para role bmc_eothinongospel_position2 sid mc.eothinongospel.position2 End-Para
-						Insert_section MA._08_Gospel__.priest End-Insert
+						Insert_section MA._07_Gospel__.yes__.priest__.eo End-Insert
+						Insert_section MA._08_Supplication__.deacon__.me End-Insert
 					Para role emc_eothinongospel_position2 sid mc.tag End-Para
 				End-Section
 				Section block11_ode9
@@ -4502,7 +4530,7 @@ Template MA
 			Section oc_h12tas0GrGrTh_and_date_me1_h123as0VGB_with_kont_festal_and_kath_me1_and_konoik_oc
 				Section block01_eothinonposition1
 					Para role bmc_eothinongospel_position1 sid mc.eothinongospel.position1 End-Para
-						Insert_section MA._08_Gospel__.priest End-Insert
+						Insert_section MA._07_Gospel__.priest_mcme End-Insert
 					Para role emc_eothinongospel_position1 sid mc.tag End-Para
 				End-Section
 				Section block02_odes13
@@ -4613,7 +4641,7 @@ Template MA
 				End-Section
 				Section block10_eothinonposition2
 					Para role bmc_eothinongospel_position2 sid mc.eothinongospel.position2 End-Para
-						Insert_section MA._08_Gospel__.priest End-Insert
+						Insert_section MA._07_Gospel__.priest_mcme End-Insert
 					Para role emc_eothinongospel_position2 sid mc.tag End-Para
 				End-Section
 				Section block11_ode9
@@ -4639,7 +4667,7 @@ Template MA
 			Section oc_h12tas0GrGrTh_and_date_me1_h123as0VVV_and_date_me2_h123as0VGB_with_konoik_oc_and_date_kath31_and_date_konoik_me1_and_ode9_M1_and_M1
 				Section block01_eothinonposition1
 					Para role bmc_eothinongospel_position1 sid mc.eothinongospel.position1 End-Para
-						Insert_section MA._08_Gospel__.priest End-Insert
+						Insert_section MA._07_Gospel__.priest_mcme End-Insert
 					Para role emc_eothinongospel_position1 sid mc.tag End-Para
 				End-Section
 				Section block02_odes13
@@ -4798,7 +4826,7 @@ Template MA
 				End-Section
 				Section block10_eothinonposition2
 					Para role bmc_eothinongospel_position2 sid mc.eothinongospel.position2 End-Para
-						Insert_section MA._08_Gospel__.priest End-Insert
+						Insert_section MA._07_Gospel__.priest_mcme End-Insert
 					Para role emc_eothinongospel_position2 sid mc.tag End-Para
 				End-Section
 				Section block11_ode9
@@ -4824,7 +4852,7 @@ Template MA
 			Section oc_h12tas0GrGrTh_and_date_me1_h123as0VVV_and_me1_123tasVVGB_with_kont_festal_and_kath_me1gbme2_and_konoik_oc
 				Section block01_eothinonposition1
 					Para role bmc_eothinongospel_position1 sid mc.eothinongospel.position1 End-Para
-						Insert_section MA._08_Gospel__.priest End-Insert
+						Insert_section MA._07_Gospel__.priest_mcme End-Insert
 					Para role emc_eothinongospel_position1 sid mc.tag End-Para
 				End-Section
 				Section block02_odes13
@@ -4963,7 +4991,7 @@ Template MA
 				End-Section
 				Section block10_eothinonposition2
 					Para role bmc_eothinongospel_position2 sid mc.eothinongospel.position2 End-Para
-						Insert_section MA._08_Gospel__.priest End-Insert
+						Insert_section MA._07_Gospel__.priest_mcme End-Insert
 					Para role emc_eothinongospel_position2 sid mc.tag End-Para
 				End-Section
 				Section block11_ode9
@@ -4987,7 +5015,7 @@ Template MA
 			Section oc_h12tas0GrGrTh_and_date_me2_1234asVVGB_with_kont_festal_and_date_kath_and_konoik_oc
 				Section block01_eothinonposition1
 					Para role bmc_eothinongospel_position1 sid mc.eothinongospel.position1 End-Para
-						Insert_section MA._08_Gospel__.priest End-Insert
+						Insert_section MA._07_Gospel__.priest_mcme End-Insert
 					Para role emc_eothinongospel_position1 sid mc.tag End-Para
 				End-Section
 				Section block02_odes13
@@ -5098,7 +5126,7 @@ Template MA
 				End-Section
 				Section block10_eothinonposition2
 					Para role bmc_eothinongospel_position2 sid mc.eothinongospel.position2 End-Para
-						Insert_section MA._08_Gospel__.priest End-Insert
+						Insert_section MA._07_Gospel__.priest_mcme End-Insert
 					Para role emc_eothinongospel_position2 sid mc.tag End-Para
 				End-Section
 				Section block11_ode9
@@ -5124,7 +5152,8 @@ Template MA
 			Section oc_h12tas0GrGrTh_and_tr1_123tasVVGB_with_konoik_oc_and_kath_tr_and_konoik_tr
 				Section block01_eothinonposition1
 					Para role bmc_eothinongospel_position1 sid mc.eothinongospel.position1 End-Para
-						Insert_section MA._08_Gospel__.priest End-Insert
+						Insert_section MA._07_Gospel__.yes__.priest__.eo End-Insert
+						Insert_section MA._08_Supplication__.deacon__.mc End-Insert
 					Para role emc_eothinongospel_position1 sid mc.tag End-Para
 				End-Section
 				Section block02_odes13
@@ -5221,7 +5250,8 @@ Template MA
 				End-Section
 				Section block10_eothinonposition2
 					Para role bmc_eothinongospel_position2 sid mc.eothinongospel.position2 End-Para
-						Insert_section MA._08_Gospel__.priest End-Insert
+						Insert_section MA._07_Gospel__.yes__.priest__.eo End-Insert
+						Insert_section MA._08_Supplication__.deacon__.mc End-Insert
 					Para role emc_eothinongospel_position2 sid mc.tag End-Para
 				End-Section
 				Section block11_ode9
@@ -5245,7 +5275,8 @@ Template MA
 			Section oc_h12tas0GrGrTh_and_tr1_123tasVVVTh_and_tr2_123tasVVGB_with_konoik_tr_and_kath_tr_and_konoik_oc
 				Section block01_eothinonposition1
 					Para role bmc_eothinongospel_position1 sid mc.eothinongospel.position1 End-Para
-						Insert_section MA._08_Gospel__.priest End-Insert
+						Insert_section MA._07_Gospel__.yes__.priest__.eo End-Insert
+						Insert_section MA._08_Supplication__.deacon__.mc End-Insert
 					Para role emc_eothinongospel_position1 sid mc.tag End-Para
 				End-Section
 				Section block02_odes13
@@ -5369,7 +5400,8 @@ Template MA
 				End-Section
 				Section block10_eothinonposition2
 					Para role bmc_eothinongospel_position2 sid mc.eothinongospel.position2 End-Para
-						Insert_section MA._08_Gospel__.priest End-Insert
+						Insert_section MA._07_Gospel__.yes__.priest__.eo End-Insert
+						Insert_section MA._08_Supplication__.deacon__.mc End-Insert
 					Para role emc_eothinongospel_position2 sid mc.tag End-Para
 				End-Section
 				Section block11_ode9
@@ -5476,7 +5508,8 @@ Template MA
 			Section pa_hh12as00VV_and_pa_t1t2asThTh_and_pe1_F1F2trtasVVGB_with_kath_pe1gb2_with_konoik_pe_with_ode9_pa_M1M2M3M4ThTh_and_pe1_VVGB
 				Section block01_eothinonposition1
 					Para role bmc_eothinongospel_position1 sid mc.eothinongospel.position1 End-Para
-						Insert_section MA._08_Gospel__.priest End-Insert
+						Insert_section MA._07_Gospel__.yes__.priest__.mc End-Insert
+						Insert_section MA._08_Supplication__.deacon__.mc End-Insert
 					Para role emc_eothinongospel_position1 sid mc.tag End-Para
 				End-Section
 				Section block02_odes13
@@ -5572,7 +5605,8 @@ Template MA
 				End-Section
 				Section block10_eothinonposition2
 					Para role bmc_eothinongospel_position2 sid mc.eothinongospel.position2 End-Para
-						Insert_section MA._08_Gospel__.priest End-Insert
+						Insert_section MA._07_Gospel__.yes__.priest__.mc End-Insert
+						Insert_section MA._08_Supplication__.deacon__.mc End-Insert
 					Para role emc_eothinongospel_position2 sid mc.tag End-Para
 				End-Section
 				Section block11_ode9
@@ -5592,7 +5626,7 @@ Template MA
 			Section pe1_h123as0VVV_and_me1_123tasVVGB_with_hypakoe_pe_and_konoik_me1_and_konoik_pe
 				Section block01_eothinonposition1
 					Para role bmc_eothinongospel_position1 sid mc.eothinongospel.position1 End-Para
-						Insert_section MA._08_Gospel__.priest End-Insert
+						Insert_section MA._07_Gospel__.priest_mcme End-Insert
 					Para role emc_eothinongospel_position1 sid mc.tag End-Para
 				End-Section
 				Section block02_odes13
@@ -5689,7 +5723,7 @@ Template MA
 				End-Section
 				Section block10_eothinonposition2
 					Para role bmc_eothinongospel_position2 sid mc.eothinongospel.position2 End-Para
-						Insert_section MA._08_Gospel__.priest End-Insert
+						Insert_section MA._07_Gospel__.priest_mcme End-Insert
 					Para role emc_eothinongospel_position2 sid mc.tag End-Para
 				End-Section
 				Section block11_ode9
@@ -8205,16 +8239,16 @@ Template MA
 		Section litanies__
 			Section ode3
 				Para role bmc_ode3_litany sid mc.ode3.litany End-Para
-					Insert_section LN.ShortLitany08 End-Insert
+					Insert_section LN.ShortLitany08_deacon End-Insert
 				Para role emc_ode3_litany sid mc.tag End-Para
 			End-Section
 			Section ode6
 				Para role bmc_ode6_litany sid mc.ode6.litany End-Para
-				Insert_section LN.ShortLitany09 End-Insert
+				Insert_section LN.ShortLitany09_deacon End-Insert
 				Para role emc_ode6_litany sid mc.tag End-Para
 			End-Section
 			Section ode9
-				Insert_section LN.ShortLitany10 End-Insert
+				Insert_section LN.ShortLitany10_deacon End-Insert
 			End-Section
 		End-Section
 		Section ode3kathisma__
@@ -13369,16 +13403,16 @@ Template MA
 			Section aftergreatdoxology
 				Insert_section LN.Ektenia02 End-Insert
 				Insert_section LN.ComplementaryM End-Insert
-				Insert_section LN.BowHeadsM_Hierarchical End-Insert
+				Insert_section LN.hBowHeadsM End-Insert
 			End-Section
 			Section aftergreatdoxology_double_commemoration
 				Insert_section LN.Ektenia02_double_commemoration End-Insert
 				Insert_section LN.ComplementaryM End-Insert
-				Insert_section LN.BowHeadsM_Hierarchical End-Insert
+				Insert_section LN.hBowHeadsM End-Insert
 			End-Section
 			Section aftersmalldoxology
 				Insert_section LN.ComplementaryM End-Insert
-				Insert_section LN.BowHeadsM_Hierarchical End-Insert
+				Insert_section LN.hBowHeadsM End-Insert
 			End-Section
 		End-Section
 		Section aftergreatdoxology
@@ -14430,306 +14464,92 @@ Template MA
 	End-Section
 
 	
-//-----------------------
 //Blocks
 
-		Section Psalm50_read
-			Actor sid Reader End-Actor
-			Section texts
-				when-movable-cycle-day-is
-					63 use: 
-						Reading sid hoMA.SunPostGospel.text @ver End-Reading
-						Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
-					71 thru 77 use:
-						Reading sid hoMA.SunPostGospel.text @ver <r>sid Thrice</> End-Reading
-					78 thru 110 use: 
-						Reading sid hoMA.SunPostGospel.text @ver End-Reading
-						Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
-					113, 127 use:
-						Reading sid hoMA.SunPostGospel.text @ver End-Reading
-						Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
-					120 use:
-						Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
-					otherwise use:
-						when-date-is
-							Feb 2 use:
-								when-name-of-day-is
-									Sunday use:
-										Reading sid hoMA.SunPostGospel.text @ver End-Reading
-										Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
-									otherwise use:
-										Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
-								end-when						
-							Mar 25 use:
-								when-name-of-day-is
-									Sunday use:
-										Reading sid hoMA.SunPostGospel.text @ver End-Reading
-										Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
-									otherwise use:
-										Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
-								end-when						
-							Aug 15 use: 
-								when-name-of-day-is
-									Sunday use:
-										Reading sid hoMA.SunPostGospel.text @ver End-Reading
-										Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
-									otherwise use:
-										Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
-								end-when						
-							Sep 8 use: 
-								when-name-of-day-is
-									Sunday use:
-										Reading sid hoMA.SunPostGospel.text @ver End-Reading
-										Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
-									otherwise use:
-										Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
-								end-when						
-							Sep 14 use: 
-								Reading sid hoMA.SunPostGospel.text @ver End-Reading
-								Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
-							Nov 21 use: 
-								when-name-of-day-is
-									Sunday use:
-										Reading sid hoMA.SunPostGospel.text @ver End-Reading
-										Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
-									otherwise use:
-										Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
-								end-when						
-							otherwise use:
-								Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
-						end-when	
-				end-when			
-			End-Section
+	Section Magnificat_Verses
+		Verse<bnr>sid vVerse</> sid bode9_mag.v1.text @ver End-Verse
+		Hymn sid prayers_gr_GR_cog.TinTimioteran.text @ver media-off End-Hymn
+		Verse<bnr>sid vVerse</> sid bode9_mag.v2.text @ver End-Verse
+		Hymn sid prayers_gr_GR_cog.TinTimioteran.text @ver media-off End-Hymn
+		Verse<bnr>sid vVerse</> sid bode9_mag.v3.text @ver End-Verse
+		Hymn sid prayers_gr_GR_cog.TinTimioteran.text @ver media-off End-Hymn
+		Verse<bnr>sid vVerse</> sid bode9_mag.v4.text @ver End-Verse
+		Hymn sid prayers_gr_GR_cog.TinTimioteran.text @ver media-off End-Hymn
+		Verse<bnr>sid vVerse</> sid bode9_mag.v5.text @ver End-Verse
+		Hymn sid prayers_gr_GR_cog.TinTimioteran.text @ver media-off End-Hymn
+		Verse<bnr>sid vVerse</> sid bode9_mag.v6.text @ver End-Verse
+		Hymn sid prayers_gr_GR_cog.TinTimioteran.text @ver media-off End-Hymn
+	End-Section
+	Section Lauds_1
+		Hymn sid psa150.v6a.text sid psa148.v1alt.text @ver End-Hymn
+	End-Section
+	Section Lauds_2
+		Hymn sid psa148.v2alt.text @ver End-Hymn
+	End-Section
+	Section Lauds_Stichologia
+		Section for_6
+		//	Title role bmc_collapse sid clps.stichologia.top End-Title
+			Para role inaudible sid psa148.v3.text End-Para
+			Para role inaudible sid psa148.v4.text sid psa148.v5a.text End-Para
+			Para role inaudible sid psa148.v5b.text End-Para
+			Para role inaudible sid psa148.v6.text End-Para
+			Para role inaudible sid psa148.v7.text End-Para
+			Para role inaudible sid psa148.v8.text End-Para
+			Para role inaudible sid psa148.v9.text End-Para
+			Para role inaudible sid psa148.v10.text End-Para
+			Para role inaudible sid psa148.v11.text End-Para
+			Para role inaudible sid psa148.v12.text sid psa148.v13a.text End-Para
+			Para role inaudible sid psa148.v13b.text sid psa148.v14a.text End-Para
+			Para role inaudible sid psa148.v14b.text End-Para
+			Para role inaudible sid psa149.v1.text End-Para
+			Para role inaudible sid psa149.v2.text End-Para
+			Para role inaudible sid psa149.v3.text End-Para
+			Para role inaudible sid psa149.v4.text End-Para
+			Para role inaudible sid psa149.v5.text End-Para
+			Para role inaudible sid psa149.v6.text End-Para
+			Para role inaudible sid psa149.v7.text End-Para
+			Para role inaudible sid psa149.v8.text End-Para
+		//	Title role emc_collapse sid clps.stichologia.bottom End-Title
 		End-Section
-
-		Section Psalm50_read_Hierarchical
-			Actor sid Hierarch End-Actor
-			Insert_section Psalm50_read.texts End-Insert
+		Section for_4
+		//	Title role bmc_collapse sid clps.stichologia.top End-Title
+			Para role inaudible sid psa148.v3.text End-Para
+			Para role inaudible sid psa148.v4.text sid psa148.v5a.text End-Para
+			Para role inaudible sid psa148.v5b.text End-Para
+			Para role inaudible sid psa148.v6.text End-Para
+			Para role inaudible sid psa148.v7.text End-Para
+			Para role inaudible sid psa148.v8.text End-Para
+			Para role inaudible sid psa148.v9.text End-Para
+			Para role inaudible sid psa148.v10.text End-Para
+			Para role inaudible sid psa148.v11.text End-Para
+			Para role inaudible sid psa148.v12.text sid psa148.v13a.text End-Para
+			Para role inaudible sid psa148.v13b.text sid psa148.v14a.text End-Para
+			Para role inaudible sid psa148.v14b.text End-Para
+			Para role inaudible sid psa149.v1.text End-Para
+			Para role inaudible sid psa149.v2.text End-Para
+			Para role inaudible sid psa149.v3.text End-Para
+			Para role inaudible sid psa149.v4.text End-Para
+			Para role inaudible sid psa149.v5.text End-Para
+			Para role inaudible sid psa149.v6.text End-Para
+			Para role inaudible sid psa149.v7.text End-Para
+			Para role inaudible sid psa149.v8.text End-Para
+			Para role inaudible sid psa149.v9.text End-Para
+			Para role inaudible sid psa150.v1.text End-Para
+		//	Title role emc_collapse sid clps.stichologia.bottom End-Title
 		End-Section
-		
-		Section Psalm50_chant
-			Actor sid Reader End-Actor
-			Reading sid hoMA.SunPostGospel.text @ver End-Reading
-			Actor sid Choir End-Actor
-			Title role desig sid psa50.title End-Title
-			Title<Tmode>sid Mode2</><Trubric>sid ITisEvdomados</>End-Title
-			Media sid hoMA.Psalm50.text End-Media
-			Insert_section LiturgicalPsalms.Psalm_50_Verses End-Insert
-		End-Section
-
-		Section Psalm50_chant_Hierarchical
-			Actor sid Hierarch End-Actor
-			Reading sid hoMA.SunPostGospel.text @ver End-Reading
-			Actor sid Choir End-Actor
-			Title role desig sid psa50.title End-Title
-			Title<Tmode>sid Mode2</><Trubric>sid ITisEvdomados</>End-Title
-			Media sid hoMA.Psalm50.text End-Media
-			Insert_section LiturgicalPsalms.Psalm_50_Verses End-Insert
-		End-Section
-
-		Section PostGospel_mc
-			when-movable-cycle-day-is
-				64 use:
-					Section tr
-						Title role source sid sourceTriodion End-Title
-						Actor sid Choir End-Actor
-						Media rid trMA.PostGospelGlory.text End-Media
-						Title role mixed sid Doxa<Tmode>rid trMA.PostGospelGlory.mode</>End-Title
-						Hymn rid trMA.PostGospelGlory.text @ver media-off End-Hymn
-						Title role mixed sid KaiNyn<Tmode>sid OAftos</>End-Title
-						Hymn rid trMA.PostGospelBoth.text @ver media-off End-Hymn
-						Title<Tdesig>sid Idiomelon</><Tmode>rid trMA.PostGospelIdiomelon.mode</>End-Title
-						Verse<bnr>sid vVerse</>sid ps_gr_GR_cog.psa50.v3.text End-Verse
-						Hymn rid trMA.PostGospelIdiomelon.text @ver media-off End-Hymn
-					End-Section 
-				71 thru 127 use:
-					Section pe
-						Title role source sid sourcePentecostarion End-Title
-						Actor sid Choir End-Actor
-						Media rid peMA.PostGospelGlory.text End-Media
-						Title role mixed sid Doxa<Tmode>rid peMA.PostGospelGlory.mode</>End-Title
-						Hymn rid peMA.PostGospelGlory.text @ver media-off End-Hymn
-						Title role mixed sid KaiNyn<Tmode>sid OAftos</>End-Title
-						Hymn rid peMA.PostGospelBoth.text @ver media-off End-Hymn
-						Title<Tdesig>sid Idiomelon</><Tmode>rid peMA.PostGospelIdiomelon.mode</>End-Title
-						Media rid peMA.PostGospelIdiomelon.text End-Media
-						Verse<bnr>sid vVerse</>sid ps_gr_GR_cog.psa50.v3.text End-Verse
-						Hymn rid peMA.PostGospelIdiomelon.text @ver media-off End-Hymn
-					End-Section
-			end-when
-		End-Section 
-
-		Section PostGospel_me
-			Title role source sid sourceMenaion End-Title
-			Actor sid Choir End-Actor
-			Title role mixed sid Doxa<Tmode>sid Mode2</>End-Title
-			Hymn rid meMA.PostGospelGlory.text @ver End-Hymn
-			Title sid KaiNyn End-Title
-			Hymn rid meMA.PostGospelBoth.text @ver End-Hymn
-			Title<Tdesig>sid Idiomelon</><Tmode>rid meMA.PostGospelIdiomelon.mode</>End-Title
-			Media rid meMA.PostGospelIdiomelon.text End-Media
-			when-movable-cycle-day-is
-				71 thru 77 use:
-					when-date-is
-						Apr 23 use:
-							Verse<bnr>sid vVerse</>sid ps_gr_GR_cog.psa63.v11a.text sid ps_gr_GR_cog.psa63.v11b.text @ver End-Verse
-					end-when
-				otherwise use:
-					Verse<bnr>sid vVerse</>sid psa50.v3.text @ver End-Verse
-			end-when
-			Hymn rid meMA.PostGospelIdiomelon.text @ver media-off End-Hymn
-		End-Section
-
-		Section PostGospel_mealt1
-			Title role source sid sourceMeSupplement End-Title
-			Actor sid Choir End-Actor
-			Title role mixed sid Doxa<Tmode>sid Mode2</>End-Title
-			Hymn rid alt1.meMA.PostGospelGlory.text @ver End-Hymn
-			Title sid KaiNyn End-Title
-			Hymn rid alt1.meMA.PostGospelBoth.text @ver End-Hymn
-			Title<Tdesig>sid Idiomelon</><Tmode>rid alt1.meMA.PostGospelIdiomelon.mode</>End-Title
-			Media rid alt1.meMA.PostGospelIdiomelon.text End-Media
-			when-movable-cycle-day-is
-				71 thru 77 use:
-					when-date-is
-						Apr 23 use:
-							Verse<bnr>sid vVerse</>sid ps_gr_GR_cog.psa63.v11a.text sid ps_gr_GR_cog.psa63.v11b.text @ver End-Verse
-					end-when
-				otherwise use:
-					Verse<bnr>sid vVerse</>sid psa50.v3.text @ver End-Verse
-			end-when
-			Hymn rid alt1.meMA.PostGospelIdiomelon.text @ver media-off End-Hymn
-		End-Section
-		
-		Section PostGospel_alt1pe1
-			Title role source sid sourcePeSupplement End-Title
-			Actor sid Choir End-Actor
-			Title role mixed sid Doxa<Tmode>sid Mode2</>End-Title
-			Hymn rid alt1.peMA.PostGospelGlory.text @ver End-Hymn
-			Title sid KaiNyn End-Title
-			Hymn rid alt1.peMA.PostGospelBoth.text @ver End-Hymn
-			Title<Tdesig>sid Idiomelon</><Tmode>rid alt1.peMA.PostGospelIdiomelon.mode</>End-Title
-			Media rid alt1.peMA.PostGospelIdiomelon.text End-Media
-			Verse<bnr>sid vVerse</>sid psa50.v3.text @ver End-Verse
-			Hymn rid alt1.peMA.PostGospelIdiomelon.text @ver media-off End-Hymn
-		End-Section
-		
-		Section PostGospel_eo
-				when-triodion-day-is 
-					1 thru 57 use:
-						Section tr
-							Title role desig sid IdiomelaTouTriodiou End-Title
-							Title role mixed sid Doxa<Tmode>sid tr.d001_gr_GR_cog.trMA.PostGospelGlory.mode</>End-Title
-							Hymn sid tr.d001_gr_GR_cog.trMA.PostGospelGlory.text @ver End-Hymn
-							Title role mixed sid KaiNyn<Tmode>sid OAftos</>End-Title
-							Hymn sid tr.d001_gr_GR_cog.trMA.PostGospelBoth.text @ver End-Hymn
-							Title<Tdesig>sid Idiomelon</><Tmode>sid tr.d001_gr_GR_cog.trMA.PostGospelIdiomelon.mode</>End-Title
-							Media sid tr.d001_gr_GR_cog.trMA.PostGospelIdiomelon.text End-Media
-							Verse<bnr>sid vVerse</>sid psa50.v3.text End-Verse
-							Hymn sid tr.d001_gr_GR_cog.trMA.PostGospelIdiomelon.text @ver media-off End-Hymn
-						End-Section 
-					otherwise use:
-						Section notr
-							Title sid Doxa End-Title
-							Hymn sid hoMA.PostGospelApostles.text @ver End-Hymn
-							Title sid KaiNyn End-Title
-							Hymn sid hoMA.PostGospelTheotokos.text @ver End-Hymn
-							Verse<bnr>sid vVerse</>sid psa50.v3.text End-Verse
-							Hymn sid hoMA.SunPostGospelIdiomelon.text @ver End-Hymn
-						End-Section
-				end-when
-		End-Section
-
-		Section Magnificat_Verses
-			Verse<bnr>sid vVerse</> sid bode9_mag.v1.text @ver End-Verse
-			Hymn sid prayers_gr_GR_cog.TinTimioteran.text @ver media-off End-Hymn
-			Verse<bnr>sid vVerse</> sid bode9_mag.v2.text @ver End-Verse
-			Hymn sid prayers_gr_GR_cog.TinTimioteran.text @ver media-off End-Hymn
-			Verse<bnr>sid vVerse</> sid bode9_mag.v3.text @ver End-Verse
-			Hymn sid prayers_gr_GR_cog.TinTimioteran.text @ver media-off End-Hymn
-			Verse<bnr>sid vVerse</> sid bode9_mag.v4.text @ver End-Verse
-			Hymn sid prayers_gr_GR_cog.TinTimioteran.text @ver media-off End-Hymn
-			Verse<bnr>sid vVerse</> sid bode9_mag.v5.text @ver End-Verse
-			Hymn sid prayers_gr_GR_cog.TinTimioteran.text @ver media-off End-Hymn
-			Verse<bnr>sid vVerse</> sid bode9_mag.v6.text @ver End-Verse
-			Hymn sid prayers_gr_GR_cog.TinTimioteran.text @ver media-off End-Hymn
-		End-Section
-
-		Section Lauds_1
-			Hymn sid psa150.v6a.text sid psa148.v1alt.text @ver End-Hymn
-		End-Section
-		Section Lauds_2
-			Hymn sid psa148.v2alt.text @ver End-Hymn
-		End-Section
-
-
-		Section Lauds_Stichologia
-			Section for_6
-			//	Title role bmc_collapse sid clps.stichologia.top End-Title
-				Para role inaudible sid psa148.v3.text End-Para
-				Para role inaudible sid psa148.v4.text sid psa148.v5a.text End-Para
-				Para role inaudible sid psa148.v5b.text End-Para
-				Para role inaudible sid psa148.v6.text End-Para
-				Para role inaudible sid psa148.v7.text End-Para
-				Para role inaudible sid psa148.v8.text End-Para
-				Para role inaudible sid psa148.v9.text End-Para
-				Para role inaudible sid psa148.v10.text End-Para
-				Para role inaudible sid psa148.v11.text End-Para
-				Para role inaudible sid psa148.v12.text sid psa148.v13a.text End-Para
-				Para role inaudible sid psa148.v13b.text sid psa148.v14a.text End-Para
-				Para role inaudible sid psa148.v14b.text End-Para
-				Para role inaudible sid psa149.v1.text End-Para
-				Para role inaudible sid psa149.v2.text End-Para
-				Para role inaudible sid psa149.v3.text End-Para
-				Para role inaudible sid psa149.v4.text End-Para
-				Para role inaudible sid psa149.v5.text End-Para
-				Para role inaudible sid psa149.v6.text End-Para
-				Para role inaudible sid psa149.v7.text End-Para
-				Para role inaudible sid psa149.v8.text End-Para
-			//	Title role emc_collapse sid clps.stichologia.bottom End-Title
-			End-Section
-			Section for_4
-			//	Title role bmc_collapse sid clps.stichologia.top End-Title
-				Para role inaudible sid psa148.v3.text End-Para
-				Para role inaudible sid psa148.v4.text sid psa148.v5a.text End-Para
-				Para role inaudible sid psa148.v5b.text End-Para
-				Para role inaudible sid psa148.v6.text End-Para
-				Para role inaudible sid psa148.v7.text End-Para
-				Para role inaudible sid psa148.v8.text End-Para
-				Para role inaudible sid psa148.v9.text End-Para
-				Para role inaudible sid psa148.v10.text End-Para
-				Para role inaudible sid psa148.v11.text End-Para
-				Para role inaudible sid psa148.v12.text sid psa148.v13a.text End-Para
-				Para role inaudible sid psa148.v13b.text sid psa148.v14a.text End-Para
-				Para role inaudible sid psa148.v14b.text End-Para
-				Para role inaudible sid psa149.v1.text End-Para
-				Para role inaudible sid psa149.v2.text End-Para
-				Para role inaudible sid psa149.v3.text End-Para
-				Para role inaudible sid psa149.v4.text End-Para
-				Para role inaudible sid psa149.v5.text End-Para
-				Para role inaudible sid psa149.v6.text End-Para
-				Para role inaudible sid psa149.v7.text End-Para
-				Para role inaudible sid psa149.v8.text End-Para
-				Para role inaudible sid psa149.v9.text End-Para
-				Para role inaudible sid psa150.v1.text End-Para
-			//	Title role emc_collapse sid clps.stichologia.bottom End-Title
-			End-Section
-		End-Section
-
-		Section laudsstichologia_media_modeofweek
-			when-mode-of-week-is
-				M1 use: Media sid oc.m1.d1_gr_GR_cog.ocMA.MM.LaudsStichologia.text End-Media
-				M2 use: Media sid oc.m2.d1_gr_GR_cog.ocMA.MM.LaudsStichologia.text End-Media
-				M3 use: Media sid oc.m3.d1_gr_GR_cog.ocMA.MM.LaudsStichologia.text End-Media
-				M4 use: Media sid oc.m4.d1_gr_GR_cog.ocMA.MM.LaudsStichologia.text End-Media
-				M5 use: Media sid oc.m5.d1_gr_GR_cog.ocMA.MM.LaudsStichologia.text End-Media
-				M6 use: Media sid oc.m6.d1_gr_GR_cog.ocMA.MM.LaudsStichologia.text End-Media
-				M7 use: Media sid oc.m7.d1_gr_GR_cog.ocMA.MM.LaudsStichologia.text End-Media
-				M8 use: Media sid oc.m8.d1_gr_GR_cog.ocMA.MM.LaudsStichologia.text End-Media
-			end-when
-		End-Section
-
-
+	End-Section
+	Section laudsstichologia_media_modeofweek
+		when-mode-of-week-is
+			M1 use: Media sid oc.m1.d1_gr_GR_cog.ocMA.MM.LaudsStichologia.text End-Media
+			M2 use: Media sid oc.m2.d1_gr_GR_cog.ocMA.MM.LaudsStichologia.text End-Media
+			M3 use: Media sid oc.m3.d1_gr_GR_cog.ocMA.MM.LaudsStichologia.text End-Media
+			M4 use: Media sid oc.m4.d1_gr_GR_cog.ocMA.MM.LaudsStichologia.text End-Media
+			M5 use: Media sid oc.m5.d1_gr_GR_cog.ocMA.MM.LaudsStichologia.text End-Media
+			M6 use: Media sid oc.m6.d1_gr_GR_cog.ocMA.MM.LaudsStichologia.text End-Media
+			M7 use: Media sid oc.m7.d1_gr_GR_cog.ocMA.MM.LaudsStichologia.text End-Media
+			M8 use: Media sid oc.m8.d1_gr_GR_cog.ocMA.MM.LaudsStichologia.text End-Media
+		end-when
+	End-Section
 	Section Lauds_ModeOfWeek
 		Title<Tdesig>sid OiAinoi</><Tmode>rid ocMA.Lauds1.mode @day D1</>End-Title
 		Media rid ocMA.MM.Lauds01.text @day D1 End-Media
@@ -14793,7 +14613,6 @@ Template MA
 		Media sid oc.m8.d1_gr_GR_cog.ocMA.MM.Lauds02.text End-Media
 		Insert_section Lauds_2 End-Insert
 	End-Section
-
 	Section Lauds_Verses
 		Section v01
 			Verse sid psa149.v9.text @ver End-Verse
@@ -14826,8 +14645,6 @@ Template MA
 			Verse sid psa9.v2.text @ver End-Verse
 		End-Section
 	End-Section
-
-
 	Section GreatDoxology
 		Section title_media
 			Title role desig sid hoMA.DoxologyGreat.title End-Title
@@ -14862,7 +14679,6 @@ Template MA
 			Reading sid hoMA.DoxologyVerse20.text End-Reading
 		End-Section
 	End-Section
-
 	Section SmallDoxology_Matins
 		Actor sid Reader End-Actor
 		Title role desig sid hoMA.SmallDoxology.title<Trubric>sid Read</>End-Title
