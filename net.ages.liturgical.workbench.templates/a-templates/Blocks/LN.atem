@@ -1213,7 +1213,7 @@ Template LN
 
 	Section Ektenia08_vigil_lity_me1
 		Section part1
-			Insert_section Supplication_deacon_mcme.part1 End-Insert
+			Insert_section Supplication_deacon_me.part1 End-Insert
 			Media sid ho.s10_gr_GR_cog.hoVE.MM.LityKyrieEleison.text.text End-Media
 			Dialog<i>sid res06p</>End-Dialog
 			Dialog sid pet18 End-Dialog
@@ -1241,7 +1241,7 @@ Template LN
 
 	Section Ektenia08_Hierarchical_vigil_lity_me1
 		Section part1
-			Insert_section Supplication_deacon_mcme.part1 End-Insert
+			Insert_section Supplication_deacon_me.part1 End-Insert
 			Media sid ho.s10_gr_GR_cog.hoVE.MM.LityKyrieEleison.text.text End-Media
 			Dialog<i>sid res06p</>End-Dialog
 			Dialog sid pet18 End-Dialog
@@ -1407,10 +1407,34 @@ Template LN
 		Insert_section supplication_part2 End-Insert
 	End-Section
 
+	Section Supplication_deacon_mealt1
+		Section part1
+			Actor sid Deacon End-Actor
+			Insert_section LN.sup_selector_mealt1 End-Insert
+		End-Section
+		Insert_section supplication_part2 End-Insert
+	End-Section
+
 	Section Supplication_deacon_me1_mealt1
 		Section part1
 			Actor sid Deacon End-Actor
 			Insert_section supplication_07_with_mealt1 End-Insert
+		End-Section
+		Insert_section supplication_part2 End-Insert
+	End-Section
+
+	Section Supplication_deacon_pealt1
+		Section part1
+			Actor sid Deacon End-Actor
+			Insert_section LN.sup_selector_pealt1 End-Insert
+		End-Section
+		Insert_section supplication_part2 End-Insert
+	End-Section
+
+	Section Supplication_deacon_plain
+		Section part1
+			Actor sid Deacon End-Actor
+			Insert_section supplication_01 End-Insert	
 		End-Section
 		Insert_section supplication_part2 End-Insert
 	End-Section
@@ -1461,76 +1485,6 @@ Template LN
 		Insert_section supplication_part2 End-Insert
 	End-Section
 
-//___________________________________
-
-	Section Supplication_deacon_mcme  //discard eventually
-		Section part1
-			Actor sid Deacon End-Actor
-			Insert_section sup_selector_mc End-Insert
-			when-movable-cycle-day-is 
-				28 use:
-					when-date-is
-					//	Feb 10 use: 
-						Feb 24 use: Insert_section supplication_09_05 End-Insert
-						otherwise use: Insert_section supplication_09 End-Insert
-					end-when
-				36, 50, 57 use: Insert_section supplication_09 End-Insert
-				78, 85, 113 use: 
-					when-date-is
-						Apr 23 use: Insert_section supplication_07 End-Insert
-						May 2, 8, 21 use: Insert_section supplication_07 End-Insert
-						otherwise use: Insert_section supplication_20 End-Insert
-					end-when
-				127 use: Insert_section supplication_21 End-Insert
-				otherwise use: Insert_section LN.sup_selector_me End-Insert
-			end-when
-		End-Section
-		Insert_section supplication_part2 End-Insert
-	End-Section
-
-	Section Supplication_deacon_mealt1
-		Section part1
-			Actor sid Deacon End-Actor
-			Insert_section LN.sup_selector_mealt1 End-Insert
-		End-Section
-		Insert_section supplication_part2 End-Insert
-	End-Section
-
-	Section Supplication_deacon_pealt1
-		Section part1
-			Actor sid Deacon End-Actor
-			Insert_section LN.sup_selector_pealt1 End-Insert
-		End-Section
-		Insert_section supplication_part2 End-Insert
-	End-Section
-
-	Section Supplication_deacon_plain
-		Section part1
-			Actor sid Deacon End-Actor
-			Insert_section supplication_01 End-Insert	
-		End-Section
-		Insert_section supplication_part2 End-Insert
-	End-Section
-
-	Section Supplication_priest_mcme  //discard eventually
-		Section part1
-			Actor sid Priest End-Actor
-			when-movable-cycle-day-is 
-				28 use:
-					when-date-is
-					//	Feb 10 use: 
-						Feb 24 use: Insert_section supplication_09_05 End-Insert
-						otherwise use: Insert_section supplication_09 End-Insert
-					end-when
-				36, 50, 57 use: Insert_section supplication_09 End-Insert
-				78, 85, 113 use: Insert_section supplication_20 End-Insert
-				127 use: Insert_section supplication_21 End-Insert
-				otherwise use: Insert_section LN.sup_selector_me End-Insert
-			end-when
-		End-Section
-		Insert_section supplication_part2 End-Insert
-	End-Section
-
 	Section Supplication_priest_plain
 		Section part1
 			Actor sid Priest End-Actor
@@ -1561,8 +1515,8 @@ Template LN
 					36, 50, 57 use: Insert_section supplication_09 End-Insert
 					78, 85, 113 use: 
 						when-date-is
-							Apr 23 use: Insert_section supplication_07 End-Insert
-							May 2, 8, 21 use: Insert_section supplication_07 End-Insert
+							Apr 23 use: Insert_section supplication_20_with_me1 End-Insert
+							May 2, 8, 21 use: Insert_section supplication_20_with_me1 End-Insert
 							otherwise use: Insert_section supplication_20 End-Insert
 						end-when
 					99, 106 use:
@@ -1727,6 +1681,9 @@ Template LN
 	End-Section
 	Section supplication_20 //Pentecostarion
 		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12<r>sid cl.localpatronsaint1.supplication</>sid sup14 rid peInsert1 rid peInsert2 sid sup15 sid sup99 End-Dialog	
+	End-Section
+	Section supplication_20_with_me1 //Pentecostarion and saint
+		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12<r>sid cl.localpatronsaint1.supplication</>sid sup14 rid peInsert1 rid meInsert1 rid meInsert2 sid sup15 sid sup99 End-Dialog	
 	End-Section
 	Section supplication_21 //AllSaints
 		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12<r>sid cl.localpatronsaint1.supplication</>sid sup14 rid peInsert1 rid peInsert2 sid sup99 End-Dialog	
