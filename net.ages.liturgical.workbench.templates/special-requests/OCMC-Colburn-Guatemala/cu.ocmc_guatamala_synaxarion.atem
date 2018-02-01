@@ -1,5 +1,10 @@
 Template cu.ocmc_guatamala_synaxarion 
 
+	import sy.*
+	import me.*
+	import tr.*
+	import pe.*
+	
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
 	import misc_gr_GR_cog.*
@@ -12,78 +17,264 @@ Template cu.ocmc_guatamala_synaxarion
 	import bTags.*
 	import roles.*
 
-	Section me_S01
-		Title<Tdesig>sid Synaxarion sid TouMinaiou</>End-Title
-		Reading rid sy.S01.narration1.p01.text End-Reading
-		Reading rid sy.S01.narration1.p02.text End-Reading
-		Reading rid sy.S01.narration1.p03.text End-Reading
-		Reading rid sy.S01.narration1.p04.text End-Reading
-		Reading rid sy.S01.narration1.p05.text End-Reading
-		Reading rid sy.S01.narration1.p06.text End-Reading
-		Reading rid sy.S01.narration1.p07.text End-Reading
-	End-Section
-	
-	Section me_S02
-		Title<Tdesig>sid Synaxarion sid TouMinaiou</>End-Title
-		Reading rid sy.S02.narration1.p01.text End-Reading
-		Reading rid sy.S02.narration1.p02.text End-Reading
-		Reading rid sy.S02.narration1.p03.text End-Reading
-		Reading rid sy.S02.narration1.p04.text End-Reading
-		Reading rid sy.S02.narration1.p05.text End-Reading
-		Reading rid sy.S02.narration1.p06.text End-Reading
-		Reading rid sy.S02.narration1.p07.text End-Reading
-	End-Section
-
-	Section me_S06
-		Title<Tdesig>sid Synaxarion sid TouMinaiou</>End-Title
-		Reading rid sy.S06.narration1.p01.text End-Reading
-		Reading rid sy.S06.narration1.p02.text End-Reading
-		Reading rid sy.S06.narration1.p03.text End-Reading
-		Reading rid sy.S06.narration1.p04.text End-Reading
-		Reading rid sy.S06.narration1.p05.text End-Reading
-		Reading rid sy.S06.narration1.p06.text End-Reading
-		Reading rid sy.S06.narration1.p07.text End-Reading
-	End-Section
-	
-	Section tr_S01
-		Title<Tdesig>sid Synaxarion sid TouTriodiou</>End-Title
-		Reading rid tr.trMA.Synaxarion.narration1.p01.text End-Reading
-		Reading rid tr.trMA.Synaxarion.narration1.p02.text End-Reading
-		Reading rid tr.trMA.Synaxarion.narration1.p03.text End-Reading
-		Reading rid tr.trMA.Synaxarion.narration1.p04.text End-Reading
-		Reading rid tr.trMA.Synaxarion.narration1.p05.text End-Reading
-		Reading rid tr.trMA.Synaxarion.narration1.p06.text End-Reading
-		Reading rid tr.trMA.Synaxarion.narration1.p07.text End-Reading
-	End-Section
-	Section pe_S01
-		Title<Tdesig>sid Synaxarion sid TouPenticostariou</>End-Title
-		Reading rid pe.peMA.Synaxarion.narration1.p01.text End-Reading
-		Reading rid pe.peMA.Synaxarion.narration1.p02.text End-Reading
-		Reading rid pe.peMA.Synaxarion.narration1.p03.text End-Reading
-		Reading rid pe.peMA.Synaxarion.narration1.p04.text End-Reading
-		Reading rid pe.peMA.Synaxarion.narration1.p05.text End-Reading
-		Reading rid pe.peMA.Synaxarion.narration1.p06.text End-Reading
-		Reading rid pe.peMA.Synaxarion.narration1.p07.text End-Reading
-	End-Section
-
-
-	Section mc_commemoration_synaxarion
-		when-movable-cycle-day-is
-			1, 8, 14, 15, 18, 20 use: 
-				Title<inr>rid tr.trShortCommemoration1.text</>End-Title
-			21 thru 70 use: 
-				Title<inr>rid tr.trShortCommemoration1.text</>End-Title
-		end-when
-		when-exists rid tr.trMA.Synaxarion.narration1.p01.text use:
-			Insert_section tr_S01 End-Insert
-		end-when
-
-	when-movable-cycle-day-is
-			71, 76, 78, 85, 92, 95, 99, 106, 110, 113, 119, 120, 121, 127 use:
-				Reading rid pe.peCommemoration.text End-Reading
-				Insert_section pe_S01 End-Insert
+	Section Synaxarion
+		when-date-is
+			Mar 26 use:
+				when-movable-cycle-day-is
+					50, 57 use:
+						Insert_section me End-Insert
+						Reading rid S99.lastline.text End-Reading
+					otherwise use:
+						Insert_section me End-Insert
+						Insert_section mc End-Insert
+				end-when
+			Jul 13 thru 19 use:
+				when-name-of-day-is 
+					Sunday use:
+						Insert_section me End-Insert
+						Reading sid sy.m07.dHF_gr_GR_cog.S01.commemoration.text End-Reading
+						Reading sid sy.m07.dHF_gr_GR_cog.S99.lastline.text End-Reading
+					otherwise use:
+						Insert_section me End-Insert
+						Insert_section mc End-Insert
+				end-when
+			Oct 11 thru 17 use:
+				when-name-of-day-is 
+					Sunday use:
+						Insert_section me End-Insert
+						Reading sid sy.m10.dHF_gr_GR_cog.S01.commemoration.text End-Reading
+						Reading sid sy.m10.dHF_gr_GR_cog.S99.lastline.text End-Reading
+					otherwise use:
+						Insert_section me End-Insert
+						Insert_section mc End-Insert
+				end-when
+			Dec 11 thru 17 use:
+				when-name-of-day-is 
+					Sunday use:
+						Insert_section me End-Insert
+						Reading sid sy.m12.dFF_gr_GR_cog.S01.commemoration.text End-Reading
+						Reading sid sy.m12.dFF_gr_GR_cog.S99.lastline.text End-Reading
+					otherwise use:
+						Insert_section me End-Insert
+						Insert_section mc End-Insert
+				end-when
+			Dec 18 thru 24 use:
+				when-name-of-day-is 
+					Sunday use:
+						Insert_section me End-Insert
+						Section dec_bc
+							Reading sid sy.m12.dBC_gr_GR_cog.S01.commemoration.text End-Reading
+						End-Section
+					otherwise use:
+						Insert_section me End-Insert
+						Insert_section mc End-Insert
+				end-when
+			Dec 26 thru 31 use:
+				when-name-of-day-is 
+					Sunday use:
+						Insert_section me End-Insert
+						Reading sid sy.m12.dAC_gr_GR_cog.S01.commemoration.text End-Reading
+						Reading sid sy.m12.dAC_gr_GR_cog.S99.lastline.text End-Reading
+					otherwise use:
+						Insert_section me End-Insert
+						Insert_section mc End-Insert
+				end-when
+			otherwise use:
+				Insert_section mc End-Insert
+				Insert_section me End-Insert
 		end-when
 	End-Section
+
+			Section me
+				Title role chapverse sid TouMinaiou End-Title
+				when-exists
+					rid S01.commemoration.text use:
+						Reading rid S01.commemoration.text End-Reading
+						when-exists rid sy.S01.narration1.p01.text use:
+							Insert_section me_S01 End-Insert
+							Break line End_Break
+						end-when
+					rid S02.commemoration.text use:
+						Reading rid S02.commemoration.text End-Reading
+						when-exists rid sy.S02.narration1.p01.text use:
+							Insert_section me_S02 End-Insert
+							Break line End_Break
+						end-when
+					rid S03.commemoration.text use:
+						Reading rid S03.commemoration.text End-Reading
+					rid S04.commemoration.text use:
+						Reading rid S04.commemoration.text End-Reading
+					rid S05.commemoration.text use:
+						Reading rid S05.commemoration.text End-Reading
+					rid S06.commemoration.text use:
+						Reading rid S06.commemoration.text End-Reading
+					rid S07.commemoration.text use:
+						Reading rid S07.commemoration.text End-Reading
+					rid S08.commemoration.text use:
+						Reading rid S08.commemoration.text End-Reading
+					rid S09.commemoration.text use:
+						Reading rid S09.commemoration.text End-Reading
+					rid S10.commemoration.text use:
+						Reading rid S10.commemoration.text End-Reading
+					rid S11.commemoration.text use:
+						Reading rid S11.commemoration.text End-Reading
+					rid S12.commemoration.text use:
+						Reading rid S12.commemoration.text End-Reading
+					rid S13.commemoration.text use:
+						Reading rid S13.commemoration.text End-Reading
+					rid S14.commemoration.text use:
+						Reading rid S14.commemoration.text End-Reading
+					rid S15.commemoration.text use:
+						Reading rid S15.commemoration.text End-Reading
+					rid S16.commemoration.text use:
+						Reading rid S16.commemoration.text End-Reading
+					rid S17.commemoration.text use:
+						Reading rid S17.commemoration.text End-Reading
+					rid S18.commemoration.text use:
+						Reading rid S18.commemoration.text End-Reading
+					rid S19.commemoration.text use:
+						Reading rid S19.commemoration.text End-Reading
+				end-when
+			End-Section //me
+		
+			Section mc
+				Section block2
+					when-movable-cycle-day-is
+						1 thru 70 use:
+							when-exists rid trMA.Synaxarion.commemoration.text use:
+								Title role chapverse sid TouTriodiou End-Title
+							end-when
+						71 thru 127 use:
+							when-exists rid peMA.Synaxarion.commemoration.text use:
+								Title role chapverse sid TouPenticostariou End-Title
+							end-when
+					end-when
+				End-Section
+				Section block3
+					when-movable-cycle-day-is
+						1, 65 use:
+							Reading rid trMA.Synaxarion.commemoration.text End-Reading
+							when-exists rid trMA.Synaxarion.narration1.p01.text use:
+								Insert_section tr_S01 End-Insert
+							end-when
+						8, 14, 15, 21, 22, 28, 29, 36, 43, 54, 56, 57, 63, 64, 66, 67, 70 use:
+							Reading rid trMA.Synaxarion.commemoration.text End-Reading
+							when-exists rid trMA.Synaxarion.narration1.p01.text use:
+								Insert_section tr_S01 End-Insert
+							end-when
+						50 use:
+							Reading rid trMA.Synaxarion.commemoration.text End-Reading
+							when-exists rid trMA.Synaxarion.narration1.p01.text use:
+								Insert_section tr_S01 End-Insert
+							end-when
+						68 use:
+							Reading rid trMA.Synaxarion.commemoration.text End-Reading
+							when-exists rid trMA.Synaxarion.narration1.p01.text use:
+								Insert_section tr_S01 End-Insert
+							end-when
+						69 use:
+							Reading rid trMA.Synaxarion.commemoration.text End-Reading
+							when-exists rid trMA.Synaxarion.narration1.p01.text use:
+								Insert_section tr_S01 End-Insert
+							end-when
+						71, 76, 78, 85, 92, 95, 99, 106, 110, 121, 127 use:
+							Reading rid peMA.Synaxarion.commemoration.text End-Reading
+							when-exists rid peMA.Synaxarion.narration1.p01.text use:
+								Insert_section pe_S01 End-Insert
+							end-when
+						113 use:
+							Reading rid peMA.Synaxarion.commemoration.text End-Reading
+							when-exists rid peMA.Synaxarion.narration1.p01.text use:
+								Insert_section pe_S01 End-Insert
+							end-when
+						119 use:
+							Reading rid peMA.Synaxarion.commemoration.text End-Reading
+							when-exists rid peMA.Synaxarion.narration1.p01.text use:
+								Insert_section pe_S01 End-Insert
+							end-when
+						120 use:
+							Reading rid peMA.Synaxarion.commemoration.text End-Reading
+							when-exists rid peMA.Synaxarion.narration1.p01.text use:
+								Insert_section pe_S01 End-Insert
+							end-when
+					end-when
+				End-Section
+			End-Section //mc
+		
+		
+		
+			Section me_S01
+				Title role chapverse sid Synaxarion End-Title
+				Reading rid sy.S01.narration1.p01.text End-Reading
+				Reading rid sy.S01.narration1.p02.text End-Reading
+				Reading rid sy.S01.narration1.p03.text End-Reading
+				Reading rid sy.S01.narration1.p04.text End-Reading
+				Reading rid sy.S01.narration1.p05.text End-Reading
+				Reading rid sy.S01.narration1.p06.text End-Reading
+				Reading rid sy.S01.narration1.p07.text End-Reading
+			End-Section
+			
+			Section me_S02
+				Title role chapverse sid Synaxarion End-Title
+				Reading rid sy.S02.narration1.p01.text End-Reading
+				Reading rid sy.S02.narration1.p02.text End-Reading
+				Reading rid sy.S02.narration1.p03.text End-Reading
+				Reading rid sy.S02.narration1.p04.text End-Reading
+				Reading rid sy.S02.narration1.p05.text End-Reading
+				Reading rid sy.S02.narration1.p06.text End-Reading
+				Reading rid sy.S02.narration1.p07.text End-Reading
+			End-Section
+		
+			Section me_S06
+				Title role chapverse sid Synaxarion End-Title
+				Reading rid sy.S06.narration1.p01.text End-Reading
+				Reading rid sy.S06.narration1.p02.text End-Reading
+				Reading rid sy.S06.narration1.p03.text End-Reading
+				Reading rid sy.S06.narration1.p04.text End-Reading
+				Reading rid sy.S06.narration1.p05.text End-Reading
+				Reading rid sy.S06.narration1.p06.text End-Reading
+				Reading rid sy.S06.narration1.p07.text End-Reading
+			End-Section
+			
+			Section tr_S01
+				Title role chapverse sid Synaxarion End-Title
+				Reading rid tr.trMA.Synaxarion.narration1.p01.text End-Reading
+				Reading rid tr.trMA.Synaxarion.narration1.p02.text End-Reading
+				Reading rid tr.trMA.Synaxarion.narration1.p03.text End-Reading
+				Reading rid tr.trMA.Synaxarion.narration1.p04.text End-Reading
+				Reading rid tr.trMA.Synaxarion.narration1.p05.text End-Reading
+				Reading rid tr.trMA.Synaxarion.narration1.p06.text End-Reading
+				Reading rid tr.trMA.Synaxarion.narration1.p07.text End-Reading
+			End-Section
+			Section pe_S01
+				Title role chapverse sid Synaxarion End-Title
+				Reading rid pe.peMA.Synaxarion.narration1.p01.text End-Reading
+				Reading rid pe.peMA.Synaxarion.narration1.p02.text End-Reading
+				Reading rid pe.peMA.Synaxarion.narration1.p03.text End-Reading
+				Reading rid pe.peMA.Synaxarion.narration1.p04.text End-Reading
+				Reading rid pe.peMA.Synaxarion.narration1.p05.text End-Reading
+				Reading rid pe.peMA.Synaxarion.narration1.p06.text End-Reading
+				Reading rid pe.peMA.Synaxarion.narration1.p07.text End-Reading
+			End-Section
+		
+		
+			Section mc_commemoration_synaxarion
+				when-movable-cycle-day-is
+					1, 8, 14, 15, 18, 20 use: 
+						Title<inr>rid tr.trShortCommemoration1.text</>End-Title
+					21 thru 70 use: 
+						Title<inr>rid tr.trShortCommemoration1.text</>End-Title
+				end-when
+				when-exists rid tr.trMA.Synaxarion.narration1.p01.text use:
+					Insert_section tr_S01 End-Insert
+				end-when
+		
+				when-movable-cycle-day-is
+					71, 76, 78, 85, 92, 95, 99, 106, 110, 113, 119, 120, 121, 127 use:
+						Reading rid pe.peCommemoration.text End-Reading
+						Insert_section pe_S01 End-Insert
+				end-when
+			End-Section
 
 
 End-Template
