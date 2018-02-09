@@ -1,0 +1,76 @@
+Template se.m10.d07.ma2 
+
+Status Review
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 10 day 7 End_Date
+			Page_Header_Even
+				center @lookup sid ma.pdf.header sid d.on lang L1 @date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+		Preface Covers
+
+			Insert_template ematins.credits End-Insert
+		End-Preface
+
+	when-name-of-day-is 
+		Sunday use:	
+			Section Instance03 //Sunday
+				Insert_section ST.ma.oc_me1 End-Insert
+				Insert_section MA._01_Beginning__.modeofweek End-Insert
+				Insert_section AP.res__.modeofweek End-Insert
+				Insert_section TI.g.s._00_saint_.mp End-Insert
+				Insert_section AP.ga.martyrs_mode4_.hymn End-Insert
+				Insert_section AP.both__.primarytheotokion__.mode4 End-Insert	
+				Insert_section MA._03_Kathisma1__.litany End-Insert
+				Insert_section MA._03_Kathisma1__.oc__.sunday__.whenmode4 End-Insert
+				Insert_section MA._04_Kathisma2__.append__.oc__.sunday__.kath212223 End-Insert
+				Insert_section MA._05_Kathisma3__.evlogetaria_res End-Insert
+				Insert_section MA._06_Antiphons__.sunday_ End-Insert
+				Insert_section MA._09_Options__.sunday__.oc_h12tas0GrGrTh_and_me1_123tasVVGB_with_kath_me1o2t_and_konoik_oc End-Insert
+				Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+				Insert_section MA._12_Exaposteilarion__.eo__.eoofweek_.exap End-Insert
+				Insert_section TI.s._00_saint_.mp End-Insert
+				Insert_section MA._12_Exaposteilarion__.append__.me__.exap123t End-Insert
+				Insert_section MA._13_Lauds__.modeofweek__.noStichologia End-Insert
+				Insert_section MA._13_Lauds__.oc__.s_1234as1234 End-Insert
+				Insert_section TI.ip.s._00_saint_.mp End-Insert
+				Insert_section MA._13_Lauds__.me__.i_1123as56martyrs12 End-Insert
+				Insert_section MA._13_Lauds__.glory__.eo_ End-Insert
+				Insert_section MA._14_Doxology__.sunday End-Insert
+				Insert_section MA._19_End_Options End-Insert
+				Insert_section MA._20_Dismissal__.commemoration End-Insert				
+			End-Section //Sunday
+			
+		Saturday use:
+		
+		otherwise use:
+			Section Instance01
+			End-Section
+		
+	end-when
+
+End-Template
