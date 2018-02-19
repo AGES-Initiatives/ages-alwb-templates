@@ -1,0 +1,59 @@
+Template se.tr.d068.pl8
+
+Status Final
+
+	import client_gr_GR_cog.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import poets_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 4 day 5 year 2018 End_Date
+			Page_Header_Even
+				center @lookup sid pl.pdf.header lang L1 @lookup sid hw.ofholywednesday lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid pl.pdf.header lang L2 @lookup sid hw.ofholywednesday lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Section Instance01
+		Title role desig sid pl.pdf.header sid hw.ofholywednesday End-Title
+		Title<inr>sid ve.pdf.header sid hw.ofholythursday</>End-Title 
+		Break line End_Break
+		Insert_section VE.LIHC_Mode1  End-Insert
+		Insert_section VE._03_Stichera__.tr__.i_12345678910as12345678910 End-Insert
+		Insert_section VE._03_Stichera__.gloryboth__.tr_ End-Insert
+		Section Presanctified03 // Entrance
+			Actor sid Deacon End-Actor
+			Dialog sid exc17 sid exc18 End-Dialog
+			Actor sid Reader End-Actor
+			Reading sid ho.s10_gr_GR_cog.hoVE.FosIlaron.text End-Reading
+		End-Section
+		Insert_section VE._05_Readings__.reader End-Insert
+		Title <r>sid cl.eu.presanctified.R005</> End-Title
+		Break line End_Break
+		Insert_section Lectionary_Triodion.Presanctified_Gospel_Reading End-Insert
+		Title <r>sid cl.eu.presanctified.R002</> End-Title
+		Break line End_Break
+		Title<Tdesig>sid Apolysis</>End-Title
+		Insert_section Selector_Dismissals.dismissal_09 End-Insert
+	End-Section
+End-Template

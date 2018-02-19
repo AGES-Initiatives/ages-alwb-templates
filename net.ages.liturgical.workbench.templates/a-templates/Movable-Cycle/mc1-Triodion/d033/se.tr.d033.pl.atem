@@ -2,6 +2,8 @@ Template se.tr.d033.pl
 
 Status NA
 
+	import client_gr_GR_cog.*
+
 	import actors_gr_GR_cog.*
 	import misc_gr_GR_cog.*
 	import poets_gr_GR_cog.*
@@ -15,7 +17,7 @@ Status NA
 	import roles.*
 
 	Head 
-		Set_Date month 3 day 9 End_Date
+		Set_Date month 3 day 1 End_Date
 			Page_Header_Even
 				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
 			End_Page_Header_Even
@@ -32,24 +34,22 @@ Status NA
 	End_Head
 
 	Preface Covers
-		Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.pdf.cover.pl End-Insert
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
 	Section Instance01
-		Insert_section ST.pl.tr_me End-Insert
-		Insert_section PL._01_Beginning End-Insert
-		Insert_section PL._02_Kekragaria__.mode1__.for10 End-Insert
+		Title role desig sid OnWednesday sid Evening sid ofWeek2 ldp @Service_Year End-Title
+		Insert_section VE.LIHC_Mode1  End-Insert
 		Insert_section PL._03_Stichera_ End-Insert
-		Insert_section PL._04_Middle End-Insert
-		Insert_section PL._05_Readings End-Insert
-		Insert_section PL._06 End-Insert
-		Insert_section PL._07 End-Insert
-		Insert_section PL._08 End-Insert
-		Insert_section PL._09 End-Insert
-		Insert_section PL._10 End-Insert
-		Insert_section PL._11 End-Insert
-		Insert_section PL._12 End-Insert
-		Insert_section PL._13_nocommemoration End-Insert
+		Section Presanctified03 // Entrance
+			Actor sid Deacon End-Actor
+			Dialog sid exc17 sid exc18 End-Dialog
+			Actor sid Reader End-Actor
+			Reading sid ho.s10_gr_GR_cog.hoVE.FosIlaron.text End-Reading
+		End-Section
+		Insert_section VE._05_Readings__.reader End-Insert
+		Break line End_Break
+		Title <r>sid cl.eu.presanctified.R002</> End-Title
 	End-Section
 End-Template

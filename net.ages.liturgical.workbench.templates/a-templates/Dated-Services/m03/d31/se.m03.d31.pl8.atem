@@ -1,6 +1,6 @@
-Template se.m10.d15.ma2 
+Template se.m03.d31.pl8 
 
-Status NA
+Status Final
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -15,12 +15,12 @@ Status NA
 	import roles.*
 
 	Head 
-		Set_Date month 10 day 15 End_Date
+		Set_Date month 3 day 31 year 2018 End_Date
 			Page_Header_Even
-				center @lookup sid ma.pdf.header sid d.on lang L1 @date lang L1
+				center @lookup sid pl.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+				center @lookup sid pl.pdf.header rid da.daVE.OnTheEveningBefore lang L2
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -32,20 +32,13 @@ Status NA
 	End_Head
 
 	Preface Covers
-		Insert_template ematins.cover.ma End-Insert
+		Insert_template ematins.pdf.cover.pl End-Insert
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-	when-name-of-day-is
-		Sunday use: 
-			Section Instance02 //Sunday
-				Insert_section se.m10.dHF.ma2.Instance01 End-Insert		
-			End-Section
-		
-		otherwise use:
-			Section Instance01 //Weekday
-		
-			End-Section
-	end-when					
+	when-movable-cycle-day-is 
+		26, 28, 33, 35, 40, 42, 47, 49, 54, 55, 56, 61, 63 use:
+			Insert_section mc.map.ve.Section02 End-Insert
+	end-when
 		
 End-Template
