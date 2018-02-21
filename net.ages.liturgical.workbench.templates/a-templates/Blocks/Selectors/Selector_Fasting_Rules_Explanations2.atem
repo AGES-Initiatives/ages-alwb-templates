@@ -1,0 +1,88 @@
+Template Selector_Fasting_Rules_Explanations2 
+
+Status NA
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head
+		Set_Date month 1 day 1 year 2018 End_Date
+	End_Head
+	
+	Section fasting_rules
+		when-date-is
+			Mar 9 use:
+				Section Mar09
+				End-Section
+			Mar 25 use:
+				Section mar25
+				End-Section
+			otherwise use:
+				when-movable-cycle-day-is
+					1 thru 7 use:
+						Section triodion_week1
+						End-Section
+					16 thru 22 use:
+						Section triodion_week3
+						End-Section
+					23, 24, 25, 26, 27, 30, 31, 32, 33, 34, 37, 38, 39, 40, 41, 44, 45, 46, 47, 48, 51, 52, 53, 55, 58, 59, 60, 61, 62 use:
+						Section weekdays_in_lent
+						End-Section
+					28, 29, 35, 36, 42, 43, 49, 50, 56, 57, 63 use:
+						Section weekends_in_lent
+						End-Section
+					54 use:
+						Section great_canon
+						End-Section
+					64 use:
+						Section palm_sunday
+						End-Section
+					65 thru 70 use:
+						Section holy_week
+						End-Section
+					71 thru 78 use:
+						Section bright_week
+						End-Section
+					95 use:
+						Section midpentecost
+						End-Section
+					109 use:
+						Section leavetaking_of_pascha
+						End-Section
+					120 thru 126 use:
+						Section pentecost_week
+						End-Section
+					otherwise use:
+						when-name-of-day-is
+							Wednesday, Friday use:
+								Section wed_fri
+									when-date-is
+										Jan 20 use:
+											Insert_section minor_feast End-Insert
+									end-when		
+								End-Section
+						end-when		
+					
+				end-when
+
+
+		end-when
+	End-Section
+
+
+	//blocks
+		Section minor_feast
+		End-Section	
+		Section major_feast
+		End-Section	
+
+End-Template

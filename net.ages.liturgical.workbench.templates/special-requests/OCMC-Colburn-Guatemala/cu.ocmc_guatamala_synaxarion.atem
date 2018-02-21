@@ -19,65 +19,45 @@ Template cu.ocmc_guatamala_synaxarion
 
 	Section Synaxarion
 		when-date-is
-			Mar 26 use:
-				when-movable-cycle-day-is
-					50, 57 use:
-						Insert_section me End-Insert
-						Reading rid S99.lastline.text End-Reading
-					otherwise use:
-						Insert_section me End-Insert
-						Insert_section mc End-Insert
-				end-when
 			Jul 13 thru 19 use:
 				when-name-of-day-is 
 					Sunday use:
+						Reading sid sy.m07.dHF_gr_GR_cog.cl.S01.commemoration.text End-Reading
 						Insert_section me End-Insert
-						Reading sid sy.m07.dHF_gr_GR_cog.S01.commemoration.text End-Reading
-						Reading sid sy.m07.dHF_gr_GR_cog.S99.lastline.text End-Reading
 					otherwise use:
 						Insert_section me End-Insert
-						Insert_section mc End-Insert
 				end-when
 			Oct 11 thru 17 use:
 				when-name-of-day-is 
 					Sunday use:
+						Reading sid sy.m10.dHF_gr_GR_cog.cl.S01.commemoration.text End-Reading
 						Insert_section me End-Insert
-						Reading sid sy.m10.dHF_gr_GR_cog.S01.commemoration.text End-Reading
-						Reading sid sy.m10.dHF_gr_GR_cog.S99.lastline.text End-Reading
 					otherwise use:
 						Insert_section me End-Insert
-						Insert_section mc End-Insert
 				end-when
 			Dec 11 thru 17 use:
 				when-name-of-day-is 
 					Sunday use:
+						Reading sid sy.m12.dFF_gr_GR_cog.cl.S01.commemoration.text End-Reading
 						Insert_section me End-Insert
-						Reading sid sy.m12.dFF_gr_GR_cog.S01.commemoration.text End-Reading
-						Reading sid sy.m12.dFF_gr_GR_cog.S99.lastline.text End-Reading
 					otherwise use:
 						Insert_section me End-Insert
-						Insert_section mc End-Insert
 				end-when
 			Dec 18 thru 24 use:
 				when-name-of-day-is 
 					Sunday use:
+						Reading sid sy.m12.dBC_gr_GR_cog.cl.S01.commemoration.text End-Reading
 						Insert_section me End-Insert
-						Section dec_bc
-							Reading sid sy.m12.dBC_gr_GR_cog.S01.commemoration.text End-Reading
-						End-Section
 					otherwise use:
 						Insert_section me End-Insert
-						Insert_section mc End-Insert
 				end-when
 			Dec 26 thru 31 use:
 				when-name-of-day-is 
 					Sunday use:
+						Reading sid sy.m12.dAC_gr_GR_cog.cl.S01.commemoration.text End-Reading
 						Insert_section me End-Insert
-						Reading sid sy.m12.dAC_gr_GR_cog.S01.commemoration.text End-Reading
-						Reading sid sy.m12.dAC_gr_GR_cog.S99.lastline.text End-Reading
 					otherwise use:
 						Insert_section me End-Insert
-						Insert_section mc End-Insert
 				end-when
 			otherwise use:
 				Insert_section mc End-Insert
@@ -86,7 +66,7 @@ Template cu.ocmc_guatamala_synaxarion
 	End-Section
 
 			Section me
-				Title role chapverse sid TouMinaiou End-Title
+			//	Title role chapverse sid TouMinaiou End-Title
 			//	when-exists
 			//		rid cl.S01.commemoration.text use:
 						Reading rid cl.S01.commemoration.text End-Reading
@@ -124,18 +104,6 @@ Template cu.ocmc_guatamala_synaxarion
 			End-Section //me
 		
 			Section mc
-				Section block2
-					when-movable-cycle-day-is
-						1 thru 70 use:
-							when-exists rid trMA.Synaxarion.commemoration.text use:
-								Title role chapverse sid TouTriodiou End-Title
-							end-when
-						71 thru 127 use:
-							when-exists rid peMA.Synaxarion.commemoration.text use:
-								Title role chapverse sid TouPenticostariou End-Title
-							end-when
-					end-when
-				End-Section
 				Section block3
 					when-movable-cycle-day-is
 						1, 65 use:
