@@ -20,7 +20,11 @@ Template cu.ocmc_guatamala_hymns
 	Section daily_hymns
 		Section sunday //use this section for dates that allow res but not other daily
 			when-name-of-day-is Sunday use:
-				Insert_section AP.NM.res__.modeofweek End-Insert
+				when-movable-cycle-day-is
+					64 thru 127 use:
+					otherwise use:
+						Insert_section AP.NM.res__.modeofweek End-Insert
+				end-when
 			end-when
 		End-Section
 		Section weekdays
@@ -73,18 +77,29 @@ Template cu.ocmc_guatamala_hymns
 			70 use:
 				Insert_section TI.a.tr.triodion End-Insert
 				Insert_section AP.NM.tr123_.hymns End-Insert
+			71 thru 77 use:
+				Insert_section AP.NM.pascha__.once End-Insert
 			otherwise use:
 				when-exists
 					rid tr.trVE.Apolytikion1.text use:
 						Insert_section TI.a.tr.triodion End-Insert
 						Insert_section AP.NM.tr1_.hymn End-Insert
+					rid pe.peVE.Apolytikion1.text use:
+						Insert_section TI.a.pe End-Insert
+						Insert_section AP.NM.pe1_.hymn End-Insert
 				end-when
 		end-when
-
+		when-movable-cycle-day-is
+			71 thru 77 use:
+				Insert_section KO.NM.pa End-Insert
+		end-when
 		when-exists
 			rid tr.trMA.Kontakion1.text use:
 				Insert_section TI.k.tr.triodion End-Insert
 				Insert_section KO.NM.tr1_.hymn End-Insert
+			rid pe.peMA.Kontakion1.text use:
+				Insert_section TI.k.pe_._00_pentecostarion End-Insert
+				Insert_section KO.NM.pe1_.hymn End-Insert
 		end-when
 	End-Section
 
