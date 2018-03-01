@@ -2465,6 +2465,31 @@ Status Review
 					Insert_section VE.LIHC_Verses.v07 End-Insert
 					Hymn rid ocVE.Stichera5.text @ver media-off End-Hymn
 				End-Section
+				Section p_136as567
+					Title role source sid sourceOctoechos End-Title
+					when-name-of-day-is
+						Monday, Tuesday, Saturday use: Title<Tdesig>sid StichiraDespotika</>End-Title
+						Wednesday, Friday use: Title<Tdesig>sid StichiraStavrosima</>End-Title
+						Thursday use: Title<Tdesig>sid StichiraApostolika</>End-Title
+					end-when
+					Title role mixed<Tmode>rid ocVE.Stichera1.mode</><Tmelody>rid ocVE.Stichera1.melody</>End-Title
+					Media rid ocVE.Stichera1.text End-Media
+					Insert_section VE.LIHC_Verses.v05 End-Insert
+					Hymn rid ocVE.Stichera1.text @ver media-off End-Hymn
+				//	Media rid ocVE.Stichera2.text End-Media
+					Insert_section VE.LIHC_Verses.v06 End-Insert
+					Hymn rid ocVE.Stichera3.text @ver media-off End-Hymn
+					when-name-of-day-is
+						Monday use: Insert_section TI.s._03_bodiless End-Insert
+						Tuesday use: Insert_section TI.s._06_forerunner End-Insert
+						Wednesday, Friday, Saturday use: Insert_section TI.s._16_theotokos End-Insert
+						Thursday use: Title<Tdesig>sid TouAgiouNikolaou</>End-Title
+					end-when
+					Title role mixed<Tmode>rid ocVE.Stichera6.mode</><Tmelody>rid ocVE.Stichera6.melody</>End-Title
+				//	Media rid ocVE.Stichera6.text End-Media
+					Insert_section VE.LIHC_Verses.v07 End-Insert
+					Hymn rid ocVE.Stichera6.text @ver media-off End-Hymn
+				End-Section
 				Section p_236as567
 					Title role source sid sourceOctoechos End-Title
 					when-name-of-day-is
@@ -5603,53 +5628,52 @@ Status Review
 		Section oc__
 			Section weekday_
 				Section aposticha
-					Title role source sid sourceOctoechos End-Title
-					Actor sid Choir End-Actor
-					Title role desig sid Aposticha End-Title		
-					Title role mixed<Tmode>rid ocVE.Aposticha1.mode</><Tmelody>rid ocVE.Aposticha1.melody</>End-Title
-					Hymn rid ocVE.Aposticha1.text @ver End-Hymn
-					Insert_section PsalmVerses.forVespersAposticha.weekday.verse1 End-Insert
-					when-exists rid ocVE.Aposticha2.melody use: Title role melody rid ocVE.Aposticha2.melody End-Title end-when
-					Hymn rid ocVE.Aposticha2.text @ver End-Hymn
-					Insert_section PsalmVerses.forVespersAposticha.weekday.verse2 End-Insert
-					Title role desig sid Martyrikon End-Title
-					when-exists rid ocVE.Aposticha3.melody use: Title role melody rid ocVE.Aposticha3.melody End-Title end-when
-					Hymn rid ocVE.Aposticha3.text @ver End-Hymn
+					when-name-of-day-is
+						Saturday use:
+							Section saturday
+								Title role source sid sourceOctoechos End-Title
+								Actor sid Choir End-Actor
+								Title role desig sid Aposticha End-Title		
+								Title role mixed<Tmode>rid ocVE.Aposticha1.mode</><Tmelody>sid ocVE.Aposticha1.melody</>End-Title
+								Hymn rid ocVE.Aposticha1.text @ver End-Hymn
+								Insert_section PsalmVerses.forVespersAposticha.friday.verse1 End-Insert
+								when-exists rid ocVE.Aposticha2.melody use: Title role melody rid ocVE.Aposticha2.melody End-Title end-when
+								Hymn rid ocVE.Aposticha2.text @ver End-Hymn
+								Insert_section PsalmVerses.forVespersAposticha.friday.verse2 End-Insert
+								when-exists rid ocVE.Aposticha3.melody use: Title role melody rid ocVE.Aposticha3.melody End-Title end-when
+								Hymn rid ocVE.Aposticha3.text @ver End-Hymn
+								when-exists rid ocVE.Aposticha4.melody use: 
+									Insert_section PsalmVerses.forVespersAposticha.friday.verse3 End-Insert
+									Title role melody rid ocVE.Aposticha4.melody End-Title
+									Hymn rid ocVE.Aposticha4.text @ver End-Hymn
+								end-when
+							End-Section
+						otherwise use:
+							Section montuewedthufri
+								Title role source sid sourceOctoechos End-Title
+								Actor sid Choir End-Actor
+								Title role desig sid Aposticha End-Title		
+								Title role mixed<Tmode>rid ocVE.Aposticha1.mode</><Tmelody>rid ocVE.Aposticha1.melody</>End-Title
+								Hymn rid ocVE.Aposticha1.text @ver End-Hymn
+								Insert_section PsalmVerses.forVespersAposticha.weekday.verse1 End-Insert
+								when-exists rid ocVE.Aposticha2.melody use: Title role melody rid ocVE.Aposticha2.melody End-Title end-when
+								Hymn rid ocVE.Aposticha2.text @ver End-Hymn
+								Insert_section PsalmVerses.forVespersAposticha.weekday.verse2 End-Insert
+								Title role desig sid Martyrikon End-Title
+								when-exists rid ocVE.Aposticha3.melody use: Title role melody rid ocVE.Aposticha3.melody End-Title end-when
+								Hymn rid ocVE.Aposticha3.text @ver End-Hymn
+							End-Section
+					end-when
 				End-Section
 				Section theotokion
 					when-name-of-day-is 
-						Monday, Tuesday, Thursday use:
+						Monday, Tuesday, Thursday, Saturday use:
 							Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
 							when-exists rid ocVE.AposTheotokion.melody use: Title role melody rid ocVE.AposTheotokion.melody End-Title end-when
 						Wednesday, Friday use: 
 							Title role mixed sid DoxaKaiNyn<Tdesig>sid Stavrotheotokion</>End-Title
 							when-exists rid ocVE.AposTheotokion.melody use: Title role melody rid ocVE.AposTheotokion.melody End-Title end-when
 					end-when
-					Hymn rid ocVE.AposTheotokion.text @ver End-Hymn
-				End-Section
-			End-Section
-			Section saturday_
-				Section aposticha
-					Title role source sid sourceOctoechos End-Title
-					Actor sid Choir End-Actor
-					Title role desig sid Aposticha End-Title		
-					Title role mixed<Tmode>rid ocVE.Aposticha1.mode</><Tmelody>sid ocVE.Aposticha1.melody</>End-Title
-					Hymn rid ocVE.Aposticha1.text @ver End-Hymn
-					Insert_section PsalmVerses.forVespersAposticha.friday.verse1 End-Insert
-					when-exists rid ocVE.Aposticha2.melody use: Title role melody rid ocVE.Aposticha2.melody End-Title end-when
-					Hymn rid ocVE.Aposticha2.text @ver End-Hymn
-					Insert_section PsalmVerses.forVespersAposticha.friday.verse2 End-Insert
-					when-exists rid ocVE.Aposticha3.melody use: Title role melody rid ocVE.Aposticha3.melody End-Title end-when
-					Hymn rid ocVE.Aposticha3.text @ver End-Hymn
-					when-exists rid ocVE.Aposticha4.melody use: 
-						Insert_section PsalmVerses.forVespersAposticha.friday.verse3 End-Insert
-						Title role melody rid ocVE.Aposticha4.melody End-Title
-						Hymn rid ocVE.Aposticha4.text @ver End-Hymn
-					end-when
-				End-Section
-				Section theotokion
-					Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
-					when-exists rid ocVE.AposTheotokion.melody use: Title role melody rid ocVE.AposTheotokion.melody End-Title end-when
 					Hymn rid ocVE.AposTheotokion.text @ver End-Hymn
 				End-Section
 			End-Section
