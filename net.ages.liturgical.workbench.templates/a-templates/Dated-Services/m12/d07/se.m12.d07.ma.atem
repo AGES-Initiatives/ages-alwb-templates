@@ -1,6 +1,6 @@
 Template se.m12.d07.ma 
 
-Status Final
+Status Review
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -38,8 +38,8 @@ Status Final
 
 	when-name-of-day-is 
 		Sunday use:	
-			Section Instance03 //Sunday
-				Insert_section ST.ma.oc_me End-Insert
+			Section Instance02 //Sunday
+				Insert_section ST.ma.oc End-Insert
 				Insert_section MA._01_Beginning__.modeofweek End-Insert
 				Insert_section AP.resgloryres End-Insert
 				Insert_section AP.both__.primarytheotokion__.modeofweek End-Insert
@@ -63,12 +63,10 @@ Status Final
 				Insert_section MA._13_Lauds__.glory__.eo_ End-Insert
 				Insert_section MA._14_Doxology__.sunday End-Insert
 			End-Section //Sunday
-			
-		Saturday use:
-		
+
 		otherwise use:
 			Section Instance01
-				Insert_section ST.ma.oc_me End-Insert
+				Insert_section ST.ma.oc_me1 End-Insert
 				Insert_section MA._01_Beginning__.mode4 End-Insert
 				Insert_section AP.ganame.Dec07__.ambrose_ End-Insert
 				Insert_section AP.gloryboth__.theotokion__.mode4_ End-Insert
@@ -82,8 +80,15 @@ Status Final
 				Insert_section MA._10_Canon__.ode9_end End-Insert
 				Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
 				Insert_section MA._12_Exaposteilarion__.me__.exap123t End-Insert
-				Insert_section MA._13_Lauds__.read__.all End-Insert
-				Insert_section MA._14_Doxology__.append_small End-Insert
+				when-name-of-day-is
+					Saturday use:
+						Insert_section MA._13_Lauds__.modeofweek__.noStichologia End-Insert
+						Insert_section MA._13_Lauds__.oc__.saturday_ End-Insert
+						Insert_section MA._14_Doxology__.small End-Insert
+					otherwise use:
+						Insert_section MA._13_Lauds__.read__.all End-Insert
+						Insert_section MA._14_Doxology__.append_small End-Insert
+				end-when
 				Insert_section MA._15_Litanies__.aftersmalldoxology End-Insert
 				Insert_section MA._16_Aposticha__.oc_ End-Insert
 				Insert_section MA._17_ItIsGood_Trisagion__.not_lent End-Insert
