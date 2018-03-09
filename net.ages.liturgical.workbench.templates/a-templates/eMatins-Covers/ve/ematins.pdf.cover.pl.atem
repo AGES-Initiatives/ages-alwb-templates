@@ -39,8 +39,18 @@ Status NA
 				//	56 use: 
 					63 use:
 					otherwise use:
-						Title role cover5 sid book.Menaion.name sid d.delimiter rid me.meDate.text End-Title
-						Title role cover4 rid me.meShortCommemoration1.text End-Title
+						when-date-is
+							 Mar 10 use:
+							 	Section Mar10
+							 		Set_Date month 3 day 9 End_Date
+										Title role cover5 sid book.Menaion.name sid d.delimiter rid me.meDate.text End-Title
+										Title role cover4 rid me.meShortCommemoration1.text End-Title
+									Set_Date month 0  day 0 End_Date
+							 	End-Section
+							 otherwise use:
+								Title role cover5 sid book.Menaion.name sid d.delimiter rid me.meDate.text End-Title
+								Title role cover4 rid me.meShortCommemoration1.text End-Title
+						end-when
 				end-when
 			End-Section
 		End-Section
