@@ -1,0 +1,117 @@
+Template se.m03.d25.ve2
+
+Status Draft
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 3 day 25 year 2018 End_Date
+			Page_Header_Even
+				center @lookup sid ve.pdf.header lang L1 @lookup sid d.ontheeveof lang L1 @date lang L1 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ve.pdf.header lang L2 @lookup sid d.ontheeveof lang L2 @date lang L2 
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.pdf.cover.ve.specific_2018 End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+	
+	when-triodion-day-is
+		49 use:
+			Section Instance16
+				Insert_section ST.ve.me_sal End-Insert
+				Insert_section VE._01_Beginning__.vespers End-Insert
+				Insert_section VE._02_Kekragaria__.mode6__.for6 End-Insert
+				Insert_section VE._03_Stichera__.me__.p_112233as5678910 End-Insert
+				Insert_section VE._03_Stichera__.gloryboth__.me__.gloryasgloryboth_ End-Insert
+				Insert_section VE._04_Middle__.entrance End-Insert
+				Insert_section VE._05_Readings__.reader End-Insert
+				Insert_section VE._06_Litanies__.fullektenia End-Insert
+				Insert_section VE._08_Aposticha__.me__.i_annunciation12 End-Insert
+				Insert_section VE._08_Aposticha__.gloryboth__.me__.gloryasgloryboth_ End-Insert
+				Insert_section VE._09_Symeon_Trisagion__.Priest.symeon End-Insert
+				Actor sid Choir End-Actor
+				Insert_section bk.ho.s22.Kontakion End-Insert
+				Insert_section bk.ho.s22.Stasis4 End-Insert
+				Insert_section bk.ho.s22.Stasis5 End-Insert
+				Insert_section bk.ho.s22.Kontakion End-Insert
+				Insert_section VE._09_Symeon_Trisagion__.Priest.trisagion End-Insert
+				Insert_section AP.f3 End-Insert
+				Insert_section VE._10_End__.wisdom End-Insert
+				Insert_section VE._11_Dismissal__.commemoration End-Insert
+			End-Section
+		53 use:
+			Section Instance18
+				Insert_section Instance01 End-Insert
+			End-Section
+		57 use:
+			Section Instance22
+				Insert_section ST.ve.oc_me End-Insert
+				Insert_section VE._01_Beginning__.vespers End-Insert
+				Insert_section VE._02_Kekragaria__.modeofweek__.for10 End-Insert
+				Insert_section VE._03_Stichera__.oc__.sunday__.s_1234as1234 End-Insert
+				Insert_section TI.stp.f End-Insert
+				Insert_section VE._03_Stichera__.me__.p_112233as5678910 End-Insert
+				Insert_section VE._03_Stichera__.gloryboth__.me__.gloryasgloryboth_ End-Insert
+				Insert_section VE._04_Middle__.entrance End-Insert
+				Insert_section VE._05_Readings__.reader End-Insert
+				Insert_section VE._06_Litanies__.fullektenia End-Insert
+				Section block1
+					Insert_section VE._07_Lity__.part1_title_actor__.lity_choir End-Insert
+					Insert_section VE._07_Lity__.part2__.me__.lity1 End-Insert
+					Insert_section VE._07_Lity__.part3_litany__.me1 End-Insert
+					Insert_section VE._07_Lity__.part4_theotokoshymn End-Insert
+					Insert_section VE._07_Lity__.part5_blessingofloaves End-Insert
+				End-Section
+				Insert_section VE._08_Aposticha__.oc__.sunday__.aposticha1234 End-Insert
+				Insert_section TI.gb.f End-Insert
+				Insert_section VE._08_Aposticha__.gloryboth__.me__.gloryasgloryboth_.hymn End-Insert
+				Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
+				Insert_section AP.res__.modeofweek End-Insert
+				Insert_section TI.g.f End-Insert
+				Insert_section AP.me1_.hymn End-Insert
+				Insert_section TI.b.r End-Insert
+				Insert_section AP.me1_.hymn End-Insert
+				Insert_section VE._10_End__.afterartoklasia End-Insert
+				Insert_section VE._11_Dismissal__.commemoration End-Insert
+			End-Section		
+		otherwise use:
+			Section Instance01
+				Insert_section ST.ve.me End-Insert
+				Insert_section VE._01_Beginning__.vespers End-Insert
+				Insert_section VE._02_Kekragaria__.mode6__.for6 End-Insert
+				Insert_section VE._03_Stichera__.me__.p_112233as5678910 End-Insert
+				Insert_section VE._03_Stichera__.gloryboth__.me__.gloryasgloryboth_ End-Insert
+				Insert_section VE._04_Middle__.entrance End-Insert
+				Insert_section VE._05_Readings__.reader End-Insert
+				Insert_section VE._06_Litanies__.fullektenia End-Insert
+				Insert_section VE._08_Aposticha__.me__.i_annunciation12 End-Insert
+				Insert_section VE._08_Aposticha__.gloryboth__.me__.gloryasgloryboth_ End-Insert
+				Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
+				Insert_section AP.f3 End-Insert
+				Insert_section VE._10_End__.wisdom End-Insert
+				Insert_section VE._11_Dismissal__.commemoration End-Insert
+			End-Section
+	end-when
+
+End-Template
