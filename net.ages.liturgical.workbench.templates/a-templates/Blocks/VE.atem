@@ -58,31 +58,29 @@ Status Review
 							Dialog<i>sid res04p</>End-Dialog
 						End-Section
 						Section introductorypsalm
-							Section psalm
-								when-movable-cycle-day-is 
-									78 thru 108 use:
-										Actor sid Hierarch End-Actor
-										Insert_section PE.ChristIsRisen.once End-Insert
-										Actor sid Choir End-Actor
-										Insert_section PE.ChristIsRisen.twice End-Insert
-										Actor sid Hierarch End-Actor
-									otherwise use:
-										Actor sid Hierarch End-Actor
-										Reading sid DefteProskinisomen1 End-Reading
-										Reading sid DefteProskinisomen2 End-Reading
-										Reading sid DefteProskinisomen3 End-Reading
-								end-when
-								Media sid hoVE.Ps103.text End-Media
-								Insert_section Psalm_103_Paragraph End-Insert
-								Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
-								Reading sid Allilouia3.text sid DoxaSoiOTheos1<r>sid Thrice</>End-Reading
-								Reading sid IElpisImonKyrie End-Reading
-							End-Section
-							Section prayers
-								Break page End_Break
-								Insert_section lamplighting_prayers End-Insert
-								Break page End_Break
-							End-Section
+							when-movable-cycle-day-is 
+								78 thru 108 use:
+									Actor sid Hierarch End-Actor
+									Insert_section PE.ChristIsRisen.once End-Insert
+									Actor sid Choir End-Actor
+									Insert_section PE.ChristIsRisen.twice End-Insert
+									Actor sid Hierarch End-Actor
+								otherwise use:
+									Actor sid Hierarch End-Actor
+									Reading sid DefteProskinisomen1 End-Reading
+									Reading sid DefteProskinisomen2 End-Reading
+									Reading sid DefteProskinisomen3 End-Reading
+							end-when
+							Media sid hoVE.Ps103.text End-Media
+							Insert_section Psalm_103_Paragraph End-Insert
+							Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+							Reading sid Allilouia3.text sid DoxaSoiOTheos1<r>sid Thrice</>End-Reading
+							Reading sid IElpisImonKyrie End-Reading
+						End-Section
+						Section prayers
+							Break page End_Break
+							Insert_section lamplighting_prayers End-Insert
+							Break page End_Break
 						End-Section
 						Section litany
 							Actor sid Deacon End-Actor
@@ -114,6 +112,7 @@ Status Review
 					otherwise use:
 						Insert_section vespers.enarxis End-Insert
 						Insert_section vespers.introductorypsalm End-Insert
+						Insert_section vespers.prayers End-Insert
 						Section litany
 							Actor sid Deacon End-Actor
 							when-movable-cycle-day-is
@@ -141,7 +140,7 @@ Status Review
 			Actor sid Priest End-Actor
 			Dialog sid enarxis02 End-Dialog
 			Dialog<i>sid res04p</>End-Dialog
-			Insert_section vespers.introductorypsalm.psalm End-Insert
+			Insert_section vespers.introductorypsalm End-Insert
 			Insert_section vespers.litany End-Insert
 		End-Section
 		Section vespers
@@ -164,30 +163,72 @@ Status Review
 						Dialog<i>sid res04p</>End-Dialog
 					End-Section
 					Section introductorypsalm
-						Section psalm
-							when-movable-cycle-day-is 78 thru 108 use:
-								Actor sid Priest End-Actor
-								Insert_section PE.ChristIsRisen.once End-Insert
-								Actor sid Choir End-Actor
-								Insert_section PE.ChristIsRisen.twice End-Insert
-								Actor sid Reader End-Actor
+						when-movable-cycle-day-is 78 thru 108 use:
+							Actor sid Priest End-Actor
+							Insert_section PE.ChristIsRisen.once End-Insert
+							Actor sid Choir End-Actor
+							Insert_section PE.ChristIsRisen.twice End-Insert
+							Actor sid Reader End-Actor
+						otherwise use:
+							Actor sid Reader End-Actor
+							Reading sid DefteProskinisomen1 End-Reading
+							Reading sid DefteProskinisomen2 End-Reading
+							Reading sid DefteProskinisomen3 End-Reading
+						end-when
+						Media sid hoVE.Ps103.text End-Media
+						Insert_section Psalm_103_Paragraph End-Insert
+						Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+						Reading sid Allilouia3.text sid DoxaSoiOTheos1<r>sid Thrice</>End-Reading
+						Reading sid IElpisImonKyrie End-Reading
+					End-Section
+					Section prayers
+						Break page End_Break
+						Insert_section lamplighting_prayers End-Insert
+						Break page End_Break
+					End-Section
+					Section litany
+						Actor sid Deacon End-Actor
+						when-movable-cycle-day-is
+							121 use:
+								Insert_section LN.GreatLitany_Vespers_HolySpirit01 End-Insert
 							otherwise use:
-								Actor sid Reader End-Actor
-								Reading sid DefteProskinisomen1 End-Reading
-								Reading sid DefteProskinisomen2 End-Reading
-								Reading sid DefteProskinisomen3 End-Reading
-							end-when
-							Media sid hoVE.Ps103.text End-Media
-							Insert_section Psalm_103_Paragraph End-Insert
-							Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
-							Reading sid Allilouia3.text sid DoxaSoiOTheos1<r>sid Thrice</>End-Reading
-							Reading sid IElpisImonKyrie End-Reading
-						End-Section
-						Section prayers
-							Break page End_Break
-							Insert_section lamplighting_prayers End-Insert
-							Break page End_Break
-						End-Section
+								Insert_section LN.GreatLitany01 End-Insert
+						end-when
+						Actor sid Priest End-Actor
+						Dialog sid exc01 End-Dialog
+						Dialog<i>sid res04p</>End-Dialog
+					End-Section //Part3
+			end-when
+		End-Section
+		Section with_anoixantaria
+			when-movable-cycle-day-is
+				72, 73, 74, 75, 76, 77, 109 use:
+					Insert_section vespers.pascha End-Insert
+				otherwise use:
+					Section enarxis
+						Insert_section vespers.enarxis End-Insert
+					End-Section
+					Section introductorypsalm
+						when-movable-cycle-day-is 78 thru 108 use:
+							Actor sid Priest End-Actor
+							Insert_section PE.ChristIsRisen.once End-Insert
+							Actor sid Choir End-Actor
+							Insert_section PE.ChristIsRisen.twice End-Insert
+							Actor sid Reader End-Actor
+						otherwise use:
+							Actor sid Reader End-Actor
+							Reading sid DefteProskinisomen1 End-Reading
+							Reading sid DefteProskinisomen2 End-Reading
+							Reading sid DefteProskinisomen3 End-Reading
+						end-when
+				//		Media sid hoVE.Ps103.text End-Media
+						Insert_section VI._01_Beginning__.with_anoixantaria.introductorypsalm.Psalm_103_Verses End-Insert
+						Insert_section VI._01_Beginning__.with_anoixantaria.introductorypsalm.anoixantaria End-Insert
+					End-Section
+					Section prayers	
+						Break page End_Break
+						Insert_section VE.lamplighting_prayers End-Insert
+						Break page End_Break
 					End-Section
 					Section litany
 						Actor sid Deacon End-Actor
