@@ -2132,6 +2132,25 @@ Template MA
 					Hymn rid meMA.Kathisma22.text @ver media-off End-Hymn
 				End-Section
 			End-Section
+			Section kath21o222t_
+				Actor sid Choir End-Actor
+				Title role desig sid Kathisma2 End-Title
+				Section hymns
+					Title role source0 sid sourceMenaion End-Title
+					Title<Tmode>rid meMA.Kathisma21.mode</><Tmelody>rid meMA.Kathisma21.melody</>End-Title
+					Hymn rid meMA.Kathisma21.text @ver End-Hymn
+					when-exists rid meMA.Kathisma22.text use:
+						Title sid Doxa End-Title
+						Title<Tmode>rid meMA.Kathisma22.mode</><Tmelody>rid meMA.Kathisma22.melody</>End-Title
+						Hymn rid meMA.Kathisma22.text @ver End-Hymn
+						Title sid KaiNyn End-Title
+					otherwise use:
+						Title role mixed sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+					end-when
+					Title<Tmode>rid meMA.Kathisma2T.mode</><Tmelody>rid meMA.Kathisma2T.melody</>End-Title
+					Hymn rid meMA.Kathisma2T.text @ver End-Hymn
+				End-Section
+			End-Section
 		End-Section
 		Section oc__
 			Section weekday
@@ -2592,6 +2611,9 @@ Template MA
 					End-Section
 					Section forerunner
 						Insert_section bk.ecloge.forerunner.Section01 End-Insert
+					End-Section
+					Section monastics
+						Insert_section bk.ecloge.monastics.Section01 End-Insert
 					End-Section
 					Section palm_sunday
 						Insert_section bk.ecloge.palm.Section01 End-Insert
