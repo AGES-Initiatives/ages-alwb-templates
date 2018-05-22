@@ -1,0 +1,55 @@
+Template cu.liturgy 
+
+Status Final
+
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 6 day 29 End_Date
+			Page_Header_Even
+				center @lookup sid li.pdf.header sid d.on lang L1 @date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.cover.li End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	Section Instance04
+		Insert_section goarchLI._01_Enarxis__.daily End-Insert
+		Insert_section goarchLI._02_Antiphons__.celebrated_saint End-Insert
+		Insert_section AP.me1_ End-Insert
+		Insert_section goarchLI._04_Entrance__.clergy End-Insert
+		Insert_section goarchLI._05_AfterEntranceHymns__.choir End-Insert
+		Section hymns
+			Insert_section AP.me1_ End-Insert
+			Insert_section goarchLI._05_AfterEntranceHymns__.local End-Insert
+			Insert_section KO.seasonal End-Insert
+		End-Section
+		Insert_section goarchLI._06_Trisagion__.chrys End-Insert
+		Insert_section LE._01_Epistle__.menaion_ End-Insert
+		Insert_section LE._02_Gospel__.menaion_ End-Insert
+		Insert_section goarchLI._08_Liturgy__.chrys End-Insert
+		Insert_section goarchLI._09_Dismissal__.commemoration End-Insert
+	End-Section
+End-Template
