@@ -36,11 +36,42 @@ Status NA
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-	when-movable-cycle-day-is 1 thru 127 use:
+	when-movable-cycle-day-is 
+		1 thru 127 use:
 			Insert_section mc.map.ma.Section01 End-Insert //adjust to appropriate service
-			otherwise use:
-		
+		otherwise use:
+			when-name-of-day-is
+				Sunday use:
+					Section Instance02
+					End-Section
+				otherwise use:
+					Section Instance01
+						Insert_section ST.ma.oc_me1 End-Insert
+						Insert_section MA._01_Beginning__.mode3 End-Insert
+						Insert_section AP.ganame.Jun19__.jude_ End-Insert
+						Insert_section TI.g.r End-Insert
+						Insert_section AP.both__.theotokion__.mode3_ End-Insert
+						Insert_section MA._03_Kathisma1__.oc__.weekday_for2 End-Insert
+						Insert_section MA._07_Gospel__.no__.reader__.psalm50 End-Insert
+						Insert_section MA._11_Kontakion__.me1_.kontakion End-Insert
+						Insert_section SY.Synaxarion End-Insert
+						Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
+						Insert_section MA._10_Canon__.magnificat__.mode5 End-Insert
+						Insert_section CA.heirmos.ode9.me End-Insert
+						Insert_section MA._10_Canon__.ode9_end End-Insert
+						Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+						Insert_section MA._12_Exaposteilarion__.weekday_ End-Insert
+						Insert_section MA._13_Lauds__.read__.all End-Insert
+						Insert_section MA._14_Doxology__.small End-Insert
+						Insert_section MA._15_Litanies__.aftersmalldoxology End-Insert
+						Insert_section MA._16_Aposticha__.oc_.aposticha End-Insert
+						Insert_section MA._17_ItIsGood_Trisagion__.not_lent End-Insert
+						Insert_section AP.ganame.Jun19__.jude_ End-Insert
+						Insert_section AP.gloryboth__.endofmatins_theotokion__.mode3_ End-Insert
+						Insert_section MA._18_End__.ektenia_wisdom End-Insert
+						Insert_section MA._20_Dismissal__.commemoration End-Insert						
+					End-Section
+			end-when
 	end-when	
-	
 
 End-Template

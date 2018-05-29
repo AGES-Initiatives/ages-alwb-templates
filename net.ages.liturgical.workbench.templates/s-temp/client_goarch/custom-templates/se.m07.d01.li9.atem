@@ -1,0 +1,115 @@
+Template se.m07.d01.li9
+
+Status NA
+
+	import oc.*
+	
+	import eu.lichrysbasil_gr_GR_cog.*
+	import liturgical.verses_gr_GR_cog.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 7 day 1 year 2018 End_Date
+			Page_Header_Even
+				center @lookup sid li.pdf.header sid d.on lang L1 @date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Section Instance05 //Sunday
+		Insert_section ST.li.oc_me1 End-Insert
+		Insert_section hLI._01_Enarxis__.daily End-Insert
+		Insert_section hLI._02_Antiphons__.sundays_weekdays_feasts.antiphon1 End-Insert
+		Insert_section hLI._02_Antiphons__.sundays_weekdays_feasts.antiphon2 End-Insert
+		Section antiphon3
+			Actor sid Choir End-Actor
+			Section sunday
+				Title role desig sid Antifonon3 End-Title
+				Title role mode rid ocVE.Apolytikion.mode @day D1 End-Title
+				Section v01
+					Verse<bnr>sid vVerse1</>sid psLI.sunday.antiphon3.v1.text @ver End-Verse
+				End-Section
+				Section hymn
+					Title<Tdesig>sid ApolytikionAnastasimon</>End-Title
+					Title<Tmode>rid ocVE.Apolytikion.mode @day D1</><Tmelody>rid ocVE.Apolytikion.melody @day D1</>End-Title
+					Hymn rid ocVE.Apolytikion.text @ver @day D1 End-Hymn
+				End-Section
+			End-Section
+		End-Section
+		Insert_section hLI._04_Entrance__.clergy End-Insert
+		Insert_section hLI._05_AfterEntranceHymns__.clergy End-Insert
+		Section hymns
+			Insert_section AP.res__.modeofweek End-Insert
+			Actor sid Choir End-Actor
+			Insert_section TI.a.s._00_saint_.mp End-Insert
+			Insert_section AP.me1_.hymn End-Insert
+			Section clergylaity
+				Set_Date month 3 day 25 End_Date
+					Title<Tdesig>sid client_gr_GR_cog.cl.Apolytikion1.title</>End-Title
+					Insert_section AP.me1_.hymn End-Insert
+				Set_Date month 0 day 0 End_Date
+			End-Section
+			Insert_section hLI._05_AfterEntranceHymns__.kontakion End-Insert
+		End-Section
+		Section trisagion
+			Insert_section Selector_Trisagion.hierarchical.prayer End-Insert
+			Insert_section Selector_Trisagion.hierarchical.holygod_onechoir End-Insert
+		End-Section	
+		Insert_section hLI._07_Fimi__.one_choir__.part1 End-Insert
+		Insert_section hLI._07_Fimi__.one_choir__.part2__.bishop0andbishop1 End-Insert
+		Insert_section LE._01_Epistle__.Hierarchical__.menaion_ End-Insert
+		Section gospel
+			Actor sid Choir End-Actor
+			Hymn sid ho.s07_gr_GR_cog.hoLI.GospelAlleluia.text media-off End-Hymn
+			Insert_section LE.hPrayerBeforeGospel End-Insert
+			Insert_section LE._02_Gospel__.Hierarchical__.daily_.lesson End-Insert
+		End-Section
+		Section _08_Liturgy__chrys_part1
+			Insert_section hLI._08_Liturgy__.chrys.part1.cherubic_upto_communion.part1._20_chrys.part1 End-Insert
+			Insert_section hLI._08_Liturgy__.chrys.part1.cherubic_upto_communion.part1._21_chrys End-Insert
+			Insert_section hLI._08_Liturgy__.chrys.part1.cherubic_upto_communion.part1._22_chrys End-Insert
+			Insert_section hLI._08_Liturgy__.chrys.part1.cherubic_upto_communion.part1._23_chrys_HymnToTheotokos End-Insert
+			Insert_section hLI._08_Liturgy__.chrys.part1.cherubic_upto_communion.part2 End-Insert
+			Insert_section hLI._08_Liturgy__.chrys.part1.cherubic_upto_communion.part3 End-Insert
+			Insert_section hLI.PreCommunionPrayers End-Insert
+		End-Section
+		Section _08_Liturgy__chrys_part2
+			Actor sid Choir End-Actor
+			Insert_section Selector_CommunionHymn.DayOfWeek.onSunday End-Insert
+		End-Section
+		Section _08_Liturgy__chrys_part3
+			Section call
+				Actor sid Deacon End-Actor
+				Dialog sid euLI.Key1526.text End-Dialog
+			End-Section
+			Section hymns
+				Actor sid Choir End-Actor
+				Title<r>sid euLI.MM.HymnsDuringCommunion.title</>End-Title
+				Media sid euLI.MM.HymnsDuringCommunion.text End-Media
+			End-Section
+			Insert_section hLI._08_Liturgy__.chrys.part3.communion_upto_dismissal End-Insert
+		End-Section
+		Insert_section hLI._09_Dismissal__.commemoration End-Insert
+	End-Section //Sunday
+
+End-Template

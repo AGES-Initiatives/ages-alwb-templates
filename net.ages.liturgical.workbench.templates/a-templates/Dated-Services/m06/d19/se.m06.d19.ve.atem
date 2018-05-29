@@ -36,11 +36,43 @@ Status NA
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-	when-movable-cycle-day-is 1 thru 127 use:
+	when-movable-cycle-day-is 
+		1 thru 127 use:
 			Insert_section mc.map.ve.Section01 End-Insert //adjust to appropriate service
-			otherwise use:
-		
+		otherwise use:
+			when-name-of-day-is
+				Sunday use:
+					Section Instance02
+					End-Section
+				otherwise use:
+					Section Instance01
+						Insert_section ST.ve.oc_me1 End-Insert
+						Insert_section VE._01_Beginning__.vespers End-Insert
+						Insert_section VE._02_Kekragaria__.modeofweek__.for6 End-Insert
+						Insert_section VE._03_Stichera__.oc__.weekday__.p_136as567 End-Insert
+						Insert_section TI.stp.s._01_apostle_.m End-Insert
+						Insert_section VE._03_Stichera__.me__.p_123as8910 End-Insert
+						Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_ End-Insert
+						Section metheotokion
+							when-name-of-day-is 
+								Monday, Tuesday, Thursday use:
+									Insert_section VE._03_Stichera__.both__.secondarytheotokion__.mode6_vine__.apostle End-Insert		
+								Wednesday, Friday use:
+									Insert_section VE._03_Stichera__.both__.metheotokion.stavrothetokion End-Insert
+								Saturday use:
+									Insert_section VE._03_Stichera__.both__.firsttheotokion__.modeofweek End-Insert
+							end-when
+						End-Section	
+						Insert_section VE._04_Middle__.noentrance End-Insert	
+						Insert_section VE._06_Litanies__.noektenia End-Insert
+						Insert_section VE._08_Aposticha__.oc__.weekday_ End-Insert
+						Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
+						Insert_section AP.ganame.Jun19__.jude_ End-Insert
+						Insert_section AP.gloryboth__.theotokion__.mode3_ End-Insert
+						Insert_section VE._10_End__.ektenia_wisdom End-Insert
+						Insert_section VE._11_Dismissal__.commemoration End-Insert
+					End-Section
+			end-when
 	end-when	
-	
 
 End-Template
