@@ -16,10 +16,12 @@ Status NA
 	Head 
 		Set_Date month 7 day 1 End_Date
 			Page_Header_Even
-				center @lookup sid ma.pdf.header sid d.on lang L1 @date lang L1
+				center @text "Ὄρθρος τῇ Κυριακῇ, 1 Ἰουλίου 2018"
+			//	center @lookup sid ma.pdf.header sid d.on lang L1 @date lang L1
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+				center @text "Matins on Sunday, July 1 2018"
+			//	center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -35,69 +37,48 @@ Status NA
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-	when-movable-cycle-day-is
-		125 use:
-			Section Instance01 //Friday after Pentecost
-			End-Section
-			
-		126 use:
-			Section Instance02 //Saturday after Pentecost
-			End-Section
-			
-		127 use:
-			Section Instance03 //Sunday of All Saints
-			End-Section
-			
-		otherwise use:
-			when-name-of-day-is 
-				Sunday use:
-					Section Instance05 //Sunday
-						Insert_section ST.ma.oc_me1 End-Insert
-						Insert_section MA._01_Beginning__.modeofweek End-Insert
-						Insert_section AP.res__.modeofweek End-Insert
-						Insert_section TI.g.s._00_saint_.mp End-Insert
-						Insert_section AP.me1_.hymn End-Insert
-						Insert_section AP.both__.primarytheotokion__.mode8 End-Insert
-						Insert_section MA._03_Kathisma1__.litany End-Insert
-						Insert_section MA._03_Kathisma1__.oc__.sunday__.whenmode8 End-Insert
-						Insert_section MA._04_Kathisma2__.append__.oc__.sunday__.kath212223 End-Insert
-						Insert_section MA._05_Kathisma3__.evlogetaria_res End-Insert
-						Insert_section MA._06_Antiphons__.sunday_ End-Insert
-						Insert_section MA._11_Kontakion__.sunday End-Insert
-						Insert_section TI.k.s._00_saint_.mp End-Insert
-						Insert_section MA._11_Kontakion__.append__.me1_.konoik_nt End-Insert
-						Insert_section SY.Synaxarion End-Insert
-						Insert_section KA.Hierarchical__._1345678 End-Insert
-						Insert_section MA._07_Gospel__.yes__.hierarch__.eo End-Insert
-						Insert_section MA._08_Supplication__.deacon__.me End-Insert
-						Insert_section MA._10_Canon__.ode9_intro__.hierarchical End-Insert
-						Insert_section MA._10_Canon__.magnificat__.modeofkatavasia End-Insert
-						Insert_section KA.append__._9 End-Insert
-						Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
-						Insert_section MA._12_Exaposteilarion__.Hierarchical__.eo__.eoofweek_.exap End-Insert
-						Insert_section TI.e.s._00_saint_.mp End-Insert
-						Insert_section MA._12_Exaposteilarion__.append__.me__.exap1 End-Insert
-						Insert_section MA._12_Exaposteilarion__.append__.me__.theotokion End-Insert
-						Insert_section MA._13_Lauds__.Hierarchical__.modeofweek End-Insert
-						Insert_section MA._13_Lauds__.Hierarchical__.ton_despotin End-Insert
-						Insert_section MA._13_Lauds__.Hierarchical__.rubrics__.kairos_at_lauds End-Insert
-						Actor sid Choir End-Actor
-						Insert_section MA._13_Lauds__.stichologia__.sung__.for_6 End-Insert
-						Insert_section MA._13_Lauds__.oc__.s_1234as1234 End-Insert
-						Insert_section TI.s._00_saint_.mp End-Insert
-						Insert_section MA._13_Lauds__.me__.p_1123as56martyrs1unmercenaries2 End-Insert
-						Insert_section MA._13_Lauds__.glory__.eo_ End-Insert
-						Insert_section MA._14_Doxology__.sunday End-Insert
-				//		Insert_section MA._15_Litanies__.Hierarchical__.aftergreatdoxology End-Insert
-				//		Insert_section MA._18_End__.Hierarchical__.wisdom End-Insert
-				//		Insert_section MA._20_Dismissal__.Hierarchical__.commemoration End-Insert
-					End-Section
+		Section Instance05 //Sunday
+			Insert_section ST.ma.oc_me1 End-Insert
+			Insert_section MA._01_Beginning__.modeofweek End-Insert
+			Insert_section AP.res__.modeofweek End-Insert
+			Insert_section TI.g.s._00_saint_.mp End-Insert
+			Insert_section AP.me1_.hymn End-Insert
+			Insert_section AP.both__.primarytheotokion__.mode8 End-Insert
+			Insert_section MA._03_Kathisma1__.litany End-Insert
+			Insert_section MA._03_Kathisma1__.oc__.sunday__.whenmode8 End-Insert
+			Insert_section MA._04_Kathisma2__.append__.oc__.sunday__.kath212223 End-Insert
+			Insert_section MA._05_Kathisma3__.evlogetaria_res End-Insert
+			Insert_section MA._06_Antiphons__.sunday_ End-Insert
+			Actor sid Reader End-Actor
+			Insert_section TI.k.s._00_saint_.mp End-Insert
+			Insert_section MA._11_Kontakion__.append__.me1_.konoik_nt End-Insert
+			Insert_section MA._11_Kontakion__.append__.sunday End-Insert
+			Insert_section SY.Synaxarion End-Insert
+			Insert_section KA.Hierarchical__._1345678 End-Insert
+			Insert_section MA._07_Gospel__.yes__.hierarch__.eo End-Insert
+			Insert_section MA._08_Supplication__.deacon__.me End-Insert
+			Insert_section MA._10_Canon__.ode9_intro__.hierarchical End-Insert
+			Insert_section MA._10_Canon__.magnificat__.modeofkatavasia End-Insert
+			Insert_section KA.append__._9 End-Insert
+			Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+			Insert_section MA._12_Exaposteilarion__.Hierarchical__.eo__.eoofweek_.exap End-Insert
+			Insert_section TI.e.s._00_saint_.mp End-Insert
+			Insert_section MA._12_Exaposteilarion__.append__.me__.exap1 End-Insert
+			Insert_section MA._12_Exaposteilarion__.append__.me__.theotokion End-Insert
+			Insert_section MA._13_Lauds__.modeofweek__.for6 End-Insert
+		//	Insert_section MA._13_Lauds__.Hierarchical__.modeofweek End-Insert
+		//	Insert_section MA._13_Lauds__.Hierarchical__.ton_despotin End-Insert
+		//	Insert_section MA._13_Lauds__.Hierarchical__.rubrics__.kairos_at_lauds End-Insert
+		//	Actor sid Choir End-Actor
+		//	Insert_section MA._13_Lauds__.stichologia__.sung__.for_6 End-Insert
+			Insert_section MA._13_Lauds__.oc__.s_1234as1234 End-Insert
+			Insert_section TI.s._00_saint_.mp End-Insert
+			Insert_section MA._13_Lauds__.me__.p_1123as56martyrs1unmercenaries2 End-Insert
+			Insert_section MA._13_Lauds__.glory__.eo_ End-Insert
+			Insert_section MA._14_Doxology__.sunday End-Insert
+	//		Insert_section MA._15_Litanies__.Hierarchical__.aftergreatdoxology End-Insert
+	//		Insert_section MA._18_End__.Hierarchical__.wisdom End-Insert
+	//		Insert_section MA._20_Dismissal__.Hierarchical__.commemoration End-Insert
+		End-Section
 				
-				otherwise use:
-					Section Instance04 //weekday
-					End-Section
-				
-			end-when
-	end-when
-	
 End-Template

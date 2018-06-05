@@ -7,6 +7,7 @@ Status NA
 	import client_gr_GR_cog.*
 	import eu.lichrysbasil_gr_GR_cog.*
 	import liturgical.verses_gr_GR_cog.*
+	import menaion.verses_gr_GR_cog.*
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -23,10 +24,12 @@ Status NA
 	Head 
 		Set_Date month 7 day 1 year 2018 End_Date
 			Page_Header_Even
-				center @lookup sid li.pdf.header sid d.on lang L1 @date lang L1
+				center @text "Θεία Λειτουργία τῇ Κυριακῇ, 1 Ἰουλίου 2018"
+			//	center @lookup sid li.pdf.header sid d.on lang L1 @date lang L1
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+				center @text "Divine Liturgy on Sunday, July 1 2018"
+			//	center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -71,7 +74,17 @@ Status NA
 		End-Section	
 		Insert_section hLI._07_Fimi__.one_choir__.part1 End-Insert
 		Insert_section hLI._07_Fimi__.one_choir__.part2__.bishop0andbishop1 End-Insert
-		Insert_section LE._01_Epistle__.Hierarchical__.menaion_ End-Insert
+		Section epistle
+			Insert_section LE._01_Epistle__.Hierarchical__.menaion_.title End-Insert
+			Actor sid Reader End-Actor
+			Insert_section rid_EpistleProkeimena_Menaion.me_ep_title_mode End-Insert
+			Para role readingzero sid psLI.m07.d01.prokeimenon.v1.text End-Para
+			Actor sid Deacon End-Actor
+			Dialog sid exc19 End-Dialog
+			Actor sid Reader End-Actor
+			Verse<bnr>sid vVerse</>sid psLI.m07.d01.prokeimenon.v2.text @ver End-Verse
+			Insert_section LE._01_Epistle__.Hierarchical__.menaion_.lesson End-Insert
+		End-Section
 		Section gospel
 			Actor sid Choir End-Actor
 			Hymn sid ho.s07_gr_GR_cog.hoLI.GospelAlleluia.text media-off End-Hymn
@@ -80,6 +93,19 @@ Status NA
 		End-Section
 		Section _08_Liturgy__chrys_part1
 			Insert_section hLI._08_Liturgy__.chrys.part1.cherubic_upto_communion.part1._20_chrys.part1 End-Insert
+			Section part2_greatentrance_bishop0
+				Actor sid Hierarch End-Actor
+				Rubric sid cl.client.LI.R001 End-Rubric
+			End-Section
+			Section part3
+				Actor sid PriestOrDeacon End-Actor
+				Dialog sid euLI.Key1124.text<i>sid res04p</>End-Dialog
+				Actor sid Hierarch End-Actor
+				Rubric sid cl.client.LI.R002 End-Rubric
+				Actor sid Choir End-Actor
+				Dialog sid res04 End-Dialog
+				Hymn sid euLI.Key1123.text @ver End-Hymn
+			End-Section	
 			Insert_section hLI._08_Liturgy__.chrys.part1.cherubic_upto_communion.part1._21_chrys End-Insert
 			Insert_section hLI._08_Liturgy__.chrys.part1.cherubic_upto_communion.part1._22_chrys End-Insert
 			Insert_section hLI._08_Liturgy__.chrys.part1.cherubic_upto_communion.part1._23_chrys_HymnToTheotokos End-Insert
@@ -110,11 +136,18 @@ Status NA
 				End-Section
 			End-Section	
 			Insert_section hLI._08_Liturgy__.chrys.part1.cherubic_upto_communion.part3 End-Insert
-			Insert_section hLI.PreCommunionPrayers End-Insert
 		End-Section
 		Section _08_Liturgy__chrys_part2
 			Actor sid Choir End-Actor
 			Insert_section Selector_CommunionHymn.DayOfWeek.onSunday End-Insert
+		End-Section
+		Section PreCommunionPrayers //inserted in _27
+			Actor sid People End-Actor
+			Title role desig sid ho.s21_gr_GR_cog.hoPrayer.title End-Title
+			Para role inaudible sid ho.s21_gr_GR_cog.hoPrayer.Key101.text @ver End-Para
+			Para role inaudible sid ho.s21_gr_GR_cog.hoPrayer.Key151.text @ver End-Para
+			Para role inaudible sid ho.s21_gr_GR_cog.hoPrayer.Key161.text @ver End-Para
+			Para role inaudible sid ho.s21_gr_GR_cog.hoPrayer.Key121.text @ver End-Para
 		End-Section
 		Section _08_Liturgy__chrys_part3
 			Section call
@@ -130,5 +163,10 @@ Status NA
 		End-Section
 		Insert_section hLI._09_Dismissal__.commemoration End-Insert
 	End-Section //Sunday
+
+	Break line End_Break
+	Break page End_Break
+
+	Insert_section bk.ho.s21.block5 End-Insert
 
 End-Template
