@@ -1,0 +1,45 @@
+Template se.m02.d29.ma2
+
+Status NA
+
+	import me.*
+	
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 2 day 29 year 2018 End_Date
+			Page_Header_Even
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+			Section for4
+				Insert_section MA.Lauds_Mode1 End-Insert
+				Title role bmc_collapse sid clps.stichologia.top End-Title
+					Media sid oc.m1.d1_gr_GR_cog.ocMA.MM.LaudsStichologia.text End-Media
+					Insert_section MA.Lauds_Stichologia.for_4 End-Insert
+				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Break line End_Break
+			End-Section
+	
+End-Template
