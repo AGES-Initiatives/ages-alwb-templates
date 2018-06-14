@@ -1,0 +1,120 @@
+Template cu.presanctified 
+
+	import client_gr_GR_snc.*
+	import eu.lichrysbasil_gr_GR_cog.*
+	import eu.lipresanctified_gr_GR_cog.*
+	import ho.s03_gr_GR_cog.*
+	import ho.s07_gr_GR_cog.*
+	import ho.s10_gr_GR_cog.*	
+//	import me.m00.d00_gr_GR_cog.*
+//	import pe.d000_gr_GR_cog.*
+//	import tr.d000_gr_GR_cog.*
+
+//	import oc.*
+//	import pe.*
+//	import tr.*
+
+	//Templates
+	import kTheotokos.*  //Katavasia
+	import eu.li.chrysbasil.*
+	import PresanctifiedParts.*
+	
+	import actors_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	
+
+	Head 
+	Template_Title @text "Presanctified Liturgy" End_Title
+		Set_Date month 3 day 27 End_Date
+			Page_Header_Even
+				left @pageNbr
+				center @lookup sid pl.pdf.header lang L1 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid pl.pdf.header lang L2 
+				right @pageNbr
+			End_Page_Header_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+	
+	Preface Covers
+		Insert_template cu.stnektarioscharlottencgoa_presanctifiedcover End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+	
+	Insert_section PL._01_Beginning End-Insert
+	Title <r>sid client_en_US_stnektarioscharlottencgoa.cl.eu.presanctified.R001</> End-Title
+	Break page End_Break
+	Insert_section PL._06 End-Insert
+	Insert_section PL._07 End-Insert
+
+	Section PL_08  //Catechumens
+		Insert_section LN.ForCatechumens01 End-Insert
+		Actor sid Priest<Trubric>sid InALowVoice</>End-Actor
+		Title role desig sid euPL.Key0901.title End-Title
+		Para role inaudible sid euPL.Key0901.text End-Para
+		Section ForCatechumens03
+			Actor sid Priest End-Actor
+			Dialog sid petCatechumens09 End-Dialog
+			Dialog<i>sid res04p</>End-Dialog
+			Rubric sid client_gr_GR_cog.cl.eu.presanctified.R003 End-Rubric
+			Actor sid Deacon End-Actor
+			Dialog sid petCatechumens10 sid petCatechumens13 sid petCatechumens14 End-Dialog
+			Dialog<i>sid res01p</>End-Dialog
+			Dialog sid petCatechumens15 End-Dialog
+			Dialog<i>sid res01p</>End-Dialog
+			Dialog sid petCatechumens16 End-Dialog
+			Dialog<i>sid res01p</>End-Dialog
+			Dialog sid petCatechumens17 End-Dialog
+			Dialog<i>sid res01p</>End-Dialog
+			Dialog sid petCatechumens18 End-Dialog
+			Dialog<i>sid res01p</>End-Dialog
+			Dialog sid petCatechumens19 End-Dialog
+			Dialog<i>sid res01p</>End-Dialog
+			Dialog sid petCatechumens20 End-Dialog
+			Dialog<i>sid res01p</>End-Dialog
+			Dialog sid petCatechumens21 End-Dialog
+			Dialog<i>sid res01p</>End-Dialog
+			Dialog sid petCatechumens22 End-Dialog
+			Dialog<i>sid res03p</>End-Dialog
+		End-Section
+		Actor sid Priest<Trubric>sid InALowVoice</>End-Actor
+		Title role desig sid euPL.Key0903.title End-Title
+		Para role inaudible sid euPL.Key0903.text End-Para
+		Actor sid Priest End-Actor
+		Dialog sid euPL.Key0904.text End-Dialog
+		Dialog<i>sid res04p</>End-Dialog
+		Insert_section LN.ForCatechumens04 End-Insert
+		Actor sid Priest<Trubric>sid InALowVoice</>End-Actor
+		Title role desig sid euPL.Key0905.title End-Title
+		Para role inaudible sid euPL.Key0905.text End-Para
+		Actor sid Priest End-Actor
+		Dialog sid exc01 End-Dialog
+		Dialog<i>sid res04p</>End-Dialog
+		Actor sid Deacon End-Actor
+		Dialog sid pet14 End-Dialog
+		Dialog<i>sid res01p</>End-Dialog
+		Dialog sid pet12 sid exc17 End-Dialog
+		Actor sid Priest<Trubric>sid InALowVoice</>End-Actor
+		Title role desig sid euPL.Key0907.title End-Title
+		Para role inaudible sid euPL.Key0907.text End-Para
+		Actor sid Priest End-Actor
+		Dialog sid euPL.Key0908.text End-Dialog
+		Dialog<i>sid res04p</>End-Dialog
+	End-Section
+	Insert_section PL._09 End-Insert
+	Insert_section PL._10 End-Insert
+	Insert_section PL._11 End-Insert
+	Insert_section PL._12 End-Insert
+	Insert_section PL._13_nocommemoration End-Insert
+
+End-Template

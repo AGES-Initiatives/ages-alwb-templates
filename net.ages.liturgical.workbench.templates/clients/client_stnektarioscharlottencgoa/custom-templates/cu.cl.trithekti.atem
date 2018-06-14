@@ -1,0 +1,107 @@
+Template cu.cl.trithekti 
+
+Status Final
+
+	import client_gr_GR_cog.*
+	import ho.s05_gr_GR_cog.*
+	import ho.s06_gr_GR_cog.*
+	import ho.s07_gr_GR_cog.*
+	import ps_gr_GR_cog.*
+
+	import da.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+	
+	Head 
+//		Set_Date month 2 day 23 End_Date
+			Page_Header_Even
+				center @lookup sid h36.pdf.header ldp @Service_Year lang L2
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid h36.pdf.header ldp @Service_Year lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Section Instance01
+		Title role desig sid hoH3.title End-Title
+		Insert_section HR._01_Intro_ End-Insert
+		Insert_section HR._02_Psalms__.h3 End-Insert
+		Section lent_wkds
+			Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+			Actor sid Choir End-Actor
+			Title role mode sid hoH3.LentTroparion.mode End-Title
+			Hymn sid hoH3.LentTroparion.text End-Hymn
+			Verse<bnr>sid vVerse1</>sid psa50.v12.text End-Verse
+			Hymn sid hoH3.LentTroparion.text media-off End-Hymn
+			Verse<bnr>sid vVerse2</>sid psa50.v13.text End-Verse
+			Hymn sid hoH3.LentTroparion.text media-off End-Hymn
+			Actor sid Reader End-Actor
+			Reading sid DoxaPatri.text End-Reading
+		End-Section
+		Insert_section HR._03__.h3 End-Insert
+		Section lent_wkds
+			Hymn sid hoH3.Troparion1.text End-Hymn
+			Title sid Doxa End-Title
+			Hymn sid hoH3.Troparion2.text End-Hymn
+			Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+			Hymn sid hoH3.Troparion3.text End-Hymn
+		End-Section
+		Insert_section HR._04__.h1369 End-Insert
+		Insert_section HR._05_Lent__.h3 End-Insert
+		Break line End_Break
+		Title role desig sid hoH6.title End-Title
+		Insert_section HR._02_Psalms__.h6 End-Insert
+		Section lent_wkds
+			Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+			Actor sid Choir End-Actor
+			Title role mode sid hoH6.LentTroparion.mode End-Title
+			Hymn sid hoH6.LentTroparion.text End-Hymn
+			Verse<bnr>sid vVerse1</>sid psa54.v2.text End-Verse
+			Hymn sid hoH6.LentTroparion.text media-off End-Hymn
+			Verse<bnr>sid vVerse2</>sid psa54.v17.text End-Verse
+			Hymn sid hoH6.LentTroparion.text media-off End-Hymn
+			Actor sid Reader End-Actor
+			Reading sid DoxaPatri.text End-Reading
+		End-Section
+		Insert_section HR._03__.h6_lent.part1 End-Insert
+		Break page End_Break
+		Set_Date month 2 day 23 End_Date
+		Title<inr>ldp @Service_Date</>End-Title
+		Insert_section HR._03__.prophecy End-Insert
+		Break line End_Break
+		Set_Date month 3 day 9 End_Date
+		Title<inr>ldp @Service_Date</>End-Title
+		Insert_section HR._03__.prophecy End-Insert
+		Break line End_Break
+		Set_Date month 3 day 23 End_Date
+		Title<inr>ldp @Service_Date</>End-Title
+		Insert_section HR._03__.prophecy End-Insert
+		Break page End_Break
+		Insert_section HR._03__.h6_lent.part2 End-Insert
+		Insert_section HR._04__.h1369 End-Insert
+		Insert_section HR._05_Lent__.h6 End-Insert
+		Title role desig sid hoTY.title End-Title
+		Insert_section HR._08_Typika_.beatitudes End-Insert
+		Insert_section HR._08_Typika_.prayers End-Insert
+		Insert_section HR._08_Typika_.kontakia End-Insert
+		Insert_section HR._08_Typika_.end_ End-Insert
+	End-Section
+
+End-Template

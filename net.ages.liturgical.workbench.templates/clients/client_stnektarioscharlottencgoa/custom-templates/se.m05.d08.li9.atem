@@ -1,0 +1,176 @@
+Template se.m05.d08.li9
+
+Status NA
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 5 day 8 End_Date
+			Page_Header_Even
+				center @lookup sid li.pdf.header sid d.on lang L1 @date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	when-movable-cycle-day-is
+		71, 72 use:
+			Section Instance01
+			End-Section
+			
+		73, 74, 75, 77 use:
+			Section Instance02
+			End-Section
+			
+		76 use: //Bright Friday
+			Section Instance03
+			End-Section
+			
+		78 use: //Thomas Sunday
+			Section Instance04
+				Insert_section hLI._01_Enarxis__.daily End-Insert
+				Insert_section hLI._02_Antiphons__.sundays_weekdays_feasts End-Insert
+				Insert_section hLI._04_Entrance__.clergy End-Insert
+				Insert_section hLI._05_AfterEntranceHymns__.clergy End-Insert
+				Section hymns
+					Insert_section AP.pe1_ End-Insert
+					Insert_section TI.s._05_evangelist End-Insert
+					Insert_section AP.me1_.hymn End-Insert
+					Insert_section hLI._05_AfterEntranceHymns__.kontakion End-Insert
+				End-Section
+				Insert_section hLI._06_Trisagion__.chrys  End-Insert
+				Insert_section LE._01_Epistle__.Hierarchical__.menaion_ End-Insert
+				Insert_section LE._02_Gospel__.Hierarchical__.daily_ End-Insert
+				Insert_section hLI._08_Liturgy__.chrys End-Insert
+				Insert_section hLI._09_Dismissal__.commemoration End-Insert
+			End-Section
+			
+		79 thru 83 use: //Thomas week
+			Section Instance05
+			End-Section
+			
+		84 use: //Thomas Leavetaking
+			Section Instance06
+			End-Section
+			
+		85, 92, 99, 106 use: //Paschal Sundays
+			Section Instance07
+			End-Section
+			
+		86, 87, 88, 89, 90, 93, 103, 104, 107 use:
+			Section Instance08
+				Insert_section LI._01_Enarxis__.daily End-Insert
+				Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
+				Insert_section LI._04_Entrance__.clergy End-Insert
+				Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
+				Section hymns
+					when-movable-cycle-day-is 
+						86 thru 90 use:
+							Insert_section AP.res__.mode2 End-Insert
+							Insert_section TI.s._05_evangelist End-Insert
+							Insert_section AP.me1_.hymn End-Insert
+							Insert_section TI.pe._02_myrrhbearers End-Insert
+							Insert_section AP.pe3_.hymn End-Insert
+						93 use:
+							Insert_section AP.res__.mode3 End-Insert
+							Insert_section TI.s._05_evangelist End-Insert
+							Insert_section AP.me1_.hymn End-Insert
+						103, 104 use:
+							Insert_section AP.res__.mode4 End-Insert
+							Insert_section TI.s._05_evangelist End-Insert
+							Insert_section AP.me1_.hymn End-Insert
+						107 use:
+							Insert_section AP.res__.mode5 End-Insert
+							Insert_section TI.s._05_evangelist End-Insert
+							Insert_section AP.me1_.hymn End-Insert
+					end-when
+					Insert_section LI._05_AfterEntranceHymns__.local End-Insert
+					Insert_section KO.seasonal End-Insert
+				End-Section
+				Insert_section LI._06_Trisagion__.chrys End-Insert
+				Insert_section LE._01_Epistle__.menaion_ End-Insert
+				Insert_section LE._02_Gospel__.menaion_ End-Insert
+				Insert_section LI._08_Liturgy__.chrys End-Insert
+				Insert_section LI._09_Dismissal__.commemoration End-Insert
+			End-Section
+
+		91, 105 use: //Myr or Sam Leavetaking
+			Section Instance09
+			End-Section
+			
+		94, 108 use: //Par or Blind Leavetaking
+			Section Instance10
+			End-Section
+			
+		95 use: //Mid-Pentecost
+			Section Instance11
+			End-Section
+			
+		96, 97, 100, 101 use:
+			Section Instance12
+				Insert_section LI._01_Enarxis__.daily End-Insert
+				Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
+				Insert_section LI._04_Entrance__.clergy End-Insert
+				Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
+				Section hymns
+					Insert_section AP.af End-Insert
+					Insert_section TI.s._05_evangelist End-Insert
+					Insert_section AP.me1_.hymn End-Insert
+					Insert_section LI._05_AfterEntranceHymns__.local End-Insert
+					Insert_section KO.seasonal End-Insert
+				End-Section
+				Insert_section LI._06_Trisagion__.chrys End-Insert
+				Insert_section LE._01_Epistle__.menaion_ End-Insert
+				Insert_section LE._02_Gospel__.menaion_ End-Insert
+				Insert_section LI._08_Liturgy__.chrys End-Insert
+				Insert_section LI._09_Dismissal__.commemoration End-Insert
+			End-Section
+			
+		98 use:
+			Section Instance12_098
+			End-Section			
+
+		102 use: //Mid-Pentecost Leavetaking
+			Section Instance13
+			End-Section
+			
+		109 use: //Pascha Leavetaking
+			Section Instance14
+			End-Section
+			
+		110 use: //Ascension
+			Section Instance15
+			End-Section
+			
+		111, 112, 114, 115, 116, 117 use:
+			Section Instance16
+			End-Section
+			
+		113 use: //Holy Fathers
+			Section Instance17
+			End-Section
+			
+		118 use: //Ascension Leavetaking
+			Section Instance18
+			End-Section
+	end-when
+
+End-Template
