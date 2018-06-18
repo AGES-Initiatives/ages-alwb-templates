@@ -15,30 +15,56 @@ Status NA
 
 	Head 
 		Set_Date month 7 day 1 End_Date
-			Page_Header_Even
-				center @text "Ὄρθρος τῇ Κυριακῇ, 1 Ἰουλίου 2018"
-			//	center @lookup sid ma.pdf.header sid d.on lang L1 @date lang L1
-			End_Page_Header_Even
-			Page_Header_Odd
-				center @text "Matins on Sunday, July 1 2018"
-			//	center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
-			End_Page_Header_Odd
-			Page_Footer_Even
-				center @pageNbr
-			End_Page_Footer_Even
-			Page_Footer_Odd
-				center @pageNbr
-			End_Page_Footer_Odd
+		//	Page_Header_Even
+		//		left @text "Ὄρθρος τῇ Κυριακῇ, 1 Ἰουλίου, 2018"
+		//		right @text "Matins on Sunday, July 1, 2018"
+		//	End_Page_Header_Even
+		//	Page_Header_Odd
+		//		left @text "Ὄρθρος τῇ Κυριακῇ, 1 Ἰουλίου, 2018"
+		//		right @text "Matins on Sunday, July 1, 2018"
+		//	End_Page_Header_Odd
+		//	Page_Footer_Even
+		//		center @pageNbr
+		//	End_Page_Footer_Even
+		//	Page_Footer_Odd
+		//		center @pageNbr
+		//	End_Page_Footer_Odd
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
-	Preface Covers
-		Insert_template ematins.pdf.cover.ma.s_oc_me1_k_w_me1_k End-Insert
-		Insert_template ematins.credits End-Insert
-	End-Preface
+//	Preface Covers
+//		Insert_template ematins.pdf.cover.ma.s_oc_me1_k_w_me1_k End-Insert
+		Insert_template goarch.credits End-Insert
+//	End-Preface
 
 		Section Instance05 //Sunday
-			Insert_section ST.ma.oc_me1 End-Insert
+			Insert_template goarch.credits End-Insert
+			Break page End_Break
+			Section ordinary
+				Section oc_me1
+					Para<bnr>sid book.Octoechos.name</>End-Para
+					Para role readingzero<bnr>rid oc.ocVE.Stichera1.mode</>End-Para
+					Insert_section Selector_ServiceTitle.on_morning End-Insert
+					Para<bnr>sid book.Menaion.name</>End-Para
+					Para role readingzero<bnr>rid me.meDate.text</>End-Para
+					Reading rid me.meShortCommemoration1.text End-Reading
+					Break line End_Break
+					Break line End_Break
+					Break line End_Break
+				//	Title<bnr>sid ma.html.tab</>End-Title
+				End-Section
+				Insert_section MA._00_Ordinary__.part1__.normal End-Insert
+				Insert_section MA._00_Ordinary__.part2__.parish End-Insert
+				Insert_section MA._00_Ordinary__.part3 End-Insert
+			//	Break page End_Break
+			//	Title role bmc_collapse sid clps.prayers.top End-Title
+			//	Insert_section MA._00_Ordinary__.part4 End-Insert
+			//	Title role emc_collapse sid clps.prayers.bottom End-Title
+			//	Break page End_Break
+				Insert_section MA._00_Ordinary__.part5 End-Insert
+				Insert_section MA._00_Ordinary__.part6 End-Insert
+			//	Break page End_Break
+			End-Section	
 			Insert_section MA._01_Beginning__.modeofweek End-Insert
 			Insert_section AP.res__.modeofweek End-Insert
 			Insert_section TI.g.s._00_saint_.mp End-Insert
