@@ -212,48 +212,61 @@ Template MA
 		End-Section
 		Section part5
 			Actor sid Reader End-Actor
-			Title<Tdesig>sid SixPsalms.title</>End-Title
-			Reading sid goMA.sixpsalms.intro.v1.text<inr>sid Thrice</>End-Reading		
-			Reading sid psMA.sixpsalms.intro.v2.text<inr>sid Twice</>End-Reading
-			Title<Tdesig>sid psa3.title</>End-Title
-			Reading sid psa3.text End-Reading		
-			Reading sid psMA.sixpsalms.ps3.end.v1.text @ver End-Reading		
-			Title<Tdesig>sid psa37.title</>End-Title
-			Reading sid psa37.text End-Reading		
-			Reading sid psMA.sixpsalms.ps37.end.v1.text @ver End-Reading		
-			Title<Tdesig>sid psa62.title</>End-Title
-			Reading sid psa62.text End-Reading		
-			Reading sid psMA.sixpsalms.ps62.end.v1.text sid psMA.sixpsalms.ps62.end.v2.text @ver End-Reading		
-		
-			Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
-			Reading sid Allilouia3Doxa.text<inr>sid Thrice</>End-Reading		
-		//	Reading sid Allilouia3Doxa.text End-Reading		
-		//	Reading sid Allilouia3Doxa.text End-Reading		
-			Reading sid res01<inr>sid Thrice</>End-Reading
-		//	Reading sid res01 sid res01 sid res01 End-Reading
-			Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
-	
-			Title<Tdesig>sid psa87.title</>End-Title
-			Reading sid psa87.text End-Reading		
-			Reading sid psMA.sixpsalms.ps87.end.v1.text @ver End-Reading		
-			Title<Tdesig>sid psa102.title</>End-Title
-			Reading sid psa102.text End-Reading		
-			Reading sid psMA.sixpsalms.ps102.end.v1.text @ver End-Reading		
-			Title<Tdesig>sid psa142.title</>End-Title
-			Reading sid psa142.text End-Reading		
-			Reading sid psMA.sixpsalms.ps142.end.v1.text End-Reading		
-			Reading sid psMA.sixpsalms.ps142.end.v1.text End-Reading		
-			Reading sid psMA.sixpsalms.ps142.end.v2.text @ver End-Reading		
+			Section psalms
+				Title<Tdesig>sid SixPsalms.title</>End-Title
+				Reading sid goMA.sixpsalms.intro.v1.text<inr>sid Thrice</>End-Reading		
+				Reading sid psMA.sixpsalms.intro.v2.text<inr>sid Twice</>End-Reading
+				Title<Tdesig>sid psa3.title</>End-Title
+				Reading sid psa3.text End-Reading		
+				Reading sid psMA.sixpsalms.ps3.end.v1.text @ver End-Reading		
+				Title<Tdesig>sid psa37.title</>End-Title
+				Reading sid psa37.text End-Reading		
+				Reading sid psMA.sixpsalms.ps37.end.v1.text @ver End-Reading		
+				Title<Tdesig>sid psa62.title</>End-Title
+				Reading sid psa62.text End-Reading		
+				Reading sid psMA.sixpsalms.ps62.end.v1.text sid psMA.sixpsalms.ps62.end.v2.text @ver End-Reading		
 			
-			Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
-			Reading sid Allilouia3Doxa.text End-Reading		
-			Reading sid Allilouia3Doxa.text End-Reading
-			Rubric sid Intoned End-Rubric		
-			Reading sid Allilouia3Doxa.text sid IElpisImonKyrie End-Reading		
+				Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+				Reading sid Allilouia3Doxa.text<inr>sid Thrice</>End-Reading		
+			//	Reading sid Allilouia3Doxa.text End-Reading		
+			//	Reading sid Allilouia3Doxa.text End-Reading		
+				Reading sid res01<inr>sid Thrice</>End-Reading
+			//	Reading sid res01 sid res01 sid res01 End-Reading
+				Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+		
+				Title<Tdesig>sid psa87.title</>End-Title
+				Reading sid psa87.text End-Reading		
+				Reading sid psMA.sixpsalms.ps87.end.v1.text @ver End-Reading		
+				Title<Tdesig>sid psa102.title</>End-Title
+				Reading sid psa102.text End-Reading		
+				Reading sid psMA.sixpsalms.ps102.end.v1.text @ver End-Reading		
+				Title<Tdesig>sid psa142.title</>End-Title
+				Reading sid psa142.text End-Reading		
+				Reading sid psMA.sixpsalms.ps142.end.v1.text End-Reading		
+				Reading sid psMA.sixpsalms.ps142.end.v1.text End-Reading		
+				Reading sid psMA.sixpsalms.ps142.end.v2.text @ver End-Reading		
+				
+				Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+				Reading sid Allilouia3Doxa.text End-Reading		
+				Reading sid Allilouia3Doxa.text End-Reading
+				Rubric sid Intoned End-Rubric		
+				Reading sid Allilouia3Doxa.text sid IElpisImonKyrie End-Reading
+			End-Section	
+		End-Section
+		Section part5_hierarch
+			Actor sid Hierarch End-Actor
+			Insert_section part5.psalms End-Insert
 		End-Section
 		Section part6	
 			Actor sid PriestOrDeacon End-Actor
 			Insert_section LN.GreatLitany01 End-Insert	
+			Actor sid Priest End-Actor
+			Dialog sid exc01 End-Dialog
+			Dialog<i>sid res04p</>End-Dialog
+		End-Section
+		Section part6_monastery
+			Actor sid PriestOrDeacon End-Actor
+			Insert_section LN.GreatLitany01_monastery End-Insert	
 			Actor sid Priest End-Actor
 			Dialog sid exc01 End-Dialog
 			Dialog<i>sid res04p</>End-Dialog
@@ -2283,6 +2296,7 @@ Template MA
 				End-Section
 				Section kath2122
 					Title role source sid sourceOctoechos End-Title
+					Actor sid Choir End-Actor
 					Title<Tdesig>sid Kathisma2</>End-Title
 					Title role mixed <Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
 					Hymn rid ocMA.Kathisma21.text @ver End-Hymn
@@ -2294,6 +2308,7 @@ Template MA
 				End-Section
 				Section kath21
 					Title role source sid sourceOctoechos End-Title
+					Actor sid Choir End-Actor
 					Title<Tdesig>sid Kathisma2</>End-Title
 					Title role mixed <Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
 					Hymn rid ocMA.Kathisma21.text @ver End-Hymn
@@ -2319,6 +2334,7 @@ Template MA
 				End-Section
 				Section kath21m212t
 					Title role source sid sourceOctoechos End-Title
+					Actor sid Choir End-Actor
 					Title<Tdesig>sid Kathisma2</>End-Title
 					Title role mixed <Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
 					Hymn rid ocMA.Kathisma21.text @ver End-Hymn
@@ -2925,6 +2941,32 @@ Template MA
 					Insert_section Selector_MatinsProkeimenon.me1_prokeimenon End-Insert
 				End-Section
 			End-Section	
+			Section sunday_antiphons
+				Title<Tdesig>sid OiAnavathmoi</>End-Title
+				Media rid ocMA.MM.AntiphonsProkeimenon.text End-Media
+				Title<Tdesig>sid Antifonon1</><Tmode>rid ocMA.Antiphon11.mode</>End-Title
+				Hymn rid ocMA.Antiphon11.text @ver End-Hymn
+				Hymn rid ocMA.Antiphon12.text @ver End-Hymn
+				Title sid DoxaKaiNyn End-Title
+				Hymn rid ocMA.Antiphon13.text @ver End-Hymn
+				Title<Tdesig>sid Antifonon2</>End-Title
+				Hymn rid ocMA.Antiphon21.text @ver End-Hymn
+				Hymn rid ocMA.Antiphon22.text @ver End-Hymn
+				Title sid DoxaKaiNyn End-Title
+				Hymn rid ocMA.Antiphon23.text @ver End-Hymn
+				Title<Tdesig>sid Antifonon3</>End-Title
+				Hymn rid ocMA.Antiphon31.text @ver End-Hymn
+				Hymn rid ocMA.Antiphon32.text @ver End-Hymn
+				Title sid DoxaKaiNyn End-Title
+				Hymn rid ocMA.Antiphon33.text @ver End-Hymn
+				when-mode-of-week-is M8 use:
+					Title<Tdesig>sid Antifonon4</>End-Title
+					Hymn rid ocMA.Antiphon41.text @ver End-Hymn
+					Hymn rid ocMA.Antiphon42.text @ver End-Hymn
+					Title sid DoxaKaiNyn End-Title
+					Hymn rid ocMA.Antiphon43.text @ver End-Hymn
+				end-when
+			End-Section //SunAntiphons
 		End-Section
 		Section mode41_mealt1_prokeimenon_
 			Section litany

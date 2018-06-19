@@ -46,8 +46,8 @@ Status NA
 					Insert_section KO.seasonal End-Insert
 				End-Section
 				Insert_section LI._06_Trisagion__.chrys End-Insert
-				Insert_section LE._01_Epistle__.menaion_ End-Insert
-				Insert_section LE._02_Gospel__.menaion_ End-Insert
+				Insert_section LE._01_Epistle__.cross__.sunAC_ End-Insert
+				Insert_section LE._02_Gospel__.cross__.sunAC_ End-Insert
 				Insert_section LI._08_Liturgy__.chrys End-Insert
 				Insert_section LI._09_Dismissal__.commemoration End-Insert
 			End-Section
@@ -66,15 +66,23 @@ Status NA
 				End-Section
 				Set_Date month 9 day 21 End_Date
 				Insert_section LI._06_Trisagion__.chrys End-Insert
-				Insert_section LE._01_Epistle__.daily_.title End-Insert
-					Set_Date month 9 day 14 End_Date
-					Insert_section LE._01_Epistle__.menaion_.prokeimenon End-Insert
-				Set_Date month 9 day 21 End_Date
-				Insert_section LE._01_Epistle__.daily_.lesson End-Insert
-					Set_Date month 9 day 14 End_Date
-					Insert_section LE._02_Gospel__.menaion_.alleluia End-Insert
-				Set_Date month 9 day 21 End_Date
-				Insert_section LE._02_Gospel__.daily_.lesson End-Insert
+				when-name-of-day-is
+					Saturday use:
+						Insert_section LE._01_Epistle__.cross__.satAC_ End-Insert
+						Insert_section LE._02_Gospel__.cross__.satAC_ End-Insert
+					otherwise use:
+						Section weekday
+							Insert_section LE._01_Epistle__.daily_.title End-Insert
+								Set_Date month 9 day 14 End_Date
+								Insert_section LE._01_Epistle__.menaion_.prokeimenon End-Insert
+							Set_Date month 9 day 21 End_Date
+							Insert_section LE._01_Epistle__.daily_.lesson End-Insert
+								Set_Date month 9 day 14 End_Date
+								Insert_section LE._02_Gospel__.menaion_.alleluia End-Insert
+							Set_Date month 9 day 21 End_Date
+							Insert_section LE._02_Gospel__.daily_.lesson End-Insert
+						End-Section
+				end-when
 				Insert_section LI._08_Liturgy__.chrys End-Insert
 				Insert_section LI._09_Dismissal__.commemoration End-Insert
 			End-Section

@@ -50,8 +50,8 @@ Status Final
 					Insert_section KO.seasonal End-Insert
 				End-Section
 				Insert_section LI._06_Trisagion__.chrys End-Insert
-				Insert_section LE._01_Epistle__.menaion_ End-Insert
-				Insert_section LE._02_Gospel__.menaion_ End-Insert
+				Insert_section LE._01_Epistle__.cross__.sunAC_ End-Insert
+				Insert_section LE._02_Gospel__.cross__.sunAC_ End-Insert
 				Insert_section LI._08_Liturgy__.chrys End-Insert
 				Insert_section LI._09_Dismissal__.commemoration End-Insert
 			End-Section
@@ -73,10 +73,14 @@ Status Final
 					Insert_section KO.seasonal End-Insert
 				End-Section
 				Insert_section LI._06_Trisagion__.chrys End-Insert
-				Set_Date month 7 day 11 End_Date
-					Insert_section LE._01_Epistle__.menaion_ End-Insert
-				Set_Date month 9 day 16 End_Date
-				Insert_section LE._02_Gospel__.menaion_ End-Insert
+				when-name-of-day-is
+					Saturday use:
+						Insert_section LE._01_Epistle__.menaion_ End-Insert
+						Insert_section LE._02_Gospel__.cross__.satAC_ End-Insert
+					otherwise use:
+						Insert_section LE._01_Epistle__.menaion_ End-Insert
+						Insert_section LE._02_Gospel__.menaion_ End-Insert
+				end-when
 				Insert_section LI._08_Liturgy__.chrys.part1 End-Insert
 				Insert_section Selector_CommunionHymn.DayOfWeek.onSaturday End-Insert
 				Insert_section LI._08_Liturgy__.chrys.part3 End-Insert
