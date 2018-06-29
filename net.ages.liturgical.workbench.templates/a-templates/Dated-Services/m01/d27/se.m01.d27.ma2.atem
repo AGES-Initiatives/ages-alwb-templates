@@ -1,0 +1,130 @@
+Template se.m01.d27.ma2
+
+Status Review
+
+	import MA._09_Options__.sunday__.oc_h12tas0GrGrTh_and_me2_123tasVVGB_with_konoik_me1_and_kath_me1o2t_and_konoik_oc.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+	import website.preferences.titles_en_US_alwb.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head
+		Set_Date month 1 day 27 year 2019 End_Date
+			Page_Header_Even
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+		Preface Covers
+
+			Insert_template ematins.credits End-Insert
+		End-Preface
+
+	when-triodion-day-is
+		1, 8, 15 use:
+			Section Instance03 //Triodion Sunday
+			End-Section
+		14 use: Insert_section se.tr.d014.ma.Instance01 End-Insert
+
+		otherwise use:		
+			when-name-of-day-is 
+				Sunday use:
+					Section Instance02 //Sunday
+						Insert_section ST.ma.oc_me End-Insert
+						Insert_section MA._01_Beginning__.modeofweek End-Insert
+						Insert_section AP.res__.modeofweek End-Insert	
+						Insert_section TI.g.s._00_saint_.m End-Insert
+						Insert_section AP.me1_.hymn End-Insert
+						Insert_section AP.both__.primarytheotokion__.mode8 End-Insert
+						Insert_section MA._03_Kathisma1__.litany End-Insert
+						Insert_section MA._03_Kathisma1__.oc__.sunday__.whenmode8 End-Insert
+						Insert_section MA._04_Kathisma2__.append__.oc__.sunday__.kath212223 End-Insert
+						Insert_section TI.k3.s._00_saint_.m End-Insert
+						Insert_section MA._05_Kathisma3__.append__.me__.kath31o323t_.hymns End-Insert
+						Insert_section MA._05_Kathisma3__.evlogetaria_res End-Insert
+						Insert_section MA._06_Antiphons__.sunday_ End-Insert
+						Section options
+							Insert_section block01_eothinonposition1 End-Insert
+							Insert_section block02_odes13 End-Insert
+							Section block03_kontakionposition2
+								Para role bmc_kontakion_position2 sid mc.kontakion.position2 End-Para
+									Insert_section MA._11_Kontakion__.sunday End-Insert
+								Para role emc_kontakion_position2 sid mc.tag End-Para
+							End-Section
+							Insert_section block04_ode3kathisma End-Insert
+							Insert_section block05_odes456 End-Insert
+							Section block06_kontakionposition1
+								Para role bmc_kontakion_position1 sid mc.kontakion.position1 End-Para
+									Insert_section MA._11_Kontakion__.me1_ End-Insert
+									Insert_section SY.Synaxarion End-Insert
+								Para role emc_kontakion_position1 sid mc.tag End-Para
+							End-Section
+							Insert_section block07_odes78 End-Insert
+							Insert_section block08_kontakionposition12 End-Insert
+							Insert_section block09_katavasias1345678 End-Insert
+							Insert_section block10_eothinonposition2 End-Insert
+							Insert_section block11_ode9 End-Insert
+						End-Section
+						Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+						Insert_section MA._12_Exaposteilarion__.eo__.eoofweek_.exap End-Insert
+						Insert_section TI.s._00_saint_.m End-Insert
+						Insert_section MA._12_Exaposteilarion__.append__.me__.exap123t End-Insert
+						Insert_section MA._13_Lauds__.modeofweek__.for6_nocollapse End-Insert
+						Insert_section MA._13_Lauds__.oc__.s_1234as1234 End-Insert
+						Insert_section TI.s._00_saint_.m End-Insert
+						Insert_section MA._13_Lauds__.me__.p_1234as56hierarchs13 End-Insert
+						Insert_section MA._13_Lauds__.glory__.me__.gloryasglory_ End-Insert
+						Insert_section MA._13_Lauds__.both__.eotheotokion End-Insert
+						Insert_section MA._14_Doxology__.sunday End-Insert
+						Insert_section MA._19_End_Options End-Insert
+						Insert_section MA._20_Dismissal__.commemoration End-Insert				
+					End-Section
+				
+				otherwise use:
+					Section Instance01 //Weekday
+						Insert_section ST.ma.me End-Insert
+						Insert_section MA._01_Beginning__.mode8 End-Insert
+						Insert_section AP.me1gloryme1_ End-Insert
+						Insert_section AP.both__.primarytheotokion__.mode8 End-Insert
+						Insert_section MA._03_Kathisma1__.litany End-Insert
+						Insert_section MA._03_Kathisma1__.me__.kath11111t End-Insert
+						Insert_section MA._04_Kathisma2__.append__.me__.kath21212t End-Insert
+						Insert_section MA._05_Kathisma3__.append__.me__.kath31o323t_ End-Insert
+						Insert_section MA._06_Antiphons__.mode41_prokeimenon_ End-Insert
+						Insert_section MA._07_Gospel__.yes__.priest__.me End-Insert
+						Insert_section MA._08_Supplication__.deacon__.me End-Insert
+		//needs work
+						Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+						Insert_section MA._12_Exaposteilarion__.me__.exap123t End-Insert
+						Insert_section MA._13_Lauds__.mode4__.for4_nocollapse End-Insert
+						Insert_section TI.stp.s._00_saint_.m End-Insert
+						Insert_section MA._13_Lauds__.me__.p_1234as3456 End-Insert
+						Insert_section MA._13_Lauds__.glory__.me__.gloryasglory_ End-Insert
+						Insert_section MA._13_Lauds__.both__.theotokion__.mode4 End-Insert
+						Insert_section MA._14_Doxology__.great End-Insert
+						Insert_section AP.me1_ End-Insert
+						Insert_section MA._19_End_Options End-Insert
+						Insert_section MA._20_Dismissal__.commemoration End-Insert				
+					End-Section
+			end-when			
+	end-when
+End-Template
