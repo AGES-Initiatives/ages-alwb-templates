@@ -1,0 +1,57 @@
+Template se.m02.d04.li2
+
+Status NA
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 2 day 4 year 2019 End_Date
+			Page_Header_Even
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	when-triodion-day-is
+		1 use: Insert_section se.tr.d001.li2.Instance02 End-Insert
+		2 thru 7 use:
+		8 use: Insert_section se.tr.d008.li2.Instance02 End-Insert
+		9 thru 12 use:
+		13 use: //leavetaking of Meeting
+		14 use:	Insert_section se.tr.d014.li2.Instance01 End-Insert
+		15 use: 
+		16 use: 
+		17, 19 use:
+		18 use:
+		20 use: //leavetaking of Meeting
+		otherwise use:
+			when-name-of-day-is
+				Sunday use:
+					Section Instance02 //Sunday
+					End-Section
+				otherwise use:
+					Section Instance01 //Weekday
+					End-Section				
+			end-when
+	end-when
+
+End-Template

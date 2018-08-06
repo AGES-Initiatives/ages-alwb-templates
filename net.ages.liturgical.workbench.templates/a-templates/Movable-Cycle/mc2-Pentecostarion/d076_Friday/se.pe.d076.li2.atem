@@ -1,0 +1,63 @@
+Template se.pe.d076.li2
+
+Status NA
+
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 4 day 13 year 2018 End_Date
+			Page_Header_Even
+				center @lookup sid pa.pascha lang L1 @lookup sid d.delimiter lang L1 @lookup sid li.pdf.header lang L1 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid pa.pascha lang L2 @lookup sid d.delimiter lang L2 @lookup sid li.pdf.header lang L2 
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Section Instance01
+		Insert_section ST.li.pe1 End-Insert
+		Insert_section PE.Pascha_Beginning End-Insert
+			Break line End_Break
+		Insert_section LI._10_Parts__._1_antiphons__.sundays_weekdays_feasts End-Insert
+		Insert_section LI._10_Parts__._4_entrance End-Insert
+			Break line End_Break
+		Title role desig sid YmnoiMetaTinMikranEisodon End-Title
+		Insert_section se.pe.d076.li.Instance01.hymns End-Insert
+			Break line End_Break
+		Insert_section LI._10_Parts__._5_trisagionhymn__.chrys End-Insert
+			Break line End_Break
+		Insert_section LE._01_Epistle__.textonly__.daily End-Insert
+			Break line End_Break
+		Insert_section LE._02_Gospel__.textonly__.daily End-Insert
+			Break line End_Break
+		Title<Tdesig>sid YmnosEisTinTheotokon</>End-Title
+		Insert_section Selector_Megalynarion.Chrysostom End-Insert
+			Break line End_Break
+		Insert_section Selector_CommunionHymn.Chrysostom End-Insert
+			Break line End_Break
+		Title<Tdesig>sid eu.lichrysbasil_gr_GR_cog.euLI.Key1530.title</>End-Title
+		Insert_section Selector_AfterCommunion.Chrysostom End-Insert
+		Insert_section LI._08_Liturgy__.chrys.part3.communion_upto_dismissal._35_chrys.part1.hymn End-Insert
+			Break line End_Break
+		Title<Tdesig>sid eu.lichrysbasil_gr_GR_cog.euLI.Key1700.title</>End-Title
+		Insert_section Selector_Dismissals.Com_No.part1 End-Insert
+			Break line End_Break	
+		Insert_section LI._10_Parts__._9_fasting_ End-Insert
+	End-Section
+End-Template
