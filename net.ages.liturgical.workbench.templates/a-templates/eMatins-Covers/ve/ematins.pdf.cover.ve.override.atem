@@ -1,0 +1,58 @@
+Template ematins.pdf.cover.ve.override
+
+Status NA
+
+	import da.*
+	import oc.*
+	import me.*
+	import eo.*
+	import tr.*
+	import pe.*
+	
+	import ematinscovers_en_US_ematins.*
+
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+
+	import iTags.*
+	import bTags.*
+	import roles.*
+	import rules.*
+	
+	Switch-Version L2 End-Switch-Version
+	
+
+		when-date-is
+			Jan 0 use:
+				Section title
+					Title role cover0 sid logo.text End-Title
+					Title role cover1 sid ve.pdf.cover End-Title
+					Insert_section ematins.pdf.cover.lookup.on_evening_before End-Insert
+					Title role cover3 sid d.for ldp @Service_Date End-Title 	
+				End-Section
+			
+			Oct 1 use: 
+				Section Oct01
+					Insert_section title End-Insert
+					when-name-of-day-is
+						Sunday use:
+							Section modeofweek
+								Title role cover5 sid book.Octoechos.name sid d.delimiter rid ocVE.Stichera1.mode End-Title
+								Insert_section ematins.pdf.cover.lookup.on_evening_before End-Insert
+							End-Section
+					end-when
+					Section commeoration
+						Title role cover5 sid book.MeSupplement.name End-Title
+						Title role cover4 sid me.m10.d28_gr_GR_cog.alt1.meShortCommemoration1.text End-Title
+					End-Section
+				End-Section
+		end-when
+		Title role cover6 sid pref.generation_alwb.cover.version End-Title
+	
+	Switch-Version Both End-Switch-Version	
+	
+End-Template
