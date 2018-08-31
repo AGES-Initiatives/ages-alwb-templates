@@ -1,0 +1,108 @@
+Template bk.other.oct28_doxology 
+
+Status Final
+
+	import client_gr_GR_cog.*
+	import hi.s16_gr_GR_cog.*
+	import ho.s03_gr_GR_cog.*
+	import liturgical.verses_gr_GR_cog.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Template_Title @text "October 28 - Doxology for Greek National Holiday" End_Title
+		Set_Date month 10 day 28 End_Date
+			Page_Header_Even
+				center @text "28 Ὀκτωβρίου - Δοξολογία ἐπὶ τῇ Ἐθνικῇ Ἑορτῇ" 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @text "October 28 - Doxology for Greek National Holiday"
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+/*	Preface Covers
+		Insert_template ematins.cover.sp End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+ */ 
+
+	Section section01
+		Title<Tdesig>sid hiCE.Key_0300.title</>End-Title
+		Title<Tdesig>sid hiCE.Key_0301.title</>End-Title
+		Title<r>sid hiCE.Key_0302.title</>End-Title
+		Break line End_Break
+		
+		Actor sid Deacon End-Actor
+		Dialog sid res08 End-Dialog
+		Actor sid Priest End-Actor
+		Dialog sid enarxis01 End-Dialog
+		Dialog<i>sid res04p</>End-Dialog
+		Rubric sid hiCE.Key_0303.rubric End-Rubric
+		Actor sid Choir End-Actor
+		Insert_section AP.mealt11_ End-Insert
+	//	Rubric sid hiCE.Key_0304.rubric End-Rubric
+		Insert_section Selector_Kontakion.SeasonalKontakion.Annunciation End-Insert
+		Set_Date month 10 day 28 End_Date
+		Rubric sid hiCE.Key_0305.rubric End-Rubric
+		Section doxology
+			Title<Tmode>sid Mode7</>End-Title
+			Hymn sid hoMA.DoxologyGreatIntro.text sid hoMA.DoxologyVerse01.text End-Hymn
+			Reading sid hoMA.DoxologyVerse02.text End-Reading
+			Reading sid hoMA.DoxologyVerse03.text End-Reading
+			Reading sid hoMA.DoxologyVerse05.text End-Reading
+			Reading sid hoMA.DoxologyVerse06.text End-Reading
+			Reading sid hoMA.DoxologyVerse15.text End-Reading
+			Reading sid hoMA.DoxologyVerse16.text End-Reading
+			Reading sid hoMA.DoxologyVerse17.text End-Reading
+			Reading sid hoMA.DoxologyVerse18.text End-Reading
+			Reading sid hoMA.DoxologyVerse19.text End-Reading
+			Reading sid hoMA.DoxologyVerse20.text End-Reading
+		End-Section
+		Break line End_Break
+		Actor sid Deacon End-Actor
+		Dialog sid pet17 End-Dialog
+		Dialog<i>sid res06p</>End-Dialog
+		Dialog sid pet18 End-Dialog
+		Dialog<i>sid res06p</>End-Dialog
+		Dialog sid pet19a sid cl.bishop1.rank sid cl.bishop1.name_p sid pet19b End-Dialog
+		Dialog<i>sid res06p</>End-Dialog
+		Dialog sid hiCE.Key_0312.text End-Dialog
+		Dialog<i>sid res06p</>End-Dialog
+		Dialog sid hiCE.Key_0313.text End-Dialog
+		Dialog<i>sid res16p</>End-Dialog
+		Dialog sid pet33 End-Dialog
+		Dialog<i>sid res06p</>End-Dialog
+		Dialog sid pet34 End-Dialog
+		Dialog<i>sid res06p</>End-Dialog
+		Actor sid Priest End-Actor
+		Dialog sid pet35 End-Dialog
+		Dialog<i>sid res04p</>End-Dialog
+		Actor sid Deacon End-Actor
+		Dialog sid pet00 End-Dialog
+		Dialog<i>sid res01p</>End-Dialog
+		Actor sid Priest End-Actor
+		Title<Tdesig>sid hiCE.Key_0315.title</>End-Title
+		Para role prayer sid hiCE.Key_0316.text End-Para
+		Dialog<i>sid res04p</>End-Dialog
+		Insert_section MA._20_Dismissal__.mealt1_commemoration End-Insert		
+	End-Section
+
+
+End-Template
