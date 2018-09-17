@@ -94,6 +94,14 @@ Status NA
 			Saturday use: Reading rid ocVE.Stichera1.mode sid OnSaturday sid Morning End-Reading
 		end-when
 	End-Section
+
+	Section of_day //mo
+		when-name-of-day-is
+			Sunday use: Reading sid ForSunday End-Reading
+			Saturday use: Reading sid ForSaturday End-Reading
+			otherwise use: Reading sid ForWeekday End-Reading
+		end-when
+	End-Section
 	Section on_morning
 		when-name-of-day-is
 			Sunday use: Reading sid OnSunday sid Morning End-Reading
