@@ -196,17 +196,24 @@ Status NA
 		Insert_section Com_Yes.part2 End-Insert
 	End-Section
 
-
 	Section pealt1_Com_Yes 
 		Actor sid Priest End-Actor
 		Section part1
-			when-movable-cycle-day-is
-				73 use: Insert_section dismissal_07_pealt1 End-Insert
-			end-when
+			Insert_section dismissal_07_pealt1 End-Insert
 		End-Section
 		Insert_section Com_Yes.part2 End-Insert
 	End-Section
 
+	Section tr1_me1_Com_Yes
+		Actor sid Priest End-Actor
+		Section part1
+			Insert_section dismissal_07_tr1 End-Insert
+		End-Section
+		Section regular_end
+			Dialog sid DiEfchonPateron.text End-Dialog
+			Dialog<i>sid res04p</>End-Dialog
+		End-Section
+	End-Section
 
 	Section Com_No //use this whenever there is NO explicit commemoration
 		Actor sid Priest End-Actor
@@ -487,6 +494,12 @@ Status NA
 			73 use: Dialog sid dis00 sid dis00.resurrection sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 rid alt1.peInsert1 rid alt1.peInsert2 sid dis10 sid dis89 End-Dialog 
 		end-when
 	End-Section
+	Section dismissal_07_tr1
+		when-movable-cycle-day-is 
+			21 use: Dialog sid dis00 sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 rid trInsert1 rid meInsert1 rid meInsert2 sid dis10 sid dis89 End-Dialog 
+		end-when
+	End-Section
+
 	
 	Section dismissal_08 //Joakim and Anna
 		when-name-of-day-is Sunday use: 

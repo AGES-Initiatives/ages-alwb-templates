@@ -296,12 +296,33 @@ Status NA
 	End-Section
 	Section _09_prayers
 	End-Section
-	Section _10_troparia_
+	Section _10_troparia
+		Actor sid Chanter End-Actor
+		Title<Tdesig>sid KatanyktikaTroparia</><Tmode>sid ho.s12_gr_GR_cog.hoCO.Key0804.mode</>End-Title
+		Hymn sid ho.s12_gr_GR_cog.hoCO.Key0804.text @ver End-Hymn
+		Title sid Doxa End-Title
+		Hymn sid ho.s12_gr_GR_cog.hoCO.Key0805.text @ver End-Hymn
+		Title role mixed sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+		Hymn sid ho.s12_gr_GR_cog.hoCO.Key0806.text @ver End-Hymn
 	End-Section
 	Section _11_entreaty
 	End-Section
 	Section _12_dismissal__
+		Section append__
+			Section sunday_feastday
+				Reading sid res01<r>sid Forty</>End-Reading
+				Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+				Reading sid TinTimioteranPrayer.text End-Reading
+				Reading sid EnOnomatiKyriou.text End-Reading
+				Actor sid Priest End-Actor
+				Insert_section Selector_Dismissals.Short End-Insert
+				Insert_section sunday_feastday.litany End-Insert
+				Dialog sid DiEfchonPateron.text End-Dialog
+				Dialog<i>sid res04p</>End-Dialog
+			End-Section
+		End-Section
 		Section sunday_feastday
+			Actor sid Reader End-Actor
 			Reading sid res01<r>sid Forty</>End-Reading
 			Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
 			Reading sid TinTimioteranPrayer.text End-Reading

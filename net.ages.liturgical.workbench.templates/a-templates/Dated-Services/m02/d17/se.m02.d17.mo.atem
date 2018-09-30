@@ -1,10 +1,6 @@
-Template se.m11.d18.mo
+Template se.m02.d17.mo
 
 Status Final
-
-	import oc.*
-	import client_gr_GR_cog.*
-	import ho.s02_gr_GR_cog.*
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -19,7 +15,7 @@ Status Final
 	import roles.*
 
 	Head 
-		Set_Date month 11 day 18 End_Date
+		Set_Date month 2 day 17 year 2019 End_Date
 			Page_Header_Even
 				center @lookup sid mo.pdf.header sid d.on lang L2 @date lang L2
 			End_Page_Header_Even
@@ -40,20 +36,25 @@ Status Final
 //	End-Preface
 
 
-	when-name-of-day-is
-		Sunday use:
-			Section Instance02 //Sunday
-				Insert_section ST.mo.oc End-Insert
-				Insert_section MO._01_Intro_ End-Insert
-				Insert_section MO._03_triadic_canon_ End-Insert
-				Insert_section MO._04_triadic_megalynaria End-Insert
-				Insert_section MO._06_troparia_apolytikion_hypakoe_ End-Insert
-				Insert_section MO._12_dismissal__.append__.sunday_feastday End-Insert
-			End-Section
-			
+	when-movable-cycle-day-is
+		1, 8, 15, 22, 29, 36, 43, 50, 57 use:
+			Insert_section mc.map.mo.Section01 End-Insert
 		otherwise use:
-			Section Instance01 //Weekday
-			End-Section
-	end-when			
+			when-name-of-day-is
+				Sunday use:
+					Section Instance02 //Sunday
+						Insert_section ST.mo.oc End-Insert
+						Insert_section MO._01_Intro_ End-Insert
+						Insert_section MO._03_triadic_canon_ End-Insert
+						Insert_section MO._04_triadic_megalynaria End-Insert
+						Insert_section MO._06_troparia_apolytikion_hypakoe_ End-Insert
+						Insert_section MO._12_dismissal__.append__.sunday_feastday End-Insert
+					End-Section
+					
+				otherwise use:
+					Section Instance01 //Weekday
+					End-Section
+			end-when
+	end-when
 
 End-Template
