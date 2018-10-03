@@ -296,7 +296,14 @@ Status NA
 				End-Section
 			Mar 9 use:
 				Section mar09
-					Reading<r>sid fasting.rule.oil sid fasting.explanation.minorfeast</>End-Reading
+					when-movable-cycle-day-is
+						1 thru 8 use:
+							Reading<r>sid fasting.rule.free sid fasting.explanation.triodion1</>End-Reading
+						16 thru 22 use:
+							Reading<r>sid fasting.rule.dairy sid fasting.explanation.triodion3</>End-Reading
+						otherwise use: 
+							Reading<r>sid fasting.rule.oil sid fasting.explanation.minorfeast</>End-Reading
+					end-when
 				End-Section
 			Mar 10 use:
 				Section mar10

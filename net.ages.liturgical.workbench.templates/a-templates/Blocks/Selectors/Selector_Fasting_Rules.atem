@@ -296,7 +296,14 @@ Status NA
 				End-Section
 			Mar 9 use:
 				Section mar09
-					Rubric sid fasting.rule.oil End-Rubric
+					when-movable-cycle-day-is
+						1 thru 8 use:
+							Rubric sid fasting.rule.free End-Rubric
+						16 thru 22 use:
+							Rubric sid fasting.rule.dairy End-Rubric
+						otherwise use: 
+							Rubric sid fasting.rule.oil End-Rubric
+					end-when
 				End-Section
 			Mar 10 use:
 				Section mar10

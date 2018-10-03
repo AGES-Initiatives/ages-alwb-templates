@@ -1,6 +1,6 @@
 Template se.m03.d24.co
 
-Status NA
+Status Final
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -31,9 +31,27 @@ Status NA
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
-	when-movable-cycle-day-is 1 thru 127 use:
-		Insert_template mc.map.co End-Insert
-		otherwise use:
+	when-movable-cycle-day-is 
+		36 use:
+			Section Instance01
+				Insert_section ST.co.ho_oc_me1 End-Insert
+				Insert_section HR.smallcompline__.part1 End-Insert
+				Insert_section HR.smallcompline__.part2 End-Insert
+				Insert_section KO.NM.hypakoe__.sunday__.modeofweek End-Insert
+				Insert_section TI.k.bf End-Insert
+				Insert_section KO.NM.me1_.hymn End-Insert
+			//	Insert_section TI.k.s._07_hierarch_.m End-Insert
+			//	Insert_section KO.NM.tr1_.hymn End-Insert
+				Insert_section HR.smallcompline__.part3 End-Insert
+				Insert_section HR.smallcompline__.part4 End-Insert
+				Insert_section HR.smallcompline__.part5 End-Insert
+				Insert_section HR.smallcompline__.part6 End-Insert
+				Insert_section HR.smallcompline__.part7 End-Insert
+				Insert_section HR.smallcompline__.part8 End-Insert
+			End-Section
+		
+		otherwise use: //check again
+			Insert_template mc.map.co End-Insert
 		
 	end-when
 End-Template
