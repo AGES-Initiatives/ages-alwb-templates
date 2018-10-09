@@ -1,0 +1,54 @@
+Template ematins.pdf.cover.ve.holyweek 
+
+Status NA
+
+	import ematinscovers_en_US_ematins.*
+
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+
+	import iTags.*
+	import bTags.*
+	import roles.*
+	import rules.*
+	
+//	Head
+//		Set_Date month 10 day 11 End_Date
+//	End_Head
+	
+	Switch-Version L2 End-Switch-Version
+
+		Section title
+			Title role cover0 sid logo.text End-Title
+			Title role cover1 sid hw.pdf.cover ldp@Service_Year End-Title
+			when-movable-cycle-day-is
+				66 use:
+					Title role cover2 sid pl.pdf.cover sid d.onMondayMorning End-Title
+					Title role cover3 sid ve.pdf.header sid hw.ofholytuesday End-Title
+				67 use:
+					Title role cover2 sid pl.pdf.cover sid d.onTuesdayMorning End-Title
+					Title role cover3 sid ve.pdf.header sid hw.ofholywednesday End-Title
+				68 use:
+					Title role cover2 sid pl.pdf.cover sid d.onWednesdayMorning End-Title
+					Title role cover3 sid ve.pdf.header sid hw.ofholythursday End-Title
+				69 use:
+					Title role cover2 sid vl.pdf.cover sid d.onThursdayMorning End-Title
+					Title role cover3 sid ve.pdf.header sid hw.ofholyfriday End-Title
+				70 use:
+					Title role cover2 sid hw.removal sid d.onFridayAfternoon End-Title
+					Title role cover3 sid ve.pdf.header sid hw.ofholysaturday End-Title
+				71 use:
+					Title role cover2 sid vl.pdf.cover sid d.onSaturdayMorning End-Title
+					Title role cover3 sid ve.pdf.header sid pa.ofpascha End-Title
+			end-when
+		End-Section 
+
+
+		Title role cover6 sid pref.generation_alwb.cover.version End-Title
+		
+	Switch-Version Both End-Switch-Version	
+End-Template
