@@ -1,6 +1,6 @@
 Template se.m04.d30.ma
 
-Status NA
+Status Final
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -32,14 +32,31 @@ Status NA
 	End_Head
 
 	Preface Covers
-		//Insert_template ematins.pdf.cover.ma.specific_2018 End-Insert
+		Insert_template ematins.pdf.cover.ma.specific_2019 End-Insert
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
 	when-movable-cycle-day-is
-		1 thru 64 use: Insert_section mc.map.ma.Section01 End-Insert
+		1 thru 64 use: 
+			Insert_section mc.map.ma.Section01 End-Insert
 		65 thru 70 use: //Holy Week
-		71 thru 127 use: Insert_section mc.map.ma.Section01 End-Insert
+		72 use: //Bright Monday - St. George
+			Section Instance01_Monday
+				Insert_section se.pe.d072.ma.Instance02.part1 End-Insert
+				Insert_section SY.Different_Date__.Apr23_StGeorge End-Insert
+				Insert_section se.pe.d072.ma.Instance02.part2 End-Insert
+				Insert_section se.pe.d072.ma.Instance02.part3 End-Insert
+			End-Section
+			
+		73 use: //Bright Tuesday - St. Mark
+			Section Instance01_Tuesday
+				Insert_section se.pe.d073.ma.Instance02.part1 End-Insert
+				Insert_section SY.Different_Date__.Apr25_StMark End-Insert
+				Insert_section se.pe.d073.ma.Instance02.part2 End-Insert
+				Insert_section se.pe.d073.ma.Instance02.part3 End-Insert
+			End-Section
+		74 thru 127 use: 
+			Insert_section mc.map.ma.Section01 End-Insert
 		otherwise use:
 		
 	end-when		

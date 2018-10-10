@@ -1,4 +1,4 @@
-Template se.m04.d29.li2 
+Template se.m04.d29.ve2
 
 Status Final
 
@@ -17,10 +17,10 @@ Status Final
 	Head 
 		Set_Date month 4 day 29 year 2019 End_Date
 			Page_Header_Even
-				center @lookup sid li.pdf.header lang L1 @lookup sid d.on lang L1 @date lang L1
+				center @lookup sid ve.pdf.header lang L1 @lookup sid d.ontheeveof lang L1 @date lang L1 
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @lookup sid li.pdf.header lang L2 @lookup sid d.on lang L2 @date lang L2
+				center @lookup sid ve.pdf.header lang L2 @lookup sid d.ontheeveof lang L2 @date lang L2 
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -31,13 +31,15 @@ Status Final
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
+	Preface Covers
+		Insert_template ematins.pdf.cover.ve.specific_2019 End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
 	when-movable-cycle-day-is
-		1 thru 64 use: Insert_section mc.map.li.Section02 End-Insert
-		65 thru 70 use: //Holy Week
 		72 use:
-			Insert_section se.pe.d072.li2.Instance02 End-Insert
-		73 use:
-		74 thru 127 use: Insert_section mc.map.li.Section02 End-Insert
+			Insert_section se.pe.d072.ve2.Instance02 End-Insert
 		otherwise use:
 	end-when	
+
 End-Template
