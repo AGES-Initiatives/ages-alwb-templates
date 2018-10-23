@@ -2788,11 +2788,16 @@ Template MA
 				Section both_theotokion
 					Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
 					Title<Tmode>sid oc.m1.d1_gr_GR_cog.ocLI.BeatitudesT.mode</>End-Title
-					when-name-of-day-is
-						Sunday use:
+					when-movable-cycle-day-is
+						72 thru 109 use:
 							Hymn sid oc.m1.d1_gr_GR_cog.ocLI.BeatitudesT.text End-Hymn
 						otherwise use:
-							Hymn sid hoMA.EclogeTheotokionWeekday.text End-Hymn
+							when-name-of-day-is
+								Sunday use:
+									Hymn sid oc.m1.d1_gr_GR_cog.ocLI.BeatitudesT.text End-Hymn
+								otherwise use:
+									Hymn sid hoMA.EclogeTheotokionWeekday.text End-Hymn
+							end-when
 					end-when
 				End-Section
 			End-Section
@@ -9982,7 +9987,7 @@ Template MA
 			Section kontakion
 				Title role source sid sourcePentecostarion End-Title
 				Actor sid Reader End-Actor
-				Title<Tdesig>sid Kontakion</><Tmode>sid pe.d00P_gr_GR_cog.pePA.Kontakion.mode</>End-Title	
+				Title<Tdesig>sid KontakionTouPascha</><Tmode>sid pe.d00P_gr_GR_cog.pePA.Kontakion.mode</>End-Title	
 				Reading sid pe.d00P_gr_GR_cog.pePA.Kontakion.text End-Reading
 			End-Section
 			Title<Tdesig>sid OOikos</>End-Title
