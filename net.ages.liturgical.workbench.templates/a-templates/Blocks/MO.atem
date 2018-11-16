@@ -216,20 +216,30 @@ Status NA
 			Title<Tmode>rid ocMO.Ode81.mode</><Tmelody>rid ocMO.Ode81.melody</>End-Title
 			Verse sid verse_Trinity.text End-Verse
 			Hymn rid ocMO.Ode81.text @ver End-Hymn
-			when-exists
-				rid ocMO.Ode83.text use:
-					Verse sid verse_Trinity.text End-Verse
-					Hymn rid ocMO.Ode82.text @ver End-Hymn
-					Title sid Doxa End-Title
-					Hymn rid ocMO.Ode83.text @ver End-Hymn
+			when-exists 
+				rid ocMO.Ode8T.text use:
+					when-exists
+						rid ocMO.Ode83.text use:
+							Verse sid verse_Trinity.text End-Verse
+							Hymn rid ocMO.Ode82.text @ver End-Hymn
+							Title sid Doxa End-Title
+							Hymn rid ocMO.Ode83.text @ver End-Hymn
+						otherwise use:
+							Verse sid verse_Trinity.text End-Verse
+							Hymn rid ocMO.Ode81.text @ver End-Hymn
+							Title sid Doxa End-Title
+							Hymn rid ocMO.Ode82.text @ver End-Hymn
+					end-when
+					Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+					Hymn rid ocMO.Ode8T.text @ver End-Hymn
 				otherwise use:
 					Verse sid verse_Trinity.text End-Verse
 					Hymn rid ocMO.Ode81.text @ver End-Hymn
 					Title sid Doxa End-Title
 					Hymn rid ocMO.Ode82.text @ver End-Hymn
-			end-when
-			Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
-			Hymn rid ocMO.Ode8T.text @ver End-Hymn
+					Title sid KaiNyn End-Title
+					Hymn rid ocMO.Ode83.text @ver End-Hymn
+		end-when			
 		End-Section
 		Section ode9
 			Title<Tdesig>sid Ode9</>End-Title

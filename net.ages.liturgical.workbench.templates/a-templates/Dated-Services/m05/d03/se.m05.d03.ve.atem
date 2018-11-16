@@ -1,15 +1,6 @@
 Template se.m05.d03.ve 
 
-Status NA
-
-	import client_gr_GR_cog.*
-	import ho.s10_gr_GR_cog.*	
-	import me.m05.d03_gr_GR_cog.*
-
-	import da.*
-	import oc.*
-	import pe.*
-	import tr.*
+Status Final
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -24,7 +15,7 @@ Status NA
 	import roles.*
 
 	Head 
-		Set_Date month 5 day 3 year 2018 End_Date
+		Set_Date month 5 day 3 year 2019 End_Date
 			Page_Header_Even
 				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
 			End_Page_Header_Even
@@ -41,13 +32,13 @@ Status NA
 	End_Head
 
 	Preface Covers
-		//Insert_template ematins.pdf.cover.ve.specific_2018 End-Insert
+		Insert_template ematins.pdf.cover.ve.specific_2019 End-Insert
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
 	when-movable-cycle-day-is
 		65 thru 71 use:
-			Section Instance01
+			Section Instance01_Lent
 			End-Section
 			
 		72 use: //Bright Monday - St. George
@@ -60,20 +51,9 @@ Status NA
 				Insert_section se.pe.d073.ve.Instance02 End-Insert
 			End-Section
 			
-		74 use: //Bright Wednesday - St. Athanasios
-			Section Instance01_Wednesday
-			End-Section
-			
-		75, 77 use: //Bright Thursday
-			Section Instance02
-			End-Section
-			
-		76 use: //Bright Friday
-			Section Instance03
-			End-Section
-
-		78 use: //Thomas Sunday
-			Section Instance04
+		74 thru 78 use:
+			Section Instance01
+				Insert_section mc.map.ve.Section01 End-Insert
 			End-Section
 
 		85, 92, 95, 99, 102, 106, 109, 110 use: Insert_section mc.map.ve.Section01 End-Insert

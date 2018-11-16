@@ -15,7 +15,7 @@ Status Final
 	import roles.*
 
 	Head 
-		Set_Date month 5 day 2 year 2018 End_Date
+		Set_Date month 5 day 2 year 2019 End_Date
 			Page_Header_Even
 				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
 			End_Page_Header_Even
@@ -32,7 +32,7 @@ Status Final
 	End_Head
 
 	Preface Covers
-		//Insert_template ematins.pdf.cover.ve.specific_2018 End-Insert
+		Insert_template ematins.pdf.cover.ve.specific_2019 End-Insert
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
@@ -44,21 +44,51 @@ Status Final
 		72 use: //Bright Monday - St. George
 			Section Instance01_Monday
 				Insert_section se.pe.d072.ve.Instance02 End-Insert
-				Set_Date month 5 day 2 year 2018 End_Date
+				Set_Date month 5 day 2 year 2019 End_Date
 			End-Section
 			
 		73 use: //Bright Tuesday - St. Mark
 			Section Instance01_Tuesday
 			End-Section
 			
-		74, 75, 77 use: //Bright Wed, Thu, Sat
-			Section Instance03
+		74 use: //Bright Wed
+			Section Instance03_Wednesday
 			End-Section
-			
+
+		75 use: //Bright Thursday
+			Section Instance03_Thursday
+				Insert_section ST.ve.pe_me1 End-Insert
+				Insert_section VE._01_Beginning__.vespers End-Insert
+				Insert_section VE._02_Kekragaria__.mode5__.noStichologia End-Insert
+				Insert_section VE._03_Stichera__.pe__.s_1234as3456 End-Insert
+				Insert_section TI.stp.s._00_saint_.m End-Insert
+				Insert_section VE._03_Stichera__.me__.p_1123as78910 End-Insert
+				Insert_section TI.g.pe._00_pentecostarion End-Insert
+				Insert_section VE._03_Stichera__.glory__.pe__.gloryasglory_.hymn End-Insert
+				Rubric sid Or End-Rubric
+				Insert_section TI.g.s._00_saint_.m End-Insert
+				Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_.hymn End-Insert
+				Insert_section VE._03_Stichera__.both__.pe__.bothasboth_ End-Insert
+				Insert_section VE._04_Middle__.entrance End-Insert
+				Insert_section VE._06_Litanies__.fullektenia End-Insert
+				Insert_section VE._08_Aposticha__.pe__.s_1 End-Insert
+				Insert_section VE._08_Aposticha__.pascha End-Insert
+				Insert_section TI.g.s._00_saint_.m End-Insert
+				Insert_section VE._08_Aposticha__.glory__.me__.gloryasglory_.hymn End-Insert
+				Insert_section VE._08_Aposticha__.both__.pascha_ End-Insert
+				Insert_section AP.pascha__.thrice End-Insert
+				Insert_section VE._10_End__.wisdom End-Insert
+				Insert_section VE._11_Dismissal__.commemoration End-Insert
+			End-Section
+		
 		76 use: //Bright Friday
-			Section Instance03
+			Section Instance03_Friday
 			End-Section
 			
+		77 use:
+			Section Instance03_Saturday
+			End-Section
+		
 		78 use: //Thomas Sunday
 			Section Instance04
 			End-Section
