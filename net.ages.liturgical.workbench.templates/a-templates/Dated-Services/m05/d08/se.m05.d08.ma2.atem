@@ -2,6 +2,8 @@ Template se.m05.d08.ma2
 
 Status Final
 
+	import pe.*
+
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
 	import misc_gr_GR_cog.*
@@ -16,7 +18,7 @@ Status Final
 	import roles.*
 
 	Head 
-		Set_Date month 5 day 8 year 2018 End_Date
+		Set_Date month 5 day 8 year 2019 End_Date
 			Page_Header_Even
 				center @lookup sid ma.pdf.header sid d.on lang L1 @date lang L1
 			End_Page_Header_Even
@@ -215,6 +217,132 @@ Status Final
 			
 		79 thru 83 use: //Thomas week
 			Section Instance05
+				Insert_section ST.ma.pe_me1 End-Insert
+				Insert_section MA._01_Beginning__.mode2 End-Insert
+				Insert_section TI.a.s._05_evangelist End-Insert
+				Insert_section AP.me1gloryme1_.hymn End-Insert
+				Insert_section AP.both__.af End-Insert
+				Insert_section MA._03_Kathisma1__.litany End-Insert
+				Section kathisma1
+					when-movable-cycle-day-is
+						79, 80, 82 use:
+							Section mod_tue_thur
+								Title role source sid sourcePentecostarion End-Title
+								Actor sid Choir End-Actor
+								Insert_section TI.k1.res End-Insert
+								Title<Tmode>rid peMA.Kathisma12.mode</><Tmelody>rid peMA.Kathisma12.melody</>End-Title
+								Hymn rid peMA.Kathisma12.text End-Hymn
+								Title sid DoxaKaiNyn<Tdesig> sid Theotokion</>End-Title
+								Title<Tmode>rid peMA.Kathisma1T.mode</><Tmelody>rid peMA.Kathisma1T.melody</>End-Title
+								Hymn rid peMA.Kathisma1T.text End-Hymn
+							End-Section
+						81, 83 use:
+							Section wed_fri
+								Title role source sid sourcePentecostarion End-Title
+								Actor sid Choir End-Actor
+								Insert_section TI.k1.res End-Insert
+								Title<Tmode>rid peMA.Kathisma12.mode</><Tmelody>rid peMA.Kathisma12.melody</>End-Title
+								Hymn rid peMA.Kathisma12.text End-Hymn
+								Title sid DoxaKaiNyn<Tdesig> sid Theotokion</>End-Title
+								Title<Tmode>rid peMA.Kathisma1T.mode</><Tmelody>rid peMA.Kathisma1T.melody</>End-Title
+								Hymn rid peMA.Kathisma1T.text End-Hymn
+							End-Section
+					end-when
+				End-Section
+				Insert_section TI.k2.s._05_evangelist End-Insert
+				Insert_section MA._04_Kathisma2__.append__.me__.kath21_.hymn End-Insert
+				Set_mcDay day 80 End_mcDay
+					Insert_section TI.gb.f End-Insert
+					Insert_section MA._04_Kathisma2__.append__.pe__.kath21_.hymn End-Insert
+				Set_mcDay day 0 End_mcDay
+				Insert_section TI.k3.s._05_evangelist End-Insert
+				Insert_section MA._05_Kathisma3__.append__.me__.kath31_.hymn End-Insert
+				Set_mcDay day 81 End_mcDay
+					Insert_section TI.gb.f End-Insert
+					Insert_section MA._04_Kathisma2__.append__.pe__.kath21_.hymn End-Insert
+				Set_mcDay day 0 End_mcDay
+				Insert_section MA._06_Antiphons__.mode41_prokeimenon_ End-Insert
+				Insert_section MA._07_Gospel__.yes__.priest__.me End-Insert
+				Insert_section MA._08_Supplication__.deacon__.me End-Insert
+				Section options
+					Set_mcDay day 78 End_mcDay
+					Insert_section Instance04.options.block02_odes13 End-Insert
+					Set_mcDay day 0 End_mcDay
+					Section block03_kontakionposition2
+						Para role bmc_kontakion_position2 sid mc.kontakion.position2 End-Para
+							Insert_section MA._11_Kontakion__.festal_.kontakion End-Insert
+						Para role emc_kontakion_position2 sid mc.tag End-Para
+					End-Section
+					Section block04_ode3_kathisma
+						Para role bmc_ode3_kathisma sid mc.ode3.kathisma End-Para
+							Actor sid Choir End-Actor
+							Insert_section TI.ka.s._05_evangelist End-Insert
+							Insert_section MA._10_Canon__.ode3kathisma__.me1_.hymn End-Insert
+							Insert_section TI.gb.f End-Insert
+							Set_mcDay day 82 End_mcDay
+								Insert_section MA._04_Kathisma2__.append__.pe__.kath21_.hymn End-Insert
+							Set_mcDay day 0 End_mcDay
+						Para role emc_ode3_kathisma sid mc.tag End-Para
+					End-Section
+					Set_mcDay day 78 End_mcDay
+					Insert_section Instance04.options.block05_odes456 End-Insert
+					Set_mcDay day 0 End_mcDay
+					Section block06_kontakionposition1
+						Para role bmc_kontakion_position1 sid mc.kontakion.position1 End-Para
+							Actor sid Reader End-Actor
+							Insert_section TI.k.s._05_evangelist End-Insert
+							Insert_section MA._11_Kontakion__.append__.me1_.konoik_nt End-Insert
+							Insert_section SY.Synaxarion End-Insert
+						Para role emc_kontakion_position1 sid mc.tag End-Para
+					End-Section
+					Set_mcDay day 78 End_mcDay
+					Insert_section Instance04.options.block07_odes78 End-Insert
+					Set_mcDay day 0 End_mcDay
+					Section block08_kontakionposition12
+						Para role bmc_kontakion_position12 sid mc.kontakion.position12 End-Para
+							Insert_section MA._11_Kontakion__.festal_.kontakion End-Insert
+							Insert_section TI.k.s._05_evangelist End-Insert
+							Insert_section MA._11_Kontakion__.append__.me1_.konoik_nt End-Insert
+							Insert_section SY.Synaxarion End-Insert
+						Para role emc_kontakion_position12 sid mc.tag End-Para
+					End-Section
+					Section block09_katavasias1345678
+						Insert_section KA.choir__._1345678 End-Insert
+					End-Section
+					Section block11_ode9
+						Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
+						Para role bmc_magnificat_modeofcanon sid mc.magnificat.modeofcanon End-Para
+							Insert_section MA._10_Canon__.magnificat__.mode1 End-Insert
+						Para role emc_magnificat_modeofcanon sid mc.tag End-Para
+						Para role bmc_ode9_pe_canon1 sid mc.ode9pecanon1 End-Para
+							Set_mcDay day 78 End_mcDay
+							Insert_section CA.v.ode9.pe1.ti_h123as0VVV End-Insert
+							Set_mcDay day 0 End_mcDay
+						Para role emc_ode9_pe_canon1 sid mc.tag End-Para
+						Para role bmc_ode9_me_canon1 sid mc.ode9mecanon1 End-Para
+							Insert_section TI.ct.me.c1 End-Insert
+							Insert_section CA.v.ode9.append.me1.nt_123tasVVGB End-Insert
+						Para role emc_ode9_me_canon1 sid mc.tag End-Para
+						Para role bmc_magnificat_modeofkatavasia sid mc.magnificat.modeofkatavasia End-Para
+							Insert_section MA._10_Canon__.magnificat__.modeofkatavasia End-Insert				
+						Para role emc_magnificat_modeofkatavasia sid mc.tag End-Para
+						Insert_section KA.append__._9 End-Insert
+					End-Section
+				End-Section
+				Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+				Insert_section MA._12_Exaposteilarion__.me__.exap1_ End-Insert
+				Insert_section MA._12_Exaposteilarion__.append__.festal End-Insert
+				Insert_section MA._13_Lauds__.mode8__.for4_nocollapse End-Insert
+				Insert_section MA._13_Lauds__.me__.p_1123as3456 End-Insert
+				Insert_section MA._13_Lauds__.glory__.me__.gloryasglory_ End-Insert
+				Set_mcDay day 81 End_mcDay
+					Insert_section TI.b.f End-Insert
+					Insert_section MA._13_Lauds__.both__.pe__.gloryasboth_.hymn End-Insert
+				Set_mcDay day 0 End_mcDay
+				Insert_section MA._14_Doxology__.great End-Insert
+				Insert_section AP.me1_ End-Insert			
+				Insert_section MA._19_End_Options End-Insert
+				Insert_section MA._20_Dismissal__.commemoration End-Insert
 			End-Section
 			
 		84 use: //Thomas Leavetaking
