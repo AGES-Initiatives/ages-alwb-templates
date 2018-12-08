@@ -764,6 +764,16 @@ Template LN
 			Dialog sid pet36 End-Dialog
 		End-Section
 	End-Section	
+	Section Ektenia03_mealt1mealt2 //for Lity
+		Section part1
+			Insert_section Ektenia03_me1.part1 End-Insert
+		End-Section
+		Section part2
+			Actor sid Priest End-Actor
+			Insert_section LN.ektenia_mealt1_and_mealt2 End-Insert
+			Dialog sid pet36 End-Dialog
+		End-Section
+	End-Section	
 	Section Ektenia03_pe //for Lity
 		Section part1
 			Insert_section Ektenia03_me1.part1 End-Insert
@@ -1103,6 +1113,11 @@ Template LN
 				Feb 6 use: Insert_section commemorations.ektenia_07_with_mealt2 End-Insert
 			end-when
 		End-Section
+		Section ektenia_mealt1_and_mealt2
+			when-date-is
+				Feb 6 use: Insert_section commemorations.ektenia_07_with_mealt2 End-Insert
+			end-when
+		End-Section
 
 		Section ektenia_pe
 			when-movable-cycle-day-is
@@ -1147,6 +1162,9 @@ Template LN
 			End-Section
 			Section ektenia_07_mealt1 //Saint mealt1 only
 				Insert_section Selector_Supplication.Section04_ektenia_mealt1 End-Insert
+			End-Section
+			Section ektenia_07_mealt1_mealt2 //Saints mealt1 and mealt2
+				Dialog sid sup00a sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid cl.localpatronsaint1.supplication sid sup14 rid alt1.meInsert1 rid alt2.meInsert1 rid alt2.meInsert2 sid sup15 End-Dialog	
 			End-Section
 			Section ektenia_07_pealt1 //Saint alt1pe1 only
 				Dialog sid sup00a sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12<r>sid cl.localpatronsaint1.supplication</>sid sup14 rid alt1.peInsert1 rid alt1.peInsert2 sid sup15 End-Dialog	
@@ -1515,6 +1533,14 @@ Template LN
 		Insert_section supplication_part2 End-Insert
 	End-Section
 
+	Section Supplication_deacon_mealt1_mealt2
+		Section part1
+			Actor sid Deacon End-Actor
+			Insert_section supplication_07_mealt1_mealt2 End-Insert
+		End-Section
+		Insert_section supplication_part2 End-Insert
+	End-Section
+
 	Section Supplication_deacon_pealt1
 		Section part1
 			Actor sid Deacon End-Actor
@@ -1627,7 +1653,7 @@ Template LN
 					Jan 7 use: Insert_section supplication_05 End-Insert
 					Jan 30 use: Insert_section supplication_07 End-Insert
 					Feb 24 use: Insert_section supplication_05 End-Insert
-					Mar 2 use: Insert_section supplication_07_mealt1 End-Insert
+				//	Mar 2 use: Insert_section supplication_07_mealt1 End-Insert
 					Mar 25 use: Insert_section supplication_02 End-Insert
 					May 8 use: Insert_section supplication_07 End-Insert
 					May 25 use: Insert_section supplication_05 End-Insert
@@ -1637,7 +1663,7 @@ Template LN
 						when-name-of-day-is Sunday
 							use: Insert_section supplication_10 End-Insert
 						end-when
-					Jul 22 use: Insert_section supplication_07_with_mealt1 End-Insert
+			//		Jul 22 use: Insert_section supplication_07_with_mealt1 End-Insert
 					Jul 25 use: Insert_section supplication_08 End-Insert
 					Aug 15 use: Insert_section supplication_02 End-Insert
 					Aug 29 use: Insert_section supplication_05 End-Insert
@@ -1689,6 +1715,7 @@ Template LN
 		
 			Section sup_selector_mealt1
 				when-date-is
+					Feb 6 use: Insert_section supplication_07_mealt1 End-Insert
 					Mar 2 use: Insert_section supplication_07_mealt1 End-Insert
 					Jul 12 use: Insert_section supplication_07_mealt1 End-Insert
 					Jul 22 use: Insert_section supplication_07_mealt1 End-Insert
@@ -1730,6 +1757,9 @@ Template LN
 	End-Section
 	Section supplication_07_with_mealt1 //Saint
 		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12<r>sid cl.localpatronsaint1.supplication</>sid sup14 rid meInsert1 rid alt1.meInsert1 rid alt1.meInsert2 sid sup15 sid sup99 End-Dialog	
+	End-Section
+	Section supplication_07_mealt1_mealt2 //Saint
+		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12<r>sid cl.localpatronsaint1.supplication</>sid sup14 rid alt1.meInsert1 rid alt2.meInsert1 rid alt2.meInsert2 sid sup15 sid sup99 End-Dialog	
 	End-Section
 	Section supplication_07_mealt1 //Saint
 		Insert_section Selector_Supplication.Section03_supplication_mealt1 End-Insert

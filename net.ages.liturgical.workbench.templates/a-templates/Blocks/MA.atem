@@ -3372,6 +3372,9 @@ Template MA
 			Section me1_mealt1
 				Insert_section LN.Supplication_deacon_me1_mealt1 End-Insert
 			End-Section
+			Section mealt1_mealt2
+				Insert_section LN.Supplication_deacon_mealt1_mealt2 End-Insert
+			End-Section
 			Section pealt1
 				Insert_section LN.Supplication_deacon_pealt1 End-Insert
 			End-Section
@@ -11967,6 +11970,19 @@ Template MA
 					Insert_section PsalmVerses.forHierarchs.verse2 End-Insert
 					Hymn rid alt1.meMA.Lauds4.text @ver media-off End-Hymn
 				End-Section
+				Section p_1234as56hierarchs13
+					Title role source0 sid sourceMeSupplement End-Title
+					Media rid alt1.meMA.MM.Lauds1234as5678.text End-Media
+					Title<Tmode>rid alt1.meMA.Lauds1.mode</><Tmelody>rid alt1.meMA.Lauds1.melody</>End-Title
+					Insert_section Lauds_Verses.v05 End-Insert
+					Hymn rid alt1.meMA.Lauds1.text @ver media-off End-Hymn
+					Insert_section Lauds_Verses.v06 End-Insert
+					Hymn rid alt1.meMA.Lauds2.text @ver media-off End-Hymn
+					Insert_section PsalmVerses.forHierarchs.verse1 End-Insert
+					Hymn rid alt1.meMA.Lauds3.text @ver media-off End-Hymn
+					Insert_section PsalmVerses.forHierarchs.verse3 End-Insert
+					Hymn rid alt1.meMA.Lauds4.text @ver media-off End-Hymn
+				End-Section
 				Section p_1234as56theotokos12
 					Title role source0 sid sourceMeSupplement End-Title
 					Media rid alt1.meMA.MM.Lauds1234as5678.text End-Media
@@ -14942,7 +14958,7 @@ Template MA
 			Section p_meeting12
 				Title role source sid sourceMenaion End-Title
 				Actor sid Choir End-Actor
-				Title<Tdesig>sid Aposticha</><Tdesig>sid TisEortis</>End-Title
+				Title<Tdesig>sid ApostichaTisEortis</>End-Title
 				Title<Tmode>rid meMA.Aposticha1.mode</><Tmelody>rid meMA.Aposticha1.melody</>End-Title
 				Hymn rid meMA.Aposticha1.text @ver End-Hymn
 				Media rid meMA.Aposticha2.text End-Media
@@ -14951,6 +14967,30 @@ Template MA
 				Media rid meMA.Aposticha3.text End-Media
 				Insert_section PsalmVerses.forMeeting.verse2 End-Insert
 				Hymn rid meMA.Aposticha3.text @ver media-off End-Hymn
+			End-Section
+			Section p_meeting12GB
+				Title role source sid sourceMenaion End-Title
+				Actor sid Choir End-Actor
+				Title<Tdesig>sid ApostichaTisEortis</>End-Title
+				Title<Tmode>rid meMA.Aposticha1.mode</><Tmelody>rid meMA.Aposticha1.melody</>End-Title
+				Hymn rid meMA.Aposticha1.text @ver End-Hymn
+				Media rid meMA.Aposticha2.text End-Media
+				Insert_section PsalmVerses.forMeeting.verse1 End-Insert
+				Hymn rid meMA.Aposticha2.text @ver media-off End-Hymn
+				Media rid meMA.Aposticha3.text End-Media
+				Insert_section PsalmVerses.forMeeting.verse2 End-Insert
+				Hymn rid meMA.Aposticha3.text @ver media-off End-Hymn
+				when-exists
+					rid meMA.AposBoth.text use:
+						Title sid DoxaKaiNyn<Tdesig>sid Omoion</>End-Title
+						Title<Tmode>rid meMA.AposGlory.mode</><Tmelody>rid meMA.AposGlory.melody</>End-Title
+						Hymn rid meMA.AposGlory.text @ver End-Hymn
+						Title sid KaiNyn<Tdesig>sid Omoion</>End-Title
+						Hymn rid meMA.AposBoth.text @ver End-Hymn
+					otherwise use:
+						Title sid DoxaKaiNyn<Tdesig>sid Omoion</>End-Title
+						Hymn rid meMA.AposGlory.text @ver End-Hymn
+				end-when
 			End-Section
 			Section p_prechristmas12
 				Title role source sid sourceMenaion End-Title
