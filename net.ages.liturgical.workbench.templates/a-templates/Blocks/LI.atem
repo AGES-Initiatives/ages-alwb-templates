@@ -81,38 +81,38 @@ Status Review
 	Section _02_Antiphons__
 		Section sundays_weekdays_feasts
 			Section antiphon1
-				Actor sid Choir End-Actor
+				Actor sid Choir<Trubric>sid ChoirRightBegins</>End-Actor
 				Insert_section Selector_Antiphons.antiphon1__.specific_day End-Insert
 				Insert_section short_litany_after_antiphon1 End-Insert
 			End-Section
 			Section antiphon2
-				Actor sid Choir End-Actor
+				Actor sid Choir<Trubric>sid ChoirLeftBegins</>End-Actor
 				Insert_section Selector_Antiphons.antiphon2__.specific_day End-Insert
 				Insert_section short_litany_after_antiphon2 End-Insert
 			End-Section
 			Section antiphon3
-				Actor sid Choir End-Actor
+				Actor sid Choir<Trubric>sid ChoirRightBegins</>End-Actor
 				Insert_section Selector_Antiphons.antiphon3__.specific_day End-Insert
 			End-Section
 		End-Section
 		Section celebrated_saint
 			Section antiphon1
-				Actor sid Choir End-Actor
+				Actor sid Choir<Trubric>sid ChoirRightBegins</>End-Actor
 				Insert_section Selector_Antiphons.antiphon1__.celebrated_saint End-Insert
 				Insert_section short_litany_after_antiphon1 End-Insert
 			End-Section
 			Section antiphon2
-				Actor sid Choir End-Actor
+				Actor sid Choir<Trubric>sid ChoirLeftBegins</>End-Actor
 				Insert_section Selector_Antiphons.antiphon2__.celebrated_saint End-Insert
 				Insert_section short_litany_after_antiphon2 End-Insert
 			End-Section
 			Section antiphon3
-				Actor sid Choir End-Actor
+				Actor sid Choir<Trubric>sid ChoirRightBegins</>End-Actor
 				Insert_section Selector_Antiphons.antiphon3__.celebrated_saint End-Insert
 			End-Section
 		End-Section	
 		Section psalm102
-			Actor sid Choir End-Actor
+			Actor sid Choir<Trubric>sid ChoirRightBegins</>End-Actor
 			Title role desig sid psLI.typika.ps102.title @ver End-Title
 			Media sid hoLI.MM.Psalm102.text End-Media
 			Hymn sid psLI.typika.ps102.intro.text media-off End-Hymn
@@ -143,7 +143,7 @@ Status Review
 			Insert_section short_litany_after_antiphon1 End-Insert
 		End-Section
 		Section psalm145
-			Actor sid Choir End-Actor
+			Actor sid Choir<Trubric>sid ChoirLeftBegins</>End-Actor
 			Title role desig sid psLI.typika.ps145.title @ver End-Title
 			Media sid hoLI.MM.Psalm145.text End-Media
 			Reading sid DoxaToPatri.text End-Reading
@@ -162,10 +162,10 @@ Status Review
 			Insert_section short_litany_after_antiphon2 End-Insert
 		End-Section
 		Section typika_rubrics
-			Actor sid Choir End-Actor
+			Actor sid Choir<Trubric>sid ChoirRightBegins</>End-Actor
 			Rubric sid psLI.typika.ps102.title End-Rubric
 			Insert_section short_litany_after_antiphon1 End-Insert
-			Actor sid Choir End-Actor
+			Actor sid Choir<Trubric>sid ChoirLeftBegins</>End-Actor
 			Reading sid DoxaToPatri.text End-Reading
 			Rubric sid psLI.typika.ps145.title End-Rubric
 			Verse sid KaiNynKaiAei.text End-Verse
@@ -1542,9 +1542,10 @@ Status Review
 		Section choir
 			Title role desig sid euLI.Key0500.title End-Title
 			Insert_section EntrancePrayer End-Insert
-			Actor sid Choir End-Actor
+			Actor sid Choir<Trubric>sid ChoirRightBegins</>End-Actor
 			Title role mixed<Tdesig>sid Eisodikon</><Tmode>sid Mode2</>End-Title
 			Insert_section Selector_Eisodikon.eisodikon_part1 End-Insert
+			Actor sid clChoirL End-Actor
 			Dialog sid hoLI.Antiphon22.text End-Dialog
 		End-Section
 		Section clergy
@@ -1553,7 +1554,7 @@ Status Review
 			Actor sid Clergy End-Actor
 			Title role mixed<Tdesig>sid Eisodikon</><Tmode>sid Mode2</>End-Title
 			Insert_section Selector_Eisodikon.eisodikon_part1 End-Insert
-			Actor sid Choir End-Actor
+			Actor sid clChoirL End-Actor
 			Dialog sid hoLI.Antiphon22.text End-Dialog
 		End-Section
 	End-Section
@@ -1561,7 +1562,7 @@ Status Review
 	Section _05_AfterEntranceHymns__
 		Section choir
 			Title role desig sid YmnoiMetaTinMikranEisodon End-Title
-//			Actor sid Choir End-Actor
+			Actor sid Choir<Trubric>sid ChoirRightBegins</>End-Actor
 		End-Section
 		Section clergy
 			Title role desig sid YmnoiMetaTinMikranEisodon End-Title
@@ -1776,6 +1777,7 @@ Status Review
 						Media sid euLI.Key1200.text End-Media
 						Actor sid Deacon End-Actor
 						Dialog sid pet24 End-Dialog
+						Actor sid clChoirR End-Actor
 						Dialog<i>sid res01p</>End-Dialog
 						Dialog sid euLI.Key1201.text End-Dialog
 						Dialog<i>sid res01p</>End-Dialog
@@ -1786,6 +1788,7 @@ Status Review
 						Dialog sid pet12 End-Dialog
 						Dialog<i>sid res01p</>End-Dialog
 						Dialog sid pet25m End-Dialog
+						Actor sid clChoirL End-Actor
 						Dialog<i>sid res02p</>End-Dialog
 						Dialog sid pet26 End-Dialog
 						Dialog<i>sid res02p</>End-Dialog
@@ -1804,15 +1807,15 @@ Status Review
 						Para role inaudible sid euLI.Key1202.basil.text End-Para			
 						Actor sid Priest  End-Actor 
 						Dialog sid euLI.Key1203.text End-Dialog
-						Actor sid Choir End-Actor
+						Actor sid clChoirL End-Actor
 						Dialog sid res04 End-Dialog
 						Actor sid Priest End-Actor
 						Dialog sid pet31 End-Dialog
-						Actor sid Choir End-Actor
+						Actor sid clChoirL End-Actor
 						Dialog sid res05 End-Dialog
 						Actor sid Deacon End-Actor
 						Dialog sid euLI.Key1204.text End-Dialog
-						Actor sid Choir End-Actor
+						Actor sid clChoirR End-Actor
 						Hymn sid euLI.Key1205.text @ver End-Hymn
 					//	Media sid euLI.Key1206.text End-Media
 						Para role alttext <inr>sid euLI.Key1206.rubric</>End-Para
@@ -1827,43 +1830,43 @@ Status Review
 						Title role desig sid euLI.Key1300.title End-Title	
 						Actor sid Deacon End-Actor
 						Dialog sid euLI.Key1301.text End-Dialog
-						Actor sid Choir End-Actor
+						Actor sid clChoirR End-Actor
 						Dialog sid euLI.Key1302.text End-Dialog
 						Actor sid Priest End-Actor
 						Dialog sid euLI.Key1303.text End-Dialog
-						Actor sid Choir End-Actor
+						Actor sid clChoirL End-Actor
 						Dialog sid euLI.Key1304.text End-Dialog
 						Actor sid Priest End-Actor
 						Dialog sid euLI.Key1305.text End-Dialog
-						Actor sid Choir End-Actor
+						Actor sid clChoirR End-Actor
 						Dialog sid euLI.Key1306.text End-Dialog
 						Actor sid Priest End-Actor
 						Dialog sid euLI.Key1307.text End-Dialog
-						Actor sid Choir End-Actor
+						Actor sid clChoirL End-Actor
 						Dialog sid euLI.Key1308.text End-Dialog
 						Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
 						Para role inaudible sid euLI.Key1309.basil.text End-Para				
 						Actor sid Priest End-Actor
 						Dialog sid euLI.Key1310.text End-Dialog
-						Actor sid Choir End-Actor
+						Actor sid clChoirR End-Actor
 						Hymn sid euLI.Key1311.text @ver End-Hymn	
 						Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
 						Para role inaudible sid euLI.Key1312.basil.text End-Para				
 						Actor sid Priest End-Actor
 						Dialog sid euLI.Key1313.basil.text End-Dialog
-						Actor sid Choir End-Actor
+						Actor sid clChoirL End-Actor
 						Dialog sid res04 End-Dialog
 						Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
 						Para role inaudible sid euLI.Key1314.basil.text End-Para				
 						Actor sid Priest End-Actor
 						Dialog sid euLI.Key1315.basil.text End-Dialog
-						Actor sid Choir End-Actor
+						Actor sid clChoirR End-Actor
 						Dialog sid res04 End-Dialog
 						Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
 						Para role inaudible sid euLI.Key1316.basil.text End-Para				
 						Actor sid Priest End-Actor
 						Dialog sid euLI.Key1317.text End-Dialog
-						Actor sid Choir End-Actor
+						Actor sid clChoirL End-Actor
 						Hymn sid euLI.Key1318.text @ver End-Hymn
 						Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
 						Para role inaudible sid euLI.Key1319.basil.text End-Para				
@@ -1878,7 +1881,7 @@ Status Review
 						Dialog sid euLI.Key1327.text End-Dialog				
 					End-Section
 					Section _23_basil_HymnToTheotokos
-						Actor sid Choir End-Actor
+						Actor sid clChoirR End-Actor
 						Title<Tdesig>sid YmnosEisTinTheotokon</>End-Title
 						Insert_section Selector_Megalynarion.Basil End-Insert
 					End-Section
@@ -1889,22 +1892,23 @@ Status Review
 						Dialog sid euLI.Key1330a.text<r>sid cl.bishop1.rank sid cl.bishop1.name_p</>sid euLI.Key1330b.text End-Dialog				
 						Actor sid Deacon End-Actor
 						Dialog sid euLI.Key1331.text End-Dialog				
-						Actor sid Choir End-Actor
+						Actor sid clChoirL End-Actor
 						Dialog sid euLI.Key1332.text End-Dialog		
 						Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
 						Para role inaudible sid euLI.Key1333.basil.text End-Para				
 						Actor sid Priest End-Actor
 						Dialog sid euLI.Key1334.text End-Dialog		
-						Actor sid Choir End-Actor
+						Actor sid clChoirL End-Actor
 						Dialog sid res04 End-Dialog
 						Actor sid Priest End-Actor
 						Dialog sid euLI.Key1335.text End-Dialog		
-						Actor sid Choir End-Actor
+						Actor sid clChoirL End-Actor
 						Dialog sid euLI.Key1336.text End-Dialog		
 					End-Section		
 					Section _25_basil
 						Actor sid Deacon End-Actor
 						Dialog sid euLI.Key1401.text End-Dialog
+						Actor sid clChoirL End-Actor
 						Dialog<i>sid res01p</>End-Dialog
 						Dialog sid euLI.Key1402.text End-Dialog			
 						Dialog<i>sid res01p</>End-Dialog
@@ -1943,6 +1947,7 @@ Status Review
 						Reading sid PaterImon.text @ver End-Reading
 						Actor sid Priest End-Actor
 						Dialog sid exc20 End-Dialog
+						Actor sid clChoirR End-Actor
 						Dialog<i>sid res04p</>End-Dialog
 						Actor sid Priest End-Actor
 						Dialog sid pet31 End-Dialog
@@ -1962,7 +1967,7 @@ Status Review
 						Dialog sid exc19 End-Dialog
 						Actor sid Priest End-Actor
 						Dialog sid euLI.Key1410.text End-Dialog				
-						Actor sid Choir End-Actor
+						Actor sid clChoirR End-Actor
 						Hymn sid euLI.Key1411.text @ver End-Hymn	
 					End-Section	
 				End-Section
@@ -1979,7 +1984,7 @@ Status Review
 					Section _31_basil
 						Actor sid Priest End-Actor
 						Dialog sid euLI.Key1529.text End-Dialog
-						Actor sid Choir End-Actor
+						Actor sid clChoirR End-Actor
 						Insert_section Selector_AfterCommunion.Basil End-Insert
 					End-Section
 					Section _32
@@ -1994,7 +1999,7 @@ Status Review
 						Actor sid Priest End-Actor 
 						Dialog sid PantoteNyn.text End-Dialog
 						Dialog<i>sid res04p</>End-Dialog
-						Actor sid Choir End-Actor
+						Actor sid clChoirL End-Actor
 						Hymn sid euLI.Key1603.text @ver End-Hymn
 					End-Section
 					Section _34_basil
@@ -2028,7 +2033,7 @@ Status Review
 							Dialog sid euLI.Key1702.text End-Dialog
 						end-when
 						Dialog<i>sid res04p</>End-Dialog
-						Actor sid Choir End-Actor
+						Actor sid Choir<Trubric>sid ChoirRightBegins</>End-Actor
 						Media sid euLI.Key1703.text End-Media
 						Hymn sid psLI.aftercommunion.v1.text @ver<r>sid Thrice</> End-Hymn
 						Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
@@ -2050,7 +2055,7 @@ Status Review
 					Section _20_chrys
 						Insert_section AfterGospel.chrys End-Insert
 						Title role desig sid euLI.Key1100.title End-Title
-						Actor sid Choir End-Actor
+						Actor sid clChoirR End-Actor
 						Title role desig sid euLI.Key1102.title End-Title
 						Media sid euLI.Key1102.text End-Media
 						Hymn sid euLI.Key1102.text media-off sid euLI.Key1103.text @ver End-Hymn	
@@ -2059,7 +2064,7 @@ Status Review
 						Para role inaudible sid euLI.Key1101.text End-Para
 						Actor sid Deacon End-Actor
 						Dialog sid euLI.Key1110.text End-Dialog		
-						Actor sid Choir End-Actor
+						Actor sid clChoirL End-Actor
 						Dialog sid res04 End-Dialog
 						Hymn sid euLI.Key1123.text @ver End-Hymn		
 					End-Section
@@ -2068,6 +2073,7 @@ Status Review
 						Media sid euLI.Key1200.text End-Media
 						Actor sid Deacon End-Actor
 						Dialog sid pet24 End-Dialog
+						Actor sid clChoirR End-Actor
 						Dialog<i>sid res01p</>End-Dialog
 						Dialog sid euLI.Key1201.text End-Dialog
 						Dialog<i>sid res01p</>End-Dialog
@@ -2078,6 +2084,7 @@ Status Review
 						Dialog sid pet12 End-Dialog
 						Dialog<i>sid res01p</>End-Dialog
 						Dialog sid pet25m End-Dialog
+						Actor sid clChoirL End-Actor
 						Dialog<i>sid res02p</>End-Dialog
 						Dialog sid pet26 End-Dialog
 						Dialog<i>sid res02p</>End-Dialog
@@ -2096,15 +2103,15 @@ Status Review
 						Para role inaudible sid euLI.Key1202.text End-Para			
 						Actor sid Priest  End-Actor 
 						Dialog sid euLI.Key1203.text End-Dialog
-						Actor sid Choir End-Actor
+						Actor sid clChoirL End-Actor
 						Dialog sid res04 End-Dialog
 						Actor sid Priest End-Actor
 						Dialog sid pet31 End-Dialog
-						Actor sid Choir End-Actor
+						Actor sid clChoirL End-Actor
 						Dialog sid res05 End-Dialog
 						Actor sid Deacon End-Actor
 						Dialog sid euLI.Key1204.text End-Dialog
-						Actor sid Choir End-Actor
+						Actor sid clChoirR End-Actor
 						Hymn sid euLI.Key1205.text @ver End-Hymn				
 					//	Media sid euLI.Key1206.text End-Media
 						Para role alttext <inr>sid euLI.Key1206.rubric</>End-Para
@@ -2120,43 +2127,43 @@ Status Review
 						Media sid euLI.Key1300.text End-Media
 						Actor sid Deacon End-Actor
 						Dialog sid euLI.Key1301.text End-Dialog
-						Actor sid Choir End-Actor
+						Actor sid clChoirR End-Actor
 						Dialog sid euLI.Key1302.text End-Dialog
 						Actor sid Priest End-Actor
 						Dialog sid euLI.Key1303.text End-Dialog
-						Actor sid Choir End-Actor
+						Actor sid clChoirL End-Actor
 						Dialog sid euLI.Key1304.text End-Dialog
 						Actor sid Priest End-Actor
 						Dialog sid euLI.Key1305.text End-Dialog
-						Actor sid Choir End-Actor
+						Actor sid clChoirR End-Actor
 						Dialog sid euLI.Key1306.text End-Dialog
 						Actor sid Priest End-Actor
 						Dialog sid euLI.Key1307.text End-Dialog
-						Actor sid Choir End-Actor
+						Actor sid clChoirL End-Actor
 						Dialog sid euLI.Key1308.text End-Dialog
 						Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
 						Para role inaudible sid euLI.Key1309.text End-Para				
 						Actor sid Priest End-Actor
 						Dialog sid euLI.Key1310.text End-Dialog
-						Actor sid Choir End-Actor
+						Actor sid clChoirR End-Actor
 						Hymn sid euLI.Key1311.text @ver End-Hymn	
 						Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
 						Para role inaudible sid euLI.Key1312.text End-Para				
 						Actor sid Priest End-Actor
 						Dialog sid euLI.Key1313.text End-Dialog
-						Actor sid Choir End-Actor
+						Actor sid clChoirL End-Actor
 						Dialog sid res04 End-Dialog
 						Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
 						Para role inaudible sid euLI.Key1314.text End-Para				
 						Actor sid Priest End-Actor
 						Dialog sid euLI.Key1315.text End-Dialog
-						Actor sid Choir End-Actor
+						Actor sid clChoirR End-Actor
 						Dialog sid res04 End-Dialog
 						Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
 						Para role inaudible sid euLI.Key1316.text End-Para				
 						Actor sid Priest End-Actor
 						Dialog sid euLI.Key1317.text End-Dialog
-						Actor sid Choir End-Actor
+						Actor sid clChoirL End-Actor
 						Hymn sid euLI.Key1318.text @ver End-Hymn
 						Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
 						Para role inaudible sid euLI.Key1319.text End-Para				
@@ -2171,7 +2178,7 @@ Status Review
 						Dialog sid euLI.Key1327.text End-Dialog				
 					End-Section
 					Section _23_chrys_HymnToTheotokos
-						Actor sid Choir End-Actor
+						Actor sid clChoirR End-Actor
 						Title<Tdesig>sid YmnosEisTinTheotokon</>End-Title
 						Insert_section Selector_Megalynarion.Chrysostom End-Insert
 					End-Section
@@ -2182,22 +2189,23 @@ Status Review
 						Dialog sid euLI.Key1330a.text<r>sid cl.bishop1.rank sid cl.bishop1.name_p</>sid euLI.Key1330b.text End-Dialog				
 						Actor sid Deacon End-Actor
 						Dialog sid euLI.Key1331.text End-Dialog				
-						Actor sid Choir End-Actor
+						Actor sid clChoirL End-Actor
 						Dialog sid euLI.Key1332.text End-Dialog		
 						Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
 						Para role inaudible sid euLI.Key1333.text End-Para				
 						Actor sid Priest End-Actor
 						Dialog sid euLI.Key1334.text End-Dialog		
-						Actor sid Choir End-Actor
+						Actor sid clChoirL End-Actor
 						Dialog sid res04 End-Dialog
 						Actor sid Priest End-Actor
 						Dialog sid euLI.Key1335.text End-Dialog		
-						Actor sid Choir End-Actor
+						Actor sid clChoirL End-Actor
 						Dialog sid euLI.Key1336.text End-Dialog		
 					End-Section		
 					Section _25_chrys
 						Actor sid Deacon End-Actor
 						Dialog sid euLI.Key1401.text End-Dialog
+						Actor sid clChoirL End-Actor
 						Dialog<i>sid res01p</>End-Dialog
 						Dialog sid euLI.Key1402.text End-Dialog			
 						Dialog<i>sid res01p</>End-Dialog
@@ -2236,6 +2244,7 @@ Status Review
 						Reading sid PaterImon.text @ver End-Reading
 						Actor sid Priest End-Actor
 						Dialog sid exc20 End-Dialog
+						Actor sid clChoirR End-Actor
 						Dialog<i>sid res04p</>End-Dialog
 						Actor sid Priest End-Actor
 						Dialog sid pet31 End-Dialog
@@ -2255,7 +2264,7 @@ Status Review
 						Dialog sid exc19 End-Dialog
 						Actor sid Priest End-Actor
 						Dialog sid euLI.Key1410.text End-Dialog				
-						Actor sid Choir End-Actor
+						Actor sid clChoirR End-Actor
 						Hymn sid euLI.Key1411.text @ver End-Hymn	
 					End-Section	
 				End-Section	
@@ -2271,7 +2280,7 @@ Status Review
 					Section _31_chrys
 						Actor sid Priest End-Actor
 						Dialog sid euLI.Key1529.text End-Dialog
-						Actor sid Choir End-Actor
+						Actor sid clChoirR End-Actor
 						Title<Tdesig>sid eu.lichrysbasil_gr_GR_cog.euLI.Key1530.title</>End-Title
 						Insert_section Selector_AfterCommunion.Chrysostom End-Insert
 					End-Section
@@ -2286,16 +2295,17 @@ Status Review
 						Para role inaudible sid EvlogitosOTheosImon.text End-Para
 						Actor sid Priest End-Actor 
 						Dialog sid PantoteNyn.text End-Dialog
-						Dialog<i>sid res04p</>End-Dialog
-						Actor sid Choir End-Actor
+						Actor sid clChoirL End-Actor
+						Dialog sid res04 End-Dialog
 						Hymn sid euLI.Key1603.text @ver End-Hymn
 					End-Section
 					Section _34_chrys
 						Actor sid Deacon End-Actor
 						Dialog sid euLI.Key1604.text End-Dialog
-						Dialog<i>sid res01p</>End-Dialog
-						Rubric sid Or End-Rubric
+						Actor sid clChoirR End-Actor
 						Dialog<i>sid DoxaSoiKyrieP</>End-Dialog
+						Rubric sid Or End-Rubric
+						Dialog<i>sid res01p</>End-Dialog
 						Dialog sid pet12 End-Dialog	
 						Dialog<i>sid res01p</>End-Dialog
 						Dialog sid euLI.Key1605.text End-Dialog	
@@ -2318,7 +2328,7 @@ Status Review
 							Title role smallcenter sid euLI.Key1702.title End-Title
 							Dialog sid euLI.Key1702.text End-Dialog
 							Dialog<i>sid res04p</>End-Dialog
-							Actor sid Choir End-Actor
+							Actor sid Choir<Trubric>sid ChoirRightBegins</>End-Actor
 							Section hymn
 								when-movable-cycle-day-is
 									71, 72, 73, 74, 75, 76, 77, 109 use:
@@ -2359,7 +2369,7 @@ Status Review
 					Section holythursday
 						Actor sid Priest End-Actor
 						Dialog sid dis00 sid dis00.holythursday sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 sid dis10 sid dis89 End-Dialog
-						Actor sid Choir End-Actor
+						Actor sid clChoirL End-Actor
 						Hymn sid euLI.Key1706.text @ver End-Hymn
 						Actor sid Priest End-Actor
 						Dialog sid DiEfchonPateron.text End-Dialog
@@ -2374,7 +2384,7 @@ Status Review
 						End-Section
 						Actor sid Priest End-Actor
 						Insert_section Selector_Dismissals.Com_Yes.part1 End-Insert
-						Actor sid Choir End-Actor
+						Actor sid clChoirL End-Actor
 						Hymn sid euLI.Key1706.text @ver End-Hymn
 						Actor sid Priest End-Actor
 						Insert_section Selector_Dismissals.Com_Yes.part2 End-Insert
@@ -2384,7 +2394,7 @@ Status Review
 						Insert_section pascha.intro End-Insert
 						Actor sid Priest End-Actor
 						Insert_section Selector_Dismissals.Com_Yes.part1 End-Insert
-						Actor sid Choir End-Actor
+						Actor sid clChoirL End-Actor
 						Hymn sid euLI.Key1706.text @ver End-Hymn
 						Actor sid Priest End-Actor
 						Insert_section Selector_Dismissals.Com_Yes.part2 End-Insert
@@ -2393,7 +2403,7 @@ Status Review
 					Section notpaschal
 						Actor sid Priest End-Actor
 						Insert_section Selector_Dismissals.Com_Yes.part1 End-Insert
-						Actor sid Choir End-Actor
+						Actor sid clChoirL End-Actor
 						Hymn sid euLI.Key1706.text @ver End-Hymn
 						Actor sid Priest End-Actor
 						Dialog sid DiEfchonPateron.text End-Dialog
@@ -2412,7 +2422,7 @@ Status Review
 						End-Section
 						Actor sid Priest End-Actor
 						Insert_section Selector_Dismissals.mealt1_Com_Yes.part1 End-Insert
-						Actor sid Choir End-Actor
+						Actor sid clChoirL End-Actor
 						Hymn sid euLI.Key1706.text @ver End-Hymn
 						Actor sid Priest End-Actor
 						Insert_section Selector_Dismissals.Com_Yes.part2 End-Insert
@@ -2422,7 +2432,7 @@ Status Review
 						Insert_section pascha.intro End-Insert
 						Actor sid Priest End-Actor
 						Insert_section Selector_Dismissals.mealt1_Com_Yes.part1 End-Insert
-						Actor sid Choir End-Actor
+						Actor sid clChoirL End-Actor
 						Hymn sid euLI.Key1706.text @ver End-Hymn
 						Actor sid Priest End-Actor
 						Insert_section Selector_Dismissals.Com_Yes.part2 End-Insert
@@ -2431,7 +2441,7 @@ Status Review
 					Section notpaschal
 						Actor sid Priest End-Actor
 						Insert_section Selector_Dismissals.mealt1_Com_Yes.part1 End-Insert
-						Actor sid Choir End-Actor
+						Actor sid clChoirL End-Actor
 						Hymn sid euLI.Key1706.text @ver End-Hymn
 						Actor sid Priest End-Actor
 						Dialog sid DiEfchonPateron.text End-Dialog
@@ -2450,7 +2460,7 @@ Status Review
 						End-Section
 						Actor sid Priest End-Actor
 						Insert_section Selector_Dismissals.me1_mealt1_Com_Yes.part1 End-Insert
-						Actor sid Choir End-Actor
+						Actor sid clChoirL End-Actor
 						Hymn sid euLI.Key1706.text @ver End-Hymn
 						Actor sid Priest End-Actor
 						Insert_section Selector_Dismissals.Com_Yes.part2 End-Insert
@@ -2460,7 +2470,7 @@ Status Review
 						Insert_section pascha.intro End-Insert
 						Actor sid Priest End-Actor
 						Insert_section Selector_Dismissals.me1_mealt1_Com_Yes.part1 End-Insert
-						Actor sid Choir End-Actor
+						Actor sid clChoirL End-Actor
 						Hymn sid euLI.Key1706.text @ver End-Hymn
 						Actor sid Priest End-Actor
 						Insert_section Selector_Dismissals.Com_Yes.part2 End-Insert
@@ -2469,7 +2479,7 @@ Status Review
 					Section notpaschal
 						Actor sid Priest End-Actor
 						Insert_section Selector_Dismissals.me1_mealt1_Com_Yes.part1 End-Insert
-						Actor sid Choir End-Actor
+						Actor sid clChoirL End-Actor
 						Hymn sid euLI.Key1706.text @ver End-Hymn
 						Actor sid Priest End-Actor
 						Dialog sid DiEfchonPateron.text End-Dialog
@@ -2489,7 +2499,7 @@ Status Review
 						End-Section
 						Actor sid Priest End-Actor
 						Insert_section Selector_Dismissals.pealt1_Com_Yes.part1 End-Insert
-						Actor sid Choir End-Actor
+						Actor sid clChoirL End-Actor
 						Hymn sid euLI.Key1706.text @ver End-Hymn
 						Actor sid Priest End-Actor
 						Insert_section Selector_Dismissals.Com_Yes.part2 End-Insert
@@ -2499,7 +2509,7 @@ Status Review
 						Insert_section pascha.intro End-Insert
 						Actor sid Priest End-Actor
 						Insert_section Selector_Dismissals.pealt1_Com_Yes.part1 End-Insert
-						Actor sid Choir End-Actor
+						Actor sid clChoirL End-Actor
 						Hymn sid euLI.Key1706.text @ver End-Hymn
 						Actor sid Priest End-Actor
 						Insert_section Selector_Dismissals.Com_Yes.part2 End-Insert
@@ -2508,7 +2518,7 @@ Status Review
 					Section notpaschal
 						Actor sid Priest End-Actor
 						Insert_section Selector_Dismissals.pealt1_Com_Yes.part1 End-Insert
-						Actor sid Choir End-Actor
+						Actor sid clChoirL End-Actor
 						Hymn sid euLI.Key1706.text @ver End-Hymn
 						Actor sid Priest End-Actor
 						Dialog sid DiEfchonPateron.text End-Dialog
@@ -2527,7 +2537,7 @@ Status Review
 						End-Section
 						Actor sid Priest End-Actor
 						Insert_section Selector_Dismissals.Com_No.part1 End-Insert
-						Actor sid Choir End-Actor
+						Actor sid clChoirL End-Actor
 						Hymn sid euLI.Key1706.text @ver End-Hymn
 						Actor sid Priest End-Actor
 						Insert_section Selector_Dismissals.Com_No.part2 End-Insert
@@ -2537,7 +2547,7 @@ Status Review
 						Insert_section pascha.intro End-Insert
 						Actor sid Priest End-Actor
 						Insert_section Selector_Dismissals.Com_No.part1 End-Insert
-						Actor sid Choir End-Actor
+						Actor sid clChoirL End-Actor
 						Hymn sid euLI.Key1706.text @ver End-Hymn
 					//	Actor sid Priest End-Actor
 						Insert_section Selector_Dismissals.Com_No.part2 End-Insert
@@ -2546,7 +2556,7 @@ Status Review
 					Section notpaschal
 						Actor sid Priest End-Actor
 						Insert_section Selector_Dismissals.Com_No.part1 End-Insert
-						Actor sid Choir End-Actor
+						Actor sid clChoirL End-Actor
 						Hymn sid euLI.Key1706.text @ver End-Hymn
 						Actor sid Priest End-Actor
 						Dialog sid DiEfchonPateron.text End-Dialog
@@ -2558,7 +2568,7 @@ Status Review
 			Section holysaturdayliturgy
 				Actor sid Priest End-Actor
 				Dialog sid dis00 sid dis00.resurrection sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 sid dis10 sid dis89 End-Dialog 
-				Actor sid Choir End-Actor
+				Actor sid clChoirL End-Actor
 				Hymn sid euLI.Key1706.text @ver End-Hymn
 				Actor sid Priest End-Actor
 				Dialog sid DiEfchonPateron.text End-Dialog
@@ -2572,7 +2582,7 @@ Status Review
 				End-Section
 				Actor sid Priest End-Actor
 				Insert_section Selector_Dismissals.dismissal_stgeorge End-Insert
-				Actor sid Choir End-Actor
+				Actor sid clChoirL End-Actor
 				Hymn sid euLI.Key1706.text @ver End-Hymn
 				Actor sid Priest End-Actor
 				Insert_section Selector_Dismissals.Com_Yes.part2 End-Insert
@@ -2585,7 +2595,7 @@ Status Review
 				End-Section
 				Actor sid Priest End-Actor
 				Insert_section Selector_Dismissals.dismissal_stmark End-Insert
-				Actor sid Choir End-Actor
+				Actor sid clChoirL End-Actor
 				Hymn sid euLI.Key1706.text @ver End-Hymn
 				Actor sid Priest End-Actor
 				Insert_section Selector_Dismissals.Com_Yes.part2 End-Insert
@@ -2598,7 +2608,7 @@ Status Review
 				End-Section
 				Actor sid Priest End-Actor
 				Insert_section Selector_Dismissals.dismissal_stathanasios End-Insert
-				Actor sid Choir End-Actor
+				Actor sid clChoirL End-Actor
 				Hymn sid euLI.Key1706.text @ver End-Hymn
 				Actor sid Priest End-Actor
 				Insert_section Selector_Dismissals.Com_Yes.part2 End-Insert
@@ -2607,7 +2617,7 @@ Status Review
 		Section tr1_me1_commemoration
 			Actor sid Priest End-Actor
 			Insert_section Selector_Dismissals.tr1_me1_Com_Yes.part1 End-Insert
-			Actor sid Choir End-Actor
+			Actor sid clChoirL End-Actor
 			Hymn sid euLI.Key1706.text @ver End-Hymn
 			Actor sid Priest End-Actor
 			Dialog sid DiEfchonPateron.text End-Dialog
