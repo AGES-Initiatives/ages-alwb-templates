@@ -1,4 +1,4 @@
-Template se.m03.d16.co2
+Template se.m03.d13.h1 
 
 Status Final
 
@@ -13,14 +13,14 @@ Status Final
 	import iTags.*
 	import bTags.*
 	import roles.*
-	
+
 	Head 
-		Set_Date month 3 day 16 year 2019 End_Date
+		Set_Date month 3 day 13 year 2019 End_Date
 			Page_Header_Even
-				center @lookup sid co2.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
+				center @lookup sid h1.pdf.header sid d.on lang L1 @date lang L1
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @lookup sid co2.pdf.header rid da.daVE.OnTheEveningBefore lang L2
+				center @lookup sid h1.pdf.header sid d.on lang L2 @date lang L2
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -31,9 +31,6 @@ Status Final
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
-	when-movable-cycle-day-is 28, 35, 42, 49 use:
-		Insert_template mc.map.co End-Insert
-		otherwise use:
-		
-	end-when
+	Insert_section HR.Lent_h1__.append End-Insert
+
 End-Template
