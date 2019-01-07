@@ -6483,15 +6483,18 @@ Status Review
 				Dialog sid StereosaiKyrios.text End-Dialog
 				Actor sid Reader End-Actor
 				Dialog sid res04 End-Dialog
-				Actor sid Priest End-Actor
-				Dialog sid verse_Theotokos.text End-Dialog
-				Actor sid Reader End-Actor
-				when-movable-cycle-day-is
-					71, 72, 73, 74, 75, 76, 77, 109 use:
-						Dialog sid pePA.Ode9H.text End-Dialog
-					otherwise use:
-						Dialog sid TinTimioteranPrayer.text End-Dialog
-				end-when
+				Section optional
+					Rubric<Toptional>sid Optional</>End-Rubric
+					Actor<Toptional>sid Priest</>End-Actor
+					Dialog<Toptional>sid verse_Theotokos.text</>End-Dialog
+					Actor<Toptional>sid Reader</>End-Actor
+					when-movable-cycle-day-is
+						71, 72, 73, 74, 75, 76, 77, 109 use:
+							Dialog<Toptional>sid pePA.Ode9H.text</>End-Dialog
+						otherwise use:
+							Dialog<Toptional>sid TinTimioteranPrayer.text</>End-Dialog
+					end-when
+				End-Section
 				Actor sid Priest End-Actor
 				Dialog sid DoxaSoiChriste2 End-Dialog
 				Actor sid Reader End-Actor
@@ -6629,6 +6632,7 @@ Status Review
 			Actor sid Reader End-Actor
 			Dialog sid res04 End-Dialog
 			Section optional
+				Rubric<Toptional>sid Optional</>End-Rubric
 				Actor<Toptional>sid Priest</>End-Actor
 				Dialog<Toptional>sid verse_Theotokos.text</>End-Dialog
 				Actor<Toptional>sid Reader</>End-Actor
