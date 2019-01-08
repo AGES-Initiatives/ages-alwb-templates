@@ -1,0 +1,150 @@
+Template se.tr.d066.co 
+
+Status NA
+
+	import bk.ho.s12.*
+	
+	import tr.d066_gr_GR_cog.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+	//	Set_Date month 3 day 9 End_Date
+			Page_Header_Even
+				center @lookup sid co.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid co.pdf.header rid da.daVE.OnTheEveningBefore lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Section Instance01
+		Insert_section ST.gc.tr End-Insert
+		Insert_section GreatCompline_01 End-Insert
+		Insert_section GreatCompline_02 End-Insert
+		Insert_section GreatCompline_03 End-Insert
+		Section troparion
+			Actor sid Reader<Trubric>sid Read</>End-Actor
+			Title<Tdesig>sid Troparion</>End-Title
+			Hymn sid tr.d065_gr_GR_cog.trHW.Troparion.text @ver media-off End-Hymn
+		End-Section
+		Insert_section GreatCompline_06 End-Insert
+		Section kontakion
+			Actor sid Reader<Trubric>sid Read</>End-Actor
+			Title<Tdesig>sid Kontakion</>End-Title
+			Hymn sid trMA.Kontakion1.text @ver media-off End-Hymn
+		End-Section
+		Insert_section GreatCompline_08 End-Insert
+		Insert_section GreatCompline_09.Part1 End-Insert
+		Insert_section GreatCompline_09.Part2 End-Insert
+		Insert_section GreatCompline_09.Part3 End-Insert
+		Section canon
+			Actor sid Choir End-Actor
+			Title role source0 sid sourceTriodion End-Title
+			Title<Tdesig>sid KanonTouTriodiou</>End-Title
+			Section ode2
+				Title<Tdesig>sid Ode2 sid Mode8 sid OEirmos</>End-Title
+				Para role heirmos sid trCO.Ode2C1H.text @ver <r>sid Twice</>End-Para
+				Verse sid verse_God.text End-Verse
+				Hymn sid trCO.Ode2C11.text @ver End-Hymn
+				Verse sid verse_God.text End-Verse
+				Hymn sid trCO.Ode2C12.text @ver End-Hymn
+				Verse sid verse_God.text End-Verse
+				Hymn sid trCO.Ode2C13.text @ver End-Hymn
+				Verse sid verse_Theotokos.text End-Verse
+				Title<Tdesig>sid Theotokion</>End-Title
+				Hymn sid trCO.Ode2C1T.text @ver End-Hymn
+				Title<Tdesig>sid EirmosAllos sid IchosOAftos</>End-Title
+				Para role heirmos sid trCO.Ode2C2H.text @ver End-Para
+				Verse sid verse_God.text End-Verse
+				Hymn sid trCO.Ode2C21.text @ver End-Hymn
+				Verse sid verse_God.text End-Verse
+				Hymn sid trCO.Ode2C22.text @ver End-Hymn
+				Verse sid verse_God.text End-Verse
+				Hymn sid trCO.Ode2C23.text @ver End-Hymn
+				Verse sid verse_God.text End-Verse
+				Hymn sid trCO.Ode2C24.text @ver End-Hymn
+				Verse sid verse_God.text End-Verse
+				Hymn sid trCO.Ode2C25.text @ver End-Hymn
+				Title sid Doxa<Tdesig>sid Triadikon</>End-Title
+				Hymn sid trCO.Ode2C2Tr.text @ver End-Hymn
+				Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+				Hymn sid trCO.Ode2C2T.text @ver End-Hymn
+			End-Section
+			Title<Tdesig>sid Kathisma</>End-Title
+			Title<Tmode>sid trCO.Kathisma11.mode</><Tmelody>sid trCO.Kathisma11.melody</>End-Title
+			Hymn sid trCO.Kathisma11.text @ver End-Hymn
+			Section ode8
+				Title<Tdesig>sid Ode8 sid Mode8 sid OEirmos</>End-Title
+				Para role heirmos sid trCO.Ode8C1H.text @ver <r>sid Twice</>End-Para
+				Verse sid verse_God.text End-Verse
+				Hymn sid trCO.Ode8C11.text @ver End-Hymn
+				Verse sid verse_God.text End-Verse
+				Hymn sid trCO.Ode8C12.text @ver End-Hymn
+				Verse sid verse_God.text End-Verse
+				Hymn sid trCO.Ode8C13.text @ver End-Hymn
+				Verse sid verse_God.text End-Verse
+				Hymn sid trCO.Ode8C14.text @ver End-Hymn
+				Verse sid verse_God.text End-Verse
+				Hymn sid trCO.Ode8C15.text @ver End-Hymn
+				Verse sid verse_God.text End-Verse
+				Hymn sid trCO.Ode8C16.text @ver End-Hymn
+				Title sid Doxa<Tdesig>sid Triadikon</>End-Title
+				Hymn sid trCO.Ode8C1Tr.text @ver End-Hymn
+				Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+				Hymn sid trCO.Ode8C1T.text @ver End-Hymn
+			End-Section
+			Section ode9
+				Title<Tdesig>sid Ode9 sid Mode8 sid OEirmos</>End-Title
+				Para role heirmos sid trCO.Ode9C1H.text @ver End-Para
+				Verse sid verse_God.text End-Verse
+				Hymn sid trCO.Ode9C11.text @ver End-Hymn
+				Verse sid verse_God.text End-Verse
+				Hymn sid trCO.Ode9C12.text @ver End-Hymn
+				Verse sid verse_God.text End-Verse
+				Hymn sid trCO.Ode9C13.text @ver End-Hymn
+				Verse sid verse_God.text End-Verse
+				Hymn sid trCO.Ode9C14.text @ver End-Hymn
+				Verse sid verse_God.text End-Verse
+				Hymn sid trCO.Ode9C15.text @ver End-Hymn
+				Verse sid verse_God.text End-Verse
+				Hymn sid trCO.Ode9C16.text @ver End-Hymn
+				Verse sid verse_God.text End-Verse
+				Hymn sid trCO.Ode9C17.text @ver End-Hymn
+				Title sid Doxa<Tdesig>sid Triadikon</>End-Title
+				Hymn sid trCO.Ode9C1Tr.text @ver End-Hymn
+				Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+				Hymn sid trCO.Ode9C1T.text @ver End-Hymn
+				Title<Tdesig>sid OEirmos</>End-Title
+				Para role heirmos sid trCO.Ode9C1H.text @ver End-Para
+			End-Section
+		End-Section
+		Insert_section GreatCompline_10 End-Insert
+		Insert_section GreatCompline_11 End-Insert
+		Insert_section GreatCompline_12 End-Insert
+		Insert_section GreatCompline_13 End-Insert
+		Insert_section GreatCompline_14 End-Insert
+		Insert_section GreatCompline_15 End-Insert
+		Insert_section GreatCompline_16 End-Insert
+		Insert_section GreatCompline_17.Part3 End-Insert	
+		Insert_section GreatCompline_18 End-Insert
+	End-Section
+
+End-Template
