@@ -65,8 +65,12 @@ Status NA
 	End-Section
 
 	Section Vespers_Readings
-		Actor sid Priest End-Actor
-		Dialog sid hi.s01_gr_GR_cog.hiVE.Key1110.text End-Dialog
+		when-triodion-day-is
+			19, 21 use:
+			otherwise use:
+				Actor sid Priest End-Actor
+				Dialog sid hi.s01_gr_GR_cog.hiVE.Key1110.text End-Dialog
+		end-when
 		Title role source sid sourceTriodion End-Title
 		Section lesson1
 			when-triodion-day-is
