@@ -1,6 +1,6 @@
 Template se.m03.d08.h36
 
-Status NA
+Status Final
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -31,7 +31,14 @@ Status NA
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
-	Insert_section HR.Lent_h3__.begin End-Insert
-	Insert_section HR.Lent_h6 End-Insert
+	when-movable-cycle-day-is
+		18 use:
+			Insert_section se.tr.d018.h36.Instance01 End-Insert
+		20 use:
+			Insert_section se.tr.d020.h36.Instance01 End-Insert
+		otherwise use:
+			Insert_section HR.Lent_h3__.begin End-Insert
+			Insert_section HR.Lent_h6 End-Insert
+	end-when
 
 End-Template
