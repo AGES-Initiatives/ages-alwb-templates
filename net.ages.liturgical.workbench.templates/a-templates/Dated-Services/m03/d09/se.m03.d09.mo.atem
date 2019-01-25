@@ -1,0 +1,84 @@
+Template se.m03.d09.mo
+
+Status Draft
+
+	import me.*
+	
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 3 day 9 year 2019 End_Date
+			Page_Header_Even
+				center @lookup sid mo.pdf.header sid d.on lang L1 @date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid mo.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+//	Preface covers
+//		Insert_template ematins.appeal End-Insert
+//	End-Preface
+
+
+	when-movable-cycle-day-is
+		1, 8, 15, 22, 29, 36, 43 use:
+			Insert_section mc.map.mo.Section01 End-Insert
+		21 use:
+			Section Instance05
+				Insert_section ST.mo.oc_me1 End-Insert
+				Insert_section MO._01_Intro_ End-Insert
+				Section lity
+					Rubric sid IfLityNotDoneAtVespers End-Rubric
+					Actor sid Choir End-Actor
+					Title role source0 sid sourceMenaion End-Title
+					Title<Tdesig>sid Idiomelon1</><Tmode>rid meMA.Lauds4.mode</>End-Title
+					Hymn rid meMA.Lauds4.text @ver media-off End-Hymn
+					Title<Tdesig>sid Idiomelon2</><Tmode>rid meMA.Lauds5.mode</>End-Title
+					Hymn rid meMA.Lauds5.text @ver media-off End-Hymn
+					Title<Tdesig>sid Idiomelon3</><Tmode>rid meMA.Lauds6.mode</>End-Title
+					Hymn rid meMA.Lauds6.text @ver media-off End-Hymn
+					Insert_section MA._16_Aposticha__.glory__.me__.gloryasglory_ End-Insert
+					Insert_section MA._16_Aposticha__.both__.me__.theotokion End-Insert
+				End-Section
+				Insert_section MO._06_troparia_apolytikion_hypakoe_.trisagion End-Insert
+				Insert_section AP.NM.me1_ End-Insert
+				Insert_section MO._12_dismissal__.append__.sunday_feastday End-Insert
+			End-Section
+		otherwise use:
+			when-name-of-day-is
+				Sunday use:
+					Section Instance02 //Sunday
+						Insert_section ST.mo.oc_me1 End-Insert
+						Insert_section MO._01_Intro_ End-Insert
+						Insert_section MO._03_triadic_canon_ End-Insert
+						Insert_section MO._04_triadic_megalynaria End-Insert
+						Insert_section MO._06_troparia_apolytikion_hypakoe_.trisagion End-Insert
+						Insert_section AP.NM.me1_ End-Insert
+						Insert_section MO._12_dismissal__.append__.sunday_feastday End-Insert
+					End-Section
+					
+				otherwise use:
+					Section Instance01 //Weekday
+					End-Section
+			end-when
+	end-when
+
+End-Template
