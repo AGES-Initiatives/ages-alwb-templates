@@ -9538,8 +9538,10 @@ Template MA
 					End-Section
 					Section kath2
 						Title sid Doxa<Tdesig>sid Eteron</>End-Title
-						Title<Tmode>rid trMA.Ode3Kathisma2.mode</><Tmelody>rid trMA.Ode3Kathisma2.melody</>End-Title
-						Hymn rid trMA.Ode3Kathisma2.text End-Hymn
+						Section hymn
+							Title<Tmode>rid trMA.Ode3Kathisma2.mode</><Tmelody>rid trMA.Ode3Kathisma2.melody</>End-Title
+							Hymn rid trMA.Ode3Kathisma2.text End-Hymn
+						End-Section
 					End-Section
 					Section kath3_theotokion
 						Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
@@ -10010,17 +10012,20 @@ Template MA
 				Title<Tmode>rid meMA.Kontakion1.mode</><Tmelody>rid meMA.Kontakion1.melody</>End-Title
 				Reading rid meMA.Kontakion1.text @ver End-Reading
 			End-Section
-			Title<Tdesig>sid OOikos</>End-Title
-			Reading rid meMA.Oikos1.text @ver End-Reading
-			when-exists 
-				rid meMA.Oikos12.text use:
-					Para role readingzero rid meMA.Oikos12.text End-Para 
-					Para role readingzero rid meMA.Oikos13.text End-Para 
-					Para role readingzero rid meMA.Oikos14.text End-Para 
-					Para role readingzero rid meMA.Oikos15.text End-Para 
-					Para role readingzero rid meMA.Oikos16.text End-Para 
-					Para role readingzero rid meMA.Oikos17.text End-Para 
-					Reading rid meMA.Oikos18.text End-Reading 
+			when-exists
+				rid meMA.Oikos1.text use:
+					Title<Tdesig>sid OOikos</>End-Title
+					Reading rid meMA.Oikos1.text @ver End-Reading
+					when-exists 
+						rid meMA.Oikos12.text use:
+							Para role readingzero rid meMA.Oikos12.text End-Para 
+							Para role readingzero rid meMA.Oikos13.text End-Para 
+							Para role readingzero rid meMA.Oikos14.text End-Para 
+							Para role readingzero rid meMA.Oikos15.text End-Para 
+							Para role readingzero rid meMA.Oikos16.text End-Para 
+							Para role readingzero rid meMA.Oikos17.text End-Para 
+							Reading rid meMA.Oikos18.text End-Reading 
+					end-when
 			end-when
 		End-Section
 		Section me2_
@@ -10473,7 +10478,7 @@ Template MA
 			End-Section
 			Section tr1o2ot_
 				Section exap1_
-					Title<Tdesig>sid TouTriodiou</>End-Title
+					Title<Tdesig>sid Exaposteilarion</><Tdesig>sid TouTriodiou</>End-Title
 					Section hymn
 						Title role source0 sid sourceTriodion End-Title
 						Title<Tmode>rid trMA.Exaposteilarion1.mode</><Tmelody>rid trMA.Exaposteilarion1.melody</>End-Title
@@ -10493,7 +10498,12 @@ Template MA
 				when-exists rid trMA.ExapTheotokion.text use:
 					Section theotokion_
 						Section hymn
-							Title<Tdesig>sid Theotokion</>End-Title
+							when-name-of-day-is
+								Wednesday, Friday use:
+									Title<Tdesig>sid Stavrotheotokion</>End-Title
+								otherwise use:
+									Title<Tdesig>sid Theotokion</>End-Title
+							end-when
 							Title<Tmode>rid trMA.ExapTheotokion.mode</><Tmelody>rid trMA.ExapTheotokion.melody</>End-Title
 							Hymn rid trMA.ExapTheotokion.text @ver End-Hymn
 						End-Section
@@ -11354,6 +11364,18 @@ Template MA
 					Hymn rid daMA.Photagogic1Beginning.text rid octrMA.Photagogic.text @ver @day D2 End-Hymn
 					Hymn rid daMA.Photagogic2Beginning.text rid octrMA.Photagogic.text @ver @day D2 End-Hymn
 					Hymn rid daMA.Photagogic3Beginning.text rid octrMA.Photagogic.text @ver @day D2 End-Hymn
+			end-when
+		End-Section
+		Section photagogic_first
+			Title role source sid sourceHorologion End-Title
+			Actor sid Choir End-Actor
+			Title<Tdesig>sid PhotagogicHymns</>End-Title
+			Title role mode rid octrMA.Photagogic.mode @day D2 End-Title
+			when-mode-of-week-is 
+				M1, M2, M3, M4, M5, M8 use:
+					Hymn rid octrMA.Photagogic.text @day D2 rid daMA.Photagogic1Ending.text @ver End-Hymn
+				M6, M7 use:
+					Hymn rid daMA.Photagogic1Beginning.text rid octrMA.Photagogic.text @ver @day D2 End-Hymn
 			end-when
 		End-Section
 		Section tr__
