@@ -1,0 +1,211 @@
+Template se.m01.d06.vl2
+
+Status NA
+
+	import client_gr_GR_cog.*
+	import eu.lichrysbasil_gr_GR_cog.*
+	import me.m01.d06_gr_GR_cog.*
+	import liturgical.verses_gr_GR_cog.*
+	import menaion.verses_gr_GR_cog.*
+	import ps_gr_GR_cog.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head
+		Set_Date month 1 day 6 year 2019 End_Date
+			Page_Header_Even
+				center @lookup sid vl.pdf.header sid me.m01.d06.onEpiphanyEve lang L2 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid vl.pdf.header sid me.m01.d06.onEpiphanyEve lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.pdf.cover.vl End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	when-name-of-day-is
+		Tuesday, Wednesday, Thursday, Friday, Saturday use:
+			Section Instance01
+				Insert_section ST.vl.ba.me End-Insert
+				Insert_section VE._01_Beginning__.liturgy End-Insert
+				Insert_section VE._02_Kekragaria__.mode2__.for6 End-Insert
+				Insert_section VE._03_Stichera__.me__.i_112234as5678910 End-Insert
+				Insert_section VE._03_Stichera__.gloryboth__.me__.gloryasgloryboth_ End-Insert
+				Insert_section VE._04_Middle__.entrance End-Insert
+				Section readings
+					Title<Tdesig>sid TaAnagnosmata</>End-Title				
+					Title<Tdesig>sid anum1</>End-Title				
+					Insert_section LE._03_Prophetologion__.r12 End-Insert
+					Title<Tdesig>sid anum2</>End-Title				
+					Insert_section LE._03_Prophetologion__.r13 End-Insert
+					Title<Tdesig>sid anum3</>End-Title				
+					Insert_section LE._03_Prophetologion__.r14 End-Insert
+					Insert_section se.m01.d06.vl.Instance01.Section01 End-Insert
+					Title<Tdesig>sid anum4</>End-Title				
+					Insert_section LE._03_Prophetologion__.r15 End-Insert
+					Title<Tdesig>sid anum5</>End-Title				
+					Insert_section LE._03_Prophetologion__.r16 End-Insert
+					Title<Tdesig>sid anum6</>End-Title				
+					Insert_section LE._03_Prophetologion__.r17 End-Insert
+					Insert_section se.m01.d06.vl.Instance01.Section02 End-Insert
+					Title<Tdesig>sid anum7</>End-Title				
+					Insert_section LE._03_Prophetologion__.r06 End-Insert
+					Title<Tdesig>sid anum8</>End-Title				
+					Insert_section LE._03_Prophetologion__.r18 End-Insert
+					Title<Tdesig>sid anum9</>End-Title				
+					Insert_section LE._03_Prophetologion__.r19 End-Insert
+					Title<Tdesig>sid anum10</>End-Title				
+					Insert_section LE._03_Prophetologion__.r20 End-Insert
+					Title<Tdesig>sid anum11</>End-Title				
+					Insert_section LE._03_Prophetologion__.r21 End-Insert
+					Title<Tdesig>sid anum12</>End-Title				
+					Insert_section LE._03_Prophetologion__.r22 End-Insert
+					Title<Tdesig>sid anum13</>End-Title				
+					Insert_section LE._03_Prophetologion__.r10 End-Insert
+				End-Section
+				Insert_section LI._06_Trisagion__.basil End-Insert
+				Insert_section LE._01_Epistle__.vespers__.menaion_ End-Insert
+				Insert_section LE._02_Gospel__.vespers__.menaion_ End-Insert
+				Rubric sid ContinueBasilLiturgy End-Rubric
+				Break line End_Break
+				Insert_section LI._08_Liturgy__.basil.part1 End-Insert
+				Insert_section LI._08_Liturgy__.basil.part2 End-Insert
+				Insert_section LI.Communion End-Insert
+				Insert_section LI._08_Liturgy__.basil.part3.communion_upto_dismissal._31_basil End-Insert
+				Insert_section LI._08_Liturgy__.basil.part3.communion_upto_dismissal._32 End-Insert
+				Insert_section LI._08_Liturgy__.basil.part3.communion_upto_dismissal._34_basil End-Insert
+				Section _35_basil_part1
+					Actor sid Priest End-Actor
+					Dialog sid euLI.Key1701.text End-Dialog
+					Actor sid Deacon End-Actor
+					Dialog sid pet00 End-Dialog
+					Dialog<i>sid res01p</>End-Dialog
+					Actor sid Priest End-Actor
+					Title role smallcenter sid euLI.Key1702.title End-Title
+					when-date-is Jan 1 use:
+						Dialog sid euLI.Key1702.basil.text End-Dialog
+					otherwise use:
+						Dialog sid euLI.Key1702.text End-Dialog
+					end-when
+					Dialog<i>sid res04p</>End-Dialog
+				End-Section	
+						
+				Section GreatWaterBlessing
+					Section block1
+						Title role desig sid meGW.title End-Title
+						Title role melody sid meGW.Idiomelon1.poet End-Title
+					//	Title role melody sid meGW.translator End-Title
+						Break line End_Break
+						Actor sid Choir End-Actor
+						Title role mode sid meGW.Idiomelon1.mode End-Title
+						Hymn sid meGW.Idiomelon1.text @ver <r>sid Thrice media-off</>End-Hymn
+						Hymn sid meGW.Idiomelon2.text @ver media-off<r>sid Twice media-off</>End-Hymn
+						Hymn sid meGW.Idiomelon3.text @ver media-off<r>sid Twice media-off</>End-Hymn
+						Title role mixed sid DoxaKaiNyn<Tmode>sid meGW.Idiomelon1.mode</>End-Title
+						Hymn sid meGW.IdiomelonGlory.text @ver media-off End-Hymn
+					End-Section
+					Section block2
+						Title role desig sid TaAnagnosmata End-Title
+						Insert_section LE._03_Prophetologion__.r04 End-Insert
+						Insert_section LE._03_Prophetologion__.r23 End-Insert
+						Insert_section LE._03_Prophetologion__.r08 End-Insert
+					End-Section
+					Insert_section LE._01_Epistle__.epiphany__.great_water End-Insert
+					Insert_section LE._02_Gospel__.epiphany__.great_water End-Insert
+					Insert_section LN.GreatLitany_Epiphany_Great_Water End-Insert
+					Section block3	
+						Rubric sid meGW.R01 End-Rubric
+						Reading sid meGW.Prayer1.text @ver End-Reading
+						Rubric sid meGW.R02 End-Rubric
+						Title role desig sid meGW.Prayer2.poet End-Title
+						Actor sid Priest End-Actor
+					//	Reading sid meGW.Prayer2.text @ver End-Reading		
+					//	Rubric sid meGW.R03 End-Rubric
+						Reading sid meGW.Prayer31.text @ver <r>sid Thrice</>End-Reading
+						Dialog<i>sid DoxaSoiKyrieP</>End-Dialog
+						Reading sid meGW.Prayer32.text @ver End-Reading		
+						Reading sid meGW.Prayer33.text @ver <r>sid Thrice</>End-Reading
+						Dialog<i>sid res04p</>End-Dialog	
+						Reading sid meGW.Prayer34.text @ver End-Reading		
+						Reading sid meGW.Prayer35.text @ver <r>sid Thrice</>End-Reading
+						Dialog<i>sid res04p</>End-Dialog	
+						Reading sid meGW.Prayer36.text @ver  End-Reading		
+						Reading sid meGW.Prayer37.text @ver <r>sid Thrice</>End-Reading		
+						Reading sid meGW.Prayer38.text @ver End-Reading	
+						Dialog<i>sid res04p</>End-Dialog	
+						Reading sid pet31 End-Reading
+						Dialog<i>sid res05p</>End-Dialog	
+						Reading sid pet32 End-Reading
+						Dialog<i>sid res03p</>End-Dialog	
+						Rubric sid meGW.R04 End-Rubric
+						Reading sid meGW.Prayer4.text @ver End-Reading
+						Rubric sid meGW.R05 End-Rubric		
+						Reading sid meGW.Prayer5.text @ver End-Reading
+						Dialog<i>sid res04p</>End-Dialog	
+						Rubric sid meGW.R06 End-Rubric
+						Actor sid Priest End-Actor
+						Title role mixed<Tdesig>sid Apolytikion</><Tmode>sid meVE.Apolytikion1.mode</>End-Title
+						Hymn sid meVE.Apolytikion1.text @ver End-Hymn
+						Actor sid Choir End-Actor
+						Hymn sid meVE.Apolytikion1.text<r>sid Twice media-off</>End-Hymn
+					End-Section	
+					Section block4
+						Rubric sid meGW.R071 End-Rubric
+						Title role desig sid meGW.R072 End-Title
+						Title role desig sid Kontakion sid Proeortion End-Title
+						Title role mixed<Tmode>sid me.m01.d02_gr_GR_cog.meLI.Kontakion1.mode</><Tmelody>sid me.m01.d02_gr_GR_cog.meLI.Kontakion1.melody</>End-Title
+						Hymn sid me.m01.d02_gr_GR_cog.meLI.Kontakion1.text @ver End-Hymn
+						Title role desig sid meGW.R073 End-Title
+						Title role desig sid Kontakion sid TisEortis End-Title
+						Title role mixed<Tmode>sid meLI.Kontakion1.mode</><Tmelody>sid meLI.Kontakion1.melody</>End-Title
+						Hymn sid meLI.Kontakion1.text @ver End-Hymn
+					End-Section
+					Section block5	
+						Rubric sid meGW.R08 End-Rubric
+						Actor sid Choir End-Actor
+						Title role mode sid meGW.Idiomelon4.mode End-Title
+						Hymn sid meGW.Idiomelon4.text @ver End-Hymn
+					//	Rubric sid meGW.R09 End-Rubric
+					End-Section	
+				End-Section
+				Break line End_Break
+						
+				Section _35_basil_part1_2
+					Actor sid Choir End-Actor
+					Media sid euLI.Key1703.text End-Media
+					Hymn sid psLI.aftercommunion.v1.text @ver<r>sid Thrice</> End-Hymn
+					Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
+					Para role inaudible sid euLI.Key1704.basil.text End-Para				
+					Actor sid Deacon End-Actor
+					Dialog sid pet00 End-Dialog		
+					Dialog<i>sid res01p</>End-Dialog
+					Actor sid Priest End-Actor
+					Dialog sid pet37 End-Dialog	
+					Dialog<i>sid res04p</>End-Dialog
+					Dialog sid DoxaSoiOTheosImon.text End-Dialog
+				End-Section
+				Insert_section LI._09_Dismissal__.nocommemoration End-Insert
+			End-Section
+
+	end-when		
+End-Template

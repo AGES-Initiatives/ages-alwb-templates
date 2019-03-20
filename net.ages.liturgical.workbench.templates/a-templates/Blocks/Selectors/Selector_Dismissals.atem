@@ -331,8 +331,11 @@ Status NA
 					Dec 25 use: Dialog sid dis00 rid meDismissal sid dis01 sid dis02 sid cl.localpatronsaint1.dismissal sid dis09 sid dis10 sid dis89 End-Dialog
 					otherwise use:
 						when-name-of-day-is
-							Sunday use:
-								Dialog sid dis00 sid dis00.resurrection sid dis01 sid dis02 sid cl.localpatronsaint1.dismissal sid dis09 sid dis10 sid dis89 End-Dialog
+							Sunday use: 
+								when-exists rid meDismissal use:
+									Dialog sid dis00 rid meDismissal sid dis00.andresurrection sid dis01 sid dis02 <r>sid cl.localpatronsaint1.dismissal</>sid dis09 sid dis10 sid dis89 End-Dialog 
+									otherwise use: Dialog sid dis00 sid dis00.resurrection sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 sid dis10 sid dis89 End-Dialog 
+								end-when	
 							otherwise use:
 								Dialog sid dis00 rid meDismissal sid dis01 sid dis02 sid cl.localpatronsaint1.dismissal sid dis09 sid dis10 sid dis89 End-Dialog
 						end-when
@@ -361,11 +364,12 @@ Status NA
 					Aug 6 use: Insert_section dismissal_00 End-Insert
 					Dec 25 use: Insert_section dismissal_00 End-Insert
 					otherwise use:
-						when-name-of-day-is Sunday use: 
-							when-exists rid meDismissal use:
-								Dialog sid dis00 rid meDismissal sid dis00.andresurrection sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 sid dis10 sid dis89 End-Dialog 
-								otherwise use: Dialog sid dis00 sid dis00.resurrection sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 sid dis10 sid dis89 End-Dialog 
-							end-when	
+						when-name-of-day-is 
+							Sunday use: 
+								when-exists rid meDismissal use:
+									Dialog sid dis00 rid meDismissal sid dis00.andresurrection sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 sid dis10 sid dis89 End-Dialog 
+									otherwise use: Dialog sid dis00 sid dis00.resurrection sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 sid dis10 sid dis89 End-Dialog 
+								end-when	
 							otherwise use:
 								Dialog sid dis00 rid meDismissal sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 sid dis10 sid dis89 End-Dialog 
 						end-when
