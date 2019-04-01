@@ -1,0 +1,413 @@
+Template se.m05.d02.ma3
+
+Status Final
+
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+	import website.preferences.titles_en_US_alwb.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 5 day 2 year 2019 End_Date
+			Page_Header_Even
+				center @lookup sid ma.pdf.header sid d.on lang L1 @date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.pdf.cover.ma.specific_2019 End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	when-movable-cycle-day-is
+		65 thru 71 use:
+			Section Instance01
+			End-Section
+			
+		72 use: //Bright Monday - St. George
+			Section Instance01_Monday
+			End-Section
+			
+		73 use: //Bright Tuesday - St. Mark
+			Section Instance01_Tuesday
+			End-Section
+			
+		74, 75, 77 use: //Bright Wed, Thu, Sat
+			Section Instance02
+				Insert_section ST.ma.pe_me1 End-Insert
+				Insert_section MA._01_Beginning__.pascha End-Insert
+				Section options
+					Section block02_odes13
+						Para role bmc_ode1_pa_canon sid mc.ode1pacanon1 End-Para
+							Insert_section CAv.ode1.pa.ti_hh12as00VV End-Insert
+						Para role emc_ode1_pa_canon sid mc.tag End-Para
+						Para role bmc_ode1_me_canon1 sid mc.ode1mecanon1 End-Para
+							Insert_section TI.c.s._00_saint_.m End-Insert
+							Insert_section CAv.ode1.append.me1.nt_123tasVVGB End-Insert
+						Para role emc_ode1_pe_canon1 sid mc.tag End-Para
+						Para role bmc_ode1_katavasia sid mc.ode1katavasia End-Para
+							Insert_section PE.Pascha_Ode1.Katavasia_Litany End-Insert
+						Para role emc_ode1_katavasia sid mc.tag End-Para
+						Para role bmc_ode3_pa_canon sid mc.ode3pacanon1 End-Para
+							Insert_section CAv.ode3.pa.ti_hh12as00VV End-Insert
+						Para role emc_ode3_pa_canon sid mc.tag End-Para
+						Para role bmc_ode3_me_canon1 sid mc.ode3mecanon1 End-Para
+							Insert_section TI.c.s._00_saint_.m End-Insert
+							Insert_section CAv.ode3.append.me1.nt_123tasVVGB End-Insert
+						Para role emc_ode3_pe_canon1 sid mc.tag End-Para
+						Para role bmc_ode3_katavasia sid mc.ode3katavasia End-Para
+							Insert_section PE.Pascha_Ode3.Katavasia_Litany End-Insert
+						Para role emc_ode3_katavasia sid mc.tag End-Para
+					End-Section
+					Section block03_kontakionposition2
+						Para role bmc_kontakion_position2 sid mc.kontakion.position2 End-Para
+							Insert_section MA._10_Canon__.hypakoe__.pascha End-Insert
+							Insert_section MA._11_Kontakion__.append__.pascha_.kontakion End-Insert
+						Para role emc_kontakion_position2 sid mc.tag End-Para
+					End-Section
+					Section block05_odes456
+						Para role bmc_ode4_pa_canon sid mc.ode4pacanon1 End-Para
+							Actor sid Choir End-Actor
+							Insert_section CAv.ode4.append.pa.ti_h123as0VVV End-Insert
+						Para role emc_ode4_pa_canon sid mc.tag End-Para
+						Para role bmc_ode4_me_canon1 sid mc.ode4mecanon1 End-Para
+							Insert_section TI.c.s._00_saint_.m End-Insert
+							Insert_section CAv.ode4.append.me1.nt_123tasVVGB End-Insert
+						Para role emc_ode4_pe_canon1 sid mc.tag End-Para
+						Para role bmc_ode4_katavasia sid mc.ode4katavasia End-Para
+							Insert_section PE.Pascha_Ode4.Katavasia_Litany End-Insert
+						Para role emc_ode4_katavasia sid mc.tag End-Para
+						Para role bmc_ode5_pa_canon sid mc.ode5pacanon1 End-Para
+							Insert_section CAv.ode5.pa.ti_hh12as00VV End-Insert
+						Para role emc_ode5_pa_canon sid mc.tag End-Para
+						Para role bmc_ode5_me_canon1 sid mc.ode5mecanon1 End-Para
+							Insert_section TI.c.s._00_saint_.m End-Insert
+							Insert_section CAv.ode5.append.me1.nt_123tasVVGB End-Insert
+						Para role emc_ode5_pe_canon1 sid mc.tag End-Para
+						Para role bmc_ode5_katavasia sid mc.ode5katavasia End-Para
+							Insert_section PE.Pascha_Ode5.Katavasia_Litany End-Insert
+						Para role emc_ode5_katavasia sid mc.tag End-Para
+						Para role bmc_ode6_pa_canon sid mc.ode6pacanon1 End-Para
+							Insert_section CAv.ode6.pa.ti_hh12as00VV End-Insert
+						Para role emc_ode6_pa_canon sid mc.tag End-Para
+						Para role bmc_ode6_me_canon1 sid mc.ode6mecanon1 End-Para
+							Insert_section TI.c.s._00_saint_.m End-Insert
+							Insert_section CAv.ode6.append.me1.nt_123tasVVGB End-Insert
+						Para role emc_ode6_pe_canon1 sid mc.tag End-Para
+						Para role bmc_ode6_katavasia sid mc.ode6katavasia End-Para
+							Insert_section PE.Pascha_Ode6.Katavasia_Litany End-Insert
+						Para role emc_ode6_katavasia sid mc.tag End-Para
+					End-Section
+					Section block06_kontakionposition1
+						Para role bmc_kontakion_position1 sid mc.kontakion.position1 End-Para
+							Insert_section MA._11_Kontakion__.me1_ End-Insert
+							Insert_section SY.Synaxarion End-Insert
+						Para role emc_kontakion_position1 sid mc.tag End-Para
+					End-Section
+					Section block07_odes78
+						Para role bmc_ode7_pa_canon sid mc.ode7pacanon1 End-Para
+							Insert_section CAv.ode7.pa.ti_h123as0VVV End-Insert
+						Para role emc_ode7_pa_canon sid mc.tag End-Para
+						Para role bmc_ode7_me_canon1 sid mc.ode7mecanon1 End-Para
+							Insert_section TI.c.s._00_saint_.m End-Insert
+							Insert_section CAv.ode7.append.me1.nt_123tasVVGB End-Insert
+						Para role emc_ode7_pe_canon1 sid mc.tag End-Para
+						Para role bmc_ode7_katavasia sid mc.ode7katavasia End-Para
+							Insert_section PE.Pascha_Ode7.Katavasia_Litany End-Insert
+						Para role emc_ode7_katavasia sid mc.tag End-Para
+						Para role bmc_ode8_pa_canon sid mc.ode8pacanon1 End-Para
+							Insert_section CAv.ode8.pa.ti_h123as0VVV End-Insert
+						Para role emc_ode8_pa_canon sid mc.tag End-Para
+						Para role bmc_ode8_me_canon1 sid mc.ode8mecanon1 End-Para
+							Insert_section TI.c.s._00_saint_.m End-Insert
+							Insert_section CAv.ode8.append.me1.nt_123tasVVGB End-Insert
+						Para role emc_ode8_pe_canon1 sid mc.tag End-Para
+						Para role bmc_ode8_katavasia sid mc.ode8katavasia End-Para
+							Insert_section PE.Pascha_Ode8.Katavasia_Litany End-Insert
+						Para role emc_ode8_katavasia sid mc.tag End-Para
+					End-Section
+					Section block11_ode9
+						Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
+						Para role bmc_ode9_pa_canon sid mc.ode9pacanon1 End-Para
+							Insert_section CAv.ode9.pa.ti_hh12asM1M2M3M4 End-Insert
+						Para role emc_ode9_pa_canon sid mc.tag End-Para
+						Para role bmc_ode9_me_canon1 sid mc.ode9mecanon1 End-Para
+							Insert_section TI.c.s._00_saint_.m End-Insert
+							Insert_section CAv.ode9.append.me1.nt_123tasVVGB End-Insert
+						Para role emc_ode9_pe_canon1 sid mc.tag End-Para
+						Para role bmc_ode9_katavasia sid mc.ode9katavasia End-Para
+							Insert_section PE.Pascha_Ode9.Katavasia_Litany End-Insert
+						Para role emc_ode9_katavasia sid mc.tag End-Para
+					End-Section
+				End-Section
+				Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+				Insert_section MA._12_Exaposteilarion__.pascha__.once_ End-Insert
+				Insert_section TI.s._00_saint_.m End-Insert
+				Insert_section MA._12_Exaposteilarion__.append__.me__.exap1 End-Insert
+				Insert_section TI.pe._00_pascha End-Insert
+				Insert_section MA._12_Exaposteilarion__.append__.pascha_.hymn End-Insert
+				Insert_section MA._13_Lauds__.mode5__.noStichologia End-Insert
+				Insert_section MA._13_Lauds__.pe__.s_123as123 End-Insert
+				Insert_section TI.stp.s._00_saint_.m End-Insert
+				Insert_section MA._13_Lauds__.me__.p_123as456 End-Insert
+				Insert_section MA._13_Lauds__.pascha End-Insert
+				Insert_section TI.g.s._00_saint_.m End-Insert
+				Insert_section MA._13_Lauds__.glory__.me__.gloryasglory_.hymn End-Insert
+				Insert_section MA._13_Lauds__.both__.pascha_ End-Insert
+				Insert_section AP.pascha__.thrice End-Insert
+				Insert_section MA._18_End__.wisdom End-Insert
+				Insert_section MA._20_Dismissal__.commemoration End-Insert
+			End-Section
+			
+		76 use: //Bright Friday
+			Section Instance03
+			End-Section
+			
+		78 use: //Thomas Sunday
+			Section Instance04
+			End-Section
+			
+		79 thru 83 use:
+			Section Instance05 //Thomas Post-feast
+			End-Section //Instance05
+			
+		84 use: //Thomas Saturday
+			Section Instance06
+			End-Section
+			
+		85, 92, 99, 106 use: //Sundays of Pascha
+			Section Instance07
+			End-Section
+			
+		86, 87, 88, 89, 90, 93, 103, 104, 107 use:
+			Section Instance08
+			End-Section
+			
+		91 use: //Leavetaking of Myr
+			Section Instance09_091
+			End-Section
+
+		105 use: //Leavetaking of Sam
+			Section Instance09_105
+			End-Section
+						
+		94, 108 use: //Leavetaking of Par and Blind
+			Section Instance10
+			End-Section
+			
+		95 use: //Wednesday Mid-Pentecost
+			Section Instance11
+				Insert_section ST.ma.pe_me End-Insert
+				Insert_section MA._01_Beginning__.mode8 End-Insert
+				Insert_section TI.a.f End-Insert
+				Insert_section AP.pe1_.hymn End-Insert
+				Insert_section TI.g.s._00_saint_.m End-Insert
+				Insert_section AP.me1_.hymn End-Insert
+				Insert_section TI.b.f End-Insert
+				Insert_section AP.pe1_.hymn End-Insert
+				Insert_section MA._03_Kathisma1__.litany End-Insert
+				Insert_section TI.k1.s._00_saint_.m End-Insert
+				Insert_section MA._03_Kathisma1__.me__.kath11_.hymn End-Insert
+				Insert_section TI.gb.f End-Insert
+				Insert_section MA._03_Kathisma1__.pe__.kath11_.hymn End-Insert
+				Insert_section TI.k2.s._00_saint_.m End-Insert
+				Insert_section MA._04_Kathisma2__.append__.me__.kath21_.hymn End-Insert
+				Insert_section TI.gb.f End-Insert
+				Insert_section MA._04_Kathisma2__.append__.pe__.kath21_.hymn End-Insert
+				Insert_section MA._07_Gospel__.no__.reader__.psalm50 End-Insert
+				Section options
+					Section block02_odes13
+						Para role bmc_ode1_pe_canon1 sid mc.ode1pecanon1 End-Para
+							Insert_section TI.c._ End-Insert
+							Insert_section CAv.ode1.pe1.ti_h12tas0VVTh End-Insert
+						Para role emc_ode1_pe_canon1 sid mc.tag End-Para
+						Para role bmc_ode1_pe_canon2 sid mc.ode1pecanon2 End-Para
+							Insert_section TI.ct.pe.c2 End-Insert
+							Insert_section CAv.ode1.append.pe2.nt_123tasVVVTh End-Insert
+						Para role emc_ode1_pe_canon2 sid mc.tag End-Para
+						Para role bmc_ode1_me_canon1 sid mc.ode1mecanon1 End-Para
+							Insert_section TI.ct.me.c1 End-Insert
+							Insert_section CAv.ode1.append.me1.nt_123tasVVGB End-Insert
+						Para role emc_ode1_me_canon1 sid mc.tag End-Para
+						Insert_section KA.append__._1 End-Insert
+						Para role bmc_ode3_pe_canon1 sid mc.ode3pecanon1 End-Para
+							Insert_section CAv.ode3.append.pe1.ti_h12tas0VVTh End-Insert
+						Para role emc_ode3_pe_canon1 sid mc.tag End-Para
+						Para role bmc_ode3_pe_canon2 sid mc.ode3pecanon2 End-Para
+							Insert_section TI.ct.pe.c2 End-Insert
+							Insert_section CAv.ode3.append.pe2.nt_123tasVVVTh End-Insert
+						Para role emc_ode3_pe_canon2 sid mc.tag End-Para
+						Para role bmc_ode3_me_canon1 sid mc.ode3mecanon1 End-Para
+							Insert_section TI.ct.me.c1 End-Insert
+							Insert_section CAv.ode3.append.me1.nt_123tasVVGB End-Insert
+						Para role emc_ode3_me_canon1 sid mc.tag End-Para
+						Insert_section KA.append__._3 End-Insert
+						Insert_section MA._10_Canon__.litanies__.ode3 End-Insert
+					End-Section
+					Section block03_kontakionposition2
+						Para role bmc_kontakion_position2 sid mc.kontakion.position2 End-Para
+							Insert_section TI.k.s._00_saint_.m End-Insert
+							Insert_section MA._11_Kontakion__.append__.me1_.konoik_nt End-Insert
+						Para role emc_kontakion_position2 sid mc.tag End-Para
+					End-Section
+					Section block04_ode3kathisma
+						Para role bmc_ode3_kathisma sid mc.ode3.kathisma End-Para
+							Actor sid Choir End-Actor
+							Insert_section TI.ka.f End-Insert
+							Insert_section MA._10_Canon__.ode3kathisma__.pe1_.hymn End-Insert
+							Insert_section TI.g.s._00_saint_.m End-Insert
+							Insert_section MA._10_Canon__.ode3kathisma__.me1_.hymn End-Insert
+							Insert_section TI.b.f End-Insert
+							Insert_section MA._10_Canon__.ode3kathisma__.append__.pe2 End-Insert
+						Para role emc_ode3_kathisma sid mc.tag End-Para
+					End-Section
+					Section block05_odes456
+						Para role bmc_ode4_pe_canon1 sid mc.ode4pecanon1 End-Para
+							Insert_section CAv.ode4.append.pe1.ti_h12tas0VVTh End-Insert
+						Para role emc_ode4_pe_canon1 sid mc.tag End-Para
+						Para role bmc_ode4_pe_canon2 sid mc.ode4pecanon2 End-Para
+							Insert_section TI.ct.pe.c2 End-Insert
+							Insert_section CAv.ode4.append.pe2.nt_123tasVVVTh End-Insert
+						Para role emc_ode4_pe_canon2 sid mc.tag End-Para
+						Para role bmc_ode4_me_canon1 sid mc.ode4mecanon1 End-Para
+							Insert_section TI.ct.me.c1 End-Insert
+							Insert_section CAv.ode4.append.me1.nt_123tasVVGB End-Insert
+						Para role emc_ode4_me_canon1 sid mc.tag End-Para
+						Insert_section KA.append__._4 End-Insert
+						Para role bmc_ode5_pe_canon1 sid mc.ode5pecanon1 End-Para
+							Insert_section CAv.ode5.append.pe1.ti_h12tas0VVTh End-Insert
+						Para role emc_ode5_pe_canon1 sid mc.tag End-Para
+						Para role bmc_ode5_pe_canon2 sid mc.ode5pecanon2 End-Para
+							Insert_section TI.ct.pe.c2 End-Insert
+							Insert_section CAv.ode5.append.pe2.nt_123tasVVVTh End-Insert
+						Para role emc_ode5_pe_canon2 sid mc.tag End-Para
+						Para role bmc_ode5_me_canon1 sid mc.ode5mecanon1 End-Para
+							Insert_section TI.ct.me.c1 End-Insert
+							Insert_section CAv.ode5.append.me1.nt_123tasVVGB End-Insert
+						Para role emc_ode5_me_canon1 sid mc.tag End-Para
+						Insert_section KA.append__._5 End-Insert
+						Para role bmc_ode6_pe_canon1 sid mc.ode6pecanon1 End-Para
+							Insert_section CAv.ode6.append.pe1.ti_h12tas0VVTh End-Insert
+						Para role emc_ode6_pe_canon1 sid mc.tag End-Para
+						Para role bmc_ode6_pe_canon2 sid mc.ode6pecanon2 End-Para
+							Insert_section TI.ct.pe.c2 End-Insert
+							Insert_section CAv.ode6.append.pe2.nt_123tasVVVTh End-Insert
+						Para role emc_ode6_pe_canon2 sid mc.tag End-Para
+						Para role bmc_ode6_me_canon1 sid mc.ode6mecanon1 End-Para
+							Insert_section TI.ct.me.c1 End-Insert
+							Insert_section CAv.ode6.append.me1.nt_123tasVVGB End-Insert
+						Para role emc_ode6_me_canon1 sid mc.tag End-Para
+						Insert_section KA.append__._6 End-Insert
+						Insert_section MA._10_Canon__.litanies__.ode6 End-Insert
+					End-Section
+					Section block06_kontakionposition1
+						Para role bmc_kontakion_position1 sid mc.kontakion.position1 End-Para
+							Actor sid Reader End-Actor
+							Insert_section TI.k.f End-Insert
+							Insert_section MA._11_Kontakion__.append__.pe_.konoik_nt_ End-Insert
+							Insert_section SY.Synaxarion End-Insert
+						Para role emc_kontakion_position1 sid mc.tag End-Para
+					End-Section
+					Section block07_odes78
+						Para role bmc_ode7_pe_canon1 sid mc.ode7pecanon1 End-Para
+							Insert_section CAv.ode7.pe1.ti_h12tas0VVTh End-Insert
+						Para role emc_ode7_pe_canon1 sid mc.tag End-Para
+						Para role bmc_ode7_pe_canon2 sid mc.ode7pecanon2 End-Para
+							Insert_section TI.ct.pe.c2 End-Insert
+							Insert_section CAv.ode7.append.pe2.nt_123tasVVVTh End-Insert
+						Para role emc_ode7_pe_canon2 sid mc.tag End-Para
+						Para role bmc_ode7_me_canon1 sid mc.ode7mecanon1 End-Para
+							Insert_section TI.ct.me.c1 End-Insert
+							Insert_section CAv.ode7.append.me1.nt_123tasVVGB End-Insert
+						Para role emc_ode7_me_canon1 sid mc.tag End-Para
+						Insert_section KA.append__._7 End-Insert
+						Para role bmc_ode8_pe_canon1 sid mc.ode8pecanon1 End-Para
+							Insert_section CAv.ode8.append.pe1.ti_h12tas0VVTh End-Insert
+						Para role emc_ode8_pe_canon1 sid mc.tag End-Para
+						Para role bmc_ode8_pe_canon2 sid mc.ode8pecanon2 End-Para
+							Insert_section TI.ct.pe.c2 End-Insert
+							Insert_section CAv.ode8.append.pe2.nt_123tasVVVTh End-Insert
+						Para role emc_ode8_pe_canon2 sid mc.tag End-Para
+						Para role bmc_ode8_me_canon1 sid mc.ode8mecanon1 End-Para
+							Insert_section TI.ct.me.c1 End-Insert
+							Insert_section CAv.ode8.append.me1.nt_123tasVVGB End-Insert
+						Para role emc_ode8_me_canon1 sid mc.tag End-Para
+						Insert_section KA.append__._8 End-Insert
+					End-Section
+					Section block11_ode9
+						Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
+						Para role bmc_ode9_pe_canon1 sid mc.ode9pecanon1 End-Para
+							Insert_section CAv.ode9.pe1.ti_h12tas0VVTh End-Insert
+						Para role emc_ode9_pe_canon1 sid mc.tag End-Para
+						Para role bmc_ode9_pe_canon2 sid mc.ode9pecanon2 End-Para
+							Insert_section TI.ct.pe.c2 End-Insert
+							Insert_section CAv.ode9.append.pe2.nt_123tasVVVTh End-Insert
+						Para role emc_ode9_pe_canon2 sid mc.tag End-Para
+						Para role bmc_ode9_me_canon1 sid mc.ode9mecanon1 End-Para
+							Insert_section TI.ct.me.c1 End-Insert
+							Insert_section CAv.ode9.append.me1.nt_123tasVVGB End-Insert
+						Para role emc_ode9_me_canon1 sid mc.tag End-Para
+						Insert_section KA.append__._9 End-Insert
+					End-Section
+				End-Section
+				Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+				Insert_section MA._12_Exaposteilarion__.pe__.exap1 End-Insert
+				Insert_section TI.s._00_saint_.m End-Insert
+				Insert_section MA._12_Exaposteilarion__.append__.me__.exap1 End-Insert
+				Insert_section TI.f End-Insert
+				Insert_section MA._12_Exaposteilarion__.append__.pe__.exap1 End-Insert
+				Insert_section MA._13_Lauds__.mode4__.for6_nocollapse End-Insert
+				Insert_section TI.stp.f End-Insert
+				Insert_section MA._13_Lauds__.pe__.p_123as123 End-Insert
+				Insert_section TI.s._00_saint_.m End-Insert
+				Insert_section MA._13_Lauds__.me__.p_123as456 End-Insert
+				Insert_section MA._13_Lauds__.glory__.me__.gloryasglory_ End-Insert
+				Insert_section TI.b.f End-Insert
+				Insert_section MA._13_Lauds__.both__.pe__.gloryasboth_.hymn End-Insert
+				Insert_section MA._14_Doxology__.great End-Insert
+				Insert_section TI.a.f End-Insert
+				Insert_section AP.pe1_.hymn End-Insert
+				Insert_section MA2._19_End_Options End-Insert
+				Insert_section MA._20_Dismissal__.commemoration End-Insert
+			End-Section
+			
+		96, 97, 98, 100, 101 use: 
+			Section Instance12
+			End-Section
+			
+		102 use: //Leavetaking Mid-Pentecost
+			Section Instance13
+			End-Section
+			
+		109 use: //Leavetaking Pascha
+			Section Instance14
+			End-Section
+			
+		110 use: //Ascension
+			Section Instance15
+				Insert_section se.pe.d110.ma.Instance01 End-Insert
+			End-Section
+
+		111, 112 use:
+			Section Instance16
+			End-Section
+			
+	end-when
+End-Template
