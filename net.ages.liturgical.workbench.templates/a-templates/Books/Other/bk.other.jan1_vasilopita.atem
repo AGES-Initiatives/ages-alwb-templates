@@ -1,0 +1,86 @@
+Template bk.other.jan1_vasilopita 
+
+Status Draft
+
+	import client_gr_GR_cog.*
+	import hi.s16_gr_GR_cog.*
+	import ho.s03_gr_GR_cog.*
+	import liturgical.verses_gr_GR_cog.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Template_Title @text "Cutting of the Vasilopita" End_Title
+		Set_Date month 1 day 1 End_Date
+			Page_Header_Even
+				center @text "Ἀκολουθία τῆς Βασιλόπητας" 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @text "Cutting of the Vasilopita"
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+/*	Preface Covers
+		Insert_template ematins.cover.sp End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+ */ 
+
+	Section section01
+		Title<Tdesig>sid hiCE.Key_0103.title</>End-Title
+		Break line End_Break
+		
+		Actor sid Deacon End-Actor
+		Dialog sid res08 End-Dialog
+		Actor sid Priest End-Actor
+		Dialog sid enarxis01 End-Dialog
+		Dialog<i>sid res04p</>End-Dialog
+		Actor sid Choir End-Actor
+		Insert_section TI.a.s._00_saint_.m End-Insert
+		Insert_section AP.me1_.hymn End-Insert
+		Actor sid Deacon End-Actor
+		Dialog sid pet17 End-Dialog
+		Dialog<i>sid res06p</>End-Dialog
+		Dialog sid pet18 End-Dialog
+		Dialog<i>sid res06p</>End-Dialog
+		Dialog sid pet19a sid cl.bishop1.rank sid cl.bishop1.name_p sid pet19b End-Dialog
+		Dialog<i>sid res06p</>End-Dialog
+
+//litany needs work
+
+		Dialog sid pet33 End-Dialog
+		Dialog<i>sid res06p</>End-Dialog
+		Dialog sid pet34 End-Dialog
+		Dialog<i>sid res06p</>End-Dialog
+		Actor sid Priest End-Actor
+		Dialog sid pet35 End-Dialog
+		Dialog<i>sid res04p</>End-Dialog
+		Actor sid Deacon End-Actor
+		Dialog sid pet00 End-Dialog
+		Dialog<i>sid res01p</>End-Dialog
+		Actor sid Priest End-Actor
+		Title<Tdesig>sid hiCE.Key_0315.title</>End-Title
+		Para role prayer sid hiCE.Key_0103.text End-Para
+		Dialog<i>sid res04p</>End-Dialog
+		Insert_section MA._20_Dismissal__.commemoration End-Insert		
+	End-Section
+
+
+End-Template
