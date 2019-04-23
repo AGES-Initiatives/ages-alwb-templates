@@ -5,7 +5,6 @@ Template LE
 	import ho.s10_gr_GR_cog.*
 	import le.ep.mc.*
 	import le.ep.me.*
-	import le.ep.va.*
 	import le.go.eo.*
 	import le.go.lu.*
 	import le.go.mc.*
@@ -701,6 +700,30 @@ Template LE
 						Actor sid Hierarch End-Actor
 						Dialog sid epi02 End-Dialog	
 					End-Section	
+				End-Section
+			End-Section
+			Section consecration_
+				Section prokeimenon
+					Title role desig sid OApostolos End-Title
+					Actor sid Priest End-Actor
+					Dialog sid exc19 End-Dialog
+					Actor sid Deacon End-Actor
+					Insert_section bk.ap.va.sections.forConsecration.ep_title End-Insert
+					Insert_section bk.ap.va.sections.forConsecration.ep_prokeimenon End-Insert
+					Insert_section bk.ap.va.sections.forConsecration.ep_verse End-Insert
+				End-Section
+				Section lesson
+					Actor sid Priest End-Actor
+					Dialog sid exc17 End-Dialog		
+					Actor sid Deacon End-Actor
+					Dialog sid epi01a sid le.ep.va.consecration_gr_GR_cog.levaLI.Epistle.book_string sid epi01b End-Dialog
+					Actor sid Priest End-Actor
+					Dialog sid exc19 End-Dialog
+					Actor sid Deacon End-Actor
+					Title role chapverse sid le.ep.va.consecration_gr_GR_cog.levaLI.Epistle.chapverse End-Title		
+					Reading sid le.ep.va.consecration_gr_GR_cog.levaLI.Epistle.text @ver End-Reading
+					Actor sid Hierarch End-Actor
+					Dialog sid epi02 End-Dialog
 				End-Section
 			End-Section
 			Section cross__
@@ -4069,6 +4092,30 @@ Template LE
 					End-Section	//Lesson
 				End-Section
 			End-Section
+			Section consecration
+				Title role desig sid ToTheionEvangelion End-Title
+				Actor sid Choir End-Actor
+				Hymn sid Allilouia3.text @ver End-Hymn
+				Actor sid Priest End-Actor
+				Dialog sid exc17 sid exc18 sid gos02 End-Dialog
+				Actor sid Hierarch End-Actor
+				Dialog sid pet31 End-Dialog
+				Actor sid Choir End-Actor						
+				Dialog sid res05 End-Dialog
+				Actor sid Priest End-Actor
+				Dialog sid gos03a sid le.go.va.consecration_gr_GR_cog.levaLI.Gospel.book_string sid gos03b sid exc19 End-Dialog		
+			//	Actor sid Priest End-Actor
+			//	Dialog sid exc19 End-Dialog
+				Actor sid Choir End-Actor						
+				Dialog sid DoxaSoiKyrie End-Dialog	
+				Actor sid Hierarch End-Actor
+				Title role chapverse sid le.go.va.consecration_gr_GR_cog.levaLI.Gospel.chapverse End-Title
+				Reading sid le.go.va.consecration_gr_GR_cog.levaLI.Gospel.text @ver End-Reading
+			//	Actor sid Hierarch End-Actor
+			//	Dialog sid gos04 End-Dialog
+				Actor sid Choir End-Actor						
+				Dialog sid DoxaSoiKyrie End-Dialog	
+			End-Section	
 			Section cross__
 				Section satBC_
 					Section alleluia
