@@ -1,6 +1,6 @@
 Template bk.ho.s14
 
-Status Draft
+Status NA
 
 	import client_gr_GR_cog.*
 	import eu.lichrysbasil_gr_GR_cog.*
@@ -18,38 +18,66 @@ Status Draft
 	import bTags.*
 	import roles.*
 
-	Actor sid Priest End-Actor
-	Dialog sid enarxis01 End-Dialog
-	Dialog sid res04p End-Dialog
-	Reading sid pePA.Hours1.text End-Reading
-	Actor sid Reader End-Actor
-	Para role chant sid pePA.Hours1.text End-Para
-	Para role chant sid pePA.Hours1.text End-Para
-	Para role chant sid pePA.Hours2.text End-Para
-	Para role chant sid pePA.Hours2.text End-Para
-	Para role chant sid pePA.Hours2.text End-Para
-	Para role chant sid pePA.Hours3.text End-Para
-	Para role chant sid pePA.Hours4.text End-Para
-	Para role chant sid pePA.Hours5.text End-Para
-	Title sid Doxa End-Title
-	Para role chant sid pePA.Hours6.text End-Para
-	Title sid KaiNyn End-Title
-	Para role chant sid pePA.Hours7.text End-Para
-	Reading sid res01<r>sid Forty</>sid Doxa sid KaiNyn End-Reading
-	Reading sid TinTimioteranPrayer.text End-Reading
-	Reading sid EnOnomatiKyriou.text End-Reading 
-	Actor sid Priest End-Actor
-	Dialog sid DiEfchonPateron.text End-Dialog
-	Actor sid Reader End-Actor
-	Dialog sid res04 End-Dialog
-	Para role chant sid pePA.Hours1.text End-Para
-	Para role chant sid pePA.Hours1.text End-Para
-	Para role chant sid pePA.Hours1.text End-Para
-	Reading sid res06 sid Evlogison End-Reading
-	Actor sid Priest End-Actor
-	Dialog sid dis00 sid dis00.resurrection sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 sid dis10 sid dis89 End-Dialog 
-	Hymn sid pePA.ChristIsRisen.text @ver End-Hymn
-	Actor sid Choir End-Actor
-	Hymn sid pePA.ChristIsRisen.text @ver media-off End-Hymn
-	
+	Head 
+	//	Set_Date month 5 day 4 year 2019 End_Date
+			Page_Header_Even
+				center @lookup sid h13.pdf.header lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid h13.pdf.header lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Section Instance01
+		Para<bnr>sid book.Pentecostarion.name</>End-Para
+		Reading sid pe.d071_gr_GR_cog.peShortCommemoration1.text End-Reading
+		Break line End_Break
+		Title<Tdesig>sid pePA.Hours.title</>End-Title
+		Rubric sid pePA.Hours.R01 End-Rubric
+		Actor sid Priest End-Actor
+		Dialog sid enarxis01 End-Dialog
+		Dialog sid res04p End-Dialog
+		Reading sid pePA.Hours1.text End-Reading
+		Actor sid Reader End-Actor
+		Para role chant sid pePA.Hours1.text End-Para
+		Para role chant sid pePA.Hours1.text End-Para
+		Para role chant sid pePA.Hours2.text End-Para
+		Para role chant sid pePA.Hours2.text End-Para
+		Para role chant sid pePA.Hours2.text End-Para
+		Para role chant sid pePA.Hours3.text End-Para
+		Para role chant sid pePA.Hours4.text End-Para
+		Para role chant sid pePA.Hours5.text End-Para
+		Title sid Doxa End-Title
+		Para role chant sid pePA.Hours6.text End-Para
+		Title sid KaiNyn End-Title
+		Para role chant sid pePA.Hours7.text End-Para
+		Reading sid res01<r>sid Forty</>sid Doxa sid KaiNyn End-Reading
+		Reading sid TinTimioteranPrayer.text End-Reading
+		Reading sid EnOnomatiKyriou.text End-Reading 
+		Actor sid Priest End-Actor
+		Dialog sid DiEfchonPateron.text End-Dialog
+		Actor sid Reader End-Actor
+		Dialog sid res04 End-Dialog
+		Rubric sid pePA.Hours.R03 End-Rubric
+		Actor sid Priest End-Actor
+		Para role prayer sid pe.d121_gr_GR_cog.pePE.Prayer21.text sid pe.d121_gr_GR_cog.pePE.Prayer22.text End-Para
+		Actor sid Reader End-Actor
+		Dialog sid res04 End-Dialog
+		Para role chant sid pePA.Hours1.text End-Para
+		Para role chant sid pePA.Hours1.text End-Para
+		Para role chant sid pePA.Hours1.text End-Para
+		Reading sid res06 sid Evlogison End-Reading
+		Actor sid Priest End-Actor
+		Dialog sid dis00 sid dis00.resurrection sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 sid dis10 sid dis89 End-Dialog 
+		Dialog sid pePA.ChristIsRisen.text @ver End-Dialog
+		Actor sid Reader End-Actor
+		Dialog sid PaschaDialog6.text @ver End-Dialog
+	End-Section	
 End-Template
