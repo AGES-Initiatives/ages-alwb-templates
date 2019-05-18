@@ -39,6 +39,50 @@ Status NA
 
 	Section _01_Beginning__ // Enarxis thru Peace Litany
 		Section Hierarchical__
+			Section with_anoixantaria
+				when-movable-cycle-day-is
+					72, 73, 74, 75, 76, 77, 109 use:
+						Insert_section vespers.pascha End-Insert
+					otherwise use:
+						Section enarxis
+							Insert_section vespers.enarxis End-Insert
+						End-Section
+						Section introductorypsalm
+							when-movable-cycle-day-is 78 thru 108 use:
+								Actor sid Hierarch End-Actor
+								Insert_section PE.ChristIsRisen.once End-Insert
+								Actor sid Choir End-Actor
+								Insert_section PE.ChristIsRisen.twice End-Insert
+								Actor sid Reader End-Actor
+							otherwise use:
+								Actor sid Hierarch End-Actor
+								Reading sid DefteProskinisomen1 End-Reading
+								Reading sid DefteProskinisomen2 End-Reading
+								Reading sid DefteProskinisomen3 End-Reading
+							end-when
+					//		Media sid hoVE.Ps103.text End-Media
+							Insert_section VI._01_Beginning__.with_anoixantaria.introductorypsalm.Psalm_103_Verses End-Insert
+							Insert_section VI._01_Beginning__.with_anoixantaria.introductorypsalm.anoixantaria End-Insert
+						End-Section
+						Section prayers	
+							Break page End_Break
+							Insert_section VE.lamplighting_prayers End-Insert
+							Break page End_Break
+						End-Section
+						Section litany
+							Actor sid Deacon End-Actor
+							when-movable-cycle-day-is
+								121 use:
+									Insert_section LN.GreatLitany_Vespers_HolySpirit01 End-Insert
+								otherwise use:
+									Insert_section LN.GreatLitany01 End-Insert
+							end-when
+							Actor sid Priest End-Actor
+							Dialog sid exc01 End-Dialog
+							Dialog<i>sid res04p</>End-Dialog
+						End-Section //Part3
+				end-when
+			End-Section
 			Section vespers
 				when-movable-cycle-day-is
 					72, 73, 74, 75, 76, 77, 109 use:
@@ -3886,6 +3930,9 @@ Status NA
 				End-Section
 				Section me1mealt2
 					Insert_section LN.Ektenia03_Hierarchical_me1mealt2 End-Insert
+				End-Section
+				Section pe
+					Insert_section LN.Ektenia03_Hierarchical_pe End-Insert
 				End-Section
 				Section pealt1
 					Insert_section LN.Ektenia03_Hierarchical_pealt1 End-Insert
