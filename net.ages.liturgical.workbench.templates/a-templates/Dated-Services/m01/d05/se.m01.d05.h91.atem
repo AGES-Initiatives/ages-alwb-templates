@@ -15,7 +15,7 @@ Status Final
 	import roles.*
 
 	Head 
-		Set_Date month 1 day 5 year 2019 End_Date
+		Set_Date month 1 day 5 year 2020 End_Date
 	//		Page_Header_Even
 	//			center @lookup sid li.pdf.header sid d.on lang L1 @date lang L1
 	//		End_Page_Header_Even
@@ -43,9 +43,16 @@ Status Final
 	//	Title sid horizontal_line.solid1 End-Title
 	//	Break line End_Break
 		Title<i>sid TaAnagnosmataTouMinologiou</>End-Title
-		Insert_section LE._01_Epistle__.textonly__.epiphany__.satBE_.title End-Insert
-		Insert_section LE._01_Epistle__.textonly__.epiphany__.satBE_.lesson End-Insert
-		Insert_section LE._02_Gospel__.textonly__.epiphany__.satBE_.lesson End-Insert
+		when-name-of-day-is
+			Saturday use:
+				Insert_section LE._01_Epistle__.textonly__.epiphany__.satBE_.title End-Insert
+				Insert_section LE._01_Epistle__.textonly__.epiphany__.satBE_.lesson End-Insert
+				Insert_section LE._02_Gospel__.textonly__.epiphany__.satBE_.lesson End-Insert
+			Sunday use:
+				Insert_section LE._01_Epistle__.textonly__.epiphany__.sunBE_.title End-Insert
+				Insert_section LE._01_Epistle__.textonly__.epiphany__.sunBE_.lesson End-Insert
+				Insert_section LE._02_Gospel__.textonly__.epiphany__.sunBE_.lesson End-Insert
+		end-when	
 		Title sid horizontal_line.solid1 End-Title
 		Break line End_Break
 		Insert_section SY.Synaxarion End-Insert
