@@ -1,10 +1,18 @@
 Template se.m07.d13.li
 
-Status NA
+Status Final
 
-import da.*
-import template.titles_gr_GR_cog.*
-
+	import actors_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+	
 	Head 
 		Set_Date month 7 day 13 End_Date
 			Page_Header_Even
@@ -22,15 +30,30 @@ import template.titles_gr_GR_cog.*
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
-when-name-of-day-is
-	Sunday use:
-		Insert_section se.m07.dHF.li.Instance01 End-Insert
-	
-	Saturday use:
-	
-	
-		otherwise use:
+	when-name-of-day-is
+		Sunday use:
+			Insert_section se.m07.dHF.li.Instance01 End-Insert
 		
-end-when		
+		otherwise use:
+			Section Instance01
+				Insert_section ST.li.me1 End-Insert
+				Insert_section LI._01_Enarxis__.daily End-Insert
+				Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
+				Insert_section AP.me1_ End-Insert
+				Insert_section LI._04_Entrance__.choir End-Insert
+				Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
+				Section hymns
+					Insert_section AP.me1_ End-Insert
+					Insert_section LI._05_AfterEntranceHymns__.local End-Insert
+					Insert_section KO.weekday End-Insert
+				End-Section
+				Insert_section LI._06_Trisagion__.chrys End-Insert
+				Insert_section LE._01_Epistle__.menaion_ End-Insert
+				Insert_section LE._02_Gospel__.daily_ End-Insert
+				Insert_section LI._08_Liturgy__.chrys_default End-Insert
+				Insert_section LI._09_Dismissal__.commemoration End-Insert
+			End-Section
+			
+	end-when		
 
 End-Template
