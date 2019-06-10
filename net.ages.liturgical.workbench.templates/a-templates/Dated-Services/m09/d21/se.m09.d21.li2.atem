@@ -1,4 +1,4 @@
-Template se.m01.d30.li2
+Template se.m09.d21.li2
 
 Status Final
 
@@ -14,8 +14,8 @@ Status Final
 	import bTags.*
 	import roles.*
 
-	Head
-		Set_Date month 1 day 30 year 2020 End_Date
+	Head 
+		Set_Date month 9 day 21 End_Date
 			Page_Header_Even
 				center @lookup sid li.pdf.header sid d.on lang L1 @date lang L1
 			End_Page_Header_Even
@@ -31,28 +31,31 @@ Status Final
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
-	when-name-of-day-is 
-		Sunday use:	
+
+
+	when-name-of-day-is
+		Sunday use:
 			Section Instance02 //Sunday
 				Insert_section ST.li.oc_me1 End-Insert
 				Insert_section LI._10_Parts__._1_antiphons__.sundays_weekdays_feasts End-Insert
 					Break line End_Break
 					Break page End_Break
 				Insert_section LI._10_Parts__._2_typika__.rubrics End-Insert
-				Insert_section LI._10_Parts__._3_beatitudes__.sunday__.b_123Tas5678 End-Insert
-				Insert_section LI._03_Beatitudes__.append__.me1c3__.ode6_123Tas910GB End-Insert
+				Insert_section LI._10_Parts__._3_beatitudes__.sunday__.b_123Tas1234 End-Insert
+				Insert_section LI._03_Beatitudes__.append__.festal__.sep14__.ode3c1_as5678 End-Insert
+				Insert_section LI._03_Beatitudes__.append__.festal__.sep14__.ode6c1_as910GB End-Insert
 					Break line End_Break
 					Break page End_Break
 				Insert_section LI._10_Parts__._4_entrance End-Insert
 					Break line End_Break
 				Title role desig sid YmnoiMetaTinMikranEisodon End-Title
-				Insert_section se.m01.d30.li.Instance02.hymns End-Insert
+				Insert_section se.m09.d21.li.Instance02.hymns End-Insert
 					Break line End_Break
 				Insert_section LI._10_Parts__._5_trisagionhymn__.chrys End-Insert
 					Break line End_Break
-				Insert_section LE._01_Epistle__.textonly__.menaion End-Insert
+				Insert_section LE._01_Epistle__.textonly__.cross__.sunAC_ End-Insert
 					Break line End_Break
-				Insert_section LE._02_Gospel__.textonly__.daily End-Insert
+				Insert_section LE._02_Gospel__.textonly__.cross__.sunAC_ End-Insert
 					Break line End_Break
 				Title<Tdesig>sid YmnosEisTinTheotokon</>End-Title
 				Insert_section Selector_Megalynarion.Chrysostom End-Insert
@@ -63,33 +66,41 @@ Status Final
 				Insert_section Selector_AfterCommunion.Chrysostom End-Insert
 					Break line End_Break
 				Title<Tdesig>sid eu.lichrysbasil_gr_GR_cog.euLI.Key1700.title</>End-Title
-				Insert_section Selector_Dismissals.Com_Yes.part1 End-Insert
+				Insert_section Selector_Dismissals.Com_No.part1 End-Insert
 					Break line End_Break	
 				Insert_section LI._10_Parts__._9_fasting_ End-Insert
-			End-Section //Sunday
-		
+			End-Section
+			
 		otherwise use:
-			Section Instance01 //weekday
+			Section Instance01 //Weekday
 				Insert_section ST.li.me1 End-Insert
-				Insert_section LI._10_Parts__._1_antiphons__.celebrated_saint End-Insert
-				Insert_section AP.me1_ End-Insert
+				Insert_section LI._10_Parts__._1_antiphons__.sundays_weekdays_feasts End-Insert
 					Break line End_Break
-					Break page End_Break
-				Insert_section LI._10_Parts__._2_typika__.rubrics End-Insert
-				Insert_section LI._10_Parts__._3_beatitudes__.me1c2__.ode3_123Tas5678 End-Insert
-				Insert_section LI._03_Beatitudes__.append__.me1c3__.ode6_123Tas910GB End-Insert
-					Break line End_Break
-					Break page End_Break
 				Insert_section LI._10_Parts__._4_entrance End-Insert
 					Break line End_Break
 				Title role desig sid YmnoiMetaTinMikranEisodon End-Title
-				Insert_section se.m01.d30.li.Instance01.hymns End-Insert
+				Insert_section se.m09.d21.li.Instance01.hymns End-Insert
 					Break line End_Break
 				Insert_section LI._10_Parts__._5_trisagionhymn__.chrys End-Insert
 					Break line End_Break
-				Insert_section LE._01_Epistle__.textonly__.menaion End-Insert
-					Break line End_Break
-				Insert_section LE._02_Gospel__.textonly__.menaion End-Insert
+				when-name-of-day-is
+					Saturday use:
+						Insert_section LE._01_Epistle__.textonly__.cross__.satAC_ End-Insert
+							Break line End_Break
+						Insert_section LE._02_Gospel__.textonly__.cross__.satAC_ End-Insert
+					otherwise use:
+						Section weekday
+							Insert_section LE._01_Epistle__.textonly__.daily.title End-Insert
+								Set_Date month 9 day 14 End_Date
+								Insert_section LE._01_Epistle__.textonly__.menaion.prokeimenon End-Insert
+							Set_Date month 9 day 21 End_Date
+							Insert_section LE._01_Epistle__.textonly__.daily.lesson End-Insert
+								Set_Date month 9 day 14 End_Date
+								Insert_section LE._02_Gospel__.textonly__.menaion.alleluia End-Insert
+							Set_Date month 9 day 21 End_Date
+							Insert_section LE._02_Gospel__.textonly__.daily.lesson End-Insert
+						End-Section
+				end-when
 					Break line End_Break
 				Title<Tdesig>sid YmnosEisTinTheotokon</>End-Title
 				Insert_section Selector_Megalynarion.Chrysostom End-Insert
@@ -100,10 +111,10 @@ Status Final
 				Insert_section Selector_AfterCommunion.Chrysostom End-Insert
 					Break line End_Break
 				Title<Tdesig>sid eu.lichrysbasil_gr_GR_cog.euLI.Key1700.title</>End-Title
-				Insert_section Selector_Dismissals.Com_Yes.part1 End-Insert
+				Insert_section Selector_Dismissals.Com_No.part1 End-Insert
 					Break line End_Break	
 				Insert_section LI._10_Parts__._9_fasting_ End-Insert
-			End-Section	
-	end-when
+			End-Section
+	end-when			
 
 End-Template
