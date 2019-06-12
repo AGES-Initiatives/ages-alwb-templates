@@ -15,7 +15,7 @@ Status NA
 	import roles.*
 
 	Head 
-		Set_Date month 2 day 15 year 2019 End_Date
+		Set_Date month 2 day 15 year 2020 End_Date
 			Page_Header_Even
 				center @lookup sid ma.pdf.header sid d.on lang L1 @date lang L1
 			End_Page_Header_Even
@@ -37,36 +37,43 @@ Status NA
 	End-Preface
 
 	when-movable-cycle-day-is 
-		1, 8  use: Insert_section mc.map.ma.Section01 End-Insert
-		14 thru 71 use: Insert_section mc.map.ma.Section01 End-Insert
+		1, 8  use: 
+			Insert_section mc.map.ma.Section01 End-Insert
+		14 thru 71 
+			use: Insert_section mc.map.ma.Section01 End-Insert
 		otherwise use:
-			Section Instance01
-				Insert_section ST.ma.oc_me End-Insert
-				Insert_section MA._01_Beginning__.mode3 End-Insert
-				Insert_section AP.ganame.Feb15__.onesimus_ End-Insert
-				Insert_section TI.g.r End-Insert
-				Insert_section AP.both__.theotokion__.mode3_ End-Insert
-				Insert_section MA._03_Kathisma1__.oc__.weekday123 End-Insert
-				Insert_section MA._07_Gospel__.no__.reader__.intro_psalm50 End-Insert
-				Insert_section MA._11_Kontakion__.append__.me1_ End-Insert
-				Insert_section SY.Synaxarion End-Insert
-				Insert_section KA.choir__._1345678 End-Insert
-				Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
-				Insert_section MA._10_Canon__.magnificat__.modeofkatavasia End-Insert
-				Insert_section KA.append__._9 End-Insert
-				Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
-				Insert_section MA._12_Exaposteilarion__.me__.exap123t End-Insert
-				Insert_section MA._13_Lauds__.read__.all End-Insert
-				Insert_section MA._14_Doxology__.append_small End-Insert
-				Insert_section MA._15_Litanies__.aftersmalldoxology End-Insert
-				Insert_section MA._16_Aposticha__.oc_.aposticha End-Insert
-				Insert_section MA._16_Aposticha__.oc_.theotokion End-Insert
-				Insert_section MA._17_ItIsGood_Trisagion__.not_lent End-Insert
-				Insert_section AP.ganame.Feb15__.onesimus_ End-Insert
-				Insert_section AP.gloryboth__.endofmatins_theotokion__.mode3_ End-Insert
-				Insert_section MA._18_End__.ektenia_wisdom End-Insert
-				Insert_section MA._20_Dismissal__.nocommemoration End-Insert
-			End-Section
+		when-name-of-day-is
+			Sunday use:
+			
+			otherwise use:
+				Section Instance01
+					Insert_section ST.ma.oc_me End-Insert
+					Insert_section MA._01_Beginning__.mode3 End-Insert
+					Insert_section AP.ganame.Feb15__.onesimus_ End-Insert
+					Insert_section TI.g.r End-Insert
+					Insert_section AP.both__.theotokion__.mode3_ End-Insert
+					Insert_section MA._03_Kathisma1__.oc__.weekday123 End-Insert
+					Insert_section MA._07_Gospel__.no__.reader__.intro_psalm50 End-Insert
+					Insert_section MA._11_Kontakion__.append__.me1_ End-Insert
+					Insert_section SY.Synaxarion End-Insert
+					Insert_section KA.choir__._1345678 End-Insert
+					Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
+					Insert_section MA._10_Canon__.magnificat__.modeofkatavasia End-Insert
+					Insert_section KA.append__._9 End-Insert
+					Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+					Insert_section MA._12_Exaposteilarion__.me__.exap123t End-Insert
+					Insert_section MA._13_Lauds__.read__.all End-Insert
+					Insert_section MA._14_Doxology__.append_small End-Insert
+					Insert_section MA._15_Litanies__.aftersmalldoxology End-Insert
+					Insert_section MA._16_Aposticha__.oc_.aposticha End-Insert
+					Insert_section MA._16_Aposticha__.oc_.theotokion End-Insert
+					Insert_section MA._17_ItIsGood_Trisagion__.not_lent End-Insert
+					Insert_section AP.ganame.Feb15__.onesimus_ End-Insert
+					Insert_section AP.gloryboth__.endofmatins_theotokion__.mode3_ End-Insert
+					Insert_section MA._18_End__.ektenia_wisdom End-Insert
+					Insert_section MA._20_Dismissal__.nocommemoration End-Insert
+				End-Section
+		end-when
 	end-when	
 
 End-Template

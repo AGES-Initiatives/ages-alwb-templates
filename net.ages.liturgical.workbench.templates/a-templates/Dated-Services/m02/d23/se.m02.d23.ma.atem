@@ -1,6 +1,6 @@
 Template se.m02.d23.ma 
 
-Status NA
+Status Final
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -15,7 +15,7 @@ Status NA
 	import roles.*
 
 	Head 
-		Set_Date month 2 day 23 year 2019 End_Date
+		Set_Date month 2 day 23 year 2020 End_Date
 			Page_Header_Even
 				center @lookup sid ma.pdf.header sid d.on lang L1 @date lang L1
 			End_Page_Header_Even
@@ -32,22 +32,25 @@ Status NA
 	End_Head
 
 	Preface Covers
-		//Insert_template ematins.pdf.cover.ma.specific_2018 End-Insert
+		Insert_template ematins.pdf.cover.ma.tr_s_oc_me1_k_w_oc_me1 End-Insert
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-	when-movable-cycle-day-is
-		1, 8 use: Insert_section mc.map.ma.Section01 End-Insert
-		14 thru 47 use:	Insert_section mc.map.ma.Section01 End-Insert
+	when-movable-cycle-day-is 
+		1, 8 use: 
+			Insert_section mc.map.ma.Section01 End-Insert
+		14 thru 71 use: 
+			Insert_section mc.map.ma.Section01 End-Insert
 		otherwise use:
-			when-name-of-day-is
-				Sunday use:
-					Section Instance02 //Sunday
-					End-Section
-				otherwise use:
-					Section Instance01
-					End-Section
-			end-when			
-	end-when
+		when-name-of-day-is
+			Sunday use:
+				Section Instance02
+				End-Section
+			
+			otherwise use:
+				Section Instance01
+				End-Section
+		end-when
+	end-when	
 
 End-Template
