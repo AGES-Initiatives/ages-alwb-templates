@@ -1,6 +1,6 @@
 Template se.m02.d21.ve 
 
-Status NA
+Status Final
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -32,19 +32,39 @@ Status NA
 	End_Head
 
 	Preface Covers
-		//Insert_template ematins.pdf.cover.ve.specific_2018 End-Insert
+		Insert_template ematins.pdf.cover.ve.specific_2020 End-Insert
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-	when-movable-cycle-day-is 
-		1 thru 25 use: 
-			Insert_section mc.map.ve.Section01 End-Insert
-		26, 28, 33, 35, 40, 42, 47, 49, 54, 55, 56, 61, 63, 66, 67, 68, 69, 71
-			use: //do nothing
-		27, 29, 30, 31, 32, 34, 36, 37, 38, 39, 41, 43, 44, 45, 46, 48, 50, 51, 52, 53, 55, 57, 58, 59, 60, 62, 64, 65, 70 use:
-			Insert_section mc.map.ve.Section01 End-Insert
+	when-movable-cycle-day-is
+		1, 8 use: Insert_section mc.map.ve.Section01 End-Insert
+		14 thru 25 use: Insert_section mc.map.ve.Section01 End-Insert 
+		26, 28, 33, 35, 40, 42, 47 use: //do nothing. use pl
+		27, 29, 30, 31, 32, 34, 36, 37, 38, 39, 41, 43, 44, 45, 46 use:	Insert_section mc.map.ve.Section01 End-Insert
 		otherwise use:
-				
-	end-when	
+			when-name-of-day-is
+				Sunday use:
+					Section Instance02
+					End-Section
+				otherwise use:	
+					Section Instance01
+						Insert_section ST.ve.oc_me1 End-Insert
+						Insert_section VE._01_Beginning__.vespers End-Insert
+						Insert_section VE._02_Kekragaria__.modeofweek__.for6 End-Insert
+						Insert_section VE._03_Stichera__.oc__.weekday__.p_124as567 End-Insert
+						Insert_section TI.s._00_saint_.m End-Insert
+						Insert_section VE._03_Stichera__.me__.p_123as8910 End-Insert
+						Insert_section VE._03_Stichera__.gloryboth__.metheotokion End-Insert
+						Insert_section VE._04_Middle__.noentrance End-Insert	
+						Insert_section VE._06_Litanies__.noektenia End-Insert
+						Insert_section VE._08_Aposticha__.oc__.weekday_ End-Insert
+						Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
+						Insert_section AP.ga.fathers_ End-Insert
+						Insert_section AP.gloryboth__.theotokion__.mode4_ End-Insert
+						Insert_section VE._10_End__.ektenia_wisdom End-Insert
+						Insert_section VE._11_Dismissal__.nocommemoration End-Insert
+					End-Section
+			end-when
+	end-when
 
 End-Template

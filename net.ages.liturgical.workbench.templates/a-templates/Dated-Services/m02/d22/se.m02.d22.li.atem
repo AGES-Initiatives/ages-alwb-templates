@@ -1,13 +1,6 @@
 Template se.m02.d22.li 
 
-Status NA
-
-	import client_gr_GR_cog.*
-	import me.m02.d22_gr_GR_cog.*
-
-	import da.*
-	import oc.*
-	import tr.*
+Status Final
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -38,10 +31,18 @@ Status NA
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
-	when-movable-cycle-day-is 1 thru 127 use:
-		Insert_section mc.map.li.Section01 End-Insert
+	when-movable-cycle-day-is
+		1, 8 use: Insert_section mc.map.li.Section01 End-Insert
+		14 thru 39 use:	Insert_section mc.map.li.Section01 End-Insert
 		otherwise use:
-		
+			when-name-of-day-is
+				Sunday use:
+					Section Instance02
+					End-Section
+				otherwise use:
+					Section Instance01
+					End-Section
+			end-when
 	end-when	
 
 End-Template
