@@ -1,6 +1,8 @@
 Template rid_EpistleProkeimena_Daily
 
-Status Review
+Status NA
+
+ 	import liturgical.verses_gr_GR_cog.*
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -14,51 +16,91 @@ Status Review
 	import bTags.*
 	import roles.*
 	
-	import bk.ap.da.sections.*
-
 //These sections compute the the title and prokeimenon for days of the week.
 //They are inserted in the templates LectionaryEpistleProkeimenonTitle.atem and LectionaryEpistleProkeimenon.atem
 
 	Section da_ep_title
 			when-name-of-day-is 
-				Monday use: Insert_section d2.ep_title End-Insert
-				Tuesday use: Insert_section d3.ep_title End-Insert
-				Wednesday use: Insert_section d4.ep_title End-Insert
-				Thursday use: Insert_section d5.ep_title End-Insert
-				Friday use: Insert_section d6.ep_title End-Insert
-				Saturday use: Insert_section d7.ep_title End-Insert
+				Monday use:
+					Title<r>sid Prokeimenon sid Mode4 sid psLI.weekday.d2.prokeimenon.title</>End-Title		
+				Tuesday use:
+					Title<r>sid Prokeimenon sid Mode7 sid psLI.weekday.d3.prokeimenon.title</>End-Title		
+				Wednesday use:
+					Title<r>sid Prokeimenon sid Mode3 sid psLI.weekday.d4.prokeimenon.title</>End-Title		
+				Thursday use:
+					Title<r>sid Prokeimenon sid Mode8 sid psLI.weekday.d5.prokeimenon.title</>End-Title		
+				Friday use:
+					Title<r>sid Prokeimenon sid Mode7 sid psLI.weekday.d6.prokeimenon.title</>End-Title		
+				Saturday use:
+					Title<r>sid Prokeimenon sid Mode6 sid psLI.weekday.d7.prokeimenon.title</>End-Title		
 				Sunday use:
 					when-mode-of-week-is
-						M1 use: Insert_section d1.m1.ep_title End-Insert
-						M2 use: Insert_section d1.m2.ep_title End-Insert
-						M3 use: Insert_section d1.m3.ep_title End-Insert
-						M4 use: Insert_section d1.m4.ep_title End-Insert
-						M5 use: Insert_section d1.m5.ep_title End-Insert
-						M6 use: Insert_section d1.m6.ep_title End-Insert
-						M7 use: Insert_section d1.m7.ep_title End-Insert
-						M8 use: Insert_section d1.m8.ep_title End-Insert
+						M1 use:
+							Title<r>sid Prokeimenon sid Mode1 sid psLI.sunday.m1.prokeimenon.title</>End-Title
+						M2 use:
+							Title<r>sid Prokeimenon sid Mode2 sid psLI.sunday.m2.prokeimenon.title</>End-Title
+						M3 use:
+							Title<r>sid Prokeimenon sid Mode3 sid psLI.sunday.m3.prokeimenon.title</>End-Title
+						M4 use:
+							Title<r>sid Prokeimenon sid Mode4 sid psLI.sunday.m4.prokeimenon.title</>End-Title
+						M5 use:
+							Title<r>sid Prokeimenon sid Mode5 sid psLI.sunday.m5.prokeimenon.title</>End-Title
+						M6 use:
+							Title<r>sid Prokeimenon sid Mode6 sid psLI.sunday.m6.prokeimenon.title</>End-Title
+						M7 use:
+							Title<r>sid Prokeimenon sid Mode7 sid psLI.sunday.m7.prokeimenon.title</>End-Title
+						M8 use:
+							Title<r>sid Prokeimenon sid Mode8 sid psLI.sunday.m8.prokeimenon.title</>End-Title
 					end-when
 			end-when
 	End-Section
 
 	Section da_ep_prokeimenon
 		when-name-of-day-is 
-			Monday use: Insert_section d2.ep_prokeimenon End-Insert
-			Tuesday use: Insert_section d3.ep_prokeimenon End-Insert
-			Wednesday use: Insert_section d4.ep_prokeimenon End-Insert
-			Thursday use: Insert_section d5.ep_prokeimenon End-Insert
-			Friday use: Insert_section d6.ep_prokeimenon End-Insert
-			Saturday use: Insert_section d7.ep_prokeimenon End-Insert
+			Monday use:
+				Para role readingzero sid psLI.weekday.d2.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.weekday.d2.prokeimenon.v2.text @ver End-Verse
+			Tuesday use:
+				Para role readingzero sid psLI.weekday.d3.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.weekday.d3.prokeimenon.v2.text @ver End-Verse
+			Wednesday use:
+				Para role readingzero sid psLI.weekday.d4.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.weekday.d4.prokeimenon.v2.text @ver End-Verse
+			Thursday use:
+				Para role readingzero sid psLI.weekday.d5.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.weekday.d5.prokeimenon.v2.text @ver End-Verse
+			Friday use:
+				Para role readingzero sid psLI.weekday.d6.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.weekday.d6.prokeimenon.v2.text @ver End-Verse
+			Saturday use:
+				Para role readingzero sid psLI.weekday.d7.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.weekday.d7.prokeimenon.v2.text @ver End-Verse
 			Sunday use:
 				when-mode-of-week-is
-					M1 use: Insert_section d1.m1.ep_prokeimenon End-Insert
-					M2 use: Insert_section d1.m2.ep_prokeimenon End-Insert
-					M3 use: Insert_section d1.m3.ep_prokeimenon End-Insert
-					M4 use: Insert_section d1.m4.ep_prokeimenon End-Insert
-					M5 use: Insert_section d1.m5.ep_prokeimenon End-Insert
-					M6 use: Insert_section d1.m6.ep_prokeimenon End-Insert
-					M7 use: Insert_section d1.m7.ep_prokeimenon End-Insert
-					M8 use: Insert_section d1.m8.ep_prokeimenon End-Insert
+					M1 use:
+						Para role readingzero sid psLI.sunday.m1.prokeimenon.v1.text @ver End-Para
+						Verse<bnr>sid vVerse</>sid psLI.sunday.m1.prokeimenon.v2.text @ver End-Verse
+					M2 use:
+						Para role readingzero sid psLI.sunday.m2.prokeimenon.v1.text @ver End-Para
+						Verse<bnr>sid vVerse</>sid psLI.sunday.m2.prokeimenon.v2.text @ver End-Verse
+					M3 use:
+						Para role readingzero sid psLI.sunday.m3.prokeimenon.v1.text @ver End-Para
+						Verse<bnr>sid vVerse</>sid psLI.sunday.m3.prokeimenon.v2.text @ver End-Verse
+					M4 use:
+						Para role readingzero sid psLI.sunday.m4.prokeimenon.v1.text @ver End-Para
+						Verse<bnr>sid vVerse</>sid psLI.sunday.m4.prokeimenon.v2.text @ver End-Verse
+					M5 use:
+						Para role readingzero sid psLI.sunday.m5.prokeimenon.v1.text @ver End-Para
+						Verse<bnr>sid vVerse</>sid psLI.sunday.m5.prokeimenon.v2.text @ver End-Verse
+					M6 use:
+						Para role readingzero sid psLI.sunday.m6.prokeimenon.v1.text @ver End-Para
+						Verse<bnr>sid vVerse</>sid psLI.sunday.m6.prokeimenon.v2.text @ver End-Verse
+					M7 use:
+						Para role readingzero sid psLI.sunday.m7.prokeimenon.v1.text @ver End-Para
+						Verse<bnr>sid vVerse</>sid psLI.sunday.m7.prokeimenon.v2.text @ver End-Verse
+					M8 use:
+						Para role readingzero sid psLI.sunday.m8.prokeimenon.v1.text @ver End-Para
+						Verse<bnr>sid vVerse</>sid psLI.sunday.m8.prokeimenon.v2.text @ver End-Verse
 				end-when
 		end-when
 	End-Section
