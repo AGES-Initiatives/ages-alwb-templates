@@ -306,7 +306,12 @@ Status NA
 						Hymn rid trVE.Stichera03.text @ver  media-off End-Hymn
 					End-Section
 					Section Stichera_Menaion
-						Insert_section TI.stp.me End-Insert
+						when-exists
+							rid meCom1.title use:
+								Insert_section TI.stp.me.com1 End-Insert
+							otherwise use:
+								Insert_section TI.stp.me._ End-Insert
+						end-when			
 					//	Title<r>ldp @Service_Date ldp </>End-Title
 						Insert_section VE._03_Stichera__.me__.p_1123as78910 End-Insert
 					End-Section
@@ -377,7 +382,7 @@ Status NA
 						Hymn rid octrVE.Stichera4.text @ver media-off End-Hymn
 					End-Section
 					Section Stichera_Menaion
-						Insert_section TI.stp.me End-Insert
+						Insert_section TI.stp.me._ End-Insert
 					//	Title<r>ldp @Service_Date</>End-Title
 						Insert_section VE._03_Stichera__.me__.p_1123as78910 End-Insert
 					End-Section
