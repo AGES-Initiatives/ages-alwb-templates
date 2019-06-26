@@ -11256,8 +11256,13 @@ Template MA
 		End-Section
 		Section eome
 			Insert_section eo__.eoofweek_.exap End-Insert
-			when-exists rid meMA.Exaposteilarion1.text use: 
-				Title sid Eteron End-Title
+			when-exists rid meMA.Exaposteilarion1.text use:
+				when-exists 
+					rid meCom1.title use:
+						Title<Tdesig>rid meCom1.title</>End-Title
+					otherwise use:
+						Title<Tdesig>sid TouMinaiou</>End-Title
+				end-when
 				Insert_section MA._12_Exaposteilarion__.append__.me__.exap123t End-Insert
 			otherwise use:
 				Title<Tdesig>sid Theotokion sid Omoion</>End-Title
