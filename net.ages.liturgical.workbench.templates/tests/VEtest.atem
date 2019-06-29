@@ -1,0 +1,327 @@
+Template VEtest
+
+Status NA
+
+	import me.*
+	import oc.*
+	import pe.*
+	import tr.*
+
+	import client_gr_GR_cog.*	
+	import eu.lichrysbasil_gr_GR_cog.*
+	import eu.lipresanctified_gr_GR_cog.*
+	import hi.s01_gr_GR_cog.*
+	import hi.s05_gr_GR_cog.*
+	import ho.s10_gr_GR_cog.*
+	import liturgical.verses_gr_GR_cog.*
+	import ps_gr_GR_cog.*
+	
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	// Imported templates
+	import bk.ho.s01.*
+	import bk.ho.s10.*
+	import LiturgicalPsalms.*
+
+	//Sections with names ending in __ require a selection
+	//Sections with names ending in _ have optional selections
+	//Sections with names not ending in _ have no options
+
+	Section _01_Beginning__ // Enarxis thru Peace Litany
+		Section Hierarchical__
+			Section with_anoixantaria
+				when-movable-cycle-day-is
+					72, 73, 74, 75, 76, 77, 109 use:
+						Insert_section vespers.pascha End-Insert
+					otherwise use:
+						Section enarxis
+							Insert_section vespers.enarxis End-Insert
+						End-Section
+						Section introductorypsalm
+							when-movable-cycle-day-is 78 thru 108 use:
+								Actor sid Hierarch End-Actor
+								Insert_section PE.ChristIsRisen.once End-Insert
+								Actor sid Choir End-Actor
+								Insert_section PE.ChristIsRisen.twice End-Insert
+								Actor sid Reader End-Actor
+							otherwise use:
+								Actor sid Hierarch End-Actor
+								Reading sid DefteProskinisomen1 End-Reading
+								Reading sid DefteProskinisomen2 End-Reading
+								Reading sid DefteProskinisomen3 End-Reading
+							end-when
+					//		Media sid hoVE.Ps103.text End-Media
+							Insert_section VI._01_Beginning__.with_anoixantaria.introductorypsalm.Psalm_103_Verses End-Insert
+							Insert_section VI._01_Beginning__.with_anoixantaria.introductorypsalm.anoixantaria End-Insert
+						End-Section
+						Section prayers	
+							Break page End_Break
+							Insert_section VE.lamplighting_prayers End-Insert
+							Break page End_Break
+						End-Section
+						Section litany
+							Actor sid Deacon End-Actor
+							when-movable-cycle-day-is
+								121 use:
+									Insert_section LN.GreatLitany_Vespers_HolySpirit01 End-Insert
+								otherwise use:
+									Insert_section LN.GreatLitany01 End-Insert
+							end-when
+							Actor sid Priest End-Actor
+							Dialog sid exc01 End-Dialog
+							Dialog<i>sid res04p</>End-Dialog
+						End-Section //Part3
+				end-when
+			End-Section
+			Section vespers
+				when-movable-cycle-day-is
+					72, 73, 74, 75, 76, 77, 109 use:
+						Section pascha
+							Actor sid Hierarch End-Actor
+							Dialog sid enarxis03 End-Dialog
+							Dialog<i>sid res04p</>End-Dialog
+							Insert_section hPE.Pascha_Beginning End-Insert
+							Actor sid Deacon End-Actor
+							Insert_section LN.GreatLitany01 End-Insert
+							Actor sid Hierarch End-Actor
+							Dialog sid exc01<i>sid res04p</>End-Dialog
+						End-Section
+					otherwise use:
+						Section enarxis
+							Actor sid Priest End-Actor
+							Dialog sid enarxis01 End-Dialog
+							Dialog<i>sid res04p</>End-Dialog
+						End-Section
+						Section introductorypsalm
+							when-movable-cycle-day-is 
+								78 thru 108 use:
+									Actor sid Hierarch End-Actor
+									Insert_section PE.ChristIsRisen.once End-Insert
+									Actor sid Choir End-Actor
+									Insert_section PE.ChristIsRisen.twice End-Insert
+									Actor sid Hierarch End-Actor
+								otherwise use:
+									Actor sid Hierarch End-Actor
+									Reading sid DefteProskinisomen1 End-Reading
+									Reading sid DefteProskinisomen2 End-Reading
+									Reading sid DefteProskinisomen3 End-Reading
+							end-when
+							Media sid hoVE.Ps103.text End-Media
+							Insert_section Psalm_103_Paragraph End-Insert
+							Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+							Reading sid Allilouia3.text sid DoxaSoiOTheos1<r>sid Thrice</>End-Reading
+							Reading sid IElpisImonKyrie End-Reading
+						End-Section
+						Section prayers
+							Break page End_Break
+							Insert_section lamplighting_prayers End-Insert
+							Break page End_Break
+						End-Section
+						Section litany
+							Actor sid Deacon End-Actor
+							when-movable-cycle-day-is
+								121 use:
+									Insert_section LN.GreatLitany_Vespers_HolySpirit01 End-Insert
+								otherwise use:
+									Insert_section LN.GreatLitany01 End-Insert
+							end-when
+							Actor sid Priest End-Actor
+							Dialog sid exc01 End-Dialog
+							Dialog<i>sid res04p</>End-Dialog
+						End-Section //Part3
+				end-when
+			End-Section
+			Section vespers_double_commemoration
+				when-movable-cycle-day-is
+					72, 73, 74, 75, 76, 77, 109 use:
+						Section pascha
+							Actor sid Hierarch End-Actor
+							Dialog sid enarxis03 End-Dialog
+							Dialog<i>sid res04p</>End-Dialog
+							Insert_section hPE.Pascha_Beginning End-Insert
+							Actor sid Deacon End-Actor
+							Insert_section LN.GreatLitany01_double_commemoration End-Insert
+							Actor sid Hierarch End-Actor
+							Dialog sid exc01<i>sid res04p</>End-Dialog
+						End-Section
+					otherwise use:
+						Insert_section vespers.enarxis End-Insert
+						Insert_section vespers.introductorypsalm End-Insert
+						Insert_section vespers.prayers End-Insert
+						Section litany
+							Actor sid Deacon End-Actor
+							when-movable-cycle-day-is
+								121 use:
+									Insert_section LN.GreatLitany_Vespers_HolySpirit01_double_commemoration End-Insert
+								otherwise use:
+									Insert_section LN.GreatLitany01_double_commemoration End-Insert
+							end-when
+							Actor sid Priest End-Actor
+							Dialog sid exc01 End-Dialog
+							Dialog<i>sid res04p</>End-Dialog
+						End-Section //Part3
+				end-when
+			End-Section
+			Section lent_weekday
+				Rubric sid cl.ho.s10.R001 End-Rubric
+				Insert_section vespers End-Insert
+			End-Section
+		End-Section
+		Section lent_weekday
+			Rubric sid cl.ho.s10.R001 End-Rubric
+			Insert_section vespers End-Insert
+		End-Section
+		Section liturgy
+			Actor sid Priest End-Actor
+			Dialog sid enarxis02 End-Dialog
+			Dialog<i>sid res04p</>End-Dialog
+			Insert_section vespers.introductorypsalm End-Insert
+			Insert_section vespers.litany End-Insert
+		End-Section
+		Section vespers
+			when-movable-cycle-day-is
+				72, 73, 74, 75, 76, 77, 109 use:
+					Section pascha
+						Actor sid Priest End-Actor
+						Dialog sid enarxis03 End-Dialog
+						Dialog<i>sid res04p</>End-Dialog
+						Insert_section PE.Pascha_Beginning End-Insert
+						Actor sid Deacon End-Actor
+						Insert_section LN.GreatLitany01 End-Insert
+						Actor sid Priest End-Actor
+						Dialog sid exc01<i>sid res04p</>End-Dialog
+					End-Section
+					otherwise use:
+						Section enarxis
+							Actor sid Priest End-Actor
+							Dialog sid enarxis01 End-Dialog
+							Dialog<i>sid res04p</>End-Dialog
+						End-Section
+						Section introductorypsalm
+							when-movable-cycle-day-is 78 thru 108 use:
+								Actor sid Priest End-Actor
+								Insert_section PE.ChristIsRisen.once End-Insert
+								Actor sid Choir End-Actor
+								Insert_section PE.ChristIsRisen.twice End-Insert
+								Actor sid Reader End-Actor
+							otherwise use:
+								Actor sid Reader End-Actor
+								Reading sid DefteProskinisomen1 End-Reading
+								Reading sid DefteProskinisomen2 End-Reading
+								Reading sid DefteProskinisomen3 End-Reading
+							end-when
+							Media sid hoVE.Ps103.text End-Media
+							Insert_section Psalm_103_Paragraph End-Insert
+							Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+							Reading sid Allilouia3.text sid DoxaSoiOTheos1<r>sid Thrice</>End-Reading
+							Reading sid IElpisImonKyrie End-Reading
+						End-Section
+						Section prayers
+						//	Break page End_Break
+							Insert_section lamplighting_prayers End-Insert
+						//	Break page End_Break
+						End-Section
+						Section litany
+							Actor sid Deacon End-Actor
+							when-movable-cycle-day-is
+								121 use:
+									Insert_section LN.GreatLitany_Vespers_HolySpirit01 End-Insert
+								otherwise use:
+									Insert_section LN.GreatLitany01 End-Insert
+							end-when
+							Actor sid Priest End-Actor
+							Dialog sid exc01 End-Dialog
+							Dialog<i>sid res04p</>End-Dialog
+						End-Section //Part3
+			end-when
+		End-Section
+		Section with_anoixantaria
+			when-movable-cycle-day-is
+				72, 73, 74, 75, 76, 77, 109 use:
+					Insert_section vespers.pascha End-Insert
+				otherwise use:
+					Section enarxis
+						Insert_section vespers.enarxis End-Insert
+					End-Section
+					Section introductorypsalm
+						when-movable-cycle-day-is 78 thru 108 use:
+							Actor sid Priest End-Actor
+							Insert_section PE.ChristIsRisen.once End-Insert
+							Actor sid Choir End-Actor
+							Insert_section PE.ChristIsRisen.twice End-Insert
+							Actor sid Reader End-Actor
+						otherwise use:
+							Actor sid Reader End-Actor
+							Reading sid DefteProskinisomen1 End-Reading
+							Reading sid DefteProskinisomen2 End-Reading
+							Reading sid DefteProskinisomen3 End-Reading
+						end-when
+				//		Media sid hoVE.Ps103.text End-Media
+						Insert_section VI._01_Beginning__.with_anoixantaria.introductorypsalm.Psalm_103_Verses End-Insert
+						Insert_section VI._01_Beginning__.with_anoixantaria.introductorypsalm.anoixantaria End-Insert
+					End-Section
+					Section prayers	
+						Break page End_Break
+						Insert_section VE.lamplighting_prayers End-Insert
+						Break page End_Break
+					End-Section
+					Section litany
+						Actor sid Deacon End-Actor
+						when-movable-cycle-day-is
+							121 use:
+								Insert_section LN.GreatLitany_Vespers_HolySpirit01 End-Insert
+							otherwise use:
+								Insert_section LN.GreatLitany01 End-Insert
+						end-when
+						Actor sid Priest End-Actor
+						Dialog sid exc01 End-Dialog
+						Dialog<i>sid res04p</>End-Dialog
+					End-Section //Part3
+			end-when
+		End-Section
+	End-Section // Enarxis thru Peace Litany
+
+
+//blocks
+	Section lamplighting_prayers
+		Title role bmc_collapse sid clps.prayers.top End-Title
+		Rubric sid hiVE.R1113 End-Rubric
+	//	Para role noprintrub sid hiVE.R1113 End-Para
+		Para role noprintactor sid Priest<i>sid Inaudibly</>End-Para
+		Title<Tnoprintdesig>sid hiVE.Key1101.title</>End-Title
+		Para role noprintprayer sid hiVE.Key1101.text End-Para
+		Para role noprintprayer sid hiVE.Key1101.exclamation sid res04 End-Para
+		Title<Tnoprintdesig>sid hiVE.Key1102.title</>End-Title
+		Para role noprintprayer sid hiVE.Key1102.text End-Para
+		Para role noprintprayer sid hiVE.Key1102.exclamation sid res04 End-Para
+		Title<Tnoprintdesig>sid hiVE.Key1103.title</>End-Title
+		Para role noprintprayer sid hiVE.Key1103.text End-Para
+		Para role noprintprayer sid hiVE.Key1103.exclamation sid res04 End-Para
+		Title<Tnoprintdesig>sid hiVE.Key1104.title</>End-Title
+		Para role noprintprayer sid hiVE.Key1104.text End-Para
+		Para role noprintprayer sid hiVE.Key1104.exclamation sid res04 End-Para
+		Title<Tnoprintdesig>sid hiVE.Key1105.title</>End-Title
+		Para role noprintprayer sid hiVE.Key1105.text End-Para
+		Para role noprintprayer sid hiVE.Key1105.exclamation sid res04 End-Para
+		Title<Tnoprintdesig>sid hiVE.Key1106.title</>End-Title
+		Para role noprintprayer sid hiVE.Key1106.text End-Para
+		Para role noprintprayer sid hiVE.Key1106.exclamation sid res04 End-Para
+		Title<Tnoprintdesig>sid hiVE.Key1107.title</>End-Title
+		Para role noprintprayer sid hiVE.Key1107.text End-Para
+		Para role noprintprayer sid hiVE.Key1107.exclamation sid res04 End-Para
+	//	Para role noprintrub sid hiVE.R1114 End-Para
+		Rubric sid hiVE.R1114 End-Rubric
+		Title role emc_collapse sid clps.prayers.bottom End-Title
+	End-Section
+
+End-Template
