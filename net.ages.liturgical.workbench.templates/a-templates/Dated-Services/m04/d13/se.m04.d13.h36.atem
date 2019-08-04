@@ -31,7 +31,13 @@ Status Final
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
-	Insert_section HR.Lent_h3__.begin End-Insert
-	Insert_section HR.Lent_h6 End-Insert
+	when-movable-cycle-day-is
+		1, 8, 14, 15, 18 use:
+			Insert_section mc.map.hours.hour_36 End-Insert
+		20 thru 77 use:
+			Insert_section mc.map.hours.hour_36 End-Insert
+		otherwise use:
+			
+	end-when
 
 End-Template
