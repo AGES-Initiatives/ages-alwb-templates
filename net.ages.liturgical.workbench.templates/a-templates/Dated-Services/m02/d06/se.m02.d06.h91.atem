@@ -34,21 +34,29 @@ Status Draft
 	Section section1
 		Insert_section Selector_ServiceTitle.service_day_date End-Insert
 		Break line End_Break
-		Title sid horizontal_line.dash1 End-Title
+		when-movable-cycle-day-is
+			1, 8, 14, 15, 18 use: Insert_section mc.map.dailyreadings.readings End-Insert
+			20 thru 77 use: Insert_section mc.map.dailyreadings.readings End-Insert
+			otherwise use:
+				Section block1
+					Title sid horizontal_line.solid1 End-Title
+					Title<i>sid TaAnagnosmataTisSeiras</>End-Title
+					Insert_section LE._01_Epistle__.textonly__.daily.title End-Insert
+					Insert_section LE._01_Epistle__.textonly__.daily.lesson End-Insert
+					Insert_section LE._02_Gospel__.textonly__.daily.lesson End-Insert
+				End-Section
+		end-when
 		Break line End_Break
-		Title<i>sid TaAnagnosmataTisSeiras</>End-Title
-	//	Insert_section LE._01_Epistle__.textonly__.pretriodion__.week_32_wednesday.title End-Insert
-	//	Insert_section LE._01_Epistle__.textonly__.pretriodion__.week_32_wednesday.lesson End-Insert
-	//	Insert_section LE._02_Gospel__.textonly__.pretriodion__.week_15_wednesday.lesson End-Insert
+		Section block2
+			Title sid horizontal_line.solid1 End-Title
+			Title<i>sid TaAnagnosmataTouMinologiou</>End-Title
+			Insert_section LE._01_Epistle__.textonly__.menaion.title End-Insert
+			Insert_section LE._01_Epistle__.textonly__.menaion.lesson End-Insert
+			Insert_section LE._02_Gospel__.textonly__.menaion.lesson End-Insert
+		End-Section
 		Title sid horizontal_line.solid1 End-Title
 		Break line End_Break
-		Title<i>sid TaAnagnosmataTouMinologiou</>End-Title
-		Insert_section LE._01_Epistle__.textonly__.menaion.title End-Insert
-		Insert_section LE._01_Epistle__.textonly__.menaion.lesson End-Insert
-		Insert_section LE._02_Gospel__.textonly__.menaion.lesson End-Insert
-		Title sid horizontal_line.solid1 End-Title
-		Break line End_Break
-		Insert_section SY.Synaxarion End-Insert
+		Insert_section SY.Synaxarion_for_DailyReadings End-Insert
 		Title sid horizontal_line.solid1 End-Title
 		Break line End_Break
 		Insert_section LI._10_Parts__._9_fasting_ End-Insert
