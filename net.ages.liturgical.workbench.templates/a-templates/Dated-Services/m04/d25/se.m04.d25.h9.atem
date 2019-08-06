@@ -32,9 +32,17 @@ Status NA
 	End_Head
 
 	when-movable-cycle-day-is
-		1 thru 70 use:
-			Insert_section HR.Lent_h9__.begin End-Insert
+		1, 8, 14, 15, 18 use:
+			Insert_section mc.map.hours.hour_9 End-Insert
+		20 thru 77 use:
+			Insert_section mc.map.hours.hour_9 End-Insert
 		otherwise use:
+			Section Instance01
+				Insert_section HR.h9__.beginning End-Insert
+				Insert_section HR.h9__.middle End-Insert
+				Insert_section HR.h9__.end End-Insert
+			End-Section
+			
 	end-when
 
 End-Template
