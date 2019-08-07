@@ -1,0 +1,45 @@
+Template se.m04.d28.li2
+
+Status Draft
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 4 day 28 year 2020 End_Date
+			Page_Header_Even
+				center @lookup sid li.pdf.header lang L1 @lookup sid d.on lang L1 @date lang L1 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid li.pdf.header lang L2 @lookup sid d.on lang L2 @date lang L2 
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	when-movable-cycle-day-is 
+		60, 61, 62, 65, 66, 67, 68, 69, 70 use: //do nothing 
+		63, 64 use: Insert_section mc.map.ma.Section02 End-Insert
+		71, 72, 73, 74, 75, 76, 77, 78, 85, 92, 95, 99, 102, 106 use: Insert_section mc.map.ma.Section02 End-Insert
+		79, 80, 81, 82, 83, 84, 86, 87, 88, 89, 90, 91, 93, 94, 96, 97, 98, 100, 101, 103, 104, 105, 107, 108 use:
+			Section Instance01_weekday
+				Insert_section ST.li.pe1 End-Insert
+
+			End-Section
+	end-when
+
+End-Template
