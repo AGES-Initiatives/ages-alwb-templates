@@ -1,0 +1,76 @@
+Template bk.tyLG.m04.d18
+
+Status NA
+
+	import Selector_Incipits.*
+	import ty.li.incipit_gr_GR_cog.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 4 day 18 year 2020 End_Date
+			Page_Header_Even
+				center @text "Liturgical Guide for GOA Parishes"
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @text "Liturgical Guide for GOA Parishes"
+			End_Page_Header_Odd
+	End_Head
+
+		//Date
+		Switch-Version L2 End-Switch-Version
+			Title<Tdesig>ldp @Service_Date</>End-Title
+			Title<Tdesig>sid tyDAin.HolySaturday.text</>End-Title
+			Title<inr>sid tyLIin.VesperalLiturgyBasil.text</>End-Title
+		Switch-Version Both End-Switch-Version
+		Break line End_Break
+			
+		Para<r>sid tyVLin.vespershymns.triodion.title</>End-Para
+		Break line End_Break
+		Para<r>sid tyLIin.EntranceHymn.title</>End-Para
+		Reading sid tyVEin.VespersEntrance.text End-Reading 
+		
+		//After Entrance
+			Para<r>sid TaAnagnosmata</>End-Para
+			Dialog<r>sid tyVLin.otreading_01.title</>sid tyVLin.holysaturday.otreading_01.book sid tyVLin.holysaturday.otreading_01.chapverse End-Dialog
+			Dialog<r>sid tyVLin.otreading_02.title</>sid tyVLin.holysaturday.otreading_02.book sid tyVLin.holysaturday.otreading_02.chapverse End-Dialog
+			Dialog<r>sid tyVLin.otreading_03.title</>sid tyVLin.holysaturday.otreading_03.book sid tyVLin.holysaturday.otreading_03.chapverse End-Dialog
+			Para<r>sid tyVLin.holysaturday.hymnofthreeservants.title</>End-Para
+			Reading sid tyVLin.holysaturday.hymnofthreeservants.text End-Reading
+			Para<r>sid tyLIin.trisagios_alt.title</>End-Para
+			Reading sid tyLIin.trisagios_baptized.text End-Reading
+
+			Para<r>sid tyLIin.epistle.title</>End-Para
+			Dialog sid tyVLin.holysaturday.epistle.book sid tyVLin.holysaturday.epistle.chapverse End-Dialog
+			Para<r>sid tyVLin.holysaturday.insteadofalleluia.title</>End-Para
+			Reading sid tyVLin.holysaturday.ariseogod.text End-Reading
+			Para<r>sid tyLIin.gospel.title</>End-Para
+			Dialog sid tyVLin.holysaturday.gospel.book sid tyVLin.holysaturday.gospel.chapverse End-Dialog
+
+		//Liturgical
+			Para<r>sid tyLIin.cherubichymn.title</>End-Para
+			Reading sid tyLIin.cherubic.holysaturday.text End-Reading
+			Para<r>sid tyLIin.theotokoshymn.basil.title</>End-Para
+			Reading sid tyLIin.theotokoshymn.basil.text End-Reading
+			Para<r>sid tyLIin.communionhymn.title</>End-Para
+			Reading sid tyLIin.communionhymn.holysaturday.text End-Reading
+			Para<r>sid tyLIin.aftercommunion.title</>End-Para
+			Reading sid tyLIin.aftercommunion.holysaturday.text End-Reading
+
+			Section dismissal
+				Set_mcDay day 71 End_mcDay
+				Insert_section dismissal_incipit End-Insert
+				Set_mcDay day 0 End_mcDay
+			End-Section
+			
+End-Template
