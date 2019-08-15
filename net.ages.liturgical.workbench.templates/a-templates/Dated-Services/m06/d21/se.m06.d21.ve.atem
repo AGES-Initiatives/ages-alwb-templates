@@ -1,13 +1,6 @@
 Template se.m06.d21.ve 
 
-Status NA
-
-	import client_gr_GR_cog.*
-	import ho.s10_gr_GR_cog.*	
-	import me.m06.d21_gr_GR_cog.*
-
-	import da.*
-	import oc.*
+Status Final
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -22,7 +15,7 @@ Status NA
 	import roles.*
 
 	Head 
-		Set_Date month 6 day 21 End_Date
+		Set_Date month 6 day 21 year 2020 End_Date
 			Page_Header_Even
 				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L1 
 			End_Page_Header_Even
@@ -39,7 +32,7 @@ Status NA
 	End_Head
 
 	Preface Covers
-		//Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.pdf.cover.ve.s_oc_me1_w_oc_me1 End-Insert
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
@@ -55,18 +48,13 @@ Status NA
 		end-when
 	otherwise use:	
 		when-name-of-day-is 
-			Monday, Tuesday, Wednesday, Thursday, Friday use:
-				Section Instance03
-				End-Section
-			Saturday use:
-				Section Instance04
-				End-Section
 			Sunday use:	
-				Section Instance05 //Sunday
-					Insert_section TI.se.me.ve End-Insert
+				Section Instance04 //Sunday
+					Insert_section ST.ve.oc_me1 End-Insert
 					Insert_section VE._01_Beginning__.vespers End-Insert
 					Insert_section VE._02_Kekragaria__.modeofweek__.for10 End-Insert
 					Insert_section VE._03_Stichera__.oc__.sunday__.s_1234567as1234567 End-Insert
+					Insert_section TI.s._00_saint_.m End-Insert
 					Insert_section VE._03_Stichera__.me__.p_123as8910 End-Insert
 					Insert_section VE._03_Stichera__.gloryboth__.firsttheotokion.modeofweek End-Insert	
 					Insert_section VE._04_Middle__.entrance End-Insert	
@@ -77,6 +65,9 @@ Status NA
 					Insert_section AP.gloryboth__.primarytheotokion__.modeofweek End-Insert
 					Insert_section VE._10_End__.wisdom End-Insert
 					Insert_section VE._11_Dismissal__.nocommemoration End-Insert
+				End-Section
+			otherwise use:
+				Section Instance03
 				End-Section
 		end-when
 	end-when

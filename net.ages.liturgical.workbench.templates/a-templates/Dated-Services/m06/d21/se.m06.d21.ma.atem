@@ -1,14 +1,6 @@
 Template se.m06.d21.ma 
 
-Status NA
-
-	import client_gr_GR_cog.*
-	import ho.s03_gr_GR_cog.*
-	import me.m06.d21_gr_GR_cog.*
-
-	import da.*
-	import oc.*
-	import pe.*
+Status Final
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -23,7 +15,7 @@ Status NA
 	import roles.*
 
 	Head 
-		Set_Date month 6 day 21 End_Date
+		Set_Date month 6 day 21 year 2020 End_Date
 			Page_Header_Even
 				center @lookup sid ma.pdf.header sid d.on lang L1 @date lang L1
 			End_Page_Header_Even
@@ -40,7 +32,7 @@ Status NA
 	End_Head
 
 	Preface Covers
-		//Insert_template ematins.cover.ma End-Insert
+		Insert_template ematins.pdf.cover.ma.s_oc_k_w_oc_me1 End-Insert
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
@@ -56,15 +48,9 @@ Status NA
 		end-when
 	otherwise use:	
 		when-name-of-day-is 
-			Monday, Tuesday, Wednesday, Thursday, Friday use:
-				Section Instance03
-				End-Section
-			Saturday use:
-				Section Instance04
-				End-Section
 			Sunday use:	
-				Section Instance05 //Sunday
-					Insert_section TI.se.me.ma End-Insert
+				Section Instance04 //Sunday
+					Insert_section ST.ma.oc End-Insert
 					Insert_section MA._01_Beginning__.modeofweek End-Insert
 					Insert_section AP.resgloryres End-Insert
 					Insert_section AP.both__.primarytheotokion__.modeofweek End-Insert
@@ -87,6 +73,9 @@ Status NA
 					Insert_section MA._13_Lauds__.oc__.sunday End-Insert
 					Insert_section MA._13_Lauds__.glory__.eo_ End-Insert
 					Insert_section MA._14_Doxology__.sunday End-Insert
+				End-Section
+			otherwise use:
+				Section Instance03
 				End-Section
 		end-when
 	end-when

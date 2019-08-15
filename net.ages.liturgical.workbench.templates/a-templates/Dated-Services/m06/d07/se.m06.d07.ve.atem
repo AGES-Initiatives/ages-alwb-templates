@@ -1,14 +1,6 @@
 Template se.m06.d07.ve 
 
-Status NA
-
-	import client_gr_GR_cog.*
-	import ho.s10_gr_GR_cog.*	
-	import me.m06.d07_gr_GR_cog.*
-
-	import da.*
-	import oc.*
-	import pe.*
+Status Final
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -23,7 +15,7 @@ Status NA
 	import roles.*
 
 	Head 
-		Set_Date month 6 day 7 End_Date
+		Set_Date month 6 day 7 year 2020 End_Date
 			Page_Header_Even
 				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L1 
 			End_Page_Header_Even
@@ -40,13 +32,14 @@ Status NA
 	End_Head
 
 	Preface Covers
-		//Insert_template ematins.cover.ve End-Insert
+		Insert_template ematins.pdf.cover.ve.specific_2020 End-Insert
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-	when-movable-cycle-day-is 1 thru 127 use:
+	when-movable-cycle-day-is 
+		1 thru 127 use:
 			Insert_section mc.map.ve.Section01 End-Insert //adjust to appropriate service
-			otherwise use:
+		otherwise use:
 		
 	end-when	
 

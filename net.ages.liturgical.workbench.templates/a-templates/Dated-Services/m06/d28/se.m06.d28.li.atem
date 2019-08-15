@@ -1,6 +1,6 @@
 Template se.m06.d28.li 
 
-Status NA
+Status Final
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -15,7 +15,7 @@ Status NA
 	import roles.*
 
 	Head 
-		Set_Date month 6 day 28 End_Date
+		Set_Date month 6 day 28 year 2020 End_Date
 			Page_Header_Even
 				center @lookup sid li.pdf.header sid d.on lang L1 @date lang L1
 			End_Page_Header_Even
@@ -43,15 +43,9 @@ Status NA
 		end-when
 	otherwise use:	
 		when-name-of-day-is 
-			Monday, Tuesday, Wednesday, Thursday, Friday use:
-				Section Instance03
-				End-Section
-			Saturday use:
-				Section Instance04
-				End-Section
 			Sunday use:	
-				Section Instance05 //Sunday
-					Insert_section TI.se.me.li End-Insert
+				Section Instance04 //Sunday
+					Insert_section ST.li.oc End-Insert
 					Insert_section LI._01_Enarxis__.daily End-Insert
 					Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
 					Insert_section LI._04_Entrance__.choir End-Insert
@@ -66,6 +60,9 @@ Status NA
 					Insert_section LE._02_Gospel__.daily_ End-Insert
 					Insert_section LI._08_Liturgy__.chrys_default End-Insert
 					Insert_section LI._09_Dismissal__.nocommemoration End-Insert
+				End-Section
+			otherwise use:
+				Section Instance03
 				End-Section
 		end-when
 	end-when

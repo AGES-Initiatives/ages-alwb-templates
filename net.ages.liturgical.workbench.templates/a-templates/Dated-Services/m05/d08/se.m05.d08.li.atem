@@ -15,7 +15,7 @@ Status Final
 	import roles.*
 
 	Head 
-		Set_Date month 5 day 8 year 2019 End_Date
+		Set_Date month 5 day 8 year 2020 End_Date
 			Page_Header_Even
 				center @lookup sid li.pdf.header sid d.on lang L1 @date lang L1
 			End_Page_Header_Even
@@ -103,11 +103,15 @@ Status Final
 				Section hymns
 					when-movable-cycle-day-is 
 						86 thru 90 use:
-							Insert_section AP.res__.mode2 End-Insert
-							Insert_section TI.s._05_evangelist End-Insert
-							Insert_section AP.me1_.hymn End-Insert
-							Insert_section TI.pe._02_myrrhbearers End-Insert
-							Insert_section AP.pe3_.hymn End-Insert
+							Section myrrhbearers
+								Insert_section AP.res__.mode2 End-Insert
+								Insert_section TI.s._05_evangelist End-Insert
+								Insert_section AP.me1_.hymn End-Insert
+								Set_mcDay day 85 End_mcDay
+								Insert_section TI.pe._02_myrrhbearers End-Insert
+								Insert_section AP.pe3_.hymn End-Insert
+								Set_mcDay day 0 End_mcDay
+							End-Section
 						93 use:
 							Insert_section AP.res__.mode3 End-Insert
 							Insert_section TI.s._05_evangelist End-Insert
