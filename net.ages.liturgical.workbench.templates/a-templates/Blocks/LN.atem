@@ -786,6 +786,16 @@ Template LN
 			Dialog sid pet36 End-Dialog
 		End-Section
 	End-Section	
+	Section Ektenia03_peme1 //for Lity
+		Section part1
+			Insert_section Ektenia03_me1.part1 End-Insert
+		End-Section
+		Section part2
+			Actor sid Priest End-Actor
+			Insert_section LN.ektenia_peme1 End-Insert
+			Dialog sid pet36 End-Dialog
+		End-Section
+	End-Section	
 	Section Ektenia03_Hierarchical_pe //for Lity
 		Section part1
 			Insert_section Ektenia03_Hierarchical_me1.part1 End-Insert
@@ -1133,8 +1143,19 @@ Template LN
 
 		Section ektenia_pe
 			when-movable-cycle-day-is
-				78, 110, 120 use: Insert_section commemorations.ektenia_20 End-Insert
-				127 use: Insert_section commemorations.ektenia_21 End-Insert
+				127 use: 
+					Insert_section commemorations.ektenia_21 End-Insert
+				otherwise use: 
+					Insert_section commemorations.ektenia_20 End-Insert
+			end-when
+		End-Section
+
+		Section ektenia_peme1
+			when-movable-cycle-day-is
+				127 use: 
+					Insert_section commemorations.ektenia_21_me1 End-Insert
+				otherwise use: 
+					Insert_section commemorations.ektenia_20_me1 End-Insert
 			end-when
 		End-Section
 
@@ -1221,8 +1242,14 @@ Template LN
 			Section ektenia_20 //Pentecostarion
 				Dialog sid sup00a sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12<r>sid cl.localpatronsaint1.supplication</>sid sup14 rid peInsert1 rid peInsert2 sid sup15 End-Dialog	
 			End-Section
+			Section ektenia_20_me1 //Pentecostarion and saint
+				Dialog sid sup00a sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12<r>sid cl.localpatronsaint1.supplication</>sid sup14 rid peInsert1 rid peInsert2 rid meInsert1 rid meInsert2 sid sup15 End-Dialog	
+			End-Section
 			Section ektenia_21 //AllSaints
 				Dialog sid sup00a sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12<r>sid cl.localpatronsaint1.supplication</>sid sup14 rid peInsert1 rid peInsert2 End-Dialog	
+			End-Section
+			Section ektenia_21_me1 //AllSaints and saint
+				Dialog sid sup00a sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12<r>sid cl.localpatronsaint1.supplication</>sid sup14 rid meInsert1 rid peInsert1 rid peInsert2 End-Dialog	
 			End-Section
 	End-Section
 	

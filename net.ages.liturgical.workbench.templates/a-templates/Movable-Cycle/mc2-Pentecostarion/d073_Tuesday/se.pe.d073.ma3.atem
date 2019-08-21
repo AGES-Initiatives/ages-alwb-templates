@@ -1,0 +1,348 @@
+Template se.pe.d073.ma3 
+
+Status NA
+
+	import me.*
+	import pe.*
+
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 5 day 3 End_Date
+			Page_Header_Even
+				center @lookup sid ma.pdf.header lang L1 @lookup sid d.on lang L1 @date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ma.pdf.header lang L2 @lookup sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		//Insert_template ematins.cover.ma End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	Section Instance01
+		Insert_section ST.ma.pe End-Insert
+		Insert_section MA._01_Beginning__.pascha End-Insert
+		Set_mcDay day 71 End_mcDay
+			Section canon
+				Section block02_odes13
+					Insert_section CAv.ode1.pa.ti_hh1122as00VVGB End-Insert
+					Insert_section PE.Pascha_Ode1.Katavasia_Litany End-Insert
+					Insert_section CAv.ode3.pa.ti_hh1122as00VVGB End-Insert
+					Insert_section PE.Pascha_Ode3.Katavasia_Litany End-Insert
+				End-Section
+				Section block04_ode3kathisma
+					Insert_section MA._10_Canon__.hypakoe__.pascha End-Insert
+				End-Section
+				Section block05_odes456
+					Insert_section CAv.ode4.pa.ti_hh1123as00VVGB End-Insert
+					Insert_section PE.Pascha_Ode4.Katavasia_Litany End-Insert
+					Insert_section CAv.ode5.pa.ti_hh1122as00VVGB End-Insert
+					Insert_section PE.Pascha_Ode5.Katavasia_Litany End-Insert
+					Insert_section CAv.ode6.pa.ti_hh1122as00VVGB End-Insert
+					Insert_section PE.Pascha_Ode6.Katavasia_Litany End-Insert
+				End-Section
+				Section block06_kontakionposition1
+					Insert_section MA._11_Kontakion__.pascha_ End-Insert
+					Set_mcDay day 73 End_mcDay
+						Section block1
+							Insert_section SY.me End-Insert
+							Reading rid pe.alt1.peMA.Synaxarion.commemoration.text End-Reading
+							Reading rid pe.alt1.peMA.Synaxarion.lastline.text End-Reading
+						End-Section
+					Set_mcDay day 71 End_mcDay
+				End-Section
+				Section block07_odes78
+					Insert_section CAv.ode7.pa.ti_hh1123as00VVGB End-Insert
+					Insert_section PE.Pascha_Ode7.Katavasia_Litany End-Insert
+					Insert_section CAv.ode8.pa.ti_hh1123as00VVGB End-Insert
+					Insert_section PE.Pascha_Ode8.Katavasia_Litany End-Insert
+				End-Section
+				Section block11_ode9
+					Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
+					Insert_section CAv.ode9.pa.ti_hh1122asM1M2M3M4GMTrBMTh End-Insert
+					Insert_section PE.Pascha_Ode9.Katavasia_Litany End-Insert
+				End-Section
+			End-Section
+		Set_mcDay day 73 End_mcDay
+		Insert_section MA._12_Exaposteilarion__.pascha__.thrice_ End-Insert
+		Insert_section MA._13_Lauds__.mode2__.noStichologia End-Insert
+		Insert_section MA._13_Lauds__.pe__.s_1234as3456 End-Insert
+		Insert_section MA._13_Lauds__.pascha End-Insert
+		Insert_section MA._13_Lauds__.gloryboth__.pascha_ End-Insert
+		Insert_section AP.pascha__.thrice End-Insert
+		Insert_section MA._18_End__.wisdom End-Insert
+		Insert_section MA._20_Dismissal__.brightweek End-Insert
+	End-Section
+	
+	Section Instance02 //with St Mark
+		Section part1
+			Section block1
+				Para<bnr>sid book.Pentecostarion.name</>End-Para
+				Reading rid pe.peShortCommemoration1.text End-Reading
+				Para<bnr>sid book.Menaion.name</>End-Para
+				Reading<bnr>sid me.m04.d25_gr_GR_cog.meDate.text</>End-Reading
+				Reading sid me.m04.d25_gr_GR_cog.meCommemoration.text End-Reading
+				Break line End_Break
+				Title<bnr>sid ma.html.tab</>End-Title
+			End-Section
+			Set_Date month 4 day 25 End_Date
+			Set_mcDay day 73 End_mcDay
+			Insert_section MA._01_Beginning__.pascha End-Insert
+			Insert_section MA._10_Canon__.hypakoe__.pascha End-Insert
+			Insert_section MA._11_Kontakion__.append__.pascha_ End-Insert
+			Insert_section TI.k.s._05_evangelist End-Insert
+			Insert_section MA._11_Kontakion__.append__.me1_.konoik_nt End-Insert
+			Set_Date month 0 day 0 year 0 End_Date
+		End-Section
+	//	Synaxarion inserted in menaion template
+		Section part2
+			Insert_section KA.choir__._1345678 End-Insert
+			Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
+			Insert_section CAv.ode9.pa.ti_hh12asM1M2M3M4 End-Insert
+			Insert_section TI.c.s._05_evangelist End-Insert
+			Section ode9_me1_nt_123tasApApGB
+				Title role source0 sid sourceMenaion End-Title
+				Media sid me.m04.d25_gr_GR_cog.meMA.Ode9C11.text End-Media
+				Title<Tmode>sid me.m04.d25_gr_GR_cog.meMA.Ode9C11.mode</><Tmelody>sid me.m04.d25_gr_GR_cog.meMA.Ode9C11.melody</>End-Title
+				Verse sid verse_Apostle.text End-Verse
+				Hymn sid me.m04.d25_gr_GR_cog.meMA.Ode9C11.text @ver media-off End-Hymn
+				Verse sid verse_Apostle.text End-Verse
+				Hymn sid me.m04.d25_gr_GR_cog.meMA.Ode9C12.text @ver End-Hymn
+				Title sid Doxa End-Title
+				Hymn sid me.m04.d25_gr_GR_cog.meMA.Ode9C13.text @ver End-Hymn
+				Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+				Hymn sid me.m04.d25_gr_GR_cog.meMA.Ode9C1T.text @ver End-Hymn
+			End-Section
+			Section block1
+				Title role desig sid Katavasia End-Title
+				Media sid pe.d00P_gr_GR_cog.pePA.Ode9K.text End-Media
+				Verse sid pe.d00P_gr_GR_cog.pePA.Ode9MKa.text End-Verse
+				Hymn sid pe.d00P_gr_GR_cog.pePA.Ode9K.text @ver media-off End-Hymn
+				Hymn sid pe.d00P_gr_GR_cog.pePA.ChristIsRisenShort.text<r>sid Thrice media-off</>End-Hymn
+				Hymn sid ho.s03_gr_GR_cog.hoMA.SunPostGospelIdiomelon.text @ver End-Hymn
+			End-Section
+		End-Section
+		Section part3
+			Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+			Insert_section MA._12_Exaposteilarion__.pascha__.once_ End-Insert
+			Insert_section TI.s._05_evangelist End-Insert
+			Section me_exap1
+				Title role source0 sid sourceMenaion End-Title
+				Title<Tmode>sid me.m04.d25_gr_GR_cog.meMA.Exaposteilarion1.mode</><Tmelody>sid me.m04.d25_gr_GR_cog.meMA.Exaposteilarion1.melody</>End-Title
+				Hymn sid me.m04.d25_gr_GR_cog.meMA.Exaposteilarion1.text @ver End-Hymn
+			End-Section
+			Insert_section MA._12_Exaposteilarion__.append__.pascha_ End-Insert
+			Insert_section MA._13_Lauds__.mode3__.noStichologia End-Insert
+			Insert_section MA._13_Lauds__.pe__.s_123as123 End-Insert
+			Insert_section TI.s._05_evangelist End-Insert
+			Section lauds_me_p_123as456
+				Title role source0 sid sourceMenaion End-Title
+				Title<Tmode>sid me.m04.d25_gr_GR_cog.meMA.Lauds1.mode</><Tmelody>sid me.m04.d25_gr_GR_cog.meMA.Lauds1.melody</>End-Title
+				Media sid me.m04.d25_gr_GR_cog.meMA.MM.Lauds123as456.text End-Media
+				Insert_section MA.Lauds_Verses.v04 End-Insert
+				Hymn sid me.m04.d25_gr_GR_cog.meMA.Lauds1.text @ver media-off End-Hymn		
+				Insert_section MA.Lauds_Verses.v05 End-Insert
+				Hymn sid me.m04.d25_gr_GR_cog.meMA.Lauds2.text @ver media-off End-Hymn		
+				Insert_section MA.Lauds_Verses.v06 End-Insert
+				Hymn sid me.m04.d25_gr_GR_cog.meMA.Lauds3.text @ver media-off End-Hymn
+			End-Section	
+			Insert_section MA._13_Lauds__.pascha End-Insert
+			Insert_section TI.g.s._05_evangelist End-Insert
+			Section lauds_glory_me_hymn
+				Title role source0 sid sourceMenaion End-Title
+				Title role mode sid me.m04.d25_gr_GR_cog.meMA.LaudsGlory.mode End-Title
+				Hymn sid me.m04.d25_gr_GR_cog.meMA.LaudsGlory.text @ver End-Hymn
+			End-Section
+			Insert_section MA._13_Lauds__.both__.pascha_ End-Insert
+			Insert_section AP.pascha__.thrice End-Insert
+			Insert_section MA._18_End__.wisdom End-Insert
+			Insert_section MA._20_Dismissal__.specificcommemoration__.brightweek_stmark End-Insert
+		End-Section
+	End-Section
+
+	Section Instance03 //with Sts Raphael, Nicholas and Irene
+		Insert_section ST.ma.pealt1 End-Insert
+		Insert_section MA._01_Beginning__.pascha End-Insert
+		Section polyelelos
+			Actor sid Choir End-Actor
+			Insert_section MA._05_Kathisma3__.polyeleos__.titles End-Insert
+			Insert_section MA._05_Kathisma3__.polyeleos__.append__.selected_verses__.martyrs End-Insert
+			Insert_section MA._05_Kathisma3__.polyeleos__.append__.glory_triadic End-Insert
+			Insert_section MA._05_Kathisma3__.polyeleos__.append__.both_theotokion End-Insert
+		End-Section
+		Insert_section MA._05_Kathisma3__.litany End-Insert
+		Insert_section MA._05_Kathisma3__.pe__.alt1__.kath31o323t_ End-Insert
+		Insert_section MA._06_Antiphons__.append__.mode41_pealt1_prokeimenon_ End-Insert
+		Insert_section MA._07_Gospel__.yes__.priest__.pealt1 End-Insert
+		Insert_section MA._08_Supplication__.deacon__.pealt1 End-Insert
+		Section canon
+			Section ode1
+				Insert_section CAv.ode1.pa.ti_hh12as00VV End-Insert
+				Title<Tdesig>rid alt1.peMA.C1.title</>End-Title
+				Title<Tmode>rid alt1.peMA.Ode1C11.mode</><Tmelody>rid alt1.peMA.Ode1C11.melody</>End-Title
+				Verse rid alt1.peMA.C1.verse End-Verse
+				Hymn rid alt1.peMA.Ode1C11.text @ver media-off End-Hymn
+				Verse rid alt1.peMA.C1.verse End-Verse
+				Hymn rid alt1.peMA.Ode1C12.text @ver media-off End-Hymn
+				Title sid Doxa End-Title
+				Hymn rid alt1.peMA.Ode1C13.text @ver media-off End-Hymn
+				Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+				Hymn rid alt1.peMA.Ode1C1T.text @ver media-off End-Hymn
+				Insert_section PE.Pascha_Ode1.Katavasia_Litany End-Insert
+			End-Section
+			Section ode3
+				Insert_section CAv.ode3.pa.ti_hh12as00VV End-Insert
+				Title<Tdesig>rid alt1.peMA.C1.title</>End-Title
+				Title<Tmode>rid alt1.peMA.Ode3C11.mode</><Tmelody>rid alt1.peMA.Ode3C11.melody</>End-Title
+				Verse rid alt1.peMA.C1.verse End-Verse
+				Hymn rid alt1.peMA.Ode3C11.text @ver media-off End-Hymn
+				Verse rid alt1.peMA.C1.verse End-Verse
+				Hymn rid alt1.peMA.Ode3C12.text @ver media-off End-Hymn
+				Title sid Doxa End-Title
+				Hymn rid alt1.peMA.Ode3C13.text @ver media-off End-Hymn
+				Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+				Hymn rid alt1.peMA.Ode3C1T.text @ver media-off End-Hymn
+				Insert_section PE.Pascha_Ode3.Katavasia_Litany End-Insert
+			End-Section
+			Insert_section MA._10_Canon__.hypakoe__.pascha End-Insert
+			Insert_section MA._11_Kontakion__.append__.pascha_.kontakion End-Insert
+			Insert_section MA._10_Canon__.ode3kathisma__.alt1pe1gb2 End-Insert
+			Section ode4
+				Insert_section CAv.ode4.append.pa.ti_h123as0VVV End-Insert
+				Title<Tdesig>rid alt1.peMA.C1.title</>End-Title
+				Title<Tmode>rid alt1.peMA.Ode4C11.mode</><Tmelody>rid alt1.peMA.Ode4C11.melody</>End-Title
+				Verse rid alt1.peMA.C1.verse End-Verse
+				Hymn rid alt1.peMA.Ode4C11.text @ver media-off End-Hymn
+				Verse rid alt1.peMA.C1.verse End-Verse
+				Hymn rid alt1.peMA.Ode4C12.text @ver media-off End-Hymn
+				Title sid Doxa End-Title
+				Hymn rid alt1.peMA.Ode4C13.text @ver media-off End-Hymn
+				Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+				Hymn rid alt1.peMA.Ode4C1T.text @ver media-off End-Hymn
+				Insert_section PE.Pascha_Ode4.Katavasia_Litany End-Insert
+			End-Section
+			Section ode5
+				Insert_section CAv.ode5.pa.ti_hh12as00VV End-Insert
+				Title<Tdesig>rid alt1.peMA.C1.title</>End-Title
+				Title<Tmode>rid alt1.peMA.Ode5C11.mode</><Tmelody>rid alt1.peMA.Ode5C11.melody</>End-Title
+				Verse rid alt1.peMA.C1.verse End-Verse
+				Hymn rid alt1.peMA.Ode5C11.text @ver media-off End-Hymn
+				Verse rid alt1.peMA.C1.verse End-Verse
+				Hymn rid alt1.peMA.Ode5C12.text @ver media-off End-Hymn
+				Title sid Doxa End-Title
+				Hymn rid alt1.peMA.Ode5C13.text @ver media-off End-Hymn
+				Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+				Hymn rid alt1.peMA.Ode5C1T.text @ver media-off End-Hymn
+				Insert_section PE.Pascha_Ode5.Katavasia_Litany End-Insert
+			End-Section
+			Section ode6
+				Insert_section CAv.ode6.pa.ti_hh12as00VV End-Insert
+				Title<Tdesig>rid alt1.peMA.C1.title</>End-Title
+				Title<Tmode>rid alt1.peMA.Ode6C11.mode</><Tmelody>rid alt1.peMA.Ode6C11.melody</>End-Title
+				Verse rid alt1.peMA.C1.verse End-Verse
+				Hymn rid alt1.peMA.Ode6C11.text @ver media-off End-Hymn
+				Verse rid alt1.peMA.C1.verse End-Verse
+				Hymn rid alt1.peMA.Ode6C12.text @ver media-off End-Hymn
+				Title sid Doxa End-Title
+				Hymn rid alt1.peMA.Ode6C13.text @ver media-off End-Hymn
+				Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+				Hymn rid alt1.peMA.Ode6C1T.text @ver media-off End-Hymn
+				Insert_section PE.Pascha_Ode6.Katavasia_Litany End-Insert
+			End-Section
+			Actor sid Reader End-Actor
+			Insert_section TI.k.s._00_saint_.mp End-Insert
+			Insert_section MA._11_Kontakion__.append__.alt1pe1_.konoik_nt_ End-Insert
+			Insert_section SY.Synaxarion End-Insert
+			Section ode7
+				Insert_section CAv.ode7.pa.ti_h123as0VVV End-Insert
+				Title<Tdesig>rid alt1.peMA.C1.title</>End-Title
+				Title<Tmode>rid alt1.peMA.Ode7C11.mode</><Tmelody>rid alt1.peMA.Ode7C11.melody</>End-Title
+				Verse rid alt1.peMA.C1.verse End-Verse
+				Hymn rid alt1.peMA.Ode7C11.text @ver media-off End-Hymn
+				Verse rid alt1.peMA.C1.verse End-Verse
+				Hymn rid alt1.peMA.Ode7C12.text @ver media-off End-Hymn
+				Title sid Doxa End-Title
+				Hymn rid alt1.peMA.Ode7C13.text @ver media-off End-Hymn
+				Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+				Hymn rid alt1.peMA.Ode7C1T.text @ver media-off End-Hymn
+				Insert_section PE.Pascha_Ode7.Katavasia_Litany End-Insert
+			End-Section
+			Section ode8
+				Insert_section CAv.ode8.pa.ti_h123as0VVV End-Insert
+				Title<Tdesig>rid alt1.peMA.C1.title</>End-Title
+				Title<Tmode>rid alt1.peMA.Ode8C11.mode</><Tmelody>rid alt1.peMA.Ode8C11.melody</>End-Title
+				Verse rid alt1.peMA.C1.verse End-Verse
+				Hymn rid alt1.peMA.Ode8C11.text @ver media-off End-Hymn
+				Verse rid alt1.peMA.C1.verse End-Verse
+				Hymn rid alt1.peMA.Ode8C12.text @ver media-off End-Hymn
+				Title sid Doxa End-Title
+				Hymn rid alt1.peMA.Ode8C13.text @ver media-off End-Hymn
+				Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+				Hymn rid alt1.peMA.Ode8C1T.text @ver media-off End-Hymn
+				Insert_section PE.Pascha_Ode8.Katavasia_Litany End-Insert
+			End-Section
+		End-Section
+		Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
+		Insert_section CAv.ode9.pa.ti_hh12asM1M2M3M4 End-Insert
+		Insert_section TI.c.s._00_saint_.mp End-Insert
+		Section ode9_pealt1_nt_123tasM1M2GMTrBMTh
+			Title role source0 sid sourcePeSupplement End-Title
+			Title<Tdesig>rid alt1.peMA.C1.title</>End-Title
+			Media rid alt1.peMA.Ode9C11.text End-Media
+			Title<Tmode>rid alt1.peMA.Ode9C11.mode</><Tmelody>rid alt1.peMA.Ode9C11.melody</>End-Title
+			Verse rid alt1.peMA.Ode9C1M01.text End-Verse
+			Hymn rid alt1.peMA.Ode9C11.text @ver media-off End-Hymn
+			Verse rid alt1.peMA.Ode9C1M02.text End-Verse
+			Hymn rid alt1.peMA.Ode9C12.text @ver End-Hymn
+			Title sid Doxa End-Title
+			Verse rid alt1.peMA.Ode9C1MTr.text End-Verse
+			Hymn rid alt1.peMA.Ode9C13.text @ver End-Hymn
+			Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+			Verse rid alt1.peMA.Ode9C1MTh.text End-Verse
+			Hymn rid alt1.peMA.Ode9C1T.text @ver End-Hymn
+		End-Section
+		Section block1
+			Title role desig sid Katavasia End-Title
+			Media sid pe.d00P_gr_GR_cog.pePA.Ode9K.text End-Media
+			Verse sid pe.d00P_gr_GR_cog.pePA.Ode9MKa.text End-Verse
+			Hymn sid pe.d00P_gr_GR_cog.pePA.Ode9K.text @ver media-off End-Hymn
+			Hymn sid pe.d00P_gr_GR_cog.pePA.ChristIsRisenShort.text<r>sid Thrice media-off</>End-Hymn
+			Hymn sid ho.s03_gr_GR_cog.hoMA.SunPostGospelIdiomelon.text @ver End-Hymn
+		End-Section
+		Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+		Insert_section MA._12_Exaposteilarion__.pascha__.once_ End-Insert
+		Insert_section TI.s._00_saint_.mp End-Insert
+		Insert_section MA._12_Exaposteilarion__.append__.pe__.alt1__.exap2 End-Insert
+		Insert_section MA._12_Exaposteilarion__.append__.pascha_ End-Insert
+		Insert_section MA._13_Lauds__.mode3__.noStichologia End-Insert
+		Insert_section MA._13_Lauds__.pe__.s_1234as1234 End-Insert
+		Insert_section TI.s._00_saint_.mp End-Insert
+		Insert_section MA._13_Lauds__.pe__.alt1__.p_5678as56martyrs12 End-Insert
+		Insert_section MA._13_Lauds__.pascha End-Insert
+		Insert_section TI.g.s._00_saint_.mp End-Insert
+		Insert_section MA._13_Lauds__.glory__.pe__.alt1__.gloryasglory_.hymn End-Insert
+		Insert_section MA._13_Lauds__.both__.pascha_ End-Insert
+		Insert_section AP.pascha__.thrice End-Insert
+		Insert_section MA._18_End__.wisdom End-Insert
+		Insert_section MA._20_Dismissal__.pealt1_commemoration End-Insert
+	End-Section	
+End-Template
