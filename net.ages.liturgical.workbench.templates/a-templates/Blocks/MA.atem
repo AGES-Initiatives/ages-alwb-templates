@@ -1398,42 +1398,49 @@ Template MA
 							Hymn rid peMA.Kathisma1T.text @ver End-Hymn
 						End-Section
 					otherwise use:
-						Title role source sid sourcePentecostarion End-Title
-						Actor sid Choir End-Actor
-						Title<Tdesig>sid Kathisma1</>End-Title
-						when-name-of-day-is
-							Monday, Tuesday, Thursday use:
-								Title<Tdesig>sid Anastasimon</>End-Title
-							Wednesday, Friday use:
-								Title<Tdesig>sid Stavrosimon</>End-Title
-						end-when
-						Title<Tmode>rid peMA.Kathisma11.mode</><Tmelody>rid peMA.Kathisma11.melody</>End-Title
-						Hymn rid peMA.Kathisma11.text @ver End-Hymn
-						when-name-of-day-is
-							Monday, Tuesday use:
-								Title<Tdesig>sid Katanyktikon</>End-Title
-								Insert_section PsalmVerses.forMatinsKathismata.verse1.monday.verse1 End-Insert
-							Wednesday, Friday use:
-								Title<Tdesig>sid Anastasimon</>End-Title
-								Insert_section PsalmVerses.forVespersAposticha.saturday.verse1 End-Insert
-							Thursday use:
-								Title<Tdesig>sid Apostolikon</>End-Title
-								Insert_section PsalmVerses.forMatinsKathismata.verse1.thursday.verse1 End-Insert
-						end-when	
-						Title<Tmode>rid peMA.Kathisma12.mode</><Tmelody>rid peMA.Kathisma12.melody</>End-Title
-						Hymn rid peMA.Kathisma12.text @ver End-Hymn
-						Title<Tdesig>sid Martyrikon</>End-Title
-						Insert_section PsalmVerses.forMatinsKathismata.verse3 End-Insert
-						Title<Tmode>rid peMA.Kathisma13.mode</><Tmelody>rid peMA.Kathisma13.melody</>End-Title
-						Hymn rid peMA.Kathisma13.text @ver End-Hymn
-						when-name-of-day-is
-							Wednesday, Friday use:
-								Title sid DoxaKaiNyn<Tdesig>sid Stavrotheotokion</>End-Title
+						when-movable-cycle-day-is
+							108 use:
+								Insert_section saturday End-Insert
 							otherwise use:
-								Title sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+								Section mon_thru_fri
+									Title role source sid sourcePentecostarion End-Title
+									Actor sid Choir End-Actor
+									Title<Tdesig>sid Kathisma1</>End-Title
+									when-name-of-day-is
+										Monday, Tuesday, Thursday use:
+											Title<Tdesig>sid Anastasimon</>End-Title
+										Wednesday, Friday use:
+											Title<Tdesig>sid Stavrosimon</>End-Title
+									end-when
+									Title<Tmode>rid peMA.Kathisma11.mode</><Tmelody>rid peMA.Kathisma11.melody</>End-Title
+									Hymn rid peMA.Kathisma11.text @ver End-Hymn
+									when-name-of-day-is
+										Monday, Tuesday use:
+											Title<Tdesig>sid Katanyktikon</>End-Title
+											Insert_section PsalmVerses.forMatinsKathismata.verse1.monday.verse1 End-Insert
+										Wednesday, Friday use:
+											Title<Tdesig>sid Anastasimon</>End-Title
+											Insert_section PsalmVerses.forVespersAposticha.saturday.verse1 End-Insert
+										Thursday use:
+											Title<Tdesig>sid Apostolikon</>End-Title
+											Insert_section PsalmVerses.forMatinsKathismata.verse1.thursday.verse1 End-Insert
+									end-when	
+									Title<Tmode>rid peMA.Kathisma12.mode</><Tmelody>rid peMA.Kathisma12.melody</>End-Title
+									Hymn rid peMA.Kathisma12.text @ver End-Hymn
+									Title<Tdesig>sid Martyrikon</>End-Title
+									Insert_section PsalmVerses.forMatinsKathismata.verse3 End-Insert
+									Title<Tmode>rid peMA.Kathisma13.mode</><Tmelody>rid peMA.Kathisma13.melody</>End-Title
+									Hymn rid peMA.Kathisma13.text @ver End-Hymn
+									when-name-of-day-is
+										Wednesday, Friday use:
+											Title sid DoxaKaiNyn<Tdesig>sid Stavrotheotokion</>End-Title
+										otherwise use:
+											Title sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+									end-when
+									Title<Tmode>rid peMA.Kathisma1T.mode</><Tmelody>rid peMA.Kathisma1T.melody</>End-Title
+									Hymn rid peMA.Kathisma1T.text @ver End-Hymn
+								End-Section
 						end-when
-						Title<Tmode>rid peMA.Kathisma1T.mode</><Tmelody>rid peMA.Kathisma1T.melody</>End-Title
-						Hymn rid peMA.Kathisma1T.text @ver End-Hymn
 				end-when
 			End-Section
 		End-Section
@@ -14531,22 +14538,27 @@ Template MA
 			Section weekday_
 				when-name-of-day-is
 					Monday, Tuesday use:
-						Section monday_tuesday	
-							Title role source sid sourcePentecostarion End-Title
-							Title<Tdesig>sid Stichira</><Tmode>rid peMA.Lauds1.mode</>End-Title
-							Insert_section Lauds_Verses.v03 End-Insert
-							Title<Tdesig>sid Anastasimon</>End-Title
-							Hymn rid peMA.Lauds1.text @ver End-Hymn
-							Insert_section Lauds_Verses.v04 End-Insert
-							Title<Tdesig>sid ToAfto</>End-Title
-							Hymn rid peMA.Lauds1.text @ver End-Hymn
-							Insert_section Lauds_Verses.v05 End-Insert
-							Title<Tdesig>sid Katanyktikon</><Tmelody>rid peMA.Lauds2.melody</>End-Title
-							Hymn rid peMA.Lauds2.text @ver End-Hymn
-							Insert_section Lauds_Verses.v06 End-Insert
-							Title<Tdesig>sid Martyrikon</><Tmelody>rid peMA.Lauds3.melody</>End-Title
-							Hymn rid peMA.Lauds3.text @ver End-Hymn
-						End-Section
+						when-movable-cycle-day-is
+							108 use:
+								Insert_section saturday End-Insert
+							otherwise use:
+								Section monday_tuesday
+									Title role source sid sourcePentecostarion End-Title
+									Title<Tdesig>sid Stichira</><Tmode>rid peMA.Lauds1.mode</>End-Title
+									Insert_section Lauds_Verses.v03 End-Insert
+									Title<Tdesig>sid Anastasimon</>End-Title
+									Hymn rid peMA.Lauds1.text @ver End-Hymn
+									Insert_section Lauds_Verses.v04 End-Insert
+									Title<Tdesig>sid ToAfto</>End-Title
+									Hymn rid peMA.Lauds1.text @ver End-Hymn
+									Insert_section Lauds_Verses.v05 End-Insert
+									Title<Tdesig>sid Katanyktikon</><Tmelody>rid peMA.Lauds2.melody</>End-Title
+									Hymn rid peMA.Lauds2.text @ver End-Hymn
+									Insert_section Lauds_Verses.v06 End-Insert
+									Title<Tdesig>sid Martyrikon</><Tmelody>rid peMA.Lauds3.melody</>End-Title
+									Hymn rid peMA.Lauds3.text @ver End-Hymn
+								End-Section
+						end-when
 					Wednesday, Friday use:
 						Section wednesday_friday
 							Title role source sid sourcePentecostarion End-Title
