@@ -1,6 +1,6 @@
 Template se.m05.d29.ve 
 
-Status NA
+Status Review
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -37,13 +37,85 @@ Status NA
 	End-Preface
 
 	when-movable-cycle-day-is
-		92, 95, 99, 102, 106, 109, 110, 113, 118, 119, 120, 127 use: 
-			Insert_section mc.map.ve.Section01 End-Insert
-		79 thru 83 use: //Thomas week
-		84 use: //Thomas Saturday
-		// various weekdays
-		108 use: //OC Leavetaking of Blindman
-		111 use: //OC After Ascension
+		92, 95, 99, 102, 106, 109, 110, 113, 118, 119, 120, 121, 126, 127 use:
+			Section Instance01
+				Insert_section mc.map.ve.Section01 End-Insert
+			End-Section
+			
+		86 thru 90 use:
+			Section Instance04_86thru90
+			End-Section
+			
+		91 use:
+			Section Instance04_91
+			End-Section
+
+		93, 94 use:
+			Section Instance04_9394
+			End-Section
+
+		96, 97, 100, 101 use:
+			Section Instance04_9697100101
+			End-Section
+
+		98 use:
+			Section Instance04_98
+			End-Section
+
+		103, 104, 107 use:
+			Section Instance04_103104107
+			End-Section
+
+		105 use:
+			Section Instance04_105
+			End-Section
+
+		108 use: //Leavetaking of Blindman
+			Section Instance05
+			End-Section
+
+		111, 112 use: 
+			Section Instance06
+				Insert_section ST.ve.pe_me1 End-Insert
+				Insert_section VE._01_Beginning__.vespers End-Insert
+				when-movable-cycle-day-is
+					111 use:
+						Insert_section VE._02_Kekragaria__.mode1__.for6 End-Insert
+						Insert_section TI.stp.f End-Insert
+						Insert_section VE._03_Stichera__.pe__.i_123as567 End-Insert
+					112	use:
+						Insert_section VE._02_Kekragaria__.mode4__.for6 End-Insert
+						Insert_section TI.stp.f End-Insert
+						Insert_section VE._03_Stichera__.pe__.p_123as567 End-Insert
+				end-when
+				Insert_section TI.s._00_saint_.w End-Insert
+				Insert_section VE._03_Stichera__.me__.p_123as8910 End-Insert
+				Insert_section TI.gb.f End-Insert
+				Insert_section VE._03_Stichera__.gloryboth__.pe_.hymn End-Insert
+				Insert_section VE._04_Middle__.noentrance End-Insert
+				Insert_section VE._06_Litanies__.noektenia End-Insert
+				Insert_section VE._08_Aposticha__.pe__.p_ascension12 End-Insert
+				Insert_section TI.gb.f End-Insert
+				Insert_section VE._08_Aposticha__.gloryboth__.pe_.hymn End-Insert
+				Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
+				Insert_section AP.af End-Insert	
+				Insert_section TI.g.s._00_saint_.w End-Insert
+				Insert_section AP.ga.womanmartyr_.hymn End-Insert
+				Insert_section AP.gloryboth__.af End-Insert
+				Insert_section VE._10_End__.ektenia_wisdom End-Insert
+				Insert_section VE._11_Dismissal__.nocommemoration End-Insert			
+			End-Section
+
+		114, 115, 116, 117 use: 
+			Section Instance07
+			End-Section
+
+		122 thru 125 use: 
+			Section Instance08
+			End-Section
+			
+		otherwise use:
+
 	end-when	
 		
 End-Template
