@@ -1,6 +1,6 @@
 Template se.m06.d04.li
 
-Status NA
+Status Final
 
 	import actors_gr_GR_cog.*
 	import misc_gr_GR_cog.*
@@ -30,11 +30,63 @@ Status NA
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
-	when-movable-cycle-day-is 1 thru 127 use:
-			Insert_section mc.map.li.Section01 End-Insert //adjust to appropriate service
-			otherwise use:
-		
+	when-movable-cycle-day-is
+		95, 99, 102, 106, 109, 110, 113, 118, 119, 120, 121, 126, 127 use:
+			Section Instance01
+				Insert_section mc.map.li.Section01 End-Insert
+			End-Section
+
+		96, 97, 100, 101 use:
+			Section Instance04_9697100101
+			End-Section
+
+		98 use:
+			Section Instance04_98
+			End-Section
+
+		103, 104, 107 use:
+			Section Instance04_103104107
+			End-Section
+
+		105 use:
+			Section Instance04_105
+			End-Section
+
+		108 use: //Leavetaking of Blindman
+			Section Instance05
+			End-Section
+
+		111, 112 use: 
+			Section Instance06
+			End-Section
+
+		114, 115, 116, 117 use: 
+			Section Instance07
+				Insert_section ST.li.pe_me1 End-Insert
+				Insert_section LI._01_Enarxis__.daily End-Insert
+				Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
+				Insert_section LI._04_Entrance__.choir End-Insert
+				Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
+				Section hymns
+					Insert_section AP.af End-Insert
+					Insert_section TI.s._00_saint_.m End-Insert
+					Insert_section AP.ganame.Jun04__.mitrophanis End-Insert
+					Insert_section LI._05_AfterEntranceHymns__.local End-Insert
+					Insert_section KO.seasonal End-Insert
+				End-Section
+				Insert_section LI._06_Trisagion__.chrys  End-Insert
+				Insert_section LE._01_Epistle__.menaion_ End-Insert
+				Insert_section LE._02_Gospel__.menaion_ End-Insert
+				Insert_section LI._08_Liturgy__.chrys_default End-Insert
+				Insert_section LI._09_Dismissal__.commemoration End-Insert
+			End-Section
+
+		122 thru 125 use: 
+			Section Instance08
+			End-Section
+			
+		otherwise use:
+
 	end-when	
-	
 
 End-Template

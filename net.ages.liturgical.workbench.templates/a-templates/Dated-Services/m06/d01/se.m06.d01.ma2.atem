@@ -1,9 +1,8 @@
-Template se.m06.d06.ve 
+Template se.m06.d01.ma2 
 
-Status Final
+Status NA
 
 	import actors_gr_GR_cog.*
-	import dismissals_gr_GR_cog.*
 	import misc_gr_GR_cog.*
 	import prayers_gr_GR_cog.*
 	import rubrical_gr_GR_cog.*
@@ -15,12 +14,12 @@ Status Final
 	import roles.*
 
 	Head 
-		Set_Date month 6 day 6 year 2020 End_Date
+		Set_Date month 6 day 1 year 2020 End_Date
 			Page_Header_Even
-				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L1 
+				center @lookup sid ma.pdf.header sid d.on lang L1 @date lang L1
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -32,14 +31,14 @@ Status Final
 	End_Head
 
 	Preface Covers
-		Insert_template ematins.pdf.cover.ve.specific_2020 End-Insert
+
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
 	when-movable-cycle-day-is
 		95, 99, 102, 106, 109, 110, 113, 118, 119, 120, 121, 126, 127 use:
 			Section Instance01
-				Insert_section mc.map.ve.Section01 End-Insert
+				Insert_section mc.map.ma.Section02 End-Insert
 			End-Section
 			
 		96, 97, 100, 101 use:
@@ -62,19 +61,11 @@ Status Final
 			Section Instance05
 			End-Section
 
-		111 use: 
-			Section Instance06_111
+		111, 112 use: 
+			Section Instance06
 			End-Section
 
-		112 use: 
-			Section Instance06_112
-			End-Section
-
-		114 use: 
-			Section Instance07_114
-			End-Section
-
-		115, 116, 117 use: 
+		114, 115, 116, 117 use: 
 			Section Instance07
 			End-Section
 
@@ -85,5 +76,5 @@ Status Final
 		otherwise use:
 
 	end-when	
-		
+	
 End-Template

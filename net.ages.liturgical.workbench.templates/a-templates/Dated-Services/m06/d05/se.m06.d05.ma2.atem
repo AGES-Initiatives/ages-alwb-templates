@@ -1,6 +1,6 @@
 Template se.m06.d05.ma2 
 
-Status NA
+Status Final
 
 	import actors_gr_GR_cog.*
 	import misc_gr_GR_cog.*
@@ -35,10 +35,46 @@ Status NA
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-	when-movable-cycle-day-is 1 thru 127 use:
-			Insert_section mc.map.ma.Section02 End-Insert //adjust to appropriate service
-			otherwise use:
-		
+	when-movable-cycle-day-is
+		95, 99, 102, 106, 109, 110, 113, 118, 119, 120, 121, 126, 127 use:
+			Section Instance01
+				Insert_section mc.map.ma.Section02 End-Insert
+			End-Section
+			
+		96, 97, 100, 101 use:
+			Section Instance04_9697100101
+			End-Section
+
+		98 use:
+			Section Instance04_98
+			End-Section
+
+		103, 104, 107 use:
+			Section Instance04_103104107
+			End-Section
+
+		105 use:
+			Section Instance04_105
+			End-Section
+
+		108 use: //Leavetaking of Blindman
+			Section Instance05
+			End-Section
+
+		111, 112 use: 
+			Section Instance06
+			End-Section
+
+		114, 115, 116, 117 use: 
+			Section Instance07
+			End-Section
+
+		122 thru 125 use: 
+			Section Instance08
+			End-Section
+			
+		otherwise use:
+
 	end-when	
 	
 End-Template
