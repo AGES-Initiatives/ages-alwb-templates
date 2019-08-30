@@ -36,20 +36,46 @@ Status NA
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-	when-movable-cycle-day-is 1 thru 127 use:
-			Insert_section mc.map.ma.Section02 End-Insert //adjust to appropriate service
-			otherwise use:
-		when-name-of-day-is 
-			Sunday use:
-				Section Instance02
-				End-Section
+	when-movable-cycle-day-is
+		102, 106, 109, 110, 113, 118, 119, 120, 121, 126, 127 use:
+			Section Instance01
+				Insert_section mc.map.ma.Section02 End-Insert
+			End-Section
+			
+		103, 104, 107 use:
+			Section Instance04_103104107
+			End-Section
 
-			otherwise use:
-				Section Instance01
-				End-Section
-		end-when
-		
-	end-when	
+		105 use:
+			Section Instance04_105
+			End-Section
+
+		108 use: //Leavetaking of Blindman
+			Section Instance05
+			End-Section
+
+		111, 112 use: 
+			Section Instance06
+			End-Section
+
+		114, 115, 116, 117 use: 
+			Section Instance07
+			End-Section
+
+		122 thru 125 use: 
+			Section Instance08
+			End-Section
+			
+		otherwise use:
+			when-name-of-day-is 
+				Sunday use:
+					Section Instance02
+					End-Section
 	
+				otherwise use:
+					Section Instance01
+					End-Section
+			end-when
+	end-when	
 
 End-Template
