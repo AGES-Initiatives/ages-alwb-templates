@@ -1,0 +1,1170 @@
+Template rid_EpistleProkeimena_Menaion
+
+Status NA
+
+	import le.pr.os_gr_GR_cog.*
+	import menaion.verses_gr_GR_cog.*
+	import movable.verses_gr_GR_cog.*
+	
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+	
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+/* 
+ These sections compute the Epistle title and prokeimenon for menaion commemorations.
+ * The source is the book templates in Apostolos.
+They are to be inserted in LectionaryReadings.atem (Lectionary_Epistle_Menaion), 
+to replace the three lines calling the Prokeimena parts using rids. 
+These new sections will select the right Title and Prokeimenon/Verse based on the "when statement," 
+while the remaining rids in LectionaryReadings.atem will select the right Epistle reading etc.	
+*/
+
+	Section me_ep_title_mode
+		when-date-is
+			Jan 1 use:
+				Title<r>sid Prokeimenon sid Mode1 sid psLI.m01.d01.prokeimenon.title</>End-Title
+			Jan 2, 23, 29 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m01.d02.prokeimenon.title</>End-Title
+			Jan 4 use:
+ 				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Jan 6 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m01.d06.prokeimenon.title</>End-Title
+			Jan 7 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m01.d07.prokeimenon.title</>End-Title
+			Jan 8 use:
+ 				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Jan 9, 24 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m01.d09.prokeimenon.title</>End-Title
+			Jan 10 use:
+				Title<r>sid Prokeimenon sid Mode1 sid psLI.m01.d01.prokeimenon.title</>End-Title
+			Jan 11 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m01.d11.prokeimenon.title</>End-Title
+			Jan 12 use:
+ 				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Jan 14 use:
+ 				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+		//	Jan 15 use:
+ 		//		Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Jan 16 use:
+				Title<r>sid Prokeimenon sid Mode8 sid psLI.m01.d16.prokeimenon.title</>End-Title
+			Jan 17 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m01.d17.prokeimenon.title</>End-Title
+			Jan 18 use:
+				Title<r>sid Prokeimenon sid Mode4 sid leosLI.pe.d113.EpistleProkeimenon.title</>End-Title
+			Jan 19 use:
+ 				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Jan 15, 20 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m01.d20.prokeimenon.title</>End-Title
+			Jan 21 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m01.d21.prokeimenon.title</>End-Title
+			Jan 22 use:
+				Title<r>sid Prokeimenon sid Mode8 sid psLI.m01.d22.prokeimenon.title</>End-Title
+		//	Jan 23 use:
+		//		Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+		//	Jan 24 use:
+		//		Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Jan 25 use:
+				Title<r>sid Prokeimenon sid Mode1 sid psLI.m01.d25.prokeimenon.title</>End-Title
+			Jan 27 use:
+				Title<r>sid Prokeimenon sid Mode1 sid psLI.m01.d27.prokeimenon.title</>End-Title
+			Jan 28 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+		//	Jan 29 use:
+		//		Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Jan 30 use:
+				Title<r>sid Prokeimenon sid Mode8 sid psLI.m01.d30.prokeimenon.title</>End-Title
+			Jan 31 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m01.d31.prokeimenon.title</>End-Title
+			Feb 1 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m02.d01.prokeimenon.title</>End-Title
+			Feb 2 use:
+				Title<r>sid Prokeimenon sid Mode3 sid psLI.m02.d02.prokeimenon.title</>End-Title
+			Feb 3 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m02.d03.prokeimenon.title</>End-Title
+			Feb 8 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m02.d08.prokeimenon.title</>End-Title
+			Feb 9 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m02.d09.prokeimenon.title</>End-Title
+			Feb 10 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m02.d10.prokeimenon.title</>End-Title
+			Feb 11 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Feb 15 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Feb 17 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m02.d17.prokeimenon.title</>End-Title
+			Feb 23 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m02.d23.prokeimenon.title</>End-Title
+			Feb 24 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m02.d24.prokeimenon.title</>End-Title
+			Feb 26 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Mar 9, 10 use:
+				Title<r>sid Prokeimenon sid Mode8 sid psLI.m03.d09.prokeimenon.title</>End-Title
+			Mar 25 use:
+				Title<r>sid Prokeimenon sid Mode3 sid psLI.m03.d25.prokeimenon.title</>End-Title
+			Mar 26 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m03.d26.prokeimenon.title</>End-Title
+			Mar 30 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m03.d30.prokeimenon.title</>End-Title
+			Apr 1 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m04.d01.prokeimenon.title</>End-Title
+			Apr 10 use:
+				Title<r>sid Prokeimenon sid Mode1 sid psLI.m04.d10.prokeimenon.title</>End-Title
+			Apr 23 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m04.d23.prokeimenon.title</>End-Title
+			Apr 25 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m04.d25.prokeimenon.title</>End-Title
+			Apr 29 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Apr 30 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m04.d30.prokeimenon.title</>End-Title
+			May 1 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			May 2 use:
+				Title<r>sid Prokeimenon sid Mode4 sid leosLI.pe.d113.EpistleProkeimenon.title</>End-Title
+			May 7 use:
+				Title<r>sid Prokeimenon sid Mode1 sid psLI.m05.d07.prokeimenon.title</>End-Title
+			May 8 use:
+				Title<r>sid Prokeimenon sid Mode8 sid psLI.m05.d08.prokeimenon.title</>End-Title
+			May 9 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			May 10 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			May 11 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			May 15 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			May 20 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			May 21 use:
+				Title<r>sid Prokeimenon sid Mode8 sid psLI.m05.d21.prokeimenon.title</>End-Title
+			May 24 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			May 25 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m05.d25.prokeimenon.title</>End-Title
+			May 26 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			May 29 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Jun 2 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m06.d02.prokeimenon.title</>End-Title
+			Jun 4 use:
+				Title<r>sid Prokeimenon sid Mode1 sid psLI.m06.d04.prokeimenon.title</>End-Title
+			Jun 8 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Jun 9 use:
+				Title<r>sid Prokeimenon sid Mode1 sid psLI.m06.d09.prokeimenon.title</>End-Title
+			Jun 11 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Jun 12 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Jun 14 use:
+				Title<r>sid Prokeimenon sid Mode1 sid psLI.m06.d14a.prokeimenon.title</>End-Title
+		//	Jun 14 use:
+		//		Title<r>sid Prokeimenon sid Mode7 sid psLI.m06.d14b.prokeimenon.title</>End-Title
+			Jun 17 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Jun 19 use:
+				Title<r>sid Prokeimenon sid Mode8 sid psLI.m06.d19.prokeimenon.title</>End-Title
+			Jun 24 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m06.d24.prokeimenon.title</>End-Title
+			Jun 25 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m06.d25.prokeimenon.title</>End-Title
+			Jun 26 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Jun 27 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Jun 28 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m06.d28.prokeimenon.title</>End-Title
+			Jun 29 use:
+				Title<r>sid Prokeimenon sid Mode8 sid psLI.m06.d29.prokeimenon.title</>End-Title
+			Jun 30 use:
+				Title<r>sid Prokeimenon sid Mode8 sid psLI.m06.d30.prokeimenon.title</>End-Title
+			Jul 1 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m07.d01.prokeimenon.title</>End-Title
+			Jul 2 use:
+				Title<r>sid Prokeimenon sid Mode3 sid psLI.m07.d02.prokeimenon.title</>End-Title
+			Jul 4 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Jul 5 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m12.d05.prokeimenon.title</>End-Title
+			Jul 8 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Jul 9 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m07.d09.prokeimenon.title</>End-Title
+			Jul 11 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Jul 13 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m07.d13.prokeimenon.title</>End-Title
+			Jul 14 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Jul 7, 15 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m07.d15.prokeimenon.title</>End-Title
+			Jul 17 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Jul 20 use:
+				Title<r>sid Prokeimenon sid Mode1 sid psLI.m07.d20.prokeimenon.title</>End-Title
+			Jul 21 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m07.d21.prokeimenon.title</>End-Title
+			Jul 22 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m07.d22.prokeimenon.title</>End-Title
+			Jul 24 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Jul 25 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m07.d25.prokeimenon.title</>End-Title
+			Jul 26 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m07.d26b.prokeimenon.title</>End-Title
+			Jul 27 use:
+				Title<r>sid Prokeimenon sid Mode6 sid psLI.m07.d27.prokeimenon.title</>End-Title
+			Jul 28 use:
+				Title<r>sid Prokeimenon sid Mode8 sid psLI.m07.d28.prokeimenon.title</>End-Title
+			Jul 29 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m07.d29.prokeimenon.title</>End-Title
+			Jul 31 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Aug 1 use:
+				Title<r>sid Prokeimenon sid Mode8 sid psLI.m08.d01.prokeimenon.title</>End-Title
+			Aug 2 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Aug 3 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Aug 4 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Aug 5 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Aug 6 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m08.d06.prokeimenon.title</>End-Title
+			Aug 7 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Aug 9 use:
+				Title<r>sid Prokeimenon sid Mode8 sid psLI.m08.d09.prokeimenon.title</>End-Title
+			Aug 10 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Aug 11 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Aug 13 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Aug 15 use:
+				Title<r>sid Prokeimenon sid Mode3 sid psLI.m08.d15.prokeimenon.title</>End-Title
+			Aug 16 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m08.d16.prokeimenon.title</>End-Title
+			Aug 18 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m08.d18.prokeimenon.title</>End-Title
+			Aug 20 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m08.d20.prokeimenon.title</>End-Title
+			Aug 25 use:
+				Title<r>sid Prokeimenon sid Mode8 sid psLI.m08.d25.prokeimenon.title</>End-Title
+			Aug 26 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m08.d26.prokeimenon.title</>End-Title
+			Aug 27 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Aug 28 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Aug 29 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m08.d29.prokeimenon.title</>End-Title
+			Aug 31 use:
+				Title<r>sid Prokeimenon sid Mode3 sid psLI.m08.d31.prokeimenon.title</>End-Title
+			Sep 1 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m09.d01.prokeimenon.title</>End-Title
+			Sep 2 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m09.d02.prokeimenon.title</>End-Title
+			Sep 3 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m09.d03.prokeimenon.title</>End-Title
+			Sep 4 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m09.d04.prokeimenon.title</>End-Title
+			Sep 5 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m09.d05.prokeimenon.title</>End-Title
+			Sep 6 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m09.d06.prokeimenon.title</>End-Title
+			Sep 8 use:
+				Title<r>sid Prokeimenon sid Mode3 sid psLI.m09.d08.prokeimenon.title</>End-Title
+			Sep 9 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m09.d09.prokeimenon.title</>End-Title
+			Sep 13 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m09.d13.prokeimenon.title</>End-Title
+			Sep 14 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m09.d14.prokeimenon.title</>End-Title
+			Sep 15 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m09.d15.prokeimenon.title</>End-Title
+			Sep 16 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m09.d16.prokeimenon.title</>End-Title
+			Sep 20 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m09.d20.prokeimenon.title</>End-Title
+			Sep 22 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Sep 23 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m09.d23.prokeimenon.title</>End-Title
+			Sep 24 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m09.d24.prokeimenon2.title</>End-Title
+			Sep 26 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m09.d26.prokeimenon.title</>End-Title
+			Sep 27 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Sep 28 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m09.d28.prokeimenon.title</>End-Title
+			Sep 29 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m09.d29.prokeimenon.title</>End-Title
+			Sep 30 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m09.d30.prokeimenon.title</>End-Title
+			Oct 1 use:
+				Title<r>sid Prokeimenon sid Mode3 sid psLI.m10.d01.prokeimenon.title</>End-Title
+			Oct 2 use:
+				Title<r>sid Prokeimenon sid Mode8 sid psLI.m10.d02.prokeimenon.title</>End-Title
+			Oct 3 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m10.d03.prokeimenon.title</>End-Title
+			Oct 6 use:
+				Title<r>sid Prokeimenon sid Mode8 sid psLI.m10.d06.prokeimenon.title</>End-Title
+			Oct 7 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Oct 8 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+		//	Oct 9 use:
+		//		Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Oct 9 use:
+				Title<r>sid Prokeimenon sid Mode8 sid psLI.m10.d06.prokeimenon.title</>End-Title
+			Oct 10 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Oct 11 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Oct 12 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Oct 13 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Oct 14 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Oct 15 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m10.d15.prokeimenon.title</>End-Title
+			Oct 16 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m10.d16.prokeimenon.title</>End-Title
+			Oct 17 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Oct 18 use:
+				Title<r>sid Prokeimenon sid Mode8 sid psLI.m10.d18.prokeimenon.title</>End-Title
+			Oct 19 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Oct 20 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m10.d20.prokeimenon.title</>End-Title
+			Oct 21 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m10.d21.prokeimenon.title</>End-Title
+			Oct 22 use:
+				Title<r>sid Prokeimenon sid Mode1 sid psLI.m10.d22.prokeimenon.title</>End-Title
+	//		Oct 22 use:
+	//			Insert_section bk.ap.me.m10.sections.d22.ep2_title End-Insert //Seven Children
+			Oct 23 use:
+				Title<r>sid Prokeimenon sid Mode8 sid psLI.m10.d23.prokeimenon.title</>End-Title
+			Oct 24 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m10.d24.prokeimenon.title</>End-Title
+			Oct 25 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m10.d25.prokeimenon.title</>End-Title
+			Oct 26 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m10.d26.prokeimenon.title</>End-Title
+			Nov 1 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m11.d01.prokeimenon.title</>End-Title
+			Nov 2 use:
+				Title<r>sid Prokeimenon sid Mode8 sid psLI.m11.d02.prokeimenon.title</>End-Title
+			Nov 3 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Nov 4 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m11.d04.prokeimenon.title</>End-Title
+			Nov 5 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Nov 6 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m11.d06.prokeimenon.title</>End-Title
+			Nov 7 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Nov 8 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m11.d08.prokeimenon.title</>End-Title
+			Nov 10 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Nov 11 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m11.d11.prokeimenon.title</>End-Title
+			Nov 12 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m11.d12.prokeimenon.title</>End-Title
+			Nov 13 use:
+				Title<r>sid Prokeimenon sid Mode1 sid psLI.m11.d13.prokeimenon.title</>End-Title
+			Nov 14 use:
+				Title<r>sid Prokeimenon sid Mode8 sid psLI.m11.d14.prokeimenon.title</>End-Title
+			Nov 15 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Nov 16 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Nov 17 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m11.d17.prokeimenon.title</>End-Title
+			Nov 18 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Nov 20 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Nov 21 use:
+				Title<r>sid Prokeimenon sid Mode3 sid psLI.m11.d21.prokeimenon.title</>End-Title
+			Nov 22 use:
+				Title<r>sid Prokeimenon sid Mode8 sid psLI.m11.d22.prokeimenon.title</>End-Title
+			Nov 23 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Nov 24 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m11.d24.prokeimenon.title</>End-Title
+			Nov 25 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m11.d25.prokeimenon.title</>End-Title
+			Nov 26 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Nov 27 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Nov 28 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Nov 29 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Nov 30 use:
+				Title<r>sid Prokeimenon sid Mode8 sid psLI.m11.d30.prokeimenon.title</>End-Title
+			Dec 1 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Dec 2 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Dec 3 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Dec 4 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m12.d04.prokeimenon.title</>End-Title
+			Dec 5 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m12.d05.prokeimenon.title</>End-Title
+			Dec 6 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m12.d06.prokeimenon.title</>End-Title
+			Dec 7 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m12.d07.prokeimenon.title</>End-Title
+			Dec 8 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Dec 9 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m12.d09.prokeimenon.title</>End-Title
+			Dec 10 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Dec 11 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Dec 12 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m12.d12.prokeimenon.title</>End-Title
+			Dec 13 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Dec 14 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Dec 15 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m12.d15.prokeimenon.title</>End-Title
+			Dec 16 use:
+				Title<r>sid Prokeimenon sid Mode1 sid psLI.m12.d16.prokeimenon.title</>End-Title
+			Dec 17 use:
+				Title<r>sid Prokeimenon sid Mode8 sid psLI.pe.d127.prokeimenon.title</>End-Title
+			Dec 20 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m12.d20.prokeimenon.title</>End-Title
+			Dec 22 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+			Dec 25 use:
+				Title<r>sid Prokeimenon sid Mode8 sid psLI.m12.d25.prokeimenon.title</>End-Title
+			Dec 26 use:
+				Title<r>sid Prokeimenon sid Mode3 sid psLI.m12.d26.prokeimenon.title</>End-Title
+			Dec 27 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m12.d27.prokeimenon.title</>End-Title
+			Dec 29 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_pr_title_mode End-Insert
+		end-when
+	End-Section
+
+	Section me_ep_prokeimenon_verse
+		when-date-is
+			Jan 1 use:
+				Para role readingzero sid psLI.m01.d01.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m01.d01.prokeimenon.v2.text @ver End-Verse
+			Jan 2, 23, 29 use:
+				Para role readingzero sid psLI.m01.d02.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m01.d02.prokeimenon.v2.text @ver End-Verse
+			Jan 4 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Jan 6 use:
+				Para role readingzero sid psLI.m01.d06.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m01.d06.prokeimenon.v2.text @ver End-Verse
+			Jan 7 use:
+				Para role readingzero sid psLI.m01.d07.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m01.d07.prokeimenon.v2.text @ver End-Verse
+			Jan 8 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Jan 9, 24 use:
+				Para role readingzero sid psLI.m01.d09.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m01.d09.prokeimenon.v2.text @ver End-Verse
+			Jan 10 use:
+				Para role readingzero sid psLI.m01.d01.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m01.d01.prokeimenon.v2.text @ver End-Verse
+			Jan 11 use:
+				Para role readingzero sid psLI.m01.d11.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m01.d11.prokeimenon.v2.text @ver End-Verse
+			Jan 12 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Jan 14 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+		//	Jan 15 use: 
+		//		Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Jan 16 use:
+				Para role readingzero sid psLI.m01.d16.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m01.d16.prokeimenon.v2.text @ver End-Verse
+			Jan 17 use:
+				Para role readingzero sid psLI.m01.d17.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m01.d17.prokeimenon.v2.text @ver End-Verse
+			Jan 18 use:
+				Para role readingzero sid psLI.m01.d18.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m01.d18.prokeimenon.v2.text @ver End-Verse
+			Jan 19 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Jan 15, 20 use:
+				Para role readingzero sid psLI.m01.d20.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m01.d20.prokeimenon.v2.text @ver End-Verse
+			Jan 21 use:
+				Para role readingzero sid psLI.m01.d21.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m01.d21.prokeimenon.v2.text @ver End-Verse
+			Jan 22 use:
+				Para role readingzero sid psLI.m01.d22.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m01.d22.prokeimenon.v2.text @ver End-Verse
+		//	Jan 23 use: 
+		//		Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+		//	Jan 24 use:
+		//		Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Jan 25 use:
+				Para role readingzero sid psLI.m01.d25.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m01.d25.prokeimenon.v2.text @ver End-Verse
+			Jan 27 use:
+				Para role readingzero sid psLI.m01.d27.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m01.d27.prokeimenon.v2.text @ver End-Verse
+			Jan 28 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+		//	Jan 29 use:
+		//		Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Jan 30 use:
+				Para role readingzero sid psLI.m01.d30.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m01.d30.prokeimenon.v2.text @ver End-Verse
+			Jan 31 use:
+				Para role readingzero sid psLI.m01.d31.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m01.d31.prokeimenon.v2.text @ver End-Verse
+			Feb 1 use:
+				Para role readingzero sid psLI.m02.d01.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m02.d01.prokeimenon.v2.text @ver End-Verse
+			Feb 2 use:
+				Para role readingzero sid psLI.m02.d02.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m02.d02.prokeimenon.v2.text @ver End-Verse
+			Feb 3 use:
+				Para role readingzero sid psLI.m02.d03.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m02.d03.prokeimenon.v2.text @ver End-Verse
+		//	Feb 6 use:
+		//		Para role readingzero sid psLI.m02.d06.prokeimenon.v1.text @ver End-Para
+		//		Verse<bnr>sid vVerse</>sid psLI.m02.d06.prokeimenon.v2.text @ver End-Verse
+			Feb 8 use:
+				Para role readingzero sid psLI.m02.d08.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m02.d08.prokeimenon.v2.text @ver End-Verse
+			Feb 9 use:
+				Para role readingzero sid psLI.m02.d09.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m02.d09.prokeimenon.v2.text @ver End-Verse
+			Feb 10 use:
+				Para role readingzero sid psLI.m02.d10.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m02.d10.prokeimenon.v2.text @ver End-Verse
+			Feb 11 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Feb 15 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Feb 17 use:
+				Para role readingzero sid psLI.m02.d17.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m02.d17.prokeimenon.v2.text @ver End-Verse
+			Feb 23 use:
+				Para role readingzero sid psLI.m02.d23.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m02.d23.prokeimenon.v2.text @ver End-Verse
+			Feb 24 use:
+				Para role readingzero sid psLI.m02.d24.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m02.d24.prokeimenon.v2.text @ver End-Verse
+			Feb 26 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Mar 9, 10 use:
+				Para role readingzero sid psLI.m03.d09.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m03.d09.prokeimenon.v2.text @ver End-Verse
+			Mar 25 use:
+				Para role readingzero sid psLI.m03.d25.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m03.d25.prokeimenon.v2.text @ver End-Verse
+			Mar 26 use:
+				Para role readingzero sid psLI.m03.d26.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m03.d26.prokeimenon.v2.text @ver End-Verse
+			Mar 30 use:
+				Para role readingzero sid psLI.m03.d30.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m03.d30.prokeimenon.v2.text @ver End-Verse
+			Apr 1 use:
+				Para role readingzero sid psLI.m04.d01.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m04.d01.prokeimenon.v2.text @ver End-Verse
+			Apr 10 use:
+				Para role readingzero sid psLI.m04.d10.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m04.d10.prokeimenon.v2.text @ver End-Verse
+			Apr 23 use:
+				Para role readingzero sid psLI.m04.d23.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m04.d23.prokeimenon.v2.text @ver End-Verse
+			Apr 25 use:
+				Para role readingzero sid psLI.m04.d25.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m04.d25.prokeimenon.v2.text @ver End-Verse
+			Apr 29 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Apr 30 use:
+				Para role readingzero sid psLI.m04.d30.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m04.d30.prokeimenon.v2.text @ver End-Verse
+			May 1 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			May 2 use:
+				Para role readingzero sid psLI.m05.d02.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m05.d02.prokeimenon.v2.text @ver End-Verse
+			May 7 use:
+				Para role readingzero sid psLI.m05.d07.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m05.d07.prokeimenon.v2.text @ver End-Verse
+			May 8 use:
+				Para role readingzero sid psLI.m05.d08.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m05.d08.prokeimenon.v2.text @ver End-Verse
+			May 9 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			May 10 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			May 11 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			May 15 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			May 20 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			May 21 use:
+				Para role readingzero sid psLI.m05.d21.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m05.d21.prokeimenon.v2.text @ver End-Verse
+			May 24 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			May 25 use:
+				Para role readingzero sid psLI.m05.d25.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m05.d25.prokeimenon.v2.text @ver End-Verse
+			May 26 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			May 29 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Jun 2 use:
+				Para role readingzero sid psLI.m06.d02.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m06.d02.prokeimenon.v2.text @ver End-Verse
+			Jun 4 use:
+				Para role readingzero sid psLI.m06.d04.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m06.d04.prokeimenon.v2.text @ver End-Verse
+			Jun 8 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Jun 9 use:
+				Para role readingzero sid psLI.m06.d09.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m06.d09.prokeimenon.v2.text @ver End-Verse
+			Jun 11 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Jun 12 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Jun 14 use:
+				Para role readingzero sid psLI.m06.d14a.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m06.d14a.prokeimenon.v2.text @ver End-Verse
+		//	Jun 14 use:
+		//		Para role readingzero sid psLI.m06.d14b.prokeimenon.v1.text @ver End-Para
+		//		Verse<bnr>sid vVerse</>sid psLI.m06.d14b.prokeimenon.v2.text @ver End-Verse
+			Jun 17 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Jun 19 use:
+				Para role readingzero sid psLI.m06.d19.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m06.d19.prokeimenon.v2.text @ver End-Verse
+			Jun 24 use:
+				Para role readingzero sid psLI.m06.d24.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m06.d24.prokeimenon.v2.text @ver End-Verse
+			Jun 25 use:
+				Para role readingzero sid psLI.m06.d25.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m06.d25.prokeimenon.v2.text @ver End-Verse
+			Jun 26 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Jun 27 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Jun 28 use:
+				Para role readingzero sid psLI.m06.d28.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m06.d28.prokeimenon.v2.text @ver End-Verse
+			Jun 29 use:
+				Para role readingzero sid psLI.m06.d29.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m06.d29.prokeimenon.v2.text @ver End-Verse
+			Jun 30 use:
+				Para role readingzero sid psLI.m06.d30.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m06.d30.prokeimenon.v2.text @ver End-Verse
+			Jul 1 use:
+				Para role readingzero sid psLI.m07.d01.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m07.d01.prokeimenon.v2.text @ver End-Verse
+			Jul 2 use:
+				Para role readingzero sid psLI.m07.d02.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m07.d02.prokeimenon.v2.text @ver End-Verse
+			Jul 4 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Jul 5 use:
+				Para role readingzero sid psLI.m12.d05.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m12.d05.prokeimenon.v2.text @ver End-Verse
+			Jul 8 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Jul 9 use:
+				Para role readingzero sid psLI.m07.d09.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m07.d09.prokeimenon.v2.text @ver End-Verse
+			Jul 11 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Jul 13 use:
+				Para role readingzero sid psLI.m07.d13.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m07.d13.prokeimenon.v2.text @ver End-Verse
+			Jul 14 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Jul 7, 15 use:
+				Para role readingzero sid psLI.m07.d15.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m07.d15.prokeimenon.v2.text @ver End-Verse
+			Jul 17 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Jul 20 use:
+				Para role readingzero sid psLI.m07.d20.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m07.d20.prokeimenon.v2.text @ver End-Verse
+			Jul 21 use:
+				Para role readingzero sid psLI.m07.d21.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m07.d21.prokeimenon.v2.text @ver End-Verse
+			Jul 22 use:
+				Para role readingzero sid psLI.m07.d22.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m07.d22.prokeimenon.v2.text @ver End-Verse
+			Jul 24 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Jul 25 use:
+				Para role readingzero sid psLI.m07.d25.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m07.d25.prokeimenon.v2.text @ver End-Verse
+			Jul 26 use:
+				Para role readingzero sid psLI.m07.d26b.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m07.d26b.prokeimenon.v2.text @ver End-Verse
+			Jul 27 use:
+				Para role readingzero sid psLI.m07.d27.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m07.d27.prokeimenon.v2.text @ver End-Verse
+			Jul 28 use:
+				Para role readingzero sid psLI.m07.d28.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m07.d28.prokeimenon.v2.text @ver End-Verse
+			Jul 29 use:
+				Para role readingzero sid psLI.m07.d29.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m07.d29.prokeimenon.v2.text @ver End-Verse
+			Jul 31 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Aug 1 use:
+				Para role readingzero sid psLI.m08.d01.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m08.d01.prokeimenon.v2.text @ver End-Verse
+			Aug 2 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Aug 3 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Aug 4 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Aug 5 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Aug 6 use:
+				Para role readingzero sid psLI.m08.d06.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m08.d06.prokeimenon.v2.text @ver End-Verse
+			Aug 7 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Aug 9 use:
+				Para role readingzero sid psLI.m08.d09.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m08.d09.prokeimenon.v2.text @ver End-Verse
+			Aug 10 use:	
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Aug 11 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Aug 13 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Aug 15 use:
+				Para role readingzero sid psLI.m08.d15.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m08.d15.prokeimenon.v2.text @ver End-Verse
+			Aug 16 use:
+				Para role readingzero sid psLI.m08.d16.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m08.d16.prokeimenon.v2.text @ver End-Verse
+			Aug 18 use:
+				Para role readingzero sid psLI.m08.d18.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m08.d18.prokeimenon.v2.text @ver End-Verse
+			Aug 20 use:
+				Para role readingzero sid psLI.m08.d20.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m08.d20.prokeimenon.v2.text @ver End-Verse
+			Aug 25 use:
+				Para role readingzero sid psLI.m08.d25.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m08.d25.prokeimenon.v2.text @ver End-Verse
+			Aug 26 use:
+				Para role readingzero sid psLI.m08.d26.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m08.d26.prokeimenon.v2.text @ver End-Verse
+			Aug 27 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Aug 28 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Aug 29 use:
+				Para role readingzero sid psLI.m08.d29.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m08.d29.prokeimenon.v2.text @ver End-Verse
+			Aug 31 use:
+				Para role readingzero sid psLI.m08.d31.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m08.d31.prokeimenon.v2.text @ver End-Verse
+			Sep 1 use:
+				Para role readingzero sid psLI.m09.d01.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m09.d01.prokeimenon.v2.text @ver End-Verse
+			Sep 2 use:
+				Para role readingzero sid psLI.m09.d02.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m09.d02.prokeimenon.v2.text @ver End-Verse
+			Sep 3 use:
+				Para role readingzero sid psLI.m09.d03.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m09.d03.prokeimenon.v2.text @ver End-Verse
+			Sep 4 use:
+				Para role readingzero sid psLI.m09.d04.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m09.d04.prokeimenon.v2.text @ver End-Verse
+			Sep 5 use:
+				Para role readingzero sid psLI.m09.d05.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m09.d05.prokeimenon.v2.text @ver End-Verse
+			Sep 6 use:
+				Para role readingzero sid psLI.m09.d06.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m09.d06.prokeimenon.v2.text @ver End-Verse
+			Sep 8 use:
+				Para role readingzero sid psLI.m09.d08.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m09.d08.prokeimenon.v2.text @ver End-Verse
+			Sep 9 use:
+				Para role readingzero sid psLI.m09.d09.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m09.d09.prokeimenon.v2.text @ver End-Verse
+			Sep 13 use:
+				Para role readingzero sid psLI.m09.d13.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m09.d13.prokeimenon.v2.text @ver End-Verse
+			Sep 14 use:
+				Para role readingzero sid psLI.m09.d14.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m09.d14.prokeimenon.v2.text @ver End-Verse
+			Sep 15 use:
+				Para role readingzero sid psLI.m09.d15.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m09.d15.prokeimenon.v2.text @ver End-Verse
+			Sep 16 use:
+				Para role readingzero sid psLI.m09.d16.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m09.d16.prokeimenon.v2.text @ver End-Verse
+			Sep 20 use:
+				Para role readingzero sid psLI.m09.d20.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m09.d20.prokeimenon.v2.text @ver End-Verse
+			Sep 22 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Sep 23 use:
+				Para role readingzero sid psLI.m09.d23.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m09.d23.prokeimenon.v2.text @ver End-Verse
+			Sep 24 use:
+				Para role readingzero sid psLI.m09.d24.prokeimenon2.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m09.d24.prokeimenon2.v2.text @ver End-Verse
+			Sep 26 use:
+				Para role readingzero sid psLI.m09.d26.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m09.d26.prokeimenon.v2.text @ver End-Verse
+			Sep 27 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Sep 28 use:
+				Para role readingzero sid psLI.m09.d28.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m09.d28.prokeimenon.v2.text @ver End-Verse
+			Sep 29 use:
+				Para role readingzero sid psLI.m09.d29.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m09.d29.prokeimenon.v2.text @ver End-Verse
+			Sep 30 use:
+				Para role readingzero sid psLI.m09.d30.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m09.d30.prokeimenon.v2.text @ver End-Verse
+			Oct 1 use:
+				Para role readingzero sid psLI.m10.d01.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m10.d01.prokeimenon.v2.text @ver End-Verse
+			Oct 2 use:
+				Para role readingzero sid psLI.m10.d02.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m10.d02.prokeimenon.v2.text @ver End-Verse
+			Oct 3 use:
+				Para role readingzero sid psLI.m10.d03.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m10.d03.prokeimenon.v2.text @ver End-Verse
+			Oct 6 use:
+				Para role readingzero sid psLI.m10.d06.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m10.d06.prokeimenon.v2.text @ver End-Verse
+			Oct 7 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Oct 8 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+		//	Oct 9 use:
+		//		Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Oct 9 use:
+				Para role readingzero sid psLI.m10.d06.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m10.d06.prokeimenon.v2.text @ver End-Verse
+			Oct 10 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Oct 11 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Oct 12 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Oct 13 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Oct 14 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Oct 15 use:
+				Para role readingzero sid psLI.m10.d15.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m10.d15.prokeimenon.v2.text @ver End-Verse
+			Oct 16 use:
+				Para role readingzero sid psLI.m10.d16.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m10.d16.prokeimenon.v2.text @ver End-Verse
+			Oct 17 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Oct 18 use:
+				Para role readingzero sid psLI.m10.d18.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m10.d18.prokeimenon.v2.text @ver End-Verse
+			Oct 19 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Oct 20 use:
+				Para role readingzero sid psLI.m10.d20.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m10.d20.prokeimenon.v2.text @ver End-Verse
+			Oct 21 use:
+				Para role readingzero sid psLI.m10.d21.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m10.d21.prokeimenon.v2.text @ver End-Verse
+			Oct 22 use:
+				Para role readingzero sid psLI.m10.d22.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m10.d22.prokeimenon.v2.text @ver End-Verse
+	//		Oct 22 use:
+	//			Para role readingzero sid psLI.m10.d22.prokeimenon2.v1.text @ver End-Para
+	//			Verse<bnr>sid vVerse</>sid psLI.m10.d22.prokeimenon2.v2.text @ver End-Verse
+			Oct 23 use:
+				Para role readingzero sid psLI.m10.d23.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m10.d23.prokeimenon.v2.text @ver End-Verse
+			Oct 24 use:
+				Para role readingzero sid psLI.m10.d24.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m10.d24.prokeimenon.v2.text @ver End-Verse
+			Oct 25 use:
+				Para role readingzero sid psLI.m10.d25.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m10.d25.prokeimenon.v2.text @ver End-Verse
+			Oct 26 use:
+				Para role readingzero sid psLI.m10.d26.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m10.d26.prokeimenon.v2.text @ver End-Verse
+			Nov 1 use:
+				Para role readingzero sid psLI.m11.d01.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m11.d01.prokeimenon.v2.text @ver End-Verse
+			Nov 2 use:
+				Para role readingzero sid psLI.m11.d02.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m11.d02.prokeimenon.v2.text @ver End-Verse
+			Nov 3 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Nov 4 use:
+				Para role readingzero sid psLI.m11.d04.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m11.d04.prokeimenon.v2.text @ver End-Verse
+			Nov 5 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Nov 6 use:
+				Para role readingzero sid psLI.m11.d06.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m11.d06.prokeimenon.v2.text @ver End-Verse
+			Nov 7 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Nov 8 use:
+				Para role readingzero sid psLI.m11.d08.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m11.d08.prokeimenon.v2.text @ver End-Verse
+			Nov 10 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Nov 11 use:
+				Para role readingzero sid psLI.m11.d11.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m11.d11.prokeimenon.v2.text @ver End-Verse
+			Nov 12 use:
+				Para role readingzero sid psLI.m11.d12.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m11.d12.prokeimenon.v2.text @ver End-Verse
+			Nov 13 use:
+				Para role readingzero sid psLI.m11.d13.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m11.d13.prokeimenon.v2.text @ver End-Verse
+			Nov 14 use:
+				Para role readingzero sid psLI.m11.d14.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m11.d14.prokeimenon.v2.text @ver End-Verse
+			Nov 15 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Nov 16 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Nov 17 use:
+				Para role readingzero sid psLI.m11.d17.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m11.d17.prokeimenon.v2.text @ver End-Verse
+			Nov 18 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Nov 20 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Nov 21 use:
+				Para role readingzero sid psLI.m11.d21.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m11.d21.prokeimenon.v2.text @ver End-Verse
+			Nov 22 use:
+				Para role readingzero sid psLI.m11.d22.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m11.d22.prokeimenon.v2.text @ver End-Verse
+			Nov 23 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Nov 24 use:
+				Para role readingzero sid psLI.m11.d24.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m11.d24.prokeimenon.v2.text @ver End-Verse
+			Nov 25 use:
+				Para role readingzero sid psLI.m11.d25.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m11.d25.prokeimenon.v2.text @ver End-Verse
+			Nov 26 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Nov 27 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Nov 28 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Nov 29 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Nov 30 use:
+				Para role readingzero sid psLI.m11.d30.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m11.d30.prokeimenon.v2.text @ver End-Verse
+			Dec 1 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Dec 2 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Dec 3 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Dec 4 use:
+				Para role readingzero sid psLI.m12.d04.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m12.d04.prokeimenon.v2.text @ver End-Verse
+			Dec 5 use:
+				Para role readingzero sid psLI.m12.d05.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m12.d05.prokeimenon.v2.text @ver End-Verse
+			Dec 6 use:
+				Para role readingzero sid psLI.m12.d06.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m12.d06.prokeimenon.v2.text @ver End-Verse
+			Dec 7 use:
+				Para role readingzero sid psLI.m12.d07.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m12.d07.prokeimenon.v2.text @ver End-Verse
+			Dec 8 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Dec 9 use:
+				Para role readingzero sid psLI.m12.d09.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m12.d09.prokeimenon.v2.text @ver End-Verse
+			Dec 10 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Dec 11 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Dec 12 use:
+				Para role readingzero sid psLI.m12.d12.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m12.d12.prokeimenon.v2.text @ver End-Verse
+			Dec 13 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Dec 14 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Dec 15 use:
+				Para role readingzero sid psLI.m12.d15.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m12.d15.prokeimenon.v2.text @ver End-Verse
+			Dec 16 use:
+				Para role readingzero sid psLI.m12.d16.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m12.d16.prokeimenon.v2.text @ver End-Verse
+			Dec 17 use:
+				Para role readingzero sid psLI.pe.d127.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.pe.d127.prokeimenon.v2.text @ver End-Verse
+			Dec 20 use:
+				Para role readingzero sid psLI.m12.d20.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m12.d20.prokeimenon.v2.text @ver End-Verse
+			Dec 22 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+			Dec 25 use:
+				Para role readingzero sid psLI.m12.d25.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m12.d25.prokeimenon.v2.text @ver End-Verse
+			Dec 26 use:
+				Para role readingzero sid psLI.m12.d26.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m12.d26.prokeimenon.v2.text @ver End-Verse
+			Dec 27 use:
+				Para role readingzero sid psLI.m12.d27.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m12.d27.prokeimenon.v2.text @ver End-Verse
+			Dec 29 use:
+				Insert_section rid_EpistleProkeimena_Daily.da_ep_prokeimenon_verse End-Insert
+		end-when
+	End-Section
+
+	Section mealt1_ep_title_mode
+		when-date-is
+			Feb 6 use:
+				Title<r>sid Prokeimenon sid Mode1 sid psLI.m02.d06.prokeimenon.title</>End-Title
+			Feb 19, 26 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m02.d19.prokeimenon.title</>End-Title
+			Jul 12 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m12.d05.prokeimenon.title</>End-Title
+			Aug 16 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m12.d05.prokeimenon.title</>End-Title
+			Aug 24 use:
+				Title<r>sid Prokeimenon sid Mode1 sid psLI.m01.dSunAE.prokeimenon.title</>End-Title
+			Aug 27 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m09.d02.prokeimenon.title</>End-Title
+			Sep 7 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m11.d25.prokeimenon.title</>End-Title
+			Sep 24 use:
+				Title<r>sid Prokeimenon sid Mode3 sid psLI.m09.d24.prokeimenon.title</>End-Title
+			Sep 17 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psLI.m09.d17.prokeimenon.title</>End-Title
+			Oct 20 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m12.d05.prokeimenon.title</>End-Title
+			Oct 28 use:
+				Title<r>sid Prokeimenon sid Mode3 sid psLI.m10.d28.prokeimenon.title</>End-Title
+			Nov 9 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m11.d09.prokeimenon.title</>End-Title
+			Nov 22 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m12.d05.prokeimenon.title</>End-Title
+			Dec 2 use:
+				Title<r>sid Prokeimenon sid Mode7 sid psLI.m12.d06.prokeimenon.title</>End-Title
+			Dec 17 use:
+				Title<r>sid Prokeimenon sid Mode4 sid leosLI.pe.d113.EpistleProkeimenon.title</>End-Title
+		end-when
+	End-Section
+	
+	Section mealt1_ep_prokeimenon_verse
+		when-date-is
+			Feb 6 use:
+				Para role readingzero sid psLI.m02.d06.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m02.d06.prokeimenon.v2.text @ver End-Verse
+			Feb 19, 26 use:
+				Para role readingzero sid psLI.m02.d19.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m02.d19.prokeimenon.v2.text @ver End-Verse
+			Jul 12 use:
+				Para role readingzero sid psLI.m12.d05.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m12.d05.prokeimenon.v2.text @ver End-Verse
+			Aug 16 use:
+				Para role readingzero sid psLI.m12.d05.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m12.d05.prokeimenon.v2.text @ver End-Verse
+			Aug 24 use:
+				Para role readingzero sid psLI.m01.dSunAE.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m01.dSunAE.prokeimenon.v2.text @ver End-Verse
+			Aug 27 use:
+				Para role readingzero sid psLI.m09.d02.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m09.d02.prokeimenon.v2.text @ver End-Verse
+			Sep 7 use:
+				Para role readingzero sid psLI.m11.d25.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m11.d25.prokeimenon.v2.text @ver End-Verse
+			Sep 17 use:
+				Para role readingzero sid psLI.m09.d17.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m09.d17.prokeimenon.v2.text @ver End-Verse
+			Sep 24 use:
+				Para role readingzero sid psLI.m09.d24.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m09.d24.prokeimenon.v2.text @ver End-Verse
+			Oct 20 use:
+				Para role readingzero sid psLI.m12.d05.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m12.d05.prokeimenon.v2.text @ver End-Verse
+			Oct 28 use:
+				Para role readingzero sid psLI.m10.d28.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m10.d28.prokeimenon.v2.text @ver End-Verse
+			Nov 9 use:
+				Para role readingzero sid psLI.m11.d09.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m11.d09.prokeimenon.v2.text @ver End-Verse
+			Nov 22 use:
+				Para role readingzero sid psLI.m12.d05.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m12.d05.prokeimenon.v2.text @ver End-Verse
+			Dec 2 use:
+				Para role readingzero sid psLI.m12.d06.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m12.d06.prokeimenon.v2.text @ver End-Verse
+			Dec 17 use:
+				Para role readingzero sid psLI.m12.d17b.prokeimenon.v1.text @ver End-Para
+				Verse<bnr>sid vVerse</>sid psLI.m12.d17b.prokeimenon.v2.text @ver End-Verse
+		end-when
+	End-Section
+
+
+//Epistle Readings for Vesperal Liturgies
+
+	Section me_vespers_ep_title_mode //Epiphany and Christmas
+		when-date-is
+			Jan 6 use:
+				Title<r>sid Prokeimenon sid Mode3 sid psVL.m01.d06.prokeimenon.title</>End-Title
+			Dec 25 use:
+				Title<r>sid Prokeimenon sid Mode4 sid psVL.m12.d25.prokeimenon.title</>End-Title
+		end-when
+	End-Section	
+	
+	Section me_vespers_ep_prokeimenon_verse //Epiphany and Christmas
+		when-date-is
+			Jan 6 use:
+				Para role readingzero sid psVL.m01.d06.prokeimenon.v1.text End-Para
+				Verse<bnr>sid vVerse</>sid psVL.m01.d06.prokeimenon.v2.text @ver End-Verse
+			Dec 25 use:
+				Para role readingzero sid psVL.m12.d25.prokeimenon.v1.text End-Para
+				Verse<bnr>sid vVerse</>sid psVL.m12.d25.prokeimenon.v2.text @ver End-Verse
+		end-when
+	End-Section
+	
+End-Template

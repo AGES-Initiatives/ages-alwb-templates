@@ -3,6 +3,7 @@ Template LE
 	import eu.lichrysbasil_gr_GR_cog.*
 	import ho.s07_gr_GR_cog.*
 	import ho.s10_gr_GR_cog.*
+	import le.pr.os_gr_GR_cog.*
 	import le.ep.mc.*
 	import le.ep.me.*
 	import le.go.eo.*
@@ -11,10 +12,7 @@ Template LE
 	import le.go.me.*
 	import le.go.va.*
 	import le.pr.tr.*
-	import me.*
-	import oc.*
-	import tr.*
-
+	
 	import actors_gr_GR_cog.*
 	import lectionaries_gr_GR_cog.*
 	import misc_gr_GR_cog.*
@@ -22,16 +20,23 @@ Template LE
 	import rubrical_gr_GR_cog.*
 	import titles_gr_GR_cog.*
 	
-	import LectionaryEpistleProkeimenonTitle.*
-	import LectionaryEpistleProkeimenon.*
+	import liturgical.verses_gr_GR_cog.*
+	import menaion.verses_gr_GR_cog.*
+	
+	import LectionaryEpProkeimenon.*
+	import LectionaryEpProkeimenon_Menaion.*
+//	import LectionaryEpistleProkeimenonTitle.*
+//	import LectionaryEpistleProkeimenon.*
 	import LectionaryEpistleBook.*
 	import LectionaryEpistleTitle.*
 	import LectionaryEpistleChapverse.*
 	import LectionaryEpistleText.*
 		
-	import LectionaryGospelAlleluiaMode.*
-	import LectionaryGospelAlleluiaVerse1.*
-	import LectionaryGospelAlleluiaVerse2.*
+	import LectionaryGospelAlleluia.*
+	import LectionaryGospelAlleluia_Menaion.*
+//	import LectionaryGospelAlleluiaMode.*
+//	import LectionaryGospelAlleluiaVerse1.*
+//	import LectionaryGospelAlleluiaVerse2.*
 	import LectionaryGospelTitle.*
 	import LectionaryGospelBook.*
 	import LectionaryGospelChapverse.*
@@ -58,8 +63,9 @@ Template LE
 					Actor sid Deacon End-Actor
 					Dialog sid exc19 End-Dialog
 					Actor sid Reader End-Actor
-					Insert_section bk.ap.me.m12.sections.dFF.ep_title End-Insert
-					Insert_section bk.ap.me.m12.sections.dFF.ep_prokeimenon End-Insert
+					Title<r>sid Prokeimenon sid Mode8 sid leosLI.pe.d113.EpistleProkeimenon.title</>End-Title
+					Para role readingzero sid psLI.m12.dFF.prokeimenon.v1.text @ver End-Para
+					Verse<bnr>sid vVerse</>sid psLI.m12.dFF.prokeimenon.v2.text @ver End-Verse
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -84,8 +90,8 @@ Template LE
 					Actor sid Deacon End-Actor
 					Dialog sid exc19 End-Dialog
 					Actor sid Reader End-Actor
-					Insert_section Epistle_Prokeimenon_Title End-Insert
-					Insert_section Epistle_Prokeimenon End-Insert
+					Insert_section ep_pr_title_mode End-Insert
+					Insert_section ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -110,8 +116,9 @@ Template LE
 					Actor sid Deacon End-Actor
 					Dialog sid exc19 End-Dialog
 					Actor sid Reader End-Actor
-					Insert_section bk.ap.me.m12.sections.dSunBC.ep_title End-Insert
-					Insert_section bk.ap.me.m12.sections.dSunBC.ep_prokeimenon End-Insert
+					Title<r>sid Prokeimenon sid Mode4 sid leosLI.pe.d113.EpistleProkeimenon.title</>End-Title
+					Para role readingzero sid psLI.m12.dSunBC.prokeimenon.v1.text @ver End-Para
+					Verse<bnr>sid vVerse</>sid psLI.m12.dSunBC.prokeimenon.v2.text @ver End-Verse
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -136,8 +143,9 @@ Template LE
 					Actor sid Deacon End-Actor
 					Dialog sid exc19 End-Dialog
 					Actor sid Reader End-Actor
-					Insert_section bk.ap.me.m12.sections.dSatAC.ep_title End-Insert
-					Insert_section bk.ap.me.m12.sections.dSatAC.ep_prokeimenon End-Insert
+					Title<r>sid Prokeimenon sid Mode4 sid psLI.m12.dSatAC.prokeimenon.title</>End-Title
+					Para role readingzero sid psLI.m12.dSatAC.prokeimenon.v1.text @ver End-Para
+					Verse<bnr>sid vVerse</>sid psLI.m12.dSatAC.prokeimenon.v2.text @ver End-Verse
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -162,8 +170,9 @@ Template LE
 					Actor sid Deacon End-Actor
 					Dialog sid exc19 End-Dialog
 					Actor sid Reader End-Actor
-					Insert_section bk.ap.me.m12.sections.dSunAC.ep_title End-Insert
-					Insert_section bk.ap.me.m12.sections.dSunAC.ep_prokeimenon End-Insert
+					Title<r>sid Prokeimenon sid Mode4 sid psLI.m12.dSunAC.prokeimenon.title</>End-Title
+					Para role readingzero sid psLI.m12.dSunAC.prokeimenon.v1.text @ver End-Para
+					Verse<bnr>sid vVerse</>sid psLI.m12.dSunAC.prokeimenon.v2.text @ver End-Verse
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -190,8 +199,9 @@ Template LE
 					Actor sid Deacon End-Actor
 					Dialog sid exc19 End-Dialog
 					Actor sid Reader End-Actor
-					Insert_section bk.ap.me.m09.sections.dSatBC.ep_title End-Insert
-					Insert_section bk.ap.me.m09.sections.dSatBC.ep_prokeimenon End-Insert
+					Title<r>sid Prokeimenon sid Mode3 sid psLI.m09.dSatBC.prokeimenon.title</>End-Title
+					Para role readingzero sid psLI.m09.dSatBC.prokeimenon.v1.text @ver End-Para
+					Verse<bnr>sid vVerse</>sid psLI.m09.dSatBC.prokeimenon.v2.text @ver End-Verse
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -216,8 +226,9 @@ Template LE
 					Actor sid Deacon End-Actor
 					Dialog sid exc19 End-Dialog
 					Actor sid Reader End-Actor
-					Insert_section bk.ap.me.m09.sections.dSunBC.ep_title End-Insert
-					Insert_section bk.ap.me.m09.sections.dSunBC.ep_prokeimenon End-Insert
+					Title<r>sid Prokeimenon sid Mode6 sid psLI.m09.dSunBC.prokeimenon.title</>End-Title
+					Para role readingzero sid psLI.m09.dSunBC.prokeimenon.v1.text @ver End-Para
+					Verse<bnr>sid vVerse</>sid psLI.m09.dSunBC.prokeimenon.v2.text @ver End-Verse
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -242,8 +253,8 @@ Template LE
 					Actor sid Deacon End-Actor
 					Dialog sid exc19 End-Dialog
 					Actor sid Reader End-Actor
-					Insert_section Epistle_Prokeimenon_Title End-Insert
-					Insert_section Epistle_Prokeimenon End-Insert
+					Insert_section ep_pr_title_mode End-Insert
+					Insert_section ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -268,8 +279,8 @@ Template LE
 					Actor sid Deacon End-Actor
 					Dialog sid exc19 End-Dialog
 					Actor sid Reader End-Actor
-					Insert_section Epistle_Prokeimenon_Title End-Insert
-					Insert_section Epistle_Prokeimenon End-Insert
+					Insert_section ep_pr_title_mode End-Insert
+					Insert_section ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -291,12 +302,11 @@ Template LE
 				Insert_section Epistle_Title End-Insert
 			End-Section
 			Section prokeimenon
-			//	Title role desig sid OApostolos End-Title
 				Actor sid Deacon End-Actor	
 				Dialog sid exc19 End-Dialog
 				Actor sid Reader End-Actor
-				Insert_section Epistle_Prokeimenon_Title End-Insert
-				Insert_section Epistle_Prokeimenon End-Insert
+				Insert_section ep_pr_title_mode End-Insert
+				Insert_section ep_prokeimeon_verse End-Insert
 			End-Section
 			Section lesson
 				Actor sid Deacon End-Actor
@@ -324,8 +334,8 @@ Template LE
 					Actor sid Deacon End-Actor
 					Dialog sid exc19 End-Dialog
 					Actor sid Reader End-Actor
-					Insert_section Epistle_Prokeimenon_Title End-Insert
-					Insert_section Epistle_Prokeimenon End-Insert
+					Insert_section ep_pr_title_mode End-Insert
+					Insert_section ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -351,8 +361,8 @@ Template LE
 					Actor sid Deacon End-Actor
 					Dialog sid exc19 End-Dialog
 					Actor sid Reader End-Actor
-					Insert_section Epistle_Prokeimenon_Title.Defaults End-Insert
-					Insert_section Epistle_Prokeimenon.Defaults End-Insert
+					Insert_section ep_pr_title_mode End-Insert
+					Insert_section ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -378,8 +388,9 @@ Template LE
 					Actor sid Deacon End-Actor
 					Dialog sid exc19 End-Dialog
 					Actor sid Reader End-Actor
-					Insert_section bk.ap.me.m12.sections.dSunBE.ep_title End-Insert
-					Insert_section bk.ap.me.m12.sections.dSunBE.ep_prokeimenon End-Insert
+					Title<r>sid Prokeimenon sid Mode6 sid psLI.m12.dSunBE.prokeimenon.title</>End-Title
+					Para role readingzero sid psLI.m12.dSunBE.prokeimenon.v1.text @ver End-Para
+					Verse<bnr>sid vVerse</>sid psLI.m12.dSunBE.prokeimenon.v2.text @ver End-Verse
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -422,8 +433,8 @@ Template LE
 					Actor sid Deacon End-Actor
 					Dialog sid exc19 End-Dialog
 					Actor sid Reader End-Actor
-					Insert_section Epistle_Prokeimenon_Title End-Insert
-					Insert_section Epistle_Prokeimenon End-Insert
+					Insert_section ep_pr_title_mode End-Insert
+					Insert_section ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -448,8 +459,8 @@ Template LE
 					Actor sid Deacon End-Actor
 					Dialog sid exc19 End-Dialog
 					Actor sid Reader End-Actor
-					Insert_section Epistle_Prokeimenon_Title End-Insert
-					Insert_section Epistle_Prokeimenon End-Insert
+					Insert_section ep_pr_title_mode End-Insert
+					Insert_section ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -474,8 +485,8 @@ Template LE
 					Actor sid Deacon End-Actor
 					Dialog sid exc19 End-Dialog
 					Actor sid Reader End-Actor
-					Insert_section Epistle_Prokeimenon_Title End-Insert
-					Insert_section Epistle_Prokeimenon End-Insert
+					Insert_section ep_pr_title_mode End-Insert
+					Insert_section ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -500,8 +511,9 @@ Template LE
 					Actor sid Deacon End-Actor
 					Dialog sid exc19 End-Dialog
 					Actor sid Reader End-Actor
-					Insert_section bk.ap.me.m01.sections.d06.ep_title End-Insert
-					Insert_section bk.ap.me.m01.sections.d06.ep_prokeimenon End-Insert
+					Title<r>sid Prokeimenon sid Mode4 sid psLI.m01.d06.prokeimenon.title</>End-Title
+					Para role readingzero sid psLI.m01.d06.prokeimenon.v1.text @ver End-Para
+					Verse<bnr>sid vVerse</>sid psLI.m01.d06.prokeimenon.v2.text @ver End-Verse
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -526,8 +538,9 @@ Template LE
 					Actor sid Deacon End-Actor
 					Dialog sid exc19 End-Dialog
 					Actor sid Reader End-Actor
-					Insert_section bk.ap.me.m01.sections.dSatAE.ep_title End-Insert
-					Insert_section bk.ap.me.m01.sections.dSatAE.ep_prokeimenon End-Insert
+					Title<r>sid Prokeimenon sid Mode6 sid psLI.m01.dSatAE.prokeimenon.title</>End-Title
+					Para role readingzero sid psLI.m01.dSatAE.prokeimenon.v1.text @ver End-Para
+					Verse<bnr>sid vVerse</>sid psLI.m01.dSatAE.prokeimenon.v2.text @ver End-Verse
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -552,8 +565,9 @@ Template LE
 					Actor sid Deacon End-Actor
 					Dialog sid exc19 End-Dialog
 					Actor sid Reader End-Actor
-					Insert_section bk.ap.me.m01.sections.dSunAE.ep_title End-Insert
-					Insert_section bk.ap.me.m01.sections.dSunAE.ep_prokeimenon End-Insert
+					Title<r>sid Prokeimenon sid Mode6 sid psLI.m01.dSunAE.prokeimenon.title</>End-Title
+					Para role readingzero sid psLI.m01.dSunAE.prokeimenon.v1.text @ver End-Para
+					Verse<bnr>sid vVerse</>sid psLI.m01.dSunAE.prokeimenon.v2.text @ver End-Verse
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -581,8 +595,9 @@ Template LE
 						Actor sid Deacon End-Actor
 						Dialog sid exc19 End-Dialog
 						Actor sid Reader End-Actor
-						Insert_section bk.ap.me.m12.sections.dFF.ep_title End-Insert
-						Insert_section bk.ap.me.m12.sections.dFF.ep_prokeimenon End-Insert
+						Title<r>sid Prokeimenon sid Mode8 sid leosLI.pe.d113.EpistleProkeimenon.title</>End-Title
+						Para role readingzero sid psLI.m12.dFF.prokeimenon.v1.text @ver End-Para
+						Verse<bnr>sid vVerse</>sid psLI.m12.dFF.prokeimenon.v2.text @ver End-Verse
 					End-Section
 					Section lesson
 						Actor sid Deacon End-Actor
@@ -607,8 +622,8 @@ Template LE
 						Actor sid Deacon End-Actor
 						Dialog sid exc19 End-Dialog
 						Actor sid Reader End-Actor
-						Insert_section Epistle_Prokeimenon_Title End-Insert
-						Insert_section Epistle_Prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 						Actor sid Deacon End-Actor
@@ -633,8 +648,9 @@ Template LE
 						Actor sid Deacon End-Actor
 						Dialog sid exc19 End-Dialog
 						Actor sid Reader End-Actor
-						Insert_section bk.ap.me.m12.sections.dSunBC.ep_title End-Insert
-						Insert_section bk.ap.me.m12.sections.dSunBC.ep_prokeimenon End-Insert
+						Title<r>sid Prokeimenon sid Mode4 sid leosLI.pe.d113.EpistleProkeimenon.title</>End-Title
+						Para role readingzero sid psLI.m12.dSunBC.prokeimenon.v1.text @ver End-Para
+						Verse<bnr>sid vVerse</>sid psLI.m12.dSunBC.prokeimenon.v2.text @ver End-Verse
 					End-Section
 					Section lesson
 						Actor sid Deacon End-Actor
@@ -659,8 +675,9 @@ Template LE
 						Actor sid Deacon End-Actor
 						Dialog sid exc19 End-Dialog
 						Actor sid Reader End-Actor
-						Insert_section bk.ap.me.m12.sections.dSatAC.ep_title End-Insert
-						Insert_section bk.ap.me.m12.sections.dSatAC.ep_prokeimenon End-Insert
+						Title<r>sid Prokeimenon sid Mode4 sid psLI.m12.dSatAC.prokeimenon.title</>End-Title
+						Para role readingzero sid psLI.m12.dSatAC.prokeimenon.v1.text @ver End-Para
+						Verse<bnr>sid vVerse</>sid psLI.m12.dSatAC.prokeimenon.v2.text @ver End-Verse
 					End-Section
 					Section lesson
 						Actor sid Deacon End-Actor
@@ -685,8 +702,9 @@ Template LE
 						Actor sid Deacon End-Actor
 						Dialog sid exc19 End-Dialog
 						Actor sid Reader End-Actor
-						Insert_section bk.ap.me.m12.sections.dSunAC.ep_title End-Insert
-						Insert_section bk.ap.me.m12.sections.dSunAC.ep_prokeimenon End-Insert
+						Title<r>sid Prokeimenon sid Mode4 sid psLI.m12.dSunAC.prokeimenon.title</>End-Title
+						Para role readingzero sid psLI.m12.dSunAC.prokeimenon.v1.text @ver End-Para
+						Verse<bnr>sid vVerse</>sid psLI.m12.dSunAC.prokeimenon.v2.text @ver End-Verse
 					End-Section
 					Section lesson
 						Actor sid Deacon End-Actor
@@ -708,9 +726,9 @@ Template LE
 					Actor sid Priest End-Actor
 					Dialog sid exc19 End-Dialog
 					Actor sid Deacon End-Actor
-					Insert_section bk.ap.va.sections.forConsecration.ep_title End-Insert
-					Insert_section bk.ap.va.sections.forConsecration.ep_prokeimenon End-Insert
-					Insert_section bk.ap.va.sections.forConsecration.ep_verse End-Insert
+					Title<r>sid Prokeimenon sid Mode4 sid psEU.consecration.li.prokeimenon.title</>End-Title
+					Para role readingzero sid psEU.consecration.li.prokeimenon.v1.text End-Para
+					Para role readingzero sid psEU.consecration.li.prokeimenon.v2.text End-Para
 				End-Section
 				Section lesson
 					Actor sid Priest End-Actor
@@ -737,8 +755,9 @@ Template LE
 						Actor sid Deacon End-Actor
 						Dialog sid exc19 End-Dialog
 						Actor sid Reader End-Actor
-						Insert_section bk.ap.me.m09.sections.dSatBC.ep_title End-Insert
-						Insert_section bk.ap.me.m09.sections.dSatBC.ep_prokeimenon End-Insert
+						Title<r>sid Prokeimenon sid Mode3 sid psLI.m09.dSatBC.prokeimenon.title</>End-Title
+						Para role readingzero sid psLI.m09.dSatBC.prokeimenon.v1.text @ver End-Para
+						Verse<bnr>sid vVerse</>sid psLI.m09.dSatBC.prokeimenon.v2.text @ver End-Verse
 					End-Section
 					Section lesson
 						Actor sid Deacon End-Actor
@@ -763,8 +782,9 @@ Template LE
 						Actor sid Deacon End-Actor
 						Dialog sid exc19 End-Dialog
 						Actor sid Reader End-Actor
-						Insert_section bk.ap.me.m09.sections.dSunBC.ep_title End-Insert
-						Insert_section bk.ap.me.m09.sections.dSunBC.ep_prokeimenon End-Insert
+						Title<r>sid Prokeimenon sid Mode6 sid psLI.m09.dSunBC.prokeimenon.title</>End-Title
+						Para role readingzero sid psLI.m09.dSunBC.prokeimenon.v1.text @ver End-Para
+						Verse<bnr>sid vVerse</>sid psLI.m09.dSunBC.prokeimenon.v2.text @ver End-Verse
 					End-Section
 					Section lesson
 						Actor sid Deacon End-Actor
@@ -789,8 +809,8 @@ Template LE
 						Actor sid Deacon End-Actor
 						Dialog sid exc19 End-Dialog
 						Actor sid Reader End-Actor
-						Insert_section Epistle_Prokeimenon_Title End-Insert
-						Insert_section Epistle_Prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 						Actor sid Deacon End-Actor
@@ -815,8 +835,8 @@ Template LE
 						Actor sid Deacon End-Actor
 						Dialog sid exc19 End-Dialog
 						Actor sid Reader End-Actor
-						Insert_section Epistle_Prokeimenon_Title End-Insert
-						Insert_section Epistle_Prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 						Actor sid Deacon End-Actor
@@ -842,8 +862,8 @@ Template LE
 					Actor sid Deacon End-Actor	
 					Dialog sid exc19 End-Dialog
 					Actor sid Reader End-Actor
-					Insert_section Epistle_Prokeimenon_Title End-Insert
-					Insert_section Epistle_Prokeimenon End-Insert
+					Insert_section ep_pr_title_mode End-Insert
+					Insert_section ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -867,8 +887,8 @@ Template LE
 					Actor sid Deacon End-Actor
 					Dialog sid exc19 End-Dialog
 					Actor sid Reader End-Actor
-					Insert_section bk.ap.mc.p5.sections.Week_35.Day_Saturday.ep_title End-Insert
-					Insert_section bk.ap.mc.p5.sections.Week_35.Day_Saturday.ep_prokeimenon End-Insert
+					Insert_section ep_pr_title_mode End-Insert
+					Insert_section ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -894,8 +914,8 @@ Template LE
 						Actor sid Deacon End-Actor
 						Dialog sid exc19 End-Dialog
 						Actor sid Reader End-Actor
-						Insert_section Epistle_Prokeimenon_Title End-Insert
-						Insert_section Epistle_Prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 						Actor sid Deacon End-Actor
@@ -920,8 +940,8 @@ Template LE
 						Actor sid Deacon End-Actor
 						Dialog sid exc19 End-Dialog
 						Actor sid Reader End-Actor
-						Insert_section Epistle_Prokeimenon_Title End-Insert
-						Insert_section Epistle_Prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 						Actor sid Deacon End-Actor
@@ -946,8 +966,9 @@ Template LE
 						Actor sid Deacon End-Actor
 						Dialog sid exc19 End-Dialog
 						Actor sid Reader End-Actor
-						Insert_section bk.ap.me.m12.sections.dSunBE.ep_title End-Insert
-						Insert_section bk.ap.me.m12.sections.dSunBE.ep_prokeimenon End-Insert
+						Title<r>sid Prokeimenon sid Mode6 sid psLI.m12.dSunBE.prokeimenon.title</>End-Title
+						Para role readingzero sid psLI.m12.dSunBE.prokeimenon.v1.text @ver End-Para
+						Verse<bnr>sid vVerse</>sid psLI.m12.dSunBE.prokeimenon.v2.text @ver End-Verse
 					End-Section
 					Section lesson
 						Actor sid Deacon End-Actor
@@ -990,8 +1011,8 @@ Template LE
 						Actor sid Deacon End-Actor
 						Dialog sid exc19 End-Dialog
 						Actor sid Reader End-Actor
-						Insert_section Epistle_Prokeimenon_Title End-Insert
-						Insert_section Epistle_Prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 						Actor sid Deacon End-Actor
@@ -1016,8 +1037,8 @@ Template LE
 						Actor sid Deacon End-Actor
 						Dialog sid exc19 End-Dialog
 						Actor sid Reader End-Actor
-						Insert_section Epistle_Prokeimenon_Title End-Insert
-						Insert_section Epistle_Prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 						Actor sid Deacon End-Actor
@@ -1042,8 +1063,8 @@ Template LE
 						Actor sid Deacon End-Actor
 						Dialog sid exc19 End-Dialog
 						Actor sid Reader End-Actor
-						Insert_section Epistle_Prokeimenon_Title End-Insert
-						Insert_section Epistle_Prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 						Actor sid Deacon End-Actor
@@ -1068,8 +1089,9 @@ Template LE
 						Actor sid Deacon End-Actor
 						Dialog sid exc19 End-Dialog
 						Actor sid Reader End-Actor
-						Insert_section bk.ap.me.m01.sections.d06.ep_title End-Insert
-						Insert_section bk.ap.me.m01.sections.d06.ep_prokeimenon End-Insert
+						Title<r>sid Prokeimenon sid Mode4 sid psLI.m01.d06.prokeimenon.title</>End-Title
+						Para role readingzero sid psLI.m01.d06.prokeimenon.v1.text @ver End-Para
+						Verse<bnr>sid vVerse</>sid psLI.m01.d06.prokeimenon.v2.text @ver End-Verse
 					End-Section
 					Section lesson
 						Actor sid Deacon End-Actor
@@ -1094,8 +1116,9 @@ Template LE
 						Actor sid Deacon End-Actor
 						Dialog sid exc19 End-Dialog
 						Actor sid Reader End-Actor
-						Insert_section bk.ap.me.m01.sections.dSatAE.ep_title End-Insert
-						Insert_section bk.ap.me.m01.sections.dSatAE.ep_prokeimenon End-Insert
+						Title<r>sid Prokeimenon sid Mode6 sid psLI.m01.dSatAE.prokeimenon.title</>End-Title
+						Para role readingzero sid psLI.m01.dSatAE.prokeimenon.v1.text @ver End-Para
+						Verse<bnr>sid vVerse</>sid psLI.m01.dSatAE.prokeimenon.v2.text @ver End-Verse
 					End-Section
 					Section lesson
 						Actor sid Deacon End-Actor
@@ -1120,8 +1143,9 @@ Template LE
 						Actor sid Deacon End-Actor
 						Dialog sid exc19 End-Dialog
 						Actor sid Reader End-Actor
-						Insert_section bk.ap.me.m01.sections.dSunAE.ep_title End-Insert
-						Insert_section bk.ap.me.m01.sections.dSunAE.ep_prokeimenon End-Insert
+						Title<r>sid Prokeimenon sid Mode6 sid psLI.m01.dSunAE.prokeimenon.title</>End-Title
+						Para role readingzero sid psLI.m01.dSunAE.prokeimenon.v1.text @ver End-Para
+						Verse<bnr>sid vVerse</>sid psLI.m01.dSunAE.prokeimenon.v2.text @ver End-Verse
 					End-Section
 					Section lesson
 						Actor sid Deacon End-Actor
@@ -1148,8 +1172,9 @@ Template LE
 						Actor sid Deacon End-Actor
 						Dialog sid exc19 End-Dialog
 						Actor sid Reader End-Actor
-						Insert_section bk.ap.me.m07.sections.dHF.ep_title End-Insert
-						Insert_section bk.ap.me.m07.sections.dHF.ep_prokeimenon End-Insert
+						Title<r>sid Prokeimenon sid Mode8 sid psLI.m07.dHF.prokeimenon.title</>End-Title
+						Para role readingzero sid psLI.m07.dHF.prokeimenon.v1.text @ver End-Para
+						Verse<bnr>sid vVerse</>sid psLI.m07.dHF.prokeimenon.v2.text @ver End-Verse
 					End-Section
 					Section lesson
 						Actor sid Deacon End-Actor
@@ -1174,8 +1199,9 @@ Template LE
 						Actor sid Deacon End-Actor
 						Dialog sid exc19 End-Dialog
 						Actor sid Reader End-Actor
-						Insert_section bk.ap.me.m10.sections.dHF.ep_title End-Insert
-						Insert_section bk.ap.me.m10.sections.dHF.ep_prokeimenon End-Insert
+						Title<r>sid Prokeimenon sid Mode4 sid leosLI.pe.d113.EpistleProkeimenon.title</>End-Title
+						Reading sid psLI.m10.dHF.prokeimenon.v1.text @ver End-Reading
+						Verse<bnr>sid vVerse</>sid psLI.m10.dHF.prokeimenon.v2.text @ver End-Verse
 					End-Section
 					Section lesson
 						Actor sid Deacon End-Actor
@@ -1201,8 +1227,8 @@ Template LE
 					Actor sid Deacon End-Actor
 					Dialog sid exc19 End-Dialog
 					Actor sid Reader End-Actor
-					Insert_section rid_EpistleProkeimena_Menaion.me_ep_title_mode End-Insert
-					Insert_section rid_EpistleProkeimena_Menaion.me_ep_prokeimenon_verse End-Insert
+					Insert_section me_ep_pr_title_mode End-Insert
+					Insert_section me_ep_prokeimenon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -1224,8 +1250,8 @@ Template LE
 					Actor sid Deacon End-Actor
 					Dialog sid exc19 End-Dialog
 					Actor sid Reader End-Actor
-					Insert_section rid_EpistleProkeimena_Menaion.mealt1_ep_title_mode End-Insert
-					Insert_section rid_EpistleProkeimena_Menaion.mealt1_ep_prokeimenon_verse End-Insert
+					Insert_section mealt1_ep_pr_title_mode End-Insert
+					Insert_section mealt1_ep_prokeimenon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -1250,8 +1276,8 @@ Template LE
 						Actor sid Deacon End-Actor
 						Dialog sid exc19 End-Dialog
 						Actor sid Reader End-Actor
-						Insert_section rid_EpistleProkeimena_Menaion.me_vespers_ep_title_mode End-Insert
-						Insert_section rid_EpistleProkeimena_Menaion.me_vespers_ep_prokeimenon_verse End-Insert
+						Insert_section me_vespers_ep_pr_title_mode End-Insert
+						Insert_section me_vespers_ep_prokeimenon_verse End-Insert
 					End-Section
 					Section lesson
 						Actor sid Deacon End-Actor
@@ -1273,8 +1299,8 @@ Template LE
 						Actor sid Deacon End-Actor
 						Dialog sid exc19 End-Dialog
 						Actor sid Reader End-Actor
-						Insert_section rid_EpistleProkeimena_MovableCycle.mc_vespers_ep_title_mode End-Insert
-						Insert_section rid_EpistleProkeimena_MovableCycle.mc_vespers_ep_prokeimenon_verse End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 						Actor sid Deacon End-Actor
@@ -1329,8 +1355,9 @@ Template LE
 					Actor sid Deacon End-Actor
 					Dialog sid exc19 End-Dialog
 					Actor sid Reader End-Actor
-					Insert_section bk.ap.me.m09.sections.d08.ep_title End-Insert
-					Insert_section bk.ap.me.m09.sections.d08.ep_prokeimenon End-Insert
+					Title<r>sid Prokeimenon sid Mode3 sid psLI.m09.d08.prokeimenon.title</>End-Title
+					Reading sid psLI.m09.d08.prokeimenon.v1.text @ver End-Reading
+					Verse<bnr>sid vVerse</>sid psLI.m09.d08.prokeimenon.v2.text @ver End-Verse
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -1352,8 +1379,9 @@ Template LE
 					Actor sid Deacon End-Actor
 					Dialog sid exc19 End-Dialog
 					Actor sid Reader End-Actor
-					Insert_section bk.ap.me.m11.sections.d21.ep_title End-Insert
-					Insert_section bk.ap.me.m11.sections.d21.ep_prokeimenon End-Insert
+					Title<r>sid Prokeimenon sid Mode3 sid psLI.m11.d21.prokeimenon.title</>End-Title
+					Reading sid psLI.m11.d21.prokeimenon.v1.text @ver End-Reading
+					Verse<bnr>sid vVerse</>sid psLI.m11.d21.prokeimenon.v2.text @ver End-Verse
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -1377,8 +1405,8 @@ Template LE
 						Actor sid Deacon End-Actor
 						Dialog sid exc19 End-Dialog
 						Actor sid Reader End-Actor
-						Insert_section rid_EpistleProkeimena_MovableCycle.mc_ep_title_mode End-Insert
-						Insert_section rid_EpistleProkeimena_MovableCycle.mc_ep_prokeimenon_verse End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 						Actor sid Deacon End-Actor
@@ -1398,7 +1426,11 @@ Template LE
 						Insert_section TI.le.ep.s._10_monastic_.mp End-Insert
 					End-Section
 					Section prokeimenon
-						Insert_section _01_Epistle__.daily_.prokeimenon End-Insert
+						Actor sid Deacon End-Actor	
+						Dialog sid exc19 End-Dialog
+						Actor sid Reader End-Actor
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 						Insert_section _01_Epistle__.Hierarchical__.monastic.lesson End-Insert
@@ -1412,8 +1444,8 @@ Template LE
 						Actor sid Deacon End-Actor
 						Dialog sid exc19 End-Dialog
 						Actor sid Reader End-Actor
-						Insert_section rid_EpistleProkeimena_MovableCycle.mc_ep_title_mode End-Insert
-						Insert_section rid_EpistleProkeimena_MovableCycle.mc_ep_prokeimenon_verse End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 						Actor sid Deacon End-Actor
@@ -1436,8 +1468,8 @@ Template LE
 						Actor sid Deacon End-Actor
 						Dialog sid exc19 End-Dialog
 						Actor sid Reader End-Actor
-						Insert_section bk.ap.me.m10.sections.d26.ep_title End-Insert
-						Insert_section bk.ap.me.m10.sections.d26.ep_prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 						Actor sid Deacon End-Actor
@@ -1460,8 +1492,8 @@ Template LE
 						Actor sid Deacon End-Actor
 						Dialog sid exc19 End-Dialog
 						Actor sid Reader End-Actor
-						Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent1.ep_title End-Insert
-						Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent1.ep_prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 						Actor sid Deacon End-Actor
@@ -1484,8 +1516,8 @@ Template LE
 						Actor sid Deacon End-Actor
 						Dialog sid exc19 End-Dialog
 						Actor sid Reader End-Actor
-						Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent3.ep_title End-Insert
-						Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent3.ep_prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 						Actor sid Deacon End-Actor
@@ -1510,8 +1542,8 @@ Template LE
 						Actor sid Deacon End-Actor
 						Dialog sid exc19 End-Dialog
 						Actor sid Reader End-Actor
-						Insert_section bk.ap.mc.p5.sections.Day_Saturday_Lent5.ep_title End-Insert
-						Insert_section bk.ap.mc.p5.sections.Day_Saturday_Lent5.ep_prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 						Actor sid Deacon End-Actor
@@ -1539,8 +1571,9 @@ Template LE
 					Actor sid Deacon End-Actor
 					Dialog sid exc19 End-Dialog
 					Actor sid Reader End-Actor
-					Insert_section bk.ap.me.m07.sections.dHF.ep_title End-Insert
-					Insert_section bk.ap.me.m07.sections.dHF.ep_prokeimenon End-Insert
+					Title<r>sid Prokeimenon sid Mode8 sid psLI.m07.dHF.prokeimenon.title</>End-Title
+					Para role readingzero sid psLI.m07.dHF.prokeimenon.v1.text @ver End-Para
+					Verse<bnr>sid vVerse</>sid psLI.m07.dHF.prokeimenon.v2.text @ver End-Verse
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -1565,8 +1598,9 @@ Template LE
 					Actor sid Deacon End-Actor
 					Dialog sid exc19 End-Dialog
 					Actor sid Reader End-Actor
-					Insert_section bk.ap.me.m10.sections.dHF.ep_title End-Insert
-					Insert_section bk.ap.me.m10.sections.dHF.ep_prokeimenon End-Insert
+					Title<r>sid Prokeimenon sid Mode4 sid leosLI.pe.d113.EpistleProkeimenon.title</>End-Title
+					Reading sid psLI.m10.dHF.prokeimenon.v1.text @ver End-Reading
+					Verse<bnr>sid vVerse</>sid psLI.m10.dHF.prokeimenon.v2.text @ver End-Verse
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -1592,8 +1626,8 @@ Template LE
 				Actor sid Deacon End-Actor
 				Dialog sid exc19 End-Dialog
 				Actor sid Reader End-Actor
-				Insert_section rid_EpistleProkeimena_Menaion.me_ep_title_mode End-Insert
-				Insert_section rid_EpistleProkeimena_Menaion.me_ep_prokeimenon_verse End-Insert
+				Insert_section me_ep_pr_title_mode End-Insert
+				Insert_section me_ep_prokeimenon_verse End-Insert
 			End-Section
 			Section lesson
 				Actor sid Deacon End-Actor
@@ -1618,8 +1652,8 @@ Template LE
 				Actor sid Deacon End-Actor
 				Dialog sid exc19 End-Dialog
 				Actor sid Reader End-Actor
-				Insert_section rid_EpistleProkeimena_Menaion.mealt1_ep_title_mode End-Insert
-				Insert_section rid_EpistleProkeimena_Menaion.mealt1_ep_prokeimenon_verse End-Insert
+				Insert_section mealt1_ep_pr_title_mode End-Insert
+				Insert_section mealt1_ep_prokeimenon_verse End-Insert
 			End-Section
 			Section lesson
 				Actor sid Deacon End-Actor
@@ -1643,8 +1677,8 @@ Template LE
 					Actor sid Deacon End-Actor
 					Dialog sid exc19 End-Dialog
 					Actor sid Reader End-Actor
-					Insert_section rid_EpistleProkeimena_Menaion.me_vespers_ep_title_mode End-Insert
-					Insert_section rid_EpistleProkeimena_Menaion.me_vespers_ep_prokeimenon_verse End-Insert
+					Insert_section me_vespers_ep_pr_title_mode End-Insert
+					Insert_section me_vespers_ep_prokeimenon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -1666,8 +1700,8 @@ Template LE
 					Actor sid Deacon End-Actor
 					Dialog sid exc19 End-Dialog
 					Actor sid Reader End-Actor
-					Insert_section rid_EpistleProkeimena_MovableCycle.mc_vespers_ep_title_mode End-Insert
-					Insert_section rid_EpistleProkeimena_MovableCycle.mc_vespers_ep_prokeimenon_verse End-Insert
+					Insert_section vespers_ep_pr_title_mode End-Insert
+					Insert_section vespers_ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -1691,8 +1725,8 @@ Template LE
 				Actor sid Deacon End-Actor
 				Dialog sid exc19 End-Dialog
 				Actor sid Reader End-Actor
-				Insert_section bk.ap.mc.p5.sections.Week_35.Day_Saturday.ep_title End-Insert
-				Insert_section bk.ap.mc.p5.sections.Week_35.Day_Saturday.ep_prokeimenon End-Insert
+				Insert_section ep_pr_title_mode End-Insert
+				Insert_section ep_prokeimeon_verse End-Insert
 			End-Section
 			Section lesson
 				Actor sid Deacon End-Actor
@@ -1745,8 +1779,9 @@ Template LE
 				Actor sid Deacon End-Actor
 				Dialog sid exc19 End-Dialog
 				Actor sid Reader End-Actor
-				Insert_section bk.ap.me.m09.sections.d08.ep_title End-Insert
-				Insert_section bk.ap.me.m09.sections.d08.ep_prokeimenon End-Insert
+				Title<r>sid Prokeimenon sid Mode3 sid psLI.m09.d08.prokeimenon.title</>End-Title
+				Reading sid psLI.m09.d08.prokeimenon.v1.text @ver End-Reading
+				Verse<bnr>sid vVerse</>sid psLI.m09.d08.prokeimenon.v2.text @ver End-Verse
 			End-Section
 			Section lesson
 				Actor sid Deacon End-Actor
@@ -1768,8 +1803,9 @@ Template LE
 				Actor sid Deacon End-Actor
 				Dialog sid exc19 End-Dialog
 				Actor sid Reader End-Actor
-				Insert_section bk.ap.me.m11.sections.d21.ep_title End-Insert
-				Insert_section bk.ap.me.m11.sections.d21.ep_prokeimenon End-Insert
+				Title<r>sid Prokeimenon sid Mode3 sid psLI.m11.d21.prokeimenon.title</>End-Title
+				Reading sid psLI.m11.d21.prokeimenon.v1.text @ver End-Reading
+				Verse<bnr>sid vVerse</>sid psLI.m11.d21.prokeimenon.v2.text @ver End-Verse
 			End-Section
 			Section lesson
 				Actor sid Deacon End-Actor
@@ -1791,7 +1827,11 @@ Template LE
 					Title role smallcenter sid lecLE.SaturdayBeforeEpiphany End-Title
 				End-Section
 				Section prokeimenon
-					Insert_section daily_.prokeimenon End-Insert
+					Actor sid Deacon End-Actor	
+					Dialog sid exc19 End-Dialog
+					Actor sid Reader End-Actor
+					Insert_section ep_pr_title_mode End-Insert
+					Insert_section ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -1815,8 +1855,8 @@ Template LE
 					Actor sid Deacon End-Actor	
 					Dialog sid exc19 End-Dialog
 					Actor sid Reader End-Actor
-					Insert_section Epistle_Prokeimenon_Title End-Insert
-					Insert_section Epistle_Prokeimenon End-Insert
+					Insert_section ep_pr_title_mode End-Insert
+					Insert_section ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -1837,7 +1877,11 @@ Template LE
 					Title role smallcenter sid lecLE.Day2 sid lecLE.ofthe sid lecLE.ordinal32a sid lecLE.ordinal32b sid lecLE.ofWeek End-Title
 				End-Section
 				Section prokeimenon
-					Insert_section daily_.prokeimenon End-Insert
+					Actor sid Deacon End-Actor	
+					Dialog sid exc19 End-Dialog
+					Actor sid Reader End-Actor
+					Insert_section ep_pr_title_mode End-Insert
+					Insert_section ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -1858,7 +1902,11 @@ Template LE
 					Title role smallcenter sid lecLE.Day3 sid lecLE.ofthe sid lecLE.ordinal32a sid lecLE.ordinal32b sid lecLE.ofWeek End-Title
 				End-Section
 				Section prokeimenon
-					Insert_section daily_.prokeimenon End-Insert
+					Actor sid Deacon End-Actor	
+					Dialog sid exc19 End-Dialog
+					Actor sid Reader End-Actor
+					Insert_section ep_pr_title_mode End-Insert
+					Insert_section ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -1879,7 +1927,11 @@ Template LE
 					Title role smallcenter sid lecLE.Day4 sid lecLE.ofthe sid lecLE.ordinal32a sid lecLE.ordinal32b sid lecLE.ofWeek End-Title
 				End-Section
 				Section prokeimenon
-					Insert_section daily_.prokeimenon End-Insert
+					Actor sid Deacon End-Actor	
+					Dialog sid exc19 End-Dialog
+					Actor sid Reader End-Actor
+					Insert_section ep_pr_title_mode End-Insert
+					Insert_section ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -1900,7 +1952,11 @@ Template LE
 					Title role smallcenter sid lecLE.Day5 sid lecLE.ofthe sid lecLE.ordinal32a sid lecLE.ordinal32b sid lecLE.ofWeek End-Title
 				End-Section
 				Section prokeimenon
-					Insert_section daily_.prokeimenon End-Insert
+					Actor sid Deacon End-Actor	
+					Dialog sid exc19 End-Dialog
+					Actor sid Reader End-Actor
+					Insert_section ep_pr_title_mode End-Insert
+					Insert_section ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -1921,7 +1977,11 @@ Template LE
 					Title role smallcenter sid lecLE.Day6 sid lecLE.ofthe sid lecLE.ordinal32a sid lecLE.ordinal32b sid lecLE.ofWeek End-Title
 				End-Section
 				Section prokeimenon
-					Insert_section daily_.prokeimenon End-Insert
+					Actor sid Deacon End-Actor	
+					Dialog sid exc19 End-Dialog
+					Actor sid Reader End-Actor
+					Insert_section ep_pr_title_mode End-Insert
+					Insert_section ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -1942,7 +2002,11 @@ Template LE
 					Title role smallcenter sid lecLE.Day7 sid lecLE.ofthe sid lecLE.ordinal32a sid lecLE.ordinal32b sid lecLE.ofWeek End-Title
 				End-Section
 				Section prokeimenon
-					Insert_section daily_.prokeimenon End-Insert
+					Actor sid Deacon End-Actor	
+					Dialog sid exc19 End-Dialog
+					Actor sid Reader End-Actor
+					Insert_section ep_pr_title_mode End-Insert
+					Insert_section ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -1963,7 +2027,11 @@ Template LE
 					Title role smallcenter sid lecLE.Day2 sid lecLE.ofthe sid lecLE.ordinal33a sid lecLE.ordinal33b sid lecLE.ofWeek End-Title
 				End-Section
 				Section prokeimenon
-					Insert_section daily_.prokeimenon End-Insert
+					Actor sid Deacon End-Actor	
+					Dialog sid exc19 End-Dialog
+					Actor sid Reader End-Actor
+					Insert_section ep_pr_title_mode End-Insert
+					Insert_section ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -1984,7 +2052,11 @@ Template LE
 					Title role smallcenter sid lecLE.Day3 sid lecLE.ofthe sid lecLE.ordinal33a sid lecLE.ordinal33b sid lecLE.ofWeek End-Title
 				End-Section
 				Section prokeimenon
-					Insert_section daily_.prokeimenon End-Insert
+					Actor sid Deacon End-Actor	
+					Dialog sid exc19 End-Dialog
+					Actor sid Reader End-Actor
+					Insert_section ep_pr_title_mode End-Insert
+					Insert_section ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -2005,7 +2077,11 @@ Template LE
 					Title role smallcenter sid lecLE.Day4 sid lecLE.ofthe sid lecLE.ordinal33a sid lecLE.ordinal33b sid lecLE.ofWeek End-Title
 				End-Section
 				Section prokeimenon
-					Insert_section daily_.prokeimenon End-Insert
+					Actor sid Deacon End-Actor	
+					Dialog sid exc19 End-Dialog
+					Actor sid Reader End-Actor
+					Insert_section ep_pr_title_mode End-Insert
+					Insert_section ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -2026,7 +2102,11 @@ Template LE
 					Title role smallcenter sid lecLE.Day5 sid lecLE.ofthe sid lecLE.ordinal33a sid lecLE.ordinal33b sid lecLE.ofWeek End-Title
 				End-Section
 				Section prokeimenon
-					Insert_section daily_.prokeimenon End-Insert
+					Actor sid Deacon End-Actor	
+					Dialog sid exc19 End-Dialog
+					Actor sid Reader End-Actor
+					Insert_section ep_pr_title_mode End-Insert
+					Insert_section ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -2047,7 +2127,11 @@ Template LE
 					Title role smallcenter sid lecLE.Day6 sid lecLE.ofthe sid lecLE.ordinal33a sid lecLE.ordinal33b sid lecLE.ofWeek End-Title
 				End-Section
 				Section prokeimenon
-					Insert_section daily_.prokeimenon End-Insert
+					Actor sid Deacon End-Actor	
+					Dialog sid exc19 End-Dialog
+					Actor sid Reader End-Actor
+					Insert_section ep_pr_title_mode End-Insert
+					Insert_section ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -2068,7 +2152,11 @@ Template LE
 					Title role smallcenter sid lecLE.Day7 sid lecLE.ofthe sid lecLE.ordinal33a sid lecLE.ordinal33b sid lecLE.ofWeek End-Title
 				End-Section
 				Section prokeimenon
-					Insert_section daily_.prokeimenon End-Insert
+					Actor sid Deacon End-Actor	
+					Dialog sid exc19 End-Dialog
+					Actor sid Reader End-Actor
+					Insert_section ep_pr_title_mode End-Insert
+					Insert_section ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -2089,7 +2177,11 @@ Template LE
 					Title role smallcenter sid lecLE.Day2 sid lecLE.ofthe sid lecLE.ordinal34a sid lecLE.ordinal34b sid lecLE.ofWeek End-Title
 				End-Section
 				Section prokeimenon
-					Insert_section daily_.prokeimenon End-Insert
+					Actor sid Deacon End-Actor	
+					Dialog sid exc19 End-Dialog
+					Actor sid Reader End-Actor
+					Insert_section ep_pr_title_mode End-Insert
+					Insert_section ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -2110,7 +2202,11 @@ Template LE
 					Title role smallcenter sid lecLE.Day3 sid lecLE.ofthe sid lecLE.ordinal34a sid lecLE.ordinal34b sid lecLE.ofWeek End-Title
 				End-Section
 				Section prokeimenon
-					Insert_section daily_.prokeimenon End-Insert
+					Actor sid Deacon End-Actor	
+					Dialog sid exc19 End-Dialog
+					Actor sid Reader End-Actor
+					Insert_section ep_pr_title_mode End-Insert
+					Insert_section ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -2131,7 +2227,11 @@ Template LE
 					Title role smallcenter sid lecLE.Day4 sid lecLE.ofthe sid lecLE.ordinal34a sid lecLE.ordinal34b sid lecLE.ofWeek End-Title
 				End-Section
 				Section prokeimenon
-					Insert_section daily_.prokeimenon End-Insert
+					Actor sid Deacon End-Actor	
+					Dialog sid exc19 End-Dialog
+					Actor sid Reader End-Actor
+					Insert_section ep_pr_title_mode End-Insert
+					Insert_section ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -2152,7 +2252,11 @@ Template LE
 					Title role smallcenter sid lecLE.Day5 sid lecLE.ofthe sid lecLE.ordinal34a sid lecLE.ordinal34b sid lecLE.ofWeek End-Title
 				End-Section
 				Section prokeimenon
-					Insert_section daily_.prokeimenon End-Insert
+					Actor sid Deacon End-Actor	
+					Dialog sid exc19 End-Dialog
+					Actor sid Reader End-Actor
+					Insert_section ep_pr_title_mode End-Insert
+					Insert_section ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -2173,7 +2277,11 @@ Template LE
 					Title role smallcenter sid lecLE.Day6 sid lecLE.ofthe sid lecLE.ordinal34a sid lecLE.ordinal34b sid lecLE.ofWeek End-Title
 				End-Section
 				Section prokeimenon
-					Insert_section daily_.prokeimenon End-Insert
+					Actor sid Deacon End-Actor	
+					Dialog sid exc19 End-Dialog
+					Actor sid Reader End-Actor
+					Insert_section ep_pr_title_mode End-Insert
+					Insert_section ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -2194,7 +2302,11 @@ Template LE
 					Title role smallcenter sid lecLE.Day7 sid lecLE.ofthe sid lecLE.ordinal34a sid lecLE.ordinal34b sid lecLE.ofWeek End-Title
 				End-Section
 				Section prokeimenon
-					Insert_section daily_.prokeimenon End-Insert
+					Actor sid Deacon End-Actor	
+					Dialog sid exc19 End-Dialog
+					Actor sid Reader End-Actor
+					Insert_section ep_pr_title_mode End-Insert
+					Insert_section ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -2219,8 +2331,8 @@ Template LE
 					Actor sid Deacon End-Actor
 					Dialog sid exc19 End-Dialog
 					Actor sid Reader End-Actor
-					Insert_section rid_EpistleProkeimena_MovableCycle.mc_ep_title_mode End-Insert
-					Insert_section rid_EpistleProkeimena_MovableCycle.mc_ep_prokeimenon_verse End-Insert
+					Insert_section ep_pr_title_mode End-Insert
+					Insert_section ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -2240,7 +2352,11 @@ Template LE
 					Insert_section TI.le.ep.s._10_monastic_.mp End-Insert
 				End-Section
 				Section prokeimenon
-					Insert_section _01_Epistle__.daily_.prokeimenon End-Insert
+					Actor sid Deacon End-Actor	
+					Dialog sid exc19 End-Dialog
+					Actor sid Reader End-Actor
+					Insert_section ep_pr_title_mode End-Insert
+					Insert_section ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 					Insert_section _01_Epistle__.monastic.lesson End-Insert
@@ -2254,8 +2370,8 @@ Template LE
 					Actor sid Deacon End-Actor
 					Dialog sid exc19 End-Dialog
 					Actor sid Reader End-Actor
-					Insert_section rid_EpistleProkeimena_MovableCycle.mc_ep_title_mode End-Insert
-					Insert_section rid_EpistleProkeimena_MovableCycle.mc_ep_prokeimenon_verse End-Insert
+					Insert_section ep_pr_title_mode End-Insert
+					Insert_section ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -2278,8 +2394,8 @@ Template LE
 					Actor sid Deacon End-Actor
 					Dialog sid exc19 End-Dialog
 					Actor sid Reader End-Actor
-					Insert_section bk.ap.me.m10.sections.d26.ep_title End-Insert
-					Insert_section bk.ap.me.m10.sections.d26.ep_prokeimenon End-Insert
+					Insert_section ep_pr_title_mode End-Insert
+					Insert_section ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -2302,8 +2418,8 @@ Template LE
 					Actor sid Deacon End-Actor
 					Dialog sid exc19 End-Dialog
 					Actor sid Reader End-Actor
-					Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent1.ep_title End-Insert
-					Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent1.ep_prokeimenon End-Insert
+					Insert_section ep_pr_title_mode End-Insert
+					Insert_section ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -2326,8 +2442,8 @@ Template LE
 					Actor sid Deacon End-Actor
 					Dialog sid exc19 End-Dialog
 					Actor sid Reader End-Actor
-					Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent3.ep_title End-Insert
-					Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent3.ep_prokeimenon End-Insert
+					Insert_section ep_pr_title_mode End-Insert
+					Insert_section ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -2352,8 +2468,8 @@ Template LE
 					Actor sid Deacon End-Actor
 					Dialog sid exc19 End-Dialog
 					Actor sid Reader End-Actor
-					Insert_section bk.ap.mc.p5.sections.Day_Saturday_Lent5.ep_title End-Insert
-					Insert_section bk.ap.mc.p5.sections.Day_Saturday_Lent5.ep_prokeimenon End-Insert
+					Insert_section ep_pr_title_mode End-Insert
+					Insert_section ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -2377,8 +2493,9 @@ Template LE
 						Title role smallcenter sid daySunday sid TonPropatoron End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section bk.ap.me.m12.sections.dFF.ep_title End-Insert
-						Insert_section bk.ap.me.m12.sections.dFF.ep_prokeimenon End-Insert
+						Title<r>sid Prokeimenon sid Mode8 sid leosLI.pe.d113.EpistleProkeimenon.title</>End-Title
+						Para role readingzero sid psLI.m12.dFF.prokeimenon.v1.text @ver End-Para
+						Verse<bnr>sid vVerse</>sid psLI.m12.dFF.prokeimenon.v2.text @ver End-Verse
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.me.m12.sections.dFF.ep_book End-Insert
@@ -2391,8 +2508,8 @@ Template LE
 						Title role smallcenter sid daySaturday sid BeforeChristmas End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section Epistle_Prokeimenon_Title End-Insert
-						Insert_section Epistle_Prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.me.m12.sections.dSatBC.ep_book End-Insert
@@ -2405,8 +2522,9 @@ Template LE
 						Title role smallcenter sid daySunday sid BeforeChristmas End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section bk.ap.me.m12.sections.dSunBC.ep_title End-Insert
-						Insert_section bk.ap.me.m12.sections.dSunBC.ep_prokeimenon End-Insert
+						Title<r>sid Prokeimenon sid Mode4 sid leosLI.pe.d113.EpistleProkeimenon.title</>End-Title
+						Para role readingzero sid psLI.m12.dSunBC.prokeimenon.v1.text @ver End-Para
+						Verse<bnr>sid vVerse</>sid psLI.m12.dSunBC.prokeimenon.v2.text @ver End-Verse
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.me.m12.sections.dSunBC.ep_book End-Insert
@@ -2419,8 +2537,9 @@ Template LE
 						Title role smallcenter sid daySaturday sid AfterChristmas End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section bk.ap.me.m12.sections.dSatAC.ep_title End-Insert
-						Insert_section bk.ap.me.m12.sections.dSatAC.ep_prokeimenon End-Insert
+						Title<r>sid Prokeimenon sid Mode4 sid psLI.m12.dSatAC.prokeimenon.title</>End-Title
+						Para role readingzero sid psLI.m12.dSatAC.prokeimenon.v1.text @ver End-Para
+						Verse<bnr>sid vVerse</>sid psLI.m12.dSatAC.prokeimenon.v2.text @ver End-Verse
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.me.m12.sections.dSatAC.ep_book End-Insert
@@ -2433,8 +2552,9 @@ Template LE
 						Title role smallcenter sid daySunday sid AfterChristmas End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section bk.ap.me.m12.sections.dSunAC.ep_title End-Insert
-						Insert_section bk.ap.me.m12.sections.dSunAC.ep_prokeimenon End-Insert
+						Title<r>sid Prokeimenon sid Mode4 sid psLI.m12.dSunAC.prokeimenon.title</>End-Title
+						Para role readingzero sid psLI.m12.dSunAC.prokeimenon.v1.text @ver End-Para
+						Verse<bnr>sid vVerse</>sid psLI.m12.dSunAC.prokeimenon.v2.text @ver End-Verse
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.me.m12.sections.dSunAC.ep_book End-Insert
@@ -2449,8 +2569,9 @@ Template LE
 						Title role smallcenter sid daySaturday sid BeforeCross End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section bk.ap.me.m09.sections.dSatBC.ep_title End-Insert
-						Insert_section bk.ap.me.m09.sections.dSatBC.ep_prokeimenon End-Insert
+						Title<r>sid Prokeimenon sid Mode3 sid psLI.m09.dSatBC.prokeimenon.title</>End-Title
+						Para role readingzero sid psLI.m09.dSatBC.prokeimenon.v1.text @ver End-Para
+						Verse<bnr>sid vVerse</>sid psLI.m09.dSatBC.prokeimenon.v2.text @ver End-Verse
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.me.m09.sections.dSatBC.ep_book End-Insert
@@ -2463,8 +2584,9 @@ Template LE
 						Title role smallcenter sid daySunday sid BeforeCross End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section bk.ap.me.m09.sections.dSunBC.ep_title End-Insert
-						Insert_section bk.ap.me.m09.sections.dSunBC.ep_prokeimenon End-Insert
+						Title<r>sid Prokeimenon sid Mode6 sid psLI.m09.dSunBC.prokeimenon.title</>End-Title
+						Para role readingzero sid psLI.m09.dSunBC.prokeimenon.v1.text @ver End-Para
+						Verse<bnr>sid vVerse</>sid psLI.m09.dSunBC.prokeimenon.v2.text @ver End-Verse
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.me.m09.sections.dSunBC.ep_book End-Insert
@@ -2478,8 +2600,8 @@ Template LE
 						Title role smallcenter sid daySaturday sid AfterCross End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section Epistle_Prokeimenon_Title End-Insert
-						Insert_section Epistle_Prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.me.m09.sections.dSatAC.ep_book End-Insert
@@ -2493,8 +2615,8 @@ Template LE
 						Title role smallcenter sid daySunday sid AfterCross End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section Epistle_Prokeimenon_Title End-Insert
-						Insert_section Epistle_Prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.me.m09.sections.dSunAC.ep_book End-Insert
@@ -2508,8 +2630,8 @@ Template LE
 					Insert_section Epistle_Title End-Insert
 				End-Section
 				Section prokeimenon
-					Insert_section Epistle_Prokeimenon_Title End-Insert
-					Insert_section Epistle_Prokeimenon End-Insert
+					Insert_section ep_pr_title_mode End-Insert
+					Insert_section ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 				//	Insert_section Epistle_Book End-Insert
@@ -2523,8 +2645,8 @@ Template LE
 					Title<Tdesig>sid TonKekoimimenon</>End-Title
 				End-Section
 				Section prokeimenon
-					Insert_section bk.ap.mc.p5.sections.Week_35.Day_Saturday.ep_title End-Insert
-					Insert_section bk.ap.mc.p5.sections.Week_35.Day_Saturday.ep_prokeimenon End-Insert
+					Insert_section ep_pr_title_mode End-Insert
+					Insert_section ep_prokeimeon_verse End-Insert
 				End-Section
 				Section lesson
 				//	Dialog sid epi01a sid le.ep.va.deceased_gr_GR_cog.levaDEC.Epistle1.book_string sid epi01b End-Dialog
@@ -2538,8 +2660,8 @@ Template LE
 						Title role smallcenter sid Proeortios End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section Epistle_Prokeimenon_Title End-Insert
-						Insert_section Epistle_Prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.mc.p0.sections.Week_4.Day_Friday.ep_book End-Insert
@@ -2553,8 +2675,8 @@ Template LE
 						Title role smallcenter sid daySaturday sid BeforeEpiphany End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section Epistle_Prokeimenon_Title End-Insert
-						Insert_section Epistle_Prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.me.m12.sections.dSatBE.ep_book End-Insert
@@ -2568,8 +2690,9 @@ Template LE
 						Title role smallcenter sid daySunday sid BeforeEpiphany End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section bk.ap.me.m12.sections.dSunBE.ep_title End-Insert
-						Insert_section bk.ap.me.m12.sections.dSunBE.ep_prokeimenon End-Insert
+						Title<r>sid Prokeimenon sid Mode6 sid psLI.m12.dSunBE.prokeimenon.title</>End-Title
+						Para role readingzero sid psLI.m12.dSunBE.prokeimenon.v1.text @ver End-Para
+						Verse<bnr>sid vVerse</>sid psLI.m12.dSunBE.prokeimenon.v2.text @ver End-Verse
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.me.m12.sections.dSunBE.ep_book End-Insert
@@ -2582,8 +2705,8 @@ Template LE
 						Title role smallcenter sid Metheortos End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section Epistle_Prokeimenon_Title End-Insert
-						Insert_section Epistle_Prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.mc.p6.sections.Day_HolySaturday.liturgy.ep_book End-Insert
@@ -2596,8 +2719,8 @@ Template LE
 						Title role smallcenter sid Metheortos End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section Epistle_Prokeimenon_Title End-Insert
-						Insert_section Epistle_Prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.mc.p0.sections.Week_6.Day_Wednesday.ep_book End-Insert
@@ -2610,8 +2733,8 @@ Template LE
 						Title role smallcenter sid Metheortos End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section Epistle_Prokeimenon_Title End-Insert
-						Insert_section Epistle_Prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.mc.p2.sections.Week_15.Day_Thursday.ep_book End-Insert
@@ -2624,8 +2747,9 @@ Template LE
 						Title role smallcenter sid Metheortos End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section bk.ap.me.m01.sections.d06.ep_title End-Insert
-						Insert_section bk.ap.me.m01.sections.d06.ep_prokeimenon End-Insert
+						Title<r>sid Prokeimenon sid Mode4 sid psLI.m01.d06.prokeimenon.title</>End-Title
+						Para role readingzero sid psLI.m01.d06.prokeimenon.v1.text @ver End-Para
+						Verse<bnr>sid vVerse</>sid psLI.m01.d06.prokeimenon.v2.text @ver End-Verse
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.mc.p0.sections.Week_1.Day_Thursday.ep_book End-Insert
@@ -2638,8 +2762,9 @@ Template LE
 						Title role smallcenter sid daySaturday sid AfterEpiphany End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section bk.ap.me.m01.sections.dSatAE.ep_title End-Insert
-						Insert_section bk.ap.me.m01.sections.dSatAE.ep_prokeimenon End-Insert
+						Title<r>sid Prokeimenon sid Mode6 sid psLI.m01.dSatAE.prokeimenon.title</>End-Title
+						Para role readingzero sid psLI.m01.dSatAE.prokeimenon.v1.text @ver End-Para
+						Verse<bnr>sid vVerse</>sid psLI.m01.dSatAE.prokeimenon.v2.text @ver End-Verse
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.me.m01.sections.dSatAE.ep_book End-Insert
@@ -2652,8 +2777,9 @@ Template LE
 						Title role smallcenter sid daySunday sid AfterEpiphany End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section bk.ap.me.m01.sections.dSunAE.ep_title End-Insert
-						Insert_section bk.ap.me.m01.sections.dSunAE.ep_prokeimenon End-Insert
+						Title<r>sid Prokeimenon sid Mode6 sid psLI.m01.dSunAE.prokeimenon.title</>End-Title
+						Para role readingzero sid psLI.m01.dSunAE.prokeimenon.v1.text @ver End-Para
+						Verse<bnr>sid vVerse</>sid psLI.m01.dSunAE.prokeimenon.v2.text @ver End-Verse
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.me.m01.sections.dSunAE.ep_book End-Insert
@@ -2668,8 +2794,9 @@ Template LE
 						Title role smallcenter sid TonPateron End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section bk.ap.me.m07.sections.dHF.ep_title End-Insert
-						Insert_section bk.ap.me.m07.sections.dHF.ep_prokeimenon End-Insert
+						Title<r>sid Prokeimenon sid Mode8 sid psLI.m07.dHF.prokeimenon.title</>End-Title
+						Para role readingzero sid psLI.m07.dHF.prokeimenon.v1.text @ver End-Para
+						Verse<bnr>sid vVerse</>sid psLI.m07.dHF.prokeimenon.v2.text @ver End-Verse
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.me.m07.sections.dHF.ep_book End-Insert
@@ -2682,8 +2809,9 @@ Template LE
 						Title role smallcenter sid TonPateron End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section bk.ap.me.m10.sections.dHF.ep_title End-Insert
-						Insert_section bk.ap.me.m10.sections.dHF.ep_prokeimenon End-Insert
+						Title<r>sid Prokeimenon sid Mode4 sid leosLI.pe.d113.EpistleProkeimenon.title</>End-Title
+						Reading sid psLI.m10.dHF.prokeimenon.v1.text @ver End-Reading
+						Verse<bnr>sid vVerse</>sid psLI.m10.dHF.prokeimenon.v2.text @ver End-Verse
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.me.m10.sections.dHF.ep_book End-Insert
@@ -2704,8 +2832,8 @@ Template LE
 					Insert_section rid_EpistleLessons_Menaion.mealt1_ep_designation End-Insert
 				End-Section
 				Section prokeimenon
-					Insert_section rid_EpistleProkeimena_Menaion.mealt1_ep_title_mode End-Insert
-					Insert_section rid_EpistleProkeimena_Menaion.mealt1_ep_prokeimenon_verse End-Insert
+					Insert_section mealt1_ep_pr_title_mode End-Insert
+					Insert_section mealt1_ep_prokeimenon_verse End-Insert
 				End-Section
 				Section lesson
 				//	Insert_section rid_EpistleLessons_Menaion.mealt1_ep_book End-Insert
@@ -2718,8 +2846,8 @@ Template LE
 					Insert_section rid_EpistleLessons_Menaion.me_ep_designation End-Insert
 				End-Section
 				Section prokeimenon
-					Insert_section rid_EpistleProkeimena_Menaion.me_ep_title_mode End-Insert
-					Insert_section rid_EpistleProkeimena_Menaion.me_ep_prokeimenon_verse End-Insert
+					Insert_section me_ep_pr_title_mode End-Insert
+					Insert_section me_ep_prokeimenon_verse End-Insert
 				End-Section
 				Section lesson
 				//	Insert_section rid_EpistleLessons_Menaion.me_ep_book End-Insert
@@ -2733,8 +2861,8 @@ Template LE
 						Title role smallcenter sid lecLE.SaturdayBeforeEpiphany End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section Epistle_Prokeimenon_Title End-Insert
-						Insert_section Epistle_Prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.me.m12.sections.dSatBE.ep_book End-Insert
@@ -2748,8 +2876,8 @@ Template LE
 						Title role smallcenter sid daySunday sid ofWeek4 End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section Epistle_Prokeimenon_Title End-Insert
-						Insert_section Epistle_Prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.mc.p1.sections.Day_Sunday_04.ep_book End-Insert
@@ -2762,7 +2890,8 @@ Template LE
 						Title role smallcenter sid lecLE.Day2 sid lecLE.ofthe sid lecLE.ordinal32a sid lecLE.ordinal32b sid lecLE.ofWeek End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section daily_.prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.mc.p4.sections.Week_32.Day_Monday.ep_book End-Insert
@@ -2775,7 +2904,8 @@ Template LE
 						Title role smallcenter sid lecLE.Day3 sid lecLE.ofthe sid lecLE.ordinal32a sid lecLE.ordinal32b sid lecLE.ofWeek End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section daily_.prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.mc.p4.sections.Week_32.Day_Tuesday.ep_book End-Insert
@@ -2788,7 +2918,8 @@ Template LE
 						Title role smallcenter sid lecLE.Day4 sid lecLE.ofthe sid lecLE.ordinal32a sid lecLE.ordinal32b sid lecLE.ofWeek End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section daily_.prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.mc.p4.sections.Week_32.Day_Wednesday.ep_book End-Insert
@@ -2801,7 +2932,8 @@ Template LE
 						Title role smallcenter sid lecLE.Day5 sid lecLE.ofthe sid lecLE.ordinal32a sid lecLE.ordinal32b sid lecLE.ofWeek End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section daily_.prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.mc.p4.sections.Week_32.Day_Thursday.ep_book End-Insert
@@ -2814,7 +2946,8 @@ Template LE
 						Title role smallcenter sid lecLE.Day6 sid lecLE.ofthe sid lecLE.ordinal32a sid lecLE.ordinal32b sid lecLE.ofWeek End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section daily_.prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.mc.p4.sections.Week_32.Day_Friday.ep_book End-Insert
@@ -2827,7 +2960,8 @@ Template LE
 						Title role smallcenter sid lecLE.Day7 sid lecLE.ofthe sid lecLE.ordinal32a sid lecLE.ordinal32b sid lecLE.ofWeek End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section daily_.prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.mc.p4.sections.Week_32.Day_Saturday.ep_book End-Insert
@@ -2840,7 +2974,8 @@ Template LE
 						Title role smallcenter sid lecLE.Day2 sid lecLE.ofthe sid lecLE.ordinal33a sid lecLE.ordinal33b sid lecLE.ofWeek End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section daily_.prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.mc.p4.sections.Week_33.Day_Monday.ep_book End-Insert
@@ -2853,7 +2988,8 @@ Template LE
 						Title role smallcenter sid lecLE.Day3 sid lecLE.ofthe sid lecLE.ordinal33a sid lecLE.ordinal33b sid lecLE.ofWeek End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section daily_.prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.mc.p4.sections.Week_33.Day_Tuesday.ep_book End-Insert
@@ -2866,7 +3002,8 @@ Template LE
 						Title role smallcenter sid lecLE.Day4 sid lecLE.ofthe sid lecLE.ordinal33a sid lecLE.ordinal33b sid lecLE.ofWeek End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section daily_.prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.mc.p4.sections.Week_33.Day_Wednesday.ep_book End-Insert
@@ -2879,7 +3016,8 @@ Template LE
 						Title role smallcenter sid lecLE.Day5 sid lecLE.ofthe sid lecLE.ordinal33a sid lecLE.ordinal33b sid lecLE.ofWeek End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section daily_.prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.mc.p4.sections.Week_33.Day_Thursday.ep_book End-Insert
@@ -2892,7 +3030,8 @@ Template LE
 						Title role smallcenter sid lecLE.Day6 sid lecLE.ofthe sid lecLE.ordinal33a sid lecLE.ordinal33b sid lecLE.ofWeek End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section daily_.prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.mc.p4.sections.Week_33.Day_Friday.ep_book End-Insert
@@ -2905,7 +3044,8 @@ Template LE
 						Title role smallcenter sid lecLE.Day7 sid lecLE.ofthe sid lecLE.ordinal33a sid lecLE.ordinal33b sid lecLE.ofWeek End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section daily_.prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.mc.p4.sections.Week_33.Day_Saturday.ep_book End-Insert
@@ -2918,7 +3058,8 @@ Template LE
 						Title role smallcenter sid lecLE.Day2 sid lecLE.ofthe sid lecLE.ordinal34a sid lecLE.ordinal34b sid lecLE.ofWeek End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section daily_.prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.mc.p4.sections.Week_34.Day_Monday.ep_book End-Insert
@@ -2931,7 +3072,8 @@ Template LE
 						Title role smallcenter sid lecLE.Day3 sid lecLE.ofthe sid lecLE.ordinal34a sid lecLE.ordinal34b sid lecLE.ofWeek End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section daily_.prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.mc.p4.sections.Week_34.Day_Tuesday.ep_book End-Insert
@@ -2944,7 +3086,8 @@ Template LE
 						Title role smallcenter sid lecLE.Day4 sid lecLE.ofthe sid lecLE.ordinal34a sid lecLE.ordinal34b sid lecLE.ofWeek End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section daily_.prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.mc.p4.sections.Week_34.Day_Wednesday.ep_book End-Insert
@@ -2957,7 +3100,8 @@ Template LE
 						Title role smallcenter sid lecLE.Day5 sid lecLE.ofthe sid lecLE.ordinal34a sid lecLE.ordinal34b sid lecLE.ofWeek End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section daily_.prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.mc.p4.sections.Week_34.Day_Thursday.ep_book End-Insert
@@ -2970,7 +3114,8 @@ Template LE
 						Title role smallcenter sid lecLE.Day6 sid lecLE.ofthe sid lecLE.ordinal34a sid lecLE.ordinal34b sid lecLE.ofWeek End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section daily_.prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.mc.p4.sections.Week_34.Day_Friday.ep_book End-Insert
@@ -2983,7 +3128,8 @@ Template LE
 						Title role smallcenter sid lecLE.Day7 sid lecLE.ofthe sid lecLE.ordinal34a sid lecLE.ordinal34b sid lecLE.ofWeek End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section daily_.prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.mc.p4.sections.Week_34.Day_Saturday.ep_book End-Insert
@@ -2997,8 +3143,8 @@ Template LE
 						Insert_section TI.le.ep.triodion.d015_meatfare End-Insert
 					End-Section
 					Section prokeimenon
-						Insert_section rid_EpistleProkeimena_MovableCycle.mc_ep_title_mode End-Insert
-						Insert_section rid_EpistleProkeimena_MovableCycle.mc_ep_prokeimenon_verse End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Meat.ep_book End-Insert
@@ -3010,8 +3156,8 @@ Template LE
 						Insert_section TI.le.ep.s._10_monastic_.mp End-Insert
 					End-Section
 					Section prokeimenon
-						Insert_section Epistle_Prokeimenon_Title End-Insert
-						Insert_section Epistle_Prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 					//	Dialog sid epi01a sid le.ep.ge.monastic_gr_GR_cog.legeLI.Epistle.book_string sid epi01b End-Dialog
@@ -3025,8 +3171,8 @@ Template LE
 						Insert_section TI.le.ep.triodion.d022_cheesefare End-Insert
 					End-Section
 					Section prokeimenon
-						Insert_section rid_EpistleProkeimena_MovableCycle.mc_ep_title_mode End-Insert
-						Insert_section rid_EpistleProkeimena_MovableCycle.mc_ep_prokeimenon_verse End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Cheese.ep_book End-Insert
@@ -3038,8 +3184,8 @@ Template LE
 						Insert_section TI.le.ep.s._09_martyr_.m End-Insert
 					End-Section
 					Section prokeimenon
-						Insert_section bk.ap.me.m10.sections.d26.ep_title End-Insert
-						Insert_section bk.ap.me.m10.sections.d26.ep_prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.me.m10.sections.d26.ep_book End-Insert
@@ -3051,8 +3197,8 @@ Template LE
 						Insert_section TI.le.ep.triodion.d029_lent1 End-Insert
 					End-Section
 					Section prokeimenon
-						Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent1.ep_title End-Insert
-						Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent1.ep_prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent1.ep_book End-Insert
@@ -3064,8 +3210,8 @@ Template LE
 						Insert_section TI.le.ep.triodion.d043_lent3 End-Insert
 					End-Section
 					Section prokeimenon
-						Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent3.ep_title End-Insert
-						Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent3.ep_prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent3.ep_book End-Insert
@@ -3078,8 +3224,8 @@ Template LE
 						Title role smallcenter sid TisTheotokou End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section bk.ap.mc.p5.sections.Day_Saturday_Lent5.ep_title End-Insert
-						Insert_section bk.ap.mc.p5.sections.Day_Saturday_Lent5.ep_prokeimenon End-Insert
+						Insert_section ep_pr_title_mode End-Insert
+						Insert_section ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 					//	Insert_section bk.ap.mc.p5.sections.Day_Saturday_Lent5.ep2_book End-Insert
@@ -3094,8 +3240,8 @@ Template LE
 						Title<inr>sid lemeVE.Epistle.title</>End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section rid_EpistleProkeimena_Menaion.me_vespers_ep_title_mode End-Insert
-						Insert_section rid_EpistleProkeimena_Menaion.me_vespers_ep_prokeimenon_verse End-Insert
+						Insert_section me_vespers_ep_pr_title_mode End-Insert
+						Insert_section me_vespers_ep_prokeimenon_verse End-Insert
 					End-Section
 					Section lesson
 					//	Insert_section rid_EpistleLessons_Menaion.me_vespers_ep_book End-Insert
@@ -3107,8 +3253,8 @@ Template LE
 						Title role desig sid OApostolos End-Title
 					End-Section
 					Section prokeimenon
-						Insert_section rid_EpistleProkeimena_MovableCycle.mc_vespers_ep_title_mode End-Insert
-						Insert_section rid_EpistleProkeimena_MovableCycle.mc_vespers_ep_prokeimenon_verse End-Insert
+						Insert_section vespers_ep_pr_title_mode End-Insert
+						Insert_section vespers_ep_prokeimeon_verse End-Insert
 					End-Section
 					Section lesson
 					//	Insert_section Vespers_Epistle_Book End-Insert
@@ -3120,16 +3266,16 @@ Template LE
 		End-Section
 	End-Section
 
-			Section PrayerBeforeGospel //inserted in sections below
-				Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
-				Title role smallcenter sid euLI.Key0704.title End-Title
-				Para role inaudible sid euLI.Key0704.text End-Para
-			End-Section 
-			Section hPrayerBeforeGospel //inserted in sections below
-				Actor sid Hierarch<Trubric>sid InALowVoice</>End-Actor 
-				Title role smallcenter sid euLI.Key0704.title End-Title
-				Para role inaudible sid euLI.Key0704.text End-Para
-			End-Section 
+		Section PrayerBeforeGospel //inserted in sections below
+			Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
+			Title role smallcenter sid euLI.Key0704.title End-Title
+			Para role inaudible sid euLI.Key0704.text End-Para
+		End-Section 
+		Section hPrayerBeforeGospel //inserted in sections below
+			Actor sid Hierarch<Trubric>sid InALowVoice</>End-Actor 
+			Title role smallcenter sid euLI.Key0704.title End-Title
+			Para role inaudible sid euLI.Key0704.text End-Para
+		End-Section 
 
 	Section _02_Gospel__
 		Section christmas__
@@ -3137,11 +3283,11 @@ Template LE
 				Section alleluia
 					Actor sid Choir End-Actor
 					Insert_section bk.ap.me.m12.sections.dFF.al_title End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 					Insert_section bk.ap.me.m12.sections.dFF.al_verse1 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 					Insert_section bk.ap.me.m12.sections.dFF.al_verse2 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 				End-Section
 				Insert_section PrayerBeforeGospel End-Insert
 				Section lesson 
@@ -3199,11 +3345,11 @@ Template LE
 				Section alleluia
 					Actor sid Choir End-Actor
 					Insert_section bk.ap.me.m12.sections.dSunBC.al_title End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 					Insert_section bk.ap.me.m12.sections.dSunBC.al_verse1 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 					Insert_section bk.ap.me.m12.sections.dSunBC.al_verse2 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 				End-Section
 				Insert_section PrayerBeforeGospel End-Insert
 				Section lesson 
@@ -3232,11 +3378,11 @@ Template LE
 			Section satAC_
 					Actor sid Choir End-Actor
 					Insert_section bk.ap.me.m12.sections.dSatAC.al_title End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 					Insert_section bk.ap.me.m12.sections.dSatAC.al_verse1 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 					Insert_section bk.ap.me.m12.sections.dSunBC.al_verse2 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 				Insert_section PrayerBeforeGospel End-Insert
 				Section lesson 
 					Title role desig sid ToEvangelion End-Title
@@ -3264,11 +3410,11 @@ Template LE
 			Section sunAC_
 					Actor sid Choir End-Actor
 					Insert_section bk.ap.me.m12.sections.dSunAC.al_title End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 					Insert_section bk.ap.me.m12.sections.dSunAC.al_verse1 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 					Insert_section bk.ap.me.m12.sections.dSunAC.al_verse2 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 				Insert_section PrayerBeforeGospel End-Insert
 				Section lesson 
 					Title role desig sid ToEvangelion End-Title
@@ -3299,11 +3445,11 @@ Template LE
 				Section alleluia
 					Actor sid Choir End-Actor
 					Insert_section bk.ap.me.m09.sections.dSatBC.al_title End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 					Insert_section bk.ap.me.m09.sections.dSatBC.al_verse1 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 					Insert_section bk.ap.me.m09.sections.dSatBC.al_verse2 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 				End-Section
 				Insert_section PrayerBeforeGospel End-Insert
 				Section lesson 
@@ -3333,11 +3479,11 @@ Template LE
 				Section alleluia
 					Actor sid Choir End-Actor
 					Insert_section bk.ap.me.m09.sections.dSunBC.al_title End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 					Insert_section bk.ap.me.m09.sections.dSunBC.al_verse1 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 					Insert_section bk.ap.me.m09.sections.dSunBC.al_verse2 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 				End-Section
 				Insert_section PrayerBeforeGospel End-Insert
 				Section lesson 
@@ -3419,14 +3565,14 @@ Template LE
 		Section daily_
 			Section alleluia
 				Actor sid Choir End-Actor
-				Insert_section Gospel_Alleluia_Mode End-Insert
-//				Media sid hoLI.GospelAlleluia.text End-Media
-				Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-				Insert_section Gospel_Alleluia_Verse1 End-Insert
-				Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-				Insert_section Gospel_Alleluia_Verse2 End-Insert
-				Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-			End-Section //Alleluia
+				Insert_section Gospel_Alleluia End-Insert
+			//	Insert_section Gospel_Alleluia_Mode End-Insert
+			//	Hymn sid Allilouia3.text media-off End-Hymn
+			//	Insert_section Gospel_Alleluia_Verse1 End-Insert
+			//	Hymn sid Allilouia3.text media-off End-Hymn
+			//	Insert_section Gospel_Alleluia_Verse2 End-Insert
+			//	Hymn sid Allilouia3.text media-off End-Hymn
+			End-Section
 			Insert_section PrayerBeforeGospel End-Insert
 			Section lesson 
 				Title role desig sid ToEvangelion End-Title
@@ -3517,13 +3663,13 @@ Template LE
 			Section satBE_ //Mat 3:1-6
 				Section alleluia
 					Actor sid Choir End-Actor
-					Insert_section Gospel_Alleluia_Mode.DaysByNumber.Defaults End-Insert
-	//				Media sid hoLI.GospelAlleluia.text End-Media
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-					Insert_section Gospel_Alleluia_Verse1.DaysByNumber.Defaults End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-					Insert_section Gospel_Alleluia_Verse2.DaysByNumber.Defaults End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Insert_section Gospel_Alleluia End-Insert
+				//	Insert_section Gospel_Alleluia_Mode.DaysByNumber.Defaults End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
+				//	Insert_section Gospel_Alleluia_Verse1.DaysByNumber.Defaults End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
+				//	Insert_section Gospel_Alleluia_Verse2.DaysByNumber.Defaults End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
 				End-Section //Alleluia
 				Insert_section PrayerBeforeGospel End-Insert
 				Section lesson 
@@ -3552,11 +3698,11 @@ Template LE
 				Section alleluia
 					Actor sid Choir End-Actor
 					Insert_section bk.ap.me.m12.sections.dSunBE.al_title End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 					Insert_section bk.ap.me.m12.sections.dSunBE.al_verse1 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 					Insert_section bk.ap.me.m12.sections.dSunBE.al_verse2 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 				End-Section
 				Insert_section PrayerBeforeGospel End-Insert
 				Section lesson 
@@ -3585,11 +3731,11 @@ Template LE
 				Section alleluia
 					Actor sid Choir End-Actor
 					Insert_section bk.ap.me.m01.sections.d05.water.al_title End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 					Insert_section bk.ap.me.m01.sections.d05.water.al_verse1 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 					Insert_section bk.ap.me.m01.sections.d05.water.al_verse2 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 				End-Section //Alleluia
 				Section lesson
 					Actor sid Deacon End-Actor
@@ -3765,11 +3911,11 @@ Template LE
 				Section alleluia
 					Actor sid Choir End-Actor
 					Insert_section bk.ap.me.m01.sections.d06.al_title End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 					Insert_section bk.ap.me.m01.sections.d06.al_verse1 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 					Insert_section bk.ap.me.m01.sections.d06.al_verse2 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 				End-Section
 				Insert_section PrayerBeforeGospel End-Insert
 				Section lesson 
@@ -3798,11 +3944,11 @@ Template LE
 				Section alleluia
 					Actor sid Choir End-Actor
 					Insert_section bk.ap.me.m01.sections.dSatAE.al_title End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 					Insert_section bk.ap.me.m01.sections.dSatAE.al_verse1 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 					Insert_section bk.ap.me.m01.sections.dSatAE.al_verse2 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 				End-Section
 				Insert_section PrayerBeforeGospel End-Insert
 				Section lesson 
@@ -3831,11 +3977,11 @@ Template LE
 				Section alleluia
 					Actor sid Choir End-Actor
 					Insert_section bk.ap.me.m01.sections.dSunAE.al_title End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 					Insert_section bk.ap.me.m01.sections.dSunAE.al_verse1 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 					Insert_section bk.ap.me.m01.sections.dSunAE.al_verse2 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 				End-Section
 				Insert_section PrayerBeforeGospel End-Insert
 				Section lesson 
@@ -3866,11 +4012,11 @@ Template LE
 				Section alleluia
 					Actor sid Choir End-Actor
 					Insert_section bk.ap.me.m07.sections.dHF.al_title End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 					Insert_section bk.ap.me.m07.sections.dHF.al_verse1 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 					Insert_section bk.ap.me.m07.sections.dHF.al_verse2 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 				End-Section
 				Insert_section PrayerBeforeGospel End-Insert
 				Section lesson 
@@ -3899,11 +4045,11 @@ Template LE
 				Section alleluia
 					Actor sid Choir End-Actor
 					Insert_section bk.ap.me.m10.sections.dHF.al_title End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 					Insert_section bk.ap.me.m10.sections.dHF.al_verse1 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 					Insert_section bk.ap.me.m10.sections.dHF.al_verse2 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 				End-Section
 				Insert_section PrayerBeforeGospel End-Insert
 				Section lesson 
@@ -3935,11 +4081,11 @@ Template LE
 					Section alleluia
 						Actor sid Choir End-Actor
 						Insert_section bk.ap.me.m12.sections.dFF.al_title End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m12.sections.dFF.al_verse1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m12.sections.dFF.al_verse2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section
 					Insert_section hPrayerBeforeGospel End-Insert
 					Section lesson 
@@ -3995,11 +4141,11 @@ Template LE
 					Section alleluia
 						Actor sid Choir End-Actor
 						Insert_section bk.ap.me.m12.sections.dSunBC.al_title End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m12.sections.dSunBC.al_verse1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m12.sections.dSunBC.al_verse2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section
 					Insert_section hPrayerBeforeGospel End-Insert
 					Section lesson 
@@ -4028,11 +4174,11 @@ Template LE
 					Section alleluia
 						Actor sid Choir End-Actor
 						Insert_section bk.ap.me.m12.sections.dSatAC.al_title End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m12.sections.dSatAC.al_verse1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m12.sections.dSunBC.al_verse2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section
 					Insert_section hPrayerBeforeGospel End-Insert
 					Section lesson 
@@ -4061,11 +4207,11 @@ Template LE
 					Section alleluia
 						Actor sid Choir End-Actor
 						Insert_section bk.ap.me.m12.sections.dSunAC.al_title End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m12.sections.dSunAC.al_verse1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m12.sections.dSunAC.al_verse2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section
 					Insert_section hPrayerBeforeGospel End-Insert
 					Section lesson 
@@ -4120,11 +4266,11 @@ Template LE
 					Section alleluia
 						Actor sid Choir End-Actor
 						Insert_section bk.ap.me.m09.sections.dSatBC.al_title End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m09.sections.dSatBC.al_verse1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m09.sections.dSatBC.al_verse2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section
 					Insert_section hPrayerBeforeGospel End-Insert
 					Section lesson 
@@ -4153,11 +4299,11 @@ Template LE
 					Section alleluia
 						Actor sid Choir End-Actor
 						Insert_section bk.ap.me.m09.sections.dSunBC.al_title End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m09.sections.dSunBC.al_verse1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m09.sections.dSunBC.al_verse2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section
 					Insert_section hPrayerBeforeGospel End-Insert
 					Section lesson 
@@ -4236,14 +4382,14 @@ Template LE
 			Section daily_
 				Section alleluia 
 					Actor sid Choir End-Actor
-					Insert_section Gospel_Alleluia_Mode End-Insert
-	//				Media sid hoLI.GospelAlleluia.text End-Media
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-					Insert_section Gospel_Alleluia_Verse1 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-					Insert_section Gospel_Alleluia_Verse2 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-				End-Section //Alleluia
+					Insert_section Gospel_Alleluia End-Insert
+				//	Insert_section Gospel_Alleluia_Mode End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
+				//	Insert_section Gospel_Alleluia_Verse1 End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
+				//	Insert_section Gospel_Alleluia_Verse2 End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
+				End-Section
 				Insert_section hPrayerBeforeGospel End-Insert
 				Section lesson 
 					Title role desig sid ToEvangelion End-Title
@@ -4351,11 +4497,11 @@ Template LE
 					Section alleluia
 						Actor sid Choir End-Actor
 						Insert_section bk.ap.me.m12.sections.dSunBE.al_title End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m12.sections.dSunBE.al_verse1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m12.sections.dSunBE.al_verse2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section
 					Insert_section hPrayerBeforeGospel End-Insert
 					Section lesson 
@@ -4384,11 +4530,11 @@ Template LE
 					Section alleluia
 						Actor sid Choir End-Actor
 						Insert_section bk.ap.me.m01.sections.d05.water.al_title End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m01.sections.d05.water.al_verse1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m01.sections.d05.water.al_verse2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section //Alleluia
 					Section lesson
 						Actor sid Deacon End-Actor
@@ -4564,11 +4710,11 @@ Template LE
 					Section alleluia
 						Actor sid Choir End-Actor
 						Insert_section bk.ap.me.m01.sections.d06.al_title End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m01.sections.d06.al_verse1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m01.sections.d06.al_verse2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section
 					Insert_section hPrayerBeforeGospel End-Insert
 					Section lesson 
@@ -4597,11 +4743,11 @@ Template LE
 					Section alleluia
 						Actor sid Choir End-Actor
 						Insert_section bk.ap.me.m01.sections.dSatAE.al_title End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m01.sections.dSatAE.al_verse1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m01.sections.dSatAE.al_verse2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section
 					Insert_section hPrayerBeforeGospel End-Insert
 					Section lesson 
@@ -4630,11 +4776,11 @@ Template LE
 					Section alleluia
 						Actor sid Choir End-Actor
 						Insert_section bk.ap.me.m01.sections.dSunAE.al_title End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m01.sections.dSunAE.al_verse1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m01.sections.dSunAE.al_verse2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section
 					Insert_section hPrayerBeforeGospel End-Insert
 					Section lesson 
@@ -4665,11 +4811,11 @@ Template LE
 					Section alleluia
 						Actor sid Choir End-Actor
 						Insert_section bk.ap.me.m07.sections.dHF.al_title End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m07.sections.dHF.al_verse1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m07.sections.dHF.al_verse2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section
 					Insert_section hPrayerBeforeGospel End-Insert
 					Section lesson 
@@ -4698,11 +4844,11 @@ Template LE
 					Section alleluia
 						Actor sid Choir End-Actor
 						Insert_section bk.ap.me.m10.sections.dHF.al_title End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m10.sections.dHF.al_verse1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m10.sections.dHF.al_verse2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section
 					Insert_section hPrayerBeforeGospel End-Insert
 					Section lesson 
@@ -4731,12 +4877,13 @@ Template LE
 			Section menaion_ 
 				Section alleluia
 					Actor sid Choir End-Actor
-					Insert_section rid_GospelAlleluia_Menaion.me_al_title_mode End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-					Insert_section rid_GospelAlleluia_Menaion.me_al_verse_1 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-					Insert_section rid_GospelAlleluia_Menaion.me_al_verse_2 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Insert_section Gospel_Alleluia_Menaion End-Insert 
+				//	Insert_section rid_GospelAlleluia_Menaion.me_al_title_mode End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
+				//	Insert_section rid_GospelAlleluia_Menaion.me_al_verse_1 End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
+				//	Insert_section rid_GospelAlleluia_Menaion.me_al_verse_2 End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
 				End-Section
 				Insert_section hPrayerBeforeGospel End-Insert
 				Section lesson
@@ -4764,12 +4911,13 @@ Template LE
 			Section mealt1_ 
 				Section alleluia
 					Actor sid Choir End-Actor
-					Insert_section rid_GospelAlleluia_Menaion.mealt1_al_title_mode End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-					Insert_section rid_GospelAlleluia_Menaion.mealt1_al_verse_1 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-					Insert_section rid_GospelAlleluia_Menaion.mealt1_al_verse_2 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Insert_section Gospel_Alleluia_mealt1 End-Insert 
+				//	Insert_section rid_GospelAlleluia_Menaion.mealt1_al_title_mode End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
+				//	Insert_section rid_GospelAlleluia_Menaion.mealt1_al_verse_1 End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
+				//	Insert_section rid_GospelAlleluia_Menaion.mealt1_al_verse_2 End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
 				End-Section
 				Insert_section hPrayerBeforeGospel End-Insert
 				Section lesson
@@ -4798,11 +4946,11 @@ Template LE
 				Section alleluia
 					Actor sid Choir End-Actor
 					Insert_section bk.ap.me.m09.sections.d08.al_title End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 					Insert_section bk.ap.me.m09.sections.d08.al_verse1 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 					Insert_section bk.ap.me.m09.sections.d08.al_verse2 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 				End-Section
 				Insert_section PrayerBeforeGospel End-Insert
 				Section lesson
@@ -4831,11 +4979,11 @@ Template LE
 				Section alleluia
 					Actor sid Choir End-Actor
 					Insert_section bk.ap.me.m09.sections.d08.al_title End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 					Insert_section bk.ap.me.m09.sections.d08.al_verse1 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 					Insert_section bk.ap.me.m09.sections.d08.al_verse2 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Hymn sid Allilouia3.text media-off End-Hymn
 				End-Section
 				Insert_section PrayerBeforeGospel End-Insert
 				Section lesson
@@ -4864,12 +5012,13 @@ Template LE
 				Section d015_meatfare
 					Section alleluia
 						Actor sid Choir End-Actor
-						Insert_section bk.ap.mc.p5.sections.Day_Sunday_Meat.al_title End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-						Insert_section bk.ap.mc.p5.sections.Day_Sunday_Meat.al_verse1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-						Insert_section bk.ap.mc.p5.sections.Day_Sunday_Meat.al_verse2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Insert_section Gospel_Alleluia End-Insert
+					//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Meat.al_title End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
+					//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Meat.al_verse1 End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
+					//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Meat.al_verse2 End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section
 					Insert_section hPrayerBeforeGospel End-Insert
 					Section lesson
@@ -4896,12 +5045,13 @@ Template LE
 				Section d022_cheesefare
 					Section alleluia
 						Actor sid Choir End-Actor
-						Insert_section bk.ap.mc.p5.sections.Day_Sunday_Cheese.al_title End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-						Insert_section bk.ap.mc.p5.sections.Day_Sunday_Cheese.al_verse1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-						Insert_section bk.ap.mc.p5.sections.Day_Sunday_Cheese.al_verse2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Insert_section Gospel_Alleluia End-Insert
+					//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Cheese.al_title End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
+					//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Cheese.al_verse1 End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
+					//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Cheese.al_verse2 End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section
 					Insert_section hPrayerBeforeGospel End-Insert
 					Section lesson
@@ -4928,12 +5078,13 @@ Template LE
 				Section d029_lent1
 					Section alleluia
 						Actor sid Choir End-Actor
-						Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent1.al_title End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-						Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent1.al_verse1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-						Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent1.al_verse2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Insert_section Gospel_Alleluia End-Insert
+					//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent1.al_title End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
+					//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent1.al_verse1 End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
+					//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent1.al_verse2 End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section
 					Insert_section hPrayerBeforeGospel End-Insert
 					Section lesson
@@ -4960,12 +5111,13 @@ Template LE
 				Section d043_lent3
 					Section alleluia
 						Actor sid Choir End-Actor
-						Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent3.al_title End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-						Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent3.al_verse1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-						Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent3.al_verse2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Insert_section Gospel_Alleluia End-Insert
+					//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent3.al_title End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
+					//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent3.al_verse1 End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
+					//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent3.al_verse2 End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section
 					Insert_section hPrayerBeforeGospel End-Insert
 					Section lesson
@@ -4992,12 +5144,13 @@ Template LE
 				Section d056_akathist
 					Section alleluia
 						Actor sid Choir End-Actor
-						Insert_section bk.ap.mc.p5.sections.Day_Saturday_Lent5.al_title End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-						Insert_section bk.ap.mc.p5.sections.Day_Saturday_Lent5.al_verse1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-						Insert_section bk.ap.mc.p5.sections.Day_Saturday_Lent5.al_verse2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Insert_section Gospel_Alleluia End-Insert
+					//	Insert_section bk.ap.mc.p5.sections.Day_Saturday_Lent5.al_title End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
+					//	Insert_section bk.ap.mc.p5.sections.Day_Saturday_Lent5.al_verse1 End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
+					//	Insert_section bk.ap.mc.p5.sections.Day_Saturday_Lent5.al_verse2 End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section
 					Insert_section hPrayerBeforeGospel End-Insert
 					Section lesson
@@ -5027,12 +5180,13 @@ Template LE
 				Section menaion_ //computes Ephiphany and Christmas Eve 
 					Section alleluia
 						Actor sid Choir End-Actor
-						Insert_section rid_GospelAlleluia_Menaion.me_vespers_al_title_mode End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-						Insert_section rid_GospelAlleluia_Menaion.me_vespers_al_verse_1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-						Insert_section rid_GospelAlleluia_Menaion.me_vespers_al_verse_2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Insert_section Vespers_Gospel_Alleluia_Menaion End-Insert 
+					//	Insert_section rid_GospelAlleluia_Menaion.me_vespers_al_title_mode End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
+					//	Insert_section rid_GospelAlleluia_Menaion.me_vespers_al_verse_1 End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
+					//	Insert_section rid_GospelAlleluia_Menaion.me_vespers_al_verse_2 End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section
 					Insert_section hPrayerBeforeGospel End-Insert
 					Section lesson
@@ -5061,14 +5215,15 @@ Template LE
 				Section triodion_ //computes Holy Week
 					Section alleluia
 						Actor sid Choir End-Actor
-						Insert_section Vespers_Gospel_Alleluia_Mode End-Insert
-						Media sid hoLI.GospelAlleluia.text media-off End-Media
-						Insert_section Vespers_Gospel_Alleluia_Verse1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-						Insert_section Vespers_Gospel_Alleluia_Verse2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-						Insert_section Vespers_Gospel_Alleluia_Verse3 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Insert_section Vespers_Gospel_Alleluia End-Insert
+					//	Insert_section Vespers_Gospel_Alleluia_Mode End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
+					//	Insert_section Vespers_Gospel_Alleluia_Verse1 End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
+					//	Insert_section Vespers_Gospel_Alleluia_Verse2 End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
+					//	Insert_section Vespers_Gospel_Alleluia_Verse3 End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section
 					Insert_section hPrayerBeforeGospel End-Insert
 					Section lesson
@@ -5099,12 +5254,13 @@ Template LE
 		Section menaion_ 
 			Section alleluia
 				Actor sid Choir End-Actor
-				Insert_section rid_GospelAlleluia_Menaion.me_al_title_mode End-Insert
-				Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-				Insert_section rid_GospelAlleluia_Menaion.me_al_verse_1 End-Insert
-				Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-				Insert_section rid_GospelAlleluia_Menaion.me_al_verse_2 End-Insert
-				Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+				Insert_section Gospel_Alleluia_Menaion End-Insert 
+			//	Insert_section rid_GospelAlleluia_Menaion.me_al_title_mode End-Insert
+			//	Hymn sid Allilouia3.text media-off End-Hymn
+			//	Insert_section rid_GospelAlleluia_Menaion.me_al_verse_1 End-Insert
+			//	Hymn sid Allilouia3.text media-off End-Hymn
+			//	Insert_section rid_GospelAlleluia_Menaion.me_al_verse_2 End-Insert
+			//	Hymn sid Allilouia3.text media-off End-Hymn
 			End-Section
 			Insert_section PrayerBeforeGospel End-Insert
 			Section lesson
@@ -5132,12 +5288,13 @@ Template LE
 		Section mealt1_ 
 			Section alleluia
 				Actor sid Choir End-Actor
-				Insert_section rid_GospelAlleluia_Menaion.mealt1_al_title_mode End-Insert
-				Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-				Insert_section rid_GospelAlleluia_Menaion.mealt1_al_verse_1 End-Insert
-				Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-				Insert_section rid_GospelAlleluia_Menaion.mealt1_al_verse_2 End-Insert
-				Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+				Insert_section Gospel_Alleluia_mealt1 End-Insert 
+			//	Insert_section rid_GospelAlleluia_Menaion.mealt1_al_title_mode End-Insert
+			//	Hymn sid Allilouia3.text media-off End-Hymn
+			//	Insert_section rid_GospelAlleluia_Menaion.mealt1_al_verse_1 End-Insert
+			//	Hymn sid Allilouia3.text media-off End-Hymn
+			//	Insert_section rid_GospelAlleluia_Menaion.mealt1_al_verse_2 End-Insert
+			//	Hymn sid Allilouia3.text media-off End-Hymn
 			End-Section
 			Insert_section PrayerBeforeGospel End-Insert
 			Section lesson
@@ -5166,11 +5323,11 @@ Template LE
 			Section alleluia
 				Actor sid Choir End-Actor
 				Insert_section bk.ap.me.m01.sections.d17.al_title End-Insert
-				Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+				Hymn sid Allilouia3.text media-off End-Hymn
 				Insert_section bk.ap.me.m01.sections.d17.al_verse1 End-Insert
-				Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+				Hymn sid Allilouia3.text media-off End-Hymn
 				Insert_section bk.ap.me.m01.sections.d17.al_verse2 End-Insert
-				Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+				Hymn sid Allilouia3.text media-off End-Hymn
 			End-Section
 			Insert_section PrayerBeforeGospel End-Insert
 			Section lesson
@@ -5677,11 +5834,11 @@ Template LE
 			Section alleluia
 				Actor sid Choir End-Actor
 				Insert_section bk.ap.me.m09.sections.d08.al_title End-Insert
-				Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+				Hymn sid Allilouia3.text media-off End-Hymn
 				Insert_section bk.ap.me.m09.sections.d08.al_verse1 End-Insert
-				Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+				Hymn sid Allilouia3.text media-off End-Hymn
 				Insert_section bk.ap.me.m09.sections.d08.al_verse2 End-Insert
-				Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+				Hymn sid Allilouia3.text media-off End-Hymn
 			End-Section
 			Insert_section PrayerBeforeGospel End-Insert
 			Section lesson
@@ -5710,11 +5867,11 @@ Template LE
 			Section alleluia
 				Actor sid Choir End-Actor
 				Insert_section bk.ap.me.m09.sections.d08.al_title End-Insert
-				Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+				Hymn sid Allilouia3.text media-off End-Hymn
 				Insert_section bk.ap.me.m09.sections.d08.al_verse1 End-Insert
-				Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+				Hymn sid Allilouia3.text media-off End-Hymn
 				Insert_section bk.ap.me.m09.sections.d08.al_verse2 End-Insert
-				Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+				Hymn sid Allilouia3.text media-off End-Hymn
 			End-Section
 			Insert_section PrayerBeforeGospel End-Insert
 			Section lesson
@@ -5743,12 +5900,13 @@ Template LE
 			Section d015_meatfare
 				Section alleluia
 					Actor sid Choir End-Actor
-					Insert_section bk.ap.mc.p5.sections.Day_Sunday_Meat.al_title End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-					Insert_section bk.ap.mc.p5.sections.Day_Sunday_Meat.al_verse1 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-					Insert_section bk.ap.mc.p5.sections.Day_Sunday_Meat.al_verse2 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Insert_section Gospel_Alleluia End-Insert
+				//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Meat.al_title End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
+				//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Meat.al_verse1 End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
+				//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Meat.al_verse2 End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
 				End-Section
 				Insert_section PrayerBeforeGospel End-Insert
 				Section lesson
@@ -5775,14 +5933,14 @@ Template LE
 			Section d021_monastics
 				Section alleluia
 					Actor sid Choir End-Actor
-					Insert_section Gospel_Alleluia_Mode End-Insert
-	//				Media sid hoLI.GospelAlleluia.text End-Media
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-					Insert_section Gospel_Alleluia_Verse1 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-					Insert_section Gospel_Alleluia_Verse2 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-				End-Section //Alleluia
+					Insert_section LectionaryGospelAlleluia.Gospel_Alleluia End-Insert
+				//	Insert_section Gospel_Alleluia_Mode End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
+				//	Insert_section Gospel_Alleluia_Verse1 End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
+				//	Insert_section Gospel_Alleluia_Verse2 End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
+				End-Section
 				Insert_section PrayerBeforeGospel End-Insert
 				Section lesson 
 					Title role desig sid ToEvangelion End-Title
@@ -5808,12 +5966,13 @@ Template LE
 			Section d022_cheesefare
 				Section alleluia
 					Actor sid Choir End-Actor
-					Insert_section bk.ap.mc.p5.sections.Day_Sunday_Cheese.al_title End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-					Insert_section bk.ap.mc.p5.sections.Day_Sunday_Cheese.al_verse1 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-					Insert_section bk.ap.mc.p5.sections.Day_Sunday_Cheese.al_verse2 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Insert_section Gospel_Alleluia End-Insert
+				//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Cheese.al_title End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
+				//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Cheese.al_verse1 End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
+				//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Cheese.al_verse2 End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
 				End-Section
 				Insert_section PrayerBeforeGospel End-Insert
 				Section lesson
@@ -5840,12 +5999,13 @@ Template LE
 			Section d029_lent1
 				Section alleluia
 					Actor sid Choir End-Actor
-					Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent1.al_title End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-					Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent1.al_verse1 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-					Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent1.al_verse2 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Insert_section Gospel_Alleluia End-Insert
+				//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent1.al_title End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
+				//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent1.al_verse1 End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
+				//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent1.al_verse2 End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
 				End-Section
 				Insert_section PrayerBeforeGospel End-Insert
 				Section lesson
@@ -5872,12 +6032,13 @@ Template LE
 			Section d043_lent3
 				Section alleluia
 					Actor sid Choir End-Actor
-					Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent3.al_title End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-					Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent3.al_verse1 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-					Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent3.al_verse2 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Insert_section Gospel_Alleluia End-Insert
+				//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent3.al_title End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
+				//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent3.al_verse1 End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
+				//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent3.al_verse2 End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
 				End-Section
 				Insert_section PrayerBeforeGospel End-Insert
 				Section lesson
@@ -5904,12 +6065,13 @@ Template LE
 			Section d056_akathist
 				Section alleluia
 					Actor sid Choir End-Actor
-					Insert_section bk.ap.mc.p5.sections.Day_Saturday_Lent5.al_title End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-					Insert_section bk.ap.mc.p5.sections.Day_Saturday_Lent5.al_verse1 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-					Insert_section bk.ap.mc.p5.sections.Day_Saturday_Lent5.al_verse2 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Insert_section Gospel_Alleluia End-Insert
+				//	Insert_section bk.ap.mc.p5.sections.Day_Saturday_Lent5.al_title End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
+				//	Insert_section bk.ap.mc.p5.sections.Day_Saturday_Lent5.al_verse1 End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
+				//	Insert_section bk.ap.mc.p5.sections.Day_Saturday_Lent5.al_verse2 End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
 				End-Section
 				Insert_section PrayerBeforeGospel End-Insert
 				Section lesson
@@ -5939,12 +6101,13 @@ Template LE
 			Section menaion_ //computes Ephiphany and Christmas Eve 
 				Section alleluia
 					Actor sid Choir End-Actor
-					Insert_section rid_GospelAlleluia_Menaion.me_vespers_al_title_mode End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-					Insert_section rid_GospelAlleluia_Menaion.me_vespers_al_verse_1 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-					Insert_section rid_GospelAlleluia_Menaion.me_vespers_al_verse_2 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Insert_section Vespers_Gospel_Alleluia_Menaion End-Insert 
+				//	Insert_section rid_GospelAlleluia_Menaion.me_vespers_al_title_mode End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
+				//	Insert_section rid_GospelAlleluia_Menaion.me_vespers_al_verse_1 End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
+				//	Insert_section rid_GospelAlleluia_Menaion.me_vespers_al_verse_2 End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
 				End-Section
 				Insert_section PrayerBeforeGospel End-Insert
 				Section lesson
@@ -5974,17 +6137,19 @@ Template LE
 				Section alleluia
 					when-movable-cycle-day-is
 						71 use:
-							Insert_section bk.ap.mc.p6.sections.Day_HolySaturday.liturgy.instead_of_alleluia End-Insert
+							Insert_section Vespers_Gospel_Alleluia End-Insert
+						//	Insert_section bk.ap.mc.p6.sections.Day_HolySaturday.liturgy.instead_of_alleluia End-Insert
 						otherwise use:
 							Actor sid Choir End-Actor
-							Insert_section Vespers_Gospel_Alleluia_Mode End-Insert
-							Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-							Insert_section Vespers_Gospel_Alleluia_Verse1 End-Insert
-							Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-							Insert_section Vespers_Gospel_Alleluia_Verse2 End-Insert
-							Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-							Insert_section Vespers_Gospel_Alleluia_Verse3 End-Insert
-							Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+							Insert_section Vespers_Gospel_Alleluia End-Insert
+						//	Insert_section Vespers_Gospel_Alleluia_Mode End-Insert
+						//	Hymn sid Allilouia3.text media-off End-Hymn
+						//	Insert_section Vespers_Gospel_Alleluia_Verse1 End-Insert
+						//	Hymn sid Allilouia3.text media-off End-Hymn
+						//	Insert_section Vespers_Gospel_Alleluia_Verse2 End-Insert
+						//	Hymn sid Allilouia3.text media-off End-Hymn
+						//	Insert_section Vespers_Gospel_Alleluia_Verse3 End-Insert
+						//	Hymn sid Allilouia3.text media-off End-Hymn
 					end-when
 				End-Section
 				Insert_section PrayerBeforeGospel End-Insert
@@ -6032,11 +6197,11 @@ Template LE
 				Section sunFF_
 					Section alleluia
 						Insert_section bk.ap.me.m12.sections.dFF.al_title End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m12.sections.dFF.al_verse1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m12.sections.dFF.al_verse2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section
 					Section lesson 
 						Title role desig sid ToEvangelion End-Title
@@ -6059,11 +6224,11 @@ Template LE
 				Section sunBC_
 					Section alleluia
 						Insert_section bk.ap.me.m12.sections.dSunBC.al_title End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m12.sections.dSunBC.al_verse1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m12.sections.dSunBC.al_verse2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section
 					Section lesson 
 						Title role desig sid ToEvangelion End-Title
@@ -6075,11 +6240,11 @@ Template LE
 				Section satAC_
 					Section alleluia
 						Insert_section bk.ap.me.m12.sections.dSatAC.al_title End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m12.sections.dSatAC.al_verse1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m12.sections.dSunBC.al_verse2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section
 					Section lesson 
 						Title role desig sid ToEvangelion End-Title
@@ -6091,11 +6256,11 @@ Template LE
 				Section sunAC_
 					Section alleluia
 						Insert_section bk.ap.me.m12.sections.dSunAC.al_title End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m12.sections.dSunAC.al_verse1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m12.sections.dSunAC.al_verse2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section
 					Section lesson 
 						Title role desig sid ToEvangelion End-Title
@@ -6109,11 +6274,11 @@ Template LE
 				Section satBC_
 					Section alleluia
 						Insert_section bk.ap.me.m09.sections.dSatBC.al_title End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m09.sections.dSatBC.al_verse1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m09.sections.dSatBC.al_verse2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section
 					Section lesson 
 						Title role desig sid ToEvangelion End-Title
@@ -6125,11 +6290,11 @@ Template LE
 				Section sunBC_
 					Section alleluia
 						Insert_section bk.ap.me.m09.sections.dSunBC.al_title End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m09.sections.dSunBC.al_verse1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m09.sections.dSunBC.al_verse2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section
 					Section lesson 
 						Title role desig sid ToEvangelion End-Title
@@ -6159,14 +6324,14 @@ Template LE
 			End-Section
 			Section daily
 				Section alleluia
-					Insert_section Gospel_Alleluia_Mode End-Insert
-	//				Media sid hoLI.GospelAlleluia.text End-Media
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-					Insert_section Gospel_Alleluia_Verse1 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-					Insert_section Gospel_Alleluia_Verse2 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-				End-Section //Alleluia
+					Insert_section LectionaryGospelAlleluia.Gospel_Alleluia End-Insert
+				//	Insert_section Gospel_Alleluia_Mode End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
+				//	Insert_section Gospel_Alleluia_Verse1 End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
+				//	Insert_section Gospel_Alleluia_Verse2 End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
+				End-Section
 				Section lesson
 					Title role desig sid ToEvangelion End-Title
 					Insert_section Gospel_Title End-Insert
@@ -6196,12 +6361,13 @@ Template LE
 				End-Section
 				Section satBE_ //Mat 3:1-6
 					Section alleluia
-						Insert_section Gospel_Alleluia_Mode.DaysByNumber.Defaults End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-						Insert_section Gospel_Alleluia_Verse1.DaysByNumber.Defaults End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-						Insert_section Gospel_Alleluia_Verse2.DaysByNumber.Defaults End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Insert_section Gospel_Alleluia End-Insert
+					//	Insert_section Gospel_Alleluia_Mode.DaysByNumber.Defaults End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
+					//	Insert_section Gospel_Alleluia_Verse1.DaysByNumber.Defaults End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
+					//	Insert_section Gospel_Alleluia_Verse2.DaysByNumber.Defaults End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section //Alleluia
 					Section lesson 
 						Title role desig sid ToEvangelion End-Title
@@ -6214,11 +6380,11 @@ Template LE
 				Section sunBE_ //Mark 1:1-8
 					Section alleluia
 						Insert_section bk.ap.me.m12.sections.dSunBE.al_title End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m12.sections.dSunBE.al_verse1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m12.sections.dSunBE.al_verse2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section
 					Section lesson 
 						Title role desig sid ToEvangelion End-Title
@@ -6285,11 +6451,11 @@ Template LE
 				Section jan14_Luke4_ //Luke 4:1-15
 					Section alleluia
 						Insert_section bk.ap.me.m01.sections.d06.al_title End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m01.sections.d06.al_verse1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m01.sections.d06.al_verse2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section
 					Section lesson 
 						Title role desig sid ToEvangelion End-Title
@@ -6301,11 +6467,11 @@ Template LE
 				Section satAE_ //Mat 4:1-11
 					Section alleluia
 						Insert_section bk.ap.me.m01.sections.dSatAE.al_title End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m01.sections.dSatAE.al_verse1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m01.sections.dSatAE.al_verse2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section
 					Section lesson 
 						Title role desig sid ToEvangelion End-Title
@@ -6317,11 +6483,11 @@ Template LE
 				Section sunAE_ //Mat 4:12-17
 					Section alleluia
 						Insert_section bk.ap.me.m01.sections.dSunAE.al_title End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m01.sections.dSunAE.al_verse1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m01.sections.dSunAE.al_verse2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section
 					Section lesson 
 						Title role desig sid ToEvangelion End-Title
@@ -6335,11 +6501,11 @@ Template LE
 				Section july_
 					Section alleluia
 						Insert_section bk.ap.me.m07.sections.dHF.al_title End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m07.sections.dHF.al_verse1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m07.sections.dHF.al_verse2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section
 					Section lesson 
 						Title role desig sid ToEvangelion End-Title
@@ -6351,11 +6517,11 @@ Template LE
 				Section october_
 					Section alleluia
 						Insert_section bk.ap.me.m10.sections.dHF.al_title End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m10.sections.dHF.al_verse1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 						Insert_section bk.ap.me.m10.sections.dHF.al_verse2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section
 					Section lesson 
 						Title role desig sid ToEvangelion End-Title
@@ -6367,12 +6533,13 @@ Template LE
 			End-Section
 			Section mealt1 
 				Section alleluia
-					Insert_section rid_GospelAlleluia_Menaion.mealt1_al_title_mode End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-					Insert_section rid_GospelAlleluia_Menaion.mealt1_al_verse_1 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-					Insert_section rid_GospelAlleluia_Menaion.mealt1_al_verse_2 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Insert_section Gospel_Alleluia_mealt1 End-Insert 
+				//	Insert_section rid_GospelAlleluia_Menaion.mealt1_al_title_mode End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
+				//	Insert_section rid_GospelAlleluia_Menaion.mealt1_al_verse_1 End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
+				//	Insert_section rid_GospelAlleluia_Menaion.mealt1_al_verse_2 End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
 				End-Section
 				Section lesson
 					Title role desig sid ToEvangelion End-Title
@@ -6383,12 +6550,13 @@ Template LE
 			End-Section	
 			Section menaion 
 				Section alleluia
-					Insert_section rid_GospelAlleluia_Menaion.me_al_title_mode End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-					Insert_section rid_GospelAlleluia_Menaion.me_al_verse_1 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-					Insert_section rid_GospelAlleluia_Menaion.me_al_verse_2 End-Insert
-					Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+					Insert_section Gospel_Alleluia_Menaion End-Insert 
+				//	Insert_section rid_GospelAlleluia_Menaion.me_al_title_mode End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
+				//	Insert_section rid_GospelAlleluia_Menaion.me_al_verse_1 End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
+				//	Insert_section rid_GospelAlleluia_Menaion.me_al_verse_2 End-Insert
+				//	Hymn sid Allilouia3.text media-off End-Hymn
 				End-Section
 				Section lesson
 					Title role desig sid ToEvangelion End-Title
@@ -6659,12 +6827,13 @@ Template LE
 			Section triodion__
 				Section d015_meatfare
 					Section alleluia
-						Insert_section bk.ap.mc.p5.sections.Day_Sunday_Meat.al_title End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-						Insert_section bk.ap.mc.p5.sections.Day_Sunday_Meat.al_verse1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-						Insert_section bk.ap.mc.p5.sections.Day_Sunday_Meat.al_verse2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Insert_section Gospel_Alleluia End-Insert
+					//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Meat.al_title End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
+					//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Meat.al_verse1 End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
+					//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Meat.al_verse2 End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section
 					Section lesson
 						Insert_section TI.le.go.triodion.d015_meatfare End-Insert
@@ -6674,12 +6843,13 @@ Template LE
 				End-Section
 				Section d021_monastics
 					Section alleluia
-						Insert_section Gospel_Alleluia_Mode End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-						Insert_section Gospel_Alleluia_Verse1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-						Insert_section Gospel_Alleluia_Verse2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Insert_section LectionaryGospelAlleluia.Gospel_Alleluia End-Insert
+					//	Insert_section Gospel_Alleluia_Mode End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
+					//	Insert_section Gospel_Alleluia_Verse1 End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
+					//	Insert_section Gospel_Alleluia_Verse2 End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section
 					Section lesson 
 						Title<Tdesig>sid ToEvangelion</>End-Title
@@ -6690,12 +6860,13 @@ Template LE
 				End-Section
 				Section d022_cheesefare
 					Section alleluia
-						Insert_section bk.ap.mc.p5.sections.Day_Sunday_Cheese.al_title End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-						Insert_section bk.ap.mc.p5.sections.Day_Sunday_Cheese.al_verse1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-						Insert_section bk.ap.mc.p5.sections.Day_Sunday_Cheese.al_verse2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Insert_section Gospel_Alleluia End-Insert
+					//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Cheese.al_title End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
+					//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Cheese.al_verse1 End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
+					//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Cheese.al_verse2 End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section
 					Section lesson
 						Insert_section TI.le.go.triodion.d022_cheesefare End-Insert
@@ -6705,12 +6876,13 @@ Template LE
 				End-Section
 				Section d029_lent1
 					Section alleluia
-						Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent1.al_title End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-						Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent1.al_verse1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-						Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent1.al_verse2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Insert_section Gospel_Alleluia End-Insert
+					//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent1.al_title End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
+					//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent1.al_verse1 End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
+					//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent1.al_verse2 End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section
 					Section lesson
 						Insert_section TI.le.go.triodion.d029_lent1 End-Insert
@@ -6720,12 +6892,13 @@ Template LE
 				End-Section
 				Section d043_lent3
 					Section alleluia
-						Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent3.al_title End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-						Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent3.al_verse1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-						Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent3.al_verse2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Insert_section Gospel_Alleluia End-Insert
+					//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent3.al_title End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
+					//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent3.al_verse1 End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
+					//	Insert_section bk.ap.mc.p5.sections.Day_Sunday_Lent3.al_verse2 End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section
 					Section lesson
 						Insert_section TI.le.go.triodion.d043_lent3 End-Insert
@@ -6735,12 +6908,13 @@ Template LE
 				End-Section
 				Section d056_akathist
 					Section alleluia
-						Insert_section bk.ap.mc.p5.sections.Day_Saturday_Lent5.al_title End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-						Insert_section bk.ap.mc.p5.sections.Day_Saturday_Lent5.al_verse1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-						Insert_section bk.ap.mc.p5.sections.Day_Saturday_Lent5.al_verse2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Insert_section Gospel_Alleluia End-Insert
+					//	Insert_section bk.ap.mc.p5.sections.Day_Saturday_Lent5.al_title End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
+					//	Insert_section bk.ap.mc.p5.sections.Day_Saturday_Lent5.al_verse1 End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
+					//	Insert_section bk.ap.mc.p5.sections.Day_Saturday_Lent5.al_verse2 End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section
 					Section lesson
 						Title role desig sid ToEvangelion End-Title
@@ -6753,12 +6927,13 @@ Template LE
 			Section vespers__
 				Section menaion_ //computes Ephiphany and Christmas Eve 
 					Section alleluia
-						Insert_section rid_GospelAlleluia_Menaion.me_vespers_al_title_mode End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-						Insert_section rid_GospelAlleluia_Menaion.me_vespers_al_verse_1 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-						Insert_section rid_GospelAlleluia_Menaion.me_vespers_al_verse_2 End-Insert
-						Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+						Insert_section Vespers_Gospel_Alleluia_Menaion End-Insert 
+					//	Insert_section rid_GospelAlleluia_Menaion.me_vespers_al_title_mode End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
+					//	Insert_section rid_GospelAlleluia_Menaion.me_vespers_al_verse_1 End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
+					//	Insert_section rid_GospelAlleluia_Menaion.me_vespers_al_verse_2 End-Insert
+					//	Hymn sid Allilouia3.text media-off End-Hymn
 					End-Section
 					Section lesson
 						Title role desig sid ToEvangelion End-Title
@@ -6772,16 +6947,18 @@ Template LE
 					Section alleluia
 						when-movable-cycle-day-is
 							71 use:
-								Insert_section bk.ap.mc.p6.sections.Day_HolySaturday.liturgy.instead_of_alleluia End-Insert
+								Insert_section Vespers_Gospel_Alleluia End-Insert
+							//	Insert_section bk.ap.mc.p6.sections.Day_HolySaturday.liturgy.instead_of_alleluia End-Insert
 							otherwise use:
-								Insert_section Vespers_Gospel_Alleluia_Mode End-Insert
-								Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-								Insert_section Vespers_Gospel_Alleluia_Verse1 End-Insert
-								Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-								Insert_section Vespers_Gospel_Alleluia_Verse2 End-Insert
-								Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
-								Insert_section Vespers_Gospel_Alleluia_Verse3 End-Insert
-								Hymn sid hoLI.GospelAlleluia.text media-off End-Hymn
+								Insert_section Vespers_Gospel_Alleluia End-Insert
+							//	Insert_section Vespers_Gospel_Alleluia_Mode End-Insert
+							//	Hymn sid Allilouia3.text media-off End-Hymn
+							//	Insert_section Vespers_Gospel_Alleluia_Verse1 End-Insert
+							//	Hymn sid Allilouia3.text media-off End-Hymn
+							//	Insert_section Vespers_Gospel_Alleluia_Verse2 End-Insert
+							//	Hymn sid Allilouia3.text media-off End-Hymn
+							//	Insert_section Vespers_Gospel_Alleluia_Verse3 End-Insert
+							//	Hymn sid Allilouia3.text media-off End-Hymn
 						end-when
 					End-Section
 					Section lesson
