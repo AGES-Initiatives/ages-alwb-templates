@@ -1,0 +1,49 @@
+Template Selector_AntiphonVersesNote 
+
+	import ty.li.incipit_gr_GR_cog.*
+
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+	
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 2 day 21 year 2020 End_Date
+	End_Head
+
+	Section note
+		when-date-is
+			Jan 1 use: Reading<r>sid tyLIin.antiphon_verses.jan01.note</>End-Reading
+			Jan 6 thru 14 use: Reading<r>sid tyLIin.antiphon_verses.jan06.note</>End-Reading
+			Feb 2 thru 9 use: Reading<r>sid tyLIin.antiphon_verses.feb02.note</>End-Reading
+			Mar 25 use: Reading<r>sid tyLIin.antiphon_verses.mar25.note</>End-Reading
+			otherwise use:
+				when-movable-cycle-day-is
+					29 use: Reading<r>sid tyLIin.antiphon_verses.lent1.note</>End-Reading
+					43 use: Reading<r>sid tyLIin.antiphon_verses.lent3.note</>End-Reading
+					64 use: Reading<r>sid tyLIin.antiphon_verses.palm.note</>End-Reading
+					71 thru 109 use: Reading<r>sid tyLIin.antiphon_verses.pascha.note</>End-Reading
+					110 thru 118 use: Reading<r>sid tyLIin.antiphon_verses.ascension.note</>End-Reading
+					120 thru 126 use: Reading<r>sid tyLIin.antiphon_verses.pentecost.note</>End-Reading
+					otherwise use:
+						when-date-is
+							Aug 6 thru 13 use: Reading<r>sid tyLIin.antiphon_verses.aug06.note</>End-Reading
+							Aug 15 thru 23 use: Reading<r>sid tyLIin.antiphon_verses.aug15.note</>End-Reading
+							Sep 8 thru 12 use: Reading<r>sid tyLIin.antiphon_verses.sep08.note</>End-Reading
+							Sep 14 thru 22 use: Reading<r>sid tyLIin.antiphon_verses.sep14.note</>End-Reading
+							Nov 21 thru 25 use: Reading<r>sid tyLIin.antiphon_verses.nov21.note</>End-Reading
+							Dec 25 thru 31 use: Reading<r>sid tyLIin.antiphon_verses.dec25.note</>End-Reading
+							otherwise use:
+								Section default_Sunday
+								End-Section
+						end-when
+				end-when
+		end-when
+	End-Section
+
+End-Template
