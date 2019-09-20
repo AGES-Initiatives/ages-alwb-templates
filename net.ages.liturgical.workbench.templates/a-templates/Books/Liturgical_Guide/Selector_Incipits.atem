@@ -139,7 +139,6 @@ Status NA
 			120 use: Reading<r>sid tyLIin.ApFeast.title</>sid tyPEin.pentecost.Apolytikion.text End-Reading
 			otherwise use:
 				when-date-is
-					Jan 1 use: Reading<r>sid tyLIin.ApSaintM.title</>sid tyMEin.m01.d01.Apolytikion2.text End-Reading
 					Jan 6 use: Reading<r>sid tyLIin.ApFeast.title</>sid tyMEin.m01.d06.Apolytikion1.text End-Reading
 					Aug 6 use: Reading<r>sid tyLIin.ApFeast.title</>sid tyMEin.m08.d06.Apolytikion1.text End-Reading
 					Sep 14 use: Reading<r>sid tyLIin.ApCross.title</>sid tyMEin.m09.d14.Apolytikion1.text End-Reading
@@ -149,6 +148,7 @@ Status NA
 							Sunday use:	Reading sid tyMAin.afterdoxology.text End-Reading
 							otherwise use:
 								when-date-is
+									Jan 1 use: Reading<r>sid tyLIin.ApFeast.title</>sid tyMEin.m01.d01.Apolytikion1.text End-Reading
 									Feb 2 use: Reading<r>sid tyLIin.ApFeast.title</>sid tyMEin.m02.d02.Apolytikion1.text End-Reading
 									Mar 25 use: Reading<r>sid tyLIin.ApFeast.title</>sid tyMEin.m03.d25.Apolytikion1.text End-Reading
 									Aug 15 use: Reading<r>sid tyLIin.ApFeast.title</>sid tyMEin.m08.d15.Apolytikion1.text End-Reading
@@ -164,12 +164,12 @@ Status NA
 		end-when	
 	End-Section
 
-//	Section antiphon1_incipit
-//		Para<r>sid tyLIin.antiphon1.title</>End-Para
-//		Reading sid tyLIin.antiphon1.text End-Reading
-//	End-Section
-
 	Section antiphon1_incipit
+		Para<r>sid tyLIin.antiphon1.title</>End-Para
+		Reading sid tyLIin.antiphon1.text End-Reading
+	End-Section
+
+	Section antiphon_verses
 		Para<r>sid tyLIin.antiphon_verses.title</>End-Para
 		Insert_section Selector_AntiphonVersesNote.note End-Insert
 	End-Section
@@ -331,6 +331,9 @@ Status NA
 						Aug 15 thru 23 use:
 							Para<r>sid tyLIin.antiphon3.title sid separator.hyphen sid ApolytikionTisEortis</>End-Para
 							Reading sid tyMEin.m08.d15.Apolytikion1.text End-Reading
+						Sep 8 thru 12 use:
+							Para<r>sid tyLIin.antiphon3.title sid separator.hyphen sid ApolytikionTisEortis</>End-Para
+							Reading sid tyMEin.m09.d08.Apolytikion1.text End-Reading
 						Sep 14 thru 21 use:
 							Para<r>sid tyLIin.antiphon3.title sid separator.hyphen sid ApolytikionTisEortis</>End-Para
 							Reading sid tyMEin.m09.d14.Apolytikion1.text End-Reading
@@ -407,8 +410,7 @@ Status NA
 								Section meeting
 									when-name-of-day-is
 										Sunday use:
-										//	Reading sid tyLIin.m02.d02.entrance.v1.text sid tyLIin.Antiphon21.text sid tyLIin.EntranceHymn2s.text sid punctuation.ellipsis End-Reading 
-											Insert_section usualSunday End-Insert
+											Para role inaudible sid tyLIin.m02.d02.entrance.v1.text sid tyLIin.Antiphon21.text sid tyLIin.EntranceHymn2s.text sid punctuation.ellipsis End-Para
 										otherwise use:
 											Para role inaudible sid tyLIin.m02.d02.entrance.v1.text sid tyLIin.Antiphon21.text sid tyLIin.m02.d02.Antiphon2.text sid punctuation.ellipsis End-Para 
 										end-when
@@ -467,8 +469,10 @@ Status NA
 						end-when
 					otherwise use: 
 						when-name-of-day-is
-							Sunday use: Insert_section usualSunday End-Insert
-							otherwise use: Insert_section meeting End-Insert
+							Sunday use:
+								Insert_section meeting End-Insert
+							otherwise use: 
+								Insert_section meeting End-Insert
 						end-when
 				end-when
 			Mar 25 use:
@@ -580,6 +584,7 @@ Status NA
 				Reading<r>sid tyLIin.ApSaintM.title</>sid tyMEin.m01.d01.Apolytikion2.text End-Reading
 			Jan 5 use: Reading<r>sid tyLIin.ApForefeast.title</>sid tyMEin.m01.d05.Apolytikion1.text End-Reading
 			Jan 6 thru 14 use: Reading<r>sid tyLIin.ApFeast.title</>sid tyMEin.m01.d06.Apolytikion1.text End-Reading
+			Jan 19 use: Reading<r>sid TouOsiou</>sid tyMEin.m01.d19.Apolytikion1.text End-Reading
 			Jan 20 use: Reading<r>sid tyLIin.ApSaintM.title</>sid tyMEin.m01.d20.Apolytikion1.text End-Reading
 			Jan 27 use: Reading<r>sid tyLIin.ApSaintM.title</>sid tyMEin.m01.d27.Apolytikion1.text End-Reading
 			Feb 2 thru 9 use: Reading<r>sid tyLIin.ApFeast.title</>sid tyMEin.m02.d02.Apolytikion1.text End-Reading
@@ -600,8 +605,8 @@ Status NA
 			Aug 6 thru 13 use: Reading<r>sid tyLIin.ApFeast.title</>sid tyMEin.m08.d06.Apolytikion1.text End-Reading
 			Aug 15, 17, 18, 19, 20, 21, 22, 23 use: Reading<r>sid tyLIin.ApFeast.title</>sid tyMEin.m08.d15.Apolytikion1.text End-Reading
 			Aug 16 use:
-				Reading<r>sid tyLIin.ApFeast.title</>sid tyMEin.m08.d15.Apolytikion1.text End-Reading
 				Reading<r>sid TouAgiouMandyliou</>sid tyMEin.m08.d16.Apolytikion1.text End-Reading
+				Reading<r>sid tyLIin.ApFeast.title</>sid tyMEin.m08.d15.Apolytikion1.text End-Reading
 			Aug 25 use: Reading<r>sid tyLIin.ApApostles.title</>sid tyMEin.m08.d25.Apolytikion1.text End-Reading
 			Aug 29 use: Reading<r>sid tyLIin.ApForerunner.title</>sid tyMEin.m08.d29.Apolytikion1.text End-Reading
 			Aug 30 use: Reading<r>sid tyLIin.ApForerunner.title</>sid tyMEin.m08.d29.Apolytikion1.text End-Reading
@@ -622,6 +627,7 @@ Status NA
 				Reading<r>sid tyLIin.ApCross.title</>sid tyMEin.m09.d14.Apolytikion1.text End-Reading
 				Reading<r>sid tyLIin.ApSaints.title</>sid tyMEin.m09.d20.Apolytikion1.text End-Reading
 			Sep 22 use: Reading<r>sid tyLIin.ApSaintM.title</>sid tyMEin.m09.d22.Apolytikion1.text End-Reading
+			Sep 27 use: Reading<r>sid tyLIin.ApSaintM.title</>sid tyMEin.m09.d27.Apolytikion1.text End-Reading
 			Sep 29 use: Reading<r>sid tyLIin.ApSaintM.title</>sid tyMEin.m09.d29.Apolytikion1.text End-Reading
 			Oct 6 use: Reading<r>sid tyLIin.ApApostle.title</>sid tyMEin.m10.d06.Apolytikion1.text End-Reading
 			Oct 11 thru 17 use:
@@ -851,7 +857,7 @@ Status NA
 		Section trisagios_title
 			when-date-is
 				Jan 6, 7 use:
-					Para<r>sid tyLIin.trisagios.title</>End-Para
+					Para<r>sid tyLIin.trisagios_alt.title</>End-Para
 				Aug 1 use:
 					Para<r>sid tyLIin.trisagios_alt.title</>End-Para
 				Sep 14 use:
@@ -860,7 +866,7 @@ Status NA
 					Para<r>sid tyLIin.trisagios_alt.title</>End-Para
 				otherwise use:
 					when-movable-cycle-day-is
-						63, 71, 72, 73, 74, 75, 76, 77, 109, 120, 121 use:
+						43, 63, 71, 72, 73, 74, 75, 76, 77, 109, 120, 121 use:
 							Para<r>sid tyLIin.trisagios_alt.title</>End-Para
 						otherwise use:
 							Para<r>sid tyLIin.trisagios.title</>End-Para
@@ -893,9 +899,15 @@ Status NA
 			Jan 1 use: 
 				Para<r>sid tyLIin.theotokoshymn.basil.title</>End-Para
 				Reading sid tyLIin.theotokoshymn.basil.text End-Reading
-			Jan 6 use: 
-				Para<r>sid tyLIin.theotokoshymn.title sid separator.hyphen sid tyLIin.theotokoshymn.heirmos91.text</>End-Para
-				Reading sid tyLIin.theotokoshymn.epiphany1.text End-Reading
+			Jan 6 use:
+				when-name-of-day-is
+					Sunday, Monday use:
+						Para<r>sid tyLIin.theotokoshymn.basil.title</>End-Para
+						Reading sid tyLIin.theotokoshymn.basil.text End-Reading
+					otherwise use:
+						Para<r>sid tyLIin.theotokoshymn.title sid separator.hyphen sid tyLIin.theotokoshymn.heirmos91.text</>End-Para
+						Reading sid tyLIin.theotokoshymn.epiphany1.text End-Reading
+				end-when
 			Jan 7, 14 use: 
 				Para<r>sid tyLIin.theotokoshymn.title sid separator.hyphen sid tyLIin.theotokoshymn.heirmos92.text</>End-Para
 				Reading sid tyLIin.theotokoshymn.epiphany2.text End-Reading
@@ -1074,8 +1086,14 @@ Status NA
 								Para<r>sid tyLIin.theotokoshymn.title sid separator.hyphen sid tyLIin.theotokoshymn.heirmos91.text</>End-Para
 								Reading sid tyLIin.theotokoshymn.entry.text End-Reading
 							Dec 25 use:
-								Para<r>sid tyLIin.theotokoshymn.title sid separator.hyphen sid tyLIin.theotokoshymn.heirmos91.text</>End-Para
-								Reading sid tyLIin.theotokoshymn.christmas1.text End-Reading
+								when-name-of-day-is
+									Sunday, Monday use:
+										Para<r>sid tyLIin.theotokoshymn.basil.title</>End-Para
+										Reading sid tyLIin.theotokoshymn.basil.text End-Reading
+									otherwise use:
+										Para<r>sid tyLIin.theotokoshymn.title sid separator.hyphen sid tyLIin.theotokoshymn.heirmos91.text</>End-Para
+										Reading sid tyLIin.theotokoshymn.christmas1.text End-Reading
+								end-when
 							Dec 26, 31 use:
 								Para<r>sid tyLIin.theotokoshymn.title sid separator.hyphen sid tyLIin.theotokoshymn.heirmos92.text</>End-Para
 								Reading sid tyLIin.theotokoshymn.christmas2.text End-Reading
@@ -1280,7 +1298,7 @@ Status NA
 										end-when
 									Aug 15, 23 use:
 										when-name-of-day-is
-											Sunday use: Reading sid tyLIin.communionhymn.sunday.text End-Reading
+											Sunday use: Reading sid tyLIin.communionhymn.theotokos.text End-Reading
 											otherwise use: Reading sid tyLIin.communionhymn.theotokos.text End-Reading
 										end-when
 									Aug 16 use: Reading sid tyLIin.communionhymn.sunday.text End-Reading
@@ -1306,7 +1324,7 @@ Status NA
 										end-when
 									Sep 8, 12 use:
 										when-name-of-day-is
-											Sunday use: Reading sid tyLIin.communionhymn.theotokos.text <inr>sid Or</>sid tyLIin.communionhymn.sunday.text End-Reading
+											Sunday use: Reading sid tyLIin.communionhymn.theotokos.text End-Reading
 											otherwise use: Reading sid tyLIin.communionhymn.theotokos.text End-Reading
 										end-when
 									Sep 9 use:
@@ -1335,9 +1353,14 @@ Status NA
 											Sunday use: Reading sid tyLIin.communionhymn.sunday.text End-Reading
 											otherwise use: Reading sid tyLIin.communionhymn.apostle.text End-Reading
 										end-when
-									Oct 6, 9, 18, 23 use: 
+									Oct 6, 9, 23 use: 
 										when-name-of-day-is
 											Sunday use: Reading sid tyLIin.communionhymn.sunday.text End-Reading
+											otherwise use: Reading sid tyLIin.communionhymn.apostle.text End-Reading
+										end-when
+									Oct 18 use: 
+										when-name-of-day-is
+											Sunday use: Reading sid tyLIin.communionhymn.apostle.text End-Reading
 											otherwise use: Reading sid tyLIin.communionhymn.apostle.text End-Reading
 										end-when
 									Oct 26, 27 use:
@@ -1352,7 +1375,7 @@ Status NA
 										end-when
 									Nov 8 use:
 										when-name-of-day-is
-											Sunday use: Reading sid tyLIin.communionhymn.sunday.text End-Reading
+											Sunday use: Reading sid tyLIin.communionhymn.angels.text End-Reading
 											otherwise use: Reading sid tyLIin.communionhymn.angels.text End-Reading
 										end-when
 									Nov 14, 16, 30 use:
@@ -1362,7 +1385,7 @@ Status NA
 										end-when
 									Nov 21, 25 use:
 										when-name-of-day-is
-											Sunday use: Reading sid tyLIin.communionhymn.sunday.text End-Reading
+											Sunday use: Reading sid tyLIin.communionhymn.theotokos.text End-Reading
 											otherwise use: Reading sid tyLIin.communionhymn.theotokos.text End-Reading
 										end-when
 									Dec 4, 5, 6, 12, 15 use:
@@ -1464,8 +1487,10 @@ Status NA
 				when-date-is
 					Jan 7 thru 14 use: 
 						Title<Tdesig>sid tyDAin.SundayAfterEpiphany.text</>End-Title
-					Feb 3 thru 9 use: 
+					Feb 3 thru 8 use: 
 						Title<Tdesig>sid tyDAin.SundayAfterMeeting.text</>End-Title
+					Feb 9 use: 
+						Title<Tdesig>rid meShortCommemoration2.text</>End-Title
 					Jul 13 thru 19 use:
 						Title<Tdesig>sid tyDAin.SundayOfHolyFathers.text</>End-Title
 					Aug 7 thru 13 use: 
