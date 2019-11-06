@@ -1,0 +1,101 @@
+Template se.m06.d27.ma 
+
+Status Draft
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 6 day 27 year 2020 End_Date
+			Page_Header_Even
+				center @lookup sid ma.pdf.header sid d.on lang L1 @date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.pdf.cover.ma.s_oc_k_w_oc_me1 End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	when-movable-cycle-day-is 
+		1 thru 127 use:
+			Insert_section mc.map.ma.Section01 End-Insert //adjust to appropriate service
+		otherwise use:
+			when-name-of-day-is 
+				Sunday use:	
+					Section Instance02
+					End-Section //Sunday
+				otherwise use:
+					Section Instance01
+						Insert_section ST.ma.oc_me1 End-Insert
+						when-name-of-day-is
+							Saturday use:
+								Insert_section MA._01_Beginning__.alleluia__.mode2_saturday End-Insert
+								Insert_section AP.saturday1g2bt End-Insert
+							otherwise use:
+								Insert_section MA._01_Beginning__.mode8 End-Insert
+								Insert_section AP.me1_ End-Insert
+								Insert_section TI.g.r End-Insert
+								Insert_section AP.both__.theotokion__.mode8_ End-Insert
+						end-when
+						Insert_section MA._03_Kathisma1__.oc__.weekday123 End-Insert
+						Insert_section MA._07_Gospel__.no__.reader__.psalm50 End-Insert
+						when-name-of-day-is
+							Saturday use:
+								Insert_section MA._11_Kontakion__.append__.saturday_ End-Insert
+						end-when
+						Insert_section SY.Synaxarion End-Insert
+						Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
+						Insert_section MA._10_Canon__.magnificat__.modeofcanon__.me1 End-Insert
+						Insert_section CA.heirmos.ode9.me End-Insert
+						Insert_section MA._10_Canon__.ode9_end End-Insert
+						Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+						Insert_section MA._12_Exaposteilarion__.weekday_ End-Insert
+						when-name-of-day-is
+							Saturday use:
+								Section saturday
+									Insert_section MA._13_Lauds__.modeofweek__.for4 End-Insert
+									Insert_section MA._13_Lauds__.oc__.saturday_ End-Insert
+									Insert_section MA._14_Doxology__.small End-Insert
+								End-Section
+							otherwise use:
+								Insert_section MA._13_Lauds__.read__.all End-Insert
+								Insert_section MA._14_Doxology__.append_small End-Insert
+						end-when
+						Insert_section MA._15_Litanies__.aftersmalldoxology End-Insert
+						Insert_section MA._16_Aposticha__.oc_.aposticha End-Insert
+						Insert_section MA._16_Aposticha__.oc_.theotokion End-Insert
+						Insert_section MA._17_ItIsGood_Trisagion__.not_lent End-Insert
+						when-name-of-day-is
+							Saturday use:
+								Insert_section AP.saturday1g2bt End-Insert
+							otherwise use:
+								Insert_section AP.me1_ End-Insert
+								Insert_section AP.gloryboth__.endofmatins_theotokion__.mode8_ End-Insert
+						end-when
+						Insert_section MA._18_End__.ektenia_wisdom End-Insert
+						Insert_section MA._20_Dismissal__.nocommemoration End-Insert						
+					End-Section
+			end-when
+	end-when
+
+End-Template
