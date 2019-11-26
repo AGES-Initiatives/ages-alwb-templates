@@ -1,0 +1,234 @@
+Template Selector_WeekdayExaposteilaria 
+
+Status NA
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 1 day 1 End_Date
+			Page_Header_Even
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Section exap_all
+		when-name-of-day-is
+			Monday use:
+				Insert_section weekday_exaposteilaria__.monday_ End-Insert
+			Tuesday use:
+				Insert_section weekday_exaposteilaria__.tuesday_ End-Insert
+			Wednesday use:
+				Insert_section weekday_exaposteilaria__.wednesday__.exap1_ End-Insert
+				Insert_section weekday_exaposteilaria__.wednesday__.exap2_ End-Insert
+				Insert_section weekday_exaposteilaria__.wednesday__.theotokion2 End-Insert
+			Thursday use:
+				Insert_section weekday_exaposteilaria__.thursday__.exap1_ End-Insert
+				Insert_section weekday_exaposteilaria__.thursday__.exap2_ End-Insert
+				Insert_section weekday_exaposteilaria__.thursday__.theotokion1 End-Insert
+			Friday use:
+				Insert_section weekday_exaposteilaria__.friday_.exap1_ End-Insert
+				Insert_section weekday_exaposteilaria__.friday_.exap2_ End-Insert
+				Insert_section weekday_exaposteilaria__.friday_.theotokion2 End-Insert
+			Saturday use:			
+				Insert_section weekday_exaposteilaria__.saturday__.exap1_ End-Insert
+				Insert_section weekday_exaposteilaria__.saturday__.exap2_ End-Insert
+				Insert_section weekday_exaposteilaria__.saturday__.theotokion1 End-Insert
+		end-when
+	End-Section
+
+	Section exap1
+		when-name-of-day-is
+			Monday use:
+				Insert_section weekday_exaposteilaria__.monday_.exap1_ End-Insert
+			Tuesday use:
+				Insert_section weekday_exaposteilaria__.tuesday_.exap1_ End-Insert
+			Wednesday use:
+				Insert_section weekday_exaposteilaria__.wednesday__.exap1_ End-Insert
+			Thursday use:
+				Insert_section weekday_exaposteilaria__.thursday__.exap1_ End-Insert
+			Friday use:
+				Insert_section weekday_exaposteilaria__.friday_.exap1_ End-Insert
+			Saturday use:			
+				Insert_section weekday_exaposteilaria__.saturday__.exap1_ End-Insert
+		end-when
+	End-Section
+
+	//blocks
+		Section weekday_exaposteilaria__	
+			Section monday_
+				Section exap1_
+					Title<Tdesig>sid Exaposteilarion</><Tdesig>sid TonAsomaton</>End-Title
+					Section hynm
+						Title role source0 sid sourceOctoechos End-Title
+						Title<Tmode>sid da.d2_gr_GR_cog.daMA.Exaposteilarion1.mode</><Tmelody>sid da.d2_gr_GR_cog.daMA.Exaposteilarion1.melody</>End-Title
+						Hymn sid da.d2_gr_GR_cog.daMA.Exaposteilarion1.text @ver End-Hymn
+					End-Section
+				End-Section
+				Section theotokion1
+					Title<Tdesig>sid Theotokion</>End-Title
+					Title role source0 sid sourceOctoechos End-Title
+					Title<Tmode>sid da.d2_gr_GR_cog.daMA.ExapTheotokion1.mode</><Tmelody>sid da.d2_gr_GR_cog.daMA.ExapTheotokion1.melody</>End-Title
+					Hymn sid da.d2_gr_GR_cog.daMA.ExapTheotokion1.text @ver End-Hymn
+				End-Section
+			End-Section
+			Section tuesday_
+				Section exap1_
+					Title<Tdesig>sid Exaposteilarion</><Tdesig>sid TouProdromou</>End-Title
+					Section hymn
+						Title role source0 sid sourceOctoechos End-Title
+						Title<Tmode>sid da.d3_gr_GR_cog.daMA.Exaposteilarion1.mode</><Tmelody>sid da.d3_gr_GR_cog.daMA.Exaposteilarion1.melody</>End-Title
+						Hymn sid da.d3_gr_GR_cog.daMA.Exaposteilarion1.text @ver End-Hymn
+					End-Section
+				End-Section
+				Section theotokion1
+					Title<Tdesig>sid Theotokion</>End-Title
+					Title role source0 sid sourceOctoechos End-Title
+					Title<Tmode>sid da.d3_gr_GR_cog.daMA.ExapTheotokion1.mode</><Tmelody>sid da.d3_gr_GR_cog.daMA.ExapTheotokion1.melody</>End-Title
+					Hymn sid da.d3_gr_GR_cog.daMA.ExapTheotokion1.text @ver End-Hymn
+				End-Section
+			End-Section
+			Section wednesday__
+				Section exap1_
+					Title<Tdesig>sid Exaposteilarion</><Tdesig>sid Stavrosimon</>End-Title
+					Section hymn
+						Title role source0 sid sourceOctoechos End-Title
+						Title<Tmode>sid da.d4_gr_GR_cog.daMA.Exaposteilarion1.mode</><Tmelody>sid da.d4_gr_GR_cog.daMA.Exaposteilarion1.melody</>End-Title
+						Hymn sid da.d4_gr_GR_cog.daMA.Exaposteilarion1.text @ver End-Hymn
+					End-Section
+				End-Section
+				Section exap2_
+					Title<Tdesig>sid Eteron</>End-Title
+					Section hymn
+						Title role source0 sid sourceOctoechos End-Title
+						Title<Tmode>sid da.d4_gr_GR_cog.daMA.Exaposteilarion2.mode</><Tmelody>sid da.d4_gr_GR_cog.daMA.Exaposteilarion2.melody</>End-Title
+						Hymn sid da.d4_gr_GR_cog.daMA.Exaposteilarion2.text @ver End-Hymn
+					End-Section
+				End-Section
+				Section theotokion1
+					Title<Tdesig>sid Stavrotheotokion</>End-Title
+					Title role source0 sid sourceOctoechos End-Title
+					Title<Tmode>sid da.d4_gr_GR_cog.daMA.ExapTheotokion1.mode</><Tmelody>sid da.d4_gr_GR_cog.daMA.ExapTheotokion1.melody</>End-Title
+					Hymn sid da.d4_gr_GR_cog.daMA.ExapTheotokion1.text @ver End-Hymn
+				End-Section
+				Section theotokion2
+					Title<Tdesig>sid Stavrotheotokion</>End-Title
+					Title role source0 sid sourceOctoechos End-Title
+					Title<Tmode>sid da.d4_gr_GR_cog.daMA.ExapTheotokion2.mode</><Tmelody>sid da.d4_gr_GR_cog.daMA.ExapTheotokion2.melody</>End-Title
+					Hymn sid da.d4_gr_GR_cog.daMA.ExapTheotokion2.text @ver End-Hymn
+				End-Section
+			End-Section
+			Section thursday__
+				Section exap1_
+					Title<Tdesig>sid Exaposteilarion</><Tdesig>sid TonApostolon</>End-Title
+					Section hymn
+						Title role source0 sid sourceOctoechos End-Title
+						Title<Tmode>sid da.d5_gr_GR_cog.daMA.Exaposteilarion1.mode</><Tmelody>sid da.d5_gr_GR_cog.daMA.Exaposteilarion1.melody</>End-Title
+						Hymn sid da.d5_gr_GR_cog.daMA.Exaposteilarion1.text @ver End-Hymn
+					End-Section
+				End-Section
+				Section exap2_
+					Title<Tdesig>sid TouAgiouNikolaou</>End-Title
+					Section hymn
+						Title role source0 sid sourceOctoechos End-Title
+						Title<Tmode>sid da.d5_gr_GR_cog.daMA.Exaposteilarion2.mode</><Tmelody>sid da.d5_gr_GR_cog.daMA.Exaposteilarion2.melody</>End-Title
+						Hymn sid da.d5_gr_GR_cog.daMA.Exaposteilarion2.text @ver End-Hymn
+					End-Section
+				End-Section
+				Section theotokion1
+					Title<Tdesig>sid Theotokion</>End-Title
+					Title role source0 sid sourceOctoechos End-Title
+					Title<Tmode>sid da.d5_gr_GR_cog.daMA.ExapTheotokion1.mode</><Tmelody>sid da.d5_gr_GR_cog.daMA.ExapTheotokion1.melody</>End-Title
+					Hymn sid da.d5_gr_GR_cog.daMA.ExapTheotokion1.text @ver End-Hymn
+				End-Section
+				Section theotokion2
+					Title<Tdesig>sid Theotokion</>End-Title
+					Title role source0 sid sourceOctoechos End-Title
+					Title<Tmode>sid da.d5_gr_GR_cog.daMA.ExapTheotokion2.mode</><Tmelody>sid da.d5_gr_GR_cog.daMA.ExapTheotokion2.melody</>End-Title
+					Hymn sid da.d5_gr_GR_cog.daMA.ExapTheotokion2.text @ver End-Hymn
+				End-Section
+			End-Section
+			Section friday_
+				Section exap1_
+					Title<Tdesig>sid Exaposteilarion</><Tdesig>sid Stavrosimon</>End-Title
+					Section hymn
+						Title role source0 sid sourceOctoechos End-Title
+						Title<Tmode>sid da.d6_gr_GR_cog.daMA.Exaposteilarion1.mode</><Tmelody>sid da.d6_gr_GR_cog.daMA.Exaposteilarion1.melody</>End-Title
+						Hymn sid da.d6_gr_GR_cog.daMA.Exaposteilarion1.text @ver End-Hymn
+					End-Section
+				End-Section
+				Section exap2_
+					Title<Tdesig>sid Eteron</>End-Title
+					Section hymn
+						Title role source0 sid sourceOctoechos End-Title
+						Title<Tmode>sid da.d6_gr_GR_cog.daMA.Exaposteilarion2.mode</><Tmelody>sid da.d6_gr_GR_cog.daMA.Exaposteilarion2.melody</>End-Title
+						Hymn sid da.d6_gr_GR_cog.daMA.Exaposteilarion2.text @ver End-Hymn
+					End-Section
+				End-Section
+				Section theotokion2
+					Title<Tdesig>sid Stavrotheotokion</>End-Title
+					Title role source0 sid sourceOctoechos End-Title
+					Title<Tmode>sid da.d6_gr_GR_cog.daMA.ExapTheotokion2.mode</><Tmelody>sid da.d6_gr_GR_cog.daMA.ExapTheotokion2.melody</>End-Title
+					Hymn sid da.d6_gr_GR_cog.daMA.ExapTheotokion2.text @ver End-Hymn
+				End-Section
+			End-Section
+			Section saturday__
+				Section exap_
+					Title<Tdesig>sid Exaposteilarion</>End-Title
+					Section hymn
+						Title role source0 sid sourceOctoechos End-Title
+						Title<Tmode>sid he.a.m3_gr_GR_cog.OOuranonToisAstrois.mode</><Tdesig>sid Automelon</>End-Title
+						Hymn sid he.a.m3_gr_GR_cog.OOuranonToisAstrois.text @ver End-Hymn
+					End-Section
+				End-Section
+				Section exap1_
+					Title<Tdesig>sid Exaposteilarion</>End-Title
+					Section hymn
+						Title role source0 sid sourceOctoechos End-Title
+						Title<Tmode>sid da.d7_gr_GR_cog.daMA.Exaposteilarion1.mode</><Tmelody>sid da.d7_gr_GR_cog.daMA.Exaposteilarion1.melody</>End-Title
+						Hymn sid da.d7_gr_GR_cog.daMA.Exaposteilarion1.text @ver End-Hymn
+					End-Section
+				End-Section
+				Section exap2_
+					Title<Tdesig>sid Nekrosimon</>End-Title
+					Section hymn
+						Title role source0 sid sourceOctoechos End-Title
+						Title<Tmode>sid da.d7_gr_GR_cog.daMA.Exaposteilarion2.mode</><Tmelody>sid da.d7_gr_GR_cog.daMA.Exaposteilarion2.melody</>End-Title
+						Hymn sid da.d7_gr_GR_cog.daMA.Exaposteilarion2.text @ver End-Hymn
+					End-Section
+				End-Section
+				Section theotokion1
+					Title<Tdesig>sid Theotokion</>End-Title
+					Title role source0 sid sourceOctoechos End-Title
+					Title<Tmode>sid da.d7_gr_GR_cog.daMA.ExapTheotokion1.mode</><Tmelody>sid da.d7_gr_GR_cog.daMA.ExapTheotokion1.melody</>End-Title
+					Hymn sid da.d7_gr_GR_cog.daMA.ExapTheotokion1.text @ver End-Hymn
+				End-Section
+				Section theotokion2
+					Title<Tdesig>sid Theotokion</>End-Title
+					Title role source0 sid sourceOctoechos End-Title
+					Title<Tmode>sid da.d7_gr_GR_cog.daMA.ExapTheotokion2.mode</><Tmelody>sid da.d7_gr_GR_cog.daMA.ExapTheotokion2.melody</>End-Title
+					Hymn sid da.d7_gr_GR_cog.daMA.ExapTheotokion2.text @ver End-Hymn
+				End-Section
+			End-Section
+		End-Section
+
+End-Template
