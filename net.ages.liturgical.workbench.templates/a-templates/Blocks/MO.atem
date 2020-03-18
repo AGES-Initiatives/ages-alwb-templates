@@ -4,6 +4,7 @@ Status NA
 
 	import client_gr_GR_cog.*
 	import ho.s02_gr_GR_cog.*
+	import ho.s12_gr_GR_cog.*
 
 	import me.*
 	import oc.*
@@ -22,7 +23,7 @@ Status NA
 	import bTags.*
 	import roles.*
 
-	Section _01_Intro_
+	Section _01_intro_
 		Section enarxis
 			Actor sid Priest End-Actor
 			Dialog sid enarxis01 End-Dialog
@@ -62,13 +63,15 @@ Status NA
 			Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
 		End-Section
 	End-Section
-	Section _02_Psalter_Reading_
+	Section _02_kathisma_
 		when-name-of-day-is
 			Monday, Tuesday, Wednesday, Thursday, Friday use:
 				Section kathisma_17
+					Insert_section PS.Kathisma17 End-Insert
 				End-Section
 			Saturday use:
 				Section kathisma_9
+					Insert_section PS.Kathisma09 End-Insert
 				End-Section
 		end-when
 	End-Section
@@ -273,8 +276,11 @@ Status NA
 		Hymn sid hoMO.TriadicMegalynaria04.text @ver End-Hymn
 	End-Section
 	Section _05_creed
+	//	Title sid DoxaKaiNyn End-Title
+		Hymn sid DoxaPatri.text sid KaiNynKaiAei.text End-Hymn
+		Hymn sid Pistevo.text @ver End-Hymn
 	End-Section
-	Section _06_troparia_apolytikion_hypakoe_
+	Section _06_sundays_feastdays_
 		Section trisagion
 			Actor sid Reader End-Actor
 			Title<Tdesig>sid Trisagion</>End-Title
@@ -297,17 +303,106 @@ Status NA
 					Hymn rid ocMA.Hypakoe.text @ver media-off End-Hymn
 				End-Section
 			otherwise use:
-				Section weekday
+				Section feastday //currently handled explicitly in template
 				End-Section
 		end-when
 	End-Section
-	Section _07_prayers_psalms_
+	Section _07_prayers_
+		Section trisagion
+			Title<Tdesig>sid Trisagion</>End-Title
+			Reading sid AgiosOTheos.text<r>sid Thrice media-off</>End-Reading
+			Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+			Reading sid PanagiaTrias.text End-Reading
+			Reading sid res06 End-Reading
+			Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+			Reading sid PaterImon.text @ver End-Reading
+			Actor sid Priest End-Actor
+			Dialog sid exc20 End-Dialog
+			Actor sid Reader End-Actor
+			Dialog sid res04 End-Dialog
+		End-Section
+		Section troparia
+			when-name-of-day-is
+				Saturday use:
+					Title<Tdesig>sid hoMO.SaturdayTroparion1.mode</>End-Title
+					Hymn sid hoMO.SaturdayTroparion1.text End-Hymn
+					Title sid Doxa End-Title
+					Hymn sid hoMO.SaturdayTroparion2.text End-Hymn
+					Title sid KaiNyn End-Title
+					Hymn sid hoMO.SaturdayTroparion3.text End-Hymn
+				otherwise use:
+					Hymn sid tr.d065_gr_GR_cog.trHW.Troparion.text sid tr.d065_gr_GR_cog.trHW.Troparion3.text @ver End-Hymn
+					Title sid Doxa End-Title
+					Hymn sid oc.m8.d2_gr_GR_cog.ocMA.Kathisma12.text @ver End-Hymn
+					Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+					Hymn sid hoMO.AfterCreedTheotokion.text @ver End-Hymn
+			end-when
+		End-Section
+		Section prayers
+			Reading sid res01<r>sid Forty</>End-Reading
+			Reading sid OEnPantiKairo.text End-Reading
+			Reading sid res01<r>sid Thrice</>End-Reading	
+			Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+			Reading sid TinTimioteranPrayer.text End-Reading
+			Reading sid EnOnomatiKyriou.text End-Reading
+			Actor sid Priest End-Actor
+			Dialog sid OTheosOiktirisai.text End-Dialog
+			Actor sid Reader End-Actor
+			Dialog sid res04 End-Dialog
+		End-Section
 	End-Section
-	Section _08_troparia_kontakia_
+	Section _08_lentprayer
+		when-name-of-day-is
+			Monday, Tuesday, Wednesday, Thursday, Friday use:
+				Insert_section TR.StEphraimPrayer End-Insert
+		end-when
 	End-Section
-	Section _09_prayers
+	Section _09_prayers_psalms_
+		Title<Tdesig>sid ho.MO.StMardariosPrayer.title</>End-Title
+		Reading sid ho.MO.StMardariosPrayer.text @ver sid res04 End-Reading
+		when-name-of-day-is
+			Saturday use:
+				Rubric sid ho.MO.StEfstratiosPrayer.rubric End-Rubric
+				Title<Tdesig>sid ho.MO.StEfstratiosPrayer.title</>End-Title
+				Reading sid ho.MO.StEfstratiosPrayer.text @ver End-Reading
+			otherwise use:
+				Rubric sid ho.MO.StBasilPrayer1.rubric End-Rubric
+				Title<Tdesig>sid ho.MO.StBasilPrayer1.title</>End-Title
+				Reading sid ho.MO.StBasilPrayer1.text @ver sid res04 End-Reading
+				Rubric sid ho.MO.StBasilPrayer2.rubric End-Rubric
+			//	Actor sid Priest End-Actor
+				Title<Tdesig>sid ho.MO.StBasilPrayer2.title</>End-Title
+				Reading sid ho.MO.StBasilPrayer2.text @ver End-Reading
+			//	Actor sid Reader End-Actor
+				Dialog sid res04 End-Dialog
+		end-when
+		Reading sid DefteProskinisomen1 End-Reading
+		Reading sid DefteProskinisomen2 End-Reading
+		Reading sid DefteProskinisomen3 End-Reading
+		Insert_section PS.Kathisma18.stanza1.Psalm_120_Verses End-Insert
+		Insert_section PS.Kathisma18.stanza3.Psalm_133_Verses End-Insert
+		Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+		Insert_section _07_prayers_.trisagion End-Insert
 	End-Section
-	Section _10_troparia
+	Section _10_troparia_kontakia_
+		Hymn sid oc.m2.d7_gr_GR_cog.ocMA.Kathisma23.text @ver End-Hymn
+		Hymn sid oc.m8.d7_gr_GR_cog.ocMA.Kathisma23.text @ver End-Hymn
+		Title sid Doxa End-Title
+		Hymn sid tr.d014_gr_GR_cog.trMA.Kontakion1.text @ver End-Hymn
+		Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+		Hymn sid me.m08.d15_gr_GR_cog.meMA.Hypakoe.text @ver End-Hymn
+	End-Section
+	Section _11_prayers
+		Reading sid res01<inr>sid Twelve</>End-Reading
+		Title<Tdesig>sid hoMO.PrayerForDeceased.title</>End-Title
+		Reading sid hoMO.PrayerForDeceased.text @ver End-Reading
+		Dialog sid res04 End-Dialog
+		Reading sid hoCO.Key1103.text @ver End-Reading
+		Title<Tdesig>sid hoCO.Key1104.title</>End-Title
+		Reading sid hoCO.Key1104.text @ver End-Reading	
+		Reading sid hoCO.Key1105.text @ver End-Reading
+	End-Section
+	Section _12_troparia
 		Actor sid Chanter End-Actor
 		Title<Tdesig>sid KatanyktikaTroparia</><Tmode>sid ho.s12_gr_GR_cog.hoCO.Key0804.mode</>End-Title
 		Hymn sid ho.s12_gr_GR_cog.hoCO.Key0804.text @ver End-Hymn
@@ -316,28 +411,36 @@ Status NA
 		Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
 		Hymn sid ho.s12_gr_GR_cog.hoCO.Key0806.text @ver End-Hymn
 	End-Section
-	Section _11_entreaty
-	End-Section
-	Section _12_dismissal__
-		Section append__
-			Section sunday_feastday
-				Reading sid res01<r>sid Forty</>End-Reading
-				Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
-				Reading sid TinTimioteranPrayer.text End-Reading
-				Reading sid EnOnomatiKyriou.text End-Reading
-				Actor sid Priest End-Actor
-				Insert_section Selector_Dismissals.Short End-Insert
-				Insert_section sunday_feastday.litany End-Insert
-				Dialog sid DiEfchonPateron.text End-Dialog
-				Dialog<i>sid res04p</>End-Dialog
-			End-Section
-		End-Section
-		Section sunday_feastday
-			Actor sid Reader End-Actor
+	Section _13_end_dismissal__
+		Section append_sunday_feastday
 			Reading sid res01<r>sid Forty</>End-Reading
 			Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
 			Reading sid TinTimioteranPrayer.text End-Reading
 			Reading sid EnOnomatiKyriou.text End-Reading
+			Section supplication
+				Actor sid Priest End-Actor
+				Dialog sid pet17 End-Dialog
+				Dialog<i>sid res06p</>End-Dialog
+				Dialog sid pet18 End-Dialog
+				Dialog<i>sid res06p</>End-Dialog
+				Dialog sid pet19Sa sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
+				Dialog<i>sid res06p</>End-Dialog
+				Dialog sid pet07Sa End-Dialog
+				Dialog<i>sid res06p</>End-Dialog
+				Dialog sid pet21a End-Dialog
+				Dialog<i>sid res06p</>End-Dialog
+				Dialog sid pet33 End-Dialog
+				Dialog<i>sid res06p</>End-Dialog
+				Dialog sid pet34 End-Dialog
+				Dialog<i>sid res06p</>End-Dialog
+				Actor sid Priest End-Actor
+				Dialog sid pet35 sid exc11a End-Dialog
+				Dialog<i>sid res04p</>End-Dialog
+			End-Section
+			Actor sid Reader End-Actor
+			Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+			Reading sid res06 End-Reading
+			Reading sid Evlogison End-Reading
 			Actor sid Priest End-Actor
 			Insert_section Selector_Dismissals.Short End-Insert
 			Section litany
@@ -361,7 +464,13 @@ Status NA
 			Dialog sid DiEfchonPateron.text End-Dialog
 			Dialog<i>sid res04p</>End-Dialog
 		End-Section
+		Section after_hymns
+			Actor sid Reader End-Actor
+			Insert_section append_sunday_feastday End-Insert
+		End-Section
 	End-Section
-	
+
+	Section Midnight_Office_Weekday
+	End-Section
 
 End-Template
