@@ -32,12 +32,12 @@ Status Final
 	End_Head
 
 	when-movable-cycle-day-is 
-		1 thru 127 use:
+		112 thru 127 use:
 			Insert_section mc.map.li.Section02 End-Insert //adjust to appropriate service
 		otherwise use:
-			when-name-of-day-is 
+			when-name-of-day-is
 				Sunday use:
-					Section Instance02
+					Section Instance00_sunday
 						Insert_section ST.li.oc End-Insert
 						Insert_section LI._10_Parts__._1_antiphons__.sundays_weekdays_feasts End-Insert
 							Break line End_Break
@@ -49,7 +49,7 @@ Status Final
 						Insert_section LI._10_Parts__._4_entrance End-Insert
 							Break line End_Break
 						Title role desig sid YmnoiMetaTinMikranEisodon End-Title
-						Insert_section se.m06.d18.li.Instance02.hymns End-Insert
+						Insert_section se.m06.d18.li.Instance00_sunday.hymns End-Insert
 							Break line End_Break
 						Insert_section LI._10_Parts__._5_trisagionhymn__.chrys End-Insert
 							Break line End_Break
@@ -69,12 +69,16 @@ Status Final
 						Insert_section Selector_Dismissals.Com_No.part1 End-Insert
 							Break line End_Break	
 						Insert_section LI._10_Parts__._9_fasting_ End-Insert
-					End-Section //Sunday
+					End-Section
+				Saturday use:
+					Section Instance00_saturday
+						Insert_section Instance00_weekday End-Insert
+					End-Section
 				otherwise use:
-					Section Instance01
-						Insert_section ST.li.oc_me1 End-Insert
+					Section Instance00_weekday
+						Insert_section ST.li.ho_oc End-Insert
 						Insert_section LI._10_Parts__._1_antiphons__.sundays_weekdays_feasts End-Insert
-						Insert_section AP.ga.martyr_mode4_ End-Insert
+						Insert_section AP.da__.dayofweek1_ End-Insert
 							Break line End_Break
 							Break page End_Break
 						Insert_section LI._10_Parts__._2_typika__.rubrics End-Insert
@@ -84,7 +88,7 @@ Status Final
 						Insert_section LI._10_Parts__._4_entrance End-Insert
 							Break line End_Break
 						Title role desig sid YmnoiMetaTinMikranEisodon End-Title
-						Insert_section se.m06.d18.li.Instance01.hymns End-Insert
+						Insert_section se.m06.d18.li.Instance00_weekday.hymns End-Insert
 							Break line End_Break
 						Insert_section LI._10_Parts__._5_trisagionhymn__.chrys End-Insert
 							Break line End_Break

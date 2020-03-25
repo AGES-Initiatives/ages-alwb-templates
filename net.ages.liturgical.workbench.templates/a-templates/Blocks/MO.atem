@@ -23,6 +23,34 @@ Status NA
 	import bTags.*
 	import roles.*
 
+//services
+	Section Midnight_Office_Weekday
+		Insert_section ST.mo._ End-Insert
+		Insert_section _01_intro_ End-Insert
+		Insert_section _02_kathisma_ End-Insert
+		Insert_section _05_creed End-Insert
+		Insert_section _07_prayers_ End-Insert
+		when-movable-cycle-day-is
+			23 thru 67 use:
+				Insert_section _08_lentprayer End-Insert
+		end-when
+		Insert_section _09_prayers_psalms_ End-Insert
+		Insert_section _10_troparia_kontakia_ End-Insert
+		Insert_section _11_prayers End-Insert
+		Insert_section _12_troparia End-Insert
+		Insert_section _13_end_dismissal__.after_hymns End-Insert
+	End-Section
+	
+	Section Midnight_Office_Sunday
+		Insert_section ST.mo.oc End-Insert
+		Insert_section _01_intro_ End-Insert
+		Insert_section _03_triadic_canon_ End-Insert
+		Insert_section _04_triadic_megalynaria End-Insert
+		Insert_section _06_sundays_feastdays_ End-Insert
+		Insert_section _13_end_dismissal__.append_sunday_feastday End-Insert
+	End-Section
+
+//blocks
 	Section _01_intro_
 		Section enarxis
 			Actor sid Priest End-Actor
@@ -325,17 +353,17 @@ Status NA
 			when-name-of-day-is
 				Saturday use:
 					Title<Tdesig>sid hoMO.SaturdayTroparion1.mode</>End-Title
-					Hymn sid hoMO.SaturdayTroparion1.text End-Hymn
+					Hymn sid hoMO.SaturdayTroparion1.text @ver media-off End-Hymn
 					Title sid Doxa End-Title
-					Hymn sid hoMO.SaturdayTroparion2.text End-Hymn
+					Hymn sid hoMO.SaturdayTroparion2.text @ver media-off End-Hymn
 					Title sid KaiNyn End-Title
-					Hymn sid hoMO.SaturdayTroparion3.text End-Hymn
+					Hymn sid hoMO.SaturdayTroparion3.text @ver media-off End-Hymn
 				otherwise use:
-					Hymn sid tr.d065_gr_GR_cog.trHW.Troparion.text sid tr.d065_gr_GR_cog.trHW.Troparion3.text @ver End-Hymn
+					Hymn sid tr.d065_gr_GR_cog.trHW.Troparion.text media-off sid tr.d065_gr_GR_cog.trHW.Troparion3.text @ver media-off End-Hymn
 					Title sid Doxa End-Title
-					Hymn sid oc.m8.d2_gr_GR_cog.ocMA.Kathisma12.text @ver End-Hymn
+					Hymn sid oc.m8.d2_gr_GR_cog.ocMA.Kathisma12.text @ver media-off End-Hymn
 					Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
-					Hymn sid hoMO.AfterCreedTheotokion.text @ver End-Hymn
+					Hymn sid hoMO.AfterCreedTheotokion.text @ver media-off End-Hymn
 			end-when
 		End-Section
 		Section prayers
@@ -347,17 +375,18 @@ Status NA
 			Reading sid EnOnomatiKyriou.text End-Reading
 			Actor sid Priest End-Actor
 			Dialog sid OTheosOiktirisai.text End-Dialog
-			Actor sid Reader End-Actor
-			Dialog sid res04 End-Dialog
+			Dialog<i>sid res04p</>End-Dialog
 		End-Section
 	End-Section
 	Section _08_lentprayer
 		when-name-of-day-is
 			Monday, Tuesday, Wednesday, Thursday, Friday use:
+				Break line End_Break
 				Insert_section TR.StEphraimPrayer End-Insert
 		end-when
 	End-Section
 	Section _09_prayers_psalms_
+		Actor sid Reader End-Actor
 		Title<Tdesig>sid ho.MO.StMardariosPrayer.title</>End-Title
 		Reading sid ho.MO.StMardariosPrayer.text @ver sid res04 End-Reading
 		when-name-of-day-is
@@ -366,14 +395,12 @@ Status NA
 				Title<Tdesig>sid ho.MO.StEfstratiosPrayer.title</>End-Title
 				Reading sid ho.MO.StEfstratiosPrayer.text @ver End-Reading
 			otherwise use:
-				Rubric sid ho.MO.StBasilPrayer1.rubric End-Rubric
-				Title<Tdesig>sid ho.MO.StBasilPrayer1.title</>End-Title
-				Reading sid ho.MO.StBasilPrayer1.text @ver sid res04 End-Reading
+				Insert_section basilprayer1 End-Insert
 				Rubric sid ho.MO.StBasilPrayer2.rubric End-Rubric
 			//	Actor sid Priest End-Actor
 				Title<Tdesig>sid ho.MO.StBasilPrayer2.title</>End-Title
 				Reading sid ho.MO.StBasilPrayer2.text @ver End-Reading
-			//	Actor sid Reader End-Actor
+				Actor sid Reader End-Actor
 				Dialog sid res04 End-Dialog
 		end-when
 		Reading sid DefteProskinisomen1 End-Reading
@@ -381,16 +408,16 @@ Status NA
 		Reading sid DefteProskinisomen3 End-Reading
 		Insert_section PS.Kathisma18.stanza1.Psalm_120_Verses End-Insert
 		Insert_section PS.Kathisma18.stanza3.Psalm_133_Verses End-Insert
-		Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+		Hymn sid DoxaPatri.text sid KaiNynKaiAei.text End-Hymn
 		Insert_section _07_prayers_.trisagion End-Insert
 	End-Section
 	Section _10_troparia_kontakia_
-		Hymn sid oc.m2.d7_gr_GR_cog.ocMA.Kathisma23.text @ver End-Hymn
-		Hymn sid oc.m8.d7_gr_GR_cog.ocMA.Kathisma23.text @ver End-Hymn
+		Hymn sid oc.m2.d7_gr_GR_cog.ocMA.Kathisma23.text @ver media-off End-Hymn
+		Hymn sid oc.m8.d7_gr_GR_cog.ocMA.Kathisma23.text @ver media-off End-Hymn
 		Title sid Doxa End-Title
-		Hymn sid tr.d014_gr_GR_cog.trMA.Kontakion1.text @ver End-Hymn
+		Hymn sid tr.d014_gr_GR_cog.trMA.Kontakion1.text @ver media-off End-Hymn
 		Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
-		Hymn sid me.m08.d15_gr_GR_cog.meMA.Hypakoe.text @ver End-Hymn
+		Hymn sid me.m08.d15_gr_GR_cog.meMA.Hypakoe.text @ver media-off End-Hymn
 	End-Section
 	Section _11_prayers
 		Reading sid res01<inr>sid Twelve</>End-Reading
@@ -469,8 +496,28 @@ Status NA
 			Insert_section append_sunday_feastday End-Insert
 		End-Section
 	End-Section
+	
+	//prayer logic
+	Section basilprayer1
+		when-date-is
+			Sep 22 thru 30 use:
+				Section prayer1
+					Rubric sid ho.MO.StBasilPrayer1.rubric End-Rubric
+					Title<Tdesig>sid ho.MO.StBasilPrayer1.title</>End-Title
+					Reading sid ho.MO.StBasilPrayer1.text @ver End-Reading
+				End-Section
+			Oct 1 thru 31 use: Insert_section prayer1 End-Insert
+			Nov 1 thru 30 use: Insert_section prayer1 End-Insert
+			Dec 1 thru 31 use: Insert_section prayer1 End-Insert
+			Jan 1 thru 31 use: Insert_section prayer1 End-Insert
+			Feb 1 thru 29 use: Insert_section prayer1 End-Insert
+			otherwise use:
+				when-movable-cycle-day-is
+					1 thru 63 use: Insert_section prayer1 End-Insert
+				end-when
+		end-when
+	End-Section	
+	
 
-	Section Midnight_Office_Weekday
-	End-Section
 
 End-Template

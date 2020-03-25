@@ -36,17 +36,11 @@ Status Final
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-	when-movable-cycle-day-is 122 thru 127 use:
-		when-movable-cycle-day-is 
-			126, 127 use:
-				Section Instance01
-					Insert_section mc.map.ve.Section01 End-Insert
-				End-Section
-			otherwise use:
-				Section Instance02 //weekday in Pent
-				End-Section
-		end-when
-	otherwise use:	
+	when-movable-cycle-day-is 
+		126, 127 use:
+			Insert_section mc.map.ma.Section02 End-Insert //adjust to appropriate service
+		122, 123, 124, 125 use:
+		otherwise use:
 		when-name-of-day-is 
 			Sunday use:	
 				Section Instance04 //Sunday

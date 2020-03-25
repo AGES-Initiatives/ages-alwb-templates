@@ -37,17 +37,17 @@ Status Final
 	End-Preface
 
 	when-movable-cycle-day-is 
-		1 thru 127 use:
+		112 thru 127 use:
 			Insert_section mc.map.ve.Section01 End-Insert //adjust to appropriate service
 		otherwise use:
 			when-name-of-day-is
 				Sunday use:
-					Section Instance02
+					Section Instance00_sunday
 						Insert_section ST.ve.oc_me1 End-Insert
 						Insert_section VE._01_Beginning__.vespers End-Insert
 						Insert_section VE._02_Kekragaria__.modeofweek__.for10 End-Insert
 						Insert_section VE._03_Stichera__.oc__.sunday__.s_1234567as1234567 End-Insert
-						Insert_section TI.s._09_martyr_.m End-Insert
+						Insert_section TI.s._00_saint_.m End-Insert
 						Insert_section VE._03_Stichera__.me__.p_123as8910 End-Insert
 						Insert_section VE._03_Stichera__.gloryboth__.firsttheotokion.modeofweek End-Insert	
 						Insert_section VE._04_Middle__.entrance End-Insert	
@@ -59,9 +59,13 @@ Status Final
 						Insert_section VE._10_End__.wisdom End-Insert
 						Insert_section VE._11_Dismissal__.nocommemoration End-Insert
 					End-Section
+				Saturday use:
+					Section Instance00_saturday
+						Insert_section Instance00_weekday End-Insert
+					End-Section
 				otherwise use:
-					Section Instance01
-						Insert_section ST.ve.oc_me1 End-Insert
+					Section Instance00_weekday
+						Insert_section ST.ve.oc_me1_ho End-Insert
 						Insert_section VE._01_Beginning__.vespers End-Insert
 						Insert_section VE._02_Kekragaria__.modeofweek__.for6 End-Insert
 						Insert_section VE._03_Stichera__.oc__.weekday__.p_XXXas567 End-Insert
@@ -70,10 +74,9 @@ Status Final
 						Insert_section VE._03_Stichera__.gloryboth__.metheotokion End-Insert
 						Insert_section VE._04_Middle__.noentrance End-Insert
 						Insert_section VE._06_Litanies__.noektenia End-Insert
-						Insert_section VE._08_Aposticha__.oc__.weekday_ End-Insert
+						Insert_section VE._08_Aposticha__.oc__.weekday_  End-Insert
 						Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
-						Insert_section AP.ga.martyr_mode4_ End-Insert
-						Insert_section AP.gloryboth__.theotokion__.mode4_ End-Insert
+						Insert_section AP.da__.vespers End-Insert
 						Insert_section VE._10_End__.ektenia_wisdom End-Insert
 						Insert_section VE._11_Dismissal__.nocommemoration End-Insert
 					End-Section
