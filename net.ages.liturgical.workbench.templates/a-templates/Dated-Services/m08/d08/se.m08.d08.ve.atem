@@ -1,0 +1,93 @@
+Template se.m08.d08.ve 
+
+Status Final
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 8 day 8 year 2020 End_Date
+			Page_Header_Even
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L1 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.pdf.cover.ve.s_oc_mecom_w_me End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	when-name-of-day-is 
+		Sunday use:	
+			Section Instance02 
+				Insert_section ST.ve.oc_meaf End-Insert
+				Insert_section VE._01_Beginning__.vespers End-Insert
+				Insert_section VE._02_Kekragaria__.modeofweek__.for10 End-Insert
+				Insert_section VE._03_Stichera__.oc__.sunday__.s_123456as123456 End-Insert
+					Set_Date month 8 day 6 year 2020 End_Date
+					Insert_section TI.f End-Insert
+					Insert_section VE._03_Stichera__.me__.i_1234as78910 End-Insert
+					Insert_section VE._07_Lity__.part2__.me__.glory_ End-Insert
+				Set_Date month 8 day 8 year 2020 End_Date
+				Insert_section VE._03_Stichera__.both__.firsttheotokion__.modeofweek End-Insert	
+				Insert_section VE._04_Middle__.entrance End-Insert	
+				Insert_section VE._06_Litanies__.fullektenia End-Insert
+				Insert_section VE._08_Aposticha__.oc__.sunday__.aposticha1234 End-Insert
+					Set_Date month 8 day 6 year 2020 End_Date
+					Insert_section TI.gb.f End-Insert
+					Insert_section VE._07_Lity__.part2__.me__.both_.hymn End-Insert
+				Set_Date month 8 day 8 year 2020 End_Date
+				Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
+				Insert_section AP.res__.modeofweek End-Insert
+				Insert_section AP.gloryboth__.af End-Insert
+				Insert_section VE._10_End__.wisdom End-Insert
+				Insert_section VE._11_Dismissal__.nocommemoration End-Insert
+			End-Section
+		otherwise use:
+			Section Instance01
+				Insert_section ST.ve.me_hocanon End-Insert
+				Insert_section VE._01_Beginning__.vespers End-Insert
+				Insert_section VE._02_Kekragaria__.mode4__.for6 End-Insert
+				Insert_section TI.stp.f End-Insert
+				Insert_section VE._03_Stichera__.me__.p_123as567 End-Insert
+				Insert_section TI.s._00_saint_.m End-Insert
+				Insert_section VE._03_Stichera__.me__.p_456as8910 End-Insert
+				Insert_section TI.gb.f End-Insert
+				Insert_section VE._03_Stichera__.gloryboth__.me__.gloryasgloryboth_.hymn End-Insert
+				Rubric sid client_gr_GR_cog.cl.me.m08.vespers_entrance.R001 End-Rubric
+				Insert_section VE._04_Middle__.entrance End-Insert	
+				Insert_section VE._06_Litanies__.fullektenia End-Insert
+				Insert_section VE._08_Aposticha__.me__.p_transfiguration12 End-Insert
+				Insert_section VE._08_Aposticha__.gloryboth__.me__.gloryasgloryboth_ End-Insert
+				Insert_section VE._09_Symeon_Trisagion__.Priest.symeon End-Insert
+				Section paraklesis
+					Insert_section Selector_AugustVespersParaklesis.canon_at_vespers_part1 End-Insert
+					Insert_section AP.af End-Insert
+					Insert_section LN.Ektenia06_priest End-Insert
+					Insert_section VE._10_End__.wisdom End-Insert
+					Insert_section Selector_Dismissals.Com_No.part1 End-Insert
+					Insert_section Selector_AugustVespersParaklesis.canon_at_vespers_part2 End-Insert
+				End-Section
+			End-Section
+	end-when
+
+End-Template
