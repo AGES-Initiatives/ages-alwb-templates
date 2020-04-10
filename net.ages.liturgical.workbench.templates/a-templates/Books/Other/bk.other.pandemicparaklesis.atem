@@ -1,9 +1,11 @@
-Template bk.other.stnicholasparaklesis1
+Template bk.other.pandemicparaklesis
 
 Status Final
 
-	import other.stnicholasparaklesis1_gr_GR_cog.*
+	import other.pandemicparaklesis_gr_GR_cog.*
 	import liturgical.verses_gr_GR_cog.*
+	import ps_gr_GR_cog.*
+	import client_gr_GR_cog.*
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -18,12 +20,12 @@ Status Final
 	import roles.*
 
 	Head 
-		Template_Title @text "Paraklesis to St. Nicholas of Myra" End_Title
+		Template_Title @text "Supplication Service During a Pandemic" End_Title
 			Page_Header_Even
-				center @text "Paraklesis to St. Nicholas" 
+				center @text "Supplication Service During a Pandemic" 
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @text "Paraklesis to St. Nicholas"
+				center @text "Supplication Service During a Pandemic"
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -34,21 +36,18 @@ Status Final
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
-	//Preface Covers
-	//	Insert_template ematins.cover.sp End-Insert
-	//	Insert_template ematins.credits End-Insert
-	//	Insert_template ematins.credits_facing End-Insert
-	//End-Preface
- 
+/*	Preface Covers
+		Insert_template ematins.cover.sp End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+ */ 
 
-	Title<Tdesig>sid hoCA.title</>End-Title
-	Title<Tdesig>sid hoCA.title2</>End-Title
-	Title<Tdesig>sid hoCA.title3</>End-Title
-	Title<Tdesig>sid hoCA.title4</>End-Title
-	Title<inr>sid hoCA.poet</>End-Title
+	Title role desig sid hoCA.title End-Title
+	Title role desig sid hoCA.title2 End-Title
+	Title<Trubric>sid hoCA.poet</>End-Title
 	Title<Trubric>sid hoCA.translator</>End-Title
 	Break line End_Break
-//	Title<r>sid hoCA.media.text</>End-Title
+	Title<r>sid hoCA.media.text</>End-Title
 	Media sid hoCA.media.text End-Media
 	Section Section01
 		Actor sid Priest End-Actor
@@ -58,18 +57,19 @@ Status Final
 		Insert_section LiturgicalPsalms.Psalm_142_Paragraph End-Insert
 		Rubric sid ho.s23_gr_GR_cog.R02 End-Rubric
 		Insert_section MA._01_Beginning__.mode4 End-Insert
-		Title<Tdesig>sid Troparia</>End-Title
+		Title role desig sid Troparia End-Title
 		Title<Tmode>sid hoCA.Apolytikion1.mode</><Tmelody>sid hoCA.Apolytikion1.melody</>End-Title
 		Hymn sid hoCA.Apolytikion1.text End-Hymn
-		Title sid DoxaKaiNyn<Tdesig>sid Theotokion</><Tdesig>sid Omoion</>End-Title
-		Hymn sid ho.s23_gr_GR_cog.hoCA.Apolytikion2.text End-Hymn
+		Insert_section TI.gb._ End-Insert
+		Title sid KaiNyn<Tdesig>sid Theotokion</><Tdesig>sid Omoion</>End-Title
+		Hymn sid hoCA.Apolytikion2.text End-Hymn
 		Actor sid Reader End-Actor
 		Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
 	End-Section
 	Section Section02
-		Title<Tdesig>sid OKanon</>End-Title
-		Title role smallcenter sid hoCA.Acrostic.text End-Title
 		Actor sid Choir End-Actor
+		Title role desig sid OKanon End-Title
+		Title<Trubric>sid hoCA.Acrostic.text</>End-Title
 		Title<Tdesig>sid Ode1</><Tmode>sid hoCA.Ode11.mode</><Tmelody>sid hoCA.Ode11.melody</>End-Title
 		Verse sid hoCA.verse End-Verse
 		Hymn sid hoCA.Ode11.text End-Hymn
@@ -97,10 +97,28 @@ Status Final
 		Hymn sid hoCA.Troparion31.text End-Hymn	
 		Hymn sid hoCA.Troparion32.text End-Hymn	
 	End-Section	
-	Insert_section LN.Ektenia05_priest End-Insert
+	Section Ektenia_priest
+		Actor sid Priest End-Actor
+		Dialog sid pet17 End-Dialog
+		Dialog<i>sid res06p</>End-Dialog
+		Dialog sid pet18 End-Dialog
+		Dialog<i>sid res06p</>End-Dialog
+		Dialog sid pet19Sa sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
+		Dialog<i>sid res06p</>End-Dialog
+	//	Dialog sid pet21 End-Dialog
+	//	Dialog<i>sid res06p</>End-Dialog
+	//	Dialog sid pet21p End-Dialog
+		Dialog sid hoCA.Petition1 End-Dialog
+		Dialog<i>sid res06p</>End-Dialog
+	//	Dialog sid pet23 End-Dialog
+	//	Dialog<i>sid res06p</>End-Dialog
+		Actor sid Priest End-Actor
+		Dialog sid exc11 End-Dialog
+		Dialog<i>sid res04p</>End-Dialog
+	End-Section
 	Section Section05
 		Actor sid Choir End-Actor
-		Title<Tdesig>sid Kathisma</>End-Title
+		Title role desig sid Kathisma End-Title
 		Title<Tmode>sid hoCA.Kathisma11.mode</><Tmelody>sid hoCA.Kathisma11.melody</>End-Title
 		Hymn sid hoCA.Kathisma11.text End-Hymn
 	End-Section	
@@ -144,18 +162,18 @@ Status Final
 		Hymn sid hoCA.Troparion61.text End-Hymn	
 		Hymn sid hoCA.Troparion62.text End-Hymn	
 	End-Section	
-	Insert_section LN.Ektenia05_priest End-Insert
+	Insert_section Ektenia_priest End-Insert
 	Section Section10
 		Actor sid Choir End-Actor
 		Title<Tdesig>sid Kontakion</>End-Title
 		Title<Tmode>sid hoCA.Kontakion.mode</><Tmelody>sid hoCA.Kontakion.melody</>End-Title
 		Hymn sid hoCA.Kontakion.text End-Hymn
-		Rubric sid client_gr_GR_cog.cl.ho.s23.R003 End-Rubric
-		Insert_section MA._06_Antiphons__.append__.mode41_prokeimenon_.antiphon End-Insert
-		Title<Tdesig>sid Prokeimenon sid Mode4</>End-Title
-		Hymn sid psVE.hierarchs.aposverse.v2.text<r>sid Twice</>End-Hymn
-		Verse<bnr>sid vVerse</>sid psVE.hierarchs.aposverse.v4.text End-Verse
-		Hymn sid psVE.hierarchs.aposverse.v2.text @ver End-Hymn
+	//	Rubric sid client_gr_GR_cog.cl.ho.s23.R003 End-Rubric
+	//	Insert_section MA._06_Antiphons__.append__.mode41_prokeimenon_.antiphon End-Insert
+		Title<Tdesig>sid Prokeimenon</><Tmode>sid Mode4</>End-Title
+		Hymn sid psVE.prokeimenon.wednesday.v1.text<r>sid Twice</>End-Hymn
+		Verse<bnr>sid vVerse</>sid psVE.prokeimenon.wednesday.v2.text End-Verse
+		Hymn sid psVE.prokeimenon.wednesday.v1.text @ver End-Hymn
 		Actor sid Priest End-Actor
 		Dialog sid gos01 End-Dialog
 		Dialog<i>sid res06p</>End-Dialog
@@ -167,13 +185,13 @@ Status Final
 	End-Section
 	Section Section11
 		Actor sid Priest End-Actor
-		Dialog sid gos03a sid le.go.ge.hierarch_gr_GR_cog.legeMA.Gospel.book_string sid gos03b End-Dialog
+		Dialog sid gos03a sid le.go.os_gr_GR_cog.leosCA.ParaklesisPandemic.Gospel.book_string sid gos03b End-Dialog
 		Actor sid Priest End-Actor
 		Dialog sid exc19 End-Dialog
 		Dialog<i>sid DoxaSoiKyrieP</>End-Dialog
 		Actor sid Priest End-Actor
-		Title role chapverse sid le.go.ge.hierarch_gr_GR_cog.legeMA.Gospel.book_abbr sid le.go.ge.hierarch_gr_GR_cog.legeMA.Gospel.chapverse End-Title
-		Reading sid le.go.ge.hierarch_gr_GR_cog.legeMA.Gospel.text @ver End-Reading
+		Title role chapverse sid le.go.os_gr_GR_cog.leosCA.ParaklesisPandemic.Gospel.book_abbr sid le.go.os_gr_GR_cog.leosCA.ParaklesisPandemic.Gospel.chapverse End-Title
+		Reading sid le.go.os_gr_GR_cog.leosCA.ParaklesisPandemic.Gospel.text @ver End-Reading
 		Dialog<i>sid DoxaSoiKyrieP</>End-Dialog
 	End-Section
 	Section Section12
@@ -183,12 +201,12 @@ Status Final
 		Title sid KaiNyn End-Title
 		Hymn sid hoCA.PostGospelBoth.text End-Hymn
 		Title<Tmode>sid hoCA.PostGospelHymn1.mode</><Tmelody>sid hoCA.PostGospelHymn1.melody</>End-Title
-		Verse<bnr>sid vVerse</>sid psMA.postgospelverse.v1.text @ver End-Verse
+		Verse<bnr>sid vVerse</>sid psa50.v3.text End-Verse
 		Hymn sid hoCA.PostGospelHymn1.text media-off End-Hymn
 	End-Section
 	Section Supplication_Plain_priest
 		Actor sid Priest End-Actor
-		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08_nicholas sid sup09 sid sup10 sid sup11 sid sup12 sid client_gr_GR_cog.cl.localpatronsaint1.supplication sid sup14 sid hoCA.Insert1 sid sup15 sid sup99 End-Dialog	
+		Dialog sid sup00 sid sup01 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12 sid client_gr_GR_cog.cl.localpatronsaint1.supplication sid sup14 sid hoCA.Insert1 sid sup15 sid sup99 End-Dialog	
 		Actor sid Choir End-Actor
 		Dialog sid res01<r>sid Twelve</>End-Dialog
 		Actor sid Priest End-Actor
@@ -233,13 +251,14 @@ Status Final
 		Hymn sid hoCA.Ode9T.text End-Hymn
 	End-Section
 	Section Section16
-		Title<Tdesig>sid Megalynaria</>End-Title
+		Title role desig sid Megalynaria End-Title
 		Hymn sid hoCA.Meg00.text End-Hymn
 		Hymn sid hoCA.Meg01.text End-Hymn
 		Hymn sid hoCA.Meg02.text End-Hymn
 		Hymn sid hoCA.Meg03.text End-Hymn
 		Hymn sid hoCA.Meg04.text End-Hymn
 		Hymn sid hoCA.Meg05.text End-Hymn
+		Hymn sid hoCA.Meg06.text End-Hymn
 		Hymn sid hoCA.Meg0F.text End-Hymn
 	End-Section
 	Section Section17
@@ -251,20 +270,18 @@ Status Final
 		Dialog sid res04 End-Dialog
 	End-Section
 	Section Section18
-		Title<Tdesig>sid Apolytikion</>End-Title
-		Insert_section AP.ganame.Dec06__.nicholas_.hymn End-Insert
-	//	Title<Tmode>sid Mode6</>End-Title
-	//	Hymn sid oc.m6.d2_gr_GR_cog.ocMA.Kathisma21.text @ver End-Hymn
-	//	Title sid Doxa End-Title
-	//	Hymn sid oc.m6.d2_gr_GR_cog.ocMA.Kathisma22.text @ver End-Hymn
-	//	Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
-	//	Hymn sid oc.m6.d5_gr_GR_cog.ocMA.Kathisma13.text @ver End-Hymn
+		Title role mode sid Mode6 End-Title
+		Hymn sid oc.m6.d2_gr_GR_cog.ocMA.Kathisma21.text End-Hymn
+		Title sid Doxa End-Title
+		Hymn sid oc.m6.d2_gr_GR_cog.ocMA.Kathisma22.text End-Hymn
+		Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+		Hymn sid oc.m6.d5_gr_GR_cog.ocMA.Kathisma13.text End-Hymn
 	End-Section
 	Insert_section LN.Ektenia06_priest End-Insert
 	Section Section19
 		Actor sid Priest End-Actor
 		Dialog sid DoxaSoiOTheosImon.text End-Dialog
-		Dialog sid dis00 sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08 sid dis09 sid hoCA.Insert1 sid dis10 sid dis89 End-Dialog 
+		Dialog sid dis00 sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid client_gr_GR_cog.cl.localpatronsaint1.dismissal</>sid dis09 sid hoCA.Insert1 sid dis10 sid dis89 End-Dialog 
 	End-Section
 	Section Section20
 		Actor sid Choir End-Actor
@@ -279,5 +296,14 @@ Status Final
 		Dialog sid res04p End-Dialog
 	End-Section	
 	Break line End_Break
+	Title sid horizontal_line.solid1 End-Title
+	Section Section23
+		Title<Tdesig>sid other.prayers_gr_GR_cog.PandemicPrayer1.title</>End-Title
+		Actor sid Priest End-Actor
+		Dialog sid pet00 End-Dialog
+		Dialog<i>sid res01p</>End-Dialog
+		Para role prayer sid other.prayers_gr_GR_cog.PandemicPrayer1.text @ver End-Para
+		Dialog<i>sid res04p</>End-Dialog
+	End-Section
 
 End-Template
