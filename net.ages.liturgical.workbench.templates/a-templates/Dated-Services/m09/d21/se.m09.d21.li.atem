@@ -1,6 +1,6 @@
 Template se.m09.d21.li 
 
-Status NA
+Status Final
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -31,8 +31,6 @@ Status NA
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
-
-
 	when-name-of-day-is
 		Sunday use:
 			Section Instance02 //Sunday
@@ -51,7 +49,7 @@ Status NA
 				Insert_section LE._01_Epistle__.cross__.sunAC_ End-Insert
 				Insert_section LE._02_Gospel__.cross__.sunAC_ End-Insert
 				Insert_section LI._08_Liturgy__.chrys_default End-Insert
-				Insert_section LI._09_Dismissal__.commemoration End-Insert
+				Insert_section LI._09_Dismissal__.nocommemoration End-Insert
 			End-Section
 			
 		otherwise use:
@@ -62,7 +60,7 @@ Status NA
 				Insert_section LI._04_Entrance__.choir End-Insert
 				Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
 				Section hymns
-					Set_Date month 9 day 14 year 2020 End_Date
+					Set_Date month 9 day 14 End_Date
 					Insert_section AP.f3 End-Insert
 					Insert_section KO.seasonal End-Insert
 					Set_Date month 9 day 21 year 2020 End_Date
@@ -75,18 +73,18 @@ Status NA
 					otherwise use:
 						Section weekday
 							Insert_section LE._01_Epistle__.daily_.title End-Insert
-								Set_Date month 9 day 14 year 2020 End_Date
+								Set_Date month 9 day 14 End_Date
 								Insert_section LE._01_Epistle__.menaion_.prokeimenon End-Insert
-							Set_Date month 9 day 21 year 2020 End_Date
+							Set_Date month 9 day 21 End_Date
 							Insert_section LE._01_Epistle__.daily_.lesson End-Insert
-								Set_Date month 9 day 14 year 2020 End_Date
+								Set_Date month 9 day 14 End_Date
 								Insert_section LE._02_Gospel__.menaion_.alleluia End-Insert
-							Set_Date month 9 day 21 year 2020 End_Date
+							Set_Date month 9 day 21 End_Date
 							Insert_section LE._02_Gospel__.daily_.lesson End-Insert
 						End-Section
 				end-when
 				Insert_section LI._08_Liturgy__.chrys_default End-Insert
-				Insert_section LI._09_Dismissal__.commemoration End-Insert
+				Insert_section LI._09_Dismissal__.nocommemoration End-Insert
 			End-Section
 	end-when			
 
