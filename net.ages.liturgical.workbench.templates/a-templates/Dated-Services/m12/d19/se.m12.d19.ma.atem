@@ -38,10 +38,71 @@ Status Final
 
 	when-name-of-day-is
 		Sunday use:
-			Section Instance02 //Sunday
+			Section Instance03
 				Insert_section se.m12.dBC.ma.Instance01 End-Insert
 			End-Section
 			
+		Saturday use:
+			Section Instance02
+				Section block1
+					Para role servicesourcestitle sid book.BooksSources.title End-Para
+					Para role servicesources sid book.Octoechos.name sid separator.hyphen rid oc.ocVE.Stichera1.mode End-Para
+					Insert_section Selector_ServiceTitle.on_morning End-Insert
+					Para role servicesources sid book.Menaion.name sid separator.hyphen sid me.m12.d19_gr_GR_cog.meDate.text End-Para
+					Para role servicesourcessection sid me.m12.d19_gr_GR_cog.meShortCommemoration1.text End-Para
+					Para role servicesources sid book.Menaion.name sid separator.hyphen sid me.m12.d20_gr_GR_cog.meDate.text End-Para
+					Para role servicesourcessection sid me.m12.d20_gr_GR_cog.meShortCommemoration2.text End-Para
+					Title sid horizontal_line.solid1 End-Title
+					Break line End_Break
+					Title<bnr>sid ma.html.tab</>End-Title
+				End-Section
+				Insert_section MA._01_Beginning__.mode4 End-Insert
+				Set_Date month 12 day 20 End_Date
+					Insert_section TI.a.me.com2 End-Insert
+					Insert_section AP.ganame.Dec20__.ignatius_.hymn End-Insert
+				Set_Date month 12 day 19 End_Date
+				Insert_section TI.g.me.com1 End-Insert
+				Insert_section AP.ga.martyr_mode4_.hymn End-Insert
+				Insert_section AP.both__.theotokion__.mode4_ End-Insert
+				Insert_section MA._03_Kathisma1__.oc__.weekday123 End-Insert
+				Insert_section MA._07_Gospel__.no__.reader__.intro_psalm50 End-Insert
+				Set_Date month 12 day 20 End_Date
+					Insert_section TI.k.me.com2 End-Insert
+					Insert_section MA._11_Kontakion__.append__.me2_.konoik_nt End-Insert
+				Set_Date month 12 day 19 End_Date
+				Insert_section SY.Different_Date__.Dec20_StIgnatius End-Insert
+				Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
+				Insert_section MA._10_Canon__.magnificat__.modeofcanon__.me1 End-Insert
+				Insert_section CA.heirmos.ode9.me End-Insert
+				Insert_section MA._10_Canon__.ode9_end End-Insert
+				Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+				Set_Date month 12 day 20 End_Date
+					Insert_section TI.e.me.com2 End-Insert
+					Insert_section MA._12_Exaposteilarion__.append__.me__.exap2_ End-Insert
+					Insert_section TI.another._ End-Insert
+					Insert_section MA._12_Exaposteilarion__.append__.me__.exap3_ End-Insert
+					Set_Date month 12 day 13 End_Date
+						Insert_section MA._12_Exaposteilarion__.append__.me__.theotokion End-Insert
+				Set_Date month 12 day 19 End_Date
+				Insert_section MA._13_Lauds__.read__.all End-Insert
+				Insert_section MA._14_Doxology__.append_small End-Insert
+				Insert_section MA._15_Litanies__.aftersmalldoxology End-Insert
+				Insert_section MA._16_Aposticha__.oc_.aposticha End-Insert
+				Set_Date month 12 day 20 End_Date
+					Insert_section TI.g.me.com2 End-Insert
+					Insert_section MA._16_Aposticha__.glory__.me__.gloryasglory_.hymn End-Insert
+					Insert_section VE._08_Aposticha__.both__.secondarytheotokion__.mode1 End-Insert
+				Insert_section MA._17_ItIsGood_Trisagion__.not_lent End-Insert
+					Insert_section TI.a.me.com2 End-Insert
+					Insert_section AP.ganame.Dec20__.ignatius_.hymn End-Insert
+				Set_Date month 12 day 19 End_Date
+				Insert_section TI.g.me.com1 End-Insert
+				Insert_section AP.ga.martyr_mode4_.hymn End-Insert
+				Insert_section AP.both__.endofmatins_theotokion__.mode4_ End-Insert
+				Insert_section MA._18_End__.ektenia_wisdom End-Insert
+				Insert_section MA._20_Dismissal__.specificcommemoration__.dec19_when_saturday End-Insert
+			End-Section
+		
 		otherwise use:
 			Section Instance01
 				Insert_section ST.ma.oc_me1 End-Insert
@@ -58,15 +119,8 @@ Status Final
 				Insert_section MA._10_Canon__.ode9_end End-Insert
 				Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
 				Insert_section MA._12_Exaposteilarion__.weekday__.all End-Insert
-				when-name-of-day-is
-					Saturday use:
-						Insert_section MA._13_Lauds__.modeofweek__.for4 End-Insert
-						Insert_section MA._13_Lauds__.oc__.saturday_ End-Insert
-						Insert_section MA._14_Doxology__.small End-Insert
-					otherwise use:
-						Insert_section MA._13_Lauds__.read__.all End-Insert
-						Insert_section MA._14_Doxology__.append_small End-Insert
-				end-when
+				Insert_section MA._13_Lauds__.read__.all End-Insert
+				Insert_section MA._14_Doxology__.append_small End-Insert
 				Insert_section MA._15_Litanies__.aftersmalldoxology End-Insert
 				Insert_section MA._16_Aposticha__.oc_ End-Insert
 				Insert_section MA._17_ItIsGood_Trisagion__.not_lent End-Insert

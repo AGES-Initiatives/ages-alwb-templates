@@ -32,23 +32,69 @@ Status Final
 	End_Head
 
 	Preface Covers
-		Insert_template ematins.pdf.cover.ve.s_oc_mecom_w_oc_me1 End-Insert
+		Insert_template ematins.pdf.cover.ve.s_oc_mecom_w_oc_mecom End-Insert
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
 	when-name-of-day-is
 		Sunday use:
-			Section Instance02 //Sunday
+			Section Instance03
 				Insert_section se.m12.dBC.ve.Instance01 End-Insert
 			End-Section
 			
+		Saturday use:
+			Section Instance02
+				Section block1
+					Para role servicesourcestitle sid book.BooksSources.title End-Para
+					Para role servicesources sid book.Menaion.name sid separator.hyphen sid me.m12.d19_gr_GR_cog.meDate.text End-Para
+					Para role servicesourcessection sid me.m12.d19_gr_GR_cog.meShortCommemoration1.text End-Para
+					Para role servicesources sid book.Menaion.name sid separator.hyphen sid me.m12.d20_gr_GR_cog.meDate.text End-Para
+					Para role servicesourcessection sid me.m12.d20_gr_GR_cog.meShortCommemoration2.text End-Para
+					Para role servicesources sid book.Octoechos.name sid separator.hyphen rid oc.ocVE.Stichera1.mode End-Para
+					Insert_section Selector_ServiceTitle.on_evening_before End-Insert
+					Title sid horizontal_line.solid1 End-Title
+					Break line End_Break
+					Title<bnr>sid ve.html.tab</>End-Title
+				End-Section
+				Insert_section VE._01_Beginning__.vespers End-Insert
+				Insert_section VE._02_Kekragaria__.mode4__.for6 End-Insert
+				Set_Date month 12 day 20 End_Date
+					Insert_section TI.stp.me.com2 End-Insert
+					Insert_section VE._03_Stichera__.me__.p_456as567 End-Insert
+				Set_Date month 12 day 19 End_Date
+				Insert_section TI.me.com1 End-Insert
+				Insert_section VE._03_Stichera__.me__.p_123as8910 End-Insert
+				Set_Date month 12 day 20 End_Date
+					Insert_section TI.g.me.com2 End-Insert
+					Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_.hymn End-Insert
+				Set_Date month 12 day 19 End_Date
+				Insert_section VE._03_Stichera__.both__.firsttheotokion__.modeofweek End-Insert
+				Insert_section VE._04_Middle__.entrance End-Insert
+				Insert_section VE._06_Litanies__.fullektenia End-Insert
+				Insert_section VE._08_Aposticha__.oc__.weekday_.aposticha End-Insert
+				Set_Date month 12 day 20 End_Date
+					Insert_section TI.g.me.com2 End-Insert
+					Insert_section VE._08_Aposticha__.glory__.me__.gloryasglory_.hymn End-Insert
+					Insert_section VE._08_Aposticha__.both__.secondarytheotokion__.mode1 End-Insert
+				Set_Date month 12 day 19 End_Date
+				Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
+				Set_Date month 12 day 20 End_Date
+					Insert_section TI.a.me.com2 End-Insert
+					Insert_section AP.ganame.Dec20__.ignatius_.hymn End-Insert
+				Set_Date month 12 day 19 End_Date
+				Insert_section TI.g.me.com1 End-Insert
+				Insert_section AP.ga.martyr_mode4_.hymn End-Insert
+				Insert_section AP.both__.theotokion__.mode4_ End-Insert
+				Insert_section VE._10_End__.wisdom End-Insert
+				Insert_section VE._11_Dismissal__.specificcommemoration__.dec19_when_saturday End-Insert
+			End-Section
+			
 		otherwise use:
-			Section Instance01 //Weekday
+			Section Instance01
 				Insert_section ST.ve.oc_me1 End-Insert
 				Insert_section VE._01_Beginning__.vespers End-Insert
 				Insert_section VE._02_Kekragaria__.modeofweek__.for6 End-Insert
 				Insert_section VE._03_Stichera__.oc__.weekday__.p_XXXas567 End-Insert
-			//	Insert_section VE._03_Stichera__.oc__.weekday__.p_XXXas567 End-Insert
 				Insert_section TI.s._09_martyr_.m End-Insert
 				Insert_section VE._03_Stichera__.me__.p_123as8910 End-Insert
 				Insert_section VE._03_Stichera__.gloryboth__.metheotokion End-Insert
