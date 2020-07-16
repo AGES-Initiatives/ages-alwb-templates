@@ -1,10 +1,6 @@
-Template se.m09.d13.mo
+Template se.m12.d27.mo
 
 Status Final
-
-	import oc.*
-	import client_gr_GR_cog.*
-	import ho.s02_gr_GR_cog.*
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -19,7 +15,7 @@ Status Final
 	import roles.*
 
 	Head 
-		Set_Date month 9 day 13 End_Date
+		Set_Date month 12 day 27 End_Date
 			Page_Header_Even
 				center @lookup sid mo.pdf.header sid d.on lang L1 @date lang L1
 			End_Page_Header_Even
@@ -35,25 +31,24 @@ Status Final
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
+//	Preface covers
+//		Insert_template ematins.appeal End-Insert
+//	End-Preface
+
 	when-name-of-day-is
 		Sunday use:
 			Section Instance02
-				Insert_section ST.mo.oc_me1 End-Insert
+				Insert_section ST.mo.oc_com End-Insert
 				Insert_section MO._01_intro_ End-Insert
 				Insert_section MO._03_triadic_canon_ End-Insert
 				Insert_section MO._04_triadic_megalynaria End-Insert
 				Insert_section MO._06_sundays_feastdays_.trisagion End-Insert
-				Insert_section AP.NM.me1_ End-Insert
+				Insert_section AP.NM.af End-Insert
 				Insert_section MO._13_end_dismissal__.append_sunday_feastday End-Insert
 			End-Section
 			
 		otherwise use:
 			Section Instance01
-				Insert_section ST.mo.me End-Insert
-				Insert_section MO._01_intro_ End-Insert
-				Insert_section MO._06_sundays_feastdays_.trisagion End-Insert
-				Insert_section AP.NM.me1_ End-Insert
-				Insert_section MO._13_end_dismissal__.append_sunday_feastday End-Insert
 			End-Section
 	end-when			
 
