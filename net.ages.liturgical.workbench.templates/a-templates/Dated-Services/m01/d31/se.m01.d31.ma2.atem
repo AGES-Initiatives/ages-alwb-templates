@@ -1,6 +1,6 @@
 Template se.m01.d31.ma2
 
-Status NA
+Status Final
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -15,7 +15,7 @@ Status NA
 	import roles.*
 
 	Head
-		Set_Date month 1 day 31 year 2020 End_Date
+		Set_Date month 1 day 31 year 2021 End_Date
 			Page_Header_Even
 				center @lookup sid ma.pdf.header sid d.on lang L1 @date lang L1
 			End_Page_Header_Even
@@ -38,8 +38,8 @@ Status NA
 
 	when-name-of-day-is 
 		Sunday use:
-			Section Instance02 //Sunday
-				Insert_section ST.ma.oc_me End-Insert
+			Section Instance02
+				Insert_section ST.ma.oc_me1 End-Insert
 				Insert_section MA._01_Beginning__.modeofweek End-Insert
 				Insert_section AP.res__.modeofweek End-Insert
 				Insert_section TI.g.s._00_saint_.mp End-Insert
@@ -67,7 +67,7 @@ Status NA
 			End-Section
 		
 			otherwise use:
-				Section Instance01 //Weekday
+				Section Instance01
 				End-Section
 	end-when			
 
