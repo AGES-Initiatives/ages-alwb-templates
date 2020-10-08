@@ -386,11 +386,16 @@ Status NA
 					//	Title<r>ldp @Service_Date</>End-Title
 						Insert_section VE._03_Stichera__.me__.p_1123as78910 End-Insert
 					End-Section
-					Section Glory
-						Title sid Doxa<Tdesig>sid Nekrosimon</>End-Title
-						Title role mode rid octrVE.SticGlory.mode End-Title
-						Hymn rid octrVE.SticGlory.text @ver End-Hymn
-					End-Section
+					when-exists
+						rid meVE.SticGlory.text use:
+							Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_ End-Insert
+						otherwise use:
+							Section Glory
+								Title sid Doxa<Tdesig>sid Nekrosimon</>End-Title
+								Title role mode rid octrVE.SticGlory.mode End-Title
+								Hymn rid octrVE.SticGlory.text @ver End-Hymn
+							End-Section
+					end-when
 					Insert_section VE._03_Stichera__.both__.firsttheotokion__.modeofweek End-Insert
 				End-Section 
 		end-when

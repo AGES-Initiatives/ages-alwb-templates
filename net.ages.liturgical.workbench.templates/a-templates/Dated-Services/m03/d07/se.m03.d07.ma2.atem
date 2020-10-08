@@ -1,7 +1,7 @@
-Template se.m03.d07.ma
+Template se.m03.d07.ma2 
 
 Status Final
-	
+
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
 	import misc_gr_GR_cog.*
@@ -17,10 +17,10 @@ Status Final
 	Head 
 		Set_Date month 3 day 7 year 2021 End_Date
 			Page_Header_Even
-				center @lookup sid ma.pdf.header lang L1 @lookup sid d.on lang L1 @date lang L1 
+				center @lookup sid ma.pdf.header sid d.on lang L1 @date lang L1
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @lookup sid ma.pdf.header lang L2 @lookup sid d.on lang L2 @date lang L2 
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -32,15 +32,25 @@ Status Final
 	End_Head
 
 	Preface Covers
-		Insert_template ematins.pdf.cover.ma.specific_2021 End-Insert
+
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
 	when-movable-cycle-day-is 
-		1 thru 127 use:
-			Insert_section mc.map.ma.Section01 End-Insert
+		1, 8 use: 
+			Insert_section mc.map.ma.Section02 End-Insert
+		14 thru 71 use: 
+			Insert_section mc.map.ma.Section02 End-Insert
 		otherwise use:
-		
+		when-name-of-day-is
+			Sunday use:
+				Section Instance02
+				End-Section
+			
+			otherwise use:
+				Section Instance01
+				End-Section
+		end-when
 	end-when	
 
 End-Template
