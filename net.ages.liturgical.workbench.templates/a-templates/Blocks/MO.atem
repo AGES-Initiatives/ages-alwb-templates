@@ -350,20 +350,25 @@ Status NA
 			Dialog sid res04 End-Dialog
 		End-Section
 		Section troparia
-			when-name-of-day-is
-				Saturday use:
-					Title<Tdesig>sid hoMO.SaturdayTroparion1.mode</>End-Title
-					Hymn sid hoMO.SaturdayTroparion1.text @ver media-off End-Hymn
-					Title sid Doxa End-Title
-					Hymn sid hoMO.SaturdayTroparion2.text @ver media-off End-Hymn
-					Title sid KaiNyn End-Title
-					Hymn sid hoMO.SaturdayTroparion3.text @ver media-off End-Hymn
+			when-date-is
+				Mar 24 use:
+					Insert_section AP.NM.me1_ End-Insert
 				otherwise use:
-					Hymn sid tr.d065_gr_GR_cog.trHW.Troparion.text media-off sid tr.d065_gr_GR_cog.trHW.Troparion3.text @ver media-off End-Hymn
-					Title sid Doxa End-Title
-					Hymn sid oc.m8.d2_gr_GR_cog.ocMA.Kathisma12.text @ver media-off End-Hymn
-					Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
-					Hymn sid hoMO.AfterCreedTheotokion.text @ver media-off End-Hymn
+					when-name-of-day-is
+						Saturday use:
+							Title<Tdesig>sid hoMO.SaturdayTroparion1.mode</>End-Title
+							Hymn sid hoMO.SaturdayTroparion1.text @ver media-off End-Hymn
+							Title sid Doxa End-Title
+							Hymn sid hoMO.SaturdayTroparion2.text @ver media-off End-Hymn
+							Title sid KaiNyn End-Title
+							Hymn sid hoMO.SaturdayTroparion3.text @ver media-off End-Hymn
+						otherwise use:
+							Hymn sid tr.d065_gr_GR_cog.trHW.Troparion.text media-off sid tr.d065_gr_GR_cog.trHW.Troparion3.text @ver media-off End-Hymn
+							Title sid Doxa End-Title
+							Hymn sid oc.m8.d2_gr_GR_cog.ocMA.Kathisma12.text @ver media-off End-Hymn
+							Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Hymn sid hoMO.AfterCreedTheotokion.text @ver media-off End-Hymn
+					end-when
 			end-when
 		End-Section
 		Section prayers
@@ -412,12 +417,17 @@ Status NA
 		Insert_section _07_prayers_.trisagion End-Insert
 	End-Section
 	Section _10_troparia_kontakia_
-		Hymn sid oc.m2.d7_gr_GR_cog.ocMA.Kathisma23.text @ver media-off End-Hymn
-		Hymn sid oc.m8.d7_gr_GR_cog.ocMA.Kathisma23.text @ver media-off End-Hymn
-		Title sid Doxa End-Title
-		Hymn sid tr.d014_gr_GR_cog.trMA.Kontakion1.text @ver media-off End-Hymn
-		Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
-		Hymn sid me.m08.d15_gr_GR_cog.meMA.Hypakoe.text @ver media-off End-Hymn
+		when-date-is
+			Mar 24 use:
+				Insert_section KO.NM.me1_ End-Insert
+			otherwise use:
+				Hymn sid oc.m2.d7_gr_GR_cog.ocMA.Kathisma23.text @ver media-off End-Hymn
+				Hymn sid oc.m8.d7_gr_GR_cog.ocMA.Kathisma23.text @ver media-off End-Hymn
+				Title sid Doxa End-Title
+				Hymn sid tr.d014_gr_GR_cog.trMA.Kontakion1.text @ver media-off End-Hymn
+				Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+				Hymn sid me.m08.d15_gr_GR_cog.meMA.Hypakoe.text @ver media-off End-Hymn
+		end-when
 	End-Section
 	Section _11_prayers
 		Reading sid res01<inr>sid Twelve</>End-Reading

@@ -1,0 +1,120 @@
+Template se.m04.d24.mo
+
+Status Final
+
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 4 day 24 year 2021 End_Date
+			Page_Header_Even
+				center @lookup sid mo.pdf.header lang L1 @lookup sid d.on lang L1 @date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid mo.pdf.header lang L2 @lookup sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+//	Preface Covers
+		//Insert_template ematins.cover.mo End-Insert
+		//Insert_template ematins.credits End-Insert
+//	End-Preface
+
+	when-movable-cycle-day-is
+		58 thru 71 use:
+			Insert_section mc.map.mo.Section01 End-Insert
+
+		72, 73, 74, 75, 77 use: //Bright Week
+			Section Instance10
+				Insert_section ST.mo.pa_me1 End-Insert
+				Actor sid Priest End-Actor
+				Dialog sid enarxis01 End-Dialog
+				Actor sid Reader End-Actor
+				Dialog sid res04 End-Dialog
+				Insert_section PE.Pascha_Hours_Parts.beginning End-Insert
+				Insert_section PE.Pascha_Hours_Parts.middle End-Insert
+				Insert_section PE.Pascha_Hours_Parts.middle End-Insert
+				Section lity
+					Rubric sid IfLityNotDoneAtVespers End-Rubric
+					Actor sid Choir End-Actor
+					Insert_section TI.ip.lity End-Insert
+					Insert_section VE._07_Lity__.part2__.me__.lity1_ End-Insert
+					Insert_section VE._07_Lity__.part2__.me__.lity2_ End-Insert
+					Insert_section VE._07_Lity__.part2__.me__.lity3_ End-Insert
+					Insert_section VE._07_Lity__.part2__.me__.lity4_ End-Insert
+					Insert_section VE._07_Lity__.part2__.me__.lity5_ End-Insert
+					Insert_section VE._07_Lity__.part2__.me__.lity6_ End-Insert
+					Insert_section VE._07_Lity__.part2__.me__.lity7_ End-Insert
+					Insert_section VE._07_Lity__.part2__.me__.glory_ End-Insert
+					Insert_section VE._08_Aposticha__.both__.secondarytheotokion__.mode2 End-Insert
+				End-Section
+				Actor sid Reader End-Actor
+				Insert_section PE.Pascha_Hours_Parts.end.midnightoffice End-Insert
+			End-Section
+		
+		76 use: //Bright Friday
+			Section Instance11
+			End-Section
+			
+		78 use: //Thomas Sunday
+			Section Instance12
+			End-Section
+
+		79 thru 83 use: //Thomas Mon-Fri
+			Section Instance13
+			End-Section
+			
+		84 use: //Thomas Sat
+			Section Instance14
+			End-Section
+
+		85, 92, 99 use: //Sunday of Myr, Par, Sam
+			Section Instance15
+			End-Section
+			
+		86, 87, 88, 89, 90 use: 
+			Section Instance16
+			End-Section
+			
+		91 use: 
+			Section Instance17
+			End-Section
+			
+		93 use:
+		
+		94 use: 
+			Section Instance18
+			End-Section
+			
+		95 use: //Wed Mid-Pentecost
+			Section Instance19
+			End-Section
+			
+		96, 97, 98, 100, 101 use: 
+			Section Instance20
+			End-Section
+			
+		102 use: 
+			Section Instance21
+			End-Section
+		
+		103 use:	
+			
+	end-when
+	
+End-Template
