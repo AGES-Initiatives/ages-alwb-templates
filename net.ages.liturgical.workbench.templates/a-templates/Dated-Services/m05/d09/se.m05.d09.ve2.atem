@@ -1,0 +1,115 @@
+Template se.m05.d09.ve2
+
+Status Final
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 5 day 9 year 2021 End_Date
+			Page_Header_Even
+				center @lookup sid ve.pdf.header sid da.daVE.OnTheEveningBefore lang L1 @date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ve.pdf.header sid da.daVE.OnTheEveningBefore lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.pdf.cover.ve.specific_2020 End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+	
+	when-movable-cycle-day-is
+		72 use: //Bright Monday - St. George
+			Section Instance01_Monday
+				Insert_section se.pe.d072.ve2.Instance02 End-Insert
+			End-Section
+			
+		73 use: //Bright Tuesday - St. Mark
+			Section Instance01_Tuesday
+				Insert_section se.pe.d073.ve2.Instance02 End-Insert
+			End-Section
+			
+		74 use: //Bright Wednesday - St. Athanasios
+			Section Instance01_Wednesday
+		//		Insert_section se.pe.d074.ve.Instance02 End-Insert
+			End-Section
+			
+		75, 76, 77, 78, 85, 92, 95, 99, 102, 106, 109, 110, 113 use:
+			Section Instance01
+				Insert_section mc.map.ve.Section02 End-Insert
+			End-Section
+			
+		79 thru 83 use: //Thomas week
+			Section Instance02
+			End-Section
+
+		84 use: //Thomas Saturday
+			Section Instance03
+			End-Section
+
+		86 thru 90 use:
+			Section Instance04_86thru90
+			End-Section
+			
+		91 use:
+			Section Instance04_91
+			End-Section
+
+		93, 94 use:
+			Section Instance04_9394
+			End-Section
+			
+		96, 97, 100, 101 use:
+			Section Instance04_9697100101
+			End-Section
+
+		98 use:
+			Section Instance04_98
+			End-Section
+
+		103, 104, 107 use:
+			Section Instance04_103104107
+			End-Section
+
+		105 use:
+			Section Instance04_105
+			End-Section
+
+		108 use: //Leavetaking of Blindman
+			Section Instance05
+			End-Section
+
+		111, 112 use: 
+			Section Instance06
+			End-Section
+
+		114, 115, 116, 117 use: 
+			Section Instance07
+			End-Section
+
+		118, 119 use: 
+			Section Instance07
+				Insert_section mc.map.ve.Section02 End-Insert
+			End-Section
+
+	end-when	
+
+End-Template
