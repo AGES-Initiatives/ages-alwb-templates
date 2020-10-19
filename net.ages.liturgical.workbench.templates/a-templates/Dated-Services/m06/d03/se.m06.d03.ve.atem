@@ -1,6 +1,6 @@
 Template se.m06.d03.ve 
 
-Status Final
+Status Review
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -15,7 +15,7 @@ Status Final
 	import roles.*
 
 	Head 
-		Set_Date month 6 day 3 year 2020 End_Date
+		Set_Date month 6 day 3 year 2021 End_Date
 			Page_Header_Even
 				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L1 
 			End_Page_Header_Even
@@ -32,7 +32,7 @@ Status Final
 	End_Head
 
 	Preface Covers
-		Insert_template ematins.pdf.cover.ve.specific_2020 End-Insert
+		Insert_template ematins.pdf.cover.ve.specific_mc End-Insert
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
@@ -52,6 +52,35 @@ Status Final
 
 		103, 104, 107 use:
 			Section Instance04_103104107
+				Insert_section ST.ve.pe_me1 End-Insert
+				Insert_section VE._01_Beginning__.vespers End-Insert
+				when-movable-cycle-day-is
+					103 use: Insert_section VE._02_Kekragaria__.mode4__.for6 End-Insert
+					104 use: Insert_section VE._02_Kekragaria__.mode4__.for6 End-Insert
+					107 use: Insert_section VE._02_Kekragaria__.mode5__.for6 End-Insert
+				end-when
+				Insert_section TI.stp.pe.specific End-Insert
+				Insert_section VE._03_Stichera__.pe__.p_123as567 End-Insert
+				Insert_section TI.s._00_saint_.m End-Insert
+				Insert_section VE._03_Stichera__.me__.p_123as8910 End-Insert
+				when-movable-cycle-day-is
+					103, 104 use: Insert_section TI.gb.pe_._05_samaritan End-Insert
+					107 use: Insert_section TI.gb.pe_._06_blindman End-Insert
+				end-when
+				Insert_section VE._03_Stichera__.gloryboth__.pe_.hymn End-Insert
+				Insert_section VE._04_Middle__.noentrance End-Insert
+				Insert_section VE._06_Litanies__.noektenia End-Insert
+				Insert_section VE._08_Aposticha__.pe__.weekday_ End-Insert
+				when-movable-cycle-day-is
+					103, 104 use: Insert_section TI.gb.pe_._05_samaritan End-Insert
+					107 use: Insert_section TI.gb.pe_._06_blindman End-Insert
+				end-when
+				Insert_section VE._08_Aposticha__.gloryboth__.pe_.hymn End-Insert
+				Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
+				Insert_section AP.res__.modeofweek End-Insert
+				Insert_section AP.gloryboth__.primarytheotokion__.modeofweek End-Insert
+				Insert_section VE._10_End__.ektenia_wisdom End-Insert
+				Insert_section VE._11_Dismissal__.nocommemoration End-Insert			
 			End-Section
 
 		105 use:
@@ -80,8 +109,7 @@ Status Final
 				Insert_section VE._08_Aposticha__.gloryboth__.pe_.hymn End-Insert
 				Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
 				Insert_section AP.af End-Insert	
-				Insert_section AP.glory__.ga.martyr_mode4 End-Insert
-				Insert_section AP.both__.af End-Insert
+				Insert_section AP.gloryboth__.af End-Insert
 				Insert_section VE._10_End__.wisdom End-Insert
 				Insert_section VE._11_Dismissal__.nocommemoration End-Insert			
 			End-Section
@@ -104,8 +132,7 @@ Status Final
 				Insert_section VE._08_Aposticha__.gloryboth__.pe_.hymn End-Insert
 				Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
 				Insert_section AP.af End-Insert	
-				Insert_section AP.glory__.ga.martyr_mode4 End-Insert
-				Insert_section AP.both__.af End-Insert
+				Insert_section AP.gloryboth__.af End-Insert
 				Insert_section VE._10_End__.ektenia_wisdom End-Insert
 				Insert_section VE._11_Dismissal__.nocommemoration End-Insert			
 			End-Section
@@ -155,8 +182,7 @@ Status Final
 				Insert_section VE._08_Aposticha__.gloryboth__.pe_.hymn End-Insert
 				Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
 				Insert_section AP.af End-Insert	
-				Insert_section AP.glory__.ga.martyr_mode4 End-Insert
-				Insert_section AP.both__.af End-Insert
+				Insert_section AP.gloryboth__.af End-Insert
 				Insert_section VE._10_End__.ektenia_wisdom End-Insert
 				Insert_section VE._11_Dismissal__.nocommemoration End-Insert			
 			End-Section
