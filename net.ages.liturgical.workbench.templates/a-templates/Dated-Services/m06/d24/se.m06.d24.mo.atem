@@ -1,6 +1,6 @@
 Template se.m06.d24.mo
 
-Status NA
+Status Final
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -37,6 +37,26 @@ Status NA
 
 	when-movable-cycle-day-is
 		118 thru 127 use: //check again
+			Section Instance03
+				Insert_section ST.mo.me1 End-Insert
+				Insert_section MO._01_intro_ End-Insert
+				Section lity
+					Rubric sid IfLityNotDoneAtVespers End-Rubric
+					Actor sid Choir End-Actor
+					Insert_section TI.ip.lity End-Insert
+					Insert_section VE._07_Lity__.part2__.me__.lity1_ End-Insert
+					Insert_section VE._07_Lity__.part2__.me__.lity2_ End-Insert
+					Insert_section VE._07_Lity__.part2__.me__.lity3_ End-Insert
+					Insert_section VE._07_Lity__.part2__.me__.glory_ End-Insert
+					Set_mcDay day 120 End_mcDay
+					Insert_section TI.b.f End-Insert
+					Insert_section VE._07_Lity__.part2__.pe__.glory_.hymn End-Insert
+					Set_mcDay day 0 End_mcDay
+				End-Section
+				Insert_section MO._06_sundays_feastdays_.trisagion End-Insert
+				Insert_section AP.NM.me1_ End-Insert
+				Insert_section MO._13_end_dismissal__.append_sunday_feastday End-Insert
+			End-Section
 
 		otherwise use:
 			when-name-of-day-is
@@ -45,7 +65,16 @@ Status NA
 						Insert_section ST.mo.oc_me1 End-Insert
 						Insert_section MO._01_intro_ End-Insert
 						Insert_section MO._03_triadic_canon_ End-Insert
-						Insert_section Instance01.lity End-Insert
+						Section lity
+							Rubric sid IfLityNotDoneAtVespers End-Rubric
+							Actor sid Choir End-Actor
+							Insert_section TI.ip.lity End-Insert
+							Insert_section VE._07_Lity__.part2__.me__.lity1_ End-Insert
+							Insert_section VE._07_Lity__.part2__.me__.lity2_ End-Insert
+							Insert_section VE._07_Lity__.part2__.me__.lity3_ End-Insert
+							Insert_section VE._07_Lity__.part2__.me__.glory_ End-Insert
+							Insert_section VE._07_Lity__.part2__.me__.both_ End-Insert
+						End-Section
 						Insert_section MO._04_triadic_megalynaria End-Insert
 						Insert_section MO._06_sundays_feastdays_ End-Insert //check this
 						Insert_section MO._13_end_dismissal__.append_sunday_feastday End-Insert

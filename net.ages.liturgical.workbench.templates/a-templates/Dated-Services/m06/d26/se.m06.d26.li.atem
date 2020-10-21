@@ -1,6 +1,6 @@
 Template se.m06.d26.li 
 
-Status NA
+Status Final
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -31,12 +31,14 @@ Status NA
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
-	when-movable-cycle-day-is
-		120 use: Insert_section mc.map.li.Section01 End-Insert //adjust to appropriate service
-		121 use: Insert_section mc.map.li.Section01 End-Insert //adjust to appropriate service
-		122 thru 125 use:
-		126 use: Insert_section mc.map.li.Section01 End-Insert //adjust to appropriate service
-		127 use: Insert_section mc.map.li.Section01 End-Insert //adjust to appropriate service
+	when-movable-cycle-day-is 
+		120, 121, 126, 127 use:
+			Section Instance01
+				Insert_section mc.map.li.Section01 End-Insert
+			End-Section
+		122, 123, 124, 125 use:
+			Section Instance02
+			End-Section
 		otherwise use:
 			when-name-of-day-is
 				Sunday use:

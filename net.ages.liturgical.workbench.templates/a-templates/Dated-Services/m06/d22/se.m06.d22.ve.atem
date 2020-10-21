@@ -1,6 +1,6 @@
 Template se.m06.d22.ve 
 
-Status NA
+Status Final
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -32,19 +32,38 @@ Status NA
 	End_Head
 
 	Preface Covers
-		Insert_template ematins.pdf.cover.ve.s_oc_me1_w_oc_me1 End-Insert
+	//	Insert_template ematins.pdf.cover.ve.s_oc_me1_w_oc_me1 End-Insert
+		Insert_template ematins.pdf.cover.ve.specific_mc End-Insert
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-	when-movable-cycle-day-is
-		116 thru 117 use:
-		118 use: Insert_section mc.map.ve.Section01 End-Insert //adjust to appropriate service
-		119 use: Insert_section mc.map.ve.Section01 End-Insert //adjust to appropriate service
-		120 use: Insert_section mc.map.ve.Section01 End-Insert //adjust to appropriate service
-		121 use: Insert_section mc.map.ve.Section01 End-Insert //adjust to appropriate service
-		122 thru 125 use:
-		126 use: Insert_section mc.map.ve.Section01 End-Insert //adjust to appropriate service
-		127 use: Insert_section mc.map.ve.Section01 End-Insert //adjust to appropriate service
+	when-movable-cycle-day-is 
+		118, 119, 120, 121, 126, 127 use:
+			Section Instance01
+				Insert_section mc.map.ve.Section01 End-Insert
+			End-Section
+		116, 117, 122, 123, 124, 125 use:
+			Section Instance02
+				Insert_section ST.ve.pe_me1 End-Insert
+				Insert_section VE._01_Beginning__.vespers End-Insert
+				Insert_section VE._02_Kekragaria__.modeofpeday__.for6 End-Insert
+				Insert_section TI.stp.f End-Insert
+				Insert_section VE._03_Stichera__.pe__.p_123as567 End-Insert
+				Insert_section TI.s._00_saint_.m End-Insert
+				Insert_section VE._03_Stichera__.me__.p_123as8910 End-Insert
+				Insert_section TI.gb.f End-Insert
+				Insert_section VE._03_Stichera__.gloryboth__.pe_.hymn End-Insert
+				Insert_section VE._04_Middle__.noentrance End-Insert
+				Insert_section VE._06_Litanies__.noektenia End-Insert
+				Insert_section VE._08_Aposticha__.pe__.weekday_ End-Insert
+				Insert_section TI.gb.f End-Insert
+				Insert_section VE._08_Aposticha__.gloryboth__.pe_.hymn End-Insert
+				Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
+				Insert_section AP.af End-Insert
+				Insert_section AP.gloryboth__.af End-Insert
+				Insert_section VE._10_End__.ektenia_wisdom End-Insert
+				Insert_section VE._11_Dismissal__.nocommemoration End-Insert			
+			End-Section
 		otherwise use:
 			when-name-of-day-is
 				Sunday use:

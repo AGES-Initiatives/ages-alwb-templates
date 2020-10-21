@@ -1,6 +1,6 @@
 Template se.m06.d20.ma 
 
-Status NA
+Status Final
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -32,19 +32,19 @@ Status NA
 	End_Head
 
 	Preface Covers
-		Insert_template ematins.pdf.cover.ma.s_oc_k_w_oc_me1 End-Insert
+	//	Insert_template ematins.pdf.cover.ma.s_oc_k_w_oc_me1 End-Insert
+		Insert_template ematins.pdf.cover.ma.specific_mc End-Insert
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-	when-movable-cycle-day-is
-		114 thru 117 use:
-		118 use: Insert_section mc.map.ma.Section01 End-Insert //adjust to appropriate service
-		119 use: Insert_section mc.map.ma.Section01 End-Insert //adjust to appropriate service
-		120 use: Insert_section mc.map.ma.Section01 End-Insert //adjust to appropriate service
-		121 use: Insert_section mc.map.ma.Section01 End-Insert //adjust to appropriate service
-		122 thru 125 use:
-		126 use: Insert_section mc.map.ma.Section01 End-Insert //adjust to appropriate service
-		127 use: Insert_section mc.map.ma.Section01 End-Insert //adjust to appropriate service
+	when-movable-cycle-day-is 
+		118, 119, 120, 121, 126, 127 use:
+			Section Instance01
+				Insert_section mc.map.ma.Section01 End-Insert
+			End-Section
+		114, 115, 116, 117, 122, 123, 124, 125 use:
+			Section Instance02
+			End-Section
 		otherwise use:
 			when-name-of-day-is
 				Sunday use:

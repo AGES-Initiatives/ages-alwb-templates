@@ -4965,6 +4965,13 @@ Status NA
 					Insert_section PsalmVerses.forHierarchs.verse3 End-Insert
 					Hymn rid meVE.Aposticha3.text @ver End-Hymn
 				End-Section
+				Section i_hierarchs6
+					Title<Tmode>rid meVE.Aposticha4.mode</>End-Title
+					Title role source0 sid sourceMenaion End-Title
+					Media rid meVE.Aposticha4.text End-Media
+					Insert_section PsalmVerses.forHierarchs.verse6 End-Insert
+					Hymn rid meVE.Aposticha4.text @ver media-off End-Hymn
+				End-Section
 				Section i_meeting12
 					Title role source0 sid sourceMenaion End-Title
 					Title role mode rid meVE.Aposticha1.mode End-Title
@@ -7035,57 +7042,93 @@ Status NA
 				Hymn rid peVE.Aposticha3.text @ver End-Hymn
 			End-Section
 			Section weekday_
-				Actor sid Choir End-Actor
-				Title role desig sid Aposticha End-Title
-				Title role source0 sid sourcePentecostarion End-Title
-				when-name-of-day-is
-					Monday, Tuesday use:
-						Section monday_tuesday
-							Title<Tmode>rid peVE.Aposticha1.mode</>End-Title
-							Title<Tdesig>sid Anastasimon</>End-Title
-							Hymn rid peVE.Aposticha1.text @ver End-Hymn
-							Insert_section PsalmVerses.forVespersAposticha.weekday.verse1 End-Insert
-							Title<Tdesig>sid Katanyktikon</><Tmelody>rid peVE.Aposticha2.melody</>End-Title
+				when-movable-cycle-day-is
+					86 thru 108 use:
+						when-name-of-day-is
+							Monday, Tuesday use:
+								Section monday_tuesday
+									Actor sid Choir End-Actor
+									Title role desig sid Aposticha End-Title
+									Title role source0 sid sourcePentecostarion End-Title
+									Title<Tmode>rid peVE.Aposticha1.mode</>End-Title
+									Title<Tdesig>sid Anastasimon</>End-Title
+									Hymn rid peVE.Aposticha1.text @ver End-Hymn
+									Insert_section PsalmVerses.forVespersAposticha.weekday.verse1 End-Insert
+									Title<Tdesig>sid Katanyktikon</><Tmelody>rid peVE.Aposticha2.melody</>End-Title
+									Hymn rid peVE.Aposticha2.text @ver End-Hymn
+									Insert_section PsalmVerses.forVespersAposticha.weekday.verse2 End-Insert
+									Title<Tdesig>sid Martyrikon</><Tmelody>rid peVE.Aposticha3.melody</>End-Title
+									Hymn rid peVE.Aposticha3.text @ver End-Hymn
+								End-Section
+							Wednesday, Friday use:
+								Section wednesday_friday
+									Actor sid Choir End-Actor
+									Title role desig sid Aposticha End-Title
+									Title role source0 sid sourcePentecostarion End-Title
+									Title<Tmode>rid peVE.Aposticha1.mode</>End-Title
+									Title<Tdesig>sid Stavrosimon</>End-Title
+									Hymn rid peVE.Aposticha1.text @ver End-Hymn
+									Insert_section PsalmVerses.forVespersAposticha.weekday.verse1 End-Insert
+									Title<Tdesig>sid Anastasimon</>End-Title
+									Hymn rid peVE.Aposticha2.text @ver End-Hymn
+									Insert_section PsalmVerses.forVespersAposticha.weekday.verse2 End-Insert
+									Title<Tdesig>sid Martyrikon</><Tmelody>rid peVE.Aposticha3.melody</>End-Title
+									Hymn rid peVE.Aposticha3.text @ver End-Hymn
+								End-Section
+							Thursday use:
+								Section thursday
+									Actor sid Choir End-Actor
+									Title role desig sid Aposticha End-Title
+									Title role source0 sid sourcePentecostarion End-Title
+									Title<Tmode>rid peVE.Aposticha1.mode</>End-Title
+									Title<Tdesig>sid Anastasimon</>End-Title
+									Hymn rid peVE.Aposticha1.text @ver End-Hymn
+									Insert_section PsalmVerses.forApostles.verse1 End-Insert
+									Title<Tdesig>sid Apostolikon</><Tmelody>rid peVE.Aposticha2.melody</>End-Title
+									Hymn rid peVE.Aposticha2.text @ver End-Hymn
+									Insert_section PsalmVerses.forMartyrs.verse1 End-Insert
+									Title<Tdesig>sid Martyrikon</><Tmelody>rid peVE.Aposticha3.melody</>End-Title
+									Hymn rid peVE.Aposticha3.text @ver End-Hymn
+								End-Section
+							Saturday use:
+								Section saturday_
+									Actor sid Choir End-Actor
+									Title role desig sid Aposticha End-Title
+									Title role source0 sid sourcePentecostarion End-Title
+									Title role desig sid StichiraAnastasima End-Title
+									Title role mode rid peVE.Aposticha1.mode End-Title
+									Hymn rid peVE.Aposticha1.text @ver End-Hymn
+									Insert_section PsalmVerses.forVespersAposticha.saturday.verse1 End-Insert
+									Hymn rid peVE.Aposticha2.text @ver End-Hymn
+									Insert_section PsalmVerses.forVespersAposticha.saturday.verse2 End-Insert
+									Hymn rid peVE.Aposticha3.text @ver End-Hymn
+									Insert_section PsalmVerses.forVespersAposticha.saturday.verse3 End-Insert
+									Hymn rid peVE.Aposticha4.text @ver End-Hymn
+								End-Section
+						end-when
+					111 thru 117 use:
+						Section p_ascension12
+							Actor sid Choir End-Actor
+							Insert_section TI.apos.f End-Insert
+							Title role source0 sid sourcePentecostarion End-Title
+							Title<Tmode>rid peVE.Aposticha2.mode</><Tmelody>rid peVE.Aposticha2.melody</>End-Title
+							Hymn rid peVE.Aposticha1.text	End-Hymn
+							Insert_section PsalmVerses.forAscension.verse1 End-Insert
 							Hymn rid peVE.Aposticha2.text @ver End-Hymn
-							Insert_section PsalmVerses.forVespersAposticha.weekday.verse2 End-Insert
-							Title<Tdesig>sid Martyrikon</><Tmelody>rid peVE.Aposticha3.melody</>End-Title
+							Insert_section PsalmVerses.forAscension.verse2 End-Insert
 							Hymn rid peVE.Aposticha3.text @ver End-Hymn
 						End-Section
-					Wednesday, Friday use:
-						Section wednesday_friday
-							Title<Tmode>rid peVE.Aposticha1.mode</>End-Title
-							Title<Tdesig>sid Stavrosimon</>End-Title
-							Hymn rid peVE.Aposticha1.text @ver End-Hymn
-							Insert_section PsalmVerses.forVespersAposticha.weekday.verse1 End-Insert
-							Title<Tdesig>sid Anastasimon</>End-Title
+					122 thru 125 use:
+						Section p_pentecost12
+							Actor sid Choir End-Actor
+							Insert_section TI.apos.f End-Insert
+							Title role source0 sid sourcePentecostarion End-Title
+							Title<Tmode>rid peVE.Aposticha2.mode</><Tmelody>rid peVE.Aposticha2.melody</>End-Title
+							Hymn rid peVE.Aposticha1.text	End-Hymn
+							Insert_section PsalmVerses.forPentecost.verse1 End-Insert
 							Hymn rid peVE.Aposticha2.text @ver End-Hymn
-							Insert_section PsalmVerses.forVespersAposticha.weekday.verse2 End-Insert
-							Title<Tdesig>sid Martyrikon</><Tmelody>rid peVE.Aposticha3.melody</>End-Title
+							Insert_section PsalmVerses.forPentecost.verse2 End-Insert
 							Hymn rid peVE.Aposticha3.text @ver End-Hymn
-						End-Section
-					Thursday use:
-						Section thursday
-							Title<Tmode>rid peVE.Aposticha1.mode</>End-Title
-							Title<Tdesig>sid Anastasimon</>End-Title
-							Hymn rid peVE.Aposticha1.text @ver End-Hymn
-							Insert_section PsalmVerses.forApostles.verse1 End-Insert
-							Title<Tdesig>sid Apostolikon</><Tmelody>rid peVE.Aposticha2.melody</>End-Title
-							Hymn rid peVE.Aposticha2.text @ver End-Hymn
-							Insert_section PsalmVerses.forMartyrs.verse1 End-Insert
-							Title<Tdesig>sid Martyrikon</><Tmelody>rid peVE.Aposticha3.melody</>End-Title
-							Hymn rid peVE.Aposticha3.text @ver End-Hymn
-						End-Section
-					Saturday use:
-						Section saturday_
-							Title role desig sid StichiraAnastasima End-Title
-							Title role mode rid peVE.Aposticha1.mode End-Title
-							Hymn rid peVE.Aposticha1.text @ver End-Hymn
-							Insert_section PsalmVerses.forVespersAposticha.saturday.verse1 End-Insert
-							Hymn rid peVE.Aposticha2.text @ver End-Hymn
-							Insert_section PsalmVerses.forVespersAposticha.saturday.verse2 End-Insert
-							Hymn rid peVE.Aposticha3.text @ver End-Hymn
-							Insert_section PsalmVerses.forVespersAposticha.saturday.verse3 End-Insert
-							Hymn rid peVE.Aposticha4.text @ver End-Hymn
 						End-Section
 				end-when
 			End-Section

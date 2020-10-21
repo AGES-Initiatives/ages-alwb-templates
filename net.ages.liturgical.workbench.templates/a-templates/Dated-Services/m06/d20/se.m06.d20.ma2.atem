@@ -1,6 +1,6 @@
 Template se.m06.d20.ma2
 
-Status NA
+Status Final
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -36,52 +36,23 @@ Status NA
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-	when-movable-cycle-day-is
-		114 thru 117 use:
-		118 use: Insert_section mc.map.ma.Section02 End-Insert //adjust to appropriate service
-		119 use: Insert_section mc.map.ma.Section02 End-Insert //adjust to appropriate service
-		120 use: Insert_section mc.map.ma.Section02 End-Insert //adjust to appropriate service
-		121 use: Insert_section mc.map.ma.Section02 End-Insert //adjust to appropriate service
-		122 thru 125 use:
-		126 use: Insert_section mc.map.ma.Section02 End-Insert //adjust to appropriate service
-		127 use: Insert_section mc.map.ma.Section02 End-Insert //adjust to appropriate service
+	when-movable-cycle-day-is 
+		118, 119, 120, 121, 126, 127 use:
+			Section Instance01
+				Insert_section mc.map.ma.Section02 End-Insert
+			End-Section
+		114, 115, 116, 117, 122, 123, 124, 125 use:
+			Section Instance02
+			End-Section
 		otherwise use:
 			when-name-of-day-is
 				Sunday use:
-					Section Instance03
-					End-Section
-				Saturday use:
 					Section Instance02
-						Insert_section ST.ma.oc_me1 End-Insert
-						Insert_section MA._01_Beginning__.mode3 End-Insert
-						Insert_section AP.me1gloryme1_ End-Insert
-						Insert_section AP.both__.theotokion__.mode3_ End-Insert
-						Insert_section MA._03_Kathisma1__.litany End-Insert
-						Insert_section MA._03_Kathisma1__.oc__.weekday End-Insert
-						Insert_section MA._04_Kathisma2__.append__.oc__.weekday End-Insert
-						Insert_section MA._07_Gospel__.no__.reader__.psalm50 End-Insert
-						Insert_section SY.Synaxarion End-Insert
-						Insert_section KA.choir__._1345678 End-Insert
-						Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
-						Insert_section MA._10_Canon__.magnificat__.modeofkatavasia End-Insert
-						Insert_section KA.append__._9 End-Insert
-						Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
-						Insert_section MA._12_Exaposteilarion__.weekday__.all End-Insert
-						Insert_section MA._13_Lauds__.modeofweek__.for4_nocollapse End-Insert
-						Insert_section MA._13_Lauds__.oc__.saturday_ End-Insert
-						Insert_section MA._14_Doxology__.small End-Insert
-						Insert_section MA._15_Litanies__.aftersmalldoxology End-Insert
-						Insert_section MA._16_Aposticha__.oc_ End-Insert
-						Insert_section MA._17_ItIsGood_Trisagion__.not_lent End-Insert
-						Insert_section AP.me1_ End-Insert
-						Insert_section AP.gloryboth__.endofmatins_theotokion__.mode3_ End-Insert
-						Insert_section MA._18_End__.ektenia_wisdom End-Insert
-						Insert_section MA._20_Dismissal__.nocommemoration End-Insert
 					End-Section
 				otherwise use:
 					Section Instance01
 					End-Section
 			end-when
-	end-when
+	end-when	
 
 End-Template

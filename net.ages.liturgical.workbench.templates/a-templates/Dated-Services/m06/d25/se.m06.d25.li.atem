@@ -32,13 +32,30 @@ Status NA
 	End_Head
 
 	when-movable-cycle-day-is 
-		119 use: //Soul Saturday
-		120 use: //Pentecost Sunday
-		121 use: //Mon of Holy Spirit
+		119, 120, 121, 126 use:
+			Section Instance01
+				Insert_section mc.map.li.Section01 End-Insert
+			End-Section
 		122 thru 125 use: 
 			Section Instance02
+				Insert_section ST.li.pe_me1 End-Insert
+				Insert_section LI._01_Enarxis__.daily End-Insert
+				Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
+				Insert_section LI._04_Entrance__.choir End-Insert
+				Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
+				Section hymns
+					Insert_section AP.af End-Insert
+					Insert_section TI.s._06_forerunner End-Insert
+					Insert_section AP.me1_.hymn End-Insert
+					Insert_section LI._05_AfterEntranceHymns__.local End-Insert
+					Insert_section KO.seasonal End-Insert
+				End-Section
+				Insert_section LI._06_Trisagion__.chrys End-Insert
+				Insert_section LE._01_Epistle__.daily_ End-Insert
+				Insert_section LE._02_Gospel__.daily_ End-Insert
+				Insert_section LI._08_Liturgy__.chrys_default End-Insert
+				Insert_section LI._09_Dismissal__.nocommemoration End-Insert
 			End-Section
-		126 use: //Sat Leave-taking of Pent
 		127 use: //All Saints Sunday
 			Section Instance03
 			End-Section
@@ -64,22 +81,14 @@ Status NA
 					End-Section
 				otherwise use:
 					Section Instance04
-						Insert_section ST.li.me21 End-Insert
+						Insert_section ST.li.me1 End-Insert
 						Insert_section LI._01_Enarxis__.daily End-Insert
 						Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
-						Set_Date month 6 day 24 year 2021 End_Date
-							Insert_section TI.a.s._06_forerunner End-Insert
-							Insert_section AP.me1_.hymn End-Insert
-						Set_Date month 0 day 0 year 2021 End_Date
+						Insert_section AP.me1_ End-Insert
 						Insert_section LI._04_Entrance__.choir End-Insert
 						Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
 						Section hymns
-							Set_Date month 6 day 24 year 2021 End_Date
-								Insert_section TI.a.s._06_forerunner End-Insert
-								Insert_section AP.me1_.hymn End-Insert
-							Set_Date month 0 day 0 year 2021 End_Date
-							Insert_section TI.s._00_saint_.w End-Insert
-							Insert_section AP.ga.womanmartyr_.hymn End-Insert
+							Insert_section AP.me1_ End-Insert
 							Insert_section LI._05_AfterEntranceHymns__.local End-Insert
 							Insert_section KO.weekday End-Insert
 						End-Section

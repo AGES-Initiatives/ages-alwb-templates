@@ -1,6 +1,6 @@
 Template se.m06.d28.ve 
 
-Status NA
+Status Review
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -38,12 +38,16 @@ Status NA
 
 	when-movable-cycle-day-is 
 		126, 127 use:
-			Insert_section mc.map.ve.Section01 End-Insert //adjust to appropriate service
+			Section Instance01
+				Insert_section mc.map.ve.Section01 End-Insert
+			End-Section
 		122, 123, 124, 125 use:
+			Section Instance02
+			End-Section
 		otherwise use:
 			when-name-of-day-is
 				Sunday use:
-					Section Instance00_sunday
+					Section Instance05
 						Insert_section ST.ve.oc_me1 End-Insert
 						Insert_section VE._01_Beginning__.vespers End-Insert
 						Insert_section VE._02_Kekragaria__.modeofweek__.for10 End-Insert
@@ -61,11 +65,11 @@ Status NA
 						Insert_section VE._11_Dismissal__.nocommemoration End-Insert
 					End-Section
 				Saturday use:
-					Section Instance00_saturday
-						Insert_section Instance00_weekday End-Insert
+					Section Instance04
+
 					End-Section
 				otherwise use:
-					Section Instance00_weekday
+					Section Instance03
 						Insert_section ST.ve.oc_me1_ho End-Insert
 						Insert_section VE._01_Beginning__.vespers End-Insert
 						Insert_section VE._02_Kekragaria__.modeofweek__.for6 End-Insert

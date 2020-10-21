@@ -1,6 +1,6 @@
 Template se.m06.d21.ma2 
 
-Status NA
+Status Final
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -36,16 +36,14 @@ Status NA
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-	when-movable-cycle-day-is 115 thru 127 use:
-		when-movable-cycle-day-is 
-			118, 119, 120, 126, 127 use:
-				Section Instance01
-					Insert_section mc.map.ve.Section01 End-Insert
-				End-Section
-			otherwise use:
-				Section Instance02 //weekday in Pent
-				End-Section
-		end-when
+	when-movable-cycle-day-is 
+		118, 119, 120, 121, 126, 127 use:
+			Section Instance01
+				Insert_section mc.map.ma.Section02 End-Insert
+			End-Section
+		115, 116, 117, 122, 123, 124, 125 use:
+			Section Instance02
+			End-Section
 	otherwise use:	
 		when-name-of-day-is 
 			Sunday use:	
