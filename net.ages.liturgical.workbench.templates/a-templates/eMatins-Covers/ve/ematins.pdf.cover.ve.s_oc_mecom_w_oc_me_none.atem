@@ -1,6 +1,6 @@
-Template ematins.pdf.cover.ve.s_oc_me1_mealt1_w_me1_mealt1
+Template ematins.pdf.cover.ve.s_oc_mecom_w_oc_me_none
 
-Status Draft
+Status NA
 
 	import da.*
 	import oc.*
@@ -24,25 +24,25 @@ Status Draft
 
 		Section title
 			Title role cover0 sid logo.text End-Title
-			Title role cover1 sid ve.pdf.cover End-Title
+			Title role cover1 sid ve.pdf.cover End-Title 	//Service
 			Insert_section ematins.pdf.cover.lookup.on_evening_before End-Insert
 			Title role cover3 sid d.for ldp @Service_Date End-Title 	
 		End-Section
 		Section modeofweek
-			when-name-of-day-is
-				Sunday use:
-					Title role cover5 sid book.Octoechos.name sid d.delimiter rid ocVE.Stichera1.mode End-Title
-					Insert_section ematins.pdf.cover.lookup.on_evening_before End-Insert
-			end-when
+			Title role cover5 sid book.Octoechos.name sid d.delimiter rid ocVE.Stichera1.mode End-Title
+			Insert_section ematins.pdf.cover.lookup.on_evening_before End-Insert
 		End-Section
 		Section commeoration
-			Title role cover5 sid book.Menaion.name sid d.delimiter rid meDate.text End-Title
-			Title role cover4 rid meShortCommemoration1.text End-Title
-			Title role cover5 sid book.MeSupplement.name End-Title
-			Title role cover4 rid alt1.meShortCommemoration1.text End-Title
+			when-name-of-day-is
+				Sunday use:
+					Insert_section ematins.pdf.cover.lookup.when_sunday_dates End-Insert
+				otherwise use: 
+					Title role cover5 sid book.Menaion.name sid d.delimiter rid meDate.text End-Title
+					Title role cover4 rid meCommemoration.text End-Title
+			end-when
 		End-Section
 		
-		Title role cover6 sid pref.generation_alwb.cover.version End-Title
+		Title role cover6 sid pref.generation_alwb.cover.version End-Title //GE or E
 	
 	Switch-Version Both End-Switch-Version	
 	

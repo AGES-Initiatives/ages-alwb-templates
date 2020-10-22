@@ -1,6 +1,6 @@
 Template ematins.pdf.cover.ve.tr_s_oc_me1_w_me1 // use starting Jan 24
 
-Status NA
+Status Final
 
 	import da.*
 	import oc.*
@@ -31,67 +31,69 @@ Status NA
 			Insert_section ematins.pdf.cover.lookup.on_evening_before End-Insert
 			Title role cover3 sid d.for ldp @Service_Date End-Title 	
 		End-Section
-		
-		when-movable-cycle-day-is
-			128 thru 365 use:
-				Section normal
-					Section modeofweek
-						when-name-of-day-is
-							Sunday use:
-								Title role cover5 sid book.Octoechos.name sid d.delimiter rid ocVE.Stichera1.mode End-Title
-								Insert_section ematins.pdf.cover.lookup.on_evening_before End-Insert
-						end-when
-					End-Section
-					Section commeoration
-						Title role cover5 sid book.Menaion.name sid d.delimiter rid meDate.text End-Title
-						Title role cover4 rid meShortCommemoration1.text End-Title
-					End-Section
-				End-Section
-				
-			1 thru 22 use:
-				Section triodion
-					Section modeofweek
-						when-name-of-day-is
-							Sunday use:
-								Title role cover5 sid book.Octoechos.name sid d.delimiter rid ocVE.Stichera1.mode End-Title
-								Insert_section ematins.pdf.cover.lookup.on_evening_before End-Insert
-						end-when
-					End-Section
-					Section moveable
-						when-movable-cycle-day-is
-							1, 8, 14, 15, 21, 22 use:
-								Insert_section ematins.pdf.cover.lookup.mc_vespers_on_day_before End-Insert
-						end-when
-					End-Section
-					Section commeoration
-						when-movable-cycle-day-is
-							14 use:
-							otherwise use:
-								Title role cover5 sid book.Menaion.name sid d.delimiter rid meDate.text End-Title
-								Title role cover4 rid meShortCommemoration1.text End-Title
-						end-when
-					End-Section
-				End-Section
 
-			23 thru 62 use:
-				Section lent
-					Section modeofweek
-						when-name-of-day-is
-							Sunday use:
-								Title role cover5 sid book.Octoechos.name sid d.delimiter rid ocVE.Stichera1.mode End-Title
-								Insert_section ematins.pdf.cover.lookup.on_evening_before End-Insert
-						end-when
+		Section cover		
+			when-movable-cycle-day-is
+				128 thru 365 use:
+					Section normal
+						Section modeofweek
+							when-name-of-day-is
+								Sunday use:
+									Title role cover5 sid book.Octoechos.name sid d.delimiter rid ocVE.Stichera1.mode End-Title
+									Insert_section ematins.pdf.cover.lookup.on_evening_before End-Insert
+							end-when
+						End-Section
+						Section commeoration
+							Title role cover5 sid book.Menaion.name sid d.delimiter rid meDate.text End-Title
+							Title role cover4 rid meShortCommemoration1.text End-Title
+						End-Section
 					End-Section
-					Section moveable
-						Insert_section ematins.pdf.cover.lookup.mc_vespers_on_day_before End-Insert
+					
+				1 thru 22 use:
+					Section triodion
+						Section modeofweek
+							when-name-of-day-is
+								Sunday use:
+									Title role cover5 sid book.Octoechos.name sid d.delimiter rid ocVE.Stichera1.mode End-Title
+									Insert_section ematins.pdf.cover.lookup.on_evening_before End-Insert
+							end-when
+						End-Section
+						Section moveable
+							when-movable-cycle-day-is
+								1, 8, 14, 15, 21, 22 use:
+									Insert_section ematins.pdf.cover.lookup.mc_vespers_on_day_before End-Insert
+							end-when
+						End-Section
+						Section commeoration
+							when-movable-cycle-day-is
+								14 use:
+								otherwise use:
+									Title role cover5 sid book.Menaion.name sid d.delimiter rid meDate.text End-Title
+									Title role cover4 rid meShortCommemoration1.text End-Title
+							end-when
+						End-Section
 					End-Section
-					Section commeoration
-						Title role cover5 sid book.Menaion.name sid d.delimiter rid meDate.text End-Title
-						Title role cover4 rid meShortCommemoration1.text End-Title
+	
+				23 thru 62 use:
+					Section lent
+						Section modeofweek
+							when-name-of-day-is
+								Sunday use:
+									Title role cover5 sid book.Octoechos.name sid d.delimiter rid ocVE.Stichera1.mode End-Title
+									Insert_section ematins.pdf.cover.lookup.on_evening_before End-Insert
+							end-when
+						End-Section
+						Section moveable
+							Insert_section ematins.pdf.cover.lookup.mc_vespers_on_day_before End-Insert
+						End-Section
+						Section commeoration
+							Title role cover5 sid book.Menaion.name sid d.delimiter rid meDate.text End-Title
+							Title role cover4 rid meShortCommemoration1.text End-Title
+						End-Section
 					End-Section
-				End-Section
-		end-when
-		
+			end-when
+		End-Section	
+
 		Title role cover6 sid pref.generation_alwb.cover.version End-Title
 	
 	Switch-Version Both End-Switch-Version	
