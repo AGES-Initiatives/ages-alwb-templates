@@ -36,25 +36,6 @@ Status Final
 
 		Section cover
 			when-movable-cycle-day-is
-				128 thru 365 use:
-					Section normal
-						Section mode_eothinon
-							when-name-of-day-is 
-								Sunday use: 
-									Title role cover5 sid book.Octoechos.name sid d.delimiter rid ocVE.Stichera1.mode End-Title
-									Insert_section ematins.pdf.cover.lookup.on_morning End-Insert
-									Title role cover4 sid Eothinon ldp @Eothinon End-Title
-							end-when
-						End-Section
-						Section commeoration
-							Title role cover5 sid book.Menaion.name sid d.delimiter rid meDate.text End-Title
-							Title role cover4 rid meShortCommemoration1.text End-Title
-						End-Section
-						Section katavasia
-							Insert_section KA._title End-Insert
-						End-Section
-					End-Section
-		
 				1 thru 63 use:
 					Section triodion_lent
 						Section mode_eothinon
@@ -84,6 +65,24 @@ Status Final
 								14 use:
 								otherwise use: Insert_section KA._title End-Insert
 							end-when
+						End-Section
+					End-Section
+				otherwise use:
+					Section normal
+						Section mode_eothinon
+							when-name-of-day-is 
+								Sunday use: 
+									Title role cover5 sid book.Octoechos.name sid d.delimiter rid ocVE.Stichera1.mode End-Title
+									Insert_section ematins.pdf.cover.lookup.on_morning End-Insert
+									Title role cover4 sid Eothinon ldp @Eothinon End-Title
+							end-when
+						End-Section
+						Section commeoration
+							Title role cover5 sid book.Menaion.name sid d.delimiter rid meDate.text End-Title
+							Title role cover4 rid meShortCommemoration1.text End-Title
+						End-Section
+						Section katavasia
+							Insert_section KA._title End-Insert
 						End-Section
 					End-Section
 			end-when

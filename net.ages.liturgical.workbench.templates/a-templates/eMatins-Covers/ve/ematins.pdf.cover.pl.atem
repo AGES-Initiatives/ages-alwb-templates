@@ -1,6 +1,6 @@
 Template ematins.pdf.cover.pl
 
-Status NA //This template has been functionally replaced by ematins.pdf.cover.ve.specific_mc
+Status Final //Except for special dated pl. this template has been functionally replaced by ematins.pdf.cover.ve.specific_mc
 
 	import ematinscovers_en_US_ematins.*
 
@@ -26,33 +26,21 @@ Status NA //This template has been functionally replaced by ematins.pdf.cover.ve
 		End-Section
 
 		Section lent
-			Section modeofweek
-				Insert_section ematins.pdf.cover.lookup.tr_modeofweek_ve End-Insert
-			End-Section
-			Section moveable
-				Insert_section ematins.pdf.cover.lookup.mc_vespers_on_day_before End-Insert
-			End-Section
-			Section commeoration
-				when-movable-cycle-day-is
-				//	28 use: 
-					54 use: 
-				//	56 use: 
-					63 use:
-					otherwise use:
-						when-date-is
-							 Mar 10 use:
-							 	Section Mar10
-							 		Set_Date month 3 day 9 End_Date
-										Title role cover5 sid book.Menaion.name sid d.delimiter rid me.meDate.text End-Title
-										Title role cover4 rid me.meShortCommemoration1.text End-Title
-									Set_Date month 0  day 0 End_Date
-							 	End-Section
-							 otherwise use:
-								Title role cover5 sid book.Menaion.name sid d.delimiter rid me.meDate.text End-Title
-								Title role cover4 rid me.meShortCommemoration1.text End-Title
-						end-when
-				end-when
-			End-Section
+			when-date-is
+				 Mar 10 use:
+					Section moveable
+						Insert_section ematins.pdf.cover.lookup.mc_vespers_on_day_before End-Insert
+					End-Section
+					Section commemoration
+						Title role cover5 sid book.Menaion.name sid d.delimiter sid me.m03.d09_gr_GR_cog.meDate.text End-Title
+						Title role cover4 sid me.m03.d09_gr_GR_cog.meShortCommemoration1.text End-Title
+					End-Section
+				 Mar 25 use:
+					Section commemoration
+						Title role cover5 sid book.Menaion.name sid d.delimiter sid me.m03.d25_gr_GR_cog.meDate.text End-Title
+						Title role cover4 sid me.m03.d25_gr_GR_cog.meShortCommemoration1.text End-Title
+					End-Section
+			end-when
 		End-Section
 	
 		Title role cover5 sid pref.generation_alwb.cover.version End-Title
