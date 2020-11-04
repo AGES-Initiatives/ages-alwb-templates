@@ -1,0 +1,89 @@
+Template se.m11.dSRaph.ma5
+
+Status Final
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 11 day 7 End_Date
+			Page_Header_Even
+				center @lookup sid ma.pdf.header sid d.on lang L1 @date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.pdf.cover.ma.override End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	Section Instance01
+		Set_Date month 11 day 7 End_Date
+		Section mealt1
+			Para role servicesourcestitle sid book.BooksSources.title End-Para
+			Para role servicesources sid book.MeSupplement.name sid separator.hyphen rid me.alt1.meDate.text End-Para
+			Para role servicesourcessection rid me.alt1.meShortCommemoration1.text End-Para
+			Para role servicesourcessection<inr>rid me.alt1.meNote.text</>End-Para
+			Title sid horizontal_line.solid1 End-Title
+			Break line End_Break
+			Title<bnr>sid ma.html.tab</>End-Title
+		End-Section
+		Insert_section MA._01_Beginning__.mode3 End-Insert
+		Insert_section AP.mealt11_ End-Insert
+		Insert_section TI.r End-Insert
+		Insert_section AP.both__.primarytheotokion__.mode3 End-Insert
+		Insert_section MA._03_Kathisma1__.me__.alt1__.kath11o121t_ End-Insert
+		Insert_section MA._04_Kathisma2__.append__.me__.alt1__.kath21o222t_ End-Insert
+		Insert_section MA._05_Kathisma3__.append__.me__.alt1__.kath31o323t_ End-Insert
+		Insert_section MA._06_Antiphons__.mode41_mealt1_prokeimenon_.litany End-Insert
+		Insert_section MA._06_Antiphons__.mode41_mealt1_prokeimenon_.antiphon End-Insert
+		Insert_section Selector_MatinsProkeimenon.ps115v5v3 End-Insert
+		Section gospel
+			Insert_section Selector_MatinsGospel.gospel_introP End-Insert
+			Insert_section Selector_MatinsGospel.gospel_me.Nov13 End-Insert
+			Insert_section Selector_MatinsGospel.Psalm50_read End-Insert
+			Insert_section Selector_MatinsGospel.PostGospel_mealt1 End-Insert
+		End-Section
+		Section Supplication_deacon_mealt1
+			Actor sid Deacon End-Actor
+			Insert_section LN.supplication_07_mealt1 End-Insert
+			Insert_section LN.supplication_part2 End-Insert
+		End-Section
+		Insert_section MA._11_Kontakion__.mealt11_ End-Insert
+		Insert_section SY.Synaxarion End-Insert
+		Insert_section KA.choir__._1345678 End-Insert
+		Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
+		Insert_section MA._10_Canon__.magnificat__.modeofkatavasia End-Insert
+		Insert_section KA.append__._9 End-Insert
+		Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+		Insert_section MA._12_Exaposteilarion__.me__.alt1__.exap123t End-Insert
+		Insert_section MA._13_Lauds__.mode4__.for4 End-Insert
+		Insert_section TI.stp.s._07_hierarch_.m End-Insert
+		Insert_section MA._13_Lauds__.me__.alt1__.p_1123as3456 End-Insert
+		Insert_section MA._13_Lauds__.glory__.me__.alt1__.gloryasglory_ End-Insert
+		Insert_section MA._13_Lauds__.both__.me__.alt1__.theotokion End-Insert
+		Insert_section MA._14_Doxology__.great End-Insert
+		Insert_section AP.mealt11_ End-Insert
+		Set_Date month 0 day 0 End_Date
+	End-Section
+
+End-Template

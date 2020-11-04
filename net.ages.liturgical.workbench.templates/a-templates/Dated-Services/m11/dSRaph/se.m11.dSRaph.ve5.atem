@@ -1,0 +1,86 @@
+Template se.m11.dSRaph.ve5
+
+Status Final
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 11 day 7 End_Date
+			Page_Header_Even
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L1 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template ematins.pdf.cover.ve.override End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+
+	Section Instance01
+		Set_Date month 11 day 7 End_Date
+		Section mealt1
+			Para role servicesourcestitle sid book.BooksSources.title End-Para
+			Para role servicesources sid book.MeSupplement.name sid separator.hyphen rid me.alt1.meDate.text End-Para
+			Para role servicesourcessection rid me.alt1.meShortCommemoration1.text End-Para
+			Para role servicesourcessection<inr>rid me.alt1.meNote.text</>End-Para
+			Title sid horizontal_line.solid1 End-Title
+			Break line End_Break
+			Title<bnr>sid ve.html.tab</>End-Title
+		End-Section
+		Insert_section VE._01_Beginning__.vespers.enarxis End-Insert
+		Insert_section VE._01_Beginning__.vespers.introductorypsalm End-Insert
+		Insert_section VE._01_Beginning__.vespers.litany End-Insert
+		Insert_section PS._01_Vespers__.kathisma1_stanza1__.rubric End-Insert
+		Insert_section PS.optionalLitany02_deacon End-Insert
+		Insert_section VE._02_Kekragaria__.mode1__.for6 End-Insert
+		Insert_section TI.stp.s._00_saint_.m End-Insert
+		Insert_section VE._03_Stichera__.me__.alt1__.p_112233as5678910 End-Insert
+		Insert_section VE._03_Stichera__.glory__.me__.alt1__.gloryasglory_ End-Insert
+		Set_Date month 0 day 0 End_Date
+		Insert_section VE._03_Stichera__.both__.firsttheotokion__.mode6_ End-Insert
+		Set_Date month 11 day 7 End_Date
+		Insert_section VE._04_Middle__.entrance End-Insert
+		Section readings
+			Title role desig sid TaAnagnosmata End-Title
+			Title role source sid sourceMenaion End-Title
+			Insert_section LE._03_Prophetologion__.r30 End-Insert
+			Insert_section LE._03_Prophetologion__.r48 End-Insert
+			Insert_section LE._03_Prophetologion__.r27 End-Insert
+		End-Section
+		Insert_section VE._06_Litanies__.fullektenia End-Insert
+		Insert_section VE._08_Aposticha__.me__.alt1__.p_hierarchs12 End-Insert
+		Insert_section VE._08_Aposticha__.glory__.me__.alt1__.gloryasglory_ End-Insert	
+		Insert_section VE._08_Aposticha__.both__.primarytheotokion__.mode4 End-Insert
+		Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
+		Insert_section AP.mealt11_ End-Insert
+		Insert_section AP.gloryboth__.primarytheotokion__.mode3 End-Insert
+		Insert_section VE._10_End__.wisdom End-Insert
+		Section dismissal
+			Actor sid Priest End-Actor
+			Insert_section Selector_Dismissals.dismissal_07_mealt1 End-Insert
+			Insert_section Selector_Dismissals.Com_Yes.part2 End-Insert
+		End-Section
+		Set_Date month 0 day 0 End_Date
+	End-Section
+
+End-Template

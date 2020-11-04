@@ -10397,6 +10397,10 @@ Template MA
 					Reading rid trMA.Oikos18.text End-Reading 
 			end-when
 		End-Section
+		Section weekday
+			Actor sid Reader End-Actor
+			Insert_section Selector_Kontakion.NM.DailyKontakion End-Insert
+		End-Section
 	End-Section
 	
 	Section _12_Exaposteilarion__
@@ -11461,26 +11465,23 @@ Template MA
 						End-Section
 					end-when
 					Section theotokion
-						when-exists
-							rid alt1.meMA.ExapTheotokion.text use:
-								when-name-of-day-is
-									Monday, Tuesday, Thursday, Saturday, Sunday use:
-										Section exaptheotokion
-											Title<Tdesig>sid Theotokion</>End-Title
-											Title<Tmode>rid alt1.meMA.ExapTheotokion.mode</><Tmelody>rid alt1.meMA.ExapTheotokion.melody</>End-Title
-											Hymn rid alt1.meMA.ExapTheotokion.text @ver End-Hymn
-										End-Section
-									Wednesday, Friday use:
-										when-exists rid alt1.meMA.ExapStavrotheotokion.text use:
-											Section exapstavrotheotokion
-												Title<Tdesig>sid Stavrotheotokion</>End-Title
-												Hymn rid alt1.meMA.ExapStavrotheotokion.text @ver End-Hymn
-											End-Section
-										otherwise use:
-											when-exists rid alt1.meMA.ExapTheotokion.text use:
-												Insert_section exaptheotokion End-Insert
-											end-when
-										end-when
+						when-name-of-day-is
+							Monday, Tuesday, Thursday, Saturday, Sunday use:
+								Section exaptheotokion
+									Title<Tdesig>sid Theotokion</>End-Title
+									Title<Tmode>rid alt1.meMA.ExapTheotokion.mode</><Tmelody>rid alt1.meMA.ExapTheotokion.melody</>End-Title
+									Hymn rid alt1.meMA.ExapTheotokion.text @ver End-Hymn
+								End-Section
+							Wednesday, Friday use:
+								when-exists rid alt1.meMA.ExapStavrotheotokion.text use:
+									Section exapstavrotheotokion
+										Title<Tdesig>sid Stavrotheotokion</>End-Title
+										Hymn rid alt1.meMA.ExapStavrotheotokion.text @ver End-Hymn
+									End-Section
+								otherwise use:
+									when-exists rid alt1.meMA.ExapTheotokion.text use:
+										Insert_section exaptheotokion End-Insert
+									end-when
 								end-when
 						end-when
 					End-Section
@@ -11804,6 +11805,11 @@ Template MA
 							Title role mode rid alt1.meMA.LaudsBoth.mode End-Title
 							Hymn rid alt1.meMA.LaudsBoth.text @ver End-Hymn
 						End-Section
+					End-Section	
+					Section theotokion
+						Title role source sid sourceMeSupplement End-Title
+						Title sid KaiNyn<Tmode>rid alt1.meMA.LaudsTheotokion.mode</><Tdesig>sid Theotokion</>End-Title
+						Hymn rid alt1.meMA.LaudsTheotokion.text @ver End-Hymn
 					End-Section	
 				End-Section
 				Section bothasboth_
