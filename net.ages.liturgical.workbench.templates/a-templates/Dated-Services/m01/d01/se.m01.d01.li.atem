@@ -2,6 +2,11 @@ Template se.m01.d01.li
 
 Status Final
 
+	import client_gr_GR_cog.*
+	import hi.s16_gr_GR_cog.*
+	import ho.s03_gr_GR_cog.*
+	import liturgical.verses_gr_GR_cog.*
+
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
 	import misc_gr_GR_cog.*
@@ -53,7 +58,68 @@ Status Final
 				Insert_section LI._08_Liturgy__.basil End-Insert
 				Insert_section LI._09_Dismissal__.commemoration End-Insert
 				Break page End_Break
-				Insert_section bk.other.jan1_doxology.section01 End-Insert
+				Section block1
+					Title<Tdesig>sid hiCE.Key_0100.title</>End-Title
+					Title<Tdesig>sid hiCE.Key_0101.title</>End-Title
+					Break line End_Break
+					Actor sid Deacon End-Actor
+					Dialog sid res08 End-Dialog
+					Actor sid Priest End-Actor
+					Dialog sid enarxis01 End-Dialog
+					Dialog<i>sid res04p</>End-Dialog
+					Actor sid Choir End-Actor
+					Insert_section TI.a.f End-Insert
+					Insert_section AP.me2_.hymn End-Insert
+					Section kontakion
+						Title role desig sid Kontakion End-Title
+						Section hymn
+							Title role source0 sid sourceMenaion End-Title
+							Title<Tmode>sid me.m09.d01_gr_GR_cog.meMA.Kontakion3.mode</><Tmelody>sid me.m09.d01_gr_GR_cog.meMA.Kontakion3.melody</>End-Title
+							Hymn sid me.m09.d01_gr_GR_cog.meMA.Kontakion3.text @ver End-Hymn
+						End-Section
+					End-Section
+					Insert_section TI.a.s._00_saint_.m End-Insert
+					Insert_section AP.me1_.hymn End-Insert
+					Rubric sid hiCE.Key_0101.rubric End-Rubric
+					Section doxology
+						Media sid hoMA.MM.DoxologyGreat.text End-Media
+						Hymn sid hoMA.DoxologyGreatIntro.text sid hoMA.DoxologyVerse01.text End-Hymn
+						Reading sid hoMA.DoxologyVerse02.text End-Reading
+						Reading sid hoMA.DoxologyVerse03.text End-Reading
+						Reading sid hoMA.DoxologyVerse05.text End-Reading
+						Reading sid hoMA.DoxologyVerse06.text End-Reading
+						Reading sid hoMA.DoxologyVerse15.text sid hoMA.DoxologyVerse16.text End-Reading
+						Reading sid hoMA.DoxologyVerse17.text End-Reading
+						Reading sid hoMA.DoxologyVerse18.text End-Reading
+						Reading sid hoMA.DoxologyVerse19.text End-Reading
+						Reading sid hoMA.DoxologyVerse20.text End-Reading
+					End-Section
+					Break line End_Break
+					Actor sid Deacon End-Actor
+					Dialog sid pet17 End-Dialog
+					Dialog<i>sid res06p</>End-Dialog
+					Dialog sid pet18 End-Dialog
+					Dialog<i>sid res06p</>End-Dialog
+					Dialog sid pet19a sid cl.bishop1.rank sid cl.bishop1.name_p sid pet19b End-Dialog
+					Dialog<i>sid res06p</>End-Dialog
+					Dialog sid hiCE.Key_0204.text End-Dialog
+					Dialog<i>sid res06p</>End-Dialog
+					Dialog sid pet33 End-Dialog
+					Dialog<i>sid res06p</>End-Dialog
+					Dialog sid pet34 End-Dialog
+					Dialog<i>sid res06p</>End-Dialog
+					Actor sid Priest End-Actor
+					Dialog sid pet35 End-Dialog
+					Dialog<i>sid res04p</>End-Dialog
+					Actor sid Deacon End-Actor
+					Dialog sid pet00 End-Dialog
+					Dialog<i>sid res01p</>End-Dialog
+					Actor sid Priest End-Actor
+					Title<Tdesig>sid hiCE.Key_0315.title</>End-Title
+					Para role prayer sid hiCE.Key_0207.text End-Para
+					Dialog<i>sid res04p</>End-Dialog
+					Insert_section MA._20_Dismissal__.commemoration End-Insert		
+				End-Section
 			End-Section
 			
 		otherwise use:
@@ -76,7 +142,7 @@ Status Final
 				Insert_section LI._08_Liturgy__.basil End-Insert
 				Insert_section LI._09_Dismissal__.commemoration End-Insert
 				Break page End_Break
-				Insert_section bk.other.jan1_doxology.section01 End-Insert
+				Insert_section Instance02.block1 End-Insert
 			End-Section	
 	end-when
 
