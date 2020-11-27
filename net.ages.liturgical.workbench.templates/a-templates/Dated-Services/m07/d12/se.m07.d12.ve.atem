@@ -15,7 +15,7 @@ Status Final
 	import roles.*
 
 	Head 
-		Set_Date month 7 day 12 year 2020 End_Date
+		Set_Date month 7 day 12 year 2021 End_Date
 			Page_Header_Even
 				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L1 
 			End_Page_Header_Even
@@ -32,13 +32,13 @@ Status Final
 	End_Head
 
 	Preface Covers
-		Insert_template ematins.pdf.cover.ve.s_oc_me1_w_oc_me1 End-Insert
+		Insert_template ematins.pdf.cover.ve.me End-Insert
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
 	when-name-of-day-is
 		Sunday use:
-			Section Instance02
+			Section Instance03
 				Insert_section ST.ve.oc_me1 End-Insert
 				Insert_section VE._01_Beginning__.vespers End-Insert
 				Insert_section VE._02_Kekragaria__.modeofweek__.for10 End-Insert
@@ -55,10 +55,12 @@ Status Final
 				Insert_section VE._10_End__.wisdom End-Insert
 				Insert_section VE._11_Dismissal__.nocommemoration End-Insert
 			End-Section
-
+		Saturday use:
+			Section Instance02
+			End-Section
 		otherwise use:
 			Section Instance01
-				Insert_section ST.ve.oc_me1 End-Insert
+				Insert_section ST.ve.oc_me1_ho End-Insert
 				Insert_section VE._01_Beginning__.vespers End-Insert
 				Insert_section VE._02_Kekragaria__.modeofweek__.for6 End-Insert
 				Insert_section VE._03_Stichera__.oc__.weekday__.p_XXXas567 End-Insert
@@ -69,8 +71,7 @@ Status Final
 				Insert_section VE._06_Litanies__.noektenia End-Insert
 				Insert_section VE._08_Aposticha__.oc__.weekday_ End-Insert
 				Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
-				Insert_section AP.ga.martyrs_mode4_ End-Insert
-				Insert_section AP.gloryboth__.theotokion__.mode4_ End-Insert
+				Insert_section AP.da__.vespers End-Insert
 				Insert_section VE._10_End__.ektenia_wisdom End-Insert
 				Insert_section VE._11_Dismissal__.nocommemoration End-Insert
 			End-Section
