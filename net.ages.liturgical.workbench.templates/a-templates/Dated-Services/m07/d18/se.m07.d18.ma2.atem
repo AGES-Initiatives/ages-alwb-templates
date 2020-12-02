@@ -1,4 +1,4 @@
-Template se.m07.d25.co3
+Template se.m07.d18.ma2
 
 Status Final
 
@@ -15,12 +15,12 @@ Status Final
 	import roles.*
 
 	Head 
-		Set_Date month 7 day 25 year 2021 End_Date
+		Set_Date month 7 day 18 year 2021 End_Date
 			Page_Header_Even
-				center @lookup sid co.akathist.pdf.header lang L1
+				center @lookup sid ma.pdf.header sid d.on lang L1 @date lang L1
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @lookup sid co.akathist.pdf.header lang L2
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -32,13 +32,18 @@ Status Final
 	End_Head
 
 	Preface Covers
-		Insert_template ematins.pdf.cover.co End-Insert
+
 		Insert_template ematins.credits End-Insert
 	End-Preface
 
-// GOA Synod, July 19, 2020
-//And we enjoin every Church in our Holy Archdiocese to chant the Akathist Hymn in the evening of this day (Friday, July 24, 2020), just as we chant it on the Fifth Friday of the Great and Holy Fast.
-
-	Insert_section se.tr.d056.co.Instance01 End-Insert
+	when-name-of-day-is 
+		Sunday use:
+			Section Instance02 
+				Insert_section se.m07.dHF.ma2.Instance01 End-Insert
+			End-Section
+		otherwise use: //needs work
+			Section Instance01 //Weekday
+			End-Section
+	end-when			
 
 End-Template
