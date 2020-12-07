@@ -1,0 +1,53 @@
+Template se.m11.d28.mo
+
+Status Final
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 11 day 28 year 2021 End_Date
+			Page_Header_Even
+				center @lookup sid mo.pdf.header sid d.on lang L1 @date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid mo.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+//	Preface Covers
+//		Insert_template ematins.appeal End-Insert
+//	End-Preface
+
+	when-name-of-day-is
+		Sunday use:
+			Section Instance02
+				Insert_section ST.mo.oc End-Insert
+				Insert_section MO._01_intro_ End-Insert
+				Insert_section MO._03_triadic_canon_ End-Insert
+				Insert_section MO._04_triadic_megalynaria End-Insert
+				Insert_section MO._06_sundays_feastdays_ End-Insert
+				Insert_section MO._13_end_dismissal__.append_sunday_feastday End-Insert
+			End-Section
+		otherwise use:
+			Section Instance01
+			End-Section
+	end-when			
+
+End-Template
