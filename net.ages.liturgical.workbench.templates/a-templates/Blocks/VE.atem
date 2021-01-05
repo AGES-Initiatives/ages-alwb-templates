@@ -3123,14 +3123,16 @@ Status NA
 			End-Section
 			Section i_112as567
 				Title role source0 sid sourcePentecostarion End-Title
-				Media rid peVE.MM.Stichera112as567.text End-Media
+			//	Media rid peVE.MM.Stichera112as567.text End-Media
 				Title<Tdesig>sid Idiomelon</><Tmode>rid peVE.Stichera01.mode</>End-Title
+				Media rid peVE.Stichera01.text End-Media
 				Insert_section VE.LIHC_Verses.v05 End-Insert
 				Hymn rid peVE.Stichera01.text @ver media-off End-Hymn
 				Title<Tdesig>sid Idiomelon</><Tmode>rid peVE.Stichera01.mode</>End-Title
 				Insert_section VE.LIHC_Verses.v06 End-Insert
 				Hymn rid peVE.Stichera01.text @ver media-off End-Hymn
 				Title<Tdesig>sid Idiomelon</><Tmode>rid peVE.Stichera02.mode</>End-Title
+				Media rid peVE.Stichera02.text End-Media
 				Insert_section VE.LIHC_Verses.v07 End-Insert
 				Hymn rid peVE.Stichera02.text @ver media-off End-Hymn
 			End-Section
@@ -4155,24 +4157,33 @@ Status NA
 		End-Section
 		Section entrance
 			when-date-is
-				Jan 6 use: Insert_section noprokeimenon End-Insert
-				Dec 25 use: Insert_section noprokeimenon End-Insert
+				Jan 6 use: 
+					Section before_prokeimenon
+						Actor sid Deacon<Trubric>sid InALowVoice</>End-Actor
+						Dialog sid pet00 End-Dialog
+						Actor sid Priest<Trubric>sid InALowVoice</>End-Actor
+						Title role desig sid hiVE.Key1108.title End-Title
+						Para role inaudible sid hiVE.Key1108.text End-Para
+						Actor sid Deacon End-Actor
+						Dialog sid exc17 sid exc18 End-Dialog
+						Actor sid ClergyAndPeople End-Actor
+						Title role mode sid Mode2 End-Title
+						Hymn sid hoVE.FosIlaron.text @ver End-Hymn
+					End-Section
+					Actor sid Deacon End-Actor
+					Dialog sid hi.s01_gr_GR_cog.hiVE.Key1110.text End-Dialog
+				Dec 25 use: 
+					Insert_section before_prokeimenon End-Insert
+					Actor sid Deacon End-Actor
+					Dialog sid hi.s01_gr_GR_cog.hiVE.Key1110.text End-Dialog
 				otherwise use:
 					when-movable-cycle-day-is
-						71 use: Insert_section noprokeimenon End-Insert
+						71 use: 
+							Insert_section before_prokeimenon End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid hi.s01_gr_GR_cog.hiVE.Key1110.text End-Dialog
 						otherwise use:
-							Section noprokeimenon
-								Actor sid Deacon<Trubric>sid InALowVoice</>End-Actor
-								Dialog sid pet00 End-Dialog
-								Actor sid Priest<Trubric>sid InALowVoice</>End-Actor
-								Title role desig sid hiVE.Key1108.title End-Title
-								Para role inaudible sid hiVE.Key1108.text End-Para
-								Actor sid Deacon End-Actor
-								Dialog sid exc17 sid exc18 End-Dialog
-								Actor sid ClergyAndPeople End-Actor
-								Title role mode sid Mode2 End-Title
-								Hymn sid hoVE.FosIlaron.text @ver End-Hymn
-							End-Section
+							Insert_section before_prokeimenon End-Insert
 							Insert_section Selector_VespersProkeimenon.Deacon.EveningProkeimenon End-Insert
 					end-when
 			end-when
