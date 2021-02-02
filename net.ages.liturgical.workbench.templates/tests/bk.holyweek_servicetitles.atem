@@ -1,0 +1,63 @@
+Template bk.holyweek_servicetitles
+
+Status NA
+
+	import tr.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head
+		Set_Date month 4 day 26 year 2021 End_Date
+			Page_Header_Even
+				center @lookup sid hw.bridegroomservice lang L1 @lookup sid d.onSundayEvening lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid hw.bridegroomservice lang L2 @lookup sid d.onSundayEvening lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface cover
+		Insert_template ematins.pdf.cover.ma.holyweek End-Insert
+		Insert_template ematins.credits End-Insert
+	End-Preface
+	
+	Section em
+		Para role servicesourcestitle sid book.BooksSources.title End-Para
+		Para role servicesources sid book.Triodion.name sid separator.hyphen sid hw.pdf.cover End-Para
+		Para role servicesourcessection rid trShortCommemoration1.text End-Para
+		Insert_section Selector_ServiceTitle.hw_matins_on_evenign_before End-Insert
+		Title sid horizontal_line.solid1 End-Title
+		Break line End_Break
+		Title<bnr>sid ma.html.tab</>End-Title
+	End-Section
+
+	Section ve
+		Set_Date month 5 day 1 year 2021 End_Date
+		Para role servicesourcestitle sid book.BooksSources.title End-Para
+		Para role servicesources sid book.Triodion.name sid separator.hyphen sid hw.pdf.cover End-Para
+	//	Para role servicesourcessection rid trShortCommemoration1.text End-Para
+		Insert_section Selector_ServiceTitle.hw_vespers_on_day_before End-Insert
+		Title sid horizontal_line.solid1 End-Title
+		Break line End_Break
+		Title<bnr>sid ma.html.tab</>End-Title
+	End-Section
+
+
+End-Template

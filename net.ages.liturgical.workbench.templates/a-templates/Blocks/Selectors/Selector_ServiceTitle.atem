@@ -851,6 +851,34 @@ Status NA
 		end-when
 	End-Section
 
+	Section hw_matins_on_evenign_before
+		when-movable-cycle-day-is
+			65 thru 70 use:
+				Section holyweek
+					Para role servicesourcessection rid trEM.header End-Para
+				End-Section
+		end-when
+	End-Section
+
+	Section hw_vespers_on_day_before
+		when-movable-cycle-day-is
+			66, 67, 68, 69, 71 use:
+				Section holyweek_vl
+					Para role servicesourcessection rid trVL.header End-Para
+					Title sid horizontal_line.solid1 End-Title
+					Break line End_Break
+					Title<bnr>sid vl.html.tab</>End-Title
+				End-Section
+			70 use:
+				Section holyweek_ve
+					Para role servicesourcessection sid OnFriday sid eistonesperinon End-Para
+					Title sid horizontal_line.solid1 End-Title
+					Break line End_Break
+					Title<bnr>sid ve.html.tab</>End-Title
+				End-Section
+		end-when
+	End-Section
+
 	Section pe_vespers_on_day_before
 		when-movable-cycle-day-is
 			72 use:
