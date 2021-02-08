@@ -1,0 +1,86 @@
+Template bk.sy.m01.d01
+
+Status Review
+
+	import sy.m01.d01_gr_GR_cog.*
+	import ho.s15.m01_gr_GR_cog.*
+	
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head
+	//	Set_Date month 1 day 1 year 2021 End_Date
+	//		Page_Header_Even
+	//			center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L1 
+	//		End_Page_Header_Even
+	//		Page_Header_Odd
+	//			center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore lang L2
+	//		End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+//	Preface Covers
+//		Insert_template ematins.pdf.cover.ve.me End-Insert
+//		Insert_template ematins.credits End-Insert
+//	End-Preface
+
+	Section title
+		Title<bigblack><r>sid Synaxarion</></>End-Title
+		Title<Tdesig>sid ho.Month</>End-Title
+		Title<inr>sid ho.Days</>End-Title
+		Title<inr>sid ho.Hours</>End-Title
+	End-Section
+	Break line End_Break
+	Section commemorations
+		Section com1_verses
+			Reading sid syMA.commemoration01.text End-Reading
+			Title<Tdesig>sid syMA.commemoration01.couplet1.title</>End-Title
+			Para role readingcenterzero sid syMA.commemoration01.couplet1.verse1 End-Para
+			Para role readingcenter sid syMA.commemoration01.couplet1.verse2 End-Para
+		End-Section
+		Section com1_narrration
+			Para role readingzero<s>sid syMA.commemoration01.narration.p01</>End-Para
+			Reading<s>sid syMA.commemoration01.narration.p02</>End-Reading
+		End-Section
+		Section com2_verses
+			Reading sid syMA.commemoration02.text End-Reading
+			Title<Tdesig>sid syMA.commemoration02.couplet1.title</>End-Title
+			Para role readingcenterzero sid syMA.commemoration02.couplet1.verse1 End-Para
+			Para role readingcenter sid syMA.commemoration02.couplet1.verse2 End-Para
+			Para role readingcenter sid syMA.commemoration02.single1 End-Para
+		End-Section
+		Section com2_narrration
+			Para role readingzero<s>sid syMA.commemoration02.narration.p01</>End-Para
+			Reading<s>sid syMA.commemoration02.narration.p02</>End-Reading
+		End-Section
+		Section com3_verses
+			Reading sid syMA.commemoration03.text End-Reading
+			Title<Tdesig>sid syMA.commemoration03.couplet1.title</>End-Title
+			Para role readingcenterzero sid syMA.commemoration03.couplet1.verse1 End-Para
+			Para role readingcenter sid syMA.commemoration03.couplet1.verse2 End-Para
+		End-Section
+		Section com4_verses
+			Reading sid syMA.commemoration04.text End-Reading
+			Title<Tdesig>sid syMA.commemoration04.couplet1.title</>End-Title
+			Para role readingcenterzero sid syMA.commemoration04.couplet1.verse1 End-Para
+			Para role readingcenter sid syMA.commemoration04.couplet1.verse2 End-Para
+		End-Section
+		Section end
+			Reading sid syMA.lastline End-Reading
+		End-Section
+	End-Section
+	
+End-Template
