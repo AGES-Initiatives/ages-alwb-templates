@@ -1,0 +1,935 @@
+Template SY2
+
+	import ho.s03_gr_GR_cog.*
+	
+	import properties_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	
+	import sy.*
+	import tr.*
+	import pe.*
+	
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+//	Head 
+//		Set_Date month 5 day 25 year 2016 End_Date
+//	End_Head
+
+	Title ldp@Service_Date End-Title
+	Title ldp@Name_of_Period @Day_of_Movable_Cycle End-Title
+	
+	Section Synaxarion_new
+		Title role desig sid Synaxarion End-Title
+		Title role chapverse sid TouMinaiou End-Title
+		when-date-is
+			Jan 1 use:
+				Insert_section bk.sy.m01.d01.synaxarion End-Insert
+			Jan 2 use:
+			//	Insert_section bk.sy.m01.d02.synaxarion End-Insert
+				Insert_section bk.sy.m01.d02.synaxarion.commemoration01.commemoration End-Insert
+				Insert_section bk.sy.m01.d02.synaxarion.commemoration01.verses End-Insert
+				Insert_section bk.sy.m01.d02.synaxarion.commemoration02.commemoration End-Insert
+				Insert_section bk.sy.m01.d02.synaxarion.commemoration02.verses End-Insert
+				Insert_section bk.sy.m01.d02.synaxarion.commemoration03.commemoration End-Insert
+				Insert_section bk.sy.m01.d02.synaxarion.commemoration03.verses End-Insert
+				Insert_section bk.sy.m01.d02.synaxarion.commemoration04.commemoration End-Insert
+				Insert_section bk.sy.m01.d02.synaxarion.commemoration04.verses End-Insert
+				Insert_section bk.sy.m01.d02.synaxarion.commemoration05.commemoration End-Insert
+				Insert_section bk.sy.m01.d02.synaxarion.commemoration05.verses End-Insert
+				Insert_section bk.sy.m01.d02.synaxarion.commemoration06.commemoration End-Insert
+				Insert_section bk.sy.m01.d02.synaxarion.commemoration06.verses End-Insert
+				Insert_section bk.sy.m01.d02.synaxarion.commemoration07.commemoration End-Insert
+				Insert_section bk.sy.m01.d02.synaxarion.commemoration07.verses End-Insert
+				Insert_section bk.sy.m01.d02.synaxarion.commemoration08.commemoration End-Insert
+				Insert_section bk.sy.m01.d02.synaxarion.commemoration08.verses End-Insert
+				Insert_section bk.sy.m01.d02.synaxarion.commemoration09.commemoration End-Insert
+				Insert_section bk.sy.m01.d02.synaxarion.commemoration09.verses End-Insert
+				Insert_section bk.sy.m01.d02.synaxarion.end End-Insert
+			Mar 26 use:
+				when-movable-cycle-day-is
+					50, 57 use:
+						Insert_section me End-Insert
+						Reading rid syMA.lastline End-Reading
+					otherwise use:
+						Insert_section me End-Insert
+						Insert_section mc End-Insert
+				end-when
+			Jul 13 thru 19 use:
+				when-name-of-day-is 
+					Sunday use:
+						Insert_section me End-Insert
+						Reading sid sy.m07.dHF_gr_GR_cog.syMA.commemoration01.text End-Reading
+						Reading sid sy.m07.dHF_gr_GR_cog.syMA.lastline End-Reading
+					otherwise use:
+						Insert_section me End-Insert
+						Insert_section mc End-Insert
+				end-when
+			Oct 11 thru 17 use:
+				when-name-of-day-is 
+					Sunday use:
+						Insert_section me End-Insert
+						Reading sid sy.m10.dHF_gr_GR_cog.syMA.commemoration01.text End-Reading
+						Reading sid sy.m10.dHF_gr_GR_cog.syMA.lastline End-Reading
+					otherwise use:
+						Insert_section me End-Insert
+						Insert_section mc End-Insert
+				end-when
+			Dec 11 thru 17 use:
+				when-name-of-day-is 
+					Sunday use:
+						Insert_section me End-Insert
+						Reading sid sy.m12.dFF_gr_GR_cog.syMA.commemoration01.text End-Reading
+						Reading sid sy.m12.dFF_gr_GR_cog.syMA.lastline End-Reading
+					otherwise use:
+						Insert_section me End-Insert
+						Insert_section mc End-Insert
+				end-when
+			Dec 18 thru 24 use:
+				when-name-of-day-is 
+					Sunday use:
+						Insert_section me End-Insert
+						Section dec_bc
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration01.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration02.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration03.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration04.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration05.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration06.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration07.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration08.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration09.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration10.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration11.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration12.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration13.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration14.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration15.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration16.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration17.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration18.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration19.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration20.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration21.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration22.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration23.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration24.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration25.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration26.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration27.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration28.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration29.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration30.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration31.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration32.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration33.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration34.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration35.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration36.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration37.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration38.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration39.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration40.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration41.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration42.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration43.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration44.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration45.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration46.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration47.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration48.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration49.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration50.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration51.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration52.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration53.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration54.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration55.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration56.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration57.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration58.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration59.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration60.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration61.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration62.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration63.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration64.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration65.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration66.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration67.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration68.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration69.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration70.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration71.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration72.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration73.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration74.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration75.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration76.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration77.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration78.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration79.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration80.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration81.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration82.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration83.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration84.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration85.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration86.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration87.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration88.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration89.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration90.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration91.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration92.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration93.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration94.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration95.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration96.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.lastline End-Reading
+						End-Section
+					otherwise use:
+						Insert_section me End-Insert
+						Insert_section mc End-Insert
+				end-when
+			Dec 26 thru 31 use:
+				when-name-of-day-is 
+					Sunday use:
+						Insert_section me End-Insert
+						Reading sid sy.m12.dAC_gr_GR_cog.syMA.commemoration01.text End-Reading
+						Reading sid sy.m12.dAC_gr_GR_cog.syMA.lastline End-Reading
+					otherwise use:
+						Insert_section me End-Insert
+						Insert_section mc End-Insert
+				end-when
+			otherwise use:
+				Insert_section me End-Insert
+				Insert_section mc End-Insert
+		end-when
+	End-Section
+
+	Section Synaxarion_current
+		when-date-is
+			Mar 26 use:
+				when-movable-cycle-day-is
+					50, 57 use:
+						Insert_section me End-Insert
+						Reading rid syMA.lastline End-Reading
+					otherwise use:
+						Insert_section me End-Insert
+						Insert_section mc End-Insert
+				end-when
+			Jul 13 thru 19 use:
+				when-name-of-day-is 
+					Sunday use:
+						Insert_section me End-Insert
+						Reading sid sy.m07.dHF_gr_GR_cog.syMA.commemoration01.text End-Reading
+						Reading sid sy.m07.dHF_gr_GR_cog.syMA.lastline End-Reading
+					otherwise use:
+						Insert_section me End-Insert
+						Insert_section mc End-Insert
+				end-when
+			Oct 11 thru 17 use:
+				when-name-of-day-is 
+					Sunday use:
+						Insert_section me End-Insert
+						Reading sid sy.m10.dHF_gr_GR_cog.syMA.commemoration01.text End-Reading
+						Reading sid sy.m10.dHF_gr_GR_cog.syMA.lastline End-Reading
+					otherwise use:
+						Insert_section me End-Insert
+						Insert_section mc End-Insert
+				end-when
+			Dec 11 thru 17 use:
+				when-name-of-day-is 
+					Sunday use:
+						Insert_section me End-Insert
+						Reading sid sy.m12.dFF_gr_GR_cog.syMA.commemoration01.text End-Reading
+						Reading sid sy.m12.dFF_gr_GR_cog.syMA.lastline End-Reading
+					otherwise use:
+						Insert_section me End-Insert
+						Insert_section mc End-Insert
+				end-when
+			Dec 18 thru 24 use:
+				when-name-of-day-is 
+					Sunday use:
+						Insert_section me End-Insert
+						Section dec_bc
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration01.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration02.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration03.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration04.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration05.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration06.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration07.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration08.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration09.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration10.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration11.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration12.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration13.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration14.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration15.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration16.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration17.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration18.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration19.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration20.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration21.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration22.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration23.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration24.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration25.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration26.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration27.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration28.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration29.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration30.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration31.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration32.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration33.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration34.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration35.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration36.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration37.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration38.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration39.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration40.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration41.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration42.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration43.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration44.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration45.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration46.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration47.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration48.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration49.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration50.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration51.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration52.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration53.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration54.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration55.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration56.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration57.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration58.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration59.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration60.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration61.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration62.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration63.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration64.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration65.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration66.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration67.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration68.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration69.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration70.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration71.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration72.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration73.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration74.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration75.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration76.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration77.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration78.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration79.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration80.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration81.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration82.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration83.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration84.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration85.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration86.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration87.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration88.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration89.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration90.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration91.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration92.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration93.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration94.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration95.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration96.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.lastline End-Reading
+						End-Section
+					otherwise use:
+						Insert_section me End-Insert
+						Insert_section mc End-Insert
+				end-when
+			Dec 26 thru 31 use:
+				when-name-of-day-is 
+					Sunday use:
+						Insert_section me End-Insert
+						Reading sid sy.m12.dAC_gr_GR_cog.syMA.commemoration01.text End-Reading
+						Reading sid sy.m12.dAC_gr_GR_cog.syMA.lastline End-Reading
+					otherwise use:
+						Insert_section me End-Insert
+						Insert_section mc End-Insert
+				end-when
+			otherwise use:
+				Insert_section me End-Insert
+				Insert_section mc End-Insert
+		end-when
+	End-Section
+	
+	Section Different_Date__
+		Section Apr23_StGeorge
+			Insert_section me End-Insert
+			Reading sid sy.m04.d23_gr_GR_cog.syMA.commemorationDD.text End-Reading
+			Insert_section mc End-Insert
+		End-Section
+		Section Apr25_StMark
+			Insert_section me End-Insert
+			Reading sid sy.m04.d25_gr_GR_cog.syMA.commemorationDD.text End-Reading
+			Insert_section mc End-Insert
+		End-Section
+		Section May02_StAthanasios
+			Insert_section me End-Insert
+			Reading sid sy.m05.d02_gr_GR_cog.syMA.commemorationDD.text End-Reading
+			Insert_section mc End-Insert
+		End-Section
+		Section May08_StJohn
+			Insert_section me End-Insert
+			Reading sid sy.m05.d08_gr_GR_cog.syMA.commemorationDD.text End-Reading
+			Insert_section mc End-Insert
+		End-Section
+		Section May25_Forerunner
+			Insert_section me End-Insert
+			Reading sid sy.m05.d25_gr_GR_cog.syMA.commemorationDD.text End-Reading
+			Insert_section mc End-Insert
+		End-Section
+		Section Dec20_StIgnatius
+			Insert_section me End-Insert
+			Reading sid sy.m12.d20_gr_GR_cog.syMA.commemorationDD.text End-Reading
+			Insert_section mc End-Insert
+		End-Section
+	End-Section
+
+	Section Synaxarion_for_DailyReadings
+		when-date-is
+			Mar 26 use:
+				when-movable-cycle-day-is
+					50, 57 use:
+						Insert_section me End-Insert
+						Reading rid syMA.lastline End-Reading
+					otherwise use:
+						Insert_section me End-Insert
+						Insert_section mc End-Insert
+				end-when
+			Jul 13 thru 19 use:
+				when-name-of-day-is 
+					Sunday use:
+						Insert_section me End-Insert
+						Reading sid sy.m07.dHF_gr_GR_cog.syMA.commemoration01.text End-Reading
+						Reading sid sy.m07.dHF_gr_GR_cog.syMA.lastline End-Reading
+					otherwise use:
+						Insert_section me End-Insert
+						Insert_section mc End-Insert
+				end-when
+			Oct 11 thru 17 use:
+				when-name-of-day-is 
+					Sunday use:
+						Insert_section me End-Insert
+						Reading sid sy.m10.dHF_gr_GR_cog.syMA.commemoration01.text End-Reading
+						Reading sid sy.m10.dHF_gr_GR_cog.syMA.lastline End-Reading
+					otherwise use:
+						Insert_section me End-Insert
+						Insert_section mc End-Insert
+				end-when
+			Dec 11 thru 17 use:
+				when-name-of-day-is 
+					Sunday use:
+						Insert_section me End-Insert
+						Reading sid sy.m12.dFF_gr_GR_cog.syMA.commemoration01.text End-Reading
+						Reading sid sy.m12.dFF_gr_GR_cog.syMA.lastline End-Reading
+					otherwise use:
+						Insert_section me End-Insert
+						Insert_section mc End-Insert
+				end-when
+			Dec 18 thru 24 use:
+				when-name-of-day-is 
+					Sunday use:
+						Insert_section me End-Insert
+						Section dec_bc
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration01.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration02.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration03.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration04.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration05.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration06.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration07.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration08.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration09.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration10.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration11.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration12.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration13.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration14.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration15.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration16.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration17.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration18.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration19.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration20.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration21.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration22.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration23.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration24.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration25.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration26.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration27.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration28.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration29.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration30.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration31.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration32.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration33.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration34.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration35.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration36.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration37.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration38.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration39.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration40.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration41.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration42.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration43.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration44.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration45.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration46.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration47.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration48.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration49.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration50.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration51.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration52.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration53.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration54.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration55.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration56.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration57.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration58.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration59.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration60.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration61.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration62.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration63.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration64.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration65.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration66.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration67.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration68.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration69.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration70.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration71.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration72.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration73.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration74.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration75.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration76.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration77.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration78.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration79.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration80.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration81.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration82.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration83.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration84.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration85.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration86.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration87.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration88.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration89.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration90.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration91.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration92.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration93.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration94.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration95.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.commemoration96.text End-Reading
+							Reading sid sy.m12.dBC_gr_GR_cog.syMA.lastline End-Reading
+						End-Section
+					otherwise use:
+						Insert_section me End-Insert
+						Insert_section mc.com End-Insert
+				end-when
+			Dec 26 thru 31 use:
+				when-name-of-day-is 
+					Sunday use:
+						Insert_section me End-Insert
+						Reading sid sy.m12.dAC_gr_GR_cog.syMA.commemoration01.text End-Reading
+						Reading sid sy.m12.dAC_gr_GR_cog.syMA.lastline End-Reading
+					otherwise use:
+						Insert_section me End-Insert
+						Insert_section mc End-Insert
+				end-when
+			otherwise use:
+				Insert_section me End-Insert
+				Insert_section mc.com End-Insert
+		end-when
+	End-Section
+
+//	blocks
+		Section me
+			Title role desig sid Synaxarion End-Title
+			Title role chapverse sid TouMinaiou End-Title
+			when-exists
+				rid syMA.commemoration01.text use:
+					Reading rid syMA.commemoration01.text End-Reading
+				rid syMA.commemoration02.text use:
+					Reading rid syMA.commemoration02.text End-Reading
+				rid syMA.commemoration03.text use:
+					Reading rid syMA.commemoration03.text End-Reading
+				rid syMA.commemoration04.text use:
+					Reading rid syMA.commemoration04.text End-Reading
+				rid syMA.commemoration05.text use:
+					Reading rid syMA.commemoration05.text End-Reading
+				rid syMA.commemoration06.text use:
+					Reading rid syMA.commemoration06.text End-Reading
+				rid syMA.commemoration07.text use:
+					Reading rid syMA.commemoration07.text End-Reading
+				rid syMA.commemoration08.text use:
+					Reading rid syMA.commemoration08.text End-Reading
+				rid syMA.commemoration09.text use:
+					Reading rid syMA.commemoration09.text End-Reading
+				rid syMA.commemoration10.text use:
+					Reading rid syMA.commemoration10.text End-Reading
+				rid syMA.commemoration11.text use:
+					Reading rid syMA.commemoration11.text End-Reading
+				rid syMA.commemoration12.text use:
+					Reading rid syMA.commemoration12.text End-Reading
+				rid syMA.commemoration13.text use:
+					Reading rid syMA.commemoration13.text End-Reading
+				rid syMA.commemoration14.text use:
+					Reading rid syMA.commemoration14.text End-Reading
+				rid syMA.commemoration15.text use:
+					Reading rid syMA.commemoration15.text End-Reading
+				rid syMA.commemoration16.text use:
+					Reading rid syMA.commemoration16.text End-Reading
+				rid syMA.commemoration17.text use:
+					Reading rid syMA.commemoration17.text End-Reading
+				rid syMA.commemoration18.text use:
+					Reading rid syMA.commemoration18.text End-Reading
+				rid syMA.commemoration19.text use:
+					Reading rid syMA.commemoration19.text End-Reading
+			end-when
+			Section S20_thru_S98
+				when-exists
+					rid syMA.commemoration20.text use:
+						Reading rid syMA.commemoration20.text End-Reading
+					rid syMA.commemoration21.text use:
+						Reading rid syMA.commemoration21.text End-Reading
+					rid syMA.commemoration22.text use:
+						Reading rid syMA.commemoration22.text End-Reading
+					rid syMA.commemoration23.text use:
+						Reading rid syMA.commemoration23.text End-Reading
+					rid syMA.commemoration24.text use:
+						Reading rid syMA.commemoration24.text End-Reading
+					rid syMA.commemoration25.text use:
+						Reading rid syMA.commemoration25.text End-Reading
+					rid syMA.commemoration26.text use:
+						Reading rid syMA.commemoration26.text End-Reading
+					rid syMA.commemoration27.text use:
+						Reading rid syMA.commemoration27.text End-Reading
+					rid syMA.commemoration28.text use:
+						Reading rid syMA.commemoration28.text End-Reading
+					rid syMA.commemoration29.text use:
+						Reading rid syMA.commemoration29.text End-Reading
+		
+					rid syMA.commemoration30.text use:
+						Reading rid syMA.commemoration30.text End-Reading
+					rid syMA.commemoration31.text use:
+						Reading rid syMA.commemoration31.text End-Reading
+					rid syMA.commemoration32.text use:
+						Reading rid syMA.commemoration32.text End-Reading
+					rid syMA.commemoration33.text use:
+						Reading rid syMA.commemoration33.text End-Reading
+					rid syMA.commemoration34.text use:
+						Reading rid syMA.commemoration34.text End-Reading
+					rid syMA.commemoration35.text use:
+						Reading rid syMA.commemoration35.text End-Reading
+					rid syMA.commemoration36.text use:
+						Reading rid syMA.commemoration36.text End-Reading
+					rid syMA.commemoration37.text use:
+						Reading rid syMA.commemoration37.text End-Reading
+					rid syMA.commemoration38.text use:
+						Reading rid syMA.commemoration38.text End-Reading
+					rid syMA.commemoration39.text use:
+						Reading rid syMA.commemoration39.text End-Reading
+		
+					rid syMA.commemoration40.text use:
+						Reading rid syMA.commemoration40.text End-Reading
+					rid syMA.commemoration41.text use:
+						Reading rid syMA.commemoration41.text End-Reading
+					rid syMA.commemoration42.text use:
+						Reading rid syMA.commemoration42.text End-Reading
+					rid syMA.commemoration43.text use:
+						Reading rid syMA.commemoration43.text End-Reading
+					rid syMA.commemoration44.text use:
+						Reading rid syMA.commemoration44.text End-Reading
+					rid syMA.commemoration45.text use:
+						Reading rid syMA.commemoration45.text End-Reading
+					rid syMA.commemoration46.text use:
+						Reading rid syMA.commemoration46.text End-Reading
+					rid syMA.commemoration47.text use:
+						Reading rid syMA.commemoration47.text End-Reading
+					rid syMA.commemoration48.text use:
+						Reading rid syMA.commemoration48.text End-Reading
+					rid syMA.commemoration49.text use:
+						Reading rid syMA.commemoration49.text End-Reading
+		
+					rid syMA.commemoration50.text use:
+						Reading rid syMA.commemoration50.text End-Reading
+					rid syMA.commemoration51.text use:
+						Reading rid syMA.commemoration51.text End-Reading
+					rid syMA.commemoration52.text use:
+						Reading rid syMA.commemoration52.text End-Reading
+					rid syMA.commemoration53.text use:
+						Reading rid syMA.commemoration53.text End-Reading
+					rid syMA.commemoration54.text use:
+						Reading rid syMA.commemoration54.text End-Reading
+					rid syMA.commemoration55.text use:
+						Reading rid syMA.commemoration55.text End-Reading
+					rid syMA.commemoration56.text use:
+						Reading rid syMA.commemoration56.text End-Reading
+					rid syMA.commemoration57.text use:
+						Reading rid syMA.commemoration57.text End-Reading
+					rid syMA.commemoration58.text use:
+						Reading rid syMA.commemoration58.text End-Reading
+					rid syMA.commemoration59.text use:
+						Reading rid syMA.commemoration59.text End-Reading
+		
+					rid syMA.commemoration60.text use:
+						Reading rid syMA.commemoration60.text End-Reading
+					rid syMA.commemoration61.text use:
+						Reading rid syMA.commemoration61.text End-Reading
+					rid syMA.commemoration62.text use:
+						Reading rid syMA.commemoration62.text End-Reading
+					rid syMA.commemoration63.text use:
+						Reading rid syMA.commemoration63.text End-Reading
+					rid syMA.commemoration64.text use:
+						Reading rid syMA.commemoration64.text End-Reading
+					rid syMA.commemoration65.text use:
+						Reading rid syMA.commemoration65.text End-Reading
+					rid syMA.commemoration66.text use:
+						Reading rid syMA.commemoration66.text End-Reading
+					rid syMA.commemoration67.text use:
+						Reading rid syMA.commemoration67.text End-Reading
+					rid syMA.commemoration68.text use:
+						Reading rid syMA.commemoration68.text End-Reading
+					rid syMA.commemoration69.text use:
+						Reading rid syMA.commemoration69.text End-Reading
+		
+					rid syMA.commemoration70.text use:
+						Reading rid syMA.commemoration70.text End-Reading
+					rid syMA.commemoration71.text use:
+						Reading rid syMA.commemoration71.text End-Reading
+					rid syMA.commemoration72.text use:
+						Reading rid syMA.commemoration72.text End-Reading
+					rid syMA.commemoration73.text use:
+						Reading rid syMA.commemoration73.text End-Reading
+					rid syMA.commemoration74.text use:
+						Reading rid syMA.commemoration74.text End-Reading
+					rid syMA.commemoration75.text use:
+						Reading rid syMA.commemoration75.text End-Reading
+					rid syMA.commemoration76.text use:
+						Reading rid syMA.commemoration76.text End-Reading
+					rid syMA.commemoration77.text use:
+						Reading rid syMA.commemoration77.text End-Reading
+					rid syMA.commemoration78.text use:
+						Reading rid syMA.commemoration78.text End-Reading
+					rid syMA.commemoration79.text use:
+						Reading rid syMA.commemoration79.text End-Reading
+		
+					rid syMA.commemoration80.text use:
+						Reading rid syMA.commemoration80.text End-Reading
+					rid syMA.commemoration81.text use:
+						Reading rid syMA.commemoration81.text End-Reading
+					rid syMA.commemoration82.text use:
+						Reading rid syMA.commemoration82.text End-Reading
+					rid syMA.commemoration83.text use:
+						Reading rid syMA.commemoration83.text End-Reading
+					rid syMA.commemoration84.text use:
+						Reading rid syMA.commemoration84.text End-Reading
+					rid syMA.commemoration85.text use:
+						Reading rid syMA.commemoration85.text End-Reading
+					rid syMA.commemoration86.text use:
+						Reading rid syMA.commemoration86.text End-Reading
+					rid syMA.commemoration87.text use:
+						Reading rid syMA.commemoration87.text End-Reading
+					rid syMA.commemoration88.text use:
+						Reading rid syMA.commemoration88.text End-Reading
+					rid syMA.commemoration89.text use:
+						Reading rid syMA.commemoration89.text End-Reading
+		
+					rid syMA.commemoration90.text use:
+						Reading rid syMA.commemoration90.text End-Reading
+					rid syMA.commemoration91.text use:
+						Reading rid syMA.commemoration91.text End-Reading
+					rid syMA.commemoration92.text use:
+						Reading rid syMA.commemoration92.text End-Reading
+					rid syMA.commemoration93.text use:
+						Reading rid syMA.commemoration93.text End-Reading
+					rid syMA.commemoration94.text use:
+						Reading rid syMA.commemoration94.text End-Reading
+					rid syMA.commemoration95.text use:
+						Reading rid syMA.commemoration95.text End-Reading
+					rid syMA.commemoration96.text use:
+						Reading rid syMA.commemoration96.text End-Reading
+					rid syMA.commemoration97.text use:
+						Reading rid syMA.commemoration97.text End-Reading
+					rid syMA.commemoration98.text use:
+						Reading rid syMA.commemoration98.text End-Reading
+				end-when
+			End-Section
+		End-Section //me
+
+		Section mc_alt1
+			Insert_section block2 End-Insert
+			when-movable-cycle-day-is
+				73 use:
+					Section pealt1_73
+						Reading rid alt1.peSY.commemoration.text End-Reading
+						Para role titlezero rid alt1.peSY.commemoration.couplet1.title End-Para
+						Para role readingcenterzero rid alt1.peSY.commemoration.couplet1.verse1 End-Para
+						Para role readingcenter rid alt1.peSY.commemoration.couplet1.verse2 End-Para
+						Para role titlezero rid alt1.peSY.commemoration.couplet2.title End-Para
+						Para role readingcenterzero rid alt1.peSY.commemoration.couplet2.verse1 End-Para
+						Para role readingcenter rid alt1.peSY.commemoration.couplet2.verse2 End-Para
+						Para role titlezero rid alt1.peSY.commemoration.couplet2.title End-Para
+						Para role readingcenterzero rid alt1.peSY.commemoration.couplet2.verse1 End-Para
+						Para role readingcenter rid alt1.peSY.commemoration.couplet2.verse2 End-Para
+						Reading rid alt1.peSY.lastline End-Reading
+					End-Section
+			end-when
+			Insert_section block4 End-Insert
+		End-Section		
+
+		Section mc
+			when-movable-cycle-day-is
+				71, 72, 73, 74, 75, 76, 77, 109 use:
+					Section com
+						Insert_section block1 End-Insert
+						Insert_section block2 End-Insert
+						Insert_section block3 End-Insert
+					End-Section
+					Insert_section block4 End-Insert
+				otherwise use:
+					Insert_section block1 End-Insert
+					Insert_section block2 End-Insert
+					Insert_section block3 End-Insert
+			end-when
+		End-Section
+			
+			Section block1
+		//		when-movable-cycle-day-is
+		//			71 use: Title role desig sid Synaxarion End-Title
+		//		end-when
+			End-Section
+			Section block2
+				when-movable-cycle-day-is
+					1 thru 70 use:
+						when-exists rid trSY.commemoration.text use:
+							Title role chapverse sid TouTriodiou End-Title
+						end-when
+					71 thru 127 use:
+						when-exists rid peSY.commemoration.text use:
+							Title role chapverse sid TouPenticostariou End-Title
+						end-when
+				end-when
+			End-Section
+			Section block3
+				when-movable-cycle-day-is
+					1, 65 use:
+						Reading rid trSY.commemoration.text End-Reading
+						Para role titlezero rid trSY.commemoration.couplet1.title End-Para
+						Para role readingcenterzero rid trSY.commemoration.couplet1.verse1 End-Para
+						Para role readingcenter rid trSY.commemoration.couplet1.verse2 End-Para
+						Para role titlezero rid trSY.commemoration.couplet2.title End-Para
+						Para role readingcenterzero rid trSY.commemoration.couplet2.verse1 End-Para
+						Para role readingcenterzero rid trSY.commemoration.couplet2.verse2 End-Para
+						Para role readingcenter rid trSY.commemoration.couplet2.verse3 End-Para
+						Reading rid trSY.lastline End-Reading
+					8, 14, 15, 21, 22, 28, 29, 36, 43, 54, 56, 57, 63, 64, 66, 67, 70 use:
+						Reading rid trSY.commemoration.text End-Reading
+						Para role titlezero rid trSY.commemoration.couplet1.title End-Para
+						Para role readingcenterzero rid trSY.commemoration.couplet1.verse1 End-Para
+						Para role readingcenter rid trSY.commemoration.couplet1.verse2 End-Para
+						Reading rid trSY.lastline End-Reading
+					50 use:
+						Reading rid trSY.commemoration.text End-Reading
+						Para role titlezero rid trSY.commemoration.couplet1.title End-Para
+						Para role readingcenterzero rid trSY.commemoration.couplet1.verse1 End-Para
+						Para role readingcenter rid trSY.commemoration.couplet1.verse2 End-Para
+						Para role readingcenterzero rid trSY.commemoration.couplet2.verse1 End-Para
+						Para role readingcenter rid trSY.commemoration.couplet2.verse2 End-Para
+						Reading rid trSY.lastline End-Reading
+					68 use:
+						Reading rid trSY.commemoration.text End-Reading
+						Para role titlezero rid trSY.commemoration.couplet1.title End-Para
+						Para role readingcenterzero rid trSY.commemoration.couplet1.verse1 End-Para
+						Para role readingcenter rid trSY.commemoration.couplet1.verse2 End-Para
+						Para role titlezero rid trSY.commemoration.couplet2.title End-Para
+						Para role readingcenterzero rid trSY.commemoration.couplet2.verse1 End-Para
+						Para role readingcenter rid trSY.commemoration.couplet2.verse2 End-Para
+						Para role readingcenterzero rid trSY.commemoration.couplet3.verse1 End-Para
+						Para role readingcenterzero rid trSY.commemoration.couplet3.verse2 End-Para
+						Para role readingcenter rid trSY.commemoration.couplet3.verse3 End-Para
+						Para role titlezero rid trSY.commemoration.couplet4.title End-Para
+						Para role readingcenterzero rid trSY.commemoration.couplet4.verse1 End-Para
+						Para role readingcenter rid trSY.commemoration.couplet4.verse2 End-Para
+						Reading rid trSY.lastline End-Reading
+					69 use:
+						Reading rid trSY.commemoration.text End-Reading
+						Para role titlezero rid trSY.commemoration.couplet1.title End-Para
+						Para role readingcenterzero rid trSY.commemoration.couplet1.verse1 End-Para
+						Para role readingcenter rid trSY.commemoration.couplet1.verse2 End-Para
+						Para role titlezero rid trSY.commemoration.couplet2.title End-Para
+						Para role readingcenterzero rid trSY.commemoration.couplet2.verse1 End-Para
+						Para role readingcenter rid trSY.commemoration.couplet2.verse2 End-Para
+						Reading rid trSY.lastline End-Reading
+					71, 76, 78, 85, 92, 95, 99, 106, 110, 121, 127 use:
+						Reading rid peSY.commemoration.text End-Reading
+						Para role titlezero rid peSY.commemoration.couplet1.title End-Para
+						Para role readingcenterzero rid peSY.commemoration.couplet1.verse1 End-Para
+						Para role readingcenter rid peSY.commemoration.couplet1.verse2 End-Para
+						Reading rid peSY.lastline End-Reading
+					73 use: Insert_section mc_alt1.pealt1_73 End-Insert
+					113 use:
+						Reading rid peSY.commemoration.text End-Reading
+						Para role titlezero rid peSY.commemoration.couplet1.title End-Para
+						Para role readingcenterzero rid peSY.commemoration.couplet1.verse1 End-Para
+						Para role readingcenter rid peSY.commemoration.couplet1.verse2 End-Para
+						Para role titlezero rid peSY.commemoration.couplet2.title End-Para
+						Para role readingcenterzero rid peSY.commemoration.couplet2.verse1 End-Para
+						Para role readingcenter rid peSY.commemoration.couplet2.verse2 End-Para
+						Reading rid peSY.lastline End-Reading
+					119 use:
+						Reading rid peSY.commemoration.text End-Reading
+						Reading rid peSY.lastline End-Reading
+					120 use:
+						Reading rid peSY.commemoration.text End-Reading
+						Para role titlezero rid peSY.commemoration.couplet1.title End-Para
+						Para role readingcenterzero rid peSY.commemoration.couplet1.verse1 End-Para
+						Para role readingcenter rid peSY.commemoration.couplet1.verse2 End-Para
+						Para role readingcenter rid peSY.commemoration.single1 End-Para
+						Reading rid peSY.lastline End-Reading
+					
+					otherwise use:
+						Reading rid syMA.lastline End-Reading
+				end-when
+			End-Section
+			Section block4
+			//	when-movable-cycle-day-is
+			//		71, 72, 73, 74, 75, 76, 77, 109 use:
+						Section pascha	
+							Reading sid hoMA.SunPostGospel.text<r>sid Thrice</>End-Reading
+							Reading sid hoMA.SunPostGospelIdiomelon.text<r>sid Thrice</>End-Reading
+						End-Section
+			//	end-when
+			End-Section
+	//	End-Section //mc
+	
+End-Template
