@@ -51,12 +51,14 @@ Status Final
 		
 		Actor sid Deacon End-Actor
 		Dialog sid res08 End-Dialog
-		Actor sid Priest End-Actor
+		Actor sid HierarchOrPriest End-Actor
 		Dialog sid enarxis01 End-Dialog
 		Dialog<i>sid res04p</>End-Dialog
 		Actor sid Choir End-Actor
-		Insert_section AP.me1_ End-Insert
-		Insert_section Selector_Kontakion.SeasonalKontakion.Annunciation End-Insert
+	//	Insert_section AP.me1_ End-Insert
+		Title<Tdesig>sid Kontakion</>End-Title
+		Title<Tmode>sid tr.d056_gr_GR_cog.trMA.Kontakion1.mode</>End-Title
+		Hymn sid tr.d056_gr_GR_cog.trMA.Kontakion1.text @ver End-Hymn
 		Rubric sid hiCE.Key_0203.rubric End-Rubric
 		Section doxology
 		//	Title<Tmode>sid Mode7</>End-Title
@@ -71,15 +73,18 @@ Status Final
 			Reading sid hoMA.DoxologyVerse19.text End-Reading
 			Reading sid hoMA.DoxologyVerse20.text End-Reading
 		End-Section
+		Insert_section AP.me1_ End-Insert
 		Break line End_Break
 		Actor sid Deacon End-Actor
 		Dialog sid pet17 End-Dialog
 		Dialog<i>sid res06p</>End-Dialog
 		Dialog sid pet18 End-Dialog
 		Dialog<i>sid res06p</>End-Dialog
-		Dialog sid pet19a sid cl.bishop1.rank sid cl.bishop1.name_p sid pet19b End-Dialog
+		Dialog sid pet19a<r>sid cl.bishop1.rank sid cl.bishop1.name_p</>sid pet19b End-Dialog
 		Dialog<i>sid res06p</>End-Dialog
-		Dialog sid hiCE.Key_0204.text End-Dialog
+		Dialog sid hiCE.Key_0204_GOA.text End-Dialog
+		Dialog<i>sid res06p</>End-Dialog
+		Dialog sid hiCE.Key_additional_petition.text End-Dialog
 		Dialog<i>sid res06p</>End-Dialog
 		Dialog sid hiCE.Key_0205.text End-Dialog
 		Dialog<i>sid res16p</>End-Dialog
@@ -87,17 +92,21 @@ Status Final
 		Dialog<i>sid res06p</>End-Dialog
 		Dialog sid pet34 End-Dialog
 		Dialog<i>sid res06p</>End-Dialog
-		Actor sid Priest End-Actor
+		Actor sid HierarchOrPriest End-Actor
 		Dialog sid pet35 End-Dialog
 		Dialog<i>sid res04p</>End-Dialog
 		Actor sid Deacon End-Actor
 		Dialog sid pet00 End-Dialog
 		Dialog<i>sid res01p</>End-Dialog
-		Actor sid Priest End-Actor
+		Actor sid HierarchOrPriest End-Actor
 		Title<Tdesig>sid hiCE.Key_0315.title</>End-Title
 		Para role prayer sid hiCE.Key_0207.text End-Para
 		Dialog<i>sid res04p</>End-Dialog
-		Insert_section MA._20_Dismissal__.commemoration End-Insert		
+		Section dismissal
+			Actor sid HierarchOrPriest End-Actor
+			Insert_section Selector_Dismissals.Com_Yes.part1 End-Insert
+			Insert_section Selector_Dismissals.Com_Yes.part2 End-Insert
+		End-Section
 	End-Section
 
 End-Template
