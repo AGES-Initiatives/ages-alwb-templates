@@ -1,8 +1,9 @@
-Template Selector_Dismissals 
+Template Selector_Dismissals
 
 Status NA
 
 	import client_gr_GR_cog.*
+	import ty.typikon.parts_gr_GR_cog.*
 
 	import me.*
 	import pe.*
@@ -369,6 +370,43 @@ Status NA
 				end-when
 		end-when
 	End-Section
+
+	Section Incipit
+		when-movable-cycle-day-is
+			63, 64, 68 use: 
+				Para role typikon<b>sid tyPart.Dismissal</>sid dis00 rid trDA.dismissal sid punctuation.ellipsis End-Para
+			69 use: 
+				Para role typikon<b>sid tyPart.Dismissal</>sid dis00.holythursday sid punctuation.ellipsis End-Para
+			71 thru 109 use:
+				Para role typikon<b>sid tyPart.Dismissal</>sid dis00 sid dis00.resurrection sid punctuation.ellipsis End-Para
+			110, 111, 112, 114, 115, 116, 117, 118 use:
+				Para role typikon<b>sid tyPart.Dismissal</>sid dis00 sid dis00.ascension sid punctuation.ellipsis End-Para
+			113 use:
+				Para role typikon<b>sid tyPart.Dismissal</>sid dis00 sid dis00.resurrection sid dis00.andascension sid punctuation.ellipsis End-Para
+			120 thru 126 use:
+				Para role typikon<b>sid tyPart.Dismissal</>sid dis00 sid dis00.pentecost sid punctuation.ellipsis End-Para
+			otherwise use:
+				when-date-is
+					Jan 6 use: Para role typikon<b>sid tyPart.Dismissal</>sid dis00 rid meDA.dismissal sid punctuation.ellipsis End-Para
+					Mar 25 use: Para role typikon<b>sid tyPart.Dismissal</>sid dis00 rid meDA.dismissal sid punctuation.ellipsis End-Para
+					Aug 6 use: Para role typikon<b>sid tyPart.Dismissal</>sid dis00 rid meDA.dismissal sid punctuation.ellipsis End-Para
+					Dec 25 use: Para role typikon<b>sid tyPart.Dismissal</>sid dis00 rid meDA.dismissal sid punctuation.ellipsis End-Para
+					otherwise use:
+						when-name-of-day-is
+							Sunday use: 
+								when-exists 
+									rid meDA.dismissal use:
+										Para role typikon<b>sid tyPart.Dismissal</>sid dis00 rid meDA.dismissal sid dis00.andresurrection sid punctuation.ellipsis End-Para 
+									otherwise use: 
+										Para role typikon<b>sid tyPart.Dismissal</>sid dis00 sid dis00.resurrection sid punctuation.ellipsis End-Para 
+								end-when	
+							otherwise use:
+								Para role typikon<b>sid tyPart.Dismissal</>sid dis00 rid meDA.dismissal sid dis01 sid punctuation.ellipsis End-Para
+						end-when
+				end-when
+		end-when
+	End-Section
+
 // The sections below are referenced by the above
 // You can customize the listing of saints, but must do so for each section
 
