@@ -401,7 +401,12 @@ Status NA
 										Para role typikon<b>sid tyPart.Dismissal</>sid dis00 sid dis00.resurrection sid punctuation.ellipsis End-Para 
 								end-when	
 							otherwise use:
-								Para role typikon<b>sid tyPart.Dismissal</>sid dis00 rid meDA.dismissal sid dis01 sid punctuation.ellipsis End-Para
+								when-exists 
+									rid meDA.dismissal use:
+										Para role typikon<b>sid tyPart.Dismissal</>sid dis00 rid meDA.dismissal sid dis01 sid punctuation.ellipsis End-Para 
+									otherwise use: 
+								//		Para role typikon<b>sid tyPart.Dismissal</>sid dis00 sid dis01 sid punctuation.ellipsis End-Para 
+								end-when	
 						end-when
 				end-when
 		end-when
