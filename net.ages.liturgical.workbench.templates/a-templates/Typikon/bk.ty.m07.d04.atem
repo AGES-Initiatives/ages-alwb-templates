@@ -1,0 +1,96 @@
+Template bk.ty.m07.d04
+
+Status Draft
+
+	import ty.typikon.parts_gr_GR_cog.*
+	import me.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 7 day 4 year 2021 End_Date
+//			Page_Header_Even
+//				center @lookup sid mo1.pdf.header sid d.on lang L1 @date lang L1
+//			End_Page_Header_Even
+//			Page_Header_Odd
+//				center @lookup sid mo1.pdf.header sid d.on lang L2 @date lang L2
+//			End_Page_Header_Odd
+//			Page_Footer_Even
+//				center @pageNbr
+//			End_Page_Footer_Even
+//			Page_Footer_Odd
+//				center @pageNbr
+//			End_Page_Footer_Odd
+//		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Section vespers
+		when-name-of-day-is 
+			Sunday use:	
+				Section Instance02 
+					Insert_section TYST.ve.oc_me1 End-Insert
+					Insert_section TYVE._01_Beginning__.vespers End-Insert
+					Insert_section TYVE._02_Kekragaria__.modeofweek__.for10 End-Insert
+					Para role typikon<b>sid tyPart.Stichera</><r>sid tySource.Octoechos sid tyRubric.Resurrectional.Stichera7</>End-Para
+					Insert_section TYVE._03_Stichera__.oc__.sunday__.s_1234567as1234567 End-Insert
+					Para role typikon<b>sid tyPart.Stichera</><r>sid tySource.Menaion sid tyRubric.SaintM.Prosomoia3</>End-Para
+					Insert_section TYVE._03_Stichera__.me__.p_123as8910 End-Insert
+					Insert_section TYVE._03_Stichera__.gloryboth__.firsttheotokion.modeofweek End-Insert	
+					Insert_section TYVE._04_Middle__.entrance End-Insert	
+					Insert_section TYVE._06_Litanies__.fullektenia End-Insert
+					Insert_section TYVE._08_Aposticha__.oc__.sunday__.aposticha1234gbT  End-Insert
+					Insert_section TYVE._09_Symeon_Trisagion__.Priest End-Insert
+					Insert_section INAP.res__.modeofweek End-Insert
+					Insert_section INAP.gloryboth__.primarytheotokion__.modeofweek End-Insert	
+					Insert_section TYVE._10_End__.wisdom End-Insert
+					Insert_section TYVE._11_Dismissal__.nocommemoration End-Insert
+				End-Section
+			Saturday use:
+				Section Instance03
+					Insert_section ST.ve.oc_me1_ho End-Insert
+					Insert_section VE._01_Beginning__.vespers End-Insert
+					Insert_section VE._02_Kekragaria__.modeofweek__.for6 End-Insert
+					Insert_section VE._03_Stichera__.oc__.weekday__.p_XXXas567 End-Insert
+					Insert_section TI.s._00_saint_.m End-Insert
+					Insert_section VE._03_Stichera__.me__.p_123as8910 End-Insert
+					Insert_section VE._03_Stichera__.gloryboth__.firsttheotokion End-Insert
+					Insert_section VE._04_Middle__.noentrance End-Insert
+					Insert_section VE._06_Litanies__.noektenia End-Insert
+					Insert_section VE._08_Aposticha__.oc__.weekday_  End-Insert
+					Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
+					Insert_section AP.da__.vespers End-Insert
+					Insert_section VE._10_End__.ektenia_wisdom End-Insert
+					Insert_section VE._11_Dismissal__.nocommemoration End-Insert
+				End-Section
+			otherwise use:
+				Section Instance01
+					Insert_section ST.ve.oc_me1_ho End-Insert
+					Insert_section VE._01_Beginning__.vespers End-Insert
+					Insert_section VE._02_Kekragaria__.modeofweek__.for6 End-Insert
+					Insert_section VE._03_Stichera__.oc__.weekday__.p_XXXas567 End-Insert
+					Insert_section TI.s._00_saint_.m End-Insert
+					Insert_section VE._03_Stichera__.me__.p_123as8910 End-Insert
+					Insert_section VE._03_Stichera__.gloryboth__.metheotokion End-Insert
+					Insert_section VE._04_Middle__.noentrance End-Insert
+					Insert_section VE._06_Litanies__.noektenia End-Insert
+					Insert_section VE._08_Aposticha__.oc__.weekday_  End-Insert
+					Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
+					Insert_section AP.da__.vespers End-Insert
+					Insert_section VE._10_End__.ektenia_wisdom End-Insert
+					Insert_section VE._11_Dismissal__.nocommemoration End-Insert
+				End-Section
+			
+		end-when
+	End-Section
+	
+End-Template

@@ -1,6 +1,6 @@
 Template bk.ty.m07.d01
 
-Status Draft
+Status Final
 
 	import ty.typikon.parts_gr_GR_cog.*
 	import me.*
@@ -34,74 +34,76 @@ Status Draft
 //		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
-	when-movable-cycle-day-is
-		125 use:
-			Section Instance01 //Friday after Pentecost
-			End-Section
-			
-		126 use:
-			Section Instance02 //Saturday after Pentecost
-			End-Section
-			
-		127 use:
-			Section Instance03 //Sunday of All Saints
-			End-Section
-			
-		otherwise use:
-			when-name-of-day-is 
-				Sunday use:
-					Section Instance05 
-						Insert_section ST.ve.oc_me1 End-Insert
-						Insert_section INVE._01_Beginning__.vespers End-Insert
-						Insert_section INVE._02_Kekragaria__.modeofweek__.for10 End-Insert
-						Insert_section INVE._03_Stichera__.oc__.sunday__.s_123456as123456 End-Insert
-						Insert_section TI.stp.s._00_saint_.mp End-Insert
-						Insert_section VE._03_Stichera__.me__.p_1123as78910 End-Insert
-						Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_ End-Insert
-						Insert_section VE._03_Stichera__.both__.firsttheotokion__.mode6_ End-Insert	
-						Insert_section VE._04_Middle__.entrance End-Insert	
-				//		Insert_section VE._05_Readings__.reader End-Insert	
-						Insert_section VE._06_Litanies__.fullektenia End-Insert
-						Insert_section VE._08_Aposticha__.oc__.sunday__.aposticha1234 End-Insert
-						Insert_section TI.g.s._00_saint_.mp End-Insert
-						Insert_section VE._08_Aposticha__.glory__.me__.gloryasglory_.hymn End-Insert
-						Insert_section VE._08_Aposticha__.both__.primarytheotokion__.mode6 End-Insert
-						Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
-						Insert_section AP.res__.modeofweek End-Insert
-						Insert_section TI.g.s._00_saint_.mp End-Insert
-						Insert_section AP.me1_.hymn End-Insert
-						Insert_section AP.both__.primarytheotokion__.mode8 End-Insert
-						Insert_section VE._10_End__.wisdom End-Insert
-						Insert_section VE._11_Dismissal__.commemoration End-Insert
-					End-Section
+	Section vespers
+		when-movable-cycle-day-is
+			125 use:
+				Section Instance01 //Friday after Pentecost
+				End-Section
 				
-				otherwise use:
-					Section Instance04 //Weekday
-						Para role typikon<b>ldp @Service_Date</>End-Para
-						Para role typikonindent<b>rid meDA.commemoration.full</>End-Para
-						Insert_section INVE._01_Beginning__.vespers End-Insert
-						Insert_section INVE._02_Kekragaria__.mode6__.for6 End-Insert
-						Para role typikon<b>sid tyPart.Stichera</><r>sid tySource.Menaion sid tyRubric.Prosomoia03.Saints sid tyRubric.DoubleAll</>End-Para
-						Insert_section INVE._03_Stichera__.me__.p_112233as5678910 End-Insert
-						Para role typikon<b>sid tyPart.Glory</><r>sid tySource.Menaion sid TonAgion</>End-Para
-						Insert_section INVE._03_Stichera__.glory__.me__.gloryasglory_.hymn End-Insert
-						Insert_section INVE._03_Stichera__.both__.firsttheotokion__.mode6_ End-Insert
-						Insert_section INVE._04_Middle__.entrance End-Insert	
-						Insert_section INVE._05_Readings__.reader End-Insert	
-						Insert_section INVE._06_Litanies__.fullektenia End-Insert
-						Para role typikon<b>sid tyPart.Aposticha</><r>sid tySource.Menaion sid tyRubric.Prosomoia03.Saints</>End-Para
-						Insert_section INVE._08_Aposticha__.me__.p_unmercenaries12 End-Insert
-						Para role typikon<b>sid tyPart.Glory</><r>sid tySource.Menaion sid TonAgion</>End-Para
-						Insert_section INVE._08_Aposticha__.glory__.me__.gloryasglory_.hymn End-Insert
-						Insert_section INVE._08_Aposticha__.both__.secondarytheotokion__.mode6_vine__.unmercenaries End-Insert
-						Insert_section INVE._09_Symeon_Trisagion__.Priest End-Insert
-						Para role typikon<b>sid tyPart.Apolytikia</><r>sid TonAgion</>End-Para
-						Insert_section INAP.me1_.hymn End-Insert
-						Insert_section INAP.gloryboth__.primarytheotokion__.mode8 End-Insert
-						Insert_section INVE._10_End__.wisdom End-Insert
-						Insert_section INVE._11_Dismissal__.commemoration End-Insert
-					End-Section
-			end-when
-	end-when
+			126 use:
+				Section Instance02 //Saturday after Pentecost
+				End-Section
+				
+			127 use:
+				Section Instance03 //Sunday of All Saints
+				End-Section
+				
+			otherwise use:
+				when-name-of-day-is 
+					Sunday use:
+						Section Instance05 
+							Insert_section ST.ve.oc_me1 End-Insert
+							Insert_section TYVE._01_Beginning__.vespers End-Insert
+							Insert_section TYVE._02_Kekragaria__.modeofweek__.for10 End-Insert
+							Insert_section TYVE._03_Stichera__.oc__.sunday__.s_123456as123456 End-Insert
+							Insert_section TI.stp.s._00_saint_.mp End-Insert
+							Insert_section VE._03_Stichera__.me__.p_1123as78910 End-Insert
+							Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_ End-Insert
+							Insert_section VE._03_Stichera__.both__.firsttheotokion__.mode6_ End-Insert	
+							Insert_section VE._04_Middle__.entrance End-Insert	
+					//		Insert_section VE._05_Readings__.reader End-Insert	
+							Insert_section VE._06_Litanies__.fullektenia End-Insert
+							Insert_section VE._08_Aposticha__.oc__.sunday__.aposticha1234 End-Insert
+							Insert_section TI.g.s._00_saint_.mp End-Insert
+							Insert_section VE._08_Aposticha__.glory__.me__.gloryasglory_.hymn End-Insert
+							Insert_section VE._08_Aposticha__.both__.primarytheotokion__.mode6 End-Insert
+							Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
+							Insert_section AP.res__.modeofweek End-Insert
+							Insert_section TI.g.s._00_saint_.mp End-Insert
+							Insert_section AP.me1_.hymn End-Insert
+							Insert_section AP.both__.primarytheotokion__.mode8 End-Insert
+							Insert_section VE._10_End__.wisdom End-Insert
+							Insert_section VE._11_Dismissal__.commemoration End-Insert
+						End-Section
+					
+					otherwise use:
+						Section Instance04 //Weekday
+							Insert_section TYST.ve.me1 End-Insert
+					//		Para role typikon<b>ldp @Service_Date</>End-Para
+					//		Para role typikonindent<b>rid meDA.commemoration.full</>End-Para
+							Insert_section TYVE._01_Beginning__.vespers End-Insert
+							Insert_section TYVE._02_Kekragaria__.mode6__.for6 End-Insert
+							Para role typikon<b>sid tyPart.Stichera</><r>sid tySource.Menaion sid tyRubric.Saints.Prosomoia3as6</>End-Para
+							Insert_section TYVE._03_Stichera__.me__.p_112233as5678910 End-Insert
+							Para role typikon<b>sid tyPart.Glory</><r>sid tySource.Menaion sid TonAgion</>End-Para
+							Insert_section TYVE._03_Stichera__.glory__.me__.gloryasglory_.hymn End-Insert
+							Insert_section TYVE._03_Stichera__.both__.firsttheotokion__.mode6_ End-Insert
+							Insert_section TYVE._04_Middle__.entrance End-Insert	
+							Insert_section TYVE._05_Readings_Litanies End-Insert	
+							Para role typikon<b>sid tyPart.Aposticha</><r>sid tySource.Menaion sid tyRubric.Saints.Prosomoia3</>End-Para
+							Insert_section TYVE._08_Aposticha__.me__.p_unmercenaries12 End-Insert
+							Para role typikon<b>sid tyPart.Glory</><r>sid tySource.Menaion sid TonAgion</>End-Para
+							Insert_section TYVE._08_Aposticha__.glory__.me__.gloryasglory_.hymn End-Insert
+							Insert_section TYVE._08_Aposticha__.both__.secondarytheotokion__.mode6_vine__.unmercenaries End-Insert
+							Insert_section TYVE._09_Symeon_Trisagion__.Priest End-Insert
+							Para role typikon<b>sid tyPart.Apolytikia</><r>sid TonAgion</>End-Para
+							Insert_section INAP.me1_.hymn End-Insert
+							Insert_section INAP.gloryboth__.primarytheotokion__.mode8 End-Insert
+							Insert_section TYVE._10_End__.wisdom End-Insert
+							Insert_section TYVE._11_Dismissal__.commemoration End-Insert
+						End-Section
+				end-when
+		end-when
+	End-Section
 	
 End-Template
