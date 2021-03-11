@@ -34,24 +34,48 @@ Status Final
 //		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
-	Section vespers
-		when-movable-cycle-day-is
-			125 use:
-				Section Instance01 //Friday after Pentecost
+	when-movable-cycle-day-is
+		125 use:
+			Section Instance01 //Friday after Pentecost
+				Section ve
 				End-Section
-				
-			126 use:
-				Section Instance02 //Saturday after Pentecost
+				Section mo
 				End-Section
-				
-			127 use:
-				Section Instance03 //Sunday of All Saints
+				Section ma
 				End-Section
-				
-			otherwise use:
-				when-name-of-day-is 
-					Sunday use:
-						Section Instance05 
+				Section li
+				End-Section
+			End-Section
+			
+		126 use:
+			Section Instance02 //Saturday after Pentecost
+				Section ve
+				End-Section
+				Section mo
+				End-Section
+				Section ma
+				End-Section
+				Section li
+				End-Section
+			End-Section
+			
+		127 use:
+			Section Instance03 //Sunday of All Saints
+				Section ve
+				End-Section
+				Section mo
+				End-Section
+				Section ma
+				End-Section
+				Section li
+				End-Section
+			End-Section
+			
+		otherwise use:
+			when-name-of-day-is 
+				Sunday use:
+					Section Instance05
+						Section ve
 							Insert_section ST.ve.oc_me1 End-Insert
 							Insert_section TYVE._01_Beginning__.vespers End-Insert
 							Insert_section TYVE._02_Kekragaria__.modeofweek__.for10 End-Insert
@@ -75,9 +99,16 @@ Status Final
 							Insert_section VE._10_End__.wisdom End-Insert
 							Insert_section VE._11_Dismissal__.commemoration End-Insert
 						End-Section
-					
-					otherwise use:
-						Section Instance04 //Weekday
+						Section mo
+						End-Section
+						Section ma
+						End-Section
+						Section li
+						End-Section
+					End-Section
+				otherwise use:
+					Section Instance04 //Weekday
+						Section ve
 							Insert_section TYST.ve.me1 End-Insert
 					//		Para role typikon<b>ldp @Service_Date</>End-Para
 					//		Para role typikonindent<b>rid meDA.commemoration.full</>End-Para
@@ -102,8 +133,14 @@ Status Final
 							Insert_section TYVE._10_End__.wisdom End-Insert
 							Insert_section TYVE._11_Dismissal__.commemoration End-Insert
 						End-Section
-				end-when
-		end-when
-	End-Section
+						Section mo
+						End-Section
+						Section ma
+						End-Section
+						Section li
+						End-Section
+					End-Section
+			end-when
+	end-when
 	
 End-Template
