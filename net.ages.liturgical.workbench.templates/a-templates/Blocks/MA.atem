@@ -42,6 +42,21 @@ Template MA
 	//Sections with names not ending in _ have no options
 
 	Section _00_Ordinary__
+		Section collapsible
+			Title role bmc_collapse sid clps.matinsordinary.top End-Title
+				Insert_section Selector_MatinsOrdinary.parish End-Insert
+			Title role emc_collapse sid clps.matinsordinary.bottom End-Title
+		End-Section
+		Section html_link
+			when-movable-cycle-day-is
+				78 thru 108 use:
+					Passthrough-Html "<p class=\"designation\"><a href=\"h/c/matinsordinary_paschal/gr-en/index.html\" target=\"_self\">Matins Ordinary</a></p>" END-Passthrough-Html
+				110 thru 119 use:
+					Passthrough-Html "<p class=\"designation\"><a href=\"h/c/matinsordinary_ascension/gr-en/index.html\" target=\"_self\">Matins Ordinary</a></p>" END-Passthrough-Html
+				otherwise use:
+					Passthrough-Html "<p class=\"designation\"><a href=\"h/c/matinsordinary/gr-en/index.html\" target=\"_self\">Matins Ordinary</a></p>" END-Passthrough-Html
+			end-when
+		End-Section
 		Section options
 			Para role bmc_matinsordinary sid mc.matinsordinary End-Para
 				Insert_section Selector_MatinsOrdinary.parish End-Insert
@@ -49,7 +64,7 @@ Template MA
 		End-Section
 		Section part1__
 			Section afterpascha
-				Title<Tdesig>sid hoMA.title</>End-Title
+				Title<Tdesig>sid hoMA.MatinsOrdinary.title</>End-Title
 				Break line End_Break
 				Actor sid Priest End-Actor
 				Dialog sid enarxis01 End-Dialog
@@ -61,7 +76,7 @@ Template MA
 				Insert_section PE.ChristIsRisen.twice End-Insert
 			End-Section
 			Section ascension
-				Title<Tdesig>sid hoMA.title</>End-Title
+				Title<Tdesig>sid hoMA.MatinsOrdinary.title</>End-Title
 				Break line End_Break
 				Actor sid Priest End-Actor
 				Dialog sid enarxis01 End-Dialog
@@ -69,7 +84,7 @@ Template MA
 				Dialog sid res04 End-Dialog
 			End-Section
 			Section normal
-				Title<Tdesig>sid hoMA.title</>End-Title
+				Title<Tdesig>sid hoMA.MatinsOrdinary.title</>End-Title
 				Break line End_Break
 				Actor sid Priest End-Actor
 				Dialog sid enarxis01 End-Dialog
@@ -421,6 +436,7 @@ Template MA
 			Insert_section verses End-Insert
 		End-Section
 		Section mode8
+			Insert_section MA._00_Ordinary__.html_link End-Insert
 			Actor sid Choir End-Actor
 			Title role mode sid Mode8 End-Title
 			Media sid oc.m8.d1_gr_GR_cog.ocMA.MM.GodIsTheLord.text End-Media
