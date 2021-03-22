@@ -58,27 +58,26 @@ Status NA
 							Insert_section _01_Beginning__.with_anoixantaria.enarxis End-Insert
 						End-Section
 						Section introductorypsalm
-							when-movable-cycle-day-is 78 thru 108 use:
-								Actor sid Hierarch End-Actor
-								Insert_section PE.ChristIsRisen.once End-Insert
-								Actor sid Choir End-Actor
-								Insert_section PE.ChristIsRisen.twice End-Insert
-								Actor sid Hierarch End-Actor
-							otherwise use:
-								Actor sid Hierarch End-Actor
-								Reading sid DefteProskinisomen1 End-Reading
-								Reading sid DefteProskinisomen2 End-Reading
-								Reading sid DefteProskinisomen3 End-Reading
+							when-movable-cycle-day-is 
+								78 thru 108 use:
+									Actor sid Hierarch End-Actor
+									Insert_section PE.ChristIsRisen.once End-Insert
+									Actor sid Choir End-Actor
+									Insert_section PE.ChristIsRisen.twice End-Insert
+									Insert_section VE.lamplighting_prayers_link End-Insert
+									Actor sid Hierarch End-Actor
+								otherwise use:
+									Insert_section VE.lamplighting_prayers_link End-Insert
+									Actor sid Hierarch End-Actor
+									Reading sid DefteProskinisomen1 End-Reading
+									Reading sid DefteProskinisomen2 End-Reading
+									Reading sid DefteProskinisomen3 End-Reading
 							end-when
 					//		Media sid hoVE.Ps103.text End-Media
 							Insert_section with_anoixantaria.introductorypsalm.Psalm_103_Verses End-Insert
 							Insert_section with_anoixantaria.introductorypsalm.anoixantaria End-Insert
 						End-Section
-						Section prayers
-							Break page End_Break
-							Insert_section VE.lamplighting_prayers End-Insert
-							Break page End_Break
-						End-Section
+					//	Insert_section VE.lamplighting_prayers_collapse End-Insert
 						Section litany
 							Insert_section _01_Beginning__.with_anoixantaria.litany End-Insert
 						End-Section
@@ -115,17 +114,20 @@ Status NA
 						Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
 					End-Section
 					Section introductorypsalm
-						when-movable-cycle-day-is 78 thru 108 use:
-							Actor sid Priest End-Actor
-							Insert_section PE.ChristIsRisen.once End-Insert
-							Actor sid Choir End-Actor
-							Insert_section PE.ChristIsRisen.twice End-Insert
-							Actor sid Reader End-Actor
-						otherwise use:
-							Actor sid Reader End-Actor
-							Reading sid DefteProskinisomen1 End-Reading
-							Reading sid DefteProskinisomen2 End-Reading
-							Reading sid DefteProskinisomen3 End-Reading
+						when-movable-cycle-day-is 
+							78 thru 108 use:
+								Actor sid Priest End-Actor
+								Insert_section PE.ChristIsRisen.once End-Insert
+								Actor sid Choir End-Actor
+								Insert_section PE.ChristIsRisen.twice End-Insert
+								Insert_section VE.lamplighting_prayers_link End-Insert
+								Actor sid Reader End-Actor
+							otherwise use:
+								Insert_section VE.lamplighting_prayers_link End-Insert
+								Actor sid Reader End-Actor
+								Reading sid DefteProskinisomen1 End-Reading
+								Reading sid DefteProskinisomen2 End-Reading
+								Reading sid DefteProskinisomen3 End-Reading
 						end-when
 				//		Media sid hoVE.Ps103.text End-Media
 						Section Psalm_103_Verses
@@ -146,19 +148,12 @@ Status NA
 							Hymn sid psVE.anoixantaria.v8.text <i>sid other.verse35.text @ver</>End-Hymn
 							Hymn sid psVE.anoixantaria.v9.text <i>sid other.refrain1.text @ver</>End-Hymn
 							Hymn sid psVE.anoixantaria.v10.text <i>sid other.refrain2.text @ver</>End-Hymn
-						//	Hymn sid DoxaPatri.text End-Hymn
-						//	Hymn sid KaiNynKaiAei.text End-Hymn
-							Hymn sid Doxa sid punctuation.ellipsis sid KaiNyn sid punctuation.ellipsis End-Hymn
+							Hymn sid Doxa.incipit sid KaiNyn.incipit End-Hymn
 							Hymn sid Allilouia3Doxa.text <inr>sid Twice</>End-Hymn
-						//	Hymn sid Allilouia3Doxa.text End-Hymn
 							Hymn sid Allilouia3Doxa.text sid IElpisImonKyrie End-Hymn
 						End-Section
 					End-Section
-					Section prayers	
-						Break page End_Break
-						Insert_section VE.lamplighting_prayers End-Insert
-						Break page End_Break
-					End-Section
+				//	Insert_section VE.lamplighting_prayers_collapse End-Insert
 					Section litany
 						Actor sid Deacon End-Actor
 						when-movable-cycle-day-is
