@@ -1,0 +1,594 @@
+Template Selector_TY_Eisodikon 
+
+Status NA
+
+	import ho.s07_gr_GR_cog.*
+	import menaion.verses_gr_GR_cog.*
+	import movable.verses_gr_GR_cog.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 1 day 1 year 2017 End_Date
+	End_Head
+
+	Section eisodikon_part1 //incomplete
+			when-date-is
+				Jan 1 use: 
+					when-name-of-day-is
+						Sunday use:
+							Insert_section usualSunday End-Insert
+						otherwise use:
+							Media sid me.m01.d01_gr_GR_cog.meLI.MM.EntranceHymn.text End-Media
+							Hymn sid hoLI.EntranceHymn.text media-off sid hoLI.Antiphon21.text media-off sid me.m01.d01_gr_GR_cog.meLI.Antiphon2.text @ver media-off End-Hymn
+					end-when				
+				Jan 6, 7 use:
+					Media sid me.m01.d06_gr_GR_cog.meLI.MM.EntranceHymn.text End-Media
+					Hymn sid psLI.m01.d06.entrance.v1.text sid hoLI.Antiphon21.text media-off sid me.m01.d06_gr_GR_cog.meLI.Antiphon2.text @ver media-off End-Hymn
+				Jan 8 thru 13 use:
+					when-name-of-day-is
+						Sunday use:
+						//	Hymn sid psLI.m01.d06.entrance.v1.text sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2s.text @ver media-off End-Hymn
+							Insert_section usualSunday End-Insert
+						otherwise use:
+							Media sid me.m01.d06_gr_GR_cog.meLI.MM.EntranceHymn.text End-Media
+							Hymn sid psLI.m01.d06.entrance.v1.text sid hoLI.Antiphon21.text media-off sid me.m01.d06_gr_GR_cog.meLI.Antiphon2.text @ver media-off End-Hymn
+					end-when
+				Jan 14 use:
+					when-name-of-day-is
+						Sunday use:
+							Hymn sid psLI.m01.d06.entrance.v1.text sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2s.text @ver media-off End-Hymn
+							Insert_section usualSunday End-Insert
+						otherwise use:
+							Media sid me.m01.d06_gr_GR_cog.meLI.MM.EntranceHymn.text End-Media
+							Hymn sid psLI.m01.d06.entrance.v1.text sid hoLI.Antiphon21.text media-off sid me.m01.d06_gr_GR_cog.meLI.Antiphon2.text @ver media-off End-Hymn
+					end-when
+				Feb 2 thru 9 use:
+					when-movable-cycle-day-is
+						1 thru 13 use:
+							when-date-is
+								Feb 2, 9 use:
+									Section meeting
+										when-name-of-day-is
+											Sunday use:
+												Media sid me.m02.d02_gr_GR_cog.meLI.MM.EntranceHymnSunday.text End-Media
+												Hymn sid psLI.m02.d02.entrance.v1.text media-off sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2s.text @ver media-off End-Hymn
+											//	Insert_section usualSunday End-Insert
+											otherwise use:
+												Media sid me.m02.d02_gr_GR_cog.meLI.MM.EntranceHymn.text End-Media
+												Hymn sid psLI.m02.d02.entrance.v1.text media-off sid hoLI.Antiphon21.text media-off sid me.m02.d02_gr_GR_cog.meLI.Antiphon2.text @ver media-off End-Hymn
+											end-when
+									End-Section
+								Feb 3 thru 8 use:
+									Section meeting_af
+										when-name-of-day-is
+											Sunday use:
+											//	Media sid me.m02.d02_gr_GR_cog.meLI.MM.EntranceHymnSunday.text End-Media
+											//	Hymn sid psLI.m02.d02.entrance.v1.text media-off sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2s.text @ver media-off End-Hymn
+												Insert_section usualSunday End-Insert
+											otherwise use:
+												Media sid me.m02.d02_gr_GR_cog.meLI.MM.EntranceHymn.text End-Media
+												Hymn sid hoLI.EntranceHymn.text media-off sid hoLI.Antiphon21.text media-off sid me.m02.d02_gr_GR_cog.meLI.Antiphon2.text @ver media-off End-Hymn
+											end-when
+									End-Section
+							end-when
+						14 use:
+							when-date-is
+								Feb 2 thru 5 use: Insert_section meeting End-Insert
+							end-when
+						15 use:
+							when-date-is
+								Feb 2 thru 6 use: Insert_section meeting End-Insert
+							end-when
+						16 use:
+							when-date-is
+								Feb 2 thru 7 use: Insert_section meeting End-Insert
+							end-when
+						17 use:
+							when-date-is
+								Feb 2 thru 8 use: Insert_section meeting End-Insert
+							end-when
+						18 use:
+							when-date-is
+								Feb 2 thru 5 use: Insert_section meeting End-Insert
+							end-when
+						19 use:
+							when-date-is
+								Feb 2 thru 6 use: Insert_section meeting End-Insert
+							end-when
+						20 use:
+							when-date-is
+								Feb 2 thru 5 use: Insert_section meeting End-Insert
+							end-when
+						21 use:
+							when-date-is
+								Feb 2, 3 use: Insert_section meeting End-Insert
+							end-when
+						22 use:
+							when-date-is
+								Feb 2 thru 7 use: Insert_section meeting End-Insert
+							end-when
+						23 use:
+							when-date-is
+								Feb 2 use: Insert_section meeting End-Insert
+							end-when
+						otherwise use: 
+							when-name-of-day-is
+								Sunday use:
+								//	Media sid me.m02.d02_gr_GR_cog.meLI.MM.EntranceHymnSunday.text End-Media
+								//	Hymn sid psLI.m02.d02.entrance.v1.text media-off sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2s.text @ver media-off End-Hymn
+									Insert_section usualSunday End-Insert
+								otherwise use:
+									Insert_section meeting End-Insert
+							end-when
+					end-when
+				Mar 25 use:
+					Media sid me.m03.d25_gr_GR_cog.meLI.MM.EntranceHymn.text End-Media
+					when-name-of-day-is
+						Sunday use:
+							Hymn sid psLI.m03.d25.entrance.v1.text sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2s.text @ver media-off End-Hymn
+						otherwise use:
+							Hymn sid psLI.m03.d25.entrance.v1.text sid hoLI.Antiphon21.text media-off sid me.m03.d25_gr_GR_cog.meLI.Antiphon2.text @ver media-off End-Hymn
+					end-when
+				Aug 6 use:
+					Media sid me.m08.d06_gr_GR_cog.meLI.MM.EntranceHymn.text End-Media
+					Hymn sid psLI.m08.d06.entrance1.v1.text sid hoLI.Antiphon21.text media-off sid me.m08.d06_gr_GR_cog.meLI.Antiphon2.text @ver media-off End-Hymn
+				Aug 7 thru 12 use:
+				//	Media sid me.m08.d06_gr_GR_cog.meLI.MM.EntranceHymn.text End-Media
+					when-name-of-day-is
+						Sunday use:
+						//	Hymn sid psLI.m08.d06.entrance.v1.text sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2s.text @ver media-off End-Hymn
+							Insert_section usualSunday End-Insert
+						otherwise use:
+						//	Hymn sid psLI.m08.d06.entrance.v1.text sid hoLI.Antiphon21.text media-off sid me.m08.d06_gr_GR_cog.meLI.Antiphon2.text @ver media-off End-Hymn
+							Hymn sid hoLI.EntranceHymn.text media-off sid hoLI.Antiphon21.text media-off sid me.m08.d06_gr_GR_cog.meLI.Antiphon2.text @ver media-off End-Hymn
+					end-when
+				Aug 13 use:
+					when-name-of-day-is
+						Sunday use:
+							Media sid me.m08.d06_gr_GR_cog.meLI.MM.EntranceHymnSunday.text End-Media
+							Hymn sid psLI.m08.d06.entrance1.v1.text sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2s.text @ver media-off End-Hymn
+						otherwise use:
+							Media sid me.m08.d06_gr_GR_cog.meLI.MM.EntranceHymn.text End-Media
+							Hymn sid psLI.m08.d06.entrance1.v1.text sid hoLI.Antiphon21.text media-off sid me.m08.d06_gr_GR_cog.meLI.Antiphon2.text @ver media-off End-Hymn
+					end-when
+				Sep 13 use: 
+					Hymn sid hoLI.EntranceHymn.text media-off sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2s.text @ver End-Hymn
+				Sep 14 use:
+					Media sid me.m09.d14_gr_GR_cog.meLI.MM.EntranceHymn.text End-Media
+					Hymn sid psLI.m09.d14.entrance.v1.text sid hoLI.Antiphon21.text media-off sid me.m09.d14_gr_GR_cog.meLI.Antiphon2.text @ver media-off End-Hymn
+				Sep 15 thru 21 use:
+				//	Media sid me.m09.d14_gr_GR_cog.meLI.MM.EntranceHymn.text End-Media
+					when-name-of-day-is
+						Sunday use:
+						//	Hymn sid psLI.m09.d14.entrance.v1.text sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2s.text @ver media-off End-Hymn
+							Insert_section usualSunday End-Insert
+						otherwise use:
+						//	Hymn sid psLI.m09.d14.entrance.v1.text sid hoLI.Antiphon21.text media-off sid me.m09.d14_gr_GR_cog.meLI.Antiphon2.text @ver media-off End-Hymn
+							Hymn sid hoLI.EntranceHymn.text media-off sid hoLI.Antiphon21.text media-off sid me.m09.d14_gr_GR_cog.meLI.Antiphon2.text @ver media-off End-Hymn
+					end-when		
+				Dec 25 use:
+					Media sid me.m12.d25_gr_GR_cog.meLI.MM.EntranceHymn.text End-Media
+					Hymn sid psLI.m12.d25.entrance.v1.text sid hoLI.Antiphon21.text media-off sid me.m12.d25_gr_GR_cog.meLI.Antiphon2.text @ver media-off End-Hymn
+				Dec 26 thru 31 use:
+					when-name-of-day-is
+						Sunday use:
+						//	Hymn sid psLI.m12.d25.entrance.v1.text sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2s.text @ver media-off End-Hymn
+							Insert_section usualSunday End-Insert
+						otherwise use:
+							Media sid me.m12.d25_gr_GR_cog.meLI.MM.EntranceHymn.text End-Media
+							Hymn sid psLI.m12.d25.entrance.v1.text sid hoLI.Antiphon21.text media-off sid me.m12.d25_gr_GR_cog.meLI.Antiphon2.text @ver media-off End-Hymn
+						//	Hymn sid hoLI.EntranceHymn.text media-off sid hoLI.Antiphon21.text media-off sid me.m12.d25_gr_GR_cog.meLI.Antiphon2.text @ver media-off End-Hymn
+					end-when
+				otherwise use:
+					when-movable-cycle-day-is
+						63 use: 
+							Hymn sid hoLI.EntranceHymn.text media-off sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2s.text @ver End-Hymn
+						64 use:
+							Media sid tr.d064_gr_GR_cog.trLI.MM.EntranceHymn.text End-Media
+							Hymn sid psLI.tr.d064.entrance.v1.text sid hoLI.Antiphon21.text media-off sid tr.d064_gr_GR_cog.trLI.Antiphon2.text @ver media-off End-Hymn
+						71 thru 109 use:
+							Media sid pe.d00P_gr_GR_cog.pePA.EntranceHymn.text End-Media
+							Hymn sid psLI.pe.d071.entrance.v1.text @ver media-off sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2s.text media-off End-Hymn
+						110, 118 use:
+							Media sid pe.d110_gr_GR_cog.peLI.MM.EntranceHymn.text End-Media
+							Hymn sid psLI.pe.d110.entrance.v1.text sid hoLI.Antiphon21.text media-off sid pe.d110_gr_GR_cog.peLI.Antiphon2.text @ver media-off End-Hymn
+						111 thru 117 use:
+							when-name-of-day-is
+								Sunday use: Insert_section usualSunday End-Insert
+								otherwise use:
+									Media sid pe.d110_gr_GR_cog.peLI.MM.EntranceHymnAF.text End-Media
+									Hymn sid hoLI.EntranceHymn.text media-off sid hoLI.Antiphon21.text media-off sid pe.d110_gr_GR_cog.peLI.Antiphon2.text @ver media-off End-Hymn
+							end-when
+						119 use:
+							Media sid hoLI.EntranceHymn2w.text End-Media
+							Hymn sid hoLI.EntranceHymn.text media-off sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2w.text @ver media-off End-Hymn
+						120, 121, 126 use:
+							Media sid pe.d120_gr_GR_cog.peLI.MM.EntranceHymn.text End-Media
+							Hymn sid psLI.pe.d120.entrance.v1.text sid pe.d120_gr_GR_cog.peLI.Antiphon2.text @ver media-off End-Hymn
+						122 thru 125 use:
+							Media sid pe.d120_gr_GR_cog.peLI.MM.EntranceHymnAF.text End-Media
+							Hymn sid hoLI.EntranceHymn.text sid pe.d120_gr_GR_cog.peLI.Antiphon2.text @ver media-off End-Hymn
+						127 use:
+							Hymn sid hoLI.EntranceHymn.text media-off sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2s.text @ver End-Hymn
+						otherwise use:
+							when-name-of-day-is
+								Sunday use:
+									Section usualSunday
+										Para role typikonindent sid hoLI.EntranceHymn.incipit sid hoLI.EntranceHymn2s.incipit End-Para
+									End-Section
+								otherwise use:
+									Section usualWeekday
+										Para role typikonindent sid hoLI.EntranceHymn.incipit sid hoLI.EntranceHymn2w.incipit End-Para
+									End-Section
+						end-when
+				end-when
+		end-when				
+	End-Section	
+
+	Section eisodikon_complete //when clergy or choir sings the whole thing
+			when-date-is
+				Jan 1 use: 
+					Media sid me.m01.d01_gr_GR_cog.meLI.MM.EntranceHymn.text End-Media
+					when-name-of-day-is
+						Sunday use:
+							Hymn sid hoLI.EntranceHymn.text media-off sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2s.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+						otherwise use:
+							Hymn sid hoLI.EntranceHymn.text media-off sid hoLI.Antiphon21.text media-off sid me.m01.d01_gr_GR_cog.meLI.Antiphon2.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+					end-when				
+				Jan 6, 7 use:
+					Media sid me.m01.d06_gr_GR_cog.meLI.MM.EntranceHymn.text End-Media
+					Hymn sid psLI.m01.d06.entrance.v1.text sid hoLI.Antiphon21.text media-off sid me.m01.d06_gr_GR_cog.meLI.Antiphon2.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+				Jan 8 thru 13 use:
+				//	Media sid me.m01.d06_gr_GR_cog.meLI.MM.EntranceHymn.text End-Media
+					when-name-of-day-is
+						Sunday use:
+						//	Media sid me.m01.d06_gr_GR_cog.meLI.MM.EntranceHymnSunday.text End-Media
+						//	Hymn sid psLI.m01.d06.entrance.v1.text sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2s.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+							Insert_section usualSunday End-Insert
+						otherwise use:
+						//	Hymn sid psLI.m01.d06.entrance.v1.text sid hoLI.Antiphon21.text media-off sid me.m01.d06_gr_GR_cog.meLI.Antiphon2.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+							Hymn sid hoLI.EntranceHymn.text media-off sid hoLI.Antiphon21.text media-off sid me.m01.d06_gr_GR_cog.meLI.Antiphon2.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+					end-when
+				Jan 14 use:
+					when-name-of-day-is
+						Sunday use:
+							Media sid me.m01.d06_gr_GR_cog.meLI.MM.EntranceHymnSunday.text End-Media
+							Hymn sid psLI.m01.d06.entrance.v1.text sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2s.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+							Insert_section usualSunday End-Insert
+						otherwise use:
+							Hymn sid psLI.m01.d06.entrance.v1.text sid hoLI.Antiphon21.text media-off sid me.m01.d06_gr_GR_cog.meLI.Antiphon2.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+							Hymn sid hoLI.EntranceHymn.text media-off sid hoLI.Antiphon21.text media-off sid me.m01.d06_gr_GR_cog.meLI.Antiphon2.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+					end-when
+				Feb 2 thru 9 use:
+					when-movable-cycle-day-is
+						1 thru 13 use:
+							when-date-is
+								Feb 2, 9 use:
+									Section meeting
+									//	Media sid me.m02.d02_gr_GR_cog.meLI.MM.EntranceHymn.text End-Media
+										when-name-of-day-is
+											Sunday use:
+												Media sid me.m02.d02_gr_GR_cog.meLI.MM.EntranceHymnSunday.text End-Media
+												Hymn sid psLI.m02.d02.entrance.v1.text sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2s.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+											//	Insert_section usualSunday End-Insert
+											otherwise use:
+												Hymn sid psLI.m02.d02.entrance.v1.text sid hoLI.Antiphon21.text media-off sid me.m02.d02_gr_GR_cog.meLI.Antiphon2.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+											end-when
+									End-Section
+								Feb 3 thru 8 use:
+									Section meeting_af
+									//	Media sid me.m02.d02_gr_GR_cog.meLI.MM.EntranceHymn.text End-Media
+										when-name-of-day-is
+											Sunday use:
+											//	Hymn sid psLI.m02.d02.entrance.v1.text sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2s.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+												Insert_section usualSunday End-Insert
+											otherwise use:
+												Hymn sid hoLI.EntranceHymn.text media-off sid hoLI.Antiphon21.text media-off sid me.m02.d02_gr_GR_cog.meLI.Antiphon2.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+											//	Hymn sid hoLI.EntranceHymn.text media-off sid hoLI.Antiphon21.text media-off sid me.m02.d02_gr_GR_cog.meLI.Antiphon2.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+											end-when
+									End-Section
+							end-when
+						14 use:
+							when-date-is
+								Feb 2 thru 5 use: Insert_section meeting End-Insert
+							end-when
+						15 use:
+							when-date-is
+								Feb 2 thru 6 use: Insert_section meeting End-Insert
+							end-when
+						16 use:
+							when-date-is
+								Feb 2 thru 7 use: Insert_section meeting End-Insert
+							end-when
+						17 use:
+							when-date-is
+								Feb 2 thru 8 use: Insert_section meeting End-Insert
+							end-when
+						18 use:
+							when-date-is
+								Feb 2 thru 5 use: Insert_section meeting End-Insert
+							end-when
+						19 use:
+							when-date-is
+								Feb 2 thru 6 use: Insert_section meeting End-Insert
+							end-when
+						20 use:
+							when-date-is
+								Feb 2 thru 5 use: Insert_section meeting End-Insert
+							end-when
+						21 use:
+							when-date-is
+								Feb 2, 3 use: Insert_section meeting End-Insert
+							end-when
+						22 use:
+							when-date-is
+								Feb 2 thru 7 use: Insert_section meeting End-Insert
+							end-when
+						23 use:
+							when-date-is
+								Feb 2 use: Insert_section meeting End-Insert
+							end-when
+						otherwise use: 
+							when-name-of-day-is
+								Sunday use:
+									Media sid me.m02.d02_gr_GR_cog.meLI.MM.EntranceHymnSunday.text End-Media
+									Hymn sid psLI.m02.d02.entrance.v1.text sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2s.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+								//	Insert_section usualSunday End-Insert
+								otherwise use:
+									Insert_section meeting End-Insert
+							end-when
+					end-when
+				Mar 25 use:
+					Media sid me.m03.d25_gr_GR_cog.meLI.MM.EntranceHymn.text End-Media
+					when-name-of-day-is
+						Sunday use:
+							Hymn sid psLI.m03.d25.entrance.v1.text sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2s.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+						otherwise use:
+							Hymn sid psLI.m03.d25.entrance.v1.text sid hoLI.Antiphon21.text media-off sid me.m03.d25_gr_GR_cog.meLI.Antiphon2.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+					end-when
+				Aug 6 use:
+					Media sid me.m08.d06_gr_GR_cog.meLI.MM.EntranceHymn.text End-Media
+					Hymn sid psLI.m08.d06.entrance1.v1.text sid hoLI.Antiphon21.text media-off sid me.m08.d06_gr_GR_cog.meLI.Antiphon2.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+				Aug 7 thru 12 use:
+				//	Media sid me.m08.d06_gr_GR_cog.meLI.MM.EntranceHymn.text End-Media
+					when-name-of-day-is
+						Sunday use:
+						//	Hymn sid psLI.m08.d06.entrance.v1.text sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2s.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+							Insert_section usualSunday End-Insert
+						otherwise use:
+						//	Hymn sid psLI.m08.d06.entrance.v1.textsid hoLI.Antiphon21.text media-off sid me.m08.d06_gr_GR_cog.meLI.Antiphon2.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+							Hymn sid hoLI.EntranceHymn.text media-off sid hoLI.Antiphon21.text media-off sid me.m08.d06_gr_GR_cog.meLI.Antiphon2.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+					end-when
+				Sep 13 use: 
+					Hymn sid hoLI.EntranceHymn.text media-off sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2s.text sid hoLI.Antiphon22.text @ver media-off End-Hymn
+				Sep 14 use:
+					Media sid me.m09.d14_gr_GR_cog.meLI.MM.EntranceHymn.text End-Media
+					Hymn sid psLI.m09.d14.entrance.v1.text sid hoLI.Antiphon21.text media-off sid me.m09.d14_gr_GR_cog.meLI.Antiphon2.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+				Sep 15 thru 21 use:
+				//	Media sid me.m09.d14_gr_GR_cog.meLI.MM.EntranceHymn.text End-Media
+					when-name-of-day-is
+						Sunday use:
+						//	Hymn sid psLI.m09.d14.entrance.v1.text sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2s.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+							Insert_section usualSunday End-Insert
+						otherwise use:
+						//	Hymn sid psLI.m09.d14.entrance.v1.text sid hoLI.Antiphon21.text media-off sid me.m09.d14_gr_GR_cog.meLI.Antiphon2.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+							Hymn sid hoLI.EntranceHymn.text media-off sid hoLI.Antiphon21.text media-off sid me.m09.d15_gr_GR_cog.meLI.Antiphon2.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+					end-when		
+				Dec 25 use:
+					Media sid me.m12.d25_gr_GR_cog.meLI.MM.EntranceHymn.text End-Media
+					Hymn sid psLI.m12.d25.entrance.v1.text sid hoLI.Antiphon21.text media-off sid me.m12.d25_gr_GR_cog.meLI.Antiphon2.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+				Dec 26 thru 31 use:
+				//	Media sid me.m12.d25_gr_GR_cog.meLI.MM.EntranceHymn.text End-Media
+					when-name-of-day-is
+						Sunday use:
+						//	Hymn sid psLI.m12.d25.entrance.v1.text sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2s.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+							Insert_section usualSunday End-Insert
+						otherwise use:
+						//	Hymn sid psLI.m12.d25.entrance.v1.text sid hoLI.Antiphon21.text media-off sid me.m12.d25_gr_GR_cog.meLI.Antiphon2.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+							Hymn sid hoLI.EntranceHymn.text media-off sid hoLI.Antiphon21.text media-off sid me.m12.d25_gr_GR_cog.meLI.Antiphon2.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+					end-when
+				otherwise use:
+					when-movable-cycle-day-is
+						63 use:
+							Insert_section usualSunday End-Insert
+						64 use:
+							Media sid tr.d064_gr_GR_cog.trLI.MM.EntranceHymn.text End-Media
+							Hymn sid psLI.tr.d064.entrance.v1.text @ver sid hoLI.Antiphon21.text media-off sid tr.d064_gr_GR_cog.trLI.Antiphon2.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+						71 thru 109 use:
+							Media sid pe.d00P_gr_GR_cog.pePA.EntranceHymn.text End-Media
+							Hymn sid psLI.pe.d071.entrance.v1.text @ver media-off sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2s.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+						110, 118 use:
+							Media sid pe.d110_gr_GR_cog.peLI.MM.EntranceHymn.text End-Media
+							Hymn sid psLI.pe.d110.entrance.v1.text sid hoLI.Antiphon21.text media-off sid pe.d110_gr_GR_cog.peLI.Antiphon2.text @ver media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+						111 thru 117 use:
+							when-name-of-day-is
+								Sunday use: Insert_section usualSunday End-Insert
+								otherwise use:
+									Media sid pe.d110_gr_GR_cog.peLI.MM.EntranceHymnAF.text End-Media
+									Hymn sid hoLI.EntranceHymn.text media-off sid hoLI.Antiphon21.text media-off sid pe.d110_gr_GR_cog.peLI.Antiphon2.text @ver media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+							end-when
+						119 use:
+							Media sid hoLI.EntranceHymn2w.text End-Media
+							Hymn sid hoLI.EntranceHymn.text media-off sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2w.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+						120, 121, 126 use:
+							Media sid pe.d120_gr_GR_cog.peLI.MM.EntranceHymn.text End-Media
+							Hymn sid psLI.pe.d120.entrance.v1.text @ver sid pe.d120_gr_GR_cog.peLI.Antiphon2.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+						122 thru 125 use:
+							Media sid pe.d120_gr_GR_cog.peLI.MM.EntranceHymnAF.text End-Media
+							Hymn sid hoLI.EntranceHymn.text @ver sid pe.d120_gr_GR_cog.peLI.Antiphon2.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+						127 use:
+							Hymn sid hoLI.EntranceHymn.text media-off sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2s.text sid hoLI.Antiphon22.text @ver media-off End-Hymn
+					otherwise use:
+						when-name-of-day-is
+							Sunday use:
+								Section usualSunday
+									Hymn sid hoLI.EntranceHymn.text media-off sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2s.text sid hoLI.Antiphon22.text @ver media-off End-Hymn
+								End-Section
+							otherwise use:
+								Section usualWeekday
+									Hymn sid hoLI.EntranceHymn.text media-off sid hoLI.Antiphon21.text media-off sid hoLI.EntranceHymn2w.text sid hoLI.Antiphon22.text @ver media-off End-Hymn
+								End-Section
+					end-when
+				end-when
+		end-when				
+	End-Section	
+
+	Section eisodikon_refrain //when choir repeats refrain after eisodikon_complete
+			when-date-is
+				Jan 1 use: 
+					when-name-of-day-is
+						Sunday use:
+							Hymn sid hoLI.Antiphon21.text media-off sid hoLI.Antiphon2s.text sid hoLI.Antiphon22.text @ver media-off End-Hymn
+						otherwise use:
+							Hymn sid hoLI.Antiphon21.text media-off sid me.m01.d01_gr_GR_cog.meLI.Antiphon2.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+					end-when				
+				Jan 6 use:
+					Hymn sid hoLI.Antiphon21.text media-off sid me.m01.d06_gr_GR_cog.meLI.Antiphon2.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+				Jan 7 thru 14 use:
+					when-name-of-day-is
+						Sunday use:
+							Hymn sid hoLI.Antiphon21.text media-off sid hoLI.Antiphon2s.text sid hoLI.Antiphon22.text @ver media-off End-Hymn
+						otherwise use:
+							Hymn sid hoLI.Antiphon21.text media-off sid me.m01.d06_gr_GR_cog.meLI.Antiphon2.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+					end-when
+				Feb 2 thru 9 use:
+					when-movable-cycle-day-is
+						1 thru 13 use:
+							when-date-is
+								Feb 2 thru 9 use:
+									Section meeting
+										when-name-of-day-is
+											Sunday use:
+												Hymn sid hoLI.Antiphon21.text media-off sid hoLI.Antiphon2s.text sid hoLI.Antiphon22.text @ver media-off End-Hymn
+											otherwise use:
+												Hymn sid hoLI.Antiphon21.text media-off sid me.m02.d02_gr_GR_cog.meLI.Antiphon2.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+											end-when
+									End-Section
+							end-when
+						14 use:
+							when-date-is
+								Feb 2 thru 5 use: Insert_section meeting End-Insert
+							end-when
+						15 use:
+							when-date-is
+								Feb 2 thru 6 use: Insert_section meeting End-Insert
+							end-when
+						16 use:
+							when-date-is
+								Feb 2 thru 7 use: Insert_section meeting End-Insert
+							end-when
+						17 use:
+							when-date-is
+								Feb 2 thru 8 use: Insert_section meeting End-Insert
+							end-when
+						18 use:
+							when-date-is
+								Feb 2 thru 5 use: Insert_section meeting End-Insert
+							end-when
+						19 use:
+							when-date-is
+								Feb 2 thru 6 use: Insert_section meeting End-Insert
+							end-when
+						20 use:
+							when-date-is
+								Feb 2 thru 5 use: Insert_section meeting End-Insert
+							end-when
+						21 use:
+							when-date-is
+								Feb 2, 3 use: Insert_section meeting End-Insert
+							end-when
+						22 use:
+							when-date-is
+								Feb 2 thru 7 use: Insert_section meeting End-Insert
+							end-when
+						23 use:
+							when-date-is
+								Feb 2 use: Insert_section meeting End-Insert
+							end-when
+						otherwise use: 
+							when-name-of-day-is
+								Sunday use: Insert_section usualSunday End-Insert
+								otherwise use: Insert_section meeting End-Insert
+							end-when
+					end-when
+				Mar 25 use:
+					when-name-of-day-is
+						Sunday use:
+							Hymn sid hoLI.Antiphon21.text media-off sid hoLI.Antiphon2s.text sid hoLI.Antiphon22.text @ver media-off End-Hymn
+						otherwise use:
+							Hymn sid hoLI.Antiphon21.text media-off sid me.m03.d25_gr_GR_cog.meLI.Antiphon2.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+					end-when
+				Aug 6 use:
+					Hymn sid hoLI.Antiphon21.text media-off sid me.m08.d06_gr_GR_cog.meLI.Antiphon2.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+				Aug 7 thru 12 use:
+					when-name-of-day-is
+						Sunday use:
+							Hymn sid hoLI.Antiphon21.text media-off sid hoLI.Antiphon2s.text sid hoLI.Antiphon22.text @ver media-off End-Hymn
+						otherwise use:
+							Hymn sid hoLI.Antiphon21.text media-off sid me.m08.d06_gr_GR_cog.meLI.Antiphon2.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+					end-when
+				Sep 13 use: 
+					Hymn sid hoLI.Antiphon21.text media-off sid hoLI.Antiphon2s.text sid hoLI.Antiphon22.text @ver media-off End-Hymn
+				Sep 14 use:
+					Hymn sid hoLI.Antiphon21.text media-off sid me.m09.d14_gr_GR_cog.meLI.Antiphon2.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+				Sep 15 thru 21 use:
+					when-name-of-day-is
+						Sunday use:
+							Hymn sid hoLI.Antiphon21.text media-off sid hoLI.Antiphon2s.text sid hoLI.Antiphon22.text @ver media-off End-Hymn
+						otherwise use:
+							Hymn sid hoLI.Antiphon21.text media-off sid me.m09.d14_gr_GR_cog.meLI.Antiphon2.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+					end-when		
+				Dec 25 use:
+					Hymn sid hoLI.Antiphon21.text media-off sid me.m12.d25_gr_GR_cog.meLI.Antiphon2.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+				Dec 26 thru 31 use:
+					when-name-of-day-is
+						Sunday use:
+							Hymn sid hoLI.Antiphon21.text media-off sid hoLI.Antiphon2s.text sid hoLI.Antiphon22.text @ver media-off End-Hymn
+						otherwise use:
+							Hymn sid hoLI.Antiphon21.text media-off sid me.m12.d25_gr_GR_cog.meLI.Antiphon2.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+					end-when
+				otherwise use:
+					when-movable-cycle-day-is
+						64 use:
+							Hymn sid hoLI.Antiphon21.text media-off sid tr.d064_gr_GR_cog.trLI.Antiphon2.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+						71 thru 109 use:
+							Hymn sid hoLI.Antiphon21.text media-off sid hoLI.Antiphon2s.text sid hoLI.Antiphon22.text @ver media-off End-Hymn
+						110, 118 use:
+							Hymn sid hoLI.Antiphon21.text media-off sid pe.d110_gr_GR_cog.peLI.Antiphon2.text @ver sid hoLI.Antiphon22.text @ver media-off End-Hymn
+						111 thru 117 use:
+							when-name-of-day-is
+								Sunday use: Insert_section usualSunday End-Insert
+								otherwise use:
+									Hymn sid hoLI.Antiphon21.text media-off sid pe.d110_gr_GR_cog.peLI.Antiphon2.text @ver sid hoLI.Antiphon22.text @ver media-off End-Hymn
+							end-when
+						119 use:
+							Hymn sid hoLI.Antiphon21.text media-off sid hoLI.Antiphon2w.text sid hoLI.Antiphon22.text @ver media-off End-Hymn
+						120 thru 126 use:
+							Hymn sid pe.d120_gr_GR_cog.peLI.Antiphon2.text media-off sid hoLI.Antiphon22.text @ver media-off End-Hymn
+						127 use:
+							Hymn sid hoLI.Antiphon21.text media-off sid hoLI.Antiphon2s.text sid hoLI.Antiphon22.text @ver media-off End-Hymn
+					otherwise use:
+						when-name-of-day-is
+							Sunday use:
+								Section usualSunday
+									Hymn sid hoLI.Antiphon21.text media-off sid hoLI.Antiphon2s.text sid hoLI.Antiphon22.text @ver media-off End-Hymn
+								End-Section
+							otherwise use:
+								Hymn sid hoLI.Antiphon21.text media-off sid hoLI.Antiphon2w.text sid hoLI.Antiphon22.text @ver media-off End-Hymn
+					end-when
+				end-when
+		end-when				
+	End-Section	
+
+End-Template

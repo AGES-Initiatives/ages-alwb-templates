@@ -1,0 +1,77 @@
+Template TYMO
+
+Status NA
+
+	import client_gr_GR_cog.*
+	import ho.s02_gr_GR_cog.*
+	import ho.s12_gr_GR_cog.*
+
+	import me.*
+	import oc.*
+	import pe.*
+	import tr.*
+	
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+	import ty.typikon.parts_gr_GR_cog.*
+	import ty.typikon.pe_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Section _01_intro_
+		when-movable-cycle-day-is
+			72, 73, 74, 75, 76, 77, 109 use:
+				Section pascha
+					Para role typikon<b>sid tyPart.Enarxis</>sid enarxis01.incipit End-Para
+					Para role typikonindent sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.incipit<r>sid tyPE.PaschalEnarxis4</>End-Para
+					Para role typikonindent<r>sid tyPE.PaschalEnarxis5</>End-Para
+				End-Section
+			otherwise use:
+				Section enarxis
+					when-movable-cycle-day-is 
+						78 thru 108 use:
+							Para role typikon<b>sid tyPart.Enarxis</>sid enarxis01.incipit End-Para
+							Para role typikonindent sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.incipit<r>sid tyPE.PaschalEnarxis4</>End-Para
+							Para role typikonindent<r>sid tyPE.PaschalEnarxis6</>End-Para
+						otherwise use:
+							Para role typikon<b>sid tyPart.Enarxis</>sid enarxis01.incipit sid VasilefOuranie.incipit End-Para
+							Para role typikonindent<r>sid tyPart.Trisagion</>sid AgiosOTheos.incipit End-Para
+					end-when
+				End-Section
+		end-when
+	End-Section
+
+	Section _03_triadic_canon_
+		Para role typikonindent<r>sid tyPart.AfterPsalm50</>End-Para
+		Para role typikon<b>sid tyPart.TriadicCanon</><r>sid tySource.Octoechos rid ocMO.Ode11.mode</>End-Para
+		Para role typikonindent rid ocMO.Ode11.incipit End-Para
+	End-Section
+	Section _04_triadic_megalynaria
+		Para role typikon<b>sid tyPart.TriadicMegalynaria</><r>sid tySource.Horologion sid Mode2</>End-Para
+		Para role typikonindent sid hoMO.TriadicMegalynaria01.incipit End-Para
+	End-Section
+
+	Section _06_sundays_feastdays_
+		Section trisagion
+			Para role typikonindent<r>sid tyPart.Trisagion</>sid AgiosOTheos.incipit End-Para
+		End-Section
+		when-name-of-day-is
+			Sunday use:
+				Section hypakoe_sunday
+					Para role typikon<b>sid tyPart.HypakoeOfMode</><r>sid tySource.Octoechos rid ocMO.Ode11.mode</>End-Para
+					Para role typikonindent rid ocMA.Hypakoe.incipit End-Para
+				End-Section
+			otherwise use:
+				Section feastday //currently handled explicitly in template
+				End-Section
+		end-when
+	End-Section
+	
+End-Template
