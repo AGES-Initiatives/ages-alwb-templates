@@ -1,0 +1,40 @@
+Template ematins.pdf.cover.links.lookup
+
+Status NA
+
+	import ematinscovers_en_US_ematins.*
+
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+
+	import iTags.*
+	import bTags.*
+	import roles.*
+	import rules.*
+	
+	Section vespers
+		Title role cover9 sid vesperslamplightingprayers.link.title End-Title
+		Title role cover10<bigblack><b>sid Bilingual</></>sid vesperslamplightingprayers.link.GE End-Title
+		Title role cover10<bigblack><b>sid English</></>sid vesperslamplightingprayers.link.E End-Title
+	End-Section
+	
+	Section matins
+		Title role cover9 sid matinsordinary.link.title End-Title
+		when-movable-cycle-day-is
+			78 thru 108 use:
+				Title role cover10<bigblack><b>sid Bilingual</></>sid matinsordinary_paschal.link.GE End-Title
+				Title role cover10<bigblack><b>sid English</></>sid matinsordinary_paschal.link.E End-Title
+			110 thru 119 use:
+				Title role cover10<bigblack><b>sid Bilingual</></>sid matinsordinary_ascension.link.GE End-Title
+				Title role cover10<bigblack><b>sid English</></>sid matinsordinary_ascension.link.E End-Title
+			otherwise use:
+				Title role cover10<bigblack><b>sid Bilingual</></>sid matinsordinary.link.GE End-Title
+				Title role cover10<bigblack><b>sid English</></>sid matinsordinary.link.E End-Title
+		end-when
+	End-Section
+
+End-Template
