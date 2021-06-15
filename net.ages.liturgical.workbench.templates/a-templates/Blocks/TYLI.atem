@@ -25,6 +25,8 @@ Status NA
 	import titles_gr_GR_cog.*
 	import ty.typikon.parts_gr_GR_cog.*
 	import ty.typikon.pe_gr_GR_cog.*
+
+	import ty.li.incipit_gr_GR_cog.*
 	
 	import iTags.*
 	import bTags.*
@@ -71,7 +73,38 @@ Status NA
 
 	Section _02_Antiphons__
 		Section sundays_weekdays_feasts
-			Para role typikon<b>sid tyPart.Antiphons</>End-Para
+		//	Para role typikon<b>sid tyPart.Antiphons</>End-Para
+
+			Section note
+				when-date-is
+					Jan 1 use: Para role typikon<b>sid tyPart.Antiphons</><r>sid tyLIin.antiphon_verses.jan01.note</>End-Para
+					Jan 6 thru 14 use: Para role typikon<b>sid tyPart.Antiphons</><r>sid tyLIin.antiphon_verses.jan06.note</>End-Para
+					Feb 2 thru 9 use: Para role typikon<b>sid tyPart.Antiphons</><r>sid tyLIin.antiphon_verses.feb02.note</>End-Para
+					Mar 25 use: Para role typikon<b>sid tyPart.Antiphons</><r>sid tyLIin.antiphon_verses.mar25.note</>End-Para
+					otherwise use:
+						when-movable-cycle-day-is
+							29 use: Para role typikon<b>sid tyPart.Antiphons</><r>sid tyLIin.antiphon_verses.lent1.note</>End-Para
+							43 use: Para role typikon<b>sid tyPart.Antiphons</><r>sid tyLIin.antiphon_verses.lent3.note</>End-Para
+							64 use: Para role typikon<b>sid tyPart.Antiphons</><r>sid tyLIin.antiphon_verses.palm.note</>End-Para
+							71 thru 109 use: Para role typikon<b>sid tyPart.Antiphons</><r>sid tyLIin.antiphon_verses.pascha.note</>End-Para
+							110 thru 118 use: Para role typikon<b>sid tyPart.Antiphons</><r>sid tyLIin.antiphon_verses.ascension.note</>End-Para
+							120 thru 126 use: Para role typikon<b>sid tyPart.Antiphons</><r>sid tyLIin.antiphon_verses.pentecost.note</>End-Para
+							otherwise use:
+								when-date-is
+									Aug 6 thru 13 use: Para role typikon<b>sid tyPart.Antiphons</><r>sid tyLIin.antiphon_verses.aug06.note</>End-Para
+									Aug 15 thru 23 use: Para role typikon<b>sid tyPart.Antiphons</><r>sid tyLIin.antiphon_verses.aug15.note</>End-Para
+									Sep 8 thru 12 use: Para role typikon<b>sid tyPart.Antiphons</><r>sid tyLIin.antiphon_verses.sep08.note</>End-Para
+									Sep 14 thru 22 use: Para role typikon<b>sid tyPart.Antiphons</><r>sid tyLIin.antiphon_verses.sep14.note</>End-Para
+									Nov 21 thru 25 use: Para role typikon<b>sid tyPart.Antiphons</><r>sid tyLIin.antiphon_verses.nov21.note</>End-Para
+									Dec 25 thru 31 use: Para role typikon<b>sid tyPart.Antiphons</><r>sid tyLIin.antiphon_verses.dec25.note</>End-Para
+									otherwise use: Para role typikon<b>sid tyPart.Antiphons</><r>sid tyLIin.antiphon_verses.sunday.note</>End-Para
+								end-when
+						end-when
+				end-when
+			End-Section
+
+
+
 			Section antiphon1
 				Insert_section Selector_TY_Antiphons.antiphon1__.specific_day End-Insert
 			End-Section
