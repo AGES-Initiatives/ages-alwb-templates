@@ -1,0 +1,996 @@
+Template Selector_TY_MatinsGospel 
+
+Status NA
+
+	import me.*
+	import tr.*
+	import pe.*
+	import ho.s03_gr_GR_cog.*
+	import liturgical.verses_gr_GR_cog.*
+	import menaion.verses_gr_GR_cog.*
+	import ps_gr_GR_cog.*
+	
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+	import ty.typikon.parts_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Section gospel_hierarch_eo
+		Rubric sid standing.prefix sid standing.matins.gospel End-Rubric
+		Insert_section gospel_introH End-Insert
+		Insert_section gospel_eo End-Insert
+		Insert_section Psalm50_chant_hierarch End-Insert
+		Insert_section PostGospel_eo End-Insert
+	End-Section
+	Section gospel_hierarch_mc
+		Rubric sid standing.prefix sid standing.matins.gospel End-Rubric
+		when-movable-cycle-day-is
+			64 use: //palm sunday
+				Section palmsunday
+					Insert_section gospel_introH End-Insert
+					Insert_section gospel_mc End-Insert
+					Insert_section Psalm50_read_hierarch End-Insert
+					Insert_section PostGospel_mc End-Insert
+				End-Section
+			65 thru 68 use:
+				Insert_section LN.hBeforeGospel End-Insert
+				Insert_section gospel_mc End-Insert
+				Insert_section Psalm50_read_hierarch End-Insert
+			71 use: 
+				Insert_section LN.hBeforeGospel End-Insert
+				Insert_section gospel_mc End-Insert
+			72, 73, 74, 75 use:
+				Insert_section gospel_introH End-Insert
+				Insert_section gospel_mc End-Insert
+				Actor sid Hierarch End-Actor
+				Reading sid hoMA.SunPostGospel.text @ver End-Reading
+				Insert_section PostGospel_me End-Insert
+			78, 85, 92, 99, 106, 113 use:
+				Section sundays_of_pascha
+					Insert_section gospel_introH End-Insert
+					Insert_section gospel_mc End-Insert
+					Insert_section Psalm50_chant_hierarch End-Insert
+					Insert_section PostGospel_eo End-Insert
+				End-Section
+			110, 120 use:
+				Section ascension_pentecost
+					Insert_section gospel_introH End-Insert
+					Insert_section gospel_mc End-Insert
+					Insert_section Psalm50_read_hierarch End-Insert
+					Insert_section PostGospel_mc End-Insert
+				End-Section
+		end-when
+	End-Section
+	Section gospel_hierarch_me
+		Rubric sid standing.prefix sid standing.matins.gospel End-Rubric
+		Insert_section gospel_introH End-Insert
+		Insert_section gospel_me End-Insert
+		Insert_section Psalm50_read_hierarch End-Insert
+		Insert_section PostGospel_me End-Insert
+	End-Section
+	Section gospel_hierarch_mealt1
+		Section matinsgospel
+			Rubric sid standing.prefix sid standing.matins.gospel End-Rubric
+			Insert_section gospel_introH End-Insert
+			Insert_section gospel_mealt1 End-Insert
+			Insert_section Psalm50_read_hierarch End-Insert
+			Insert_section PostGospel_mealt1 End-Insert
+		End-Section
+	End-Section
+	Section gospel_hierarch_pealt1
+		Section matinsgospel
+			Rubric sid standing.prefix sid standing.matins.gospel End-Rubric
+			Insert_section gospel_introH End-Insert
+			Insert_section gospel_pealt1 End-Insert
+			when-movable-cycle-day-is
+				72 thru 77 use:
+					Actor sid Hierarch End-Actor
+					Reading sid hoMA.SunPostGospel.text @ver End-Reading
+				otherwise use:
+					Insert_section Psalm50_read_hierarch End-Insert
+			end-when
+			Insert_section PostGospel_pealt1 End-Insert
+		End-Section
+	End-Section
+	Section gospel_priest_eo
+		Rubric sid standing.prefix sid standing.matins.gospel End-Rubric
+		Insert_section gospel_introP End-Insert
+		Insert_section gospel_eo End-Insert
+		Insert_section Psalm50_chant End-Insert
+		Insert_section PostGospel_eo End-Insert
+	End-Section
+	Section gospel_priest_mc
+		Rubric sid standing.prefix sid standing.matins.gospel End-Rubric
+		when-movable-cycle-day-is
+			64 use: //palm sunday
+				Section palmsunday
+					Insert_section gospel_introP End-Insert
+					Insert_section gospel_mc End-Insert
+					Insert_section Psalm50_read End-Insert
+					Insert_section PostGospel_mc End-Insert
+				End-Section
+			65 thru 68 use:
+				Insert_section LN.BeforeGospel End-Insert
+				Insert_section gospel_mc End-Insert
+				Insert_section Psalm50_read End-Insert
+			71 use: 
+				Insert_section LN.BeforeGospel End-Insert
+				Insert_section gospel_mc End-Insert
+			72, 73, 74, 75 use:
+				Insert_section gospel_introP End-Insert
+				Insert_section gospel_mc End-Insert
+				Actor sid Reader End-Actor
+				Reading sid hoMA.SunPostGospel.text @ver End-Reading
+				Insert_section PostGospel_me End-Insert
+			78, 85, 92, 99, 106, 113 use:
+				Section sundays_of_pascha
+					Insert_section gospel_introP End-Insert
+					Insert_section gospel_mc End-Insert
+					Insert_section Psalm50_chant End-Insert
+					Insert_section PostGospel_eo End-Insert
+				End-Section
+			110, 120 use:
+				Section ascension_pentecost
+					Insert_section gospel_introP End-Insert
+					Insert_section gospel_mc End-Insert
+					Insert_section Psalm50_read End-Insert
+					Insert_section PostGospel_mc End-Insert
+				End-Section
+		end-when
+	End-Section
+	Section gospel_priest_me
+		Insert_section gospel_me End-Insert
+		Insert_section Psalm50_read End-Insert
+		Insert_section PostGospel_me End-Insert
+	End-Section
+	Section gospel_priest_mealt1
+		Section matinsgospel
+			Rubric sid standing.prefix sid standing.matins.gospel End-Rubric
+			Insert_section gospel_introP End-Insert
+			Insert_section gospel_mealt1 End-Insert
+			Insert_section Psalm50_read End-Insert
+			Insert_section PostGospel_mealt1 End-Insert
+		End-Section
+	End-Section
+	Section gospel_priest_pealt1
+		Section matinsgospel
+			Rubric sid standing.prefix sid standing.matins.gospel End-Rubric
+			Insert_section gospel_introP End-Insert
+			Insert_section gospel_pealt1 End-Insert
+			when-movable-cycle-day-is
+				72 thru 77 use:
+					Actor sid Reader End-Actor
+					Reading sid hoMA.SunPostGospel.text @ver End-Reading
+				otherwise use:
+					Insert_section Psalm50_read End-Insert
+			end-when
+			Insert_section PostGospel_pealt1 End-Insert
+		End-Section
+	End-Section
+
+			Section gospel_eo
+				Actor sid Priest End-Actor
+				Dialog sid gos03a rid le.go.eo.leeoMA.Gospel.book_string sid gos03b End-Dialog
+				Actor sid Deacon End-Actor
+				Dialog sid exc19 End-Dialog
+				Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+				Actor sid Priest<inr>sid FromTheAltarTable</>End-Actor
+				Title role chapverse sid Eothinon rid le.go.eo.leeoMA.Gospel.title_abbr End-Title
+				Title role chapverse rid le.go.eo.leeoMA.Gospel.book_string rid le.go.eo.leeoMA.Gospel.chapverse End-Title
+				Reading rid le.go.eo.leeoMA.Gospel.text @ver End-Reading
+				Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+			End-Section
+			Section gospel_mc
+				when-movable-cycle-day-is
+					64 use:
+						Section palmsunday
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.mc.p4.sections.Day_PalmSunday.matins.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.mc.p4.sections.Day_PalmSunday.matins.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					65 use:
+						Section holymonday
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.mc.p5.sections.Day_HolyMonday.matins.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.mc.p5.sections.Day_HolyMonday.matins.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					66 use:
+						Section holytuesday
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.mc.p5.sections.Day_HolyTuesday.matins.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.mc.p5.sections.Day_HolyTuesday.matins.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					67 use:
+						Section holywednesday
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.mc.p5.sections.Day_HolyWednesday.matins.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.mc.p5.sections.Day_HolyWednesday.matins.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					68 use:
+						Section holythursday
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.mc.p5.sections.Day_HolyThursday.matins.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.mc.p5.sections.Day_HolyThursday.matins.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					71 use:
+						Section pascha
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.mc.p1.sections.Day_Sunday01.matins.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.mc.p1.sections.Day_Sunday01.matins.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					78 use:
+						Section thomas
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.mc.p1.sections.Day_Sunday02.matins.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheAltarTable</>End-Actor
+							Title role chapverse sid Eothinon sid anum1 End-Title
+							Insert_section bk.ev.mc.p1.sections.Day_Sunday02.matins.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					85 use:
+						Section myrrhbearers
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.mc.p1.sections.Day_Sunday03.matins.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheAltarTable</>End-Actor
+							Title role chapverse sid Eothinon sid anum4 End-Title
+							Insert_section bk.ev.mc.p1.sections.Day_Sunday03.matins.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					92 use:
+						Section paralytic
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.mc.p1.sections.Day_Sunday04.matins.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheAltarTable</>End-Actor
+							Title role chapverse sid Eothinon sid anum5 End-Title
+							Insert_section bk.ev.mc.p1.sections.Day_Sunday04.matins.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					99 use:
+						Section samaritanwoman
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.mc.p1.sections.Day_Sunday05.matins.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheAltarTable</>End-Actor
+							Title role chapverse sid Eothinon sid anum7 End-Title
+							Insert_section bk.ev.mc.p1.sections.Day_Sunday05.matins.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					106 use:
+						Section blindman
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.mc.p1.sections.Day_Sunday06.matins.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheAltarTable</>End-Actor
+							Title role chapverse sid Eothinon sid anum8 End-Title
+							Insert_section bk.ev.mc.p1.sections.Day_Sunday06.matins.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					110 use:
+						Section ascension
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.mc.p1.sections.Week_06.Day_Thursday.matins.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.mc.p1.sections.Week_06.Day_Thursday.matins.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					113 use:
+						Section holyfathers
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.mc.p1.sections.Day_Sunday07.matins.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheAltarTable</>End-Actor
+							Title role chapverse sid Eothinon sid anum10 End-Title
+							Insert_section bk.ev.mc.p1.sections.Day_Sunday07.matins.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					120 use:
+						Section pentecost
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.mc.p1.sections.Day_Sunday08.matins.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.mc.p1.sections.Day_Sunday08.matins.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+				end-when
+			End-Section
+			Section gospel_me
+				when-date-is
+					Jan 1, 10, 25, 27 use: Insert_section Nov13 End-Insert
+					Jan 6 use:
+						Section Jan06
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.me.m01.sections.d06.matins.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.me.m01.sections.d06.matins.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					Jan 11 use:
+						Section Jan11
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.me.m01.sections.d17.liturgy.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.me.m01.sections.d17.liturgy.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					Jan 17, 20 use:
+						Section Jan17
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.me.m01.sections.d17.matins.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.me.m01.sections.d17.matins.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					Jan 18 use: Insert_section Jan30 End-Insert
+					Jan 30 use:
+						Section Jan30
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.me.m01.sections.d30.matins.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.me.m01.sections.d30.matins.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					Feb 2 use:
+						Section Feb02
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.me.m02.sections.d02.matins.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.me.m02.sections.d02.matins.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					Feb 10 use:
+						Section Feb10
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.ge.sections.forMartyrs.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.ge.sections.forMartyrs.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					Feb 24 use:
+						Section Feb24
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.me.m02.sections.d24.matins.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.me.m02.sections.d24.matins.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					Mar 9 use:
+						Section Mar09
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.me.m03.sections.d09.matins.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.me.m03.sections.d09.matins.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					Mar 25 use: Insert_section Sep08 End-Insert
+					Apr 23 use:
+						Section Apr23
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.me.m04.sections.d23.matins.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.me.m04.sections.d23.matins.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					May 8 use: Insert_section Sep26 End-Insert
+					May 21 use: Insert_section Jan30 End-Insert
+					May 25 use: Insert_section Feb24 End-Insert
+					Jun 4 use: Insert_section Nov13 End-Insert
+					Jun 24 use:
+						Section Jun24
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.me.m06.sections.d24.matins.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.me.m06.sections.d24.matins.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					Jun 29 use: Insert_section Sep26 End-Insert
+					Jul 11, 17 use: 
+						Section Jul11
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.me.m12.sections.d04.liturgy.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.me.m12.sections.d04.liturgy.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					Jul 27 use: 
+						Section Jul27
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.ge.sections.forMartyrs.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.ge.sections.forMartyrs.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					Aug 6 use:
+						Section Aug06
+							Para role typikon<b>sid tyPart.MatinsGospel</><r>sid le.go.me.m08.d06_gr_GR_cog.lemeMA.Gospel.title_abbr</><r>sid parenthesis.open sid le.go.me.m08.d06_gr_GR_cog.lemeMA.Gospel.book_abbr sid le.go.me.m08.d06_gr_GR_cog.lemeMA.Gospel.chapverse sid parenthesis.close</>End-Para
+							Para role typikonindent sid le.go.me.m08.d06_gr_GR_cog.lemeMA.Gospel.incipit End-Para
+						End-Section
+					Aug 15 use: Insert_section Sep08 End-Insert
+					Aug 29 use:
+						Section Aug29
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.me.m08.sections.d29.matins.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.me.m08.sections.d29.matins.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					Sep 1 use: Insert_section Jan17 End-Insert
+					Sep 8 use:
+						Section Sep08
+							Para role typikon<b>sid tyPart.MatinsGospel</><r>sid le.go.me.m09.d08_gr_GR_cog.lemeMA.Gospel.title_abbr</><r>sid parenthesis.open sid le.go.me.m09.d08_gr_GR_cog.lemeMA.Gospel.book_abbr sid le.go.me.m09.d08_gr_GR_cog.lemeMA.Gospel.chapverse sid parenthesis.close</>End-Para
+							Para role typikonindent sid le.go.me.m09.d08_gr_GR_cog.lemeMA.Gospel.incipit End-Para
+						End-Section
+					Sep 14 use:
+						Section Sep14
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.me.m09.sections.d14.matins.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.me.m09.sections.d14.matins.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					Sep 17 use:
+						Section Sep17
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.me.m09.sections.d17.matins.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.me.m09.sections.d17.matins.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					Sep 26 use:
+						Section Sep26
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.me.m09.sections.d26.matins.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.me.m09.sections.d26.matins.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					Oct 26 use:
+						Section Oct26
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.me.m10.sections.d26.matins.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.me.m10.sections.d26.matins.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					Nov 3 use: Insert_section Apr23 End-Insert
+					Nov 8 use:
+						Section Nov08
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.me.m11.sections.d08.matins.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.me.m11.sections.d08.matins.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					Nov 13 use:
+						Section Nov13
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.me.m11.sections.d13.matins.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.me.m11.sections.d13.matins.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					Nov 21 use: Insert_section Sep08 End-Insert
+					Nov 25 use: 
+						Section Nov25
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.ge.sections.forWomenDevout.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.ge.sections.forWomenDevout.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					Nov 30 use:
+						Section Nov30
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.me.m11.sections.d30.matins.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.me.m11.sections.d30.matins.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					Dec 4 use:
+						Section Dec04
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.me.m12.sections.d04.matins.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.me.m12.sections.d04.matins.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					Dec 5 use:
+						Section Dec05
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.me.m12.sections.d05.matins.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.me.m12.sections.d05.matins.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					Dec 6, 12, 16 use: Insert_section Nov13 End-Insert
+					Dec 25 use:
+						Section Dec25
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.me.m12.sections.d25.matins.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.me.m12.sections.d25.matins.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+				end-when		
+			End-Section
+			Section gospel_mealt1
+				when-date-is
+					Feb 6 use: Insert_section gospel_me.Nov13 End-Insert
+					Feb 19 use:
+						Section Feb19
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.me.m02.sections.d19.matins.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.me.m02.sections.d19.matins.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					Feb 26 use:
+						Section Feb26
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.me.m04.sections.d01.liturgy.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.me.m04.sections.d01.liturgy.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					Mar 2 use:
+						Section Mar02 //St. Nicholas Planas
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.ge.sections.forAngels.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.ge.sections.forAngels.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					Jul 12 use:
+						Section Jul12
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.me.m12.sections.d05.liturgy.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.me.m12.sections.d05.liturgy.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					Jul 20 use: 
+						Section Jul20
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.ge.sections.forProphets.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.ge.sections.forProphets.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					Jul 22 use: 
+						Section Jul22_Markella
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.ge.sections.forWomenDevoutMartyrs.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.ge.sections.forWomenDevoutMartyrs.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					Jul 25 use: Insert_section gospel_me.Sep08 End-Insert
+					Aug 16 use: Insert_section gospel_me.Dec05 End-Insert
+					Aug 24 use:
+						Section Aug24_StCosmas
+							Actor sid Priest End-Actor
+							Dialog sid gos03a sid le.go.mc.d137_gr_GR_cog.lemcLI.Gospel.book_string sid gos03b End-Dialog
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Title role chapverse sid le.go.mc.d137_gr_GR_cog.lemcLI.Gospel.chapverse End-Title		
+							Reading sid le.go.mc.d137_gr_GR_cog.lemcLI.Gospel.text @ver End-Reading
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					Sep 3 use: Insert_section gospel_me.Nov13 End-Insert
+					Sep 7 use: Insert_section gospel_me.Dec04 End-Insert
+					Sep 17 use: Insert_section gospel_me.Sep17 End-Insert
+					Sep 24 use: Insert_section gospel_me.Sep08 End-Insert
+					Oct 18 use:
+						Section Oct18
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.eo.sections.eothinon05.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.eo.sections.eothinon05.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					Oct 20 use: Insert_section gospel_me.Dec05 End-Insert
+					Oct 1, 28 use: Insert_section gospel_me.Sep08 End-Insert
+					Oct 23 use:
+						Section Oct23_StJames
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.me.m10.sections.d23.matins.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.me.m10.sections.d23.matins.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+					Nov 9, 14 use: Insert_section gospel_me.Nov13 End-Insert
+					Nov 22 use: Insert_section gospel_me.Dec05 End-Insert
+					Dec 2 use: Insert_section gospel_me.Jan17 End-Insert
+					Dec 17 use:
+						Section Dec17_StDionysios
+							Actor sid Priest End-Actor
+							Insert_section bk.ev.me.m12.sections.d12.matins.go_book End-Insert
+							Actor sid Deacon End-Actor
+							Dialog sid exc19 End-Dialog
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+							Actor sid Priest<inr>sid FromTheGate</>End-Actor
+							Insert_section bk.ev.me.m12.sections.d12.matins.go_lesson End-Insert
+							Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+						End-Section
+				end-when
+			End-Section
+			Section gospel_pealt1
+				when-movable-cycle-day-is
+					73 use:
+						Section StsRaphaelNicholasIrene
+							Insert_section gospel_me.Apr23 End-Insert
+						End-Section
+				end-when
+			End-Section
+
+//blocks
+	Section gospel_introH
+		Actor sid Deacon End-Actor
+		Dialog sid pet00 End-Dialog
+		Dialog<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
+		Actor sid Priest End-Actor
+		Dialog sid exc06 End-Dialog
+		Actor sid Choir End-Actor
+		Dialog sid res04 End-Dialog
+		Title role mode sid Mode2 End-Title
+		Media sid hoMA.PreGospelHymn.text @ver End-Media
+		Hymn sid psMA.gospelintro.v1.text<r>sid Twice</>sid psMA.gospelintro.v1a.text sid psMA.gospelintro.v1b.text @ver End-Hymn
+		Insert_section LN.hBeforeGospel End-Insert
+	End-Section
+	Section gospel_introP
+		Actor sid Deacon End-Actor
+		Dialog sid pet00 End-Dialog
+		Dialog<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
+		Actor sid Priest End-Actor
+		Dialog sid exc06 End-Dialog
+		Actor sid Choir End-Actor
+		Dialog sid res04 End-Dialog
+		Title role mode sid Mode2 End-Title
+		Media sid hoMA.PreGospelHymn.text @ver End-Media
+		Hymn sid psMA.gospelintro.v1.text<r>sid Twice</>sid psMA.gospelintro.v1a.text sid psMA.gospelintro.v1b.text @ver End-Hymn
+		Insert_section LN.BeforeGospel End-Insert
+	End-Section
+	Section Psalm50_chant
+		Actor sid Reader End-Actor
+		Reading sid hoMA.SunPostGospel.text @ver End-Reading
+		Actor sid Choir End-Actor
+		Title role desig sid psa50.title End-Title
+		Title<Tmode>sid Mode2</><Trubric>sid ITisEvdomados</>End-Title
+		Media sid hoMA.Psalm50.text End-Media
+	//	Insert_section LiturgicalPsalms.Psalm_50_Verses End-Insert
+		Insert_section LiturgicalPsalms.Psalm_50_Chanted End-Insert
+	End-Section
+	Section Psalm50_chant_hierarch
+		Actor sid Hierarch End-Actor
+		Reading sid hoMA.SunPostGospel.text @ver End-Reading
+		Actor sid Choir End-Actor
+		Title role desig sid psa50.title End-Title
+		Title<Tmode>sid Mode2</><Trubric>sid ITisEvdomados</>End-Title
+		Media sid hoMA.Psalm50.text End-Media
+	//	Insert_section LiturgicalPsalms.Psalm_50_Verses End-Insert
+		Insert_section LiturgicalPsalms.Psalm_50_Chanted End-Insert
+	End-Section
+	Section Psalm50_read
+		Section texts
+			when-movable-cycle-day-is
+				63 use: 
+					Para role typikon sid hoMA.SunPostGospel.incipit End-Para
+					Para role typikon<b>sid tyPart.Psalm50</><r>sid tyRubric.Read</>End-Para
+				71 thru 77 use:
+					Para role typikon sid hoMA.SunPostGospel.incipit<inr>sid OnceOrThrice</>End-Para
+				78 thru 110 use: 
+					Para role typikon sid hoMA.SunPostGospel.incipit End-Para
+					Para role typikon<b>sid tyPart.Psalm50</><r>sid tyRubric.Read</>End-Para
+				113, 127 use:
+					Para role typikon sid hoMA.SunPostGospel.incipit End-Para
+					Para role typikon<b>sid tyPart.Psalm50</><r>sid tyRubric.Read</>End-Para
+				120 use:
+					Para role typikon<b>sid tyPart.Psalm50</><r>sid tyRubric.Read</>End-Para
+				otherwise use:
+					when-date-is
+						Feb 2 use:
+							when-name-of-day-is
+								Sunday use:
+									Para role typikon sid hoMA.SunPostGospel.incipit End-Para
+									Para role typikon<b>sid tyPart.Psalm50</><r>sid tyRubric.Read</>End-Para
+								otherwise use:
+									Para role typikon<b>sid tyPart.Psalm50</><r>sid tyRubric.Read</>End-Para
+							end-when						
+						Mar 25 use:
+							when-name-of-day-is
+								Sunday use:
+									Para role typikon sid hoMA.SunPostGospel.incipit End-Para
+									Para role typikon<b>sid tyPart.Psalm50</><r>sid tyRubric.Read</>End-Para
+								otherwise use:
+									Para role typikon<b>sid tyPart.Psalm50</><r>sid tyRubric.Read</>End-Para
+							end-when						
+						Aug 15 use: 
+							when-name-of-day-is
+								Sunday use:
+									Para role typikon sid hoMA.SunPostGospel.incipit End-Para
+									Para role typikon<b>sid tyPart.Psalm50</><r>sid tyRubric.Read</>End-Para
+								otherwise use:
+									Para role typikon<b>sid tyPart.Psalm50</><r>sid tyRubric.Read</>End-Para
+							end-when						
+						Sep 8 use: 
+							when-name-of-day-is
+								Sunday use:
+									Para role typikon sid hoMA.SunPostGospel.incipit End-Para
+									Para role typikon<b>sid tyPart.Psalm50</><r>sid tyRubric.Read</>End-Para
+								otherwise use:
+									Para role typikon<b>sid tyPart.Psalm50</><r>sid tyRubric.Read</>End-Para
+							end-when						
+						Sep 14 use: 
+							Para role typikon sid hoMA.SunPostGospel.incipit End-Para
+							Para role typikon<b>sid tyPart.Psalm50</><r>sid tyRubric.Read</>End-Para
+						Nov 21 use: 
+							when-name-of-day-is
+								Sunday use:
+									Para role typikon sid hoMA.SunPostGospel.incipit End-Para
+									Para role typikon<b>sid tyPart.Psalm50</><r>sid tyRubric.Read</>End-Para
+								otherwise use:
+									Para role typikon<b>sid tyPart.Psalm50</><r>sid tyRubric.Read</>End-Para
+							end-when						
+						otherwise use:
+							Para role typikon<b>sid tyPart.Psalm50</><r>sid tyRubric.Read</>End-Para
+					end-when	
+			end-when			
+		End-Section
+	End-Section
+	Section Psalm50_read_hierarch
+		Actor sid Hierarch End-Actor
+		Insert_section Psalm50_read.texts End-Insert
+	End-Section
+	Section PostGospel_eo
+			when-movable-cycle-day-is 
+				1 thru 57 use:
+					Section tr
+						Title role desig sid IdiomelaTouTriodiou End-Title
+						Title sid Doxa<Tmode>sid tr.d001_gr_GR_cog.trMA.PostGospelGlory.mode</>End-Title
+						Hymn sid tr.d001_gr_GR_cog.trMA.PostGospelGlory.text @ver End-Hymn
+						Title sid KaiNyn<Tmode>sid OAftos</>End-Title
+						Hymn sid tr.d001_gr_GR_cog.trMA.PostGospelBoth.text @ver End-Hymn
+						Title<Tdesig>sid Idiomelon</><Tmode>sid tr.d001_gr_GR_cog.trMA.PostGospelIdiomelon.mode</>End-Title
+						Media sid tr.d001_gr_GR_cog.trMA.PostGospelIdiomelon.text End-Media
+						Verse<bnr>sid vVerse</>sid psMA.postgospelverse.v1.text End-Verse
+						Hymn sid tr.d001_gr_GR_cog.trMA.PostGospelIdiomelon.text @ver media-off End-Hymn
+					End-Section 
+				otherwise use:
+					Section notr
+						Title sid Doxa End-Title
+						Hymn sid hoMA.PostGospelApostles.text @ver End-Hymn
+						Title sid KaiNyn End-Title
+						Hymn sid hoMA.PostGospelTheotokos.text @ver End-Hymn
+						Verse<bnr>sid vVerse</>sid psMA.postgospelverse.v1.text End-Verse
+						Hymn sid hoMA.SunPostGospelIdiomelon.text @ver End-Hymn
+					End-Section
+			end-when
+	End-Section
+	Section PostGospel_mc
+		when-movable-cycle-day-is
+			64 use:
+				Section tr
+					Title role source sid sourceTriodion End-Title
+					Actor sid Choir End-Actor
+					Media rid trMA.PostGospelGlory.text End-Media
+					Title sid Doxa<Tmode>rid trMA.PostGospelGlory.mode</>End-Title
+					Hymn rid trMA.PostGospelGlory.text @ver media-off End-Hymn
+					Title sid KaiNyn<Tmode>sid OAftos</>End-Title
+					Hymn rid trMA.PostGospelBoth.text @ver media-off End-Hymn
+					Title<Tdesig>sid Idiomelon</><Tmode>rid trMA.PostGospelIdiomelon.mode</>End-Title
+					Media rid trMA.PostGospelIdiomelon.text End-Media
+					Verse<bnr>sid vVerse</>sid psMA.postgospelverse.v1.text End-Verse
+					Hymn rid trMA.PostGospelIdiomelon.text @ver media-off End-Hymn
+				End-Section 
+			71 thru 127 use:
+				Section pe
+					Title role source sid sourcePentecostarion End-Title
+					Actor sid Choir End-Actor
+					Media rid peMA.PostGospelGlory.text End-Media
+					Title sid Doxa<Tmode>rid peMA.PostGospelGlory.mode</>End-Title
+					Hymn rid peMA.PostGospelGlory.text @ver media-off End-Hymn
+					Title sid KaiNyn<Tmode>sid OAftos</>End-Title
+					Hymn rid peMA.PostGospelBoth.text @ver media-off End-Hymn
+					Title<Tdesig>sid Idiomelon</><Tmode>rid peMA.PostGospelIdiomelon.mode</>End-Title
+					Media rid peMA.PostGospelIdiomelon.text End-Media
+					Verse<bnr>sid vVerse</>sid psMA.postgospelverse.v1.text End-Verse
+					Hymn rid peMA.PostGospelIdiomelon.text @ver media-off End-Hymn
+				End-Section
+		end-when
+	End-Section 
+	Section PostGospel_me
+		when-movable-cycle-day-is
+			71 thru 77 use:
+				when-date-is
+					Apr 23 use:
+						Para role typikonindent<b>sid tyPart.Glory</>rid meMA.PostGospelGlory.incipit End-Para
+						Para role typikonindent<b>sid tyPart.BothNow</>rid meMA.PostGospelBoth.incipit End-Para
+						Para role typikonindent<inr>sid vVerse</><i>sid psMA.m04.d23.postgospelverse.v1.text</>End-Para
+						Para role typikonindent<b>sid tyPart.PostGospelIdiomelon</>rid meMA.PostGospelIdiomelon.incipit End-Para
+					May 8 use:
+						Para role typikonindent<b>sid tyPart.Glory</>rid meMA.PostGospelGlory.incipit End-Para
+						Para role typikonindent<b>sid tyPart.BothNow</>rid meMA.PostGospelBoth.incipit End-Para
+						Para role typikonindent<inr>sid vVerse</><i>sid psMA.m05.d08.postgospelverse.v1.text</>End-Para
+						Para role typikonindent<b>sid tyPart.PostGospelIdiomelon</>rid meMA.PostGospelIdiomelon.incipit End-Para
+				end-when
+			otherwise use:
+				Para role typikonindent<b>sid tyPart.Glory</>rid meMA.PostGospelGlory.incipit End-Para
+				Para role typikonindent<b>sid tyPart.BothNow</>rid meMA.PostGospelBoth.incipit End-Para
+				Para role typikonindent<b>sid tyPart.PostGospelIdiomelon</>rid meMA.PostGospelIdiomelon.incipit End-Para
+		end-when
+	End-Section
+	Section PostGospel_mealt1
+		Para role typikonindent<b>sid tyPart.Glory</>rid alt1.meMA.PostGospelGlory.incipit End-Para
+		Para role typikonindent<b>sid tyPart.BothNow</>rid alt1.meMA.PostGospelBoth.incipit End-Para
+		Para role typikonindent<b>sid tyPart.PostGospelIdiomelon</>rid alt1.meMA.PostGospelIdiomelon.incipit End-Para
+	End-Section
+	Section PostGospel_pealt1
+		Title role source sid sourcePeSupplement End-Title
+		Actor sid Choir End-Actor
+		Title sid Doxa<Tmode>sid Mode2</>End-Title
+		Hymn rid alt1.peMA.PostGospelGlory.text @ver End-Hymn
+		Title sid KaiNyn End-Title
+		Hymn rid alt1.peMA.PostGospelBoth.text @ver End-Hymn
+		Title<Tdesig>sid Idiomelon</><Tmode>rid alt1.peMA.PostGospelIdiomelon.mode</>End-Title
+		Media rid alt1.peMA.PostGospelIdiomelon.text End-Media
+		Verse<bnr>sid vVerse</>sid psMA.postgospelverse.v1.text @ver End-Verse
+		Hymn rid alt1.peMA.PostGospelIdiomelon.text @ver media-off End-Hymn
+	End-Section
+	
+End-Template

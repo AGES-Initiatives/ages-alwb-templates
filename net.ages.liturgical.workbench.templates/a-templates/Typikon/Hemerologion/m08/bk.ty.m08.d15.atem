@@ -1,0 +1,183 @@
+Template bk.ty.m08.d15
+
+Status Final
+
+	import ty.typikon.parts_gr_GR_cog.*
+	import me.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 8 day 15 year 2021 End_Date
+//			Page_Header_Even
+//				center @lookup sid mo1.pdf.header sid d.on lang L1 @date lang L1
+//			End_Page_Header_Even
+//			Page_Header_Odd
+//				center @lookup sid mo1.pdf.header sid d.on lang L2 @date lang L2
+//			End_Page_Header_Odd
+//			Page_Footer_Even
+//				center @pageNbr
+//			End_Page_Footer_Even
+//			Page_Footer_Odd
+//				center @pageNbr
+//			End_Page_Footer_Odd
+//		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	when-name-of-day-is 
+		Sunday use:	
+			Section Instance02 
+				Section ve
+					Insert_section TYST.ve.oc_me1 End-Insert
+					Insert_section TYVE._01_Beginning__.vespers End-Insert
+					Insert_section TYVE._02_Kekragaria__.modeofweek__.for10 End-Insert
+					Insert_section TYVE._03_Stichera__.oc__.sunday__.s_1234as1234 End-Insert
+					Insert_section TYTI.stp.f.ve.me_p_112233as5678910 End-Insert
+					Insert_section TYVE._03_Stichera__.me__.p_112233as5678910 End-Insert
+					Insert_section TYVE._03_Stichera__.gloryboth__.me__.eightmodedoxasticon_ End-Insert
+					Insert_section TYVE._04_Middle__.entrance End-Insert
+					Insert_section TYVE._05_Readings_Litanies End-Insert
+					Insert_section TYVE._08_Aposticha__.oc__.sunday__.aposticha1234 End-Insert
+					Insert_section TYTI.gb.f.meB End-Insert
+					Insert_section TYVE._08_Aposticha__.gloryboth__.me__.gloryasgloryboth_.hymn End-Insert
+					Insert_section TYVE._09_Symeon_Trisagion__.Priest End-Insert
+					Insert_section INAP.res__.modeofweek End-Insert
+					Insert_section TYTI.g.f.me End-Insert
+					Insert_section INAP.me1_.hymn End-Insert
+					Insert_section TYTI.b.r End-Insert
+					Insert_section INAP.me1_.hymn End-Insert
+					Insert_section TYVE._11_Dismissal__.commemoration End-Insert
+				End-Section
+				Break line End_Break
+				Section mo
+					Insert_section TYST.mo.oc_me1 End-Insert
+					Insert_section TYMO._01_intro_ End-Insert
+					Insert_section TYMO._03_triadic_canon_ End-Insert
+				//	Rubric sid IfLityNotDoneAtVespers End-Rubric
+					Section lity
+						Insert_section TYTI.ip.lity__.me End-Insert
+						Insert_section TYVE._07_Lity__.part2__.me__.lity1_.hymn End-Insert
+						Insert_section TYVE._07_Lity__.part2__.me__.lity2_.hymn End-Insert
+						Insert_section TYVE._07_Lity__.part2__.me__.lity3_.hymn End-Insert
+						Insert_section TYVE._07_Lity__.part2__.me__.lity4_.hymn End-Insert
+						Insert_section TYVE._07_Lity__.part2__.me__.glory_ End-Insert
+						Insert_section TYVE._07_Lity__.part2__.me__.both_ End-Insert
+					End-Section
+					Insert_section TYMO._04_triadic_megalynaria End-Insert
+					Insert_section TYMO._06_sundays_feastdays_.trisagion End-Insert
+					Insert_section TYTI.a.f.me End-Insert
+					Insert_section INAP.me1_.hymn End-Insert
+				End-Section
+				Break line End_Break
+				Section ma
+					Insert_section TYST.ma.oc_me1 End-Insert
+					Insert_section TYMA._01_Beginning__.modeofweek End-Insert
+					Insert_section INAP.res__.modeofweek End-Insert
+					Insert_section TYTI.g.f.me End-Insert
+					Insert_section INAP.me1_.hymn End-Insert
+					Insert_section TYTI.b.r End-Insert
+					Insert_section INAP.me1_.hymn End-Insert
+					Insert_section TYMA._03_Kathisma1__.oc__.sunday__.withfeast End-Insert
+					Insert_section TYMA._04_Kathisma2__.append__.oc__.sunday__.withfeast End-Insert
+					Insert_section TYTI.k3.f End-Insert
+					Insert_section TYMA._05_Kathisma3__.append__.me__.kath31gb31_.hymns End-Insert
+					Insert_section TYMA._05_Kathisma3__.no_resurrectional_evlogetaria End-Insert
+					Insert_section TYMA._06_Antiphons__.sunday_.hypakoe End-Insert
+					Insert_section TYMA._06_Antiphons__.sunday_.antiphons End-Insert
+					Insert_section TYMA._06_Antiphons__.mode41_prokeimenon_.prokeimenon End-Insert
+					Insert_section TYMA._07_Gospel__.yes__.priest__.me End-Insert
+					Section canon
+						Section block02_odes13
+							Para role typikon<b>sid tyPart.Canons</>End-Para
+							Para role typikonindent sid anum1 <r>sid tySource.Octoechos</><r>rid oc.ocMA.OdeS1C1H.mode</><r>sid tyRubric.Canon.Resurrectional</>rid oc.ocMA.OdeS1C1H.incipit<r>sid tyRubric.Canon.h12t</>End-Para
+							Para role typikonindent sid anum2 <r>sid tySource.Menaion</><r>rid me.meMA.C1.title</>rid meMA.Ode1C1H.incipit<r>sid tyRubric.Canon.WithItsHeirmoi</><r>sid tyRubric.Canon.In4</><r>sid tyRubric.Canon.verse</><i>rid meMA.C1.verse</>End-Para
+							Para role typikonindent sid anum3 <r>sid tySource.Menaion</><r>rid me.meMA.C2.title</>rid meMA.Ode1C2H.incipit<r>sid tyRubric.Canon.WithItsHeirmoi</><r>sid tyRubric.Canon.In4</><r>sid tyRubric.Canon.verse</><i>rid meMA.C1.verse</><r>sid tyRubric.Canon.LastTwo</>End-Para
+						End-Section
+						Section block03_kontakionposition2
+							Para role typikon<b>sid tyPart.AfterOde3</>End-Para
+							Para role typikonindent<r>sid tySource.Octoechos</><r>sid tyRubric.Canon.ResurrectionalKontakionOikos</>End-Para
+						End-Section
+						Section block04_ode3_kathisma
+							Insert_section TYMA._10_Canon__.hypakoe__.me End-Insert
+						End-Section
+						Section block06_kontakionposition1
+							Para role typikon<b>sid tyPart.AfterOde6</><r>sid tyPart.KontakionOikos</><r>sid TisEortis</>End-Para
+							Para role typikon<b>sid tyPart.Synaxarion</><r>sid tySource.Menaion</><r>sid tyRubric.OfTheDay</>End-Para
+						End-Section
+						Section block09_katavasias1345678
+							Insert_section INKA.ka1345678 End-Insert
+						End-Section
+						Section block11_ode9
+							Para role typikon<b>sid tyPart.Magnificat</><r>sid tyRubric.Canon.MagnificatNotSung</><r>sid tyRubric.Canon.InsteadUseOde9</><r>sid tyRubric.Canon.OfBothCanonsOfFeast</><r>sid tyRubric.Canon.WithTheirMegalynaria</>End-Para
+							Para role typikonindent sid anum1 <r>sid tySource.Menaion</><r>rid meMA.C1.title</>rid meMA.Ode9C1M01.incipit rid meMA.Ode9C1H.incipit<r>sid tyRubric.Canon.h123</>End-Para
+							Para role typikonindent sid anum2 <r>sid tySource.Menaion</><r>rid meMA.C2.title</>rid meMA.Ode9C2M01.incipit rid meMA.Ode9C2H.incipit<r>sid tyRubric.Canon.In4</><r>sid tyRubric.Canon.LastTwo</>End-Para
+							Insert_section INKA.ka9 End-Insert
+						End-Section
+					End-Section
+					Insert_section TYMA._12_Exaposteilarion__.eo__.eoofweek_.exap End-Insert
+					Insert_section TYTI.f.me_twice End-Insert
+					Insert_section TYMA._12_Exaposteilarion__.append__.me__.exap11 End-Insert
+					Insert_section TYMA._13_Lauds__.modeofweek__.for6 End-Insert
+					Insert_section TYMA._13_Lauds__.oc__.s_1234as1234 End-Insert
+					Insert_section TYTI.stp.f.ma.me_p_1123as5678 End-Insert
+					Insert_section TYMA._13_Lauds__.me__.p_1123as56dormition12 End-Insert
+					Insert_section TYTI.g.f.meB End-Insert
+					Insert_section TYMA._13_Lauds__.glory__.me__.gloryasglory_.hymn End-Insert
+					Insert_section TYMA._13_Lauds__.both__.eotheotokion End-Insert
+					Insert_section TYMA._14_Doxology__.sunday End-Insert
+				End-Section
+				Break line End_Break
+				Section li
+					Insert_section TYST.li.oc_me1 End-Insert
+					Insert_section TYLI._01_Enarxis__.daily End-Insert
+					Insert_section TYLI._02_Antiphons__.sundays_weekdays_feasts End-Insert
+					Insert_section TYLI._04_Entrance__.choir End-Insert
+					Insert_section TYLI._05_AfterEntranceHymns__.choir End-Insert
+					Section hymns
+						Insert_section INAP.res__.modeofweek End-Insert
+						Insert_section TYTI.f.me End-Insert
+						Insert_section INAP.me1_.hymn End-Insert
+						Insert_section INKO.seasonal End-Insert
+					End-Section
+					Insert_section TYLI._06_Trisagion__.chrys End-Insert
+					Insert_section TYLE._01_Epistle__.menaion_ End-Insert
+					Insert_section TYLE._02_Gospel__.menaion_ End-Insert
+					Insert_section TYLI._08_Liturgy__.chrys_default End-Insert
+					Insert_section TYLI._09_Dismissal__.commemoration End-Insert
+				End-Section
+			End-Section
+		Saturday use:
+			Section Instance03
+				Section ve
+			End-Section
+				Section mo
+				End-Section
+				Section ma
+				End-Section
+				Section li
+				End-Section
+			End-Section
+		otherwise use:
+			Section Instance01
+				Section ve
+				End-Section
+				Section mo
+				End-Section
+				Section ma
+				End-Section
+				Section li
+				End-Section
+			End-Section
+	end-when
+
+End-Template
