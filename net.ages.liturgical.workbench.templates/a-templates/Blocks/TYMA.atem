@@ -22,6 +22,7 @@ Template TYMA
 	import eo.*
 	import tr.*
 	import pe.*
+	import ty.*
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -161,9 +162,9 @@ Template TYMA
 	Section _03_Kathisma1__
 		Section psalter
 		End-Section
-		Section litany
-			Insert_section LN.ShortLitany02_priest End-Insert
-		End-Section
+	//	Section litany
+	//		Insert_section LN.ShortLitany02_priest End-Insert
+	//	End-Section
 		Section both__
 			Section con
 				Hymn sid eu.consecration_gr_GR_cog.euMA.Kathisma11.text End-Hymn
@@ -2003,9 +2004,9 @@ Template TYMA
 				End-Section
 			End-Section
 		End-Section
-		Section litany
-			Insert_section LN.ShortLitany04_priest End-Insert
-		End-Section
+	//	Section litany
+	//		Insert_section LN.ShortLitany04_priest End-Insert
+	//	End-Section
 	End-Section
 
 	Section _06_Antiphons__
@@ -2245,7 +2246,7 @@ Template TYMA
 				Section block06_kontakionposition1
 					Para role typikon<b>sid tyPart.AfterOde6</><r>sid tyPart.KontakionOikos</>End-Para
 					Para role typikonindent<r>sid tyRubric.Resurrectional</><r>sid tySource.Octoechos</>End-Para
-					Para role typikon<b>sid tyPart.Synaxarion</><r>sid tyRubric.OfTheDay</><r>sid tySource.Menaion</>End-Para
+					Insert_section TYSY.Synaxarion End-Insert
 				End-Section
 				Section block09_katavasias1345678
 					Insert_section INKA.ka1345678 End-Insert
@@ -2255,7 +2256,7 @@ Template TYMA
 					Para role typikonindent rid le.go.eo.leeoMA.Gospel.incipit End-Para
 				End-Section
 				Section block11_ode9
-					Insert_section INKA.magnificat End-Insert
+					Insert_section INKA.magnificat__.date End-Insert
 					Insert_section INKA.ka9 End-Insert
 				End-Section
 			End-Section
@@ -2271,8 +2272,8 @@ Template TYMA
 					Insert_section TYMA._10_Canon__.ode3kathisma__.me1o2t End-Insert
 				End-Section
 				Section block06_kontakionposition1
-						Insert_section TYMA._11_Kontakion__.sunday End-Insert
-						Para role typikon<b>sid tyPart.Synaxarion</><r>sid tyRubric.OfTheDay</><r>sid tySource.Menaion</>End-Para
+					Insert_section TYMA._11_Kontakion__.sunday End-Insert
+					Insert_section TYSY.Synaxarion End-Insert
 				End-Section
 				Section block09_katavasias1345678
 					Insert_section INKA.ka1345678 End-Insert
@@ -2282,15 +2283,18 @@ Template TYMA
 					Para role typikonindent rid le.go.eo.leeoMA.Gospel.incipit End-Para
 				End-Section
 				Section block11_ode9
-					Insert_section INKA.magnificat End-Insert
+					Insert_section INKA.magnificat__.date End-Insert
 					Insert_section INKA.ka9 End-Insert
 				End-Section
 			End-Section
 			Section oc_h12tas0GrGrTh_and_me1_123tasVVGB_with_kath_me1o2t_and_konoik_oc
 				Section block02_odes13
 					Para role typikon<b>sid tyPart.Canons</>End-Para
-					Para role typikonindent sid anum1 <r>sid tySource.Octoechos</><r>rid ocMA.OdeS1C1H.mode</><r>sid tyRubric.Canon.Resurrectional</>rid ocMA.OdeS1C1H.incipit<r>sid tyRubric.Canon.h12t</>End-Para
-					Para role typikonindent sid anum2 <r>sid tySource.Menaion</><r>rid meMA.C1.title</>rid meMA.Ode1C11.incipit<r>sid tyRubric.Canon.In4</><r>sid tyRubric.Canon.verse</><i>rid meMA.C1.verse</><r>sid tyRubric.Canon.LastTwo</>End-Para
+					Para role typikonindent sid anum1<r>rid tyMA.Canon1_onSunday.text</><r>rid ocMA.OdeS1C1H.mode</><r>sid tySource.Octoechos</>End-Para
+					Para role typikonindent rid ocMA.OdeS1C1H.incipit<i>sid verse_Resurrection.text</>End-Para
+					Para role typikonindent sid anum2<r>rid tyMA.Canon2_onSunday.text</><r>sid tySource.Menaion</>End-Para
+					Para role typikonindent rid meMA.Ode1C11.incipit<i>rid meMA.C1.verse</>End-Para
+					Para role typikonindent<r>sid tyRubric.Canon.LastTwo</>End-Para
 				End-Section
 				Section block04_ode3_kathisma
 					Para role typikon<b>sid tyPart.AfterOde3 sid tyPart.MidodeKathisma</>End-Para
@@ -2307,7 +2311,7 @@ Template TYMA
 				Section block08_kontakionposition12
 					Para role typikon<b>sid tyPart.AfterOde6 sid tyPart.KontakionOikos</>End-Para
 					Para role typikonindent<r>sid tyRubric.Resurrectional</><r>sid tySource.Octoechos</>End-Para
-					Para role typikon<b>sid tyPart.Synaxarion</><r>sid tyRubric.OfTheDay</><r>sid tySource.Menaion</>End-Para
+					Insert_section TYSY.Synaxarion End-Insert
 				End-Section
 				Section block09_katavasias1345678
 					Insert_section INKA.ka1345678 End-Insert
@@ -2317,7 +2321,7 @@ Template TYMA
 					Para role typikonindent rid le.go.eo.leeoMA.Gospel.incipit End-Para
 				End-Section
 				Section block11_ode9
-					Insert_section INKA.magnificat End-Insert
+					Insert_section INKA.magnificat__.date End-Insert
 					Insert_section INKA.ka9 End-Insert
 				End-Section
 			End-Section
@@ -2336,7 +2340,7 @@ Template TYMA
 				Section block06_kontakionposition1
 					Para role typikon<b>sid tyPart.AfterOde6</><r>sid tyPart.KontakionOikos</>End-Para
 					Para role typikonindent<r>rid meDA.commemoration.first_title</><r>sid tySource.Menaion</>End-Para
-					Para role typikon<b>sid tyPart.Synaxarion</><r>sid tyRubric.OfTheDay</><r>sid tySource.Menaion</>End-Para
+					Insert_section TYSY.Synaxarion End-Insert
 				End-Section
 				Section block09_katavasias1345678
 					Insert_section INKA.ka1345678 End-Insert
@@ -2351,8 +2355,10 @@ Template TYMA
 			Section me1_h123as0VVV_and_me2_h1trtas0VGB_hypakoe_me_and_konoik_me1
 				Section block02_odes13
 					Para role typikon<b>sid tyPart.Canons</>End-Para
-					Para role typikonindent sid anum1 <r>sid tySource.Menaion</><r>rid meMA.C1.title</>rid meMA.Ode1C1H.incipit<r>sid tyRubric.Canon.h123</><r>sid tyRubric.Canon.verse</><i>rid meMA.C1.verse</>End-Para
-					Para role typikonindent sid anum2 <r>sid tySource.Menaion</><r>rid meMA.C2.title</>rid meMA.Ode1C2H.incipit<r>sid tyRubric.Canon.h123</><r>sid tyRubric.Canon.verse</><i>rid meMA.C2.verse</><r>sid tyRubric.Canon.LastTwo</>End-Para
+					Para role typikon<r>rid tyMA.Canons.text</><r>sid tySource.Menaion</>End-Para
+					Para role typikonindent sid anum1 rid meMA.Ode1C1H.incipit<i>rid meMA.C1.verse</>End-Para
+					Para role typikonindent sid anum2 rid meMA.Ode1C2H.incipit<i>rid meMA.C2.verse</>End-Para
+					Para role typikonindent<r>sid tyRubric.Canon.LastTwo</>End-Para
 				End-Section
 				Section block04_ode3kathisma
 					Para role typikon<b>sid tyPart.AfterOde3</><r>sid tyPart.Hypakoe</><r>sid TisEortis</><r>sid tySource.Menaion</><r>sid tyRubric.Read</>End-Para
@@ -2360,7 +2366,7 @@ Template TYMA
 				End-Section
 				Section block06_kontakionposition1
 					Para role typikon<b>sid tyPart.AfterOde6</><r>sid tyPart.KontakionOikos</><r>sid TisEortis</><r>sid tySource.Menaion</>End-Para
-					Para role typikon<b>sid tyPart.Synaxarion</><r>sid tyRubric.OfTheDay</><r>sid tySource.Menaion</>End-Para
+					Insert_section TYSY.Synaxarion End-Insert
 				End-Section
 				Section block09_katavasias1345678
 					Insert_section INKA.ka1345678 End-Insert
@@ -2997,7 +3003,7 @@ Template TYMA
 		End-Section
 		Section JulHF
 			Para role typikonindent<r>sid tyRubric.Resurrectional</><r>sid tySource.Octoechos</>End-Para
-			Para role typikon<b>sid tyPart.Synaxarion</><r>sid tyRubric.OfTheDay</><r>sid tySource.Menaion</>End-Para
+			Para role typikon<b>sid tyPart.Synaxarion</><r>sid tyRubric.Synaxarion.Menaion</><r>sid tySource.Menaion</>End-Para
 		End-Section
 		Section OctHF
 			Reading sid me.m10.dHF_gr_GR_cog.meMA.Kontakion1.text End-Reading
@@ -3077,8 +3083,8 @@ Template TYMA
 			Reading sid tr.d014_gr_GR_cog.trMA.Oikos1.text End-Reading
 		End-Section
 		Section sunday
-			Para role typikon<b>sid tyPart.AfterOde6</><r>sid tyPart.KontakionOikos</>End-Para
-			Para role typikonindent<r>sid tyRubric.Resurrectional</><r>sid tySource.Octoechos</>End-Para
+			Para role typikon<b>sid tyPart.AfterOde6</><r>sid tyPart.KontakionOikos</><r>sid tyRubric.Resurrectional</><r>sid tySource.Octoechos</>End-Para
+		//	Para role typikonindent<r>sid tyRubric.Resurrectional</><r>sid tySource.Octoechos</>End-Para
 		End-Section
 		Section tr_
 			Section kontakion
@@ -4969,14 +4975,10 @@ Template TYMA
 				Para role typikonindent<i>sid psVE.righteous.aposverse.v2.text</>rid meMA.Lauds3.incipit End-Para
 			End-Section
 			Section p_1123as56theotokos12
-				Insert_section Lauds_Verses.v05 End-Insert
-				Hymn rid meMA.Lauds1.text End-Hymn
-				Insert_section Lauds_Verses.v06 End-Insert
-				Hymn rid meMA.Lauds1.text End-Hymn
-				Insert_section PsalmVerses.forTheotokos.verse1 End-Insert
-				Hymn rid meMA.Lauds2.text End-Hymn
-				Insert_section PsalmVerses.forTheotokos.verse2 End-Insert
-				Hymn rid meMA.Lauds3.text End-Hymn
+				Para role typikonindent<i>sid psMA.lauds.stichologia.v02.incipit</>rid meMA.Lauds1.incipit End-Para
+				Para role typikonindent<i>sid psMA.lauds.stichologia.v01.incipit</>rid meMA.Lauds1.incipit End-Para
+				Para role typikonindent<i>sid psVE.theotokos.aposverse.v1.text</>rid meMA.Lauds2.incipit End-Para
+				Para role typikonindent<i>sid psVE.theotokos.aposverse.v2.text</>rid meMA.Lauds3.incipit End-Para
 			End-Section
 			Section p_1123as56theotokosbelt12
 				Insert_section Lauds_Verses.v05 End-Insert

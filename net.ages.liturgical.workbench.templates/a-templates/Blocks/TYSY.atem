@@ -1,0 +1,256 @@
+Template TYSY
+
+	import ho.s03_gr_GR_cog.*
+	
+	import properties_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import ty.typikon.parts_gr_GR_cog.*
+	
+	import sy.*
+	import tr.*
+	import pe.*
+	
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+//	Head 
+//		Set_Date month 5 day 25 year 2016 End_Date
+//	End_Head
+
+	Title ldp@Service_Date End-Title
+	Title ldp@Name_of_Period @Day_of_Movable_Cycle End-Title
+	
+	Section Synaxarion
+		when-date-is
+			Mar 26 use:
+				when-movable-cycle-day-is
+					50, 57 use:
+						Insert_section me End-Insert
+					otherwise use:
+						Insert_section me End-Insert
+				end-when
+			Jul 13 thru 19 use:
+				when-name-of-day-is 
+					Sunday use:
+						Para role typikon<b>sid tyPart.Synaxarion</><r>sid tyRubric.Synaxarion.OfTheDay</><r>sid tyRubric.Synaxarion.Fathers</><r>sid tyRubric.Synaxarion.Menaion</>End-Para
+					otherwise use:
+						Insert_section me End-Insert
+				end-when
+			Oct 11 thru 17 use:
+				when-name-of-day-is 
+					Sunday use:
+						Para role typikon<b>sid tyPart.Synaxarion</><r>sid tyRubric.Synaxarion.OfTheDay</><r>sid tyRubric.Synaxarion.Fathers</><r>sid tyRubric.Synaxarion.Menaion</>End-Para
+					otherwise use:
+						Insert_section me End-Insert
+				end-when
+			Dec 11 thru 17 use:
+				when-name-of-day-is 
+					Sunday use:
+						Para role typikon<b>sid tyPart.Synaxarion</><r>sid tyRubric.Synaxarion.OfTheDay</><r>sid tyRubric.Synaxarion.Forefathers</><r>sid tyRubric.Synaxarion.Menaion</>End-Para
+					otherwise use:
+						Insert_section me End-Insert
+				end-when
+			Dec 18 thru 24 use:
+				when-name-of-day-is 
+					Sunday use:
+						Para role typikon<b>sid tyPart.Synaxarion</><r>sid tyRubric.Synaxarion.OfTheDay</><r>sid tyRubric.Synaxarion.SundayBC</><r>sid tyRubric.Synaxarion.Menaion</>End-Para
+					otherwise use:
+						Insert_section me End-Insert
+				end-when
+			Dec 26 thru 31 use:
+				when-name-of-day-is 
+					Sunday use:
+						Para role typikon<b>sid tyPart.Synaxarion</><r>sid tyRubric.Synaxarion.OfTheDay</><r>sid tyRubric.Synaxarion.SundayAC</><r>sid tyRubric.Synaxarion.Menaion</>End-Para
+					otherwise use:
+						Insert_section me End-Insert
+				end-when
+			otherwise use:
+				Insert_section me End-Insert
+		end-when
+	End-Section
+	
+	Section Different_Date__
+		Section Apr23_StGeorge
+			Insert_section me End-Insert
+			Reading sid sy.m04.d23_gr_GR_cog.syMA.commemorationDD.text End-Reading
+			Insert_section mc End-Insert
+		End-Section
+		Section Apr25_StMark
+			Insert_section me End-Insert
+			Reading sid sy.m04.d25_gr_GR_cog.syMA.commemorationDD.text End-Reading
+			Insert_section mc End-Insert
+		End-Section
+		Section May02_StAthanasios
+			Insert_section me End-Insert
+			Reading sid sy.m05.d02_gr_GR_cog.syMA.commemorationDD.text End-Reading
+			Insert_section mc End-Insert
+		End-Section
+		Section May08_StJohn
+			Insert_section me End-Insert
+			Reading sid sy.m05.d08_gr_GR_cog.syMA.commemorationDD.text End-Reading
+			Insert_section mc End-Insert
+		End-Section
+		Section May25_Forerunner
+			Insert_section me End-Insert
+			Reading sid sy.m05.d25_gr_GR_cog.syMA.commemorationDD.text End-Reading
+			Insert_section mc End-Insert
+		End-Section
+		Section Dec20_StIgnatius
+			Insert_section me End-Insert
+			Reading sid sy.m12.d20_gr_GR_cog.syMA.commemorationDD.text End-Reading
+			Insert_section mc End-Insert
+		End-Section
+	End-Section
+
+	Section Synaxarion_for_DailyReadings
+		when-date-is
+			Mar 26 use:
+				when-movable-cycle-day-is
+					50, 57 use:
+						Insert_section me End-Insert
+						Reading rid syMA.lastline End-Reading
+					otherwise use:
+						Insert_section me End-Insert
+				end-when
+			Jul 13 thru 19 use:
+				when-name-of-day-is 
+					Sunday use:
+						Insert_section me End-Insert
+						Reading sid sy.m07.dHF_gr_GR_cog.syMA.commemoration01.text End-Reading
+					otherwise use:
+						Insert_section me End-Insert
+				end-when
+			Oct 11 thru 17 use:
+				when-name-of-day-is 
+					Sunday use:
+						Insert_section me End-Insert
+						Reading sid sy.m10.dHF_gr_GR_cog.syMA.commemoration01.text End-Reading
+					otherwise use:
+						Insert_section me End-Insert
+				end-when
+			Dec 11 thru 17 use:
+				when-name-of-day-is 
+					Sunday use:
+						Insert_section me End-Insert
+						Reading sid sy.m12.dFF_gr_GR_cog.syMA.commemoration01.text End-Reading
+					otherwise use:
+						Insert_section me End-Insert
+				end-when
+			Dec 18 thru 24 use:
+				when-name-of-day-is 
+					Sunday use:
+						Insert_section me End-Insert
+						Section dec_bc
+						End-Section
+					otherwise use:
+						Insert_section me End-Insert
+				end-when
+			Dec 26 thru 31 use:
+				when-name-of-day-is 
+					Sunday use:
+						Insert_section me End-Insert
+						Reading sid sy.m12.dAC_gr_GR_cog.syMA.commemoration01.text End-Reading
+					otherwise use:
+						Insert_section me End-Insert
+				end-when
+			otherwise use:
+				Insert_section me End-Insert
+		end-when
+	End-Section
+
+//	blocks
+		Section me
+			when-exists 
+				rid trSY.commemoration.text use:
+					Para role typikon<b>sid tyPart.Synaxarion</><r>sid tyRubric.Synaxarion.OfTheDay</><r>sid tyRubric.Synaxarion.Menaion</><r>sid tyRubric.Synaxarion.Triodion</>End-Para
+				rid peSY.commemoration.text use:
+					Para role typikon<b>sid tyPart.Synaxarion</><r>sid tyRubric.Synaxarion.OfTheDay</><r>sid tyRubric.Synaxarion.Menaion</><r>sid tyRubric.Synaxarion.Pentecostarion</>End-Para
+				otherwise use:
+					Para role typikon<b>sid tyPart.Synaxarion</><r>sid tyRubric.Synaxarion.OfTheDay</><r>sid tyRubric.Synaxarion.Menaion</>End-Para
+			end-when
+		End-Section //me
+
+		Section mc_alt1
+			Insert_section block2 End-Insert
+			when-movable-cycle-day-is
+				73 use:
+					Section pealt1_73
+						Reading rid alt1.peSY.commemoration.text End-Reading
+					End-Section
+			end-when
+			Insert_section block4 End-Insert
+		End-Section		
+
+		Section mc
+			when-movable-cycle-day-is
+				71, 72, 73, 74, 75, 76, 77, 109 use:
+					Section com
+						Insert_section block1 End-Insert
+						Insert_section block2 End-Insert
+						Insert_section block3 End-Insert
+					End-Section
+					Insert_section block4 End-Insert
+				otherwise use:
+					Insert_section block1 End-Insert
+					Insert_section block2 End-Insert
+					Insert_section block3 End-Insert
+			end-when
+		End-Section
+			
+			Section block1
+		//		when-movable-cycle-day-is
+		//			71 use: Title role desig sid Synaxarion End-Title
+		//		end-when
+			End-Section
+			Section block2
+				when-movable-cycle-day-is
+					1 thru 70 use:
+						when-exists rid trSY.commemoration.text use:
+							Para role typikon<b>sid tyPart.Synaxarion</><r>sid tyRubric.Synaxarion.Menaion</><r>sid tyRubric.Synaxarion.Triodion</>End-Para
+						end-when
+					71 thru 127 use:
+						when-exists rid peSY.commemoration.text use:
+							Para role typikon<b>sid tyPart.Synaxarion</><r>sid tyRubric.Synaxarion.Menaion</><r>sid tyRubric.Synaxarion.Pentecostarion</>End-Para
+						end-when
+				end-when
+			End-Section
+			Section block3
+				when-movable-cycle-day-is
+					1, 65 use:
+						Reading rid trSY.commemoration.text End-Reading
+					8, 14, 15, 21, 22, 28, 29, 36, 43, 54, 56, 57, 63, 64, 66, 67, 70 use:
+						Reading rid trSY.commemoration.text End-Reading
+					50 use:
+						Reading rid trSY.commemoration.text End-Reading
+					68 use:
+						Reading rid trSY.commemoration.text End-Reading
+					69 use:
+						Reading rid trSY.commemoration.text End-Reading
+					71, 76, 78, 85, 92, 95, 99, 106, 110, 121, 127 use:
+						Reading rid peSY.commemoration.text End-Reading
+					73 use: 
+						Insert_section mc_alt1.pealt1_73 End-Insert
+					113 use:
+						Reading rid peSY.commemoration.text End-Reading
+					119 use:
+						Reading rid peSY.commemoration.text End-Reading
+					120 use:
+						Reading rid peSY.commemoration.text End-Reading
+					otherwise use:
+						Reading rid syMA.lastline End-Reading
+				end-when
+			End-Section
+			Section block4
+			//	when-movable-cycle-day-is
+			//		71, 72, 73, 74, 75, 76, 77, 109 use:
+						Section pascha	
+							Reading sid hoMA.SunPostGospel.text<r>sid Thrice</>End-Reading
+							Reading sid hoMA.SunPostGospelIdiomelon.text<r>sid Thrice</>End-Reading
+						End-Section
+			//	end-when
+			End-Section
+	//	End-Section //mc
+	
+End-Template
