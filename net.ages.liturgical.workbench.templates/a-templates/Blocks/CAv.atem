@@ -10253,14 +10253,21 @@ Status NA
 					Hymn rid meMA.Ode8C21.text @ver media-off End-Hymn
 					Verse rid meMA.C2.verse End-Verse
 					when-exists 
-						rid meMA.Ode8C23.text use:
+						rid meMA.Ode8C2Tr.text use:
 							Hymn rid meMA.Ode8C22.text @ver End-Hymn
-							Title sid Doxa End-Title
-							Hymn rid meMA.Ode8C23.text @ver End-Hymn
+							Title sid Doxa<Tdesig>sid Triadikon</>End-Title
+							Hymn rid meMA.Ode8C2Tr.text @ver End-Hymn
 						otherwise use:
-							Hymn rid meMA.Ode8C21.text @ver End-Hymn
-							Title sid Doxa End-Title
-							Hymn rid meMA.Ode8C22.text @ver End-Hymn
+							when-exists
+								rid meMA.Ode8C23.text use:
+									Hymn rid meMA.Ode8C22.text @ver End-Hymn
+									Title sid Doxa End-Title
+									Hymn rid meMA.Ode8C23.text @ver End-Hymn
+								otherwise use:
+									Hymn rid meMA.Ode8C21.text @ver End-Hymn
+									Title sid Doxa End-Title
+									Hymn rid meMA.Ode8C22.text @ver End-Hymn
+							end-when
 					end-when	
 					Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
 					Hymn rid meMA.Ode8C2T.text @ver End-Hymn
