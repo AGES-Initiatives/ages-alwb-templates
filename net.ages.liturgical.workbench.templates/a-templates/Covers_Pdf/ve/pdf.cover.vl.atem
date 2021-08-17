@@ -1,0 +1,81 @@
+Template pdf.cover.vl
+
+Status Final
+
+	import da.*
+	import oc.*
+	import me.*
+	import eo.*
+	import tr.*
+	import pe.*
+	
+	import he.k_en_US_public.*
+	import pdf.covers_en_US_goarch.*
+
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+
+	import iTags.*
+	import bTags.*
+	import roles.*
+	import rules.*
+	
+	Switch-Version L2 End-Switch-Version
+	
+
+	when-movable-cycle-day-is 
+		69 use:
+			Section hw_vl1
+				Para role logo1 sid logo1.text End-Para
+				Para role logo2 sid logo2.text End-Para
+				Title role cover1 sid hw.pdf.cover ldp @Service_Year End-Title 	//Service
+				Title role cover2 sid vl.pdf.cover sid vl.pdf.cover2  End-Title
+				Title role cover2 sid d.onThursdayMorning End-Title
+				Title role cover4 sid ve.pdf.header sid d.of rid trDA.commemoration.short End-Title	//Triodion
+			End-Section //hw_vl1
+		71 use:
+			Section hw_vl2
+				Para role logo1 sid logo1.text End-Para
+				Para role logo2 sid logo2.text End-Para
+				Title role cover1 sid hw.pdf.cover ldp @Service_Year End-Title 	//Service
+				Title role cover2 sid vl.pdf.cover sid vl.pdf.cover2  End-Title
+				Title role cover2 sid d.onSaturdayMorning End-Title
+				Title role cover4 sid ve.pdf.header sid d.of rid peDA.commemoration.short End-Title	
+			End-Section //hw_vl2
+		otherwise use:
+			when-date-is
+				Dec 25 use:
+					Para role logo1 sid logo1.text End-Para
+					Para role logo2 sid logo2.text End-Para
+					Title role cover1 sid vl.pdf.cover End-Title 	//Service
+					Title role cover2 sid vl.pdf.cover2 End-Title 	//Service
+					Insert_section pdf.cover.lookup.on_evening_before End-Insert
+					Title role cover3 sid me.m12.d25.onChristmasEve ldp @Service_Year End-Title 	
+
+					Title role cover5 sid book.Menaion.name sid d.delimiter rid meDA.date End-Title
+					Title role cover4 rid meDA.commemoration.full End-Title
+				
+				Jan 6 use:
+					Para role logo1 sid logo1.text End-Para
+					Para role logo2 sid logo2.text End-Para
+					Title role cover1 sid vl.pdf.cover End-Title 	//Service
+					Title role cover2 sid vl.pdf.cover2 End-Title 	//Service
+					Insert_section pdf.cover.lookup.on_evening_before End-Insert
+					Title role cover3 sid me.m01.d06.onEpiphanyEve ldp @Service_Year End-Title 	
+
+					Title role cover5 sid book.Menaion.name sid d.delimiter rid meDA.date End-Title
+					Title role cover4 rid meDA.commemoration.full End-Title
+			end-when
+	end-when
+		
+		Title role cover6 sid pref.generation_alwb.cover.version End-Title //GE or E
+	
+		Insert_section pdf.cover.links.lookup.vespers End-Insert
+	
+	Switch-Version Both End-Switch-Version	
+	
+End-Template
