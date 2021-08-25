@@ -1,0 +1,128 @@
+Template cu.lichrys9
+
+Status NA
+
+	import liturgical.verses_gr_GR_cog.*
+	import cu.li9_gr_GR_cog.*
+
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+		Head 
+			Set_Date month 7 day 21 year 2019 End_Date
+				Page_Header_Even
+					center @text "Θεία Λειτουργία τῆς Κυριακῆς"
+				End_Page_Header_Even
+				Page_Header_Odd
+					center @text "Divine Liturgy on Sunday"
+				End_Page_Header_Odd
+				Page_Footer_Even
+					center @pageNbr
+				End_Page_Footer_Even
+				Page_Footer_Odd
+					center @pageNbr
+				End_Page_Footer_Odd
+			Set_Page_Number 1 End_Set_Page_Number
+		End_Head
+	
+	Section Instance01
+		Section _
+			Break line End_Break
+			Title<bnr>sid cu.HierarchicalLiturgy</>End-Title
+			Title<r>sid cu.Chrysostom</>End-Title
+			Title<Trubric>sid cu.OnASunday</>End-Title
+			Break line End_Break
+			Insert_section ST.copyright_notice__.goa_liturgy_chrys End-Insert
+		End-Section
+		Insert_section hLI._01_Enarxis__.daily End-Insert
+		Insert_section hLI._02_Antiphons__.sundays_weekdays_feasts.antiphon1 End-Insert
+		Insert_section hLI._02_Antiphons__.sundays_weekdays_feasts.antiphon2 End-Insert
+		Section sunday
+			Actor sid Choir End-Actor
+			Title<Tdesig>sid Antifonon3</>End-Title
+			Title<Tmode>sid cu.ModeOfApolytikion</>End-Title
+			Section v01
+				Verse<bnr>sid vVerse1</>sid psLI.sunday.antiphon3.v1.text @ver End-Verse
+			End-Section
+			Section hymn
+				Title role desig sid Apolytikion End-Title
+				Title<Trubric>sid cu.ApolytikionOfTheDay</>End-Title
+			End-Section
+		End-Section
+		Insert_section hLI._04_Entrance__.clergy End-Insert
+		Insert_section hLI._05_AfterEntranceHymns__.clergy End-Insert
+		Section hymns
+			Title role desig sid Apolytikion End-Title
+			Title<Trubric>sid cu.ApolytikionOfTheDay</>End-Title
+			Actor sid Choir End-Actor
+			Insert_section LI._05_AfterEntranceHymns__.local End-Insert
+			Insert_section hLI._05_AfterEntranceHymns__.kontakion End-Insert
+		End-Section
+		Insert_section hLI._06_Trisagion__.chrys End-Insert
+		Insert_section hLI._07_Fimi__.one_choir__.part1 End-Insert
+		Insert_section hLI._07_Fimi__.one_choir__.part2__.bishop0andbishop1 End-Insert
+		Section Epistle //computes
+			Section title
+				Title role desig sid OApostolos End-Title
+			//	Insert_section Epistle_Title End-Insert
+			End-Section
+			Section prokeimenon
+				Actor sid Deacon End-Actor	
+				Dialog sid exc19 End-Dialog
+				Actor sid Reader End-Actor
+				Title<Trubric>sid cu.EpistleProkeimenon</>End-Title
+			End-Section
+			Section lesson
+				Actor sid Deacon End-Actor
+				Dialog sid exc17 End-Dialog
+				Actor sid Reader End-Actor
+				Dialog sid cu.EpistleBook End-Dialog
+				Actor sid Deacon End-Actor
+				Dialog sid exc19 End-Dialog
+				Actor sid Reader End-Actor
+				Title<Trubric>sid cu.EpistleLesson</>End-Title
+				Actor sid Hierarch End-Actor
+				Dialog sid epi02 End-Dialog		
+			End-Section
+		End-Section
+		Section Gospel
+			Section alleluia 
+				Actor sid Choir End-Actor
+				Hymn sid Allilouia3.text End-Hymn
+			End-Section //Alleluia
+			Insert_section LE.hPrayerBeforeGospel End-Insert
+			Section lesson 
+				Title role desig sid ToEvangelion End-Title
+				Actor sid Deacon End-Actor
+				Dialog sid exc17 sid exc18 sid gos02 End-Dialog
+				Actor sid Hierarch End-Actor
+				Dialog sid pet31 End-Dialog
+				Dialog<i>sid parenthesis.open sid res05 sid parenthesis.close</>End-Dialog
+				Actor sid Deacon End-Actor
+				Dialog sid cu.GospelBook End-Dialog
+				Actor sid PriestOrDeacon End-Actor
+				Dialog sid exc19 End-Dialog
+				Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog	
+				Actor sid Deacon End-Actor
+				Title<Trubric>sid cu.GospelLesson</>End-Title
+				Actor sid Hierarch End-Actor
+				Dialog sid gos04 End-Dialog
+				Actor sid Choir End-Actor						
+				Media sid DoxaSoiKyrie.MM.aftergospel.text End-Media
+				Dialog sid DoxaSoiKyrie End-Dialog	
+				Dialog sid res07 End-Dialog	
+			End-Section	//Lesson
+		End-Section
+		Insert_section hLI._08_Liturgy__.chrys_default End-Insert
+		Insert_section hLI._09_Dismissal__.commemoration End-Insert
+	End-Section
+
+End-Template

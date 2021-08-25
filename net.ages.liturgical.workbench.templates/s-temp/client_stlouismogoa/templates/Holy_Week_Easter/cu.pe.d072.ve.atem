@@ -1,0 +1,108 @@
+Template cu.pe.d072.ve 
+
+Status NA
+
+	import client_gr_GR_cog.*
+	import me.*
+	
+	import actors_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 4 day 29 year 2019 End_Date
+			Page_Header_Even
+				center  @text "Agape Vespers on Easter Sunday"
+			End_Page_Header_Even
+			Page_Header_Odd
+				center  @text "Agape Vespers on Easter Sunday"
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template pdf.cover.ve.override End-Insert
+		Insert_template pdf.cover.credits.short End-Insert
+	End-Preface
+
+	Section Instance01
+		Title<bnr>sid ve.html.tab</>End-Title
+		Insert_section VE._01_Beginning__.vespers End-Insert
+		Insert_section VE._02_Kekragaria__.mode2__.noStichologia End-Insert
+		Insert_section VE._03_Stichera__.pe__.s_123456as5678910 End-Insert
+		Insert_section VE._03_Stichera__.glory__.pe__.gloryasglory_ End-Insert
+		Insert_section VE._03_Stichera__.both__.pe__.bothasboth_ End-Insert
+		Insert_section VE._04_Middle__.entrance End-Insert
+		Insert_section PE.SundayVespersGospel End-Insert
+			Section fullektenia
+				Section Ektenia01 //long version 
+					Actor sid Deacon End-Actor
+					Dialog sid pet15 End-Dialog
+					Dialog<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
+					Dialog sid pet16 End-Dialog
+					Dialog<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
+					Dialog sid pet17 End-Dialog
+					Dialog<i>sid parenthesis.open sid res06 sid parenthesis.close</>End-Dialog
+					Dialog sid pet18 End-Dialog
+					Dialog<i>sid parenthesis.open sid res01 sid parenthesis.close sid Thrice</>End-Dialog
+					Dialog sid pet19Sa sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
+					Dialog<i>sid parenthesis.open sid res01 sid parenthesis.close sid Thrice</>End-Dialog
+					Dialog sid pet20 End-Dialog
+					Dialog<i>sid parenthesis.open sid res01 sid parenthesis.close sid Thrice</>End-Dialog
+					Dialog sid pet21 End-Dialog
+					Dialog<i>sid parenthesis.open sid res01 sid parenthesis.close sid Thrice</>End-Dialog
+					Dialog sid pet22 End-Dialog
+					Dialog<i>sid parenthesis.open sid res01 sid parenthesis.close sid Thrice</>End-Dialog
+					Dialog sid pet23 End-Dialog
+					Dialog<i>sid parenthesis.open sid res01 sid parenthesis.close sid Thrice</>End-Dialog
+					Actor sid Priest End-Actor
+					Dialog sid exc11 End-Dialog
+					Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+				End-Section
+				Actor sid Reader End-Actor
+				Reading sid ho.s10_gr_GR_cog.hoVE.Prayer_Kataxioson.text @ver End-Reading
+				Dialog <i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+				Section ComplementaryV //Vespers
+					Actor sid Deacon End-Actor
+					Dialog sid pet24v End-Dialog
+					Dialog<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
+					Dialog sid pet12 End-Dialog
+					Dialog<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
+					Dialog sid pet25v End-Dialog
+					Dialog<i>sid parenthesis.open sid res02 sid parenthesis.close</>End-Dialog
+					Dialog sid pet26 End-Dialog
+					Dialog sid pet27 End-Dialog
+					Dialog sid pet28 End-Dialog
+					Dialog sid pet29 End-Dialog
+					Dialog sid pet30 End-Dialog
+					Dialog sid pet13 End-Dialog
+					Dialog<i>sid parenthesis.open sid res03 sid parenthesis.close</>End-Dialog
+					Actor sid Priest End-Actor
+					Dialog sid exc03 End-Dialog
+					Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+				End-Section
+				Insert_section LN.BowHeadsV End-Insert
+			End-Section
+		Insert_section VE._08_Aposticha__.pe__.s_1 End-Insert
+		Insert_section VE._08_Aposticha__.pascha End-Insert
+		Insert_section VE._08_Aposticha__.gloryboth__.pascha_ End-Insert
+		Insert_section AP.pascha__.thrice End-Insert
+		Insert_section VE._10_End__.wisdom End-Insert
+		Insert_section VE._11_Dismissal__.nocommemoration End-Insert
+	End-Section
+	
+
+End-Template
