@@ -1,6 +1,6 @@
 Template se.m03.d09.co
 
-Status NA
+Status Final
 
 	import client_gr_GR_cog.*
 	import ho.s12_gr_GR_cog.*
@@ -40,7 +40,7 @@ Status NA
 	when-movable-cycle-day-is 
 		1 thru 127 use:
 			when-movable-cycle-day-is
-				24, 25, 26, 27, 31, 32, 33, 34, 38, 39, 40, 41, 45, 46, 47, 48, 52, 53, 54, 55, 59, 60, 61, 62 use:
+				31, 32, 33, 34, 38, 39, 40, 41, 45, 46, 47, 48, 52, 53, 54, 55, 59, 60, 61, 62 use:
 					Section Instance02
 						Insert_section ST.gc.ho End-Insert
 						Title role desig sid hoCO.Key0100.title End-Title
@@ -80,15 +80,70 @@ Status NA
 						Insert_section GreatCompline_14 End-Insert
 						Insert_section GreatCompline_15 End-Insert
 						Insert_section GreatCompline_16 End-Insert
-					
 						when-name-of-day-is 
 							Tuesday, Thursday use: Insert_section GreatCompline_17.Part1 End-Insert
 							Wednesday, Friday use: Insert_section GreatCompline_17.Part3 End-Insert
 						end-when
-					
 						Insert_section GreatCompline_18 End-Insert
 					End-Section
-
+				24, 25, 26, 27 use:
+					Section Instance08
+						Insert_section ST.gc.ho End-Insert
+						Title role desig sid hoCO.Key0100.title End-Title
+						Insert_section GreatCompline_01 End-Insert
+						Insert_section GreatCompline_02 End-Insert
+						Insert_section GreatCompline_03.part1 End-Insert
+						Section part2	
+							Actor sid Choir End-Actor
+							Title role mode sid hoCO.Key0601.mode End-Title
+							Media sid hoCO.Key0601.text End-Media
+							Para role chant sid hoCO.Key0601.text @ver <r>sid Thrice</>End-Para
+							Para role chant sid hoCO.Key0602.text<r>sid Twice</>End-Para
+							Para role chant sid hoCO.Key0603.text<r>sid Twice</>End-Para
+							Para role chant sid hoCO.Key0604.text<r>sid Twice</>End-Para
+							Para role chant sid hoCO.Key0605.text<r>sid Twice</>End-Para
+							Para role chant sid cl.localpatronsaint1.greatcompline<r>sid Twice</>End-Para
+							Para role chant rid me.meCO.SupplicationVerse.text<r>sid Twice</>End-Para
+							Para role chant sid hoCO.Key0607.text<r>sid Twice</>End-Para
+							Para role chant sid hoCO.Key0608.text<r>sid Twice</>End-Para
+							Para role chant sid hoCO.Key0609.text End-Para
+						End-Section
+						Insert_section GreatCompline_03.part3 End-Insert
+						when-name-of-day-is 
+							Tuesday, Thursday use: Insert_section GreatCompline_04 End-Insert
+							Wednesday, Friday use: Insert_section GreatCompline_05 End-Insert
+						end-when	
+						Insert_section GreatCompline_06 End-Insert
+						Insert_section GreatCompline_07 End-Insert
+						Insert_section GreatCompline_08 End-Insert
+						Insert_section GreatCompline_09.Part1 End-Insert
+						Insert_section GreatCompline_09.Part2 End-Insert
+						Insert_section GreatCompline_09.Part3 End-Insert
+						Section greatcanon
+							Rubric sid hoCO.Key0910.rubric End-Rubric
+							Actor sid Choir End-Actor
+							when-movable-cycle-day-is
+								24 use: Insert_section tr.d24.GreatCanon_Part1 End-Insert
+								25 use: Insert_section tr.d25.GreatCanon_Part2 End-Insert
+								26 use: Insert_section tr.d26.GreatCanon_Part3 End-Insert
+								27 use: Insert_section tr.d27.GreatCanon_Part4 End-Insert
+							end-when
+						End-Section
+						Insert_section GreatCompline_10 End-Insert
+						Insert_section GreatCompline_11 End-Insert
+						Insert_section GreatCompline_12 End-Insert
+						Insert_section GreatCompline_13 End-Insert
+						Insert_section GreatCompline_14 End-Insert
+						Rubric sid hoCO.Key1201.rubric End-Rubric
+						Insert_section LE._02_Gospel__.compline End-Insert
+						Insert_section GreatCompline_15 End-Insert
+						Insert_section GreatCompline_16 End-Insert
+						when-name-of-day-is 
+							Tuesday, Thursday use: Insert_section GreatCompline_17.Part1 End-Insert
+							Wednesday, Friday use: Insert_section GreatCompline_17.Part3 End-Insert
+						end-when
+						Insert_section GreatCompline_18 End-Insert
+					End-Section
 				otherwise use:
 					Insert_template mc.map.co End-Insert
 			end-when

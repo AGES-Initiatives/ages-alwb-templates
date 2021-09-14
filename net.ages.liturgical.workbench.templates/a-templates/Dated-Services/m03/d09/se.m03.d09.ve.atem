@@ -1,6 +1,9 @@
 Template se.m03.d09.ve
 
-Status NA
+Status Final
+
+	import liturgical.verses_gr_GR_cog.*
+	import ps_gr_GR_cog.*
 
 	import actors_gr_GR_cog.*
 	import misc_gr_GR_cog.*
@@ -96,6 +99,46 @@ Status NA
 				Insert_section VE._11_Dismissal__.tr1_me1_commemoration End-Insert
 			End-Section
 		22 use:
+		25, 32, 39, 46 use:
+			Section Instance08
+				Insert_section ST.ve.tr_me1 End-Insert
+				Insert_section VE._01_Beginning__.vespers End-Insert
+				when-movable-cycle-day-is
+					25 use:
+						Insert_section VE._02_Kekragaria__.mode2__.for6 End-Insert
+					32 use:
+						Insert_section VE._02_Kekragaria__.mode1__.for6 End-Insert
+					39 use:
+						Insert_section VE._02_Kekragaria__.mode3__.for6 End-Insert
+					46 use:
+						Insert_section VE._02_Kekragaria__.mode6__.for6 End-Insert
+				end-when
+				Insert_section VE._03_Stichera__.tr__.p_123as567 End-Insert
+				Insert_section TI.ip.me.com1 End-Insert
+				Insert_section VE._03_Stichera__.me__.i_123as8910 End-Insert
+				Set_Date month 3 day 6 year 2022 End_Date
+					Insert_section VE._03_Stichera__.gloryboth__.metheotokion2.stavrothetokion End-Insert
+				Set_Date month 3 day 9 year 2022 End_Date
+				Insert_section VE._04_Middle__.noentrance End-Insert
+				Insert_section VE._05_Readings__.reader End-Insert
+				Insert_section VE._06_Litanies__.noektenia End-Insert
+				Insert_section VE._08_Aposticha__.tr__.weekday_ End-Insert
+				Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert	
+				Insert_section AP.lent__.ve End-Insert
+				Insert_section VE._10_End__.lent_.part1 End-Insert
+				Section End_lent_part2
+					Actor sid Reader End-Actor
+					Reading sid res01<r>sid Twelve</>End-Reading
+					Reading sid ho.s07_gr_GR_cog.hoTY.Key0501.text sid res04 End-Reading
+					Reading sid psLI.aftercommunion.v1.text<r>sid Thrice</>End-Reading
+					Title role desig sid psa33.title End-Title
+					Reading sid psa33.text End-Reading
+				//	Title role desig sid psa144.title End-Title
+				//	Reading sid psa144.text End-Reading
+				End-Section
+				Insert_section VE._10_End__.lent_.part3 End-Insert
+				Insert_section VE._11_Dismissal__.commemoration End-Insert
+			End-Section
 		29 use: 
 			Section Instance12 //Lent1	
 				Insert_section ST.ve.oc_tr_me1 End-Insert
