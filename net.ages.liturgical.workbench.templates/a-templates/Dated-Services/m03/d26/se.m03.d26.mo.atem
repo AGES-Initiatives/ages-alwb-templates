@@ -1,6 +1,6 @@
 Template se.m03.d26.mo
 
-Status NA
+Status Final
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -38,6 +38,24 @@ Status NA
 	when-movable-cycle-day-is
 		1, 8, 15, 22, 29, 36, 43, 50, 56, 57, 63, 64 use:
 			Insert_section mc.map.mo.Section01 End-Insert
+		35, 42 use:
+			Section Instance08
+				Insert_section ST.mo._ End-Insert
+				Insert_section MO._01_intro_ End-Insert
+				Insert_section MO._02_kathisma_ End-Insert
+				Insert_section MO._05_creed End-Insert
+				Insert_section MO._07_prayers_.trisagion End-Insert
+				Insert_section AP.NM.af End-Insert
+				when-movable-cycle-day-is
+					23 thru 67 use:
+						Insert_section MO._08_lentprayer End-Insert
+				end-when
+				Insert_section MO._09_prayers_psalms_ End-Insert
+				Insert_section KO.NM.af End-Insert
+				Insert_section MO._11_prayers End-Insert
+				Insert_section MO._12_troparia End-Insert
+				Insert_section MO._13_end_dismissal__.after_hymns End-Insert
+			End-Section
 		otherwise use:
 			when-name-of-day-is
 				Sunday use:
