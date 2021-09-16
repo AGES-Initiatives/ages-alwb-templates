@@ -1,6 +1,6 @@
 Template se.m04.d26.h91
 
-Status NA
+Status Final
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -47,16 +47,42 @@ Status NA
 				End-Section
 		end-when
 		Break line End_Break
-		Section block2
-		//	Title sid horizontal_line.solid1 End-Title
-		//	Title<i>sid TaAnagnosmataTouMinologiou</>End-Title
-		//	Insert_section LE._01_Epistle__.textonly__.menaion.title End-Insert
-		//	Insert_section LE._01_Epistle__.textonly__.menaion.lesson End-Insert
-		//	Insert_section LE._02_Gospel__.textonly__.menaion.lesson End-Insert
-		End-Section
+		when-movable-cycle-day-is
+			72 use:
+				Section stgeorge
+					Set_Date month 4 day 23 year 2022 End_Date
+					Insert_section LE._01_Epistle__.textonly__.menaion.title End-Insert
+					Insert_section LE._01_Epistle__.textonly__.menaion.lesson End-Insert
+					Insert_section LE._02_Gospel__.textonly__.menaion.lesson End-Insert
+					Set_Date month 4 day 26 year 2022 End_Date
+				End-Section
+			73 use:
+				Section stmark
+					Set_Date month 4 day 25 year 2022 End_Date
+					Insert_section LE._01_Epistle__.textonly__.menaion.title End-Insert
+					Insert_section LE._01_Epistle__.textonly__.menaion.lesson End-Insert
+					Insert_section LE._02_Gospel__.textonly__.menaion.lesson End-Insert
+					Set_Date month 4 day 26 year 2022 End_Date
+				End-Section
+		end-when
 		Title sid horizontal_line.solid1 End-Title
 		Break line End_Break
-		Insert_section SY.Synaxarion_for_DailyReadings End-Insert
+		when-movable-cycle-day-is
+			72 use:
+				Section Apr23_StGeorge
+					Insert_section SY.me End-Insert
+					Reading sid sy.m04.d23_gr_GR_cog.syMA.commemorationDD.text End-Reading
+					Insert_section SY.mc End-Insert
+				End-Section
+			73 use:
+				Section Apr25_StMark
+					Insert_section SY.me End-Insert
+					Reading sid sy.m04.d25_gr_GR_cog.syMA.commemorationDD.text End-Reading
+					Insert_section SY.mc End-Insert
+				End-Section
+			otherwise use:
+				Insert_section SY.Synaxarion_for_DailyReadings End-Insert
+		end-when
 		Title sid horizontal_line.solid1 End-Title
 		Break line End_Break
 		Insert_section LI._10_Parts__._9_fasting_ End-Insert

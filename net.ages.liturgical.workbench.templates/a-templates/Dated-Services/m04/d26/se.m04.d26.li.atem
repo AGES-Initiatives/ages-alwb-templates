@@ -1,6 +1,6 @@
 Template se.m04.d26.li
 
-Status NA
+Status Final
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -31,8 +31,24 @@ Status NA
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
-	when-movable-cycle-day-is 1 thru 127 use:
-		Insert_section mc.map.li.Section01 End-Insert
+	when-movable-cycle-day-is 
+		65 thru 71 use:
+			Section Instance01_HW
+				Insert_section mc.map.li.Section01 End-Insert
+			End-Section
+			
+		72 use: //Bright Monday - St. George
+			Section Instance01_Monday
+				Insert_section se.pe.d072.li.Instance02 End-Insert
+			End-Section
+			
+		73 use: //Bright Tuesday - St. Mark
+			Section Instance01_Tuesday
+				Insert_section se.pe.d073.li.Instance02 End-Insert
+			End-Section
+		
+		74 thru 127 use:
+			Insert_section mc.map.li.Section01 End-Insert
 		otherwise use:
 		
 	end-when	
