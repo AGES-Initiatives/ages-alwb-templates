@@ -1,6 +1,6 @@
-Template se.m05.d26.ma3 
+Template se.m05.d01.ma2 
 
-Status NA
+Status Review
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -9,14 +9,13 @@ Status NA
 	import rubrical_gr_GR_cog.*
 	import template.titles_gr_GR_cog.*
 	import titles_gr_GR_cog.*
-	import website.preferences.titles_en_US_alwb.*
 		
 	import iTags.*
 	import bTags.*
 	import roles.*
 
 	Head 
-		Set_Date month 5 day 26 year 2022 End_Date
+		Set_Date month 5 day 1 year 2022 End_Date
 			Page_Header_Even
 				center @lookup sid ma.pdf.header sid d.on lang L1 @date lang L1
 			End_Page_Header_Even
@@ -33,62 +32,50 @@ Status NA
 	End_Head
 
 	Preface Covers
-		Insert_template pdf.cover.ma.me End-Insert
+
 		Insert_template pdf.cover.credits End-Insert
 	End-Preface
 
 	when-movable-cycle-day-is
-		92, 95, 99, 102, 106, 109, 110, 113, 118, 119, 120, 121, 126, 127 use:
+		65 thru 71 use:
+			Section Instance01_Lent
+			End-Section
+			
+		72 use: //Bright Monday - St. George
+			Section Instance01_Monday
+				Insert_section se.pe.d072.ma2.Instance02 End-Insert
+			End-Section
+			
+		73 use: //Bright Tuesday - St. Mark
+			Section Instance01_Tuesday
+				Insert_section se.pe.d073.ma2.Instance02 End-Insert
+			End-Section
+			
+		74, 75, 76, 77, 78, 85, 92, 95, 99, 102, 106, 109, 110 use:
 			Section Instance01
-				Insert_section mc.map.ma.Section03 End-Insert
+				Insert_section mc.map.ma.Section02 End-Insert
 			End-Section
 			
-		86 thru 90 use:
-			Section Instance04_86thru90
-			End-Section
-			
-		91 use:
-			Section Instance04_91
+		79 thru 83 use: //Thomas week
+			Section Instance02
 			End-Section
 
-		93, 94 use:
-			Section Instance04_9394
+		84 use: //Thomas Saturday
+			Section Instance03
 			End-Section
 
-		96, 97, 100, 101 use:
-			Section Instance04_9697100101
-			End-Section
-
-		98 use:
-			Section Instance04_98
-			End-Section
-
-		103, 104, 107 use:
-			Section Instance04_103104107
-			End-Section
-
-		105 use:
-			Section Instance04_105
+		86, 87, 88, 89, 90, 91, 93, 94, 96, 97, 98, 100, 101, 103, 104, 105, 107 use:
+			Section Instance04
 			End-Section
 
 		108 use: //Leavetaking of Blindman
 			Section Instance05
 			End-Section
 
-		111, 112 use: 
+		111 use: //Friday After Ascension
 			Section Instance06
 			End-Section
 
-		114, 115, 116, 117 use: 
-			Section Instance07
-			End-Section
-
-		122 thru 125 use: 
-			Section Instance08
-			End-Section
-			
-		otherwise use:
-
 	end-when	
-
+		
 End-Template
