@@ -1,6 +1,6 @@
-Template cu.cl.vespers_oceannjgoa
+Template se.m11.d28.ve9
 
-Status Draft
+Status NA
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -15,7 +15,7 @@ Status Draft
 	import roles.*
 	
 	Head 
-		Template_Title @lookup sid ve.pdf.header lang L2 End_Title
+		Template_Title @text "St George Ocean NJ Consecration: Vespers" End_Title
 		Set_Date month 11 day 28 year 2021 End_Date
 		Page_Header_Even 
 			center @text "Consecration Vespers" 
@@ -25,12 +25,29 @@ Status Draft
 			center @text "Saturday, November 27, 2021" 
 			right @pageNbr 
 		End_Page_Header_Odd
-		Set_Page_Number 9 End_Set_Page_Number
+		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
+	Preface Covers
+		Insert_template pdf.cover.ve.override End-Insert
+		Insert_template pdf.cover.credits End-Insert
+	End-Preface
 
 	Section Instance11
-		Insert_section ST.ve.oc_me1_con End-Insert
+		Section oc_me1_con
+			Para role servicesourcestitle sid book.BooksSources.title End-Para
+			Para role servicesources sid book.Octoechos.name sid separator.hyphen rid oc.ocVE.Stichera1.mode End-Para
+			Insert_section Selector_ServiceTitle.on_evening_before End-Insert
+			Set_Date month 4 day 23 year 2021 End_Date
+			Para role servicesources sid book.Menaion.name sid separator.hyphen rid me.meDA.date End-Para
+			Para role servicesourcessection rid me.meDA.commemoration.first_short End-Para
+			Set_Date month 11 day 28 year 2021 End_Date
+			Para role servicesources sid book.Euchologion.name End-Para
+			Para role servicesourcessection sid EgkainiaNaou End-Para
+			Title sid horizontal_line.solid1 End-Title
+			Break line End_Break
+			Title<bnr>sid ve.html.tab</>End-Title
+		End-Section
 		Insert_section VE._01_Beginning__.Hierarchical__.vespers End-Insert
 		Insert_section VE._02_Kekragaria__.Hierarchical__.modeofweek__.for10 End-Insert
 		Insert_section VE._03_Stichera__.oc__.sunday__.s_1234as1234 End-Insert
@@ -70,6 +87,6 @@ Status Draft
 		Insert_section VE._10_End__.Hierarchical__.wisdom End-Insert
 		Insert_section VE._11_Dismissal__.Hierarchical__.nocommemoration End-Insert
 	End-Section
-	Insert_template pdf.cover.credits End-Insert
+//	Insert_template pdf.cover.credits End-Insert
 
 End-Template

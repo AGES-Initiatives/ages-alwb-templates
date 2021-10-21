@@ -1,6 +1,6 @@
 Template se.m05.d08.mo
 
-Status NA
+Status Review
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -57,7 +57,6 @@ Status NA
 					Insert_section VE._07_Lity__.part2__.me__.lity2_ End-Insert
 					Insert_section VE._07_Lity__.part2__.me__.lity3_ End-Insert
 					Insert_section VE._07_Lity__.part2__.me__.lity4_ End-Insert
-				//	Insert_section VE._07_Lity__.part2__.me__.lity5_ End-Insert
 					Insert_section VE._07_Lity__.part2__.me__.glory_ End-Insert
 					Insert_section VE._08_Aposticha__.both__.secondarytheotokion__.mode4 End-Insert
 					Set_mcDay day 0 End_mcDay
@@ -82,8 +81,40 @@ Status NA
 			Section Instance14
 			End-Section
 
-		85, 92, 99 use: //Sunday of Myr, Par, Sam
+		85, 92, 99, 106 use: //Sunday of Myr, Par, Sam, BM
 			Section Instance15
+				Insert_section ST.mo.pe_me1 End-Insert
+				Insert_section MO._01_intro_ End-Insert
+				Insert_section MO._03_triadic_canon_ End-Insert
+				Section lity
+					Rubric sid IfLityNotDoneAtVespers End-Rubric
+					Actor sid Choir End-Actor
+					Insert_section TI.ip.lity End-Insert
+					when-movable-cycle-day-is
+						85 use: 
+							Insert_section TI.pe.specific._02_myrrhbearers End-Insert
+							Insert_section VE._07_Lity__.part2__.pe__.lity1 End-Insert
+							Insert_section VE._07_Lity__.part2__.pe__.lity2 End-Insert
+							Insert_section VE._07_Lity__.part2__.pe__.lity3 End-Insert
+					end-when
+					Insert_section TI.s._05_evangelist End-Insert
+					Insert_section VE._07_Lity__.part2__.me__.lity1_.hymn End-Insert
+					Insert_section VE._07_Lity__.part2__.me__.lity2_.hymn End-Insert
+					Insert_section VE._07_Lity__.part2__.me__.lity3_.hymn End-Insert
+					Insert_section VE._07_Lity__.part2__.me__.lity4_.hymn End-Insert
+					Insert_section VE._07_Lity__.part2__.me__.glory_ End-Insert
+					Insert_section TI.b.pe_.specific End-Insert
+					Insert_section VE._07_Lity__.part2__.pe__.glory_.hymn End-Insert
+				End-Section
+				Insert_section MO._04_triadic_megalynaria End-Insert
+				when-movable-cycle-day-is
+					85 use: 
+						Insert_section MO._06_sundays_feastdays_.trisagion End-Insert
+						Insert_section AP.NM.pe1_ End-Insert
+					90, 99, 106 use:
+						Insert_section MO._06_sundays_feastdays_ End-Insert
+				end-when
+				Insert_section MO._13_end_dismissal__.append_sunday_feastday End-Insert
 			End-Section
 			
 		86, 87, 88, 89, 90 use: 
