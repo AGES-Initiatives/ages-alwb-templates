@@ -275,14 +275,14 @@ Template MA
 			Insert_section part5.psalms End-Insert
 		End-Section
 		Section part6	
-			Actor sid PriestOrDeacon End-Actor
+			Actor sid Priest End-Actor
 			Insert_section LN.GreatLitany01 End-Insert	
 			Actor sid Priest End-Actor
 			Dialog sid exc01 End-Dialog
 			Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
 		End-Section
 		Section part6_monastery
-			Actor sid PriestOrDeacon End-Actor
+			Actor sid Priest End-Actor
 			Insert_section LN.GreatLitany01_monastery End-Insert	
 			Actor sid Priest End-Actor
 			Dialog sid exc01 End-Dialog
@@ -470,7 +470,7 @@ Template MA
 			Dialog sid enarxis03 End-Dialog
 			Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
 			Insert_section PE.Pascha_Beginning End-Insert
-			Actor sid Deacon End-Actor
+			Actor sid Priest End-Actor
 			Insert_section LN.GreatLitany01 End-Insert
 			Actor sid Priest End-Actor
 			Dialog sid exc01<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
@@ -481,7 +481,7 @@ Template MA
 				Dialog sid enarxis03 End-Dialog
 				Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
 				Insert_section hPE.Pascha_Beginning End-Insert
-				Actor sid Deacon End-Actor
+				Actor sid Priest End-Actor
 				Insert_section LN.GreatLitany01 End-Insert
 				Actor sid Priest End-Actor
 				Dialog sid exc01<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
@@ -3311,7 +3311,7 @@ Template MA
 		End-Section
 		Section mode41_prokeimenon_
 			Section litany
-				Insert_section LN.ShortLitany04_deacon End-Insert
+				Insert_section LN.ShortLitany04_priest End-Insert
 			End-Section
 			Section antiphon
 				Actor sid Choir End-Actor
@@ -3331,7 +3331,7 @@ Template MA
 		End-Section	
 		Section sunday_
 			Section litany
-				Insert_section LN.ShortLitany04_deacon End-Insert
+				Insert_section LN.ShortLitany04_priest End-Insert
 			End-Section
 			Section hypakoe
 				Actor sid Reader End-Actor
@@ -3615,16 +3615,16 @@ Template MA
 		Section litanies__
 			Section ode3
 				Para role bmc_ode3_litany sid mc.ode3.litany End-Para
-					Insert_section LN.ShortLitany08_deacon End-Insert
+					Insert_section LN.ShortLitany08_priest End-Insert
 				Para role emc_ode3_litany sid mc.tag End-Para
 			End-Section
 			Section ode6
 				Para role bmc_ode6_litany sid mc.ode6.litany End-Para
-				Insert_section LN.ShortLitany09_deacon End-Insert
+				Insert_section LN.ShortLitany09_priest End-Insert
 				Para role emc_ode6_litany sid mc.tag End-Para
 			End-Section
 			Section ode9
-				Insert_section LN.ShortLitany10_deacon End-Insert
+				Insert_section LN.ShortLitany10_priest End-Insert
 			End-Section
 		End-Section
 		Section ode3_heirmos__
@@ -9776,16 +9776,13 @@ Template MA
 			Insert_section great End-Insert
 			Rubric sid R36 End-Rubric
 			Section hymn
+				Title<Tmode>sid hoMA.SunTroparion1.mode</><Trubric>sid ITisEvdomados</>End-Title
+				Hymn sid hoMA.SunTroparion1.text @ver End-Hymn
 				when-mode-of-week-is 
-					M1, M2, M3, M4 use:
-						Title<Tmode>sid hoMA.SunTroparion1.mode</><Trubric>sid ITisEvdomados</>End-Title
-						Hymn sid hoMA.SunTroparion1.text @ver End-Hymn
-					otherwise use:
+					M5, M6, M7, M8 use:
+						Rubric sid OrAccordingToOlderPractice End-Rubric	
 						Title<Tmode>sid hoMA.SunTroparion2.mode</><Trubric>sid ITisEvdomados</>End-Title
 						Hymn sid hoMA.SunTroparion2.text @ver End-Hymn
-						Rubric sid OrAccordingToCommonPractice End-Rubric	
-						Title<Tmode>sid hoMA.SunTroparion1.mode</><Trubric>sid ITisEvdomados</>End-Title
-						Hymn sid hoMA.SunTroparion1.text @ver End-Hymn
 				end-when
 			End-Section
 		End-Section
