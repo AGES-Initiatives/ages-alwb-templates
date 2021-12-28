@@ -75,7 +75,6 @@ Status NA
 			Actor sid Priest End-Actor
 			Dialog sid euLI.Key0109.text End-Dialog
 			Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
-			Insert_section VE.vesperal_prayers_link End-Insert
 			Insert_section VE._01_Beginning__.vespers.introductorypsalm End-Insert
 		//	Insert_section VE._01_Beginning__.vespers.prayers End-Insert
 			Insert_section VE._01_Beginning__.vespers.litany End-Insert
@@ -1643,6 +1642,7 @@ Status NA
 	Section _04_Entrance__
 		Section parish
 			Title role desig sid euLI.Key0500.title End-Title
+			Rubric sid cl.eu.lichrysbasil.R005 End-Rubric
 			Insert_section EntrancePrayer End-Insert
 			Actor sid ChoirR End-Actor
 			Title<Tdesig>sid Eisodikon</><Tmode>sid Mode2</>End-Title
@@ -1658,6 +1658,7 @@ Status NA
 		End-Section
 		Section choir
 			Title role desig sid euLI.Key0500.title End-Title
+			Rubric sid cl.eu.lichrysbasil.R005 End-Rubric
 			Insert_section EntrancePrayer End-Insert
 			Actor sid Choir End-Actor
 			Title<Tdesig>sid Eisodikon</><Tmode>sid Mode2</>End-Title
@@ -1667,6 +1668,7 @@ Status NA
 		End-Section
 		Section clergy
 			Title role desig sid euLI.Key0500.title End-Title
+			Rubric sid cl.eu.lichrysbasil.R005 End-Rubric
 			Insert_section EntrancePrayer End-Insert
 			Actor sid Clergy End-Actor
 			Title<Tdesig>sid Eisodikon</><Tmode>sid Mode2</>End-Title
@@ -1809,6 +1811,8 @@ Status NA
 						Actor sid People End-Actor
 						Title role smallcenter sid euLI.Key1209.title End-Title
 						Reading sid Pistevo.text @ver End-Reading
+						Actor sid clChoirL End-Actor
+						Dialog sid res04 End-Dialog
 					End-Section
 					Section anaphora
 						Title role desig sid euLI.Key1300.title End-Title	
@@ -2114,6 +2118,8 @@ Status NA
 						Actor sid People End-Actor
 						Title role smallcenter sid euLI.Key1209.title End-Title
 						Reading sid Pistevo.text @ver End-Reading
+						Actor sid clChoirL End-Actor
+						Dialog sid res04 End-Dialog
 					End-Section //LitanyAndCreed
 					Section anaphora
 						Title role desig sid euLI.Key1300.title End-Title
@@ -3590,9 +3596,11 @@ Status NA
 			Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
 		End-Section
 		Section EntrancePrayer //inserted in _04
+			Actor sid Deacon<Trubric>sid InALowVoice</>End-Actor 
+			Para role inaudible sid pet00 sid res01 End-Para
 			Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
 			Title role smallcenter sid euLI.Key0501.title End-Title
-			Para role inaudible sid euLI.Key0501.text sid exc01 End-Para
+			Para role inaudible sid euLI.Key0501.text sid exc01 sid res04 End-Para
 			Actor sid Deacon<Trubric>sid InALowVoice</>End-Actor
 			Para role inaudible sid euLI.Key0502.text End-Para
 			Actor sid Priest<Trubric>sid InALowVoice</>End-Actor
@@ -3608,6 +3616,7 @@ Status NA
 					Rubric sid euLI.Key0706.rubric End-Rubric
 					Title sid horizontal_line.solid1 End-Title
 				End-Section
+			/* 	
 				Break page End_Break
 				Rubric sid euLI.Key0707.rubric End-Rubric
 				Title role bmc_collapse sid clps.additionallitanies.top End-Title
@@ -3684,6 +3693,7 @@ Status NA
 					End-Section
 				Title role emc_collapse sid clps.additionallitanies.bottom End-Title
 				Break page End_Break
+			 */
 				Section _19_SecondPrayerOfFaithful
 					Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
 					Title role smallcenter sid euLI.Key1002.title End-Title
@@ -3699,6 +3709,7 @@ Status NA
 					Title<Tdesig>sid euLI.Key0706.title</>End-Title
 					Rubric sid euLI.Key0706.rubric End-Rubric
 				End-Section
+			/* 
 				Break page End_Break
 				Rubric sid euLI.Key0707.rubric End-Rubric
 				Title role bmc_collapse sid clps.additionallitanies.top End-Title
@@ -3749,6 +3760,7 @@ Status NA
 					Insert_section chrys._18_SortLitany End-Insert
 				Title role emc_collapse sid clps.additionallitanies.bottom End-Title
 				Break page End_Break
+			*/
 				Section _19_SecondPrayerOfFaithful
 					Actor sid Priest<Trubric>sid InALowVoice</>End-Actor 
 					Title role smallcenter sid euLI.Key1002.title End-Title

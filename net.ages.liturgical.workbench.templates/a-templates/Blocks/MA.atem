@@ -461,7 +461,7 @@ Template MA
 		End-Section
 		Section verses
 			Verse<bnr>sid vVerse1</>sid psMA.beginning.v2.text End-Verse
-			Para role alttext <Trubric>sid Or</><i> sid psMA.beginning.v2alt.text</> End-Para
+		//	Para role alttext <Trubric>sid Or</><i> sid psMA.beginning.v2alt.text</> End-Para
 			Verse<bnr>sid vVerse2</>sid psMA.beginning.v3.text End-Verse
 			Verse<bnr>sid vVerse3</>sid psMA.beginning.v4.text End-Verse
 		End-Section
@@ -4187,7 +4187,7 @@ Template MA
 			End-Section
 			Section me2
 				Actor sid Choir End-Actor
-				Title<Tdesig>rid meMA.Ode8C1H.ode</><Tdesig>rid meMA.Ode8C2H.melody</><Tmode>rid meMA.Ode8C2H.mode</>End-Title
+				Title<Tdesig>rid meMA.Ode8C2H.ode</><Tdesig>rid meMA.Ode8C2H.melody</><Tmode>rid meMA.Ode8C2H.mode</>End-Title
 				Verse sid bode8.v19.text End-Verse
 				Para role heirmos rid meMA.Ode8C2H.text @ver End-Para
 			End-Section
@@ -9718,7 +9718,7 @@ Template MA
 					Rubric sid euORD.EP.r02b End-Rubric
 					Actor sid Bishop_Elect End-Actor
 					Dialog sid euORD.EP.p402.text End-Dialog
-					Dialog sid Pistevo.text End-Dialog
+					Dialog sid Pistevo.text sid res04 End-Dialog
 					Dialog sid euORD.EP.p404.text End-Dialog
 					Dialog sid euORD.EP.p405.text End-Dialog
 					Dialog sid euORD.EP.p406.text End-Dialog
@@ -9767,9 +9767,12 @@ Template MA
 		End-Section
 		Section small
 			Rubric sid standing.prefix sid standing.matins.smalldoxology End-Rubric
-			Actor sid Reader End-Actor
 			Title role desig sid hoMA.SmallDoxology.title<Trubric>sid Read</>End-Title
-			Reading sid hoMA.DoxologySmallIntro.text sid hoMA.SmallDoxology1.text sid hoMA.SmallDoxology1d sid hoMA.SmallDoxology2.text sid hoMA.SmallDoxology2d sid hoMA.SmallDoxology3.text End-Reading
+			Actor sid SuperiorOrReader End-Actor
+			Reading sid hoMA.DoxologySmallIntro.text End-Reading
+			Actor sid Reader End-Actor
+			Reading sid res04 End-Reading
+			Reading sid hoMA.SmallDoxology1.text sid hoMA.SmallDoxology1d sid hoMA.SmallDoxology2.text sid hoMA.SmallDoxology2d sid hoMA.SmallDoxology3.text End-Reading
 		End-Section
 		Section sunday
 			Insert_section great End-Insert
@@ -9978,14 +9981,14 @@ Template MA
 			Section i_4asmartyrs1
 				Title role source0 sid sourceMenaion End-Title
 				Title<Tdesig>sid Idiomelon</><Tmode>rid meMA.Aposticha4.mode</>End-Title
-				Media sid meMA.Aposticha4.text End-Media
+				Media rid meMA.Aposticha4.text End-Media
 				Insert_section PsalmVerses.forMartyrs.verse1 End-Insert
 				Hymn rid meMA.Aposticha4.text @ver media-off End-Hymn
 			End-Section
 			Section i_4asmartyrs2
 				Title role source0 sid sourceMenaion End-Title
 				Title<Tdesig>sid Idiomelon</><Tmode>rid meMA.Aposticha4.mode</>End-Title
-				Media sid meMA.Aposticha4.text End-Media
+				Media rid meMA.Aposticha4.text End-Media
 				Insert_section PsalmVerses.forMartyrs.verse2 End-Insert
 				Hymn rid meMA.Aposticha4.text @ver media-off End-Hymn
 			End-Section
@@ -10915,6 +10918,10 @@ Template MA
 				End-Section
 			End-Section
 		End-Section
+		Section ektenia_wisdom0 //the litany was removed by GOA as of 2022
+		//	Insert_section LN.Ektenia02 End-Insert
+			Insert_section wisdom End-Insert
+		End-Section
 		Section ektenia_wisdom
 			Insert_section LN.Ektenia02 End-Insert
 			Insert_section wisdom End-Insert
@@ -10956,14 +10963,45 @@ Template MA
 		End-Section
 		Section wisdom
 			Section part1
-				Actor sid Deacon End-Actor
+				Actor sid Priest End-Actor
 				Dialog sid exc17 End-Dialog
 				Dialog<i>sid parenthesis.open sid Evlogison sid parenthesis.close</>End-Dialog	
-				Actor sid Priest End-Actor
+			//	Actor sid Priest End-Actor
 				Dialog sid OOnEvlogitos.text<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+				Actor sid SuperiorOrReader End-Actor
 				Dialog sid StereosaiKyrios.text End-Dialog
-				Actor sid Reader End-Actor
-				Dialog sid res04 End-Dialog
+				Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog	
+			End-Section
+		/*
+			Section part2
+				when-movable-cycle-day-is
+					71, 72, 73, 74, 75, 76, 77, 109 use:
+						Dialog sid pe.d00P_gr_GR_cog.pePA.Ode9H.text End-Dialog
+					otherwise use:
+						Dialog sid TinTimioteranPrayer.text End-Dialog
+				end-when
+			End-Section
+			Section part3
+				when-movable-cycle-day-is 
+					71 thru 109 use:
+						Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text End-Dialog
+					otherwise use:
+						Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
+				end-when
+				Dialog sid res01<r>sid Thrice</>sid Evlogison End-Dialog
+			End-Section
+		 */
+		End-Section
+		Section wisdom123
+			Section part1
+				Actor sid Priest End-Actor
+				Dialog sid exc17 End-Dialog
+				Dialog<i>sid parenthesis.open sid Evlogison sid parenthesis.close</>End-Dialog	
+			//	Actor sid Priest End-Actor
+				Dialog sid OOnEvlogitos.text<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+				Actor sid SuperiorOrReader End-Actor
+				Dialog sid StereosaiKyrios.text End-Dialog
+				Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog	
 			End-Section
 			Section part2
 				when-movable-cycle-day-is
@@ -10990,15 +11028,15 @@ Template MA
 			Para role bmc_matins_end_no_dismissal sid mc.matins.end.no.dismissal End-Para
 				Insert_section _15_Litanies__.aftergreatdoxology End-Insert
 				Insert_section _18_End__.wisdom.part1 End-Insert
-				Insert_section _18_End__.wisdom.part2 End-Insert
+			//	Insert_section _18_End__.wisdom.part2 End-Insert
 			Para role emc_matins_end_no_dismissal sid mc.tag End-Para
 		End-Section
 		Section aftergreatdoxology_end_before_dismissal
 			Para role bmc_matins_end_before_dismissal sid mc.matins.end.before.dismissal End-Para
 				Insert_section _15_Litanies__.aftergreatdoxology End-Insert
 				Insert_section _18_End__.wisdom.part1 End-Insert
-				Insert_section _18_End__.wisdom.part2 End-Insert
-				Insert_section _18_End__.wisdom.part3 End-Insert
+			//	Insert_section _18_End__.wisdom.part2 End-Insert
+			//	Insert_section _18_End__.wisdom.part3 End-Insert
 			Para role emc_matins_end_before_dismissal sid mc.tag End-Para
 		End-Section
 	End-Section
