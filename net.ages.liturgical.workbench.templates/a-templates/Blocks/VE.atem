@@ -7643,6 +7643,35 @@ Status NA
 			end-when
 			Dialog sid res01<r>sid Thrice</>sid Evlogison End-Dialog
 		End-Section
+		Section wisdom123
+			Section part1
+				Actor sid Deacon End-Actor
+				Dialog sid exc17 End-Dialog
+				Dialog<i>sid parenthesis.open sid Evlogison sid parenthesis.close</>End-Dialog	
+				Actor sid Priest End-Actor
+				Dialog sid OOnEvlogitos.text<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+				Dialog sid StereosaiKyrios.text End-Dialog
+				Actor sid Reader End-Actor
+				Dialog sid res04 End-Dialog
+			End-Section
+			Section part2
+				when-movable-cycle-day-is
+					71, 72, 73, 74, 75, 76, 77, 109 use:
+						Dialog sid pe.d00P_gr_GR_cog.pePA.Ode9H.text End-Dialog
+					otherwise use:
+						Dialog sid TinTimioteranPrayer.text End-Dialog
+				end-when
+			End-Section
+			Section part3
+				when-movable-cycle-day-is 
+					71 thru 109 use:
+						Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text End-Dialog
+					otherwise use:
+						Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
+				end-when
+				Dialog sid res01<r>sid Thrice</>sid Evlogison End-Dialog
+			End-Section
+		End-Section
 	End-Section
 	
 	Section _11_Dismissal__
