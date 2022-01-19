@@ -7389,8 +7389,9 @@ Status NA
 				Dialog sid res01<r>sid Thrice</>sid res13 End-Dialog
 			End-Section
 			Section ektenia_wisdom
-				Insert_section LN.Ektenia02 End-Insert
-				Insert_section wisdom End-Insert
+			//	Insert_section LN.Ektenia02 End-Insert
+				Rubric sid cl.ho.s10.R004 End-Rubric //as of 2022
+				Insert_section wisdom123.part1 End-Insert
 			End-Section
 			Section lent_
 				Section part1
@@ -7471,7 +7472,7 @@ Status NA
 					Rubric sid hiVI.R201b sid hiVI.R201dalt End-Rubric
 				End-Section
 			End-Section
-			Section wisdom
+			Section wisdom //before2022
 				Actor sid Deacon End-Actor
 				Dialog sid exc17 End-Dialog
 				Dialog<i>sid parenthesis.open sid res08 sid parenthesis.close</>End-Dialog	
@@ -7501,6 +7502,40 @@ Status NA
 				end-when
 				Dialog sid res06 End-Dialog
 				Dialog sid res13 End-Dialog
+			End-Section
+			Section wisdom123
+				Section part1
+					Actor sid Deacon End-Actor
+					Dialog sid exc17 End-Dialog
+					Dialog<i>sid parenthesis.open sid res08 sid parenthesis.close</>End-Dialog	
+					Actor sid Priest End-Actor
+					Dialog sid OOnEvlogitos.text<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+					Actor sid Hierarch End-Actor
+					Dialog sid StereosaiKyrios.text End-Dialog
+					Actor sid Reader End-Actor
+					Dialog sid res04 End-Dialog
+				End-Section
+				Section part2
+					Actor sid Priest End-Actor
+					Dialog sid verse_Theotokos.text End-Dialog
+					Actor sid Reader End-Actor
+					when-movable-cycle-day-is
+						71, 72, 73, 74, 75, 76, 77, 109 use:
+							Dialog sid pe.d00P_gr_GR_cog.pePA.Ode9H.text End-Dialog
+						otherwise use:
+							Dialog sid TinTimioteranPrayer.text End-Dialog
+					end-when
+				End-Section
+				Section part3
+					when-movable-cycle-day-is 
+						71 thru 109 use:
+							Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text End-Dialog
+						otherwise use:
+							Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
+					end-when
+					Dialog sid res06 End-Dialog
+					Dialog sid res13 End-Dialog
+				End-Section
 			End-Section
 		End-Section
 		Section afterartoklasia	
@@ -7539,7 +7574,7 @@ Status NA
 		Section ektenia_wisdom
 		//	Insert_section LN.Ektenia02 End-Insert
 			Rubric sid cl.ho.s10.R004 End-Rubric //as of 2022
-			Insert_section wisdom End-Insert
+			Insert_section wisdom123.part1 End-Insert
 		End-Section
 		Section lent_
 			Section part1
@@ -7620,7 +7655,7 @@ Status NA
 				Rubric sid hiVI.R201b sid hiVI.R201dalt End-Rubric
 			End-Section
 		End-Section
-		Section wisdom
+		Section wisdom //before 2022
 			Actor sid Deacon End-Actor
 			Dialog sid exc17 End-Dialog
 			Dialog<i>sid parenthesis.open sid Evlogison sid parenthesis.close</>End-Dialog	
