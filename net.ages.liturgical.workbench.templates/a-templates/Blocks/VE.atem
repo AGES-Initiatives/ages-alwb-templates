@@ -1067,11 +1067,16 @@ Status NA
 							Hymn rid meVE.SticTheotokion.text @ver End-Hymn
 						End-Section
 					Wednesday, Friday use:
-						Section stavrothetokion
-							Title sid KaiNyn<Tdesig>sid Stavrotheotokion</>End-Title
-							Title<Tmode>rid meVE.SticStavrotheotokion.mode</><Tmelody>rid meVE.SticStavrotheotokion.melody</>End-Title
-							Hymn rid meVE.SticStavrotheotokion.text @ver End-Hymn
-						End-Section
+						when-exists 
+							rid meVE.SticStavrotheotokion.text use:
+								Section stavrothetokion
+									Title sid KaiNyn<Tdesig>sid Stavrotheotokion</>End-Title
+									Title<Tmode>rid meVE.SticStavrotheotokion.mode</><Tmelody>rid meVE.SticStavrotheotokion.melody</>End-Title
+									Hymn rid meVE.SticStavrotheotokion.text @ver End-Hymn
+								End-Section
+							otherwise use:
+								Insert_section theotokion End-Insert
+						end-when
 					Saturday use:
 						Section firsttheotokion
 							Title sid KaiNyn<Tmode>rid ocVE.SticTheotokion.mode @day D1</>End-Title
@@ -1090,11 +1095,16 @@ Status NA
 							Hymn rid meVE.SticTheotokion2.text @ver End-Hymn
 						End-Section
 					Wednesday, Friday use:
-						Section stavrothetokion
-							Title sid KaiNyn<Tdesig>sid Stavrotheotokion</>End-Title
-							Title<Tmode>rid meVE.SticStavrotheotokion2.mode</><Tmelody>rid meVE.SticStavrotheotokion2.melody</>End-Title
-							Hymn rid meVE.SticStavrotheotokion2.text @ver End-Hymn
-						End-Section
+						when-exists 
+							rid meVE.SticStavrotheotokion2.text use:
+								Section stavrothetokion
+									Title sid KaiNyn<Tdesig>sid Stavrotheotokion</>End-Title
+									Title<Tmode>rid meVE.SticStavrotheotokion2.mode</><Tmelody>rid meVE.SticStavrotheotokion2.melody</>End-Title
+									Hymn rid meVE.SticStavrotheotokion2.text @ver End-Hymn
+								End-Section
+							otherwise use:
+								Insert_section theotokion End-Insert
+						end-when
 					Saturday use:
 						Section firsttheotokion
 							Title sid KaiNyn<Tmode>rid ocVE.SticTheotokion.mode @day D1</>End-Title
@@ -7363,30 +7373,7 @@ Status NA
 				Dialog sid pet37 End-Dialog
 				Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
 				Dialog sid StereosaiKyrios.text End-Dialog
-				Actor sid Reader End-Actor
-				Dialog sid res04 End-Dialog
-				Section optional
-					Rubric<Toptional>sid Optional</>End-Rubric
-					Actor<Toptional>sid Priest</>End-Actor
-					Dialog<Toptional>sid verse_Theotokos.text</>End-Dialog
-					Actor<Toptional>sid Reader</>End-Actor
-					when-movable-cycle-day-is
-						71, 72, 73, 74, 75, 76, 77, 109 use:
-							Dialog<Toptional>sid pePA.Ode9H.text</>End-Dialog
-						otherwise use:
-							Dialog<Toptional>sid TinTimioteranPrayer.text</>End-Dialog
-					end-when
-				End-Section
-				Actor sid Priest End-Actor
-				Dialog sid DoxaSoiChriste2 End-Dialog
-				Actor sid Reader End-Actor
-				when-movable-cycle-day-is 
-					71 thru 109 use:
-						Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text End-Dialog
-					otherwise use:
-						Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
-				end-when
-				Dialog sid res01<r>sid Thrice</>sid res13 End-Dialog
+			Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog	
 			End-Section
 			Section ektenia_wisdom
 			//	Insert_section LN.Ektenia02 End-Insert
@@ -7539,37 +7526,14 @@ Status NA
 			End-Section
 		End-Section
 		Section afterartoklasia	
-			Actor sid Deacon End-Actor
+			Actor sid Priest End-Actor
 			Dialog sid pet00 End-Dialog
 			Dialog<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog	
-			Actor sid Priest End-Actor
 			Dialog sid pet37 End-Dialog
 			Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+			Actor sid SuperiorOrReader End-Actor
 			Dialog sid StereosaiKyrios.text End-Dialog
-			Actor sid Reader End-Actor
-			Dialog sid res04 End-Dialog
-			Section optional
-				Rubric<Toptional>sid Optional</>End-Rubric
-				Actor<Toptional>sid Priest</>End-Actor
-				Dialog<Toptional>sid verse_Theotokos.text</>End-Dialog
-				Actor<Toptional>sid Reader</>End-Actor
-				when-movable-cycle-day-is
-					71, 72, 73, 74, 75, 76, 77, 109 use:
-						Dialog<Toptional>sid pePA.Ode9H.text</>End-Dialog
-					otherwise use:
-						Dialog<Toptional>sid TinTimioteranPrayer.text</>End-Dialog
-				end-when
-			End-Section
-			Actor sid Priest End-Actor
-			Dialog sid DoxaSoiChriste2 End-Dialog
-			Actor sid Reader End-Actor
-			when-movable-cycle-day-is 
-				71 thru 109 use:
-					Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text End-Dialog
-				otherwise use:
-					Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
-			end-when
-			Dialog sid res01<r>sid Thrice</>sid Evlogison End-Dialog
+			Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog	
 		End-Section
 		Section ektenia_wisdom
 		//	Insert_section LN.Ektenia02 End-Insert
@@ -7680,14 +7644,13 @@ Status NA
 		End-Section
 		Section wisdom123
 			Section part1
-				Actor sid Deacon End-Actor
+				Actor sid Priest End-Actor
 				Dialog sid exc17 End-Dialog
 				Dialog<i>sid parenthesis.open sid Evlogison sid parenthesis.close</>End-Dialog	
-				Actor sid Priest End-Actor
 				Dialog sid OOnEvlogitos.text<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+				Actor sid SuperiorOrReader End-Actor
 				Dialog sid StereosaiKyrios.text End-Dialog
-				Actor sid Reader End-Actor
-				Dialog sid res04 End-Dialog
+				Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog	
 			End-Section
 			Section part2
 				when-movable-cycle-day-is

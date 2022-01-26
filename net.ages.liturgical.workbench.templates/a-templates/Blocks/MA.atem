@@ -3436,9 +3436,6 @@ Template MA
 						End-Section	
 				end-when
 			End-Section
-			Section litany_before_kontakion
-				Insert_section LN.ShortLitany09_priest End-Insert
-			End-Section
 		End-Section
 	End-Section
 
@@ -9760,10 +9757,14 @@ Template MA
 				Reading sid hoMA.DoxologySmallIntro.text sid hoMA.SmallDoxology1.text sid hoMA.SmallDoxology1d sid hoMA.SmallDoxology2.text sid hoMA.SmallDoxology2d sid hoMA.SmallDoxology3.text End-Reading
 			End-Section
 		End-Section
-		Section append_small
+		Section append_small //2022 added Superior, so not really appended
 			Rubric sid standing.prefix sid standing.matins.smalldoxology End-Rubric
 			Title role desig sid hoMA.SmallDoxology.title<Trubric>sid Read</>End-Title
-			Reading sid hoMA.DoxologySmallIntro.text sid hoMA.SmallDoxology1.text sid hoMA.SmallDoxology1d sid hoMA.SmallDoxology2.text sid hoMA.SmallDoxology2d sid hoMA.SmallDoxology3.text End-Reading
+			Actor sid SuperiorOrReader End-Actor
+			Reading sid hoMA.DoxologySmallIntro.text End-Reading
+			Actor sid Reader End-Actor
+			Reading sid res04 End-Reading
+			Reading sid hoMA.SmallDoxology1.text sid hoMA.SmallDoxology1d sid hoMA.SmallDoxology2.text sid hoMA.SmallDoxology2d sid hoMA.SmallDoxology3.text End-Reading
 		End-Section
 		Section small
 			Rubric sid standing.prefix sid standing.matins.smalldoxology End-Rubric
@@ -11028,7 +11029,6 @@ Template MA
 				Actor sid Priest End-Actor
 				Dialog sid exc17 End-Dialog
 				Dialog<i>sid parenthesis.open sid Evlogison sid parenthesis.close</>End-Dialog	
-			//	Actor sid Priest End-Actor
 				Dialog sid OOnEvlogitos.text<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
 				Actor sid SuperiorOrReader End-Actor
 				Dialog sid StereosaiKyrios.text End-Dialog
