@@ -633,11 +633,17 @@ Template MA
 				end-when	
 				Hymn rid octrMA.Kathisma12.text @ver End-Hymn
 				Insert_section TI.g.s._09_martyr_.mp End-Insert
+				Verse<bnr>sid vVerse</>sid psMA.saturday.kathismata.v1.text @ver End-Verse
 				when-exists rid octrMA.Ode7Martyricon.melody use:
 					Title role melody rid octrMA.Ode7Martyricon.melody End-Title
 				end-when	
 				Hymn rid octrMA.Ode7Martyricon.text @ver End-Hymn
-				Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+				when-movable-cycle-day-is
+					16, 17, 19 use:
+						Title sid DoxaKaiNyn<Tdesig>sid Theotokion</>End-Title
+					18, 20 use:
+						Title sid DoxaKaiNyn<Tdesig>sid Stavrotheotokion</>End-Title
+				end-when
 				when-exists rid octrMA.Kathisma1T.melody use:
 					Title role melody rid octrMA.Kathisma1T.melody End-Title
 				end-when	
@@ -10988,6 +10994,9 @@ Template MA
 		End-Section
 		Section rubrics__
 			Section begin_first_hour
+				Rubric sid R27 End-Rubric
+			End-Section
+			Section lent_begin_first_hour
 				Rubric sid R35 End-Rubric
 			End-Section
 		End-Section
