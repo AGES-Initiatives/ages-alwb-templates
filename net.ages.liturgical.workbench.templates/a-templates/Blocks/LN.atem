@@ -1572,7 +1572,7 @@ Template LN
 	Section Supplication_deacon_me1_mealt1
 		Section part1
 			Actor sid Deacon End-Actor
-			Insert_section supplication_07_with_mealt1 End-Insert
+			Insert_section sup_selector_me1_mealt1 End-Insert
 		End-Section
 		Insert_section supplication_part2 End-Insert
 	End-Section
@@ -1634,7 +1634,7 @@ Template LN
 	Section Supplication_priest_me1_mealt1
 		Section part1
 			Actor sid Priest End-Actor
-			Insert_section supplication_07_with_mealt1 End-Insert
+			Insert_section sup_selector_me1_mealt1 End-Insert
 		End-Section
 		Insert_section supplication_part2 End-Insert
 	End-Section
@@ -1787,6 +1787,17 @@ Template LN
 				end-when
 			End-Section
 		
+			Section sup_selector_me1_mealt1
+				when-date-is
+					Sep 24 use: 
+						Section supplication_07_with_mealt1
+							Dialog sid sup00 sid sup01 rid alt1.meDA.insert2 sid sup02 sid sup03 sid sup04 sid sup05 sid sup06 sid sup07 sid sup08 sid sup09 sid sup10 sid sup11 sid sup12<r>sid cl.localpatronsaint1.supplication</>sid sup14 rid meDA.insert1 rid meDA.insert2 sid sup15 sid sup99 End-Dialog	
+						End-Section
+					otherwise use:
+						Insert_section supplication_07_mealt1 End-Insert
+				end-when
+			End-Section
+
 			Section sup_selector_pealt1
 				when-movable-cycle-day-is
 					73 use: Insert_section supplication_07_pealt1 End-Insert

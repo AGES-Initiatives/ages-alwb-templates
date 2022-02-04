@@ -202,7 +202,7 @@ Status NA
 			Dialog sid DoxaSoiChriste1 End-Dialog
 			when-date-is
 				Jul 22 use: Insert_section dismissal_07_with_mealt1 End-Insert
-				Sep 24 use: Insert_section dismissal_07_with_mealt1 End-Insert
+				Sep 24 use: Insert_section dismissal_07_me1_mealt1_Sep24 End-Insert
 				Oct 20 use: Insert_section dismissal_07_with_mealt1 End-Insert
 				Nov 14 use: Insert_section dismissal_07_with_mealt1 End-Insert
 			end-when
@@ -568,6 +568,14 @@ Status NA
 						Dialog sid dis00 rid meDA.dismissal sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 rid meDA.insert1 rid alt1.meDA.insert1 sid dis11 sid dis10 sid dis88 End-Dialog 
 				end-when
 		end-when			
+	End-Section
+	Section dismissal_07_me1_mealt1_Sep24
+		when-name-of-day-is 
+			Sunday use: 
+				Dialog sid dis00 sid dis00.resurrection sid dis01 sid dis02 rid alt1.meDA.insert2 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 rid meDA.insert1 rid meDA.insert2 sid dis10 sid dis88 End-Dialog 
+			otherwise use:
+				Dialog sid dis00 rid meDA.dismissal sid dis01 sid dis02 rid alt1.meDA.insert2 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 rid meDA.insert1 rid meDA.insert2 sid dis10 sid dis88 End-Dialog 
+		end-when
 	End-Section
 	Section dismissal_07_mealt1 //Saint only alt1
 		when-movable-cycle-day-is 
