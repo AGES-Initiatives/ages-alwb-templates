@@ -8864,32 +8864,61 @@ Template MA
 		End-Section
 		Section oc__
 			Section saturday_
-				Section stich_1234as3456
-					Title<Tdesig>sid StichiraMartyrika</>End-Title
-					Title role source0 sid sourceOctoechos End-Title
-					Title role mode rid ocMA.Lauds1.mode End-Title
-					Media rid ocMA.Lauds1.text End-Media
-					Insert_section Lauds_Verses.v03 End-Insert
-					Hymn rid ocMA.Lauds1.text @ver media-off End-Hymn
-					Media rid ocMA.Lauds2.text End-Media
-					Insert_section Lauds_Verses.v04 End-Insert
-					Hymn rid ocMA.Lauds2.text @ver media-off End-Hymn
-					Media rid ocMA.Lauds3.text End-Media
-					Insert_section Lauds_Verses.v05 End-Insert
-					Hymn rid ocMA.Lauds3.text @ver media-off End-Hymn
-					Media rid ocMA.Lauds4.text End-Media
-					Insert_section Lauds_Verses.v06 End-Insert
-					Hymn rid ocMA.Lauds4.text @ver media-off End-Hymn
+				Section stichera
+					when-mode-of-week-is
+						M1, M6, M7, M8 use:
+							Section martyric1234
+								Title<Tdesig>sid StichiraMartyrika</>End-Title
+								Title role source0 sid sourceOctoechos End-Title
+								Title role mode rid ocMA.Lauds1.mode End-Title
+								Media rid ocMA.Lauds1.text End-Media
+								Insert_section Lauds_Verses.v03 End-Insert
+								Hymn rid ocMA.Lauds1.text @ver media-off End-Hymn
+								Media rid ocMA.Lauds2.text End-Media
+								Insert_section Lauds_Verses.v04 End-Insert
+								Hymn rid ocMA.Lauds2.text @ver media-off End-Hymn
+								Media rid ocMA.Lauds3.text End-Media
+								Insert_section Lauds_Verses.v05 End-Insert
+								Hymn rid ocMA.Lauds3.text @ver media-off End-Hymn
+								Media rid ocMA.Lauds4.text End-Media
+								Insert_section Lauds_Verses.v06 End-Insert
+								Hymn rid ocMA.Lauds4.text @ver media-off End-Hymn
+							End-Section
+						M2, M3, M4, M5 use:
+							Section martyric123deceased4
+								Title<Tdesig>sid StichiraMartyrika</>End-Title
+								Title role source0 sid sourceOctoechos End-Title
+								Title role mode rid ocMA.Lauds1.mode End-Title
+								Media rid ocMA.Lauds1.text End-Media
+								Insert_section Lauds_Verses.v03 End-Insert
+								Hymn rid ocMA.Lauds1.text @ver media-off End-Hymn
+								Media rid ocMA.Lauds2.text End-Media
+								Insert_section Lauds_Verses.v04 End-Insert
+								Hymn rid ocMA.Lauds2.text @ver media-off End-Hymn
+								Media rid ocMA.Lauds3.text End-Media
+								Insert_section Lauds_Verses.v05 End-Insert
+								Hymn rid ocMA.Lauds3.text @ver media-off End-Hymn
+								Title<Tdesig>sid Nekrosimon</>End-Title
+								Media rid ocMA.Lauds4.text End-Media
+								Insert_section Lauds_Verses.v06 End-Insert
+								Hymn rid ocMA.Lauds4.text @ver media-off End-Hymn
+							End-Section
+					end-when
 				End-Section
-				Section glory_both_
-					when-exists 
-						rid ocMA.Lauds5.text use:
+				Section glory_both
+					when-mode-of-week-is
+						M1 use:
 							Title sid Doxa<Tdesig>sid Nekrosimon</>End-Title
 							Hymn rid ocMA.Lauds5.text @ver End-Hymn
 							Title sid KaiNyn<Tdesig>sid Theotokion</><Tmelody>rid ocMA.LaudsTheotokion.melody</>End-Title
 							Hymn rid ocMA.LaudsTheotokion.text @ver End-Hymn
-						otherwise use:
+						M2, M3, M5 use:
 							Title sid DoxaKaiNyn<Tdesig>sid Theotokion</><Tmelody>rid ocMA.LaudsTheotokion.melody</>End-Title
+							Hymn rid ocMA.LaudsTheotokion.text @ver End-Hymn
+						M4, M6, M7, M8 use:
+							Title sid Doxa<Tdesig>sid Nekrosimon</>End-Title
+							Hymn rid ocMA.LaudsGlory.text @ver End-Hymn
+							Title sid KaiNyn<Tdesig>sid Theotokion</><Tmelody>rid ocMA.LaudsTheotokion.melody</>End-Title
 							Hymn rid ocMA.LaudsTheotokion.text @ver End-Hymn
 					end-when
 				End-Section
