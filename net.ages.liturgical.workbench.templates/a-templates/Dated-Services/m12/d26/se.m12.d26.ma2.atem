@@ -198,8 +198,16 @@ Status NA
 			Insert_section se.m12.dAC.ma2.Instance01 End-Insert
 			
 		Monday use:
-			Section Instance03 //Monday (e.g. 2011)
-				Insert_section ST.ma.me End-Insert
+			Section Instance03
+				Section ST
+					Para role servicesourcestitle sid book.BooksSources.title End-Para
+					Para role servicesources sid book.Menaion.name sid separator.hyphen sid me.m12.d26_gr_GR_cog.meDA.date End-Para
+					Para role servicesourcessection sid me.m12.d26_gr_GR_cog.meDA.commemoration.full End-Para
+					Para role servicesourcessection sid me.m12.dAC_gr_GR_cog.meDA.commemoration.first End-Para
+					Title sid horizontal_line.solid1 End-Title
+					Break line End_Break
+					Title<bnr>sid ma.html.tab</>End-Title
+				End-Section
 				Insert_section MA._01_Beginning__.mode4 End-Insert
 				Insert_section AP.af End-Insert
 				Section block1
@@ -221,10 +229,21 @@ Status NA
 					Hymn sid me.m12.dAC_gr_GR_cog.meMA.Exaposteilarion1.text @ver End-Hymn
 				End-Section
 				Insert_section MA._12_Exaposteilarion__.append__.festal End-Insert
-					Set_Date month 12 day 25 year 2022 End_Date
 					Insert_section MA._13_Lauds__.mode4__.for4_nocollapse End-Insert
-					Insert_section MA._13_Lauds__.me__.p_1234as3456 End-Insert
-				Set_Date month 12 day 26 year 2022 End_Date
+					Section i_1234as3456
+						Title<Tdesig>sid IdiomelaTisEortis</>End-Title
+						Title role source0 sid sourceMenaion End-Title
+						Media sid me.m12.dAC_gr_GR_cog.meMA.MM.Lauds1234as3456.text End-Media
+						Title<Tmode>sid me.m12.dAC_gr_GR_cog.meMA.Lauds1.mode</>End-Title
+						Insert_section MA.Lauds_Verses.v03 End-Insert
+						Hymn sid me.m12.dAC_gr_GR_cog.meMA.Lauds1.text @ver media-off End-Hymn
+						Insert_section MA.Lauds_Verses.v04 End-Insert
+						Hymn sid me.m12.dAC_gr_GR_cog.meMA.Lauds2.text @ver media-off End-Hymn
+						Insert_section MA.Lauds_Verses.v05 End-Insert
+						Hymn sid me.m12.dAC_gr_GR_cog.meMA.Lauds3.text @ver media-off End-Hymn
+						Insert_section MA.Lauds_Verses.v06 End-Insert
+						Hymn sid me.m12.dAC_gr_GR_cog.meMA.Lauds4.text @ver media-off End-Hymn
+					End-Section
 				Insert_section TI.g.com.decac_.ancestors  End-Insert
 				Section block4
 					Title<Tmode>sid me.m12.dAC_gr_GR_cog.meMA.LaudsGlory.mode</>End-Title

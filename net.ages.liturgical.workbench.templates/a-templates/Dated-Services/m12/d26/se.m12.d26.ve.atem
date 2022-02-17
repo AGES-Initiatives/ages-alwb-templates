@@ -1,6 +1,6 @@
 Template se.m12.d26.ve 
 
-Status NA
+Status Final
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -92,8 +92,16 @@ Status NA
 				Insert_section VE._11_Dismissal__.commemoration End-Insert
 			End-Section
 		Monday use:
-			Section Instance03 //Monday (e.g. 2011)
-				Insert_section ST.ve.me End-Insert
+			Section Instance03
+				Section ST
+					Para role servicesourcestitle sid book.BooksSources.title End-Para
+					Para role servicesources sid book.Menaion.name sid separator.hyphen sid me.m12.d26_gr_GR_cog.meDA.date End-Para
+					Para role servicesourcessection sid me.m12.d26_gr_GR_cog.meDA.commemoration.full End-Para
+					Para role servicesourcessection sid me.m12.dAC_gr_GR_cog.meDA.commemoration.first End-Para
+					Title sid horizontal_line.solid1 End-Title
+					Break line End_Break
+					Title<bnr>sid ve.html.tab</>End-Title
+				End-Section
 				Insert_section VE._01_Beginning__.vespers End-Insert
 				Insert_section VE.LIHC_Mode2 End-Insert
 					Set_Date month 12 day 25 year 2022 End_Date
