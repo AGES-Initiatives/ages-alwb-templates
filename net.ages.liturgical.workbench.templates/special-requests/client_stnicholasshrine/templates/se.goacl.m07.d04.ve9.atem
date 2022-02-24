@@ -3,6 +3,7 @@ Template se.goacl.m07.d04.ve9
 Status NA
 
 	import actors_gr_GR_cog.*
+	import client_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
 	import template.titles_gr_GR_cog.*
 	import prayers_gr_GR_cog.*
@@ -47,12 +48,13 @@ Status NA
 		End-Section
 		Insert_section VE._01_Beginning__.Hierarchical__.vespers End-Insert
 		Insert_section VE._02_Kekragaria__.Hierarchical__.mode6__.for8 End-Insert
-		Insert_section TI.con End-Insert
+		Insert_section TI.stp.con End-Insert
 		Insert_section VE._03_Stichera__.eucon__.i_1234as3456 End-Insert
 		Insert_section TI.s._00_saint_.m End-Insert
 		Insert_section VE._03_Stichera__.me__.p_1234as78910 End-Insert
 		Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_ End-Insert
-		Insert_section VE._03_Stichera__.both__.eucon__.bothasboth_ End-Insert
+	//	Insert_section VE._03_Stichera__.both__.eucon__.bothasboth_ End-Insert
+		Insert_section VE._03_Stichera__.both__.eucon__.bothasboth_clientname_ End-Insert
 		Set_Date month 7 day 4 year 2022 End_Date
 		Insert_section VE._04_Middle__.Hierarchical__.entrance End-Insert
 		Set_Date month 12 day 6 year 2022 End_Date
@@ -75,9 +77,20 @@ Status NA
 		Insert_section AP.ganame.Dec06__.nicholas_.hymn End-Insert
 		Insert_section TI.b.con End-Insert
 		Insert_section AP.con_.hymn End-Insert
-		Insert_section VE._10_End__.Hierarchical__.wisdom End-Insert
+		Insert_section VE._10_End__.Hierarchical__.wisdom123.part1 End-Insert
 		Set_Date month 7 day 4 year 2022 End_Date
-		Insert_section VE._11_Dismissal__.Hierarchical__.nocommemoration End-Insert
+		Section dismissal
+			Actor sid Priest End-Actor
+			Dialog sid dis00 rid me.meDA.dismissal sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08 sid cl.localpatronsaint1.dismissal sid cl.relics.saint1 sid cl.relics.saint2 sid cl.relics.saint3 sid dis09 sid dis10 sid dis88 End-Dialog 
+			Actor sid Choir End-Actor
+			Hymn sid eu.lichrysbasil_gr_GR_cog.euLI.Key1706h.text @ver End-Hymn
+			Actor sid Hierarch End-Actor
+			Dialog sid DiEfchonPateron.text End-Dialog
+			Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+			Actor sid Clergy End-Actor
+			Dialog sid DiEfchonDespotou.text End-Dialog
+			Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+		End-Section
 	End-Section
 
 End-Template
