@@ -1,0 +1,75 @@
+Template se.tr.d056.pl1 
+
+Status NA
+
+	import tr.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 3 day 24 year 2018 End_Date
+			Page_Header_Even
+				center @lookup rid tr.trVL.header lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup rid tr.trVL.header lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template pdf.cover.pl End-Insert
+		Insert_template pdf.cover.credits End-Insert
+	End-Preface
+
+	Section Instance01
+		Insert_section ST.pl.tr End-Insert
+		Insert_section PL._01_Beginning End-Insert
+		Insert_section PL._02_Kekragaria__.mode6__.for6 End-Insert
+		Section Idiomela_Triodion
+			Title role desig sid TouTriodiou End-Title
+			Title<Tdesig>sid StichironIdiomelon</><Tmode>rid trVE.AposIdiomelon1.mode</>End-Title
+			Media rid trVE.AposIdiomelon1.text End-Media
+			Insert_section VE.LIHC_Verses.v05 End-Insert
+			Hymn rid trVE.AposIdiomelon1.text @ver media-off End-Hymn
+			Title<Tdesig>sid StichironIdiomelon</><Tmode>rid trVE.AposIdiomelon1.mode</>End-Title
+			Insert_section VE.LIHC_Verses.v06 End-Insert
+			Hymn rid trVE.AposIdiomelon1.text @ver media-off End-Hymn
+			Title role desig sid Martyrikon End-Title
+			Title<Tmode>rid trVE.AposMartyric.mode</><Tmelody>rid trVE.AposMartyric.melody</>End-Title
+			Media rid trVE.AposMartyric.text End-Media
+			Insert_section VE.LIHC_Verses.v07 End-Insert
+			Hymn rid trVE.AposMartyric.text @ver  media-off End-Hymn
+		End-Section
+		Insert_section TI.stp.s._16_theotokos End-Insert
+		Insert_section VE._03_Stichera__.tr__.p_123as8910 End-Insert
+		Insert_section VE._03_Stichera__.gloryboth__.tr_ End-Insert
+		Insert_section PL._04_Middle End-Insert
+		Insert_section PL._05_Readings End-Insert
+		Insert_section PL._06 End-Insert
+		Insert_section PL._07 End-Insert
+		Insert_section PL._08 End-Insert
+		Insert_section PL._09 End-Insert
+		Insert_section PL._10 End-Insert
+		Insert_section PL._11 End-Insert
+		Insert_section PL._12 End-Insert
+		Insert_section PL._13_nocommemoration End-Insert
+	End-Section
+
+End-Template

@@ -1,0 +1,33 @@
+Template se.m04.d17.pl1
+
+Status NA
+
+import template.titles_gr_GR_cog.*
+
+	Head 
+		Set_Date month 4 day 17 year 2022 End_Date
+			Page_Header_Even
+				center @lookup rid tr.trVL.header lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup rid tr.trVL.header lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+	End_Head
+
+	Preface Covers
+		Insert_template pdf.cover.ve.me End-Insert
+		Insert_template pdf.cover.credits End-Insert
+	End-Preface
+
+	when-movable-cycle-day-is
+		26, 28, 33, 35, 40, 42, 47, 49, 54, 55, 56, 61, 63, 66, 67, 68 use:
+			Insert_section mc.map.ve.Section01 End-Insert
+	end-when	
+	
+End-Template

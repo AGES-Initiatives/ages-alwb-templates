@@ -1,4 +1,4 @@
-Template se.m03.d25.sv3
+Template se.m04.d03.pl1
 
 Status NA
 
@@ -15,12 +15,12 @@ Status NA
 	import roles.*
 
 	Head 
-		Set_Date month 3 day 25 year 2022 End_Date
+		Set_Date month 4 day 3 year 2022 End_Date
 			Page_Header_Even
-				center @lookup sid sv3.pdf.header rid da.daVE.OnTheEveningBefore lang L1 
+				center @lookup rid tr.trVL.header lang L1
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @lookup sid sv3.pdf.header rid da.daVE.OnTheEveningBefore lang L2
+				center @lookup rid tr.trVL.header lang L2
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -32,10 +32,13 @@ Status NA
 	End_Head
 
 	Preface Covers
-		//Insert_template ematins.cover.sv3 End-Insert
+		Insert_template pdf.cover.ve.me End-Insert
 		Insert_template pdf.cover.credits End-Insert
 	End-Preface
-	
-	Insert_section se.m03.d25.pl1.Instance16 End-Insert
 
+	when-movable-cycle-day-is
+		26, 28, 33, 35, 40, 42, 47, 49, 54, 55, 56, 61, 63, 66, 67, 68 use:
+			Insert_section mc.map.ve.Section01 End-Insert
+	end-when	
+	
 End-Template
