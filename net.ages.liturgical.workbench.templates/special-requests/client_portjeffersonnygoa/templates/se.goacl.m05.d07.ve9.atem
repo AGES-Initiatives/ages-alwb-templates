@@ -1,0 +1,80 @@
+Template se.goacl.m05.d07.ve9
+
+Status NA
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+	
+	import iTags.*
+	import bTags.*
+	import roles.*
+	
+	Head 
+		Set_Date month 5 day 7 year 2022 End_Date
+		Page_Header_Even 
+			center @text "Consecration Vespers" 
+			left @pageNbr 
+		End_Page_Header_Even
+		Page_Header_Odd 
+			center @text "Friday, May 6, 2022" 
+			right @pageNbr 
+		End_Page_Header_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template pdf.cover.ve.override End-Insert
+		Insert_template pdf.cover.credits End-Insert
+	End-Preface
+
+	Section Instance11
+		Section oc_me1_con
+			Para role servicesourcestitle sid book.BooksSources.title End-Para
+			Para role servicesources sid book.Pentecostarion.name End-Para
+			Insert_section Selector_ServiceTitle.pe_vespers_on_day_before End-Insert
+			Para role servicesources sid book.Euchologion.name End-Para
+			Para role servicesourcessection sid EgkainiaNaou End-Para
+			Para role servicesources sid book.Menaion.name sid separator.hyphen sid me.m08.d15_gr_GR_cog.meDA.date End-Para
+			Para role servicesourcessection sid me.m08.d15_gr_GR_cog.meDA.commemoration.first_short End-Para
+			Title sid horizontal_line.solid1 End-Title
+			Break line End_Break
+			Title<bnr>sid ve.html.tab</>End-Title
+		End-Section
+		Insert_section VE._01_Beginning__.Hierarchical__.vespers End-Insert
+		Insert_section VE._02_Kekragaria__.Hierarchical__.mode1__.for6 End-Insert
+		Insert_section TI.stp.f End-Insert
+		Insert_section VE._03_Stichera__.pe__.i_123as567 End-Insert
+		Insert_section VE._03_Stichera__.eucon__.i_123as8910 End-Insert
+		Insert_section VE._03_Stichera__.glory__.pe__.gloryasglory_ End-Insert
+		Insert_section VE._03_Stichera__.both__.eucon__.bothasboth_ End-Insert
+		Insert_section VE._04_Middle__.Hierarchical__.entrance End-Insert
+		Section block2
+		//	Title role source sid sourceMenaion End-Title
+			Title role small sid TonEnkainion End-Title
+			Insert_section LE._04_hProphetologion__.r98 End-Insert
+			Insert_section LE._04_hProphetologion__.r40 End-Insert
+			Insert_section LE._04_hProphetologion__.r73 End-Insert
+		End-Section
+		Insert_section VE._06_Litanies__.Hierarchical__.fullektenia End-Insert
+		Insert_section VE._08_Aposticha__.pe__.weekday_ End-Insert
+		Insert_section TI.g.f End-Insert
+		Insert_section VE._08_Aposticha__.glory__.pe__.gloryasglory_.hymn End-Insert
+		Insert_section TI.b.con End-Insert
+		Insert_section VE._08_Aposticha__.both__.eucon__.gloryasboth_.hymn End-Insert
+		Insert_section VE._09_Symeon_Trisagion__.Hierarchical End-Insert
+		Insert_section AP.af End-Insert
+		Insert_section TI.g.con End-Insert
+		Insert_section AP.con_.hymn End-Insert
+		Insert_section TI.b.local End-Insert
+		Insert_section AP.client End-Insert
+		Insert_section VE._10_End__.Hierarchical__.wisdom123.part1 End-Insert
+		Insert_section VE._11_Dismissal__.Hierarchical__.nocommemoration End-Insert
+	End-Section
+//	Insert_template pdf.cover.credits End-Insert
+
+End-Template
