@@ -1,0 +1,115 @@
+Template se.goacl.m05.d07.ma9
+
+Status NA
+
+	import eu.consecration_gr_GR_cog.*
+	import pe.*
+
+	import actors_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+	
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	
+	Head 
+		Set_Date month 5 day 7 year 2022 End_Date
+			Page_Header_Even 
+				center @text "Consecration Matins"
+				left @pageNbr
+			End_Page_Header_Even
+			Page_Header_Odd 
+				center @text "Saturday, May 7, 2022" 
+				right @pageNbr 
+			End_Page_Header_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template pdf.cover.ma.override End-Insert
+		Insert_template pdf.cover.credits End-Insert
+	End-Preface
+
+	Section Instance11
+		Section ST
+			Para role servicesourcestitle sid book.BooksSources.title End-Para
+			Para role servicesources sid book.Pentecostarion.name End-Para
+			Para role servicesourcessection rid pe.peDA.commemoration.short End-Para
+			Para role servicesources sid book.Euchologion.name End-Para
+			Para role servicesourcessection sid EgkainiaNaou End-Para
+		//	Para role servicesources sid book.Menaion.name sid separator.hyphen sid me.m08.d15_gr_GR_cog.meDA.date End-Para
+		//	Para role servicesourcessection sid me.m08.d15_gr_GR_cog.meDA.commemoration.first_short End-Para
+			Title sid horizontal_line.solid1 End-Title
+			Break line End_Break
+			Title<bnr>sid ma.html.tab</>End-Title
+		End-Section
+		Insert_section MA._00_Ordinary__.part1__.normal End-Insert
+		Insert_section MA._00_Ordinary__.part2__.parish End-Insert
+		Insert_section MA._00_Ordinary__.part3 End-Insert
+		Insert_section MA._00_Ordinary__.part5_hierarch End-Insert
+		Insert_section MA._00_Ordinary__.part6 End-Insert
+		Break page End_Break
+		Insert_section MA._01_Beginning__.mode1 End-Insert
+		Insert_section AP.af End-Insert
+		Insert_section TI.g.con End-Insert
+		Insert_section AP.con_.hymn End-Insert
+		Insert_section TI.b.local End-Insert
+		Insert_section AP.client End-Insert
+		Insert_section MA._03_Kathisma1__.litany End-Insert
+		Set_mcDay day 78 End_mcDay
+		Insert_section MA._03_Kathisma1__.pe__.kath11_ End-Insert
+		Insert_section MA._03_Kathisma1__.both__.con End-Insert
+		Insert_section MA._04_Kathisma2__.append__.pe__.kath21_ End-Insert
+		Insert_section MA._04_Kathisma2__.gloryboth__.con End-Insert
+		Insert_section MA._06_Antiphons__.append__.mode41_prokeimenon_ End-Insert
+		Section sundays_of_pascha
+			Insert_section Selector_MatinsGospel.gospel_introH End-Insert
+			Insert_section Selector_MatinsGospel.gospel_mc End-Insert
+		End-Section
+		Insert_section MA._07_Gospel__.no__.hierarch__.psalm50 End-Insert
+		Insert_section MA._08_Supplication__.priest__.mc End-Insert
+		Insert_section MA._11_Kontakion__.pe1_ End-Insert
+		Set_mcDay day 0 End_mcDay
+		Insert_section SY.Synaxarion End-Insert
+		Set_mcDay day 78 End_mcDay
+		Insert_section KA.Hierarchical__._1345678 End-Insert
+		Insert_section MA._10_Canon__.ode9_intro__.hierarchical End-Insert
+		Insert_section CAv.ode9.pe1.ti_hh1234as00VVGB End-Insert
+		Insert_section KA.append__._9 End-Insert
+		Set_mcDay day 0 End_mcDay
+		Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+		Insert_section MA._12_Exaposteilarion__.Hierarchical__.festal End-Insert
+		Insert_section MA._12_Exaposteilarion__.append__.con End-Insert
+		Insert_section MA._12_Exaposteilarion__.append__.festal2 End-Insert
+		Insert_section MA._13_Lauds__.Hierarchical__.mode1 End-Insert
+		Section prayers
+			Actor sid Hierarch End-Actor
+			Title role desig sid euCON.Key1001.title End-Title
+			Para role prayer sid euCON.Key1001.text<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Para
+			Title role desig sid euCON.Key1002.title End-Title
+			Para role prayer sid euCON.Key1002.text<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Para
+			Actor sid Choir End-Actor
+			Hymn sid eu.lichrysbasil_gr_GR_cog.euLI.Key1706h.text @ver End-Hymn
+		End-Section
+		Insert_section MA._13_Lauds__.stichologia__.sung__.for6_nocollapse End-Insert
+		Set_mcDay day 78 End_mcDay
+		Insert_section TI.stp.f End-Insert
+		Insert_section MA._13_Lauds__.pe__.p_123as123 End-Insert
+		Insert_section MA._13_Lauds__.con__.p_123as456 End-Insert
+		Insert_section TI.g.f End-Insert
+		Insert_section MA._13_Lauds__.glory__.pe__.gloryasglory_.hymn End-Insert
+		Set_mcDay day 0 End_mcDay
+		Insert_section MA._13_Lauds__.both__.con End-Insert
+		Insert_section MA._14_Doxology__.great End-Insert
+		Insert_section AP.af End-Insert
+		Insert_section MA._15_Litanies__.Hierarchical__.aftergreatdoxology End-Insert
+		Insert_section MA._18_End__.Hierarchical__.wisdom123.part1 End-Insert
+		Insert_section MA._20_Dismissal__.Hierarchical__.nocommemoration End-Insert
+	End-Section
+	
+End-Template
