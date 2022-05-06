@@ -4278,7 +4278,14 @@ Status NA
 
 	Section MA
 		Section _00_weekday_ordinary
-			Insert_section MA._00_Ordinary__.part1__.normal End-Insert
+			when-movable-cycle-day-is
+				71 thru 109 use:
+					Insert_section MA._00_Ordinary__.part1__.afterpascha End-Insert
+				110 thru 119 use:
+					Insert_section MA._00_Ordinary__.part1__.ascension End-Insert
+				otherwise use: 
+					Insert_section MA._00_Ordinary__.part1__.normal End-Insert
+			end-when				
 			Insert_section MA._00_Ordinary__.part2__.parish End-Insert
 			Insert_section MA._00_Ordinary__.part3 End-Insert
 			Section daily_six_psalms
@@ -4373,6 +4380,17 @@ Status NA
 					Insert_section PsalmVerses.forForerunner.verse2 End-Insert
 					Hymn rid meMA.Lauds3.text @ver media-off End-Hymn
 				End-Section
+				Section p_forerunner34
+					Actor sid Choir End-Actor
+					Title<Tdesig>sid Aposticha</><Tdesig>rid meDA.commemoration.first_title</>End-Title
+					Title role source0 sid sourceMenaion End-Title
+					Title<Tmode>rid meMA.Lauds1.mode</><Tmelody>rid meMA.Lauds1.melody</>End-Title
+					Hymn rid meMA.Lauds1.text @ver media-off End-Hymn
+					Insert_section PsalmVerses.forForerunner.verse3 End-Insert
+					Hymn rid meMA.Lauds2.text @ver media-off End-Hymn
+					Insert_section PsalmVerses.forForerunner.verse4 End-Insert
+					Hymn rid meMA.Lauds3.text @ver media-off End-Hymn
+				End-Section
 				Section p_hierarchs12
 					Actor sid Choir End-Actor
 					Title<Tdesig>sid Aposticha</><Tdesig>rid meDA.commemoration.first_title</>End-Title
@@ -4415,6 +4433,17 @@ Status NA
 					Insert_section PsalmVerses.forMeeting.verse1 End-Insert
 					Hymn rid meMA.Lauds2.text @ver media-off End-Hymn
 					Insert_section PsalmVerses.forMeeting.verse2 End-Insert
+					Hymn rid meMA.Lauds3.text @ver media-off End-Hymn
+				End-Section
+				Section p_oneapostle12
+					Actor sid Choir End-Actor
+					Title<Tdesig>sid Aposticha</><Tdesig>rid meDA.commemoration.first_title</>End-Title
+					Title role source0 sid sourceMenaion End-Title
+					Title<Tmode>rid meMA.Lauds1.mode</><Tmelody>rid meMA.Lauds1.melody</>End-Title
+					Hymn rid meMA.Lauds1.text @ver media-off End-Hymn
+					Insert_section PsalmVerses.forOneApostle.verse1 End-Insert
+					Hymn rid meMA.Lauds2.text @ver media-off End-Hymn
+					Insert_section PsalmVerses.forOneApostle.verse2 End-Insert
 					Hymn rid meMA.Lauds3.text @ver media-off End-Hymn
 				End-Section
 				Section p_unmercenaries12

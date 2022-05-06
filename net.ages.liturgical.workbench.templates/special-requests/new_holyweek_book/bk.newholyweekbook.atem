@@ -1,0 +1,743 @@
+Template bk.newholyweekbook
+
+Status Draft
+
+	import client_gr_GR_cog.*
+	import ho.s03_gr_GR_cog.*
+	import liturgical.verses_gr_GR_cog.*
+
+//	import da.*
+	import tr.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+	//	Set_Date month 4 day 10 year 2017 End_Date
+		//	Page_Header_Even
+		//		center @text "Holy Week and Easter"
+		//	End_Page_Header_Even
+		//	Page_Header_Odd
+		//		center @text "Holy Week and Easter"
+		//	End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+//	Preface cover
+//		Insert_template bk.pdf.cover.ma.holyweek End-Insert
+//		Insert_template pdf.cover.credits.short End-Insert
+//	End-Preface
+
+	Section Instance00
+		Set_mcDay day 65 End_mcDay
+		Title role desig sid hw.pdf.cover End-Title
+		Break line End_Break
+		Insert_section bk.hwbk.matinsordinary.Instance01 End-Insert
+	End-Section
+	Break page End_Break
+	Section Instance65
+		Title role desig sid hw.bridegroomservice sid d.onSundayEvening End-Title
+		Title<inr>sid ma.pdf.header sid hw.ofholymonday</>End-Title 
+		Section block1
+			Actor sid Choir End-Actor	
+			Title role mode rid trHW.Troparion.mode End-Title
+			Media rid trHW.Alleluia.text End-Media
+			Insert_section MA._01_Beginning__.lent__.alleluia.verses End-Insert
+			Title<Tdesig>sid Troparion</><Tmode>rid trHW.Troparion.mode</>End-Title
+			Hymn rid trHW.Troparion.text sid da.d2_gr_GR_cog.daMA.Triadic1Ending.text media-off End-Hymn
+			Title sid Doxa<Tdesig>sid ToAfto</>End-Title
+			Para sid punctuation.ellipsis sid da.d2_gr_GR_cog.daMA.Triadic2Ending.text media-off End-Para
+			Title sid KaiNyn<Tdesig>sid ToAfto</>End-Title
+			Para sid punctuation.ellipsis sid da.d2_gr_GR_cog.daMA.Triadic3Ending.text media-off End-Para
+		End-Section
+		Section ShortLitany02
+			Actor sid Priest End-Actor
+			Dialog sid pet14 End-Dialog
+			Dialog<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
+			Dialog sid pet12<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
+			Dialog sid pet13<i>sid parenthesis.open sid res03 sid parenthesis.close</>End-Dialog
+			Dialog sid exc02<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+		End-Section
+		Insert_section MA._03_Kathisma1__.tr__.kath11 End-Insert
+		Title sid DoxaKaiNyn<Tdesig>sid ToAfto</>End-Title
+		Insert_section MA._04_Kathisma2__.append__.tr__.kath21 End-Insert
+		Title sid DoxaKaiNyn<Tdesig>sid ToAfto</>End-Title
+		Insert_section MA._05_Kathisma3__.append__.tr__.kath31 End-Insert
+		Title sid DoxaKaiNyn<Tdesig>sid ToAfto</>End-Title
+		Insert_section MA._07_Gospel__.yes__.priest__.mc End-Insert
+		Section block2
+			Actor sid Choir End-Actor
+			Title role desig sid OKanon End-Title
+			Title role desig rid trMA.C1.poet End-Title
+			Title<Tdesig>rid trMA.Ode1C1H.ode</><Tmode>rid trMA.Ode1C1H.mode</><Tdesig>sid OEirmos</>End-Title	
+			Media rid trMA.Ode1C1H.text End-Media
+			Para role heirmos rid trMA.Ode1C1H.text<r>sid Twice</>End-Para
+			Title role desig sid Troparia End-Title
+			Verse sid verse_God.text End-Verse
+			Hymn rid trMA.Ode1C11.text<r>sid Twice media-off</>End-Hymn
+			Title sid Doxa sid KaiNyn End-Title
+			Hymn rid trMA.Ode1C12.text<r>sid Twice media-off</>End-Hymn
+			Title role desig sid Katavasia End-Title
+			Hymn rid trMA.Ode1K.text End-Hymn
+		End-Section
+		Section ShortLitany09
+			Actor sid Priest End-Actor
+			Dialog sid pet14 End-Dialog
+			Dialog<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
+			Dialog sid pet12<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
+			Dialog sid pet13<i>sid parenthesis.open sid res03 sid parenthesis.close</>End-Dialog
+			Dialog sid exc09<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+		End-Section
+		Insert_section MA._11_Kontakion__.tr_ End-Insert
+		Title<Tdesig>sid Synaxarion</>End-Title
+		Insert_section SY.mc End-Insert
+		Section block3
+			Actor sid Choir End-Actor	
+			Title role desig rid trMA.Ode8C1H.ode sid OEirmos End-Title
+			Media rid trMA.Ode8C1H.text End-Media
+			Para role heirmos rid trMA.Ode8C1H.text<r>sid Twice</>End-Para
+			Title role desig sid Troparia End-Title
+			Verse sid verse_God.text End-Verse
+			Hymn rid trMA.Ode8C11.text<r>sid Twice media-off</>End-Hymn
+			Verse sid ps_gr_GR_cog.bode8.v18.text End-Verse
+			Hymn rid trMA.Ode8C12.text End-Hymn
+			Verse sid KaiNynKaiAei.text End-Verse
+			Hymn rid trMA.Ode8C12.text End-Hymn
+			Title role desig sid Katavasia End-Title
+			Verse sid ps_gr_GR_cog.bode8.v19.text End-Verse
+			Hymn rid trMA.Ode8K.text End-Hymn
+		End-Section
+		Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
+		Section block4
+			Title role desig rid trMA.Ode9C1H.ode sid OEirmos End-Title
+			Media rid trMA.Ode9C1H.text End-Media
+			Para role heirmos rid trMA.Ode9C1H.text<r>sid Twice</>End-Para
+			Title role desig sid Troparia End-Title
+			Verse sid verse_God.text End-Verse
+			Hymn rid trMA.Ode9C11.text<r>sid Twice media-off</>End-Hymn
+			Title sid Doxa sid KaiNyn End-Title
+			Hymn rid trMA.Ode9C12.text<r>sid Twice media-off</>End-Hymn
+			Title role desig sid Katavasia End-Title
+			Hymn rid trMA.Ode9K.text End-Hymn
+		End-Section
+		Section ShortLitany10
+			Actor sid Priest End-Actor
+			Dialog sid pet14 End-Dialog
+			Dialog<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
+			Dialog sid pet12<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
+			Dialog sid pet13<i>sid parenthesis.open sid res03 sid parenthesis.close</>End-Dialog
+			Dialog sid exc10<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+		End-Section
+		Insert_section MA._12_Exaposteilarion__.tr__.exap111 End-Insert
+		Insert_section MA._13_Lauds__.mode1__.noStichologia End-Insert
+		Insert_section MA._13_Lauds__.tr__.i_1122as3456 End-Insert
+		Insert_section MA._13_Lauds__.gloryboth__.tr__.gloryasgloryboth_ End-Insert
+		Insert_section MA._14_Doxology__.small End-Insert
+		Section aftersmalldoxology
+			Section ComplementaryM
+				Actor sid Priest End-Actor
+				Dialog sid pet24m End-Dialog
+				Dialog<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
+				Dialog sid pet12<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
+				Dialog sid pet25m End-Dialog
+				Dialog<i>sid parenthesis.open sid res02 sid parenthesis.close</>End-Dialog
+				Dialog sid pet26 End-Dialog
+				Dialog sid pet27 End-Dialog
+				Dialog sid pet28 End-Dialog
+				Dialog sid pet29 End-Dialog
+				Dialog sid pet30 End-Dialog
+				Dialog sid pet13<i>sid parenthesis.open sid res03 sid parenthesis.close</>End-Dialog
+				Dialog sid exc12<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+			End-Section
+			Section BowHeadsM
+				Dialog sid pet31<i>sid parenthesis.open sid res05 sid parenthesis.close</>End-Dialog
+				Dialog sid pet32<i>sid parenthesis.open sid res03 sid parenthesis.close</>End-Dialog
+				Actor sid Priest<Trubric>sid InALowVoice</>End-Actor
+				Para role inaudible sid hi.s04_gr_GR_cog.hiMA.Key0113.text End-Para
+				Rubric sid Aloud End-Rubric
+				Dialog sid exc13<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+			End-Section
+		End-Section
+		Insert_section MA._16_Aposticha__.tr__.i_matinsaposticha12idiomela End-Insert
+		Insert_section MA._16_Aposticha__.gloryboth__.tr__.gloryasgloryboth_ End-Insert
+		Section itisgood_trisagion
+			Section part1
+				Actor sid Priest End-Actor
+				Reading sid psMA.weekday.end.v1.text End-Reading
+				Actor sid Reader End-Actor
+				Reading sid AgiosOTheos.text<r>sid Thrice media-off</>End-Reading
+				Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+				Reading sid PanagiaTrias.text End-Reading
+				Reading sid res06 End-Reading
+				Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+				Reading sid PaterImon.text End-Reading
+				Actor sid Priest End-Actor
+				Dialog sid exc20<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+			End-Section
+			Actor sid Reader End-Actor
+			Title<Tdesig>sid Kontakion</>End-Title
+			Reading rid trMA.Kontakion1.text End-Reading
+		End-Section	
+		Insert_section MA._18_End__.lent_ End-Insert
+		Insert_section MA._20_Dismissal__.nocommemoration End-Insert
+		Set_mcDay day 0 End_mcDay
+	End-Section
+	Break page End_Break
+	Section Instance66
+		Set_mcDay day 66 End_mcDay
+		Title role desig sid hw.bridegroomservice sid d.onMondayEvening End-Title
+		Title<inr>sid ma.pdf.header sid hw.ofholytuesday</>End-Title 
+		Section block1
+			Actor sid Choir End-Actor	
+			Title role mode rid trHW.Troparion.mode End-Title
+			Media rid trHW.Alleluia.text End-Media
+			Insert_section MA._01_Beginning__.lent__.alleluia.verses End-Insert
+			Title<Tdesig>sid Troparion</><Tmode>rid trHW.Troparion.mode</>End-Title
+			Hymn rid trHW.Troparion.text sid da.d3_gr_GR_cog.daMA.Triadic1Ending.text media-off End-Hymn
+			Title sid Doxa<Tdesig>sid ToAfto</>End-Title
+			Para sid punctuation.ellipsis sid da.d3_gr_GR_cog.daMA.Triadic2Ending.text media-off End-Para
+			Title sid KaiNyn<Tdesig>sid ToAfto</>End-Title
+			Para sid punctuation.ellipsis sid da.d3_gr_GR_cog.daMA.Triadic3Ending.text media-off End-Para
+		End-Section
+		Section ShortLitany02
+			Actor sid Priest End-Actor
+			Dialog sid pet14 End-Dialog
+			Dialog<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
+			Dialog sid pet12<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
+			Dialog sid pet13<i>sid parenthesis.open sid res03 sid parenthesis.close</>End-Dialog
+			Dialog sid exc02<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+		End-Section
+		Insert_section MA._03_Kathisma1__.tr__.kath11 End-Insert
+		Title sid DoxaKaiNyn<Tdesig>sid ToAfto</>End-Title
+		Insert_section MA._04_Kathisma2__.append__.tr__.kath21 End-Insert
+		Title sid DoxaKaiNyn<Tdesig>sid ToAfto</>End-Title
+		Insert_section MA._05_Kathisma3__.append__.tr__.kath31 End-Insert
+		Title sid DoxaKaiNyn<Tdesig>sid ToAfto</>End-Title
+		Insert_section MA._07_Gospel__.yes__.priest__.mc End-Insert
+		Section ShortLitany09
+			Actor sid Priest End-Actor
+			Dialog sid pet14 End-Dialog
+			Dialog<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
+			Dialog sid pet12<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
+			Dialog sid pet13<i>sid parenthesis.open sid res03 sid parenthesis.close</>End-Dialog
+			Dialog sid exc09<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+		End-Section
+		Insert_section MA._11_Kontakion__.tr_ End-Insert
+		Title<Tdesig>sid Synaxarion</>End-Title
+		Insert_section SY.mc End-Insert
+		Section block2	
+			Actor sid Choir End-Actor	
+			Title role desig sid OKanon End-Title
+			Title role desig rid trMA.C1.poet End-Title
+			Title<Tdesig>rid trMA.Ode8C1H.ode</><Tmode>rid trMA.Ode8C1H.mode</><Tdesig>sid OEirmos</>End-Title	
+			Media rid trMA.Ode8C1H.text End-Media
+			Para role heirmos rid trMA.Ode8C1H.text<r>sid Twice</>End-Para
+			Title role desig sid Troparia End-Title
+			Verse sid verse_God.text End-Verse
+			Hymn rid trMA.Ode8C11.text<r>sid Twice media-off</>End-Hymn
+			Verse sid verse_God.text End-Verse
+			Hymn rid trMA.Ode8C12.text<r>sid Twice media-off</>End-Hymn
+			Verse sid ps_gr_GR_cog.bode8.v18.text End-Verse
+			Hymn rid trMA.Ode8C13.text @ver End-Hymn
+			Verse sid KaiNynKaiAei.text End-Verse
+			Hymn rid trMA.Ode8C13.text @ver End-Hymn
+			Title role desig sid Katavasia End-Title
+			Verse sid ps_gr_GR_cog.bode8.v19.text End-Verse
+			Hymn rid trMA.Ode8K.text @ver End-Hymn
+		End-Section
+		Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
+		Section block3
+			Title role desig rid trMA.Ode9C1H.ode sid OEirmos End-Title
+			Media rid trMA.Ode9C1H.text End-Media
+			Para role heirmos rid trMA.Ode9C1H.text<r>sid Twice</>End-Para
+			Title role desig sid Troparia End-Title
+			Verse sid verse_God.text End-Verse
+			Hymn rid trMA.Ode9C11.text<r>sid Twice media-off</>End-Hymn
+			Title sid Doxa sid KaiNyn End-Title
+			Hymn rid trMA.Ode9C12.text<r>sid Twice media-off</>End-Hymn
+			Title role desig sid Katavasia End-Title
+			Hymn rid trMA.Ode9K.text @ver End-Hymn
+		End-Section	
+		Section ShortLitany10
+			Actor sid Priest End-Actor
+			Dialog sid pet14 End-Dialog
+			Dialog<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
+			Dialog sid pet12<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
+			Dialog sid pet13<i>sid parenthesis.open sid res03 sid parenthesis.close</>End-Dialog
+			Dialog sid exc10<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+		End-Section
+		Insert_section MA._12_Exaposteilarion__.tr__.exap111 End-Insert
+		Insert_section MA._13_Lauds__.mode1__.noStichologia End-Insert
+		Insert_section MA._13_Lauds__.tr__.i_1122as3456 End-Insert
+		Insert_section MA._13_Lauds__.gloryboth__.tr__.gloryasgloryboth_ End-Insert
+		Insert_section MA._14_Doxology__.small End-Insert
+		Section aftersmalldoxology
+			Section ComplementaryM
+				Actor sid Priest End-Actor
+				Dialog sid pet24m End-Dialog
+				Dialog<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
+				Dialog sid pet12<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
+				Dialog sid pet25m End-Dialog
+				Dialog<i>sid parenthesis.open sid res02 sid parenthesis.close</>End-Dialog
+				Dialog sid pet26 End-Dialog
+				Dialog sid pet27 End-Dialog
+				Dialog sid pet28 End-Dialog
+				Dialog sid pet29 End-Dialog
+				Dialog sid pet30 End-Dialog
+				Dialog sid pet13<i>sid parenthesis.open sid res03 sid parenthesis.close</>End-Dialog
+				Dialog sid exc12<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+			End-Section
+			Section BowHeadsM
+				Dialog sid pet31<i>sid parenthesis.open sid res05 sid parenthesis.close</>End-Dialog
+				Dialog sid pet32<i>sid parenthesis.open sid res03 sid parenthesis.close</>End-Dialog
+				Actor sid Priest<Trubric>sid InALowVoice</>End-Actor
+				Para role inaudible sid hi.s04_gr_GR_cog.hiMA.Key0113.text End-Para
+				Rubric sid Aloud End-Rubric
+				Dialog sid exc13<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+			End-Section
+		End-Section
+		Insert_section MA._16_Aposticha__.tr__.i_matinsaposticha12idiomela End-Insert
+		Insert_section MA._16_Aposticha__.gloryboth__.tr__.gloryasgloryboth_ End-Insert
+		Section itisgood_trisagion
+			Section part1
+				Actor sid Priest End-Actor
+				Reading sid psMA.weekday.end.v1.text End-Reading
+				Actor sid Reader End-Actor
+				Reading sid AgiosOTheos.text<r>sid Thrice media-off</>End-Reading
+				Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+				Reading sid PanagiaTrias.text End-Reading
+				Reading sid res06 End-Reading
+				Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+				Reading sid PaterImon.text End-Reading
+				Actor sid Priest End-Actor
+				Dialog sid exc20<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+			End-Section
+			Actor sid Reader End-Actor
+			Title<Tdesig>sid Kontakion</>End-Title
+			Reading rid trMA.Kontakion1.text End-Reading
+		End-Section	
+		Insert_section MA._18_End__.lent_ End-Insert
+		Insert_section MA._20_Dismissal__.nocommemoration End-Insert
+		Set_mcDay day 0 End_mcDay
+	End-Section
+	Break page End_Break
+	Section Instance67
+		Set_mcDay day 67 End_mcDay
+		Title role desig sid hw.bridegroomservice sid d.onTuesdayEvening End-Title
+		Title<inr>sid ma.pdf.header sid hw.ofholywednesday</>End-Title 
+		Section block1
+			Actor sid Choir End-Actor	
+			Title role mode rid trHW.Troparion.mode End-Title
+			Media rid trHW.Alleluia.text End-Media
+			Insert_section MA._01_Beginning__.lent__.alleluia.verses End-Insert
+			Title<Tdesig>sid Troparion</><Tmode>rid trHW.Troparion.mode</>End-Title
+			Hymn rid trHW.Troparion.text sid da.d4_gr_GR_cog.daMA.Triadic1Ending.text media-off End-Hymn
+			Title sid Doxa<Tdesig>sid ToAfto</>End-Title
+			Para sid punctuation.ellipsis sid da.d4_gr_GR_cog.daMA.Triadic2Ending.text media-off End-Para
+			Title sid KaiNyn<Tdesig>sid ToAfto</>End-Title
+			Para sid punctuation.ellipsis sid da.d4_gr_GR_cog.daMA.Triadic3Ending.text media-off End-Para
+		End-Section
+		Section ShortLitany02
+			Actor sid Priest End-Actor
+			Dialog sid pet14 End-Dialog
+			Dialog<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
+			Dialog sid pet12<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
+			Dialog sid pet13<i>sid parenthesis.open sid res03 sid parenthesis.close</>End-Dialog
+			Dialog sid exc02<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+		End-Section
+		Insert_section MA._03_Kathisma1__.tr__.kath11 End-Insert
+		Title sid DoxaKaiNyn<Tdesig>sid ToAfto</>End-Title
+		Insert_section MA._04_Kathisma2__.append__.tr__.kath21 End-Insert
+		Title sid DoxaKaiNyn<Tdesig>sid ToAfto</>End-Title
+		Insert_section MA._05_Kathisma3__.append__.tr__.kath31 End-Insert
+		Title sid DoxaKaiNyn<Tdesig>sid ToAfto</>End-Title
+		Insert_section MA._07_Gospel__.yes__.priest__.mc End-Insert
+		Section block2
+			Actor sid Choir End-Actor
+			Title role desig sid OKanon End-Title
+			Title role desig rid trMA.C1.poet End-Title
+			Title<Tdesig>rid trMA.Ode3C1H.ode</><Tmode>rid trMA.Ode3C1H.mode</><Tdesig>sid OEirmos</>End-Title	
+			Media rid trMA.Ode3C1H.text End-Media
+			Para role heirmos rid trMA.Ode3C1H.text<r>sid Twice</>End-Para
+			Title role desig sid Troparia End-Title
+			Verse sid verse_God.text End-Verse
+			Hymn rid trMA.Ode3C11.text<r>sid Twice media-off</>End-Hymn
+			Title sid Doxa sid KaiNyn End-Title
+			Hymn rid trMA.Ode3C12.text<r>sid Twice media-off</>End-Hymn
+			Title role desig sid Katavasia End-Title
+			Hymn rid trMA.Ode3K.text @ver End-Hymn
+		End-Section
+		Section ShortLitany09
+			Actor sid Priest End-Actor
+			Dialog sid pet14 End-Dialog
+			Dialog<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
+			Dialog sid pet12<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
+			Dialog sid pet13<i>sid parenthesis.open sid res03 sid parenthesis.close</>End-Dialog
+			Dialog sid exc09<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+		End-Section
+		Insert_section MA._11_Kontakion__.tr_ End-Insert
+		Title<Tdesig>sid Synaxarion</>End-Title
+		Insert_section SY.mc End-Insert
+		Section block3
+			Actor sid Choir End-Actor	
+			Title role desig rid trMA.Ode8C1H.ode sid OEirmos End-Title
+			Media rid trMA.Ode8C1H.text End-Media
+			Para role heirmos rid trMA.Ode8C1H.text<r>sid Twice</>End-Para
+			Title role desig sid Troparia End-Title
+			Verse sid verse_God.text End-Verse
+			Hymn rid trMA.Ode8C11.text<r>sid Twice media-off</>End-Hymn
+			Verse sid verse_God.text End-Verse
+			Hymn rid trMA.Ode8C12.text<r>sid Twice media-off</>End-Hymn
+			Verse sid ps_gr_GR_cog.bode8.v18.text End-Verse
+			Hymn rid trMA.Ode8C13.text @ver End-Hymn
+			Verse sid KaiNynKaiAei.text End-Verse
+			Hymn rid trMA.Ode8C13.text @ver End-Hymn
+			Title role desig sid Katavasia End-Title
+			Verse sid ps_gr_GR_cog.bode8.v19.text End-Verse
+			Hymn rid trMA.Ode8K.text @ver End-Hymn
+		End-Section
+		Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
+		Section block4
+			Title role desig rid trMA.Ode9C1H.ode sid OEirmos End-Title
+			Media rid trMA.Ode9C1H.text End-Media
+			Para role heirmos rid trMA.Ode9C1H.text<r>sid Twice</>End-Para
+			Title role desig sid Troparia End-Title
+			Verse sid verse_God.text End-Verse
+			Hymn rid trMA.Ode9C11.text<r>sid Twice media-off</>End-Hymn
+			Verse sid verse_God.text End-Verse
+			Hymn rid trMA.Ode9C12.text<r>sid Twice media-off</>End-Hymn
+			Title sid Doxa sid KaiNyn End-Title
+			Hymn rid trMA.Ode9C13.text<r>sid Twice media-off</>End-Hymn
+			Title role desig sid Katavasia End-Title
+			Hymn rid trMA.Ode9K.text @ver End-Hymn
+		End-Section
+		Section ShortLitany10
+			Actor sid Priest End-Actor
+			Dialog sid pet14 End-Dialog
+			Dialog<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
+			Dialog sid pet12<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
+			Dialog sid pet13<i>sid parenthesis.open sid res03 sid parenthesis.close</>End-Dialog
+			Dialog sid exc10<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+		End-Section
+		Insert_section MA._12_Exaposteilarion__.tr__.exap111 End-Insert
+		Insert_section MA._13_Lauds__.mode1__.noStichologia End-Insert
+		Insert_section MA._13_Lauds__.tr__.i_1234as3456 End-Insert
+		Insert_section TI.g._ End-Insert
+		Insert_section MA._13_Lauds__.glory__.tr__.gloryasglory_.hymn End-Insert
+		Insert_section MA._13_Lauds__.both__.tr__.bothasboth_ End-Insert
+		Insert_section MA._14_Doxology__.small End-Insert
+		Section aftersmalldoxology
+			Section ComplementaryM
+				Actor sid Priest End-Actor
+				Dialog sid pet24m End-Dialog
+				Dialog<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
+				Dialog sid pet12<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
+				Dialog sid pet25m End-Dialog
+				Dialog<i>sid parenthesis.open sid res02 sid parenthesis.close</>End-Dialog
+				Dialog sid pet26 End-Dialog
+				Dialog sid pet27 End-Dialog
+				Dialog sid pet28 End-Dialog
+				Dialog sid pet29 End-Dialog
+				Dialog sid pet30 End-Dialog
+				Dialog sid pet13<i>sid parenthesis.open sid res03 sid parenthesis.close</>End-Dialog
+				Dialog sid exc12<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+			End-Section
+			Section BowHeadsM
+				Dialog sid pet31<i>sid parenthesis.open sid res05 sid parenthesis.close</>End-Dialog
+				Dialog sid pet32<i>sid parenthesis.open sid res03 sid parenthesis.close</>End-Dialog
+				Actor sid Priest<Trubric>sid InALowVoice</>End-Actor
+				Para role inaudible sid hi.s04_gr_GR_cog.hiMA.Key0113.text End-Para
+				Rubric sid Aloud End-Rubric
+				Dialog sid exc13<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+			End-Section
+		End-Section
+		Insert_section MA._16_Aposticha__.tr__.i_matinsaposticha1a1b2idiomela End-Insert
+		Insert_section MA._16_Aposticha__.gloryboth__.tr__.gloryasgloryboth_ End-Insert
+		Section itisgood_trisagion
+			Section part1
+				Actor sid Priest End-Actor
+				Reading sid psMA.weekday.end.v1.text End-Reading
+				Actor sid Reader End-Actor
+				Reading sid AgiosOTheos.text<r>sid Thrice media-off</>End-Reading
+				Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+				Reading sid PanagiaTrias.text End-Reading
+				Reading sid res06 End-Reading
+				Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+				Reading sid PaterImon.text End-Reading
+				Actor sid Priest End-Actor
+				Dialog sid exc20<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+			End-Section
+			Actor sid Reader End-Actor
+			Title<Tdesig>sid Kontakion</>End-Title
+			Reading rid trMA.Kontakion1.text End-Reading
+		End-Section	
+		Insert_section MA._18_End__.lent_ End-Insert
+		Insert_section MA._20_Dismissal__.nocommemoration End-Insert
+		Set_mcDay day 0 End_mcDay
+	End-Section
+	Break page End_Break
+	Section Unction
+		Insert_section bk.unction.Instance01 End-Insert
+	End-Section
+	Break page End_Break
+	Section Instance68
+		Set_mcDay day 68 End_mcDay
+		Title role desig sid hw.bridegroomservice sid d.onWednesdayEvening End-Title
+		Title<inr>sid ma.pdf.header sid hw.ofholythursday</>End-Title 
+		Break line End_Break
+		Section block1
+			Actor sid Choir End-Actor	
+			Title role mode rid trHW.Troparion.mode End-Title
+			Media rid trHW.Alleluia.text End-Media
+			Insert_section MA._01_Beginning__.lent__.alleluia.verses End-Insert
+			Title<Tdesig>sid Troparion</><Tmode>rid trHW.Troparion.mode</>End-Title
+			Hymn rid trHW.Troparion.text<r>sid Thrice media-off</>End-Hymn
+		End-Section
+		Insert_section MA._07_Gospel__.yes__.priest__.mc End-Insert
+		Section block2
+			Actor sid Choir End-Actor
+			Title role desig sid OKanon End-Title
+			Title role desig rid trMA.C1.poet End-Title
+			Title<Tdesig>rid trMA.Ode1C1H.ode</><Tmode>rid trMA.Ode1C1H.mode</><Tdesig>sid OEirmos</>End-Title	
+			Media rid trMA.Ode1C1H.text End-Media
+			Para role heirmos rid trMA.Ode1C1H.text End-Para
+			Title role desig sid Troparia End-Title
+			Verse sid verse_God.text End-Verse
+			Hymn rid trMA.Ode1C11.text @ver End-Hymn
+			Title sid Doxa End-Title
+			Hymn rid trMA.Ode1C12.text @ver End-Hymn
+			Title sid KaiNyn End-Title
+			Hymn rid trMA.Ode1C13.text @ver End-Hymn
+			Title role desig sid Katavasia End-Title
+			Hymn rid trMA.Ode1K.text @ver End-Hymn
+		End-Section
+		Section block3
+			Title<Tdesig>rid trMA.Ode3C1H.ode</><Tdesig>sid OEirmos</>End-Title	
+			Media rid trMA.Ode3C1H.text End-Media
+			Para role heirmos rid trMA.Ode3C1H.text<r>sid Twice</>End-Para
+			Title role desig sid Troparia End-Title
+			Title sid Doxa End-Title
+			Hymn rid trMA.Ode3C11.text @ver End-Hymn
+			Title sid KaiNyn End-Title
+			Hymn rid trMA.Ode3C12.text @ver End-Hymn
+			Title role desig sid Katavasia End-Title
+			Hymn rid trMA.Ode3K.text @ver End-Hymn
+		End-Section
+		Section ShortLitany08
+			Actor sid Priest End-Actor
+			Dialog sid pet14 End-Dialog
+			Dialog<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
+			Dialog sid pet12<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
+			Dialog sid pet13<i>sid parenthesis.open sid res03 sid parenthesis.close</>End-Dialog
+			Dialog sid exc08<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+		End-Section
+		Section block4
+			Actor sid Choir End-Actor
+			Title role desig sid Kathisma1 End-Title
+			Title<Tmode>rid trMA.Ode3Kathisma1.mode</><Tmelody>rid trMA.Ode3Kathisma1.melody</>End-Title	
+			Media rid trMA.Ode3Kathisma1.text End-Media
+			Hymn rid trMA.Ode3Kathisma1.text @ver media-off End-Hymn
+			Title sid Doxa<Tmode>rid trMA.Ode3Kathisma2.mode</><Tmelody>rid trMA.Ode3Kathisma2.melody</>End-Title	
+			Media rid trMA.Ode3Kathisma2.text End-Media
+			Hymn rid trMA.Ode3Kathisma2.text @ver media-off End-Hymn
+			Title sid KaiNyn<Tmode>rid trMA.Ode3Kathisma3.mode</><Tmelody>rid trMA.Ode3Kathisma3.melody</>End-Title	
+			Media rid trMA.Ode3Kathisma3.text End-Media
+			Hymn rid trMA.Ode3Kathisma3.text @ver media-off End-Hymn
+		End-Section
+		Section block5
+			Title<Tdesig>rid trMA.Ode4C1H.ode</><Tdesig>sid OEirmos</>End-Title	
+			Media rid trMA.Ode4C1H.text End-Media
+			Para role heirmos rid trMA.Ode4C1H.text End-Para
+			Title role desig sid Troparia End-Title
+			Verse sid verse_God.text End-Verse
+			Hymn rid trMA.Ode4C11.text @ver End-Hymn
+			Title sid Doxa End-Title
+			Hymn rid trMA.Ode4C12.text @ver End-Hymn
+			Title sid KaiNyn End-Title
+			Hymn rid trMA.Ode4C13.text @ver End-Hymn
+			Title role desig sid Katavasia End-Title
+			Hymn rid trMA.Ode4K.text @ver End-Hymn
+		End-Section
+		Section block6
+			Title<Tdesig>rid trMA.Ode5C1H.ode</><Tdesig>sid OEirmos</>End-Title	
+			Media rid trMA.Ode5C1H.text End-Media
+			Para role heirmos rid trMA.Ode5C1H.text<r>sid Twice</>End-Para
+			Title role desig sid Troparia End-Title
+			Title sid Doxa End-Title
+			Hymn rid trMA.Ode5C11.text @ver End-Hymn
+			Title sid KaiNyn End-Title
+			Hymn rid trMA.Ode5C12.text @ver End-Hymn
+			Title role desig sid Katavasia End-Title
+			Hymn rid trMA.Ode5K.text @ver End-Hymn
+		End-Section
+		Section block7
+			Title<Tdesig>rid trMA.Ode6C1H.ode</><Tdesig>sid OEirmos</>End-Title	
+			Media rid trMA.Ode6C1H.text End-Media
+			Para role heirmos rid trMA.Ode6C1H.text<r>sid Twice</>End-Para
+			Title role desig sid Troparia End-Title
+			Title sid Doxa End-Title
+			Hymn rid trMA.Ode6C11.text @ver End-Hymn
+			Title sid KaiNyn End-Title
+			Hymn rid trMA.Ode6C12.text @ver End-Hymn
+			Title role desig sid Katavasia End-Title
+			Hymn rid trMA.Ode6K.text @ver End-Hymn
+		End-Section
+		Section ShortLitany09
+			Actor sid Priest End-Actor
+			Dialog sid pet14 End-Dialog
+			Dialog<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
+			Dialog sid pet12<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
+			Dialog sid pet13<i>sid parenthesis.open sid res03 sid parenthesis.close</>End-Dialog
+			Dialog sid exc09<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+		End-Section
+		Insert_section MA._11_Kontakion__.tr_ End-Insert
+		Section block8
+			Title<Tdesig>sid Synaxarion</>End-Title
+			Title role chapverse sid TouTriodiou End-Title
+			Reading rid trSY.commemoration.text End-Reading
+			Title role desig rid trSY.commemoration.couplet1.title End-Title
+			Para role readingcenterzero rid trSY.commemoration.couplet1.verse1 End-Para
+			Para role readingcenter rid trSY.commemoration.couplet1.verse2 End-Para
+			Title role desig rid trSY.commemoration.couplet2.title End-Title
+			Para role readingcenterzero rid trSY.commemoration.couplet2.verse1 End-Para
+			Para role readingcenter rid trSY.commemoration.couplet2.verse2 End-Para
+			Title role desig rid trSY.commemoration.couplet3.title End-Title
+			Para role readingcenterzero rid trSY.commemoration.couplet3.verse1 End-Para
+			Para role readingcenterzero rid trSY.commemoration.couplet3.verse2 End-Para
+			Para role readingcenter rid trSY.commemoration.couplet3.verse3 End-Para
+			Title role desig rid trSY.commemoration.couplet4.title End-Title
+			Para role readingcenterzero rid trSY.commemoration.couplet4.verse1 End-Para
+			Para role readingcenter rid trSY.commemoration.couplet4.verse2 End-Para
+			Reading rid trSY.lastline End-Reading
+		End-Section
+		Section block9	
+			Actor sid Choir End-Actor	
+			Title<Tdesig>rid trMA.Ode7C1H.ode</><Tdesig>sid OEirmos</>End-Title	
+			Media rid trMA.Ode7C1H.text End-Media
+			Para role heirmos rid trMA.Ode7C1H.text End-Para
+			Title role desig sid Troparia End-Title
+			Verse sid verse_God.text End-Verse
+			Hymn rid trMA.Ode7C11.text @ver End-Hymn
+			Title sid Doxa End-Title
+			Hymn rid trMA.Ode7C12.text @ver End-Hymn
+			Title sid KaiNyn End-Title
+			Hymn rid trMA.Ode7C13.text @ver End-Hymn
+			Title role desig sid Katavasia End-Title
+			Hymn rid trMA.Ode7K.text @ver End-Hymn
+		End-Section
+		Section block10
+			Title role desig rid trMA.Ode8C1H.ode sid OEirmos End-Title
+			Media rid trMA.Ode8C1H.text End-Media
+			Para role heirmos rid trMA.Ode8C1H.text End-Para
+			Title role desig sid Troparia End-Title
+			Verse sid verse_God.text End-Verse
+			Hymn rid trMA.Ode8C11.text @ver End-Hymn
+			Verse sid ps_gr_GR_cog.bode8.v18.text End-Verse
+			Hymn rid trMA.Ode8C12.text @ver End-Hymn
+			Title sid KaiNyn End-Title
+			Hymn rid trMA.Ode8C13.text @ver End-Hymn
+			Title role desig sid Katavasia End-Title
+			Verse sid ps_gr_GR_cog.bode8.v19.text End-Verse
+			Hymn rid trMA.Ode8K.text @ver End-Hymn
+		End-Section
+		Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
+		Section block11
+			Title role desig rid trMA.Ode9C1H.ode sid OEirmos End-Title
+			Media rid trMA.Ode9C1H.text End-Media
+			Para role heirmos rid trMA.Ode9C1H.text End-Para
+			Title role desig sid Troparia End-Title
+			Verse sid verse_God.text End-Verse
+			Hymn rid trMA.Ode9C11.text @ver End-Hymn
+			Title sid Doxa End-Title
+			Hymn rid trMA.Ode9C12.text @ver End-Hymn
+			Title sid KaiNyn End-Title
+			Hymn rid trMA.Ode9C13.text @ver End-Hymn
+			Title role desig sid Katavasia End-Title
+			Hymn rid trMA.Ode9K.text @ver End-Hymn
+		End-Section
+		Section ShortLitany10
+			Actor sid Priest End-Actor
+			Dialog sid pet14 End-Dialog
+			Dialog<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
+			Dialog sid pet12<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
+			Dialog sid pet13<i>sid parenthesis.open sid res03 sid parenthesis.close</>End-Dialog
+			Dialog sid exc10<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+		End-Section
+		Insert_section MA._12_Exaposteilarion__.tr__.exap111 End-Insert
+		Insert_section MA._13_Lauds__.mode2__.noStichologia End-Insert
+		Insert_section MA._13_Lauds__.tr__.i_1234as3456 End-Insert
+		Insert_section MA._13_Lauds__.gloryboth__.tr__.gloryasgloryboth_ End-Insert
+		Insert_section MA._14_Doxology__.small End-Insert
+		Section aftersmalldoxology
+			Section ComplementaryM
+				Actor sid Priest End-Actor
+				Dialog sid pet24m End-Dialog
+				Dialog<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
+				Dialog sid pet12<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
+				Dialog sid pet25m End-Dialog
+				Dialog<i>sid parenthesis.open sid res02 sid parenthesis.close</>End-Dialog
+				Dialog sid pet26 End-Dialog
+				Dialog sid pet27 End-Dialog
+				Dialog sid pet28 End-Dialog
+				Dialog sid pet29 End-Dialog
+				Dialog sid pet30 End-Dialog
+				Dialog sid pet13<i>sid parenthesis.open sid res03 sid parenthesis.close</>End-Dialog
+				Dialog sid exc12<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+			End-Section
+			Section BowHeadsM
+				Dialog sid pet31<i>sid parenthesis.open sid res05 sid parenthesis.close</>End-Dialog
+				Dialog sid pet32<i>sid parenthesis.open sid res03 sid parenthesis.close</>End-Dialog
+				Actor sid Priest<Trubric>sid InALowVoice</>End-Actor
+				Para role inaudible sid hi.s04_gr_GR_cog.hiMA.Key0113.text End-Para
+				Rubric sid Aloud End-Rubric
+				Dialog sid exc13<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+			End-Section
+		End-Section
+		Insert_section MA._16_Aposticha__.tr__.i_holythursday123idiomela End-Insert
+		Insert_section MA._16_Aposticha__.glory__.tr__.gloryasglory_ End-Insert
+		Insert_section MA._16_Aposticha__.both__.tr__.bothasboth_ End-Insert
+		Section itisgood_trisagion
+			Section part1
+				Actor sid Priest End-Actor
+				Reading sid psMA.weekday.end.v1.text End-Reading
+				Actor sid Reader End-Actor
+				Reading sid AgiosOTheos.text<r>sid Thrice media-off</>End-Reading
+				Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+				Reading sid PanagiaTrias.text End-Reading
+				Reading sid res06 End-Reading
+				Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+				Reading sid PaterImon.text End-Reading
+				Actor sid Priest End-Actor
+				Dialog sid exc20<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+			End-Section
+		End-Section	
+		Section block16
+			Actor sid Choir End-Actor
+			Title<Tdesig>sid TroparionTisProfiteias</><Tmode>rid trTE.Troparion.mode</>End-Title
+			Media rid trTE.Troparion.text End-Media
+			Hymn rid trTE.Troparion.text @ver media-off End-Hymn
+			Title sid DoxaKaiNyn<Tdesig>sid ToAfto</>End-Title
+			Break line End_Break
+		End-Section
+		Insert_section Lectionary_Triodion.Trithekti_Prophecy End-Insert
+		Insert_section MA._18_End__.wisdom123.part1 End-Insert
+		Insert_section MA._20_Dismissal__.holythursday End-Insert
+		Set_mcDay day 0 End_mcDay
+	End-Section
+
+End-Template

@@ -1,0 +1,83 @@
+Template bk.ordination.fatherconfessor 
+
+Status NA
+
+	import client_gr_GR_cog.*
+	import eu.ordination_gr_GR_cog.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 7 day 3 year 2022 End_Date
+			Page_Header_Even
+				center @text ""
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @text ""
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Section spiritualfather
+		Section block1
+			Title role desig sid euORD.SF.p700.title End-Title
+			Actor sid Hierarch End-Actor
+			Dialog sid enarxis01 End-Dialog
+			Actor sid Deacon sid Or sid Reader End-Actor
+			Dialog sid res04 End-Dialog
+			Section Trisagion_Prayers
+				Reading sid AgiosOTheos.text<r>sid Thrice media-off</>End-Reading
+				Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+				Reading sid PanagiaTrias.text End-Reading
+				Reading sid res06 End-Reading
+				Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+				Reading sid PaterImon.text End-Reading
+			End-Section		
+			Actor sid Hierarch End-Actor
+			Dialog sid exc20 End-Dialog
+			Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+			Actor sid Deacon End-Actor
+			Dialog sid pet00 End-Dialog
+			Dialog<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
+			Actor sid Hierarch End-Actor
+			Dialog sid euORD.SF.p701.text End-Dialog
+			Rubric sid euORD.SF.r02 End-Rubric
+			Actor sid Deacon End-Actor
+			Dialog sid exc17 sid exc18 sid gos02 End-Dialog
+			Actor sid Hierarch End-Actor
+			Dialog sid pet31 End-Dialog
+			Dialog<i>sid parenthesis.open sid res05 sid parenthesis.close</>End-Dialog
+			Insert_section bk.ev.mc.p1.sections.Day_Sunday08.matins.go_book End-Insert
+			Actor sid Deacon End-Actor
+			Dialog sid exc19 End-Dialog
+			Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+			Actor sid Hierarch End-Actor
+			Insert_section bk.ev.mc.p1.sections.Day_Sunday08.matins.go_lesson End-Insert
+			Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+			Actor sid Hierarch End-Actor
+			Dialog sid euORD.SF.p702.text End-Dialog
+			Title<Tdesig>sid Apolysis</>End-Title
+			Actor sid Hierarch End-Actor
+			Insert_section Selector_Dismissals.Com_No.part1 End-Insert
+			Dialog sid DiEfchonPateron.text End-Dialog
+			Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+		End-Section
+	End-Section
+
+End-Template
