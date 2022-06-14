@@ -440,19 +440,28 @@ Status NA
 		Section enarxis
 			Actor sid Priest End-Actor
 			Dialog sid enarxis01 End-Dialog
-			Actor sid Reader End-Actor
-			Dialog sid res04 End-Dialog
-			Actor sid Priest End-Actor
+			Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
 			Section Heavenly_King
-				Reading sid DoxaSoiOTheosImon.text End-Reading
-				Reading sid VasilefOuranie.text @ver End-Reading
+				when-movable-cycle-day-is
+					71 thru 109 use:
+						Reading sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text @ver media-off End-Reading
+					110 thru 120 use:
+					otherwise use:
+						Reading sid DoxaSoiOTheosImon.text End-Reading
+						Reading sid VasilefOuranie.text @ver End-Reading
+				end-when
 			End-Section
 		End-Section
 		Section append
 			Actor sid Reader End-Actor
 			Section Trisagion_Prayers
-				Title role desig sid Trisagion End-Title
-				Reading sid AgiosOTheos.text<r>sid Thrice media-off</>End-Reading
+				when-movable-cycle-day-is
+					71 thru 109 use:
+						Reading sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text @ver <r>sid Twice media-off</>End-Reading
+					otherwise use:
+						Title<Tdesig>sid Trisagion</>End-Title
+						Reading sid AgiosOTheos.text<r>sid Thrice media-off</>End-Reading
+				end-when
 				Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
 				Reading sid PanagiaTrias.text End-Reading
 				Reading sid res06 End-Reading
