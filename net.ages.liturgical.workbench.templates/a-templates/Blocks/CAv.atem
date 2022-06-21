@@ -1733,10 +1733,15 @@ Status NA
 			End-Section
 			Section ti_hh1234as00VVVV
 				Title role source sid sourceTriodion End-Title
+				when-exists
+					rid trMA.C1.acrostic.title use:
+						Title<r>rid trMA.C1.acrostic.title</><r>rid trMA.C1.acrostic.notice1</>End-Title
+						Title rid trMA.C1.acrostic.text End-Title 
+					otherwise use:
+						Title<Tdesig>rid trMA.C1.title</>End-Title
+				end-when
+				Title role name rid trMA.C1.poet End-Title
 				Actor sid Choir End-Actor
-				Title role desig rid trMA.C1.title End-Title
-				Title<r>rid trMA.C1.acrostic</>End-Title
-				Title role desig rid trMA.C1.poet End-Title
 				Title<Tdesig>rid trMA.Ode1C1H.ode</><Tmode>rid trMA.Ode1C1H.mode</><Tdesig>sid OEirmos</>End-Title
 				Media rid trMA.Ode1C1H.text End-Media
 				when-exists
