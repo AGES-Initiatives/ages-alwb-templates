@@ -1,0 +1,64 @@
+Template bk.tyLG.m02.d05
+
+Status Final
+
+	import Selector_Incipits.*
+	import ty.li.incipit_gr_GR_cog.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 2 day 5 year 2023 End_Date
+			Page_Header_Even
+				center @text "Liturgical Guide for GOA Parishes"
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @text "Liturgical Guide for GOA Parishes"
+			End_Page_Header_Odd
+	End_Head
+
+		//Date
+		Switch-Version L2 End-Switch-Version
+			Insert_section date_title__.oc_specific_sunday End-Insert
+		Switch-Version Both End-Switch-Version
+		Break line End_Break
+			
+		//Doxology
+			Insert_section after_doxology_incipit End-Insert
+			
+		//Antiphons
+			Insert_section antiphon_verses End-Insert
+			Insert_section antiphon2_incipit__.specific_day End-Insert
+			Insert_section antiphon3_incipit End-Insert
+			Insert_section eisodikon_incipit End-Insert
+		
+		//After Entrance
+			Para<r>sid tyLIin.AfterEntrance.title</>End-Para
+			Insert_section ap_incipit_by_mode End-Insert
+			Insert_section ap_incipit_by_date End-Insert
+			Insert_section ap_client__.yes End-Insert
+			Insert_section ko_incipit_by_season End-Insert
+			Insert_section trisagios_incipit End-Insert
+
+		//Readings
+			Insert_section Selector_Epistle.daily End-Insert
+			Insert_section Selector_Gospel.daily End-Insert
+
+		//Liturgical
+			Insert_section theotokos_hymn_incipit End-Insert
+			Insert_section communion_hymn_incipit End-Insert
+			Insert_section after_communion_hymn_incipit End-Insert
+
+			Insert_section dismissal_incipit End-Insert
+
+End-Template
