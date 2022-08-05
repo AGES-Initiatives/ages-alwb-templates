@@ -29,7 +29,12 @@ Status Final
 
 		//Date
 		Switch-Version L2 End-Switch-Version
-			Insert_section date_title__.oc_specific_sunday End-Insert
+			Section oc_specific_sunday
+				Title<Tdesig>ldp @Service_Date sid separator.hyphen rid oc.ocVE.Stichera1.mode</>End-Title
+			//	Title<Tdesig>sid tyDAin.SundayAfterMeeting.text</>End-Title
+				Title<Tdesig>rid tr.trDA.commemoration.short</>End-Title
+				Insert_section liturgy_selector End-Insert
+			End-Section
 		Switch-Version Both End-Switch-Version
 		Break line End_Break
 			
@@ -55,8 +60,11 @@ Status Final
 			Insert_section Selector_Gospel.daily End-Insert
 
 		//Liturgical
-			Insert_section theotokos_hymn_incipit End-Insert
-			Insert_section communion_hymn_incipit End-Insert
+		//	Insert_section theotokos_hymn_incipit End-Insert
+				Para<r>sid tyLIin.theotokoshymn.title</> sid tyLIin.theotokoshymn.default.text End-Para
+		//	Insert_section communion_hymn_incipit End-Insert
+				Para<r>sid tyLIin.communionhymn.title</> sid tyLIin.communionhymn.sunday.text End-Para
+		
 			Insert_section after_communion_hymn_incipit End-Insert
 
 			Insert_section dismissal_incipit End-Insert
