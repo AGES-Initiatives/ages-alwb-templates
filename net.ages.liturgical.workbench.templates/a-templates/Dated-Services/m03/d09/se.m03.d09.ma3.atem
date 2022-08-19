@@ -15,7 +15,7 @@ Status Final
 	import roles.*
 
 	Head 
-		Set_Date month 3 day 9 year 2022 End_Date
+		Set_Date month 3 day 9 year 2023 End_Date
 			Page_Header_Even
 				center @lookup sid ma.pdf.header sid d.on lang L1 @date lang L1
 			End_Page_Header_Even
@@ -47,27 +47,29 @@ Status Final
 		15 use:
 		16 thru 20 use:
 			Section Instance04
-				Insert_section ST.ma.hosp_me1 End-Insert
-				Insert_section MA._01_Beginning__.mode1 End-Insert
-				Insert_section AP.me1gloryme1_ End-Insert	
-				Insert_section AP.both__.primarytheotokion__.mode1 End-Insert
-				Insert_section PS._02_Matins_1st__.rubric__.has_litany End-Insert
-				Insert_section MA._03_Kathisma1__.litany End-Insert
-				Insert_section MA._03_Kathisma1__.me__.kath11o121t_ End-Insert
-				Insert_section PS._03_Matins_2nd__.rubric__.has_litany End-Insert
-				Insert_section PS.optionalLitany03_priest End-Insert
-				Insert_section MA._04_Kathisma2__.me__.kath21o222t_ End-Insert
-				Section polyelelos
-					Insert_section MA._05_Kathisma3__.polyeleos__.titles End-Insert
-					Insert_section MA._05_Kathisma3__.polyeleos__.append__.selected_verses__.martyrs End-Insert
-					Insert_section MA._05_Kathisma3__.polyeleos__.append__.glory_triadic End-Insert
-					Insert_section MA._05_Kathisma3__.polyeleos__.append__.both_theotokion End-Insert
+				Section block1
+					Insert_section ST.ma.hosp_me1 End-Insert
+					Insert_section MA._01_Beginning__.mode1 End-Insert
+					Insert_section AP.me1gloryme1_ End-Insert	
+					Insert_section AP.both__.primarytheotokion__.mode1 End-Insert
+					Insert_section PS._02_Matins_1st__.rubric__.has_litany End-Insert
+					Insert_section MA._03_Kathisma1__.litany End-Insert
+					Insert_section MA._03_Kathisma1__.me__.kath11o121t_ End-Insert
+					Insert_section PS._03_Matins_2nd__.rubric__.has_litany End-Insert
+					Insert_section PS.optionalLitany03_priest End-Insert
+					Insert_section MA._04_Kathisma2__.me__.kath21o222t_ End-Insert
+					Section polyelelos
+						Insert_section MA._05_Kathisma3__.polyeleos__.titles End-Insert
+						Insert_section MA._05_Kathisma3__.polyeleos__.append__.selected_verses__.martyrs End-Insert
+						Insert_section MA._05_Kathisma3__.polyeleos__.append__.glory_triadic End-Insert
+						Insert_section MA._05_Kathisma3__.polyeleos__.append__.both_theotokion End-Insert
+					End-Section
+					Insert_section MA._05_Kathisma3__.litany End-Insert
+					Insert_section MA._05_Kathisma3__.me__.kath31o323t_ End-Insert
+					Insert_section MA._06_Antiphons__.append__.mode41_prokeimenon_ End-Insert
+					Insert_section MA._07_Gospel__.yes__.priest__.me End-Insert
+					Insert_section MA._08_Supplication__.priest__.me End-Insert
 				End-Section
-				Insert_section MA._05_Kathisma3__.litany End-Insert
-				Insert_section MA._05_Kathisma3__.me__.kath31o323t_ End-Insert
-				Insert_section MA._06_Antiphons__.append__.mode41_prokeimenon_ End-Insert
-				Insert_section MA._07_Gospel__.yes__.priest__.me End-Insert
-				Insert_section MA._08_Supplication__.priest__.me End-Insert
 				Section canon
 					Section block02_odes13
 						Insert_section CAv.ode1.ho.ti_sp_hh1234as00ThThThTh End-Insert
@@ -122,17 +124,19 @@ Status Final
 						Insert_section KA.append__._9 End-Insert
 					End-Section
 				End-Section
-				Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
-				Insert_section MA._12_Exaposteilarion__.me__.exap123t End-Insert
-				Insert_section MA._13_Lauds__.mode5__.for4_nocollapse End-Insert
-				Insert_section TI.stp.s._09_martyr_.mp End-Insert
-				Insert_section MA._13_Lauds__.me__.p_1123as3456 End-Insert
-				Insert_section MA._13_Lauds__.glory__.me__.gloryasglory_ End-Insert
-				Insert_section MA._13_Lauds__.both__.theotokion__.mode5 End-Insert
-				Insert_section MA._14_Doxology__.great End-Insert
-				Insert_section AP.me1_ End-Insert
-				Insert_section MA._15_Litanies__.aftergreatdoxology End-Insert
-				Insert_section MA._18_End__.wisdom123.part1 End-Insert
+				Section block2
+					Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+					Insert_section MA._12_Exaposteilarion__.me__.exap123t End-Insert
+					Insert_section MA._13_Lauds__.mode5__.for4_nocollapse End-Insert
+					Insert_section TI.stp.s._09_martyr_.mp End-Insert
+					Insert_section MA._13_Lauds__.me__.p_1123as3456 End-Insert
+					Insert_section MA._13_Lauds__.glory__.me__.gloryasglory_ End-Insert
+					Insert_section MA._13_Lauds__.both__.theotokion__.mode5 End-Insert
+					Insert_section MA._14_Doxology__.great End-Insert
+					Insert_section AP.me1_ End-Insert
+					Insert_section MA._15_Litanies__.aftergreatdoxology End-Insert
+					Insert_section MA._18_End__.wisdom123.part1 End-Insert
+				End-Section
 				Insert_section MA._20_Dismissal__.commemoration End-Insert
 			End-Section
 		21 use:
@@ -275,7 +279,17 @@ Status Final
 			Section Instance08
 				Insert_section Instance04 End-Insert
 			End-Section
-		26 use:
+		26, 33, 40, 47 use:
+			Section Instance09
+				Insert_section Instance04.block1 End-Insert
+				Insert_section Instance04.canon End-Insert
+				Insert_section Instance04.block2 End-Insert
+				Insert_section MA._18_End__.rubrics__.lent_begin_first_hour End-Insert
+				Rubric sid Or End-Rubric
+				Actor sid Reader End-Actor
+				Insert_section MA._18_End__.wisdom123.part3 End-Insert
+				Insert_section MA._20_Dismissal__.commemoration End-Insert
+			End-Section
 		27 use:
 		28 use:
 		29 use: 
@@ -285,7 +299,7 @@ Status Final
 		30 use:
 		31 use:
 		32 use:
-		33, 37 use: 
+		37 use: 
 			Section Instance13 
 			End-Section
 		34, 41, 48 use:
@@ -296,13 +310,11 @@ Status Final
 
 		38 use:
 		39 use:
-		40 use:
 		42 use:
 		43 use:
 		44 use:
 		45 use:
 		46 use:
-		47 use:
 		49 use:
 		50 use:
 		51 use:
