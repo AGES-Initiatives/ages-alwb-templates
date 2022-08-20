@@ -1,6 +1,6 @@
-Template se.m04.d18.li3
+Template se.m04.d16.ma1
 
-Status NA
+Status Final
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -15,12 +15,12 @@ Status NA
 	import roles.*
 
 	Head 
-		Set_Date month 4 day 18 year 2022 End_Date
+		Set_Date month 4 day 16 year 2023 End_Date
 			Page_Header_Even
-				center @lookup sid li.pdf.header lang L1 @lookup sid d.on lang L1 @date lang L1
+				center @lookup sid ma.pdf.header lang L1 @lookup sid d.on lang L1 @date lang L1 
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @lookup sid li.pdf.header lang L2 @lookup sid d.on lang L2 @date lang L2
+				center @lookup sid ma.pdf.header lang L2 @lookup sid d.on lang L2 @date lang L2 
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -31,9 +31,15 @@ Status NA
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
+	Preface Covers
+		Insert_template pdf.cover.ma.me End-Insert
+		Insert_template pdf.cover.credits End-Insert
+	End-Preface
+
 	when-movable-cycle-day-is
-		73 use: Insert_section se.pe.d073.li.Instance03 End-Insert
-		
-	end-when	
+		71, 109 use: 
+			Insert_section mc.map.ma.Section_ma1 End-Insert
+		otherwise use:
+	end-when		
 
 End-Template
