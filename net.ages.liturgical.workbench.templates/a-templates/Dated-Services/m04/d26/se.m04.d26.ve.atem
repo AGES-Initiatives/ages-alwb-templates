@@ -1,6 +1,6 @@
 Template se.m04.d26.ve
 
-Status NA
+Status Final
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -37,8 +37,8 @@ Status NA
 	End-Preface
 
 	
-	when-movable-cycle-day-is 26, 28, 33, 35, 40, 42, 47, 49, 54, 55, 56, 61, 63, 66, 67, 68, 69, 71
-		use: //do nothing
+	when-movable-cycle-day-is 
+		26, 28, 33, 35, 40, 42, 47, 49, 54, 55, 56, 61, 63, 66, 67, 68, 69, 71 use: //do nothing
 		otherwise use:
 			when-movable-cycle-day-is
 				1 thru 25 
@@ -54,9 +54,33 @@ Status NA
 					Section Instance01_Tuesday
 						Insert_section se.pe.d073.ve.Instance02 End-Insert
 					End-Section
-				74 thru 127
+				74 thru 78
 					use: Insert_section mc.map.ve.Section01 End-Insert
+				79 thru 83 use: //Thomas week
+					Section Instance02
+						Insert_section ST.ve.pe_me1 End-Insert
+						Insert_section VE._01_Beginning__.vespers End-Insert
+						Insert_section VE._02_Kekragaria__.modeofpeday__.for6 End-Insert
+						Insert_section TI.stp.f End-Insert
+						Insert_section VE._03_Stichera__.pe__.p_123as567 End-Insert
+						Insert_section TI.stp.s._00_saint_.m End-Insert
+						Insert_section VE._03_Stichera__.me__.p_123as8910 End-Insert
+						Insert_section TI.gb.f End-Insert
+						Insert_section VE._03_Stichera__.gloryboth__.pe_.hymn End-Insert
+						Insert_section VE._04_Middle__.noentrance End-Insert
+						Insert_section VE._06_Litanies__.noektenia End-Insert
+						Insert_section VE._08_Aposticha__.pe__.weekday_ End-Insert
+						Insert_section TI.gb.f End-Insert
+						Insert_section VE._08_Aposticha__.gloryboth__.pe_.hymn End-Insert
+						Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert	
+						Insert_section AP.af End-Insert
+						Insert_section VE._10_End__.ektenia_wisdom End-Insert
+						Insert_section VE._11_Dismissal__.nocommemoration End-Insert			
+					End-Section
+				84 use: //Thomas Saturday
+					
 				otherwise use:
+					Insert_section mc.map.ve.Section01 End-Insert
 				
 			end-when
 	end-when	
