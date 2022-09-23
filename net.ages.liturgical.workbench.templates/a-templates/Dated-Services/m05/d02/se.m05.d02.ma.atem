@@ -14,7 +14,7 @@ Status Final
 	import roles.*
 
 	Head 
-		Set_Date month 5 day 2 year 2022 End_Date
+		Set_Date month 5 day 2 year 2023 End_Date
 			Page_Header_Even
 				center @lookup sid ma.pdf.header sid d.on lang L1 @date lang L1
 			End_Page_Header_Even
@@ -206,43 +206,34 @@ Status Final
 			Section Instance07
 			End-Section
 			
-		86, 87, 88, 89, 90, 93, 103, 104, 107 use:
-			Section Instance08
+		86, 87, 88, 89, 90 use:
+			Section Instance08_8690
 				Insert_section ST.ma.pe_me End-Insert
 				Insert_section MA._01_Beginning__.mode2 End-Insert
-				when-movable-cycle-day-is
-					86 thru 90 use:
-						Section block1
-							Set_mcDay day 85 End_mcDay
-								Insert_section TI.ap._ End-Insert
-								Insert_section AP.pe1_.hymn End-Insert
-								Insert_section TI.g.s._00_saint_.m End-Insert
-								Insert_section AP.me1_.hymn End-Insert
-								Insert_section TI.b.pe._02_myrrhbearers End-Insert
-								Insert_section AP.pe3_.hymn End-Insert
-							Set_mcDay day 0 End_mcDay
-						End-Section
-				end-when
+				Section block1
+					Set_mcDay day 85 End_mcDay
+						Insert_section TI.ap._ End-Insert
+						Insert_section AP.pe1_.hymn End-Insert
+						Insert_section TI.g.s._00_saint_.m End-Insert
+						Insert_section AP.me1_.hymn End-Insert
+						Insert_section TI.b.pe._02_myrrhbearers End-Insert
+						Insert_section AP.pe3_.hymn End-Insert
+					Set_mcDay day 0 End_mcDay
+				End-Section
 				Insert_section MA._03_Kathisma1__.litany End-Insert
 				Insert_section MA._03_Kathisma1__.me__.kath11_ End-Insert
-				Insert_section TI.gb.pe._02_myrrhbearers End-Insert
-				when-movable-cycle-day-is
-					87 use: 
-						Insert_section MA._04_Kathisma2__.append__.pe__.kath21_.hymn End-Insert
-				end-when
+				Insert_section TI.gb.pe.specific End-Insert
+				Set_mcDay day 87 End_mcDay
+					Insert_section MA._04_Kathisma2__.append__.pe__.kath21_.hymn End-Insert
+				Set_mcDay day 0 End_mcDay
 				Insert_section MA._04_Kathisma2__.append__.me__.kath21_ End-Insert
-				Insert_section TI.gb.pe._02_myrrhbearers End-Insert
-				when-movable-cycle-day-is
-					87 use:
-						Section block3
-							Set_mcDay day 88 End_mcDay
-								Insert_section MA._04_Kathisma2__.append__.pe__.kath21_.hymn End-Insert
-							Set_mcDay day 0 End_mcDay
-						End-Section
-				end-when
+				Insert_section TI.gb.pe.specific End-Insert
+				Set_mcDay day 88 End_mcDay
+					Insert_section MA._04_Kathisma2__.append__.pe__.kath21_.hymn End-Insert
+				Set_mcDay day 0 End_mcDay
 				Insert_section MA._07_Gospel__.no__.reader__.psalm50 End-Insert
 				Set_mcDay day 85 End_mcDay
-					Insert_section TI.k.pe_._02_myrrhbearers End-Insert
+					Insert_section TI.k.pe.specific End-Insert
 					Insert_section MA._11_Kontakion__.append__.pe1_.konoik_nt_.kontakion_nt End-Insert
 				Set_mcDay day 0 End_mcDay
 				Insert_section TI.k.s._00_saint_.m End-Insert
@@ -256,6 +247,7 @@ Status Final
 				Insert_section MA._12_Exaposteilarion__.me__.exap1_ End-Insert
 				Insert_section MA._12_Exaposteilarion__.append__.festal End-Insert
 				Insert_section MA._13_Lauds__.mode4__.for4 End-Insert
+				Insert_section TI.stp.s._00_saint_.m End-Insert
 				Insert_section MA._13_Lauds__.me__.p_1123as3456 End-Insert
 				Insert_section MA._13_Lauds__.glory__.me__.gloryasglory_ End-Insert
 				Insert_section TI.b.pe._02_myrrhbearers End-Insert
@@ -291,7 +283,7 @@ Status Final
 				Set_mcDay day 0 End_mcDay
 				Insert_section MA._07_Gospel__.no__.reader__.psalm50 End-Insert
 				Set_mcDay day 85 End_mcDay
-					Insert_section TI.k.pe_._02_myrrhbearers End-Insert
+					Insert_section TI.k.pe._02_myrrhbearers End-Insert
 					Insert_section MA._11_Kontakion__.append__.pe1_.konoik_nt_ End-Insert
 				Set_mcDay day 0 End_mcDay
 				Insert_section TI.k.s._00_saint_.m End-Insert
@@ -319,6 +311,10 @@ Status Final
 
 			End-Section
 
+		93, 103, 104, 107 use:
+			Section Instnace08_93103104107
+			End-Section
+			
 		105 use: //Leavetaking of Sam
 			Section Instance09_105
 			End-Section
