@@ -1,6 +1,6 @@
 Template se.m06.d27.ma 
 
-Status NA
+Status Final
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -38,12 +38,16 @@ Status NA
 
 	when-movable-cycle-day-is 
 		121, 126, 127 use:
+			Section Instance01
 			Insert_section mc.map.ma.Section01 End-Insert
+			End-Section
 		122, 123, 124, 125 use:
+			Section Instance02
+			End-Section
 		otherwise use:
 			when-name-of-day-is
 				Sunday use:
-					Section Instance00_sunday
+					Section Instance03
 						Insert_section ST.ma.oc End-Insert
 						Insert_section MA._01_Beginning__.modeofweek End-Insert
 						Insert_section AP.resgloryres End-Insert
@@ -70,7 +74,7 @@ Status NA
 						Insert_section MA._14_Doxology__.sunday End-Insert
 					End-Section
 				Saturday use:
-					Section Instance00_saturday
+					Section Instance04
 						Insert_section ST.ma.ho_oc_me1 End-Insert
 						Insert_section MA._01_Beginning__.alleluia__.mode2_saturday End-Insert
 						Insert_section AP.da__.matins_begin End-Insert
@@ -98,7 +102,7 @@ Status NA
 						Insert_section MA._20_Dismissal__.nocommemoration End-Insert
 					End-Section
 				otherwise use:
-					Section Instance00_weekday
+					Section Instance05
 						Insert_section ST.ma.ho_oc_me1 End-Insert
 						Insert_section MA._01_Beginning__.modeofday End-Insert
 						Insert_section AP.da__.matins_begin End-Insert
