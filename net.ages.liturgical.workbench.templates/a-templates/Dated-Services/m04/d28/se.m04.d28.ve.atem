@@ -37,60 +37,13 @@ Status Final
 
 	when-movable-cycle-day-is 
 		61, 63, 66, 67, 68, 69, 71 use: //do nothing since pl or vl
-		60, 62, 64, 65, 70 use: Insert_section mc.map.ve.Section01 End-Insert
-		72, 73, 74, 75, 76, 77, 78, 85, 92, 95, 99, 102, 106 use: Insert_section mc.map.ve.Section01 End-Insert
-		79, 80, 81, 82, 83, 84, 86, 87, 88, 89, 90, 91, 93, 94, 96, 97, 98, 100, 101, 103, 104, 105, 107, 108 use:
-			Section Instance01 //weekday
-				Insert_section ST.ve.pe_me End-Insert
-				Insert_section VE._01_Beginning__.vespers End-Insert
-				Insert_section VE._02_Kekragaria__.modeofpeday__.for6 End-Insert
-				when-name-of-day-is
-					Saturday use:
-						when-movable-cycle-day-is
-							98 use:
-								Insert_section TI.stp.f End-Insert
-								Insert_section VE._03_Stichera__.pe__.p_123as567 End-Insert
-							otherwise use:
-								Insert_section TI.ip.pe.specific End-Insert
-								Insert_section VE._03_Stichera__.pe__.i_123as567 End-Insert
-						end-when
-					otherwise use:
-						Insert_section TI.stp.f End-Insert
-						Insert_section VE._03_Stichera__.pe__.p_123as567 End-Insert
-				end-when
-				Insert_section TI.stp.s._09_martyr_.mp End-Insert
-				Insert_section VE._03_Stichera__.me__.p_123as8910 End-Insert
-				Insert_section VE._03_Stichera__.gloryboth__.pe_ End-Insert
-				Insert_section VE._04_Middle__.noentrance End-Insert
-				Insert_section VE._06_Litanies__.noektenia End-Insert
-				Insert_section VE._08_Aposticha__.pe__.weekday_ End-Insert
-				Insert_section VE._08_Aposticha__.gloryboth__.pe_ End-Insert
-				Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
-				Section apolytikia
-					when-movable-cycle-day-is
-						79, 80, 81, 82, 83, 84, 96, 97, 98, 100, 101 use:
-							Insert_section AP.af End-Insert
-						86 thru 91 use:
-						Section apol_myrrhbearers
-							Set_mcDay day 85 End_mcDay
-								Insert_section TI.ap End-Insert
-								Insert_section AP.pe2_.hymn End-Insert
-								Title sid Doxa<Tdesig>sid ToAnastasimon</>End-Title
-								Insert_section AP.pe1_.hymn End-Insert
-								Insert_section TI.b.pe._02_myrrhbearers End-Insert
-								Insert_section AP.pe3_.hymn End-Insert
-							Set_mcDay day 0 End_mcDay
-						End-Section
-						93,  94, 103, 104, 105, 107, 108 use:
-							Title<Tdesig>sid ApolytikionAnastasimon</>End-Title
-							Title<Tmode>rid oc.ocVE.Apolytikion.mode @day D1</><Tmelody>rid oc.ocVE.Apolytikion.melody @day D1</>End-Title
-							Hymn rid oc.ocVE.Apolytikion.text @day D1 End-Hymn
-							Insert_section AP.gloryboth__.primarytheotokion__.modeofweek End-Insert
-					end-when
-				End-Section
-				Insert_section VE._10_End__.ektenia_wisdom End-Insert
-				Insert_section VE._11_Dismissal__.nocommemoration End-Insert
-			End-Section
+
+		62, 64, 65, 70 use: 
+			Insert_section mc.map.ve.Section01 End-Insert
+
+		72 thru 95 use: 
+			Insert_section mc.map.ve.Section01 End-Insert
+
 	end-when
 
 End-Template

@@ -1,0 +1,84 @@
+Template se.m04.d26.pl2
+
+Status NA
+
+	import Selector_ServiceTitle.*
+
+	import actors_gr_GR_cog.*
+	import client_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 4 day 26 year 2023 End_Date
+			Page_Header_Even
+				center @lookup rid tr.trVL.header lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup rid tr.trVL.header lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template pdf.cover.pl End-Insert
+		Insert_template pdf.cover.credits End-Insert
+	End-Preface
+
+	when-movable-cycle-day-is
+		59, 60, 61, 62 use:
+			Section Instance01
+				Section ST
+					Para role servicesourcestitle sid book.BooksSources.title End-Para
+					Para role servicesources sid book.Triodion.name End-Para
+					Insert_section tr_vespers_on_day_before End-Insert
+					Set_Date month 4 day 25 year 2023 End_Date
+					Para role servicesources sid book.Menaion.name sid separator.hyphen rid me.meDA.date End-Para
+					Para role servicesourcessection rid me.meDA.commemoration.first_short End-Para
+					Set_Date month 4 day 26 year 2023 End_Date
+					Title sid horizontal_line.solid1 End-Title
+					Break line End_Break
+					Title<bnr>sid pl.html.tab</>End-Title
+				End-Section
+				Insert_section PL._03_Stichera_.montuewedthur_.Idiomela_Triodion End-Insert
+				Insert_section PL._03_Stichera_.montuewedthur_.Stichera_Triodion End-Insert
+				Set_Date month 4 day 25 year 2023 End_Date
+				Insert_section TI.stp.s._05_evangelist End-Insert
+				Insert_section VE._03_Stichera__.me__.p_4456as78910 End-Insert
+				Insert_section VE._08_Aposticha__.glory__.me__.gloryasglory_ End-Insert
+				Set_Date month 4 day 2 year 2023 End_Date
+				Insert_section VE._03_Stichera__.both__.metheotokion End-Insert
+				Set_Date month 4 day 26 year 2023 End_Date
+				Section Presanctified03 // Entrance
+					Actor sid Deacon End-Actor
+					Dialog sid exc17 sid exc18 End-Dialog
+					Actor sid Reader End-Actor
+					Reading sid ho.s10_gr_GR_cog.hoVE.FosIlaron.text End-Reading
+				End-Section
+				Insert_section VE._05_Readings__.reader End-Insert
+				Break line End_Break
+				Title <r>sid cl.eu.presanctified.R004</> End-Title
+				Break line End_Break
+				Insert_section LE._01_Epistle__.textonly__.menaion End-Insert
+				Insert_section LE._02_Gospel__.textonly__.menaion End-Insert
+				Break line End_Break
+				Title <r>sid cl.eu.presanctified.R002</> End-Title
+				Insert_section PL._10.hymn End-Insert
+			End-Section
+	end-when	
+	
+End-Template

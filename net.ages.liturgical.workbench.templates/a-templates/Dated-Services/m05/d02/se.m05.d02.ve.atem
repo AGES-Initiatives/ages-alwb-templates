@@ -37,36 +37,29 @@ Status Final
 	End-Preface
 
 	when-movable-cycle-day-is
-		65 thru 71 use:
-			Section Instance01
-			End-Section
-			
+		66, 67, 68, 69, 71 use: //do nothing since pl or vl
+
+		65, 70 use:
+			Insert_section mc.map.ve.Section01 End-Insert
+
 		72 use: //Bright Monday - St. George
-			Section Instance01_Monday
+			Section Instance01
 				Insert_section se.pe.d072.ve.Instance02 End-Insert
 				Set_Date month 5 day 2 year 2023 End_Date
 			End-Section
 			
-		73 use: //Bright Tuesday - St. Mark
-			Section Instance01_Tuesday
-			End-Section
-			
-		74 use: //Bright Wed
-			Section Instance03_Wednesday
-			End-Section
-
-		75 use: //Bright Thursday
-			Section Instance03_Thursday
+		73, 74, 75, 77 use:
+			Section Instance02
 				Insert_section ST.ve.pe_me1 End-Insert
 				Insert_section VE._01_Beginning__.vespers End-Insert
-				Insert_section VE._02_Kekragaria__.mode5__.noStichologia End-Insert
+				Insert_section VE._02_Kekragaria__.modeofpeday__.noStichologia End-Insert
 				Insert_section VE._03_Stichera__.pe__.s_1234as3456 End-Insert
-				Insert_section TI.stp.s._00_saint_.m End-Insert
+				Insert_section TI.stp.me.com1 End-Insert
 				Insert_section VE._03_Stichera__.me__.p_1123as78910 End-Insert
-				Insert_section TI.g.pe._00_pentecostarion End-Insert
+				Insert_section TI.g.res End-Insert
 				Insert_section VE._03_Stichera__.glory__.pe__.gloryasglory_.hymn End-Insert
 				Rubric sid Or End-Rubric
-				Insert_section TI.g.s._00_saint_.m End-Insert
+				Insert_section TI.g.me.com1 End-Insert
 				Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_.hymn End-Insert
 				Insert_section VE._03_Stichera__.both__.pe__.bothasboth_ End-Insert
 				Insert_section VE._04_Middle__.entrance End-Insert
@@ -76,20 +69,19 @@ Status Final
 				Insert_section TI.g.s._00_saint_.m End-Insert
 				Insert_section VE._08_Aposticha__.glory__.me__.gloryasglory_.hymn End-Insert
 				Insert_section VE._08_Aposticha__.both__.pascha_ End-Insert
-				Insert_section AP.pascha__.thrice End-Insert
+				Insert_section AP.pascha__.twice End-Insert
+				Insert_section TI.me.com1 End-Insert
+				Insert_section AP.me1_.hymn End-Insert
+				Insert_section AP.pascha__.once End-Insert
 				Insert_section VE._10_End__.wisdom123.part1 End-Insert
 				Insert_section VE._11_Dismissal__.commemoration End-Insert
 			End-Section
-		
-		76 use: //Bright Friday
-			Section Instance03_Friday
+			
+		76 use:
+			Section Instance03
 			End-Section
 			
-		77 use:
-			Section Instance03_Saturday
-			End-Section
-		
-		78 use: //Thomas Sunday
+		78 use:
 			Section Instance04
 			End-Section
 			
@@ -97,13 +89,7 @@ Status Final
 			Section Instance05
 				Insert_section ST.ve.pe_me1 End-Insert
 				Insert_section VE._01_Beginning__.vespers End-Insert
-				when-movable-cycle-day-is
-					79 use: Insert_section VE._02_Kekragaria__.mode1__.for6 End-Insert
-					80 use: Insert_section VE._02_Kekragaria__.mode4__.for6 End-Insert
-					81 use: Insert_section VE._02_Kekragaria__.mode1__.for6 End-Insert
-					82 use: Insert_section VE._02_Kekragaria__.mode2__.for6 End-Insert
-					83 use: Insert_section VE._02_Kekragaria__.mode1__.for6 End-Insert
-				end-when
+				Insert_section VE._02_Kekragaria__.modeofpeday__.for6 End-Insert
 				Insert_section TI.stp.pe.specific End-Insert
 				Insert_section VE._03_Stichera__.pe__.p_123as567 End-Insert
 				Insert_section TI.s._00_saint_.m End-Insert
@@ -125,7 +111,7 @@ Status Final
 				Insert_section VE._11_Dismissal__.commemoration End-Insert
 			End-Section
 			
-		84 use: //Thomas Saturday
+		84 use:
 			Section Instance06
 				Insert_section ST.ve.pe_me1 End-Insert
 				Insert_section VE._01_Beginning__.vespers End-Insert
@@ -164,7 +150,7 @@ Status Final
 			Section Instance07
 			End-Section
 			
-		86, 87, 88, 89, 90, 93, 103, 104, 107 use:
+		86, 87, 88, 89, 90, 93 use:
 			Section Instance08
 				Insert_section ST.ve.pe_me1 End-Insert
 				Insert_section VE._01_Beginning__.vespers End-Insert
@@ -195,7 +181,7 @@ Status Final
 								Insert_section AP.pe3_.hymn End-Insert
 							Set_mcDay day 0 End_mcDay
 						End-Section
-					93, 103, 104, 107 use:
+					93 use:
 						Section block2
 							Insert_section AP.res__.modeofweek End-Insert
 							Insert_section TI.g.s._00_saint_.m End-Insert
@@ -207,13 +193,12 @@ Status Final
 				Insert_section VE._11_Dismissal__.commemoration End-Insert
 			End-Section
 			
-		91, 105 use: //Leavetaking of Myr and Sam
+		91 use: //Leavetaking of Myr and Sam
 			Section Instance09
 				Insert_section ST.ve.pe_me End-Insert
 				Insert_section VE._01_Beginning__.vespers End-Insert
 				when-movable-cycle-day-is
 					91 use: Insert_section VE._02_Kekragaria__.mode2__.for6 End-Insert
-					105 use: Insert_section VE._02_Kekragaria__.mode4__.for6 End-Insert
 				end-when
 				when-movable-cycle-day-is
 					91 use:
@@ -232,13 +217,6 @@ Status Final
 							Insert_section VE._03_Stichera__.both__.pe__.gloryasboth_.hymn End-Insert
 						Set_mcDay day 0 End_mcDay
 						End-Section
-					105 use:
-						Section block2
-						Set_mcDay day 99 End_mcDay
-							Insert_section TI.b.pe._05_samaritan End-Insert
-							Insert_section VE._03_Stichera__.both__.pe__.gloryasboth_.hymn End-Insert
-						Set_mcDay day 0 End_mcDay
-						End-Section
 				end-when
 				Insert_section VE._04_Middle__.entrance End-Insert
 				Insert_section VE._06_Litanies__.fullektenia End-Insert
@@ -251,13 +229,6 @@ Status Final
 						Section block3
 						Set_mcDay day 85 End_mcDay
 							Insert_section TI.b.pe._02_myrrhbearers End-Insert
-							Insert_section VE._08_Aposticha__.both__.pe__.gloryasboth_.hymn End-Insert
-						Set_mcDay day 0 End_mcDay
-						End-Section
-					105 use:
-						Section block4
-						Set_mcDay day 99 End_mcDay
-							Insert_section TI.b.pe._05_samaritan End-Insert
 							Insert_section VE._08_Aposticha__.both__.pe__.gloryasboth_.hymn End-Insert
 						Set_mcDay day 0 End_mcDay
 						End-Section
@@ -275,13 +246,6 @@ Status Final
 							Insert_section TI.b.pe._02_myrrhbearers End-Insert
 							Insert_section AP.pe3_.hymn End-Insert
 						Set_mcDay day 0 End_mcDay
-						End-Section
-					105 use:
-						Section block6
-							Insert_section AP.res__.modeofweek End-Insert
-							Insert_section TI.g.s._00_saint_.m End-Insert
-							Insert_section AP.me1_.hymn End-Insert
-							Insert_section AP.both__.primarytheotokion__.mode3 End-Insert
 						End-Section
 				end-when
 				Insert_section VE._10_End__.wisdom123.part1 End-Insert
@@ -323,29 +287,8 @@ Status Final
 				Insert_section VE._11_Dismissal__.commemoration End-Insert
 			End-Section
 			
-		96, 97, 98, 100, 101 use: 
+		96, 97, 98 use: 
 			Section Instance12
-			End-Section
-			
-		102 use: //Leavetaking Mid-Pentecost
-			Section Instance13
-			End-Section
-			
-		109 use: //Leavetaking Pascha
-			Section Instance14
-			End-Section
-			
-		110 use: //Ascension
-			Section Instance15
-				Insert_section se.pe.d110.ve.Instance01 End-Insert
-			End-Section
-
-		111 use:
-			Section Instance16_111
-			End-Section
-			
-		112 use:
-			Section Instance16_112
 			End-Section
 			
 	end-when		
