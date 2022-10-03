@@ -41,20 +41,35 @@ Status NA
 			Insert_section VE._01_Beginning__.vespers End-Insert
 			Insert_section VE._02_Kekragaria__.modeofpeday__.for6 End-Insert
 			Insert_section TI.stp.pe.specific End-Insert
-			Insert_section VE._03_Stichera__.pe__.p_123as567 End-Insert
+			Insert_section VE._03_Stichera__.pe__.i_112as567 End-Insert
 			Insert_section TI.stp.me.com1 End-Insert
 			Insert_section VE._03_Stichera__.me__.p_123as8910 End-Insert
-			Insert_section TI.gb.pe.specific End-Insert
-			Insert_section VE._03_Stichera__.gloryboth__.pe_.hymn End-Insert
+			when-exists
+				rid me.meVE.SticGlory.text use:
+					Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_ End-Insert
+					Insert_section TI.b.pe.specific End-Insert
+					Insert_section VE._03_Stichera__.gloryboth__.pe_.hymn End-Insert
+				otherwise use:
+					Insert_section TI.gb.pe.specific End-Insert
+					Insert_section VE._03_Stichera__.gloryboth__.pe_.hymn End-Insert
+			end-when
 			Insert_section VE._04_Middle__.noentrance End-Insert
 			Insert_section VE._06_Litanies__.noektenia End-Insert
 			Insert_section VE._08_Aposticha__.pe__.weekday_ End-Insert
-			Insert_section TI.gb.pe.specific End-Insert
-			Insert_section VE._08_Aposticha__.gloryboth__.pe_.hymn End-Insert
+			when-exists
+				rid me.meVE.AposGlory.text use:
+					Insert_section TI.g.me.com1 End-Insert
+					Insert_section VE._08_Aposticha__.glory__.me__.gloryasglory_.hymn End-Insert
+					Insert_section TI.b.pe.specific End-Insert
+					Insert_section VE._08_Aposticha__.gloryboth__.pe_.hymn End-Insert
+				otherwise use:
+					Insert_section TI.gb.pe.specific End-Insert
+					Insert_section VE._08_Aposticha__.gloryboth__.pe_.hymn End-Insert
+			end-when
 			Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
 		End-Section
-		Insert_section AP.res__.mode3 End-Insert
-		Insert_section AP.gloryboth__.primarytheotokion__.mode3 End-Insert
+		Insert_section AP.res__.modeofweek End-Insert
+		Insert_section AP.gloryboth__.primarytheotokion__.modeofweek End-Insert
 		Insert_section VE._10_End__.ektenia_wisdom End-Insert
 		Insert_section VE._11_Dismissal__.nocommemoration End-Insert			
 	End-Section

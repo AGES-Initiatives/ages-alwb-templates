@@ -44,14 +44,37 @@ Status NA
 			Insert_section VE._03_Stichera__.pe__.i_123as567 End-Insert
 			Insert_section TI.me.com1 End-Insert
 			Insert_section VE._03_Stichera__.me__.p_123as8910 End-Insert
-			Insert_section TI.g.pe.specific End-Insert
-			Insert_section VE._03_Stichera__.glory__.pe__.gloryasglory_.hymn End-Insert
-			Insert_section VE._03_Stichera__.both__.pe__.bothasboth_ End-Insert
+			when-exists
+				rid me.meVE.AposGlory.text use:
+					Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_ End-Insert
+					Insert_section TI.b.pe.specific End-Insert
+					Insert_section VE._03_Stichera__.both__.pe__.gloryasboth_.hymn End-Insert
+				otherwise use:
+					Insert_section TI.g.pe.specific End-Insert
+					Insert_section VE._03_Stichera__.glory__.pe__.gloryasglory_.hymn End-Insert
+					Insert_section VE._03_Stichera__.both__.firsttheotokion__.modeofweek End-Insert
+			end-when
 			Insert_section VE._04_Middle__.noentrance End-Insert
 			Insert_section VE._06_Litanies__.noektenia End-Insert
 			Insert_section VE._08_Aposticha__.pe__.weekday_ End-Insert
-			Insert_section TI.gb.pe.specific End-Insert
-			Insert_section VE._08_Aposticha__.gloryboth__.pe_.hymn End-Insert
+			when-exists
+				rid me.meVE.AposGlory.text use:
+					Insert_section TI.g.me.com1 End-Insert
+					Insert_section VE._08_Aposticha__.glory__.me__.gloryasglory_.hymn End-Insert
+					Insert_section TI.b.pe.specific End-Insert
+					Insert_section VE._03_Stichera__.both__.pe__.gloryasboth_.hymn End-Insert
+				otherwise use:
+					when-exists
+						rid me.meVE.SticGlory.text use:
+							Insert_section TI.g.me.com1 End-Insert
+							Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_.hymn End-Insert
+							Insert_section TI.b.pe.specific End-Insert
+							Insert_section VE._08_Aposticha__.gloryboth__.pe_.hymn End-Insert
+						otherwise use:
+							Insert_section TI.gb.pe.specific End-Insert
+							Insert_section VE._08_Aposticha__.gloryboth__.pe_.hymn End-Insert
+					end-when
+			end-when
 			Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
 		End-Section
 		Insert_section AP.f3 End-Insert
