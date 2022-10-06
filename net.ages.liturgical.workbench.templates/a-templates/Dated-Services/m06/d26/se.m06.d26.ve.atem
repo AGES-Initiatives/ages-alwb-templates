@@ -37,20 +37,18 @@ Status Final
 	End-Preface
 
 	when-movable-cycle-day-is 
-		120, 121, 126, 127 use:
-			Insert_section mc.map.ve.Section01 End-Insert //adjust to appropriate service
-		122, 123, 124, 125 use:
-			Section Instance01
-			End-Section
+		120 thru 127 use:
+			Insert_section mc.map.ve.Section01 End-Insert
+
 		otherwise use:
 			when-name-of-day-is
 				Sunday use:
-					Section Instance02
+					Section Instance_Sunday
 						Insert_section ST.ve.oc_me1 End-Insert
 						Insert_section VE._01_Beginning__.vespers End-Insert
 						Insert_section VE._02_Kekragaria__.modeofweek__.for10 End-Insert
 						Insert_section VE._03_Stichera__.oc__.sunday__.s_1234567as1234567 End-Insert
-						Insert_section TI.s._00_saint_.m End-Insert
+						Insert_section TI.stp.me.com1 End-Insert
 						Insert_section VE._03_Stichera__.me__.p_123as8910 End-Insert
 						Insert_section VE._03_Stichera__.gloryboth__.firsttheotokion End-Insert	
 						Insert_section VE._04_Middle__.entrance End-Insert	
@@ -63,12 +61,12 @@ Status Final
 						Insert_section VE._11_Dismissal__.nocommemoration End-Insert
 					End-Section
 				otherwise use:
-					Section Instance03
+					Section Instance_Weekday
 						Insert_section ST.ve.oc_me1_ho End-Insert
 						Insert_section VE._01_Beginning__.vespers End-Insert
 						Insert_section VE._02_Kekragaria__.modeofweek__.for6 End-Insert
 						Insert_section VE._03_Stichera__.oc__.weekday__.p_XXXas567 End-Insert
-						Insert_section TI.s._00_saint_.m End-Insert
+						Insert_section TI.me.com1 End-Insert
 						Insert_section VE._03_Stichera__.me__.p_123as8910 End-Insert
 						Insert_section VE._03_Stichera__.gloryboth__.metheotokion End-Insert
 						Insert_section VE._04_Middle__.noentrance End-Insert

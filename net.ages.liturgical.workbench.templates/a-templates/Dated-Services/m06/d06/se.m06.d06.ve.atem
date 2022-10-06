@@ -37,70 +37,91 @@ Status Final
 	End-Preface
 
 	when-movable-cycle-day-is
-		95, 99, 102, 106, 109, 110, 113, 118, 119, 120, 121, 126, 127 use:
-			Section Instance01
-				Insert_section mc.map.ve.Section01 End-Insert
-			End-Section
+		102, 106, 109, 110, 113, 114, 118, 119, 120, 121, 126, 127 use:
+			Insert_section mc.map.ve.Section01 End-Insert
 			
-		96, 97, 100, 101 use:
-			Section Instance04_9697100101
-			End-Section
-
-		98 use:
-			Section Instance04_98
-			End-Section
-
-		103, 104, 107 use:
-			Section Instance04_103104107
-			End-Section
-
-		105 use:
-			Section Instance04_105
-			End-Section
-
-		108 use: //Leavetaking of Blindman
-			Section Instance05
-			End-Section
-
-		111 use: 
-			Section Instance06_111
-			End-Section
-
-		112, 115, 116, 117 use: 
-			Section Instance06
-			End-Section
-
-		114 use: 
-			Section Instance07
-				Insert_section se.pe.d114.ve.Instance01 End-Insert
-			End-Section
-
-		122 thru 125 use: 
-			Section Instance08
-				Insert_section ST.ve.pe_me1 End-Insert
-				Insert_section VE._01_Beginning__.vespers End-Insert
-				Insert_section VE._02_Kekragaria__.modeofpeday__.for6 End-Insert
-				Insert_section TI.stp.pe.specific End-Insert
-				Insert_section VE._03_Stichera__.pe__.p_123as567 End-Insert
-				Insert_section TI.s._00_saint_.m End-Insert
-				Insert_section VE._03_Stichera__.me__.p_123as8910 End-Insert
-				Insert_section TI.gb.pe.specific End-Insert
-				Insert_section VE._03_Stichera__.gloryboth__.pe_.hymn End-Insert
-				Insert_section VE._04_Middle__.noentrance End-Insert
-				Insert_section VE._06_Litanies__.noektenia End-Insert
-				Insert_section VE._08_Aposticha__.pe__.weekday_ End-Insert
-				Insert_section TI.gb.pe.specific End-Insert
-				Insert_section VE._08_Aposticha__.gloryboth__.pe_.hymn End-Insert
-				Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
-				Insert_section AP.af End-Insert	
-				Insert_section AP.glory__.ganame.Jun06__.hilarion End-Insert
-				Insert_section AP.both__.af End-Insert
+		100, 101 use:
+			Section Instance01
+				Insert_section mc.map.ve.Section01_Instance01_block1 End-Insert
+				Insert_section AP.ganame.Jun06__.hilarion_ End-Insert
+				Insert_section AP.gloryboth__.af End-Insert
 				Insert_section VE._10_End__.ektenia_wisdom End-Insert
 				Insert_section VE._11_Dismissal__.nocommemoration End-Insert			
 			End-Section
-			
-		otherwise use:
 
+		103, 104, 105, 107, 108 use:
+			Section Instance02
+				Insert_section mc.map.ve.Section01_Instance01_block1 End-Insert
+				Insert_section AP.res__.modeofweek End-Insert
+				Insert_section TI.g.me.com1 End-Insert
+				Insert_section AP.glory__.ganame.Jun06__.hilarion.hymn End-Insert
+				Insert_section AP.both__.primarytheotokion__.mode4 End-Insert
+				Insert_section VE._10_End__.wisdom123.part1 End-Insert
+				Insert_section VE._11_Dismissal__.nocommemoration End-Insert			
+			End-Section
+
+		111 use: 
+			Section Instance03
+				Insert_section mc.map.ve.Section01_Instance01_block1 End-Insert
+				Insert_section AP.af End-Insert	
+				Insert_section TI.g.me.com1 End-Insert
+				Insert_section AP.glory__.ganame.Jun06__.hilarion.hymn End-Insert
+				Insert_section AP.both__.af End-Insert
+				Insert_section VE._10_End__.wisdom123.part1 End-Insert
+				Insert_section VE._11_Dismissal__.nocommemoration End-Insert			
+			End-Section
+
+		112, 115, 116, 117, 122, 123, 124, 125 use: 
+			Section Instance04
+				Insert_section mc.map.ve.Section01_Instance01_block1 End-Insert
+				Insert_section AP.ganame.Jun06__.hilarion_ End-Insert
+				Insert_section AP.gloryboth__.af End-Insert
+				Insert_section VE._10_End__.ektenia_wisdom End-Insert
+				Insert_section VE._11_Dismissal__.nocommemoration End-Insert			
+			End-Section
+
+		otherwise use:
+			when-name-of-day-is
+				Sunday use:
+					Section Instance_Sunday
+						Insert_section ST.ve.oc_me1 End-Insert
+						Insert_section VE._01_Beginning__.vespers End-Insert
+						Insert_section VE._02_Kekragaria__.modeofweek__.for10 End-Insert
+						Insert_section VE._03_Stichera__.oc__.sunday__.s_1234567as1234567 End-Insert
+						Insert_section TI.stp.me.com1 End-Insert
+						Insert_section VE._03_Stichera__.me__.p_123as8910 End-Insert
+						Insert_section VE._03_Stichera__.gloryboth__.firsttheotokion End-Insert
+						Insert_section VE._04_Middle__.entrance End-Insert
+						Insert_section VE._06_Litanies__.fullektenia End-Insert
+						Insert_section VE._08_Aposticha__.oc__.sunday__.aposticha1234gbT End-Insert
+						Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
+						Insert_section AP.res__.modeofweek End-Insert
+						Insert_section AP.gloryboth__.primarytheotokion__.modeofweek End-Insert
+						Insert_section VE._10_End__.wisdom123.part1 End-Insert
+						Insert_section VE._11_Dismissal__.nocommemoration End-Insert
+					End-Section
+				Saturday use:
+					Section Instance_Saturday
+						Insert_section Instance_Weekday End-Insert
+					End-Section
+				otherwise use:
+					Section Instance_Weekday
+						Insert_section ST.ve.oc_me1_ho End-Insert
+						Insert_section VE._01_Beginning__.vespers End-Insert
+						Insert_section VE._02_Kekragaria__.modeofweek__.for6 End-Insert
+						Insert_section VE._03_Stichera__.oc__.weekday__.p_XXXas567 End-Insert
+						Insert_section TI.me.com1 End-Insert
+						Insert_section VE._03_Stichera__.me__.p_123as8910 End-Insert
+						Insert_section VE._03_Stichera__.gloryboth__.metheotokion End-Insert
+						Insert_section VE._04_Middle__.noentrance End-Insert
+						Insert_section VE._06_Litanies__.noektenia End-Insert
+						Insert_section VE._08_Aposticha__.oc__.weekday_  End-Insert
+						Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
+						Insert_section AP.da__.vespers End-Insert
+						Insert_section VE._10_End__.ektenia_wisdom End-Insert
+						Insert_section VE._11_Dismissal__.nocommemoration End-Insert
+					End-Section
+			end-when
 	end-when	
 		
 End-Template
