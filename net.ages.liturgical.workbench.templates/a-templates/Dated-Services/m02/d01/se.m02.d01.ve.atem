@@ -37,20 +37,15 @@ Status Final
 	End-Preface
 
 	when-movable-cycle-day-is
-		1, 8, 15, 22 use:
-			Section Instance03 //Triodion Sunday
+		1, 8 use:
+			Section Instance01
 				Insert_section ST.ve.oc_tr_me2 End-Insert
 				Insert_section VE._01_Beginning__.vespers End-Insert
 				Insert_section VE._02_Kekragaria__.modeofweek__.for10 End-Insert
 				Insert_section VE._03_Stichera__.oc__.sunday__.s_1234as1234 End-Insert
-				Insert_section TI.stp.tr_._ End-Insert
-				when-movable-cycle-day-is
-					1 use: Insert_section VE._03_Stichera__.tr__.i_112as567 End-Insert
-					8 use: Insert_section VE._03_Stichera__.tr__.i_112as567 End-Insert
-					15 use: Insert_section VE._03_Stichera__.tr__.p_123as567 End-Insert
-					22 use: Insert_section VE._03_Stichera__.tr__.p_123as567 End-Insert
-				end-when
-				Insert_section TI.s._09_martyr_.m End-Insert
+				Insert_section TI.stp.tr_._00_triodion_ End-Insert
+				Insert_section VE._03_Stichera__.tr__.i_112as567 End-Insert
+				Insert_section TI.stp.me.com2 End-Insert
 				Insert_section VE._03_Stichera__.me__.p_456as8910 End-Insert
 				Insert_section TI.g.tr_._00_triodion End-Insert
 				Insert_section VE._03_Stichera__.glory__.tr__.gloryasglory_.hymn End-Insert
@@ -60,44 +55,30 @@ Status Final
 				Insert_section VE._08_Aposticha__.oc__.sunday__.aposticha1234 End-Insert	
 				Insert_section VE._08_Aposticha__.glory__.tr_ End-Insert	
 				when-movable-cycle-day-is
-					1 use: Insert_section VE._08_Aposticha__.both__.primarytheotokion__.mode5 End-Insert
-					8 use: Insert_section VE._08_Aposticha__.both__.primarytheotokion__.mode6 End-Insert
-					15 use: Insert_section VE._08_Aposticha__.both__.primarytheotokion__.mode8 End-Insert
-					22 use: Insert_section VE._08_Aposticha__.both__.primarytheotokion__.mode6 End-Insert
+					1 use:
+						Insert_section VE._08_Aposticha__.both__.primarytheotokion__.mode5 End-Insert
+					8 use:
+						Insert_section VE._08_Aposticha__.both__.primarytheotokion__.mode6 End-Insert
 				end-when
 				Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
 				Insert_section AP.res__.modeofweek End-Insert	
-				Insert_section TI.s._09_martyr_.m End-Insert
-				Insert_section AP.ga.martyr_mode4_.hymn End-Insert
+				Insert_section AP.glory__.ga.martyr_mode4 End-Insert
 				Insert_section TI.b.bf End-Insert
 				Insert_section AP.me2_.hymn End-Insert
 				Insert_section VE._10_End__.wisdom123.part1 End-Insert
 				Insert_section VE._11_Dismissal__.commemoration End-Insert
 			End-Section
-		14 use:
-			Section Instance04 //Soul Saturday
-				Insert_section se.tr.d014.ve.Instance01 End-Insert
-			End-Section	
-		16 thru 19 use:
-			Section Instance05 //Cheese Mon-Thur
-			End-Section
-		20 use:
-			Section Instance06 //Cheese Friday
-			End-Section
-		21 use:
-			Section Instance07 //Cheese Saturday
-			End-Section
 		otherwise use:
 			when-name-of-day-is
 				Sunday use:
-					Section Instance02
+					Section Instance_Sunday
 						Insert_section ST.ve.oc_me End-Insert
 						Insert_section VE._01_Beginning__.vespers End-Insert
 						Insert_section VE._02_Kekragaria__.modeofweek__.for10 End-Insert
 						Insert_section VE._03_Stichera__.oc__.sunday__.s_1234as1234 End-Insert
 						Insert_section TI.stp.bf End-Insert
 						Insert_section VE._03_Stichera__.me__.p_123as567 End-Insert
-						Insert_section TI.s._09_martyr_.m End-Insert
+						Insert_section TI.me.com2 End-Insert
 						Insert_section VE._03_Stichera__.me__.p_456as8910 End-Insert
 						Insert_section TI.g.bf End-Insert
 						Insert_section VE._03_Stichera__.glory__.me__.bothasglory_.hymn End-Insert
@@ -105,7 +86,7 @@ Status Final
 						Insert_section VE._04_Middle__.entrance End-Insert	
 						Insert_section VE._06_Litanies__.fullektenia End-Insert
 						Insert_section VE._08_Aposticha__.oc__.sunday__.aposticha1234 End-Insert
-						Insert_section TI.g.s._09_martyr_.m End-Insert
+						Insert_section TI.g.me.com2 End-Insert
 						Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_.hymn End-Insert
 						Insert_section TI.b.bf End-Insert
 						Insert_section VE._08_Aposticha__.glory__.me__.gloryasglory_.hymn End-Insert
@@ -118,7 +99,7 @@ Status Final
 						Insert_section VE._11_Dismissal__.commemoration End-Insert
 					End-Section
 				otherwise use:
-					Section Instance01
+					Section Instance_Weekday
 						Insert_section ST.ve.me End-Insert
 						Insert_section VE._01_Beginning__.vespers End-Insert
 						Insert_section VE._02_Kekragaria__.mode4__.for6 End-Insert

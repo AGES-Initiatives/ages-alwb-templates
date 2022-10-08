@@ -35,15 +35,9 @@ Status NA
 		Insert_template pdf.cover.credits End-Insert
 	End-Preface
 
-	when-movable-cycle-day-is
-		1, 8 use: Insert_section mc.map.ve.Section01 End-Insert
-		14 thru 25 use: Insert_section mc.map.ve.Section01 End-Insert 
-		26, 28, 33, 35, 40 use: //do nothing. use pl
-		27, 29, 30, 31, 32, 34, 36, 37, 38, 39 use:	Insert_section mc.map.ve.Section01 End-Insert
-		otherwise use:
 			when-name-of-day-is
 				Sunday use:
-					Section Instance02
+					Section Instance02 //2051
 					End-Section
 				otherwise use:	
 					Section Instance01
@@ -82,6 +76,5 @@ Status NA
 						Insert_section VE._11_Dismissal__.mealt1_commemoration End-Insert
 					End-Section
 			end-when
-	end-when
 	
 End-Template

@@ -417,6 +417,12 @@ Status NA
 	End-Section
 
 	Section _04_Middle
+		when-date-is
+			Feb 11, 25 use:
+				Rubric sid EntranceWithGospel End-Rubric
+			Mar 10 use:
+				Rubric sid EntranceWithGospel End-Rubric
+		end-when
 		Actor sid Deacon End-Actor
 		Rubric sid InALowVoice End-Rubric
 		Dialog sid pet00 End-Dialog
@@ -431,6 +437,19 @@ Status NA
 
 	Section _05_Readings
 		Insert_section Selector_VespersReadings.reader End-Insert
+	End-Section
+
+	Section _05_Readings_For_Other_PL
+		Actor sid Priest End-Actor
+		Dialog sid hi.s01_gr_GR_cog.hiVE.Key1110.text End-Dialog
+		Title role source sid sourceTriodion End-Title
+		Insert_section Lectionary_Triodion.Vespers_Readings.lesson1 End-Insert
+		Rubric sid Sung End-Rubric
+		Dialog sid Kelefson End-Dialog
+		Actor sid Priest End-Actor
+		Dialog sid exc17 sid exc18 sid eu.lipresanctified_gr_GR_cog.euPL.Key0701.text sid eu.lipresanctified_gr_GR_cog.euPL.Key0702.text End-Dialog
+		Actor sid Reader End-Actor
+		Insert_section Lectionary_Triodion.Vespers_Readings.lesson2 End-Insert
 	End-Section
 
 	Section _06
@@ -714,5 +733,5 @@ Status NA
 		Insert_section Psalm_33_Verses End-Insert
 		Insert_section Psalm_144_Verses End-Insert
 	End-Section
-
+	
 End-Template

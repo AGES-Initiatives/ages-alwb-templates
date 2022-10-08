@@ -1,0 +1,123 @@
+Template se.m02.d25.pl1
+
+Status NA
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 2 day 25 year 2023 End_Date
+			Page_Header_Even
+				center @lookup rid tr.trVL.header lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup rid tr.trVL.header lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template pdf.cover.ve.me End-Insert
+		Insert_template pdf.cover.credits End-Insert
+	End-Preface
+
+	when-movable-cycle-day-is 
+		25 use:
+			Section Instance01 //2015, 2026
+				Insert_section ST.pl.tr_me2 End-Insert
+				Insert_section PL._01_Beginning End-Insert
+				when-movable-cycle-day-is
+					25, 26 use:
+						Insert_section PL._02_Kekragaria__.mode8__.for10 End-Insert
+					27 use:
+						Insert_section PL._02_Kekragaria__.mode4__.for10 End-Insert
+					31, 32 use:
+						Insert_section PL._02_Kekragaria__.mode3__.for10 End-Insert
+					33 use:
+						Insert_section PL._02_Kekragaria__.mode1__.for10 End-Insert
+				end-when
+				Insert_section PL._03_Stichera_.montuewedthur_.Idiomela_Triodion End-Insert
+				Insert_section PL._03_Stichera_.montuewedthur_.Stichera_Triodion End-Insert
+				Insert_section TI.stp.s._06_forerunner End-Insert
+				Insert_section VE._03_Stichera__.me__.p_1123as78910 End-Insert
+				Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_ End-Insert
+				Insert_section VE._03_Stichera__.both__.metheotokion.stavrothetokion End-Insert
+				Insert_section PL._04_Middle End-Insert
+				Insert_section PL._05_Readings_For_Other_PL End-Insert
+				Insert_section PL._06 End-Insert
+				Set_Date month 2 day 24 year 2023 End_Date
+				Insert_section LE._01_Epistle__.menaion_ End-Insert
+				Insert_section LE._02_Gospel__.menaion_ End-Insert
+				Set_Date month 2 day 25 year 2023 End_Date
+				Insert_section PL._07 End-Insert
+				Insert_section PL._08 End-Insert
+				Insert_section PL._09 End-Insert
+				Insert_section PL._10 End-Insert
+				Insert_section PL._11 End-Insert
+				Insert_section PL._12 End-Insert
+				Insert_section PL._13_nocommemoration End-Insert
+			End-Section
+		26 use:
+			Section Instance02 //2004, 2083
+				Insert_section Instance01 End-Insert
+			End-Section
+		27 use:
+			Section Instance03 //2061
+				Insert_section Instance01 End-Insert
+			End-Section
+		28 use:
+			Section Instance04 //2034
+				Insert_section ST.pl.tr_me1 End-Insert
+				Insert_section PL._01_Beginning End-Insert
+				Insert_section PL._02_Kekragaria__.mode5__.for10 End-Insert
+				Insert_section PL._03_Stichera_.friday_.Idiomela_Triodion End-Insert
+				Insert_section TI.stp.me.com1 End-Insert
+				Insert_section VE._03_Stichera__.me__.p_1123as3456 End-Insert
+				Insert_section TI.s._00_saint_.m End-Insert
+				Insert_section VE._03_Stichera__.tr__.i_1234as78910 End-Insert
+				Insert_section VE._03_Stichera__.glory__.tr__.gloryasglory_ End-Insert
+				Insert_section VE._03_Stichera__.both__.firsttheotokion__.modeofweek End-Insert
+				Insert_section PL._04_Middle End-Insert
+				Insert_section PL._05_Readings End-Insert
+				Insert_section PL._06 End-Insert
+				Insert_section PL._07 End-Insert
+				Insert_section PL._08 End-Insert
+				Insert_section PL._09 End-Insert
+				Insert_section PL._10 End-Insert
+				Insert_section PL._11 End-Insert
+				Insert_section PL._12 End-Insert
+				Insert_section PL._13_commemoration End-Insert
+			End-Section
+
+		31 use:
+			Section Instanace05 //1980, 2132
+				Insert_section Instance01 End-Insert
+			End-Section
+
+		32 use:
+			Section Instanace //2037
+				Insert_section Instance01 End-Insert
+			End-Section
+
+		33 use:
+			Section Instanace //2010
+				Insert_section Instance01 End-Insert
+			End-Section
+	end-when	
+	
+End-Template

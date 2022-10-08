@@ -37,17 +37,26 @@ Status Final
 	End-Preface
 
 	when-movable-cycle-day-is
-		1, 8 use: Insert_section mc.map.ve.Section01 End-Insert
-		14 thru 33 use:	Insert_section mc.map.ve.Section01 End-Insert
+		1, 8, 14, 15, 18, 20, 21, 22 use:
+			Insert_section mc.map.ve.Section01 End-Insert
+		16, 17, 19 use:
+			Section Instance01
+				Insert_section mc.map.ve.Section01_Instance01_block1 End-Insert
+				Insert_section AP.ganame.Feb14_.afxentios_ End-Insert
+				Insert_section AP.gloryboth__.theotokion__.mode1_ End-Insert
+				Insert_section VE._10_End__.ektenia_wisdom End-Insert
+				Insert_section VE._11_Dismissal__.commemoration End-Insert
+			End-Section
+
 		otherwise use:
 			when-name-of-day-is
 				Sunday use:
-					Section Instance02
+					Section Instance_Sunday
 						Insert_section ST.ve.oc_me1 End-Insert
 						Insert_section VE._01_Beginning__.vespers End-Insert
 						Insert_section VE._02_Kekragaria__.modeofweek__.for10 End-Insert
 						Insert_section VE._03_Stichera__.oc__.sunday__.s_123456as123456 End-Insert
-						Insert_section TI.s._10_monastic_.m End-Insert
+						Insert_section TI.stp.me.com1 End-Insert
 						Insert_section VE._03_Stichera__.me__.p_1123as78910 End-Insert
 						Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_ End-Insert
 						Insert_section VE._03_Stichera__.both__.firsttheotokion__.modeofweek End-Insert
@@ -62,12 +71,12 @@ Status Final
 						Insert_section VE._11_Dismissal__.commemoration End-Insert
 					End-Section
 				otherwise use:
-					Section Instance01
+					Section Instance_Weekday
 						Insert_section ST.ve.oc_me1 End-Insert
 						Insert_section VE._01_Beginning__.vespers End-Insert
 						Insert_section VE._02_Kekragaria__.modeofweek__.for6 End-Insert
 						Insert_section VE._03_Stichera__.oc__.weekday__.p_XXXas567 End-Insert
-						Insert_section TI.s._10_monastic_.m End-Insert
+						Insert_section TI.me.com1 End-Insert
 						Insert_section VE._03_Stichera__.me__.p_123as8910 End-Insert
 						Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_ End-Insert
 						Insert_section VE._03_Stichera__.both__.metheotokion2 End-Insert

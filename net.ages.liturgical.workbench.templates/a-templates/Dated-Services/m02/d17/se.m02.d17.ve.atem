@@ -37,36 +37,14 @@ Status Final
 	End-Preface
 
 	when-movable-cycle-day-is
-		1, 8 use: 
-			Section Instance03
-				Insert_section ST.ve.oc_tr End-Insert
-				Insert_section VE._01_Beginning__.vespers End-Insert
-				Insert_section VE._02_Kekragaria__.modeofweek__.for10 End-Insert
-				Insert_section VE._03_Stichera__.oc__.sunday__.s_1234567as1234567 End-Insert
-				Insert_section TI.stp.tr_._ End-Insert
-				Insert_section VE._03_Stichera__.tr__.i_112as8910 End-Insert
-				Insert_section VE._03_Stichera__.glory__.tr__.gloryasglory_ End-Insert
-				Insert_section VE._03_Stichera__.both__.firsttheotokion__.modeofweek End-Insert
-				Insert_section VE._04_Middle__.entrance End-Insert
-				Insert_section VE._06_Litanies__.fullektenia End-Insert	
-				Insert_section VE._08_Aposticha__.oc__.sunday__.aposticha1234 End-Insert
-				Insert_section TI.g.tr_._00_triodion End-Insert
-				Insert_section VE._08_Aposticha__.glory__.tr_.hymn End-Insert
-				Insert_section VE._08_Aposticha__.both__.primarytheotokion__.mode5 End-Insert
-				Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
-				Insert_section AP.res__.modeofweek End-Insert
-				Insert_section AP.gloryboth__.primarytheotokion__.modeofweek End-Insert
-				Insert_section VE._10_End__.wisdom123.part1 End-Insert
-				Insert_section VE._11_Dismissal__.nocommemoration End-Insert
-			End-Section
-		14, 15, 16, 17, 18, 19, 20, 22, 23, 24, 25 use: 
+		1, 8, 14, 15, 16, 17, 18, 19, 20, 22, 23, 24, 25 use: 
 			Insert_section mc.map.ve.Section01 End-Insert 
 		21 use:
-			Section tr_d21
+			Section Instance01
 				Insert_section ST.ve.tr_me1 End-Insert
 				Insert_section VE._01_Beginning__.vespers End-Insert
 				Insert_section VE._02_Kekragaria__.mode8__.for6 End-Insert
-				Insert_section TI.stp.tr_._ End-Insert
+				Insert_section TI.stp.tr_._00_triodion_ End-Insert
 				Insert_section VE._03_Stichera__.tr__.p_123as567 End-Insert
 				Insert_section TI.s._00_saint_.m End-Insert
 				Insert_section VE._03_Stichera__.me__.p_123as8910 End-Insert
@@ -89,16 +67,35 @@ Status Final
 				Insert_section VE._10_End__.ektenia_wisdom End-Insert
 				Insert_section VE._11_Dismissal__.commemoration End-Insert
 			End-Section
-		26, 28, 33, 35 use: //do nothing. use pl
-		27, 29, 30, 31, 32, 34, 36, 37, 38, 39 use:	
-			Insert_section mc.map.ve.Section01 End-Insert
+
 		otherwise use:
 			when-name-of-day-is
 				Sunday use:
-					Section Instance02
+					Section Instance_Sunday
+						Insert_section ST.ve.oc_me1 End-Insert
+						Insert_section VE._01_Beginning__.vespers End-Insert
+						Insert_section VE._02_Kekragaria__.modeofweek__.for10 End-Insert
+						Insert_section VE._03_Stichera__.oc__.sunday__.s_123456as123456 End-Insert
+						Insert_section TI.stp.me.com1 End-Insert
+						Insert_section VE._03_Stichera__.me__.p_1123as78910 End-Insert
+						Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_ End-Insert
+						Insert_section VE._03_Stichera__.both__.firsttheotokion__.modeofweek End-Insert	
+						Insert_section VE._04_Middle__.entrance End-Insert	
+						Insert_section VE._06_Litanies__.fullektenia End-Insert
+						Insert_section VE._08_Aposticha__.oc__.sunday__.aposticha1234 End-Insert	
+						Insert_section TI.g.me.com1 End-Insert
+						Insert_section VE._08_Aposticha__.glory__.me__.gloryasglory_.hymn End-Insert
+						Insert_section VE._08_Aposticha__.both__.primarytheotokion__.mode2 End-Insert
+						Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
+						Insert_section AP.res__.modeofweek End-Insert
+						Insert_section TI.g.me.com1 End-Insert
+						Insert_section AP.me1_.hymn End-Insert
+						Insert_section AP.both__.primarytheotokion__.mode2 End-Insert
+						Insert_section VE._10_End__.wisdom123.part1 End-Insert
+						Insert_section VE._11_Dismissal__.commemoration End-Insert
 					End-Section
 				otherwise use:
-					Section Instance01
+					Section Instance_Weekday
 						Insert_section ST.ve.oc_me1 End-Insert
 						Insert_section VE._01_Beginning__.vespers End-Insert
 						Insert_section VE._02_Kekragaria__.mode2__.for6 End-Insert

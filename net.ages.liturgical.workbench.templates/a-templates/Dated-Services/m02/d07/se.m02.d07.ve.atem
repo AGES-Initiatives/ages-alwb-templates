@@ -37,22 +37,19 @@ Status Final
 	End-Preface
 
 	when-movable-cycle-day-is
-		1 use: 
-		8 use: 
-		13, 17 use: //leavetaking of Meeting
-		14 use:	Insert_section se.tr.d014.ve.Instance01 End-Insert
-		15 use: 
-		16, 19 use:
-		18, 20 use:
-		21 use:
-		22 use: 
-		23 thru 26 use: 
-		27 use: 
-		28 use: Insert_section se.tr.d028.pl1.Instance01 End-Insert
+		1, 8 use:
+			Insert_section mc.map.ve.Section01_Instance02 End-Insert
+		13 use: 
+			Section Instance01 //leavetaking of Meeting
+				Insert_section se.m02.d09.ve.Instance_Weekday End-Insert
+			End-Section
+		14 use:
+			Insert_section se.tr.d014.ve.Instance01 End-Insert
+
 		otherwise use:
 			when-name-of-day-is
 				Sunday use:
-					Section Instance02
+					Section Instance_Sunday
 						Insert_section ST.ve.oc_meaf End-Insert
 						Insert_section VE._01_Beginning__.vespers End-Insert
 						Insert_section VE._02_Kekragaria__.modeofweek__.for10 End-Insert
@@ -78,7 +75,7 @@ Status Final
 						Insert_section VE._11_Dismissal__.nocommemoration End-Insert
 					End-Section
 				otherwise use:
-					Section Instance01
+					Section Instance_Weekday
 						Insert_section ST.ve.me End-Insert
 						Insert_section VE._01_Beginning__.vespers End-Insert
 						Insert_section VE._02_Kekragaria__.mode1__.for6 End-Insert
@@ -86,10 +83,8 @@ Status Final
 						Insert_section VE._03_Stichera__.me__.p_123as567 End-Insert
 						Insert_section TI.me.com2 End-Insert
 						Insert_section VE._03_Stichera__.me__.p_456as8910 End-Insert
-						Set_Date month 2 day 2 year 2023 End_Date
-						Insert_section TI.gb.f End-Insert
-						Insert_section MA._13_Lauds__.gloryboth__.me__.gloryasgloryboth_.hymn End-Insert
-						Set_Date month 2 day 7 year 2023 End_Date
+						Insert_section TI.gb.me.com1 End-Insert
+						Insert_section VE._03_Stichera__.gloryboth__.me__.gloryasgloryboth_.hymn End-Insert
 						Insert_section VE._04_Middle__.noentrance End-Insert	
 						Insert_section VE._06_Litanies__.noektenia End-Insert
 						Insert_section VE._08_Aposticha__.me__.p_meeting12GB End-Insert
