@@ -36,26 +36,63 @@ Status Final
 		Insert_template pdf.cover.credits End-Insert
 	End-Preface
 
-	when-movable-cycle-day-is 26, 28, 33, 35, 40, 42, 47, 49, 54, 55, 56, 61, 63
-		use: //do nothing
+	when-movable-cycle-day-is 
+		14, 15, 16, 17, 18, 19, 20, 21, 23, 24, 25, 27, 29, 30, 31, 32, 34, 36, 37, 38, 39, 41, 43, 44 use:
+			Insert_section mc.map.ve.Section01 End-Insert
+
+		13 use:
+			Section Instance01
+				Break line End_Break
+				Rubric sid me.m03.d08_gr_GR_cog.meR001 End-Rubric
+				Break line End_Break
+				Set_Date month 3 day 9 year 2023 End_Date
+				Insert_section ST.ve.me1 End-Insert
+				Insert_section VE._01_Beginning__.vespers End-Insert
+				Insert_section VE._02_Kekragaria__.mode2__.for6 End-Insert
+				Insert_section TI.ip.me.com1 End-Insert
+				Insert_section VE._03_Stichera__.me__.i_112233as5678910 End-Insert
+				Insert_section MA._16_Aposticha__.glory__.me__.gloryasglory_ End-Insert
+				Set_Date month 3 day 8 year 2023 End_Date
+				Insert_section VE._03_Stichera__.both__.firsttheotokion__.mode2_ End-Insert
+				Insert_section VE._04_Middle__.entrance End-Insert
+				Insert_section VE._06_Litanies__.fullektenia End-Insert
+				Set_Date month 3 day 9 year 2023 End_Date
+				Insert_section VE._08_Aposticha__.me__.p_martyrs45 End-Insert
+				Insert_section VE._08_Aposticha__.glory__.me__.gloryasglory_ End-Insert
+				Insert_section VE._08_Aposticha__.both__.secondarytheotokion__.mode6_vine__.martyrs End-Insert
+				Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
+				Insert_section AP.me1_ End-Insert
+				Insert_section AP.gloryboth__.primarytheotokion__.mode1 End-Insert
+				Insert_section VE._10_End__.wisdom123.part1 End-Insert
+				Insert_section VE._11_Dismissal__.commemoration End-Insert
+				Set_Date month 3 day 8 year 2023 End_Date
+			End-Section
+
+		22 use:
+			Section Instance02 //2065, 2076
+				//Forty Martyrs
+			End-Section
+
+		26, 28, 33, 35, 40, 42 use: //pl
+
 		otherwise use:
-			when-movable-cycle-day-is
-				1 thru 12 use:
-					Insert_section mc.map.ve.Section01 End-Insert
-				13 use:
-					Section Instance02
-					// 40 Martyrs 
-					End-Section
-				14 use: Insert_section se.tr.d014.ve.Instance01 End-Insert	
-				15 thru 25 use:
-					Insert_section mc.map.ve.Section01 End-Insert
-				27, 29, 30, 31, 32, 34, 36, 37, 38, 39, 41, 43, 44, 45, 46, 48, 50, 51, 52, 53, 57, 58, 59, 60, 62, 64, 65, 70 
-					use: Insert_section mc.map.ve.Section01 End-Insert
-				72 thru 127
-					use: Insert_section mc.map.ve.Section01 End-Insert
-				otherwise use:
+			Section Instance_Weekday
+				Insert_section ST.ve.oc_me1_ho End-Insert
+				Insert_section VE._01_Beginning__.vespers End-Insert
+				Insert_section VE._02_Kekragaria__.modeofweek__.for6 End-Insert
+				Insert_section VE._03_Stichera__.oc__.weekday__.p_XXXas567 End-Insert
+				Insert_section TI.me.com1 End-Insert
+				Insert_section VE._03_Stichera__.me__.p_123as8910 End-Insert
+				Insert_section VE._03_Stichera__.gloryboth__.metheotokion End-Insert
+				Insert_section VE._04_Middle__.noentrance End-Insert	
+				Insert_section VE._06_Litanies__.noektenia End-Insert
+				Insert_section VE._08_Aposticha__.oc__.weekday_ End-Insert
+				Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
+				Insert_section AP.da__.vespers End-Insert
+				Insert_section VE._10_End__.ektenia_wisdom End-Insert
+				Insert_section VE._11_Dismissal__.nocommemoration End-Insert
+			End-Section
 				
-			end-when
 	end-when	
 
 End-Template
