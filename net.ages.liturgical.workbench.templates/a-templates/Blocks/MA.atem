@@ -492,10 +492,7 @@ Template MA
 		End-Section
 	End-Section
 	
-//	Section _02_Lent
-//	End-Section
-
-	Section _03_Kathisma1__
+	Section _02_Kathisma1__
 		Section psalter
 		End-Section
 		Section litany
@@ -1182,9 +1179,9 @@ Template MA
 				Insert_section oc__.weekday.saturday End-Insert
 				Insert_section PS._03_Matins_2nd__.rubric__.sos End-Insert
 				Actor sid Choir End-Actor
-				Insert_section MA._04_Kathisma2__.evlogetaria_sos_full End-Insert
-				Insert_section MA._04_Kathisma2__.litany_sos End-Insert
-				Insert_section MA._04_Kathisma2__.sos End-Insert
+				Insert_section MA._03_Kathisma2__.evlogetaria_sos_full End-Insert
+				Insert_section MA._03_Kathisma2__.litany_sos End-Insert
+				Insert_section MA._03_Kathisma2__.sos End-Insert
 			End-Section
 			Section weekday_for2
 				when-name-of-day-is
@@ -1199,7 +1196,7 @@ Template MA
 					Tuesday, Friday use:
 						Section kathismata2and3
 							Insert_section PS._02_Matins_1st__.rubric__.no_litany End-Insert
-							Insert_section _04_Kathisma2__.oc__.weekday End-Insert
+							Insert_section _03_Kathisma2__.oc__.weekday End-Insert
 							Insert_section PS._03_Matins_2nd__.rubric__.no_litany End-Insert
 							Actor sid Choir End-Actor
 							Insert_section _05_Kathisma3__.append__.oc End-Insert
@@ -1213,7 +1210,7 @@ Template MA
 				Insert_section weekday End-Insert
 				Insert_section PS._03_Matins_2nd__.rubric__.no_litany End-Insert
 				Actor sid Choir End-Actor
-				Insert_section _04_Kathisma2__.append__.oc__.weekday End-Insert
+				Insert_section _03_Kathisma2__.append__.oc__.weekday End-Insert
 			End-Section
 			Section weekday123
 				Insert_section PS._02_Matins_1st__.rubric__.has_litany End-Insert
@@ -1222,7 +1219,7 @@ Template MA
 				Insert_section weekday End-Insert
 				Insert_section PS._03_Matins_2nd__.rubric__.no_litany End-Insert
 				Actor sid Choir End-Actor
-				Insert_section _04_Kathisma2__.append__.oc__.weekday End-Insert
+				Insert_section _03_Kathisma2__.append__.oc__.weekday End-Insert
 				when-name-of-day-is Monday, Tuesday, Wednesday, Thursday, Friday use:
 					Insert_section _05_Kathisma3__.append__.oc End-Insert
 				end-when
@@ -1739,7 +1736,7 @@ Template MA
 		End-Section
 	End-Section
 
-	Section _04_Kathisma2__
+	Section _03_Kathisma2__
 		Section append__
 			Section me__
 				Section alt1__
@@ -2930,6 +2927,97 @@ Template MA
 		End-Section
 	End-Section
 
+	Section _04_Polyeleos__
+		Section titles
+			Title<Tdesig>sid OPolyeleos</>End-Title
+			Rubric sid psa134.title End-Rubric
+			Rubric sid psa135.title End-Rubric
+			Rubric sid eclog.title1 End-Rubric
+		End-Section
+		Section selected_verses__
+			Section mc_me1
+				Insert_section Selector_PolyeleosSelectedVerses.mc_me1 End-Insert
+			End-Section
+			Section mealt1
+				Insert_section Selector_PolyeleosSelectedVerses.mealt1 End-Insert
+			End-Section
+		End-Section
+		Section glory_triadic
+			Title sid Doxa<Tdesig>sid Triadikon</>End-Title
+			Title<Tmode>sid oc.m1.d1_gr_GR_cog.ocLI.BeatitudesTr.mode</>End-Title
+			Media sid oc.m1.d1_gr_GR_cog.ocLI.BeatitudesTr.text End-Media
+			Hymn sid oc.m1.d1_gr_GR_cog.ocLI.BeatitudesTr.text @ver media-off End-Hymn
+		End-Section
+		Section both_theotokion
+			Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+			Title<Tmode>sid oc.m1.d1_gr_GR_cog.ocLI.BeatitudesT.mode</>End-Title
+			when-movable-cycle-day-is
+				72 thru 109 use:
+					Media sid oc.m1.d1_gr_GR_cog.ocLI.BeatitudesT.text End-Media
+					Hymn sid oc.m1.d1_gr_GR_cog.ocLI.BeatitudesT.text @ver media-off End-Hymn
+				otherwise use:
+					when-name-of-day-is
+						Sunday use:
+							Media sid oc.m1.d1_gr_GR_cog.ocLI.BeatitudesT.text End-Media
+							Hymn sid oc.m1.d1_gr_GR_cog.ocLI.BeatitudesT.text @ver media-off End-Hymn
+						otherwise use:
+							Media sid hoMA.EclogeTheotokionWeekday.text End-Media
+							Hymn sid hoMA.EclogeTheotokionWeekday.text @ver media-off End-Hymn
+					end-when
+			end-when
+		End-Section
+		Section litany
+			Insert_section LN.ShortLitany16_priest End-Insert
+		End-Section
+		Section psalm_134
+			Title<Tdesig>sid OPolyeleos</>End-Title
+			Insert_section PS.Polyeleos_Psalm_134 End-Insert
+		End-Section
+		Section psalm_135
+			Insert_section PS.Polyeleos_Psalm_135 End-Insert
+		End-Section
+		Section sunday__
+			Section me1_
+				Section polyeleos
+					Insert_section MA._04_Polyeleos__.titles End-Insert
+					Insert_section MA._04_Polyeleos__.selected_verses__.mc_me1 End-Insert
+					Insert_section MA._04_Polyeleos__.glory_triadic End-Insert
+					Insert_section MA._04_Polyeleos__.both_theotokion End-Insert
+					Insert_section MA._04_Polyeleos__.litany End-Insert
+					Insert_section MA._05_Kathisma3__.me__.kath31o323t_ End-Insert
+				End-Section
+				Section evlogetaria
+					Insert_section MA._05_Kathisma3__.resurrectional_evlogetaria End-Insert
+					Insert_section MA._06_Antiphons__.sunday_.litany End-Insert
+				End-Section
+				Section hypakoe_antiphons
+					Insert_section MA._06_Antiphons__.sunday_.hypakoe End-Insert
+					Insert_section MA._06_Antiphons__.append__.sunday_antiphons_prokeimenon.antiphons End-Insert
+				End-Section
+				Insert_section MA._06_Antiphons__.sunday_.prokeimenon End-Insert
+			End-Section
+			Section mealt1_
+				Section polyeleos
+					Insert_section MA._04_Polyeleos__.titles End-Insert
+					Insert_section MA._04_Polyeleos__.selected_verses__.mealt1 End-Insert
+					Insert_section MA._04_Polyeleos__.glory_triadic End-Insert
+					Insert_section MA._04_Polyeleos__.both_theotokion End-Insert
+					Insert_section MA._04_Polyeleos__.litany End-Insert
+					Insert_section MA._05_Kathisma3__.me__.alt1__.kath31o323t_ End-Insert
+				End-Section
+				Section evlogetaria
+					Insert_section MA._05_Kathisma3__.resurrectional_evlogetaria End-Insert
+					Insert_section MA._06_Antiphons__.sunday_.litany End-Insert
+				End-Section
+				Section hypakoe_antiphons
+					Insert_section MA._06_Antiphons__.sunday_.hypakoe End-Insert
+					Insert_section MA._06_Antiphons__.append__.sunday_antiphons_prokeimenon.antiphons End-Insert
+				End-Section
+				Insert_section MA._06_Antiphons__.sunday_.prokeimenon End-Insert
+			End-Section
+		End-Section
+	End-Section
+
 	Section _05_Kathisma3__
 		Section append__
 			Section eu__
@@ -3214,117 +3302,6 @@ Template MA
 			End-Section
 		End-Section
 		Section psalter
-		End-Section
-		Section polyeleos__
-			Section psalm_134
-				Actor sid Choir End-Actor
-				Title<Tdesig>sid OPolyeleos</>End-Title
-				Insert_section PS.Polyeleos_Psalm_134 End-Insert
-			End-Section
-			Section append__
-				Section psalm_134
-					Title<Tdesig>sid OPolyeleos</>End-Title
-					Insert_section PS.Polyeleos_Psalm_134 End-Insert
-				End-Section
-				Section psalm_135
-					Insert_section PS.Polyeleos_Psalm_135 End-Insert
-				End-Section
-				Section selected_verses__
-					Section angels
-						Insert_section bk.ecloge.angels.Section01 End-Insert
-					End-Section
-					Section annunciation
-						Insert_section bk.ecloge.annunciation.Section01 End-Insert
-					End-Section
-					Section apostles
-						Insert_section bk.ecloge.apostles.Section01 End-Insert
-					End-Section
-					Section ascension
-						Insert_section bk.ecloge.ascension.Section01 End-Insert
-					End-Section
-					Section christmas
-						Insert_section bk.ecloge.christmas.Section01 End-Insert
-					End-Section
-					Section cross
-						Insert_section bk.ecloge.cross.Section01 End-Insert
-					End-Section
-					Section dormition
-						Insert_section bk.ecloge.dormition.Section01 End-Insert
-					End-Section
-					Section entry
-						Insert_section bk.ecloge.entry.Section01 End-Insert
-					End-Section
-					Section epiphany
-						Insert_section bk.ecloge.epiphany.Section01 End-Insert
-					End-Section
-					Section forerunner
-						Insert_section bk.ecloge.forerunner.Section01 End-Insert
-					End-Section
-					Section hierarchs
-						Insert_section bk.ecloge.hierarchs.Section01 End-Insert
-					End-Section
-					Section martyrs
-						Insert_section bk.ecloge.martyrs.Section01 End-Insert
-					End-Section
-					Section monastics
-						Insert_section bk.ecloge.monastics.Section01 End-Insert
-					End-Section
-					Section palm_sunday
-						Insert_section bk.ecloge.palm.Section01 End-Insert
-					End-Section
-					Section pentecost
-						Insert_section bk.ecloge.pentecost.Section01 End-Insert
-					End-Section
-					Section prophetelias
-						Insert_section bk.ecloge.prophetelias.Section01 End-Insert
-					End-Section
-					Section stanna
-						Insert_section bk.ecloge.stanna.Section01 End-Insert
-					End-Section
-					Section theotokos
-						Insert_section bk.ecloge.theotokos.Section01 End-Insert
-					End-Section
-					Section theotokos_birth
-						Insert_section bk.ecloge.theotokosbirth.Section01 End-Insert
-					End-Section
-					Section thomas_sunday
-						Insert_section bk.ecloge.thomas.Section01 End-Insert
-					End-Section
-					Section transfiguration
-						Insert_section bk.ecloge.transfiguration.Section01 End-Insert
-					End-Section
-				End-Section
-				Section glory_triadic
-					Title sid Doxa<Tdesig>sid Triadikon</>End-Title
-					Title<Tmode>sid oc.m1.d1_gr_GR_cog.ocLI.BeatitudesTr.mode</>End-Title
-					Media sid oc.m1.d1_gr_GR_cog.ocLI.BeatitudesTr.text End-Media
-					Hymn sid oc.m1.d1_gr_GR_cog.ocLI.BeatitudesTr.text @ver media-off End-Hymn
-				End-Section
-				Section both_theotokion
-					Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
-					Title<Tmode>sid oc.m1.d1_gr_GR_cog.ocLI.BeatitudesT.mode</>End-Title
-					when-movable-cycle-day-is
-						72 thru 109 use:
-							Media sid oc.m1.d1_gr_GR_cog.ocLI.BeatitudesT.text End-Media
-							Hymn sid oc.m1.d1_gr_GR_cog.ocLI.BeatitudesT.text @ver media-off End-Hymn
-						otherwise use:
-							when-name-of-day-is
-								Sunday use:
-									Media sid oc.m1.d1_gr_GR_cog.ocLI.BeatitudesT.text End-Media
-									Hymn sid oc.m1.d1_gr_GR_cog.ocLI.BeatitudesT.text @ver media-off End-Hymn
-								otherwise use:
-									Media sid hoMA.EclogeTheotokionWeekday.text End-Media
-									Hymn sid hoMA.EclogeTheotokionWeekday.text @ver media-off End-Hymn
-							end-when
-					end-when
-				End-Section
-			End-Section
-			Section titles
-				Title<Tdesig>sid OPolyeleos</>End-Title
-				Rubric sid psa134.title End-Rubric
-				Rubric sid psa135.title End-Rubric
-				Rubric sid eclog.title1 End-Rubric
-			End-Section
 		End-Section
 		Section no_resurrectional_evlogetaria
 			Break line End_Break
@@ -3642,32 +3619,35 @@ Template MA
 					Insert_section Selector_MatinsProkeimenon.me1_prokeimenon End-Insert
 				End-Section
 			End-Section	
-			Section sunday_antiphons
-				Title role source sid sourceOctoechos End-Title
-				Title<Tdesig>sid OiAnavathmoi</>End-Title
-				Media rid ocMA.MM.AntiphonsProkeimenon.text End-Media
-				Title<Tdesig>sid Antifonon1</><Tmode>rid ocMA.Antiphon11.mode</>End-Title
-				Hymn rid ocMA.Antiphon11.text @ver End-Hymn
-				Hymn rid ocMA.Antiphon12.text @ver End-Hymn
-				Title sid DoxaKaiNyn End-Title
-				Hymn rid ocMA.Antiphon13.text @ver End-Hymn
-				Title<Tdesig>sid Antifonon2</>End-Title
-				Hymn rid ocMA.Antiphon21.text @ver End-Hymn
-				Hymn rid ocMA.Antiphon22.text @ver End-Hymn
-				Title sid DoxaKaiNyn End-Title
-				Hymn rid ocMA.Antiphon23.text @ver End-Hymn
-				Title<Tdesig>sid Antifonon3</>End-Title
-				Hymn rid ocMA.Antiphon31.text @ver End-Hymn
-				Hymn rid ocMA.Antiphon32.text @ver End-Hymn
-				Title sid DoxaKaiNyn End-Title
-				Hymn rid ocMA.Antiphon33.text @ver End-Hymn
-				when-mode-of-week-is M8 use:
-					Title<Tdesig>sid Antifonon4</>End-Title
-					Hymn rid ocMA.Antiphon41.text @ver End-Hymn
-					Hymn rid ocMA.Antiphon42.text @ver End-Hymn
+			Section sunday_antiphons_prokeimenon
+				Section antiphons
+					Title role source sid sourceOctoechos End-Title
+					Title<Tdesig>sid OiAnavathmoi</>End-Title
+					Media rid ocMA.MM.AntiphonsProkeimenon.text End-Media
+					Title<Tdesig>sid Antifonon1</><Tmode>rid ocMA.Antiphon11.mode</>End-Title
+					Hymn rid ocMA.Antiphon11.text @ver End-Hymn
+					Hymn rid ocMA.Antiphon12.text @ver End-Hymn
 					Title sid DoxaKaiNyn End-Title
-					Hymn rid ocMA.Antiphon43.text @ver End-Hymn
-				end-when
+					Hymn rid ocMA.Antiphon13.text @ver End-Hymn
+					Title<Tdesig>sid Antifonon2</>End-Title
+					Hymn rid ocMA.Antiphon21.text @ver End-Hymn
+					Hymn rid ocMA.Antiphon22.text @ver End-Hymn
+					Title sid DoxaKaiNyn End-Title
+					Hymn rid ocMA.Antiphon23.text @ver End-Hymn
+					Title<Tdesig>sid Antifonon3</>End-Title
+					Hymn rid ocMA.Antiphon31.text @ver End-Hymn
+					Hymn rid ocMA.Antiphon32.text @ver End-Hymn
+					Title sid DoxaKaiNyn End-Title
+					Hymn rid ocMA.Antiphon33.text @ver End-Hymn
+					when-mode-of-week-is M8 use:
+						Title<Tdesig>sid Antifonon4</>End-Title
+						Hymn rid ocMA.Antiphon41.text @ver End-Hymn
+						Hymn rid ocMA.Antiphon42.text @ver End-Hymn
+						Title sid DoxaKaiNyn End-Title
+						Hymn rid ocMA.Antiphon43.text @ver End-Hymn
+					end-when
+				End-Section
+				Insert_section sunday_.prokeimenon End-Insert
 			End-Section //SunAntiphons
 		End-Section
 		Section mode41_mealt1_prokeimenon_
@@ -4502,6 +4482,38 @@ Template MA
 				Hymn rid peMA.Ode3Kathisma3.text @ver media-off End-Hymn
 			End-Section
 			Section tr__
+				Section kath1gme1bt
+					Actor sid Choir End-Actor
+					Title<Tdesig>sid Kathisma</>End-Title
+					Title role source0 sid sourceTriodion End-Title
+					Title<Tmode>rid trMA.Ode3Kathisma1.mode</><Tmelody>rid trMA.Ode3Kathisma1.melody</>End-Title
+					Media rid trMA.Ode3Kathisma1.text End-Media
+					Hymn rid trMA.Ode3Kathisma1.text @ver media-off End-Hymn
+					Insert_section TI.g.me._ End-Insert
+					Title role source0 sid sourceMenaion End-Title
+					Title<Tmode>rid meMA.Ode3Kathisma1.mode</><Tmelody>rid meMA.Ode3Kathisma1.melody</>End-Title
+					Media rid meMA.Ode3Kathisma1.text End-Media
+					Hymn rid meMA.Ode3Kathisma1.text @ver media-off End-Hymn
+					Insert_section TI.b.th End-Insert
+					Media rid meMA.Ode3KathismaT.text End-Media
+					Hymn rid meMA.Ode3KathismaT.text @ver media-off End-Hymn
+				End-Section
+				Section kath1gme2bt
+					Actor sid Choir End-Actor
+					Title<Tdesig>sid Kathisma</>End-Title
+					Title role source0 sid sourceTriodion End-Title
+					Title<Tmode>rid trMA.Ode3Kathisma1.mode</><Tmelody>rid trMA.Ode3Kathisma1.melody</>End-Title
+					Media rid trMA.Ode3Kathisma1.text End-Media
+					Hymn rid trMA.Ode3Kathisma1.text @ver media-off End-Hymn
+					Insert_section TI.g.me._ End-Insert
+					Title role source0 sid sourceMenaion End-Title
+					Title<Tmode>rid meMA.Ode3Kathisma2.mode</><Tmelody>rid meMA.Ode3Kathisma2.melody</>End-Title
+					Media rid meMA.Ode3Kathisma2.text End-Media
+					Hymn rid meMA.Ode3Kathisma2.text @ver media-off End-Hymn
+					Insert_section TI.b.th End-Insert
+					Media rid meMA.Ode3KathismaT.text End-Media
+					Hymn rid meMA.Ode3KathismaT.text @ver media-off End-Hymn
+				End-Section
 				Section kath3g4b5
 					Actor sid Choir End-Actor
 					Title<Tdesig>sid Kathisma</>End-Title
