@@ -39,18 +39,14 @@ Status Final
 	End-Preface
 
 	when-movable-cycle-day-is
-		1, 8, 15, 22 use:
-			Section Instance03 //Triodion Sunday
+		1, 8 use:
+			Section Instance01 //2031
 			End-Section
-		14 use: Insert_section Instance01 End-Insert
-		16 thru 21 use: Insert_section Instance01 End-Insert
-		23 use:
-			Section Instance07
-			End-Section
+
 		otherwise use:
 			when-name-of-day-is
 				Sunday use:
-					Section Instance02
+					Section Instance_Sunday
 						Insert_section ST.ma.oc_me1 End-Insert
 						Insert_section MA._01_Beginning__.modeofweek End-Insert
 						Insert_section AP.res__.modeofweek End-Insert	
@@ -157,7 +153,7 @@ Status Final
 						Insert_section MA._20_Dismissal__.nocommemoration End-Insert				
 					End-Section
 				otherwise use:
-					Section Instance01
+					Section Instance_Weekday
 						Insert_section ST.ma.me1 End-Insert
 						Insert_section MA._01_Beginning__.mode1 End-Insert
 						Insert_section AP.f3 End-Insert

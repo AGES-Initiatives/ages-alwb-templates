@@ -37,22 +37,21 @@ Status Final
 	End-Preface
 
 	when-movable-cycle-day-is
-		1 use: 
-		8 use: 
-		13, 17 use: //leavetaking of Meeting
-		14 use:	Insert_section se.tr.d014.ma.Instance01 End-Insert
-		15 use: 
-		16, 19 use:
-		18, 20 use:
-		21 use:
-		22 use: 
-		23 thru 26 use: 
-		27 use: 
-		28 use: 
+		1, 8 use:
+			Insert_section mc.map.ma.Section01_Instance02 End-Insert
+		13 use: 
+			Section Instance01 //leavetaking of Meeting
+				Insert_section se.m02.d09.ma.Instance_Weekday End-Insert
+			End-Section
+		14 use:
+			Insert_section se.tr.d014.ma.Instance01 End-Insert
+		15 use:
+			Insert_section mc.map.ma.Section01 End-Insert
+
 		otherwise use:
 			when-name-of-day-is
 				Sunday use:
-					Section Instance02
+					Section Instance_Sunday
 						Insert_section ST.ma.oc_meaf End-Insert
 						Insert_section MA._01_Beginning__.modeofweek End-Insert
 						Insert_section AP.resgloryres End-Insert
@@ -84,7 +83,7 @@ Status Final
 						Insert_section MA._14_Doxology__.sunday End-Insert
 					End-Section
 				otherwise use:
-					Section Instance01
+					Section Instance_Weekday
 						Insert_section ST.ma.me End-Insert
 						Insert_section MA._01_Beginning__.mode4 End-Insert
 						Insert_section AP.ga.fathers_ End-Insert

@@ -37,13 +37,12 @@ Status Final
 	End-Preface
 
 	when-movable-cycle-day-is
-		1, 8, 15, 22 use:
-			Section Instance03 //Triodion Sunday
+		1, 8 use:
+			Section Instance01 //2004, 2083
 				Insert_section ST.ma.oc_tr_me End-Insert
 				Insert_section MA._01_Beginning__.modeofweek End-Insert
 				Insert_section AP.res__.modeofweek End-Insert	
-				Insert_section TI.s._09_martyr_.m End-Insert
-				Insert_section AP.ga.martyr_mode4_.hymn End-Insert
+				Insert_section AP.glory__.ga.martyr_mode4 End-Insert
 				Insert_section TI.b.bf End-Insert
 				Insert_section AP.me2_.hymn End-Insert
 				Insert_section MA._02_Kathisma1__.litany End-Insert
@@ -69,41 +68,24 @@ Status Final
 				Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
 				Insert_section MA._12_Exaposteilarion__.eo__.eoofweek_.exap End-Insert
 				Insert_section MA._12_Exaposteilarion__.append__.tr1 End-Insert
-				Insert_section TI.s._00_saint_.m End-Insert
+				Insert_section TI.me.com2 End-Insert
 				Insert_section MA._12_Exaposteilarion__.append__.me__.exap1 End-Insert
 				Insert_section TI.bf End-Insert
 				Insert_section MA._12_Exaposteilarion__.append__.me__.exap2_ End-Insert
 				Insert_section MA._13_Lauds__.modeofweek__.for6 End-Insert
 				Insert_section MA._13_Lauds__.oc__.s_123as123 End-Insert
-				when-movable-cycle-day-is
-					1 use: Insert_section MA._13_Lauds__.tr__.i_12as45_ End-Insert
-					8 use: Insert_section MA._13_Lauds__.tr__.i_12as45_ End-Insert
-					15 use: Insert_section MA._13_Lauds__.tr__.i_12as45_ End-Insert
-					22 use: Insert_section MA._13_Lauds__.tr__.i_12as45_ End-Insert
-				end-when
+				Insert_section MA._13_Lauds__.tr__.i_12as45_ End-Insert
 				Insert_section TI.bfp End-Insert
 				Insert_section MA._13_Lauds__.me__.p_apos123as6meeting12 End-Insert
 				Insert_section MA._13_Lauds__.glory__.tr__.gloryasglory_ End-Insert
 				Insert_section MA._13_Lauds__.both__.eotheotokion End-Insert
 				Insert_section MA._14_Doxology__.sunday End-Insert
 			End-Section
-		14 use:
-			Section Instance04 //Soul Saturday
-				Insert_section se.tr.d014.ma.Instance01 End-Insert
-			End-Section	
-		16 thru 19 use:
-			Section Instance05 //Cheese Mon-Thur
-			End-Section
-		20 use:
-			Section Instance06 //Cheese Friday
-			End-Section
-		21 use:
-			Section Instance07 //Cheese Saturday
-			End-Section
+
 		otherwise use:
 			when-name-of-day-is
 				Sunday use:
-					Section Instance02
+					Section Instance_Sunday
 						Insert_section ST.ma.oc_me End-Insert
 						Insert_section MA._01_Beginning__.modeofweek End-Insert
 						Insert_section AP.res__.modeofweek End-Insert
@@ -142,7 +124,7 @@ Status Final
 						Insert_section MA._14_Doxology__.sunday End-Insert			
 					End-Section
 				otherwise use:
-					Section Instance01
+					Section Instance_Weekday
 						Insert_section ST.ma.me End-Insert
 						Insert_section MA._01_Beginning__.mode1 End-Insert
 						Insert_section TI.a.bf End-Insert

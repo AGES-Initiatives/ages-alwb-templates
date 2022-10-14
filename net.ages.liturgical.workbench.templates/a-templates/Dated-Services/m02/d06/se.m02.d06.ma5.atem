@@ -36,81 +36,94 @@ Status Final
 		Insert_template pdf.cover.credits End-Insert
 	End-Preface
 
-	when-name-of-day-is
-		Sunday use:
-			Section Instance02
-				Insert_section ST.ma.oc_meaf_mealt1 End-Insert
-				Insert_section MA._01_Beginning__.modeofweek End-Insert
-				Insert_section AP.res__.modeofweek End-Insert
-				Insert_section TI.g.s._00_saint_.m End-Insert
-				Insert_section AP.mealt11_.hymn End-Insert
-				Insert_section AP.both__.af End-Insert
-				Insert_section MA._02_Kathisma1__.litany End-Insert
-				Insert_section MA._02_Kathisma1__.oc__.sunday__.withfeast End-Insert
-				Insert_section MA._03_Kathisma2__.append__.oc__.sunday__.withfeast End-Insert
-				Insert_section MA._05_Kathisma3__.append__.me__.alt1__.kath31_ End-Insert
-				Insert_section MA._05_Kathisma3__.gloryboth__.feast End-Insert
-				Insert_section MA._05_Kathisma3__.resurrectional_evlogetaria End-Insert
-				Insert_section MA._06_Antiphons__.sunday_ End-Insert
-				Insert_section MA._10_Canon__.litanies__.ode6 End-Insert
-				Insert_section MA._11_Kontakion__.sunday End-Insert			
-				Insert_section SY.Synaxarion_mealt1 End-Insert
-				Insert_section KA.choir__._1345678 End-Insert
-				Insert_section MA._07_Gospel__.yes__.priest__.eo End-Insert
-				Insert_section MA._08_Supplication__.priest__.mealt1 End-Insert
-				Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
-				Insert_section MA._10_Canon__.magnificat__.modeofkatavasia End-Insert
-				Insert_section KA.append__._9 End-Insert
-				Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
-				Insert_section MA._12_Exaposteilarion__.eo__.eoofweek_.exap End-Insert
-				Insert_section TI.s._00_saint_.m End-Insert
-				Insert_section MA._12_Exaposteilarion__.append__.me__.alt1__.exap1 End-Insert
-				Insert_section MA._12_Exaposteilarion__.append__.festal End-Insert
-				Insert_section MA._13_Lauds__.modeofweek__.for6 End-Insert
-				Insert_section MA._13_Lauds__.oc__.s_123as123 End-Insert
-				Set_Date month 2 day 2 year 2023 End_Date
-				Insert_section TI.f End-Insert
-				Insert_section MA._13_Lauds__.me__.p_12as45 End-Insert
-				Set_Date month 2 day 6 year 2023 End_Date
-				Insert_section TI.s._00_saint_.m End-Insert
-				Insert_section MA._13_Lauds__.me__.alt1__.p_123as6hierarchs13 End-Insert
-				Insert_section MA._13_Lauds__.glory__.eo_ End-Insert
-				Insert_section MA._14_Doxology__.sunday End-Insert
+	when-movable-cycle-day-is
+		1, 8 use:
+			Insert_section mc.map.ve.Section01_Instance02 End-Insert
+
+		13 use:
+			Section Instance01 //leavetaking of feast 2037
+				Insert_section se.m02.d09.ve.Instance_Weekday End-Insert
 			End-Section
+		14 use:
+			Insert_section mc.map.ve.Section01 End-Insert
+
 		otherwise use:
-			Section Instance01
-				Insert_section ST.ma.mealt1 End-Insert
-				Insert_section MA._01_Beginning__.mode4 End-Insert
-				Insert_section AP.mealt11glorymealt11_ End-Insert
-				Insert_section AP.both__.af End-Insert
-				Insert_section MA._02_Kathisma1__.litany End-Insert
-				Insert_section MA._02_Kathisma1__.me__.alt1__.kath11_ End-Insert
-				Insert_section MA._02_Kathisma1__.gloryboth__.feast End-Insert
-				Insert_section MA._03_Kathisma2__.append__.me__.alt1__.kath21_ End-Insert
-				Insert_section MA._03_Kathisma2__.gloryboth__.feast End-Insert
-				Insert_section MA._05_Kathisma3__.append__.me__.alt1__.kath31_ End-Insert
-				Insert_section MA._05_Kathisma3__.gloryboth__.feast End-Insert
-				Insert_section MA._06_Antiphons__.mode41_mealt1_prokeimenon_ End-Insert
-				Insert_section MA._07_Gospel__.yes__.priest__.mealt1 End-Insert
-				Insert_section MA._08_Supplication__.priest__.mealt1 End-Insert
-				Insert_section MA._11_Kontakion__.mealt11_ End-Insert
-				Insert_section SY.Synaxarion_mealt1 End-Insert
-				Insert_section KA.choir__._1345678 End-Insert
-				Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
-				Insert_section MA._10_Canon__.magnificat__.modeofkatavasia End-Insert
-				Insert_section KA.append__._9 End-Insert
-				Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
-				Insert_section MA._12_Exaposteilarion__.me__.alt1__.exap123t.exap1 End-Insert
-				Insert_section MA._12_Exaposteilarion__.append__.festal End-Insert
-				Insert_section MA._13_Lauds__.mode1__.for4 End-Insert
-				Insert_section TI.stp.s._00_saint_.m End-Insert
-				Insert_section MA._13_Lauds__.me__.alt1__.p_1234as3456 End-Insert
-				Insert_section MA._13_Lauds__.glory__.me__.alt1__.gloryasglory_ End-Insert
-				Insert_section TI.b.f End-Insert
-				Insert_section MA._13_Lauds__.both__.me__.alt1__.bothasboth_.hymn End-Insert
-				Insert_section MA._14_Doxology__.great End-Insert
-				Insert_section AP.mealt11_ End-Insert
-			End-Section	
+			when-name-of-day-is
+				Sunday use:
+					Section Instance_Sunday
+						Insert_section ST.ma.oc_meaf_mealt1 End-Insert
+						Insert_section MA._01_Beginning__.modeofweek End-Insert
+						Insert_section AP.res__.modeofweek End-Insert
+						Insert_section TI.g.s._00_saint_.m End-Insert
+						Insert_section AP.mealt11_.hymn End-Insert
+						Insert_section AP.both__.af End-Insert
+						Insert_section MA._02_Kathisma1__.litany End-Insert
+						Insert_section MA._02_Kathisma1__.oc__.sunday__.withfeast End-Insert
+						Insert_section MA._03_Kathisma2__.append__.oc__.sunday__.withfeast End-Insert
+						Insert_section MA._05_Kathisma3__.append__.me__.alt1__.kath31_ End-Insert
+						Insert_section MA._05_Kathisma3__.gloryboth__.feast End-Insert
+						Insert_section MA._05_Kathisma3__.resurrectional_evlogetaria End-Insert
+						Insert_section MA._06_Antiphons__.sunday_ End-Insert
+						Insert_section MA._10_Canon__.litanies__.ode6 End-Insert
+						Insert_section MA._11_Kontakion__.sunday End-Insert			
+						Insert_section SY.Synaxarion_mealt1 End-Insert
+						Insert_section KA.choir__._1345678 End-Insert
+						Insert_section MA._07_Gospel__.yes__.priest__.eo End-Insert
+						Insert_section MA._08_Supplication__.priest__.mealt1 End-Insert
+						Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
+						Insert_section MA._10_Canon__.magnificat__.modeofkatavasia End-Insert
+						Insert_section KA.append__._9 End-Insert
+						Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+						Insert_section MA._12_Exaposteilarion__.eo__.eoofweek_.exap End-Insert
+						Insert_section TI.s._00_saint_.m End-Insert
+						Insert_section MA._12_Exaposteilarion__.append__.me__.alt1__.exap1 End-Insert
+						Insert_section MA._12_Exaposteilarion__.append__.festal End-Insert
+						Insert_section MA._13_Lauds__.modeofweek__.for6 End-Insert
+						Insert_section MA._13_Lauds__.oc__.s_123as123 End-Insert
+						Set_Date month 2 day 2 year 2023 End_Date
+						Insert_section TI.f End-Insert
+						Insert_section MA._13_Lauds__.me__.p_12as45 End-Insert
+						Set_Date month 2 day 6 year 2023 End_Date
+						Insert_section TI.s._00_saint_.m End-Insert
+						Insert_section MA._13_Lauds__.me__.alt1__.p_123as6hierarchs13 End-Insert
+						Insert_section MA._13_Lauds__.glory__.eo_ End-Insert
+						Insert_section MA._14_Doxology__.sunday End-Insert
+					End-Section
+				otherwise use:
+					Section Instance_Weekday
+						Insert_section ST.ma.mealt1 End-Insert
+						Insert_section MA._01_Beginning__.mode4 End-Insert
+						Insert_section AP.mealt11glorymealt11_ End-Insert
+						Insert_section AP.both__.af End-Insert
+						Insert_section MA._02_Kathisma1__.litany End-Insert
+						Insert_section MA._02_Kathisma1__.me__.alt1__.kath11_ End-Insert
+						Insert_section MA._02_Kathisma1__.gloryboth__.feast End-Insert
+						Insert_section MA._03_Kathisma2__.append__.me__.alt1__.kath21_ End-Insert
+						Insert_section MA._03_Kathisma2__.gloryboth__.feast End-Insert
+						Insert_section MA._05_Kathisma3__.append__.me__.alt1__.kath31_ End-Insert
+						Insert_section MA._05_Kathisma3__.gloryboth__.feast End-Insert
+						Insert_section MA._06_Antiphons__.mode41_mealt1_prokeimenon_ End-Insert
+						Insert_section MA._07_Gospel__.yes__.priest__.mealt1 End-Insert
+						Insert_section MA._08_Supplication__.priest__.mealt1 End-Insert
+						Insert_section MA._11_Kontakion__.mealt11_ End-Insert
+						Insert_section SY.Synaxarion_mealt1 End-Insert
+						Insert_section KA.choir__._1345678 End-Insert
+						Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
+						Insert_section MA._10_Canon__.magnificat__.modeofkatavasia End-Insert
+						Insert_section KA.append__._9 End-Insert
+						Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+						Insert_section MA._12_Exaposteilarion__.me__.alt1__.exap123t.exap1 End-Insert
+						Insert_section MA._12_Exaposteilarion__.append__.festal End-Insert
+						Insert_section MA._13_Lauds__.mode1__.for4 End-Insert
+						Insert_section TI.stp.s._00_saint_.m End-Insert
+						Insert_section MA._13_Lauds__.me__.alt1__.p_1234as3456 End-Insert
+						Insert_section MA._13_Lauds__.glory__.me__.alt1__.gloryasglory_ End-Insert
+						Insert_section TI.b.f End-Insert
+						Insert_section MA._13_Lauds__.both__.me__.alt1__.bothasboth_.hymn End-Insert
+						Insert_section MA._14_Doxology__.great End-Insert
+						Insert_section AP.mealt11_ End-Insert
+					End-Section
+			end-when
 	end-when
 		
 End-Template
