@@ -80,7 +80,17 @@ Status NA
 			Insert_section CA.heirmos.ode6.me1 End-Insert
 		End-Section
 		Insert_section MA._10_Canon__.litanies__.ode6 End-Insert
-		Insert_section MA._11_Kontakion__.me1_ End-Insert
+		when-exists
+			rid me.meMA.Kontakion1.poet use:
+				Insert_section MA._11_Kontakion__.weekday End-Insert
+			otherwise use:
+				when-exists
+					rid me.meMA.Kontakion1.text use:
+						Insert_section MA._11_Kontakion__.me1_ End-Insert
+					otherwise use:
+						Insert_section MA._11_Kontakion__.weekday End-Insert
+				end-when
+		end-when
 		Insert_section SY.Synaxarion End-Insert
 		Section ode7
 			Insert_section CA.b.ode7.oc1.weekday.ti_H1234Tas123456 End-Insert

@@ -38,7 +38,7 @@ Status Final
 //	End-Preface
 
 	when-movable-cycle-day-is
-		1, 8, 15, 22, 29, 36, 43 use:
+		15, 22, 29, 36, 43 use:
 			Insert_section mc.map.mo.Section01 End-Insert
 		16 thru 20 use:
 			Section Instance04
@@ -68,7 +68,7 @@ Status Final
 				Insert_section AP.NM.me1_ End-Insert
 				Insert_section MO._13_end_dismissal__.append_sunday_feastday End-Insert
 			End-Section
-		25, 32, 39, 46 use:
+		25, 32, 39 use:
 			Section Instance08
 				Insert_section ST.mo.me1 End-Insert
 				Insert_section MO._01_intro_ End-Insert
@@ -92,7 +92,7 @@ Status Final
 				Insert_section AP.NM.me1_ End-Insert
 				Insert_section MO._13_end_dismissal__.append_sunday_feastday End-Insert
 			End-Section
-		30, 37, 44, 51, 58 use:
+		30, 37, 44 use:
 			Section Instance13
 				Insert_section ST.mo.me1 End-Insert
 				Insert_section MO._01_intro_ End-Insert
@@ -104,19 +104,9 @@ Status Final
 		otherwise use:
 			when-name-of-day-is
 				Sunday use:
-					Section Instance02 //Sunday
-						Insert_section ST.mo.oc_me1 End-Insert
-						Insert_section MO._01_intro_ End-Insert
-						Insert_section MO._03_triadic_canon_ End-Insert
-						Insert_section MO._04_triadic_megalynaria End-Insert
-						Insert_section MO._06_sundays_feastdays_.trisagion End-Insert
-						Insert_section AP.NM.me1_ End-Insert
-						Insert_section MO._13_end_dismissal__.append_sunday_feastday End-Insert
-					End-Section
-					
+					Insert_section MO.Midnight_Office_Sunday End-Insert
 				otherwise use:
-					Section Instance01 //Weekday
-					End-Section
+					Insert_section MO.Midnight_Office_Weekday End-Insert
 			end-when
 	end-when
 

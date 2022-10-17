@@ -1,6 +1,6 @@
-Template se.m03.d23.mo
+Template se.m02.d11.mo
 
-Status Final
+Status NA
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -15,7 +15,7 @@ Status Final
 	import roles.*
 
 	Head 
-		Set_Date month 3 day 23 year 2023 End_Date
+		Set_Date month 2 day 11 year 2023 End_Date
 			Page_Header_Even
 				center @lookup sid mo.pdf.header sid d.on lang L1 @date lang L1
 			End_Page_Header_Even
@@ -36,14 +36,23 @@ Status Final
 //	End-Preface
 
 	when-movable-cycle-day-is
-		29, 36, 43, 50, 56, 57 use:
+		1, 8, 15 use:
 			Insert_section mc.map.mo.Section01 End-Insert
 		otherwise use:
 			when-name-of-day-is
 				Sunday use:
-					Insert_section MO.Midnight_Office_Sunday End-Insert
+					Section Instance_Sunday
+						Insert_section ST.mo.oc End-Insert
+						Insert_section MO._01_intro_ End-Insert
+						Insert_section MO._03_triadic_canon_ End-Insert
+						Insert_section MO._04_triadic_megalynaria End-Insert
+						Insert_section MO._06_sundays_feastdays_ End-Insert
+						Insert_section MO._13_end_dismissal__.append_sunday_feastday End-Insert
+					End-Section
+					
 				otherwise use:
-					Insert_section MO.Midnight_Office_Weekday End-Insert
+					Section Instance_Weekday
+					End-Section
 			end-when
 	end-when
 

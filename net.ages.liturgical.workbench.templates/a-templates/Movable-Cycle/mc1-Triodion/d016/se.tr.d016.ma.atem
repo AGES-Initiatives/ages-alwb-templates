@@ -44,7 +44,17 @@ Status NA
 		Insert_section MA._02_Kathisma1__.octr__.cheese_week End-Insert
 		Insert_section MA._03_Kathisma2__.append__.tr__.kath21gb22 End-Insert
 		Insert_section MA._07_Gospel__.no__.reader__.intro_psalm50 End-Insert
-		Insert_section MA._11_Kontakion__.weekday End-Insert
+		when-exists
+			rid me.meMA.Kontakion1.poet use:
+				Insert_section MA._11_Kontakion__.append__.weekday End-Insert
+			otherwise use:
+				when-exists
+					rid me.meMA.Kontakion1.text use:
+						Insert_section MA._11_Kontakion__.append__.me1_ End-Insert
+					otherwise use:
+						Insert_section MA._11_Kontakion__.append__.weekday End-Insert
+				end-when
+		end-when
 		Insert_section SY.Synaxarion End-Insert
 		Insert_section MA._10_Canon__.ode8_heirmos__.tr2 End-Insert
 		Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert

@@ -37,13 +37,14 @@ Status Final
 	End-Preface
 
 	when-movable-cycle-day-is
-		1, 8 use: Insert_section mc.map.ma.Section02 End-Insert
-		14 thru 33 use:	Insert_section mc.map.ma.Section02 End-Insert
+		1, 8, 15, 16, 17, 18, 19, 20 use:
+			Insert_section mc.map.ve.Section02 End-Insert
+
 		otherwise use:
 			when-name-of-day-is
 				Sunday use:
-					Section Instance02
-						Insert_section ST.ma.oc_me End-Insert
+					Section Instance_Sunday
+						Insert_section ST.ma.oc_me1 End-Insert
 						Insert_section MA._01_Beginning__.modeofweek End-Insert
 						Insert_section AP.resgloryres End-Insert
 						Insert_section AP.both__.primarytheotokion__.modeofweek End-Insert
@@ -55,7 +56,7 @@ Status Final
 						Insert_section MA2._09_Options__.sunday__.oc_h12tas0GrGrTh_and_me1_123tasVVGB_with_kath_me1o2t_and_konoik_oc End-Insert
 						Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
 						Insert_section MA._12_Exaposteilarion__.eo__.eoofweek_.exap End-Insert
-						Insert_section TI.s._00_saint_.m End-Insert
+						Insert_section TI.me.com1 End-Insert
 						Insert_section MA._12_Exaposteilarion__.append__.me__.exap123t End-Insert
 						Insert_section MA._13_Lauds__.modeofweek__.for6_nocollapse End-Insert
 						Insert_section MA._13_Lauds__.oc__.sunday End-Insert
@@ -64,11 +65,8 @@ Status Final
 						Insert_section MA2._19_End_Options End-Insert
 						Insert_section MA._20_Dismissal__.nocommemoration End-Insert				
 					End-Section
-//				Saturday use:
-//					Section Instance03
-//					End-Section
 				otherwise use:
-					Section Instance01
+					Section Instance_Weekday
 					End-Section
 			end-when
 	end-when	
