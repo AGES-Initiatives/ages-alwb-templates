@@ -1,0 +1,420 @@
+Template se.m02.d24.ma3
+
+Status Final
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 2 day 24 year 2023 End_Date
+			Page_Header_Even
+				center @lookup sid ma.pdf.header sid d.on lang L1 @date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template pdf.cover.ma.me End-Insert
+		Insert_template pdf.cover.credits End-Insert
+	End-Preface
+
+	when-movable-cycle-day-is
+		1, 8, 15, 22 use:
+			Section Instance02
+				Insert_section ST.ma.oc_tr_me1 End-Insert
+				Insert_section MA._01_Beginning__.modeofweek End-Insert
+				Insert_section AP.res__.modeofweek End-Insert
+				Insert_section TI.g.me.com1 End-Insert
+				Insert_section AP.me1_.hymn End-Insert
+				Insert_section AP.both__.primarytheotokion__.mode4 End-Insert
+				Insert_section PS._02_Matins_1st__.rubric__.has_litany End-Insert
+				Insert_section MA._02_Kathisma1__.litany End-Insert
+				Insert_section MA._02_Kathisma1__.oc__.sunday__.whenmode4 End-Insert
+				Insert_section PS._03_Matins_2nd__.rubric__.has_litany End-Insert
+				Insert_section PS.optionalLitany03_priest End-Insert
+				Insert_section MA._03_Kathisma2__.oc__.sunday__.kath212223 End-Insert
+				Insert_section MA._04_Polyeleos__.sunday__.me1_ End-Insert
+				Insert_section MA._07_Gospel__.yes__.priest__.eo End-Insert
+				Insert_section MA._08_Supplication__.priest__.me End-Insert
+				Section canon
+					Section block02_odes13
+						Insert_section TI.c._ End-Insert
+						Insert_section CAv.ode1.oc1.ti_sun_h12tas0GrGrTh End-Insert
+						Insert_section TI.ct.tr.c1 End-Insert
+						Insert_section CAv.ode1.append.tr1.nt_123tasVVVTh End-Insert
+						Insert_section TI.ct.me.c1 End-Insert
+						Insert_section CAv.ode1.append.me1.nt_123tasVVGB End-Insert
+						Insert_section KA.append__._1 End-Insert
+						Insert_section CAv.ode3.append.oc1.ti_sun_h12tas0GrGrTh End-Insert
+						Insert_section TI.ct.tr.c1 End-Insert
+						Insert_section CAv.ode3.append.tr1.nt_123tasVVVTh End-Insert
+						Insert_section TI.ct.me.c1 End-Insert
+						Insert_section CAv.ode3.append.me1.nt_123tasVVGB End-Insert
+						Insert_section KA.append__._3 End-Insert
+						Insert_section MA._10_Canon__.litanies__.ode3 End-Insert
+					End-Section
+					Section block03_kontakionposition2
+						Insert_section MA._11_Kontakion__.sunday End-Insert
+					End-Section
+					Section block04_ode3_kathisma
+						Actor sid Choir End-Actor
+						Insert_section TI.ka.me.com1 End-Insert
+						Insert_section MA._10_Canon__.midodekathisma__.me1_.hymn End-Insert
+						Section kath_triodiou
+							Title sid Doxa<Tdesig>sid TouTriodiou</>End-Title
+							Title<Tmode>rid tr.trMA.Ode3Kathisma1.mode</><Tmelody>rid tr.trMA.Ode3Kathisma1.melody</>End-Title
+							Title role source0 sid sourceTriodion End-Title
+							Media rid tr.trMA.Ode3Kathisma1.text End-Media
+							Hymn rid tr.trMA.Ode3Kathisma1.text @ver media-off End-Hymn
+							Title sid KaiNyn<Tdesig>sid Theotokion</>End-Title
+							Title<Tmode>rid tr.trMA.Ode3Kathisma2.mode</><Tmelody>rid tr.trMA.Ode3Kathisma2.melody</>End-Title
+							Hymn rid tr.trMA.Ode3Kathisma2.text @ver media-off End-Hymn
+						End-Section
+					End-Section
+					Section block05_odes456
+						Insert_section CAv.ode4.append.oc1.ti_sun_h12tas0GrGrTh End-Insert
+						Insert_section TI.ct.tr.c1 End-Insert
+						Insert_section CAv.ode4.append.tr1.nt_123tasVVVTh End-Insert
+						Insert_section TI.ct.me.c1 End-Insert
+						Insert_section CAv.ode4.append.me1.nt_123tasVVGB End-Insert
+						Insert_section KA.append__._4 End-Insert
+						Insert_section CAv.ode5.append.oc1.ti_sun_h12tas0GrGrTh End-Insert
+						Insert_section TI.ct.tr.c1 End-Insert
+						Insert_section CAv.ode5.append.tr1.nt_123tasVVVTh End-Insert
+						Insert_section TI.ct.me.c1 End-Insert
+						Insert_section CAv.ode5.append.me1.nt_123tasVVGB End-Insert
+						Insert_section KA.append__._5 End-Insert
+						Insert_section CAv.ode6.append.oc1.ti_sun_h12tas0GrGrTh End-Insert
+						Insert_section TI.ct.tr.c1 End-Insert
+						Insert_section CAv.ode6.append.tr1.nt_123tasVVVTh End-Insert
+						Insert_section TI.ct.me.c1 End-Insert
+						Insert_section CAv.ode6.append.me1.nt_123tasVVGB End-Insert
+						Insert_section KA.append__._6 End-Insert
+						Insert_section MA._10_Canon__.litanies__.ode6 End-Insert
+					End-Section
+					Section block06_kontakionposition1
+						Insert_section MA._11_Kontakion__.tr_ End-Insert
+						Insert_section SY.Synaxarion End-Insert
+					End-Section
+					Section block07_odes78
+						Insert_section CAv.ode7.oc1.ti_sun_h12tas0GrGrTh End-Insert
+						Insert_section TI.ct.tr.c1 End-Insert
+						Insert_section CAv.ode7.append.tr1.nt_123tasVVVTh End-Insert
+						Insert_section TI.ct.me.c1 End-Insert
+						Insert_section CAv.ode7.append.me1.nt_123tasVVGB End-Insert
+						Insert_section KA.append__._7 End-Insert
+						Insert_section CAv.ode8.append.oc1.ti_sun_h12tas0GrGrTh End-Insert
+						Insert_section TI.ct.tr.c1 End-Insert
+						Insert_section CAv.ode8.append.tr1.nt_123tasVVVTh End-Insert
+						Insert_section TI.ct.me.c1 End-Insert
+						Insert_section CAv.ode8.append.me1.nt_123tasVVGB End-Insert
+						Insert_section KA.append__._8 End-Insert
+					End-Section
+					Section block11_ode9
+						Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
+						Insert_section MA._10_Canon__.magnificat__.modeofweek End-Insert				
+						Insert_section CAv.ode9.append.oc1.ti_sun_h12tas0GrGrTh End-Insert
+						Insert_section TI.ct.tr.c1 End-Insert
+						Insert_section CAv.ode9.append.tr1.nt_123tasVVVTh End-Insert
+						Insert_section TI.ct.me.c1 End-Insert
+						Insert_section CAv.ode9.append.me1.nt_123tasVVGB End-Insert
+						Insert_section KA.append__._9 End-Insert
+					End-Section
+				End-Section
+				Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+				Insert_section MA._12_Exaposteilarion__.eo__.eoofweek_.exap End-Insert
+				Insert_section MA._12_Exaposteilarion__.append__.tr1o2ot_.exap1_ End-Insert
+				Insert_section TI.me.com1 End-Insert
+				Insert_section MA._12_Exaposteilarion__.append__.me__.exap123t End-Insert
+				Insert_section MA._13_Lauds__.modeofweek__.for6 End-Insert
+				Insert_section MA._13_Lauds__.oc__.s_123as123 End-Insert
+				Insert_section MA._13_Lauds__.tr__.i_12as45_ End-Insert
+				Insert_section TI.me.com1 End-Insert
+				Insert_section MA._13_Lauds__.me__.p_123as6forerunner32 End-Insert
+				Insert_section MA._13_Lauds__.glory__.tr__.gloryasglory_ End-Insert
+				Insert_section MA._13_Lauds__.both__.eotheotokion End-Insert
+				Insert_section MA._14_Doxology__.sunday End-Insert
+				Insert_section MA2._19_End_Options End-Insert
+				Insert_section MA._20_Dismissal__.commemoration End-Insert
+			End-Section
+
+		14 use:
+			Section Instance03
+				Insert_section mc.map.ma.Section03 End-Insert
+			End-Section
+
+		16 thru 20 use:	
+			Section Instance04 //2012, 2014, 2017, 2020, 2023, 2025
+				Insert_section Instance01 End-Insert
+			End-Section
+
+		21 use:
+			Section Instance05
+			End-Section
+
+		23 use:
+			Section Instance06 //2031
+				Break line End_Break
+				Rubric sid me.m02.d24_gr_GR_cog.meR001 End-Rubric
+				Break line End_Break
+				Section tr_mode_me1
+					Para role servicesourcestitle sid book.BooksSources.title End-Para
+					Para role servicesources sid book.Triodion.name End-Para
+					Insert_section Selector_ServiceTitle.mode_on_morning End-Insert
+					Insert_section Selector_ServiceTitle.tr_matins_on_day End-Insert
+					Para role servicesources sid book.Menaion.name sid separator.hyphen sid me.m02.d23_gr_GR_cog.meDA.date End-Para
+					Para role servicesourcessection sid me.m02.d23_gr_GR_cog.meDA.commemoration.first_short End-Para
+					Title sid horizontal_line.solid1 End-Title
+					Break line End_Break
+					Title<bnr>sid ma.html.tab</>End-Title
+				End-Section
+				Insert_section MA._01_Beginning__.lent__.alleluia End-Insert
+				Insert_section MA._01_Beginning__.lent__.triadics End-Insert
+				Insert_section PS._02_Matins_1st__.rubric__.no_litany End-Insert
+			//	Insert_section MA._02_Kathisma1__.litany End-Insert
+				Insert_section MA._02_Kathisma1__.octr__.weekday End-Insert
+				Insert_section PS._03_Matins_2nd__.rubric__.has_litany End-Insert
+				Insert_section MA._03_Kathisma2__.litany End-Insert
+				Actor sid Choir End-Actor
+				Insert_section MA._03_Kathisma2__.append__.tr__.lent_weekday End-Insert
+				Insert_section PS._04_Matins_3rd__.rubric__.has_litany End-Insert
+				Insert_section MA._05_Kathisma3__.litany End-Insert
+				Actor sid Choir End-Actor
+				Insert_section MA._05_Kathisma3__.append__.tr__.lent_weekday End-Insert
+				Insert_section MA._07_Gospel__.no__.reader__.intro_psalm50 End-Insert
+				Insert_section MA._08_Supplication__.priest__.plain End-Insert
+				Section ode1
+					Set_Date month 2 day 23 year 2023 End_Date
+					Insert_section CA.b.ode1.me1.ti_H1123Tas0V3456 End-Insert
+					Set_Date month 2 day 24 year 2023 End_Date
+					Rubric sid Read End-Rubric
+					Insert_section CA.bOde1.lent_monday End-Insert
+					Rubric sid Sung End-Rubric
+					Insert_section CA.b.ode1.append.tr1.ti_123Tas78910 End-Insert
+					Insert_section CA.b.ode1.append.tr2.ti_12TrTAas1112GBGg End-Insert
+					Insert_section CA.heirmos.ode1.tr2 End-Insert
+				End-Section
+				Set_Date month 2 day 23 year 2023 End_Date
+				Insert_section CA.b.ode3.append.me1.ti_H1123Tas0V1112GB End-Insert
+				Insert_section CA.heirmos.ode3.me1 End-Insert
+				Insert_section MA._10_Canon__.litanies__.ode3 End-Insert
+				Insert_section MA._10_Canon__.midodekathisma__.me1o2t End-Insert
+				Insert_section CA.b.ode4.append.me1.ti_H1123Tas0V1112GB End-Insert
+				Insert_section CA.b.ode5.append.me1.ti_H1123Tas0V1112GB End-Insert
+				Insert_section CA.b.ode6.append.me1.ti_H1123Tas0V1112GB End-Insert
+				Insert_section CA.heirmos.ode6.me1 End-Insert
+				Insert_section MA._10_Canon__.litanies__.ode6 End-Insert
+				Set_Date month 2 day 24 year 2023 End_Date
+				Insert_section MA._11_Kontakion__.martyric End-Insert
+				Insert_section SY.Synaxarion End-Insert
+				Set_Date month 2 day 23 year 2023 End_Date
+				Insert_section CA.b.ode7.me1.ti_H1123Tas0V1112GB End-Insert
+				Section ode8
+					Insert_section CA.b.ode8.append.me1.ti_H1123Tas0V3456 End-Insert
+					Set_Date month 2 day 24 year 2023 End_Date
+					Rubric sid Read End-Rubric
+					Insert_section CA.bOde8.lent_weekday End-Insert
+					Rubric sid Sung End-Rubric
+					Insert_section CA.b.ode8.append.tr1.ti_123Tas78910 End-Insert
+					Insert_section CA.b.ode8.append.tr2.ti_12TrTAas1112GBGg End-Insert
+					Insert_section CA.heirmos.ode8.tr2 End-Insert
+				End-Section
+				Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
+				Set_Date month 2 day 23 year 2023 End_Date
+				Insert_section MA._10_Canon__.magnificat__.modeofcanon__.me1 End-Insert
+				Insert_section CA.b.ode9.append.me1.ti_H1123Tas0V3456 End-Insert
+				Set_Date month 2 day 24 year 2023 End_Date
+				Insert_section CA.b.ode9.append.tr1.ti_123Tas78910 End-Insert
+				Insert_section CA.b.ode9.append.tr2.ti_12TrTAas1112GBGg End-Insert
+				Insert_section MA._10_Canon__.ode9_heirmos__.tr2 End-Insert
+				Insert_section MA._10_Canon__.ode9_end End-Insert
+				Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+				Insert_section MA._12_Exaposteilarion__.photagogics End-Insert
+				Insert_section MA._13_Lauds__.read__.all End-Insert
+				Insert_section MA._14_Doxology__.append_small End-Insert
+				Insert_section MA._15_Litanies__.aftersmalldoxology End-Insert
+				Insert_section MA._16_Aposticha__.tr__.weekday_ End-Insert
+				Insert_section MA._16_Aposticha__.gloryboth__.tr__.theotokion End-Insert
+				Insert_section MA._17_ItIsGood_Trisagion__.lent_weekday End-Insert
+				Insert_section MA._18_End__.lent_ End-Insert
+				Insert_section MA._18_End__.rubrics__.lent_begin_first_hour End-Insert
+				Rubric sid Or End-Rubric
+				Actor sid Reader End-Actor
+				Insert_section MA._18_End__.wisdom123.part3 End-Insert
+				Insert_section MA._20_Dismissal__.nocommemoration End-Insert
+			End-Section
+
+		24, 31 use:
+			Section Instance07 //2015, 2026
+				Insert_section Instance01 End-Insert
+			End-Section
+
+		25, 32 use:
+			Section Instance08 //2010
+			End-Section
+
+		26 use:
+			Section Instance09
+			End-Section
+
+		27 use:
+			Section Instance10 //2034
+				Insert_section Instance01 End-Insert
+			End-Section
+
+		28 use:
+			Section Instance11
+				Insert_section ST.ma.tr_me1 End-Insert
+				Insert_section MA._01_Beginning__.mode4 End-Insert
+				Insert_section TI.a.me.com1 End-Insert
+				Insert_section AP.me1_.hymn End-Insert
+				Insert_section TI.g.s._00_saint_.m End-Insert
+				Insert_section AP.tr1_.hymn End-Insert
+				Insert_section AP.both__.primarytheotokion__.mode2 End-Insert
+				Insert_section PS._02_Matins_1st__.rubric__.has_litany End-Insert
+				Insert_section MA._02_Kathisma1__.litany End-Insert
+				Insert_section TI.k1.me.com1 End-Insert
+				Insert_section MA._02_Kathisma1__.me__.kath11o121t_.hymns End-Insert
+				Insert_section PS._03_Matins_2nd__.rubric__.has_litany End-Insert
+				Insert_section PS.optionalLitany03_priest End-Insert
+				Actor sid Choir End-Actor
+				Insert_section TI.k2.s._00_saint_.m End-Insert
+				Insert_section MA._03_Kathisma2__.append__.tr__.kath21g22bT23_.hymns End-Insert
+				Insert_section MA._04_Polyeleos__.weekday__.me1_ End-Insert
+				Insert_section MA._07_Gospel__.yes__.priest__.me End-Insert
+				Insert_section MA._08_Supplication__.priest__.mc End-Insert
+				Section canon
+					Insert_section CAv.ode1.tr1.ti_h12tas0VVTh End-Insert
+					Insert_section TI.ct.me.c1 End-Insert
+					Insert_section CAv.ode1.append.me1.nt_123tasVVGB End-Insert
+					Insert_section KA.append__._1 End-Insert
+					Insert_section CAv.ode3.append.tr1.ti_h12tas0VVTh End-Insert
+					Insert_section TI.ct.me.c1 End-Insert
+					Insert_section CAv.ode3.append.me1.nt_123tasVVGB End-Insert
+					Insert_section KA.append__._3 End-Insert
+					Insert_section MA._10_Canon__.litanies__.ode3 End-Insert
+					Insert_section MA._11_Kontakion__.me1_ End-Insert
+					Insert_section TI.ka.me.com1 End-Insert
+					Insert_section MA._10_Canon__.midodekathisma__.me1_.hymn End-Insert
+					Insert_section MA._10_Canon__.midodekathisma__.append__.tr__.kath1g2b3_ End-Insert
+					Insert_section CAv.ode4.append.tr1.ti_h12tas0VVTh End-Insert
+					Insert_section TI.ct.me.c1 End-Insert
+					Insert_section CAv.ode4.append.me1.nt_123tasVVGB End-Insert
+					Insert_section KA.append__._4 End-Insert
+					Insert_section CAv.ode5.append.tr1.ti_h12tas0VVTh End-Insert
+					Insert_section TI.ct.me.c1 End-Insert
+					Insert_section CAv.ode5.append.me1.nt_123tasVVGB End-Insert
+					Insert_section KA.append__._5 End-Insert
+					Insert_section CAv.ode6.append.tr1.ti_h12tas0VVTh End-Insert
+					Insert_section TI.ct.me.c1 End-Insert
+					Insert_section CAv.ode6.append.me1.nt_123tasVVGB End-Insert
+					Insert_section KA.append__._6 End-Insert
+					Insert_section MA._11_Kontakion__.tr_ End-Insert
+					Insert_section SY.Synaxarion End-Insert
+					Insert_section CAv.ode7.tr1.ti_h12tas0VVTh End-Insert
+					Insert_section TI.ct.me.c1 End-Insert
+					Insert_section CAv.ode7.append.me1.nt_123tasVVGB End-Insert
+					Insert_section KA.append__._7 End-Insert
+					Insert_section CAv.ode8.append.tr1.ti_h12tas0VVTh End-Insert
+					Insert_section TI.ct.me.c1 End-Insert
+					Insert_section CAv.ode8.append.me1.nt_123tasVVGB End-Insert
+					Insert_section KA.append__._8 End-Insert
+					Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
+					Insert_section MA._10_Canon__.magnificat__.mode4 End-Insert				
+					Insert_section CAv.ode9.append.tr1.ti_h12tas0VVTh End-Insert
+					Insert_section TI.ct.me.c1 End-Insert
+					Insert_section CAv.ode9.append.me1.nt_123tasVVGB End-Insert
+					Insert_section KA.append__._9 End-Insert
+				End-Section
+				Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+				Actor sid Choir End-Actor
+				Insert_section TI.e.me.com1 End-Insert
+				Insert_section MA._12_Exaposteilarion__.me__.exap1_.hymn End-Insert
+				Insert_section TI.s._00_saint_.m End-Insert
+				Insert_section MA._12_Exaposteilarion__.append__.tr1 End-Insert
+				Insert_section MA._12_Exaposteilarion__.append__.tr1o2ot_.theotokion_ End-Insert
+				Insert_section MA._13_Lauds__.mode4__.for6 End-Insert
+				Insert_section TI.stp.me.com1 End-Insert
+				Insert_section MA._13_Lauds__.me__.p_123as123 End-Insert
+				Insert_section TI.s._00_saint_.m End-Insert
+				Insert_section MA._13_Lauds__.tr__.p_123as456 End-Insert
+				Insert_section TI.g.me.com1 End-Insert
+				Insert_section MA._13_Lauds__.glory__.me__.gloryasglory_.hymn End-Insert
+				Insert_section MA._13_Lauds__.both__.theotokion__.mode6_vine__.forerunner End-Insert
+				Insert_section MA._14_Doxology__.great End-Insert
+				Insert_section TI.a.me.com1 End-Insert
+				Insert_section AP.me1_.hymn End-Insert
+				Insert_section MA2._19_End_Options End-Insert
+				Insert_section MA._20_Dismissal__.commemoration End-Insert
+			End-Section
+
+		29 use:
+			Section Instance12
+			End-Section
+
+		30 use:
+			Section Instance13 //2048
+				Insert_section Instance01 End-Insert
+			End-Section
+
+		otherwise use:
+			Section Instance01
+				Insert_section ST.ma.me1 End-Insert
+				Insert_section MA._01_Beginning__.mode4 End-Insert
+				Insert_section AP.me1gloryme1_ End-Insert
+				Insert_section AP.both__.primarytheotokion__.mode4 End-Insert
+				Insert_section PS._02_Matins_1st__.rubric__.has_litany End-Insert
+				Insert_section MA._02_Kathisma1__.litany End-Insert
+				Insert_section MA._02_Kathisma1__.me__.kath11o121t_ End-Insert
+				Insert_section PS._03_Matins_2nd__.rubric__.has_litany End-Insert
+				Insert_section PS.optionalLitany03_priest End-Insert
+				Insert_section MA._03_Kathisma2__.me__.kath21o222t_ End-Insert
+				Insert_section MA._04_Polyeleos__.weekday__.me1_ End-Insert
+				Insert_section MA._07_Gospel__.yes__.priest__.me End-Insert
+				Insert_section MA._08_Supplication__.priest__.me End-Insert
+				Insert_section MA2._09_Options__.weekday__.sp_hh1234_and_me1_123tasVVGB_kath_me12t_and_konoik_m1.block02_odes13 End-Insert
+				Insert_section MA2._09_Options__.weekday__.sp_hh1234_and_me1_123tasVVGB_kath_me12t_and_konoik_m1.block04_ode3kathisma End-Insert
+				Insert_section MA2._09_Options__.weekday__.sp_hh1234_and_me1_123tasVVGB_kath_me12t_and_konoik_m1.block05_odes456 End-Insert
+				Insert_section MA2._09_Options__.weekday__.sp_hh1234_and_me1_123tasVVGB_kath_me12t_and_konoik_m1.block06_kontakionposition1 End-Insert
+				Insert_section MA2._09_Options__.weekday__.sp_hh1234_and_me1_123tasVVGB_kath_me12t_and_konoik_m1.block07_odes78 End-Insert
+				Section block11_ode9
+					Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
+					Insert_section MA._10_Canon__.magnificat__.mode8 End-Insert				
+					Insert_section CAv.ode9.append.ho.ti_sp_h12345as0ThThThThTh End-Insert
+					Insert_section TI.ct.me.c1 End-Insert
+					Insert_section CAv.ode9.append.me1.nt_123tasVVGB End-Insert
+					Insert_section KA.append__._9 End-Insert
+				End-Section
+				Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+				Insert_section MA._12_Exaposteilarion__.me__.exap123t End-Insert
+				Insert_section MA._13_Lauds__.mode4__.for4 End-Insert
+				Insert_section TI.stp.me.com1 End-Insert
+				Insert_section MA._13_Lauds__.me__.p_1123as3456 End-Insert
+				Insert_section MA._13_Lauds__.glory__.me__.gloryasglory_ End-Insert
+				Insert_section MA._13_Lauds__.both__.theotokion__.mode6_vine__.forerunner End-Insert
+				Insert_section MA._14_Doxology__.great End-Insert
+				Insert_section AP.me1_ End-Insert
+				Insert_section MA2._19_End_Options End-Insert
+				Insert_section MA._20_Dismissal__.commemoration End-Insert
+			End-Section
+	end-when
+
+End-Template

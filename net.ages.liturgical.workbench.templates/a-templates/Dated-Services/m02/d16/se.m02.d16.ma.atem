@@ -37,17 +37,40 @@ Status Final
 	End-Preface
 
 	when-movable-cycle-day-is 
-		1, 8 use: 
+		1, 8, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24 use:
 			Insert_section mc.map.ma.Section01 End-Insert
-		14 thru 71 use: 
-			Insert_section mc.map.ma.Section01 End-Insert
+
 		otherwise use:
 			when-name-of-day-is
 				Sunday use:
-					Section Instance02
+					Section Instance_Sunday
+						Insert_section ST.ma.oc End-Insert
+						Insert_section MA._01_Beginning__.modeofweek End-Insert
+						Insert_section AP.resgloryres End-Insert
+						Insert_section AP.both__.primarytheotokion__.modeofweek End-Insert
+						Insert_section MA._02_Kathisma1__.litany End-Insert
+						Insert_section MA._02_Kathisma1__.oc__.sunday__.kath111213 End-Insert
+						Insert_section MA._03_Kathisma2__.append__.oc__.sunday__.kath212223 End-Insert
+						Insert_section MA._05_Kathisma3__.resurrectional_evlogetaria End-Insert
+						Insert_section MA._06_Antiphons__.sunday_ End-Insert
+						Insert_section MA._10_Canon__.litanies__.ode6 End-Insert
+						Insert_section MA._11_Kontakion__.sunday End-Insert
+						Insert_section SY.Synaxarion End-Insert
+						Insert_section KA.choir__._1345678 End-Insert
+						Insert_section MA._07_Gospel__.yes__.priest__.eo End-Insert
+						Insert_section MA._08_Supplication__.priest__.plain End-Insert
+						Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
+						Insert_section MA._10_Canon__.magnificat__.modeofkatavasia End-Insert
+						Insert_section KA.append__._9 End-Insert
+						Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+						Insert_section MA._12_Exaposteilarion__.eo__.eoofweek_ End-Insert
+						Insert_section MA._13_Lauds__.modeofweek__.for6 End-Insert
+						Insert_section MA._13_Lauds__.oc__.sunday End-Insert
+						Insert_section MA._13_Lauds__.glory__.eo_ End-Insert
+						Insert_section MA._14_Doxology__.sunday End-Insert
 					End-Section
 				Saturday use:
-					Section Instance03
+					Section Instance_Saturday
 						Insert_section ST.ma.ho_oc_me1 End-Insert
 						Insert_section MA._01_Beginning__.alleluia__.mode2_saturday End-Insert
 						Insert_section AP.da__.matins_begin End-Insert
@@ -75,7 +98,7 @@ Status Final
 						Insert_section MA._20_Dismissal__.nocommemoration End-Insert
 					End-Section
 				otherwise use:
-					Section Instance01
+					Section Instance_Weekday
 						Insert_section ST.ma.ho_oc_me1 End-Insert
 						Insert_section MA._01_Beginning__.modeofday End-Insert
 						Insert_section AP.da__.matins_begin End-Insert

@@ -1,0 +1,329 @@
+Template se.m02.d17.ma3
+
+Status NA
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 2 day 17 year 2023 End_Date
+			Page_Header_Even
+				center @lookup sid ma.pdf.header sid d.on lang L1 @date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template pdf.cover.ma.me End-Insert
+		Insert_template pdf.cover.credits End-Insert
+	End-Preface
+
+	when-movable-cycle-day-is
+		1, 8, 14, 15, 18, 20, 22, 23, 24, 25 use: 
+			Insert_section mc.map.ma.Section03 End-Insert
+			
+		16, 17, 19 use:
+			Section Instance01
+				Insert_section ST.ma.oc_me1 End-Insert
+				Insert_section MA._01_Beginning__.mode2 End-Insert
+				Insert_section AP.me1_ End-Insert
+				Insert_section TI.g.r End-Insert
+				Insert_section AP.both__.theotokion__.mode2_ End-Insert
+				Insert_section mc.map.ma.Section03_Instance01_block1 End-Insert 
+				Insert_section AP.me1_ End-Insert
+				Insert_section AP.gloryboth__.endofmatins_theotokion__.mode2_ End-Insert
+				Insert_section MA._18_End__.ektenia_no_dismissal End-Insert
+				Insert_section MA._18_End__.rubrics__.begin_first_hour End-Insert
+				Rubric sid Or End-Rubric
+				Insert_section MA._20_Dismissal__.nocommemoration End-Insert
+			End-Section
+
+		21 use: 
+			Section Instance02
+				Insert_section ST.ma.tr_me1 End-Insert
+				Insert_section MA._01_Beginning__.mode4 End-Insert
+				Insert_section TI.a.s._10_monastic_.mp End-Insert
+				Insert_section AP.tr1_.hymn End-Insert
+				Insert_section TI.g.me.com1 End-Insert
+				Insert_section AP.me1_.hymn End-Insert
+				Insert_section AP.both__.primarytheotokion__.mode2 End-Insert
+				Insert_section MA._02_Kathisma1__.litany End-Insert
+				Insert_section MA._02_Kathisma1__.tr__.kath11g12bT13 End-Insert
+				Insert_section MA._03_Kathisma2__.append__.tr__.kath21g22bT23_ End-Insert
+				Insert_section MA._07_Gospel__.no__.reader__.psalm50 End-Insert
+				Section canon				
+					Section ode1
+						Actor sid Choir End-Actor
+						Title role desig sid OKanon End-Title
+						Title<Tdesig>rid tr.trMA.Ode1C1H.ode</><Tmode>rid tr.trMA.Ode1C1H.mode</><Tdesig>sid OEirmos</>End-Title
+						Para role heirmos rid tr.trMA.Ode1C1H.text @ver End-Para
+						Title<Tdesig>sid Troparia</>End-Title
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode1C11.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode1C12.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode1C13.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode1C14.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode1C15.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode1C16.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode1C17.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode1C18.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Title role desig sid Martyrikon End-Title
+						Hymn rid tr.trMA.Ode1C1M.text @ver End-Hymn
+						Insert_section TI.c.me End-Insert
+						Insert_section CAv.ode1.append.me1.nt_123tasVVGB End-Insert
+						Title<Tdesig>sid Katavasia</>End-Title
+						Hymn rid tr.trMA.Ode1K.text End-Hymn
+					End-Section
+					Rubric sid Read End-Rubric
+					Insert_section CA.bOde2.lent_tuesday End-Insert
+					Actor sid Choir End-Actor
+					Section ode2
+						Title<Tdesig>rid tr.trMA.Ode2C1H.ode</><Tmode>rid tr.trMA.Ode2C1H.mode</><Tdesig>sid OEirmos</>End-Title
+						Para role heirmos rid tr.trMA.Ode2C1H.text @ver End-Para
+						Title<Tdesig>sid Troparia</>End-Title
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode2C11.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode2C12.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode2C13.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode2C14.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode2C15.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode2C16.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Title role desig sid Martyrikon End-Title
+						Hymn rid tr.trMA.Ode2C1M.text @ver End-Hymn
+						Title sid Doxa End-Title
+						Hymn rid tr.trMA.Ode2C1Tr.text @ver End-Hymn
+						Title sid KaiNyn<bnr>sid Theotokion</>End-Title
+						Hymn rid tr.trMA.Ode2C1T.text @ver End-Hymn
+						Title<Tdesig>sid Katavasia</>End-Title
+						Hymn rid tr.trMA.Ode2K.text End-Hymn
+					End-Section
+					Section ode3
+						Title<Tdesig>rid tr.trMA.Ode3C1H.ode</><Tmode>rid tr.trMA.Ode3C1H.mode</><Tdesig>sid OEirmos</>End-Title
+						Para role heirmos rid tr.trMA.Ode3C1H.text @ver End-Para
+						Title<Tdesig>sid Troparia</>End-Title
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode3C11.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode3C12.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode3C13.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode3C14.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode3C15.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode3C16.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Title role desig sid Martyrikon End-Title
+						Hymn rid tr.trMA.Ode3C1M.text @ver End-Hymn
+						Insert_section TI.c.me End-Insert
+						Insert_section CAv.ode3.append.me1.nt_123tasVVGB End-Insert
+						Title<Tdesig>sid Katavasia</>End-Title
+						Hymn rid tr.trMA.Ode3K.text End-Hymn
+					End-Section
+					Insert_section MA._10_Canon__.litanies__.ode3 End-Insert
+					Insert_section MA._11_Kontakion__.me1_ End-Insert
+					Insert_section MA._10_Canon__.midodekathisma__.tr__.kath1gme1bt End-Insert
+					Section ode4
+						Title<Tdesig>rid tr.trMA.Ode4C1H.ode</><Tmode>rid tr.trMA.Ode4C1H.mode</><Tdesig>sid OEirmos</>End-Title
+						Para role heirmos rid tr.trMA.Ode4C1H.text @ver End-Para
+						Title<Tdesig>sid Troparia</>End-Title
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode4C11.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode4C12.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode4C13.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode4C14.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode4C15.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode4C16.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Title role desig sid Martyrikon End-Title
+						Hymn rid tr.trMA.Ode4C1M.text @ver End-Hymn
+						Insert_section TI.c.me End-Insert
+						Insert_section CAv.ode4.append.me1.nt_123tasVVGB End-Insert
+						Title<Tdesig>sid Katavasia</>End-Title
+						Hymn rid tr.trMA.Ode4K.text End-Hymn
+					End-Section
+					Section ode5
+						Title<Tdesig>rid tr.trMA.Ode5C1H.ode</><Tmode>rid tr.trMA.Ode5C1H.mode</><Tdesig>sid OEirmos</>End-Title
+						Para role heirmos rid tr.trMA.Ode5C1H.text @ver End-Para
+						Title<Tdesig>sid Troparia</>End-Title
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode5C11.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode5C12.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode5C13.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode5C14.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode5C15.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode5C16.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Title role desig sid Martyrikon End-Title
+						Hymn rid tr.trMA.Ode5C1M.text @ver End-Hymn
+						Insert_section TI.c.me End-Insert
+						Insert_section CAv.ode5.append.me1.nt_123tasVVGB End-Insert
+						Title<Tdesig>sid Katavasia</>End-Title
+						Hymn rid tr.trMA.Ode5K.text End-Hymn
+					End-Section
+					Section ode6
+						Title<Tdesig>rid tr.trMA.Ode6C1H.ode</><Tmode>rid tr.trMA.Ode6C1H.mode</><Tdesig>sid OEirmos</>End-Title
+						Para role heirmos rid tr.trMA.Ode6C1H.text @ver End-Para
+						Title<Tdesig>sid Troparia</>End-Title
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode6C11.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode6C12.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode6C13.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode6C14.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode6C15.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode6C16.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Title role desig sid Martyrikon End-Title
+						Hymn rid tr.trMA.Ode6C1M.text @ver End-Hymn
+						Insert_section TI.c.me End-Insert
+						Insert_section CAv.ode6.append.me1.nt_123tasVVGB End-Insert
+						Title<Tdesig>sid Katavasia</>End-Title
+						Hymn rid tr.trMA.Ode6K.text End-Hymn
+					End-Section
+					Insert_section MA._10_Canon__.litanies__.ode6 End-Insert
+					Insert_section MA._11_Kontakion__.tr_ End-Insert
+					Insert_section SY.Synaxarion End-Insert
+					Section ode7
+						Actor sid Choir End-Actor
+						Title<Tdesig>rid tr.trMA.Ode7C1H.ode</><Tmode>rid tr.trMA.Ode7C1H.mode</><Tdesig>sid OEirmos</>End-Title
+						Para role heirmos rid tr.trMA.Ode7C1H.text @ver End-Para
+						Title<Tdesig>sid Troparia</>End-Title
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode7C11.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode7C12.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode7C13.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode7C14.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode7C15.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode7C16.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode7C17.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Title role desig sid Martyrikon End-Title
+						Hymn rid tr.trMA.Ode7C1M.text @ver End-Hymn
+						Insert_section TI.c.me End-Insert
+						Insert_section CAv.ode7.append.me1.nt_123tasVVGB End-Insert
+						Title<Tdesig>sid Katavasia</>End-Title
+						Hymn rid tr.trMA.Ode7K.text End-Hymn
+					End-Section
+					Section ode8
+						Title<Tdesig>rid tr.trMA.Ode8C1H.ode</><Tmode>rid tr.trMA.Ode8C1H.mode</><Tdesig>sid OEirmos</>End-Title
+						Para role heirmos rid tr.trMA.Ode8C1H.text @ver End-Para
+						Title<Tdesig>sid Troparia</>End-Title
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode8C11.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode8C12.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode8C13.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode8C14.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode8C15.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode8C16.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Title role desig sid Martyrikon End-Title
+						Hymn rid tr.trMA.Ode8C1M.text @ver End-Hymn
+						Insert_section TI.c.me End-Insert
+						Insert_section CAv.ode8.append.me1.nt_123tasVVGB End-Insert
+						Verse sid ps_gr_GR_cog.bode8.v19.text End-Verse
+						Title<Tdesig>sid Katavasia</>End-Title
+						Hymn rid tr.trMA.Ode8K.text End-Hymn
+					End-Section
+					Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
+					Insert_section MA._10_Canon__.magnificat__.mode8 End-Insert
+					Section ode9
+						Title<Tdesig>rid tr.trMA.Ode9C1H.ode</><Tmode>rid tr.trMA.Ode9C1H.mode</><Tdesig>sid OEirmos</>End-Title
+						Hymn rid tr.trMA.Ode9C1H.text @ver End-Hymn
+						Title<Tdesig>sid Troparia</>End-Title
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode9C11.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode9C12.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode9C13.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode9C14.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode9C15.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Hymn rid tr.trMA.Ode9C16.text @ver End-Hymn
+						Verse sid verse_SaintsM.text End-Verse
+						Title role desig sid Martyrikon End-Title
+						Hymn rid tr.trMA.Ode9C1M.text @ver End-Hymn
+						Insert_section TI.c.me End-Insert
+						Insert_section CAv.ode9.append.me1.nt_123tasVVGB End-Insert
+						Title<Tdesig>sid Katavasia</>End-Title
+						Hymn rid tr.trMA.Ode9K.text End-Hymn
+					End-Section
+				End-Section				
+				Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+				Insert_section MA._12_Exaposteilarion__.tr__.exap1o2ot.exap1_ End-Insert
+				Insert_section TI.me.com1 End-Insert
+				Insert_section MA._12_Exaposteilarion__.append__.me__.exap123t End-Insert
+				Insert_section MA._13_Lauds__.mode8__.for6 End-Insert
+				Insert_section MA._13_Lauds__.tr__.p_123as123_.hymns End-Insert
+				Insert_section TI.me.com1 End-Insert
+				Insert_section MA._13_Lauds__.me__.p_123as456 End-Insert
+				Insert_section TI.g.s._10_monastic_.mp End-Insert
+				Insert_section MA._13_Lauds__.glory__.tr__.gloryasglory_.hymn End-Insert
+				Insert_section MA._13_Lauds__.both__.theotokion__.mode6_vine__.devouts End-Insert
+				Insert_section MA._14_Doxology__.great End-Insert
+				Insert_section AP.tr1_ End-Insert
+			End-Section
+	end-when	
+
+End-Template

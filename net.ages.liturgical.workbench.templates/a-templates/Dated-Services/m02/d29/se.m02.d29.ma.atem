@@ -36,21 +36,37 @@ Status NA
 		Insert_template pdf.cover.credits End-Insert
 	End-Preface
 
-	when-movable-cycle-day-is 
-		1, 8 use: 
+	when-movable-cycle-day-is
+		8, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37 use: 
 			Insert_section mc.map.ma.Section01 End-Insert
-		14 thru 71 use: 
-			Insert_section mc.map.ma.Section01 End-Insert
+
 		otherwise use:
-		when-name-of-day-is
-			Sunday use:
-				Section Instance02
-				End-Section
-			
-			otherwise use:
-				Section Instance01
-				End-Section
-		end-when
-	end-when	
+			Section Instance_Weekday
+				Insert_section ST.ma.ho_oc_me1 End-Insert
+				Insert_section MA._01_Beginning__.modeofday End-Insert
+				Insert_section AP.da__.matins_begin End-Insert
+				Insert_section MA._02_Kathisma1__.oc__.weekday123 End-Insert
+				Insert_section MA._07_Gospel__.no__.reader__.intro_psalm50 End-Insert
+				Insert_section MA._11_Kontakion__.append__.me1_ End-Insert
+				Insert_section SY.Synaxarion End-Insert
+				Insert_section MA._10_Canon__.ode8_heirmos__.me1 End-Insert
+				Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
+				Insert_section MA._10_Canon__.magnificat__.mode2 End-Insert
+				Insert_section MA._10_Canon__.ode9_heirmos__.me1 End-Insert
+				Insert_section MA._10_Canon__.ode9_end End-Insert
+				Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+				Insert_section MA._12_Exaposteilarion__.weekday__.all End-Insert
+				Insert_section MA._13_Lauds__.read__.all End-Insert
+				Insert_section MA._14_Doxology__.append_small End-Insert
+				Insert_section MA._15_Litanies__.aftersmalldoxology End-Insert
+				Insert_section MA._16_Aposticha__.oc_ End-Insert
+				Insert_section MA._17_ItIsGood_Trisagion__.not_lent End-Insert
+				Insert_section AP.da__.matins_end End-Insert
+				Insert_section MA._18_End__.ektenia_wisdom End-Insert
+				Insert_section MA._18_End__.rubrics__.begin_first_hour End-Insert
+				Rubric sid Or End-Rubric
+				Insert_section MA._20_Dismissal__.nocommemoration End-Insert
+			End-Section
+	end-when
 
 End-Template

@@ -37,12 +37,27 @@ Status Final
 	End-Preface
 
 	when-movable-cycle-day-is
-		1, 8 use: Insert_section mc.map.ma.Section01 End-Insert
-		14 thru 33 use:	Insert_section mc.map.ma.Section01 End-Insert
+		1, 8, 14, 15, 18, 20, 21, 22 use:
+			Insert_section mc.map.ma.Section01 End-Insert
+		16, 17, 19 use:
+			Section Instance01
+				Insert_section ST.ma.oc_tr_me1 End-Insert
+				Insert_section MA._01_Beginning__.mode1 End-Insert
+				Insert_section AP.ganame.Feb14_.afxentios_ End-Insert
+				Insert_section AP.gloryboth__.theotokion__.mode1_ End-Insert
+				Insert_section mc.map.ma.Section01_Instance01_block1 End-Insert
+				Insert_section AP.ganame.Feb14_.afxentios_ End-Insert
+				Insert_section AP.gloryboth__.endofmatins_theotokion__.mode1_ End-Insert
+				Insert_section MA._18_End__.ektenia_no_dismissal End-Insert
+				Insert_section MA._18_End__.rubrics__.begin_first_hour End-Insert
+				Rubric sid Or End-Rubric
+				Insert_section MA._20_Dismissal__.nocommemoration End-Insert
+			End-Section
+
 		otherwise use:
 			when-name-of-day-is
 				Sunday use:
-					Section Instance02
+					Section Instance_Sunday
 						Insert_section ST.ma.oc_me1 End-Insert
 						Insert_section MA._01_Beginning__.modeofweek End-Insert
 						Insert_section AP.res__.modeofweek End-Insert
@@ -72,7 +87,7 @@ Status Final
 						Insert_section MA._14_Doxology__.sunday End-Insert
 					End-Section
 				otherwise use:
-					Section Instance01
+					Section Instance_Weekday
 						Insert_section ST.ma.oc_me1 End-Insert
 						Insert_section MA._01_Beginning__.mode1 End-Insert
 						Insert_section AP.ganame.Feb14_.afxentios_ End-Insert
@@ -92,15 +107,8 @@ Status Final
 						Insert_section TI.s._00_saint_.m End-Insert
 						Insert_section MA._12_Exaposteilarion__.append__.me__.exap1 End-Insert
 						Insert_section MA._12_Exaposteilarion__.append__.me__.theotokion End-Insert
-					//	when-name-of-day-is
-					//		Saturday use:
-					//			Insert_section MA._13_Lauds__.modeofweek__.for4 End-Insert
-					//			Insert_section MA._13_Lauds__.oc__.saturday_ End-Insert
-					//			Insert_section MA._14_Doxology__.small End-Insert
-					//		otherwise use:
-								Insert_section MA._13_Lauds__.read__.all End-Insert
-								Insert_section MA._14_Doxology__.append_small End-Insert
-					//	end-when	
+						Insert_section MA._13_Lauds__.read__.all End-Insert
+						Insert_section MA._14_Doxology__.append_small End-Insert
 						Insert_section MA._15_Litanies__.aftersmalldoxology End-Insert
 						Insert_section MA._16_Aposticha__.oc_ End-Insert
 						Insert_section MA._17_ItIsGood_Trisagion__.not_lent End-Insert
