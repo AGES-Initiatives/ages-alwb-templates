@@ -1,4 +1,4 @@
-Template se.m03.d12.ma3
+Template se.m03.d16.ma2
 
 Status NA
 	
@@ -15,7 +15,7 @@ Status NA
 	import roles.*
 
 	Head 
-		Set_Date month 3 day 12 year 2023 End_Date
+		Set_Date month 3 day 16 year 2023 End_Date
 			Page_Header_Even
 				center @lookup sid ma.pdf.header lang L1 @lookup sid d.on lang L1 @date lang L1 
 			End_Page_Header_Even
@@ -32,13 +32,14 @@ Status NA
 	End_Head
 
 	Preface Covers
-		Insert_template pdf.cover.ma.me End-Insert
+
 		Insert_template pdf.cover.credits End-Insert
 	End-Preface
 
-	when-movable-cycle-day-is
-		14 thru 48 use:
-			Insert_section mc.map.ma.Section03 End-Insert
+	when-movable-cycle-day-is 
+		22, 29, 36, 43, 50 use:
+			Insert_section mc.map.ma.Section02 End-Insert
+		otherwise use:
 	end-when	
 
 End-Template

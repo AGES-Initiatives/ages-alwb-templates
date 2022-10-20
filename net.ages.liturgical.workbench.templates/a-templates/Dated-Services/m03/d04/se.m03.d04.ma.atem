@@ -37,17 +37,13 @@ Status Final
 	End-Preface
 
 	when-movable-cycle-day-is
-		1, 8 use: 
+		8, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40 use:
 			Insert_section mc.map.ma.Section01 End-Insert
-		14 thru 48 use: 
-			Insert_section mc.map.ma.Section01 End-Insert 
+
 		otherwise use:
 			when-name-of-day-is
-				Sunday use:
-					Section Instance02
-					End-Section
 				Saturday use:
-					Section Instance03
+					Section Instance_Saturday
 						Insert_section ST.ma.ho_oc_me1 End-Insert
 						Insert_section MA._01_Beginning__.alleluia__.mode2_saturday End-Insert
 						Insert_section AP.da__.matins_begin End-Insert
@@ -75,7 +71,7 @@ Status Final
 						Insert_section MA._20_Dismissal__.nocommemoration End-Insert
 					End-Section
 				otherwise use:
-					Section Instance01
+					Section Instance_Weekday
 						Insert_section ST.ma.ho_oc_me1 End-Insert
 						Insert_section MA._01_Beginning__.modeofday End-Insert
 						Insert_section AP.da__.matins_begin End-Insert
