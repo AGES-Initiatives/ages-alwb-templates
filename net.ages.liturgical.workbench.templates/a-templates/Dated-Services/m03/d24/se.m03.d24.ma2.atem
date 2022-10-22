@@ -39,13 +39,18 @@ Status NA
 		Insert_template pdf.cover.credits End-Insert
 	End-Preface
 
-	when-movable-cycle-day-is 
-		36 use:
+	when-movable-cycle-day-is
+		29, 43 use:
+			Section Instance04
+				Insert_section mc.map.ma.Section02 End-Insert
+			End-Section
+
+		36, 50, 57 use:
 			Section Instance11
 				Insert_section ST.ma.oc_tr_me1 End-Insert
 				Insert_section MA._01_Beginning__.modeofweek End-Insert
 				Insert_section AP.res__.modeofweek End-Insert
-				Insert_section TI.g.s._07_hierarch_.m End-Insert
+				Insert_section TI.g.tr.com1 End-Insert
 				Insert_section AP.tr1_.hymn End-Insert
 				Insert_section TI.b.bf End-Insert
 				Insert_section AP.me1_.hymn End-Insert
@@ -100,7 +105,7 @@ Status NA
 						Para role bmc_ode3_kathisma sid mc.ode3.kathisma End-Para
 							Title role source sid sourceTriodion End-Title
 							Actor sid Choir End-Actor
-							Insert_section TI.ka.s._07_hierarch_.m End-Insert
+							Insert_section TI.ka.tr.com1 End-Insert
 							Title<Tmode>rid trMA.Ode3Kathisma1.mode</><Tmelody>rid trMA.Ode3Kathisma1.melody</>End-Title
 							Media rid trMA.Ode3Kathisma1.text End-Media
 							Hymn rid trMA.Ode3Kathisma1.text @ver media-off End-Hymn
@@ -221,32 +226,52 @@ Status NA
 				End-Section
 				Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
 				Insert_section MA._12_Exaposteilarion__.eo__.eoofweek_.exap End-Insert
-				Insert_section TI.s._07_hierarch_.m End-Insert
+				Insert_section TI.tr.com1 End-Insert
 				Insert_section MA._12_Exaposteilarion__.append__.tr1 End-Insert
 				Insert_section TI.bf End-Insert
 				Insert_section MA._12_Exaposteilarion__.append__.me__.exap1 End-Insert
 				Insert_section MA._13_Lauds__.modeofweek__.for6_nocollapse End-Insert
 				Insert_section MA._13_Lauds__.oc__.s_12as12 End-Insert
-				Section block1
-					Insert_section TI.bf End-Insert
-					Title role source0 sid sourceMenaion End-Title
-					Media sid me.m03.d24_gr_GR_cog.meMA.MM.Mar25Sv123asLauds345.text End-Media
-					Title<Tmode>sid me.m03.d25_gr_GR_cog.meSV.Stichera1.mode</><Tmelody>sid me.m03.d25_gr_GR_cog.meSV.Stichera1.melody</>End-Title
-					Insert_section MA.Lauds_Verses.v03 End-Insert
-					Hymn sid me.m03.d25_gr_GR_cog.meSV.Stichera1.text @ver media-off End-Hymn
-					Insert_section MA.Lauds_Verses.v04 End-Insert
-					Hymn sid me.m03.d25_gr_GR_cog.meSV.Stichera2.text @ver media-off End-Hymn
-					Insert_section MA.Lauds_Verses.v05 End-Insert
-					Hymn sid me.m03.d25_gr_GR_cog.meSV.Stichera3.text @ver media-off End-Hymn
-				End-Section
-				Insert_section TI.s._07_hierarch_.m End-Insert
-				Insert_section MA._13_Lauds__.tr__.p_123as678_.hymns End-Insert
+				when-movable-cycle-day-is
+					36 use:
+						Insert_section MA._13_Lauds__.oc__.s_12as12 End-Insert
+						Section block1
+							Insert_section TI.bf End-Insert
+							Title role source0 sid sourceMenaion End-Title
+							Media sid me.m03.d24_gr_GR_cog.meMA.MM.Mar25Sv123asLauds345.text End-Media
+							Title<Tmode>sid me.m03.d25_gr_GR_cog.meSV.Stichera1.mode</><Tmelody>sid me.m03.d25_gr_GR_cog.meSV.Stichera1.melody</>End-Title
+							Insert_section MA.Lauds_Verses.v03 End-Insert
+							Hymn sid me.m03.d25_gr_GR_cog.meSV.Stichera1.text @ver media-off End-Hymn
+							Insert_section MA.Lauds_Verses.v04 End-Insert
+							Hymn sid me.m03.d25_gr_GR_cog.meSV.Stichera2.text @ver media-off End-Hymn
+							Insert_section MA.Lauds_Verses.v05 End-Insert
+							Hymn sid me.m03.d25_gr_GR_cog.meSV.Stichera3.text @ver media-off End-Hymn
+						End-Section
+						Insert_section TI.tr.com1 End-Insert
+						Insert_section MA._13_Lauds__.tr__.p_123as678_.hymns End-Insert
+					50, 57 use:
+						Insert_section MA._13_Lauds__.oc__.s_1234as1234 End-Insert
+						Section block2
+							Insert_section TI.bf End-Insert
+							Title role source0 sid sourceMenaion End-Title
+							Title<Tmode>sid me.m03.d25_gr_GR_cog.meSV.Stichera1.mode</><Tmelody>sid me.m03.d25_gr_GR_cog.meSV.Stichera1.melody</>End-Title
+							Insert_section MA.Lauds_Verses.v05 End-Insert
+							Hymn sid me.m03.d25_gr_GR_cog.meSV.Stichera1.text @ver media-off End-Hymn
+							Insert_section MA.Lauds_Verses.v06 End-Insert
+							Hymn sid me.m03.d25_gr_GR_cog.meSV.Stichera1.text @ver media-off End-Hymn
+							Insert_section PsalmVerses.forAnnunciation.verse1 End-Insert
+							Hymn sid me.m03.d25_gr_GR_cog.meSV.Stichera2.text @ver media-off End-Hymn
+							Insert_section PsalmVerses.forAnnunciation.verse2 End-Insert
+							Hymn sid me.m03.d25_gr_GR_cog.meSV.Stichera3.text @ver media-off End-Hymn
+						End-Section
+				end-when
 				Insert_section MA._13_Lauds__.glory__.tr__.gloryasglory_ End-Insert
 				Insert_section MA._13_Lauds__.both__.eotheotokion End-Insert
 				Insert_section MA._14_Doxology__.sunday End-Insert
 				Insert_section MA2._19_End_Options End-Insert
 				Insert_section MA._20_Dismissal__.nocommemoration End-Insert				
 			End-Section
+
 		56 use:
 			Section Instance22
 				Insert_section ST.ma.tr_me1 End-Insert

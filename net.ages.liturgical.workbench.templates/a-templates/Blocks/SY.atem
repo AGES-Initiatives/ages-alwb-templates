@@ -14,15 +14,18 @@ Template SY
 	import bTags.*
 	import roles.*
 
-//	Head 
-//		Set_Date month 5 day 25 year 2016 End_Date
-//	End_Head
-
-	Title ldp@Service_Date End-Title
-	Title ldp@Name_of_Period @Day_of_Movable_Cycle End-Title
 	
 	Section Synaxarion
 		when-date-is
+			Mar 25 use:
+				when-movable-cycle-day-is
+					28, 36, 50, 54, 57 use:
+						Insert_section me End-Insert
+						Reading rid syMA.lastline End-Reading
+					otherwise use:
+						Insert_section me End-Insert
+						Insert_section mc End-Insert
+				end-when
 			Mar 26 use:
 				when-movable-cycle-day-is
 					50, 57 use:
@@ -201,6 +204,16 @@ Template SY
 				Insert_section me End-Insert
 				Insert_section mc End-Insert
 		end-when
+	End-Section
+
+	Section Synaxarion_mc_onotherday
+		Insert_section me End-Insert
+		Insert_section mc_onotherday End-Insert
+	End-Section
+
+	Section Synaxarion_me_only
+		Insert_section me End-Insert
+		Reading rid syMA.lastline End-Reading
 	End-Section
 
 	Section Synaxarion_mealt1
@@ -514,6 +527,15 @@ Template SY
 
 	Section Synaxarion_for_DailyReadings
 		when-date-is
+			Mar 25 use:
+				when-movable-cycle-day-is
+					28, 36, 50, 54, 57 use:
+						Insert_section me End-Insert
+						Reading rid syMA.lastline End-Reading
+					otherwise use:
+						Insert_section me End-Insert
+						Insert_section mc End-Insert
+				end-when
 			Mar 26 use:
 				when-movable-cycle-day-is
 					50, 57 use:
@@ -683,7 +705,7 @@ Template SY
 		Insert_section SY.mc End-Insert
 	End-Section
 
-//	blocks
+
 		Section me
 			Rubric sid standing.prefix sid standing.matins.synaxarion End-Rubric
 			Title role desig sid Synaxarion End-Title
@@ -897,10 +919,10 @@ Template SY
 						Reading rid syMA.commemoration98.text End-Reading
 				end-when
 			End-Section
-		End-Section //me
+		End-Section
 
 		Section mc_alt1
-			Insert_section block2 End-Insert
+			Insert_section block1 End-Insert
 			when-movable-cycle-day-is
 				73 use:
 					Section pealt1_73
@@ -917,7 +939,7 @@ Template SY
 						Reading rid alt1.peSY.lastline End-Reading
 					End-Section
 			end-when
-			Insert_section block4 End-Insert
+			Insert_section block3 End-Insert
 		End-Section		
 
 		Section mc
@@ -926,22 +948,24 @@ Template SY
 					Section com
 						Insert_section block1 End-Insert
 						Insert_section block2 End-Insert
-						Insert_section block3 End-Insert
 					End-Section
-					Insert_section block4 End-Insert
+					Insert_section block3 End-Insert
 				otherwise use:
 					Insert_section block1 End-Insert
 					Insert_section block2 End-Insert
-					Insert_section block3 End-Insert
 			end-when
+		End-Section
+		
+		Section mc_onotherday
+			Title role chapverse sid TouTriodiou End-Title
+			Reading rid trSY.commemoration.onotherday.text End-Reading
+			Para role titlezero rid trSY.commemoration.couplet1.title End-Para
+			Para role readingcenterzero rid trSY.commemoration.couplet1.verse1 End-Para
+			Para role readingcenter rid trSY.commemoration.couplet1.verse2 End-Para
+			Reading rid trSY.lastline End-Reading
 		End-Section
 			
 			Section block1
-		//		when-movable-cycle-day-is
-		//			71 use: Title role desig sid Synaxarion End-Title
-		//		end-when
-			End-Section
-			Section block2
 				when-movable-cycle-day-is
 					1 thru 70 use:
 						when-exists rid trSY.commemoration.text use:
@@ -953,7 +977,7 @@ Template SY
 						end-when
 				end-when
 			End-Section
-			Section block3
+			Section block2
 				when-movable-cycle-day-is
 					1, 65 use:
 						Reading rid trSY.commemoration.text End-Reading
@@ -1034,15 +1058,11 @@ Template SY
 						Reading rid syMA.lastline End-Reading
 				end-when
 			End-Section
-			Section block4
-			//	when-movable-cycle-day-is
-			//		71, 72, 73, 74, 75, 76, 77, 109 use:
-						Section pascha	
-							Reading sid hoMA.SunPostGospel.text<r>sid Thrice</>End-Reading
-							Reading sid hoMA.SunPostGospelIdiomelon.text<r>sid Thrice</>End-Reading
-						End-Section
-			//	end-when
+			Section block3
+				Section pascha	
+					Reading sid hoMA.SunPostGospel.text<r>sid Thrice</>End-Reading
+					Reading sid hoMA.SunPostGospelIdiomelon.text<r>sid Thrice</>End-Reading
+				End-Section
 			End-Section
-	//	End-Section //mc
 	
 End-Template
