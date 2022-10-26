@@ -1,0 +1,91 @@
+Template se.pe.d093.ma 
+
+Status NA
+
+	import actors_gr_GR_cog.*
+	import misc_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head
+	//	Set_Date month 4 day 29 End_Date
+			Page_Header_Even
+				center @lookup sid ma.pdf.header sid d.on lang L1 @date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+
+		Insert_template pdf.cover.credits End-Insert
+	End-Preface
+
+	Section Instance01
+		Insert_section ST.ma.pe_me End-Insert
+		Insert_section MA._01_Beginning__.mode3 End-Insert
+		Insert_section AP.res__.mode3 End-Insert
+		Insert_section AP.gloryboth__.primarytheotokion__.mode3 End-Insert
+		Section block1
+			Insert_section MA._02_Kathisma1__.litany End-Insert
+			Insert_section MA._02_Kathisma1__.pe__.weekday End-Insert
+			Insert_section MA._03_Kathisma2__.append__.pe__.kath21gb21_ End-Insert
+			Insert_section MA._07_Gospel__.no__.reader__.psalm50 End-Insert
+			when-exists
+				rid me.meMA.Kontakion1.poet use:
+					Insert_section MA._11_Kontakion__.append__.pe_weekday End-Insert
+				otherwise use:
+					when-exists
+						rid me.meMA.Kontakion1.text use:
+							Insert_section MA._11_Kontakion__.append__.me1_ End-Insert
+						otherwise use:
+							Insert_section MA._11_Kontakion__.append__.pe_weekday End-Insert
+					end-when
+			end-when
+			Insert_section SY.Synaxarion End-Insert				
+			Insert_section MA._10_Canon__.ode8_heirmos__.me End-Insert
+			Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
+			Insert_section MA._10_Canon__.magnificat__.modeofode9heirmos__.me End-Insert
+			Insert_section MA._10_Canon__.ode9_heirmos__.me End-Insert
+			Insert_section MA._10_Canon__.ode9_end End-Insert
+			Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+			when-exists
+				rid me.meMA.Exaposteilarion1.text use:
+					Insert_section MA._12_Exaposteilarion__.me__.exap1_ End-Insert
+					Insert_section MA._12_Exaposteilarion__.append__.festal End-Insert
+				otherwise use:
+					Insert_section MA._12_Exaposteilarion__.festal End-Insert
+			end-when
+			Insert_section MA._13_Lauds__.modeofpeday__.for4 End-Insert
+			Insert_section MA._13_Lauds__.pe__.weekday_ End-Insert
+			Insert_section TI.gb.pe.specific End-Insert
+			Insert_section MA._13_Lauds__.gloryboth__.pe__.gloryasgloryboth_.hymn End-Insert
+			Insert_section MA._14_Doxology__.small End-Insert
+			Insert_section MA._15_Litanies__.aftersmalldoxology End-Insert
+			Insert_section MA._16_Aposticha__.pe__.weekday_ End-Insert
+			Insert_section MA._16_Aposticha__.gloryboth__.pe__.gloryasgloryboth_ End-Insert
+			Insert_section MA._17_ItIsGood_Trisagion__.not_lent End-Insert
+		End-Section
+		Insert_section AP.res__.mode3 End-Insert
+		Insert_section AP.gloryboth__.primarytheotokion__.mode3 End-Insert
+		Insert_section MA._18_End__.ektenia_wisdom End-Insert
+		Insert_section MA._18_End__.rubrics__.begin_first_hour End-Insert
+		Rubric sid Or End-Rubric
+		Insert_section MA._20_Dismissal__.nocommemoration End-Insert
+	End-Section
+
+End-Template

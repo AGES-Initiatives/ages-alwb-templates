@@ -37,13 +37,31 @@ Status NA
 	End-Preface
 
 	when-movable-cycle-day-is
-		1 thru 64 use: 
+		61 thru 64 use:
 			Insert_section mc.map.ma.Section03 End-Insert
-		65 thru 70 use: //Holy Week
-		71 thru 127 use: 
+
+		65 thru 70 use: //holy week em
+
+		71 use:
 			Insert_section mc.map.ma.Section03 End-Insert
+			
+		72 use: //Bright Monday - St. George
+			Section Instance01_Monday
+				Insert_section se.pe.d072.ma3.Instance02.part1 End-Insert
+				Insert_section SY.Different_Date__.Apr23_StGeorge End-Insert
+				Insert_section se.pe.d072.ma3.Instance02.part2 End-Insert
+			End-Section
+			
+		73 use: //Bright Tuesday - St. Mark
+			Section Instance01_Tuesday
+				Insert_section se.pe.d073.ma3.Instance02.part1 End-Insert
+				Insert_section SY.Different_Date__.Apr25_StMark End-Insert
+				Insert_section se.pe.d073.ma3.Instance02.part2 End-Insert
+			End-Section
+
 		otherwise use:
-		
-	end-when		
+			Insert_section mc.map.ma.Section03 End-Insert
+
+	end-when	
 		
 End-Template

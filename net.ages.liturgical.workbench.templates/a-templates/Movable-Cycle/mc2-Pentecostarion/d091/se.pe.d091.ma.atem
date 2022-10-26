@@ -41,47 +41,52 @@ Status NA
 		Insert_section ST.ma.pe_me1 End-Insert
 		Insert_section MA._01_Beginning__.mode2 End-Insert
 		Set_mcDay day 85 End_mcDay
-			Insert_section AP.pe1_ End-Insert
-			Insert_section TI.g._ End-Insert
-			Insert_section AP.pe2_.hymn End-Insert
-			Insert_section TI.b._ End-Insert
-			Insert_section AP.pe3_.hymn End-Insert
+		Insert_section AP.pe1_ End-Insert
+		Insert_section TI.g._ End-Insert
+		Insert_section AP.pe2_.hymn End-Insert
+		Insert_section TI.b.pe.specific End-Insert
+		Insert_section AP.pe3_.hymn End-Insert
 		Set_mcDay day 91 End_mcDay
-		Insert_section MA._02_Kathisma1__.litany End-Insert
-		Insert_section MA._02_Kathisma1__.pe__.weekday End-Insert
-		Insert_section MA._03_Kathisma2__.append__.pe__.kath21gb21_ End-Insert
-		Insert_section MA._07_Gospel__.no__.reader__.psalm50 End-Insert
-		Set_mcDay day 85 End_mcDay
+		Section block1
+			Insert_section MA._02_Kathisma1__.litany End-Insert
+			Insert_section MA._02_Kathisma1__.pe__.weekday End-Insert
+			Insert_section MA._03_Kathisma2__.append__.pe__.kath21gb21_ End-Insert
+			Insert_section MA._07_Gospel__.no__.reader__.psalm50 End-Insert
+			Set_mcDay day 85 End_mcDay
 			Insert_section MA._11_Kontakion__.append__.pe1_ End-Insert
-		Set_mcDay day 91 End_mcDay
-		Insert_section SY.Synaxarion End-Insert
-		Insert_section MA._10_Canon__.ode8_heirmos__.me End-Insert
-		Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
-		Insert_section MA._10_Canon__.magnificat__.modeofcanon__.me1 End-Insert
-		Insert_section MA._10_Canon__.ode9_heirmos__.me End-Insert
-		Insert_section MA._10_Canon__.ode9_end End-Insert
-		Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
-		Set_mcDay day 85 End_mcDay
-			Insert_section MA._12_Exaposteilarion__.pe__.exap1 End-Insert
-		Set_mcDay day 91 End_mcDay
-		Insert_section MA._13_Lauds__.mode2__.for4 End-Insert
-		Insert_section MA._13_Lauds__.pe__.weekday_ End-Insert
-		Insert_section MA._13_Lauds__.gloryboth__.pe__.gloryasgloryboth_ End-Insert
-		Insert_section MA._14_Doxology__.small End-Insert
-		Insert_section MA._15_Litanies__.aftersmalldoxology End-Insert
-		Insert_section MA._16_Aposticha__.pe__.weekday_ End-Insert
-		Insert_section MA._16_Aposticha__.gloryboth__.pe__.gloryasgloryboth_ End-Insert
-		Insert_section MA._17_ItIsGood_Trisagion__.not_lent End-Insert
+			Set_mcDay day 91 End_mcDay
+			Insert_section SY.Synaxarion End-Insert
+			Insert_section MA._10_Canon__.ode8_heirmos__.me End-Insert
+			Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
+			Insert_section MA._10_Canon__.magnificat__.modeofode9heirmos__.me End-Insert
+			Insert_section MA._10_Canon__.ode9_heirmos__.me End-Insert
+			Insert_section MA._10_Canon__.ode9_end End-Insert
+			Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+			when-exists
+				rid me.meMA.Exaposteilarion1.text use:
+					Insert_section MA._12_Exaposteilarion__.me__.exap1_ End-Insert
+					Insert_section MA._12_Exaposteilarion__.append__.festal End-Insert
+				otherwise use:
+					Insert_section MA._12_Exaposteilarion__.festal End-Insert
+			end-when
+			Insert_section MA._13_Lauds__.mode2__.for4 End-Insert
+			Insert_section MA._13_Lauds__.pe__.weekday_ End-Insert
+			Insert_section MA._13_Lauds__.gloryboth__.pe__.gloryasgloryboth_ End-Insert
+			Insert_section MA._14_Doxology__.small End-Insert
+			Insert_section MA._15_Litanies__.aftersmalldoxology End-Insert
+			Insert_section MA._16_Aposticha__.pe__.weekday_ End-Insert
+			Insert_section MA._16_Aposticha__.gloryboth__.pe__.gloryasgloryboth_ End-Insert
+			Insert_section MA._17_ItIsGood_Trisagion__.not_lent End-Insert
+		End-Section
 		Set_mcDay day 85 End_mcDay
 			Insert_section AP.pe1_ End-Insert
 			Insert_section TI.g._ End-Insert
 			Insert_section AP.pe2_.hymn End-Insert
-			Insert_section TI.b._ End-Insert
+			Insert_section TI.b.pe.specific End-Insert
 			Insert_section AP.pe3_.hymn End-Insert
 		Set_mcDay day 91 End_mcDay
 		Insert_section MA._18_End__.ektenia_wisdom End-Insert
 		Insert_section MA._20_Dismissal__.nocommemoration End-Insert		
-		
-		
 	End-Section
+
 End-Template
