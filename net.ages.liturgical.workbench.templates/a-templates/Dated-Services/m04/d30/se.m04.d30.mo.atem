@@ -32,15 +32,21 @@ Status Final
 	End_Head
 
 	when-movable-cycle-day-is
-		1 thru 64 use: 
-
-		65 thru 70 use: //Holy Week
-		72 use:
-			Insert_section se.pe.d072.mo.Instance02 End-Insert
-		73 thru 127 use: 
+		63 thru 71 use:
 			Insert_section mc.map.mo.Section01 End-Insert
 
+		72 use: //St George
+			Insert_section se.pe.d072.mo.Instance02 End-Insert
+			
+		73, 74, 75, 76, 77, 78, 85, 92, 95 use:
+			Insert_section mc.map.mo.Section01 End-Insert
 		otherwise use:
-	end-when	
-
+			when-name-of-day-is
+				Sunday use:
+					Insert_section MO.Midnight_Office_Sunday End-Insert
+				otherwise use:
+					Insert_section MO.Midnight_Office_Weekday End-Insert
+			end-when
+	end-when
+	
 End-Template
