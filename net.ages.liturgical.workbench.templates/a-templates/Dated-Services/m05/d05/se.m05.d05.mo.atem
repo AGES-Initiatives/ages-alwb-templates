@@ -36,8 +36,15 @@ Status NA
 //	End-Preface
 
 	when-movable-cycle-day-is
-		1, 8, 15, 22, 29, 36, 43, 50, 57, 64, 78 use: //check again
+		68 thru 71 use:
 			Insert_section mc.map.mo.Section01 End-Insert
+
+		72 use: //St George
+			Insert_section se.pe.d072.mo.Instance02 End-Insert
+			
+		73, 75, 76, 77, 78, 85, 92, 95, 99 use:
+			Insert_section mc.map.mo.Section01 End-Insert
+
 		74 use: 
 			Section Instance02
 				Section block1
@@ -68,22 +75,14 @@ Status NA
 				Actor sid Reader End-Actor
 				Insert_section PE.Pascha_Hours_Parts.end.midnightoffice End-Insert
 			End-Section
+
 		otherwise use:
 			when-name-of-day-is
 				Sunday use:
-					Section Instance02 //Sunday
-						Insert_section ST.mo.oc_me1 End-Insert
-						Insert_section MO._01_intro_ End-Insert
-						Insert_section MO._03_triadic_canon_ End-Insert
-						Insert_section MO._04_triadic_megalynaria End-Insert
-						Insert_section MO._06_sundays_feastdays_ End-Insert
-						Insert_section MO._13_end_dismissal__.append_sunday_feastday End-Insert
-					End-Section
-					
+					Insert_section MO.Midnight_Office_Sunday End-Insert
 				otherwise use:
-					Section Instance01 //Weekday
-					End-Section
+					Insert_section MO.Midnight_Office_Weekday End-Insert
 			end-when
 	end-when
-
+	
 End-Template
