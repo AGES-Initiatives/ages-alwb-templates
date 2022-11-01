@@ -88,7 +88,15 @@ Status NA
 			Insert_section MA._14_Doxology__.small End-Insert
 			Insert_section MA._15_Litanies__.aftersmalldoxology End-Insert
 			Insert_section MA._16_Aposticha__.pe__.weekday_ End-Insert
-			Insert_section MA._16_Aposticha__.gloryboth__.pe__.gloryasgloryboth_ End-Insert
+			when-exists
+				rid me.meMA.AposGlory.text use:
+					Insert_section TI.g.me.com2 End-Insert
+					Insert_section MA._16_Aposticha__.glory__.me__.gloryasglory_.hymn End-Insert
+					Insert_section TI.b.pe.specific End-Insert
+					Insert_section MA._16_Aposticha__.both__.pe__.gloryasboth_.hymn End-Insert
+				otherwise use:
+					Insert_section MA._16_Aposticha__.gloryboth__.pe__.gloryasgloryboth_ End-Insert
+			end-when
 			Insert_section MA._17_ItIsGood_Trisagion__.not_lent End-Insert
 		End-Section
 		Section end_apolytikia
