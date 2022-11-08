@@ -37,45 +37,33 @@ Status NA
 	End-Preface
 
 	when-movable-cycle-day-is
-		95, 99, 102, 106, 109, 110, 113, 118, 119, 120, 121, 126, 127 use:
-			Section Instance01
-				Insert_section mc.map.ma.Section02 End-Insert
-			End-Section
-			
-		96, 97, 100, 101 use:
-			Section Instance04_9697100101
-			End-Section
-
-		98 use:
-			Section Instance04_98
-			End-Section
-
-		103, 104, 107 use:
-			Section Instance04_103104107
-			End-Section
-
-		105 use:
-			Section Instance04_105
-			End-Section
-
-		108 use: //Leavetaking of Blindman
-			Section Instance05
-			End-Section
-
-		111, 112 use: 
-			Section Instance06
-			End-Section
-
-		114, 115, 116, 117 use: 
-			Section Instance07
-			End-Section
-
-		122 thru 125 use: 
-			Section Instance08
-			End-Section
+		102, 106, 110, 113, 118, 120, 121, 126, 127 use:
+			Insert_section mc.map.ma.Section02 End-Insert
 			
 		otherwise use:
-
+			when-name-of-day-is
+				Sunday use:
+					Section Instance_Sunday
+						Insert_section ST.ma.oc_me1 End-Insert
+						Insert_section MA._01_Beginning__.modeofweek End-Insert
+						Insert_section AP.resgloryres End-Insert
+						Insert_section AP.both__.primarytheotokion__.modeofweek End-Insert
+						Insert_section MA._02_Kathisma1__.litany End-Insert
+						Insert_section MA._02_Kathisma1__.oc__.sunday__.kath111213 End-Insert
+						Insert_section MA._03_Kathisma2__.append__.oc__.sunday__.kath212223 End-Insert
+						Insert_section MA._05_Kathisma3__.resurrectional_evlogetaria End-Insert
+						Insert_section MA._06_Antiphons__.sunday_ End-Insert
+						Insert_section MA2._09_Options__.sunday__.oc_h12tas0GrGrTh_and_me1_123tasVVGB_with_kath_me1o2t_and_konoik_oc End-Insert
+						Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+						Insert_section MA._12_Exaposteilarion__.eo__.eoofweek_ End-Insert
+						Insert_section MA._13_Lauds__.modeofweek__.for6_nocollapse End-Insert
+						Insert_section MA._13_Lauds__.oc__.sunday End-Insert
+						Insert_section MA._13_Lauds__.glory__.eo_ End-Insert
+						Insert_section MA._14_Doxology__.sunday End-Insert
+						Insert_section MA2._19_End_Options End-Insert
+						Insert_section MA._20_Dismissal__.nocommemoration End-Insert
+					End-Section
+			end-when
 	end-when	
-
+		
 End-Template

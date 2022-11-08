@@ -32,22 +32,39 @@ Status NA
 	End_Head
 
 	Preface Covers
-		//Insert_template ematins.cover.ma End-Insert
+
 		Insert_template pdf.cover.credits End-Insert
 	End-Preface
 
 	when-movable-cycle-day-is 
-		1 thru 127 use:
-			Insert_section mc.map.ma.Section02 End-Insert //adjust to appropriate service
+		113, 118, 120, 121, 126, 127 use:
+			Insert_section mc.map.ma.Section02 End-Insert
+
 		otherwise use:
 			when-name-of-day-is
 				Sunday use:
-					Section Instance02
-					End-Section
-				otherwise use:
-					Section Instance01
+					Section Instance_Sunday
+						Insert_section ST.ma.oc_me1 End-Insert
+						Insert_section MA._01_Beginning__.modeofweek End-Insert
+						Insert_section AP.res__.modeofweek End-Insert
+						Insert_section AP.glory__.ganame.Jun19__.jude End-Insert
+						Insert_section AP.both__.primarytheotokion__.mode3 End-Insert	
+						Insert_section MA._02_Kathisma1__.litany End-Insert
+						Insert_section MA._02_Kathisma1__.oc__.sunday__.whenmode3 End-Insert
+						Insert_section MA._03_Kathisma2__.append__.oc__.sunday__.kath212223 End-Insert
+						Insert_section MA._05_Kathisma3__.resurrectional_evlogetaria End-Insert
+						Insert_section MA._06_Antiphons__.sunday_ End-Insert
+						Insert_section MA2._09_Options__.sunday__.oc_h12tas0GrGrTh_and_me1_123tasVVGB_with_kath_me1o2t_and_konoik_oc End-Insert
+						Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+						Insert_section MA._12_Exaposteilarion__.eo__.eoofweek_ End-Insert
+						Insert_section MA._13_Lauds__.modeofweek__.for6_nocollapse End-Insert
+						Insert_section MA._13_Lauds__.oc__.sunday End-Insert
+						Insert_section MA._13_Lauds__.glory__.eo_ End-Insert
+						Insert_section MA._14_Doxology__.sunday End-Insert
+						Insert_section MA2._19_End_Options End-Insert
+						Insert_section MA._20_Dismissal__.nocommemoration End-Insert
 					End-Section
 			end-when
 	end-when	
-
+	
 End-Template

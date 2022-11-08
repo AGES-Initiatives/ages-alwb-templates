@@ -37,12 +37,13 @@ Status NA
 	End-Preface
 
 	when-movable-cycle-day-is 
-		1 thru 127 use:
-			Insert_section mc.map.ma.Section02 End-Insert //adjust to appropriate service
+		113, 118, 120, 121, 126, 127 use:
+			Insert_section mc.map.ma.Section02 End-Insert
+
 		otherwise use:
 			when-name-of-day-is 
 				Sunday use:
-					Section Instance02
+					Section Instance_Sunday
 						Insert_section ST.ma.oc_me1 End-Insert
 						Insert_section MA._01_Beginning__.modeofweek End-Insert
 						Insert_section AP.res__.modeofweek End-Insert
@@ -64,14 +65,8 @@ Status NA
 						Insert_section MA2._19_End_Options End-Insert
 						Insert_section MA._20_Dismissal__.nocommemoration End-Insert
 					End-Section
-	
-				otherwise use:
-					Section Instance01
-						Para sid Or End-Para
-					End-Section
 			end-when
 		
 	end-when	
-	
 
 End-Template

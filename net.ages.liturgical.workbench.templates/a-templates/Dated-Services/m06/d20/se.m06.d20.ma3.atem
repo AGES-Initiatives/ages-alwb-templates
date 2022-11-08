@@ -36,26 +36,9 @@ Status NA
 		Insert_template pdf.cover.credits End-Insert
 	End-Preface
 
-	when-movable-cycle-day-is 
-		118, 119, 120, 121, 126, 127 use:
-			Section Instance01
-				Insert_section mc.map.ma.Section03 End-Insert
-			End-Section
-		114, 115, 116, 117, 122, 123, 124, 125 use:
-			Section Instance02
-			End-Section
-		otherwise use:
-			when-name-of-day-is
-				Sunday use:
-					Section Instance00_sunday
-					End-Section
-				Saturday use:
-					Section Instance00_saturday
-					End-Section
-				otherwise use:
-					Section Instance00_weekday
-					End-Section
-			end-when
+	when-movable-cycle-day-is
+		119, 120 use: 
+			Insert_section mc.map.ma.Section03 End-Insert
 	end-when	
 
 End-Template
