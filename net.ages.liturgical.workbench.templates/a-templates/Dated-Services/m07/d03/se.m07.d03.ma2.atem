@@ -36,14 +36,14 @@ Status Final
 		Insert_template pdf.cover.credits End-Insert
 	End-Preface
 
-	when-movable-cycle-day-is
+	when-movable-cycle-day-is 
 		127 use:
-			Section Instance01
-			End-Section
+			Insert_section mc.map.ma.Section02 End-Insert
+
 		otherwise use:
-			when-name-of-day-is 
-				Sunday use:	
-					Section Instance03
+			when-name-of-day-is
+				Sunday use:
+					Section Instance_Sunday
 						Insert_section ST.ma.oc_me1 End-Insert
 						Insert_section MA._01_Beginning__.modeofweek End-Insert
 						Insert_section AP.resgloryres End-Insert
@@ -63,15 +63,6 @@ Status Final
 						Insert_section MA2._19_End_Options End-Insert
 						Insert_section MA._20_Dismissal__.nocommemoration End-Insert
 					End-Section 
-					
-				Saturday use:
-					Section Instance04
-					End-Section 
-				
-				otherwise use:
-					Section Instance02
-					End-Section 
-					
 			end-when
 	end-when
 End-Template

@@ -38,16 +38,43 @@ Status Final
 
 	when-movable-cycle-day-is
 		126 use:
-			Section Instance01 // 2078
+			Section Instance01 //2078
 			End-Section
+
 		127 use:
-			Section Instance02 // 2051
+			Section Instance02
+				Insert_section ST.ve.pe_me1 End-Insert
+				Insert_section VE._01_Beginning__.vespers End-Insert
+				Insert_section VE._02_Kekragaria__.modeofweek__.for10 End-Insert
+				Insert_section VE._03_Stichera__.oc__.sunday__.s_1234as1234 End-Insert
+				Insert_section TI.stp.me.com1 End-Insert
+				Insert_section VE._03_Stichera__.me__.p_123as567 End-Insert	
+				Insert_section TI.pe.specific End-Insert
+				Insert_section VE._03_Stichera__.pe__.p_789as8910 End-Insert	
+				Insert_section VE._03_Stichera__.glory__.pe__.gloryasglory_ End-Insert	
+				Insert_section VE._03_Stichera__.both__.firsttheotokion__.modeofweek End-Insert
+				Insert_section VE._04_Middle__.entrance End-Insert
+				Insert_section VE._05_Readings__.reader End-Insert
+				Insert_section VE._06_Litanies__.fullektenia End-Insert
+				Insert_section VE._08_Aposticha__.oc__.sunday__.aposticha1234 End-Insert
+				Insert_section TI.g.pe.specific End-Insert
+				Insert_section VE._08_Aposticha__.glory__.pe__.gloryasglory_.hymn End-Insert
+				Insert_section TI.b.me.com1 End-Insert
+				Insert_section VE._08_Aposticha__.both__.me__.gloryasboth_.hymn End-Insert
+				Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
+				Insert_section AP.res__.modeofweek End-Insert
+				Insert_section TI.g.pe.specific End-Insert
+				Insert_section AP.pe2_.hymn End-Insert
+				Insert_section TI.b.me.com1 End-Insert
+				Insert_section AP.me1_.hymn End-Insert
+				Insert_section VE._10_End__.wisdom123.part1 End-Insert
+				Insert_section VE._11_Dismissal__.commemoration End-Insert
 			End-Section
 
 		otherwise use:
 			when-name-of-day-is
 				Sunday use:
-					Section Instance04
+					Section Instance_Sunday
 						Insert_section ST.ve.oc_me1 End-Insert
 						Insert_section VE._01_Beginning__.vespers End-Insert
 						Insert_section VE._02_Kekragaria__.modeofweek__.for10 End-Insert
@@ -68,8 +95,9 @@ Status Final
 						Insert_section VE._10_End__.wisdom123.part1 End-Insert
 						Insert_section VE._11_Dismissal__.commemoration End-Insert
 					End-Section
+
 				otherwise use:
-					Section Instance03
+					Section Instance_Weekday
 						Insert_section ST.ve.me1 End-Insert
 						Insert_section VE._01_Beginning__.vespers End-Insert
 						Insert_section VE._02_Kekragaria__.mode4__.for6 End-Insert
