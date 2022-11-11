@@ -35,12 +35,16 @@ Status NA
 		Insert_template pdf.cover.credits End-Insert
 	End-Preface
 
+	when-movable-cycle-day-is
+		1, 8, 14, 15, 21, 22 use:
+
+		otherwise use:
 			when-name-of-day-is
 				Sunday use:
-					Section Instance02 //2051
+					Section Instance_Sunday //2040
 					End-Section
 				otherwise use:	
-					Section Instance01
+					Section Instance_Weekday
 						Insert_section ST.ve.mealt1 End-Insert
 						Insert_section VE._01_Beginning__.vespers End-Insert
 						Insert_section PS._01_Vespers__.kathisma1_stanza1__.rubric End-Insert
@@ -76,5 +80,6 @@ Status NA
 						Insert_section VE._11_Dismissal__.mealt1_commemoration End-Insert
 					End-Section
 			end-when
+	end-when
 	
 End-Template

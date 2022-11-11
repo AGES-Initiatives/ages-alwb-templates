@@ -32,21 +32,19 @@ Status Final
 	End_Head
 
 	when-movable-cycle-day-is
-		1 use: Insert_section se.tr.d001.li2.Instance02 End-Insert
-		2 thru 7 use:
-		8 use: Insert_section se.tr.d008.li2.Instance02 End-Insert
-		9 thru 12 use:
-		13 use: //leavetaking of Meeting
-		14 use:	Insert_section se.tr.d014.li2.Instance01 End-Insert
-		15 use: 
-		16 use: 
-		17, 19 use:
-		18 use:
-		20 use: //leavetaking of Meeting
+		1, 8 use:
+			Insert_section mc.map.li.Section02_Instance02 End-Insert
+		13 use: 
+			Section Instance01
+				Insert_section se.m02.d09.li2.Instance_Weekday End-Insert
+			End-Section
+		14, 15 use:
+			Insert_section mc.map.li.Section02 End-Insert
+			
 		otherwise use:
 			when-name-of-day-is
 				Sunday use:
-					Section Instance02
+					Section Instance_Sunday
 						Insert_section ST.li.oc_meaf End-Insert
 						Insert_section LI._10_Parts__._1_antiphons__.sundays_weekdays_feasts End-Insert
 							Break line End_Break
@@ -59,7 +57,7 @@ Status Final
 						Insert_section LI._10_Parts__._4_entrance End-Insert
 							Break line End_Break
 						Title<Tdesig>sid YmnoiMetaTinMikranEisodon</>End-Title
-						Insert_section se.m02.d07.li.Instance02.hymns End-Insert
+						Insert_section se.m02.d07.li.Instance_Sunday.hymns End-Insert
 							Break line End_Break
 						Insert_section LI._10_Parts__._5_trisagionhymn__.chrys End-Insert
 							Break line End_Break
@@ -81,7 +79,7 @@ Status Final
 						Insert_section LI._10_Parts__._9_fasting_ End-Insert
 					End-Section
 				otherwise use:
-					Section Instance01
+					Section Instance_Weekday
 						Insert_section ST.li.me End-Insert
 						Insert_section LI._10_Parts__._1_antiphons__.sundays_weekdays_feasts End-Insert
 							Break line End_Break
@@ -94,7 +92,7 @@ Status Final
 						Insert_section LI._10_Parts__._4_entrance End-Insert
 							Break line End_Break
 						Title<Tdesig>sid YmnoiMetaTinMikranEisodon</>End-Title
-						Insert_section se.m02.d07.li.Instance01.hymns End-Insert
+						Insert_section se.m02.d07.li.Instance_Weekday.hymns End-Insert
 							Break line End_Break
 						Insert_section LI._10_Parts__._5_trisagionhymn__.chrys End-Insert
 							Break line End_Break

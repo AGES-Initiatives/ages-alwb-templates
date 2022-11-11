@@ -32,15 +32,15 @@ Status NA
 	End_Head
 
 	when-movable-cycle-day-is
-		1, 8 use: //Insert_section mc.map.li.Section01 End-Insert
-		14 thru 40 use:	//Insert_section mc.map.li.Section01 End-Insert
+		1, 8, 14, 15, 21, 22 use:
+
 		otherwise use:
 			when-name-of-day-is
 				Sunday use:
-					Section Instance02
+					Section Instance_Sunday //2040
 					End-Section
 				otherwise use:
-					Section Instance01
+					Section Instance_Weekday
 						Insert_section ST.li.mealt1 End-Insert
 						Insert_section LI._10_Parts__._1_antiphons__.celebrated_saint_mealt1 End-Insert
 						Insert_section AP.mealt11_ End-Insert
@@ -54,7 +54,7 @@ Status NA
 						Insert_section LI._10_Parts__._4_entrance End-Insert
 							Break line End_Break
 						Title<Tdesig>sid YmnoiMetaTinMikranEisodon</>End-Title
-						Insert_section se.m02.d19.li6.Instance01.hymns End-Insert
+						Insert_section se.m02.d19.li6.Instance_Weekday.hymns End-Insert
 							Break line End_Break
 						Insert_section LI._10_Parts__._5_trisagionhymn__.chrys End-Insert
 							Break line End_Break

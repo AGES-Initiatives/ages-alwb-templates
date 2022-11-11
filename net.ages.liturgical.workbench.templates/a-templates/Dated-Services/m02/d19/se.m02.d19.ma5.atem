@@ -37,15 +37,15 @@ Status NA
 	End-Preface
 
 	when-movable-cycle-day-is
-		1, 8 use: Insert_section mc.map.ma.Section01 End-Insert
-		14 thru 40 use:	Insert_section mc.map.ma.Section01 End-Insert
+		1, 8, 14, 15, 21, 22 use:
+
 		otherwise use:
 			when-name-of-day-is
 				Sunday use:
-					Section Instance02
+					Section Instance_Sunday //2040
 					End-Section
-				otherwise use:
-					Section Instance01
+				otherwise use:	
+					Section Instance_Weekday
 						Insert_section ST.ma.mealt1 End-Insert
 						Insert_section MA._01_Beginning__.mode5 End-Insert
 						Insert_section AP.mealt11glorymealt11_ End-Insert

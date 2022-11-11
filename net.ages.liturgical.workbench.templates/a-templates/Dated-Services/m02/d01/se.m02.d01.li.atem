@@ -32,8 +32,8 @@ Status Final
 	End_Head
 
 	when-movable-cycle-day-is
-		1, 8, 15, 22 use:
-			Section Instance03 //Triodion Sunday
+		1, 8 use:
+			Section Instance01
 				Insert_section ST.li.oc_tr_me End-Insert
 				Insert_section LI._01_Enarxis__.daily End-Insert
 				Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
@@ -54,23 +54,11 @@ Status Final
 				Insert_section LI._08_Liturgy__.chrys_default End-Insert
 				Insert_section LI._09_Dismissal__.commemoration End-Insert
 			End-Section
-		14 use:
-			Section Instance04 //Soul Saturday
-				Insert_section se.tr.d014.li.Instance01 End-Insert
-			End-Section	
-		16 thru 19 use:
-			Section Instance05 //Cheese Mon-Thur
-			End-Section
-		20 use:
-			Section Instance06 //Cheese Friday
-			End-Section
-		21 use:
-			Section Instance07 //Cheese Friday
-			End-Section
+
 		otherwise use:
 			when-name-of-day-is
 				Sunday use:
-					Section Instance02
+					Section Instance_Sunday
 						Insert_section ST.li.oc_me End-Insert
 						Insert_section LI._01_Enarxis__.daily End-Insert
 						Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
@@ -92,7 +80,7 @@ Status Final
 						Insert_section LI._09_Dismissal__.commemoration End-Insert
 					End-Section
 				otherwise use:
-					Section Instance01
+					Section Instance_Weekday
 						Insert_section ST.li.me End-Insert
 						Insert_section LI._01_Enarxis__.daily End-Insert
 						Insert_section LI._02_Antiphons__.celebrated_saint End-Insert
@@ -115,4 +103,5 @@ Status Final
 					End-Section				
 			end-when
 	end-when
+
 End-Template

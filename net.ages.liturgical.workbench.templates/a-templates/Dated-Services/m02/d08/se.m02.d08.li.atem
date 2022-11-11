@@ -32,44 +32,40 @@ Status Final
 	End_Head
 
 	when-movable-cycle-day-is
-		1 use: 
-		8 use: 
-			Section Instance04
-				Insert_section ST.li.oc_tr_me1 End-Insert
-				Insert_section LI._01_Enarxis__.daily End-Insert
-				Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
-				Insert_section LI._04_Entrance__.choir End-Insert
-				Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
-				Section hymns
-					Insert_section AP.res__.modeofweek End-Insert
-					Insert_section AP.af End-Insert
-					Insert_section LI._05_AfterEntranceHymns__.local End-Insert
-					Insert_section KO.seasonal End-Insert
-				End-Section
-				Insert_section LI._06_Trisagion__.chrys  End-Insert
-				Insert_section LE._01_Epistle__.daily_ End-Insert
-				Insert_section LE._02_Gospel__.daily_ End-Insert
-				Insert_section LI._08_Liturgy__.chrys_default End-Insert
-				Insert_section LI._09_Dismissal__.nocommemoration End-Insert
+		1, 8 use:
+			Insert_section mc.map.li.Section01_Instance02 End-Insert
+		13 use: 
+			Section Instance01 //2075
+				Insert_section se.m02.d09.li.Instance_Weekday End-Insert
 			End-Section
-		
-		13, 17 use: //leavetaking of Meeting
-		14 use:	Insert_section se.tr.d014.li.Instance01 End-Insert
-		15 use: Insert_section se.tr.d015.li.Instance01 End-Insert
-		16, 19 use:
-		18, 20 use:
-		21 use:
-		22 use: Insert_section se.tr.d022.li.Instance01 End-Insert
-		23 thru 26 use: 
-		27 use: 
-		28 use: Insert_section se.tr.d028.li.Instance01 End-Insert
+		14, 15 use:
+			Insert_section mc.map.li.Section01 End-Insert
+
 		otherwise use:
 			when-name-of-day-is
 				Sunday use:
-					Section Instance02
+					Section Instance_Sunday
+						Insert_section ST.li.oc_meaf End-Insert
+						Insert_section LI._01_Enarxis__.daily End-Insert
+						Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
+						Insert_section LI._04_Entrance__.choir End-Insert
+						Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
+						Section hymns
+							Insert_section AP.res__.modeofweek End-Insert
+							Insert_section AP.af End-Insert
+							Insert_section TI.me.com1 End-Insert
+							Insert_section AP.me1_.hymn End-Insert
+							Insert_section LI._05_AfterEntranceHymns__.local End-Insert
+							Insert_section KO.seasonal End-Insert
+						End-Section
+						Insert_section LI._06_Trisagion__.chrys End-Insert
+						Insert_section LE._01_Epistle__.daily_ End-Insert
+						Insert_section LE._02_Gospel__.daily_ End-Insert
+						Insert_section LI._08_Liturgy__.chrys_default End-Insert
+						Insert_section LI._09_Dismissal__.nocommemoration End-Insert
 					End-Section
 				otherwise use:
-					Section Instance01
+					Section Instance_Weekday
 						Insert_section ST.li.me End-Insert
 						Insert_section LI._01_Enarxis__.daily End-Insert
 						Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert

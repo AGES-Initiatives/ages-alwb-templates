@@ -32,8 +32,8 @@ Status Final
 	End_Head
 
 	when-movable-cycle-day-is
-		1 use: 
-			Section Instance03
+		1, 8 use: 
+			Section Instance01
 				Insert_section ST.li.oc_tr_meaf End-Insert
 				Insert_section LI._10_Parts__._1_antiphons__.sundays_weekdays_feasts End-Insert
 					Break line End_Break
@@ -47,7 +47,7 @@ Status Final
 				Insert_section LI._10_Parts__._4_entrance End-Insert
 					Break line End_Break
 				Title<Tdesig>sid YmnoiMetaTinMikranEisodon</>End-Title
-				Insert_section se.m02.d09.li.Instance03.hymns End-Insert
+				Insert_section se.m02.d09.li.Instance01.hymns End-Insert
 					Break line End_Break
 				Insert_section LI._10_Parts__._5_trisagionhymn__.chrys End-Insert
 					Break line End_Break
@@ -68,10 +68,7 @@ Status Final
 					Break line End_Break	
 				Insert_section LI._10_Parts__._9_fasting_ End-Insert
 			End-Section
-		8 use: 
-			Section Instance04
-			End-Section
-		13 use: //leavetaking on Feb10
+		13 use:
 			Section InstanceFeb10
 				Section block1
 					Para<bnr>sid book.Menaion.name</>End-Para
@@ -121,23 +118,16 @@ Status Final
 				End-Section
 				Set_Date month 2 day 9 year 2023 End_Date
 			End-Section
-		14 use: Insert_section se.tr.d014.li2.Instance01 End-Insert
-		15 use: Insert_section se.tr.d015.li2.Instance01 End-Insert
-		16, 19 use:
-		17 use: //leavetaking of Meeting
-		18, 20 use:
-		21 use:
-		22 use: Insert_section se.tr.d022.li2.Instance01 End-Insert
-		23 thru 26 use: 
-		27 use: 
-		28 use: Insert_section se.tr.d028.li2.Instance01 End-Insert
+		14 thru 17 use:
+			Insert_section mc.map.li.Section02 End-Insert
+
 		otherwise use:
 			when-name-of-day-is
 				Sunday use:
-					Section Instance02
+					Section Instance_Sunday //future
 					End-Section
 				otherwise use:
-					Section Instance01
+					Section Instance_Weekday
 						Insert_section ST.li.me_leavetaking End-Insert
 						Set_Date month 2 day 2 year 2023 End_Date
 						Insert_section LI._10_Parts__._1_antiphons__.sundays_weekdays_feasts End-Insert
@@ -151,7 +141,7 @@ Status Final
 						Insert_section LI._10_Parts__._4_entrance End-Insert
 							Break line End_Break
 						Title<Tdesig>sid YmnoiMetaTinMikranEisodon</>End-Title
-						Insert_section se.m02.d09.li.Instance01.hymns End-Insert
+						Insert_section se.m02.d09.li.Instance_Weekday.hymns End-Insert
 							Break line End_Break
 						Insert_section LI._10_Parts__._5_trisagionhymn__.chrys End-Insert
 							Break line End_Break
