@@ -32,11 +32,24 @@ Status Final
 	End_Head
 
 	when-movable-cycle-day-is 
-		60, 61, 62, 65, 66, 67, 68, 69, 70 use: //do nothing 
-		63, 64 use: Insert_section mc.map.li.Section01 End-Insert
-		71, 72, 73, 74, 75, 76, 77, 78, 85, 92, 95, 99, 102, 106 use: Insert_section mc.map.li.Section01 End-Insert
-		79, 80, 81, 82, 83, 84, 86, 87, 88, 89, 90, 91, 93, 94, 96, 97, 98, 100, 101, 103, 104, 105, 107, 108 use:
-			Section Instance01_weekday
+		63, 64, 71 use:
+			Insert_section mc.map.li.Section01 End-Insert
+			
+		72 use: //St. George
+			Section Instance01_Monday
+				Insert_section se.pe.d072.li.Instance02 End-Insert
+			End-Section
+			
+		73 use: //St. Mark
+			Section Instance01_Tuesday
+				Insert_section se.pe.d073.li.Instance02 End-Insert
+			End-Section
+
+		74, 75, 77, 78, 85, 92, 95 use:
+			Insert_section mc.map.li.Section01 End-Insert
+
+		79, 80, 81, 82, 83, 84, 86, 87, 88, 89, 90, 91, 93, 94, 96 use:
+			Section Instance02
 				Insert_section ST.li.pe_me1 End-Insert
 				Insert_section LI._01_Enarxis__.daily End-Insert
 				Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
@@ -44,25 +57,25 @@ Status Final
 				Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
 				Section hymns
 					when-movable-cycle-day-is
-						79, 80, 81, 82, 83, 84, 96, 97, 98, 100, 101 use:
+						79 thru 84 use:
 							Insert_section AP.af End-Insert
-							Insert_section TI.g.s._01_apostle_.mp End-Insert
-							Insert_section AP.ga.apostles_.hymn End-Insert
 						86 thru 91 use:
-							Insert_section AP.pe2_ End-Insert
-							Insert_section AP.pe1_.hymn End-Insert
-							Insert_section AP.pe3_.hymn End-Insert
-							Insert_section TI.g.s._01_apostle_.mp End-Insert
-							Insert_section AP.ga.apostles_.hymn End-Insert
-						93,  94, 103, 104, 105, 107, 108 use:
-							Title<Tdesig>sid ApolytikionAnastasimon</>End-Title
-							Title<Tmode>rid oc.ocVE.Apolytikion.mode @day D1</><Tmelody>rid oc.ocVE.Apolytikion.melody @day D1</>End-Title
-							Hymn rid oc.ocVE.Apolytikion.text @day D1 End-Hymn
-							Insert_section TI.g.s._01_apostle_.mp End-Insert
-							Insert_section AP.ga.apostles_.hymn End-Insert
+							Section myrrhbearers
+								Set_mcDay day 85 End_mcDay
+								Insert_section AP.pe1_ End-Insert
+								Insert_section AP.pe2_.hymn End-Insert
+								Insert_section AP.pe3_.hymn End-Insert
+								Set_mcDay day 0 End_mcDay
+							End-Section
+						93, 94 use:
+							Insert_section AP.res__.modeofweek End-Insert
+						96 use:
+							Insert_section AP.af End-Insert
 					end-when
+					Insert_section TI.me.com1 End-Insert
+					Insert_section AP.ga.apostles_.hymn End-Insert
 					Insert_section LI._05_AfterEntranceHymns__.local End-Insert
-					Insert_section KO.pe_weekday End-Insert
+					Insert_section KO.seasonal End-Insert
 				End-Section
 				Insert_section LI._06_Trisagion__.chrys End-Insert
 				Insert_section LE._01_Epistle__.daily_ End-Insert

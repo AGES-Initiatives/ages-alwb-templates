@@ -32,25 +32,23 @@ Status Final
 	End_Head
 
 	when-movable-cycle-day-is
-		65 thru 71 use:
-			Section Instance01_Lent
-			End-Section
+		71 use:
+			Insert_section mc.map.li.Section01 End-Insert
 			
-		72 use: //Bright Monday - St. George
+		72 use: //St. George
 			Section Instance01_Monday
 				Insert_section se.pe.d072.li.Instance02 End-Insert
 			End-Section
 			
-		73 use: //Bright Tuesday - St. Mark
+		73, 74 use: //St. Mark
 			Section Instance01_Tuesday
 				Insert_section se.pe.d073.li.Instance02 End-Insert
 			End-Section
 			
-		74 thru 78 use:
-			Section Instance01
-				Insert_section mc.map.li.Section01 End-Insert
-			End-Section
-		79 thru 83 use: //Thomas week
+		75, 76, 77, 78, 84, 85, 92, 95, 99 use:
+			Insert_section mc.map.li.Section01 End-Insert
+
+		79, 80, 81, 82, 83, 86, 87, 88, 89, 90, 91, 93, 94, 96, 97, 98, 100 use:
 			Section Instance02
 				Insert_section ST.li.pe_me1 End-Insert
 				Insert_section LI._01_Enarxis__.daily End-Insert
@@ -58,93 +56,33 @@ Status Final
 				Insert_section LI._04_Entrance__.choir End-Insert
 				Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
 				Section hymns
-					Insert_section AP.af End-Insert
-					Insert_section TI.s._00_saint_.mp End-Insert
+					when-movable-cycle-day-is
+						79 thru 83 use:
+							Insert_section AP.af End-Insert
+						86 thru 91 use:
+							Section myrrhbearers
+								Set_mcDay day 85 End_mcDay
+								Insert_section AP.pe1_ End-Insert
+								Insert_section AP.pe2_.hymn End-Insert
+								Insert_section AP.pe3_.hymn End-Insert
+								Set_mcDay day 0 End_mcDay
+							End-Section
+						93, 94 use:
+							Insert_section AP.res__.modeofweek End-Insert
+						96, 97, 98, 100 use:
+							Insert_section AP.af End-Insert
+					end-when
+					Insert_section TI.me.com1 End-Insert
 					Insert_section AP.me1_.hymn End-Insert
 					Insert_section LI._05_AfterEntranceHymns__.local End-Insert
 					Insert_section KO.pe_weekday End-Insert
 				End-Section
-				Insert_section LI._06_Trisagion__.chrys  End-Insert
-				Insert_section LE._01_Epistle__.daily_ End-Insert
-				Insert_section LE._02_Gospel__.daily_ End-Insert
-				Insert_section LI._08_Liturgy__.chrys_default End-Insert
-				Insert_section LI._09_Dismissal__.nocommemoration End-Insert
-			End-Section
-
-		84 use: //Thomas Saturday
-
-		85, 92, 95, 99, 102, 106, 109, 110 use: 
-			Insert_section mc.map.li.Section01 End-Insert
-
-		86 thru 90 use:
-			Section Instance04_86thru90
-				Insert_section ST.li.pe_me1 End-Insert
-				Insert_section LI._01_Enarxis__.daily End-Insert
-				Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
-				Insert_section LI._04_Entrance__.choir End-Insert
-				Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
-				Section hymns
-					Set_mcDay day 85 End_mcDay
-						Insert_section AP.pe2_ End-Insert
-						Insert_section TI.a.r End-Insert
-						Insert_section AP.pe1_.hymn End-Insert
-						Insert_section AP.pe3_ End-Insert
-					Set_mcDay day 0 End_mcDay
-					Insert_section TI.s._00_saint_.mp End-Insert
-					Insert_section AP.me1_.hymn End-Insert
-					Insert_section LI._05_AfterEntranceHymns__.local End-Insert
-					Insert_section KO.seasonal End-Insert
-				End-Section
 				Insert_section LI._06_Trisagion__.chrys End-Insert
 				Insert_section LE._01_Epistle__.daily_ End-Insert
 				Insert_section LE._02_Gospel__.daily_ End-Insert
 				Insert_section LI._08_Liturgy__.chrys_default End-Insert
 				Insert_section LI._09_Dismissal__.nocommemoration End-Insert
 			End-Section
-			
-		91 use:
-			Section Instance04_91
-			End-Section
-
-		93, 94 use:
-			Section Instance04_9394
-				Insert_section ST.li.pe_me1 End-Insert
-				Insert_section LI._01_Enarxis__.daily End-Insert
-				Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
-				Insert_section LI._04_Entrance__.choir End-Insert
-				Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
-				Section hymns
-					Insert_section AP.res__.modeofweek End-Insert
-					Insert_section TI.s._00_saint_.mp End-Insert
-					Insert_section AP.me1_.hymn End-Insert
-					Insert_section LI._05_AfterEntranceHymns__.local End-Insert
-					Insert_section KO.seasonal End-Insert
-				End-Section
-				Insert_section LI._06_Trisagion__.chrys End-Insert
-				Insert_section LE._01_Epistle__.daily_ End-Insert
-				Insert_section LE._02_Gospel__.daily_ End-Insert
-				Insert_section LI._08_Liturgy__.chrys_default End-Insert
-				Insert_section LI._09_Dismissal__.nocommemoration End-Insert
-			End-Section
-
-		96, 97, 100, 101 use:
-			Section Instance04_9697100101
-			End-Section
-
-		98 use:
-			Section Instance04_98
-			End-Section
-
-		103, 104, 107 use:
-			Section Instance04_103104107
-			End-Section
-
-		105 use:
-			Section Instance04_105
-			End-Section
-
-		108 use: //OC Leavetaking of Blindman
-		111 use: //OC After Ascension
 	end-when	
 
 End-Template
