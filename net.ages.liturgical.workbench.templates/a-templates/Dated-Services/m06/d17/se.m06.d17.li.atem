@@ -31,13 +31,12 @@ Status Final
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
-	when-movable-cycle-day-is 
+	when-movable-cycle-day-is
 		113, 118, 119, 120, 121, 126, 127 use:
-			Section Instance01
-				Insert_section mc.map.li.Section01 End-Insert
-			End-Section
+			Insert_section mc.map.li.Section01 End-Insert
+
 		111, 112, 114, 115, 116, 117, 122, 123, 124, 125 use:
-			Section Instance02
+			Section Instance01
 				Insert_section ST.li.pe_me End-Insert
 				Insert_section LI._01_Enarxis__.daily End-Insert
 				Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
@@ -59,7 +58,7 @@ Status Final
 		otherwise use:
 			when-name-of-day-is 
 				Sunday use:
-					Section Instance03
+					Section Instance_Sunday
 						Insert_section ST.li.oc End-Insert
 						Insert_section LI._01_Enarxis__.daily End-Insert
 						Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
@@ -77,7 +76,7 @@ Status Final
 						Insert_section LI._09_Dismissal__.nocommemoration End-Insert
 					End-Section
 				otherwise use:
-					Section Instance04
+					Section Instance_Weekday
 						Insert_section ST.li.me End-Insert
 						Insert_section LI._01_Enarxis__.daily End-Insert
 						Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert

@@ -32,87 +32,13 @@ Status Final
 	End_Head
 
 	when-movable-cycle-day-is
-		102, 106, 109, 110, 113, 118, 119, 120, 121, 126, 127 use:
-			Section Instance01
-				Insert_section mc.map.li.Section01 End-Insert
-			End-Section
-
-		103, 104, 107 use:
-			Section Instance04_103104107
-			End-Section
-
-		105 use:
-			Section Instance04_105
-				Insert_section ST.li.pe_me1 End-Insert
-				Insert_section LI._01_Enarxis__.daily End-Insert
-				Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
-				Insert_section LI._04_Entrance__.choir End-Insert
-				Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
-				Section hymns
-					Insert_section AP.res__.modeofweek End-Insert
-					Insert_section TI.s._00_saint_.mp End-Insert
-					Insert_section AP.ga.martyrs_mode4_.hymn End-Insert
-					Insert_section LI._05_AfterEntranceHymns__.local End-Insert
-					Insert_section KO.seasonal End-Insert
-				End-Section
-				Insert_section LI._06_Trisagion__.chrys  End-Insert
-				Insert_section LE._01_Epistle__.daily_ End-Insert
-				Insert_section LE._02_Gospel__.daily_ End-Insert
-				Insert_section LI._08_Liturgy__.chrys_default End-Insert
-				Insert_section LI._09_Dismissal__.nocommemoration End-Insert
-			End-Section
-
-		108 use: //Leavetaking of Blindman
-			Section Instance05
-				Insert_section ST.li.pe_me1 End-Insert
-				Insert_section LI._01_Enarxis__.daily End-Insert
-				Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
-				Insert_section LI._04_Entrance__.choir End-Insert
-				Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
-				Section hymns
-					Insert_section AP.res__.modeofweek End-Insert
-					Insert_section TI.s._00_saint_.mp End-Insert
-					Insert_section AP.ga.martyrs_mode4_.hymn End-Insert
-					Insert_section LI._05_AfterEntranceHymns__.local End-Insert
-					Insert_section KO.seasonal End-Insert
-				End-Section
-				Insert_section LI._06_Trisagion__.chrys  End-Insert
-				Insert_section LE._01_Epistle__.daily_ End-Insert
-				Insert_section LE._02_Gospel__.daily_ End-Insert
-				Insert_section LI._08_Liturgy__.chrys_default End-Insert
-				Insert_section LI._09_Dismissal__.nocommemoration End-Insert
-			End-Section
-
-		111, 112, 114, 115, 116, 117 use: 
-			Section Instance06
-				Insert_section ST.li.pe_me1 End-Insert
-				Insert_section LI._01_Enarxis__.daily End-Insert
-				Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
-				Insert_section LI._04_Entrance__.choir End-Insert
-				Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
-				Section hymns
-					Insert_section AP.af End-Insert
-					Insert_section TI.s._00_saint_.mp End-Insert
-					Insert_section AP.ga.martyrs_mode4_.hymn End-Insert
-					Insert_section LI._05_AfterEntranceHymns__.local End-Insert
-					Insert_section KO.seasonal End-Insert
-				End-Section
-				Insert_section LI._06_Trisagion__.chrys  End-Insert
-				Insert_section LE._01_Epistle__.daily_ End-Insert
-				Insert_section LE._02_Gospel__.daily_ End-Insert
-				Insert_section LI._08_Liturgy__.chrys_default End-Insert
-				Insert_section LI._09_Dismissal__.nocommemoration End-Insert
-			End-Section
-
-		122 thru 125 use: 
-			Section Instance08
-				Insert_section Instance06 End-Insert
-			End-Section
+		104 thru 127 use:
+			Insert_section mc.map.li.Section01 End-Insert
 			
 		otherwise use:
 			when-name-of-day-is
 				Sunday use:
-					Section Instance00_sunday
+					Section Instance_Sunday
 						Insert_section ST.li.oc End-Insert
 						Insert_section LI._01_Enarxis__.daily End-Insert
 						Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert
@@ -129,12 +55,8 @@ Status Final
 						Insert_section LI._08_Liturgy__.chrys_default End-Insert
 						Insert_section LI._09_Dismissal__.nocommemoration End-Insert
 					End-Section
-				Saturday use:
-					Section Instance00_saturday
-						Insert_section Instance00_weekday End-Insert
-					End-Section
 				otherwise use:
-					Section Instance00_weekday
+					Section Instance_Weekday
 						Insert_section ST.li.ho End-Insert
 						Insert_section LI._01_Enarxis__.daily End-Insert
 						Insert_section LI._02_Antiphons__.sundays_weekdays_feasts End-Insert

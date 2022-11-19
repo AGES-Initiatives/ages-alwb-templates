@@ -32,17 +32,13 @@ Status Final
 	End_Head
 
 	when-movable-cycle-day-is 
-		120, 121, 126, 127 use:
-			Section Instance01
-				Insert_section mc.map.li.Section02 End-Insert
-			End-Section
-		122, 123, 124, 125 use:
-			Section Instance02
-			End-Section
+		120 thru 127 use:
+			Insert_section mc.map.li.Section02 End-Insert
+
 		otherwise use:
 			when-name-of-day-is
 				Sunday use:
-					Section Instance03
+					Section Instance_Sunday
 						Insert_section ST.li.oc End-Insert
 						Insert_section LI._10_Parts__._1_antiphons__.sundays_weekdays_feasts End-Insert
 							Break line End_Break
@@ -54,7 +50,7 @@ Status Final
 						Insert_section LI._10_Parts__._4_entrance End-Insert
 							Break line End_Break
 						Title<Tdesig>sid YmnoiMetaTinMikranEisodon</>End-Title
-						Insert_section se.m06.d26.li.Instance03.hymns End-Insert
+						Insert_section se.m06.d26.li.Instance_Sunday.hymns End-Insert
 							Break line End_Break
 						Insert_section LI._10_Parts__._5_trisagionhymn__.chrys End-Insert
 							Break line End_Break
@@ -76,7 +72,7 @@ Status Final
 						Insert_section LI._10_Parts__._9_fasting_ End-Insert
 					End-Section
 				otherwise use:
-					Section Instance04
+					Section Instance_Weekday
 						Insert_section ST.li.ho_oc End-Insert
 						Insert_section LI._10_Parts__._1_antiphons__.sundays_weekdays_feasts End-Insert
 						Insert_section AP.da__.dayofweek1_ End-Insert
@@ -89,7 +85,7 @@ Status Final
 						Insert_section LI._10_Parts__._4_entrance End-Insert
 							Break line End_Break
 						Title<Tdesig>sid YmnoiMetaTinMikranEisodon</>End-Title
-						Insert_section se.m06.d26.li.Instance04.hymns End-Insert
+						Insert_section se.m06.d26.li.Instance_Weekday.hymns End-Insert
 							Break line End_Break
 						Insert_section LI._10_Parts__._5_trisagionhymn__.chrys End-Insert
 							Break line End_Break
