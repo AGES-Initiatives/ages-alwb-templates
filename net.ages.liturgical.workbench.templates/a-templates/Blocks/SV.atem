@@ -16,7 +16,7 @@ Status NA
 	import liturgical.verses_gr_GR_cog.*
 	import ps_gr_GR_cog.*
 	
-	import actors_gr_GR_cog.*
+	import actors_gr_GR_cog.ac.*
 	import dismissals_gr_GR_cog.*
 	import misc_gr_GR_cog.*
 	import prayers_gr_GR_cog.*
@@ -42,7 +42,7 @@ Status NA
 			72, 73, 74, 75, 76, 77, 109 use:
 				Section pascha
 					Actor sid Priest End-Actor
-					Dialog sid enarxis01 End-Dialog
+					Dialog sid pr.enarxis01.text End-Dialog
 					Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
 					Insert_section PE.Pascha_Beginning End-Insert
 					//no litany
@@ -50,7 +50,7 @@ Status NA
 			otherwise use:
 				Section enarxis
 					Actor sid Priest End-Actor
-					Dialog sid enarxis01 End-Dialog
+					Dialog sid pr.enarxis01.text End-Dialog
 					Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
 				End-Section
 				Section introductorypsalm
@@ -62,17 +62,17 @@ Status NA
 						Actor sid Reader End-Actor
 					otherwise use:
 						Actor sid Reader End-Actor
-						Reading sid DefteProskinisomen1 End-Reading
-						Reading sid DefteProskinisomen2 End-Reading
-						Reading sid DefteProskinisomen3 End-Reading
+						Reading sid pr.ComeLetUsWorship1 End-Reading
+						Reading sid pr.ComeLetUsWorship2 End-Reading
+						Reading sid pr.ComeLetUsWorship3 End-Reading
 					end-when
 					Media sid hoVE.Ps103.text End-Media
 					Insert_section Psalm_103_Paragraph End-Insert
-					Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
-					Reading sid Allilouia3.text sid DoxaSoiOTheos1<r>sid ru.Thrice</>End-Reading
+					Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
+					Reading sid pr.Alleluia3.text sid pr.GloryToYouGod<r>sid ru.Thrice</>End-Reading
 					Reading sid res06 End-Reading
-					Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
-				//	Reading sid IElpisImonKyrie End-Reading
+					Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
+				//	Reading sid pr.OurHopeLord.text End-Reading
 				End-Section
 				Section prayers
 					//no prayers
@@ -121,7 +121,7 @@ Status NA
 			Section me__
 				Section alt1__
 					Section bothasboth_
-						Title sid KaiNyn End-Title
+						Title sid ti.BothNow End-Title
 						Section hymn
 							Title role source0 sid ti.sourceMenaion End-Title
 							Title role mode rid alt1.meSV.SticBoth.mode End-Title
@@ -130,7 +130,7 @@ Status NA
 						End-Section
 					End-Section
 					Section gloryasboth_
-						Title sid KaiNyn End-Title
+						Title sid ti.BothNow End-Title
 						Section hymn
 							Title role source0 sid ti.sourceMenaion End-Title
 							Title role mode rid alt1.meSV.SticGlory.mode End-Title
@@ -140,7 +140,7 @@ Status NA
 					End-Section
 				End-Section
 				Section bothasboth_
-					Title sid KaiNyn End-Title
+					Title sid ti.BothNow End-Title
 					Section hymn
 						Title role source0 sid ti.sourceMenaion End-Title
 						Title role mode rid meSV.SticBoth.mode End-Title
@@ -149,7 +149,7 @@ Status NA
 					End-Section
 				End-Section
 				Section gloryasboth_
-					Title sid KaiNyn End-Title
+					Title sid ti.BothNow End-Title
 					Section hymn
 						Title role source0 sid ti.sourceMenaion End-Title
 						Title role mode rid meSV.SticGlory.mode End-Title
@@ -161,35 +161,35 @@ Status NA
 			Section secondarytheotokion__
 				Section mode1
 					Title role source sid ti.sourceOctoechos End-Title
-					Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+					Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 					Title role mode sid Mode1 End-Title
 					Media sid oc.m1.d3_gr_GR_cog.ocVE.AposTheotokion.text End-Media
 					Hymn sid oc.m1.d3_gr_GR_cog.ocVE.AposTheotokion.text @ver media-off End-Hymn
 				End-Section
 				Section mode2
 					Title role source sid ti.sourceOctoechos End-Title
-					Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+					Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 					Title role mode sid Mode2 End-Title
 					Media sid ho.s23_gr_GR_cog.hoCA.Troparion7.text End-Media
 					Hymn sid ho.s23_gr_GR_cog.hoCA.Troparion7.text @ver media-off End-Hymn
 				End-Section
 				Section mode3
 					Title role source sid ti.sourceOctoechos End-Title
-					Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+					Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 					Title role mode sid Mode3 End-Title
 					Media sid oc.m3.d2_gr_GR_cog.ocVE.AposTheotokion.text End-Media
 					Hymn sid oc.m3.d2_gr_GR_cog.ocVE.AposTheotokion.text @ver media-off End-Hymn
 				End-Section
 				Section mode4
 					Title role source sid ti.sourceOctoechos End-Title
-					Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+					Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 					Title role mode sid Mode4 End-Title
 					Media sid oc.m4.d2_gr_GR_cog.ocMA.AposTheotokion.text End-Media
 					Hymn sid oc.m4.d2_gr_GR_cog.ocMA.AposTheotokion.text @ver media-off End-Hymn
 				End-Section
 				Section mode5
 					Title role source sid ti.sourceOctoechos End-Title
-					Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+					Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 					Title role mode sid Mode5 End-Title
 					Media sid oc.m5.d3_gr_GR_cog.ocVE.AposTheotokion.text End-Media
 					Hymn sid oc.m5.d3_gr_GR_cog.ocVE.AposTheotokion.text @ver media-off End-Hymn
@@ -197,87 +197,87 @@ Status NA
 				Section mode6_vine__
 					Section apostle
 						Title role source sid ti.sourceOctoechos End-Title
-						Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 						Title role mode sid Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Apostle End-Insert
 					End-Section
 					Section apostles
 						Title role source sid ti.sourceOctoechos End-Title
-						Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 						Title role mode sid Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Apostles End-Insert
 					End-Section
 					Section devout
 						Title role source sid ti.sourceOctoechos End-Title
-						Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 						Title role mode sid Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Devout End-Insert
 					End-Section
 					Section devouts
 						Title role source sid ti.sourceOctoechos End-Title
-						Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 						Title role mode sid Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Devouts End-Insert
 					End-Section
 					Section forerunner
 						Title role source sid ti.sourceOctoechos End-Title
-						Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 						Title role mode sid Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Forerunner End-Insert
 					End-Section
 					Section hierarch
 						Title role source sid ti.sourceOctoechos End-Title
-						Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 						Title role mode sid Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Hierarch End-Insert
 					End-Section
 					Section martyr
 						Title role source sid ti.sourceOctoechos End-Title
-						Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 						Title role mode sid Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Martyr End-Insert
 					End-Section
 					Section martyrs
 						Title role source sid ti.sourceOctoechos End-Title
-						Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 						Title role mode sid Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Martyrs End-Insert
 					End-Section
 					Section prophet
 						Title role source sid ti.sourceOctoechos End-Title
-						Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 						Title role mode sid Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Prophet End-Insert
 					End-Section
 					Section teachers
 						Title role source sid ti.sourceOctoechos End-Title
-						Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 						Title role mode sid Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Teachers End-Insert
 					End-Section
 					Section unmercenaries
 						Title role source sid ti.sourceOctoechos End-Title
-						Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 						Title role mode sid Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Unmercenaries End-Insert
 					End-Section
 					Section womanmartyr
 						Title role source sid ti.sourceOctoechos End-Title
-						Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 						Title role mode sid Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_WomanMartyr End-Insert
 					End-Section
 				End-Section
 				Section mode7
 					Title role source sid ti.sourceOctoechos End-Title
-					Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+					Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 					Title role mode sid Mode7 End-Title
 					Media sid oc.m7.d5_gr_GR_cog.ocVE.AposTheotokion.text End-Media
 					Hymn sid oc.m7.d5_gr_GR_cog.ocVE.AposTheotokion.text @ver media-off End-Hymn
 				End-Section
 				Section mode8
 					Title role source sid ti.sourceOctoechos End-Title
-					Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+					Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 					Title role mode sid Mode8 End-Title
 					Media sid oc.m8.d5_gr_GR_cog.ocMA.AposTheotokion.text End-Media
 					Hymn sid oc.m8.d5_gr_GR_cog.ocMA.AposTheotokion.text @ver media-off End-Hymn
@@ -285,7 +285,7 @@ Status NA
 			End-Section
 			Section tr__
 				Section gloryasboth_
-					Title sid KaiNyn End-Title
+					Title sid ti.BothNow End-Title
 					Section hymn
 						Title role source0 sid ti.sourceTriodion End-Title
 						Title role mode rid trSV.SticGlory.mode End-Title
@@ -299,7 +299,7 @@ Status NA
 			Section me__
 				Section alt1__
 					Section gloryasglory_
-						Title sid Doxa End-Title
+						Title sid ti.Glory End-Title
 						Section hymn
 							Title role source0 sid ti.sourceMeSupplement End-Title
 							Title role mode rid alt1.meSV.SticGlory.mode End-Title
@@ -309,7 +309,7 @@ Status NA
 					End-Section
 				End-Section
 				Section bothasglory_
-					Title sid Doxa End-Title
+					Title sid ti.Glory End-Title
 					Section hymn
 						Title role source0 sid ti.sourceMenaion End-Title
 						Title role mode rid meSV.SticBoth.mode End-Title
@@ -318,7 +318,7 @@ Status NA
 					End-Section
 				End-Section
 				Section gloryasglory_
-					Title sid Doxa End-Title
+					Title sid ti.Glory End-Title
 					Section hymn
 						Title role source0 sid ti.sourceMenaion End-Title
 						Title role mode rid meSV.SticGlory.mode End-Title
@@ -329,7 +329,7 @@ Status NA
 			End-Section
 			Section pe__
 				Section gloryasglory_
-					Title sid Doxa End-Title
+					Title sid ti.Glory End-Title
 					Section hymn
 						Title role source0 sid ti.sourcePentecostarion End-Title
 						Title role mode rid peSV.SticGlory.mode End-Title
@@ -340,7 +340,7 @@ Status NA
 			End-Section
 			Section tr__
 				Section gloryasglory_
-					Title sid Doxa End-Title
+					Title sid ti.Glory End-Title
 					Section hymn
 						Title role source0 sid ti.sourceTriodion End-Title
 						Title role mode rid trSV.SticGlory.mode End-Title
@@ -354,7 +354,7 @@ Status NA
 			Section me__
 				Section alt1__
 					Section gloryasgloryboth_
-						Title sid DoxaKaiNyn End-Title
+						Title sid ti.GloryBothNow End-Title
 						Section hymn
 							Title role source0 sid ti.sourceMeSupplement End-Title
 							Title role mode rid alt1.meSV.SticGlory.mode End-Title
@@ -364,7 +364,7 @@ Status NA
 					End-Section
 				End-Section
 				Section bothasgloryboth_
-					Title sid DoxaKaiNyn End-Title
+					Title sid ti.GloryBothNow End-Title
 					Section hymn
 						Title role source0 sid ti.sourceMenaion End-Title
 						Title role mode rid meSV.SticBoth.mode End-Title
@@ -373,7 +373,7 @@ Status NA
 					End-Section
 				End-Section
 				Section gloryasgloryboth_
-					Title sid DoxaKaiNyn End-Title
+					Title sid ti.GloryBothNow End-Title
 					Section hymn
 						Title role source0 sid ti.sourceMenaion End-Title
 						Title role mode rid meSV.SticGlory.mode End-Title
@@ -383,7 +383,7 @@ Status NA
 				End-Section
 			End-Section
 			Section pe_
-				Title sid DoxaKaiNyn End-Title
+				Title sid ti.GloryBothNow End-Title
 				Section hymn
 					Title role source0 sid ti.sourcePentecostarion End-Title
 					Title role mode rid peSV.SticGlory.mode End-Title
@@ -392,7 +392,7 @@ Status NA
 				End-Section
 			End-Section
 			Section tr_
-				Title sid DoxaKaiNyn End-Title
+				Title sid ti.GloryBothNow End-Title
 				Section hymn
 					Title role source0 sid ti.sourceTriodion End-Title
 					Title role mode rid trSV.SticGlory.mode End-Title
@@ -450,7 +450,7 @@ Status NA
 	
 	Section _05_Prayer
 		Actor sid Reader End-Actor
-		Reading sid hoVE.Prayer_Kataxioson.text @ver End-Reading
+		Reading sid hoVE.Prayer_Katpr.Axios.texton.text @ver End-Reading
 		Dialog <i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
 	End-Section
 	
@@ -469,35 +469,35 @@ Status NA
 			Section secondarytheotokion__
 				Section mode1
 					Title role source sid ti.sourceOctoechos End-Title
-					Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+					Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 					Title role mode sid Mode1 End-Title
 					Media sid oc.m1.d3_gr_GR_cog.ocVE.AposTheotokion.text End-Media
 					Hymn sid oc.m1.d3_gr_GR_cog.ocVE.AposTheotokion.text @ver media-off End-Hymn
 				End-Section
 				Section mode2
 					Title role source sid ti.sourceOctoechos End-Title
-					Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+					Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 					Title role mode sid Mode2 End-Title
 					Media sid ho.s23_gr_GR_cog.hoCA.Troparion7.text End-Media
 					Hymn sid ho.s23_gr_GR_cog.hoCA.Troparion7.text @ver media-off End-Hymn
 				End-Section
 				Section mode3
 					Title role source sid ti.sourceOctoechos End-Title
-					Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+					Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 					Title role mode sid Mode3 End-Title
 					Media sid oc.m3.d2_gr_GR_cog.ocVE.AposTheotokion.text End-Media
 					Hymn sid oc.m3.d2_gr_GR_cog.ocVE.AposTheotokion.text @ver media-off End-Hymn
 				End-Section
 				Section mode4
 					Title role source sid ti.sourceOctoechos End-Title
-					Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+					Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 					Title role mode sid Mode4 End-Title
 					Media sid oc.m4.d2_gr_GR_cog.ocMA.AposTheotokion.text End-Media
 					Hymn sid oc.m4.d2_gr_GR_cog.ocMA.AposTheotokion.text @ver media-off End-Hymn
 				End-Section
 				Section mode5
 					Title role source sid ti.sourceOctoechos End-Title
-					Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+					Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 					Title role mode sid Mode5 End-Title
 					Media sid oc.m5.d3_gr_GR_cog.ocVE.AposTheotokion.text End-Media
 					Hymn sid oc.m5.d3_gr_GR_cog.ocVE.AposTheotokion.text @ver media-off End-Hymn
@@ -505,87 +505,87 @@ Status NA
 				Section mode6_vine__
 					Section apostle
 						Title role source sid ti.sourceOctoechos End-Title
-						Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 						Title role mode sid Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Apostle End-Insert
 					End-Section
 					Section apostles
 						Title role source sid ti.sourceOctoechos End-Title
-						Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 						Title role mode sid Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Apostles End-Insert
 					End-Section
 					Section devout
 						Title role source sid ti.sourceOctoechos End-Title
-						Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 						Title role mode sid Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Devout End-Insert
 					End-Section
 					Section devouts
 						Title role source sid ti.sourceOctoechos End-Title
-						Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 						Title role mode sid Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Devouts End-Insert
 					End-Section
 					Section forerunner
 						Title role source sid ti.sourceOctoechos End-Title
-						Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 						Title role mode sid Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Forerunner End-Insert
 					End-Section
 					Section hierarch
 						Title role source sid ti.sourceOctoechos End-Title
-						Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 						Title role mode sid Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Hierarch End-Insert
 					End-Section
 					Section martyr
 						Title role source sid ti.sourceOctoechos End-Title
-						Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 						Title role mode sid Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Martyr End-Insert
 					End-Section
 					Section martyrs
 						Title role source sid ti.sourceOctoechos End-Title
-						Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 						Title role mode sid Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Martyrs End-Insert
 					End-Section
 					Section prophet
 						Title role source sid ti.sourceOctoechos End-Title
-						Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 						Title role mode sid Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Prophet End-Insert
 					End-Section
 					Section teachers
 						Title role source sid ti.sourceOctoechos End-Title
-						Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 						Title role mode sid Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Teachers End-Insert
 					End-Section
 					Section unmercenaries
 						Title role source sid ti.sourceOctoechos End-Title
-						Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 						Title role mode sid Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Unmercenaries End-Insert
 					End-Section
 					Section womanmartyr
 						Title role source sid ti.sourceOctoechos End-Title
-						Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 						Title role mode sid Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_WomanMartyr End-Insert
 					End-Section
 				End-Section
 				Section mode7
 					Title role source sid ti.sourceOctoechos End-Title
-					Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+					Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 					Title role mode sid Mode7 End-Title
 					Media sid oc.m7.d5_gr_GR_cog.ocVE.AposTheotokion.text End-Media
 					Hymn sid oc.m7.d5_gr_GR_cog.ocVE.AposTheotokion.text @ver media-off End-Hymn
 				End-Section
 				Section mode8
 					Title role source sid ti.sourceOctoechos End-Title
-					Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+					Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 					Title role mode sid Mode8 End-Title
 					Media sid oc.m8.d5_gr_GR_cog.ocMA.AposTheotokion.text End-Media
 					Hymn sid oc.m8.d5_gr_GR_cog.ocMA.AposTheotokion.text @ver media-off End-Hymn
@@ -596,7 +596,7 @@ Status NA
 			Section me__
 				Section alt1__
 					Section	gloryasglory_
-						Title sid Doxa End-Title
+						Title sid ti.Glory End-Title
 						Section hymn
 							Title role source0 sid ti.sourceMeSupplement End-Title
 							Title role mode rid alt1.meSV.AposGlory.mode End-Title
@@ -607,7 +607,7 @@ Status NA
 				End-Section
 				Section alt2__
 					Section	gloryasglory_
-						Title sid Doxa End-Title
+						Title sid ti.Glory End-Title
 						Section hymn
 							Title role source0 sid ti.sourceMeSupplement End-Title
 							Title role mode rid alt2.meSV.AposGlory.mode End-Title
@@ -617,7 +617,7 @@ Status NA
 					End-Section
 				End-Section
 				Section gloryasglory_
-					Title sid Doxa End-Title
+					Title sid ti.Glory End-Title
 					Section hymn
 						Title role source0 sid ti.sourceMenaion End-Title
 						Title role mode rid meSV.AposGlory.mode End-Title
@@ -628,7 +628,7 @@ Status NA
 			End-Section
 			Section pe__
 				Section gloryasglory_
-					Title sid Doxa End-Title
+					Title sid ti.Glory End-Title
 					Section hymn
 						Title role source0 sid ti.sourcePentecostarion End-Title
 						Title role mode rid peSV.AposGlory.mode End-Title
@@ -638,7 +638,7 @@ Status NA
 				End-Section
 			End-Section
 			Section tr_
-				Title sid Doxa End-Title
+				Title sid ti.Glory End-Title
 				Section hymn
 					Title role source0 sid ti.sourceTriodion End-Title
 					Title role mode rid trSV.AposGlory.mode End-Title
@@ -651,7 +651,7 @@ Status NA
 			Section me__
 				Section alt1__
 					Section gloryasgloryboth_
-						Title sid DoxaKaiNyn End-Title
+						Title sid ti.GloryBothNow End-Title
 						Section hymn
 							Title role source0 sid ti.sourceMeSupplement End-Title
 							Title role mode rid alt1.meSV.AposGlory.mode End-Title
@@ -661,7 +661,7 @@ Status NA
 					End-Section
 				End-Section
 				Section bothasgloryboth_
-					Title sid DoxaKaiNyn End-Title
+					Title sid ti.GloryBothNow End-Title
 					Section hymn
 						Title role source0 sid ti.sourceMenaion End-Title
 						Title role mode rid meSV.AposBoth.mode End-Title
@@ -670,7 +670,7 @@ Status NA
 					End-Section
 				End-Section
 				Section gloryasgloryboth_
-					Title sid DoxaKaiNyn End-Title
+					Title sid ti.GloryBothNow End-Title
 					Section hymn
 						Title role source0 sid ti.sourceMenaion End-Title
 						Title role mode rid meSV.AposGlory.mode End-Title
@@ -680,7 +680,7 @@ Status NA
 				End-Section
 			End-Section
 			Section pe_
-				Title sid DoxaKaiNyn End-Title
+				Title sid ti.GloryBothNow End-Title
 				Section hymn
 					Title role source0 sid ti.sourcePentecostarion End-Title
 					Title role mode rid peSV.AposGlory.mode End-Title
@@ -689,7 +689,7 @@ Status NA
 				End-Section
 			End-Section
 			Section tr_
-				Title sid DoxaKaiNyn End-Title
+				Title sid ti.GloryBothNow End-Title
 				Section hymn
 					Title role source0 sid ti.sourceTriodion End-Title
 					Title role mode rid trVE.AposGlory.mode End-Title
@@ -1121,10 +1121,10 @@ Status NA
 				Media rid meSV.Aposticha3.text End-Media
 				Insert_section PsalmVerses.forChristmas.verse2 End-Insert
 				Hymn rid meSV.Aposticha3.text @ver media-off End-Hymn
-				Title sid Doxa<Tmode>rid meSV.AposGlory.mode</><Tmelody>rid meSV.AposGlory.melody</>End-Title
+				Title sid ti.Glory<Tmode>rid meSV.AposGlory.mode</><Tmelody>rid meSV.AposGlory.melody</>End-Title
 				Media rid meSV.AposGlory.text End-Media
 				Hymn rid meSV.AposGlory.text @ver media-off End-Hymn
-				Title sid KaiNyn<Tmode>rid meSV.AposBoth.mode</><Tmelody>rid meSV.AposBoth.melody</>End-Title
+				Title sid ti.BothNow<Tmode>rid meSV.AposBoth.mode</><Tmelody>rid meSV.AposBoth.melody</>End-Title
 				Media rid meSV.AposBoth.text End-Media
 				Hymn rid meSV.AposBoth.text @ver media-off End-Hymn
 			End-Section
@@ -1169,12 +1169,12 @@ Status NA
 				Hymn rid meSV.Aposticha3.text @ver media-off End-Hymn
 				when-exists
 					rid meSV.AposBoth.text use:
-						Title sid Doxa<Tdesig>sid ti.SameMelody_1hymn</>End-Title
+						Title sid ti.Glory<Tdesig>sid ti.SameMelody_1hymn</>End-Title
 						Hymn rid meSV.AposGlory.text @ver media-off End-Hymn
-						Title sid KaiNyn<Tdesig>sid ti.SameMelody_1hymn</>End-Title
+						Title sid ti.BothNow<Tdesig>sid ti.SameMelody_1hymn</>End-Title
 						Hymn rid meSV.AposBoth.text @ver media-off End-Hymn
 					otherwise use:	
-						Title sid DoxaKaiNyn<Tdesig>sid ti.SameMelody_1hymn</>End-Title
+						Title sid ti.GloryBothNow<Tdesig>sid ti.SameMelody_1hymn</>End-Title
 						Hymn rid meSV.AposGlory.text @ver media-off End-Hymn
 				end-when
 			End-Section
@@ -1467,7 +1467,7 @@ Status NA
 				Media rid meSV.Aposticha3.text End-Media
 				Insert_section PsalmVerses.forMeeting.verse2 End-Insert
 				Hymn rid meSV.Aposticha3.text @ver media-off End-Hymn
-				Title sid DoxaKaiNyn<Tdesig>sid ti.SameMelody_1hymn</>End-Title
+				Title sid ti.GloryBothNow<Tdesig>sid ti.SameMelody_1hymn</>End-Title
 				Hymn rid meSV.AposGlory.text @ver media-off End-Hymn
 			End-Section
 			Section p_oneapostle12
@@ -1511,12 +1511,12 @@ Status NA
 				Hymn rid meSV.Aposticha3.text @ver media-off End-Hymn
 				when-exists
 					rid meSV.AposBoth.text use:
-						Title sid Doxa<Tdesig>sid ti.SameMelody_1hymn</>End-Title
+						Title sid ti.Glory<Tdesig>sid ti.SameMelody_1hymn</>End-Title
 						Hymn rid meSV.AposGlory.text @ver media-off End-Hymn
-						Title sid KaiNyn<Tdesig>sid ti.SameMelody_1hymn</>End-Title
+						Title sid ti.BothNow<Tdesig>sid ti.SameMelody_1hymn</>End-Title
 						Hymn rid meSV.AposBoth.text @ver media-off End-Hymn
 					otherwise use:	
-						Title sid DoxaKaiNyn<Tdesig>sid ti.SameMelody_1hymn</>End-Title
+						Title sid ti.GloryBothNow<Tdesig>sid ti.SameMelody_1hymn</>End-Title
 						Hymn rid meSV.AposGlory.text @ver media-off End-Hymn
 				end-when
 			End-Section
@@ -1787,30 +1787,30 @@ Status NA
 	Section _08_End
 		Actor sid Priest End-Actor
 		Dialog sid exc17 End-Dialog
-		Dialog<i>sid parenthesis.open sid Evlogison sid parenthesis.close</>End-Dialog	
-		Dialog sid OOnEvlogitos.text<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
-		Dialog sid StereosaiKyrios.text End-Dialog
+		Dialog<i>sid parenthesis.open sid pr.Bless_father.text sid parenthesis.close</>End-Dialog	
+		Dialog sid pr.DismissalPrayer1.text<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+		Dialog sid pr.DismissalPrayer2.text End-Dialog
 		Actor sid Reader End-Actor
 		Dialog sid res04 End-Dialog
 		when-movable-cycle-day-is
 			71, 72, 73, 74, 75, 76, 77, 109 use:
 				Dialog sid pe.d00P_gr_GR_cog.pePA.Ode9H.text End-Dialog
 			otherwise use:
-				Dialog sid TinTimioteranPrayer.text End-Dialog
+				Dialog sid pr.GreaterInHonor.text End-Dialog
 		end-when
 		when-movable-cycle-day-is 
 			71 thru 109 use:
 				Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text End-Dialog
 			otherwise use:
-				Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
+				Dialog sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Dialog
 		end-when
-		Dialog sid res01<r>sid ru.Thrice</>sid Evlogison End-Dialog
+		Dialog sid res01<r>sid ru.Thrice</>sid pr.Bless_father.text End-Dialog
 	End-Section
 	
 	Section _09_Dismissal__  //needs to be made short
 		Section commemoration
 			Insert_section Selector_Dismissals.Com_Yes End-Insert
-			Dialog sid DiEfchonPateron.text End-Dialog
+			Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
 			Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
 		End-Section
 		Section mealt1_commemoration
@@ -1824,7 +1824,7 @@ Status NA
 		End-Section
 		Section nocommemoration
 			Insert_section Selector_Dismissals.Short End-Insert
-			Dialog sid DiEfchonPateron.text End-Dialog
+			Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
 			Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
 	End-Section
 		Section specificcommemoration__
@@ -1996,12 +1996,12 @@ Status NA
 			Actor sid People End-Actor		
 			Section prayers
 				Title role desig sid ti.Trisagion End-Title
-				Reading sid AgiosOTheos.text<r>sid ru.Thrice media-off</>End-Reading
-				Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
-				Reading sid PanagiaTrias.text End-Reading
+				Reading sid pr.HolyGod.text<r>sid ru.Thrice media-off</>End-Reading
+				Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
+				Reading sid pr.AllHolyTrinity.text End-Reading
 				Reading sid res06 End-Reading
-				Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
-				Reading sid PaterImon.text End-Reading
+				Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
+				Reading sid pr.OurFather.text End-Reading
 			End-Section		
 			Actor sid Priest End-Actor
 			Dialog sid exc20<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog

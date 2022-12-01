@@ -4,7 +4,7 @@ Template bk.ho.s21
 	import ho.s21_gr_GR_cog.*
 	import ps_gr_GR_cog.*
 
-	import actors_gr_GR_cog.*
+	import actors_gr_GR_cog.ac.*
 	import dismissals_gr_GR_cog.*
 	import misc_gr_GR_cog.*
 	import prayers_gr_GR_cog.*
@@ -43,7 +43,7 @@ Template bk.ho.s21
 		Title<Tdesig>sid ho.title</>End-Title
 		Break line End_Break
 		Actor sid Priest End-Actor
-		Dialog sid enarxis01 End-Dialog
+		Dialog sid pr.enarxis01.text End-Dialog
 		Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
 		Insert_section Heavenly_King End-Insert
 		Actor sid Reader End-Actor
@@ -53,10 +53,10 @@ Template bk.ho.s21
 		Dialog sid exc20<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
 		Actor sid Reader End-Actor
 		Reading sid res01<r>sid ru.Twelve</>End-Reading
-		Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
-		Reading sid DefteProskinisomen1 End-Reading
-		Reading sid DefteProskinisomen2 End-Reading
-		Reading sid DefteProskinisomen3 End-Reading
+		Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
+		Reading sid pr.ComeLetUsWorship1 End-Reading
+		Reading sid pr.ComeLetUsWorship2 End-Reading
+		Reading sid pr.ComeLetUsWorship3 End-Reading
 		Title role desig sid psa50.title End-Title
 		Reading sid psa50.text End-Reading
 	End-Section
@@ -113,7 +113,7 @@ Template bk.ho.s21
 			Hymn sid hoCA.Ode6T.text @ver End-Hymn
 		End-Section
 		
-		Title sid DoxaKaiNyn End-Title
+		Title sid ti.GloryBothNow End-Title
 		Section kontakion
 			Title<Tdesig>sid ti.Kontakion</>End-Title
 			Title<Tmode>sid hoCA.Kontakion.mode</><Tmelody>sid hoCA.Kontakion.melody</>End-Title
@@ -155,19 +155,19 @@ Template bk.ho.s21
 	End-Section
 	Break line End_Break
 	Section block2
-		Reading sid DefteProskinisomen1 End-Reading
-		Reading sid DefteProskinisomen2 End-Reading
-		Reading sid DefteProskinisomen3 End-Reading
+		Reading sid pr.ComeLetUsWorship1 End-Reading
+		Reading sid pr.ComeLetUsWorship2 End-Reading
+		Reading sid pr.ComeLetUsWorship3 End-Reading
 		Insert_section LiturgicalPsalms.Psalm_22_Paragraph End-Insert
 		Insert_section LiturgicalPsalms.Psalm_23_Paragraph End-Insert
 		Insert_section LiturgicalPsalms.Psalm_115_Paragraph End-Insert
-		Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
-		Reading sid Allilouia3.text sid DoxaSoiOTheos1<r>sid ru.Thrice</>End-Reading
+		Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
+		Reading sid pr.Alleluia3.text sid pr.GloryToYouGod<r>sid ru.Thrice</>End-Reading
 		Reading sid res06 End-Reading
 		Hymn sid hoPrayer.Key001.text @ver media-off End-Hymn
-		Title sid Doxa End-Title
+		Title sid ti.Glory End-Title
 		Hymn sid hoPrayer.Key002.text @ver media-off End-Hymn
-		Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+		Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 		Hymn sid hoPrayer.Key003.text @ver media-off End-Hymn
 		Title<Trubric>sid hoPrayer.Key004.title</>End-Title
 		Hymn sid hoPrayer.Key004.text @ver media-off End-Hymn
@@ -320,9 +320,9 @@ Template bk.ho.s21
 		Title<Trubric>sid hoPrayer.Key300.title</>End-Title
 		Title<Tdesig>sid ti.Apolytikion</>End-Title
 		Hymn rid me.meVE.Apolytikion1.text @ver media-off End-Hymn
-		Title sid Doxa<Tdesig>sid ti.Kontakion</>End-Title
+		Title sid ti.Glory<Tdesig>sid ti.Kontakion</>End-Title
 		Hymn rid me.meMA.Kontakion1.text @ver media-off End-Hymn
-		Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+		Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 		Hymn sid oc.m1.d2_gr_GR_cog.ocVE.Aposticha3.text @ver End-Hymn
 		Set_Date month 0 day 0 End_Date
 	End-Section
@@ -332,9 +332,9 @@ Template bk.ho.s21
 		Title<Trubric>sid hoPrayer.Key400.title</>End-Title
 		Title<Tdesig>sid ti.Apolytikion</>End-Title
 		Hymn rid me.meVE.Apolytikion1.text @ver media-off End-Hymn
-		Title sid Doxa<Tdesig>sid ti.Kontakion</>End-Title
+		Title sid ti.Glory<Tdesig>sid ti.Kontakion</>End-Title
 		Hymn rid me.meMA.Kontakion1.text @ver media-off End-Hymn
-		Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+		Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 		Hymn sid oc.m1.d2_gr_GR_cog.ocVE.Aposticha3.text @ver End-Hymn
 		Set_Date month 0 day 0 End_Date
 	End-Section
@@ -343,29 +343,29 @@ Template bk.ho.s21
 		Title<Trubric>sid hoPrayer.Key500.title</>End-Title
 		Title<Tdesig>sid ti.Apolytikion</>End-Title
 		Hymn sid ho.s15.m03_gr_GR_cog.hoD12.Apolytikion1.text @ver media-off End-Hymn
-		Title sid Doxa<Tdesig>sid ti.Kontakion</>End-Title
+		Title sid ti.Glory<Tdesig>sid ti.Kontakion</>End-Title
 		Hymn sid ho.s15.m03_gr_GR_cog.hoD12.Kontakion1.text @ver media-off End-Hymn
-		Title sid KaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+		Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 		Hymn sid oc.m1.d2_gr_GR_cog.ocVE.Aposticha3.text @ver End-Hymn
 	End-Section
 	Break line End_Break
 	Section block10
 		Actor sid Reader End-Actor
 		Dialog sid res01<r>sid ru.Twelve</>End-Dialog
-		Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
-		Dialog sid TinTimioteranPrayer.text End-Dialog
-		Dialog sid EnOnomatiKyriou.text End-Dialog
+		Dialog sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Dialog
+		Dialog sid pr.GreaterInHonor.text End-Dialog
+		Dialog sid pr.InTheNameOfLordBless_father.text End-Dialog
 		Actor sid Priest End-Actor
-		Dialog sid OTheosOiktirisai.text End-Dialog
+		Dialog sid pr.MayGodHaveCompassion.text End-Dialog
 		Actor sid Reader End-Actor
 		Dialog sid res04 End-Dialog
-		Dialog sid DoxaPatri.text sid KaiNynKaiAei.text End-Dialog
+		Dialog sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Dialog
 		Dialog sid res06 End-Dialog
-		Dialog sid Evlogison End-Dialog
+		Dialog sid pr.Bless_father.text End-Dialog
 		Actor sid Priest End-Actor
 		Dialog sid dis00 sid dis01 sid dis02 sid cl.localpatronsaint1.dismissal sid dis09 sid dis10 sid dis88 End-Dialog
 		Actor sid Priest End-Actor
-		Dialog sid DiEfchonPateron.text End-Dialog
+		Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
 		Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
 	End-Section
 	

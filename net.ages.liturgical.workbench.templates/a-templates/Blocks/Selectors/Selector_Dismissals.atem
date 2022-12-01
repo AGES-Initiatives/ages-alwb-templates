@@ -9,7 +9,7 @@ Status NA
 	import pe.*
 	import tr.*
 
-	import actors_gr_GR_cog.*
+	import actors_gr_GR_cog.ac.*
 	import dismissals_gr_GR_cog.*
 	import misc_gr_GR_cog.*
 	import prayers_gr_GR_cog.*
@@ -28,7 +28,7 @@ Status NA
 	Section Com_Yes //use this whenever there IS an explicit commemoration
 		Actor sid Priest End-Actor
 		Section part1
-			Dialog sid DoxaSoiChriste1 End-Dialog
+			Dialog sid pr.GloryToYouChrist End-Dialog
 			when-date-is
 				Jan 6 use: Insert_section dismissal_00 End-Insert
 				Jan 7 use: Insert_section dismissal_05 End-Insert
@@ -129,32 +129,32 @@ Status NA
 			when-movable-cycle-day-is
 				71, 72, 73, 74, 75, 76, 77, 109 use:
 					Section pascha_end
-					//	Dialog sid PaschaDialog1.text End-Dialog
-						Dialog sid PaschaDialog2.text End-Dialog
+					//	Dialog sid pr.PaschaDialog1.text End-Dialog
+						Dialog sid pr.PaschaDialog2.text End-Dialog
 						Actor sid People End-Actor
-						Dialog sid PaschaDialog3.text End-Dialog
+						Dialog sid pr.PaschaDialog3.text End-Dialog
 						Actor sid Priest End-Actor
-						Dialog sid PaschaDialog2.text End-Dialog
+						Dialog sid pr.PaschaDialog2.text End-Dialog
 						Actor sid People End-Actor
-						Dialog sid PaschaDialog3.text End-Dialog
+						Dialog sid pr.PaschaDialog3.text End-Dialog
 						Actor sid Priest End-Actor
-						Dialog sid PaschaDialog2.text End-Dialog
+						Dialog sid pr.PaschaDialog2.text End-Dialog
 						Actor sid People End-Actor
-						Dialog sid PaschaDialog3.text End-Dialog
+						Dialog sid pr.PaschaDialog3.text End-Dialog
 						Actor sid Priest End-Actor
-						Dialog sid PaschaDialog4.text End-Dialog
+						Dialog sid pr.PaschaDialog4.text End-Dialog
 						Actor sid People End-Actor
-						Dialog sid PaschaDialog5.text End-Dialog
+						Dialog sid pr.PaschaDialog5.text End-Dialog
 						Actor sid Priest End-Actor
 						Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text End-Dialog
 						Actor sid People End-Actor
-						Dialog sid PaschaDialog6.text End-Dialog
+						Dialog sid pr.PaschaDialog6.text End-Dialog
 					End-Section
 				78 thru 108 use:
 					Section afterpascha_end_1
 						Rubric sid cl.pe.d078.R001 End-Rubric
 						Actor sid Priest End-Actor
-						Dialog sid DiEfchonPateron.text End-Dialog
+						Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
 						Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
 					End-Section
 					Section afterpascha_end_2	
@@ -163,11 +163,11 @@ Status NA
 						Actor sid Priest End-Actor
 						Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text End-Dialog
 						Actor sid People End-Actor
-						Dialog sid PaschaDialog6.text End-Dialog
+						Dialog sid pr.PaschaDialog6.text End-Dialog
 					End-Section
 				otherwise use:
 					Section regular_end
-						Dialog sid DiEfchonPateron.text End-Dialog
+						Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
 						Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
 					End-Section
 			end-when
@@ -177,7 +177,7 @@ Status NA
 	Section mealt1_Com_Yes 
 		Actor sid Priest End-Actor
 		Section part1
-			Dialog sid DoxaSoiChriste1 End-Dialog
+			Dialog sid pr.GloryToYouChrist End-Dialog
 			when-date-is
 				Feb 6, 19, 26 use: Insert_section dismissal_07_mealt1 End-Insert
 				Jul 12 use: Insert_section dismissal_07_mealt1 End-Insert
@@ -200,7 +200,7 @@ Status NA
 	Section me1_mealt1_Com_Yes 
 		Actor sid Priest End-Actor
 		Section part1
-			Dialog sid DoxaSoiChriste1 End-Dialog
+			Dialog sid pr.GloryToYouChrist End-Dialog
 			when-date-is
 				Jul 22 use: Insert_section dismissal_07_with_mealt1 End-Insert
 				Sep 24 use: Insert_section dismissal_07_me1_mealt1_Sep24 End-Insert
@@ -214,7 +214,7 @@ Status NA
 	Section pealt1_Com_Yes 
 		Actor sid Priest End-Actor
 		Section part1
-			Dialog sid DoxaSoiChriste1 End-Dialog
+			Dialog sid pr.GloryToYouChrist End-Dialog
 			Insert_section dismissal_07_pealt1 End-Insert
 		End-Section
 		Insert_section Com_Yes.part2 End-Insert
@@ -223,11 +223,11 @@ Status NA
 	Section tr1_me1_Com_Yes
 		Actor sid Priest End-Actor
 		Section part1
-			Dialog sid DoxaSoiChriste1 End-Dialog
+			Dialog sid pr.GloryToYouChrist End-Dialog
 			Insert_section dismissal_07_tr1 End-Insert
 		End-Section
 		Section part2
-			Dialog sid DiEfchonPateron.text End-Dialog
+			Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
 			Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
 		End-Section
 	End-Section
@@ -235,7 +235,7 @@ Status NA
 	Section Com_No //use this whenever there is NO explicit commemoration
 		Actor sid Priest End-Actor
 		Section part1
-			Dialog sid DoxaSoiChriste1 End-Dialog
+			Dialog sid pr.GloryToYouChrist End-Dialog
 			Insert_section dismissal_01 End-Insert
 		End-Section
 		Section part2
@@ -249,7 +249,7 @@ Status NA
 					Actor sid People End-Actor
 					Dialog sid res04 End-Dialog
 				otherwise use:
-					Dialog sid DiEfchonPateron.text End-Dialog
+					Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
 					Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
 			end-when
 		End-Section
@@ -261,32 +261,32 @@ Status NA
 				71, 72, 73, 74, 75, 76, 77, 109 use:
 					Section pascha_end
 						Actor sid Hierarch End-Actor
-					//	Dialog sid PaschaDialog1.text End-Dialog
-						Dialog sid PaschaDialog2.text End-Dialog
+					//	Dialog sid pr.PaschaDialog1.text End-Dialog
+						Dialog sid pr.PaschaDialog2.text End-Dialog
 						Actor sid People End-Actor
-						Dialog sid PaschaDialog3.text End-Dialog
+						Dialog sid pr.PaschaDialog3.text End-Dialog
 						Actor sid Hierarch End-Actor
-						Dialog sid PaschaDialog2.text End-Dialog
+						Dialog sid pr.PaschaDialog2.text End-Dialog
 						Actor sid People End-Actor
-						Dialog sid PaschaDialog3.text End-Dialog
+						Dialog sid pr.PaschaDialog3.text End-Dialog
 						Actor sid Hierarch End-Actor
-						Dialog sid PaschaDialog2.text End-Dialog
+						Dialog sid pr.PaschaDialog2.text End-Dialog
 						Actor sid People End-Actor
-						Dialog sid PaschaDialog3.text End-Dialog
+						Dialog sid pr.PaschaDialog3.text End-Dialog
 						Actor sid Hierarch End-Actor
-						Dialog sid PaschaDialog4.text End-Dialog
+						Dialog sid pr.PaschaDialog4.text End-Dialog
 						Actor sid People End-Actor
-						Dialog sid PaschaDialog5.text End-Dialog
+						Dialog sid pr.PaschaDialog5.text End-Dialog
 						Actor sid Hierarch End-Actor
 						Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text End-Dialog
 						Actor sid People End-Actor
-						Dialog sid PaschaDialog6.text End-Dialog
+						Dialog sid pr.PaschaDialog6.text End-Dialog
 					End-Section
 				78 thru 108 use:
 					Section afterpascha_end_1
 						Rubric sid cl.pe.d078.R001 End-Rubric
 						Actor sid Priest End-Actor
-						Dialog sid DiEfchonPateron.text End-Dialog
+						Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
 						Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
 					End-Section
 					Section afterpascha_end_2	
@@ -295,14 +295,14 @@ Status NA
 						Actor sid Hierarch End-Actor
 						Dialog sid pe.d00P_gr_GR_cog.pePA.ChristIsRisen.text End-Dialog
 						Actor sid People End-Actor
-						Dialog sid PaschaDialog6.text End-Dialog
+						Dialog sid pr.PaschaDialog6.text End-Dialog
 					End-Section
 				otherwise use:
 				Section regular_end
-					Dialog sid DiEfchonPateron.text End-Dialog
+					Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
 					Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
 					Actor sid Clergy End-Actor
-					Dialog sid DiEfchonDespotou.text End-Dialog
+					Dialog sid pr.ThroughThePrayers_bishop.text End-Dialog
 					Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
 				End-Section
 			end-when
@@ -312,19 +312,19 @@ Status NA
 	Section Com_Specific__
 		Section brightweek_stgeorge
 			Actor sid Priest End-Actor
-			Dialog sid DoxaSoiChriste1 End-Dialog
+			Dialog sid pr.GloryToYouChrist End-Dialog
 			Insert_section dismissal_stgeorge End-Insert
 			Insert_section Com_Yes.part2 End-Insert
 		End-Section
 		Section brightweek_stmark
 			Actor sid Priest End-Actor
-			Dialog sid DoxaSoiChriste1 End-Dialog
+			Dialog sid pr.GloryToYouChrist End-Dialog
 			Insert_section dismissal_stmark End-Insert
 			Insert_section Com_Yes.part2 End-Insert
 		End-Section
 		Section brightweek_stathanasios
 			Actor sid Priest End-Actor
-			Dialog sid DoxaSoiChriste1 End-Dialog
+			Dialog sid pr.GloryToYouChrist End-Dialog
 			Insert_section dismissal_stathanasios End-Insert
 			Insert_section Com_Yes.part2 End-Insert
 		End-Section
@@ -335,9 +335,9 @@ Status NA
 		End-Section
 		Section dec19_when_saturday
 			Actor sid Priest End-Actor
-			Dialog sid DoxaSoiChriste1 End-Dialog
+			Dialog sid pr.GloryToYouChrist End-Dialog
 			Dialog sid dis00 rid meDA.dismissal sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 sid me.m12.d20_gr_GR_cog.meDA.insert1 sid me.m12.d20_gr_GR_cog.meDA.insert2 sid dis10 sid dis88 End-Dialog 
-			Dialog sid DiEfchonPateron.text End-Dialog
+			Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
 			Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
 		End-Section
 	End-Section	

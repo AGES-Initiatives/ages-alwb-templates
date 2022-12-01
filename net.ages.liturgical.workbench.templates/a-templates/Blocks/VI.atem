@@ -17,7 +17,7 @@ Status NA
 	import liturgical.verses_gr_GR_cog.*
 	import ps_gr_GR_cog.*
 	
-	import actors_gr_GR_cog.*
+	import actors_gr_GR_cog.ac.*
 	import dismissals_gr_GR_cog.*
 	import misc_gr_GR_cog.*
 	import prayers_gr_GR_cog.*
@@ -45,7 +45,7 @@ Status NA
 					72, 73, 74, 75, 76, 77, 109 use:
 						Section pascha //needs work
 							Actor sid Priest End-Actor
-							Dialog sid enarxis03 End-Dialog
+							Dialog sid pr.enarxis03.text End-Dialog
 							Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
 							Insert_section PE.Pascha_Beginning End-Insert
 							Actor sid Deacon End-Actor
@@ -69,9 +69,9 @@ Status NA
 								otherwise use:
 									Insert_section VE.vesperal_prayers_link End-Insert
 									Actor sid Hierarch End-Actor
-									Reading sid DefteProskinisomen1 End-Reading
-									Reading sid DefteProskinisomen2 End-Reading
-									Reading sid DefteProskinisomen3 End-Reading
+									Reading sid pr.ComeLetUsWorship1 End-Reading
+									Reading sid pr.ComeLetUsWorship2 End-Reading
+									Reading sid pr.ComeLetUsWorship3 End-Reading
 							end-when
 					//		Media sid hoVE.Ps103.text End-Media
 							Insert_section with_anoixantaria.introductorypsalm.Psalm_103_Verses End-Insert
@@ -99,7 +99,7 @@ Status NA
 				72, 73, 74, 75, 76, 77, 109 use:
 					Section pascha
 						Actor sid Priest End-Actor
-						Dialog sid enarxis03 End-Dialog
+						Dialog sid pr.enarxis03.text End-Dialog
 						Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
 						Insert_section PE.Pascha_Beginning End-Insert
 						Actor sid Deacon End-Actor
@@ -110,7 +110,7 @@ Status NA
 				otherwise use:
 					Section enarxis
 						Actor sid Priest End-Actor
-						Dialog sid enarxis03 End-Dialog
+						Dialog sid pr.enarxis03.text End-Dialog
 						Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
 					End-Section
 					Section introductorypsalm
@@ -125,9 +125,9 @@ Status NA
 							otherwise use:
 								Insert_section VE.vesperal_prayers_link End-Insert
 								Actor sid Reader End-Actor
-								Reading sid DefteProskinisomen1 End-Reading
-								Reading sid DefteProskinisomen2 End-Reading
-								Reading sid DefteProskinisomen3 End-Reading
+								Reading sid pr.ComeLetUsWorship1 End-Reading
+								Reading sid pr.ComeLetUsWorship2 End-Reading
+								Reading sid pr.ComeLetUsWorship3 End-Reading
 						end-when
 				//		Media sid hoVE.Ps103.text End-Media
 						Section Psalm_103_Verses
@@ -148,9 +148,9 @@ Status NA
 							Hymn sid psVE.anoixantaria.v8.text <i>sid other.verse35.text @ver</>End-Hymn
 							Hymn sid psVE.anoixantaria.v9.text <i>sid other.refrain1.text @ver</>End-Hymn
 							Hymn sid psVE.anoixantaria.v10.text <i>sid other.refrain2.text @ver</>End-Hymn
-							Hymn sid Doxa.incipit sid KaiNyn.incipit End-Hymn
-							Hymn sid Allilouia3Doxa.text <inr>sid ru.Twice</>End-Hymn
-							Hymn sid Allilouia3Doxa.text sid IElpisImonKyrie End-Hymn
+							Hymn sid pr.GloryToTheFather.incipit sid pr.BothNowAndEver.incipit End-Hymn
+							Hymn sid pr.Alleluia3Glory.text <inr>sid ru.Twice</>End-Hymn
+							Hymn sid pr.Alleluia3Glory.text sid pr.OurHopeLord.text End-Hymn
 						End-Section
 					End-Section
 				//	Insert_section VE.vesperal_prayers_collapse End-Insert
@@ -220,7 +220,7 @@ Status NA
 					Hymn rid meVE.Lity8.text @ver media-off End-Hymn
 				End-Section
 				Section glory_
-					Title sid Doxa End-Title
+					Title sid ti.Glory End-Title
 					Section hymn
 						Title<Tmode>rid meVE.LityGlory.mode</>End-Title
 						Media rid meVE.LityGlory.text End-Media
@@ -228,7 +228,7 @@ Status NA
 					End-Section
 				End-Section
 				Section gloryboth_
-					Title sid DoxaKaiNyn End-Title
+					Title sid ti.GloryBothNow End-Title
 					Section hymn
 						Title role source0 sid ti.sourceMenaion End-Title
 						Title<Tdesig>sid Idiomelon</><Tmode>rid meVE.LityGlory.mode</>End-Title
@@ -237,7 +237,7 @@ Status NA
 					End-Section
 				End-Section
 				Section both_
-					Title sid KaiNyn End-Title
+					Title sid ti.BothNow End-Title
 					Section hymn
 						Title role source0 sid ti.sourceMenaion End-Title
 						Title role mode rid meVE.LityBoth.mode End-Title
@@ -288,7 +288,7 @@ Status NA
 					Hymn rid alt1.meVE.Lity8.text @ver media-off End-Hymn
 				End-Section
 				Section glory_
-					Title sid Doxa End-Title
+					Title sid ti.Glory End-Title
 					Section hymn
 						Title<Tdesig>sid Idiomelon</><Tmode>rid alt1.meVE.LityGlory.mode</>End-Title
 						Media rid alt1.meVE.LityGlory.text End-Media
@@ -296,7 +296,7 @@ Status NA
 					End-Section
 				End-Section
 				Section gloryboth_
-					Title sid DoxaKaiNyn End-Title
+					Title sid ti.GloryBothNow End-Title
 					Section hymn
 						Title role source0 sid ti.sourceMenaion End-Title
 						Title<Tdesig>sid Idiomelon</><Tmode>rid alt1.meVE.LityGlory.mode</>End-Title
@@ -305,7 +305,7 @@ Status NA
 					End-Section
 				End-Section
 				Section both_
-					Title sid KaiNyn End-Title
+					Title sid ti.BothNow End-Title
 					Section hymn
 						Title role source0 sid ti.sourceMenaion End-Title
 						Title role mode rid alt1.meVE.LityBoth.mode End-Title
@@ -356,7 +356,7 @@ Status NA
 					Hymn rid alt2.meVE.Lity8.text @ver media-off End-Hymn
 				End-Section
 				Section glory_
-					Title sid Doxa End-Title
+					Title sid ti.Glory End-Title
 					Section hymn
 						Title<Tdesig>sid Idiomelon</><Tmode>rid alt2.meVE.LityGlory.mode</>End-Title
 						Media rid alt2.meVE.LityGlory.text End-Media
@@ -364,7 +364,7 @@ Status NA
 					End-Section
 				End-Section
 				Section gloryboth_
-					Title sid DoxaKaiNyn End-Title
+					Title sid ti.GloryBothNow End-Title
 					Section hymn
 						Title role source0 sid ti.sourceMenaion End-Title
 						Title<Tdesig>sid Idiomelon</><Tmode>rid alt2.meVE.LityGlory.mode</>End-Title
@@ -373,7 +373,7 @@ Status NA
 					End-Section
 				End-Section
 				Section both_
-					Title sid KaiNyn End-Title
+					Title sid ti.BothNow End-Title
 					Section hymn
 						Title role source0 sid ti.sourceMenaion End-Title
 						Title role mode rid alt2.meVE.LityBoth.mode End-Title
@@ -409,7 +409,7 @@ Status NA
 						Hymn rid alt1.peVE.Lity4.text @ver media-off End-Hymn
 					End-Section
 					Section gloryboth_
-						Title sid DoxaKaiNyn End-Title
+						Title sid ti.GloryBothNow End-Title
 						Section hymn
 							Title role source0 sid ti.sourcePeSupplement End-Title
 							Title<Tdesig>sid Idiomelon</><Tmode>rid alt1.peVE.LityGlory.mode</>End-Title
@@ -455,7 +455,7 @@ Status NA
 					Hymn rid peVE.Lity6.text @ver media-off End-Hymn
 				End-Section
 				Section glory_
-					Title sid Doxa End-Title
+					Title sid ti.Glory End-Title
 					Section hymn
 						Title role source0 sid ti.sourcePentecostarion End-Title
 						Title<Tdesig>sid Idiomelon</><Tmode>rid peVE.LityGlory.mode</>End-Title
@@ -464,7 +464,7 @@ Status NA
 					End-Section
 				End-Section
 				Section gloryboth_
-					Title sid DoxaKaiNyn End-Title
+					Title sid ti.GloryBothNow End-Title
 					Section hymn
 						Title role source0 sid ti.sourcePentecostarion End-Title
 						Title<Tdesig>sid Idiomelon</><Tmode>rid peVE.LityGlory.mode</>End-Title
@@ -473,7 +473,7 @@ Status NA
 					End-Section
 				End-Section
 				Section both_
-					Title sid KaiNyn End-Title
+					Title sid ti.BothNow End-Title
 					Section hymn
 						Title role source0 sid ti.sourcePentecostarion End-Title
 						Title role mode rid peVE.LityBoth.mode End-Title
@@ -511,9 +511,9 @@ Status NA
 					Actor sid Reader End-Actor
 					Reading sid psLI.aftercommunion.v1.text End-Reading
 					Actor sid Superior sid ru.Or sid Reader End-Actor
-					Reading sid DoxaPatri.text End-Reading
+					Reading sid pr.GloryToTheFather.text End-Reading
 					Actor sid Reader End-Actor
-					Reading sid KaiNynKaiAei.text End-Reading
+					Reading sid pr.BothNowAndEver.text End-Reading
 					Reading sid ps_gr_GR_cog.psa33.v2.text End-Reading
 					Reading sid ps_gr_GR_cog.psa33.v3.text End-Reading
 					Reading sid ps_gr_GR_cog.psa33.v4.text End-Reading
@@ -546,17 +546,17 @@ Status NA
 			Section part3_artoclasiahymn__
 				Section once_choir
 					Actor sid Choir End-Actor
-					Media sid hoVE.MM.ArtoklasiaHymn.text @ver End-Media
+					Media sid hoVE.MM.LoavesHymn2_ps33v11.text @ver End-Media
 					Hymn sid psVE.breadhymn.v1.text @ver End-Hymn
 				End-Section
 				Section once_clergy
 					Actor sid Clergy End-Actor
-					Media sid hoVE.MM.ArtoklasiaHymn.text @ver End-Media
+					Media sid hoVE.MM.LoavesHymn2_ps33v11.text @ver End-Media
 					Hymn sid psVE.breadhymn.v1.text @ver End-Hymn
 				End-Section
 				Section twice_choir
 					Actor sid Choir End-Actor
-					Media sid hoVE.MM.ArtoklasiaHymn.text @ver End-Media
+					Media sid hoVE.MM.LoavesHymn2_ps33v11.text @ver End-Media
 					Hymn sid psVE.breadhymn.v1.text @ver <r>sid ru.Twice</>End-Hymn
 				End-Section
 			End-Section
@@ -605,9 +605,9 @@ Status NA
 				Actor sid Reader End-Actor
 				Reading sid psLI.aftercommunion.v1.text End-Reading
 				Actor sid Superior sid ru.Or sid Reader End-Actor
-				Reading sid DoxaPatri.text End-Reading
+				Reading sid pr.GloryToTheFather.text End-Reading
 				Actor sid Reader End-Actor
-				Reading sid KaiNynKaiAei.text End-Reading
+				Reading sid pr.BothNowAndEver.text End-Reading
 				Reading sid ps_gr_GR_cog.psa33.v2.text End-Reading
 				Reading sid ps_gr_GR_cog.psa33.v3.text End-Reading
 				Reading sid ps_gr_GR_cog.psa33.v4.text End-Reading
@@ -640,17 +640,17 @@ Status NA
 		Section part3_artoclasiahymn__
 			Section once_choir
 				Actor sid Choir End-Actor
-				Media sid hoVE.MM.ArtoklasiaHymn.text @ver End-Media
+				Media sid hoVE.MM.LoavesHymn2_ps33v11.text @ver End-Media
 				Hymn sid psVE.breadhymn.v1.text @ver End-Hymn
 			End-Section
 			Section once_clergy
 				Actor sid Clergy End-Actor
-				Media sid hoVE.MM.ArtoklasiaHymn.text @ver End-Media
+				Media sid hoVE.MM.LoavesHymn2_ps33v11.text @ver End-Media
 				Hymn sid psVE.breadhymn.v1.text @ver End-Hymn
 			End-Section
 			Section twice_choir
 				Actor sid Choir End-Actor
-				Media sid hoVE.MM.ArtoklasiaHymn.text @ver End-Media
+				Media sid hoVE.MM.LoavesHymn2_ps33v11.text @ver End-Media
 				Hymn sid psVE.breadhymn.v1.text @ver <r>sid ru.Twice</>End-Hymn
 			End-Section
 		End-Section
@@ -670,8 +670,8 @@ Status NA
 //blocks
 		Section theotokoshymn
 			Title<Tdesig>sid ti.HymnToTheotokos</>End-Title
-			Media sid hoVE.MM.ArtoklasiaTheotokeParthene.text End-Media
-			Hymn sid TheotokeParthene.text @ver media-off End-Hymn
+			Media sid hoVE.MM.LoavesHymn1_Theotokos.text End-Media
+			Hymn sid ho.s10_gr_GR_cog.hoVE.LentApolytikion1.text @ver media-off End-Hymn
 		End-Section
 	
 End-Template

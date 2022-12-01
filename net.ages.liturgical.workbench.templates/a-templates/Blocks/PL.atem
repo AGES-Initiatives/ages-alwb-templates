@@ -17,7 +17,7 @@ Status NA
 	//Templates
 	import LiturgicalPsalms.*
 	
-	import actors_gr_GR_cog.*
+	import actors_gr_GR_cog.ac.*
 	import misc_gr_GR_cog.*
 	import poets_gr_GR_cog.*
 	import prayers_gr_GR_cog.*
@@ -34,14 +34,14 @@ Status NA
 		Section part1
 			Actor sid Reader End-Actor
 			Dialog sid res04 End-Dialog
-			Reading sid DefteProskinisomen1 End-Reading
-			Reading sid DefteProskinisomen2 End-Reading
-			Reading sid DefteProskinisomen3 End-Reading
+			Reading sid pr.ComeLetUsWorship1 End-Reading
+			Reading sid pr.ComeLetUsWorship2 End-Reading
+			Reading sid pr.ComeLetUsWorship3 End-Reading
 			Media sid ps_gr_GR_cog.psa103.text End-Media
 			Insert_section Psalm_103_Paragraph End-Insert
-			Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
-			Reading sid Allilouia3.text sid DoxaSoiOTheos1<r>sid ru.Thrice</>End-Reading
-			Reading sid IElpisImonKyrie End-Reading
+			Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
+			Reading sid pr.Alleluia3.text sid pr.GloryToYouGod<r>sid ru.Thrice</>End-Reading
+			Reading sid pr.OurHopeLord.text End-Reading
 			Break line End_Break 
 			Actor sid Deacon End-Actor
 			Insert_section LN.GreatLitany01 End-Insert
@@ -64,10 +64,10 @@ Status NA
 			Reading sid psa122.text @ver End-Reading
 			Title role desig sid psa123.title End-Title
 			Reading sid psa123.text @ver End-Reading
-			Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
-			Reading sid Allilouia3.text sid DoxaSoiOTheos1<r>sid ru.Thrice</>End-Reading
+			Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
+			Reading sid pr.Alleluia3.text sid pr.GloryToYouGod<r>sid ru.Thrice</>End-Reading
 			Reading sid res06 End-Reading
-			Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+			Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
 		End-Section
 		Section part3
 			Actor sid Deacon End-Actor
@@ -91,10 +91,10 @@ Status NA
 			Reading sid psa127.text @ver End-Reading
 			Title role desig sid psa128.title End-Title
 			Reading sid psa128.text @ver End-Reading
-			Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
-			Reading sid Allilouia3.text sid DoxaSoiOTheos1<r>sid ru.Thrice</>End-Reading
+			Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
+			Reading sid pr.Alleluia3.text sid pr.GloryToYouGod<r>sid ru.Thrice</>End-Reading
 			Reading sid res06 End-Reading
-			Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
+			Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
 		End-Section
 		Section part5
 			Actor sid Deacon End-Actor
@@ -118,9 +118,9 @@ Status NA
 			Reading sid psa132.text @ver End-Reading
 			Title role desig sid psa133.title End-Title
 			Reading sid psa133.text @ver End-Reading
-			Reading sid DoxaPatri.text sid KaiNynKaiAei.text End-Reading
-			Reading sid Allilouia3.text sid DoxaSoiOTheos1<r>sid ru.Thrice</>End-Reading
-			Reading sid IElpisImonKyrie End-Reading
+			Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
+			Reading sid pr.Alleluia3.text sid pr.GloryToYouGod<r>sid ru.Thrice</>End-Reading
+			Reading sid pr.OurHopeLord.text End-Reading
 		End-Section
 		Section part7
 			Actor sid Deacon End-Actor
@@ -333,7 +333,7 @@ Status NA
 						when-movable-cycle-day-is
 							47 use:
 								Section cross
-									Title sid DoxaKaiNyn<Tmode>rid trVE.SticGlory.mode</>End-Title
+									Title sid ti.GloryBothNow<Tmode>rid trVE.SticGlory.mode</>End-Title
 									Title<Tdesig>sid ti.Cross</>End-Title
 									Media rid trVE.SticGlory.text End-Media
 									Hymn rid trVE.SticGlory.text @ver media-off End-Hymn
@@ -342,14 +342,14 @@ Status NA
 								when-name-of-day-is
 									Wednesday, Friday use:
 										Section stavrotheotokion
-											Title sid DoxaKaiNyn<Tdesig>sid ti.Stavrotheotokion</>End-Title
+											Title sid ti.GloryBothNow<Tdesig>sid ti.Stavrotheotokion</>End-Title
 											Title<Tmode>rid meVE.SticStavrotheotokion.mode</><Tmelody>rid meVE.SticStavrotheotokion.melody</>End-Title
 											Media rid meVE.SticStavrotheotokion.text End-Media
 											Hymn rid meVE.SticStavrotheotokion.text @ver media-off End-Hymn
 										End-Section
 									otherwise use:
 										Section theotokion
-											Title sid DoxaKaiNyn<Tdesig>sid ti.Theotokion</>End-Title
+											Title sid ti.GloryBothNow<Tdesig>sid ti.Theotokion</>End-Title
 											Title<Tmode>rid meVE.SticTheotokion.mode</><Tmelody>rid meVE.SticTheotokion.melody</>End-Title
 											Media rid meVE.SticTheotokion.text End-Media
 											Hymn rid meVE.SticTheotokion.text @ver media-off End-Hymn
@@ -405,7 +405,7 @@ Status NA
 							Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_ End-Insert
 						otherwise use:
 							Section Glory
-								Title sid Doxa<Tdesig>sid ti.ForDead_1hymn</>End-Title
+								Title sid ti.Glory<Tdesig>sid ti.ForDead_1hymn</>End-Title
 								Title role mode rid octrVE.SticGlory.mode End-Title
 								Media rid octrVE.SticGlory.text End-Media
 								Hymn rid octrVE.SticGlory.text @ver media-off End-Hymn
@@ -445,7 +445,7 @@ Status NA
 		Title role source sid ti.sourceTriodion End-Title
 		Insert_section Lectionary_Triodion.Vespers_Readings.lesson1 End-Insert
 		Rubric sid ru.Sung End-Rubric
-		Dialog sid Kelefson End-Dialog
+		Dialog sid pr.Command.text End-Dialog
 		Actor sid Priest End-Actor
 		Dialog sid exc17 sid exc18 sid eu.lipresanctified_gr_GR_cog.euPL.Key0701.text sid eu.lipresanctified_gr_GR_cog.euPL.Key0702.text End-Dialog
 		Actor sid Reader End-Actor
@@ -468,7 +468,7 @@ Status NA
 		Actor sid Choir End-Actor
 		Para role chant sid psPL.incense.v1.text End-Para
 		Actor sid Priest End-Actor
-		Verse sid DoxaPatri.text sid KaiNynKaiAei.text End-Verse
+		Verse sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Verse
 		Actor sid Choir End-Actor
 		Para role chant sid psPL.incense.v1.text End-Para
 		Actor sid Priest End-Actor
@@ -569,7 +569,7 @@ Status NA
 		Media sid euPL.Key1001.text End-Media
 		Hymn sid euPL.Key1001.text @ver media-off End-Hymn
 		Actor sid Priest<Trubric>sid ru.InALowVoice</>End-Actor
-		Dialog sid DiEfchonPateron.text End-Dialog
+		Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
 		Actor sid Choir End-Actor
 		Hymn sid euPL.Key1002.text @ver End-Hymn
 		Actor sid Deacon End-Actor
@@ -598,7 +598,7 @@ Status NA
 		Dialog sid euLI.Key1406.text End-Dialog
 		Actor sid People End-Actor
 		Title role desig sid ti.LordsPrayer.uc End-Title
-		Reading sid PaterImon.text End-Reading
+		Reading sid pr.OurFather.text End-Reading
 		Actor sid Priest End-Actor
 		Dialog sid exc20 End-Dialog
 		Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
@@ -635,7 +635,7 @@ Status NA
 				Apr 26 use: Insert_section Selector_CommunionHymn.Various.apostle End-Insert
 				otherwise use:
 					Media sid euPL.Key1201.text End-Media
-					Hymn sid psPL.communion.v1.text @ver sid Allilouia1 End-Hymn
+					Hymn sid psPL.communion.v1.text @ver sid pr.Alleluia1.text End-Hymn
 			end-when
 		End-Section
 	End-Section
@@ -663,13 +663,13 @@ Status NA
 		Para role inaudible sid euLI.Key1601.text End-Para	
 		Actor sid Priest<Trubric>sid ru.InALowVoice</>End-Actor 
 		Para role inaudible sid euLI.Key1602.text End-Para
-		Para role inaudible sid EvlogitosOTheosImon.text End-Para
+		Para role inaudible sid pr.BlessedIsOurGod.text End-Para
 		Actor sid Priest End-Actor 
-		Dialog sid PantoteNyn.text End-Dialog
+		Dialog sid pr.AlwaysNow.text End-Dialog
 		Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
 		Actor sid Deacon End-Actor
 		Dialog sid euLI.Key1604.text End-Dialog
-		Dialog<i>sid parenthesis.open sid DoxaSoiKyrie sid parenthesis.close</>End-Dialog
+		Dialog<i>sid parenthesis.open sid pr.GloryToYouLord sid parenthesis.close</>End-Dialog
 		Dialog sid pet12 End-Dialog	
 		Dialog<i>sid parenthesis.open sid res01 sid parenthesis.close</>End-Dialog
 		Dialog sid euPL.Key1203.text End-Dialog	
@@ -702,29 +702,29 @@ Status NA
 	End-Section
 
 	Section _13_nocommemoration
-		Dialog sid DoxaSoiChriste2 End-Dialog
+		Dialog sid pr.GloryToYouChristHope End-Dialog
 		Insert_section Selector_Dismissals.dismissal_01 End-Insert
 		Insert_section _14 End-Insert
 		Actor sid Priest End-Actor
-		Dialog sid DiEfchonPateron.text End-Dialog
+		Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
 		Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
 	End-Section
 
 	Section _13_commemoration
-		Dialog sid DoxaSoiChriste2 End-Dialog
+		Dialog sid pr.GloryToYouChristHope End-Dialog
 		Insert_section Selector_Dismissals.dismissal_07 End-Insert
 		Insert_section _14 End-Insert
 		Actor sid Priest End-Actor
-		Dialog sid DiEfchonPateron.text End-Dialog
+		Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
 		Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
 	End-Section
 	
 	Section _13_holyweek
-		Dialog sid DoxaSoiChriste2 End-Dialog
+		Dialog sid pr.GloryToYouChristHope End-Dialog
 		Insert_section Selector_Dismissals.dismissal_09 End-Insert
 		Insert_section _14 End-Insert
 		Actor sid Priest End-Actor
-		Dialog sid DiEfchonPateron.text End-Dialog
+		Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
 		Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
 	End-Section
 	
