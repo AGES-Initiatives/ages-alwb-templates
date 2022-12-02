@@ -43,7 +43,7 @@ Status NA
 				Section pascha
 					Actor sid Priest End-Actor
 					Dialog sid pr.enarxis01.text End-Dialog
-					Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+					Dialog<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Dialog
 					Insert_section PE.Pascha_Beginning End-Insert
 					//no litany
 				End-Section
@@ -51,7 +51,7 @@ Status NA
 				Section enarxis
 					Actor sid Priest End-Actor
 					Dialog sid pr.enarxis01.text End-Dialog
-					Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+					Dialog<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Dialog
 				End-Section
 				Section introductorypsalm
 					when-movable-cycle-day-is 78 thru 108 use:
@@ -62,15 +62,15 @@ Status NA
 						Actor sid Reader End-Actor
 					otherwise use:
 						Actor sid Reader End-Actor
-						Reading sid pr.ComeLetUsWorship1 End-Reading
-						Reading sid pr.ComeLetUsWorship2 End-Reading
-						Reading sid pr.ComeLetUsWorship3 End-Reading
+						Reading sid pr.ComeLetUsWorship1.text End-Reading
+						Reading sid pr.ComeLetUsWorship2.text End-Reading
+						Reading sid pr.ComeLetUsWorship3.text End-Reading
 					end-when
 					Media sid hoVE.Ps103.text End-Media
 					Insert_section Psalm_103_Paragraph End-Insert
 					Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
-					Reading sid pr.Alleluia3.text sid pr.GloryToYouGod<r>sid ru.Thrice</>End-Reading
-					Reading sid res06 End-Reading
+					Reading sid pr.Alleluia3.text sid pr.GloryToYouGod.text<r>sid ru.Thrice</>End-Reading
+					Reading sid pr.res06.text End-Reading
 					Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
 				//	Reading sid pr.OurHopeLord.text End-Reading
 				End-Section
@@ -451,7 +451,7 @@ Status NA
 	Section _05_Prayer
 		Actor sid Reader End-Actor
 		Reading sid hoVE.Prayer_Katpr.Axios.texton.text @ver End-Reading
-		Dialog <i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+		Dialog <i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Dialog
 	End-Section
 	
 	Section _06_Aposticha__
@@ -1778,20 +1778,20 @@ Status NA
 			Actor sid People End-Actor		
 			Insert_section Trisagion_Prayers End-Insert
 			Actor sid Priest End-Actor
-			Para role prayer sid exc20 End-Para
-			Para role prayer<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Para
+			Para role prayer sid pr.exc20.text End-Para
+			Para role prayer<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Para
 		End-Section
 		Actor sid Choir End-Actor
 	End-Section
 	
 	Section _08_End
 		Actor sid Priest End-Actor
-		Dialog sid exc17 End-Dialog
+		Dialog sid pr.exc17.text End-Dialog
 		Dialog<i>sid parenthesis.open sid pr.Bless_father.text sid parenthesis.close</>End-Dialog	
-		Dialog sid pr.DismissalPrayer1.text<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+		Dialog sid pr.DismissalPrayer1.text<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Dialog
 		Dialog sid pr.DismissalPrayer2.text End-Dialog
 		Actor sid Reader End-Actor
-		Dialog sid res04 End-Dialog
+		Dialog sid pr.res04.text End-Dialog
 		when-movable-cycle-day-is
 			71, 72, 73, 74, 75, 76, 77, 109 use:
 				Dialog sid pe.d00P_gr_GR_cog.pePA.Ode9H.text End-Dialog
@@ -1804,14 +1804,14 @@ Status NA
 			otherwise use:
 				Dialog sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Dialog
 		end-when
-		Dialog sid res01<r>sid ru.Thrice</>sid pr.Bless_father.text End-Dialog
+		Dialog sid pr.res01.text<r>sid ru.Thrice</>sid pr.Bless_father.text End-Dialog
 	End-Section
 	
 	Section _09_Dismissal__  //needs to be made short
 		Section commemoration
 			Insert_section Selector_Dismissals.Com_Yes End-Insert
 			Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
-			Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+			Dialog<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Dialog
 		End-Section
 		Section mealt1_commemoration
 			Insert_section Selector_Dismissals.mealt1_Com_Yes End-Insert
@@ -1825,7 +1825,7 @@ Status NA
 		Section nocommemoration
 			Insert_section Selector_Dismissals.Short End-Insert
 			Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
-			Dialog<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+			Dialog<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Dialog
 	End-Section
 		Section specificcommemoration__
 			Section brightweek_stgeorge
@@ -1850,25 +1850,25 @@ Status NA
 		Actor sid Priest<Trubric>sid ru.Inaudibly</>End-Actor
 		Title<Tdesig>sid hiVE.Key1101.title</>End-Title
 		Para role prayer sid hiVE.Key1101.text @ver End-Para
-		Para role prayer sid hiVE.Key1101.exclamation @ver sid res04 End-Para
+		Para role prayer sid hiVE.Key1101.exclamation @ver sid pr.res04.text End-Para
 		Title<Tdesig>sid hiVE.Key1102.title</>End-Title
 		Para role prayer sid hiVE.Key1102.text @ver End-Para
-		Para role prayer sid hiVE.Key1102.exclamation @ver sid res04 End-Para
+		Para role prayer sid hiVE.Key1102.exclamation @ver sid pr.res04.text End-Para
 		Title<Tdesig>sid hiVE.Key1103.title</>End-Title
 		Para role prayer sid hiVE.Key1103.text @ver End-Para
-		Para role prayer sid hiVE.Key1103.exclamation @ver sid res04 End-Para
+		Para role prayer sid hiVE.Key1103.exclamation @ver sid pr.res04.text End-Para
 		Title<Tdesig>sid hiVE.Key1104.title</>End-Title
 		Para role prayer sid hiVE.Key1104.text @ver End-Para
-		Para role prayer sid hiVE.Key1104.exclamation @ver sid res04 End-Para
+		Para role prayer sid hiVE.Key1104.exclamation @ver sid pr.res04.text End-Para
 		Title<Tdesig>sid hiVE.Key1105.title</>End-Title
 		Para role prayer sid hiVE.Key1105.text @ver End-Para
-		Para role prayer sid hiVE.Key1105.exclamation @ver sid res04 End-Para
+		Para role prayer sid hiVE.Key1105.exclamation @ver sid pr.res04.text End-Para
 		Title<Tdesig>sid hiVE.Key1106.title</>End-Title
 		Para role prayer sid hiVE.Key1106.text @ver End-Para
-		Para role prayer sid hiVE.Key1106.exclamation @ver sid res04 End-Para
+		Para role prayer sid hiVE.Key1106.exclamation @ver sid pr.res04.text End-Para
 		Title<Tdesig>sid hiVE.Key1107.title</>End-Title
 		Para role prayer sid hiVE.Key1107.text @ver End-Para
-		Para role prayer sid hiVE.Key1107.exclamation @ver sid res04 End-Para
+		Para role prayer sid hiVE.Key1107.exclamation @ver sid pr.res04.text End-Para
 		Rubric sid hiVE.R1114 End-Rubric
 		Title role emc_collapse sid clps.prayers.bottom End-Title
 	End-Section
@@ -1999,12 +1999,12 @@ Status NA
 				Reading sid pr.HolyGod.text<r>sid ru.Thrice media-off</>End-Reading
 				Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
 				Reading sid pr.AllHolyTrinity.text End-Reading
-				Reading sid res06 End-Reading
+				Reading sid pr.res06.text End-Reading
 				Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
 				Reading sid pr.OurFather.text End-Reading
 			End-Section		
 			Actor sid Priest End-Actor
-			Dialog sid exc20<i>sid parenthesis.open sid res04 sid parenthesis.close</>End-Dialog
+			Dialog sid pr.exc20.text<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Dialog
 		End-Section
 	End-Section
 
