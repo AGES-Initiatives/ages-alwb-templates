@@ -1,6 +1,6 @@
 Template se.hc.m03.d22.ma8
 
-Status NA
+Status Final
 
 	import actors_gr_GR_cog.ac.*
 	import dismissals_gr_GR_cog.*
@@ -48,7 +48,12 @@ Status NA
 		Insert_section MA._14_Doxology__.small End-Insert
 		Insert_section MA._15_Litanies__.aftersmalldoxology End-Insert
 		Insert_section MA._16_Aposticha__.tr__.weekday_ End-Insert
-		Insert_section MA._16_Aposticha__.gloryboth__.tr__.theotokion End-Insert
+		when-movable-cycle-day-is
+			46, 48 use:
+				Insert_section MA._16_Aposticha__.gloryboth__.tr__.gloryasgloryboth_ End-Insert
+			otherwise use:
+				Insert_section MA._16_Aposticha__.gloryboth__.tr__.theotokion End-Insert
+		end-when
 		Insert_section MA._17_ItIsGood_Trisagion__.lent_weekday End-Insert
 		Insert_section HR._03__.prophecy End-Insert
 		Insert_section MA._18_End__.lent_ End-Insert
