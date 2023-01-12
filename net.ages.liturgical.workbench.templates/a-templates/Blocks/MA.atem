@@ -495,6 +495,7 @@ Template MA
 				Section kath13
 					Title role source0 sid ti.sourcePentecostarion End-Title
 					Title<Tmode>rid peMA.Kathisma13.mode</><Tmelody>rid peMA.Kathisma13.melody</>End-Title
+					Title role greekmelody rid peMA.Kathisma13.greekmelody End-Title
 					Media rid peMA.Kathisma13.text End-Media
 					Hymn rid peMA.Kathisma13.text @ver media-off End-Hymn
 				End-Section
@@ -638,6 +639,7 @@ Template MA
 					Section hymn
 						Title role source0 sid ti.sourcePentecostarion End-Title
 						Title<Tmode>rid peMA.Kathisma11.mode</><Tmelody>rid peMA.Kathisma11.melody</>End-Title
+						Title role greekmelody rid peMA.Kathisma11.greekmelody End-Title
 						Media rid peMA.Kathisma11.text End-Media
 						Hymn rid peMA.Kathisma11.text @ver media-off End-Hymn
 					End-Section
@@ -647,6 +649,7 @@ Template MA
 					Section hymn
 						Title role source0 sid ti.sourcePentecostarion End-Title
 						Title<Tmode>rid peMA.Kathisma1T.mode</><Tmelody>rid peMA.Kathisma1T.melody</>End-Title
+						Title role greekmelody rid peMA.Kathisma1T.greekmelody End-Title
 						Media rid peMA.Kathisma1T.text End-Media
 						Hymn rid peMA.Kathisma1T.text @ver media-off End-Hymn
 					End-Section
@@ -658,20 +661,30 @@ Template MA
 				Actor sid Choir End-Actor
 				Title<Tdesig>sid ti.Kathisma1</>End-Title
 				Title role source0 sid ti.sourceTriodion End-Title
-				Title<Tmode>rid octrMA.Kathisma11.mode</><Tmelody>rid octrMA.Kathisma11.melody</>End-Title
+				when-exists
+					rid octrMA.Kathisma11.melody use: 
+						Title<Tmode>rid octrMA.Kathisma11.mode</><Tmelody>sid octrMA.Kathisma11.melody</>End-Title
+						Title role greekmelody rid octrMA.Kathisma11.greekmelody End-Title
+					otherwise use:
+						Title<Tmode>rid octrMA.Kathisma11.mode</>End-Title
+				end-when
 				Media rid octrMA.Kathisma11.text End-Media
 				Hymn rid octrMA.Kathisma11.text @ver media-off End-Hymn
 				Verse<bnr>sid vVerse</>sid psMA.monday.kathismata.v1.text @ver End-Verse
-				when-exists rid octrMA.Kathisma12.melody use:
-					Title role melody rid octrMA.Kathisma12.melody End-Title
-				end-when	
+				when-exists
+					rid octrMA.Kathisma12.melody use: 
+						Title<Tmode>rid octrMA.Kathisma12.mode</><Tmelody>sid octrMA.Kathisma12.melody</>End-Title
+						Title role greekmelody rid octrMA.Kathisma12.greekmelody End-Title
+				end-when
 				Media rid octrMA.Kathisma12.text End-Media
 				Hymn rid octrMA.Kathisma12.text @ver media-off End-Hymn
 				Insert_section TI.g.s._09_martyr_.mp End-Insert
 				Verse<bnr>sid vVerse</>sid psMA.saturday.kathismata.v1.text @ver End-Verse
-				when-exists rid octrMA.Ode7Martyricon.melody use:
-					Title role melody rid octrMA.Ode7Martyricon.melody End-Title
-				end-when	
+				when-exists
+					rid octrMA.Ode7Martyricon.melody use: 
+						Title<Tmode>rid octrMA.Ode7Martyricon.mode</><Tmelody>sid octrMA.Ode7Martyricon.melody</>End-Title
+						Title role greekmelody rid octrMA.Ode7Martyricon.greekmelody End-Title
+				end-when
 				Media rid octrMA.Ode7Martyricon.text End-Media
 				Hymn rid octrMA.Ode7Martyricon.text @ver media-off End-Hymn
 				when-movable-cycle-day-is
@@ -680,9 +693,11 @@ Template MA
 					18, 20 use:
 						Title sid ti.GloryBothNow<Tdesig>sid ti.Stavrotheotokion</>End-Title
 				end-when
-				when-exists rid octrMA.Kathisma1T.melody use:
-					Title role melody rid octrMA.Kathisma1T.melody End-Title
-				end-when	
+				when-exists
+					rid octrMA.Kathisma1T.melody use: 
+						Title<Tmode>rid octrMA.Kathisma1T.mode</><Tmelody>sid octrMA.Kathisma1T.melody</>End-Title
+						Title role greekmelody rid octrMA.Kathisma1T.greekmelody End-Title
+				end-when
 				Media rid octrMA.Kathisma1T.text End-Media
 				Hymn rid octrMA.Kathisma1T.text @ver media-off End-Hymn
 			End-Section
@@ -698,7 +713,13 @@ Template MA
 					Thursday use:
 						Title<Tdesig>sid ti.Kathisma1 sid ti.ForApostles</>End-Title
 				end-when
-				Title<Tmode>rid octrMA.Kathisma11.mode</><Tmelody>rid octrMA.Kathisma11.melody</>End-Title
+				when-exists
+					rid octrMA.Kathisma11.melody use: 
+						Title<Tmode>rid octrMA.Kathisma11.mode</><Tmelody>sid octrMA.Kathisma11.melody</>End-Title
+						Title role greekmelody rid octrMA.Kathisma11.greekmelody End-Title
+					otherwise use:
+						Title<Tmode>rid octrMA.Kathisma11.mode</>End-Title
+				end-when
 				Media rid octrMA.Kathisma11.text End-Media
 				Hymn rid octrMA.Kathisma11.text @ver media-off End-Hymn
 				when-name-of-day-is
@@ -709,7 +730,11 @@ Template MA
 					Thursday use: 
 						Insert_section PsalmVerses.forApostles.verse1 End-Insert
 				end-when
-				Title<Tmode>rid octrMA.Kathisma12.mode</><Tmelody>rid octrMA.Kathisma12.melody</>End-Title
+				when-exists
+					rid octrMA.Kathisma12.melody use: 
+						Title<Tmode>rid octrMA.Kathisma12.mode</><Tmelody>sid octrMA.Kathisma12.melody</>End-Title
+						Title role greekmelody rid octrMA.Kathisma12.greekmelody End-Title
+				end-when
 				Media rid octrMA.Kathisma12.text End-Media
 				Hymn rid octrMA.Kathisma12.text @ver media-off End-Hymn
 				when-name-of-day-is
@@ -718,7 +743,11 @@ Template MA
 					Wednesday, Friday use:
 						Title sid ti.GloryBothNow<Tdesig>sid ti.Stavrotheotokion</>End-Title
 				end-when
-				Title<Tmode>rid octrMA.Kathisma1T.mode</><Tmelody>rid octrMA.Kathisma1T.melody</>End-Title
+				when-exists
+					rid octrMA.Kathisma1T.melody use: 
+						Title<Tmode>rid octrMA.Kathisma1T.mode</><Tmelody>sid octrMA.Kathisma1T.melody</>End-Title
+						Title role greekmelody rid octrMA.Kathisma1T.greekmelody End-Title
+				end-when
 				Media rid octrMA.Kathisma1T.text End-Media
 				Hymn rid octrMA.Kathisma1T.text @ver media-off End-Hymn
 			End-Section
@@ -726,25 +755,37 @@ Template MA
 				Actor sid Choir End-Actor
 				Title<Tdesig>sid ti.Kathisma1</>End-Title
 				Title role source0 sid ti.sourceTriodion End-Title
-				Title<Tmode>rid octrMA.Kathisma11.mode</><Tmelody>rid octrMA.Kathisma11.melody</>End-Title
+				when-exists
+					rid octrMA.Kathisma11.melody use: 
+						Title<Tmode>rid octrMA.Kathisma11.mode</><Tmelody>sid octrMA.Kathisma11.melody</>End-Title
+						Title role greekmelody rid octrMA.Kathisma11.greekmelody End-Title
+					otherwise use:
+						Title<Tmode>rid octrMA.Kathisma11.mode</>End-Title
+				end-when
 				Media rid octrMA.Kathisma11.text End-Media
 				Hymn rid octrMA.Kathisma11.text @ver media-off End-Hymn
 				Insert_section PsalmVerses.forMartyrs.verse1 End-Insert
-				when-exists rid octrMA.Kathisma12.melody use:
-					Title role melody rid octrMA.Kathisma12.melody End-Title
-				end-when	
+				when-exists
+					rid octrMA.Kathisma12.melody use: 
+						Title<Tmode>rid octrMA.Kathisma12.mode</><Tmelody>sid octrMA.Kathisma12.melody</>End-Title
+						Title role greekmelody rid octrMA.Kathisma12.greekmelody End-Title
+				end-when
 				Media rid octrMA.Kathisma12.text End-Media
 				Hymn rid octrMA.Kathisma12.text @ver media-off End-Hymn
 				Insert_section PsalmVerses.forMartyrs.verse2 End-Insert
-				when-exists rid octrMA.Kathisma13.melody use:
-					Title role melody rid octrMA.Kathisma13.melody End-Title
-				end-when	
+				when-exists
+					rid octrMA.Kathisma13.melody use: 
+						Title<Tmode>rid octrMA.Kathisma13.mode</><Tmelody>sid octrMA.Kathisma13.melody</>End-Title
+						Title role greekmelody rid octrMA.Kathisma13.greekmelody End-Title
+				end-when
 				Media rid octrMA.Kathisma13.text End-Media
 				Hymn rid octrMA.Kathisma13.text @ver media-off End-Hymn
 				Title sid ti.GloryBothNow<Tdesig>sid ti.Theotokion</>End-Title
-				when-exists rid octrMA.Kathisma1T.melody use:
-					Title role melody rid octrMA.Kathisma1T.melody End-Title
-				end-when	
+				when-exists
+					rid octrMA.Kathisma1T.melody use: 
+						Title<Tmode>rid octrMA.Kathisma1T.mode</><Tmelody>sid octrMA.Kathisma1T.melody</>End-Title
+						Title role greekmelody rid octrMA.Kathisma1T.greekmelody End-Title
+				end-when
 				Media rid octrMA.Kathisma1T.text End-Media
 				Hymn rid octrMA.Kathisma1T.text @ver media-off End-Hymn
 			End-Section
@@ -752,39 +793,55 @@ Template MA
 				Actor sid Choir End-Actor
 				Title<Tdesig>sid ti.Kathisma1</>End-Title
 				Title role source0 sid ti.sourceTriodion End-Title
-				Title<Tmode>rid octrMA.Kathisma11.mode</><Tmelody>rid octrMA.Kathisma11.melody</>End-Title
+				when-exists
+					rid octrMA.Kathisma11.melody use: 
+						Title<Tmode>rid octrMA.Kathisma11.mode</><Tmelody>sid octrMA.Kathisma11.melody</>End-Title
+						Title role greekmelody rid octrMA.Kathisma11.greekmelody End-Title
+					otherwise use:
+						Title<Tmode>rid octrMA.Kathisma11.mode</>End-Title
+				end-when
 				Media rid octrMA.Kathisma11.text End-Media
 				Hymn rid octrMA.Kathisma11.text @ver media-off End-Hymn
 				Insert_section PsalmVerses.forMartyrs.verse1 End-Insert
-				when-exists rid octrMA.Kathisma12.melody use:
-					Title role melody rid octrMA.Kathisma12.melody End-Title
-				end-when	
+				when-exists
+					rid octrMA.Kathisma12.melody use: 
+						Title<Tmode>rid octrMA.Kathisma12.mode</><Tmelody>sid octrMA.Kathisma12.melody</>End-Title
+						Title role greekmelody rid octrMA.Kathisma12.greekmelody End-Title
+				end-when
 				Media rid octrMA.Kathisma12.text End-Media
 				Hymn rid octrMA.Kathisma12.text @ver media-off End-Hymn
 				Insert_section PsalmVerses.forMartyrs.verse2 End-Insert
-				when-exists rid octrMA.Kathisma13.melody use:
-					Title role melody rid octrMA.Kathisma13.melody End-Title
-				end-when	
+				when-exists
+					rid octrMA.Kathisma13.melody use: 
+						Title<Tmode>rid octrMA.Kathisma13.mode</><Tmelody>sid octrMA.Kathisma13.melody</>End-Title
+						Title role greekmelody rid octrMA.Kathisma13.greekmelody End-Title
+				end-when
 				Media rid octrMA.Kathisma13.text End-Media
 				Hymn rid octrMA.Kathisma13.text @ver media-off End-Hymn
 				Title sid ti.Glory<Tdesig>sid ti.ForDead_1hymn</>End-Title
-				when-exists rid octrMA.Kathisma14.melody use:
-					Title role melody rid octrMA.Kathisma14.melody End-Title
-				end-when	
+				when-exists
+					rid octrMA.Kathisma14.melody use: 
+						Title<Tmode>rid octrMA.Kathisma14.mode</><Tmelody>sid octrMA.Kathisma14.melody</>End-Title
+						Title role greekmelody rid octrMA.Kathisma14.greekmelody End-Title
+				end-when
 				Media rid octrMA.Kathisma14.text End-Media
 				Hymn rid octrMA.Kathisma14.text @ver media-off End-Hymn
 				Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 				when-movable-cycle-day-is
 					14 use:
-						when-exists rid ocMA.Kathisma14.melody use:
-							Title role melody rid ocMA.Kathisma14.melody End-Title
-						end-when	
+						when-exists
+							rid octrMA.Kathisma14.melody use: 
+								Title<Tmode>rid octrMA.Kathisma14.mode</><Tmelody>sid octrMA.Kathisma14.melody</>End-Title
+								Title role greekmelody rid octrMA.Kathisma14.greekmelody End-Title
+						end-when
 						Media rid ocMA.Kathisma14.text End-Media
 						Hymn rid ocMA.Kathisma14.text @ver media-off End-Hymn
 					otherwise use:
-						when-exists rid octrMA.Kathisma1T.melody use:
-							Title role melody rid octrMA.Kathisma1T.melody End-Title
-						end-when	
+						when-exists
+							rid octrMA.Kathisma1T.melody use: 
+								Title<Tmode>rid octrMA.Kathisma1T.mode</><Tmelody>sid octrMA.Kathisma1T.melody</>End-Title
+								Title role greekmelody rid octrMA.Kathisma1T.greekmelody End-Title
+						end-when
 						Media rid octrMA.Kathisma1T.text End-Media
 						Hymn rid octrMA.Kathisma1T.text @ver media-off End-Hymn
 				end-when
@@ -1260,19 +1317,37 @@ Template MA
 							Title<Tdesig>sid ti.Kathisma1</>End-Title
 							Title role source0 sid ti.sourceOctoechos End-Title
 							Title<Tdesig>sid ti.ForMartyrs_hymns</>End-Title
-							Title<Tmode>rid ocMA.Kathisma11.mode</><Tmelody>rid ocMA.Kathisma11.melody</>End-Title
+							when-exists 
+								rid ocMA.Kathisma11.melody use: 
+									Title<Tmode>rid ocMA.Kathisma11.mode</><Tmelody>rid ocMA.Kathisma11.melody</>End-Title
+									Title role greekmelody rid ocMA.Kathisma11.greekmelody End-Title
+								otherwise use:
+									Title<Tmode>rid ocMA.Kathisma11.mode</>End-Title
+							end-when
 							Media rid ocMA.Kathisma11.text End-Media
 							Hymn rid ocMA.Kathisma11.text @ver media-off End-Hymn
 							Verse<bnr>sid vVerse</>sid psMA.saturday.kathismata.v1.text @ver End-Verse
-							when-exists rid ocMA.Kathisma12.melody use: Title<Tmode>rid ocMA.Kathisma12.mode</><Tmelody>rid ocMA.Kathisma12.melody</>End-Title end-when
+							when-exists 
+								rid ocMA.Kathisma12.melody use: 
+									Title<Tmode>rid ocMA.Kathisma12.mode</><Tmelody>rid ocMA.Kathisma12.melody</>End-Title
+									Title role greekmelody rid ocMA.Kathisma12.greekmelody End-Title
+							end-when
 							Media rid ocMA.Kathisma12.text End-Media
 							Hymn rid ocMA.Kathisma12.text @ver media-off End-Hymn
 							Verse<bnr>sid vVerse</>sid psMA.saturday.kathismata.v2.text @ver End-Verse
-							when-exists rid ocMA.Kathisma13.melody use: Title<Tmode>rid ocMA.Kathisma13.mode</><Tmelody>rid ocMA.Kathisma13.melody</>End-Title end-when
+							when-exists 
+								rid ocMA.Kathisma13.melody use: 
+									Title<Tmode>rid ocMA.Kathisma13.mode</><Tmelody>rid ocMA.Kathisma13.melody</>End-Title
+									Title role greekmelody rid ocMA.Kathisma13.greekmelody End-Title
+							end-when
 							Media rid ocMA.Kathisma13.text End-Media
 							Hymn rid ocMA.Kathisma13.text @ver media-off End-Hymn
 							Insert_section TI.gb.th End-Insert
-							when-exists rid ocMA.Kathisma14.melody use: Title<Tmode>rid ocMA.Kathisma14.mode</><Tmelody>rid ocMA.Kathisma14.melody</>End-Title end-when
+							when-exists 
+								rid ocMA.Kathisma14.melody use: 
+									Title<Tmode>rid ocMA.Kathisma14.mode</><Tmelody>rid ocMA.Kathisma14.melody</>End-Title
+									Title role greekmelody rid ocMA.Kathisma14.greekmelody End-Title
+							end-when
 							Media rid ocMA.Kathisma14.text End-Media
 							Hymn rid ocMA.Kathisma14.text @ver media-off End-Hymn
 						End-Section
@@ -1288,7 +1363,13 @@ Template MA
 							Thursday use:
 								Title<Tdesig>sid ti.ForApostles</>End-Title
 						end-when	
-						Title<Tmode>rid ocMA.Kathisma11.mode</><Tmelody>rid ocMA.Kathisma11.melody</>End-Title
+						when-exists 
+							rid ocMA.Kathisma11.melody use: 
+								Title<Tmode>rid ocMA.Kathisma11.mode</><Tmelody>rid ocMA.Kathisma11.melody</>End-Title
+								Title role greekmelody rid ocMA.Kathisma11.greekmelody End-Title
+							otherwise use:
+								Title<Tmode>rid ocMA.Kathisma11.mode</>End-Title
+						end-when
 						Media rid ocMA.Kathisma11.text End-Media
 						Hymn rid ocMA.Kathisma11.text @ver media-off End-Hymn
 						when-name-of-day-is
@@ -1299,8 +1380,10 @@ Template MA
 							Thursday use:
 								Verse<inr>sid vVerse</>sid psMA.thursday.kathismata.v1.text End-Verse
 						end-when	
-						when-exists rid ocMA.Kathisma12.melody use:
-							Title<Tmode>rid ocMA.Kathisma12.mode</><Tmelody>rid ocMA.Kathisma12.melody</>End-Title
+						when-exists 
+							rid ocMA.Kathisma12.melody use: 
+								Title<Tmode>rid ocMA.Kathisma12.mode</><Tmelody>rid ocMA.Kathisma12.melody</>End-Title
+								Title role greekmelody rid ocMA.Kathisma12.greekmelody End-Title
 						end-when
 						Media rid ocMA.Kathisma12.text End-Media
 						Hymn rid ocMA.Kathisma12.text @ver media-off End-Hymn
@@ -1310,8 +1393,10 @@ Template MA
 							otherwise use:
 								Title sid ti.GloryBothNow<Tdesig>sid ti.Theotokion</>End-Title
 						end-when
-						when-exists rid ocMA.Kathisma13.melody use:
-							Title<Tmode>rid ocMA.Kathisma13.mode</><Tmelody>rid ocMA.Kathisma13.melody</>End-Title
+						when-exists 
+							rid ocMA.Kathisma13.melody use: 
+								Title<Tmode>rid ocMA.Kathisma13.mode</><Tmelody>rid ocMA.Kathisma13.melody</>End-Title
+								Title role greekmelody rid ocMA.Kathisma13.greekmelody End-Title
 						end-when
 						Media rid ocMA.Kathisma13.text End-Media
 						Hymn rid ocMA.Kathisma13.text @ver media-off End-Hymn
@@ -1322,18 +1407,28 @@ Template MA
 					Actor sid Choir End-Actor
 					Title<Tdesig>sid ti.Kathisma1</>End-Title
 					Title role source0 sid ti.sourceOctoechos End-Title
-					Title role mixed <Tmode>rid ocMA.Kathisma11.mode</><Tmelody>rid ocMA.Kathisma11.melody</>End-Title
+					when-exists 
+						rid ocMA.Kathisma11.melody use: 
+							Title<Tmode>rid ocMA.Kathisma11.mode</><Tmelody>rid ocMA.Kathisma11.melody</>End-Title
+							Title role greekmelody rid ocMA.Kathisma11.greekmelody End-Title
+						otherwise use:
+							Title<Tmode>rid ocMA.Kathisma11.mode</>End-Title
+					end-when
 					Media rid ocMA.Kathisma11.text End-Media
 					Hymn rid ocMA.Kathisma11.text @ver media-off End-Hymn
 					Title sid ti.Glory End-Title
-					when-exists rid ocMA.Kathisma12.melody use:
-						Title role melody rid ocMA.Kathisma12.melody End-Title
+					when-exists 
+						rid ocMA.Kathisma12.melody use: 
+							Title<Tmode>rid ocMA.Kathisma12.mode</><Tmelody>rid ocMA.Kathisma12.melody</>End-Title
+							Title role greekmelody rid ocMA.Kathisma12.greekmelody End-Title
 					end-when
 					Media rid ocMA.Kathisma12.text End-Media
 					Hymn rid ocMA.Kathisma12.text @ver media-off End-Hymn
 					Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-					when-exists rid ocMA.Kathisma13.melody use:
-						Title role melody rid ocMA.Kathisma13.melody End-Title
+					when-exists 
+						rid ocMA.Kathisma13.melody use: 
+							Title<Tmode>rid ocMA.Kathisma13.mode</><Tmelody>rid ocMA.Kathisma13.melody</>End-Title
+							Title role greekmelody rid ocMA.Kathisma13.greekmelody End-Title
 					end-when
 					Media rid ocMA.Kathisma13.text End-Media
 					Hymn rid ocMA.Kathisma13.text @ver media-off End-Hymn
@@ -1342,12 +1437,20 @@ Template MA
 					Actor sid Choir End-Actor
 					Title<Tdesig>sid ti.Kathisma1</>End-Title
 					Title role source0 sid ti.sourceOctoechos End-Title
-					Title role mixed <Tmode>rid ocMA.Kathisma11.mode</><Tmelody>rid ocMA.Kathisma11.melody</>End-Title
+					when-exists 
+						rid ocMA.Kathisma11.melody use: 
+							Title<Tmode>rid ocMA.Kathisma11.mode</><Tmelody>rid ocMA.Kathisma11.melody</>End-Title
+							Title role greekmelody rid ocMA.Kathisma11.greekmelody End-Title
+						otherwise use:
+							Title<Tmode>rid ocMA.Kathisma11.mode</>End-Title
+					end-when
 					Media rid ocMA.Kathisma11.text End-Media
 					Hymn rid ocMA.Kathisma11.text @ver media-off End-Hymn
 					Title sid ti.Glory End-Title 
-					when-exists rid ocMA.Kathisma12.melody use:
-						Title role melody rid ocMA.Kathisma12.melody End-Title
+					when-exists 
+						rid ocMA.Kathisma12.melody use: 
+							Title<Tmode>rid ocMA.Kathisma12.mode</><Tmelody>rid ocMA.Kathisma12.melody</>End-Title
+							Title role greekmelody rid ocMA.Kathisma12.greekmelody End-Title
 					end-when
 					Media rid ocMA.Kathisma12.text End-Media
 					Hymn rid ocMA.Kathisma12.text @ver media-off End-Hymn
@@ -1356,16 +1459,26 @@ Template MA
 					Actor sid Choir End-Actor
 					Title<Tdesig>sid ti.Kathisma1</>End-Title
 					Title role source0 sid ti.sourceOctoechos End-Title
-					Title role mixed <Tmode>rid ocMA.Kathisma11.mode @day D1 </><Tmelody>rid ocMA.Kathisma11.melody @day D1 </>End-Title
+					when-exists 
+						rid ocMA.Kathisma11.melody use: 
+							Title<Tmode>rid ocMA.Kathisma11.mode</><Tmelody>rid ocMA.Kathisma11.melody</>End-Title
+							Title role greekmelody rid ocMA.Kathisma11.greekmelody End-Title
+						otherwise use:
+							Title<Tmode>rid ocMA.Kathisma11.mode</>End-Title
+					end-when
 					Hymn rid ocMA.Kathisma11.text @ver @day D1 End-Hymn
 					Title sid ti.Glory End-Title
-					when-exists rid ocMA.Kathisma12.melody use:
-						Title role melody rid ocMA.Kathisma12.melody @day D1 End-Title
+					when-exists 
+						rid ocMA.Kathisma12.melody use: 
+							Title<Tmode>rid ocMA.Kathisma12.mode</><Tmelody>rid ocMA.Kathisma12.melody</>End-Title
+							Title role greekmelody rid ocMA.Kathisma12.greekmelody End-Title
 					end-when
 					Hymn rid ocMA.Kathisma12.text @ver @day D1 End-Hymn
 					Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-					when-exists rid ocVE.ApolTheotokionVM.melody use:
-						Title<Tmelody>rid ocVE.ApolTheotokionVM.melody @day D1 </>End-Title
+					when-exists 
+						rid ocVE.ApolTheotokionVM.melody use: 
+							Title<Tmode>rid ocVE.ApolTheotokionVM.mode</><Tmelody>rid ocVE.ApolTheotokionVM.melody</>End-Title
+							Title role greekmelody rid ocVE.ApolTheotokionVM.greekmelody End-Title
 					end-when
 					Hymn rid ocVE.ApolTheotokionVM.text @ver @day D1 End-Hymn
 				End-Section
@@ -1373,7 +1486,13 @@ Template MA
 					Actor sid Choir End-Actor
 					Title<Tdesig>sid ti.Kathisma1 sid ti.Resurrectional_1hymn</>End-Title
 					Title role source0 sid ti.sourceOctoechos End-Title
-					Title role mixed <Tmode>rid ocMA.Kathisma11.mode</><Tmelody>rid ocMA.Kathisma11.melody</>End-Title
+					when-exists 
+						rid ocMA.Kathisma11.melody use: 
+							Title<Tmode>rid ocMA.Kathisma11.mode</><Tmelody>rid ocMA.Kathisma11.melody</>End-Title
+							Title role greekmelody rid ocMA.Kathisma11.greekmelody End-Title
+						otherwise use:
+							Title<Tmode>rid ocMA.Kathisma11.mode</>End-Title
+					end-when
 					Media rid ocMA.Kathisma11.text End-Media
 					Hymn rid ocMA.Kathisma11.text @ver media-off End-Hymn
 				End-Section
@@ -1381,7 +1500,13 @@ Template MA
 					Actor sid Choir End-Actor
 					Title<Tdesig>sid ti.Kathisma1 sid ti.Resurrectional_1hymn</>End-Title
 					Title role source0 sid ti.sourceOctoechos End-Title
-					Title role mixed <Tmode>rid ocMA.Kathisma11.mode</><Tmelody>rid ocMA.Kathisma11.melody</>End-Title
+					when-exists 
+						rid ocMA.Kathisma11.melody use: 
+							Title<Tmode>rid ocMA.Kathisma11.mode</><Tmelody>rid ocMA.Kathisma11.melody</>End-Title
+							Title role greekmelody rid ocMA.Kathisma11.greekmelody End-Title
+						otherwise use:
+							Title<Tmode>rid ocMA.Kathisma11.mode</>End-Title
+					end-when
 					Media rid ocMA.Kathisma11.text End-Media
 					Hymn rid ocMA.Kathisma11.text @ver media-off End-Hymn
 					Title role source sid ti.sourceMenaion End-Title
@@ -1393,8 +1518,12 @@ Template MA
 				End-Section
 				Section kath12
 					Title sid ti.Glory End-Title 
-					when-exists rid ocMA.Kathisma12.melody use:
-						Title role melody rid ocMA.Kathisma12.melody End-Title
+					when-exists 
+						rid ocMA.Kathisma12.melody use: 
+							Title<Tmode>rid ocMA.Kathisma12.mode</><Tmelody>rid ocMA.Kathisma12.melody</>End-Title
+							Title role greekmelody rid ocMA.Kathisma12.greekmelody End-Title
+						otherwise use:
+							Title<Tmode>rid ocMA.Kathisma12.mode</>End-Title
 					end-when
 					Media rid ocMA.Kathisma12.text End-Media
 					Hymn rid ocMA.Kathisma12.text @ver media-off End-Hymn
@@ -1403,7 +1532,13 @@ Template MA
 					Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 					Section hymn
 						Title role source0 sid ti.sourceOctoechos End-Title
-						Title<Tmode>rid ocMA.Kathisma13.mode</><Tmelody>rid ocMA.Kathisma13.melody</>End-Title
+						when-exists 
+							rid ocMA.Kathisma13.melody use: 
+								Title<Tmode>rid ocMA.Kathisma13.mode</><Tmelody>rid ocMA.Kathisma13.melody</>End-Title
+								Title role greekmelody rid ocMA.Kathisma13.greekmelody End-Title
+							otherwise use:
+								Title<Tmode>rid ocMA.Kathisma13.mode</>End-Title
+						end-when
 						Media rid ocMA.Kathisma13.text End-Media
 						Hymn rid ocMA.Kathisma13.text @ver media-off End-Hymn
 					End-Section
@@ -1412,13 +1547,21 @@ Template MA
 					Actor sid Choir End-Actor
 					Title<Tdesig>sid ti.Kathisma1</>End-Title
 					Title role source0 sid ti.sourceOctoechos End-Title
-					Title role mixed <Tmode>rid ocMA.Kathisma11.mode</><Tmelody>rid ocMA.Kathisma11.melody</>End-Title
+					when-exists 
+						rid ocMA.Kathisma11.melody use: 
+							Title<Tmode>rid ocMA.Kathisma11.mode</><Tmelody>rid ocMA.Kathisma11.melody</>End-Title
+							Title role greekmelody rid ocMA.Kathisma11.greekmelody End-Title
+						otherwise use:
+							Title<Tmode>rid ocMA.Kathisma11.mode</>End-Title
+					end-when
 					Media rid ocMA.Kathisma11.text End-Media
 					Hymn rid ocMA.Kathisma11.text @ver media-off End-Hymn
 					Title sid ti.Glory End-Title 
-						when-exists rid ocMA.Kathisma12.melody use:
-					Title role melody rid ocMA.Kathisma12.melody End-Title
-						end-when
+					when-exists 
+						rid ocMA.Kathisma12.melody use: 
+							Title<Tmode>rid ocMA.Kathisma12.mode</><Tmelody>rid ocMA.Kathisma12.melody</>End-Title
+							Title role greekmelody rid ocMA.Kathisma12.greekmelody End-Title
+					end-when
 					Media rid ocMA.Kathisma12.text End-Media
 					Hymn rid ocMA.Kathisma12.text @ver media-off End-Hymn
 					Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
@@ -1431,42 +1574,54 @@ Template MA
 								Media rid ocMA.Kathisma13.text End-Media
 								Hymn rid ocMA.Kathisma13.text @ver media-off End-Hymn
 								otherwise use:
-									when-exists rid ocVE.ApolTheotokionVM.melody use:
-										Title<Tmelody>rid ocVE.ApolTheotokionVM.melody</>End-Title
+									when-exists 
+										rid ocVE.ApolTheotokionVM.melody use: 
+											Title<Tmode>rid ocVE.ApolTheotokionVM.mode</><Tmelody>rid ocVE.ApolTheotokionVM.melody</>End-Title
+											Title role greekmelody rid ocVE.ApolTheotokionVM.greekmelody End-Title
 									end-when
 									Media rid ocVE.ApolTheotokionVM.text End-Media
 									Hymn rid ocVE.ApolTheotokionVM.text @ver media-off End-Hymn
 							end-when
 						M2 use:
 							when-movable-cycle-day-is 29 use:
-								when-exists rid ocMA.Kathisma13.melody use:
-									Title role melody rid ocMA.Kathisma13.melody End-Title
+								when-exists 
+									rid ocMA.Kathisma13.melody use: 
+										Title<Tmode>rid ocMA.Kathisma13.mode</><Tmelody>rid ocMA.Kathisma13.melody</>End-Title
+										Title role greekmelody rid ocMA.Kathisma13.greekmelody End-Title
 								end-when
 								Media rid ocMA.Kathisma13.text End-Media
 								Hymn rid ocMA.Kathisma13.text @ver media-off End-Hymn
 								otherwise use:
-									when-exists rid ocVE.ApolTheotokionVM.melody use:
-										Title<Tmelody>rid ocVE.ApolTheotokionVM.melody</>End-Title
+									when-exists 
+										rid ocVE.ApolTheotokionVM.melody use: 
+											Title<Tmode>rid ocVE.ApolTheotokionVM.mode</><Tmelody>rid ocVE.ApolTheotokionVM.melody</>End-Title
+											Title role greekmelody rid ocVE.ApolTheotokionVM.greekmelody End-Title
 									end-when
 									Media rid ocVE.ApolTheotokionVM.text End-Media
 									Hymn rid ocVE.ApolTheotokionVM.text @ver media-off End-Hymn
 							end-when
 						M3, M4, M5, M6, M7 use:
-							when-exists rid ocVE.ApolTheotokionVM.melody use:
-								Title<Tmelody>rid ocVE.ApolTheotokionVM.melody</>End-Title
+							when-exists 
+								rid ocVE.ApolTheotokionVM.melody use: 
+									Title<Tmode>rid ocVE.ApolTheotokionVM.mode</><Tmelody>rid ocVE.ApolTheotokionVM.melody</>End-Title
+									Title role greekmelody rid ocVE.ApolTheotokionVM.greekmelody End-Title
 							end-when
 							Media rid ocVE.ApolTheotokionVM.text End-Media
 							Hymn rid ocVE.ApolTheotokionVM.text @ver media-off End-Hymn
 						M8 use:
 							when-movable-cycle-day-is 36, 50, 57 use:
-								when-exists rid ocMA.Kathisma13.melody use:
-									Title role melody rid ocMA.Kathisma13.melody End-Title
+								when-exists 
+									rid ocMA.Kathisma13.melody use: 
+										Title<Tmode>rid ocMA.Kathisma13.mode</><Tmelody>rid ocMA.Kathisma13.melody</>End-Title
+										Title role greekmelody rid ocMA.Kathisma13.greekmelody End-Title
 								end-when
 								Media rid ocMA.Kathisma13.text End-Media
 								Hymn rid ocMA.Kathisma13.text @ver media-off End-Hymn
 								otherwise use:
-									when-exists rid ocVE.ApolTheotokionVM.melody use:
-										Title<Tmelody>rid ocVE.ApolTheotokionVM.melody</>End-Title
+									when-exists 
+										rid ocVE.ApolTheotokionVM.melody use: 
+											Title<Tmode>rid ocVE.ApolTheotokionVM.mode</><Tmelody>rid ocVE.ApolTheotokionVM.melody</>End-Title
+											Title role greekmelody rid ocVE.ApolTheotokionVM.greekmelody End-Title
 									end-when
 									Media rid ocVE.ApolTheotokionVM.text End-Media
 									Hymn rid ocVE.ApolTheotokionVM.text @ver media-off End-Hymn
@@ -1550,6 +1705,7 @@ Template MA
 					Section hymn
 						Title role source0 sid ti.sourcePentecostarion End-Title
 						Title<Tmode>rid peMA.Kathisma11.mode</><Tmelody>rid peMA.Kathisma11.melody</>End-Title
+						Title role greekmelody rid peMA.Kathisma11.greekmelody End-Title
 						Media rid peMA.Kathisma11.text End-Media
 						Hymn rid peMA.Kathisma11.text @ver media-off End-Hymn
 					End-Section
@@ -1560,6 +1716,7 @@ Template MA
 					Section hymn
 						Title role source0 sid ti.sourcePentecostarion End-Title
 						Title<Tmode>rid peMA.Kathisma12.mode</><Tmelody>rid peMA.Kathisma12.melody</>End-Title
+						Title role greekmelody rid peMA.Kathisma12.greekmelody End-Title
 						Media rid peMA.Kathisma12.text End-Media
 						Hymn rid peMA.Kathisma12.text @ver media-off End-Hymn
 					End-Section
@@ -1569,6 +1726,7 @@ Template MA
 				Title<Tdesig>sid ti.Kathisma1</>End-Title
 				Title role source0 sid ti.sourcePentecostarion End-Title
 				Title<Tmode>rid peMA.Kathisma11.mode</><Tmelody>rid peMA.Kathisma11.melody</>End-Title
+				Title role greekmelody rid peMA.Kathisma11.greekmelody End-Title
 				Media rid peMA.Kathisma11.text End-Media
 				Hymn rid peMA.Kathisma11.text @ver media-off End-Hymn
 				Title sid ti.GloryBothNow<Tdesig>sid ti.Repeat</>End-Title
@@ -1579,10 +1737,12 @@ Template MA
 				Title<Tdesig>sid ti.Kathisma1</>End-Title
 				Title role source0 sid ti.sourcePentecostarion End-Title
 				Title<Tmode>rid peMA.Kathisma11.mode</><Tmelody>rid peMA.Kathisma11.melody</>End-Title
+				Title role greekmelody rid peMA.Kathisma11.greekmelody End-Title
 				Media rid peMA.Kathisma11.text End-Media
 				Hymn rid peMA.Kathisma11.text @ver media-off End-Hymn
 				Title sid ti.Glory End-Title
 				Title<Tmode>rid peMA.Kathisma12.mode</><Tmelody>rid peMA.Kathisma12.melody</>End-Title
+				Title role greekmelody rid peMA.Kathisma12.greekmelody End-Title
 				Media rid peMA.Kathisma12.text End-Media
 				Hymn rid peMA.Kathisma12.text @ver media-off End-Hymn
 				Section theotokion
@@ -1596,10 +1756,12 @@ Template MA
 				Title<Tdesig>sid ti.Kathisma1</>End-Title
 				Title role source0 sid ti.sourcePentecostarion End-Title
 				Title<Tmode>rid peMA.Kathisma11.mode</><Tmelody>rid peMA.Kathisma11.melody</>End-Title
+				Title role greekmelody rid peMA.Kathisma11.greekmelody End-Title
 				Media rid peMA.Kathisma11.text End-Media
 				Hymn rid peMA.Kathisma11.text @ver media-off End-Hymn
 				Title sid ti.Glory End-Title
 				Title<Tmode>rid peMA.Kathisma12.mode</><Tmelody>rid peMA.Kathisma12.melody</>End-Title
+				Title role greekmelody rid peMA.Kathisma12.greekmelody End-Title
 				Media rid peMA.Kathisma12.text End-Media
 				Hymn rid peMA.Kathisma12.text @ver media-off End-Hymn
 				Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
@@ -1610,6 +1772,7 @@ Template MA
 				Actor sid Choir End-Actor
 				Title<Tdesig>sid ti.Kathisma1</>End-Title
 				Title role mixed <Tmode>rid peMA.Kathisma11.mode</><Tmelody>rid peMA.Kathisma11.melody</>End-Title
+				Title role greekmelody rid peMA.Kathisma11.greekmelody End-Title
 				Media rid peMA.Kathisma11.text End-Media
 				Hymn rid peMA.Kathisma11.text @ver media-off End-Hymn
 				Media rid peMA.Kathisma12.text End-Media
@@ -1633,13 +1796,16 @@ Template MA
 							Title<Tdesig>sid ti.Kathisma1 sid ti.Resurrectional_hymns</>End-Title
 							Title role source0 sid ti.sourcePentecostarion End-Title
 							Title<Tmode>rid peMA.Kathisma11.mode</><Tmelody>rid peMA.Kathisma11.melody</>End-Title
+							Title role greekmelody rid peMA.Kathisma11.greekmelody End-Title
 							Media rid peMA.Kathisma11.text End-Media
 							Hymn rid peMA.Kathisma11.text @ver media-off End-Hymn
 							Title sid ti.Glory<Tmode>rid peMA.Kathisma12.mode</><Tmelody>rid peMA.Kathisma12.melody</>End-Title
+							Title role greekmelody rid peMA.Kathisma12.greekmelody End-Title
 							Media rid peMA.Kathisma12.text End-Media
 							Hymn rid peMA.Kathisma12.text @ver media-off End-Hymn
 							Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 							Title<Tmode>rid peMA.Kathisma1T.mode</><Tmelody>rid peMA.Kathisma1T.melody</>End-Title
+							Title role greekmelody rid peMA.Kathisma1T.greekmelody End-Title
 							Media rid peMA.Kathisma1T.text End-Media
 							Hymn rid peMA.Kathisma1T.text @ver media-off End-Hymn
 						End-Section
@@ -1659,6 +1825,7 @@ Template MA
 											Title<Tdesig>sid ti.ForCross_1hymn</>End-Title
 									end-when
 									Title<Tmode>rid peMA.Kathisma11.mode</><Tmelody>rid peMA.Kathisma11.melody</>End-Title
+									Title role greekmelody rid peMA.Kathisma11.greekmelody End-Title
 									Media rid peMA.Kathisma11.text End-Media
 									Hymn rid peMA.Kathisma11.text @ver media-off End-Hymn
 									when-name-of-day-is
@@ -1673,11 +1840,13 @@ Template MA
 											Insert_section PsalmVerses.forMatinsKathismata.verse1.thursday.verse1 End-Insert
 									end-when	
 									Title<Tmode>rid peMA.Kathisma12.mode</><Tmelody>rid peMA.Kathisma12.melody</>End-Title
+									Title role greekmelody rid peMA.Kathisma12.greekmelody End-Title
 									Media rid peMA.Kathisma12.text End-Media
 									Hymn rid peMA.Kathisma12.text @ver media-off End-Hymn
 									Title<Tdesig>sid ti.ForMartyrs_1hymn</>End-Title
 									Insert_section PsalmVerses.forMatinsKathismata.verse3 End-Insert
 									Title<Tmode>rid peMA.Kathisma13.mode</><Tmelody>rid peMA.Kathisma13.melody</>End-Title
+									Title role greekmelody rid peMA.Kathisma13.greekmelody End-Title
 									Media rid peMA.Kathisma13.text End-Media
 									Hymn rid peMA.Kathisma13.text @ver media-off End-Hymn
 									when-name-of-day-is
@@ -1687,6 +1856,7 @@ Template MA
 											Title sid ti.GloryBothNow<Tdesig>sid ti.Theotokion</>End-Title
 									end-when
 									Title<Tmode>rid peMA.Kathisma1T.mode</><Tmelody>rid peMA.Kathisma1T.melody</>End-Title
+									Title role greekmelody rid peMA.Kathisma1T.greekmelody End-Title
 									Media rid peMA.Kathisma1T.text End-Media
 									Hymn rid peMA.Kathisma1T.text @ver media-off End-Hymn
 								End-Section
@@ -1699,23 +1869,45 @@ Template MA
 			Title<Tdesig>sid ti.Kathisma1</>End-Title
 			Title role source0 sid ti.sourceOctoechos End-Title
 			Title<Tdesig>sid ti.ForMartyrs_hymns</>End-Title
-			Title<Tmode>rid ocMA.Kathisma11.mode</><Tmelody>rid ocMA.Kathisma11.melody</>End-Title
+			when-exists 
+				rid ocMA.Kathisma11.melody use: 
+					Title<Tmode>rid ocMA.Kathisma11.mode</><Tmelody>rid ocMA.Kathisma11.melody</>End-Title
+					Title role greekmelody rid ocMA.Kathisma11.greekmelody End-Title
+				otherwise use:
+					Title<Tmode>rid ocMA.Kathisma11.mode</>End-Title
+			end-when
 			Media rid ocMA.Kathisma11.text End-Media
 			Hymn rid ocMA.Kathisma11.text @ver media-off End-Hymn
 			Verse<bnr>sid vVerse</>sid psMA.saturday.kathismata.v1.text @ver End-Verse
-			when-exists rid ocMA.Kathisma12.melody use: Title<Tmode>rid ocMA.Kathisma12.mode</><Tmelody>rid ocMA.Kathisma12.melody</>End-Title end-when
+			when-exists 
+				rid ocMA.Kathisma12.melody use: 
+					Title<Tmode>rid ocMA.Kathisma12.mode</><Tmelody>rid ocMA.Kathisma12.melody</>End-Title
+					Title role greekmelody rid ocMA.Kathisma12.greekmelody End-Title
+			end-when
 			Media rid ocMA.Kathisma12.text End-Media
 			Hymn rid ocMA.Kathisma12.text @ver media-off End-Hymn
 			Verse<bnr>sid vVerse</>sid psMA.saturday.kathismata.v2.text @ver End-Verse
-			when-exists rid ocMA.Kathisma13.melody use: Title<Tmode>rid ocMA.Kathisma13.mode</><Tmelody>rid ocMA.Kathisma13.melody</>End-Title end-when
+			when-exists 
+				rid ocMA.Kathisma13.melody use: 
+					Title<Tmode>rid ocMA.Kathisma13.mode</><Tmelody>rid ocMA.Kathisma13.melody</>End-Title
+					Title role greekmelody rid ocMA.Kathisma13.greekmelody End-Title
+			end-when
 			Media rid ocMA.Kathisma13.text End-Media
 			Hymn rid ocMA.Kathisma13.text @ver media-off End-Hymn
 			Insert_section TI.g.fu End-Insert
-			when-exists rid ocMA.Kathisma22.melody use: Title<Tmode>rid ocMA.Kathisma22.mode</><Tmelody>rid ocMA.Kathisma22.melody</>End-Title end-when
+			when-exists 
+				rid ocMA.Kathisma22.melody use: 
+					Title<Tmode>rid ocMA.Kathisma22.mode</><Tmelody>rid ocMA.Kathisma22.melody</>End-Title
+					Title role greekmelody rid ocMA.Kathisma22.greekmelody End-Title
+			end-when
 			Media rid ocMA.Kathisma22.text End-Media
 			Hymn rid ocMA.Kathisma22.text @ver media-off End-Hymn
 			Insert_section TI.b.th End-Insert
-			when-exists rid ocMA.Kathisma14.melody use: Title<Tmode>rid ocMA.Kathisma14.mode</><Tmelody>rid ocMA.Kathisma14.melody</>End-Title end-when
+			when-exists 
+				rid ocMA.Kathisma14.melody use: 
+					Title<Tmode>rid ocMA.Kathisma14.mode</><Tmelody>rid ocMA.Kathisma14.melody</>End-Title
+					Title role greekmelody rid ocMA.Kathisma14.greekmelody End-Title
+			end-when
 			Media rid ocMA.Kathisma14.text End-Media
 			Hymn rid ocMA.Kathisma14.text @ver media-off End-Hymn
 		End-Section
@@ -1724,7 +1916,13 @@ Template MA
 				Actor sid Choir End-Actor
 				Title<Tdesig>sid ti.Kathisma1</>End-Title
 				Title role source0 sid ti.sourceTriodion End-Title
-				Title<Tmode>rid trMA.Kathisma11.mode</><Tmelody>rid trMA.Kathisma11.melody</>End-Title
+				when-exists
+					rid trMA.Kathisma11.melody use: 
+						Title<Tmode>rid trMA.Kathisma11.mode</><Tmelody>sid trMA.Kathisma11.melody</>End-Title
+						Title role greekmelody rid trMA.Kathisma11.greekmelody End-Title
+					otherwise use:
+						Title<Tmode>rid trMA.Kathisma11.mode</>End-Title
+				end-when
 				Media rid trMA.Kathisma11.text End-Media
 				Hymn rid trMA.Kathisma11.text @ver media-off End-Hymn
 			End-Section
@@ -1732,7 +1930,13 @@ Template MA
 				Actor sid Choir End-Actor
 				Title<Tdesig>sid ti.Kathisma1</>End-Title
 				Title role source0 sid ti.sourceTriodion End-Title
-				Title<Tmode>rid trMA.Kathisma11.mode</><Tmelody>rid trMA.Kathisma11.melody</>End-Title
+				when-exists
+					rid trMA.Kathisma11.melody use: 
+						Title<Tmode>rid trMA.Kathisma11.mode</><Tmelody>sid trMA.Kathisma11.melody</>End-Title
+						Title role greekmelody rid trMA.Kathisma11.greekmelody End-Title
+					otherwise use:
+						Title<Tmode>rid trMA.Kathisma11.mode</>End-Title
+				end-when
 				Media rid trMA.Kathisma11.text End-Media
 				Hymn rid trMA.Kathisma11.text @ver media-off End-Hymn
 				Title sid ti.GloryBothNow<Tdesig>sid ti.Repeat</>End-Title
@@ -1742,11 +1946,21 @@ Template MA
 				Actor sid Choir End-Actor
 				Title<Tdesig>sid ti.Kathisma1</>End-Title
 				Title role source0 sid ti.sourceTriodion End-Title
-				Title<Tmode>rid trMA.Kathisma11.mode</><Tmelody>rid trMA.Kathisma11.melody</>End-Title
+				when-exists
+					rid trMA.Kathisma11.melody use: 
+						Title<Tmode>rid trMA.Kathisma11.mode</><Tmelody>sid trMA.Kathisma11.melody</>End-Title
+						Title role greekmelody rid trMA.Kathisma11.greekmelody End-Title
+					otherwise use:
+						Title<Tmode>rid trMA.Kathisma11.mode</>End-Title
+				end-when
 				Media rid trMA.Kathisma11.text End-Media
 				Hymn rid trMA.Kathisma11.text @ver media-off End-Hymn
 				Title sid ti.GloryBothNow End-Title
-				Title<Tmode>rid trMA.Kathisma12.mode</><Tmelody>rid trMA.Kathisma12.melody</>End-Title
+				when-exists
+					rid trMA.Kathisma12.melody use: 
+						Title<Tmode>rid trMA.Kathisma12.mode</><Tmelody>sid trMA.Kathisma12.melody</>End-Title
+						Title role greekmelody rid trMA.Kathisma12.greekmelody End-Title
+				end-when
 				Media rid trMA.Kathisma12.text End-Media
 				Hymn rid trMA.Kathisma12.text @ver media-off End-Hymn
 			End-Section
@@ -1754,7 +1968,13 @@ Template MA
 				Actor sid Choir End-Actor
 				Title<Tdesig>sid ti.Kathisma1</>End-Title
 				Title role source0 sid ti.sourceTriodion End-Title
-				Title<Tmode>rid trMA.Kathisma11.mode</><Tmelody>rid trMA.Kathisma11.melody</>End-Title
+				when-exists
+					rid trMA.Kathisma11.melody use: 
+						Title<Tmode>rid trMA.Kathisma11.mode</><Tmelody>sid trMA.Kathisma11.melody</>End-Title
+						Title role greekmelody rid trMA.Kathisma11.greekmelody End-Title
+					otherwise use:
+						Title<Tmode>rid trMA.Kathisma11.mode</>End-Title
+				end-when
 				Media rid trMA.Kathisma11.text End-Media
 				Hymn rid trMA.Kathisma11.text @ver media-off End-Hymn
 				Title sid ti.Glory<bnr>sid ti.SameMelody_1hymn</>End-Title
@@ -1763,7 +1983,7 @@ Template MA
 				Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 				Media rid trMA.Kathisma13.text End-Media
 				Hymn rid trMA.Kathisma13.text @ver media-off End-Hymn
-		End-Section
+			End-Section
 		End-Section
 	End-Section
 
@@ -2107,34 +2327,66 @@ Template MA
 							when-mode-of-week-is
 								M1, M2, M3, M4, M8 use:
 									Title<Tdesig>sid ti.ForMartyrs_1hymn</>End-Title
-									Title<Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
+									when-exists 
+										rid ocMA.Kathisma21.melody use: 
+											Title<Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
+											Title role greekmelody rid ocMA.Kathisma21.greekmelody End-Title
+										otherwise use:
+											Title<Tmode>rid ocMA.Kathisma21.mode</>End-Title
+									end-when
 									Media rid ocMA.Kathisma21.text End-Media
 									Hymn rid ocMA.Kathisma21.text @ver media-off End-Hymn
 									Verse<bnr>sid vVerse</>sid psMA.saturday.kathismata.v3.text @ver End-Verse
 									Title<Tdesig>sid ti.ForDead_hymns</>End-Title
-									when-exists rid ocMA.Kathisma22.melody use: Title<Tmode>rid ocMA.Kathisma22.mode</><Tmelody>rid ocMA.Kathisma22.melody</>End-Title end-when
+									when-exists 
+										rid ocMA.Kathisma22.melody use: 
+											Title<Tmode>rid ocMA.Kathisma22.mode</><Tmelody>rid ocMA.Kathisma22.melody</>End-Title
+											Title role greekmelody rid ocMA.Kathisma22.greekmelody End-Title
+									end-when
 									Media rid ocMA.Kathisma22.text End-Media
 									Hymn rid ocMA.Kathisma22.text @ver media-off End-Hymn
 									Verse<bnr>sid vVerse</>sid psMA.saturday.kathismata.v4.text @ver End-Verse
-									when-exists rid ocMA.Kathisma23.melody use: Title<Tmode>rid ocMA.Kathisma23.mode</><Tmelody>rid ocMA.Kathisma23.melody</>End-Title end-when
+									when-exists 
+										rid ocMA.Kathisma23.melody use: 
+											Title<Tmode>rid ocMA.Kathisma23.mode</><Tmelody>rid ocMA.Kathisma23.melody</>End-Title
+											Title role greekmelody rid ocMA.Kathisma23.greekmelody End-Title
+									end-when
 									Media rid ocMA.Kathisma23.text End-Media
 									Hymn rid ocMA.Kathisma23.text @ver media-off End-Hymn
 									Insert_section TI.gb.th End-Insert
-									when-exists rid ocMA.Kathisma24.melody use: Title<Tmode>rid ocMA.Kathisma24.mode</><Tmelody>rid ocMA.Kathisma24.melody</>End-Title end-when
+									when-exists 
+										rid ocMA.Kathisma24.melody use: 
+											Title<Tmode>rid ocMA.Kathisma24.mode</><Tmelody>rid ocMA.Kathisma24.melody</>End-Title
+											Title role greekmelody rid ocMA.Kathisma24.greekmelody End-Title
+									end-when
 									Media rid ocMA.Kathisma24.text End-Media
 									Hymn rid ocMA.Kathisma24.text @ver media-off End-Hymn
 								M5, M6, M7 use:
 									Title<Tdesig>sid ti.ForMartyrs_1hymn</>End-Title
-									Title<Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
+									when-exists 
+										rid ocMA.Kathisma21.melody use: 
+											Title<Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
+											Title role greekmelody rid ocMA.Kathisma21.greekmelody End-Title
+										otherwise use:
+											Title<Tmode>rid ocMA.Kathisma21.mode</>End-Title
+									end-when
 									Media rid ocMA.Kathisma21.text End-Media
 									Hymn rid ocMA.Kathisma21.text @ver media-off End-Hymn
 									Verse<bnr>sid vVerse</>sid psMA.saturday.kathismata.v3.text @ver End-Verse
 									Title<Tdesig>sid ti.ForDead_1hymn</>End-Title
-									when-exists rid ocMA.Kathisma22.melody use: Title<Tmode>rid ocMA.Kathisma22.mode</><Tmelody>rid ocMA.Kathisma22.melody</>End-Title end-when
+									when-exists 
+										rid ocMA.Kathisma22.melody use: 
+											Title<Tmode>rid ocMA.Kathisma22.mode</><Tmelody>rid ocMA.Kathisma22.melody</>End-Title
+											Title role greekmelody rid ocMA.Kathisma22.greekmelody End-Title
+									end-when
 									Media rid ocMA.Kathisma22.text End-Media
 									Hymn rid ocMA.Kathisma22.text @ver media-off End-Hymn
 									Insert_section TI.gb.th End-Insert
-									when-exists rid ocMA.Kathisma23.melody use: Title<Tmode>rid ocMA.Kathisma23.mode</><Tmelody>rid ocMA.Kathisma23.melody</>End-Title end-when
+									when-exists 
+										rid ocMA.Kathisma23.melody use: 
+											Title<Tmode>rid ocMA.Kathisma23.mode</><Tmelody>rid ocMA.Kathisma23.melody</>End-Title
+											Title role greekmelody rid ocMA.Kathisma23.greekmelody End-Title
+									end-when
 									Media rid ocMA.Kathisma23.text End-Media
 									Hymn rid ocMA.Kathisma23.text @ver media-off End-Hymn
 							end-when
@@ -2150,7 +2402,13 @@ Template MA
 							Thursday use:
 								Title<Tdesig>sid ti.ForApostles</>End-Title
 						end-when	
-						Title<Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
+						when-exists 
+							rid ocMA.Kathisma21.melody use: 
+								Title<Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
+								Title role greekmelody rid ocMA.Kathisma21.greekmelody End-Title
+							otherwise use:
+								Title<Tmode>rid ocMA.Kathisma21.mode</>End-Title
+						end-when
 						Media rid ocMA.Kathisma21.text End-Media
 						Hymn rid ocMA.Kathisma21.text @ver media-off End-Hymn
 						when-name-of-day-is
@@ -2161,8 +2419,10 @@ Template MA
 							Thursday use:
 								Verse<inr>sid vVerse</>sid psMA.thursday.kathismata.v2.text End-Verse
 						end-when	
-						when-exists rid ocMA.Kathisma22.melody use:
-							Title<Tmode>rid ocMA.Kathisma22.mode</><Tmelody>rid ocMA.Kathisma22.melody</>End-Title
+						when-exists 
+							rid ocMA.Kathisma22.melody use: 
+								Title<Tmode>rid ocMA.Kathisma22.mode</><Tmelody>rid ocMA.Kathisma22.melody</>End-Title
+								Title role greekmelody rid ocMA.Kathisma22.greekmelody End-Title
 						end-when
 						Media rid ocMA.Kathisma22.text End-Media
 						Hymn rid ocMA.Kathisma22.text @ver media-off End-Hymn
@@ -2172,8 +2432,10 @@ Template MA
 							otherwise use:
 								Title sid ti.GloryBothNow<Tdesig>sid ti.Theotokion</>End-Title
 						end-when
-						when-exists rid ocMA.Kathisma23.melody use:
-							Title<Tmode>rid ocMA.Kathisma23.mode</><Tmelody>rid ocMA.Kathisma23.melody</>End-Title
+						when-exists 
+							rid ocMA.Kathisma23.melody use: 
+								Title<Tmode>rid ocMA.Kathisma23.mode</><Tmelody>rid ocMA.Kathisma23.melody</>End-Title
+								Title role greekmelody rid ocMA.Kathisma23.greekmelody End-Title
 						end-when
 						Media rid ocMA.Kathisma23.text End-Media
 						Hymn rid ocMA.Kathisma23.text @ver media-off End-Hymn
@@ -2183,18 +2445,28 @@ Template MA
 					Section kath212223
 						Title role source sid ti.sourceOctoechos End-Title
 						Title<Tdesig>sid ti.Kathisma2</>End-Title
-						Title role mixed <Tmode>rid ocMA.Kathisma21.mode</>	<Tmelody>rid ocMA.Kathisma21.melody</>End-Title
+						when-exists 
+							rid ocMA.Kathisma21.melody use: 
+								Title<Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
+								Title role greekmelody rid ocMA.Kathisma21.greekmelody End-Title
+							otherwise use:
+								Title<Tmode>rid ocMA.Kathisma21.mode</>End-Title
+						end-when
 						Media rid ocMA.Kathisma21.text End-Media
 						Hymn rid ocMA.Kathisma21.text @ver media-off End-Hymn
 						Title sid ti.Glory End-Title
-						when-exists rid ocMA.Kathisma22.melody use:
-							Title role melody rid ocMA.Kathisma22.melody End-Title
+						when-exists 
+							rid ocMA.Kathisma22.melody use: 
+								Title<Tmode>rid ocMA.Kathisma22.mode</><Tmelody>rid ocMA.Kathisma22.melody</>End-Title
+								Title role greekmelody rid ocMA.Kathisma22.greekmelody End-Title
 						end-when
 						Media rid ocMA.Kathisma22.text End-Media
 						Hymn rid ocMA.Kathisma22.text @ver media-off End-Hymn
 						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-						when-exists rid ocMA.Kathisma23.melody use:
-							Title role melody rid ocMA.Kathisma23.melody End-Title
+						when-exists 
+							rid ocMA.Kathisma23.melody use: 
+								Title<Tmode>rid ocMA.Kathisma23.mode</><Tmelody>rid ocMA.Kathisma23.melody</>End-Title
+								Title role greekmelody rid ocMA.Kathisma23.greekmelody End-Title
 						end-when
 						Media rid ocMA.Kathisma23.text End-Media
 						Hymn rid ocMA.Kathisma23.text @ver media-off End-Hymn
@@ -2202,12 +2474,20 @@ Template MA
 					Section kath2122
 						Title role source sid ti.sourceOctoechos End-Title
 						Title<Tdesig>sid ti.Kathisma2</>End-Title
-						Title role mixed <Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
+						when-exists 
+							rid ocMA.Kathisma21.melody use: 
+								Title<Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
+								Title role greekmelody rid ocMA.Kathisma21.greekmelody End-Title
+							otherwise use:
+								Title<Tmode>rid ocMA.Kathisma21.mode</>End-Title
+						end-when
 						Media rid ocMA.Kathisma21.text End-Media
 						Hymn rid ocMA.Kathisma21.text @ver media-off End-Hymn
 						Title sid ti.Glory End-Title 
-						when-exists rid ocMA.Kathisma22.melody use:
-							Title role melody rid ocMA.Kathisma22.melody End-Title
+						when-exists 
+							rid ocMA.Kathisma22.melody use: 
+								Title<Tmode>rid ocMA.Kathisma22.mode</><Tmelody>rid ocMA.Kathisma22.melody</>End-Title
+								Title role greekmelody rid ocMA.Kathisma22.greekmelody End-Title
 						end-when
 						Media rid ocMA.Kathisma22.text End-Media
 						Hymn rid ocMA.Kathisma22.text @ver media-off End-Hymn
@@ -2215,14 +2495,22 @@ Template MA
 					Section kath21
 						Title role source sid ti.sourceOctoechos End-Title
 						Title<Tdesig>sid ti.Kathisma2 sid ti.Resurrectional_1hymn </>End-Title
-						Title role mixed <Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
+						when-exists 
+							rid ocMA.Kathisma21.melody use: 
+								Title<Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
+								Title role greekmelody rid ocMA.Kathisma21.greekmelody End-Title
+							otherwise use:
+								Title<Tmode>rid ocMA.Kathisma21.mode</>End-Title
+						end-when
 						Media rid ocMA.Kathisma21.text End-Media
 						Hymn rid ocMA.Kathisma21.text @ver media-off End-Hymn
 					End-Section
 					Section kath22
 						Title sid ti.Glory End-Title 
-						when-exists rid ocMA.Kathisma22.melody use:
-							Title role melody rid ocMA.Kathisma22.melody End-Title
+						when-exists 
+							rid ocMA.Kathisma22.melody use: 
+								Title<Tmode>rid ocMA.Kathisma22.mode</><Tmelody>rid ocMA.Kathisma22.melody</>End-Title
+								Title role greekmelody rid ocMA.Kathisma22.greekmelody End-Title
 						end-when
 						Media rid ocMA.Kathisma22.text End-Media
 						Hymn rid ocMA.Kathisma22.text @ver media-off End-Hymn
@@ -2231,7 +2519,11 @@ Template MA
 						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 						Section hymn
 							Title role source0 sid ti.sourceOctoechos End-Title
-							Title<Tmode>rid ocMA.Kathisma23.mode</><Tmelody>rid ocMA.Kathisma23.melody</>End-Title
+							when-exists 
+								rid ocMA.Kathisma23.melody use: 
+									Title<Tmode>rid ocMA.Kathisma23.mode</><Tmelody>rid ocMA.Kathisma23.melody</>End-Title
+									Title role greekmelody rid ocMA.Kathisma23.greekmelody End-Title
+							end-when
 							Media rid ocMA.Kathisma23.text End-Media
 							Hymn rid ocMA.Kathisma23.text @ver media-off End-Hymn
 						End-Section
@@ -2243,7 +2535,13 @@ Template MA
 					Section kath21m212t
 						Title role source sid ti.sourceOctoechos End-Title
 						Title<Tdesig>sid ti.Kathisma2</><Tdesig>sid ti.Resurrectional_1hymn</>End-Title
-						Title role mixed <Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
+						when-exists 
+							rid ocMA.Kathisma21.melody use: 
+								Title<Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
+								Title role greekmelody rid ocMA.Kathisma21.greekmelody End-Title
+							otherwise use:
+								Title<Tmode>rid ocMA.Kathisma21.mode</>End-Title
+						end-when
 						Media rid ocMA.Kathisma21.text End-Media
 						Hymn rid ocMA.Kathisma21.text @ver media-off End-Hymn
 						Title role source sid ti.sourceMenaion End-Title
@@ -2264,6 +2562,7 @@ Template MA
 					Section hymn
 						Title role source0 sid ti.sourcePentecostarion End-Title
 						Title<Tmode>rid peMA.Kathisma21.mode</><Tmelody>rid peMA.Kathisma21.melody</>End-Title
+						Title role greekmelody rid peMA.Kathisma21.greekmelody End-Title
 						Media rid peMA.Kathisma21.text End-Media
 						Hymn rid peMA.Kathisma21.text @ver media-off End-Hymn
 					End-Section
@@ -2273,6 +2572,7 @@ Template MA
 					Section nt
 						Title role source0 sid ti.sourcePentecostarion End-Title
 						Title<Tmode>rid peMA.Kathisma21.mode</><Tmelody>rid peMA.Kathisma21.melody</>End-Title
+						Title role greekmelody rid peMA.Kathisma21.greekmelody End-Title
 						Media rid peMA.Kathisma21.text End-Media
 						Hymn rid peMA.Kathisma21.text @ver media-off End-Hymn
 						Title sid ti.GloryBothNow<Tdesig>sid ti.Repeat</>End-Title
@@ -2283,10 +2583,12 @@ Template MA
 					Title<Tdesig>sid ti.Kathisma2</>End-Title
 					Title role source0 sid ti.sourcePentecostarion End-Title
 					Title<Tmode>rid peMA.Kathisma21.mode</><Tmelody>rid peMA.Kathisma21.melody</>End-Title
+					Title role greekmelody rid peMA.Kathisma21.greekmelody End-Title
 					Media rid peMA.Kathisma21.text End-Media
 					Hymn rid peMA.Kathisma21.text @ver media-off End-Hymn
 					Title sid ti.Glory End-Title
 					Title<Tmode>rid peMA.Kathisma22.mode</><Tmelody>rid peMA.Kathisma22.melody</>End-Title
+					Title role greekmelody rid peMA.Kathisma22.greekmelody End-Title
 					Media rid peMA.Kathisma22.text End-Media
 					Hymn rid peMA.Kathisma22.text @ver media-off End-Hymn
 					Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
@@ -2296,12 +2598,14 @@ Template MA
 				Section kath22
 					Title role source0 sid ti.sourcePentecostarion End-Title
 					Title<Tmode>rid peMA.Kathisma22.mode</><Tmelody>rid peMA.Kathisma22.melody</>End-Title
+					Title role greekmelody rid peMA.Kathisma22.greekmelody End-Title
 					Media rid peMA.Kathisma22.text End-Media
 					Hymn rid peMA.Kathisma22.text @ver media-off End-Hymn
 				End-Section
 				Section kath23
 					Title role source0 sid ti.sourcePentecostarion End-Title
 					Title<Tmode>rid peMA.Kathisma23.mode</><Tmelody>rid peMA.Kathisma23.melody</>End-Title
+					Title role greekmelody rid peMA.Kathisma23.greekmelody End-Title
 					Media rid peMA.Kathisma23.text End-Media
 					Hymn rid peMA.Kathisma23.text @ver media-off End-Hymn
 				End-Section
@@ -2310,14 +2614,26 @@ Template MA
 				Section kath21
 					Title role source sid ti.sourceTriodion End-Title
 					Title<Tdesig>sid ti.Kathisma2</>End-Title
-					Title<Tmode>rid trMA.Kathisma21.mode</><Tmelody>rid trMA.Kathisma21.melody</>End-Title
+					when-exists
+						rid trMA.Kathisma21.melody use: 
+							Title<Tmode>rid trMA.Kathisma21.mode</><Tmelody>sid trMA.Kathisma21.melody</>End-Title
+							Title role greekmelody rid trMA.Kathisma21.greekmelody End-Title
+						otherwise use:
+							Title<Tmode>rid trMA.Kathisma21.mode</>End-Title
+					end-when
 					Media rid trMA.Kathisma21.text End-Media
 					Hymn rid trMA.Kathisma21.text @ver media-off End-Hymn
 				End-Section
 				Section kath21gb21
 					Title role source sid ti.sourceTriodion End-Title
 					Title<Tdesig>sid ti.Kathisma2</>End-Title
-					Title<Tmode>rid trMA.Kathisma21.mode</><Tmelody>rid trMA.Kathisma21.melody</>End-Title
+					when-exists
+						rid trMA.Kathisma21.melody use: 
+							Title<Tmode>rid trMA.Kathisma21.mode</><Tmelody>sid trMA.Kathisma21.melody</>End-Title
+							Title role greekmelody rid trMA.Kathisma21.greekmelody End-Title
+						otherwise use:
+							Title<Tmode>rid trMA.Kathisma21.mode</>End-Title
+					end-when
 					Media rid trMA.Kathisma21.text End-Media
 					Hymn rid trMA.Kathisma21.text @ver media-off End-Hymn
 					Title sid ti.GloryBothNow<Tdesig>sid ti.Repeat</>End-Title
@@ -2326,11 +2642,21 @@ Template MA
 				Section kath21gb22
 					Title role source sid ti.sourceTriodion End-Title
 					Title<Tdesig>sid ti.Kathisma2</>End-Title
-					Title<Tmode>rid trMA.Kathisma21.mode</><Tmelody>rid trMA.Kathisma21.melody</>End-Title
+					when-exists
+						rid trMA.Kathisma21.melody use: 
+							Title<Tmode>rid trMA.Kathisma21.mode</><Tmelody>sid trMA.Kathisma21.melody</>End-Title
+							Title role greekmelody rid trMA.Kathisma21.greekmelody End-Title
+						otherwise use:
+							Title<Tmode>rid trMA.Kathisma21.mode</>End-Title
+					end-when
 					Media rid trMA.Kathisma21.text End-Media
 					Hymn rid trMA.Kathisma21.text @ver media-off End-Hymn
 					Title sid ti.GloryBothNow End-Title
-					Title<Tmode>rid trMA.Kathisma22.mode</><Tmelody>rid trMA.Kathisma22.melody</>End-Title
+					when-exists
+						rid trMA.Kathisma22.melody use: 
+							Title<Tmode>rid trMA.Kathisma22.mode</><Tmelody>sid trMA.Kathisma22.melody</>End-Title
+							Title role greekmelody rid trMA.Kathisma22.greekmelody End-Title
+					end-when
 					Media rid trMA.Kathisma22.text End-Media
 					Hymn rid trMA.Kathisma22.text @ver media-off End-Hymn
 				End-Section
@@ -2338,13 +2664,29 @@ Template MA
 					Title<Tdesig>sid ti.Kathisma2</>End-Title
 					Section hymns
 						Title role source0 sid ti.sourceTriodion End-Title
-						Title<Tmode>rid trMA.Kathisma21.mode</><Tmelody>rid trMA.Kathisma21.melody</>End-Title
+						when-exists
+							rid trMA.Kathisma21.melody use: 
+								Title<Tmode>rid trMA.Kathisma21.mode</><Tmelody>sid trMA.Kathisma21.melody</>End-Title
+								Title role greekmelody rid trMA.Kathisma21.greekmelody End-Title
+							otherwise use:
+								Title<Tmode>rid trMA.Kathisma21.mode</>End-Title
+						end-when
 						Media rid trMA.Kathisma21.text End-Media
 						Hymn rid trMA.Kathisma21.text @ver media-off End-Hymn
-						Title sid ti.Glory<Tmelody>rid trMA.Kathisma22.melody</>End-Title
+						Title sid ti.Glory End-Title
+						when-exists
+							rid trMA.Kathisma22.melody use: 
+								Title<Tmode>rid trMA.Kathisma22.mode</><Tmelody>sid trMA.Kathisma22.melody</>End-Title
+								Title role greekmelody rid trMA.Kathisma22.greekmelody End-Title
+						end-when
 						Media rid trMA.Kathisma22.text End-Media
 						Hymn rid trMA.Kathisma22.text @ver media-off End-Hymn
-						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</><Tmelody>rid trMA.Kathisma23.melody</>End-Title
+						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
+						when-exists
+							rid trMA.Kathisma23.melody use: 
+								Title<Tmode>rid trMA.Kathisma23.mode</><Tmelody>sid trMA.Kathisma23.melody</>End-Title
+								Title role greekmelody rid trMA.Kathisma23.greekmelody End-Title
+						end-when
 						Media rid trMA.Kathisma23.text End-Media
 						Hymn rid trMA.Kathisma23.text @ver media-off End-Hymn
 					End-Section
@@ -2353,10 +2695,20 @@ Template MA
 					Title<Tdesig>sid ti.Kathisma2</>End-Title
 					Section hymns
 						Title role source0 sid ti.sourceTriodion End-Title
-						Title<Tmode>rid trMA.Kathisma21.mode</><Tmelody>rid trMA.Kathisma21.melody</>End-Title
+						when-exists
+							rid trMA.Kathisma21.melody use: 
+								Title<Tmode>rid trMA.Kathisma21.mode</><Tmelody>sid trMA.Kathisma21.melody</>End-Title
+								Title role greekmelody rid trMA.Kathisma21.greekmelody End-Title
+							otherwise use:
+								Title<Tmode>rid trMA.Kathisma21.mode</>End-Title
+						end-when
 						Hymn rid trMA.Kathisma21.text @ver media-off End-Hymn
 						Title sid ti.Glory<Tdesig>sid ti.Another_1hymn</>End-Title
-						Title<Tmode>rid trMA.Kathisma31.mode</><Tmelody>rid trMA.Kathisma31.melody</>End-Title
+						when-exists
+							rid trMA.Kathisma31.melody use: 
+								Title<Tmode>rid trMA.Kathisma31.mode</><Tmelody>sid trMA.Kathisma31.melody</>End-Title
+								Title role greekmelody rid trMA.Kathisma31.greekmelody End-Title
+						end-when
 						Hymn rid trMA.Kathisma31.text @ver media-off End-Hymn
 						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 						Hymn rid trMA.Kathisma32.text @ver media-off End-Hymn
@@ -2365,24 +2717,42 @@ Template MA
 				Section lent_weekday
 					Title role source sid ti.sourceTriodion End-Title
 					Title<Tdesig>sid ti.Kathisma2 sid ti.Triodion</>End-Title
-					Title<Tmode>rid trMA.Kathisma21.mode</><Tmelody>rid trMA.Kathisma21.melody</>End-Title
+					when-exists
+						rid trMA.Kathisma21.melody use: 
+							Title<Tmode>rid trMA.Kathisma21.mode</><Tmelody>sid trMA.Kathisma21.melody</>End-Title
+							Title role greekmelody rid trMA.Kathisma21.greekmelody End-Title
+						otherwise use:
+							Title<Tmode>rid trMA.Kathisma21.mode</>End-Title
+					end-when
 					Media rid trMA.Kathisma21.text End-Media
 					Hymn rid trMA.Kathisma21.text @ver media-off End-Hymn
 					when-exists rid trMA.Kathisma23.text
 						use:
 							Title sid ti.Glory<Tdesig>sid ti.Another_1hymn</>End-Title
-							Title<Tmode>rid trMA.Kathisma22.mode</><Tmelody>rid trMA.Kathisma22.melody</>End-Title
+							when-exists
+								rid trMA.Kathisma22.melody use: 
+									Title<Tmode>rid trMA.Kathisma22.mode</><Tmelody>sid trMA.Kathisma22.melody</>End-Title
+									Title role greekmelody rid trMA.Kathisma22.greekmelody End-Title
+							end-when
 							Media rid trMA.Kathisma22.text End-Media
 							Hymn rid trMA.Kathisma22.text @ver media-off End-Hymn
 							when-name-of-day-is
 								Monday, Tuesday, Thursday use:
 									Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-									Title<Tmode>rid trMA.Kathisma23.mode</><Tmelody>rid trMA.Kathisma23.melody</>End-Title
+									when-exists
+										rid trMA.Kathisma23.melody use: 
+											Title<Tmode>rid trMA.Kathisma23.mode</><Tmelody>sid trMA.Kathisma23.melody</>End-Title
+											Title role greekmelody rid trMA.Kathisma23.greekmelody End-Title
+									end-when
 									Media rid trMA.Kathisma23.text End-Media
 									Hymn rid trMA.Kathisma23.text @ver media-off End-Hymn
 								Wednesday, Friday use:
 									Title sid ti.BothNow<Tdesig>sid ti.Stavrotheotokion</>End-Title
-									Title<Tmode>rid trMA.Kathisma23.mode</><Tmelody>rid trMA.Kathisma23.melody</>End-Title
+									when-exists
+										rid trMA.Kathisma23.melody use: 
+											Title<Tmode>rid trMA.Kathisma23.mode</><Tmelody>sid trMA.Kathisma23.melody</>End-Title
+											Title role greekmelody rid trMA.Kathisma23.greekmelody End-Title
+									end-when
 									Media rid trMA.Kathisma23.text End-Media
 									Hymn rid trMA.Kathisma23.text @ver media-off End-Hymn
 							end-when
@@ -2390,12 +2760,20 @@ Template MA
 							when-name-of-day-is
 								Monday, Tuesday, Thursday use:
 									Title sid ti.GloryBothNow<Tdesig>sid ti.Theotokion</>End-Title
-									Title<Tmode>rid trMA.Kathisma22.mode</><Tmelody>rid trMA.Kathisma22.melody</>End-Title
+									when-exists
+										rid trMA.Kathisma22.melody use: 
+											Title<Tmode>rid trMA.Kathisma22.mode</><Tmelody>sid trMA.Kathisma22.melody</>End-Title
+											Title role greekmelody rid trMA.Kathisma22.greekmelody End-Title
+									end-when
 									Media rid trMA.Kathisma22.text End-Media
 									Hymn rid trMA.Kathisma22.text @ver media-off End-Hymn
 								Wednesday, Friday use:
 									Title sid ti.GloryBothNow<Tdesig>sid ti.Stavrotheotokion</>End-Title
-									Title<Tmode>rid trMA.Kathisma22.mode</><Tmelody>rid trMA.Kathisma22.melody</>End-Title
+									when-exists
+										rid trMA.Kathisma22.melody use: 
+											Title<Tmode>rid trMA.Kathisma22.mode</><Tmelody>sid trMA.Kathisma22.melody</>End-Title
+											Title role greekmelody rid trMA.Kathisma22.greekmelody End-Title
+									end-when
 									Media rid trMA.Kathisma22.text End-Media
 									Hymn rid trMA.Kathisma22.text @ver media-off End-Hymn
 							end-when
@@ -2583,6 +2961,7 @@ Template MA
 					Section hymn
 						Title role source0 sid ti.sourcePentecostarion End-Title
 						Title<Tmode>rid peMA.Kathisma21.mode</><Tmelody>rid peMA.Kathisma21.melody</>End-Title
+						Title role greekmelody rid peMA.Kathisma21.greekmelody End-Title
 						Media rid peMA.Kathisma21.text End-Media
 						Hymn rid peMA.Kathisma21.text @ver media-off End-Hymn
 					End-Section
@@ -2755,34 +3134,66 @@ Template MA
 							when-mode-of-week-is
 								M1, M2, M3, M4, M8 use:
 									Title<Tdesig>sid ti.ForMartyrs_1hymn</>End-Title
-									Title<Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
+									when-exists 
+										rid ocMA.Kathisma21.melody use: 
+											Title<Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
+											Title role greekmelody rid ocMA.Kathisma21.greekmelody End-Title
+										otherwise use:
+											Title<Tmode>rid ocMA.Kathisma21.mode</>End-Title
+									end-when
 									Media rid ocMA.Kathisma21.text End-Media
 									Hymn rid ocMA.Kathisma21.text @ver media-off End-Hymn
 									Verse<bnr>sid vVerse</>sid psMA.saturday.kathismata.v3.text @ver End-Verse
 									Title<Tdesig>sid ti.ForDead_hymns</>End-Title
-									when-exists rid ocMA.Kathisma22.melody use: Title role melody rid ocMA.Kathisma22.melody End-Title end-when
+									when-exists 
+										rid ocMA.Kathisma22.melody use: 
+											Title<Tmode>rid ocMA.Kathisma22.mode</><Tmelody>rid ocMA.Kathisma22.melody</>End-Title
+											Title role greekmelody rid ocMA.Kathisma22.greekmelody End-Title
+									end-when
 									Media rid ocMA.Kathisma22.text End-Media
 									Hymn rid ocMA.Kathisma22.text @ver media-off End-Hymn
 									Verse<bnr>sid vVerse</>sid psMA.saturday.kathismata.v4.text @ver End-Verse
-									when-exists rid ocMA.Kathisma23.melody use: Title role melody rid ocMA.Kathisma23.melody End-Title end-when
+									when-exists 
+										rid ocMA.Kathisma23.melody use: 
+											Title<Tmode>rid ocMA.Kathisma23.mode</><Tmelody>rid ocMA.Kathisma23.melody</>End-Title
+											Title role greekmelody rid ocMA.Kathisma23.greekmelody End-Title
+									end-when
 									Media rid ocMA.Kathisma23.text End-Media
 									Hymn rid ocMA.Kathisma23.text @ver media-off End-Hymn
 									Insert_section TI.gb.th End-Insert
-									when-exists rid ocMA.Kathisma24.melody use: Title role melody rid ocMA.Kathisma24.melody End-Title end-when
+									when-exists 
+										rid ocMA.Kathisma24.melody use: 
+											Title<Tmode>rid ocMA.Kathisma24.mode</><Tmelody>rid ocMA.Kathisma24.melody</>End-Title
+											Title role greekmelody rid ocMA.Kathisma24.greekmelody End-Title
+									end-when
 									Media rid ocMA.Kathisma24.text End-Media
 									Hymn rid ocMA.Kathisma24.text @ver media-off End-Hymn
 								M5, M6, M7 use:
 									Title<Tdesig>sid ti.ForMartyrs_1hymn</>End-Title
-									Title<Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
+									when-exists 
+										rid ocMA.Kathisma21.melody use: 
+											Title<Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
+											Title role greekmelody rid ocMA.Kathisma21.greekmelody End-Title
+										otherwise use:
+											Title<Tmode>rid ocMA.Kathisma21.mode</>End-Title
+									end-when
 									Media rid ocMA.Kathisma21.text End-Media
 									Hymn rid ocMA.Kathisma21.text @ver media-off End-Hymn
 									Verse<bnr>sid vVerse</>sid psMA.saturday.kathismata.v3.text @ver End-Verse
 									Title<Tdesig>sid ti.ForDead_1hymn</>End-Title
-									when-exists rid ocMA.Kathisma22.melody use: Title role melody rid ocMA.Kathisma22.melody End-Title end-when
+									when-exists 
+										rid ocMA.Kathisma22.melody use: 
+											Title<Tmode>rid ocMA.Kathisma22.mode</><Tmelody>rid ocMA.Kathisma22.melody</>End-Title
+											Title role greekmelody rid ocMA.Kathisma22.greekmelody End-Title
+									end-when
 									Media rid ocMA.Kathisma22.text End-Media
 									Hymn rid ocMA.Kathisma22.text @ver media-off End-Hymn
 									Insert_section TI.gb.th End-Insert
-									when-exists rid ocMA.Kathisma23.melody use: Title role melody rid ocMA.Kathisma23.melody End-Title end-when
+									when-exists 
+										rid ocMA.Kathisma23.melody use: 
+											Title<Tmode>rid ocMA.Kathisma23.mode</><Tmelody>rid ocMA.Kathisma23.melody</>End-Title
+											Title role greekmelody rid ocMA.Kathisma23.greekmelody End-Title
+									end-when
 									Media rid ocMA.Kathisma23.text End-Media
 									Hymn rid ocMA.Kathisma23.text @ver media-off End-Hymn
 							end-when
@@ -2798,7 +3209,13 @@ Template MA
 							Thursday use:
 								Title<Tdesig>sid ti.ForApostles</>End-Title
 						end-when	
-						Title<Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
+						when-exists 
+							rid ocMA.Kathisma21.melody use: 
+								Title<Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
+								Title role greekmelody rid ocMA.Kathisma21.greekmelody End-Title
+							otherwise use:
+								Title<Tmode>rid ocMA.Kathisma21.mode</>End-Title
+						end-when
 						Media rid ocMA.Kathisma21.text End-Media
 						Hymn rid ocMA.Kathisma21.text @ver media-off End-Hymn
 						when-name-of-day-is
@@ -2809,14 +3226,18 @@ Template MA
 							Thursday use:
 								Verse<inr>sid vVerse</>sid psMA.thursday.kathismata.v2.text End-Verse
 						end-when	
-						when-exists rid ocMA.Kathisma22.melody use:
-							Title role melody rid ocMA.Kathisma22.melody End-Title
+						when-exists 
+							rid ocMA.Kathisma22.melody use: 
+								Title<Tmode>rid ocMA.Kathisma22.mode</><Tmelody>rid ocMA.Kathisma22.melody</>End-Title
+								Title role greekmelody rid ocMA.Kathisma22.greekmelody End-Title
 						end-when
 						Media rid ocMA.Kathisma22.text End-Media
 						Hymn rid ocMA.Kathisma22.text @ver media-off End-Hymn
 						Title sid ti.GloryBothNow<Tdesig>sid ti.Theotokion</>End-Title
-						when-exists rid ocMA.Kathisma23.melody use:
-							Title role melody rid ocMA.Kathisma23.melody End-Title
+						when-exists 
+							rid ocMA.Kathisma23.melody use: 
+								Title<Tmode>rid ocMA.Kathisma23.mode</><Tmelody>rid ocMA.Kathisma23.melody</>End-Title
+								Title role greekmelody rid ocMA.Kathisma23.greekmelody End-Title
 						end-when
 						Media rid ocMA.Kathisma23.text End-Media
 						Hymn rid ocMA.Kathisma23.text @ver media-off End-Hymn
@@ -2827,18 +3248,28 @@ Template MA
 					Actor sid Choir End-Actor
 					Title<Tdesig>sid ti.Kathisma2</>End-Title
 					Title role source0 sid ti.sourceOctoechos End-Title
-					Title role mixed <Tmode>rid ocMA.Kathisma21.mode</>	<Tmelody>rid ocMA.Kathisma21.melody</>End-Title
+					when-exists 
+						rid ocMA.Kathisma21.melody use: 
+							Title<Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
+							Title role greekmelody rid ocMA.Kathisma21.greekmelody End-Title
+						otherwise use:
+							Title<Tmode>rid ocMA.Kathisma21.mode</>End-Title
+					end-when
 					Media rid ocMA.Kathisma21.text End-Media
 					Hymn rid ocMA.Kathisma21.text @ver media-off End-Hymn
 					Title sid ti.Glory End-Title
-					when-exists rid ocMA.Kathisma22.melody use:
-						Title role melody rid ocMA.Kathisma22.melody End-Title
+					when-exists 
+						rid ocMA.Kathisma22.melody use: 
+							Title<Tmode>rid ocMA.Kathisma22.mode</><Tmelody>rid ocMA.Kathisma22.melody</>End-Title
+							Title role greekmelody rid ocMA.Kathisma22.greekmelody End-Title
 					end-when
 					Media rid ocMA.Kathisma22.text End-Media
 					Hymn rid ocMA.Kathisma22.text @ver media-off End-Hymn
 					Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-					when-exists rid ocMA.Kathisma23.melody use:
-						Title role melody rid ocMA.Kathisma23.melody End-Title
+					when-exists 
+						rid ocMA.Kathisma23.melody use: 
+							Title<Tmode>rid ocMA.Kathisma23.mode</><Tmelody>rid ocMA.Kathisma23.melody</>End-Title
+							Title role greekmelody rid ocMA.Kathisma23.greekmelody End-Title
 					end-when
 					Media rid ocMA.Kathisma23.text End-Media
 					Hymn rid ocMA.Kathisma23.text @ver media-off End-Hymn
@@ -2847,12 +3278,20 @@ Template MA
 					Actor sid Choir End-Actor
 					Title<Tdesig>sid ti.Kathisma2</>End-Title
 					Title role source0 sid ti.sourceOctoechos End-Title
-					Title role mixed <Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
+					when-exists 
+						rid ocMA.Kathisma21.melody use: 
+							Title<Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
+							Title role greekmelody rid ocMA.Kathisma21.greekmelody End-Title
+						otherwise use:
+							Title<Tmode>rid ocMA.Kathisma21.mode</>End-Title
+					end-when
 					Media rid ocMA.Kathisma21.text End-Media
 					Hymn rid ocMA.Kathisma21.text @ver media-off End-Hymn
 					Title sid ti.Glory End-Title 
-					when-exists rid ocMA.Kathisma22.melody use:
-						Title role melody rid ocMA.Kathisma22.melody End-Title
+					when-exists 
+						rid ocMA.Kathisma22.melody use: 
+							Title<Tmode>rid ocMA.Kathisma22.mode</><Tmelody>rid ocMA.Kathisma22.melody</>End-Title
+							Title role greekmelody rid ocMA.Kathisma22.greekmelody End-Title
 					end-when
 					Media rid ocMA.Kathisma22.text End-Media
 					Hymn rid ocMA.Kathisma22.text @ver media-off End-Hymn
@@ -2861,14 +3300,22 @@ Template MA
 					Actor sid Choir End-Actor
 					Title<Tdesig>sid ti.Kathisma2</>End-Title
 					Title role source0 sid ti.sourceOctoechos End-Title
-					Title role mixed <Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
+					when-exists 
+						rid ocMA.Kathisma21.melody use: 
+							Title<Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
+							Title role greekmelody rid ocMA.Kathisma21.greekmelody End-Title
+						otherwise use:
+							Title<Tmode>rid ocMA.Kathisma21.mode</>End-Title
+					end-when
 					Media rid ocMA.Kathisma21.text End-Media
 					Hymn rid ocMA.Kathisma21.text @ver media-off End-Hymn
 				End-Section
 				Section kath22
 					Title sid ti.Glory End-Title 
-					when-exists rid ocMA.Kathisma22.melody use:
-						Title role melody rid ocMA.Kathisma22.melody End-Title
+					when-exists 
+						rid ocMA.Kathisma22.melody use: 
+							Title<Tmode>rid ocMA.Kathisma22.mode</><Tmelody>rid ocMA.Kathisma22.melody</>End-Title
+							Title role greekmelody rid ocMA.Kathisma22.greekmelody End-Title
 					end-when
 					Media rid ocMA.Kathisma22.text End-Media
 					Hymn rid ocMA.Kathisma22.text @ver media-off End-Hymn
@@ -2877,7 +3324,11 @@ Template MA
 					Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
 					Section hymn
 						Title role source0 sid ti.sourceOctoechos End-Title
-						Title<Tmode>rid ocMA.Kathisma23.mode</><Tmelody>rid ocMA.Kathisma23.melody</>End-Title
+						when-exists 
+							rid ocMA.Kathisma23.melody use: 
+								Title<Tmode>rid ocMA.Kathisma23.mode</><Tmelody>rid ocMA.Kathisma23.melody</>End-Title
+								Title role greekmelody rid ocMA.Kathisma23.greekmelody End-Title
+						end-when
 						Media rid ocMA.Kathisma23.text End-Media
 						Hymn rid ocMA.Kathisma23.text @ver media-off End-Hymn
 					End-Section
@@ -2890,7 +3341,13 @@ Template MA
 					Actor sid Choir End-Actor
 					Title<Tdesig>sid ti.Kathisma2</><Tdesig>sid ti.Resurrectional_1hymn</>End-Title
 					Title role source0 sid ti.sourceOctoechos End-Title
-					Title role mixed <Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
+					when-exists 
+						rid ocMA.Kathisma21.melody use: 
+							Title<Tmode>rid ocMA.Kathisma21.mode</><Tmelody>rid ocMA.Kathisma21.melody</>End-Title
+							Title role greekmelody rid ocMA.Kathisma21.greekmelody End-Title
+						otherwise use:
+							Title<Tmode>rid ocMA.Kathisma21.mode</>End-Title
+					end-when
 					Media rid ocMA.Kathisma21.text End-Media
 					Hymn rid ocMA.Kathisma21.text @ver media-off End-Hymn
 					Title role source sid ti.sourceMenaion End-Title
@@ -2912,6 +3369,7 @@ Template MA
 				Section nt
 					Title role source0 sid ti.sourcePentecostarion End-Title
 					Title<Tmode>rid peMA.Kathisma21.mode</><Tmelody>rid peMA.Kathisma21.melody</>End-Title
+					Title role greekmelody rid peMA.Kathisma21.greekmelody End-Title
 					Media rid peMA.Kathisma21.text End-Media
 					Hymn rid peMA.Kathisma21.text @ver media-off End-Hymn
 					Title sid ti.GloryBothNow<Tdesig>sid ti.Repeat</>End-Title
@@ -2923,10 +3381,12 @@ Template MA
 				Title<Tdesig>sid ti.Kathisma2</>End-Title
 				Title role source0 sid ti.sourcePentecostarion End-Title
 				Title<Tmode>rid peMA.Kathisma21.mode</><Tmelody>rid peMA.Kathisma21.melody</>End-Title
+				Title role greekmelody rid peMA.Kathisma21.greekmelody End-Title
 				Media rid peMA.Kathisma21.text End-Media
 				Hymn rid peMA.Kathisma21.text @ver media-off End-Hymn
 				Title sid ti.Glory End-Title
 				Title<Tmode>rid peMA.Kathisma22.mode</><Tmelody>rid peMA.Kathisma22.melody</>End-Title
+				Title role greekmelody rid peMA.Kathisma22.greekmelody End-Title
 				Media rid peMA.Kathisma22.text End-Media
 				Hymn rid peMA.Kathisma22.text @ver media-off End-Hymn
 				Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
@@ -2965,7 +3425,13 @@ Template MA
 				Title role source sid ti.sourceTriodion End-Title
 				Title<Tdesig>sid ti.Kathisma2</>End-Title
 				Actor sid Choir End-Actor
-				Title<Tmode>rid trMA.Kathisma21.mode</><Tmelody>rid trMA.Kathisma21.melody</>End-Title
+				when-exists
+					rid trMA.Kathisma21.melody use: 
+						Title<Tmode>rid trMA.Kathisma21.mode</><Tmelody>sid trMA.Kathisma21.melody</>End-Title
+						Title role greekmelody rid trMA.Kathisma21.greekmelody End-Title
+					otherwise use:
+						Title<Tmode>rid trMA.Kathisma21.mode</>End-Title
+				end-when
 				Media rid trMA.Kathisma21.text End-Media
 				Hymn rid trMA.Kathisma21.text @ver media-off End-Hymn
 				Title sid ti.GloryBothNow<Tdesig>sid ti.Repeat</>End-Title
@@ -2975,12 +3441,22 @@ Template MA
 				Title<Tdesig>sid ti.Kathisma2</>End-Title
 				Section nt
 					Actor sid Choir End-Actor
-					Title<Tmode>rid trMA.Kathisma21.mode</><Tmelody>rid trMA.Kathisma21.melody</>End-Title
 					Title role source0 sid ti.sourceTriodion End-Title
+					when-exists
+						rid trMA.Kathisma21.melody use: 
+							Title<Tmode>rid trMA.Kathisma21.mode</><Tmelody>sid trMA.Kathisma21.melody</>End-Title
+							Title role greekmelody rid trMA.Kathisma21.greekmelody End-Title
+						otherwise use:
+							Title<Tmode>rid trMA.Kathisma21.mode</>End-Title
+					end-when
 					Media rid trMA.Kathisma21.text End-Media
 					Hymn rid trMA.Kathisma21.text @ver media-off End-Hymn
 					Title sid ti.GloryBothNow End-Title
-					Title<Tmode>rid trMA.Kathisma22.mode</><Tmelody>rid trMA.Kathisma22.melody</>End-Title
+					when-exists
+						rid trMA.Kathisma22.melody use: 
+							Title<Tmode>rid trMA.Kathisma22.mode</><Tmelody>sid trMA.Kathisma22.melody</>End-Title
+							Title role greekmelody rid trMA.Kathisma22.greekmelody End-Title
+					end-when
 					Media rid trMA.Kathisma22.text End-Media
 					Hymn rid trMA.Kathisma22.text @ver media-off End-Hymn
 				End-Section
@@ -2989,14 +3465,29 @@ Template MA
 				Title role source sid ti.sourceTriodion End-Title
 				Title<Tdesig>sid ti.Kathisma2</>End-Title
 				Actor sid Choir End-Actor
-				Title<Tmode>rid trMA.Kathisma21.mode</><Tmelody>rid trMA.Kathisma21.melody</>End-Title
+				when-exists
+					rid trMA.Kathisma21.melody use: 
+						Title<Tmode>rid trMA.Kathisma21.mode</><Tmelody>sid trMA.Kathisma21.melody</>End-Title
+						Title role greekmelody rid trMA.Kathisma21.greekmelody End-Title
+					otherwise use:
+						Title<Tmode>rid trMA.Kathisma21.mode</>End-Title
+				end-when
 				Media rid trMA.Kathisma21.text End-Media
 				Hymn rid trMA.Kathisma21.text @ver media-off End-Hymn
-				Title sid ti.Glory<Tmelody>rid trMA.Kathisma22.melody</>End-Title
+				Title sid ti.Glory End-Title
+				when-exists
+					rid trMA.Kathisma22.melody use: 
+						Title<Tmode>rid trMA.Kathisma22.mode</><Tmelody>sid trMA.Kathisma22.melody</>End-Title
+						Title role greekmelody rid trMA.Kathisma22.greekmelody End-Title
+				end-when
 				Media rid trMA.Kathisma22.text End-Media
 				Hymn rid trMA.Kathisma22.text @ver media-off End-Hymn
-				Title sid ti.BothNow<Tdesig>sid ti.Theotokion sid ti.SameMelody_1hymn</>End-Title
-				Title role melody rid trMA.Kathisma23.melody End-Title
+				Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
+				when-exists
+					rid trMA.Kathisma23.melody use: 
+						Title<Tmode>rid trMA.Kathisma23.mode</><Tmelody>sid trMA.Kathisma23.melody</>End-Title
+						Title role greekmelody rid trMA.Kathisma23.greekmelody End-Title
+				end-when
 				Media rid trMA.Kathisma23.text End-Media
 				Hymn rid trMA.Kathisma23.text @ver media-off End-Hymn
 			End-Section
@@ -3373,13 +3864,21 @@ Template MA
 									Title<Tdesig>sid ti.ForApostle</>End-Title
 							end-when
 					end-when	
-					Title<Tmode>rid ocMA.Kathisma31.mode</><Tmelody>rid ocMA.Kathisma31.melody</>End-Title
+					when-exists 
+						rid ocMA.Kathisma31.melody use: 
+							Title<Tmode>rid ocMA.Kathisma31.mode</><Tmelody>rid ocMA.Kathisma31.melody</>End-Title
+							Title role greekmelody rid ocMA.Kathisma31.greekmelody End-Title
+						otherwise use:
+							Title<Tmode>rid ocMA.Kathisma31.mode</>End-Title
+					end-when
 					Media rid ocMA.Kathisma31.text End-Media
 					Hymn rid ocMA.Kathisma31.text @ver media-off End-Hymn
 					Verse<inr>sid vVerse</>sid psMA.weekday.kathismata.v3.text End-Verse
 					Title<Tdesig>sid ti.ForMartyrs_1hymn</>End-Title
-					when-exists rid ocMA.Kathisma32.melody use:
-						Title<Tmode>rid ocMA.Kathisma32.mode</><Tmelody>rid ocMA.Kathisma32.melody</>End-Title
+					when-exists 
+						rid ocMA.Kathisma32.melody use: 
+							Title<Tmode>rid ocMA.Kathisma32.mode</><Tmelody>rid ocMA.Kathisma32.melody</>End-Title
+							Title role greekmelody rid ocMA.Kathisma32.greekmelody End-Title
 					end-when
 					Media rid ocMA.Kathisma32.text End-Media
 					Hymn rid ocMA.Kathisma32.text @ver media-off End-Hymn
@@ -3389,8 +3888,10 @@ Template MA
 						otherwise use:
 							Title sid ti.GloryBothNow<Tdesig>sid ti.Theotokion</>End-Title
 					end-when
-					when-exists rid ocMA.Kathisma33.melody use:
-						Title<Tmode>rid ocMA.Kathisma33.mode</><Tmelody>rid ocMA.Kathisma33.melody</>End-Title
+					when-exists 
+						rid ocMA.Kathisma33.melody use: 
+							Title<Tmode>rid ocMA.Kathisma33.mode</><Tmelody>rid ocMA.Kathisma33.melody</>End-Title
+							Title role greekmelody rid ocMA.Kathisma33.greekmelody End-Title
 					end-when
 					Media rid ocMA.Kathisma33.text End-Media
 					Hymn rid ocMA.Kathisma33.text @ver media-off End-Hymn
@@ -3402,6 +3903,7 @@ Template MA
 					Section hymn
 						Title role source0 sid ti.sourcePentecostarion End-Title
 						Title<Tmode>rid peMA.Kathisma31.mode</><Tmelody>rid peMA.Kathisma31.melody</>End-Title
+						Title role greekmelody rid peMA.Kathisma31.greekmelody End-Title
 						Media rid peMA.Kathisma31.text End-Media
 						Hymn rid peMA.Kathisma31.text @ver media-off End-Hymn
 					End-Section
@@ -3411,6 +3913,7 @@ Template MA
 					Section hymns
 						Title role source0 sid ti.sourcePentecostarion End-Title
 						Title<Tmode>rid peMA.Kathisma31.mode</><Tmelody>rid peMA.Kathisma31.melody</>End-Title
+						Title role greekmelody rid peMA.Kathisma31.greekmelody End-Title
 						Media rid peMA.Kathisma31.text End-Media
 						Hymn rid peMA.Kathisma31.text @ver media-off End-Hymn
 						Title sid ti.GloryBothNow<Tdesig>sid ti.Repeat</>End-Title
@@ -3422,7 +3925,13 @@ Template MA
 				Section kath31
 					Title<Tdesig>sid ti.Kathisma3</>End-Title
 					Title role source0 sid ti.sourceTriodion End-Title
-					Title<Tmode>rid trMA.Kathisma31.mode</><Tmelody>rid trMA.Kathisma31.melody</>End-Title
+					when-exists
+						rid trMA.Kathisma31.melody use: 
+							Title<Tmode>rid trMA.Kathisma31.mode</><Tmelody>sid trMA.Kathisma31.melody</>End-Title
+							Title role greekmelody rid trMA.Kathisma31.greekmelody End-Title
+						otherwise use:
+							Title<Tmode>rid trMA.Kathisma31.mode</>End-Title
+					end-when
 					Media rid trMA.Kathisma31.text End-Media
 					Hymn rid trMA.Kathisma31.text @ver media-off End-Hymn
 				End-Section
@@ -3440,18 +3949,32 @@ Template MA
 				Section lent_weekday
 					Title role source sid ti.sourceTriodion End-Title
 					Title<Tdesig>sid ti.Kathisma3 sid ti.Triodion</>End-Title
-					Title<Tmode>rid trMA.Kathisma31.mode</><Tmelody>rid trMA.Kathisma31.melody</>End-Title
+					when-exists
+						rid trMA.Kathisma31.melody use: 
+							Title<Tmode>rid trMA.Kathisma31.mode</><Tmelody>sid trMA.Kathisma31.melody</>End-Title
+							Title role greekmelody rid trMA.Kathisma31.greekmelody End-Title
+						otherwise use:
+							Title<Tmode>rid trMA.Kathisma31.mode</>End-Title
+					end-when
 					Media rid trMA.Kathisma31.text End-Media
 					Hymn rid trMA.Kathisma31.text @ver media-off End-Hymn
 					when-name-of-day-is
 						Monday, Tuesday, Thursday use:
 							Title sid ti.GloryBothNow<Tdesig>sid ti.Theotokion</>End-Title
-							Title<Tmode>rid trMA.Kathisma32.mode</><Tmelody>rid trMA.Kathisma32.melody</>End-Title
+							when-exists
+								rid trMA.Kathisma32.melody use: 
+									Title<Tmode>rid trMA.Kathisma32.mode</><Tmelody>sid trMA.Kathisma32.melody</>End-Title
+									Title role greekmelody rid trMA.Kathisma32.greekmelody End-Title
+							end-when
 							Media rid trMA.Kathisma32.text End-Media
 							Hymn rid trMA.Kathisma32.text @ver media-off End-Hymn
 						Wednesday, Friday use:
 							Title sid ti.GloryBothNow<Tdesig>sid ti.Stavrotheotokion</>End-Title
-							Title<Tmode>rid trMA.Kathisma32.mode</><Tmelody>rid trMA.Kathisma32.melody</>End-Title
+							when-exists
+								rid trMA.Kathisma32.melody use: 
+									Title<Tmode>rid trMA.Kathisma32.mode</><Tmelody>sid trMA.Kathisma32.melody</>End-Title
+									Title role greekmelody rid trMA.Kathisma32.greekmelody End-Title
+							end-when
 							Media rid trMA.Kathisma32.text End-Media
 							Hymn rid trMA.Kathisma32.text @ver media-off End-Hymn
 					end-when
@@ -3518,6 +4041,7 @@ Template MA
 					Section hymn
 						Title role source0 sid ti.sourcePentecostarion End-Title
 						Title<Tmode>rid peMA.Kathisma31.mode</><Tmelody>rid peMA.Kathisma31.melody</>End-Title
+						Title role greekmelody rid peMA.Kathisma31.greekmelody End-Title
 						Media rid peMA.Kathisma31.text End-Media
 						Hymn rid peMA.Kathisma31.text @ver media-off End-Hymn
 					End-Section
@@ -3672,18 +4196,28 @@ Template MA
 								Title<Tdesig>sid ti.ForApostle</>End-Title
 						end-when
 				end-when	
-				Title<Tmode>rid ocMA.Kathisma31.mode</><Tmelody>rid ocMA.Kathisma31.melody</>End-Title
+				when-exists 
+					rid ocMA.Kathisma31.melody use: 
+						Title<Tmode>rid ocMA.Kathisma31.mode</><Tmelody>rid ocMA.Kathisma31.melody</>End-Title
+						Title role greekmelody rid ocMA.Kathisma31.greekmelody End-Title
+					otherwise use:
+						Title<Tmode>rid ocMA.Kathisma31.mode</>End-Title
+				end-when
 				Media rid ocMA.Kathisma31.text End-Media
 				Hymn rid ocMA.Kathisma31.text @ver media-off End-Hymn
 				Verse<inr>sid vVerse</>sid psMA.weekday.kathismata.v3.text End-Verse
-				when-exists rid ocMA.Kathisma32.melody use:
-					Title role melody rid ocMA.Kathisma32.melody End-Title
+				when-exists 
+					rid ocMA.Kathisma32.melody use: 
+						Title<Tmode>rid ocMA.Kathisma32.mode</><Tmelody>rid ocMA.Kathisma32.melody</>End-Title
+						Title role greekmelody rid ocMA.Kathisma32.greekmelody End-Title
 				end-when
 				Media rid ocMA.Kathisma32.text End-Media
 				Hymn rid ocMA.Kathisma32.text @ver media-off End-Hymn
 				Title sid ti.GloryBothNow<Tdesig>sid ti.Theotokion</>End-Title
-				when-exists rid ocMA.Kathisma33.melody use:
-					Title role melody rid ocMA.Kathisma33.melody End-Title
+				when-exists 
+					rid ocMA.Kathisma33.melody use: 
+						Title<Tmode>rid ocMA.Kathisma33.mode</><Tmelody>rid ocMA.Kathisma33.melody</>End-Title
+						Title role greekmelody rid ocMA.Kathisma33.greekmelody End-Title
 				end-when
 				Media rid ocMA.Kathisma33.text End-Media
 				Hymn rid ocMA.Kathisma33.text @ver media-off End-Hymn
@@ -3720,6 +4254,7 @@ Template MA
 				Section hymns
 					Title role source0 sid ti.sourcePentecostarion End-Title
 					Title<Tmode>rid peMA.Kathisma31.mode</><Tmelody>rid peMA.Kathisma31.melody</>End-Title
+					Title role greekmelody rid peMA.Kathisma31.greekmelody End-Title
 					Media rid peMA.Kathisma31.text End-Media
 					Hymn rid peMA.Kathisma31.text @ver media-off End-Hymn
 					Title sid ti.GloryBothNow<Tdesig>sid ti.Repeat</>End-Title
@@ -3733,7 +4268,13 @@ Template MA
 				Title<Tdesig>sid ti.Kathisma3</>End-Title
 				Section hymns
 					Title role source0 sid ti.sourceTriodion End-Title
-					Title<Tmode>rid trMA.Kathisma31.mode</><Tmelody>rid trMA.Kathisma31.melody</>End-Title
+					when-exists
+						rid trMA.Kathisma31.melody use: 
+							Title<Tmode>rid trMA.Kathisma31.mode</><Tmelody>sid trMA.Kathisma31.melody</>End-Title
+							Title role greekmelody rid trMA.Kathisma31.greekmelody End-Title
+						otherwise use:
+							Title<Tmode>rid trMA.Kathisma31.mode</>End-Title
+					end-when
 					Media rid trMA.Kathisma31.text End-Media
 					Hymn rid trMA.Kathisma31.text @ver media-off End-Hymn
 					Title sid ti.GloryBothNow<Tdesig>sid ti.Repeat</>End-Title
@@ -4165,14 +4706,17 @@ Template MA
 			End-Section
 			Section tr1
 				Title<Tdesig>rid trMA.Ode3C1H.melody</><Tmode>rid trMA.Ode3C1H.mode</>End-Title
+				Title role greekmelody rid trMA.Ode3C1H.greekmelody End-Title
 				Para role heirmos rid trMA.Ode3C1H.text @ver End-Para
 			End-Section
 			Section tr2
 				Title<Tdesig>rid trMA.Ode3C2H.melody</><Tmode>rid trMA.Ode3C2H.mode</>End-Title
+				Title role greekmelody rid trMA.Ode3C2H.greekmelody End-Title
 				Para role heirmos rid trMA.Ode3C2H.text @ver End-Para
 			End-Section
 			Section tr3
 				Title<Tdesig>rid trMA.Ode3C3H.melody</><Tmode>rid trMA.Ode3C3H.mode</>End-Title
+				Title role greekmelody rid trMA.Ode3C3H.greekmelody End-Title
 				Para role heirmos rid trMA.Ode3C3H.text @ver End-Para
 			End-Section
 		End-Section
@@ -4319,12 +4863,14 @@ Template MA
 				Section pe1
 					Title role source0 sid ti.sourcePentecostarion End-Title
 					Title<Tmode>rid peMA.Ode3Kathisma1.mode</><Tmelody>rid peMA.Ode3Kathisma1.melody</>End-Title
+					Title role greekmelody rid peMA.Ode3Kathisma1.greekmelody End-Title
 					Media rid peMA.Ode3Kathisma1.text End-Media
 					Hymn rid peMA.Ode3Kathisma1.text @ver media-off End-Hymn
 				End-Section
 				Section pe2
 					Title role source0 sid ti.sourcePentecostarion End-Title
 					Title<Tmode>rid peMA.Ode3Kathisma2.mode</><Tmelody>rid peMA.Ode3Kathisma2.melody</>End-Title
+					Title role greekmelody rid peMA.Ode3Kathisma2.greekmelody End-Title
 					Media rid peMA.Ode3Kathisma2.text End-Media
 					Hymn rid peMA.Ode3Kathisma2.text @ver media-off End-Hymn
 				End-Section
@@ -4333,7 +4879,13 @@ Template MA
 						Title<Tdesig>sid ti.Kathisma</>End-Title
 						Section hymn
 							Title role source0 sid ti.sourceTriodion End-Title
-							Title<Tmode>rid trMA.Ode3Kathisma1.mode</><Tmelody>rid trMA.Ode3Kathisma1.melody</>End-Title
+							when-exists
+								rid trMA.Ode3Kathisma1.melody use: 
+									Title<Tmode>rid trMA.Ode3Kathisma1.mode</><Tmelody>sid trMA.Ode3Kathisma1.melody</>End-Title
+									Title role greekmelody rid trMA.Ode3Kathisma1.greekmelody End-Title
+								otherwise use:
+									Title<Tmode>rid trMA.Ode3Kathisma1.mode</>End-Title
+							end-when
 							Media rid trMA.Ode3Kathisma1.text End-Media
 							Hymn rid trMA.Ode3Kathisma1.text @ver media-off End-Hymn
 						End-Section
@@ -4342,20 +4894,38 @@ Template MA
 						Section kath1
 							Title<Tdesig>sid ti.Triodion</>End-Title
 							Title role source0 sid ti.sourceTriodion End-Title
-							Title<Tmode>rid trMA.Ode3Kathisma1.mode</><Tmelody>rid trMA.Ode3Kathisma1.melody</>End-Title
+							when-exists
+								rid trMA.Ode3Kathisma1.melody use: 
+									Title<Tmode>rid trMA.Ode3Kathisma1.mode</><Tmelody>sid trMA.Ode3Kathisma1.melody</>End-Title
+									Title role greekmelody rid trMA.Ode3Kathisma1.greekmelody End-Title
+								otherwise use:
+									Title<Tmode>rid trMA.Ode3Kathisma1.mode</>End-Title
+							end-when
 							Media rid trMA.Ode3Kathisma1.text End-Media
 							Hymn rid trMA.Ode3Kathisma1.text @ver media-off End-Hymn
 						End-Section
 						Section kath2
 							Title sid ti.Glory<Tdesig>sid ti.Another_1hymn</>End-Title
 							Section hymn
-								Title<Tmode>rid trMA.Ode3Kathisma2.mode</><Tmelody>rid trMA.Ode3Kathisma2.melody</>End-Title
+								when-exists
+									rid trMA.Ode3Kathisma2.melody use: 
+										Title<Tmode>rid trMA.Ode3Kathisma2.mode</><Tmelody>sid trMA.Ode3Kathisma2.melody</>End-Title
+										Title role greekmelody rid trMA.Ode3Kathisma2.greekmelody End-Title
+									otherwise use:
+										Title<Tmode>rid trMA.Ode3Kathisma2.mode</>End-Title
+								end-when
 								Hymn rid trMA.Ode3Kathisma2.text End-Hymn
 							End-Section
 						End-Section
 						Section kath3_theotokion
 							Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-							Title<Tmode>rid trMA.Ode3Kathisma3.mode</><Tmelody>rid trMA.Ode3Kathisma3.melody</>End-Title
+								when-exists
+									rid trMA.Ode3Kathisma3.melody use: 
+										Title<Tmode>rid trMA.Ode3Kathisma3.mode</><Tmelody>sid trMA.Ode3Kathisma3.melody</>End-Title
+										Title role greekmelody rid trMA.Ode3Kathisma3.greekmelody End-Title
+									otherwise use:
+										Title<Tmode>rid trMA.Ode3Kathisma3.mode</>End-Title
+								end-when
 							Media rid trMA.Ode3Kathisma3.text End-Media
 							Hymn rid trMA.Ode3Kathisma3.text @ver media-off End-Hymn
 						End-Section
@@ -4634,6 +5204,7 @@ Template MA
 				Insert_section TI.gb.pe.specific End-Insert
 				Title role source0 sid ti.sourcePentecostarion End-Title
 				Title<Tmode>rid peMA.Ode3Kathisma1.mode</><Tmelody>rid peMA.Ode3Kathisma1.melody</>End-Title
+				Title role greekmelody rid peMA.Ode3Kathisma1.greekmelody End-Title
 				Media rid peMA.Ode3Kathisma1.text End-Media
 				Hymn rid peMA.Ode3Kathisma1.text @ver media-off End-Hymn
 			End-Section
@@ -4677,6 +5248,7 @@ Template MA
 				Section hymn
 					Title role source0 sid ti.sourcePentecostarion End-Title
 					Title<Tmode>rid peMA.Ode3Kathisma1.mode</><Tmelody>rid peMA.Ode3Kathisma1.melody</>End-Title
+					Title role greekmelody rid peMA.Ode3Kathisma1.greekmelody End-Title
 					Media rid peMA.Ode3Kathisma1.text End-Media
 					Hymn rid peMA.Ode3Kathisma1.text @ver media-off End-Hymn
 				End-Section
@@ -4686,10 +5258,12 @@ Template MA
 				Title<Tdesig>sid ti.Kathisma</>End-Title
 				Title role source0 sid ti.sourcePentecostarion End-Title
 				Title<Tmode>rid peMA.Ode3Kathisma1.mode</><Tmelody>rid peMA.Ode3Kathisma1.melody</>End-Title
+				Title role greekmelody rid peMA.Ode3Kathisma1.greekmelody End-Title
 				Media rid peMA.Ode3Kathisma1.text End-Media
 				Hymn rid peMA.Ode3Kathisma1.text @ver media-off End-Hymn
 				Title sid ti.GloryBothNow End-Title
 				Title<Tmode>rid peMA.Ode3Kathisma2.mode</><Tmelody>rid peMA.Ode3Kathisma2.melody</>End-Title
+				Title role greekmelody rid peMA.Ode3Kathisma2.greekmelody End-Title
 				Media rid peMA.Ode3Kathisma2.text End-Media
 				Hymn rid peMA.Ode3Kathisma2.text @ver media-off End-Hymn
 			End-Section
@@ -4698,14 +5272,17 @@ Template MA
 				Title<Tdesig>sid ti.Kathisma</>End-Title
 				Title role source0 sid ti.sourcePentecostarion End-Title
 				Title<Tmode>rid peMA.Ode3Kathisma1.mode</><Tmelody>rid peMA.Ode3Kathisma1.melody</>End-Title
+				Title role greekmelody rid peMA.Ode3Kathisma1.greekmelody End-Title
 				Media rid peMA.Ode3Kathisma1.text End-Media
 				Hymn rid peMA.Ode3Kathisma1.text @ver media-off End-Hymn
 				Title sid ti.Glory End-Title
 				Title<Tmode>rid peMA.Ode3Kathisma2.mode</><Tmelody>rid peMA.Ode3Kathisma2.melody</>End-Title
+				Title role greekmelody rid peMA.Ode3Kathisma2.greekmelody End-Title
 				Media rid peMA.Ode3Kathisma2.text End-Media
 				Hymn rid peMA.Ode3Kathisma2.text @ver media-off End-Hymn
 				Insert_section TI.b.f End-Insert
 				Title<Tmode>rid peMA.Ode3Kathisma3.mode</><Tmelody>rid peMA.Ode3Kathisma3.melody</>End-Title
+				Title role greekmelody rid peMA.Ode3Kathisma3.greekmelody End-Title
 				Media rid peMA.Ode3Kathisma3.text End-Media
 				Hymn rid peMA.Ode3Kathisma3.text @ver media-off End-Hymn
 			End-Section
@@ -4714,7 +5291,13 @@ Template MA
 					Actor sid Choir End-Actor
 					Title<Tdesig>sid ti.Kathisma</>End-Title
 					Title role source0 sid ti.sourceTriodion End-Title
-					Title<Tmode>rid trMA.Ode3Kathisma1.mode</><Tmelody>rid trMA.Ode3Kathisma1.melody</>End-Title
+					when-exists
+						rid trMA.Ode3Kathisma1.melody use: 
+							Title<Tmode>rid trMA.Ode3Kathisma1.mode</><Tmelody>sid trMA.Ode3Kathisma1.melody</>End-Title
+							Title role greekmelody rid trMA.Ode3Kathisma1.greekmelody End-Title
+						otherwise use:
+							Title<Tmode>rid trMA.Ode3Kathisma1.mode</>End-Title
+					end-when
 					Media rid trMA.Ode3Kathisma1.text End-Media
 					Hymn rid trMA.Ode3Kathisma1.text @ver media-off End-Hymn
 					Insert_section TI.g.me.com1 End-Insert
@@ -4731,7 +5314,13 @@ Template MA
 					Actor sid Choir End-Actor
 					Title<Tdesig>sid ti.Kathisma</>End-Title
 					Title role source0 sid ti.sourceTriodion End-Title
-					Title<Tmode>rid trMA.Ode3Kathisma1.mode</><Tmelody>rid trMA.Ode3Kathisma1.melody</>End-Title
+					when-exists
+						rid trMA.Ode3Kathisma1.melody use: 
+							Title<Tmode>rid trMA.Ode3Kathisma1.mode</><Tmelody>sid trMA.Ode3Kathisma1.melody</>End-Title
+							Title role greekmelody rid trMA.Ode3Kathisma1.greekmelody End-Title
+						otherwise use:
+							Title<Tmode>rid trMA.Ode3Kathisma1.mode</>End-Title
+					end-when
 					Media rid trMA.Ode3Kathisma1.text End-Media
 					Hymn rid trMA.Ode3Kathisma1.text @ver media-off End-Hymn
 					Insert_section TI.gb.me.com1 End-Insert
@@ -4745,7 +5334,13 @@ Template MA
 					Actor sid Choir End-Actor
 					Title<Tdesig>sid ti.Kathisma</>End-Title
 					Title role source0 sid ti.sourceTriodion End-Title
-					Title<Tmode>rid trMA.Ode3Kathisma1.mode</><Tmelody>rid trMA.Ode3Kathisma1.melody</>End-Title
+					when-exists
+						rid trMA.Ode3Kathisma1.melody use: 
+							Title<Tmode>rid trMA.Ode3Kathisma1.mode</><Tmelody>sid trMA.Ode3Kathisma1.melody</>End-Title
+							Title role greekmelody rid trMA.Ode3Kathisma1.greekmelody End-Title
+						otherwise use:
+							Title<Tmode>rid trMA.Ode3Kathisma1.mode</>End-Title
+					end-when
 					Media rid trMA.Ode3Kathisma1.text End-Media
 					Hymn rid trMA.Ode3Kathisma1.text @ver media-off End-Hymn
 					Insert_section TI.g.me._ End-Insert
@@ -4762,7 +5357,13 @@ Template MA
 					Actor sid Choir End-Actor
 					Title<Tdesig>sid ti.Kathisma</>End-Title
 					Title role source0 sid ti.sourceTriodion End-Title
-					Title<Tmode>rid trMA.Ode3Kathisma3.mode</><Tmelody>rid trMA.Ode3Kathisma3.melody</>End-Title
+					when-exists
+						rid trMA.Ode3Kathisma3.melody use: 
+							Title<Tmode>rid trMA.Ode3Kathisma3.mode</><Tmelody>sid trMA.Ode3Kathisma3.melody</>End-Title
+							Title role greekmelody rid trMA.Ode3Kathisma3.greekmelody End-Title
+						otherwise use:
+							Title<Tmode>rid trMA.Ode3Kathisma3.mode</>End-Title
+					end-when
 					Media rid trMA.Ode3Kathisma3.text End-Media
 					Hymn rid trMA.Ode3Kathisma3.text @ver media-off End-Hymn
 					Title sid ti.Glory<Tdesig>sid ti.Another_1hymn</>End-Title
@@ -4816,7 +5417,13 @@ Template MA
 					Actor sid Choir End-Actor
 					Title<Tdesig>sid ti.Kathisma</>End-Title
 					Title role source0 sid ti.sourceTriodion End-Title
-					Title<Tmode>rid trMA.Ode3Kathisma1.mode</><Tmelody>rid trMA.Ode3Kathisma1.melody</>End-Title
+					when-exists
+						rid trMA.Ode3Kathisma1.melody use: 
+							Title<Tmode>rid trMA.Ode3Kathisma1.mode</><Tmelody>sid trMA.Ode3Kathisma1.melody</>End-Title
+							Title role greekmelody rid trMA.Ode3Kathisma1.greekmelody End-Title
+						otherwise use:
+							Title<Tmode>rid trMA.Ode3Kathisma1.mode</>End-Title
+					end-when
 					Media rid trMA.Ode3Kathisma1.text End-Media
 					Hymn rid trMA.Ode3Kathisma1.text @ver media-off End-Hymn
 					Title sid ti.GloryBothNow<Tdesig>sid ti.Repeat</>End-Title
@@ -4826,11 +5433,21 @@ Template MA
 					Actor sid Choir End-Actor
 					Title<Tdesig>sid ti.Kathisma</>End-Title
 					Title role source0 sid ti.sourceTriodion End-Title
-					Title<Tmode>rid trMA.Ode3Kathisma1.mode</><Tmelody>rid trMA.Ode3Kathisma1.melody</>End-Title
+					when-exists
+						rid trMA.Ode3Kathisma1.melody use: 
+							Title<Tmode>rid trMA.Ode3Kathisma1.mode</><Tmelody>sid trMA.Ode3Kathisma1.melody</>End-Title
+							Title role greekmelody rid trMA.Ode3Kathisma1.greekmelody End-Title
+						otherwise use:
+							Title<Tmode>rid trMA.Ode3Kathisma1.mode</>End-Title
+					end-when
 					Media rid trMA.Ode3Kathisma1.text End-Media
 					Hymn rid trMA.Ode3Kathisma1.text @ver media-off End-Hymn
 					Title sid ti.GloryBothNow<Tdesig>sid ti.Theotokion</>End-Title
-					Title<Tmode>rid trMA.Ode3Kathisma2.mode</><Tmelody>rid trMA.Ode3Kathisma2.melody</>End-Title
+					when-exists
+						rid trMA.Ode3Kathisma2.melody use: 
+							Title<Tmode>rid trMA.Ode3Kathisma2.mode</><Tmelody>sid trMA.Ode3Kathisma2.melody</>End-Title
+							Title role greekmelody rid trMA.Ode3Kathisma2.greekmelody End-Title
+					end-when
 					Hymn rid trMA.Ode3Kathisma2.text @ver media-off End-Hymn
 				End-Section
 				Section sunday
@@ -4897,6 +5514,7 @@ Template MA
 			Section pe1
 				Actor sid Choir End-Actor
 				Title<Tdesig>rid peMA.Ode8C1H.ode</><Tdesig>rid peMA.Ode8C1H.melody</><Tmode>rid peMA.Ode8C1H.mode</>End-Title
+				Title role greekmelody rid peMA.Ode8C1H.greekmelody End-Title
 				Verse sid bode8.v19.text End-Verse
 				Para role heirmos rid peMA.Ode8C1H.text @ver End-Para
 			End-Section
@@ -5990,31 +6608,37 @@ Template MA
 				Section exap1
 					Title role source0 sid ti.sourcePentecostarion End-Title
 					Title<Tmode>rid peMA.Exaposteilarion1.mode</><Tmelody>rid peMA.Exaposteilarion1.melody</>End-Title
+					Title role greekmelody rid peMA.Exaposteilarion1.greekmelody End-Title
 					Media rid peMA.Exaposteilarion1.text End-Media
 					Hymn rid peMA.Exaposteilarion1.text @ver media-off End-Hymn
 				End-Section
 				Section exap112
 					Title role source0 sid ti.sourcePentecostarion End-Title
 					Title<Tmode>rid peMA.Exaposteilarion1.mode</><Tmelody>rid peMA.Exaposteilarion1.melody</>End-Title
+					Title role greekmelody rid peMA.Exaposteilarion1.greekmelody End-Title
 					Hymn rid peMA.Exaposteilarion1.text<r>sid ru.Twice media-off</>End-Hymn
 					Title<Tdesig>sid ti.Another_1hymn</>End-Title
 					Title<Tmode>rid peMA.Exaposteilarion2.mode</><Tmelody>rid peMA.Exaposteilarion2.melody</>End-Title
+					Title role greekmelody rid peMA.Exaposteilarion2.greekmelody End-Title
 					Media rid peMA.Exaposteilarion2.text End-Media
 					Hymn rid peMA.Exaposteilarion2.text @ver media-off End-Hymn
 				End-Section
 				Section exap12
 					Title role source0 sid ti.sourcePentecostarion End-Title
 					Title<Tmode>rid peMA.Exaposteilarion1.mode</><Tmelody>rid peMA.Exaposteilarion1.melody</>End-Title
+					Title role greekmelody rid peMA.Exaposteilarion1.greekmelody End-Title
 					Media rid peMA.Exaposteilarion1.text End-Media
 					Hymn rid peMA.Exaposteilarion1.text @ver media-off End-Hymn
 					Title<Tdesig>sid ti.Another_1hymn</>End-Title
 					Title<Tmode>rid peMA.Exaposteilarion2.mode</><Tmelody>rid peMA.Exaposteilarion2.melody</>End-Title
+					Title role greekmelody rid peMA.Exaposteilarion2.greekmelody End-Title
 					Media rid peMA.Exaposteilarion2.text End-Media
 					Hymn rid peMA.Exaposteilarion2.text @ver media-off End-Hymn
 				End-Section
 				Section exap1t
 					Title role source0 sid ti.sourcePentecostarion End-Title
 					Title<Tmode>rid peMA.Exaposteilarion1.mode</><Tmelody>rid peMA.Exaposteilarion1.melody</>End-Title
+					Title role greekmelody rid peMA.Exaposteilarion1.greekmelody End-Title
 					Media rid peMA.Exaposteilarion1.text End-Media
 					Hymn rid peMA.Exaposteilarion1.text @ver media-off End-Hymn
 					Title<Tdesig>sid ti.Theotokion sid ti.SameMelody_1hymn</>End-Title
@@ -6024,6 +6648,7 @@ Template MA
 				Section exap2
 					Title role source0 sid ti.sourcePentecostarion End-Title
 					Title<Tmode>rid peMA.Exaposteilarion2.mode</><Tmelody>rid peMA.Exaposteilarion2.melody</>End-Title
+					Title role greekmelody rid peMA.Exaposteilarion2.greekmelody End-Title
 					Media rid peMA.Exaposteilarion2.text End-Media
 					Hymn rid peMA.Exaposteilarion2.text @ver media-off End-Hymn
 				End-Section
@@ -6031,6 +6656,7 @@ Template MA
 			Section tr1
 				Title role source0 sid ti.sourceTriodion End-Title
 				Title<Tmode>rid trMA.Exaposteilarion1.mode</><Tmelody>rid trMA.Exaposteilarion1.melody</>End-Title
+				Title role greekmelody rid trMA.Exaposteilarion1.greekmelody End-Title
 				Media rid trMA.Exaposteilarion1.text End-Media
 				Hymn rid trMA.Exaposteilarion1.text @ver media-off End-Hymn
 			End-Section
@@ -6038,6 +6664,7 @@ Template MA
 				Title role source sid ti.sourceTriodion End-Title
 				Title<Tdesig>sid ti.Exaposteilaria</>End-Title
 				Title<Tmode>rid trMA.Exaposteilarion1.mode</><Tmelody>rid trMA.Exaposteilarion1.melody</>End-Title
+				Title role greekmelody rid trMA.Exaposteilarion1.greekmelody End-Title
 				Hymn rid trMA.Exaposteilarion1.text @ver <r>sid ru.Twice</>End-Hymn
 				Title<Tdesig>sid ti.Another_1hymn sid ti.SameMelody_1hymn</>End-Title
 				Media rid trMA.Exaposteilarion2.text End-Media
@@ -6049,6 +6676,7 @@ Template MA
 					Section hymn
 						Title role source0 sid ti.sourceTriodion End-Title
 						Title<Tmode>rid trMA.Exaposteilarion1.mode</><Tmelody>rid trMA.Exaposteilarion1.melody</>End-Title
+						Title role greekmelody rid trMA.Exaposteilarion1.greekmelody End-Title
 						Media rid trMA.Exaposteilarion1.text End-Media
 						Hymn rid trMA.Exaposteilarion1.text @ver media-off End-Hymn
 					End-Section
@@ -6059,6 +6687,7 @@ Template MA
 						Section hymn
 							Title role source0 sid ti.sourceTriodion End-Title
 							Title<Tmode>rid trMA.Exaposteilarion2.mode</><Tmelody>rid trMA.Exaposteilarion2.melody</>End-Title
+							Title role greekmelody rid trMA.Exaposteilarion2.greekmelody End-Title
 							Media rid trMA.Exaposteilarion2.text End-Media
 							Hymn rid trMA.Exaposteilarion2.text @ver media-off End-Hymn
 						End-Section
@@ -6074,6 +6703,7 @@ Template MA
 									Title<Tdesig>sid ti.Theotokion</>End-Title
 							end-when
 							Title<Tmode>rid trMA.ExapTheotokion.mode</><Tmelody>rid trMA.ExapTheotokion.melody</>End-Title
+							Title role greekmelody rid trMA.ExapTheotokion.greekmelody End-Title
 							Media rid trMA.ExapTheotokion.text End-Media
 							Hymn rid trMA.ExapTheotokion.text @ver media-off End-Hymn
 						End-Section
@@ -6465,6 +7095,7 @@ Template MA
 					Section hymn
 						Title role source0 sid ti.sourcePentecostarion End-Title
 						Title<Tmode>rid peMA.Exaposteilarion1.mode</><Tmelody>rid peMA.Exaposteilarion1.melody</>End-Title
+						Title role greekmelody rid peMA.Exaposteilarion1.greekmelody End-Title
 						Media rid peMA.Exaposteilarion1.text End-Media
 						Hymn rid peMA.Exaposteilarion1.text @ver media-off End-Hymn
 					End-Section
@@ -6475,6 +7106,7 @@ Template MA
 					Section hymns
 						Title role source0 sid ti.sourcePentecostarion End-Title
 						Title<Tmode>rid peMA.Exaposteilarion1.mode</><Tmelody>rid peMA.Exaposteilarion1.melody</>End-Title
+						Title role greekmelody rid peMA.Exaposteilarion1.greekmelody End-Title
 						Media rid peMA.Exaposteilarion1.text End-Media
 						Hymn rid peMA.Exaposteilarion1.text @ver media-off End-Hymn
 						Title<Tdesig>sid ti.Theotokion sid ti.SameMelody_1hymn</>End-Title
@@ -6488,6 +7120,7 @@ Template MA
 					Section hymn
 						Title role source0 sid ti.sourcePentecostarion End-Title
 						Title<Tmode>rid peMA.Exaposteilarion1.mode</><Tmelody>rid peMA.Exaposteilarion1.melody</>End-Title
+						Title role greekmelody rid peMA.Exaposteilarion1.greekmelody End-Title
 						Hymn rid peMA.Exaposteilarion1.text @ver <r>sid ru.Twice media-off</>End-Hymn
 					End-Section
 				End-Section
@@ -6497,6 +7130,7 @@ Template MA
 					Section hymn
 						Title role source0 sid ti.sourcePentecostarion End-Title
 						Title<Tmode>rid peMA.Exaposteilarion1.mode</><Tmelody>rid peMA.Exaposteilarion1.melody</>End-Title
+						Title role greekmelody rid peMA.Exaposteilarion1.greekmelody End-Title
 						Hymn rid peMA.Exaposteilarion1.text @ver <r>sid ru.Thrice media-off</>End-Hymn
 					End-Section
 				End-Section
@@ -6506,9 +7140,9 @@ Template MA
 					Section hymns
 						Title role source0 sid ti.sourcePentecostarion End-Title
 						Title<Tmode>rid peMA.Exaposteilarion1.mode</><Tmelody>rid peMA.Exaposteilarion1.melody</>End-Title
+						Title role greekmelody rid peMA.Exaposteilarion1.greekmelody End-Title
 						Hymn rid peMA.Exaposteilarion1.text<r>sid ru.Twice media-off</>End-Hymn
 						Title<Tdesig>sid ti.Another_1hymn</>End-Title
-						Title<Tmode>rid peMA.Exaposteilarion2.mode</><Tmelody>rid peMA.Exaposteilarion2.melody</>End-Title
 						Media rid peMA.Exaposteilarion2.text End-Media
 						Hymn rid peMA.Exaposteilarion2.text @ver media-off End-Hymn
 					End-Section
@@ -6982,6 +7616,7 @@ Template MA
 				Section hymn
 					Title role source0 sid ti.sourcePentecostarion End-Title
 					Title<Tmode>rid peMA.Exaposteilarion1.mode</><Tmelody>rid peMA.Exaposteilarion1.melody</>End-Title
+					Title role greekmelody rid peMA.Exaposteilarion1.greekmelody End-Title
 					Media rid peMA.Exaposteilarion1.text End-Media
 					Hymn rid peMA.Exaposteilarion1.text @ver media-off End-Hymn
 				End-Section
@@ -6992,6 +7627,7 @@ Template MA
 				Section hymns
 					Title role source0 sid ti.sourcePentecostarion End-Title
 					Title<Tmode>rid peMA.Exaposteilarion1.mode</><Tmelody>rid peMA.Exaposteilarion1.melody</>End-Title
+					Title role greekmelody rid peMA.Exaposteilarion1.greekmelody End-Title
 					Media rid peMA.Exaposteilarion1.text End-Media
 					Hymn rid peMA.Exaposteilarion1.text @ver media-off End-Hymn
 					Title<Tdesig>sid ti.Theotokion sid ti.SameMelody_1hymn</>End-Title
@@ -7005,6 +7641,7 @@ Template MA
 				Section hymn
 					Title role source0 sid ti.sourcePentecostarion End-Title
 					Title<Tmode>rid peMA.Exaposteilarion1.mode</><Tmelody>rid peMA.Exaposteilarion1.melody</>End-Title
+					Title role greekmelody rid peMA.Exaposteilarion1.greekmelody End-Title
 					Hymn rid peMA.Exaposteilarion1.text @ver <r>sid ru.Twice media-off</>End-Hymn
 				End-Section
 			End-Section
@@ -7014,6 +7651,7 @@ Template MA
 				Section hymn
 					Title role source0 sid ti.sourcePentecostarion End-Title
 					Title<Tmode>rid peMA.Exaposteilarion1.mode</><Tmelody>rid peMA.Exaposteilarion1.melody</>End-Title
+					Title role greekmelody rid peMA.Exaposteilarion1.greekmelody End-Title
 					Hymn rid peMA.Exaposteilarion1.text @ver <r>sid ru.Thrice media-off</>End-Hymn
 				End-Section
 			End-Section
@@ -7022,10 +7660,10 @@ Template MA
 				Title<Tdesig>sid ti.Exaposteilaria</>End-Title
 				Section hymns
 					Title role source0 sid ti.sourcePentecostarion End-Title
-					Title<Tmode>rid peMA.Exaposteilarion1.mode</><Tmelody>rid peMA.Exaposteilarion1.melody</>End-Title
 					Hymn rid peMA.Exaposteilarion1.text @ver<r>sid ru.Twice media-off</>End-Hymn
 					Title<Tdesig>sid ti.Another_1hymn</>End-Title
 					Title<Tmode>rid peMA.Exaposteilarion2.mode</><Tmelody>rid peMA.Exaposteilarion2.melody</>End-Title
+					Title role greekmelody rid peMA.Exaposteilarion2.greekmelody End-Title
 					Media rid peMA.Exaposteilarion2.text End-Media
 					Hymn rid peMA.Exaposteilarion2.text @ver media-off End-Hymn
 				End-Section
@@ -7036,10 +7674,12 @@ Template MA
 				Section hymns
 					Title role source0 sid ti.sourcePentecostarion End-Title
 					Title<Tmode>rid peMA.Exaposteilarion1.mode</><Tmelody>rid peMA.Exaposteilarion1.melody</>End-Title
+					Title role greekmelody rid peMA.Exaposteilarion1.greekmelody End-Title
 					Media rid peMA.Exaposteilarion1.text End-Media
 					Hymn rid peMA.Exaposteilarion1.text @ver media-off End-Hymn
 					Title<Tdesig>sid ti.Another_1hymn</>End-Title
 					Title<Tmode>rid peMA.Exaposteilarion2.mode</><Tmelody>rid peMA.Exaposteilarion2.melody</>End-Title
+					Title role greekmelody rid peMA.Exaposteilarion2.greekmelody End-Title
 					Media rid peMA.Exaposteilarion2.text End-Media
 					Hymn rid peMA.Exaposteilarion2.text @ver media-off End-Hymn
 				End-Section
@@ -7079,6 +7719,7 @@ Template MA
 				Title<Tdesig>sid ti.Exaposteilarion</>End-Title
 				Title role source0 sid ti.sourceTriodion End-Title
 				Title<Tmode>rid trMA.Exaposteilarion1.mode</><Tmelody>rid trMA.Exaposteilarion1.melody</>End-Title
+				Title role greekmelody rid trMA.Exaposteilarion1.greekmelody End-Title
 				Media rid trMA.Exaposteilarion1.text End-Media
 				Hymn rid trMA.Exaposteilarion1.text @ver media-off <r>sid ru.Twice</>End-Hymn
 			End-Section
@@ -7087,6 +7728,7 @@ Template MA
 				Title<Tdesig>sid ti.Exaposteilaria</>End-Title
 				Title role source0 sid ti.sourceTriodion End-Title
 				Title<Tmode>rid trMA.Exaposteilarion1.mode</><Tmelody>rid trMA.Exaposteilarion1.melody</>End-Title
+				Title role greekmelody rid trMA.Exaposteilarion1.greekmelody End-Title
 				Media rid trMA.Exaposteilarion1.text End-Media
 				Hymn rid trMA.Exaposteilarion1.text @ver media-off <r>sid ru.Thrice</>End-Hymn
 			End-Section
@@ -7095,6 +7737,7 @@ Template MA
 				Title<Tdesig>sid ti.Exaposteilaria</>End-Title
 				Title role source0 sid ti.sourceTriodion End-Title
 				Title<Tmode>rid trMA.Exaposteilarion1.mode</><Tmelody>rid trMA.Exaposteilarion1.melody</>End-Title
+				Title role greekmelody rid trMA.Exaposteilarion1.greekmelody End-Title
 				Media rid trMA.Exaposteilarion1.text End-Media
 				Hymn rid trMA.Exaposteilarion1.text @ver media-off <r>sid ru.Twice</>End-Hymn
 				Title<Tdesig>sid ti.Another_1hymn sid ti.SameMelody_1hymn</>End-Title
@@ -7108,6 +7751,7 @@ Template MA
 					Section hymn
 						Title role source0 sid ti.sourceTriodion End-Title
 						Title<Tmode>rid trMA.Exaposteilarion1.mode</><Tmelody>rid trMA.Exaposteilarion1.melody</>End-Title
+						Title role greekmelody rid trMA.Exaposteilarion1.greekmelody End-Title
 						Media rid trMA.Exaposteilarion1.text End-Media
 						Hymn rid trMA.Exaposteilarion1.text @ver media-off End-Hymn
 					End-Section
@@ -7117,6 +7761,7 @@ Template MA
 						Title<Tdesig>sid ti.Another_1hymn</>End-Title
 						Section hymn
 							Title<Tmode>rid trMA.Exaposteilarion2.mode</><Tmelody>rid trMA.Exaposteilarion2.melody</>End-Title
+							Title role greekmelody rid trMA.Exaposteilarion2.greekmelody End-Title
 							Media rid trMA.Exaposteilarion2.text End-Media
 							Hymn rid trMA.Exaposteilarion2.text @ver media-off End-Hymn
 						End-Section
@@ -7127,6 +7772,7 @@ Template MA
 						Section hymn
 							Title<Tdesig>sid ti.Theotokion</>End-Title
 							Title<Tmode>rid trMA.ExapTheotokion.mode</><Tmelody>rid trMA.ExapTheotokion.melody</>End-Title
+							Title role greekmelody rid trMA.ExapTheotokion.greekmelody End-Title
 							Media rid trMA.ExapTheotokion.text End-Media
 							Hymn rid trMA.ExapTheotokion.text @ver media-off End-Hymn
 						End-Section
@@ -10261,6 +10907,7 @@ Template MA
 			Section p_1123as3456
 				Title role source0 sid ti.sourcePentecostarion End-Title
 				Title<Tmode>rid peMA.Lauds1.mode</><Tmelody>rid peMA.Lauds1.melody</>End-Title
+				Title role greekmelody rid peMA.Lauds1.greekmelody End-Title
 				Media rid peMA.Lauds1.text End-Media
 				Insert_section Lauds_Verses.v03 End-Insert
 				Hymn rid peMA.Lauds1.text @ver media-off End-Hymn
@@ -10276,6 +10923,7 @@ Template MA
 			Section p_123as123
 				Title role source0 sid ti.sourcePentecostarion End-Title
 				Title<Tmode>rid peMA.Lauds1.mode</><Tmelody>rid peMA.Lauds1.melody</>End-Title
+				Title role greekmelody rid peMA.Lauds1.greekmelody End-Title
 				Media rid peMA.MM.Lauds123as123.text End-Media
 				Insert_section Lauds_Verses.v01 End-Insert
 				Hymn rid peMA.Lauds1.text @ver media-off End-Hymn
@@ -10287,6 +10935,7 @@ Template MA
 			Section p_123as345
 				Title role source0 sid ti.sourcePentecostarion End-Title
 				Title<Tmode>rid peMA.Lauds1.mode</><Tmelody>rid peMA.Lauds1.melody</>End-Title
+				Title role greekmelody rid peMA.Lauds1.greekmelody End-Title
 				Media rid peMA.MM.Lauds123as345.text End-Media
 				Insert_section Lauds_Verses.v03 End-Insert
 				Hymn rid peMA.Lauds1.text @ver media-off End-Hymn
@@ -10298,6 +10947,7 @@ Template MA
 			Section p_123as456
 				Title role source0 sid ti.sourcePentecostarion End-Title
 				Title<Tmode>rid peMA.Lauds1.mode</><Tmelody>rid peMA.Lauds1.melody</>End-Title
+				Title role greekmelody rid peMA.Lauds1.greekmelody End-Title
 				Media rid peMA.MM.Lauds123as456.text End-Media
 				Insert_section Lauds_Verses.v04 End-Insert
 				Hymn rid peMA.Lauds1.text @ver media-off End-Hymn
@@ -10309,6 +10959,7 @@ Template MA
 			Section p_1234as3456
 				Title role source0 sid ti.sourcePentecostarion End-Title
 				Title<Tmode>rid peMA.Lauds1.mode</><Tmelody>rid peMA.Lauds1.melody</>End-Title
+				Title role greekmelody rid peMA.Lauds1.greekmelody End-Title
 				Media rid peMA.Lauds1.text End-Media
 				Insert_section Lauds_Verses.v03 End-Insert
 				Hymn rid peMA.Lauds1.text @ver media-off End-Hymn
@@ -10325,6 +10976,7 @@ Template MA
 			Section p_567as345
 				Title role source0 sid ti.sourcePentecostarion End-Title
 				Title<Tmode>rid peMA.Lauds5.mode</><Tmelody>rid peMA.Lauds5.melody</>End-Title
+				Title role greekmelody rid peMA.Lauds5.greekmelody End-Title
 				Media rid peMA.Lauds5.text End-Media
 				Insert_section Lauds_Verses.v03 End-Insert
 				Hymn rid peMA.Lauds5.text @ver media-off End-Hymn
@@ -10349,6 +11001,7 @@ Template MA
 			Section p_6678as56allsaints12
 				Title role source0 sid ti.sourcePentecostarion End-Title
 				Title<Tmode>rid peMA.Lauds6.mode</><Tmelody>rid peMA.Lauds6.melody</>End-Title
+				Title role greekmelody rid peMA.Lauds6.greekmelody End-Title
 				Media rid peMA.Lauds6.text End-Media
 				Insert_section Lauds_Verses.v05 End-Insert
 				Hymn rid peMA.Lauds6.text @ver media-off End-Hymn
@@ -10364,6 +11017,7 @@ Template MA
 			Section p_6678as56holyfathers12
 				Title role source0 sid ti.sourcePentecostarion End-Title
 				Title<Tmode>rid peMA.Lauds6.mode</><Tmelody>rid peMA.Lauds6.melody</>End-Title
+				Title role greekmelody rid peMA.Lauds6.greekmelody End-Title
 				Media rid peMA.Lauds6.text End-Media
 				Insert_section Lauds_Verses.v05 End-Insert
 				Hymn rid peMA.Lauds6.text @ver media-off End-Hymn
@@ -10380,6 +11034,7 @@ Template MA
 				Title role source0 sid ti.sourcePentecostarion End-Title
 				Media rid peMA.MM.Lauds678as345.text End-Media
 				Title<Tmode>rid peMA.Lauds6.mode</><Tmelody>rid peMA.Lauds6.melody</>End-Title
+				Title role greekmelody rid peMA.Lauds6.greekmelody End-Title
 				Insert_section Lauds_Verses.v03 End-Insert
 				Hymn rid peMA.Lauds6.text @ver media-off End-Hymn
 				Insert_section Lauds_Verses.v04 End-Insert
@@ -10390,6 +11045,7 @@ Template MA
 			Section p_678as6allsaints12
 				Title role source0 sid ti.sourcePentecostarion End-Title
 				Title<Tmode>rid peMA.Lauds6.mode</><Tmelody>rid peMA.Lauds6.melody</>End-Title
+				Title role greekmelody rid peMA.Lauds6.greekmelody End-Title
 				Media rid peMA.Lauds6.text End-Media
 				Insert_section Lauds_Verses.v06 End-Insert
 				Hymn rid peMA.Lauds6.text @ver media-off End-Hymn
@@ -10404,6 +11060,7 @@ Template MA
 				Title role source0 sid ti.sourceMenaion End-Title
 			//	Media rid peMA.MM.Apos1123as3456.text End-Media
 				Title<Tmode>rid peMA.Aposticha1.mode</><Tmelody>rid peMA.Aposticha1.melody</>End-Title
+				Title role greekmelody rid peMA.Aposticha1.greekmelody End-Title
 				Insert_section Lauds_Verses.v03 End-Insert
 				Hymn rid peMA.Aposticha1.text @ver media-off End-Hymn
 				Insert_section Lauds_Verses.v04 End-Insert
@@ -10514,11 +11171,19 @@ Template MA
 									Media rid peMA.Lauds1.text End-Media
 									Hymn rid peMA.Lauds1.text @ver media-off End-Hymn
 									Insert_section Lauds_Verses.v05 End-Insert
-									Title<Tdesig>sid ti.ForCompunction_1hymn</><Tmelody>rid peMA.Lauds2.melody</>End-Title
+									Title<Tdesig>sid ti.ForCompunction_1hymn</>End-Title
+									when-exists rid peMA.Lauds2.melody use: 
+										Title role melody rid peMA.Lauds2.melody End-Title
+										Title role greekmelody rid peMA.Lauds2.greekmelody End-Title
+									end-when
 									Media rid peMA.Lauds2.text End-Media
 									Hymn rid peMA.Lauds2.text @ver media-off End-Hymn
 									Insert_section Lauds_Verses.v06 End-Insert
-									Title<Tdesig>sid ti.ForMartyrs_1hymn</><Tmelody>rid peMA.Lauds3.melody</>End-Title
+									Title<Tdesig>sid ti.ForMartyrs_1hymn</>End-Title
+									when-exists rid peMA.Lauds3.melody use: 
+										Title role melody rid peMA.Lauds3.melody End-Title
+										Title role greekmelody rid peMA.Lauds3.greekmelody End-Title
+									end-when
 									Media rid peMA.Lauds3.text End-Media
 									Hymn rid peMA.Lauds3.text @ver media-off End-Hymn
 								End-Section
@@ -10540,7 +11205,11 @@ Template MA
 							Media rid peMA.Lauds2.text End-Media
 							Hymn rid peMA.Lauds2.text @ver media-off End-Hymn
 							Insert_section Lauds_Verses.v06 End-Insert
-							Title<Tdesig>sid ti.ForMartyrs_1hymn</><Tmelody>rid peMA.Lauds3.melody</>End-Title
+							Title<Tdesig>sid ti.ForMartyrs_1hymn</>End-Title
+							when-exists rid peMA.Lauds3.melody use: 
+								Title role melody rid peMA.Lauds3.melody End-Title
+								Title role greekmelody rid peMA.Lauds3.greekmelody End-Title
+							end-when
 							Media rid peMA.Lauds3.text End-Media
 							Hymn rid peMA.Lauds3.text @ver media-off End-Hymn
 						End-Section
@@ -10557,11 +11226,19 @@ Template MA
 							Media rid peMA.Lauds1.text End-Media
 							Hymn rid peMA.Lauds1.text @ver media-off End-Hymn
 							Insert_section Lauds_Verses.v05 End-Insert
-							Title<Tdesig>sid ti.ForApostle</><Tmelody>rid peMA.Lauds2.melody</>End-Title
+							Title<Tdesig>sid ti.ForApostle</>End-Title
+							when-exists rid peMA.Lauds2.melody use: 
+								Title role melody rid peMA.Lauds2.melody End-Title
+								Title role greekmelody rid peMA.Lauds2.greekmelody End-Title
+							end-when
 							Media rid peMA.Lauds2.text End-Media
 							Hymn rid peMA.Lauds2.text @ver media-off End-Hymn
 							Insert_section Lauds_Verses.v06 End-Insert
-							Title<Tdesig>sid ti.ForMartyrs_1hymn</><Tmelody>rid peMA.Lauds3.melody</>End-Title
+							Title<Tdesig>sid ti.ForMartyrs_1hymn</>End-Title
+							when-exists rid peMA.Lauds3.melody use: 
+								Title role melody rid peMA.Lauds3.melody End-Title
+								Title role greekmelody rid peMA.Lauds3.greekmelody End-Title
+							end-when
 							Media rid peMA.Lauds3.text End-Media
 							Hymn rid peMA.Lauds3.text @ver media-off End-Hymn
 						End-Section
@@ -10803,40 +11480,60 @@ Template MA
 			Section octr__
 				Section saturday_
 					Section stich_1234as3456
-						Title<Tdesig>sid ti.ForMartyrs_hymns</><Tmode>rid octrMA.Lauds1.mode</>End-Title
+						Title<Tdesig>sid ti.ForMartyrs_hymns</>End-Title
 						Title role source0 sid ti.sourceTriodion End-Title
-						when-exists rid octrMA.Lauds1.melody use:
-							Title<Tmelody>rid octrMA.Lauds1.melody</>End-Title
+						when-exists
+							rid octrMA.Lauds1.melody use: 
+								Title<Tmode>rid octrMA.Lauds1.mode</><Tmelody>sid octrMA.Lauds1.melody</>End-Title
+								Title role greekmelody rid octrMA.Lauds1.greekmelody End-Title
+							otherwise use:
+								Title<Tmode>rid octrMA.Lauds1.mode</>End-Title
 						end-when
 						Media rid octrMA.Lauds1.text End-Media
 						Insert_section Lauds_Verses.v03 End-Insert
 						Hymn rid octrMA.Lauds1.text @ver media-off End-Hymn
-						when-exists rid octrMA.Lauds2.melody use:
-							Title<Tmelody>rid octrMA.Lauds2.melody</>End-Title
+						when-exists
+							rid octrMA.Lauds2.melody use: 
+								Title<Tmode>rid octrMA.Lauds2.mode</><Tmelody>sid octrMA.Lauds2.melody</>End-Title
+								Title role greekmelody rid octrMA.Lauds2.greekmelody End-Title
 						end-when
 						Media rid octrMA.Lauds2.text End-Media
 						Insert_section Lauds_Verses.v04 End-Insert
 						Hymn rid octrMA.Lauds2.text @ver media-off End-Hymn
-						when-exists rid octrMA.Lauds3.melody use:
-							Title<Tmelody>rid octrMA.Lauds3.melody</>End-Title
+						when-exists
+							rid octrMA.Lauds3.melody use: 
+								Title<Tmode>rid octrMA.Lauds3.mode</><Tmelody>sid octrMA.Lauds3.melody</>End-Title
+								Title role greekmelody rid octrMA.Lauds3.greekmelody End-Title
 						end-when
 						Media rid octrMA.Lauds3.text End-Media
 						Insert_section Lauds_Verses.v05 End-Insert
 						Hymn rid octrMA.Lauds3.text @ver media-off End-Hymn
-						when-exists rid octrMA.Lauds4.melody use:
-							Title<Tmelody>rid octrMA.Lauds4.melody</>End-Title
+						when-exists
+							rid octrMA.Lauds4.melody use: 
+								Title<Tmode>rid octrMA.Lauds4.mode</><Tmelody>sid octrMA.Lauds4.melody</>End-Title
+								Title role greekmelody rid octrMA.Lauds4.greekmelody End-Title
 						end-when
 						Media rid octrMA.Lauds4.text End-Media
 						Insert_section Lauds_Verses.v06 End-Insert
 						Hymn rid octrMA.Lauds4.text @ver media-off End-Hymn
 					End-Section
 					Section glory_fordeceased
-						Title sid ti.Glory<Tdesig>sid ti.ForDead_1hymn</><Tmelody>rid octrMA.LaudsGlory.melody</>End-Title
+						Title sid ti.Glory<Tdesig>sid ti.ForDead_1hymn</>End-Title
+						when-exists
+							rid octrMA.LaudsGlory.melody use: 
+								Title<Tmode>rid octrMA.LaudsGlory.mode</><Tmelody>sid octrMA.LaudsGlory.melody</>End-Title
+								Title role greekmelody rid octrMA.LaudsGlory.greekmelody End-Title
+						end-when
 						Media rid octrMA.LaudsGlory.text End-Media
 						Hymn rid octrMA.LaudsGlory.text @ver media-off End-Hymn
 					End-Section
 					Section both_theotokion
-						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</><Tmelody>rid octrMA.LaudsTheotokion.melody</>End-Title
+						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
+						when-exists
+							rid octrMA.LaudsTheotokion.melody use: 
+								Title<Tmode>rid octrMA.LaudsTheotokion.mode</><Tmelody>sid octrMA.LaudsTheotokion.melody</>End-Title
+								Title role greekmelody rid octrMA.LaudsTheotokion.greekmelody End-Title
+						end-when
 						Media rid octrMA.LaudsTheotokion.text End-Media
 						Hymn rid octrMA.LaudsTheotokion.text @ver media-off End-Hymn
 					End-Section
@@ -10845,6 +11542,7 @@ Template MA
 			Section p_123as345
 				Title role source0 sid ti.sourceTriodion End-Title
 				Title<Tmode>rid trMA.Lauds1.mode</><Tmelody>rid trMA.Lauds1.melody</>End-Title
+				Title role greekmelody rid trMA.Lauds1.greekmelody End-Title
 				Media rid trMA.Lauds1.text End-Media
 				Insert_section Lauds_Verses.v03 End-Insert
 				Hymn rid trMA.Lauds1.text @ver media-off End-Hymn
@@ -10858,6 +11556,7 @@ Template MA
 			Section p_123as456
 				Title role source0 sid ti.sourceTriodion End-Title
 				Title<Tmode>rid trMA.Lauds1.mode</><Tmelody>rid trMA.Lauds1.melody</>End-Title
+				Title role greekmelody rid trMA.Lauds1.greekmelody End-Title
 				Media rid trMA.MM.Lauds123as456.text End-Media
 				Insert_section Lauds_Verses.v04 End-Insert
 				Hymn rid trMA.Lauds1.text @ver media-off End-Hymn
@@ -10871,6 +11570,7 @@ Template MA
 				Section hymns
 					Title role source0 sid ti.sourceTriodion End-Title
 					Title<Tmode>rid trMA.Lauds1.mode</><Tmelody>rid trMA.Lauds1.melody</>End-Title
+					Title role greekmelody rid trMA.Lauds1.greekmelody End-Title
 					Media rid trMA.Lauds1.text End-Media
 					Insert_section Lauds_Verses.v05 End-Insert
 					Hymn rid trMA.Lauds1.text @ver media-off End-Hymn
@@ -10901,6 +11601,7 @@ Template MA
 				Section hymns
 					Title role source0 sid ti.sourceTriodion End-Title
 					Title<Tmode>rid trMA.Lauds1.mode</><Tmelody>rid trMA.Lauds1.melody</>End-Title
+					Title role greekmelody rid trMA.Lauds1.greekmelody End-Title
 					Media rid trMA.Lauds1.text End-Media
 					Insert_section Lauds_Verses.v03 End-Insert
 					Hymn rid trMA.Lauds1.text @ver media-off End-Hymn
@@ -10919,6 +11620,7 @@ Template MA
 				Section hymns
 					Title role source0 sid ti.sourceTriodion End-Title
 					Title<Tmode>rid trMA.Lauds1.mode</><Tmelody>rid trMA.Lauds1.melody</>End-Title
+					Title role greekmelody rid trMA.Lauds1.greekmelody End-Title
 					Media rid trMA.Lauds1.text End-Media
 					Insert_section Lauds_Verses.v01 End-Insert
 					Hymn rid trMA.Lauds1.text @ver media-off End-Hymn
@@ -10935,6 +11637,7 @@ Template MA
 				Section hymns
 					Title role source0 sid ti.sourceTriodion End-Title
 					Title<Tmode>rid trMA.Lauds1.mode</><Tmelody>rid trMA.Lauds1.melody</>End-Title
+					Title role greekmelody rid trMA.Lauds1.greekmelody End-Title
 					Media rid trMA.Lauds1.text End-Media
 					Insert_section Lauds_Verses.v06 End-Insert
 					Hymn rid trMA.Lauds1.text @ver media-off End-Hymn
@@ -10963,6 +11666,7 @@ Template MA
 				Section hymns
 					Title role source0 sid ti.sourceTriodion End-Title
 					Title<Tmode>rid trMA.Lauds1.mode</><Tmelody>rid trMA.Lauds1.melody</>End-Title
+					Title role greekmelody rid trMA.Lauds1.greekmelody End-Title
 					Media rid trMA.Lauds1.text End-Media
 					Insert_section Lauds_Verses.v03 End-Insert
 					Hymn rid trMA.Lauds1.text @ver media-off End-Hymn
@@ -11804,16 +12508,30 @@ Template MA
 							Actor sid Choir End-Actor
 							Title<Tdesig>sid ti.ApostichaOctoechos</>End-Title
 							Title role source0 sid ti.sourceOctoechos End-Title
-							Title<Tmode>rid ocMA.Aposticha1.mode</><Tmelody>rid ocMA.Aposticha1.melody</>End-Title	
+							when-exists 
+								rid ocMA.Aposticha1.melody use: 
+									Title<Tmode>rid ocMA.Aposticha1.mode</><Tmelody>rid ocMA.Aposticha1.melody</>End-Title
+									Title role greekmelody rid ocMA.Aposticha1.greekmelody End-Title
+								otherwise use:
+									Title<Tmode>rid ocMA.Aposticha1.mode</>End-Title
+							end-when
 							Media rid ocMA.Aposticha1.text End-Media
 							Hymn rid ocMA.Aposticha1.text @ver media-off End-Hymn
 							Media rid ocMA.Aposticha2.text End-Media
 							Insert_section PsalmVerses.forMatinsAposticha.verse1 End-Insert
-							when-exists rid ocMA.Aposticha2.melody use: Title<Tmelody>rid ocMA.Aposticha2.melody</>End-Title end-when 
+							when-exists 
+								rid ocMA.Aposticha2.melody use: 
+									Title<Tmode>rid ocMA.Aposticha2.mode</><Tmelody>rid ocMA.Aposticha2.melody</>End-Title
+									Title role greekmelody rid ocMA.Aposticha2.greekmelody End-Title
+							end-when
 							Hymn rid ocMA.Aposticha2.text @ver media-off End-Hymn
 							Media rid ocMA.Aposticha3.text End-Media
 							Insert_section PsalmVerses.forMatinsAposticha.verse2 End-Insert
-							when-exists rid ocMA.Aposticha3.melody use: Title<Tmelody>rid ocMA.Aposticha3.melody</>End-Title end-when 
+							when-exists 
+								rid ocMA.Aposticha3.melody use: 
+									Title<Tmode>rid ocMA.Aposticha3.mode</><Tmelody>rid ocMA.Aposticha3.melody</>End-Title
+									Title role greekmelody rid ocMA.Aposticha3.greekmelody End-Title
+							end-when
 							Hymn rid ocMA.Aposticha3.text @ver media-off End-Hymn
 						End-Section
 					Saturday use:
@@ -11822,22 +12540,40 @@ Template MA
 								Actor sid Choir End-Actor
 								Title<Tdesig>sid ti.ApostichaOctoechos</>End-Title
 								Title role source0 sid ti.sourceOctoechos End-Title
-								Title<Tmode>rid ocMA.Aposticha1.mode</><Tmelody>rid ocMA.Aposticha1.melody</>End-Title	
+								when-exists 
+									rid ocMA.Aposticha1.melody use: 
+										Title<Tmode>rid ocMA.Aposticha1.mode</><Tmelody>rid ocMA.Aposticha1.melody</>End-Title
+										Title role greekmelody rid ocMA.Aposticha1.greekmelody End-Title
+									otherwise use:
+										Title<Tmode>rid ocMA.Aposticha1.mode</>End-Title
+								end-when
 								Media rid ocMA.Aposticha1.text End-Media
 								Hymn rid ocMA.Aposticha1.text @ver media-off End-Hymn
 								Media rid ocMA.Aposticha2.text End-Media
 								Insert_section PsalmVerses.forDeceased.verse1 End-Insert
-								when-exists rid ocMA.Aposticha2.melody use: Title<Tmelody>rid ocMA.Aposticha2.melody</>End-Title end-when 
+								when-exists 
+									rid ocMA.Aposticha2.melody use: 
+										Title<Tmode>rid ocMA.Aposticha2.mode</><Tmelody>rid ocMA.Aposticha2.melody</>End-Title
+										Title role greekmelody rid ocMA.Aposticha2.greekmelody End-Title
+								end-when
 								Hymn rid ocMA.Aposticha2.text @ver media-off End-Hymn
 								Media rid ocMA.Aposticha3.text End-Media
 								Insert_section PsalmVerses.forDeceased.verse2 End-Insert
-								when-exists rid ocMA.Aposticha3.melody use: Title<Tmelody>rid ocMA.Aposticha3.melody</>End-Title end-when 
+								when-exists 
+									rid ocMA.Aposticha3.melody use: 
+										Title<Tmode>rid ocMA.Aposticha3.mode</><Tmelody>rid ocMA.Aposticha3.melody</>End-Title
+										Title role greekmelody rid ocMA.Aposticha3.greekmelody End-Title
+								end-when
 								Hymn rid ocMA.Aposticha3.text @ver media-off End-Hymn
 							End-Section
 							when-exists rid ocMA.Aposticha4.text use:
 								Media rid ocMA.Aposticha4.text End-Media
 								Insert_section PsalmVerses.forDeceased.verse3 End-Insert
-								when-exists rid ocMA.Aposticha4.melody use: Title<Tmelody>rid ocMA.Aposticha4.melody</>End-Title end-when 
+								when-exists 
+									rid ocMA.Aposticha4.melody use: 
+										Title<Tmode>rid ocMA.Aposticha4.mode</><Tmelody>rid ocMA.Aposticha4.melody</>End-Title
+										Title role greekmelody rid ocMA.Aposticha4.greekmelody End-Title
+								end-when
 								Hymn rid ocMA.Aposticha4.text @ver media-off End-Hymn
 							end-when
 						End-Section
@@ -11847,22 +12583,28 @@ Template MA
 				when-name-of-day-is
 					Monday, Tuesday, Thursday use:
 						Title sid ti.GloryBothNow<Tdesig>sid ti.Theotokion</>End-Title
-						when-exists rid ocMA.AposTheotokion.melody use:
-							Title<Tmode>rid ocMA.AposTheotokion.mode</><Tmelody>rid ocMA.AposTheotokion.melody</>End-Title
+						when-exists 
+							rid ocMA.AposTheotokion.melody use: 
+								Title<Tmode>rid ocMA.AposTheotokion.mode</><Tmelody>rid ocMA.AposTheotokion.melody</>End-Title
+								Title role greekmelody rid ocMA.AposTheotokion.greekmelody End-Title
 						end-when
 						Media rid ocMA.AposTheotokion.text End-Media
 						Hymn rid ocMA.AposTheotokion.text @ver media-off End-Hymn
 					Wednesday, Friday use:
 						Title sid ti.GloryBothNow<Tdesig>sid ti.Stavrotheotokion</>End-Title
-						when-exists rid ocMA.AposTheotokion.melody use:
-							Title<Tmode>rid ocMA.AposTheotokion.mode</><Tmelody>rid ocMA.AposTheotokion.melody</>End-Title
+						when-exists 
+							rid ocMA.AposTheotokion.melody use: 
+								Title<Tmode>rid ocMA.AposTheotokion.mode</><Tmelody>rid ocMA.AposTheotokion.melody</>End-Title
+								Title role greekmelody rid ocMA.AposTheotokion.greekmelody End-Title
 						end-when
 						Media rid ocMA.AposTheotokion.text End-Media
 						Hymn rid ocMA.AposTheotokion.text @ver media-off End-Hymn
 					Saturday use:
 						Title sid ti.GloryBothNow<Tdesig>sid ti.Theotokion</>End-Title
-						when-exists rid ocMA.AposTheotokion.melody use:
-							Title<Tmode>rid ocMA.AposTheotokion.mode</><Tmelody>rid ocMA.AposTheotokion.melody</>End-Title
+						when-exists 
+							rid ocMA.AposTheotokion.melody use: 
+								Title<Tmode>rid ocMA.AposTheotokion.mode</><Tmelody>rid ocMA.AposTheotokion.melody</>End-Title
+								Title role greekmelody rid ocMA.AposTheotokion.greekmelody End-Title
 						end-when
 						Media rid ocMA.AposTheotokion.text End-Media
 						Hymn rid ocMA.AposTheotokion.text @ver media-off End-Hymn
@@ -11875,6 +12617,7 @@ Template MA
 				Insert_section TI.apos.f End-Insert
 				Title role source0 sid ti.sourcePentecostarion End-Title
 				Title<Tmode>rid peMA.Aposticha1.mode</><Tmelody>rid peMA.Aposticha1.melody</>End-Title	
+				Title role greekmelody rid peMA.Aposticha1.greekmelody End-Title
 				Media rid peMA.Aposticha1.text End-Media
 				Hymn rid peMA.Aposticha1.text @ver media-off End-Hymn
 				Media rid peMA.Aposticha2.text End-Media
@@ -11889,6 +12632,7 @@ Template MA
 				Title<Tdesig>sid ti.Aposticha</>End-Title
 				Title role source0 sid ti.sourcePentecostarion End-Title
 				Title<Tmode>rid peMA.Aposticha1.mode</><Tmelody>rid peMA.Aposticha1.melody</>End-Title	
+				Title role greekmelody rid peMA.Aposticha1.greekmelody End-Title
 				Media rid peMA.Aposticha1.text End-Media
 				Hymn rid peMA.Aposticha1.text @ver media-off End-Hymn
 				Media rid peMA.Aposticha2.text End-Media
@@ -11903,6 +12647,7 @@ Template MA
 				Insert_section TI.apos.f End-Insert
 				Title role source0 sid ti.sourcePentecostarion End-Title
 				Title<Tmode>rid peMA.Aposticha1.mode</><Tmelody>rid peMA.Aposticha1.melody</>End-Title	
+				Title role greekmelody rid peMA.Aposticha1.greekmelody End-Title
 				Media rid peMA.Aposticha1.text End-Media
 				Hymn rid peMA.Aposticha1.text @ver media-off End-Hymn
 				Media rid peMA.Aposticha2.text End-Media
@@ -11917,6 +12662,7 @@ Template MA
 				Insert_section TI.apos.f End-Insert
 				Title role source0 sid ti.sourcePentecostarion End-Title
 				Title<Tmode>rid peMA.Aposticha1.mode</><Tmelody>rid peMA.Aposticha1.melody</>End-Title	
+				Title role greekmelody rid peMA.Aposticha1.greekmelody End-Title
 				Media rid peMA.Aposticha1.text End-Media
 				Hymn rid peMA.Aposticha1.text @ver media-off End-Hymn
 				Media rid peMA.Aposticha2.text End-Media
@@ -11937,6 +12683,7 @@ Template MA
 										Insert_section TI.apos.f End-Insert
 										Title role source0 sid ti.sourcePentecostarion End-Title
 										Title<Tmode>rid peMA.Aposticha1.mode</><Tmelody>rid peMA.Aposticha1.melody</>End-Title	
+										Title role greekmelody rid peMA.Aposticha1.greekmelody End-Title
 										Media rid peMA.Aposticha1.text End-Media
 										Hymn rid peMA.Aposticha1.text @ver media-off End-Hymn
 										Media rid peMA.Aposticha2.text End-Media
@@ -11969,6 +12716,7 @@ Template MA
 							Title<Tdesig>sid ti.Aposticha sid ti.Myrrhbearers</>End-Title
 							Title role source0 sid ti.sourcePentecostarion End-Title
 							Title<Tmode>rid peMA.Aposticha1.mode</><Tmelody>rid peMA.Aposticha1.melody</>End-Title	
+							Title role greekmelody rid peMA.Aposticha1.greekmelody End-Title
 							Media rid peMA.Aposticha1.text End-Media
 							Hymn rid peMA.Aposticha1.text @ver media-off End-Hymn
 							Media rid peMA.Aposticha2.text End-Media
@@ -11984,6 +12732,7 @@ Template MA
 							Title<Tdesig>sid ti.Aposticha sid ti.Paralytic</>End-Title
 							Title role source0 sid ti.sourcePentecostarion End-Title
 							Title<Tmode>rid peMA.Aposticha1.mode</><Tmelody>rid peMA.Aposticha1.melody</>End-Title	
+							Title role greekmelody rid peMA.Aposticha1.greekmelody End-Title
 							Media rid peMA.Aposticha1.text End-Media
 							Hymn rid peMA.Aposticha1.text @ver media-off End-Hymn
 							Media rid peMA.Aposticha2.text End-Media
@@ -11999,6 +12748,7 @@ Template MA
 							Title<Tdesig>sid ti.Aposticha sid ti.Midpentecost</>End-Title
 							Title role source0 sid ti.sourcePentecostarion End-Title
 							Title<Tmode>rid peMA.Aposticha1.mode</><Tmelody>rid peMA.Aposticha1.melody</>End-Title	
+							Title role greekmelody rid peMA.Aposticha1.greekmelody End-Title
 							Media rid peMA.Aposticha1.text End-Media
 							Hymn rid peMA.Aposticha1.text @ver media-off End-Hymn
 							Media rid peMA.Aposticha2.text End-Media
@@ -12014,6 +12764,7 @@ Template MA
 							Title<Tdesig>sid ti.Aposticha sid ti.SamaritanWoman</>End-Title
 							Title role source0 sid ti.sourcePentecostarion End-Title
 							Title<Tmode>rid peMA.Aposticha1.mode</><Tmelody>rid peMA.Aposticha1.melody</>End-Title	
+							Title role greekmelody rid peMA.Aposticha1.greekmelody End-Title
 							Media rid peMA.Aposticha1.text End-Media
 							Hymn rid peMA.Aposticha1.text @ver media-off End-Hymn
 							Media rid peMA.Aposticha2.text End-Media
@@ -12029,6 +12780,7 @@ Template MA
 							Title<Tdesig>sid ti.Aposticha sid ti.Blindman</>End-Title
 							Title role source0 sid ti.sourcePentecostarion End-Title
 							Title<Tmode>rid peMA.Aposticha1.mode</><Tmelody>rid peMA.Aposticha1.melody</>End-Title	
+							Title role greekmelody rid peMA.Aposticha1.greekmelody End-Title
 							Media rid peMA.Aposticha1.text End-Media
 							Hymn rid peMA.Aposticha1.text @ver media-off End-Hymn
 							Media rid peMA.Aposticha2.text End-Media
@@ -12044,6 +12796,7 @@ Template MA
 							Title<Tdesig>sid ti.ApostichaFeast</>End-Title
 							Title role source0 sid ti.sourcePentecostarion End-Title
 							Title<Tmode>rid peMA.Aposticha1.mode</><Tmelody>rid peMA.Aposticha1.melody</>End-Title	
+							Title role greekmelody rid peMA.Aposticha1.greekmelody End-Title
 							Media rid peMA.Aposticha1.text End-Media
 							Hymn rid peMA.Aposticha1.text @ver media-off End-Hymn
 							Media rid peMA.Aposticha2.text End-Media
@@ -12059,6 +12812,7 @@ Template MA
 							Title<Tdesig>sid ti.ApostichaFeast</>End-Title
 							Title role source0 sid ti.sourcePentecostarion End-Title
 							Title<Tmode>rid peMA.Aposticha1.mode</><Tmelody>rid peMA.Aposticha1.melody</>End-Title	
+							Title role greekmelody rid peMA.Aposticha1.greekmelody End-Title
 							Media rid peMA.Aposticha1.text End-Media
 							Hymn rid peMA.Aposticha1.text @ver media-off End-Hymn
 							Media rid peMA.Aposticha2.text End-Media
@@ -12094,7 +12848,13 @@ Template MA
 						Hymn rid trMA.AposIdiomelon1.text @ver media-off End-Hymn
 				end-when
 				Title<Tdesig>sid ti.ForMartyrs_1hymn</>End-Title
-				Title<Tmode>rid trMA.AposMartyric.mode</><Tmelody>rid trMA.AposMartyric.melody</>End-Title
+				when-exists
+					rid trMA.AposMartyric.melody use: 
+						Title<Tmode>rid trMA.AposMartyric.mode</><Tmelody>sid trMA.AposMartyric.melody</>End-Title
+						Title role greekmelody rid trMA.AposMartyric.greekmelody End-Title
+					otherwise use:
+						Title<Tmode>rid trMA.AposMartyric.mode</>End-Title
+				end-when
 				Media rid trMA.AposMartyric.text End-Media
 				Insert_section bk.ho.s10.Aposticha.Weekday_Verse_2 End-Insert
 				Hymn rid trMA.AposMartyric.text @ver media-off End-Hymn
@@ -12181,7 +12941,13 @@ Template MA
 						Actor sid Choir End-Actor
 						Title<Tdesig>sid ti.Aposticha</>End-Title
 						Title role source0 sid ti.sourceTriodion End-Title
-						Title<Tmode>rid octrMA.Aposticha1.mode</><Tmelody>rid octrMA.Aposticha1.melody</>End-Title	
+						when-exists
+							rid octrMA.Aposticha1.melody use: 
+								Title<Tmode>rid octrMA.Aposticha1.mode</><Tmelody>sid octrMA.Aposticha1.melody</>End-Title
+								Title role greekmelody rid octrMA.Aposticha1.greekmelody End-Title
+							otherwise use:
+								Title<Tmode>rid octrMA.Aposticha1.mode</>End-Title
+						end-when
 						Media rid octrMA.Aposticha1.text End-Media
 						Hymn rid octrMA.Aposticha1.text @ver media-off End-Hymn
 						Media rid octrMA.Aposticha2.text End-Media
