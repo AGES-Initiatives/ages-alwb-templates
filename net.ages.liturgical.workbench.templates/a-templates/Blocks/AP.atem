@@ -1185,7 +1185,13 @@ Status NA
 			End-Section
 			Section hymn
 				Title role source0 sid ti.sourceHorologion End-Title
-				Title<Tmode>rid daVE.Apolytikion1.mode</><Tmelody>rid daVE.Apolytikion1.melody</>End-Title
+				when-exists
+					rid daVE.Apolytikion1.melody use:
+						Title<Tmode>rid daVE.Apolytikion1.mode</><Tmelody>rid daVE.Apolytikion1.melody</>End-Title
+						Title role greekmelody rid daVE.Apolytikion1.greekmelody End-Title
+					otherwise use:
+						Title<Tmode>rid daVE.Apolytikion1.mode</>End-Title
+				end-when
 				Media rid daVE.Apolytikion1.text End-Media
 				Hymn rid daVE.Apolytikion1.text @ver media-off End-Hymn
 			End-Section
@@ -1199,7 +1205,13 @@ Status NA
 			end-when
 			Section hymn
 				Title role source0 sid ti.sourceHorologion End-Title
-				Title<Tmode>rid daVE.Apolytikion2.mode</><Tmelody>rid daVE.Apolytikion2.melody</>End-Title
+				when-exists
+					rid daVE.Apolytikion2.melody use:
+						Title<Tmode>rid daVE.Apolytikion2.mode</><Tmelody>rid daVE.Apolytikion2.melody</>End-Title
+						Title role greekmelody rid daVE.Apolytikion2.greekmelody End-Title
+					otherwise use:
+						Title<Tmode>rid daVE.Apolytikion2.mode</>End-Title
+				end-when
 				Media rid daVE.Apolytikion2.text End-Media
 				Hymn rid daVE.Apolytikion2.text @ver media-off End-Hymn
 			End-Section
@@ -5235,6 +5247,16 @@ Status NA
 		Title<Tmode>rid meVE.Apolytikion1.mode</><Tmelody>rid meVE.Apolytikion1.melody</>End-Title
 		Title role greekmelody rid meVE.Apolytikion1.greekmelody End-Title
 		Hymn rid meVE.Apolytikion1.text @ver <r>sid ru.Twice</>End-Hymn
+	End-Section
+	Section me1ger_
+		Title role desig sid ti.Apolytikion End-Title
+		Section hymn
+			Title role source0 sid ti.sourceMenaion End-Title
+			Title<Tmode>rid meVE.Apolytikion1ger.mode</><Tmelody>rid meVE.Apolytikion1ger.melody</>End-Title
+			Title role greekmelody rid meVE.Apolytikion1ger.greekmelody End-Title
+			Media rid meVE.Apolytikion1ger.text End-Media
+			Hymn rid meVE.Apolytikion1ger.text @ver media-off End-Hymn
+		End-Section
 	End-Section
 	Section me1gloryme1_
 		Title role desig sid ti.Apolytikion End-Title

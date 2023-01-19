@@ -15,7 +15,7 @@ Status Final
 	import roles.*
 
 	Head 
-		Set_Date month 7 day 18 year 2022 End_Date
+		Set_Date month 7 day 18 year 2023 End_Date
 			Page_Header_Even
 				center @lookup sid li.pdf.header sid d.on lang L1 @date lang L1
 			End_Page_Header_Even
@@ -32,16 +32,16 @@ Status Final
 	End_Head
 
 	when-name-of-day-is 
-		Sunday use:	
-			Section Instance02 
+		Sunday use:
+			Section Instance_Sunday
 				Insert_section se.m07.dHF.li2.Instance01 End-Insert
 			End-Section
-		Saturday use:	
-			Section Instance03
-				Insert_section Instance01 End-Insert
+		Saturday use:
+			Section Instance_Saturday
+				Insert_section Instance_Weekday End-Insert
 			End-Section
 		otherwise use:
-			Section Instance01
+			Section Instance_Weekday
 				Insert_section ST.li.ho_oc End-Insert
 				Insert_section LI._10_Parts__._1_antiphons__.sundays_weekdays_feasts End-Insert
 				Insert_section AP.da__.dayofweek1_ End-Insert
@@ -54,7 +54,7 @@ Status Final
 				Insert_section LI._10_Parts__._4_entrance End-Insert
 					Break line End_Break
 				Title<Tdesig>sid ti.HymnsAfterSmallEntrance</>End-Title
-				Insert_section se.m07.d18.li.Instance01.hymns End-Insert
+				Insert_section se.m07.d18.li.Instance_Weekday.hymns End-Insert
 					Break line End_Break
 				Insert_section LI._10_Parts__._5_trisagionhymn__.chrys End-Insert
 					Break line End_Break

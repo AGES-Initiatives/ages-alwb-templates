@@ -1,6 +1,6 @@
 Template se.m07.d02.mo
 
-Status NA
+Status Final
 
 	import actors_gr_GR_cog.ac.*
 	import dismissals_gr_GR_cog.*
@@ -61,9 +61,17 @@ Status NA
 		otherwise use:
 			when-name-of-day-is
 				Sunday use:
-					Insert_section MO.Midnight_Office_Sunday End-Insert
-				otherwise use:
-					Insert_section MO.Midnight_Office_Weekday End-Insert
+					Section Instance_Sunday
+						Insert_section ST.mo.oc End-Insert
+						Insert_section MO._01_intro_ End-Insert
+						Insert_section MO._03_triadic_canon_ End-Insert
+						Insert_section MO._04_triadic_megalynaria End-Insert
+						Insert_section MO._06_sundays_feastdays_.trisagion End-Insert
+						Insert_section AP.NM.me1_ End-Insert
+						Insert_section MO._13_end_dismissal__.append_sunday_feastday End-Insert
+					End-Section
+			//	otherwise use:
+			//		Insert_section MO.Midnight_Office_Weekday End-Insert
 			end-when
 	end-when
 
