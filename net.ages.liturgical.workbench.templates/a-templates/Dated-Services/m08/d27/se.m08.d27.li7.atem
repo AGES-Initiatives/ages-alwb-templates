@@ -1,6 +1,6 @@
 Template se.m08.d27.li7
 
-Status Final
+Status NA
 
 	import actors_gr_GR_cog.ac.*
 	import dismissals_gr_GR_cog.*
@@ -15,7 +15,7 @@ Status Final
 	import roles.*
 
 	Head 
-		Set_Date month 8 day 27 year 2022 End_Date
+		Set_Date month 8 day 27 year 2023 End_Date
 			Page_Header_Even
 				center @lookup sid li.pdf.header sid d.on lang L1 @date lang L1
 			End_Page_Header_Even
@@ -33,11 +33,11 @@ Status Final
 
 	when-name-of-day-is
 		Sunday use:
-			Section Instance02
+			Section Instance_Sunday
 			End-Section
 			
 		otherwise use:
-			Section Instance01
+			Section Instance_Weekday
 				Insert_section ST.li.mealt1 End-Insert
 				Insert_section LI._10_Parts__._1_antiphons__.celebrated_saint_mealt1 End-Insert
 				Insert_section AP.mealt11_ End-Insert
@@ -51,7 +51,7 @@ Status Final
 				Insert_section LI._10_Parts__._4_entrance End-Insert
 					Break line End_Break
 				Title<Tdesig>sid ti.HymnsAfterSmallEntrance</>End-Title
-				Insert_section se.m08.d27.li6.Instance01.hymns End-Insert
+				Insert_section se.m08.d27.li6.Instance_Weekday.hymns End-Insert
 					Break line End_Break
 				Insert_section LI._10_Parts__._5_trisagionhymn__.chrys End-Insert
 					Break line End_Break
