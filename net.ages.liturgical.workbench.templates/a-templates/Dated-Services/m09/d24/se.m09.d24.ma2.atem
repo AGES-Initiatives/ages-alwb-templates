@@ -1,6 +1,6 @@
 Template se.m09.d24.ma2
 
-Status NA
+Status Final
 
 	import actors_gr_GR_cog.ac.*
 	import dismissals_gr_GR_cog.*
@@ -16,7 +16,7 @@ Status NA
 	import roles.*
 
 	Head 
-		Set_Date month 9 day 24 year 2022 End_Date
+		Set_Date month 9 day 24 year 2023 End_Date
 			Page_Header_Even
 				center @lookup sid ma.pdf.header sid d.on lang L1 @date lang L1
 			End_Page_Header_Even
@@ -39,11 +39,11 @@ Status NA
 
 	when-name-of-day-is
 		Sunday use:
-			Section Instance02
+			Section Instance_Sunday
 				Insert_section ST.ma.oc_me1_mealt1 End-Insert
 				Insert_section MA._01_Beginning__.modeofweek End-Insert
 				Insert_section AP.res__.modeofweek End-Insert
-				Insert_section TI.g.s._00_saint_.w End-Insert
+				Insert_section TI.g.me.com1 End-Insert
 				Insert_section AP.me1_.hymn End-Insert
 				Insert_section TI.b.s._16_theotokos End-Insert
 				Insert_section AP.mealt11_.hymn End-Insert
@@ -215,14 +215,26 @@ Status NA
 				End-Section
 				Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
 				Insert_section MA._12_Exaposteilarion__.eo__.eoofweek_.exap End-Insert
-				Insert_section TI.s._00_saint_.w End-Insert
+				Insert_section TI.me.com1 End-Insert
 				Insert_section MA._12_Exaposteilarion__.append__.me__.exap1 End-Insert
 				Insert_section TI.s._16_theotokos End-Insert
 				Insert_section MA._12_Exaposteilarion__.append__.me__.alt1__.exap1 End-Insert
 				Insert_section MA._13_Lauds__.modeofweek__.for6_nocollapse End-Insert
-				Insert_section MA._13_Lauds__.oc__.s_1234as1234 End-Insert
+				Insert_section MA._13_Lauds__.oc__.s_12as12 End-Insert
 				Insert_section TI.s._16_theotokos End-Insert
-				Insert_section MA._13_Lauds__.me__.alt1__.p_1234as56theotokos12 End-Insert
+				Section block1
+					Title role source0 sid ti.sourceMeSupplement End-Title
+					Title<Tmode>rid me.alt1.meMA.Lauds1.mode</><Tmelody>rid me.alt1.meMA.Lauds1.melody</>End-Title
+					Insert_section MA.Lauds_Verses.v03 End-Insert
+					Hymn rid me.alt1.meMA.Lauds1.text @ver media-off End-Hymn
+					Insert_section MA.Lauds_Verses.v04 End-Insert
+					Hymn rid me.alt1.meMA.Lauds2.text @ver media-off End-Hymn
+					Media rid me.alt1.meMA.Lauds3.text End-Media
+					Insert_section MA.Lauds_Verses.v05 End-Insert
+					Hymn rid me.alt1.meMA.Lauds3.text @ver media-off End-Hymn
+				End-Section
+				Insert_section TI.me.com1 End-Insert
+				Insert_section MA._13_Lauds__.me__.i_123as6oneapostle3women2 End-Insert
 				Insert_section MA._13_Lauds__.glory__.eo_ End-Insert
 				Insert_section MA._14_Doxology__.sunday End-Insert
 				Insert_section MA2._19_End_Options End-Insert
@@ -230,7 +242,7 @@ Status NA
 			End-Section
 		
 		otherwise use:
-			Section Instance01
+			Section Instance_Weekday
 			End-Section
 	end-when
 	

@@ -2,10 +2,6 @@ Template se.m09.d05.mo
 
 Status NA
 
-	import oc.*
-	import client_gr_GR_cog.*
-	import ho.s02_gr_GR_cog.*
-
 	import actors_gr_GR_cog.ac.*
 	import dismissals_gr_GR_cog.*
 	import miscellanea_gr_GR_cog.misc.*
@@ -19,7 +15,7 @@ Status NA
 	import roles.*
 
 	Head 
-		Set_Date month 9 day 5 year 2022 End_Date
+		Set_Date month 9 day 5 year 2023 End_Date
 			Page_Header_Even
 				center @lookup sid mo.pdf.header sid d.on lang L1 @date lang L1
 			End_Page_Header_Even
@@ -37,7 +33,7 @@ Status NA
 
 	when-name-of-day-is
 		Sunday use:
-			Section Instance02
+			Section Instance_Sunday
 				Insert_section ST.mo.oc End-Insert
 				Insert_section MO._01_intro_ End-Insert
 				Insert_section MO._03_triadic_canon_ End-Insert
@@ -47,7 +43,7 @@ Status NA
 			End-Section
 			
 		otherwise use:
-			Section Instance01
+			Section Instance_Weekday
 			End-Section
 	end-when			
 
