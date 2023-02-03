@@ -15,7 +15,7 @@ Status Final
 	import roles.*
 
 	Head 
-		Set_Date month 12 day 4 year 2022 End_Date
+		Set_Date month 12 day 4 year 2023 End_Date
 			Page_Header_Even
 				center @lookup sid ma.pdf.header sid d.on lang L1 @date lang L1
 			End_Page_Header_Even
@@ -38,13 +38,13 @@ Status Final
 
 	when-name-of-day-is 
 		Sunday use:
-			Section Instance02
+			Section Instance_Sunday
 				Insert_section ST.ma.oc_me End-Insert
 				Insert_section MA._01_Beginning__.modeofweek End-Insert
 				Insert_section AP.res__.modeofweek End-Insert
-				Insert_section TI.s._00_saint_.w End-Insert
+				Insert_section TI.me.com1 End-Insert
 				Insert_section AP.me1_.hymn End-Insert
-				Insert_section TI.g.s._10_monastic_.m End-Insert
+				Insert_section TI.g.me.com2 End-Insert
 				Insert_section AP.ganame.Dec04__.john_.hymn End-Insert
 				Insert_section AP.both__.primarytheotokion__.mode8 End-Insert
 				Insert_section MA._02_Kathisma1__.litany End-Insert
@@ -63,48 +63,100 @@ Status Final
 				Insert_section KA.append__._9 End-Insert
 				Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
 				Insert_section MA._12_Exaposteilarion__.eo__.eoofweek_.exap End-Insert
-				Insert_section TI.s._00_saint_.w End-Insert
+				Insert_section TI.me.com1 End-Insert
 				Insert_section MA._12_Exaposteilarion__.append__.me__.exap1 End-Insert
-				Insert_section TI.s._10_monastic_.m End-Insert
+				Insert_section TI.me.com2 End-Insert
 				Insert_section MA._12_Exaposteilarion__.append__.me__.exap2_ End-Insert
 				Insert_section MA._12_Exaposteilarion__.append__.me__.theotokion End-Insert
 				Insert_section MA._13_Lauds__.modeofweek__.for6 End-Insert
 				Insert_section MA._13_Lauds__.oc__.s_1234as1234 End-Insert
-				Insert_section TI.s._10_monastic_.m End-Insert
+				Insert_section TI.me.com2 End-Insert
 				Insert_section MA._13_Lauds__.me__.p_veapos1123as56devoutmen12 End-Insert
 				Insert_section MA._13_Lauds__.glory__.eo_ End-Insert
 				Insert_section MA._14_Doxology__.sunday End-Insert
 			End-Section
 		otherwise use:
-			Section Instance01
+			Section Instance_Weekday
 				Insert_section ST.ma.me End-Insert
 				Insert_section MA._01_Beginning__.mode8 End-Insert
-				Insert_section TI.a.s._00_saint_.w End-Insert
+				Insert_section TI.a.me.com1 End-Insert
 				Insert_section AP.me1_.hymn End-Insert
-				Insert_section TI.g.s._10_monastic_.m End-Insert
+				Insert_section TI.g.me.com2 End-Insert
 				Insert_section AP.ganame.Dec04__.john_.hymn End-Insert
 				Insert_section AP.both__.primarytheotokion__.mode8 End-Insert
 				Insert_section MA._02_Kathisma1__.litany End-Insert
-				Insert_section MA._02_Kathisma1__.me__.kath11o121t_ End-Insert
-				Insert_section MA._03_Kathisma2__.append__.me__.kath21o222t_ End-Insert
-				Insert_section MA._05_Kathisma3__.append__.me__.kath31o323t_ End-Insert
+				Section kath11o121t_
+					Actor sid Choir End-Actor
+					Insert_section TI.ka1.me.com1 End-Insert
+					Title role source0 sid ti.sourceMenaion End-Title
+					Title<Tmode>rid me.meMA.Kathisma11.mode</><Tmelody>rid me.meMA.Kathisma11.melody</>End-Title
+					Title role greekmelody rid me.meMA.Kathisma11.greekmelody End-Title
+					Media rid me.meMA.Kathisma11.text End-Media
+					Hymn rid me.meMA.Kathisma11.text @ver media-off End-Hymn
+					Title sid ti.Glory End-Title
+					Title<Tmode>rid me.meMA.Kathisma12.mode</><Tmelody>rid me.meMA.Kathisma12.melody</>End-Title
+					Title role greekmelody rid me.meMA.Kathisma12.greekmelody End-Title
+					Media rid me.meMA.Kathisma12.text End-Media
+					Hymn rid me.meMA.Kathisma12.text @ver media-off End-Hymn
+					Title sid ti.BothNow End-Title
+					Title<Tmode>rid me.meMA.Kathisma1T.mode</><Tmelody>rid me.meMA.Kathisma1T.melody</>End-Title
+					Media rid me.meMA.Kathisma1T.text End-Media
+					Hymn rid me.meMA.Kathisma1T.text @ver media-off End-Hymn
+				End-Section
+				Section kath21o222t_
+					Insert_section TI.ka2.me.com2 End-Insert
+					Title role source0 sid ti.sourceMenaion End-Title
+					Title<Tmode>rid me.meMA.Kathisma21.mode</><Tmelody>rid me.meMA.Kathisma21.melody</>End-Title
+					Title role greekmelody rid me.meMA.Kathisma21.greekmelody End-Title
+					Media rid me.meMA.Kathisma21.text End-Media
+					Hymn rid me.meMA.Kathisma21.text @ver media-off End-Hymn
+					Title sid ti.Glory End-Title
+					Title<Tmode>rid me.meMA.Kathisma22.mode</><Tmelody>rid me.meMA.Kathisma22.melody</>End-Title
+					Title role greekmelody rid me.meMA.Kathisma22.greekmelody End-Title
+					Media rid me.meMA.Kathisma22.text End-Media
+					Hymn rid me.meMA.Kathisma22.text @ver media-off End-Hymn
+					Title sid ti.BothNow End-Title
+					Title<Tmode>rid me.meMA.Kathisma2T.mode</><Tmelody>rid me.meMA.Kathisma2T.melody</>End-Title
+					Media rid me.meMA.Kathisma2T.text End-Media
+					Hymn rid me.meMA.Kathisma2T.text @ver media-off End-Hymn
+				End-Section
+				Section kath31o323t_
+					Insert_section TI.ka3.me.com1 End-Insert
+					Title role source0 sid ti.sourceMenaion End-Title
+					Title<Tmode>rid me.meMA.Kathisma31.mode</><Tmelody>rid me.meMA.Kathisma31.melody</>End-Title
+					Title role greekmelody rid me.meMA.Kathisma31.greekmelody End-Title
+					Media rid me.meMA.Kathisma31.text End-Media
+					Hymn rid me.meMA.Kathisma31.text @ver media-off End-Hymn
+					Title sid ti.GloryBothNow<Tdesig>sid ti.Theotokion</>End-Title
+					Title<Tmode>rid me.meMA.Kathisma3T.mode</><Tmelody>rid me.meMA.Kathisma3T.melody</>End-Title
+					Media rid me.meMA.Kathisma3T.text End-Media
+					Hymn rid me.meMA.Kathisma3T.text @ver media-off End-Hymn
+				End-Section
 				Insert_section MA._06_Antiphons__.mode41_prokeimenon_ End-Insert
 				Insert_section MA._07_Gospel__.yes__.priest__.me End-Insert
 				Insert_section MA._08_Supplication__.priest__.me End-Insert
-				Insert_section MA._11_Kontakion__.me1_ End-Insert
+				Section kontakion
+					Title role source sid ti.sourceMenaion End-Title
+					Actor sid Reader End-Actor
+					Insert_section TI.k.me.com1 End-Insert
+					Title<Tmode>rid me.meMA.Kontakion1.mode</><Tmelody>rid me.meMA.Kontakion1.melody</>End-Title
+					Reading rid me.meMA.Kontakion1.text @ver End-Reading
+					Title<Tdesig>sid ti.Oikos</>End-Title
+					Reading rid me.meMA.Oikos1.text @ver End-Reading
+				End-Section
 				Insert_section SY.Synaxarion End-Insert
 				Insert_section KA.choir__._1345678 End-Insert
 				Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
 				Insert_section MA._10_Canon__.magnificat__.modeofkatavasia End-Insert
 				Insert_section KA.append__._9 End-Insert
 				Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
-				Insert_section TI.e.s._00_saint_.w End-Insert
+				Insert_section TI.e.me.com1 End-Insert
 				Insert_section MA._12_Exaposteilarion__.me__.exap1_.hymn End-Insert
-				Insert_section TI.s._10_monastic_.m End-Insert
+				Insert_section TI.me.com2 End-Insert
 				Insert_section MA._12_Exaposteilarion__.append__.me__.exap2_ End-Insert
 				Insert_section MA._12_Exaposteilarion__.append__.me__.theotokion End-Insert
 				Insert_section MA._13_Lauds__.mode1__.for4 End-Insert
-				Insert_section TI.stp.s._00_saint_.w End-Insert
+				Insert_section TI.stp.me.com1 End-Insert
 				Insert_section MA._13_Lauds__.me__.i_1234as3456 End-Insert
 				Insert_section MA._13_Lauds__.glory__.me__.gloryasglory_ End-Insert
 				Insert_section MA._13_Lauds__.both__.theotokion__.mode6_vine__.womanmartyr End-Insert	

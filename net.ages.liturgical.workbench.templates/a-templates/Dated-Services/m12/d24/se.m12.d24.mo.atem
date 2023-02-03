@@ -1,0 +1,85 @@
+Template se.m12.d24.mo
+
+Status Final
+
+	import actors_gr_GR_cog.ac.*
+	import dismissals_gr_GR_cog.*
+	import miscellanea_gr_GR_cog.misc.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 12 day 24 year 2023 End_Date
+			Page_Header_Even
+				center @lookup sid mo.pdf.header sid d.on lang L1 @date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid mo.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+//	Preface Covers
+//		Insert_template ematins.appeal End-Insert
+//	End-Preface
+
+	when-name-of-day-is
+		Sunday use:
+			Section Instance_Sunday
+				Section ST
+					Para role servicesourcestitle sid book.BooksSources.title End-Para
+					Para role servicesources sid book.Horologion.name sid separator.hyphen sid mo.pdf.header End-Para
+					Insert_section ST.sunday_dates End-Insert
+					Title sid horizontal_line.solid1 End-Title
+					Break line End_Break
+					Title<bnr>sid mo.html.tab</>End-Title
+				End-Section
+				Insert_section MO._01_intro_ End-Insert
+				Section canon
+					Insert_section CA.co__.ode1__.me1__.ti_h123as0VGB End-Insert
+					Insert_section CA.co__.append__.ode3__.me1__.nt_h123as0VGB End-Insert
+					Insert_section CA.co__.append__.ode4__.me1__.nt_h123as0VGB End-Insert
+					Insert_section CA.co__.append__.ode5__.me1__.nt_h123as0VGB End-Insert
+					Insert_section CA.co__.append__.ode6__.me1__.nt_h123as0VGB End-Insert
+					Insert_section CA.co__.append__.ode7__.me1__.nt_h123as0VGB End-Insert
+					Insert_section CA.co__.append__.ode8__.me1__.nt_h123as0VGB End-Insert
+					Insert_section CA.co__.append__.ode9__.me1__.nt_h123as0VGB End-Insert
+				End-Section
+				Rubric sid ru.IfLityNotDoneAtVespers End-Rubric
+				Section glory_
+					Insert_section TI.g.com.decbc End-Insert
+					Title role source0 sid ti.sourceMenaion End-Title
+					Title<Tmode>sid me.m12.dBC_gr_GR_cog.meVE.LityGlory.mode</>End-Title
+					Media sid me.m12.dBC_gr_GR_cog.meVE.LityGlory.text End-Media
+					Hymn sid me.m12.dBC_gr_GR_cog.meVE.LityGlory.text @ver media-off End-Hymn
+				End-Section
+				Section both_
+					Insert_section TI.b.bf End-Insert
+					Title role source0 sid ti.sourceMenaion End-Title
+					Title role mode sid me.m12.dBC_gr_GR_cog.meVE.LityBoth.mode End-Title
+					Media sid me.m12.dBC_gr_GR_cog.meVE.LityBoth.text End-Media
+					Hymn sid me.m12.dBC_gr_GR_cog.meVE.LityBoth.text @ver media-off End-Hymn
+				End-Section
+				Insert_section MO._06_sundays_feastdays_.trisagion End-Insert
+				Insert_section AP.NM.bf End-Insert
+				Insert_section MO._13_end_dismissal__.append_sunday_feastday End-Insert
+			End-Section
+			
+		otherwise use:
+			Section Instance_Weekday
+			End-Section
+	end-when			
+
+End-Template
