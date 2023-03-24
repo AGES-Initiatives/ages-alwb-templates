@@ -11,9 +11,9 @@ Status NA
 	import menaion.verses_gr_GR_cog.*
 	import ps_gr_GR_cog.*
 	
-	import actors_gr_GR_cog.ac.*
+	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
-	import miscellanea_gr_GR_cog.misc.*
+	import miscellanea_gr_GR_cog.*
 	import prayers_gr_GR_cog.*
 	import rubrical_gr_GR_cog.*
 	import template.titles_gr_GR_cog.*
@@ -50,7 +50,7 @@ Status NA
 			72, 73, 74, 75 use:
 				Insert_section gospel_introH End-Insert
 				Insert_section gospel_mc End-Insert
-				Actor sid Hierarch End-Actor
+				Actor sid ac.Hierarch End-Actor
 				Reading sid hoMA.SunPostGospel.text @ver End-Reading
 				Insert_section PostGospel_me End-Insert
 			78, 85, 92, 99, 106, 113 use:
@@ -92,7 +92,7 @@ Status NA
 			Insert_section gospel_pealt1 End-Insert
 			when-movable-cycle-day-is
 				72 thru 77 use:
-					Actor sid Hierarch End-Actor
+					Actor sid ac.Hierarch End-Actor
 					Reading sid hoMA.SunPostGospel.text @ver End-Reading
 				otherwise use:
 					Insert_section Psalm50_read_hierarch End-Insert
@@ -127,7 +127,7 @@ Status NA
 			72, 73, 74, 75 use:
 				Insert_section gospel_introP End-Insert
 				Insert_section gospel_mc End-Insert
-				Actor sid Reader End-Actor
+				Actor sid ac.Reader End-Actor
 				Reading sid hoMA.SunPostGospel.text @ver End-Reading
 				Insert_section PostGospel_me End-Insert
 			78, 85, 92, 99, 106, 113 use:
@@ -169,7 +169,7 @@ Status NA
 			Insert_section gospel_pealt1 End-Insert
 			when-movable-cycle-day-is
 				72 thru 77 use:
-					Actor sid Reader End-Actor
+					Actor sid ac.Reader End-Actor
 					Reading sid hoMA.SunPostGospel.text @ver End-Reading
 				otherwise use:
 					Insert_section Psalm50_read End-Insert
@@ -179,178 +179,178 @@ Status NA
 	End-Section
 
 			Section gospel_eo
-				Actor sid Priest End-Actor
+				Actor sid ac.Priest End-Actor
 				Dialog sid pr.gos03a.text rid leeoMA.Gospel.book_string sid pr.gos03b.text End-Dialog
-			//	Actor sid Deacon End-Actor
+			//	Actor sid ac.Deacon End-Actor
 				Dialog sid pr.exc19.text End-Dialog
-				Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-				Actor sid Priest<inr>sid ru.FromTheAltarTable</>End-Actor
+				Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+				Actor sid ac.Priest<inr>sid ru.FromTheAltarTable</>End-Actor
 				Title role chapverse sid ti.Eothinon rid leeoMA.Gospel.title_abbr End-Title
 				Title role chapverse rid leeoMA.Gospel.book_string rid leeoMA.Gospel.chapverse End-Title
 				Reading rid leeoMA.Gospel.text @ver End-Reading
-				Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+				Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 			End-Section
 			Section gospel_mc
 				when-movable-cycle-day-is
 					64 use:
 						Section palmsunday
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.mc.p4.sections.Day_PalmSunday.matins.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.mc.p4.sections.Day_PalmSunday.matins.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					65 use:
 						Section holymonday
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.mc.p5.sections.Day_HolyMonday.matins.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.mc.p5.sections.Day_HolyMonday.matins.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					66 use:
 						Section holytuesday
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.mc.p5.sections.Day_HolyTuesday.matins.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.mc.p5.sections.Day_HolyTuesday.matins.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					67 use:
 						Section holywednesday
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.mc.p5.sections.Day_HolyWednesday.matins.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.mc.p5.sections.Day_HolyWednesday.matins.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					68 use:
 						Section holythursday
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.mc.p5.sections.Day_HolyThursday.matins.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.mc.p5.sections.Day_HolyThursday.matins.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					71 use:
 						Section pascha
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.mc.p1.sections.Day_Sunday01.matins.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.mc.p1.sections.Day_Sunday01.matins.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					78 use:
 						Section thomas
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.mc.p1.sections.Day_Sunday02.matins.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheAltarTable</>End-Actor
-							Title role chapverse sid ti.Eothinon sid anum1 End-Title
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheAltarTable</>End-Actor
+							Title role chapverse sid ti.Eothinon sid misc.anum1 End-Title
 							Insert_section bk.ev.mc.p1.sections.Day_Sunday02.matins.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					85 use:
 						Section myrrhbearers
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.mc.p1.sections.Day_Sunday03.matins.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheAltarTable</>End-Actor
-							Title role chapverse sid ti.Eothinon sid anum4 End-Title
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheAltarTable</>End-Actor
+							Title role chapverse sid ti.Eothinon sid misc.anum4 End-Title
 							Insert_section bk.ev.mc.p1.sections.Day_Sunday03.matins.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					92 use:
 						Section paralytic
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.mc.p1.sections.Day_Sunday04.matins.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheAltarTable</>End-Actor
-							Title role chapverse sid ti.Eothinon sid anum5 End-Title
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheAltarTable</>End-Actor
+							Title role chapverse sid ti.Eothinon sid misc.anum5 End-Title
 							Insert_section bk.ev.mc.p1.sections.Day_Sunday04.matins.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					99 use:
 						Section samaritanwoman
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.mc.p1.sections.Day_Sunday05.matins.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheAltarTable</>End-Actor
-							Title role chapverse sid ti.Eothinon sid anum7 End-Title
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheAltarTable</>End-Actor
+							Title role chapverse sid ti.Eothinon sid misc.anum7 End-Title
 							Insert_section bk.ev.mc.p1.sections.Day_Sunday05.matins.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					106 use:
 						Section blindman
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.mc.p1.sections.Day_Sunday06.matins.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheAltarTable</>End-Actor
-							Title role chapverse sid ti.Eothinon sid anum8 End-Title
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheAltarTable</>End-Actor
+							Title role chapverse sid ti.Eothinon sid misc.anum8 End-Title
 							Insert_section bk.ev.mc.p1.sections.Day_Sunday06.matins.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					110 use:
 						Section ascension
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.mc.p1.sections.Week_06.Day_Thursday.matins.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.mc.p1.sections.Week_06.Day_Thursday.matins.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					113 use:
 						Section holyfathers
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.mc.p1.sections.Day_Sunday07.matins.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheAltarTable</>End-Actor
-							Title role chapverse sid ti.Eothinon sid anum10 End-Title
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheAltarTable</>End-Actor
+							Title role chapverse sid ti.Eothinon sid misc.anum10 End-Title
 							Insert_section bk.ev.mc.p1.sections.Day_Sunday07.matins.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					120 use:
 						Section pentecost
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.mc.p1.sections.Day_Sunday08.matins.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.mc.p1.sections.Day_Sunday08.matins.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 				end-when
 			End-Section
@@ -359,104 +359,104 @@ Status NA
 					Jan 1, 10, 25, 27 use: Insert_section Nov13 End-Insert
 					Jan 6 use:
 						Section Jan06
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.me.m01.sections.d06.matins.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.me.m01.sections.d06.matins.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					Jan 11 use:
 						Section Jan11
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.me.m01.sections.d17.liturgy.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.me.m01.sections.d17.liturgy.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					Jan 17, 20 use:
 						Section Jan17
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.me.m01.sections.d17.matins.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.me.m01.sections.d17.matins.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					Jan 18 use: Insert_section Jan30 End-Insert
 					Jan 30 use:
 						Section Jan30
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.me.m01.sections.d30.matins.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.me.m01.sections.d30.matins.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					Feb 2 use:
 						Section Feb02
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.me.m02.sections.d02.matins.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.me.m02.sections.d02.matins.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					Feb 10 use:
 						Section Feb10
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.ge.sections.forMartyrs.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.ge.sections.forMartyrs.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					Feb 24 use:
 						Section Feb24
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.me.m02.sections.d24.matins.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.me.m02.sections.d24.matins.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					Mar 9 use:
 						Section Mar09
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.me.m03.sections.d09.matins.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.me.m03.sections.d09.matins.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					Mar 25 use: Insert_section Sep08 End-Insert
 					Apr 23 use:
 						Section Apr23
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.me.m04.sections.d23.matins.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.me.m04.sections.d23.matins.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					May 8 use: Insert_section Sep26 End-Insert
 					May 21 use: Insert_section Jan30 End-Insert
@@ -464,209 +464,209 @@ Status NA
 					Jun 4 use: Insert_section Nov13 End-Insert
 					Jun 24 use:
 						Section Jun24
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.me.m06.sections.d24.matins.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.me.m06.sections.d24.matins.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					Jun 29 use: Insert_section Sep26 End-Insert
 					Jul 11 use: 
 						Section Jul11
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.me.m12.sections.d04.liturgy.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.me.m12.sections.d04.liturgy.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					Jul 17 use: 
 						Section Jul17
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.mc.p2.sections.Day_Saturday17.liturgy.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Title<Tchapverse>sid le.go.mc.d238_gr_GR_cog.lemcLI.Gospel.title</>End-Title
 							Insert_section bk.ev.mc.p2.sections.Day_Saturday17.liturgy.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					Jul 27 use: 
 						Section Jul27
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.ge.sections.forMartyrs.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.ge.sections.forMartyrs.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					Aug 6 use:
 						Section Aug06
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.me.m08.sections.d06.matins.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.me.m08.sections.d06.matins.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					Aug 15 use: Insert_section Sep08 End-Insert
 					Aug 29 use:
 						Section Aug29
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.me.m08.sections.d29.matins.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.me.m08.sections.d29.matins.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					Sep 1 use: Insert_section Jan17 End-Insert
 					Sep 8 use:
 						Section Sep08
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.me.m09.sections.d08.matins.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.me.m09.sections.d08.matins.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					Sep 14 use:
 						Section Sep14
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.me.m09.sections.d14.matins.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.me.m09.sections.d14.matins.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					Sep 17 use:
 						Section Sep17
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.me.m09.sections.d17.matins.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.me.m09.sections.d17.matins.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					Sep 26 use:
 						Section Sep26
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.me.m09.sections.d26.matins.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.me.m09.sections.d26.matins.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					Oct 26 use:
 						Section Oct26
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.me.m10.sections.d26.matins.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.me.m10.sections.d26.matins.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					Nov 2 use: Insert_section Oct26 End-Insert
 					Nov 3 use: Insert_section Apr23 End-Insert
 					Nov 8 use:
 						Section Nov08
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.me.m11.sections.d08.matins.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.me.m11.sections.d08.matins.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					Nov 13 use:
 						Section Nov13
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.me.m11.sections.d13.matins.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.me.m11.sections.d13.matins.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					Nov 21 use: Insert_section Sep08 End-Insert
 					Nov 25 use: 
 						Section Nov25
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.ge.sections.forWomenDevout.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.ge.sections.forWomenDevout.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					Nov 30 use:
 						Section Nov30
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.me.m11.sections.d30.matins.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.me.m11.sections.d30.matins.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					Dec 4 use:
 						Section Dec04
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.me.m12.sections.d04.matins.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.me.m12.sections.d04.matins.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					Dec 5 use:
 						Section Dec05
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.me.m12.sections.d05.matins.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.me.m12.sections.d05.matins.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					Dec 6, 12, 16 use: Insert_section Nov13 End-Insert
 					Dec 25 use:
 						Section Dec25
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.me.m12.sections.d25.matins.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.me.m12.sections.d25.matins.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 				end-when		
 			End-Section
@@ -675,83 +675,83 @@ Status NA
 					Feb 6 use: Insert_section gospel_me.Nov13 End-Insert
 					Feb 19 use:
 						Section Feb19
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.me.m02.sections.d19.matins.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.me.m02.sections.d19.matins.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					Feb 26 use:
 						Section Feb26
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.me.m04.sections.d01.liturgy.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.me.m04.sections.d01.liturgy.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					Mar 2 use:
 						Section Mar02 //St. Nicholas Planas
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.ge.sections.forAngels.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.ge.sections.forAngels.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					Jul 12 use:
 						Section Jul12
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.me.m12.sections.d05.liturgy.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.me.m12.sections.d05.liturgy.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					Jul 20 use: 
 						Section Jul20
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.ge.sections.forProphets.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.ge.sections.forProphets.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					Jul 22 use: 
 						Section Jul22_Markella
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.ge.sections.forWomenDevoutMartyrs.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.ge.sections.forWomenDevoutMartyrs.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					Jul 25 use: Insert_section gospel_me.Sep08 End-Insert
 					Aug 16 use: Insert_section gospel_me.Dec05 End-Insert
 					Aug 24 use:
 						Section Aug24_StCosmas
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Dialog sid pr.gos03a.text sid le.go.mc.d137_gr_GR_cog.lemcLI.Gospel.book_string sid pr.gos03b.text End-Dialog
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Title role chapverse sid le.go.mc.d137_gr_GR_cog.lemcLI.Gospel.chapverse End-Title		
 							Reading sid le.go.mc.d137_gr_GR_cog.lemcLI.Gospel.text @ver End-Reading
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					Aug 27 use: Insert_section gospel_me.Apr23 End-Insert
 					Sep 3 use: Insert_section gospel_me.Nov13 End-Insert
@@ -760,52 +760,52 @@ Status NA
 					Sep 24 use: Insert_section gospel_me.Sep08 End-Insert
 					Oct 18 use:
 						Section Oct18
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.eo.sections.eothinon05.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.eo.sections.eothinon05.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					Oct 20 use: Insert_section gospel_me.Dec05 End-Insert
 					Oct 1, 28 use: Insert_section gospel_me.Sep08 End-Insert
 					Oct 23 use:
 						Section Oct23_StJames
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.me.m10.sections.d23.matins.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.me.m10.sections.d23.matins.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					Nov 9 use: 
 						Section Nov09_StNektarios
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.me.m09.sections.d30.liturgy.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.me.m09.sections.d30.liturgy.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					Nov 14 use: Insert_section gospel_me.Nov13 End-Insert
 					Nov 22, 26 use: Insert_section gospel_me.Dec05 End-Insert
 					Dec 2 use: Insert_section gospel_me.Jan17 End-Insert
 					Dec 17 use:
 						Section Dec17_StDionysios
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Insert_section bk.ev.me.m12.sections.d12.matins.go_book End-Insert
-						//	Actor sid Deacon End-Actor
+						//	Actor sid ac.Deacon End-Actor
 							Dialog sid pr.exc19.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
-							Actor sid Priest<inr>sid ru.FromTheGate</>End-Actor
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Priest<inr>sid ru.FromTheGate</>End-Actor
 							Insert_section bk.ev.me.m12.sections.d12.matins.go_lesson End-Insert
-							Dialog<i>sid parenthesis.open sid pr.GloryToYouLord.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 				end-when
 			End-Section
@@ -820,53 +820,53 @@ Status NA
 
 //blocks
 	Section gospel_introH
-		Actor sid Deacon End-Actor
+		Actor sid ac.Deacon End-Actor
 		Dialog sid pr.pet00.text End-Dialog
-		Dialog<i>sid parenthesis.open sid pr.res01.text sid parenthesis.close</>End-Dialog
-		Actor sid Priest End-Actor
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
+		Actor sid ac.Priest End-Actor
 		Dialog sid pr.exc06.text End-Dialog
-		Actor sid Choir End-Actor
+		Actor sid ac.Choir End-Actor
 		Dialog sid pr.res04.text End-Dialog
-		Title role mode sid Mode2 End-Title
+		Title role mode sid misc.Mode2 End-Title
 		Media sid hoMA.PreGospelHymn.text End-Media
 		Hymn sid psMA.gospelintro.v1.text<r>sid ru.Twice</>sid psMA.gospelintro.v1a.text sid psMA.gospelintro.v1b.text @ver media-off End-Hymn
 		Insert_section LN.hBeforeGospel End-Insert
 	End-Section
 	Section gospel_introP
-		Actor sid Deacon End-Actor
+		Actor sid ac.Deacon End-Actor
 		Dialog sid pr.pet00.text End-Dialog
-		Dialog<i>sid parenthesis.open sid pr.res01.text sid parenthesis.close</>End-Dialog
-		Actor sid Priest End-Actor
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
+		Actor sid ac.Priest End-Actor
 		Dialog sid pr.exc06.text End-Dialog
-		Actor sid Choir End-Actor
+		Actor sid ac.Choir End-Actor
 		Dialog sid pr.res04.text End-Dialog
-		Title role mode sid Mode2 End-Title
+		Title role mode sid misc.Mode2 End-Title
 		Media sid hoMA.PreGospelHymn.text End-Media
 		Hymn sid psMA.gospelintro.v1.text<r>sid ru.Twice</>sid psMA.gospelintro.v1a.text sid psMA.gospelintro.v1b.text @ver media-off End-Hymn
 		Insert_section LN.BeforeGospel End-Insert
 	End-Section
 	Section Psalm50_chant
-		Actor sid Reader End-Actor
+		Actor sid ac.Reader End-Actor
 		Reading sid hoMA.SunPostGospel.text @ver End-Reading
-		Actor sid Choir End-Actor
+		Actor sid ac.Choir End-Actor
 		Title role desig sid psa50.title End-Title
-		Title<Tmode>sid Mode2</><Trubric>sid ti.OrModeOfWeek</>End-Title
+		Title<Tmode>sid misc.Mode2</><Trubric>sid ti.OrModeOfWeek</>End-Title
 		Media sid hoMA.Psalm50.text End-Media
 	//	Insert_section LiturgicalPsalms.Psalm_50_Verses End-Insert
 		Insert_section LiturgicalPsalms.Psalm_50_Chanted End-Insert
 	End-Section
 	Section Psalm50_chant_hierarch
-		Actor sid Hierarch End-Actor
+		Actor sid ac.Hierarch End-Actor
 		Reading sid hoMA.SunPostGospel.text @ver End-Reading
-		Actor sid Choir End-Actor
+		Actor sid ac.Choir End-Actor
 		Title role desig sid psa50.title End-Title
-		Title<Tmode>sid Mode2</><Trubric>sid ti.OrModeOfWeek</>End-Title
+		Title<Tmode>sid misc.Mode2</><Trubric>sid ti.OrModeOfWeek</>End-Title
 		Media sid hoMA.Psalm50.text End-Media
 	//	Insert_section LiturgicalPsalms.Psalm_50_Verses End-Insert
 		Insert_section LiturgicalPsalms.Psalm_50_Chanted End-Insert
 	End-Section
 	Section Psalm50_read
-		Actor sid Reader End-Actor
+		Actor sid ac.Reader End-Actor
 		Section texts
 			when-movable-cycle-day-is
 				63 use: 
@@ -876,7 +876,7 @@ Status NA
 					Reading sid hoMA.SunPostGospel.text @ver <inr>sid ru.OnceOrThrice</> End-Reading
 				78 thru 110 use: 
 					Reading sid hoMA.SunPostGospel.text @ver End-Reading
-					Actor sid Reader<Trubric>sid ru.Read</>End-Actor
+					Actor sid ac.Reader<Trubric>sid ru.Read</>End-Actor
 					Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
 				113, 127 use:
 					Reading sid hoMA.SunPostGospel.text @ver End-Reading
@@ -935,25 +935,25 @@ Status NA
 		End-Section
 	End-Section
 	Section Psalm50_read_hierarch
-		Actor sid Hierarch End-Actor
+		Actor sid ac.Hierarch End-Actor
 		Section texts
 			when-movable-cycle-day-is
 				63 use: 
 					Reading sid hoMA.SunPostGospel.text @ver End-Reading
-					Actor sid Hierarch<Trubric>sid ru.Read</>End-Actor
+					Actor sid ac.Hierarch<Trubric>sid ru.Read</>End-Actor
 					Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
 				71 thru 77 use:
 					Reading sid hoMA.SunPostGospel.text @ver <inr>sid ru.OnceOrThrice</> End-Reading
 				78 thru 110 use: 
 					Reading sid hoMA.SunPostGospel.text @ver End-Reading
-					Actor sid Hierarch<Trubric>sid ru.Read</>End-Actor
+					Actor sid ac.Hierarch<Trubric>sid ru.Read</>End-Actor
 					Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
 				113, 127 use:
 					Reading sid hoMA.SunPostGospel.text @ver End-Reading
-					Actor sid Hierarch<Trubric>sid ru.Read</>End-Actor
+					Actor sid ac.Hierarch<Trubric>sid ru.Read</>End-Actor
 					Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
 				120 use:
-					Actor sid Hierarch<Trubric>sid ru.Read</>End-Actor
+					Actor sid ac.Hierarch<Trubric>sid ru.Read</>End-Actor
 					Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
 				otherwise use:
 					when-date-is
@@ -961,7 +961,7 @@ Status NA
 							when-name-of-day-is
 								Sunday use:
 									Reading sid hoMA.SunPostGospel.text @ver End-Reading
-									Actor sid Hierarch<Trubric>sid ru.Read</>End-Actor
+									Actor sid ac.Hierarch<Trubric>sid ru.Read</>End-Actor
 									Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
 								otherwise use:
 									Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
@@ -970,7 +970,7 @@ Status NA
 							when-name-of-day-is
 								Sunday use:
 									Reading sid hoMA.SunPostGospel.text @ver End-Reading
-									Actor sid Hierarch<Trubric>sid ru.Read</>End-Actor
+									Actor sid ac.Hierarch<Trubric>sid ru.Read</>End-Actor
 									Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
 								otherwise use:
 									Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
@@ -979,7 +979,7 @@ Status NA
 							when-name-of-day-is
 								Sunday use:
 									Reading sid hoMA.SunPostGospel.text @ver End-Reading
-									Actor sid Hierarch<Trubric>sid ru.Read</>End-Actor
+									Actor sid ac.Hierarch<Trubric>sid ru.Read</>End-Actor
 									Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
 								otherwise use:
 									Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
@@ -988,20 +988,20 @@ Status NA
 							when-name-of-day-is
 								Sunday use:
 									Reading sid hoMA.SunPostGospel.text @ver End-Reading
-									Actor sid Hierarch<Trubric>sid ru.Read</>End-Actor
+									Actor sid ac.Hierarch<Trubric>sid ru.Read</>End-Actor
 									Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
 								otherwise use:
 									Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
 							end-when						
 						Sep 14 use: 
 							Reading sid hoMA.SunPostGospel.text @ver End-Reading
-							Actor sid Hierarch<Trubric>sid ru.Read</>End-Actor
+							Actor sid ac.Hierarch<Trubric>sid ru.Read</>End-Actor
 							Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
 						Nov 21 use: 
 							when-name-of-day-is
 								Sunday use:
 									Reading sid hoMA.SunPostGospel.text @ver End-Reading
-									Actor sid Hierarch<Trubric>sid ru.Read</>End-Actor
+									Actor sid ac.Hierarch<Trubric>sid ru.Read</>End-Actor
 									Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
 								otherwise use:
 									Insert_section LiturgicalPsalms.Psalm_50_Paragraph End-Insert
@@ -1023,9 +1023,9 @@ Status NA
 						Title sid ti.BothNow<Tmode>sid ti.SameMode</>End-Title
 						Media sid tr.d001_gr_GR_cog.trMA.PostGospelBoth.text End-Media
 						Hymn sid tr.d001_gr_GR_cog.trMA.PostGospelBoth.text @ver media-off End-Hymn
-						Title<Tdesig>sid Idiomelon</><Tmode>sid tr.d001_gr_GR_cog.trMA.PostGospelIdiomelon.mode</>End-Title
+						Title<Tdesig>sid misc.Idiomelon</><Tmode>sid tr.d001_gr_GR_cog.trMA.PostGospelIdiomelon.mode</>End-Title
 						Media sid tr.d001_gr_GR_cog.trMA.PostGospelIdiomelon.text End-Media
-						Verse<bnr>sid vVerse</>sid psMA.postgospelverse.v1.text End-Verse
+						Verse<bnr>sid misc.vVerse</>sid psMA.postgospelverse.v1.text End-Verse
 						Hymn sid tr.d001_gr_GR_cog.trMA.PostGospelIdiomelon.text @ver media-off End-Hymn
 					End-Section 
 				otherwise use:
@@ -1036,7 +1036,7 @@ Status NA
 						Title sid ti.BothNow End-Title
 						Media sid hoMA.PostGospelTheotokos.text End-Media
 						Hymn sid hoMA.PostGospelTheotokos.text @ver media-off End-Hymn
-						Verse<bnr>sid vVerse</>sid psMA.postgospelverse.v1.text End-Verse
+						Verse<bnr>sid misc.vVerse</>sid psMA.postgospelverse.v1.text End-Verse
 						Media sid hoMA.SunPostGospelIdiomelon.text End-Media
 						Hymn sid hoMA.SunPostGospelIdiomelon.text @ver media-off End-Hymn
 					End-Section
@@ -1047,93 +1047,93 @@ Status NA
 			64 use:
 				Section tr
 					Title role source sid ti.sourceTriodion End-Title
-					Actor sid Choir End-Actor
+					Actor sid ac.Choir End-Actor
 					Media rid trMA.PostGospelGlory.text End-Media
 					Title sid ti.Glory<Tmode>rid trMA.PostGospelGlory.mode</>End-Title
 					Hymn rid trMA.PostGospelGlory.text @ver media-off End-Hymn
 					Title sid ti.BothNow<Tmode>sid ti.SameMode</>End-Title
 					Hymn rid trMA.PostGospelBoth.text @ver media-off End-Hymn
-					Title<Tdesig>sid Idiomelon</><Tmode>rid trMA.PostGospelIdiomelon.mode</>End-Title
+					Title<Tdesig>sid misc.Idiomelon</><Tmode>rid trMA.PostGospelIdiomelon.mode</>End-Title
 					Media rid trMA.PostGospelIdiomelon.text End-Media
-					Verse<bnr>sid vVerse</>sid psMA.postgospelverse.v1.text End-Verse
+					Verse<bnr>sid misc.vVerse</>sid psMA.postgospelverse.v1.text End-Verse
 					Hymn rid trMA.PostGospelIdiomelon.text @ver media-off End-Hymn
 				End-Section 
 			71 thru 127 use:
 				Section pe
 					Title role source sid ti.sourcePentecostarion End-Title
-					Actor sid Choir End-Actor
+					Actor sid ac.Choir End-Actor
 					Media rid peMA.PostGospelGlory.text End-Media
 					Title sid ti.Glory<Tmode>rid peMA.PostGospelGlory.mode</>End-Title
 					Hymn rid peMA.PostGospelGlory.text @ver media-off End-Hymn
 					Title sid ti.BothNow<Tmode>sid ti.SameMode</>End-Title
 					Hymn rid peMA.PostGospelBoth.text @ver media-off End-Hymn
-					Title<Tdesig>sid Idiomelon</><Tmode>rid peMA.PostGospelIdiomelon.mode</>End-Title
+					Title<Tdesig>sid misc.Idiomelon</><Tmode>rid peMA.PostGospelIdiomelon.mode</>End-Title
 					Media rid peMA.PostGospelIdiomelon.text End-Media
-					Verse<bnr>sid vVerse</>sid psMA.postgospelverse.v1.text End-Verse
+					Verse<bnr>sid misc.vVerse</>sid psMA.postgospelverse.v1.text End-Verse
 					Hymn rid peMA.PostGospelIdiomelon.text @ver media-off End-Hymn
 				End-Section
 		end-when
 	End-Section 
 	Section PostGospel_me
 		Title role source sid ti.sourceMenaion End-Title
-		Actor sid Choir End-Actor
-		Title sid ti.Glory<Tmode>sid Mode2</>End-Title
+		Actor sid ac.Choir End-Actor
+		Title sid ti.Glory<Tmode>sid misc.Mode2</>End-Title
 		Media rid meMA.PostGospelGlory.text End-Media
 		Hymn rid meMA.PostGospelGlory.text @ver media-off End-Hymn
 		Title sid ti.BothNow End-Title
 		Media rid meMA.PostGospelBoth.text End-Media
 		Hymn rid meMA.PostGospelBoth.text @ver media-off End-Hymn
-		Title<Tdesig>sid Idiomelon</><Tmode>rid meMA.PostGospelIdiomelon.mode</>End-Title
+		Title<Tdesig>sid misc.Idiomelon</><Tmode>rid meMA.PostGospelIdiomelon.mode</>End-Title
 		when-movable-cycle-day-is
 			71 thru 77 use:
 				when-date-is
 					Apr 23 use:
 						Media rid meMA.MM.PostGospelIdiomelon.text End-Media
-						Verse<bnr>sid vVerse</>sid psMA.m04.d23.postgospelverse.v1.text @ver End-Verse
+						Verse<bnr>sid misc.vVerse</>sid psMA.m04.d23.postgospelverse.v1.text @ver End-Verse
 					May 8 use:
 						Media rid meMA.MM.PostGospelIdiomelon.text End-Media
-						Verse<bnr>sid vVerse</>sid psMA.m05.d08.postgospelverse.v1.text @ver End-Verse
+						Verse<bnr>sid misc.vVerse</>sid psMA.m05.d08.postgospelverse.v1.text @ver End-Verse
 				end-when
 			otherwise use:
 				Media rid meMA.PostGospelIdiomelon.text End-Media
-				Verse<bnr>sid vVerse</>sid psMA.postgospelverse.v1.text @ver End-Verse
+				Verse<bnr>sid misc.vVerse</>sid psMA.postgospelverse.v1.text @ver End-Verse
 		end-when
 		Hymn rid meMA.PostGospelIdiomelon.text @ver media-off End-Hymn
 	End-Section
 	Section PostGospel_mealt1
 		Title role source sid ti.sourceMeSupplement End-Title
-		Actor sid Choir End-Actor
-		Title sid ti.Glory<Tmode>sid Mode2</>End-Title
+		Actor sid ac.Choir End-Actor
+		Title sid ti.Glory<Tmode>sid misc.Mode2</>End-Title
 		Media rid alt1.meMA.PostGospelGlory.text End-Media
 		Hymn rid alt1.meMA.PostGospelGlory.text @ver media-off End-Hymn
 		Title sid ti.BothNow End-Title
 		Media rid alt1.meMA.PostGospelBoth.text End-Media
 		Hymn rid alt1.meMA.PostGospelBoth.text @ver media-off End-Hymn
-		Title<Tdesig>sid Idiomelon</><Tmode>rid alt1.meMA.PostGospelIdiomelon.mode</>End-Title
+		Title<Tdesig>sid misc.Idiomelon</><Tmode>rid alt1.meMA.PostGospelIdiomelon.mode</>End-Title
 		Media rid alt1.meMA.PostGospelIdiomelon.text End-Media
 		when-movable-cycle-day-is
 			71 thru 77 use:
 				when-date-is
 					Apr 23 use:
-						Verse<bnr>sid vVerse</>sid psMA.m04.d23.postgospelverse.v1.text @ver End-Verse
+						Verse<bnr>sid misc.vVerse</>sid psMA.m04.d23.postgospelverse.v1.text @ver End-Verse
 				end-when
 			otherwise use:
-				Verse<bnr>sid vVerse</>sid psMA.postgospelverse.v1.text @ver End-Verse
+				Verse<bnr>sid misc.vVerse</>sid psMA.postgospelverse.v1.text @ver End-Verse
 		end-when
 		Hymn rid alt1.meMA.PostGospelIdiomelon.text @ver media-off End-Hymn
 	End-Section
 	Section PostGospel_pealt1
 		Title role source sid ti.sourcePeSupplement End-Title
-		Actor sid Choir End-Actor
-		Title sid ti.Glory<Tmode>sid Mode2</>End-Title
+		Actor sid ac.Choir End-Actor
+		Title sid ti.Glory<Tmode>sid misc.Mode2</>End-Title
 		Media rid alt1.peMA.PostGospelGlory.text End-Media
 		Hymn rid alt1.peMA.PostGospelGlory.text @ver media-off End-Hymn
 		Title sid ti.BothNow End-Title
 		Media rid alt1.peMA.PostGospelBoth.text End-Media
 		Hymn rid alt1.peMA.PostGospelBoth.text @ver media-off End-Hymn
-		Title<Tdesig>sid Idiomelon</><Tmode>rid alt1.peMA.PostGospelIdiomelon.mode</>End-Title
+		Title<Tdesig>sid misc.Idiomelon</><Tmode>rid alt1.peMA.PostGospelIdiomelon.mode</>End-Title
 		Media rid alt1.peMA.PostGospelIdiomelon.text End-Media
-		Verse<bnr>sid vVerse</>sid psMA.postgospelverse.v1.text @ver End-Verse
+		Verse<bnr>sid misc.vVerse</>sid psMA.postgospelverse.v1.text @ver End-Verse
 		Hymn rid alt1.peMA.PostGospelIdiomelon.text @ver media-off End-Hymn
 	End-Section
 	
