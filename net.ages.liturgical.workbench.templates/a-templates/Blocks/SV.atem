@@ -16,9 +16,9 @@ Status NA
 	import liturgical.verses_gr_GR_cog.*
 	import ps_gr_GR_cog.*
 	
-	import actors_gr_GR_cog.ac.*
+	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
-	import miscellanea_gr_GR_cog.misc.*
+	import miscellanea_gr_GR_cog.*
 	import prayers_gr_GR_cog.*
 	import rubrical_gr_GR_cog.*
 	import template.titles_gr_GR_cog.*
@@ -41,27 +41,27 @@ Status NA
 		when-movable-cycle-day-is
 			72, 73, 74, 75, 76, 77, 109 use:
 				Section pascha
-					Actor sid Priest End-Actor
+					Actor sid ac.Priest End-Actor
 					Dialog sid pr.enarxis01.text End-Dialog
-					Dialog<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Dialog
+					Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 					Insert_section PE.Pascha_Beginning End-Insert
 					//no litany
 				End-Section
 			otherwise use:
 				Section enarxis
-					Actor sid Priest End-Actor
+					Actor sid ac.Priest End-Actor
 					Dialog sid pr.enarxis01.text End-Dialog
-					Dialog<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Dialog
+					Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 				End-Section
 				Section introductorypsalm
 					when-movable-cycle-day-is 78 thru 108 use:
-						Actor sid Priest End-Actor
+						Actor sid ac.Priest End-Actor
 						Insert_section PE.ChristIsRisen.once End-Insert
-						Actor sid Choir End-Actor
+						Actor sid ac.Choir End-Actor
 						Insert_section PE.ChristIsRisen.twice End-Insert
-						Actor sid Reader End-Actor
+						Actor sid ac.Reader End-Actor
 					otherwise use:
-						Actor sid Reader End-Actor
+						Actor sid ac.Reader End-Actor
 						Reading sid pr.ComeLetUsWorship1.text End-Reading
 						Reading sid pr.ComeLetUsWorship2.text End-Reading
 						Reading sid pr.ComeLetUsWorship3.text End-Reading
@@ -162,35 +162,35 @@ Status NA
 				Section mode1
 					Title role source sid ti.sourceOctoechos End-Title
 					Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-					Title role mode sid Mode1 End-Title
+					Title role mode sid misc.Mode1 End-Title
 					Media sid oc.m1.d3_gr_GR_cog.ocVE.AposTheotokion.text End-Media
 					Hymn sid oc.m1.d3_gr_GR_cog.ocVE.AposTheotokion.text @ver media-off End-Hymn
 				End-Section
 				Section mode2
 					Title role source sid ti.sourceOctoechos End-Title
 					Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-					Title role mode sid Mode2 End-Title
+					Title role mode sid misc.Mode2 End-Title
 					Media sid ho.s23_gr_GR_cog.hoCA.Troparion7.text End-Media
 					Hymn sid ho.s23_gr_GR_cog.hoCA.Troparion7.text @ver media-off End-Hymn
 				End-Section
 				Section mode3
 					Title role source sid ti.sourceOctoechos End-Title
 					Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-					Title role mode sid Mode3 End-Title
+					Title role mode sid misc.Mode3 End-Title
 					Media sid oc.m3.d2_gr_GR_cog.ocVE.AposTheotokion.text End-Media
 					Hymn sid oc.m3.d2_gr_GR_cog.ocVE.AposTheotokion.text @ver media-off End-Hymn
 				End-Section
 				Section mode4
 					Title role source sid ti.sourceOctoechos End-Title
 					Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-					Title role mode sid Mode4 End-Title
+					Title role mode sid misc.Mode4 End-Title
 					Media sid oc.m4.d2_gr_GR_cog.ocMA.AposTheotokion.text End-Media
 					Hymn sid oc.m4.d2_gr_GR_cog.ocMA.AposTheotokion.text @ver media-off End-Hymn
 				End-Section
 				Section mode5
 					Title role source sid ti.sourceOctoechos End-Title
 					Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-					Title role mode sid Mode5 End-Title
+					Title role mode sid misc.Mode5 End-Title
 					Media sid oc.m5.d3_gr_GR_cog.ocVE.AposTheotokion.text End-Media
 					Hymn sid oc.m5.d3_gr_GR_cog.ocVE.AposTheotokion.text @ver media-off End-Hymn
 				End-Section
@@ -198,87 +198,87 @@ Status NA
 					Section apostle
 						Title role source sid ti.sourceOctoechos End-Title
 						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-						Title role mode sid Mode6 End-Title
+						Title role mode sid misc.Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Apostle End-Insert
 					End-Section
 					Section apostles
 						Title role source sid ti.sourceOctoechos End-Title
 						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-						Title role mode sid Mode6 End-Title
+						Title role mode sid misc.Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Apostles End-Insert
 					End-Section
 					Section devout
 						Title role source sid ti.sourceOctoechos End-Title
 						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-						Title role mode sid Mode6 End-Title
+						Title role mode sid misc.Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Devout End-Insert
 					End-Section
 					Section devouts
 						Title role source sid ti.sourceOctoechos End-Title
 						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-						Title role mode sid Mode6 End-Title
+						Title role mode sid misc.Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Devouts End-Insert
 					End-Section
 					Section forerunner
 						Title role source sid ti.sourceOctoechos End-Title
 						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-						Title role mode sid Mode6 End-Title
+						Title role mode sid misc.Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Forerunner End-Insert
 					End-Section
 					Section hierarch
 						Title role source sid ti.sourceOctoechos End-Title
 						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-						Title role mode sid Mode6 End-Title
+						Title role mode sid misc.Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Hierarch End-Insert
 					End-Section
 					Section martyr
 						Title role source sid ti.sourceOctoechos End-Title
 						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-						Title role mode sid Mode6 End-Title
+						Title role mode sid misc.Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Martyr End-Insert
 					End-Section
 					Section martyrs
 						Title role source sid ti.sourceOctoechos End-Title
 						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-						Title role mode sid Mode6 End-Title
+						Title role mode sid misc.Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Martyrs End-Insert
 					End-Section
 					Section prophet
 						Title role source sid ti.sourceOctoechos End-Title
 						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-						Title role mode sid Mode6 End-Title
+						Title role mode sid misc.Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Prophet End-Insert
 					End-Section
 					Section teachers
 						Title role source sid ti.sourceOctoechos End-Title
 						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-						Title role mode sid Mode6 End-Title
+						Title role mode sid misc.Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Teachers End-Insert
 					End-Section
 					Section unmercenaries
 						Title role source sid ti.sourceOctoechos End-Title
 						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-						Title role mode sid Mode6 End-Title
+						Title role mode sid misc.Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Unmercenaries End-Insert
 					End-Section
 					Section womanmartyr
 						Title role source sid ti.sourceOctoechos End-Title
 						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-						Title role mode sid Mode6 End-Title
+						Title role mode sid misc.Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_WomanMartyr End-Insert
 					End-Section
 				End-Section
 				Section mode7
 					Title role source sid ti.sourceOctoechos End-Title
 					Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-					Title role mode sid Mode7 End-Title
+					Title role mode sid misc.Mode7 End-Title
 					Media sid oc.m7.d5_gr_GR_cog.ocVE.AposTheotokion.text End-Media
 					Hymn sid oc.m7.d5_gr_GR_cog.ocVE.AposTheotokion.text @ver media-off End-Hymn
 				End-Section
 				Section mode8
 					Title role source sid ti.sourceOctoechos End-Title
 					Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-					Title role mode sid Mode8 End-Title
+					Title role mode sid misc.Mode8 End-Title
 					Media sid oc.m8.d5_gr_GR_cog.ocMA.AposTheotokion.text End-Media
 					Hymn sid oc.m8.d5_gr_GR_cog.ocMA.AposTheotokion.text @ver media-off End-Hymn
 				End-Section
@@ -439,7 +439,7 @@ Status NA
 		Break line End_Break
 		Rubric sid ru.NoEntrance End-Rubric
 		Break line End_Break
-		Actor sid Reader End-Actor
+		Actor sid ac.Reader End-Actor
 		Reading sid hoVE.FosIlaron.text End-Reading
 		when-movable-cycle-day-is
 			24, 25, 26, 27, 28, 31, 32, 33, 34, 35, 38, 39, 40, 41, 42, 45, 46, 47, 48, 49, 52, 53, 54, 55, 56, 59, 60, 61, 62, 63, 66, 67, 68 use:
@@ -449,9 +449,9 @@ Status NA
 	End-Section
 	
 	Section _05_Prayer
-		Actor sid Reader End-Actor
+		Actor sid ac.Reader End-Actor
 		Reading sid hoVE.Prayer_Kataxioson.text @ver End-Reading
-		Dialog <i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Dialog
+		Dialog <i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 	End-Section
 	
 	Section _06_Aposticha__
@@ -470,35 +470,35 @@ Status NA
 				Section mode1
 					Title role source sid ti.sourceOctoechos End-Title
 					Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-					Title role mode sid Mode1 End-Title
+					Title role mode sid misc.Mode1 End-Title
 					Media sid oc.m1.d3_gr_GR_cog.ocVE.AposTheotokion.text End-Media
 					Hymn sid oc.m1.d3_gr_GR_cog.ocVE.AposTheotokion.text @ver media-off End-Hymn
 				End-Section
 				Section mode2
 					Title role source sid ti.sourceOctoechos End-Title
 					Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-					Title role mode sid Mode2 End-Title
+					Title role mode sid misc.Mode2 End-Title
 					Media sid ho.s23_gr_GR_cog.hoCA.Troparion7.text End-Media
 					Hymn sid ho.s23_gr_GR_cog.hoCA.Troparion7.text @ver media-off End-Hymn
 				End-Section
 				Section mode3
 					Title role source sid ti.sourceOctoechos End-Title
 					Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-					Title role mode sid Mode3 End-Title
+					Title role mode sid misc.Mode3 End-Title
 					Media sid oc.m3.d2_gr_GR_cog.ocVE.AposTheotokion.text End-Media
 					Hymn sid oc.m3.d2_gr_GR_cog.ocVE.AposTheotokion.text @ver media-off End-Hymn
 				End-Section
 				Section mode4
 					Title role source sid ti.sourceOctoechos End-Title
 					Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-					Title role mode sid Mode4 End-Title
+					Title role mode sid misc.Mode4 End-Title
 					Media sid oc.m4.d2_gr_GR_cog.ocMA.AposTheotokion.text End-Media
 					Hymn sid oc.m4.d2_gr_GR_cog.ocMA.AposTheotokion.text @ver media-off End-Hymn
 				End-Section
 				Section mode5
 					Title role source sid ti.sourceOctoechos End-Title
 					Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-					Title role mode sid Mode5 End-Title
+					Title role mode sid misc.Mode5 End-Title
 					Media sid oc.m5.d3_gr_GR_cog.ocVE.AposTheotokion.text End-Media
 					Hymn sid oc.m5.d3_gr_GR_cog.ocVE.AposTheotokion.text @ver media-off End-Hymn
 				End-Section
@@ -506,87 +506,87 @@ Status NA
 					Section apostle
 						Title role source sid ti.sourceOctoechos End-Title
 						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-						Title role mode sid Mode6 End-Title
+						Title role mode sid misc.Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Apostle End-Insert
 					End-Section
 					Section apostles
 						Title role source sid ti.sourceOctoechos End-Title
 						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-						Title role mode sid Mode6 End-Title
+						Title role mode sid misc.Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Apostles End-Insert
 					End-Section
 					Section devout
 						Title role source sid ti.sourceOctoechos End-Title
 						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-						Title role mode sid Mode6 End-Title
+						Title role mode sid misc.Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Devout End-Insert
 					End-Section
 					Section devouts
 						Title role source sid ti.sourceOctoechos End-Title
 						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-						Title role mode sid Mode6 End-Title
+						Title role mode sid misc.Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Devouts End-Insert
 					End-Section
 					Section forerunner
 						Title role source sid ti.sourceOctoechos End-Title
 						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-						Title role mode sid Mode6 End-Title
+						Title role mode sid misc.Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Forerunner End-Insert
 					End-Section
 					Section hierarch
 						Title role source sid ti.sourceOctoechos End-Title
 						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-						Title role mode sid Mode6 End-Title
+						Title role mode sid misc.Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Hierarch End-Insert
 					End-Section
 					Section martyr
 						Title role source sid ti.sourceOctoechos End-Title
 						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-						Title role mode sid Mode6 End-Title
+						Title role mode sid misc.Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Martyr End-Insert
 					End-Section
 					Section martyrs
 						Title role source sid ti.sourceOctoechos End-Title
 						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-						Title role mode sid Mode6 End-Title
+						Title role mode sid misc.Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Martyrs End-Insert
 					End-Section
 					Section prophet
 						Title role source sid ti.sourceOctoechos End-Title
 						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-						Title role mode sid Mode6 End-Title
+						Title role mode sid misc.Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Prophet End-Insert
 					End-Section
 					Section teachers
 						Title role source sid ti.sourceOctoechos End-Title
 						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-						Title role mode sid Mode6 End-Title
+						Title role mode sid misc.Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Teachers End-Insert
 					End-Section
 					Section unmercenaries
 						Title role source sid ti.sourceOctoechos End-Title
 						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-						Title role mode sid Mode6 End-Title
+						Title role mode sid misc.Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_Unmercenaries End-Insert
 					End-Section
 					Section womanmartyr
 						Title role source sid ti.sourceOctoechos End-Title
 						Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-						Title role mode sid Mode6 End-Title
+						Title role mode sid misc.Mode6 End-Title
 						Insert_section he.o.Theotokion_Vine_WomanMartyr End-Insert
 					End-Section
 				End-Section
 				Section mode7
 					Title role source sid ti.sourceOctoechos End-Title
 					Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-					Title role mode sid Mode7 End-Title
+					Title role mode sid misc.Mode7 End-Title
 					Media sid oc.m7.d5_gr_GR_cog.ocVE.AposTheotokion.text End-Media
 					Hymn sid oc.m7.d5_gr_GR_cog.ocVE.AposTheotokion.text @ver media-off End-Hymn
 				End-Section
 				Section mode8
 					Title role source sid ti.sourceOctoechos End-Title
 					Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
-					Title role mode sid Mode8 End-Title
+					Title role mode sid misc.Mode8 End-Title
 					Media sid oc.m8.d5_gr_GR_cog.ocMA.AposTheotokion.text End-Media
 					Hymn sid oc.m8.d5_gr_GR_cog.ocMA.AposTheotokion.text @ver media-off End-Hymn
 				End-Section
@@ -702,7 +702,7 @@ Status NA
 			Section alt1__
 				Section p_devoutmen21
 					Title role source sid ti.sourceMeSupplement End-Title
-					Actor sid Choir End-Actor
+					Actor sid ac.Choir End-Actor
 					Title role desig sid ti.Aposticha End-Title		
 					Title<Tmode>rid alt1.meSV.Aposticha1.mode</><Tmode>rid alt1.meSV.Aposticha1.melody</>End-Title
 					Media rid alt1.meSV.Aposticha1.text End-Media
@@ -716,7 +716,7 @@ Status NA
 				End-Section
 				Section p_devoutmen2hierarchs2
 					Title role source sid ti.sourceMeSupplement End-Title
-					Actor sid Choir End-Actor
+					Actor sid ac.Choir End-Actor
 					Title role desig sid ti.Aposticha End-Title		
 					Title<Tmode>rid alt1.meSV.Aposticha1.mode</><Tmode>rid alt1.meSV.Aposticha1.melody</>End-Title
 					Media rid alt1.meSV.Aposticha1.text End-Media
@@ -730,7 +730,7 @@ Status NA
 				End-Section
 				Section p_devoutmen2greatmartyrs1
 					Title role source sid ti.sourceMeSupplement End-Title
-					Actor sid Choir End-Actor
+					Actor sid ac.Choir End-Actor
 					Title role desig sid ti.Aposticha End-Title		
 					Title<Tmode>rid alt1.meSV.Aposticha1.mode</><Tmode>rid alt1.meSV.Aposticha1.melody</>End-Title
 					Media rid alt1.meSV.Aposticha1.text End-Media
@@ -744,7 +744,7 @@ Status NA
 				End-Section
 				Section p_greatmartyrs12
 					Title role source sid ti.sourceMeSupplement End-Title
-					Actor sid Choir End-Actor
+					Actor sid ac.Choir End-Actor
 					Title role desig sid ti.Aposticha End-Title		
 					Title<Tmode>rid alt1.meSV.Aposticha1.mode</><Tmode>rid alt1.meSV.Aposticha1.melody</>End-Title
 					Media rid alt1.meSV.Aposticha1.text End-Media
@@ -758,7 +758,7 @@ Status NA
 				End-Section
 				Section p_hierarchs12
 					Title role source sid ti.sourceMeSupplement End-Title
-					Actor sid Choir End-Actor
+					Actor sid ac.Choir End-Actor
 					Title role desig sid ti.Aposticha End-Title		
 					Insert_section TI.apos.sv.mm.mealt1 End-Insert
 					Media rid alt1.meSV.Aposticha1.text End-Media
@@ -772,7 +772,7 @@ Status NA
 				End-Section
 				Section p_hierarchs2forerunner4
 					Title role source sid ti.sourceMeSupplement End-Title
-					Actor sid Choir End-Actor
+					Actor sid ac.Choir End-Actor
 					Title role desig sid ti.Aposticha End-Title		
 					Insert_section TI.apos.sv.mm.mealt1 End-Insert
 					Hymn rid alt1.meSV.Aposticha1.text @ver media-off End-Hymn
@@ -785,7 +785,7 @@ Status NA
 				End-Section
 				Section p_theotokosbelt1theotokos2
 					Title role source sid ti.sourceMeSupplement End-Title
-					Actor sid Choir End-Actor
+					Actor sid ac.Choir End-Actor
 					Title role desig sid ti.Aposticha End-Title		
 					Title<Tmode>rid alt1.meSV.Aposticha1.mode</><Tmelody>rid alt1.meSV.Aposticha1.melody</>End-Title
 					Media rid alt1.meSV.Aposticha1.text End-Media
@@ -799,7 +799,7 @@ Status NA
 				End-Section
 				Section p_women12
 					Title role source sid ti.sourceMeSupplement End-Title
-					Actor sid Choir End-Actor
+					Actor sid ac.Choir End-Actor
 					Title role desig sid ti.Aposticha End-Title		
 					Title<Tmode>rid alt1.meSV.Aposticha1.mode</><Tmelody>rid alt1.meSV.Aposticha1.melody</>End-Title
 					Media rid alt1.meSV.Aposticha1.text End-Media
@@ -814,7 +814,7 @@ Status NA
 			End-Section
 			Section i_annunciation12
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Insert_section TI.apos.f End-Insert
 				Title<Tdesig>sid ti.Idiomelon1</><Tmode>rid meSV.Aposticha1.mode</>End-Title
 				Media rid meSV.Aposticha1.text End-Media
@@ -830,7 +830,7 @@ Status NA
 			End-Section
 			Section i_apostles12
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Title role desig sid ti.Aposticha End-Title		
 				Title<Tdesig>sid ti.Idiomelon1</><Tmode>rid meSV.Aposticha1.mode</>End-Title
 				Media rid meSV.Aposticha1.text End-Media
@@ -846,7 +846,7 @@ Status NA
 			End-Section
 			Section i_christmas12
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Insert_section TI.apos.f End-Insert
 				Title<Tdesig>sid ti.Idiomelon1</><Tmode>rid meSV.Aposticha1.mode</>End-Title
 				Media rid meSV.Aposticha1.text End-Media
@@ -862,7 +862,7 @@ Status NA
 			End-Section
 			Section i_dormition12
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Insert_section TI.apos.f End-Insert
 				Title<Tdesig>sid ti.Idiomelon1</><Tmode>rid meSV.Aposticha1.mode</>End-Title
 				Media rid meSV.Aposticha1.text End-Media
@@ -878,7 +878,7 @@ Status NA
 			End-Section
 			Section i_earthquake12
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Title role desig sid ti.Aposticha End-Title		
 				Title<Tdesig>sid ti.Idiomelon1</><Tmode>rid meSV.Aposticha1.mode</>End-Title
 				Media rid meSV.Aposticha1.text End-Media
@@ -894,7 +894,7 @@ Status NA
 			End-Section
 			Section i_epiphanyprefeast34
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Insert_section TI.apos.bf End-Insert
 				Title<Tdesig>sid ti.Idiomelon1</><Tmode>rid meSV.Aposticha1.mode</>End-Title
 				Media rid meSV.Aposticha1.text End-Media
@@ -910,7 +910,7 @@ Status NA
 			End-Section
 			Section i_epiphany12
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Insert_section TI.apos.f End-Insert
 				Title<Tdesig>sid ti.Idiomelon1</><Tmode>rid meSV.Aposticha1.mode</>End-Title
 				Media rid meSV.Aposticha1.text End-Media
@@ -926,7 +926,7 @@ Status NA
 			End-Section
 			Section i_forerunner12
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Title role desig sid ti.Aposticha End-Title		
 				Title<Tdesig>sid ti.Idiomelon1</><Tmode>rid meSV.Aposticha1.mode</>End-Title
 				Media rid meSV.Aposticha1.text End-Media
@@ -942,7 +942,7 @@ Status NA
 			End-Section
 			Section i_forerunner56
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Title role desig sid ti.Aposticha End-Title		
 				Title<Tdesig>sid ti.Idiomelon1</><Tmode>rid meSV.Aposticha1.mode</>End-Title
 				Media rid meSV.Aposticha1.text End-Media
@@ -958,7 +958,7 @@ Status NA
 			End-Section
 			Section i_hierarchs13
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Title role desig sid ti.Aposticha End-Title		
 				Title<Tdesig>sid ti.Idiomelon1</><Tmode>rid meSV.Aposticha1.mode</>End-Title
 				Media rid meSV.Aposticha1.text End-Media
@@ -974,7 +974,7 @@ Status NA
 			End-Section
 			Section i_meeting12
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Insert_section TI.apos.f End-Insert
 				Title<Tdesig>sid ti.Idiomelon1</><Tmode>rid meSV.Aposticha1.mode</>End-Title
 				Media rid meSV.Aposticha1.text End-Media
@@ -990,7 +990,7 @@ Status NA
 			End-Section
 			Section i_prechristmas12
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Insert_section TI.apos.f End-Insert
 				Title<Tdesig>sid ti.Idiomelon1</><Tmode>rid meSV.Aposticha1.mode</>End-Title
 				Media rid meSV.Aposticha1.text End-Media
@@ -1006,7 +1006,7 @@ Status NA
 			End-Section
 			Section i_theotokos12
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Title role desig sid ti.Aposticha End-Title		
 				Title<Tdesig>sid ti.Idiomelon1</><Tmode>rid meSV.Aposticha1.mode</>End-Title
 				Media rid meSV.Aposticha1.text End-Media
@@ -1022,7 +1022,7 @@ Status NA
 			End-Section
 			Section i_transfiguration12
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Insert_section TI.apos.f End-Insert
 				Title<Tdesig>sid ti.Idiomelon1</><Tmode>rid meSV.Aposticha1.mode</>End-Title
 				Media rid meSV.Aposticha1.text End-Media
@@ -1038,7 +1038,7 @@ Status NA
 			End-Section
 			Section i_unmercenaries12
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Title role desig sid ti.Aposticha End-Title		
 				Title<Tdesig>sid ti.Idiomelon1</><Tmode>rid meSV.Aposticha1.mode</>End-Title
 				Media rid meSV.Aposticha1.text End-Media
@@ -1054,7 +1054,7 @@ Status NA
 			End-Section
 			Section p_angels12
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Title role desig sid ti.Aposticha End-Title		
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Media rid meSV.Aposticha1.text End-Media
@@ -1068,7 +1068,7 @@ Status NA
 			End-Section
 			Section p_apostles12
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Title role desig sid ti.Aposticha End-Title		
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Media rid meSV.Aposticha1.text End-Media
@@ -1082,7 +1082,7 @@ Status NA
 			End-Section
 			Section p_apostles1martyrs1
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Title role desig sid ti.Aposticha End-Title		
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Media rid meSV.Aposticha1.text End-Media
@@ -1096,7 +1096,7 @@ Status NA
 			End-Section
 			Section p_christmas12
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Insert_section TI.apos.f End-Insert
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Media rid meSV.Aposticha1.text End-Media
@@ -1110,7 +1110,7 @@ Status NA
 			End-Section
 			Section p_christmas12GB
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Insert_section TI.apos.f End-Insert
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Media rid meSV.Aposticha1.text End-Media
@@ -1130,7 +1130,7 @@ Status NA
 			End-Section
 			Section p_conceptionofanne12
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Title role desig sid ti.Aposticha End-Title		
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Media rid meSV.Aposticha1.text End-Media
@@ -1144,7 +1144,7 @@ Status NA
 			End-Section
 			Section p_cross12
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Insert_section TI.apos.cr End-Insert
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Media rid meSV.Aposticha1.text End-Media
@@ -1158,7 +1158,7 @@ Status NA
 			End-Section
 			Section p_cross12GB
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Insert_section TI.apos.f End-Insert
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Media rid meSV.Aposticha1.text End-Media
@@ -1180,7 +1180,7 @@ Status NA
 			End-Section
 			Section p_devoutmen12
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Title role desig sid ti.Aposticha End-Title		
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Media rid meSV.Aposticha1.text End-Media
@@ -1194,7 +1194,7 @@ Status NA
 			End-Section
 			Section p_devoutmen21
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Title role desig sid ti.Aposticha End-Title		
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Media rid meSV.Aposticha1.text End-Media
@@ -1208,7 +1208,7 @@ Status NA
 			End-Section
 			Section p_devoutmen23
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Title role desig sid ti.Aposticha End-Title		
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Media rid meSV.Aposticha1.text End-Media
@@ -1222,7 +1222,7 @@ Status NA
 			End-Section
 			Section p_devoutmen2hierarchs2
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Title role desig sid ti.Aposticha End-Title		
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Media rid meSV.Aposticha1.text End-Media
@@ -1236,7 +1236,7 @@ Status NA
 			End-Section
 			Section p_dormition1theotokos2
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Insert_section TI.apos.f End-Insert
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Media rid meSV.Aposticha1.text End-Media
@@ -1250,7 +1250,7 @@ Status NA
 			End-Section
 			Section p_entry12
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Insert_section TI.apos.f End-Insert
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Media rid meSV.Aposticha1.text End-Media
@@ -1264,7 +1264,7 @@ Status NA
 			End-Section
 			Section p_epiphanyprefeast34
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Insert_section TI.apos.bf End-Insert
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Media rid meSV.Aposticha1.text End-Media
@@ -1278,7 +1278,7 @@ Status NA
 			End-Section
 			Section p_epiphany12
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Insert_section TI.apos.f End-Insert
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Media rid meSV.Aposticha1.text End-Media
@@ -1292,7 +1292,7 @@ Status NA
 			End-Section
 			Section p_equaltoapostles12
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Insert_section TI.apos.s._04_equaltoapostles_.mp End-Insert
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Media rid meSV.Aposticha1.text End-Media
@@ -1306,7 +1306,7 @@ Status NA
 			End-Section
 			Section p_forerunner32
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Title role desig sid ti.Aposticha End-Title		
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Hymn rid meSV.Aposticha1.text @ver media-off End-Hymn
@@ -1319,7 +1319,7 @@ Status NA
 			End-Section
 			Section p_forerunner34
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Title role desig sid ti.Aposticha End-Title		
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Hymn rid meSV.Aposticha1.text @ver media-off End-Hymn
@@ -1332,7 +1332,7 @@ Status NA
 			End-Section
 			Section p_forerunner56
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Title role desig sid ti.Aposticha End-Title		
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Hymn rid meSV.Aposticha1.text @ver media-off End-Hymn
@@ -1345,7 +1345,7 @@ Status NA
 			End-Section
 			Section p_greatmartyrs12
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Title role desig sid ti.Aposticha End-Title		
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Media rid meSV.Aposticha1.text End-Media
@@ -1359,7 +1359,7 @@ Status NA
 			End-Section
 			Section p_hierarchs12
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Title role desig sid ti.Aposticha End-Title		
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Media rid meSV.Aposticha1.text End-Media
@@ -1373,7 +1373,7 @@ Status NA
 			End-Section
 			Section p_hierarchs13
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Title role desig sid ti.Aposticha End-Title		
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Media rid meSV.Aposticha1.text End-Media
@@ -1387,7 +1387,7 @@ Status NA
 			End-Section
 			Section p_hierarchs2forerunner4
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Title role desig sid ti.Aposticha End-Title		
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Hymn rid meSV.Aposticha1.text @ver media-off End-Hymn
@@ -1400,7 +1400,7 @@ Status NA
 			End-Section
 			Section p_hierarchs42
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Title role desig sid ti.Aposticha End-Title		
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Media rid meSV.Aposticha1.text End-Media
@@ -1414,7 +1414,7 @@ Status NA
 			End-Section
 			Section p_hierarchs2greatmartyrs1
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Title role desig sid ti.Aposticha End-Title		
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Media rid meSV.Aposticha1.text End-Media
@@ -1428,7 +1428,7 @@ Status NA
 			End-Section
 			Section p_martyrs12
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Title role desig sid ti.Aposticha End-Title		
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Media rid meSV.Aposticha1.text End-Media
@@ -1442,7 +1442,7 @@ Status NA
 			End-Section
 			Section p_martyrs13
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Title role desig sid ti.Aposticha End-Title		
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Media rid meSV.Aposticha1.text End-Media
@@ -1456,7 +1456,7 @@ Status NA
 			End-Section
 			Section p_meeting12GB
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Insert_section TI.apos.f End-Insert
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Media rid meSV.Aposticha1.text End-Media
@@ -1472,7 +1472,7 @@ Status NA
 			End-Section
 			Section p_oneapostle12
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Title role desig sid ti.Aposticha End-Title		
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Media rid meSV.Aposticha1.text End-Media
@@ -1486,7 +1486,7 @@ Status NA
 			End-Section
 			Section p_prechristmas12
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Insert_section TI.apos.f End-Insert
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Media rid meSV.Aposticha1.text End-Media
@@ -1500,7 +1500,7 @@ Status NA
 			End-Section
 			Section p_prechristmas12GB
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Insert_section TI.apos.f End-Insert
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Media rid meSV.Aposticha1.text End-Media
@@ -1522,7 +1522,7 @@ Status NA
 			End-Section
 			Section p_prophets12
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Title role desig sid ti.Aposticha End-Title		
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Media rid meSV.Aposticha1.text End-Media
@@ -1536,7 +1536,7 @@ Status NA
 			End-Section
 			Section p_righteous12
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Title role desig sid ti.Aposticha End-Title		
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Media rid meSV.Aposticha1.text End-Media
@@ -1550,7 +1550,7 @@ Status NA
 			End-Section
 			Section p_theotokos12
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Insert_section TI.apos.s._16_theotokos End-Insert
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Media rid meSV.Aposticha1.text End-Media
@@ -1564,7 +1564,7 @@ Status NA
 			End-Section
 			Section p_theotokosbelt12
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Insert_section TI.apos.s._16_theotokos End-Insert
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Media rid meSV.Aposticha1.text End-Media
@@ -1578,7 +1578,7 @@ Status NA
 			End-Section
 			Section p_theotokosbelt1theotokos2
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Insert_section TI.apos.s._16_theotokos End-Insert
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Media rid meSV.Aposticha1.text End-Media
@@ -1592,7 +1592,7 @@ Status NA
 			End-Section
 			Section p_theotokosrobe12
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Insert_section TI.apos.s._16_theotokos End-Insert
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Media rid meSV.Aposticha1.text End-Media
@@ -1606,7 +1606,7 @@ Status NA
 			End-Section
 			Section p_unmercenaries12
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Title role desig sid ti.Aposticha End-Title		
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Media rid meSV.Aposticha1.text End-Media
@@ -1620,7 +1620,7 @@ Status NA
 			End-Section
 			Section p_women12
 				Title role source sid ti.sourceMenaion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Title role desig sid ti.Aposticha End-Title
 				Insert_section TI.apos.sv.mm.me End-Insert
 				Media rid meSV.Aposticha1.text End-Media
@@ -1637,7 +1637,7 @@ Status NA
 			Section sunday__
 				Section aposticha1_
 					Title role source sid ti.sourceOctoechos End-Title
-					Actor sid Choir End-Actor
+					Actor sid ac.Choir End-Actor
 					Title role desig sid ti.ApostichaResurrectional End-Title
 					Section hymn
 						Title role mode rid ocSV.Aposticha1.mode @day D1 End-Title
@@ -1650,7 +1650,7 @@ Status NA
 		Section pe__
 			Section i_ascension12
 				Title role source sid ti.sourcePentecostarion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Insert_section TI.apos.f End-Insert
 				Title<Tdesig>sid ti.Idiomelon1</><Tmode>rid peSV.Aposticha1.mode</>End-Title
 				Media rid peSV.Aposticha1.text End-Media
@@ -1666,7 +1666,7 @@ Status NA
 			End-Section
 			Section i_midpentecost12
 				Title role source sid ti.sourcePentecostarion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Insert_section TI.apos.f End-Insert
 				Title<Tdesig>sid ti.Idiomelon1</><Tmode>rid peSV.Aposticha1.mode</>End-Title
 				Media rid peSV.Aposticha1.text End-Media
@@ -1682,7 +1682,7 @@ Status NA
 			End-Section
 			Section i_pentecost12
 				Title role source sid ti.sourcePentecostarion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Insert_section TI.apos.f End-Insert
 				Title<Tdesig>sid ti.Idiomelon1</><Tmode>rid peSV.Aposticha1.mode</>End-Title
 				Media rid peSV.Aposticha1.text End-Media
@@ -1698,7 +1698,7 @@ Status NA
 			End-Section
 			Section i_thomas12
 				Title role source sid ti.sourcePentecostarion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Insert_section TI.apos.f End-Insert
 				Title<Tdesig>sid ti.Idiomelon1</><Tmode>rid peSV.Aposticha1.mode</>End-Title
 				Media rid peSV.Aposticha1.text End-Media
@@ -1714,7 +1714,7 @@ Status NA
 			End-Section
 			Section p_ascension12
 				Title role source sid ti.sourcePentecostarion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Title role desig sid ti.Aposticha End-Title
 				Title<Tmode>rid peSV.Aposticha2.mode</><Tmelody>rid peSV.Aposticha2.melody</>End-Title
 				Media rid peSV.Aposticha1.text End-Media
@@ -1728,7 +1728,7 @@ Status NA
 			End-Section
 			Section p_theotokosfount12
 				Title role source sid ti.sourcePentecostarion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Title role desig sid ti.Aposticha End-Title
 				Title<Tmode>rid peSV.Aposticha2.mode</><Tmelody>rid peSV.Aposticha2.melody</>End-Title
 				Media rid peSV.Aposticha2.text End-Media
@@ -1744,29 +1744,29 @@ Status NA
 		Section tr__
 			Section i_palmsunday12
 				Title role source sid ti.sourceTriodion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Title role desig sid ti.Aposticha End-Title
-				Title<Tdesig>sid Idiomelon</><Tmode>rid trSV.Aposticha1.mode</>End-Title
+				Title<Tdesig>sid misc.Idiomelon</><Tmode>rid trSV.Aposticha1.mode</>End-Title
 				Media rid trSV.Aposticha1.text End-Media
 				Hymn rid trSV.Aposticha1.text @ver media-off End-Hymn
-				Title<Tdesig>sid Idiomelon</><Tmode>rid trSV.Aposticha2.mode</>End-Title
+				Title<Tdesig>sid misc.Idiomelon</><Tmode>rid trSV.Aposticha2.mode</>End-Title
 				Insert_section PsalmVerses.forPalmSunday.verse1 End-Insert
 				Hymn rid trSV.Aposticha2.text @ver media-off End-Hymn
-				Title<Tdesig>sid Idiomelon</><Tmode>rid trSV.Aposticha3.mode</>End-Title
+				Title<Tdesig>sid misc.Idiomelon</><Tmode>rid trSV.Aposticha3.mode</>End-Title
 				Insert_section PsalmVerses.forPalmSunday.verse2 End-Insert
 				Hymn rid trSV.Aposticha3.text @ver media-off End-Hymn
 			End-Section
 			Section i_palmsunday34
 				Title role source sid ti.sourceTriodion End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Title role desig sid ti.Aposticha End-Title
-				Title<Tdesig>sid Idiomelon</><Tmode>rid trSV.Aposticha1.mode</>End-Title
+				Title<Tdesig>sid misc.Idiomelon</><Tmode>rid trSV.Aposticha1.mode</>End-Title
 				Media rid trSV.Aposticha1.text End-Media
 				Hymn rid trSV.Aposticha1.text @ver media-off End-Hymn
-				Title<Tdesig>sid Idiomelon</><Tmode>rid trSV.Aposticha2.mode</>End-Title
+				Title<Tdesig>sid misc.Idiomelon</><Tmode>rid trSV.Aposticha2.mode</>End-Title
 				Insert_section PsalmVerses.forPalmSunday.verse3 End-Insert
 				Hymn rid trSV.Aposticha2.text @ver media-off End-Hymn
-				Title<Tdesig>sid Idiomelon</><Tmode>rid trSV.Aposticha3.mode</>End-Title
+				Title<Tdesig>sid misc.Idiomelon</><Tmode>rid trSV.Aposticha3.mode</>End-Title
 				Insert_section PsalmVerses.forPalmSunday.verse4 End-Insert
 				Hymn rid trSV.Aposticha3.text @ver media-off End-Hymn
 			End-Section
@@ -1775,27 +1775,27 @@ Status NA
 	
 	Section _07_Symeon_Trisagion
 		Section symeon
-			Actor sid Reader End-Actor
+			Actor sid ac.Reader End-Actor
 			Title<Tdesig>sid le.go.os_gr_GR_cog.leosVE.Prayer_NynApolyeis.title</>End-Title
 			Para role prayer sid goVE.songofsymeon.v1.text @ver End-Para
 		End-Section
 		Section trisagion
-			Actor sid People End-Actor		
+			Actor sid ac.People End-Actor		
 			Insert_section Trisagion_Prayers End-Insert
-			Actor sid Priest End-Actor
+			Actor sid ac.Priest End-Actor
 			Para role prayer sid pr.exc20.text End-Para
-			Para role prayer<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Para
+			Para role prayer<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Para
 		End-Section
-		Actor sid Choir End-Actor
+		Actor sid ac.Choir End-Actor
 	End-Section
 	
 	Section _08_End
-		Actor sid Priest End-Actor
+		Actor sid ac.Priest End-Actor
 		Dialog sid pr.exc17.text End-Dialog
-		Dialog<i>sid parenthesis.open sid pr.Bless_father.text sid parenthesis.close</>End-Dialog	
-		Dialog sid pr.DismissalPrayer1.text<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.Bless_father.text sid misc.parenthesis.close</>End-Dialog	
+		Dialog sid pr.DismissalPrayer1.text<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 		Dialog sid pr.DismissalPrayer2.text End-Dialog
-		Actor sid Reader End-Actor
+		Actor sid ac.Reader End-Actor
 		Dialog sid pr.res04.text End-Dialog
 		when-movable-cycle-day-is
 			71, 72, 73, 74, 75, 76, 77, 109 use:
@@ -1816,7 +1816,7 @@ Status NA
 		Section commemoration
 			Insert_section Selector_Dismissals.Com_Yes End-Insert
 			Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
-			Dialog<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Dialog
+			Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 		End-Section
 		Section mealt1_commemoration
 			Insert_section Selector_Dismissals.mealt1_Com_Yes End-Insert
@@ -1830,7 +1830,7 @@ Status NA
 		Section nocommemoration
 			Insert_section Selector_Dismissals.Short End-Insert
 			Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
-			Dialog<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Dialog
+			Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 	End-Section
 		Section specificcommemoration__
 			Section brightweek_stgeorge
@@ -1852,7 +1852,7 @@ Status NA
 	Section vesperal_prayers
 		Title role bmc_collapse sid clps.prayers.top End-Title
 		Rubric sid hiVE.R1113 End-Rubric
-		Actor sid Priest<Trubric>sid ru.Inaudibly</>End-Actor
+		Actor sid ac.Priest<Trubric>sid ru.Inaudibly</>End-Actor
 		Title<Tdesig>sid hiVE.Key1101.title</>End-Title
 		Para role prayer sid hiVE.Key1101.text @ver End-Para
 		Para role prayer sid hiVE.Key1101.exclamation @ver sid pr.res04.text End-Para
@@ -1921,7 +1921,7 @@ Status NA
 	End-Section
 
 	Section LIHC_ModeOfWeek
-		Actor sid Choir End-Actor
+		Actor sid ac.Choir End-Actor
 		Title role mode rid ocVE.Stichera1.mode @day D1 End-Title
 		Media rid ocVE.MM.LIHC1.text @day D1 End-Media
 		Insert_section LIHC_1 End-Insert 
@@ -1929,64 +1929,64 @@ Status NA
 		Insert_section LIHC_2 End-Insert 
 	End-Section //LIHC
 	Section LIHC_Mode1 
-		Actor sid Choir End-Actor
-		Title role mode sid Mode1 End-Title
+		Actor sid ac.Choir End-Actor
+		Title role mode sid misc.Mode1 End-Title
 		Media sid oc.m1.d1_gr_GR_cog.ocVE.MM.LIHC1.text End-Media 
 		Insert_section LIHC_1 End-Insert 
 		Media sid oc.m1.d1_gr_GR_cog.ocVE.MM.LIHC2.text End-Media 
 		Insert_section LIHC_2 End-Insert 
 	End-Section //LIHC
 	Section LIHC_Mode2 
-		Actor sid Choir End-Actor
-		Title role mode sid Mode2 End-Title
+		Actor sid ac.Choir End-Actor
+		Title role mode sid misc.Mode2 End-Title
 		Media sid oc.m2.d1_gr_GR_cog.ocVE.MM.LIHC1.text End-Media 
 		Insert_section LIHC_1 End-Insert 
 		Media sid oc.m2.d1_gr_GR_cog.ocVE.MM.LIHC2.text End-Media 
 		Insert_section LIHC_2 End-Insert 
 	End-Section //LIHC
 	Section LIHC_Mode3 
-		Actor sid Choir End-Actor
-		Title role mode sid Mode3 End-Title
+		Actor sid ac.Choir End-Actor
+		Title role mode sid misc.Mode3 End-Title
 		Media sid oc.m3.d1_gr_GR_cog.ocVE.MM.LIHC1.text End-Media 
 		Insert_section LIHC_1 End-Insert 
 		Media sid oc.m3.d1_gr_GR_cog.ocVE.MM.LIHC2.text End-Media 
 		Insert_section LIHC_2 End-Insert 
 	End-Section //LIHC
 	Section LIHC_Mode4 
-		Actor sid Choir End-Actor
-		Title role mode sid Mode4 End-Title
+		Actor sid ac.Choir End-Actor
+		Title role mode sid misc.Mode4 End-Title
 		Media sid oc.m4.d1_gr_GR_cog.ocVE.MM.LIHC1.text End-Media 
 		Insert_section LIHC_1 End-Insert 
 		Media sid oc.m4.d1_gr_GR_cog.ocVE.MM.LIHC2.text End-Media 
 		Insert_section LIHC_2 End-Insert 
 	End-Section //LIHC
 	Section LIHC_Mode5 
-		Actor sid Choir End-Actor
-		Title role mode sid Mode5 End-Title
+		Actor sid ac.Choir End-Actor
+		Title role mode sid misc.Mode5 End-Title
 		Media sid oc.m5.d1_gr_GR_cog.ocVE.MM.LIHC1.text End-Media 
 		Insert_section LIHC_1 End-Insert 
 		Media sid oc.m5.d1_gr_GR_cog.ocVE.MM.LIHC2.text End-Media 
 		Insert_section LIHC_2 End-Insert 
 	End-Section //LIHC
 	Section LIHC_Mode6 
-		Actor sid Choir End-Actor
-		Title role mode sid Mode6 End-Title
+		Actor sid ac.Choir End-Actor
+		Title role mode sid misc.Mode6 End-Title
 		Media sid oc.m6.d1_gr_GR_cog.ocVE.MM.LIHC1.text End-Media 
 		Insert_section LIHC_1 End-Insert 
 		Media sid oc.m6.d1_gr_GR_cog.ocVE.MM.LIHC2.text End-Media 
 		Insert_section LIHC_2 End-Insert 
 	End-Section //LIHC
 	Section LIHC_Mode7 
-		Actor sid Choir End-Actor
-		Title role mode sid Mode7 End-Title
+		Actor sid ac.Choir End-Actor
+		Title role mode sid misc.Mode7 End-Title
 		Media sid oc.m7.d1_gr_GR_cog.ocVE.MM.LIHC1.text End-Media 
 		Insert_section LIHC_1 End-Insert 
 		Media sid oc.m7.d1_gr_GR_cog.ocVE.MM.LIHC2.text End-Media 
 		Insert_section LIHC_2 End-Insert 
 	End-Section //LIHC
 	Section LIHC_Mode8 
-		Actor sid Choir End-Actor
-		Title role mode sid Mode8 End-Title
+		Actor sid ac.Choir End-Actor
+		Title role mode sid misc.Mode8 End-Title
 		Media sid oc.m8.d1_gr_GR_cog.ocVE.MM.LIHC1.text End-Media
 		Insert_section LIHC_1 End-Insert 
 		Media sid oc.m8.d1_gr_GR_cog.ocVE.MM.LIHC2.text End-Media 
@@ -1995,12 +1995,12 @@ Status NA
 
 	Section Symeon_Trisagion
 		Section Symeon
-			Actor sid Priest End-Actor
+			Actor sid ac.Priest End-Actor
 			Insert_section NynApolyeis.title End-Insert
 			Insert_section NynApolyeis.text End-Insert
 		End-Section
 		Section Trisagion
-			Actor sid People End-Actor		
+			Actor sid ac.People End-Actor		
 			Section prayers
 				Title role desig sid ti.Trisagion End-Title
 				Reading sid pr.HolyGod.text<r>sid ru.Thrice media-off</>End-Reading
@@ -2010,8 +2010,8 @@ Status NA
 				Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
 				Reading sid pr.OurFather.text End-Reading
 			End-Section		
-			Actor sid Priest End-Actor
-			Dialog sid pr.exc20.text<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Dialog
+			Actor sid ac.Priest End-Actor
+			Dialog sid pr.exc20.text<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 		End-Section
 	End-Section
 

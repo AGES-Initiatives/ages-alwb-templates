@@ -22,9 +22,9 @@ Status NA
 	import pe.*
 	import tr.*
 
-	import actors_gr_GR_cog.ac.*
+	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
-	import miscellanea_gr_GR_cog.misc.*
+	import miscellanea_gr_GR_cog.*
 	import prayers_gr_GR_cog.*
 	import rubrical_gr_GR_cog.*
 	import template.titles_gr_GR_cog.*
@@ -37,7 +37,7 @@ Status NA
 	Section smallcompline__
 		Section part1
 			Insert_section _01_Intro_ End-Insert
-			Actor sid Reader End-Actor
+			Actor sid ac.Reader End-Actor
 			Reading sid pr.res04.text sid pr.res01.text<r>sid ru.Twelve</>End-Reading
 			Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
 			Reading sid pr.ComeLetUsWorship1.text End-Reading
@@ -57,9 +57,9 @@ Status NA
 		End-Section
 		//canon
 		Section part2
-			Actor sid Reader End-Actor
+			Actor sid ac.Reader End-Actor
 			Insert_section _01_Intro_.append.Trisagion_Prayers End-Insert
-			Actor sid Reader End-Actor
+			Actor sid ac.Reader End-Actor
 			Dialog sid pr.res04.text End-Dialog
 		End-Section
 		//Kontakia
@@ -80,7 +80,7 @@ Status NA
 			Reading sid hoCO.Key1105.text @ver End-Reading
 		End-Section
 		Section part5
-		//	Actor sid Reader End-Actor
+		//	Actor sid ac.Reader End-Actor
 			Rubric sid ru.Optional End-Rubric
 			Reading<Toptional> sid hoSC.Key0202.text @ver</>End-Reading
 			Rubric sid ru.Optional End-Rubric
@@ -92,15 +92,15 @@ Status NA
 			Break line End_Break
 		End-Section
 		Section part6
-		//	Actor sid Reader End-Actor
+		//	Actor sid ac.Reader End-Actor
 			Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
 			Reading sid pr.res06.text End-Reading
 			Reading sid pr.Bless_father.text End-Reading
-			Actor sid Priest End-Actor
+			Actor sid ac.Priest End-Actor
 			Insert_section Selector_Dismissals.Short End-Insert
 			Section litany
 				Dialog sid pr.petCompline01.text End-Dialog
-				Dialog<i>sid parenthesis.open sid pr.res01.text sid parenthesis.close</>End-Dialog
+				Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
 				Dialog sid pr.petCompline02.text End-Dialog
 				Dialog sid pr.petCompline03.text sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
 				Dialog sid pr.petCompline04.text End-Dialog
@@ -120,21 +120,21 @@ Status NA
 		Section part7
 			when-movable-cycle-day-is 
 				28, 35, 42, 49 use:
-					Actor sid Choir End-Actor
+					Actor sid ac.Choir End-Actor
 					Title role mode sid hoSA.LastHymn.mode End-Title
 					Media sid hoSA.LastHymn.text End-Media
 					Hymn sid hoSA.LastHymn.text @ver media-off End-Hymn
 				56 use:
-					Actor sid Chanter End-Actor
+					Actor sid ac.Chanter End-Actor
 					Title role mode sid hoSA.LastHymn.mode End-Title
 					Media sid hoSA.LastHymn.text End-Media
 					Hymn sid hoSA.LastHymn.text @ver media-off End-Hymn
 			end-when	
 		End-Section
 		Section part8
-			Actor sid Priest End-Actor
+			Actor sid ac.Priest End-Actor
 			Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
-			Dialog<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Dialog
+			Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 		End-Section
 	End-Section
 
@@ -438,9 +438,9 @@ Status NA
 //Blocks  
 	Section _01_Intro_
 		Section enarxis
-			Actor sid Priest End-Actor
+			Actor sid ac.Priest End-Actor
 			Dialog sid pr.enarxis01.text End-Dialog
-			Dialog<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Dialog
+			Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 			Section Heavenly_King
 				when-movable-cycle-day-is
 					71 thru 109 use:
@@ -453,7 +453,7 @@ Status NA
 			End-Section
 		End-Section
 		Section append
-			Actor sid Reader End-Actor
+			Actor sid ac.Reader End-Actor
 			Section Trisagion_Prayers
 				when-movable-cycle-day-is
 					71 thru 109 use:
@@ -467,14 +467,14 @@ Status NA
 				Reading sid pr.res06.text End-Reading
 				Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
 				Reading sid pr.OurFather.text @ver End-Reading
-				Actor sid Priest End-Actor
+				Actor sid ac.Priest End-Actor
 				Dialog sid pr.exc20.text End-Dialog
 			End-Section
 		End-Section	
 	End-Section
 	Section _02_Psalms__
 		Section h1
-			Actor sid Reader End-Actor
+			Actor sid ac.Reader End-Actor
 			Reading sid pr.ComeLetUsWorship1.text End-Reading
 			Reading sid pr.ComeLetUsWorship2.text End-Reading
 			Reading sid pr.ComeLetUsWorship3.text End-Reading
@@ -489,7 +489,7 @@ Status NA
 			Reading sid pr.res01.text<r>sid ru.Thrice</>End-Reading
 		End-Section
 		Section h3
-			Actor sid Reader End-Actor
+			Actor sid ac.Reader End-Actor
 			Reading sid pr.res04.text End-Reading
 			Reading sid pr.res01.text<r>sid ru.Twelve</>End-Reading
 			Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
@@ -507,7 +507,7 @@ Status NA
 			Reading sid pr.res01.text<r>sid ru.Thrice</>End-Reading
 		End-Section
 		Section h6
-			Actor sid Reader End-Actor
+			Actor sid ac.Reader End-Actor
 			Reading sid pr.ComeLetUsWorship1.text End-Reading
 			Reading sid pr.ComeLetUsWorship2.text End-Reading
 			Reading sid pr.ComeLetUsWorship3.text End-Reading
@@ -522,7 +522,7 @@ Status NA
 			Reading sid pr.res01.text<r>sid ru.Thrice</>End-Reading
 		End-Section
 		Section h9
-			Actor sid Reader End-Actor
+			Actor sid ac.Reader End-Actor
 			Reading sid pr.res04.text End-Reading
 			Reading sid pr.res01.text<r>sid ru.Twelve</>End-Reading
 			Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
@@ -552,7 +552,7 @@ Status NA
 			Reading sid psH1.v5.text End-Reading
 			Reading sid psH1.v6.text @ver End-Reading
 			Insert_section _01_Intro_.append.Trisagion_Prayers End-Insert
-			Actor sid Reader End-Actor
+			Actor sid ac.Reader End-Actor
 			Dialog sid pr.res04.text End-Dialog
 		End-Section
 		Section h1_lent
@@ -575,23 +575,23 @@ Status NA
 							Reading sid psH1.v5.text @ver End-Reading
 							Reading sid psH1.v6.text @ver End-Reading
 						44, 46, 48 use:
-							Actor sid Choir End-Actor
-							Title role mode sid Mode2 End-Title
+							Actor sid ac.Choir End-Actor
+							Title role mode sid misc.Mode2 End-Title
 							Hymn sid hoLI.TonStavronSou.text<r>sid ru.Thrice</>End-Hymn
-							Actor sid Reader End-Actor
+							Actor sid ac.Reader End-Actor
 						otherwise use:
-							Actor sid Choir End-Actor
+							Actor sid ac.Choir End-Actor
 							Media sid hoH1.LentSungVerses.text End-Media
 							Hymn sid psH1.v3.text<r>sid ru.Twice</>End-Hymn
 							Hymn sid psH1.v4.text<r>sid ru.Twice</>End-Hymn
 							Hymn sid psH1.v5.text<r>sid ru.Twice</>End-Hymn
 							Media sid psH1.v6.text End-Media
 							Hymn sid psH1.v6.text @ver media-off <r>sid ru.Thrice</>End-Hymn
-							Actor sid Reader End-Actor
+							Actor sid ac.Reader End-Actor
 					end-when
 			end-when
 			Insert_section _01_Intro_.append.Trisagion_Prayers End-Insert
-			Actor sid Reader End-Actor
+			Actor sid ac.Reader End-Actor
 			Dialog sid pr.res04.text End-Dialog
 		End-Section
 		Section h3
@@ -602,7 +602,7 @@ Status NA
 			Media sid psH3.v3.text End-Media
 			Hymn sid psH3.v3.text @ver media-off End-Hymn
 			Insert_section _01_Intro_.append.Trisagion_Prayers End-Insert
-			Actor sid Reader End-Actor
+			Actor sid ac.Reader End-Actor
 			Dialog sid pr.res04.text End-Dialog
 		End-Section
 		Section h3_lent
@@ -616,7 +616,7 @@ Status NA
 				Media sid psH3.v3.text End-Media
 				Hymn sid psH3.v3.text @ver media-off End-Hymn
 				Insert_section _01_Intro_.append.Trisagion_Prayers End-Insert
-				Actor sid Reader End-Actor
+				Actor sid ac.Reader End-Actor
 				Dialog sid pr.res04.text End-Dialog
 			End-Section
 		End-Section
@@ -628,7 +628,7 @@ Status NA
 			Media sid psH6.v3.text End-Media
 			Hymn sid psH6.v3.text @ver media-off End-Hymn
 			Insert_section _01_Intro_.append.Trisagion_Prayers End-Insert
-			Actor sid Reader End-Actor
+			Actor sid ac.Reader End-Actor
 			Dialog sid pr.res04.text End-Dialog
 		End-Section
 		Section h6_lent
@@ -642,7 +642,7 @@ Status NA
 				Media sid psH6.v3.text End-Media
 				Hymn sid psH6.v3.text @ver media-off End-Hymn
 				Insert_section _01_Intro_.append.Trisagion_Prayers End-Insert
-				Actor sid Reader End-Actor
+				Actor sid ac.Reader End-Actor
 				Dialog sid pr.res04.text End-Dialog
 			End-Section
 		End-Section
@@ -654,7 +654,7 @@ Status NA
 			Media sid leosH9.ho.s09.Key0001.text End-Media
 			Hymn sid leosH9.ho.s09.Key0001.text @ver media-off End-Hymn
 			Insert_section _01_Intro_.append.Trisagion_Prayers End-Insert
-			Actor sid Reader End-Actor
+			Actor sid ac.Reader End-Actor
 			Dialog sid pr.res04.text End-Dialog
 		End-Section
 		Section h9_lent
@@ -668,7 +668,7 @@ Status NA
 				Media sid leosH9.ho.s09.Key0001.text End-Media
 				Hymn sid leosH9.ho.s09.Key0001.text @ver media-off End-Hymn
 				Insert_section _01_Intro_.append.Trisagion_Prayers End-Insert
-				Actor sid Reader End-Actor
+				Actor sid ac.Reader End-Actor
 				Dialog sid pr.res04.text End-Dialog
 			End-Section
 		End-Section
@@ -685,9 +685,9 @@ Status NA
 			Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
 			Reading sid pr.GreaterInHonor.text End-Reading
 			Reading sid pr.InTheNameOfLordBless_father.text End-Reading
-			Actor sid Priest End-Actor
+			Actor sid ac.Priest End-Actor
 			Dialog sid pr.MayGodHaveCompassion.text End-Dialog
-			Actor sid Reader End-Actor
+			Actor sid ac.Reader End-Actor
 			Dialog sid pr.res04.text End-Dialog
 		End-Section
 		Section h9_lent
@@ -695,35 +695,35 @@ Status NA
 			Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
 			Reading sid pr.GreaterInHonor.text End-Reading
 			Reading sid pr.InTheNameOfLordBless_father.text End-Reading
-			Actor sid Priest End-Actor
-			Reading sid pr.ThroughThePrayers_fathers.text<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Reading
-			Actor sid Reader End-Actor
+			Actor sid ac.Priest End-Actor
+			Reading sid pr.ThroughThePrayers_fathers.text<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Reading
+			Actor sid ac.Reader End-Actor
 			Dialog sid pr.res04.text End-Dialog
 		End-Section
 	End-Section
 	Section _05_Lent__
 		Section h1
-			Actor sid Priest End-Actor
+			Actor sid ac.Priest End-Actor
 			Insert_section TR.StEphraimPrayer_long End-Insert
-			Actor sid Reader End-Actor
+			Actor sid ac.Reader End-Actor
 			Insert_section HR._01_Intro_.append.Trisagion_Prayers End-Insert
-			Actor sid Reader End-Actor
+			Actor sid ac.Reader End-Actor
 			Reading sid pr.res04.text sid pr.res01.text<r>sid ru.Twelve</>End-Reading
 		End-Section
 		Section h3
-			Actor sid Priest End-Actor
+			Actor sid ac.Priest End-Actor
 			Insert_section TR.StEphraimPrayer_long End-Insert
-//				Actor sid Reader End-Actor
+//				Actor sid ac.Reader End-Actor
 //				Insert_section _01_Intro_.Trisagion_Prayers End-Insert
-//				Actor sid Reader End-Actor
+//				Actor sid ac.Reader End-Actor
 //				Reading sid pr.res04.text sid pr.res01.text<r>sid ru.Twelve</>End-Reading
 		End-Section
 		Section h6
-			Actor sid Priest End-Actor
+			Actor sid ac.Priest End-Actor
 			Insert_section TR.StEphraimPrayer_long End-Insert
-//				Actor sid Reader End-Actor
+//				Actor sid ac.Reader End-Actor
 //				Insert_section _01_Intro_.Trisagion_Prayers End-Insert
-//				Actor sid Reader End-Actor
+//				Actor sid ac.Reader End-Actor
 //				Reading sid pr.res04.text sid pr.res01.text<r>sid ru.Twelve</>End-Reading
 		End-Section
 		Section h9__
@@ -731,9 +731,9 @@ Status NA
 				Insert_section TR.StEphraimPrayer_short End-Insert
 				Section h9
 					Rubric sid hoH9.Prayer.R01 End-Rubric
-					Actor sid Priest End-Actor
+					Actor sid ac.Priest End-Actor
 					Title<Tdesig>sid hoH9.Prayer.title</>End-Title
-					Para role prayeroptional sid hoH9.Prayer.text<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Para
+					Para role prayeroptional sid hoH9.Prayer.text<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Para
 				End-Section
 				Insert_section _08_Typika__.with_priest_.beatitudes End-Insert
 				Insert_section _08_Typika__.with_priest_.prayers End-Insert
@@ -744,11 +744,11 @@ Status NA
 				Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
 				Reading sid pr.GreaterInHonor.text End-Reading
 				Reading sid pr.InTheNameOfLordBless_father.text End-Reading
-				Actor sid Priest End-Actor
+				Actor sid ac.Priest End-Actor
 				Dialog sid pr.MayGodHaveCompassion.text End-Dialog
-				Actor sid Reader End-Actor
+				Actor sid ac.Reader End-Actor
 				Dialog sid pr.res04.text End-Dialog
-				Actor sid Priest End-Actor
+				Actor sid ac.Priest End-Actor
 				Insert_section TR.StEphraimPrayer_long End-Insert
 				Rubric sid ru.BeginVespers End-Rubric
 			End-Section
@@ -756,9 +756,9 @@ Status NA
 				Insert_section TR.StEphraimPrayer_short End-Insert
 				Section h9
 					Rubric sid hoH9.Prayer.R01 End-Rubric
-					Actor sid Priest End-Actor
+					Actor sid ac.Priest End-Actor
 					Title<Tdesig>sid hoH9.Prayer.title</>End-Title
-					Para role prayeroptional sid hoH9.Prayer.text<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Para
+					Para role prayeroptional sid hoH9.Prayer.text<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Para
 				End-Section
 				Insert_section _08_Typika__.with_priest_.beatitudes End-Insert
 				Insert_section _08_Typika__.with_priest_.prayers End-Insert
@@ -769,38 +769,38 @@ Status NA
 	End-Section
 	Section _06_PrayerOfHour__
 		Section h1
-			Actor sid Priest End-Actor
-			Reading sid hoH1.Prayer.text<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Reading
+			Actor sid ac.Priest End-Actor
+			Reading sid hoH1.Prayer.text<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Reading
 		End-Section
 		Section h3
-			Actor sid Priest End-Actor
-			Reading sid hoH3.Prayer.text<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Reading
+			Actor sid ac.Priest End-Actor
+			Reading sid hoH3.Prayer.text<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Reading
 		End-Section
 		Section h6
-			Actor sid Priest End-Actor
-			Reading sid hoH6.Prayer.text<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Reading
+			Actor sid ac.Priest End-Actor
+			Reading sid hoH6.Prayer.text<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Reading
 		End-Section
 		Section h9
-			Actor sid Priest End-Actor
-			Reading sid hoH9.Prayer.text<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Reading
+			Actor sid ac.Priest End-Actor
+			Reading sid hoH9.Prayer.text<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Reading
 		End-Section
 	End-Section
 	Section _07_Dismissal
-		Actor sid Reader End-Actor
+		Actor sid ac.Reader End-Actor
 		Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
 		Reading sid pr.res06.text End-Reading
 		Reading sid pr.Bless_father.text End-Reading
 		Insert_section Selector_Dismissals.Com_Yes End-Insert
 	End-Section
 	Section _07_Dismissal_nocommemoration
-		Actor sid Reader End-Actor
+		Actor sid ac.Reader End-Actor
 		Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
 		Reading sid pr.res06.text End-Reading
 		Reading sid pr.Bless_father.text End-Reading
 		Insert_section Selector_Dismissals.Com_No End-Insert
 	End-Section
 	Section _07_Dismissal_mealt1
-		Actor sid Reader End-Actor
+		Actor sid ac.Reader End-Actor
 		Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
 		Reading sid pr.res06.text End-Reading
 		Reading sid pr.Bless_father.text End-Reading
@@ -809,7 +809,7 @@ Status NA
 	Section _08_Typika__
 		Section with_priest_
 			Section psalms
-				Actor sid Reader End-Actor
+				Actor sid ac.Reader End-Actor
 				Title role desig sid psa102.title End-Title
 				Reading sid psa102.text @ver End-Reading
 				Reading sid pr.GloryToTheFather2.text End-Reading
@@ -819,9 +819,9 @@ Status NA
 				Reading sid hoLI.OnlyBegotten.text @ver End-Reading
 			End-Section
 			Section beatitudes
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Title role desig sid leosTY.Beatitudes.title End-Title
-				Title role mode sid Mode8 End-Title
+				Title role mode sid misc.Mode8 End-Title
 				Media sid hoTY.Key0200.text End-Media
 				Hymn sid leosTY.Beatitudes_Intro.text sid leosTY.Beatitudes_v01.text<i>sid hoTY.Key0212.text</>End-Hymn
 				Hymn sid leosTY.Beatitudes_v02.text<i>sid hoTY.Key0212.text</>End-Hymn
@@ -840,10 +840,10 @@ Status NA
 				Para role chant sid hoTY.Key0214.text End-Para
 			End-Section
 			Section prayers
-				Actor sid Reader End-Actor
+				Actor sid ac.Reader End-Actor
 				Media sid hoTY.Key0215.text End-Media
 				Hymn sid hoTY.Key0215.text @ver media-off End-Hymn
-				Verse<inr>sid vVerse</>sid psa33.v6.text @ver End-Verse
+				Verse<inr>sid misc.vVerse</>sid psa33.v6.text @ver End-Verse
 				Media sid hoTY.Key0215.text End-Media
 				Hymn sid hoTY.Key0215.text @ver media-off End-Hymn
 				Title sid ti.Glory End-Title
@@ -861,9 +861,9 @@ Status NA
 					68, 70 use:
 					otherwise use:
 						Hymn sid pr.OurFather.text End-Hymn
-						Actor sid Priest End-Actor
+						Actor sid ac.Priest End-Actor
 						Reading sid pr.exc20.text End-Reading
-						Actor sid Reader End-Actor
+						Actor sid ac.Reader End-Actor
 						Reading sid pr.res04.text End-Reading
 				end-when
 			End-Section
@@ -926,20 +926,20 @@ Status NA
 					Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
 					Reading sid pr.GreaterInHonor.text End-Reading
 					Reading sid pr.InTheNameOfLordBless_father.text End-Reading
-					Actor sid Priest End-Actor
+					Actor sid ac.Priest End-Actor
 					Dialog sid pr.MayGodHaveCompassion.text End-Dialog
-					Actor sid Reader End-Actor
+					Actor sid ac.Reader End-Actor
 				//	Dialog sid pr.res04.text End-Dialog
-				//	Actor sid Priest End-Actor
+				//	Actor sid ac.Priest End-Actor
 				//	Insert_section TR.StEphraimPrayer_long End-Insert
-				//	Actor sid Reader End-Actor
+				//	Actor sid ac.Reader End-Actor
 				//	Insert_section _01_Intro_.append.Trisagion_Prayers End-Insert
-				//	Actor sid Reader End-Actor
+				//	Actor sid ac.Reader End-Actor
 					Dialog sid pr.res04.text End-Dialog
 					Reading sid pr.res01.text<r>sid ru.Twelve</>End-Reading
-					Actor sid Priest End-Actor
+					Actor sid ac.Priest End-Actor
 					Reading sid hoTY.Key0501.text End-Reading
-					Actor sid Reader End-Actor
+					Actor sid ac.Reader End-Actor
 					Reading sid pr.res04.text End-Reading
 				End-Section
 				Section psalms_dismissal
@@ -958,9 +958,9 @@ Status NA
 		End-Section		
 		Section no_priest_
 			Section enarxis
-				Actor sid Reader End-Actor
+				Actor sid ac.Reader End-Actor
 				Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
-				Actor sid People End-Actor
+				Actor sid ac.People End-Actor
 				Dialog sid pr.res04.text End-Dialog
 				Section Trisagion_Prayers
 					Title role desig sid ti.Trisagion End-Title
@@ -970,9 +970,9 @@ Status NA
 					Reading sid pr.res06.text End-Reading
 					Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
 					Reading sid pr.OurFather.text @ver End-Reading
-					Actor sid Reader End-Actor
+					Actor sid ac.Reader End-Actor
 					Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
-					Actor sid People End-Actor
+					Actor sid ac.People End-Actor
 					Dialog sid pr.res04.text End-Dialog
 				End-Section
 			End-Section
@@ -980,9 +980,9 @@ Status NA
 				Insert_section with_priest_.psalms End-Insert
 			End-Section
 			Section beatitudes
-			//	Actor sid Choir End-Actor
+			//	Actor sid ac.Choir End-Actor
 				Title role desig sid leosTY.Beatitudes.title End-Title
-				Title role mode sid Mode8 End-Title
+				Title role mode sid misc.Mode8 End-Title
 			//	Media sid hoTY.Key0200.text End-Media
 				Hymn sid leosTY.Beatitudes_Intro.text sid leosTY.Beatitudes_v01.text<i>sid hoTY.Key0212.text</>End-Hymn
 				Hymn sid leosTY.Beatitudes_v02.text<i>sid hoTY.Key0212.text</>End-Hymn
@@ -1001,28 +1001,28 @@ Status NA
 				Para role chant sid hoTY.Key0214.text End-Para
 			End-Section
 			Section prayers
-				Actor sid People End-Actor
+				Actor sid ac.People End-Actor
 				Media sid hoTY.Key0215.text End-Media
 				Hymn sid hoTY.Key0215.text @ver media-off End-Hymn
-				Verse<inr>sid vVerse</>sid psa33.v6.text @ver End-Verse
+				Verse<inr>sid misc.vVerse</>sid psa33.v6.text @ver End-Verse
 				Media sid hoTY.Key0215.text End-Media
 				Hymn sid hoTY.Key0215.text @ver media-off End-Hymn
 				Reading sid pr.GloryToTheFather.text End-Reading
 				Media sid hoTY.Key0216.text End-Media
 				Hymn sid hoTY.Key0216.text @ver media-off End-Hymn
 				Reading sid pr.BothNowAndEver.text End-Reading
-			//	Actor sid People End-Actor
+			//	Actor sid ac.People End-Actor
 				Media sid pr.Creed.text End-Media
 				Hymn sid pr.Creed.text @ver media-off sid pr.res04.text End-Hymn
 				Hymn sid hoTY.Key0217.text End-Hymn
 				Hymn sid pr.OurFather.text End-Hymn
-				Actor sid Reader End-Actor
+				Actor sid ac.Reader End-Actor
 				Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
-				Actor sid People End-Actor
+				Actor sid ac.People End-Actor
 				Dialog sid pr.res04.text End-Dialog
 			End-Section
 			Section kontakia
-				Actor sid Reader End-Actor
+				Actor sid ac.Reader End-Actor
 				Insert_section with_priest_.kontakia End-Insert
 			End-Section
 			Section end_
@@ -1033,11 +1033,11 @@ Status NA
 					Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
 					Reading sid pr.GreaterInHonor.text End-Reading
 					Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
-					Actor sid People End-Actor
+					Actor sid ac.People End-Actor
 					Dialog sid pr.res04.text End-Dialog
 				End-Section
 				Section psalms_dismissal
-					Actor sid Reader End-Actor
+					Actor sid ac.Reader End-Actor
 					Reading sid psLI.aftercommunion.v1.text<r>sid ru.Thrice</>End-Reading
 					Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
 					Title role desig sid psa33.title End-Title
@@ -1047,7 +1047,7 @@ Status NA
 					Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
 					Reading sid pr.ItIsTrulyRight_complete.text @ver End-Reading
 					Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
-					Actor sid People End-Actor
+					Actor sid ac.People End-Actor
 					Dialog sid pr.res04.text End-Dialog
 				End-Section
 			End-Section

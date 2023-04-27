@@ -9,9 +9,9 @@ Template bk.ho.s12
 	//Templates
 	import bk.ho.s01.*
 	
-	import actors_gr_GR_cog.ac.*
+	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
-	import miscellanea_gr_GR_cog.misc.*
+	import miscellanea_gr_GR_cog.*
 	import prayers_gr_GR_cog.*
 	import rubrical_gr_GR_cog.*
 	import titles_gr_GR_cog.*
@@ -31,16 +31,16 @@ End_Head
 	Section GreatCompline_01	
 		Media sid hoCO.Bookmark1.text End-Media
 	//	Media sid hoCO.BookmarkPage01.text End-Media
-		Actor sid Priest End-Actor
+		Actor sid ac.Priest End-Actor
 		Dialog sid pr.enarxis01.text End-Dialog
-		Dialog sid parenthesis.open sid pr.res04.text sid parenthesis.close End-Dialog
-		Actor sid Priest End-Actor
+		Dialog sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close End-Dialog
+		Actor sid ac.Priest End-Actor
 		Insert_section Heavenly_King End-Insert
-		Actor sid Reader End-Actor
+		Actor sid ac.Reader End-Actor
 		Insert_section Trisagion_Prayers End-Insert	
-		Actor sid Priest End-Actor
+		Actor sid ac.Priest End-Actor
 		Dialog sid pr.exc20.text End-Dialog
-		Actor sid Reader End-Actor
+		Actor sid ac.Reader End-Actor
 		Reading sid pr.res04.text sid pr.res01.text<r>sid ru.Twelve</>End-Reading
 		Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
 		Reading sid pr.ComeLetUsWorship1.text End-Reading
@@ -76,7 +76,7 @@ End_Head
 	
 	Section GreatCompline_03
 		Section part1
-			Actor sid Choir End-Actor
+			Actor sid ac.Choir End-Actor
 			Title role mode sid hoCO.Key0300.mode End-Title
 			Media sid hoCO.Key0301.text End-Media
 			Para role chant sid leosCO.Key0301.text sid leosCO.Key0302.text @ver End-Para
@@ -104,14 +104,14 @@ End_Head
 			Para role chant sid leosCO.Key0301.text End-Para
 			Para role chant sid leosCO.Key0302.text End-Para
 			
-			Actor sid Reader<Trubric>sid ru.Intoned</>End-Actor
+			Actor sid ac.Reader<Trubric>sid ru.Intoned</>End-Actor
 			Para role chant sid hoCO.Key0401.text @ver End-Para
 			Verse sid pr.GloryToTheFather.text End-Verse
 			Para role chant sid hoCO.Key0402.text @ver End-Para
 			Verse sid pr.BothNowAndEver.text End-Verse
 			Para role chant sid hoCO.Key0403.text @ver End-Para
 	
-			Actor sid Choir End-Actor
+			Actor sid ac.Choir End-Actor
 			Title role mode sid hoCO.Key0501.mode End-Title
 			Media sid hoCO.Key0501.text End-Media
 			Para role chant sid hoCO.Key0501.text @ver End-Para		
@@ -125,12 +125,12 @@ End_Head
 			Para role chant sid hoCO.Key0509.text End-Para		
 			Para role chant sid hoCO.Key0510.text End-Para		
 			
-			Actor sid Reader End-Actor
+			Actor sid ac.Reader End-Actor
 			Title role desig sid hoCO.Key0511.title	End-Title
 			Reading sid hoCO.Key0511.text @ver sid pr.res04.text End-Reading
 		End-Section
 		Section part2	
-			Actor sid Choir End-Actor
+			Actor sid ac.Choir End-Actor
 			Title role mode sid hoCO.Key0601.mode End-Title
 			Media sid hoCO.Key0601.text End-Media
 			Para role chant sid hoCO.Key0601.text @ver <r>sid ru.Thrice</>End-Para
@@ -159,11 +159,11 @@ End_Head
 					Media sid hoCO.Bookmark21.text End-Media
 			end-when
 		//	Media sid hoCO.BookmarkPage07.text End-Media
-			Actor sid Reader End-Actor
+			Actor sid ac.Reader End-Actor
 			Insert_section Trisagion_Prayers End-Insert
-			Actor sid Priest End-Actor
+			Actor sid ac.Priest End-Actor
 			Dialog sid pr.exc20.text End-Dialog
-			Dialog<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Dialog
+			Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 		End-Section
 	End-Section		
 
@@ -218,7 +218,7 @@ End_Head
 			Para role chant sid hoCO.Key0509.text End-Para		
 			Para role chant sid hoCO.Key0510.text End-Para		
 			
-		//	Actor sid Reader End-Actor
+		//	Actor sid ac.Reader End-Actor
 			Title role desig sid hoCO.Key0511.title	End-Title
 			Reading sid hoCO.Key0511.text @ver sid pr.res04.text End-Reading
 		End-Section
@@ -238,18 +238,18 @@ End_Head
 		End-Section
 		Section part3
 		//	Media sid hoCO.BookmarkPage07.text End-Media
-		//	Actor sid Reader End-Actor
+		//	Actor sid ac.Reader End-Actor
 			Insert_section Trisagion_Prayers End-Insert
-			Actor sid Priest End-Actor
+			Actor sid ac.Priest End-Actor
 			Dialog sid pr.exc20.text End-Dialog
-			Dialog<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Dialog
+			Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 		End-Section
 	End-Section		
 		
 	Rubric sid hoCO.Key0701.rubric End-Rubric
 
 	Section GreatCompline_04
-		Actor sid Reader<Trubric>sid ru.Read</>End-Actor
+		Actor sid ac.Reader<Trubric>sid ru.Read</>End-Actor
 		Title role mode sid hoCO.Key0701.mode End-Title
 		Reading sid hoCO.Key0701.text @ver End-Reading
 		Title sid ti.Glory End-Title
@@ -261,10 +261,10 @@ End_Head
 	Rubric sid hoCO.Key0704.rubric End-Rubric
 	
 	Section GreatCompline_05
-		Actor sid Reader End-Actor
+		Actor sid ac.Reader End-Actor
 		Title role mode sid hoCO.Key0704.mode End-Title
 		Reading sid hoCO.Key0704.text @ver End-Reading
-		Verse<bnr>sid vVerse</>sid hoCO.Key0705.text End-Verse
+		Verse<bnr>sid misc.vVerse</>sid hoCO.Key0705.text End-Verse
 		Reading sid hoCO.Key0706.text @ver End-Reading
 		Title sid ti.Glory End-Title
 		Reading sid hoCO.Key0707.text @ver End-Reading
@@ -277,12 +277,12 @@ End_Head
 		Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
 		Reading sid pr.GreaterInHonor.text End-Reading
 		Reading sid pr.InTheNameOfLordBless_father.text End-Reading
-		Actor sid Priest End-Actor
+		Actor sid ac.Priest End-Actor
 		Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
-		Dialog<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 		Title role desig sid hoCO.Key0709.title End-Title
 		Para role prayer sid hoCO.Key0709.text @ver End-Para
-		Actor sid Reader End-Actor
+		Actor sid ac.Reader End-Actor
 		Dialog sid pr.res04.text End-Dialog
 		
 		Reading sid pr.ComeLetUsWorship1.text End-Reading
@@ -292,21 +292,21 @@ End_Head
 		Reading sid	psa50.text @ver End-Reading
 		Title role desig sid psa101.title End-Title
 		Reading sid	psa101.text @ver End-Reading
-		Actor sid Priest End-Actor
+		Actor sid ac.Priest End-Actor
 		Title role desig sid hoCO.Key0803.title End-Title
 		Para role prayer sid hoCO.Key0803.text @ver End-Para
-		Dialog<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Dialog
-		Actor sid Reader End-Actor
+		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+		Actor sid ac.Reader End-Actor
 		Insert_section Trisagion_Prayers End-Insert
-		Actor sid Priest End-Actor
+		Actor sid ac.Priest End-Actor
 		Dialog sid pr.exc20.text End-Dialog
-		Dialog<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 	End-Section	
 		
 	Rubric sid hoCO.Key0804.rubric End-Rubric	
 		
 	Section GreatCompline_07
-		Actor sid Chanter End-Actor
+		Actor sid ac.Chanter End-Actor
 		Title role mode sid hoCO.Key0804.mode End-Title
 		Media sid hoCO.Key0804.text End-Media
 		Hymn sid hoCO.Key0804.text @ver media-off End-Hymn
@@ -317,32 +317,32 @@ End_Head
 	End-Section
 	
 	Section GreatCompline_08
-		Actor sid Reader End-Actor
+		Actor sid ac.Reader End-Actor
 		Reading sid pr.res01.text<r>sid ru.Forty</>End-Reading
 		Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
 		Reading sid pr.GreaterInHonor.text End-Reading
 		Reading sid pr.InTheNameOfLordBless_father.text End-Reading
-		Actor sid Priest End-Actor
+		Actor sid ac.Priest End-Actor
 		Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
-		Dialog<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 		Title role desig sid hoCO.Key0807.title End-Title
 		Para role prayer sid hoCO.Key0807.text @ver End-Para
-		Actor sid Reader End-Actor
+		Actor sid ac.Reader End-Actor
 		Dialog sid pr.res04.text End-Dialog
 	End-Section	
 		
 	Section GreatCompline_08_append
-	//	Actor sid Reader End-Actor
+	//	Actor sid ac.Reader End-Actor
 		Reading sid pr.res01.text<r>sid ru.Forty</>End-Reading
 		Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
 		Reading sid pr.GreaterInHonor.text End-Reading
 		Reading sid pr.InTheNameOfLordBless_father.text End-Reading
-		Actor sid Priest End-Actor
+		Actor sid ac.Priest End-Actor
 		Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
-		Dialog<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 		Title role desig sid hoCO.Key0807.title End-Title
 		Para role prayer sid hoCO.Key0807.text @ver End-Para
-		Actor sid Reader End-Actor
+		Actor sid ac.Reader End-Actor
 		Dialog sid pr.res04.text End-Dialog
 	End-Section	
 
@@ -369,16 +369,16 @@ End_Head
 	Rubric sid hoCO.Key0910.rubric End-Rubric
 
 	Section GreatCompline_10
-		Actor sid Reader End-Actor
+		Actor sid ac.Reader End-Actor
 		Insert_section Trisagion_Prayers End-Insert
-		Actor sid Priest End-Actor
+		Actor sid ac.Priest End-Actor
 		Dialog sid pr.exc20.text End-Dialog
-		Dialog<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 	End-Section
 	
 	Section GreatCompline_11
-		Actor sid Choir End-Actor
-		Title role mode sid hoCO.Key1001.mode sid ru.Or sid Mode8 End-Title
+		Actor sid ac.Choir End-Actor
+		Title role mode sid hoCO.Key1001.mode sid ru.Or sid misc.Mode8 End-Title
 		Media sid hoCO.Key1001.text End-Media
 		Hymn sid hoCO.Key1001.text @ver media-off End-Hymn
 		Verse sid psGC.lordofpowers.v1.text @ver End-Verse
@@ -395,7 +395,7 @@ End_Head
 		Verse sid psGC.lordofpowers.v7.text @ver End-Verse
 		Hymn sid hoCO.Key1009.text sid hoCO.Key1010.text @ver End-Hymn
 
-		Actor sid Chanter End-Actor
+		Actor sid ac.Chanter End-Actor
 		Title role mode sid hoCO.Key1011.mode<Trubric>sid ru.Intoned</>End-Title
 		Verse sid pr.GloryToTheFather2.text End-Verse
 		Media sid hoCO.Key1011.text End-Media
@@ -403,7 +403,7 @@ End_Head
 		Verse sid pr.BothNowAndEver.text End-Verse
 		Media sid hoCO.Key1012.text End-Media
 		Hymn sid hoCO.Key1012.text @ver media-off End-Hymn
-		Actor sid Choir End-Actor
+		Actor sid ac.Choir End-Actor
 		Title role mode sid hoCO.Key1013.mode End-Title
 		Media sid hoCO.Key1013.text End-Media
 		Hymn sid hoCO.Key1013.text @ver media-off End-Hymn
@@ -414,30 +414,30 @@ End_Head
 	Section GreatCompline_12
 		Media sid hoCO.Bookmark3.text End-Media
 	//	Media sid hoCO.BookmarkPage15.text End-Media
-		Actor sid Reader End-Actor
+		Actor sid ac.Reader End-Actor
 		Reading sid pr.res01.text<r>sid ru.Forty</>End-Reading
 		Reading sid hoCO.Key1015.text @ver End-Reading
 		Reading sid pr.res06.text End-Reading
 		Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
 		Reading sid pr.GreaterInHonor.text End-Reading
 		Reading sid pr.InTheNameOfLordBless_father.text End-Reading
-		Actor sid Priest End-Actor
+		Actor sid ac.Priest End-Actor
 		Dialog sid pr.MayGodHaveCompassion.text End-Dialog
-		Actor sid Reader End-Actor
+		Actor sid ac.Reader End-Actor
 		Dialog sid pr.res04.text End-Dialog
 	End-Section
 
 	Section GreatCompline_13
-		Actor sid Priest End-Actor
+		Actor sid ac.Priest End-Actor
 		Insert_section TR.StEphraimPrayer_long End-Insert
 	End-Section
 
 	Section GreatCompline_14
-		Actor sid Reader End-Actor
+		Actor sid ac.Reader End-Actor
 		Insert_section Trisagion_Prayers End-Insert
-		Actor sid Priest End-Actor
+		Actor sid ac.Priest End-Actor
 		Dialog sid pr.exc20.text End-Dialog
-		Actor sid Reader End-Actor
+		Actor sid ac.Reader End-Actor
 		Dialog sid pr.res04.text End-Dialog
 		Dialog sid pr.res01.text<r>sid ru.Twelve</>End-Dialog
 		Title role desig sid hoCO.Key1101.title End-Title
@@ -455,14 +455,14 @@ End_Head
 	Rubric sid hoCO.Key1202.rubric End-Rubric
 
 	Section GreatCompline_15
-		Actor sid Priest End-Actor
+		Actor sid ac.Priest End-Actor
 		Dialog sid pr.pet31.text End-Dialog
-		Dialog<i>sid parenthesis.open sid pr.res05.text sid parenthesis.close</>End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res05.text sid misc.parenthesis.close</>End-Dialog
 		Dialog sid pr.pet32.text End-Dialog
-		Dialog<i>sid parenthesis.open sid pr.res03.text sid parenthesis.close</>End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res03.text sid misc.parenthesis.close</>End-Dialog
 		Dialog sid pr.sup00a.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text sid cl.localpatronsaint1.supplication sid pr.sup14.text sid pr.sup15.text End-Dialog
 		Dialog sid pr.pet36.text End-Dialog
-		Dialog<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 	End-Section
 
 	Rubric sid hoCO.Key1203.rubric End-Rubric
@@ -472,11 +472,11 @@ End_Head
 	Rubric sid hoCO.Key1207.rubric End-Rubric
 
 	Section GreatCompline_16
-	//	Actor sid Reader End-Actor
+	//	Actor sid ac.Reader End-Actor
 	//	Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
 	//	Reading sid pr.res06.text End-Reading
 	//	Reading sid pr.Bless_father.text End-Reading
-	//	Actor sid Priest End-Actor
+	//	Actor sid ac.Priest End-Actor
 	//	when-movable-cycle-day-is
 	//		65 thru 68 use:
 	//			Dialog sid dis00 rid tr.trDA.dismissal sid dis01 sid dis02 sid cl.localpatronsaint1.dismissal sid dis09 sid dis10 sid dis88 End-Dialog
@@ -484,7 +484,7 @@ End_Head
 	//			Dialog sid dis00 sid dis01 sid dis02 sid cl.localpatronsaint1.dismissal sid dis09 sid dis10 sid dis88 End-Dialog
 	//	end-when
 		Dialog sid pr.petCompline01.text End-Dialog
-		Dialog<i>sid parenthesis.open sid pr.res01.text sid parenthesis.close</>End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
 		Dialog sid pr.petCompline02.text End-Dialog
 		Dialog sid pr.petCompline03.text sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
 		Dialog sid pr.petCompline04.text End-Dialog
@@ -506,21 +506,21 @@ End_Head
 	Section GreatCompline_17
 		Rubric sid hoCO.Key1301.rubric End-Rubric
 		Section Part1
-			Actor sid Choir End-Actor
+			Actor sid ac.Choir End-Actor
 			Title<Tmode>sid hoCO.Key1301.mode</><Tmelody>sid hoCO.Key1301.melody</>End-Title
 			Media sid hoCO.Key1301.text End-Media
 			Hymn sid hoCO.Key1301.text @ver media-off End-Hymn
 		End-Section
 		Rubric sid hoCO.Key1302.rubric End-Rubric
 		Section Part2
-			Actor sid Choir End-Actor
+			Actor sid ac.Choir End-Actor
 			Title<Tmode>sid hoCO.Key1302.mode</><Tmelody>sid hoCO.Key1302.melody</>End-Title
 			Media sid hoCO.Key1302.text End-Media
 			Hymn sid hoCO.Key1302.text @ver media-off End-Hymn
 		End-Section
 		Rubric sid hoCO.Key1303.rubric End-Rubric
 		Section Part3
-			Actor sid Choir End-Actor
+			Actor sid ac.Choir End-Actor
 			Title<Tmode>sid hoCO.Key1303.mode</><Tmelody>sid hoCO.Key1303.melody</>End-Title
 			Media sid hoCO.Key1303.text End-Media
 			Hymn sid hoCO.Key1303.text @ver media-off End-Hymn
@@ -528,9 +528,9 @@ End_Head
 	End-Section
 	
 	Section GreatCompline_18
-		Actor sid Priest End-Actor
+		Actor sid ac.Priest End-Actor
 		Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
-		Dialog<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 	End-Section
 
 	Rubric sid hoCO.Key1304.rubric End-Rubric

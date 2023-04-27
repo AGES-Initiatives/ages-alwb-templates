@@ -17,9 +17,9 @@ Status NA
 	import liturgical.verses_gr_GR_cog.*
 	import ps_gr_GR_cog.*
 	
-	import actors_gr_GR_cog.ac.*
+	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
-	import miscellanea_gr_GR_cog.misc.*
+	import miscellanea_gr_GR_cog.*
 	import prayers_gr_GR_cog.*
 	import rubrical_gr_GR_cog.*
 	import template.titles_gr_GR_cog.*
@@ -44,14 +44,14 @@ Status NA
 				when-movable-cycle-day-is
 					72, 73, 74, 75, 76, 77, 109 use:
 						Section pascha //needs work
-							Actor sid Priest End-Actor
+							Actor sid ac.Priest End-Actor
 							Dialog sid pr.enarxis03.text End-Dialog
-							Dialog<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Dialog
+							Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 							Insert_section PE.Pascha_Beginning End-Insert
-							Actor sid Deacon End-Actor
+							Actor sid ac.Deacon End-Actor
 							Insert_section LN.GreatLitany01 End-Insert
-							Actor sid Priest End-Actor
-							Dialog sid pr.exc01.text<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Dialog
+							Actor sid ac.Priest End-Actor
+							Dialog sid pr.exc01.text<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 					otherwise use:
 						Section enarxis
@@ -60,15 +60,15 @@ Status NA
 						Section introductorypsalm
 							when-movable-cycle-day-is 
 								78 thru 108 use:
-									Actor sid Hierarch End-Actor
+									Actor sid ac.Hierarch End-Actor
 									Insert_section PE.ChristIsRisen.once End-Insert
-									Actor sid Choir End-Actor
+									Actor sid ac.Choir End-Actor
 									Insert_section PE.ChristIsRisen.twice End-Insert
 									Insert_section VE.vesperal_prayers_link End-Insert
-									Actor sid Hierarch End-Actor
+									Actor sid ac.Hierarch End-Actor
 								otherwise use:
 									Insert_section VE.vesperal_prayers_link End-Insert
-									Actor sid Hierarch End-Actor
+									Actor sid ac.Hierarch End-Actor
 									Reading sid pr.ComeLetUsWorship1.text End-Reading
 									Reading sid pr.ComeLetUsWorship2.text End-Reading
 									Reading sid pr.ComeLetUsWorship3.text End-Reading
@@ -86,45 +86,45 @@ Status NA
 		End-Section
 		Section entry
 			Rubric sid ru.VigilEntry End-Rubric
-			Actor sid Choir End-Actor
+			Actor sid ac.Choir End-Actor
 			Hymn sid psVE.vigilentry.text End-Hymn
 			Break line End_Break
-			Actor sid Priest End-Actor
+			Actor sid ac.Priest End-Actor
 			Dialog sid pr.res11.text End-Dialog
-			Actor sid Chanter End-Actor
+			Actor sid ac.Chanter End-Actor
 			Dialog sid pr.res04.text End-Dialog
 		End-Section
 		Section with_anoixantaria
 			when-movable-cycle-day-is
 				72, 73, 74, 75, 76, 77, 109 use:
 					Section pascha
-						Actor sid Priest End-Actor
+						Actor sid ac.Priest End-Actor
 						Dialog sid pr.enarxis03.text End-Dialog
-						Dialog<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Dialog
+						Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 						Insert_section PE.Pascha_Beginning End-Insert
-						Actor sid Deacon End-Actor
+						Actor sid ac.Deacon End-Actor
 						Insert_section LN.GreatLitany01 End-Insert
-						Actor sid Priest End-Actor
-						Dialog sid pr.exc01.text<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Dialog
+						Actor sid ac.Priest End-Actor
+						Dialog sid pr.exc01.text<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 					End-Section
 				otherwise use:
 					Section enarxis
-						Actor sid Priest End-Actor
+						Actor sid ac.Priest End-Actor
 						Dialog sid pr.enarxis03.text End-Dialog
-						Dialog<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Dialog
+						Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 					End-Section
 					Section introductorypsalm
 						when-movable-cycle-day-is 
 							78 thru 108 use:
-								Actor sid Priest End-Actor
+								Actor sid ac.Priest End-Actor
 								Insert_section PE.ChristIsRisen.once End-Insert
-								Actor sid Choir End-Actor
+								Actor sid ac.Choir End-Actor
 								Insert_section PE.ChristIsRisen.twice End-Insert
 								Insert_section VE.vesperal_prayers_link End-Insert
-								Actor sid Reader End-Actor
+								Actor sid ac.Reader End-Actor
 							otherwise use:
 								Insert_section VE.vesperal_prayers_link End-Insert
-								Actor sid Reader End-Actor
+								Actor sid ac.Reader End-Actor
 								Reading sid pr.ComeLetUsWorship1.text End-Reading
 								Reading sid pr.ComeLetUsWorship2.text End-Reading
 								Reading sid pr.ComeLetUsWorship3.text End-Reading
@@ -135,7 +135,7 @@ Status NA
 							Hymn sid psVE.anoixantaria.psa103.part1.text @ver media-off End-Hymn
 						End-Section
 						Section anoixantaria
-							Actor sid Choir End-Actor
+							Actor sid ac.Choir End-Actor
 							Title<Tdesig>sid other.title</>End-Title
 							Media sid hoVE.MM.Anoixantaria.text End-Media
 							Hymn sid psVE.anoixantaria.v1.text <i>sid other.verse28.text @ver</>End-Hymn
@@ -155,16 +155,16 @@ Status NA
 					End-Section
 				//	Insert_section VE.vesperal_prayers_collapse End-Insert
 					Section litany
-						Actor sid Deacon End-Actor
+						Actor sid ac.Deacon End-Actor
 						when-movable-cycle-day-is
 							121 use:
 								Insert_section LN.GreatLitany_Vespers_HolySpirit01 End-Insert
 							otherwise use:
 								Insert_section LN.GreatLitany01 End-Insert
 						end-when
-						Actor sid Priest End-Actor
+						Actor sid ac.Priest End-Actor
 						Dialog sid pr.exc01.text End-Dialog
-						Dialog<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Dialog
+						Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 					End-Section //Part3
 			end-when
 		End-Section
@@ -174,7 +174,7 @@ Status NA
 		Section part1_title_actor__
 			Section lity_choir
 				Title role desig sid ti.Lity End-Title
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 			End-Section
 		End-Section
 		Section part2__
@@ -231,7 +231,7 @@ Status NA
 					Title sid ti.GloryBothNow End-Title
 					Section hymn
 						Title role source0 sid ti.sourceMenaion End-Title
-						Title<Tdesig>sid Idiomelon</><Tmode>rid meVE.LityGlory.mode</>End-Title
+						Title<Tdesig>sid misc.Idiomelon</><Tmode>rid meVE.LityGlory.mode</>End-Title
 						Media rid meVE.LityGlory.text End-Media
 						Hymn rid meVE.LityGlory.text @ver media-off End-Hymn
 					End-Section
@@ -253,44 +253,44 @@ Status NA
 					Hymn rid alt1.meVE.Lity1.text @ver media-off End-Hymn
 				End-Section
 				Section lity2
-					Title<Tdesig>sid Idiomelon</><Tmode>rid alt1.meVE.Lity2.mode</>End-Title
+					Title<Tdesig>sid misc.Idiomelon</><Tmode>rid alt1.meVE.Lity2.mode</>End-Title
 					Media rid alt1.meVE.Lity2.text End-Media
 					Hymn rid alt1.meVE.Lity2.text @ver media-off End-Hymn
 				End-Section
 				Section lity3
-					Title<Tdesig>sid Idiomelon</><Tmode>rid alt1.meVE.Lity3.mode</>End-Title
+					Title<Tdesig>sid misc.Idiomelon</><Tmode>rid alt1.meVE.Lity3.mode</>End-Title
 					Media rid alt1.meVE.Lity3.text End-Media
 					Hymn rid alt1.meVE.Lity3.text @ver media-off End-Hymn
 				End-Section
 				Section lity4
-					Title<Tdesig>sid Idiomelon</><Tmode>rid alt1.meVE.Lity4.mode</>End-Title
+					Title<Tdesig>sid misc.Idiomelon</><Tmode>rid alt1.meVE.Lity4.mode</>End-Title
 					Media rid alt1.meVE.Lity4.text End-Media
 					Hymn rid alt1.meVE.Lity4.text @ver media-off End-Hymn
 				End-Section
 				Section lity5
-					Title<Tdesig>sid Idiomelon</><Tmode>rid alt1.meVE.Lity5.mode</>End-Title
+					Title<Tdesig>sid misc.Idiomelon</><Tmode>rid alt1.meVE.Lity5.mode</>End-Title
 					Media rid alt1.meVE.Lity5.text End-Media
 					Hymn rid alt1.meVE.Lity5.text @ver media-off End-Hymn
 				End-Section
 				Section lity6
-					Title<Tdesig>sid Idiomelon</><Tmode>rid alt1.meVE.Lity6.mode</>End-Title
+					Title<Tdesig>sid misc.Idiomelon</><Tmode>rid alt1.meVE.Lity6.mode</>End-Title
 					Media rid alt1.meVE.Lity6.text End-Media
 					Hymn rid alt1.meVE.Lity6.text @ver media-off End-Hymn
 				End-Section
 				Section lity7
-					Title<Tdesig>sid Idiomelon</><Tmode>rid alt1.meVE.Lity7.mode</>End-Title
+					Title<Tdesig>sid misc.Idiomelon</><Tmode>rid alt1.meVE.Lity7.mode</>End-Title
 					Media rid alt1.meVE.Lity7.text End-Media
 					Hymn rid alt1.meVE.Lity7.text @ver media-off End-Hymn
 				End-Section
 				Section lity8
-					Title<Tdesig>sid Idiomelon</><Tmode>rid alt1.meVE.Lity8.mode</>End-Title
+					Title<Tdesig>sid misc.Idiomelon</><Tmode>rid alt1.meVE.Lity8.mode</>End-Title
 					Media rid alt1.meVE.Lity8.text End-Media
 					Hymn rid alt1.meVE.Lity8.text @ver media-off End-Hymn
 				End-Section
 				Section glory_
 					Title sid ti.Glory End-Title
 					Section hymn
-						Title<Tdesig>sid Idiomelon</><Tmode>rid alt1.meVE.LityGlory.mode</>End-Title
+						Title<Tdesig>sid misc.Idiomelon</><Tmode>rid alt1.meVE.LityGlory.mode</>End-Title
 						Media rid alt1.meVE.LityGlory.text End-Media
 						Hymn rid alt1.meVE.LityGlory.text @ver media-off End-Hymn
 					End-Section
@@ -299,7 +299,7 @@ Status NA
 					Title sid ti.GloryBothNow End-Title
 					Section hymn
 						Title role source0 sid ti.sourceMenaion End-Title
-						Title<Tdesig>sid Idiomelon</><Tmode>rid alt1.meVE.LityGlory.mode</>End-Title
+						Title<Tdesig>sid misc.Idiomelon</><Tmode>rid alt1.meVE.LityGlory.mode</>End-Title
 						Media rid alt1.meVE.LityGlory.text End-Media
 						Hymn rid alt1.meVE.LityGlory.text @ver media-off End-Hymn
 					End-Section
@@ -321,44 +321,44 @@ Status NA
 					Hymn rid alt2.meVE.Lity1.text @ver media-off End-Hymn
 				End-Section
 				Section lity2
-					Title<Tdesig>sid Idiomelon</><Tmode>rid alt2.meVE.Lity2.mode</>End-Title
+					Title<Tdesig>sid misc.Idiomelon</><Tmode>rid alt2.meVE.Lity2.mode</>End-Title
 					Media rid alt2.meVE.Lity2.text End-Media
 					Hymn rid alt2.meVE.Lity2.text @ver media-off End-Hymn
 				End-Section
 				Section lity3
-					Title<Tdesig>sid Idiomelon</><Tmode>rid alt2.meVE.Lity3.mode</>End-Title
+					Title<Tdesig>sid misc.Idiomelon</><Tmode>rid alt2.meVE.Lity3.mode</>End-Title
 					Media rid alt2.meVE.Lity3.text End-Media
 					Hymn rid alt2.meVE.Lity3.text @ver media-off End-Hymn
 				End-Section
 				Section lity4
-					Title<Tdesig>sid Idiomelon</><Tmode>rid alt2.meVE.Lity4.mode</>End-Title
+					Title<Tdesig>sid misc.Idiomelon</><Tmode>rid alt2.meVE.Lity4.mode</>End-Title
 					Media rid alt2.meVE.Lity4.text End-Media
 					Hymn rid alt2.meVE.Lity4.text @ver media-off End-Hymn
 				End-Section
 				Section lity5
-					Title<Tdesig>sid Idiomelon</><Tmode>rid alt2.meVE.Lity5.mode</>End-Title
+					Title<Tdesig>sid misc.Idiomelon</><Tmode>rid alt2.meVE.Lity5.mode</>End-Title
 					Media rid alt2.meVE.Lity5.text End-Media
 					Hymn rid alt2.meVE.Lity5.text @ver media-off End-Hymn
 				End-Section
 				Section lity6
-					Title<Tdesig>sid Idiomelon</><Tmode>rid alt2.meVE.Lity6.mode</>End-Title
+					Title<Tdesig>sid misc.Idiomelon</><Tmode>rid alt2.meVE.Lity6.mode</>End-Title
 					Media rid alt2.meVE.Lity6.text End-Media
 					Hymn rid alt2.meVE.Lity6.text @ver media-off End-Hymn
 				End-Section
 				Section lity7
-					Title<Tdesig>sid Idiomelon</><Tmode>rid alt2.meVE.Lity7.mode</>End-Title
+					Title<Tdesig>sid misc.Idiomelon</><Tmode>rid alt2.meVE.Lity7.mode</>End-Title
 					Media rid alt2.meVE.Lity7.text End-Media
 					Hymn rid alt2.meVE.Lity7.text @ver media-off End-Hymn
 				End-Section
 				Section lity8
-					Title<Tdesig>sid Idiomelon</><Tmode>rid alt2.meVE.Lity8.mode</>End-Title
+					Title<Tdesig>sid misc.Idiomelon</><Tmode>rid alt2.meVE.Lity8.mode</>End-Title
 					Media rid alt2.meVE.Lity8.text End-Media
 					Hymn rid alt2.meVE.Lity8.text @ver media-off End-Hymn
 				End-Section
 				Section glory_
 					Title sid ti.Glory End-Title
 					Section hymn
-						Title<Tdesig>sid Idiomelon</><Tmode>rid alt2.meVE.LityGlory.mode</>End-Title
+						Title<Tdesig>sid misc.Idiomelon</><Tmode>rid alt2.meVE.LityGlory.mode</>End-Title
 						Media rid alt2.meVE.LityGlory.text End-Media
 						Hymn rid alt2.meVE.LityGlory.text @ver media-off End-Hymn
 					End-Section
@@ -367,7 +367,7 @@ Status NA
 					Title sid ti.GloryBothNow End-Title
 					Section hymn
 						Title role source0 sid ti.sourceMenaion End-Title
-						Title<Tdesig>sid Idiomelon</><Tmode>rid alt2.meVE.LityGlory.mode</>End-Title
+						Title<Tdesig>sid misc.Idiomelon</><Tmode>rid alt2.meVE.LityGlory.mode</>End-Title
 						Media rid alt2.meVE.LityGlory.text End-Media
 						Hymn rid alt2.meVE.LityGlory.text @ver media-off End-Hymn
 					End-Section
@@ -392,19 +392,19 @@ Status NA
 					End-Section
 					Section lity2
 						Title role source sid ti.sourcePeSupplement End-Title
-						Title<Tdesig>sid Idiomelon</><Tmode>rid alt1.peVE.Lity2.mode</>End-Title
+						Title<Tdesig>sid misc.Idiomelon</><Tmode>rid alt1.peVE.Lity2.mode</>End-Title
 						Media rid alt1.peVE.Lity2.text End-Media
 						Hymn rid alt1.peVE.Lity2.text @ver media-off End-Hymn
 					End-Section
 					Section lity3
 						Title role source sid ti.sourcePeSupplement End-Title
-						Title<Tdesig>sid Idiomelon</><Tmode>rid alt1.peVE.Lity3.mode</>End-Title
+						Title<Tdesig>sid misc.Idiomelon</><Tmode>rid alt1.peVE.Lity3.mode</>End-Title
 						Media rid alt1.peVE.Lity3.text End-Media
 						Hymn rid alt1.peVE.Lity3.text @ver media-off End-Hymn
 					End-Section
 					Section lity4
 						Title role source sid ti.sourcePeSupplement End-Title
-						Title<Tdesig>sid Idiomelon</><Tmode>rid alt1.peVE.Lity4.mode</>End-Title
+						Title<Tdesig>sid misc.Idiomelon</><Tmode>rid alt1.peVE.Lity4.mode</>End-Title
 						Media rid alt1.peVE.Lity4.text End-Media
 						Hymn rid alt1.peVE.Lity4.text @ver media-off End-Hymn
 					End-Section
@@ -412,7 +412,7 @@ Status NA
 						Title sid ti.GloryBothNow End-Title
 						Section hymn
 							Title role source0 sid ti.sourcePeSupplement End-Title
-							Title<Tdesig>sid Idiomelon</><Tmode>rid alt1.peVE.LityGlory.mode</>End-Title
+							Title<Tdesig>sid misc.Idiomelon</><Tmode>rid alt1.peVE.LityGlory.mode</>End-Title
 							Media rid alt1.peVE.LityGlory.text End-Media
 							Hymn rid alt1.peVE.LityGlory.text @ver media-off End-Hymn
 						End-Section
@@ -426,31 +426,31 @@ Status NA
 				End-Section
 				Section lity2
 					Title role source sid ti.sourcePentecostarion End-Title
-					Title<Tdesig>sid Idiomelon</><Tmode>rid peVE.Lity2.mode</>End-Title
+					Title<Tdesig>sid misc.Idiomelon</><Tmode>rid peVE.Lity2.mode</>End-Title
 					Media rid peVE.Lity2.text End-Media
 					Hymn rid peVE.Lity2.text @ver media-off End-Hymn
 				End-Section
 				Section lity3
 					Title role source sid ti.sourcePentecostarion End-Title
-					Title<Tdesig>sid Idiomelon</><Tmode>rid peVE.Lity3.mode</>End-Title
+					Title<Tdesig>sid misc.Idiomelon</><Tmode>rid peVE.Lity3.mode</>End-Title
 					Media rid peVE.Lity3.text End-Media
 					Hymn rid peVE.Lity3.text @ver media-off End-Hymn
 				End-Section
 				Section lity4
 					Title role source sid ti.sourcePentecostarion End-Title
-					Title<Tdesig>sid Idiomelon</><Tmode>rid peVE.Lity4.mode</>End-Title
+					Title<Tdesig>sid misc.Idiomelon</><Tmode>rid peVE.Lity4.mode</>End-Title
 					Media rid peVE.Lity4.text End-Media
 					Hymn rid peVE.Lity4.text @ver media-off End-Hymn
 				End-Section
 				Section lity5
 					Title role source sid ti.sourcePentecostarion End-Title
-					Title<Tdesig>sid Idiomelon</><Tmode>rid peVE.Lity5.mode</>End-Title
+					Title<Tdesig>sid misc.Idiomelon</><Tmode>rid peVE.Lity5.mode</>End-Title
 					Media rid peVE.Lity5.text End-Media
 					Hymn rid peVE.Lity5.text @ver media-off End-Hymn
 				End-Section
 				Section lity6
 					Title role source sid ti.sourcePentecostarion End-Title
-					Title<Tdesig>sid Idiomelon</><Tmode>rid peVE.Lity6.mode</>End-Title
+					Title<Tdesig>sid misc.Idiomelon</><Tmode>rid peVE.Lity6.mode</>End-Title
 					Media rid peVE.Lity6.text End-Media
 					Hymn rid peVE.Lity6.text @ver media-off End-Hymn
 				End-Section
@@ -458,7 +458,7 @@ Status NA
 					Title sid ti.Glory End-Title
 					Section hymn
 						Title role source0 sid ti.sourcePentecostarion End-Title
-						Title<Tdesig>sid Idiomelon</><Tmode>rid peVE.LityGlory.mode</>End-Title
+						Title<Tdesig>sid misc.Idiomelon</><Tmode>rid peVE.LityGlory.mode</>End-Title
 						Media rid peVE.LityGlory.text End-Media
 						Hymn rid peVE.LityGlory.text @ver media-off End-Hymn
 					End-Section
@@ -467,7 +467,7 @@ Status NA
 					Title sid ti.GloryBothNow End-Title
 					Section hymn
 						Title role source0 sid ti.sourcePentecostarion End-Title
-						Title<Tdesig>sid Idiomelon</><Tmode>rid peVE.LityGlory.mode</>End-Title
+						Title<Tdesig>sid misc.Idiomelon</><Tmode>rid peVE.LityGlory.mode</>End-Title
 						Media rid peVE.LityGlory.text End-Media
 						Hymn rid peVE.LityGlory.text @ver media-off End-Hymn
 					End-Section
@@ -494,25 +494,25 @@ Status NA
 	Section _10_End__
 		Section hierarchical__
 			Section part1_blessingofloaves
-				Actor sid Deacon End-Actor
+				Actor sid ac.Deacon End-Actor
 				Dialog sid pr.pet00.text End-Dialog
-				Dialog<i>sid parenthesis.open sid pr.res01.text sid parenthesis.close</>End-Dialog	
-				Actor sid Hierarch End-Actor
+				Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog	
+				Actor sid ac.Hierarch End-Actor
 				Dialog sid hiVE.Key1311.text End-Dialog	
 				Dialog sid pr.exc28a.text End-Dialog
-				Dialog<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Dialog	
+				Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog	
 			End-Section
 			Section part2_psalmverses__
 				Section read_all
-					Actor sid Reader End-Actor
+					Actor sid ac.Reader End-Actor
 					Reading sid psLI.aftercommunion.v1.text End-Reading
-					Actor sid Superior sid ru.Or sid Reader End-Actor
+					Actor sid ac.Superior sid ru.Or sid ac.Reader End-Actor
 					Reading sid psLI.aftercommunion.v1.text End-Reading
-					Actor sid Reader End-Actor
+					Actor sid ac.Reader End-Actor
 					Reading sid psLI.aftercommunion.v1.text End-Reading
-					Actor sid Superior sid ru.Or sid Reader End-Actor
+					Actor sid ac.Superior sid ru.Or sid ac.Reader End-Actor
 					Reading sid pr.GloryToTheFather.text End-Reading
-					Actor sid Reader End-Actor
+					Actor sid ac.Reader End-Actor
 					Reading sid pr.BothNowAndEver.text End-Reading
 					Reading sid ps_gr_GR_cog.psa33.v2.text End-Reading
 					Reading sid ps_gr_GR_cog.psa33.v3.text End-Reading
@@ -525,13 +525,13 @@ Status NA
 					Reading sid ps_gr_GR_cog.psa33.v10.text @ver End-Reading
 				End-Section
 				Section sing_then_read
-					Actor sid Choir End-Actor
+					Actor sid ac.Choir End-Actor
 					Hymn sid psLI.aftercommunion.v1.text End-Hymn
 					Insert_section TI.g.r End-Insert
 					Hymn sid psLI.aftercommunion.v1.text End-Hymn
 					Insert_section TI.b.r End-Insert
 					Hymn sid psLI.aftercommunion.v1.text End-Hymn
-					Actor sid Reader End-Actor
+					Actor sid ac.Reader End-Actor
 					Reading sid ps_gr_GR_cog.psa33.v2.text End-Reading
 					Reading sid ps_gr_GR_cog.psa33.v3.text End-Reading
 					Reading sid ps_gr_GR_cog.psa33.v4.text End-Reading
@@ -545,28 +545,28 @@ Status NA
 			End-Section	
 			Section part3_artoclasiahymn__
 				Section once_choir
-					Actor sid Choir End-Actor
+					Actor sid ac.Choir End-Actor
 					Media sid hoVE.MM.LoavesHymn2_ps33v11.text @ver End-Media
 					Hymn sid psVE.breadhymn.v1.text @ver media-off End-Hymn
 				End-Section
 				Section once_clergy
-					Actor sid Clergy End-Actor
+					Actor sid ac.Clergy End-Actor
 					Media sid hoVE.MM.LoavesHymn2_ps33v11.text @ver End-Media
 					Hymn sid psVE.breadhymn.v1.text @ver media-off End-Hymn
 				End-Section
 				Section twice_choir
-					Actor sid Choir End-Actor
+					Actor sid ac.Choir End-Actor
 					Media sid hoVE.MM.LoavesHymn2_ps33v11.text @ver End-Media
 					Hymn sid psVE.breadhymn.v1.text @ver media-off <r>sid ru.Twice</>End-Hymn
 				End-Section
 			End-Section
 			Section part4_end
-				Actor sid Deacon End-Actor
+				Actor sid ac.Deacon End-Actor
 				Dialog sid pr.pet00.text End-Dialog
-				Dialog<i>sid parenthesis.open sid pr.res01.text sid parenthesis.close</>End-Dialog	
-				Actor sid Hierarch End-Actor
+				Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog	
+				Actor sid ac.Hierarch End-Actor
 				Dialog sid pr.pet37_goa.text End-Dialog
-				Dialog<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Dialog
+				Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 			End-Section
 			Section part5_rubric
 				Rubric sid hiVI.R201b sid hiVI.R201dalt End-Rubric
@@ -574,39 +574,39 @@ Status NA
 		End-Section
 		Section AP_theotokoshymn__
 			Section choir
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Insert_section theotokoshymn End-Insert				
 			End-Section
 			Section priest
-				Actor sid Priest End-Actor
+				Actor sid ac.Priest End-Actor
 				Insert_section theotokoshymn End-Insert				
 			End-Section
 			Section priest_or_choir
-				Actor sid Priest sid ru.Or sid Choir End-Actor
+				Actor sid ac.Priest sid ru.Or sid ac.Choir End-Actor
 				Insert_section theotokoshymn End-Insert				
 			End-Section
 		End-Section
 		Section part1_blessingofloaves
 			Title<Tdesig>sid ti.PrayerBlessingLoaves</>End-Title
-			Actor sid Deacon End-Actor
+			Actor sid ac.Deacon End-Actor
 			Dialog sid pr.pet00.text End-Dialog
-			Dialog<i>sid parenthesis.open sid pr.res01.text sid parenthesis.close</>End-Dialog	
-			Actor sid Priest End-Actor
+			Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog	
+			Actor sid ac.Priest End-Actor
 			Dialog sid hiVE.Key1311.text End-Dialog	
 			Dialog sid pr.exc28a.text End-Dialog
-			Dialog<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Dialog	
+			Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog	
 		End-Section
 		Section part2_psalmverses__
 			Section read_all
-				Actor sid Reader End-Actor
+				Actor sid ac.Reader End-Actor
 				Reading sid psLI.aftercommunion.v1.text End-Reading
-				Actor sid Superior sid ru.Or sid Reader End-Actor
+				Actor sid ac.Superior sid ru.Or sid ac.Reader End-Actor
 				Reading sid psLI.aftercommunion.v1.text End-Reading
-				Actor sid Reader End-Actor
+				Actor sid ac.Reader End-Actor
 				Reading sid psLI.aftercommunion.v1.text End-Reading
-				Actor sid Superior sid ru.Or sid Reader End-Actor
+				Actor sid ac.Superior sid ru.Or sid ac.Reader End-Actor
 				Reading sid pr.GloryToTheFather.text End-Reading
-				Actor sid Reader End-Actor
+				Actor sid ac.Reader End-Actor
 				Reading sid pr.BothNowAndEver.text End-Reading
 				Reading sid ps_gr_GR_cog.psa33.v2.text End-Reading
 				Reading sid ps_gr_GR_cog.psa33.v3.text End-Reading
@@ -619,13 +619,13 @@ Status NA
 				Reading sid ps_gr_GR_cog.psa33.v10.text @ver End-Reading
 			End-Section
 			Section sing_then_read
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Hymn sid psLI.aftercommunion.v1.text End-Hymn
 				Insert_section TI.g.r End-Insert
 				Hymn sid psLI.aftercommunion.v1.text End-Hymn
 				Insert_section TI.b.r End-Insert
 				Hymn sid psLI.aftercommunion.v1.text End-Hymn
-				Actor sid Reader End-Actor
+				Actor sid ac.Reader End-Actor
 				Reading sid ps_gr_GR_cog.psa33.v2.text End-Reading
 				Reading sid ps_gr_GR_cog.psa33.v3.text End-Reading
 				Reading sid ps_gr_GR_cog.psa33.v4.text End-Reading
@@ -639,28 +639,28 @@ Status NA
 		End-Section	
 		Section part3_artoclasiahymn__
 			Section once_choir
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Media sid hoVE.MM.LoavesHymn2_ps33v11.text @ver End-Media
 				Hymn sid psVE.breadhymn.v1.text @ver media-off End-Hymn
 			End-Section
 			Section once_clergy
-				Actor sid Clergy End-Actor
+				Actor sid ac.Clergy End-Actor
 				Media sid hoVE.MM.LoavesHymn2_ps33v11.text @ver End-Media
 				Hymn sid psVE.breadhymn.v1.text @ver media-off End-Hymn
 			End-Section
 			Section twice_choir
-				Actor sid Choir End-Actor
+				Actor sid ac.Choir End-Actor
 				Media sid hoVE.MM.LoavesHymn2_ps33v11.text @ver End-Media
 				Hymn sid psVE.breadhymn.v1.text @ver media-off <r>sid ru.Twice</>End-Hymn
 			End-Section
 		End-Section
 		Section part4_end
-			Actor sid Deacon End-Actor
+			Actor sid ac.Deacon End-Actor
 			Dialog sid pr.pet00.text End-Dialog
-			Dialog<i>sid parenthesis.open sid pr.res01.text sid parenthesis.close</>End-Dialog	
-			Actor sid Priest End-Actor
+			Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog	
+			Actor sid ac.Priest End-Actor
 			Dialog sid pr.pet37_goa.text End-Dialog
-			Dialog<i>sid parenthesis.open sid pr.res04.text sid parenthesis.close</>End-Dialog
+			Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 		End-Section
 		Section part5_rubric
 			Rubric sid hiVI.R201b sid hiVI.R201dalt End-Rubric
