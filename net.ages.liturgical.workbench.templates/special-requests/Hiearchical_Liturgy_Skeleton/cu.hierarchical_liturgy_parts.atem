@@ -1,0 +1,73 @@
+Template cu.hierarchical_liturgy_parts 
+
+Status NA
+
+	import eu.lichrysbasil_gr_GR_cog.*
+	import liturgical.verses_gr_GR_cog.*
+	import cu.li9_gr_GR_cog.*
+
+	import actors_gr_GR_cog.*
+	import miscellanea_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+		Head 
+			Set_Date month 5 day 14 year 2023 End_Date
+				Page_Header_Even
+					center @text "Ἀρχιερατικὴ Θεία Λειτουργία"
+				End_Page_Header_Even
+				Page_Header_Odd
+					center @text "Hierarchical Divine Liturgy"
+				End_Page_Header_Odd
+				Page_Footer_Even
+					center @pageNbr
+				End_Page_Footer_Even
+				Page_Footer_Odd
+					center @pageNbr
+				End_Page_Footer_Odd
+			Set_Page_Number 1 End_Set_Page_Number
+		End_Head
+	
+	Section Instance01
+		Break line End_Break
+		Title<bnr>sid cu.HierarchicalLiturgy</>End-Title
+		Break line End_Break
+		Section hymns
+			Actor sid ac.Clergy <Trubric>sid cu.ApolytikionOfTheDay</>End-Actor
+			Actor sid ac.Choir <Trubric>sid cu.ApolytikiaOther</> End-Actor
+			Title<Trubric>sid cu.IfMemorial</>End-Title
+ 			Actor sid ac.Clergy End-Actor
+			Title<Tmode>sid misc.Mode8</>End-Title
+			Hymn sid oc.m2.d7_gr_GR_cog.ocMA.Kathisma23.text @ver media-off End-Hymn
+			Actor sid ac.Choir<Trubric>sid cu.ApolytikionOfChurch</> End-Actor
+ 			Actor sid ac.Clergy <Trubric>sid cu.SeasonalKontakion</> End-Actor
+		End-Section
+		Section prayer
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.pet00.text End-Dialog
+			Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
+		//	Actor sid ac.Hierarch<Trubric>sid ru.InALowVoice</>End-Actor 
+		//	Title role smallcenter sid euLI.Key0601.title End-Title
+		//	Para role inaudible sid euLI.Key0601.text End-Para
+			Actor sid ac.Hierarch End-Actor
+			Dialog sid pr.exc05a.text End-Dialog
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.exc05b.text End-Dialog
+		End-Section
+		Insert_section Selector_Trisagion.hierarchical.holygod End-Insert
+		Insert_section hLI._07_Fimi__.one_choir__.part1 End-Insert
+		Section bishop1
+			Actor sid ac.Deacon End-Actor
+			Dialog sid client_gr_GR_cog.cl.bishop1.fimi.text End-Dialog	
+			Actor sid ac.Clergy End-Actor
+			Para role chant sid client_gr_GR_cog.cl.bishop1.fimi.text End-Para
+		End-Section
+	End-Section
+
+End-Template
