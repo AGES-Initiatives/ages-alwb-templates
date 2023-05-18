@@ -5452,30 +5452,30 @@ Status NA
 	Section resgloryres
 		Title role source sid ti.sourceOctoechos End-Title
 		Title role desig sid ti.ApolytikionResurrectional End-Title
-		when-exists
-			rid ocVE.Apolytikion.greekmelody use:
-				Title<Tmode>rid ocVE.Apolytikion.mode</><Tmelody>rid ocVE.Apolytikion.melody</>End-Title
-				Title role greekmelody rid ocVE.Apolytikion.greekmelody End-Title
-			otherwise use:
-				Title<Tmode>rid ocVE.Apolytikion.mode</>End-Title
-		end-when
-		Media rid ocVE.Apolytikion.text End-Media
-		Hymn rid ocVE.Apolytikion.text @ver media-off End-Hymn
+	//	when-exists
+	//		rid ocVE.Apolytikion.greekmelody use:
+				Title<Tmode>rid ocVE.Apolytikion.mode @day D1 </><Tmelody>rid ocVE.Apolytikion.melody @day D1 </>End-Title
+				Title role greekmelody rid ocVE.Apolytikion.greekmelody @day D1 End-Title
+	//		otherwise use:
+	//			Title<Tmode>rid ocVE.Apolytikion.mode</>End-Title
+	//	end-when
+		Media rid ocVE.Apolytikion.text @day D1 End-Media
+		Hymn rid ocVE.Apolytikion.text @ver media-off @day D1 End-Hymn
 		Title sid ti.Glory<Tdesig>sid ti.Repeat</>End-Title
-		Hymn rid ocVE.Apolytikion.text @ver media-off End-Hymn
+		Hymn rid ocVE.Apolytikion.text @ver media-off @day D1 End-Hymn
 	End-Section
 	Section res__
 		Section modeofweek
 			Title role source sid ti.sourceOctoechos End-Title
 			Title role desig sid ti.ApolytikionResurrectional End-Title
-			when-exists
-				rid ocVE.Apolytikion.greekmelody use:
-					Title<Tmode>rid ocVE.Apolytikion.mode</><Tmelody>rid ocVE.Apolytikion.melody</>End-Title
-					Title role greekmelody rid ocVE.Apolytikion.greekmelody End-Title
+			when-mode-of-week-is
+				M1, M5 use:
+					Title<Tmode>rid ocVE.Apolytikion.mode @day D1 </><Tmelody>rid ocVE.Apolytikion.melody @day D1 </>End-Title
+					Title role greekmelody rid ocVE.Apolytikion.greekmelody @day D1 End-Title
 				otherwise use:
 					Title<Tmode>rid ocVE.Apolytikion.mode</>End-Title
 			end-when
-			Media rid ocVE.Apolytikion.text End-Media
+			Media rid ocVE.Apolytikion.text @day D1 End-Media
 			Hymn rid ocVE.Apolytikion.text @ver media-off @day D1 End-Hymn
 		End-Section
 		Section mode1

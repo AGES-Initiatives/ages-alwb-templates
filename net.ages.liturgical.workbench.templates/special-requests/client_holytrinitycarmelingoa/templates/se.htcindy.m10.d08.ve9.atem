@@ -1,0 +1,107 @@
+Template se.htcindy.m10.d08.ve9
+
+Status Draft
+
+	import eu.lichrysbasil_gr_GR_cog.*
+	import hi.s01_gr_GR_cog.*
+	import ho.s10_gr_GR_cog.*
+	import oc.*
+	
+	import actors_gr_GR_cog.*
+	import client_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import miscellanea_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 10 day 8 year 2023 End_Date
+			Page_Header_Even
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore.text lang L1 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore.text lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+//	Preface Covers
+//		Insert_template pdf.cover.ve.override End-Insert
+//		Insert_template pdf.cover.credits End-Insert
+//	End-Preface
+
+	Section Instance_Sunday
+		Section block1
+			Para role servicesourcestitle sid misc.book.BooksSources.title End-Para
+			Para role servicesources sid misc.book.Octoechos.name sid misc.separator.hyphen rid ocVE.Stichera1.mode End-Para
+			Insert_section Selector_ServiceTitle.on_evening_before End-Insert
+			Para role servicesources sid misc.book.Euchologion.name End-Para
+			Para role servicesourcessection sid ti.ConsecrationOfAChurch End-Para
+			Para role servicesources sid misc.book.Pentecostarion.name End-Para
+			Para role servicesourcessection sid pe.d120_gr_GR_cog.peDA.commemoration.short End-Para
+			Title sid misc.horizontal_line.solid1 End-Title
+			Break line End_Break
+			Title<bnr>sid ve.html.tab</>End-Title
+		End-Section
+		Insert_section VE._01_Beginning__.hierarchical__.vespers End-Insert
+		Insert_section VE._02_LordIHaveCried__.hierarchical__.modeofweek__.for10 End-Insert
+		Insert_section VE._03_Stichera__.oc__.sunday__.s_1234as1234 End-Insert
+		Set_mcDay day 120 End_mcDay
+		Insert_section TI.stp.pe.specific End-Insert
+		Insert_section VE._03_Stichera__.pe__.i_123as567 End-Insert
+		Insert_section VE._03_Stichera__.eucon__.i_123as567 End-Insert
+		Insert_section VE._03_Stichera__.glory__.pe__.gloryasglory_ End-Insert
+		Set_mcDay day 0 End_mcDay
+		Set_Date month 10 day 8 year 2023 End_Date
+		Insert_section VE._03_Stichera__.both__.firsttheotokion__.modeofweek End-Insert	
+		Insert_section VE._04_Middle__.hierarchical__.entrance End-Insert	
+		Section block2
+			Title<Tdesig>sid ti.Readings</>End-Title
+			Title<Tsmall>sid ti.Consecration</> End-Title
+			Insert_section LE._04_hProphetologion__.r98 End-Insert
+			Insert_section LE._04_hProphetologion__.r40 End-Insert
+			Insert_section LE._04_hProphetologion__.r73 End-Insert
+		End-Section
+		Insert_section VE._06_Litanies__.hierarchical__.fullektenia End-Insert
+		Insert_section VE._08_Aposticha__.oc__.sunday__.aposticha1234 End-Insert
+		Set_mcDay day 120 End_mcDay
+		Insert_section TI.g.pe.com1 End-Insert
+		Insert_section VE._08_Aposticha__.glory__.me__.gloryasglory_.hymn End-Insert
+		Set_mcDay day 0 End_mcDay
+		Set_Date month 10 day 8 year 2023 End_Date
+		Insert_section TI.b.con End-Insert
+		Insert_section VE._08_Aposticha__.both__.eucon__.gloryasboth_.hymn End-Insert
+		Insert_section VE._09_Symeon_Trisagion__.hierarchical End-Insert
+		Insert_section AP.res__.modeofweek End-Insert
+		Insert_section TI.g.client1 End-Insert
+		Insert_section AP.client1 End-Insert
+		Insert_section TI.b.con End-Insert
+		Insert_section AP.con_.hymn End-Insert
+		Insert_section VE._10_End__.hierarchical__.wisdom123.part1 End-Insert
+		Insert_section VE._11_Dismissal__.hierarchical__.nocommemoration End-Insert
+
+		Section block3
+			Actor sid ac.Hierarch End-Actor
+			Dialog sid pr.GloryToYouOurGod.text End-Dialog
+			Dialog sid dis00 sid dis00.resurrection sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08 sid cl.localpatronsaint1.dismissal sid cl.relics.saint1 sid cl.relics.saint2 sid cl.relics.saint3 sid dis09 sid dis10 sid dis88 End-Dialog 
+			Actor sid ac.Choir End-Actor
+			Media sid eu.lichrysbasil_gr_GR_cog.euLI.Key1706h.text End-Media
+			Hymn sid eu.lichrysbasil_gr_GR_cog.euLI.Key1706h.text @ver media-off End-Hymn
+			Insert_section Selector_Dismissals.hierarchical.part2.regular_end End-Insert
+		End-Section
+
+	End-Section
+
+End-Template
