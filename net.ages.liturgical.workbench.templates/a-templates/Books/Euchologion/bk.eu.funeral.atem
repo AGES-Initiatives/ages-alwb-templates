@@ -1,0 +1,259 @@
+Template bk.eu.funeral
+
+Status NA
+
+	import eu.funeral_gr_GR_cog.*
+	import le.ep.va.deceased_gr_GR_cog.*
+	import le.go.va.deceased_gr_GR_cog.*
+	import liturgical.verses_gr_GR_cog.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import miscellanea_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head
+				Page_Header_Even
+					center @text "Funeral Service"
+				End_Page_Header_Even
+				Page_Header_Odd
+					center @text "Funeral Service"
+				End_Page_Header_Odd
+				Page_Footer_Even
+					center @pageNbr
+				End_Page_Footer_Even
+				Page_Footer_Odd
+					center @pageNbr
+				End_Page_Footer_Odd
+			Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Title role desig sid euFUN.title End-Title
+	
+	Actor sid ac.Priest End-Actor
+	Dialog sid pr.enarxis01.text End-Dialog
+	Actor sid ac.Choir End-Actor
+	Dialog sid pr.res04.text End-Dialog
+	
+	Title role desig sid euFUN.Key0300.title End-Title
+	Title role mode sid euFUN.Key0300.mode End-Title
+	Media sid euFUN.MM.Key0300.text End-Media
+	Para role chant sid psEU.funeral.stanza1.v1.text sid ti.Alleluia sid psEU.funeral.stanza1.v2.text @ver sid ti.Alleluia End-Para
+	Para role chant sid psEU.funeral.stanza1.v3.text @ver sid ti.Alleluia  End-Para
+	Para role chant sid psEU.funeral.stanza1.v4.text @ver sid ti.Alleluia  End-Para
+	Para role chant sid psEU.funeral.stanza1.v5.text @ver sid ti.Alleluia  End-Para
+	Para role chant sid psEU.funeral.stanza1.v6.text @ver sid ti.Alleluia  End-Para
+	Para role chant sid psEU.funeral.stanza1.v7.text @ver sid ti.Alleluia  End-Para
+	Verse sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Verse
+	Para role chant sid ti.Alleluia End-Para	
+
+	Section Litany01
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.pet17.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res06.text sid misc.parenthesis.close</>End-Dialog
+		Dialog sid pr.petFuneral01.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res06.text sid misc.parenthesis.close</>End-Dialog
+		Dialog sid pr.petFuneral02.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res02.text sid misc.parenthesis.close</>End-Dialog
+		Actor sid ac.Priest End-Actor
+		Dialog sid euFUN.Key0106.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+	End-Section //Litany01
+
+	Actor sid ac.Choir End-Actor
+	Title role desig sid euFUN.Key0400.title End-Title
+	Title role mode sid euFUN.Key0400.mode End-Title
+	Media sid euFUN.MM.Key0400.text End-Media
+	Para role chant sid psEU.funeral.stanza2.v2.text @ver sid psEU.funeral.stanza2.v1.text End-Para
+	Para role chant sid psEU.funeral.stanza2.v3.text @ver sid psEU.funeral.stanza2.v1.text End-Para
+	Para role chant sid psEU.funeral.stanza2.v4.text @ver sid psEU.funeral.stanza2.v1.text End-Para
+	Para role chant sid psEU.funeral.stanza2.v5.text @ver sid psEU.funeral.stanza2.v1.text End-Para
+	Para role chant sid psEU.funeral.stanza2.v6.text @ver sid psEU.funeral.stanza2.v1.text End-Para
+	Para role chant sid psEU.funeral.stanza2.v7.text @ver sid psEU.funeral.stanza2.v1.text End-Para
+	Verse sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Verse
+	Para role chant sid psEU.funeral.stanza2.v1.text End-Para
+
+	Section Litany02
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.pet00.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
+		Actor sid ac.Priest End-Actor
+		Dialog sid euFUN.Key0106.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+	End-Section	
+
+	Actor sid ac.Choir End-Actor
+	Title role desig sid euFUN.Key0500.title End-Title
+	Title role mode sid euFUN.Key0500.mode End-Title
+	Media sid euFUN.MM.Key0500.text End-Media
+	Para role chant sid psEU.funeral.stanza3.v1.text sid ti.Alleluia sid psEU.funeral.stanza3.v2.text @ver sid ti.Alleluia End-Para
+	Para role chant sid psEU.funeral.stanza3.v3.text @ver sid ti.Alleluia  End-Para
+	Para role chant sid psEU.funeral.stanza3.v4.text @ver sid ti.Alleluia  End-Para
+	Para role chant sid psEU.funeral.stanza3.v5.text @ver sid ti.Alleluia  End-Para
+	Para role chant sid psEU.funeral.stanza3.v6.text @ver End-Para
+	Para role chant sid psEU.funeral.stanza3.v7.text End-Para
+
+	Section FuneralEvlogitaria
+		Title role desig sid euFUN.Key0600.title End-Title
+		Title role mode sid euFUN.Key0600.mode End-Title
+		Media sid euFUN.Key0601.text End-Media
+		Verse sid euFUN.Key0600.text End-Verse
+		Hymn sid euFUN.Key0601.text @ver media-off End-Hymn
+		Verse sid euFUN.Key0600.text End-Verse
+		Hymn sid euFUN.Key0602.text @ver End-Hymn
+		Verse sid euFUN.Key0600.text End-Verse
+		Hymn sid euFUN.Key0603.text @ver End-Hymn
+		Verse sid euFUN.Key0600.text End-Verse
+		Hymn sid euFUN.Key0604.text @ver End-Hymn
+		Verse sid pr.GloryToTheFather.text End-Verse
+		Hymn sid euFUN.Key0605.text @ver End-Hymn
+		Verse sid pr.BothNowAndEver.text End-Verse
+		Hymn sid euFUN.Key0606.text @ver End-Hymn
+		Hymn sid euFUN.Key0607.text @ver End-Hymn
+	End-Section
+
+	Title<Tdesig>sid ti.Kontakion</><Tmode>sid euFUN.Key0700.mode</>End-Title
+	Media sid euFUN.Key0700.text End-Media
+	Hymn sid euFUN.Key0700.text @ver media-off End-Hymn
+
+	Title role desig sid euFUN.Key0800.title End-Title
+	Title role chapverse sid euFUN.Key0800.poet End-Title
+	Title role mode sid euFUN.Key0801.mode End-Title
+	Media sid euFUN.Key0801.text End-Media
+	Hymn sid euFUN.Key0801.text @ver media-off End-Hymn
+	Title role mode sid euFUN.Key0802.mode End-Title
+	Media sid euFUN.Key0802.text End-Media
+	Hymn sid euFUN.Key0802.text @ver media-off End-Hymn
+	Title role chapverse sid euFUN.Key0803.title End-Title
+	Title role mode sid euFUN.Key0803.mode End-Title
+	Media sid euFUN.Key0803.text End-Media
+	Hymn sid euFUN.Key0803.text @ver media-off End-Hymn
+	Title role mode sid euFUN.Key0804.mode End-Title
+	Media sid euFUN.Key0804.text End-Media
+	Hymn sid euFUN.Key0804.text @ver media-off End-Hymn
+	Title<Tmode>sid euFUN.Key0805.mode</><Tmelody>sid euFUN.Key0805.melody</>End-Title
+	Media sid euFUN.Key0805.text End-Media
+	Hymn sid euFUN.Key0805.text @ver media-off End-Hymn
+	Title role chapverse sid euFUN.Key0806.title End-Title
+	Title role mode sid euFUN.Key0806.mode End-Title
+	Media sid euFUN.Key0806.text End-Media
+	Hymn sid euFUN.Key0806.text @ver media-off End-Hymn
+	Title role mode sid euFUN.Key0807.mode End-Title
+	Media sid euFUN.Key0807.text End-Media
+	Hymn sid euFUN.Key0807.text @ver media-off End-Hymn
+	Title role mode sid euFUN.Key0808.mode End-Title
+	Media sid euFUN.Key0808.text End-Media
+	Hymn sid euFUN.Key0808.text @ver media-off End-Hymn
+	Title<Tmode>sid euFUN.Key0809.mode</><Tmelody>sid euFUN.Key0809.melody</>End-Title
+	Media sid euFUN.Key0809.text End-Media
+	Hymn sid euFUN.Key0809.text @ver media-off End-Hymn
+	Title role chapverse sid euFUN.Key0810.title End-Title
+	Title role mode sid euFUN.Key0810.mode End-Title
+	Media sid euFUN.Key0810.text End-Media
+	Hymn sid euFUN.Key0810.text @ver media-off End-Hymn
+	Title role mode sid euFUN.Key0811.mode End-Title
+	Media sid euFUN.Key0811.text End-Media
+	Hymn sid euFUN.Key0811.text @ver media-off End-Hymn
+	Title sid ti.Glory<Tmode>sid euFUN.Key0812.mode</>End-Title
+	Media sid euFUN.Key0812.text End-Media
+	Hymn sid euFUN.Key0812.text @ver media-off End-Hymn
+	Title sid ti.BothNow<Tmode>sid euFUN.Key0813.mode</>End-Title
+	Media sid euFUN.Key0813.text End-Media
+	Hymn sid euFUN.Key0813.text @ver media-off End-Hymn
+
+	Title<Tdesig>sid ti.Prokeimenon</><Tmode>sid misc.Mode3</>End-Title
+	Media sid euFUN.EpistleProkeimenon.text End-Media
+	Para role chant sid euFUN.EpistleProkeimenon.text @ver End-Para
+
+	Section Epistle
+		Title role desig sid ti.Epistle End-Title
+		Actor sid ac.Deacon End-Actor	
+		Dialog sid pr.exc19.text End-Dialog
+		Actor sid ac.Reader End-Actor
+		Insert_section bk.ap.va.sections.forFuneral.ep_verse End-Insert
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.exc17.text End-Dialog
+		Actor sid ac.Reader End-Actor
+		Dialog sid pr.epi01a.text sid levaDEC.Epistle1.book_string sid pr.epi01b.text End-Dialog
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.exc19.text End-Dialog
+		Actor sid ac.Reader End-Actor
+		Insert_section bk.ap.va.sections.forFuneral.ep_lesson End-Insert
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.epi02.text End-Dialog		
+	End-Section
+
+	Actor sid ac.Choir End-Actor
+	Para role chant sid pr.Alleluia3.text End-Para
+	
+	Section Gospel 
+		Title role desig sid ti.HolyGospel End-Title
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.exc17.text sid pr.exc18.text sid pr.gos02.text End-Dialog
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.pet31.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res05.text sid misc.parenthesis.close</>End-Dialog
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.gos03a.text sid levaLI.Gospel1.book_string sid pr.gos03b.text End-Dialog
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.exc19.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog	
+		Actor sid ac.Deacon End-Actor
+		Title role chapverse sid levaLI.Gospel1.chapverse End-Title
+		Reading sid levaLI.Gospel1.text @ver End-Reading
+		Actor sid ac.Priest End-Actor
+		Dialog sid eu.lichrysbasil_gr_GR_cog.euLI.Key0705.text End-Dialog
+		Actor sid ac.Choir End-Actor						
+		Dialog sid pr.GloryToYouLord.text End-Dialog	
+	End-Section	
+
+	Section Litany03
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.pet17.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res06.text sid misc.parenthesis.close</>End-Dialog
+		Dialog sid pr.petFuneral01.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res06.text sid misc.parenthesis.close</>End-Dialog
+		Dialog sid pr.petFuneral02.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res02.text sid misc.parenthesis.close</>End-Dialog
+		Actor sid ac.Priest End-Actor
+		Para role prayer sid euFUN.Key0105.text @ver End-Para
+		Dialog sid euFUN.Key0106.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+	End-Section //Litany03
+	
+	Actor sid ac.Priest End-Actor
+	Dialog sid pr.GloryToYouChristHope.text End-Dialog
+	Dialog sid euFUN.Key1401.text sid dis01 sid euFUN.Key1402.text sid euFUN.Key1403.text sid euFUN.Key1404.text sid euFUN.Key1405.text sid euFUN.Key1406.text sid euFUN.Key1407.text sid euFUN.Key1408.text End-Dialog
+	Dialog sid euFUN.Key0107.text<r>sid ru.Thrice</>End-Dialog
+//	Dialog sid euFUN.Key0108.text<r>sid ru.Thrice</>End-Dialog
+	Actor sid ac.People End-Actor
+	Media sid euFUN.Key0110.text End-Media
+	Hymn sid euFUN.Key0110.text @ver media-off End-Hymn
+	
+	Actor sid ac.Choir End-Actor
+	Title<Tmode>sid euFUN.Key1101.mode</><Tmelody>sid euFUN.Key1101.melody</>End-Title
+	Media sid euFUN.Key1101.text End-Media
+	Hymn sid euFUN.Key1101.text @ver media-off End-Hymn
+	Media sid euFUN.Key1102.text End-Media
+	Hymn sid euFUN.Key1102.text @ver media-off End-Hymn
+	Title sid ti.GloryBothNow<Tdesig>sid ti.Theotokion</>End-Title
+	Media sid euFUN.Key1103.text End-Media
+	Hymn sid euFUN.Key1103.text @ver media-off End-Hymn
+
+	Actor sid ac.Priest End-Actor	
+	Para role prayer sid psEU.funeral.casket.v1.text @ver End-Para
+	Para role prayer sid psEU.funeral.casket.v2.text End-Para
+		
+	Dialog sid euFUN.Key0106.text End-Dialog
+	Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+	
+	Dialog sid dis100 End-Dialog
+	Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+	
+End-Template

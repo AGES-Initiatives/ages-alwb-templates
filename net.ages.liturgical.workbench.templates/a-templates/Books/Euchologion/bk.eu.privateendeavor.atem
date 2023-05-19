@@ -1,0 +1,167 @@
+Template bk.eu.privateendeavor 
+
+Status NA
+
+	import client_gr_GR_cog.*
+	import eu.privateendeavor_gr_GR_cog.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import miscellanea_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+	//	Set_Date month 6 day 18  End_Date
+			Page_Header_Even
+				center @lookup sid euKey003.title lang L2
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid euKey003.title lang L1
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+	
+	Section Section01
+		Title<Tdesig>sid euKey003.title</>End-Title
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.res08.text End-Dialog
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.enarxis01.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res04.text End-Dialog
+		Insert_section AP.ga.fathers_.hymn End-Insert
+		Title sid ti.GloryBothNow<bnr>sid misc.Mode8</>End-Title
+		Media sid eu.smallwaterblessing_gr_GR_cog.euSWB.Key0304.text End-Media
+		Hymn sid eu.smallwaterblessing_gr_GR_cog.euSWB.Key0304.text @ver media-off End-Hymn
+		Hymn sid ho.s07_gr_GR_cog.hoLI.TrisagiosHymn.text @ver media-off<r>sid ru.Thrice</>End-Hymn
+		Verse sid pr.GloryToTheFather.text End-Verse
+		Verse sid pr.BothNowAndEver.text End-Verse
+		Hymn sid ho.s07_gr_GR_cog.hoLI.TrisagiosHymn34.text End-Hymn
+		Actor sid ac.Deacon End-Actor
+		Dialog sid eu.lichrysbasil_gr_GR_cog.euLI.Key0602.text End-Dialog	
+		Actor sid ac.Choir End-Actor
+		Hymn sid eu.lichrysbasil_gr_GR_cog.euLI.Key0602.text sid ho.s07_gr_GR_cog.hoLI.TrisagiosHymn.text media-off End-Hymn
+	End-Section
+	Section Section02
+	//	Title role desig sid ti.Readings End-Title
+	//	Title role desig sid ti.Epistle End-Title
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.exc19.text End-Dialog
+		Actor sid ac.Reader End-Actor
+		Insert_section bk.ap.va.sections.forPrivateEndeavor.ep_title End-Insert
+		Insert_section bk.ap.va.sections.forPrivateEndeavor.ep_prokeimenon End-Insert
+		Insert_section bk.ap.va.sections.forPrivateEndeavor.ep_verse End-Insert
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.exc17.text End-Dialog		
+		Actor sid ac.Reader End-Actor
+		Insert_section bk.ap.va.sections.forPrivateEndeavor.ep_book End-Insert
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.exc19.text End-Dialog
+		Actor sid ac.Reader End-Actor
+		Insert_section bk.ap.va.sections.forPrivateEndeavor.ep_lesson End-Insert
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.epi02.text End-Dialog
+	End-Section
+	Section Section03
+		Actor sid ac.Choir End-Actor
+		Hymn sid pr.Alleluia3.text End-Hymn
+	//	Title role desig sid ti.Gospel End-Title
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.exc17.text sid pr.exc18.text sid pr.gos02.text End-Dialog
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.pet31.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res05.text sid misc.parenthesis.close</>End-Dialog
+		Actor sid ac.Priest End-Actor
+		Insert_section bk.ev.va.sections.forPrivateEndeavor.go_book End-Insert
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.exc19.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog	
+		Actor sid ac.Priest End-Actor
+		Insert_section bk.ev.va.sections.forPrivateEndeavor.go_lesson End-Insert
+		Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog	
+	End-Section
+	Section Section04
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.pet01.text End-Dialog
+		Actor sid ac.Choir <r>sid euKey004.rubric</>End-Actor
+		Dialog sid pr.res01.text End-Dialog
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.pet02.text End-Dialog
+		Dialog sid pr.pet03.text End-Dialog
+		Dialog sid pr.pet06a.text sid cl.bishop1.rank sid cl.bishop1.name_c sid pr.pet06b.text End-Dialog //with client specific bishop's name
+		Dialog sid misc.parenthesis.open sid pr.pet07S.text sid misc.parenthesis.close End-Dialog
+		Dialog sid pr.petWater01.text End-Dialog
+		Dialog sid euKey005.text End-Dialog
+		Dialog sid euKey006.text End-Dialog
+		Dialog sid pr.pet11.text End-Dialog
+		Dialog sid pr.pet12.text End-Dialog
+		Dialog sid pr.pet13.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res03.text sid misc.parenthesis.close</>End-Dialog
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.exc01.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+	End-Section
+	Section Section05
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.pet00.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
+		Title<Trubric>sid euKey007.rubric</>End-Title
+		Actor sid ac.Priest End-Actor
+		Dialog sid eu.smallwaterblessing_gr_GR_cog.euSWB.Key0502.text End-Dialog
+		Dialog sid pr.exc02.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.pet31.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res05.text sid misc.parenthesis.close</>End-Dialog
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.pet32.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res03.text sid misc.parenthesis.close</>End-Dialog
+		Actor sid ac.Priest<inr>sid ru.InALowVoice</>End-Actor
+		Dialog sid eu.smallwaterblessing_gr_GR_cog.euSWB.Key0601.text End-Dialog
+		Actor sid ac.Priest<inr>sid ru.Aloud</>End-Actor
+		Dialog sid pr.exc29.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+		Rubric sid euKey008.rubric End-Rubric
+		Title<Tmode>sid me.m09.d14_gr_GR_cog.meVE.Apolytikion1.mode</>End-Title
+		Media sid me.m09.d14_gr_GR_cog.meVE.Apolytikion1.text End-Media
+		Hymn sid me.m09.d14_gr_GR_cog.meVE.Apolytikion1.text @ver media-off End-Hymn
+		Rubric sid euKey009.rubric End-Rubric
+		Title role mode sid eu.smallwaterblessing_gr_GR_cog.euSWB.Key0602.mode End-Title
+		Media sid eu.smallwaterblessing_gr_GR_cog.euSWB.Key0602.text End-Media
+		Hymn sid eu.smallwaterblessing_gr_GR_cog.euSWB.Key0602.text @ver media-off End-Hymn
+	End-Section
+	Section Section06
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.pet00.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
+		Title<Trubric>sid euKey010.rubric</>End-Title
+		Actor sid ac.Priest End-Actor
+		Dialog sid euKey011.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+	End-Section
+	Section Section07
+		Title<Tdesig>sid ti.Dismissal.uc</>End-Title
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.GloryToYouGodHope.text End-Dialog
+		Actor sid ac.Deacon End-Actor
+		Dialog sid ti.GloryBothNow sid pr.res01.text<r>sid ru.Thrice</> sid pr.res12.text End-Dialog
+		Actor sid ac.Priest End-Actor
+		Dialog sid dis00 sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08 sid dis09 sid dis10 sid dis88 End-Dialog 
+		Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res04.text End-Dialog
+	End-Section
+End-Template
