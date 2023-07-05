@@ -1,0 +1,229 @@
+Template cu.sarc.eu.churchdooropening 
+
+Status NA
+
+	import client_gr_GR_cog.*
+	import eu.churchdooropening_gr_GR_cog.*
+	import eu.lichrysbasil_gr_GR_cog.*
+	import eu.smallwaterblessing_gr_GR_cog.*
+	import ho.s07_gr_GR_cog.*
+	import le.go.va.dooropening_gr_GR_cog.*
+	import pe.d120_gr_GR_cog.*
+	import liturgical.verses_gr_GR_cog.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import miscellanea_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+			Page_Header_Even
+				center @text "Thyranixia - Opening of the Church"
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @text "Thyranixia - Opening of the Church"
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Section Section01
+		Title role desig sid euCDO.Key0100.title End-Title
+		Break line End_Break
+		Rubric sid euCDO.R101 End-Rubric
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.res08.text End-Dialog
+		Actor sid ac.Hierarch End-Actor
+		Dialog sid pr.enarxis01.text End-Dialog
+		Actor sid ac.Reader End-Actor
+		Dialog sid pr.res04.text End-Dialog
+		Insert_section LiturgicalPsalms.Psalm_83_Paragraph End-Insert
+	End-Section
+	Section Section02	
+		Insert_section MA._01_Beginning__.mode8 End-Insert
+		Title role desig sid euCDO.R102 End-Title
+		Title role mode sid peVE.Apolytikion1.mode End-Title
+		Media sid peVE.Apolytikion1.text End-Media
+		Hymn sid peVE.Apolytikion1.text @ver media-off End-Hymn
+	End-Section
+	Section Section03	
+		Title sid ti.Glory End-Title
+		Title role desig sid cl.Apolytikion1.title End-Title
+		Title<Tmode>sid cl.Apolytikion1.mode</><Tmelody>sid cl.Apolytikion1.melody</>End-Title
+		Media sid cl.Apolytikion1.text End-Media
+		Hymn sid cl.Apolytikion1.text @ver media-off End-Hymn
+	End-Section
+	Section Section04	
+		Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
+		Title role mode sid euSWB.Key0304.mode End-Title
+		Media sid euSWB.Key0304.text End-Media
+		Hymn sid euSWB.Key0304.text @ver media-off End-Hymn
+		Hymn sid hoLI.TrisagiosHymn.text @ver media-off<r>sid ru.Thrice</>End-Hymn
+		Verse sid pr.GloryToTheFather.text End-Verse
+		Verse sid pr.BothNowAndEver.text End-Verse
+		Hymn sid hoLI.TrisagiosHymn34.text @ver End-Hymn
+		Actor sid ac.Deacon End-Actor
+		Dialog sid euLI.Key0602.text End-Dialog	
+		Actor sid ac.Choir End-Actor
+		Hymn sid euLI.Key0602.text sid hoLI.TrisagiosHymn.text @ver media-off End-Hymn
+	End-Section
+	Section Section05
+		Title role desig sid ti.Readings End-Title
+		Title role desig sid ti.Epistle End-Title
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.exc19.text End-Dialog
+		Actor sid ac.Reader End-Actor
+		Insert_section bk.ap.va.sections.forDooropening.ep_title End-Insert
+		Insert_section bk.ap.va.sections.forDooropening.ep_prokeimenon End-Insert
+		Insert_section bk.ap.va.sections.forDooropening.ep_verse End-Insert
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.exc17.text End-Dialog		
+		Actor sid ac.Reader End-Actor
+		Insert_section bk.ap.va.sections.forDooropening.ep_book End-Insert
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.exc19.text End-Dialog
+		Actor sid ac.Reader End-Actor
+		Insert_section bk.ap.va.sections.forDooropening.ep_lesson End-Insert
+		Actor sid ac.Hierarch End-Actor
+		Dialog sid pr.epi02.text End-Dialog
+	End-Section
+	Section Section06
+		Actor sid ac.Choir End-Actor
+		Media sid pr.Alleluia3.text End-Media
+		Hymn sid pr.Alleluia3.text @ver media-off End-Hymn
+	End-Section
+	Section Section07
+		Title role desig sid ti.Gospel End-Title
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.exc17.text sid pr.exc18.text sid pr.gos02.text End-Dialog
+		Actor sid ac.Hierarch End-Actor
+		Dialog sid pr.pet31.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res05.text sid misc.parenthesis.close</>End-Dialog
+		Actor sid ac.Hierarch End-Actor
+		Dialog sid pr.gos03a.text sid levaCDO.Gospel.book_string sid pr.gos03b.text End-Dialog 
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.exc19.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog	
+		Actor sid ac.Hierarch End-Actor
+		Title role chapverse sid levaCDO.Gospel.chapverse End-Title 
+		Reading sid levaCDO.Gospel.text End-Reading 
+		Dialog<i>sid misc.parenthesis.open sid pr.GloryToYouLord.text sid misc.parenthesis.close</>End-Dialog	
+	End-Section
+	Section Section08
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.pet01.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
+		Dialog sid pr.pet02.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
+		Dialog sid pr.pet03.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
+		Dialog sid pr.pet06a.text sid cl.bishop1.rank sid cl.bishop1.name_c sid pr.pet06b.text End-Dialog //with client specific bishop's name
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
+		Dialog sid pr.pet07S.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
+		Dialog sid pr.pet08.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
+		Dialog sid pr.pet09.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
+		Dialog sid pr.pet10.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
+		Dialog sid pr.petWater01.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
+		Dialog sid pr.petWater02.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
+		Dialog sid pr.petWater13.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
+		Dialog sid pr.petConsecration01.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
+		Dialog sid pr.pet11.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
+		Dialog sid pr.pet12.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
+		Dialog sid pr.pet13.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res03.text sid misc.parenthesis.close</>End-Dialog
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.exc01.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+	End-Section
+	Section Section09
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.pet00.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
+		Title role desig sid euCDO.Key0101.title End-Title
+		Rubric sid euCDO.R103 End-Rubric
+		Actor sid ac.Hierarch End-Actor
+		Para role prayer sid euCDO.Key0102.text End-Para
+		Para role prayer sid pr.exc28.text End-Para
+		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+	End-Section
+	Section Section10
+		Rubric sid euCDO.R104 End-Rubric
+		Actor sid ac.Hierarch End-Actor
+		Title role mode sid me.m09.d14_gr_GR_cog.meVE.Apolytikion1.mode End-Title
+		Media sid me.m09.d14_gr_GR_cog.meVE.Apolytikion1.text End-Media
+		Hymn sid me.m09.d14_gr_GR_cog.meVE.Apolytikion1.text @ver media-off End-Hymn
+		Break line End_Break
+		Section Section12
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.pet00.text End-Dialog
+			Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
+			Actor sid ac.Hierarch End-Actor
+			Para role prayer sid euCDO.Key0103.text sid cl.consecration.name sid euCDO.Key0105.text End-Para
+			Para role prayer sid euCDO.Key0106.text End-Para
+			Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+		End-Section
+		Rubric sid euCDO.R105 End-Rubric
+		Actor sid ac.Hierarch End-Actor
+		Dialog sid psEU.churchdooropening.v1.text @ver End-Dialog		
+		Rubric sid euCDO.R106 End-Rubric
+		Dialog sid psEU.churchdooropening.v2.text @ver End-Dialog
+		Actor sid ac.Hierarch End-Actor
+		Dialog sid psEU.churchdooropening.v3.text @ver End-Dialog
+		Dialog sid psEU.churchdooropening.v1.text @ver End-Dialog		
+		Rubric sid euCDO.R107 End-Rubric
+		Dialog sid psEU.churchdooropening.v2.text @ver End-Dialog
+		Actor sid ac.Hierarch End-Actor
+		Dialog sid psEU.churchdooropening.v3.text @ver End-Dialog
+		Dialog sid psEU.churchdooropening.v1.text @ver End-Dialog		
+		Rubric sid euCDO.R108 End-Rubric
+		Dialog sid psEU.churchdooropening.v4.text @ver End-Dialog
+		Actor sid ac.Hierarch End-Actor
+		Dialog sid psEU.churchdooropening.v5.text @ver End-Dialog
+	End-Section
+	Section Section11	
+		Rubric sid euCDO.R109 End-Rubric
+		Insert_section AP.con_ End-Insert
+		Title role desig sid ti.Kontakion sid ti.Consecration End-Title
+		Title<Tmode>sid me.m09.d13_gr_GR_cog.meMA.Kontakion1.mode</>sid me.m09.d13_gr_GR_cog.meMA.Kontakion1.melody<Tmelody></>End-Title
+		Media sid me.m09.d13_gr_GR_cog.meMA.Kontakion1.text End-Media
+		Hymn sid me.m09.d13_gr_GR_cog.meMA.Kontakion1.text @ver media-off End-Hymn
+		Rubric sid euCDO.R110 End-Rubric
+		Title role desig sid cl.Apolytikion1.title End-Title
+		Title<Tmode>sid cl.Apolytikion1.mode</>sid cl.Apolytikion1.melody<Tmelody></>End-Title
+		Media sid cl.Apolytikion1.text End-Media
+		Hymn sid cl.Apolytikion1.text @ver media-off End-Hymn
+	End-Section
+	Section Section13
+		Title role desig sid ti.Dismissal.uc End-Title
+		Actor sid ac.Hierarch End-Actor
+		Dialog sid pr.GloryToYouChristHope.text End-Dialog
+	//	Insert_section Selector_Dismissals.Com_No End-Insert
+		Dialog sid dis00 rid me.meDA.dismissal sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08 sid dis09 sid dis10 sid dis88 End-Dialog 
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.ThroughThePrayers_bishop.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+	End-Section
+
+End-Template
