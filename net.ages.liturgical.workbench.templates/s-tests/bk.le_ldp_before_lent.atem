@@ -1,0 +1,53 @@
+Template bk.le_ldp_before_lent 
+
+Status NA
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import miscellanea_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head
+	//	Set_Date month 4 day 26 year 2021 End_Date
+			Page_Header_Even
+				center @lookup sid hw.bridegroomservice lang L1 @lookup sid d.onSundayEvening lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid hw.bridegroomservice lang L2 @lookup sid d.onSundayEvening lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+	
+	Section epistle_weeks
+		Set_Date month 2 day 20 year 2021 End_Date
+		Para<r>ldp @Service_Year</>sid misc.separator.endash rid me.meDA.date sid misc.separator.endash ldp @Day_of_Week_As_Text End-Para
+		Para ldp @Day_of_Movable_Cycle sid misc.separator.slash ldp@Lukan_Cycle_Elapsed_Days sid misc.separator.slash ldp@Sundays_Before_Triodion End-Para
+		Set_Date month 2 day 12 year 2022 End_Date
+		Para<r>ldp @Service_Year</>sid misc.separator.endash rid me.meDA.date sid misc.separator.endash ldp @Day_of_Week_As_Text End-Para
+		Para ldp @Day_of_Movable_Cycle sid misc.separator.slash ldp@Lukan_Cycle_Elapsed_Days sid misc.separator.slash ldp@Sundays_Before_Triodion End-Para
+		Set_Date month 2 day 4 year 2023 End_Date
+		Para<r>ldp @Service_Year</>sid misc.separator.endash rid me.meDA.date sid misc.separator.endash ldp @Day_of_Week_As_Text End-Para
+		Para ldp @Day_of_Movable_Cycle sid misc.separator.slash ldp@Lukan_Cycle_Elapsed_Days sid misc.separator.slash ldp@Sundays_Before_Triodion End-Para
+	//	Insert_section LE._01_Epistle__.daily_.title End-Insert
+		Para sid misc.horizontal_line.dash1 End-Para
+		Set_Date month 2 day 24 year 2024 End_Date
+		Para<r>ldp @Service_Year</>sid misc.separator.endash rid me.meDA.date sid misc.separator.endash ldp @Day_of_Week_As_Text End-Para
+		Para ldp @Day_of_Movable_Cycle sid misc.separator.slash ldp@Lukan_Cycle_Elapsed_Days sid misc.separator.slash ldp@Sundays_Before_Triodion End-Para
+	End-Section
+	
+	
+
+End-Template
