@@ -1,6 +1,6 @@
 Template se.m04.d26.pl2
 
-Status NA
+Status Final
 
 	import Selector_ServiceTitle.*
 
@@ -18,7 +18,7 @@ Status NA
 	import roles.*
 
 	Head 
-		Set_Date month 4 day 26 year 2023 End_Date
+		Set_Date month 4 day 26 year 2024 End_Date
 			Page_Header_Even
 				center @lookup rid tr.trVL.header lang L1
 			End_Page_Header_Even
@@ -46,35 +46,62 @@ Status NA
 					Para role servicesourcestitle sid misc.book.BooksSources.title End-Para
 					Para role servicesources sid misc.book.Triodion.name End-Para
 					Insert_section tr_vespers_on_day_before End-Insert
-					Set_Date month 4 day 25 year 2023 End_Date
+					Set_Date month 4 day 25 year 2024 End_Date
 					Para role servicesources sid misc.book.Menaion.name sid misc.separator.hyphen rid me.meDA.date End-Para
 					Para role servicesourcessection rid me.meDA.commemoration.first_short End-Para
-					Set_Date month 4 day 26 year 2023 End_Date
+					Set_Date month 4 day 26 year 2024 End_Date
 					Title sid misc.horizontal_line.solid1 End-Title
 					Break line End_Break
 					Title<bnr>sid pl.html.tab</>End-Title
 				End-Section
 				Insert_section PL._03_Stichera_.montuewedthur_.Idiomela_Triodion End-Insert
 				Insert_section PL._03_Stichera_.montuewedthur_.Stichera_Triodion End-Insert
-				Set_Date month 4 day 25 year 2023 End_Date
+				Set_Date month 4 day 25 year 2024 End_Date
 				Insert_section TI.stp.s._05_evangelist End-Insert
-				Insert_section VE._03_Stichera__.me__.p_4456as78910 End-Insert
+				Insert_section VE._03_Stichera__.me__.p_1123as78910 End-Insert
 				Insert_section VE._08_Aposticha__.glory__.me__.gloryasglory_ End-Insert
-				Set_Date month 4 day 2 year 2023 End_Date
-				Insert_section VE._03_Stichera__.both__.metheotokion End-Insert
-				Set_Date month 4 day 26 year 2023 End_Date
+				Set_Date month 4 day 26 year 2024 End_Date
+				when-movable-cycle-day-is
+					59, 61 use:
+						Section theotokion
+							Title sid ti.GloryBothNow<Tdesig>sid ti.Theotokion</>End-Title
+							Title<Tmode>sid me.m04.d02_gr_GR_cog.meVE.SticTheotokion.mode</><Tmelody>sid me.m04.d02_gr_GR_cog.meVE.SticTheotokion.melody</>End-Title
+							Title role greekmelody sid me.m04.d02_gr_GR_cog.meVE.SticTheotokion.greekmelody End-Title
+							Media sid me.m04.d02_gr_GR_cog.meVE.SticTheotokion.text End-Media
+							Hymn sid me.m04.d02_gr_GR_cog.meVE.SticTheotokion.text @ver media-off End-Hymn
+						End-Section
+							60, 62 use:
+						Section stavrotheotokion
+							Title sid ti.GloryBothNow<Tdesig>sid ti.Stavrotheotokion</>End-Title
+							Title<Tmode>sid me.m04.d02_gr_GR_cog.meVE.SticStavrotheotokion.mode</><Tmelody>sid me.m04.d02_gr_GR_cog.meVE.SticStavrotheotokion.melody</>End-Title
+							Title role greekmelody sid me.m04.d02_gr_GR_cog.meVE.SticStavrotheotokion.greekmelody End-Title
+							Media sid me.m04.d02_gr_GR_cog.meVE.SticStavrotheotokion.text End-Media
+							Hymn sid me.m04.d02_gr_GR_cog.meVE.SticStavrotheotokion.text @ver media-off End-Hymn
+						End-Section
+				end-when
 				Section Presanctified03 // Entrance
 					Actor sid ac.Deacon End-Actor
 					Dialog sid pr.exc17.text sid pr.exc18.text End-Dialog
 					Actor sid ac.Reader End-Actor
 					Reading sid ho.s10_gr_GR_cog.hoVE.FosIlaron.text End-Reading
 				End-Section
-				Insert_section VE._05_Readings__.reader End-Insert
+				Actor sid ac.Priest End-Actor
+				Dialog sid hi.s01_gr_GR_cog.hiVE.Key1110.text End-Dialog
+				Title role source sid ti.sourceTriodion End-Title
+				Insert_section Lectionary_Triodion.Vespers_Readings.lesson1 End-Insert
+				Rubric sid ru.Sung End-Rubric
+				Dialog sid pr.Command.text End-Dialog
+				Actor sid ac.Priest End-Actor
+				Dialog sid pr.exc17.text sid pr.exc18.text sid eu.lipresanctified_gr_GR_cog.euPL.Key0701.text sid eu.lipresanctified_gr_GR_cog.euPL.Key0702.text End-Dialog
+				Actor sid ac.Reader End-Actor
+				Insert_section Lectionary_Triodion.Vespers_Readings.lesson2 End-Insert
 				Break line End_Break
 				Title <r>sid cl.eu.presanctified.R004</> End-Title
 				Break line End_Break
+				Set_Date month 4 day 25 year 2024 End_Date
 				Insert_section LE._01_Epistle__.textonly__.menaion End-Insert
 				Insert_section LE._02_Gospel__.textonly__.menaion End-Insert
+				Set_Date month 4 day 26 year 2024 End_Date
 				Break line End_Break
 				Title <r>sid cl.eu.presanctified.R002</> End-Title
 				Insert_section PL._10.hymn End-Insert

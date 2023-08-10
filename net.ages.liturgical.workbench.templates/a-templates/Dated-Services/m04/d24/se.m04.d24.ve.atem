@@ -15,7 +15,7 @@ Status Final
 	import roles.*
 
 	Head 
-		Set_Date month 4 day 24 year 2023 End_Date
+		Set_Date month 4 day 24 year 2024 End_Date
 			Page_Header_Even
 				center @lookup sid ve.pdf.header lang L1 @lookup sid d.ontheeveof lang L1 @date lang L1 
 			End_Page_Header_Even
@@ -39,8 +39,55 @@ Status Final
 	when-movable-cycle-day-is
 		61, 63, 66, 67, 68, 69, 71 use: //do nothing
 
-		57, 58, 59, 60, 62, 64, 65, 70 use:
+		57, 64, 65, 70 use:
 			Insert_section mc.map.ve.Instance01 End-Insert
+		
+		58 use:
+			Section Instance_lent01
+				Insert_section ST.ve.tr_mode_me1 End-Insert
+				Insert_section VE._01_Beginning__.vespers End-Insert
+				Insert_section VE._02_LordIHaveCried__.modeofweek__.for10 End-Insert
+				Insert_section VE._03_Stichera__.tr__.onsunday_.octr End-Insert
+				Insert_section VE._03_Stichera__.tr__.onsunday_.tr End-Insert
+				Insert_section TI.stp.me.com1 End-Insert
+				Insert_section VE._03_Stichera__.me__.p_1123as78910 End-Insert
+				Section theotokion
+					Title sid ti.GloryBothNow<Tdesig>sid ti.Theotokion</>End-Title
+					Title<Tmode>sid me.m04.d09_gr_GR_cog.meVE.SticTheotokion.mode</><Tmelody>sid me.m04.d09_gr_GR_cog.meVE.SticTheotokion.melody</>End-Title
+					Title role greekmelody sid me.m04.d09_gr_GR_cog.meVE.SticTheotokion.greekmelody End-Title
+					Media sid me.m04.d09_gr_GR_cog.meVE.SticTheotokion.text End-Media
+					Hymn sid me.m04.d09_gr_GR_cog.meVE.SticTheotokion.text @ver media-off End-Hymn
+				End-Section
+				Insert_section VE._04_Middle__.entrance End-Insert
+				Insert_section VE._06_Litanies__.lentenektenia End-Insert
+				Insert_section VE._08_Aposticha__.tr__.weekday_ End-Insert
+				Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert	
+				Insert_section AP.lent__.ve End-Insert
+				Insert_section VE._10_End__.lent_ End-Insert
+				Insert_section VE._11_Dismissal__.nocommemoration End-Insert
+			End-Section
+		59, 60, 62 use:
+			Section Instance_lent02
+				Insert_section ST.ve.tr_me1 End-Insert
+				Insert_section VE._01_Beginning__.vespers End-Insert
+				Insert_section PS._01_Vespers__.rubric End-Insert
+				Insert_section PS.optionalLitany02_deacon End-Insert
+				Insert_section VE._02_LordIHaveCried__.mode1__.for6 End-Insert
+				Insert_section TI.stp.tr.triodion End-Insert
+				Insert_section VE._03_Stichera__.tr__.p_123as567 End-Insert
+				Insert_section TI.stp.me.com1 End-Insert
+				Insert_section VE._03_Stichera__.me__.p_123as8910 End-Insert
+				Insert_section Instance_lent01.theotokion End-Insert
+				Insert_section VE._04_Middle__.noentrance End-Insert
+				Insert_section VE._05_Readings__.reader End-Insert
+				Insert_section VE._06_Litanies__.noektenia End-Insert
+				Insert_section VE._08_Aposticha__.tr__.weekday_ End-Insert
+				Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
+				Insert_section AP.lent__.ve End-Insert	
+				Insert_section VE._10_End__.lent_ End-Insert
+				Insert_section VE._11_Dismissal__.nocommemoration End-Insert
+			End-Section
+			
 
 		72 use:
 			Section Instance01_george
