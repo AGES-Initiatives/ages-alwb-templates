@@ -1,0 +1,66 @@
+Template se.m05.d06.ve2
+
+Status Final
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import miscellanea_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 5 day 6 year 2024 End_Date
+			Page_Header_Even
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore.text lang L1 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore.text lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template pdf.cover.ve.me End-Insert
+		Insert_template pdf.cover.credits End-Insert
+	End-Preface
+
+	when-movable-cycle-day-is
+		65 thru 71 use:
+			Section Instance01_Lent
+			End-Section
+			
+		72 use: //Bright Monday - St. George
+			Section Instance01_Monday
+				Insert_section se.pe.d072.ve2.Instance02 End-Insert
+			End-Section
+			
+		73 use: //Bright Tuesday - St. Mark
+			Section Instance01_Tuesday
+				Insert_section se.pe.d073.ve2.Instance02 End-Insert
+			End-Section
+			
+		74 thru 78 use:
+			Section Instance01
+			End-Section
+
+		85, 92, 95, 99, 102, 106, 109, 110 use: 
+		79 thru 83 use: //Thomas week
+		84 use: //Thomas Saturday
+		// various weekdays
+		108 use: //OC Leavetaking of Blindman
+		111 use: //OC After Ascension
+	end-when	
+
+End-Template

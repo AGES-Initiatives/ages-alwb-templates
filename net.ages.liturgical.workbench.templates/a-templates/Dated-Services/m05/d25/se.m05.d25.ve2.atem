@@ -1,6 +1,6 @@
 Template se.m05.d25.ve2
 
-Status Final
+Status NA
 
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
@@ -15,7 +15,7 @@ Status Final
 	import roles.*
 
 	Head 
-		Set_Date month 5 day 25 year 2023 End_Date
+		Set_Date month 5 day 25 year 2024 End_Date
 			Page_Header_Even
 				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore.text lang L1 
 			End_Page_Header_Even
@@ -109,12 +109,16 @@ Status Final
 				Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
 				when-movable-cycle-day-is
 					91 use: 
-						Insert_section AP.res__.modeofweek End-Insert
-						Insert_section AP.pe2_.hymn End-Insert
-						Insert_section TI.g.me.com1 End-Insert
-						Insert_section AP.me1_.hymn End-Insert
-						Insert_section TI.b.pe.specific End-Insert
-						Insert_section AP.pe3_.hymn End-Insert
+						Section apolytikia
+							Set_mcDay day 85 End_mcDay
+							Insert_section AP.pe1_ End-Insert
+							Insert_section AP.pe2_ End-Insert
+							Insert_section TI.g.me.com1 End-Insert
+							Insert_section AP.me1_.hymn End-Insert
+							Insert_section TI.b.pe.specific End-Insert
+							Insert_section AP.pe3_.hymn End-Insert
+							Set_mcDay day 91 End_mcDay
+						End-Section
 					105, 108 use:
 						Insert_section AP.res__.modeofweek End-Insert
 						Insert_section TI.g.me.com1 End-Insert

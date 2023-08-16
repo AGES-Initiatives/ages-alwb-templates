@@ -1,0 +1,119 @@
+Template bk.snns.memorial
+
+Status NA
+
+	import eu.funeral_gr_GR_cog.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import miscellanea_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	
+	
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head
+				Page_Header_Even
+					center @text "Memorial Service on the Anniversary of September Eleventh"
+				End_Page_Header_Even
+				Page_Header_Odd
+					center @text "Memorial Service on the Anniversary of September Eleventh"
+				End_Page_Header_Odd
+				Page_Footer_Even
+					center @pageNbr
+				End_Page_Footer_Even
+				Page_Footer_Odd
+					center @pageNbr
+				End_Page_Footer_Odd
+			Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Title role desig sid euFUN.Key1500.title End-Title
+	Break line End_Break
+	Actor sid ac.Hierarch End-Actor
+	Dialog sid pr.enarxis01.text End-Dialog
+	Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+	Actor sid ac.Choir End-Actor
+	Section FuneralEvlogitaria
+		Title role desig sid euFUN.Key0600.title End-Title
+		Title role mode sid euFUN.Key0600.mode End-Title
+		Media sid euFUN.Key0601.text End-Media
+		Verse sid euFUN.Key0600.text End-Verse
+		Hymn sid euFUN.Key0601.text @ver media-off End-Hymn
+		Verse sid euFUN.Key0600.text End-Verse
+		Hymn sid euFUN.Key0602.text @ver End-Hymn
+		Verse sid euFUN.Key0600.text End-Verse
+		Hymn sid euFUN.Key0603.text @ver End-Hymn
+		Verse sid euFUN.Key0600.text End-Verse
+		Hymn sid euFUN.Key0604.text @ver End-Hymn
+		Verse sid pr.GloryToTheFather.text End-Verse
+		Hymn sid euFUN.Key0605.text @ver End-Hymn
+		Verse sid pr.BothNowAndEver.text End-Verse
+		Hymn sid euFUN.Key0606.text @ver End-Hymn
+		Hymn sid euFUN.Key0607.text @ver End-Hymn
+	End-Section
+
+	Title<Tdesig>sid ti.Kontakion</><Tmode>sid euFUN.Key0700.mode</>End-Title
+	Media sid euFUN.Key0700.text End-Media
+	Hymn sid euFUN.Key0700.text @ver media-off End-Hymn
+
+	Section MemorialTroparia
+		Title role mode sid euFUN.Key0101.mode End-Title
+		Media sid euFUN.Key0101.text End-Media
+		Hymn sid euFUN.Key0101.text @ver media-off End-Hymn
+		Hymn sid euFUN.Key0102.text @ver End-Hymn
+		Verse sid pr.GloryToTheFather.text End-Verse
+		Hymn sid euFUN.Key0103.text @ver End-Hymn
+		Verse sid pr.BothNowAndEver.text End-Verse
+		Hymn sid euFUN.Key0104.text @ver End-Hymn
+	End-Section
+	
+	Section Litany_Memorial_hierarchical
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.pet17.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res06.text sid misc.parenthesis.close</>End-Dialog
+		Dialog sid pr.petFuneral01.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res06.text sid misc.parenthesis.close</>End-Dialog
+		Dialog sid pr.petSouls02.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res02.text sid misc.parenthesis.close</>End-Dialog
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.pet00.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
+		Actor sid ac.Hierarch End-Actor
+		Dialog sid euFUN.Key0105.text End-Dialog
+	//	Actor sid ac.Deacon End-Actor
+		Dialog sid pr.pet00.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
+		Actor sid ac.Hierarch End-Actor
+		Dialog sid euFUN.Key0106.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.pet00.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
+		Actor sid ac.Hierarch End-Actor
+		Dialog sid euFUN.Key1002.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+	End-Section //Litany_Memorial
+
+	Actor sid ac.Hierarch End-Actor
+	Dialog sid pr.GloryToYouChristHope.text End-Dialog
+	Dialog sid dis00 sid euFUN.Key1401.text sid dis01 sid euFUN.Key1402.text sid euFUN.Key1403.text sid euFUN.Key1404.text sid euFUN.Key1405.text sid euFUN.Key1406.text sid euFUN.Key1407.text sid euFUN.Key1408.text End-Dialog
+	Dialog sid euFUN.Key0109.text<r>sid ru.Thrice</>End-Dialog
+	
+	Actor sid ac.Choir End-Actor
+	Title role mode sid misc.Mode3 End-Title
+	Media sid euFUN.Key0112.text End-Media
+	Hymn sid euFUN.Key0112.text media-off <r>sid ru.Thrice media-off</>End-Hymn
+	
+	Actor sid ac.Hierarch End-Actor
+	Dialog sid dis100 End-Dialog
+	Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+
+Break line End_Break
+
+End-Template
