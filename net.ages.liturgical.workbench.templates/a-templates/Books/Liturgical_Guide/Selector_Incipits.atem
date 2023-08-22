@@ -105,6 +105,12 @@ Status NA
 			Insert_section specific_sunday End-Insert
 			Insert_section liturgy_selector End-Insert
 		End-Section
+		Section oc_specific_sunday_me1
+			Title<Tdesig>ldp @Service_Date sid misc.separator.hyphen rid oc.ocVE.Stichera1.mode</>End-Title
+			Insert_section specific_sunday End-Insert
+			Title<Tdesig>rid meDA.commemoration.first_short</>End-Title
+			Insert_section liturgy_selector End-Insert
+		End-Section
 		Section oc_tr
 			Title<Tdesig>ldp @Service_Date sid misc.separator.hyphen rid oc.ocVE.Stichera1.mode</>End-Title
 			Title<Tdesig>rid tr.trDA.commemoration.short</>End-Title
@@ -405,8 +411,15 @@ Status NA
 					otherwise use:
 						Reading sid tyLIin.EntranceHymn1.text sid tyLIin.Antiphon21.text sid tyLIin.m01.d01.Antiphon2.text sid misc.punctuation.ellipsis End-Reading 
 				end-when				
-			Jan 6, 7 use:
+			Jan 6 use:
 				Para role inaudible sid tyLIin.m01.d06.entrance.v1.text sid tyLIin.Antiphon21.text sid tyLIin.m01.d06.Antiphon2.text sid misc.punctuation.ellipsis End-Para 
+			Jan 7 use:
+				when-name-of-day-is
+					Sunday use:
+						Insert_section usualSunday End-Insert
+					otherwise use:
+						Para role inaudible sid tyLIin.m01.d06.entrance.v1.text sid tyLIin.Antiphon21.text sid tyLIin.m01.d06.Antiphon2.text sid misc.punctuation.ellipsis End-Para
+				end-when 
 			Jan 8 thru 13 use:
 				when-name-of-day-is
 					Sunday use:
@@ -608,17 +621,23 @@ Status NA
 				Para role readingzero<r>sid tyLIin.ApSaintM.title</>sid tyMEin.m01.d01.Apolytikion2.text End-Para
 			Jan 2 thru 4 use: Para role readingzero<r>sid tyLIin.ApForefeast.title</>sid tyMEin.m01.d02.Apolytikion1.text End-Para
 			Jan 5 use: Para role readingzero<r>sid tyLIin.ApForefeast.title</>sid tyMEin.m01.d05.Apolytikion1.text End-Para
-			Jan 6 thru 14 use: Para role readingzero<r>sid tyLIin.ApFeast.title</>sid tyMEin.m01.d06.Apolytikion1.text End-Para
+			Jan 6, 8, 9, 10, 11, 12, 13, 14 use: 
+				Para role readingzero<r>sid tyLIin.ApFeast.title</>sid tyMEin.m01.d06.Apolytikion1.text End-Para
+			Jan 7 use: 
+				Para role readingzero<r>sid tyLIin.ApFeast.title</>sid tyMEin.m01.d06.Apolytikion1.text End-Para
+				Para role readingzero<r>sid tyLIin.ApForerunner.title</>sid tyMEin.m01.d07.Apolytikion1.text End-Para
 			Jan 15 use: Para role readingzero<r>sid ti.DevoutSaintM</>sid me.m01.d15_gr_GR_cog.meVE.Apolytikion1.incipit End-Para
 			Jan 16 use: Para role readingzero<r>sid ti.Apostle</>sid me.m01.d16_gr_GR_cog.meVE.Apolytikion1.incipit End-Para
 			Jan 17 use: Para role readingzero<r>sid ti.DevoutSaintM</>sid tyMEin.m01.d17.Apolytikion1.text End-Para
 			Jan 19 use: Para role readingzero<r>sid ti.DevoutSaintM</>sid tyMEin.m01.d19.Apolytikion1.text End-Para
 			Jan 20 use: Para role readingzero<r>sid tyLIin.ApSaintM.title</>sid tyMEin.m01.d20.Apolytikion1.text End-Para
+			Jan 21 use: Para role readingzero<r>sid ti.DevoutSaintM</>sid tyMEin.m01.d21.Apolytikion1.text End-Para
 			Jan 22 use: 
 				Para role readingzero<r>sid ti.Apostle</>sid me.m01.d22_gr_GR_cog.meVE.Apolytikion1.incipit End-Para
 				Para role readingzero<r>sid ti.DevoutMartyrM</>sid me.m01.d22_gr_GR_cog.meVE.Apolytikion2.incipit End-Para
 			Jan 23 use: Para role readingzero<r>sid ti.Hieromartyr</>sid me.m01.d23_gr_GR_cog.meVE.Apolytikion1.incipit End-Para
 			Jan 27 use: Para role readingzero<r>sid tyLIin.ApSaintM.title</>sid tyMEin.m01.d27.Apolytikion1.text End-Para
+			Jan 28 use: Para role readingzero<r>sid ti.DevoutSaintM</>sid he.ga_gr_GR_cog.heGA.TaisTonDakryonSou.incipit End-Para
 			Jan 29 use: Para role readingzero<r>sid ti.Hieromartyr</>sid he.ga_gr_GR_cog.heGA.KaiTroponMetochos.incipit End-Para
 			Jan 30 use: Para role readingzero<r>sid ti.Hierarchs</>sid me.m01.d30_gr_GR_cog.meVE.Apolytikion1.incipit End-Para
 			Jan 31 use: Para role readingzero<r>sid tyLIin.ApSaints.title</>sid tyMEin.m01.d31.Apolytikion1.text End-Para
@@ -731,7 +750,7 @@ Status NA
 				Para role readingzero<r>sid ti.SaintM</>sid he.ga_gr_GR_cog.heGA.OrthodoxiasOdigeM.incipit End-Para
 			Dec 5 use: Para role readingzero<r>sid tyLIin.ApSaintM.title</>sid tyMEin.m12.d05.Apolytikion1.text End-Para
 			Dec 6 use: Para role readingzero<r>sid tyLIin.ApSaintM.title</>sid tyMEin.m12.d06.Apolytikion1.text End-Para
-			Dec 10 use: Para role readingzero<r>sid ti.Martyrs</>sid ho.s15.m12_gr_GR_cog.hoD10.Apolytikion1.incipit End-Para
+			Dec 10 use: Para role readingzero<r>sid ti.Martyrs</>sid ho.ho15.m12_gr_GR_cog.hoD10.Apolytikion1.incipit End-Para
 			Dec 11, 13, 14, 16, 17 use: 
 				when-name-of-day-is 
 					Sunday use:
@@ -1327,8 +1346,11 @@ Status NA
 									Jan 6, 14 use: Reading sid tyLIin.communionhymn.epiphany.text End-Reading
 									Jan 7 use:
 										when-name-of-day-is
-											Sunday use: Reading sid tyLIin.communionhymn.sunday.text End-Reading
-											otherwise use: Reading sid tyLIin.communionhymn.saints.text End-Reading
+											Sunday use: 
+											//	Reading sid tyLIin.communionhymn.sunday.text End-Reading
+												Reading sid tyLIin.communionhymn.saints.text End-Reading
+											otherwise use: 
+												Reading sid tyLIin.communionhymn.saints.text End-Reading
 										end-when
 									Jan 10, 31 use:
 										when-name-of-day-is
