@@ -2,13 +2,16 @@ Template se.htcindy.m10.d08.li9
 
 Status NA
 
-	import actors_gr_GR_cog.ac.*
+	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
-	import miscellanea_gr_GR_cog.misc.*
+	import miscellanea_gr_GR_cog.c.*
 	import prayers_gr_GR_cog.*
 	import rubrical_gr_GR_cog.*
 	import template.titles_gr_GR_cog.*
 	import titles_gr_GR_cog.*
+
+	import eu.consecrationliturgygoaAB_gr_GR_cog.*
+	import eu.lichrysbasil_gr_GR_cog.*
 		
 	import iTags.*
 	import bTags.*
@@ -45,7 +48,48 @@ Status NA
 		Insert_section bk.consecrationliturgygoa_ab.Section15 End-Insert
 		Insert_section bk.consecrationliturgygoa_ab.Section16 End-Insert
 		Insert_section bk.consecrationliturgygoa_ab.Section17 End-Insert
-		Insert_section bk.consecrationliturgygoa_ab.Section18 End-Insert
+		Section Section18
+			Section part1
+			//	Title<Tdesig>sid euLI.Key0607.title</>End-Title
+				Actor sid ac.Deacon End-Actor
+				Dialog sid euLI.Key0607.text End-Dialog
+				Actor sid ac.Archbishop End-Actor
+				Para role chant sid euLI.Key0607.text End-Para
+				Actor sid ac.Deacon End-Actor
+				Dialog sid euLI.Key0607.text End-Dialog
+				Actor sid ac.Choir End-Actor
+				Media sid euLI.MM.Key0600.text End-Media
+				Para role chant sid euLI.Key0607.text End-Para
+				Actor sid ac.Deacon End-Actor
+				Dialog sid euLI.Key0607.text End-Dialog
+				Actor sid ac.Choir End-Actor
+				Para role chant sid euLI.Key0607.text End-Para
+				Actor sid ac.Deacon End-Actor
+				Dialog sid euLI.Key0608.text End-Dialog
+				Actor sid ac.Archbishop End-Actor
+				Para role chant sid euLI.Key0608.text End-Para
+			End-Section
+			Section bishop0andbishop1
+				Actor sid ac.Deacon End-Actor
+				Dialog sid client_gr_GR_cog.cl.bishop0.fimi.text End-Dialog	
+				Actor sid ac.Clergy End-Actor
+				Hymn sid client_gr_GR_cog.cl.bishop0.fimi.text End-Hymn
+				Actor sid ac.Choir End-Actor
+				Hymn sid client_gr_GR_cog.cl.bishop0.fimi.text End-Hymn
+				Actor sid ac.Choir End-Actor
+				Hymn sid client_gr_GR_cog.cl.bishop0.fimi.text End-Hymn
+				Actor sid ac.Deacon End-Actor
+				Dialog sid client_gr_GR_cog.cl.bishop1.fimi.text End-Dialog	
+				Actor sid ac.Clergy End-Actor
+				Hymn sid client_gr_GR_cog.cl.bishop1.fimi.text End-Hymn
+			End-Section
+			Section bishop2
+				Actor sid ac.Deacon End-Actor
+				Dialog sid client_gr_GR_cog.cl.bishop2.fimi.text End-Dialog	
+				Actor sid ac.Clergy End-Actor
+				Hymn sid client_gr_GR_cog.cl.bishop2.fimi.text End-Hymn
+			End-Section
+		End-Section
 		Insert_section bk.consecrationliturgygoa_ab.Section19.Epistle End-Insert
 		Insert_section LE._02_Gospel__.hierarchical__.daily_ End-Insert
 		Insert_section bk.consecrationliturgygoa_ab.Section20 End-Insert
@@ -53,7 +97,7 @@ Status NA
 		Insert_section bk.consecrationliturgygoa_ab.Section22 End-Insert
 		Section commemorations
 			// The dismissal will need to be tailored each time
-			Actor sid Archbishop End-Actor
+			Actor sid ac.Archbishop End-Actor
 			Dialog sid pr.GloryToYouOurGod.text End-Dialog
 				Dialog sid dis00 sid dis00.resurrection sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08 sid dis09 sid dis10 sid dis88 End-Dialog 
 		End-Section
