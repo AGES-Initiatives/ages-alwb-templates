@@ -1,0 +1,58 @@
+Template se.denver.m11.d09.vl
+
+Status NA
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import miscellanea_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 11 day 9 year 2023 End_Date
+			Page_Header_Even
+				center @lookup sid vl.pdf.header rid da.daVE.OnTheEveningBefore.text lang L1 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid vl.pdf.header rid da.daVE.OnTheEveningBefore.text lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template pdf.cover.ve56 End-Insert
+		Insert_template pdf.cover.credits End-Insert
+	End-Preface
+
+	Section Instance_Weekday
+		Insert_section ST.vl.ch.mealt1 End-Insert
+		Insert_section VE._01_Beginning__.liturgy End-Insert
+		Insert_section VE._02_LordIHaveCried__.mode1__.for6 End-Insert
+		Insert_section TI.stp.s._07_hierarch_.m End-Insert
+		Insert_section VE._03_Stichera__.me__.alt1__.p_123as567 End-Insert
+		Insert_section TI.additional.stp End-Insert
+		Insert_section VE._03_Stichera__.me__.alt1__.p_456as8910 End-Insert
+		Insert_section VE._03_Stichera__.glory__.me__.alt1__.gloryasglory_ End-Insert
+		Insert_section VE._03_Stichera__.both__.firsttheotokion__.mode6_ End-Insert
+		Insert_section VE._04_Middle__.entrance End-Insert	
+		Insert_section VE._05_Readings__.mealt1_reader End-Insert	
+		Insert_section LI._06_Trisagion__.chrys End-Insert
+		Insert_section LE._01_Epistle__.mealt1_ End-Insert
+		Insert_section LE._02_Gospel__.mealt1_ End-Insert
+		Insert_section LI._08_Liturgy__.chrys_mealt1 End-Insert
+		Insert_section LI._09_Dismissal__.mealt1_commemoration End-Insert
+	End-Section
+
+End-Template
