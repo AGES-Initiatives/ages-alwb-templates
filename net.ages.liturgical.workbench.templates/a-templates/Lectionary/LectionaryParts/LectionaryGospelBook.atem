@@ -2,7 +2,6 @@ Template LectionaryGospelBook
 
 Status Draft
 
-	import le.go.lu.*
 	import le.go.mc.*
 	import prayers_gr_GR_cog.*
 	
@@ -135,10 +134,10 @@ Status Draft
 					end-when
 				90 use:
 					when-Sunday-after-Elevation-of-Cross-is
-						Sep 15 use: Dialog sid pr.gos03a.text rid lemcLI.Gospel.book_string sid pr.gos03b.text End-Dialog //2013
-						Sep 16 use: Dialog sid pr.gos03a.text rid lemcLI.Gospel.book_string sid pr.gos03b.text End-Dialog //2012
-						Sep 17 use: Dialog sid pr.gos03a.text rid lemcLI.Gospel.book_string sid pr.gos03b.text End-Dialog //2006
-						Sep 18 use: Dialog sid pr.gos03a.text rid lemcLI.Gospel.book_string sid pr.gos03b.text End-Dialog //2011
+						Sep 15 use: Dialog sid pr.gos03a.text sid le.go.lu.d090_gr_GR_cog.leluLI.Gospel.book_string sid pr.gos03b.text End-Dialog //2013
+						Sep 16 use: Dialog sid pr.gos03a.text sid le.go.lu.d090_gr_GR_cog.leluLI.Gospel.book_string sid pr.gos03b.text End-Dialog //2012
+						Sep 17 use: Dialog sid pr.gos03a.text sid le.go.lu.d090_gr_GR_cog.leluLI.Gospel.book_string sid pr.gos03b.text End-Dialog //2006
+						Sep 18 use: Dialog sid pr.gos03a.text sid le.go.lu.d090_gr_GR_cog.leluLI.Gospel.book_string sid pr.gos03b.text End-Dialog //2011
 						Sep 19 use: Dialog sid pr.gos03a.text sid le.go.me.m12.dSatBC_gr_GR_cog.lemeLI.Gospel.book_string sid pr.gos03b.text End-Dialog //2010
 						Sep 20 use: Dialog sid pr.gos03a.text sid le.go.me.m12.dSatBC_gr_GR_cog.lemeLI.Gospel.book_string sid pr.gos03b.text End-Dialog //2009
 						Sep 21 use: Dialog sid pr.gos03a.text sid le.go.me.m12.dSatBC_gr_GR_cog.lemeLI.Gospel.book_string sid pr.gos03b.text End-Dialog //2014
@@ -219,9 +218,9 @@ Status Draft
 						Sep 16 use: Dialog sid pr.gos03a.text sid le.go.me.m01.dSatAE_gr_GR_cog.lemeLI.Gospel.book_string sid pr.gos03b.text End-Dialog //2012
 						Sep 17 use: Dialog sid pr.gos03a.text sid le.go.me.m01.dSatAE_gr_GR_cog.lemeLI.Gospel.book_string sid pr.gos03b.text End-Dialog //Sat Jan13 2006
 						Sep 18 use: Dialog sid pr.gos03a.text sid le.go.me.m01.dSatAE_gr_GR_cog.lemeLI.Gospel.book_string sid pr.gos03b.text End-Dialog //Sat Jan14 2011
-						Sep 19 use: Dialog sid pr.gos03a.text rid lemcLI.Gospel.book_string sid pr.gos03b.text End-Dialog //2010
-						Sep 20 use: Dialog sid pr.gos03a.text rid lemcLI.Gospel.book_string sid pr.gos03b.text End-Dialog //2009
-						Sep 21 use: Dialog sid pr.gos03a.text rid lemcLI.Gospel.book_string sid pr.gos03b.text End-Dialog //2014
+						Sep 19 use: Dialog sid pr.gos03a.text sid le.go.lu.d118_gr_GR_cog.leluLI.Gospel.book_string sid pr.gos03b.text End-Dialog //2010
+						Sep 20 use: Dialog sid pr.gos03a.text sid le.go.lu.d118_gr_GR_cog.leluLI.Gospel.book_string sid pr.gos03b.text End-Dialog //2009
+						Sep 21 use: Dialog sid pr.gos03a.text sid le.go.lu.d118_gr_GR_cog.leluLI.Gospel.book_string sid pr.gos03b.text End-Dialog //2014
 					end-when
 				119 use:
 					when-Sunday-after-Elevation-of-Cross-is
@@ -630,9 +629,11 @@ Status Draft
 									1 thru 127 use://Triodion & Pentecostarion
 										Dialog sid pr.gos03a.text rid lemcLI.Gospel.book_string sid pr.gos03b.text End-Dialog 
 									otherwise use:
-										when-exists rid leluLI.Gospel.text 
-											use: Dialog sid pr.gos03a.text rid leluLI.Gospel.book_string sid pr.gos03b.text End-Dialog
-											otherwise use: Dialog sid pr.gos03a.text rid lemcLI.Gospel.book_string sid pr.gos03b.text End-Dialog
+										when-exists 
+											rid le.go.lu.leluLI.Gospel.text use: 
+												Dialog sid pr.gos03a.text rid le.go.lu.leluLI.Gospel.book_string sid pr.gos03b.text End-Dialog
+											otherwise use: 
+												Dialog sid pr.gos03a.text rid lemcLI.Gospel.book_string sid pr.gos03b.text End-Dialog
 										end-when
 								end-when
 							End-Section //Defaults
