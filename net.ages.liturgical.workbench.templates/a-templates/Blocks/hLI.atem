@@ -404,7 +404,7 @@ Status NA
 		Section basil
 			Section part1
 				Section cherubic_upto_communion
-					Section aftergospel_cherubic
+					Section aftergospel_cherubic_part1
 						Insert_section AfterGospel.basil End-Insert
 						when-movable-cycle-day-is
 							69 use:
@@ -425,20 +425,6 @@ Status NA
 									Actor sid ac.Deacon End-Actor
 									Dialog sid euLI.Key1124.text End-Dialog
 								End-Section	
-								Section holythursday_greatentrance_bishop0
-									Actor sid ac.Hierarch End-Actor
-									Dialog sid euLI.Key1112a.text sid cl.bishop0.name_c sid euLI.Key1112b.text<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
-								End-Section
-								Section holythursday_cherubic_part2
-									Actor sid ac.PriestOrDeacon End-Actor
-									Dialog sid euLI.Key1124.text End-Dialog
-									Actor sid ac.Hierarch End-Actor
-									Dialog sid euLI.Key1113.text End-Dialog
-									Dialog sid pr.res04.text End-Dialog
-									Actor sid ac.Choir End-Actor
-									Dialog sid pr.res04.text End-Dialog
-									Hymn sid tr.d069_gr_GR_cog.trLI.CherubicHymnPart2.text @ver End-Hymn		
-								End-Section
 							71 use:
 								Section holysaturday_cherubic_part1
 									Title role desig sid euLI.Key1100.title End-Title
@@ -457,20 +443,6 @@ Status NA
 									Actor sid ac.Deacon End-Actor
 									Dialog sid euLI.Key1124.text End-Dialog
 								End-Section	
-								Section holysaturday_greatentrance_bishop0
-									Actor sid ac.Hierarch End-Actor
-									Dialog sid euLI.Key1112a.text sid cl.bishop0.name_c sid euLI.Key1112b.text<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
-								End-Section
-								Section holysaturday_cherubic_part2
-									Actor sid ac.PriestOrDeacon End-Actor
-									Dialog sid euLI.Key1124.text End-Dialog
-									Actor sid ac.Hierarch End-Actor
-									Dialog sid euLI.Key1113.text End-Dialog
-									Dialog sid pr.res04.text End-Dialog
-									Actor sid ac.Choir End-Actor
-									Dialog sid pr.res04.text End-Dialog
-									Hymn sid tr.d071_gr_GR_cog.trLI.CherubicHymnPart2.text @ver End-Hymn		
-								End-Section
 							otherwise use:
 								Section cherubic_part1
 									Title role desig sid euLI.Key1100.title End-Title
@@ -486,10 +458,37 @@ Status NA
 									Actor sid ac.Deacon End-Actor
 									Dialog sid euLI.Key1124.text<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 								End-Section
-								Section greatentrance_bishop0
+						end-when
+					End-Section
+					Section entrance
+						Actor sid ac.Hierarch End-Actor
+						Dialog sid euLI.Key1112a.text sid cl.bishop0.name_c sid euLI.Key1112b.text<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+					End-Section
+					Section cherubic_part2
+						when-movable-cycle-day-is
+							69 use:
+								Section holythursday_cherubic_part2
+									Actor sid ac.PriestOrDeacon End-Actor
+									Dialog sid euLI.Key1124.text End-Dialog
 									Actor sid ac.Hierarch End-Actor
-									Dialog sid euLI.Key1112a.text sid cl.bishop0.name_c sid euLI.Key1112b.text<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+									Dialog sid euLI.Key1113.text End-Dialog
+									Dialog sid pr.res04.text End-Dialog
+									Actor sid ac.Choir End-Actor
+									Dialog sid pr.res04.text End-Dialog
+									Hymn sid tr.d069_gr_GR_cog.trLI.CherubicHymnPart2.text @ver End-Hymn		
 								End-Section
+							71 use:
+								Section holysaturday_cherubic_part2
+									Actor sid ac.PriestOrDeacon End-Actor
+									Dialog sid euLI.Key1124.text End-Dialog
+									Actor sid ac.Hierarch End-Actor
+									Dialog sid euLI.Key1113.text End-Dialog
+									Dialog sid pr.res04.text End-Dialog
+									Actor sid ac.Choir End-Actor
+									Dialog sid pr.res04.text End-Dialog
+									Hymn sid tr.d071_gr_GR_cog.trLI.CherubicHymnPart2.text @ver End-Hymn		
+								End-Section
+							otherwise use:
 								Section cherubic_part2
 									Actor sid ac.PriestOrDeacon End-Actor
 									Dialog sid euLI.Key1124.text<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
@@ -667,13 +666,14 @@ Status NA
 							Dialog sid euLI.Key1336.text End-Dialog
 						End-Section	
 					End-Section		
-				//	Section megalynarion_basil
-				//		when-date-is
-				//			Jan 1 use:
-				//				Rubric sid me.m01.d01_gr_GR_cog.meLI.Megalynarion.rubric End-Rubric
-				//				Hymn sid me.m01.d01_gr_GR_cog.meLI.Megalynarion2.text End-Hymn
-				//		end-when
-				//	End-Section
+					Section megalynarion_basil
+						when-date-is
+							Jan 1 use:
+								Rubric sid me.m01.d01_gr_GR_cog.meLI.Megalynarion.rubric End-Rubric
+								Actor sid ac.Choir End-Actor
+								Hymn sid me.m01.d01_gr_GR_cog.meLI.Megalynarion2.text End-Hymn
+						end-when
+					End-Section
 					Section litany_upto_communion
 						Actor sid ac.Deacon End-Actor
 						Dialog sid euLI.Key1401.text End-Dialog
