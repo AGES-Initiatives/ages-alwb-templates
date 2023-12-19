@@ -1,4 +1,4 @@
-Template se.hc.m04.d24.ma8
+Template se.hc.m05.d14.ma8
 
 Status Final
 
@@ -15,7 +15,7 @@ Status Final
 	import roles.*
 
 	Head
-		Set_Date month 4 day 24 year 2024 End_Date
+		Set_Date month 5 day 14 year 2024 End_Date
 			Page_Header_Even
 				center @lookup sid ma.pdf.header sid d.on lang L1 @date lang L1
 			End_Page_Header_Even
@@ -32,40 +32,17 @@ Status Final
 	End_Head
 
 	when-movable-cycle-day-is
-		55 thru 62 use:
-			Section Instance_Lent
-				Insert_section ST.ma.tr_mode_me1 End-Insert
-				Insert_section HC.MA._00_weekday_ordinary End-Insert
-				Insert_section MA._01_Beginning__.lent__.alleluia End-Insert
-				Insert_section MA._01_Beginning__.lent__.triadics End-Insert
-				Insert_section MA._11_Kontakion__.martyric End-Insert
-				Insert_section SY.Synaxarion End-Insert
-				Insert_section MA._10_Canon__.ode8_heirmos__.tr2 End-Insert
-				Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
-				Insert_section MA._10_Canon__.magnificat__.modeofcanon__.tr2 End-Insert
-				Insert_section MA._10_Canon__.ode9_heirmos__.tr2 End-Insert
-				Insert_section MA._10_Canon__.ode9_end End-Insert
-				Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
-				Insert_section MA._12_Exaposteilarion__.photagogics End-Insert
-				Insert_section MA._14_Doxology__.small End-Insert
-				Insert_section MA._15_Litanies__.aftersmalldoxology End-Insert
-				Insert_section MA._16_Aposticha__.tr__.weekday_ End-Insert
-				Insert_section MA._16_Aposticha__.gloryboth__.tr__.theotokion End-Insert
-				Insert_section MA._17_ItIsGood_Trisagion__.lent_weekday End-Insert
-				Insert_section HR._03__.prophecy End-Insert
-				Insert_section MA._18_End__.lent_ End-Insert
-				Insert_section MA._20_Dismissal__.nocommemoration End-Insert
-			End-Section
-		otherwise use:		
-			Section Instance_weekday //adjust
+		79 thru 83 use:
+			Section Instance_thomas
 				Insert_section ST.ma.pe_me1 End-Insert
 				Insert_section HC.MA._00_weekday_ordinary End-Insert
 				Insert_section MA._01_Beginning__.mode7 End-Insert
-				Insert_section AP.af End-Insert
-				Insert_section TI.g.me.com1 End-Insert
-				Insert_section AP.ganame.Apr24__.elizabeth_.hymn End-Insert
-				Insert_section AP.both__.af End-Insert
-				Insert_section MA._11_Kontakion__.festal End-Insert
+				Section block1
+					Insert_section AP.af End-Insert
+					Insert_section AP.glory__.ga.martyr_mode4 End-Insert
+					Insert_section AP.both__.af End-Insert
+				End-Section
+				Insert_section MA._11_Kontakion__.me1_ End-Insert
 				Insert_section SY.Synaxarion End-Insert		
 				Insert_section MA._10_Canon__.ode8_heirmos__.me End-Insert
 				Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
@@ -79,13 +56,42 @@ Status Final
 				Insert_section MA._16_Aposticha__.pe__.weekday_ End-Insert
 				Insert_section MA._16_Aposticha__.gloryboth__.pe__.gloryasgloryboth_ End-Insert
 				Insert_section MA._17_ItIsGood_Trisagion__.not_lent End-Insert
-				Insert_section AP.ganame.Apr24__.elizabeth_ End-Insert
-				Insert_section AP.gloryboth__.af End-Insert
+				Insert_section block1 End-Insert
 				Insert_section HC.LE._01_Epistle__.daily_ End-Insert
 				Insert_section HC.LE._02_Gospel__.daily_ End-Insert
 				Insert_section MA._18_End__.wisdom123.part1 End-Insert
-				Insert_section MA._20_Dismissal__.commemoration End-Insert
+				Insert_section MA._20_Dismissal__.nocommemoration End-Insert
 			End-Section
+		96, 97, 100, 101 use:		
+			Section Instance_midpentecost
+				Insert_section ST.ma.pe_me1 End-Insert
+				Insert_section HC.MA._00_weekday_ordinary End-Insert
+				Insert_section MA._01_Beginning__.mode8 End-Insert
+				Section block1
+					Insert_section AP.af End-Insert
+					Insert_section AP.glory__.ga.martyr_mode4 End-Insert
+					Insert_section AP.both__.af End-Insert
+				End-Section
+				Insert_section MA._11_Kontakion__.pe_weekday End-Insert
+				Insert_section SY.Synaxarion End-Insert		
+				Insert_section MA._10_Canon__.ode8_heirmos__.me End-Insert
+				Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
+				Insert_section MA._10_Canon__.magnificat__.mode8 End-Insert
+				Insert_section MA._10_Canon__.ode9_heirmos__.me End-Insert
+				Insert_section MA._10_Canon__.ode9_end End-Insert
+				Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+				Insert_section MA._12_Exaposteilarion__.festal End-Insert
+				Insert_section MA._14_Doxology__.small End-Insert
+				Insert_section MA._15_Litanies__.aftersmalldoxology End-Insert
+				Insert_section MA._16_Aposticha__.pe__.weekday_ End-Insert
+				Insert_section MA._16_Aposticha__.gloryboth__.pe__.gloryasgloryboth_ End-Insert
+				Insert_section MA._17_ItIsGood_Trisagion__.not_lent End-Insert
+				Insert_section block1 End-Insert
+				Insert_section HC.LE._01_Epistle__.daily_ End-Insert
+				Insert_section HC.LE._02_Gospel__.daily_ End-Insert
+				Insert_section MA._18_End__.wisdom123.part1 End-Insert
+				Insert_section MA._20_Dismissal__.nocommemoration End-Insert
+		End-Section
 	end-when
-	
+
 End-Template
