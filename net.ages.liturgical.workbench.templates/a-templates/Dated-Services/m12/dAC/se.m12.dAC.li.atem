@@ -45,8 +45,14 @@ Status NA
 			Insert_section KO.seasonal End-Insert
 		End-Section
 		Insert_section LI._06_Trisagion__.chrys End-Insert
-		Insert_section LE._01_Epistle__.christmas__.sunAC_ End-Insert
-		Insert_section LE._02_Gospel__.christmas__.sunAC_ End-Insert
+		when-date-is
+			Dec 30, 31 use:
+				Insert_section LE._01_Epistle__.epiphany__.sunBE_ End-Insert
+				Insert_section LE._02_Gospel__.epiphany__.sunBE_ End-Insert
+			otherwise use:
+				Insert_section LE._01_Epistle__.christmas__.sunAC_ End-Insert
+				Insert_section LE._02_Gospel__.christmas__.sunAC_ End-Insert
+		end-when
 		Insert_section LI._08_Liturgy__.chrys_default End-Insert
 		Insert_section LI._09_Dismissal__.commemoration End-Insert
 	End-Section
