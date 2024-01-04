@@ -1,0 +1,59 @@
+Template se.m03.d02.li6
+
+Status Final
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import miscellanea_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 3 day 2 year 2024 End_Date
+			Page_Header_Even
+				center @lookup sid li.pdf.header sid d.on lang L1 @date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid li.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	when-movable-cycle-day-is
+		8, 14, 15, 21, 22, 28, 29, 35, 36 use: 
+			Insert_section mc.map.li.Instance01 End-Insert
+
+		otherwise use:
+			Section Instance_Weekday
+				Insert_section ST.li.mealt1 End-Insert
+				Insert_section LI._01_Enarxis__.daily End-Insert
+				Insert_section LI._02_Antiphons__.celebrated_saint_mealt1 End-Insert
+				Insert_section AP.mealt11_ End-Insert
+				Insert_section LI._04_Entrance__.choir End-Insert
+				Insert_section LI._05_AfterEntranceHymns__.choir End-Insert
+				Section hymns
+					Insert_section AP.mealt11_ End-Insert
+					Insert_section LI._05_AfterEntranceHymns__.local End-Insert
+					Insert_section KO.seasonal End-Insert
+				End-Section
+				Insert_section LI._06_Trisagion__.chrys End-Insert
+				Insert_section LE._01_Epistle__.mealt1_ End-Insert
+				Insert_section LE._02_Gospel__.mealt1_ End-Insert
+				Insert_section LI._08_Liturgy__.chrys_mealt1 End-Insert
+				Insert_section LI._09_Dismissal__.mealt1_commemoration End-Insert
+			End-Section
+	end-when
+
+End-Template
