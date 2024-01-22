@@ -1,0 +1,112 @@
+Template bk.hc_chapelbook_vespers_lent 
+
+Status NA
+
+	import hcchapelbook.parts_gr_GR_cog.*
+	import liturgical.verses_gr_GR_cog.*
+	import ps_gr_GR_cog.*
+	import hi.hi01_gr_GR_cog.*
+	import ho.ho10_gr_GR_cog.*
+	import actors_gr_GR_cog.*
+	import client_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import miscellanea_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+	
+	Head 
+	//	Set_Date month 3 day 7 year 2021 End_Date
+	//		Page_Header_Even
+	//			center @text "HOLY CROSS CHAPEL"
+	//		End_Page_Header_Even
+	//		Page_Header_Odd
+	//			center @text "WEEKDAY VESPERS"
+	//		End_Page_Header_Odd
+	//		Page_Header_Even
+	//			left @pageNbr
+	//		End_Page_Header_Even
+	//		Page_Header_Odd
+	//			right @pageNbr
+	//		End_Page_Header_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+//	Preface Covers
+		//Insert_template ematins.cover.ma End-Insert
+		//Insert_template pdf.cover.credits End-Insert
+//	End-Preface
+
+	Break line End_Break
+	Break line End_Break
+	Break line End_Break
+	Break line End_Break
+	Break line End_Break
+	Break line End_Break
+	Title<Tdesig>sid cbVE.key030.text</>End-Title
+	Title<Tdesig>sid cbVE.key031.text</>End-Title
+	Rubric sid cbVE.key032.text End-Rubric
+	Insert_section bk.hc_chapelbook_vespers.block1 End-Insert
+
+	Title<Tdesig> sid cbVE.key013b.text</>End-Title
+	Hymn sid hoVE.FosIlaron.text media-off End-Hymn
+	Title<Tdesig> sid cbVE.key033.text</>End-Title
+	Actor sid ac.Deacon End-Actor
+	Dialog sid hi.hi01_gr_GR_cog.hiVE.Key1110.text End-Dialog
+	Rubric sid cbVE.key034.text End-Rubric
+	Actor sid ac.Reader End-Actor
+	Dialog sid cbVE.key035.text End-Dialog
+	Actor sid ac.Deacon End-Actor
+	Dialog sid pr.exc19.text End-Dialog
+	Rubric sid cbVE.key036.text End-Rubric
+	Actor sid ac.Deacon End-Actor
+	Dialog sid pr.exc17.text End-Dialog
+	Actor sid ac.Reader End-Actor
+	Dialog sid cbVE.key037.text End-Dialog
+	Rubric sid cbVE.key038.text End-Rubric
+	Rubric sid cbVE.key039.text End-Rubric
+
+	Insert_section bk.hc_chapelbook_vespers.block2 End-Insert
+
+	Rubric sid cbVE.key040.text End-Rubric
+	Title<Tmode>sid hoVE.LentApolytikion1.mode</>End-Title
+	Hymn sid hoVE.LentApolytikion1.text End-Hymn
+	Hymn sid hoVE.LentApolytikion2.text End-Hymn
+	Dialog sid pr.GloryToTheFather.text End-Dialog
+	Hymn sid hoVE.LentApolytikion3.text End-Hymn
+	Rubric sid cbVE.key041.text End-Rubric
+	Dialog sid pr.BothNowAndEver.text End-Dialog
+	Hymn sid hoVE.LentApolytikion4.text End-Hymn
+	
+	Section blockL1
+		Actor sid ac.Reader End-Actor
+		Dialog sid pr.res01.text<inr>sid cbVE.key042.text</>End-Dialog
+		Dialog sid pr.GloryBothNow.text End-Dialog
+		Dialog sid pr.GreaterInHonor.text End-Dialog
+		Dialog sid pr.InTheNameOfLordBless_father.text End-Dialog	
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.DismissalPrayer1.text End-Dialog
+		Actor sid ac.Reader End-Actor
+		Dialog sid pr.res04.text End-Dialog
+		Actor sid cbVE.key003.text End-Actor
+		Dialog sid pr.DismissalPrayer2_lent.text End-Dialog
+		Rubric sid cbVE.key043.text End-Rubric
+		Actor sid cbVE.key003.text End-Actor
+		Para role prayer sid pr.PrayerOfStEphrem1.text End-Para
+		Para role prayer sid pr.PrayerOfStEphrem2.text End-Para
+		Para role prayer sid pr.PrayerOfStEphrem3.text sid pr.PrayerOfStEphrem4.text End-Para
+	End-Section
+
+	Actor sid ac.Reader End-Actor
+	Reading sid psLI.aftercommunion.v1.text<inr>sid cbVE.key044.text</>End-Reading
+	Rubric sid cbVE.key045.text End-Rubric
+	
+	Title<Tdesig>sid cbVE.key028.text</>End-Title
+	Insert_section bk.hc_chapelbook_vespers.block3 End-Insert
+
+End-Template
