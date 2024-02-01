@@ -1,0 +1,94 @@
+Template se.m02.d03.ma9 
+
+Status NA
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import miscellanea_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 2 day 3 year 2024 End_Date
+			Page_Header_Even
+				center @lookup sid ma.pdf.header sid d.on lang L1 @date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template pdf.cover.ma.me End-Insert
+		Insert_template pdf.cover.credits End-Insert
+	End-Preface
+
+	Section Instance_Weekday
+		Insert_section ST.ma.me1 End-Insert
+		Insert_section MA._01_Beginning__.mode1 End-Insert
+		Insert_section AP.af End-Insert
+		Insert_section AP.gloryboth__.af End-Insert
+		Set_Date month 2 day 2 year 2024 End_Date
+		Insert_section MA._02_Kathisma1__.litany End-Insert
+		Insert_section MA._02_Kathisma1__.me__.kath11gb11_ End-Insert
+		Insert_section MA._03_Kathisma2__.append__.me__.kath21gb21_ End-Insert
+		Insert_section MA._06_Antiphons__.mode41_prokeimenon_ End-Insert
+		Insert_section MA._07_Gospel__.yes__.hierarch__.me End-Insert
+		Insert_section MA._08_Supplication__.priest__.me End-Insert
+		Insert_section MA._11_Kontakion__.me1_ End-Insert
+		Set_Date month 2 day 3 year 2024 End_Date
+		Insert_section SY.Synaxarion End-Insert
+		Set_Date month 2 day 2 year 2024 End_Date
+		Insert_section hKA._1345678 End-Insert
+		Insert_section MA._10_Canon__.ode9_intro__.hierarch End-Insert
+		Insert_section CAv.ode9.me1.ti_hh1123asM11M12M13M14MTrMTh End-Insert
+		Insert_section hKA._9 End-Insert
+		Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+		Insert_section MA._12_Exaposteilarion__.hierarchical__.me__.exap11_ End-Insert
+		Insert_section MA._13_Lauds__.hierarchical__.mode4 End-Insert
+		Insert_section MA._13_Lauds__.hierarchical__.ton_despotin End-Insert
+		Insert_section MA._13_Lauds__.hierarchical__.rubrics__.kairos_at_lauds End-Insert
+		Insert_section MA._13_Lauds__.stichologia__.sung__.for4_nocollapse End-Insert
+		Insert_section TI.stp.f End-Insert
+		Insert_section MA._13_Lauds__.me__.p_1123as3456 End-Insert
+		Insert_section MA._13_Lauds__.gloryboth__.me__.gloryasgloryboth_ End-Insert
+		Insert_section MA._14_Doxology__.great End-Insert
+		Set_Date month 2 day 3 year 2024 End_Date
+		Insert_section AP.af End-Insert
+		Insert_section HIRgoa.MA_18_End__.Met_Gerasimos_SanFrancisco End-Insert
+		Insert_section MA._20_Dismissal__.hierarchical__.commemoration End-Insert
+		Break page End_Break
+		Section subdeacon
+			Title<Tdesig>sid eu.ordination_gr_GR_cog.euORD.SD.p100.title</>End-Title
+			Rubric sid eu.ordination_gr_GR_cog.euORD.SD.r01 End-Rubric
+			Actor sid ac.Hierarch End-Actor
+			Para role prayer sid pr.InTheNameOfFather.text sid pr.res04.text <inr>sid ru.Thrice</>End-Para
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.pet00.text End-Dialog
+			Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
+			Actor sid ac.Hierarch End-Actor
+			Para role prayer sid eu.ordination_gr_GR_cog.euORD.SD.p101a.text sid hierarchs_gr_GR_cog.ordinand.name.acc.text sid eu.ordination_gr_GR_cog.euORD.SD.p101c.text End-Para
+			Para role prayer sid pr.exc20.text End-Para
+			Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+			Rubric sid eu.ordination_gr_GR_cog.euORD.SD.r03 End-Rubric
+			Actor sid ac.Subdeacon End-Actor
+			Dialog sid eu.ordination_gr_GR_cog.euORD.SD.p102.text<inr>sid ru.Thrice</>End-Dialog
+			Rubric sid eu.ordination_gr_GR_cog.euORD.SD.r04 End-Rubric
+		End-Section
+		Insert_section AP.af End-Insert
+	End-Section				
+
+End-Template
