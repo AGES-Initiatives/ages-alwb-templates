@@ -1,0 +1,128 @@
+Template bk.eikonaretreat.ma 
+
+Status NA
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import miscellanea_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+	
+	import ps_gr_GR_cog.*
+	import liturgical.verses_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head
+		Set_Date month 3 day 2 year 2024 End_Date
+			Page_Header_Even
+				center @lookup sid ma.pdf.header sid d.on lang L1 @date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template pdf.cover.ma56 End-Insert
+		Insert_template pdf.cover.credits End-Insert
+	End-Preface
+
+	Section Instance_Retreat
+		Insert_section ST.ma.mealt1 End-Insert
+		Section normal
+			Break line End_Break
+			Actor sid ac.Priest End-Actor
+			Dialog sid pr.enarxis01.text End-Dialog
+			Actor sid ac.Reader End-Actor
+			Dialog sid pr.res04.text End-Dialog
+			Actor sid ac.Priest End-Actor
+			Insert_section bk.ho.ho01.Heavenly_King End-Insert
+		End-Section
+		Section parish	
+			Actor sid ac.Reader End-Actor
+			Insert_section bk.ho.ho01.Trisagion_Prayers End-Insert
+			Actor sid ac.Priest End-Actor
+			Dialog sid pr.exc20.text End-Dialog
+			Actor sid ac.Reader End-Actor
+			Dialog sid pr.res04.text End-Dialog
+		End-Section
+		Section part3		
+			Actor sid ac.Priest End-Actor
+			Dialog sid pr.pet17.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res01.text<r>sid ru.Thrice</> End-Dialog		
+			Actor sid ac.Priest End-Actor
+			Dialog sid pr.pet18.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res01.text<r>sid ru.Thrice</> End-Dialog		
+			Actor sid ac.Priest End-Actor
+			Dialog sid hierarchs_gr_GR_cog.metropolitan.denver.isaiah.pet19.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res01.text<r>sid ru.Thrice</> End-Dialog		
+			Actor sid ac.Priest End-Actor
+			Dialog sid pr.exc11.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res04.text sid pr.InTheNameOfLordBless_father.text End-Dialog
+			Actor sid ac.Priest End-Actor
+			Dialog sid pr.enarxis03.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res04.text End-Dialog
+		End-Section
+		Actor sid ac.Reader End-Actor
+		Reading sid goMA.sixpsalms.intro.v1.text<inr>sid ru.Thrice</>End-Reading		
+		Reading sid psMA.sixpsalms.intro.v2.text<inr>sid ru.Twice</>End-Reading
+		Title<Tdesig>sid psa62.title</>End-Title
+		Reading sid psa62.text End-Reading		
+		Reading sid psMA.sixpsalms.ps62.end.v1.text sid psMA.sixpsalms.ps62.end.v2.text @ver End-Reading		
+		Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
+		Reading sid pr.Alleluia3Glory.text End-Reading		
+		Reading sid pr.Alleluia3Glory.text End-Reading
+		Rubric sid ru.Intoned End-Rubric		
+		Reading sid pr.Alleluia3Glory.text sid pr.OurHopeLord.text End-Reading
+		Section part6	
+			Actor sid ac.Priest End-Actor
+			Insert_section LN.GreatLitany03_compact_priest End-Insert	
+			Actor sid ac.Priest End-Actor
+			Dialog sid pr.exc01.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res04.text End-Dialog
+		End-Section
+		Section GOTL
+			Title role mode sid misc.Mode1 End-Title
+			Media sid oc.m1.d1_gr_GR_cog.ocMA.MM.GodIsTheLord.text End-Media
+			Hymn sid psMA.beginning.v1.text @ver media-off End-Hymn
+			Insert_section MA._01_Beginning__.verses End-Insert
+		End-Section
+				Insert_section AP.mealt11_ End-Insert
+		Insert_section AP.gloryboth__.primarytheotokion__.mode1 End-Insert
+		Insert_section MA._07_Gospel__.no__.reader__.psalm50 End-Insert
+		Insert_section MA._11_Kontakion__.append__.mealt11_ End-Insert
+		Insert_section SY.Synaxarion_mealt1 End-Insert
+		Section choir
+			Rubric sid ru.standing.prefix sid ru.standing.matins.ode9 End-Rubric
+			Actor sid ac.Priest End-Actor
+			Dialog sid pr.exc15.text End-Dialog
+			Actor sid ac.Choir End-Actor
+		End-Section
+		Insert_section MA._10_Canon__.magnificat__.modeofkatavasia End-Insert
+		Insert_section KA.append__._9 End-Insert
+		Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+		Insert_section HC.LE._01_Epistle__.mealt1_ End-Insert
+		Insert_section HC.LE._02_Gospel__.mealt1_ End-Insert
+		Insert_section MA._18_End__.wisdom123.part1 End-Insert
+		Insert_section MA._20_Dismissal__.mealt1_commemoration End-Insert
+	End-Section
+
+End-Template

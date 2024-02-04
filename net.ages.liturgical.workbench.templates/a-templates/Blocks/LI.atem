@@ -38,10 +38,11 @@ Status NA
 
 	Section _01_Enarxis__
 		Section daily
+			Title role desig sid euLI.Key0200.text End-Title
 			Actor sid ac.Deacon End-Actor
 			Dialog sid pr.res08.text End-Dialog
 			Actor sid ac.Priest End-Actor
-			Dialog sid euLI.Key0109.text End-Dialog
+			Dialog sid pr.enarxis02.text End-Dialog
 			Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 			when-movable-cycle-day-is
 				71, 72, 73, 74, 75, 76, 77, 109 use:
@@ -62,9 +63,8 @@ Status NA
 					End-Section
 			end-when	
 			Section _02
-				Title role desig sid euLI.Key0200.text End-Title
 				Actor sid ac.Deacon End-Actor
-				Insert_section LN.GreatLitany01 End-Insert
+				Insert_section LN.GreatLitany03_compact_deacon End-Insert
 				Actor sid ac.Priest<Trubric>sid ru.InALowVoice</>End-Actor 
 				Title role smallcenter sid euLI.Key0201.title End-Title
 				Para role inaudible sid euLI.Key0201.text End-Para
@@ -75,7 +75,7 @@ Status NA
 		End-Section
 		Section vesperal
 			Actor sid ac.Priest End-Actor
-			Dialog sid euLI.Key0109.text End-Dialog
+			Dialog sid pr.enarxis02.text End-Dialog
 			Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 			Insert_section VE._01_Beginning__.vespers.introductorypsalm End-Insert
 		//	Insert_section VE._01_Beginning__.vespers.prayers End-Insert
@@ -1867,6 +1867,11 @@ Status NA
 			Actor sid ac.Clergy End-Actor
 		End-Section
 		Section local
+			Rubric sid ru.LocalChurchApolytikionSung End-Rubric
+			Break line End_Break
+		End-Section
+		Section client_church_apolytikion
+			Rubric sid ru.LocalChurchApolytikionSung End-Rubric
 			Title role desig sid cl.Apolytikion1.title End-Title
 			Title<Tmode>sid cl.Apolytikion1.mode</><Tmelody>sid cl.Apolytikion1.melody</>End-Title
 			Media sid cl.Apolytikion1.text End-Media
@@ -2289,31 +2294,25 @@ Status NA
 						Media sid euLI.Key1200.text End-Media
 						Actor sid ac.Deacon End-Actor
 						Dialog sid pr.pet24.text End-Dialog
-						Actor sid ac.clChoirR End-Actor
-						Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
+						Actor sid ac.Choir<Trubric>sid ru.AfterEachPetition</>End-Actor
+						Dialog sid pr.res01.text End-Dialog
+						Actor sid ac.Deacon End-Actor
 						Dialog sid euLI.Key1201.text End-Dialog
-						Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
 						Dialog sid pr.pet04.text End-Dialog
-						Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
 						Dialog sid pr.pet11.text End-Dialog 
-						Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
 						Dialog sid pr.pet12.text End-Dialog
-						Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
 						Dialog sid pr.pet25m.text End-Dialog
-						Actor sid ac.clChoirL End-Actor
-						Dialog<i>sid misc.parenthesis.open sid pr.res02.text sid misc.parenthesis.close</>End-Dialog
+						Actor sid ac.Choir<Trubric>sid ru.AfterEachPetition</>End-Actor
+						Dialog sid pr.res02.text End-Dialog
+						Actor sid ac.Deacon End-Actor
 						Dialog sid pr.pet26.text End-Dialog
-						Dialog<i>sid misc.parenthesis.open sid pr.res02.text sid misc.parenthesis.close</>End-Dialog
 						Dialog sid pr.pet27.text End-Dialog
-						Dialog<i>sid misc.parenthesis.open sid pr.res02.text sid misc.parenthesis.close</>End-Dialog
 						Dialog sid pr.pet28.text End-Dialog
-						Dialog<i>sid misc.parenthesis.open sid pr.res02.text sid misc.parenthesis.close</>End-Dialog
 						Dialog sid pr.pet29.text End-Dialog
-						Dialog<i>sid misc.parenthesis.open sid pr.res02.text sid misc.parenthesis.close</>End-Dialog
 						Dialog sid pr.pet30.text End-Dialog
-						Dialog<i>sid misc.parenthesis.open sid pr.res02.text sid misc.parenthesis.close</>End-Dialog
 						Dialog sid pr.pet13.text End-Dialog
-						Dialog<i>sid misc.parenthesis.open sid pr.res03.text sid misc.parenthesis.close</>End-Dialog
+						Actor sid ac.Choir End-Actor
+						Dialog sid pr.res03.text End-Dialog
 						Actor sid ac.Priest<Trubric>sid ru.InALowVoice</>End-Actor 
 						Title role smallcenter sid euLI.Key1202.title End-Title
 						Para role inaudible sid euLI.Key1202.text End-Para			
@@ -2439,12 +2438,11 @@ Status NA
 						Section block1
 							Actor sid ac.Deacon End-Actor
 							Dialog sid euLI.Key1401.text End-Dialog
-							Actor sid ac.clChoirL End-Actor
-							Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Choir<Trubric>sid ru.AfterEachPetition</>End-Actor
+							Dialog sid pr.res01.text End-Dialog
+							Actor sid ac.Deacon End-Actor
 							Dialog sid euLI.Key1402.text End-Dialog			
-							Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
 							Dialog sid euLI.Key1403.text End-Dialog			
-							Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
 						End-Section
 						Section block2
 							Break line End_Break
@@ -2470,8 +2468,9 @@ Status NA
 							Break line End_Break
 					 	End-Section
 						Section block3
-							Dialog sid euLI.Key1404.text End-Dialog			
-							Dialog<i>sid misc.parenthesis.open sid pr.res03.text sid misc.parenthesis.close</>End-Dialog
+							Dialog sid euLI.Key1404.text End-Dialog
+							Actor sid ac.Choir End-Actor	
+							Dialog sid pr.res03.text End-Dialog
 							Actor sid ac.Priest<Trubric>sid ru.InALowVoice</>End-Actor 
 							Para role inaudible sid euLI.Key1405.text End-Para				
 							Actor sid ac.Priest End-Actor
