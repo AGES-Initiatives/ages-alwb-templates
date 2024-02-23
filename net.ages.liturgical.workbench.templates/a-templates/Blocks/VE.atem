@@ -28,7 +28,6 @@ Status NA
 	import bTags.*
 	import roles.*
 
-	// Imported templates
 	import bk.ho.ho01.*
 	import bk.ho.ho10.*
 	import LiturgicalPsalms.*
@@ -37,7 +36,7 @@ Status NA
 	//Sections with names ending in _ have optional selections
 	//Sections with names not ending in _ have no options
 
-	Section _01_Beginning__ // Enarxis thru Peace Litany
+	Section _01_Beginning__
 		Section hierarchical__
 			Section with_anoixantaria
 				when-movable-cycle-day-is
@@ -226,29 +225,27 @@ Status NA
 									Reading sid pr.ComeLetUsWorship3.text End-Reading
 							end-when
 							Rubric sid ru.standing.prefix sid ru.standing.vespers.introductorypsalm End-Rubric
-							Section Psalm_103
-								Title role desig sid psa103.title End-Title
-								Media sid hoVE.Ps103.text End-Media
-								Reading sid psa103.text End-Reading
-								Reading sid psVE.introductorypsalm.end.v1.text End-Reading
-								Reading sid psVE.introductorypsalm.end.v2.text @ver End-Reading
-							End-Section
+							Title role desig sid psa103.title End-Title
+							Media sid hoVE.Ps103.text End-Media
+							Reading sid psa103.text End-Reading
+							Reading sid psVE.introductorypsalm.end.v1.text End-Reading
+							Reading sid psVE.introductorypsalm.end.v2.text @ver End-Reading
 							Reading sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Reading
 							Reading sid pr.Alleluia3.text sid pr.GloryToYouGod.text<r>sid ru.Thrice</>End-Reading
 							Reading sid pr.OurHopeLord.text End-Reading
 						End-Section
-					//	Insert_section vesperal_prayers_collapse End-Insert
 						Section litany
 							when-movable-cycle-day-is
 								121 use:
 									Insert_section LN.GreatLitany_Vespers_HolySpirit_deacon_parentheses End-Insert
 								otherwise use:
-									Insert_section LN.GreatLitany_deacon_parentheses End-Insert
+									Insert_section LN.GreatLitany_deacon_compact End-Insert
 							end-when
 							Actor sid ac.Priest End-Actor
 							Dialog sid pr.exc01.text End-Dialog
-							Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
-						End-Section //Part3
+							Actor sid ac.Choir End-Actor
+							Dialog sid pr.res04.text End-Dialog
+						End-Section
 			end-when
 		End-Section
 		Section with_anoixantaria
@@ -280,7 +277,6 @@ Status NA
 						Insert_section VI._01_Beginning__.with_anoixantaria.introductorypsalm.Psalm_103_Verses End-Insert
 						Insert_section VI._01_Beginning__.with_anoixantaria.introductorypsalm.anoixantaria End-Insert
 					End-Section
-				//	Insert_section vesperal_prayers_collapse End-Insert
 					Section litany
 						when-movable-cycle-day-is
 							121 use:
@@ -290,8 +286,9 @@ Status NA
 						end-when
 						Actor sid ac.Priest End-Actor
 						Dialog sid pr.exc01.text End-Dialog
-						Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
-					End-Section //Part3
+						Actor sid ac.Choir End-Actor
+						Dialog sid pr.res04.text End-Dialog
+					End-Section
 			end-when
 		End-Section
 		Section vespersordinary_link
@@ -307,26 +304,26 @@ Status NA
 				End-Section
 				Section for6
 					Insert_section VE.hLIHC_ModeOfWeek End-Insert
-					Title role bmc_collapse sid clps.stichologia.top End-Title
+					Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 						Insert_section VE.stichologia_media_modeofweek End-Insert
 						Insert_section VE.Stichologia.for_6 End-Insert
-					Title role emc_collapse sid clps.stichologia.bottom End-Title
+					Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 					Break line End_Break
 				End-Section
 				Section for8
 					Insert_section VE.hLIHC_ModeOfWeek End-Insert
-					Title role bmc_collapse sid clps.stichologia.top End-Title
+					Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 						Insert_section VE.stichologia_media_modeofweek End-Insert
 						Insert_section VE.Stichologia.for_8 End-Insert
-					Title role emc_collapse sid clps.stichologia.bottom End-Title
+					Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 					Break line End_Break
 				End-Section
 				Section for10
 					Insert_section VE.hLIHC_ModeOfWeek End-Insert
-					Title role bmc_collapse sid clps.stichologia.top End-Title
+					Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 						Insert_section VE.stichologia_media_modeofweek End-Insert
 						Insert_section VE.Stichologia.for_10 End-Insert
-					Title role emc_collapse sid clps.stichologia.bottom End-Title
+					Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 					Break line End_Break
 				End-Section
 			End-Section //LIHC
@@ -336,26 +333,26 @@ Status NA
 				End-Section
 				Section for6
 					Insert_section VE.hLIHC_Mode1 End-Insert
-					Title role bmc_collapse sid clps.stichologia.top End-Title
+					Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 						Media sid oc.m1.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 						Insert_section VE.Stichologia.for_6 End-Insert
-					Title role emc_collapse sid clps.stichologia.bottom End-Title
+					Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 					Break line End_Break
 				End-Section
 				Section for8
 					Insert_section VE.hLIHC_Mode1 End-Insert
-					Title role bmc_collapse sid clps.stichologia.top End-Title
+					Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 						Media sid oc.m1.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 						Insert_section VE.Stichologia.for_8 End-Insert
-					Title role emc_collapse sid clps.stichologia.bottom End-Title
+					Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 					Break line End_Break
 				End-Section
 				Section for10
 					Insert_section VE.hLIHC_Mode1 End-Insert
-					Title role bmc_collapse sid clps.stichologia.top End-Title
+					Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 						Media sid oc.m1.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 						Insert_section VE.Stichologia.for_10 End-Insert
-					Title role emc_collapse sid clps.stichologia.bottom End-Title
+					Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 					Break line End_Break
 				End-Section
 			End-Section
@@ -365,26 +362,26 @@ Status NA
 				End-Section
 				Section for6
 					Insert_section VE.hLIHC_Mode2 End-Insert
-					Title role bmc_collapse sid clps.stichologia.top End-Title
+					Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 						Media sid oc.m2.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 						Insert_section VE.Stichologia.for_6 End-Insert
-					Title role emc_collapse sid clps.stichologia.bottom End-Title
+					Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 					Break line End_Break
 				End-Section
 				Section for8
 					Insert_section VE.hLIHC_Mode2 End-Insert
-					Title role bmc_collapse sid clps.stichologia.top End-Title
+					Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 						Media sid oc.m2.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 						Insert_section VE.Stichologia.for_8 End-Insert
-					Title role emc_collapse sid clps.stichologia.bottom End-Title
+					Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 					Break line End_Break
 				End-Section
 				Section for10
 					Insert_section VE.hLIHC_Mode2 End-Insert
-					Title role bmc_collapse sid clps.stichologia.top End-Title
+					Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 						Media sid oc.m2.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 						Insert_section VE.Stichologia.for_10 End-Insert
-					Title role emc_collapse sid clps.stichologia.bottom End-Title
+					Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 					Break line End_Break
 				End-Section
 			End-Section
@@ -394,26 +391,26 @@ Status NA
 				End-Section
 				Section for6
 					Insert_section VE.hLIHC_Mode3 End-Insert
-					Title role bmc_collapse sid clps.stichologia.top End-Title
+					Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 						Media sid oc.m3.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 						Insert_section VE.Stichologia.for_6 End-Insert
-					Title role emc_collapse sid clps.stichologia.bottom End-Title
+					Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 					Break line End_Break
 				End-Section
 				Section for8
 					Insert_section VE.hLIHC_Mode3 End-Insert
-					Title role bmc_collapse sid clps.stichologia.top End-Title
+					Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 						Media sid oc.m3.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 						Insert_section VE.Stichologia.for_8 End-Insert
-					Title role emc_collapse sid clps.stichologia.bottom End-Title
+					Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 					Break line End_Break
 				End-Section
 				Section for10
 					Insert_section VE.hLIHC_Mode3 End-Insert
-					Title role bmc_collapse sid clps.stichologia.top End-Title
+					Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 						Media sid oc.m3.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 						Insert_section VE.Stichologia.for_10 End-Insert
-					Title role emc_collapse sid clps.stichologia.bottom End-Title
+					Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 					Break line End_Break
 				End-Section
 			End-Section
@@ -423,26 +420,26 @@ Status NA
 				End-Section
 				Section for6
 					Insert_section VE.hLIHC_Mode4 End-Insert
-					Title role bmc_collapse sid clps.stichologia.top End-Title
+					Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 						Media sid oc.m4.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 						Insert_section VE.Stichologia.for_6 End-Insert
-					Title role emc_collapse sid clps.stichologia.bottom End-Title
+					Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 					Break line End_Break
 				End-Section
 				Section for8
 					Insert_section VE.hLIHC_Mode4 End-Insert
-					Title role bmc_collapse sid clps.stichologia.top End-Title
+					Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 						Media sid oc.m4.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 						Insert_section VE.Stichologia.for_8 End-Insert
-					Title role emc_collapse sid clps.stichologia.bottom End-Title
+					Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 					Break line End_Break
 				End-Section
 				Section for10
 					Insert_section VE.hLIHC_Mode4 End-Insert
-					Title role bmc_collapse sid clps.stichologia.top End-Title
+					Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 						Media sid oc.m4.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 						Insert_section VE.Stichologia.for_10 End-Insert
-					Title role emc_collapse sid clps.stichologia.bottom End-Title
+					Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 					Break line End_Break
 				End-Section
 			End-Section
@@ -452,26 +449,26 @@ Status NA
 				End-Section
 				Section for6
 					Insert_section VE.hLIHC_Mode5 End-Insert
-					Title role bmc_collapse sid clps.stichologia.top End-Title
+					Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 						Media sid oc.m1.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 						Insert_section VE.Stichologia.for_6 End-Insert
-					Title role emc_collapse sid clps.stichologia.bottom End-Title
+					Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 					Break line End_Break
 				End-Section
 				Section for8
 					Insert_section VE.hLIHC_Mode5 End-Insert
-					Title role bmc_collapse sid clps.stichologia.top End-Title
+					Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 						Media sid oc.m1.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 						Insert_section VE.Stichologia.for_8 End-Insert
-					Title role emc_collapse sid clps.stichologia.bottom End-Title
+					Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 					Break line End_Break
 				End-Section
 				Section for10
 					Insert_section VE.hLIHC_Mode5 End-Insert
-					Title role bmc_collapse sid clps.stichologia.top End-Title
+					Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 						Media sid oc.m1.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 						Insert_section VE.Stichologia.for_10 End-Insert
-					Title role emc_collapse sid clps.stichologia.bottom End-Title
+					Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 					Break line End_Break
 				End-Section
 			End-Section
@@ -481,26 +478,26 @@ Status NA
 				End-Section
 				Section for6
 					Insert_section VE.hLIHC_Mode6 End-Insert
-					Title role bmc_collapse sid clps.stichologia.top End-Title
+					Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 						Media sid oc.m6.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 						Insert_section VE.Stichologia.for_6 End-Insert
-					Title role emc_collapse sid clps.stichologia.bottom End-Title
+					Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 					Break line End_Break
 				End-Section
 				Section for8
 					Insert_section VE.hLIHC_Mode6 End-Insert
-					Title role bmc_collapse sid clps.stichologia.top End-Title
+					Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 						Media sid oc.m6.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 						Insert_section VE.Stichologia.for_8 End-Insert
-					Title role emc_collapse sid clps.stichologia.bottom End-Title
+					Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 					Break line End_Break
 				End-Section
 				Section for10
 					Insert_section VE.hLIHC_Mode6 End-Insert
-					Title role bmc_collapse sid clps.stichologia.top End-Title
+					Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 						Media sid oc.m6.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 						Insert_section VE.Stichologia.for_10 End-Insert
-					Title role emc_collapse sid clps.stichologia.bottom End-Title
+					Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 					Break line End_Break
 				End-Section
 			End-Section
@@ -510,26 +507,26 @@ Status NA
 				End-Section
 				Section for6
 					Insert_section VE.hLIHC_Mode7 End-Insert
-					Title role bmc_collapse sid clps.stichologia.top End-Title
+					Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 						Media sid oc.m7.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 						Insert_section VE.Stichologia.for_6 End-Insert
-					Title role emc_collapse sid clps.stichologia.bottom End-Title
+					Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 					Break line End_Break
 				End-Section
 				Section for8
 					Insert_section VE.hLIHC_Mode7 End-Insert
-					Title role bmc_collapse sid clps.stichologia.top End-Title
+					Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 						Media sid oc.m7.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 						Insert_section VE.Stichologia.for_8 End-Insert
-					Title role emc_collapse sid clps.stichologia.bottom End-Title
+					Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 					Break line End_Break
 				End-Section
 				Section for10
 					Insert_section VE.hLIHC_Mode7 End-Insert
-					Title role bmc_collapse sid clps.stichologia.top End-Title
+					Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 						Media sid oc.m7.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 						Insert_section VE.Stichologia.for_10 End-Insert
-					Title role emc_collapse sid clps.stichologia.bottom End-Title
+					Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 					Break line End_Break
 				End-Section
 			End-Section
@@ -539,26 +536,26 @@ Status NA
 				End-Section
 				Section for6
 					Insert_section VE.hLIHC_Mode8 End-Insert
-					Title role bmc_collapse sid clps.stichologia.top End-Title
+					Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 						Media sid oc.m8.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 						Insert_section VE.Stichologia.for_6 End-Insert
-					Title role emc_collapse sid clps.stichologia.bottom End-Title
+					Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 					Break line End_Break
 				End-Section
 				Section for8
 					Insert_section VE.hLIHC_Mode8 End-Insert
-					Title role bmc_collapse sid clps.stichologia.top End-Title
+					Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 						Media sid oc.m8.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 						Insert_section VE.Stichologia.for_8 End-Insert
-					Title role emc_collapse sid clps.stichologia.bottom End-Title
+					Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 					Break line End_Break
 				End-Section
 				Section for10
 					Insert_section VE.hLIHC_Mode8 End-Insert
-					Title role bmc_collapse sid clps.stichologia.top End-Title
+					Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 						Media sid oc.m8.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 						Insert_section VE.Stichologia.for_10 End-Insert
-					Title role emc_collapse sid clps.stichologia.bottom End-Title
+					Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 					Break line End_Break
 				End-Section
 			End-Section
@@ -569,26 +566,26 @@ Status NA
 			End-Section
 			Section for6
 				Insert_section Selector_ModeOfTrDay.LIHC_ModeOfTrDay End-Insert
-				Title role bmc_collapse sid clps.stichologia.top End-Title
+				Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 					Insert_section Selector_ModeOfTrDay.stichologia_media_modeoftrday End-Insert
 					Insert_section VE.Stichologia.for_6 End-Insert
-				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 				Break line End_Break
 			End-Section
 			Section for8
 				Insert_section Selector_ModeOfTrDay.LIHC_ModeOfTrDay End-Insert
-				Title role bmc_collapse sid clps.stichologia.top End-Title
+				Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 					Insert_section Selector_ModeOfTrDay.stichologia_media_modeoftrday End-Insert
 					Insert_section VE.Stichologia.for_8 End-Insert
-				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 				Break line End_Break
 			End-Section
 			Section for10
 				Insert_section Selector_ModeOfTrDay.LIHC_ModeOfTrDay End-Insert
-				Title role bmc_collapse sid clps.stichologia.top End-Title
+				Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 					Insert_section Selector_ModeOfTrDay.stichologia_media_modeoftrday End-Insert
 					Insert_section VE.Stichologia.for_10 End-Insert
-				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 				Break line End_Break
 			End-Section
 		End-Section
@@ -598,26 +595,26 @@ Status NA
 			End-Section
 			Section for6
 				Insert_section Selector_ModeOfPeDay.LIHC_ModeOfPeDay End-Insert
-				Title role bmc_collapse sid clps.stichologia.top End-Title
+				Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 					Insert_section Selector_ModeOfPeDay.stichologia_media_modeofpeday End-Insert
 					Insert_section VE.Stichologia.for_6 End-Insert
-				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 				Break line End_Break
 			End-Section
 			Section for8
 				Insert_section Selector_ModeOfPeDay.LIHC_ModeOfPeDay End-Insert
-				Title role bmc_collapse sid clps.stichologia.top End-Title
+				Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 					Insert_section Selector_ModeOfPeDay.stichologia_media_modeofpeday End-Insert
 					Insert_section VE.Stichologia.for_8 End-Insert
-				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 				Break line End_Break
 			End-Section
 			Section for10
 				Insert_section Selector_ModeOfPeDay.LIHC_ModeOfPeDay End-Insert
-				Title role bmc_collapse sid clps.stichologia.top End-Title
+				Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 					Insert_section Selector_ModeOfPeDay.stichologia_media_modeofpeday End-Insert
 					Insert_section VE.Stichologia.for_10 End-Insert
-				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 				Break line End_Break
 			End-Section
 		End-Section
@@ -627,26 +624,26 @@ Status NA
 			End-Section
 			Section for6
 				Insert_section VE.LIHC_ModeOfWeek End-Insert
-				Title role bmc_collapse sid clps.stichologia.top End-Title
+				Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 					Insert_section VE.stichologia_media_modeofweek End-Insert
 					Insert_section VE.Stichologia.for_6 End-Insert
-				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 				Break line End_Break
 			End-Section
 			Section for8
 				Insert_section VE.LIHC_ModeOfWeek End-Insert
-				Title role bmc_collapse sid clps.stichologia.top End-Title
+				Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 					Insert_section VE.stichologia_media_modeofweek End-Insert
 					Insert_section VE.Stichologia.for_8 End-Insert
-				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 				Break line End_Break
 			End-Section
 			Section for10
 				Insert_section VE.LIHC_ModeOfWeek End-Insert
-				Title role bmc_collapse sid clps.stichologia.top End-Title
+				Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 					Insert_section VE.stichologia_media_modeofweek End-Insert
 					Insert_section VE.Stichologia.for_10 End-Insert
-				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 				Break line End_Break
 			End-Section
 		End-Section
@@ -656,26 +653,26 @@ Status NA
 			End-Section
 			Section for6
 				Insert_section VE.LIHC_Mode1 End-Insert
-				Title role bmc_collapse sid clps.stichologia.top End-Title
+				Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 					Media sid oc.m1.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 					Insert_section VE.Stichologia.for_6 End-Insert
-				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 				Break line End_Break
 			End-Section
 			Section for8
 				Insert_section VE.LIHC_Mode1 End-Insert
-				Title role bmc_collapse sid clps.stichologia.top End-Title
+				Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 					Media sid oc.m1.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 					Insert_section VE.Stichologia.for_8 End-Insert
-				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 				Break line End_Break
 			End-Section
 			Section for10
 				Insert_section VE.LIHC_Mode1 End-Insert
-				Title role bmc_collapse sid clps.stichologia.top End-Title
+				Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 					Media sid oc.m1.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 					Insert_section VE.Stichologia.for_10 End-Insert
-				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 				Break line End_Break
 			End-Section
 		End-Section
@@ -685,26 +682,26 @@ Status NA
 			End-Section
 			Section for6
 				Insert_section VE.LIHC_Mode2 End-Insert
-				Title role bmc_collapse sid clps.stichologia.top End-Title
+				Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 					Media sid oc.m2.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 					Insert_section VE.Stichologia.for_6 End-Insert
-				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 				Break line End_Break
 			End-Section
 			Section for8
 				Insert_section VE.LIHC_Mode2 End-Insert
-				Title role bmc_collapse sid clps.stichologia.top End-Title
+				Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 					Media sid oc.m2.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 					Insert_section VE.Stichologia.for_8 End-Insert
-				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 				Break line End_Break
 			End-Section
 			Section for10
 				Insert_section VE.LIHC_Mode2 End-Insert
-				Title role bmc_collapse sid clps.stichologia.top End-Title
+				Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 					Media sid oc.m2.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 					Insert_section VE.Stichologia.for_10 End-Insert
-				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 				Break line End_Break
 			End-Section
 		End-Section
@@ -714,26 +711,26 @@ Status NA
 			End-Section
 			Section for6
 				Insert_section VE.LIHC_Mode3 End-Insert
-				Title role bmc_collapse sid clps.stichologia.top End-Title
+				Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 					Media sid oc.m3.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 					Insert_section VE.Stichologia.for_6 End-Insert
-				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 				Break line End_Break
 			End-Section
 			Section for8
 				Insert_section VE.LIHC_Mode3 End-Insert
-				Title role bmc_collapse sid clps.stichologia.top End-Title
+				Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 					Media sid oc.m3.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 					Insert_section VE.Stichologia.for_8 End-Insert
-				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 				Break line End_Break
 			End-Section
 			Section for10
 				Insert_section VE.LIHC_Mode3 End-Insert
-				Title role bmc_collapse sid clps.stichologia.top End-Title
+				Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 					Media sid oc.m3.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 					Insert_section VE.Stichologia.for_10 End-Insert
-				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 				Break line End_Break
 			End-Section
 		End-Section
@@ -743,26 +740,26 @@ Status NA
 			End-Section
 			Section for6
 				Insert_section VE.LIHC_Mode4 End-Insert
-				Title role bmc_collapse sid clps.stichologia.top End-Title
+				Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 					Media sid oc.m4.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 					Insert_section VE.Stichologia.for_6 End-Insert
-				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 				Break line End_Break
 			End-Section
 			Section for8
 				Insert_section VE.LIHC_Mode4 End-Insert
-				Title role bmc_collapse sid clps.stichologia.top End-Title
+				Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 					Media sid oc.m4.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 					Insert_section VE.Stichologia.for_8 End-Insert
-				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 				Break line End_Break
 			End-Section
 			Section for10
 				Insert_section VE.LIHC_Mode4 End-Insert
-				Title role bmc_collapse sid clps.stichologia.top End-Title
+				Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 					Media sid oc.m4.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 					Insert_section VE.Stichologia.for_10 End-Insert
-				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 				Break line End_Break
 			End-Section
 		End-Section
@@ -772,26 +769,26 @@ Status NA
 			End-Section
 			Section for6
 				Insert_section VE.LIHC_Mode5 End-Insert
-				Title role bmc_collapse sid clps.stichologia.top End-Title
+				Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 					Media sid oc.m5.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 					Insert_section VE.Stichologia.for_6 End-Insert
-				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 				Break line End_Break
 			End-Section
 			Section for8
 				Insert_section VE.LIHC_Mode5 End-Insert
-				Title role bmc_collapse sid clps.stichologia.top End-Title
+				Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 					Media sid oc.m5.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 					Insert_section VE.Stichologia.for_8 End-Insert
-				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 				Break line End_Break
 			End-Section
 			Section for10
 				Insert_section VE.LIHC_Mode5 End-Insert
-				Title role bmc_collapse sid clps.stichologia.top End-Title
+				Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 					Media sid oc.m5.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 					Insert_section VE.Stichologia.for_10 End-Insert
-				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 				Break line End_Break
 			End-Section
 		End-Section
@@ -801,26 +798,26 @@ Status NA
 			End-Section
 			Section for6
 				Insert_section VE.LIHC_Mode6 End-Insert
-				Title role bmc_collapse sid clps.stichologia.top End-Title
+				Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 					Media sid oc.m6.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 					Insert_section VE.Stichologia.for_6 End-Insert
-				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 				Break line End_Break
 			End-Section
 			Section for8
 				Insert_section VE.LIHC_Mode6 End-Insert
-				Title role bmc_collapse sid clps.stichologia.top End-Title
+				Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 					Media sid oc.m6.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 					Insert_section VE.Stichologia.for_8 End-Insert
-				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 				Break line End_Break
 			End-Section
 			Section for10
 				Insert_section VE.LIHC_Mode6 End-Insert
-				Title role bmc_collapse sid clps.stichologia.top End-Title
+				Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 					Media sid oc.m6.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 					Insert_section VE.Stichologia.for_10 End-Insert
-				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 				Break line End_Break
 			End-Section
 		End-Section
@@ -830,26 +827,26 @@ Status NA
 			End-Section
 			Section for6
 				Insert_section VE.LIHC_Mode7 End-Insert
-				Title role bmc_collapse sid clps.stichologia.top End-Title
+				Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 					Media sid oc.m7.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 					Insert_section VE.Stichologia.for_6 End-Insert
-				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 				Break line End_Break
 			End-Section
 			Section for8
 				Insert_section VE.LIHC_Mode7 End-Insert
-				Title role bmc_collapse sid clps.stichologia.top End-Title
+				Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 					Media sid oc.m7.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 					Insert_section VE.Stichologia.for_8 End-Insert
-				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 				Break line End_Break
 			End-Section
 			Section for10
 				Insert_section VE.LIHC_Mode7 End-Insert
-				Title role bmc_collapse sid clps.stichologia.top End-Title
+				Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 					Media sid oc.m7.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 					Insert_section VE.Stichologia.for_10 End-Insert
-				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 				Break line End_Break
 			End-Section
 		End-Section
@@ -859,26 +856,26 @@ Status NA
 			End-Section
 			Section for6
 				Insert_section VE.LIHC_Mode8 End-Insert
-				Title role bmc_collapse sid clps.stichologia.top End-Title
+				Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 					Media sid oc.m8.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 					Insert_section VE.Stichologia.for_6 End-Insert
-				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 				Break line End_Break
 			End-Section
 			Section for8
 				Insert_section VE.LIHC_Mode8 End-Insert
-				Title role bmc_collapse sid clps.stichologia.top End-Title
+				Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 					Media sid oc.m8.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 					Insert_section VE.Stichologia.for_8 End-Insert
-				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 				Break line End_Break
 			End-Section
 			Section for10
 				Insert_section VE.LIHC_Mode8 End-Insert
-				Title role bmc_collapse sid clps.stichologia.top End-Title
+				Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 					Media sid oc.m8.d1_gr_GR_cog.ocVE.MM.Stichologia.text End-Media
 					Insert_section VE.Stichologia.for_10 End-Insert
-				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 				Break line End_Break
 			End-Section
 		End-Section
@@ -888,23 +885,23 @@ Status NA
 			End-Section
 			Section for6
 				Insert_section VE.LIHC_Mode0 End-Insert
-				Title role bmc_collapse sid clps.stichologia.top End-Title
+				Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 					Insert_section VE.Stichologia.for_6 End-Insert
-				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 				Break line End_Break
 			End-Section
 			Section for8
 				Insert_section VE.LIHC_Mode0 End-Insert
-				Title role bmc_collapse sid clps.stichologia.top End-Title
+				Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 					Insert_section VE.Stichologia.for_8 End-Insert
-				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 				Break line End_Break
 			End-Section
 			Section for10
 				Insert_section VE.LIHC_Mode0 End-Insert
-				Title role bmc_collapse sid clps.stichologia.top End-Title
+				Title role bmc_collapse sid template.titles_gr_GR_cog.clps.stichologia.top End-Title
 					Insert_section VE.Stichologia.for_10 End-Insert
-				Title role emc_collapse sid clps.stichologia.bottom End-Title
+				Title role emc_collapse sid template.titles_gr_GR_cog.clps.stichologia.bottom End-Title
 				Break line End_Break
 			End-Section
 		End-Section
@@ -5312,26 +5309,26 @@ Status NA
 		Section hierarchical__
 			Section part3_litany__
 				Section me1
-					Insert_section LN.Ektenia03_hierarchical_me1 End-Insert
+					Insert_section LN.hEktenia03__.me1 End-Insert
 				End-Section
 				Section mealt1
-					Insert_section LN.Ektenia03_hierarchical_mealt1 End-Insert
+					Insert_section LN.hEktenia03__.mealt1 End-Insert
 				End-Section
 				Section me1mealt1
-					Insert_section LN.Ektenia03_hierarchical_me1mealt1 End-Insert
+					Insert_section LN.hEktenia03__.me1mealt1 End-Insert
 				End-Section
 				Section me1mealt2
-					Insert_section LN.Ektenia03_hierarchical_me1mealt2 End-Insert
+					Insert_section LN.hEktenia03__.me1mealt2 End-Insert
 				End-Section
 				Section pe
-					Insert_section LN.Ektenia03_hierarchical_pe End-Insert
+					Insert_section LN.hEktenia03__.pe End-Insert
 				End-Section
 				Section pealt1
-					Insert_section LN.Ektenia03_hierarchical_pealt1 End-Insert
+					Insert_section LN.hEktenia03__.pealt1 End-Insert
 				End-Section
 				Section vigil__
 					Section me1
-						Insert_section LN.Ektenia08_hierarchical_vigil_lity_me1 End-Insert
+						Insert_section LN.hEktenia08_vigil_lity__.me1 End-Insert
 					End-Section
 				End-Section
 			End-Section
@@ -8823,7 +8820,7 @@ Status NA
 
 	Section vesperal_prayers_collapse
 		Break page End_Break
-		Title role bmc_collapse sid clps.prayers.top End-Title
+		Title role bmc_collapse sid template.titles_gr_GR_cog.clps.prayers.top End-Title
 		Rubric sid hiVE.R1113 End-Rubric
 		Actor sid ac.Priest<Trubric>sid ru.Inaudibly</>End-Actor
 		Title<Tdesig>sid hiVE.Key1101.title</>End-Title
@@ -8848,7 +8845,7 @@ Status NA
 		Para role prayer sid hiVE.Key1107.text @ver End-Para
 		Para role prayer sid hiVE.Key1107.exclamation @ver sid pr.res04.text End-Para
 		Rubric sid hiVE.R1114 End-Rubric
-		Title role emc_collapse sid clps.prayers.bottom End-Title
+		Title role emc_collapse sid template.titles_gr_GR_cog.clps.prayers.bottom End-Title
 		Break page End_Break
 	End-Section
 
