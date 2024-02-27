@@ -2,12 +2,11 @@ Template hLI
 
 Status NA
 
-	import client_gr_GR_cog.*
 	import eu.lichrysbasil_gr_GR_cog.*
 	import eu.ordination_gr_GR_cog.*
 	import hi.hi17_gr_GR_cog.*
-	import ho.ho07_gr_GR_cog.* // antiphon refrains
-	import ho.ho21_gr_GR_cog.* //for pre-communion prayers
+	import ho.ho07_gr_GR_cog.*
+	import ho.ho21_gr_GR_cog.*
 	import liturgical.verses_gr_GR_cog.*
 	import ps_gr_GR_cog.*
 	
@@ -28,25 +27,22 @@ Status NA
 	import bTags.*
 	import roles.*
 
-	//templates	
 	import bk.ap.da.sections.*
 	import bk.ho.ho07.* //antiphon verses
 	
-	//Sections with names ending in __ require a selection
-	//Sections with names ending in _ have optional selections
-	//Sections with names not ending in _ have no options
-
 	Section _01_Enarxis__
 		Section daily
+			Title<Tsmaller>sid euLI.Key0200.title</>End-Title
 			Section _01
 				when-movable-cycle-day-is
 					71, 72, 73, 74, 75, 76, 77, 109 use:
 						Section pascha
-						//	Actor sid ac.Deacon End-Actor
-						//	Dialog sid pr.res08.text End-Dialog
+							Actor sid ac.Deacon End-Actor
+							Dialog sid pr.res08.text End-Dialog
 							Actor sid ac.Hierarch End-Actor
 							Dialog sid pr.enarxis02.text End-Dialog
-							Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Choir End-Actor
+							Dialog sid pr.res04.text End-Dialog
 							Insert_section hPE.Pascha_Beginning End-Insert
 						End-Section
 					78 thru 108 use:
@@ -55,7 +51,8 @@ Status NA
 							Dialog sid pr.res08.text End-Dialog
 							Actor sid ac.Priest End-Actor
 							Dialog sid pr.enarxis02.text End-Dialog
-							Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.Choir End-Actor
+							Dialog sid pr.res04.text End-Dialog
 							Actor sid ac.Hierarch End-Actor
 							Title role mode sid pe.d071_gr_GR_cog.peMA.Troparion.mode End-Title
 							Media sid pe.d071_gr_GR_cog.peMA.Troparion.text End-Media
@@ -71,31 +68,32 @@ Status NA
 						Dialog sid pr.res08.text End-Dialog
 						Actor sid ac.Priest End-Actor
 						Dialog sid pr.enarxis02.text End-Dialog
-						Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+						Actor sid ac.Choir End-Actor
+						Dialog sid pr.res04.text End-Dialog
 				end-when
 			End-Section
 			Section _02
-				Title role desig sid euLI.Key0200.title End-Title
-				Insert_section LN.GreatLitany_deacon_parentheses End-Insert
-				Actor sid ac.Hierarch<Trubric>sid ru.InALowVoice</>End-Actor 
-				Title role smallcenter sid euLI.Key0201.title End-Title
+				Insert_section LN.GreatLitany_deacon_compact End-Insert
+				Actor sid ac.Hierarch<r><Tsmaller>sid ru.InALowVoice</></>End-Actor 
+				Title<r><Tsmaller>sid euLI.Key0201.title</></>End-Title
 				Para role inaudible sid euLI.Key0201.text End-Para
 				Actor sid ac.Priest End-Actor
 				Dialog sid pr.exc01.text End-Dialog
-				Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+				Actor sid ac.Choir End-Actor
+				Dialog sid pr.res04.text End-Dialog
 			End-Section
 		End-Section
 		Section daily_double_commemoration
 			Insert_section daily._01 End-Insert
 			Section _02
-				Title role desig sid euLI.Key0200.title End-Title
 				Insert_section LN.GreatLitany_double_commemoration_deacon_parentheses End-Insert
 				Actor sid ac.Hierarch<Trubric>sid ru.InALowVoice</>End-Actor 
-				Title role smallcenter sid euLI.Key0201.title End-Title
+				Title<r><Tsmaller>sid euLI.Key0201.title</></>End-Title
 				Para role inaudible sid euLI.Key0201.text End-Para
 				Actor sid ac.Priest End-Actor
 				Dialog sid pr.exc01.text End-Dialog
-				Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+				Actor sid ac.Choir End-Actor
+				Dialog sid pr.res04.text End-Dialog
 			End-Section
 		End-Section
 		Section vesperal
@@ -103,47 +101,37 @@ Status NA
 			Dialog sid pr.res08.text End-Dialog
 			Actor sid ac.Priest End-Actor
 			Dialog sid pr.enarxis02.text End-Dialog
-			Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res04.text End-Dialog
 			Insert_section VE._01_Beginning__.vespers.introductorypsalm End-Insert
-		//	Insert_section VE._01_Beginning__.vespers.prayers End-Insert
 			Insert_section VE._01_Beginning__.vespers.litany End-Insert
 		End-Section
 	End-Section
 
 	Section _02_Antiphons__
 		Section sundays_weekdays_feasts
-			Section antiphon1
-				Actor sid ac.Choir End-Actor
-				Insert_section Selector_Antiphons.antiphon1__.specific_day End-Insert
-				Insert_section short_litany_after_antiphon1 End-Insert
-			End-Section
-			Section antiphon2
-				Actor sid ac.Choir End-Actor
-				Insert_section Selector_Antiphons.antiphon2__.specific_day End-Insert
-				Insert_section short_litany_after_antiphon2 End-Insert
-			End-Section
-			Section antiphon3
-				Actor sid ac.Choir End-Actor
-				Insert_section Selector_Antiphons.antiphon3__.specific_day End-Insert
-			End-Section
+			Insert_section Selector_Antiphons.antiphon1__.specific_day End-Insert
+			Insert_section hLI.short_litany_after_antiphon1_deacon_choir End-Insert
+			Insert_section Selector_Antiphons.antiphon2__.specific_day End-Insert
+			Insert_section hLI.short_litany_after_antiphon2_deacon_choir End-Insert
+			Insert_section Selector_Antiphons.antiphon3__.specific_day End-Insert
 		End-Section
 		Section celebrated_saint
-			Section antiphon1
-				Actor sid ac.Choir End-Actor
-				Insert_section Selector_Antiphons.antiphon1__.celebrated_saint End-Insert
-				Insert_section short_litany_after_antiphon1 End-Insert
-			End-Section
-			Section antiphon2
-				Actor sid ac.Choir End-Actor
-				Insert_section Selector_Antiphons.antiphon2__.celebrated_saint End-Insert
-				Insert_section short_litany_after_antiphon2 End-Insert
-			End-Section
-			Section antiphon3
-				Actor sid ac.Choir End-Actor
-				Insert_section Selector_Antiphons.antiphon3__.celebrated_saint.title End-Insert
-			//	Insert_section Selector_Antiphons.antiphon3__.celebrated_saint.verses End-Insert
-			End-Section
+			Insert_section Selector_Antiphons.antiphon1__.celebrated_saint End-Insert
+			Insert_section hLI.short_litany_after_antiphon1_deacon_choir End-Insert
+			Insert_section Selector_Antiphons.antiphon2__.celebrated_saint End-Insert
+			Insert_section hLI.short_litany_after_antiphon2_deacon_choir End-Insert
+			Insert_section Selector_Antiphons.antiphon3__.celebrated_saint.title End-Insert
+			Insert_section Selector_Antiphons.antiphon3__.celebrated_saint.verses End-Insert
 		End-Section	
+		Section celebrated_saint_mealt1
+			Insert_section Selector_Antiphons.antiphon1__.celebrated_saint End-Insert
+			Insert_section hLI.short_litany_after_antiphon1_deacon_choir End-Insert
+			Insert_section Selector_Antiphons.antiphon2__.celebrated_saint End-Insert
+			Insert_section hLI.short_litany_after_antiphon2_deacon_choir End-Insert
+			Insert_section Selector_Antiphons.antiphon3__.celebrated_saint_mealt1.title End-Insert
+			Insert_section Selector_Antiphons.antiphon3__.celebrated_saint_mealt1.verses End-Insert
+		End-Section
 		Section psalm102
 			Actor sid ac.Choir End-Actor
 			Title role desig sid psLI.typika.ps102.title @ver End-Title
@@ -173,7 +161,7 @@ Status NA
 			Reading sid pr.GloryToTheFather.text End-Reading
 			Reading sid pr.BothNowAndEver.text End-Reading
 			Reading sid psLI.typika.ps102.end.text End-Reading
-			Insert_section short_litany_after_antiphon1 End-Insert
+			Insert_section hLI.short_litany_after_antiphon1_deacon_choir End-Insert
 		End-Section
 		Section psalm145
 			Actor sid ac.Choir End-Actor
@@ -193,26 +181,24 @@ Status NA
 			Verse sid pr.BothNowAndEver.text End-Verse
 			Media sid hoLI.OnlyBegotten.text End-Media
 			Hymn sid hoLI.OnlyBegotten.text media-off End-Hymn
-			Insert_section short_litany_after_antiphon2 End-Insert
+			Insert_section hLI.short_litany_after_antiphon2_deacon_choir End-Insert
 		End-Section
 	End-Section
 
-//	Section _03_Beatitudes__
-//	End-Section
-		
 	Section _04_Entrance__
-/*		Section choir
-			Title role desig sid euLI.Key0500.title End-Title
-			Insert_section EntrancePrayer End-Insert
-			Actor sid ac.Choir End-Actor
-			Title<Tdesig>sid ti.EntranceHymn</><Tmode>sid misc.Mode2</>End-Title
-			Insert_section Selector_Eisodikon.eisodikon_part1 End-Insert
-			Dialog sid hoLI.Antiphon22.text End-Dialog
-		End-Section */
 		Section clergy
-			Title role desig sid euLI.Key0500.title End-Title
+			Title<Tsmaller>sid euLI.Key0500.title</>End-Title
 			Insert_section EntrancePrayer End-Insert
 			Actor sid ac.Clergy End-Actor
+			Title<Tdesig>sid ti.EntranceHymn</><Tmode>sid misc.Mode2</>End-Title
+			Insert_section Selector_Eisodikon.eisodikon_complete End-Insert
+			Actor sid ac.Choir End-Actor
+			Insert_section Selector_Eisodikon.eisodikon_refrain End-Insert
+		End-Section
+		Section hierarch
+			Title<Tsmaller>sid euLI.Key0500.title</>End-Title
+			Insert_section EntrancePrayer End-Insert
+			Actor sid ac.Hierarch End-Actor
 			Title<Tdesig>sid ti.EntranceHymn</><Tmode>sid misc.Mode2</>End-Title
 			Insert_section Selector_Eisodikon.eisodikon_complete End-Insert
 			Actor sid ac.Choir End-Actor
@@ -222,29 +208,45 @@ Status NA
 	
 	Section _05_AfterEntranceHymns__
  		Section choir
+			Title<Tdesig>sid ti.HymnsAfterSmallEntrance</>End-Title
 			Actor sid ac.Choir End-Actor
 		End-Section
 		Section clergy
 			Title<Tdesig>sid ti.HymnsAfterSmallEntrance</>End-Title
 			Actor sid ac.Clergy End-Actor
 		End-Section
- 		Section kontakion
+		Section hierarch
+			Title<Tdesig>sid ti.HymnsAfterSmallEntrance</>End-Title
+			Actor sid ac.Hierarch End-Actor
+		End-Section
+ 		Section kontakion_clergy
  			Actor sid ac.Clergy End-Actor
  			Insert_section Selector_Kontakion.SeasonalKontakion End-Insert
  		End-Section
-		Section local
-			Title<Tdesig>sid cl.Apolytikion1.title</>End-Title
-			Title<Tmode>sid cl.Apolytikion1.mode</><Tmelody>sid cl.Apolytikion1.melody</>End-Title
-			Media sid cl.Apolytikion1.text End-Media
-			Hymn sid cl.Apolytikion1.text @ver media-off End-Hymn
+ 		Section kontakion_hierarch
+ 			Actor sid ac.Hierarch End-Actor
+ 			Insert_section Selector_Kontakion.SeasonalKontakion End-Insert
+ 		End-Section
+		Section local_rubric
+			Rubric sid ru.LocalChurchApolytikionSung sid ru.Then End-Rubric
+			Break line End_Break
+		End-Section
+		Section client_church_apolytikion
+			Rubric sid ru.LocalChurchApolytikionSung End-Rubric
+			Title role desig sid client_gr_GR_cog.cl.Apolytikion1.title End-Title
+			Title<Tmode>sid client_gr_GR_cog.cl.Apolytikion1.mode</><Tmelody>sid client_gr_GR_cog.cl.Apolytikion1.melody</>End-Title
+			Media sid client_gr_GR_cog.cl.Apolytikion1.text End-Media
+			Hymn sid client_gr_GR_cog.cl.Apolytikion1.text @ver media-off End-Hymn
 		End-Section
 	End-Section
 	
 	Section _06_Trisagion__
 		Section chrys
+			Title<Tsmaller>sid euLI.Key0600.title</>End-Title
 			Insert_section Selector_Trisagion.hChrysostom End-Insert
 		End-Section
 		Section basil
+			Title<Tsmaller>sid euLI.Key0600.title</>End-Title
 			Insert_section Selector_Trisagion.hBasil End-Insert
 		End-Section
 	End-Section	
@@ -432,7 +434,7 @@ Status NA
 					End-Section
 					Section entrance
 						Actor sid ac.Hierarch End-Actor
-						Dialog sid euLI.Key1112a.text sid cl.bishop0.name_c sid euLI.Key1112b.text<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+						Dialog sid euLI.Key1112a.text sid client_gr_GR_cog.cl.bishop0.name_c sid euLI.Key1112b.text<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 					End-Section
 					Section cherubic_part2
 						when-movable-cycle-day-is
@@ -607,17 +609,17 @@ Status NA
 						End-Section
 						Section hierarch
 							Actor sid ac.Hierarch End-Actor
-							Dialog sid euLI.Key1330a.text<r>sid cl.bishop0.rank sid cl.bishop0.name_p</>sid euLI.Key1330b.text End-Dialog				
+							Dialog sid euLI.Key1330a.text<r>sid client_gr_GR_cog.cl.bishop0.rank sid client_gr_GR_cog.cl.bishop0.name_p</>sid euLI.Key1330b.text End-Dialog				
 							Actor sid ac.Clergy End-Actor
-							Dialog sid euLI.Key1330a.text<r>sid cl.bishop1.rank sid cl.bishop1.name_p</>sid euLI.Key1330b.text End-Dialog				
-							Rubric sid cl.LI.R003 End-Rubric
+							Dialog sid euLI.Key1330a.text<r>sid client_gr_GR_cog.cl.bishop1.rank sid client_gr_GR_cog.cl.bishop1.name_p</>sid euLI.Key1330b.text End-Dialog				
+							Rubric sid client_gr_GR_cog.cl.LI.R003 End-Rubric
 							Dialog sid pr.res01.text End-Dialog	//added in 2022		
 						End-Section
 						Section all
 							Actor sid ac.Deacon End-Actor
 							Dialog sid euLI.Key1331.text End-Dialog				
 							Actor sid ac.Choir End-Actor
-							Rubric sid cl.LI.R003 End-Rubric
+							Rubric sid client_gr_GR_cog.cl.LI.R003 End-Rubric
 							Dialog sid pr.res01.text End-Dialog	//changed in 2022		
 						//	Dialog sid euLI.Key1332.text End-Dialog		
 						End-Section
@@ -688,7 +690,8 @@ Status NA
 						Reading sid pr.OurFather.text @ver End-Reading
 						Actor sid ac.Priest End-Actor
 						Dialog sid pr.exc20.text End-Dialog
-						Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+						Actor sid ac.Choir End-Actor
+						Dialog sid pr.res04.text End-Dialog
 						Actor sid ac.Hierarch End-Actor
 						Dialog sid pr.pet31.text End-Dialog
 						Dialog<i>sid misc.parenthesis.open sid pr.res05.text sid misc.parenthesis.close</>End-Dialog
@@ -699,7 +702,8 @@ Status NA
 						Para role inaudible sid euLI.Key1407.basil.text End-Para				
 						Actor sid ac.Priest End-Actor
 						Dialog sid euLI.Key1408.text End-Dialog				
-						Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+						Actor sid ac.Choir End-Actor
+						Dialog sid pr.res04.text End-Dialog
 						Title<Tdesig>sid euLI.Key1409.title</>End-Title
 						Actor sid ac.Hierarch<Trubric>sid ru.InALowVoice</>End-Actor 
 						Para role inaudible sid euLI.Key1409.text End-Para				
@@ -732,7 +736,8 @@ Status NA
 					Para role inaudible sid pr.BlessedIsOurGod.text End-Para
 					Actor sid ac.Hierarch End-Actor 
 					Dialog sid pr.AlwaysNow.text End-Dialog
-					Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+					Actor sid ac.Choir End-Actor
+					Dialog sid pr.res04.text End-Dialog
 				//	Actor sid ac.Choir End-Actor
 				//	Media sid euLI.Key1603.text End-Media
 				//	Hymn sid euLI.Key1603.text media-off End-Hymn
@@ -750,7 +755,8 @@ Status NA
 					Para role inaudible sid euLI.Key1606.basil.text End-Para				
 					Actor sid ac.Hierarch End-Actor 
 					Dialog sid euLI.Key1607.text End-Dialog	
-					Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+					Actor sid ac.Choir End-Actor
+					Dialog sid pr.res04.text End-Dialog
 				End-Section
 				Section ambo_prayer
 					Actor sid ac.Hierarch End-Actor
@@ -768,7 +774,8 @@ Status NA
 			//		otherwise use:
 			//			Dialog sid euLI.Key1702.text End-Dialog
 			//		end-when
-					Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+					Actor sid ac.Choir End-Actor
+					Dialog sid pr.res04.text End-Dialog
 				End-Section
 			End-Section
 			Section part2
@@ -784,369 +791,336 @@ Status NA
 				Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
 				Actor sid ac.Hierarch End-Actor
 				Dialog sid pr.pet37.text End-Dialog	
-				Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+				Actor sid ac.Choir End-Actor
+				Dialog sid pr.res04.text End-Dialog
 			End-Section
 		End-Section
-
 		Section chrys_default
 			Section part1
-				Section cherubic_upto_communion
-					Section aftergospel_cherubic
-						Section cherubic_part1
-							Insert_section AfterGospel.chrys End-Insert
-							Section block1
-								Title role desig sid euLI.Key1100.title End-Title
-								Actor sid ac.Choir End-Actor
-								Title role desig sid euLI.Key1102.title End-Title
-								Media sid euLI.Key1102.text End-Media
-								Hymn sid euLI.Key1102.text media-off sid euLI.Key1103.text End-Hymn	
-								Actor sid ac.Hierarch<Trubric>sid ru.InALowVoice</>End-Actor 
-								Title role smallcenter sid euLI.Key1101.title End-Title
-								Para role inaudible sid euLI.Key1101.text End-Para
-								Actor sid ac.Deacon End-Actor
-								Dialog sid euLI.Key1110.text<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog	
-								Actor sid ac.Deacon End-Actor
-								Dialog sid euLI.Key1124.text<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
-							End-Section
-						End-Section
-						Section greatentrance_bishop0
-							Actor sid ac.Hierarch End-Actor
-							Dialog sid euLI.Key1112a.text sid cl.bishop0.name_c sid euLI.Key1112b.text<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
-						End-Section
-						Section cherubic_part2
-							Actor sid ac.PriestOrDeacon End-Actor
-							Dialog sid euLI.Key1124.text<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
-							Actor sid ac.Hierarch End-Actor
-							Dialog sid euLI.Key1113.text End-Dialog
-							Actor sid ac.Choir End-Actor
-							Dialog sid pr.res04.text End-Dialog
-							Media sid euLI.Key1123.text End-Media
-							Hymn sid euLI.Key1123.text media-off End-Hymn
-						End-Section	
-					End-Section
-					Section litany_creed
-						Rubric sid euLI.Key1140.rubric End-Rubric
-						Title role desig sid euLI.Key1200.title End-Title
-						Media sid euLI.Key1200.text End-Media
-						Actor sid ac.Deacon End-Actor
-						Dialog sid pr.pet24.text End-Dialog
-						Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
-						Dialog sid euLI.Key1201.text End-Dialog
-						Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
-						Dialog sid pr.pet04.text End-Dialog
-						Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
-						Dialog sid pr.pet11.text End-Dialog 
-						Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
-						Dialog sid pr.pet12.text End-Dialog
-						Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
-						Dialog sid pr.pet25m.text End-Dialog
-						Dialog<i>sid misc.parenthesis.open sid pr.res02.text sid misc.parenthesis.close</>End-Dialog
-						Dialog sid pr.pet26.text End-Dialog
-						Dialog<i>sid misc.parenthesis.open sid pr.res02.text sid misc.parenthesis.close</>End-Dialog
-						Dialog sid pr.pet27.text End-Dialog
-						Dialog<i>sid misc.parenthesis.open sid pr.res02.text sid misc.parenthesis.close</>End-Dialog
-						Dialog sid pr.pet28.text End-Dialog
-						Dialog<i>sid misc.parenthesis.open sid pr.res02.text sid misc.parenthesis.close</>End-Dialog
-						Dialog sid pr.pet29.text End-Dialog
-						Dialog<i>sid misc.parenthesis.open sid pr.res02.text sid misc.parenthesis.close</>End-Dialog
-						Dialog sid pr.pet30.text End-Dialog
-						Dialog<i>sid misc.parenthesis.open sid pr.res02.text sid misc.parenthesis.close</>End-Dialog
-						Dialog sid pr.pet13.text End-Dialog
-						Dialog<i>sid misc.parenthesis.open sid pr.res03.text sid misc.parenthesis.close</>End-Dialog
-						Actor sid ac.Hierarch<Trubric>sid ru.InALowVoice</>End-Actor 
-						Title role smallcenter sid euLI.Key1202.title End-Title
-						Para role inaudible sid euLI.Key1202.text End-Para			
-						Actor sid ac.Hierarch End-Actor 
-						Dialog sid euLI.Key1203.text End-Dialog
+				Section aftergospel_cherubic
+					Section cherubic_part1
+						Rubric sid client_gr_GR_cog.cl.LI.R002 End-Rubric
+						Actor sid ac.Hierarch<r><Tsmaller>sid ru.InALowVoice</></>End-Actor 
+						Title<r><Tsmaller>sid euLI.Key1002.title</></>End-Title
+						Para role inaudible sid euLI.Key1002.text End-Para
+						Actor sid ac.Hierarch<r><Tsmaller>sid ru.Aloud</></>End-Actor 
+						Dialog sid euLI.Key1003.text End-Dialog
 						Actor sid ac.Choir End-Actor
 						Dialog sid pr.res04.text End-Dialog
+						Title<Tsmaller>sid euLI.Key1100.title</>End-Title
+						Actor sid ac.Choir End-Actor
+						Title<Tdesig>sid euLI.Key1102.title</>End-Title
+						Media sid euLI.Key1102.text End-Media
+						Hymn sid euLI.Key1102.text media-off sid euLI.Key1103.text End-Hymn	
+						Actor sid ac.Hierarch<r><Tsmaller>sid ru.InALowVoice</></>End-Actor 
+						Title<r><Tsmaller>sid euLI.Key1101.title</></>End-Title
+						Para role inaudible sid euLI.Key1101.text End-Para
+						Para role inaudible sid euLI.Key1102.text sid misc.separator.asterisk sid euLI.Key1103.text sid euLI.Key1123.text <r>sid ru.Thrice</>End-Para
+						Actor sid ac.Deacon End-Actor
+						Actor sid ac.Choir End-Actor
+						Dialog sid pr.res04.text End-Dialog
+						Actor sid ac.Deacon End-Actor
+						Actor sid ac.Choir End-Actor
+						Dialog sid pr.res04.text End-Dialog
+					End-Section
+					Section greatentrance_bishop0
+						Actor sid ac.Hierarch End-Actor
+						Dialog sid euLI.Key1112a.text sid client_gr_GR_cog.cl.bishop0.name_c sid euLI.Key1112b.text<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+					End-Section
+					Section cherubic_part2
+						Actor sid ac.PriestOrDeacon End-Actor
+						Dialog sid euLI.Key1124.text<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+						Actor sid ac.Hierarch End-Actor
+						Dialog sid euLI.Key1113.text End-Dialog
+						Actor sid ac.Choir End-Actor
+						Dialog sid pr.res04.text End-Dialog
+						Media sid euLI.Key1123.text End-Media
+						Hymn sid euLI.Key1123.text media-off End-Hymn
+					End-Section	
+				End-Section
+				Section litany_creed
+					Rubric sid euLI.Key1140.rubric End-Rubric
+					Insert_section LN.CompLitanyLI_deacon_compact End-Insert
+					Actor sid ac.Hierarch<r><Tsmaller>sid ru.InALowVoice</></>End-Actor 
+					Title<r><Tsmaller>sid euLI.Key1202.title</></>End-Title
+					Para role inaudible sid euLI.Key1202.text End-Para			
+					Actor sid ac.Hierarch<r><Tsmaller>sid ru.Aloud</></>End-Actor 
+					Dialog sid euLI.Key1203.text End-Dialog
+					Actor sid ac.Choir End-Actor
+					Dialog sid pr.res04.text End-Dialog
+					Title<Tsmaller>sid euLI.Key1204.title</>End-Title
+					Actor sid ac.Hierarch End-Actor
+					Dialog sid pr.pet31.text End-Dialog
+					Actor sid ac.Choir End-Actor
+					Dialog sid pr.res05.text End-Dialog
+					Actor sid ac.Deacon End-Actor
+					Dialog sid euLI.Key1204.text End-Dialog
+					Actor sid ac.Choir End-Actor
+					Media sid euLI.MM.Key1206.text End-Media
+					Hymn sid psLI.concelebration.kisshymn.v1.text End-Hymn
+					Actor sid ac.Deacon End-Actor
+					Dialog sid euLI.Key1208.text End-Dialog				
+					Actor sid ac.People End-Actor
+					Title<Tdesig>sid euLI.Key1209.title</>End-Title
+					Reading sid pr.Creed.text @ver End-Reading
+					Actor sid ac.Choir End-Actor
+					Dialog sid pr.res04.text End-Dialog
+				End-Section
+				Section anaphora
+					Title<Tsmaller>sid euLI.Key1300.title</>End-Title
+					Media sid euLI.Key1300.text End-Media
+					Actor sid ac.Deacon End-Actor
+					Dialog sid euLI.Key1301.text End-Dialog
+					Actor sid ac.Choir End-Actor
+					Dialog sid euLI.Key1302.text End-Dialog
+					Actor sid ac.Hierarch End-Actor
+					Rubric sid ru.BlessingWithTheCross End-Rubric
+					Dialog sid euLI.Key1303.text End-Dialog
+					Actor sid ac.Choir End-Actor
+					Dialog sid euLI.Key1304.text End-Dialog
+					Actor sid ac.Hierarch End-Actor
+					Dialog sid euLI.Key1305.text End-Dialog
+					Actor sid ac.Choir End-Actor
+					Dialog sid euLI.Key1306.text End-Dialog
+					Actor sid ac.Hierarch End-Actor
+					Dialog sid euLI.Key1307.text End-Dialog
+					Actor sid ac.Choir End-Actor
+					Dialog sid euLI.Key1308.text End-Dialog
+					Actor sid ac.Hierarch<r><Tsmaller>sid ru.InALowVoice</></>End-Actor 
+					Para role inaudible sid euLI.Key1309.text End-Para				
+					Actor sid ac.Priest End-Actor
+					Dialog sid euLI.Key1310.text End-Dialog
+					Actor sid ac.Choir End-Actor
+					Hymn sid euLI.Key1311.text End-Hymn	
+					Actor sid ac.Hierarch<r><Tsmaller>sid ru.InALowVoice</></>End-Actor 
+					Para role inaudible sid euLI.Key1312.text End-Para				
+					Actor sid ac.Hierarch<r><Tsmaller>sid ru.Aloud</></>End-Actor 
+					Dialog sid euLI.Key1313.text End-Dialog
+					Actor sid ac.Choir End-Actor
+					Dialog sid pr.res04.text End-Dialog
+					Actor sid ac.Hierarch<r><Tsmaller>sid ru.InALowVoice</></>End-Actor 
+					Para role inaudible sid euLI.Key1314.text End-Para				
+					Actor sid ac.Hierarch<r><Tsmaller>sid ru.Aloud</></>End-Actor 
+					Dialog sid euLI.Key1315.text End-Dialog
+					Actor sid ac.Choir End-Actor
+					Dialog sid pr.res04.text End-Dialog
+					Actor sid ac.Hierarch<r><Tsmaller>sid ru.InALowVoice</></>End-Actor 
+					Para role inaudible sid euLI.Key1316.text End-Para				
+					Actor sid ac.Hierarch<r><Tsmaller>sid ru.Aloud</></>End-Actor 
+					Dialog sid euLI.Key1317.text End-Dialog
+					Actor sid ac.Choir End-Actor
+					Media sid euLI.Key1318.text End-Media
+					Hymn sid euLI.Key1318.text media-off End-Hymn
+					Actor sid ac.Hierarch<r><Tsmaller>sid ru.InALowVoice</></>End-Actor 
+					Para role inaudible sid euLI.Key1319.text End-Para				
+					Para role inaudible<bnr>sid ac.Deacon</><r><Tsmaller>sid ru.InALowVoice</></>End-Para				
+					Para role inaudible sid euLI.Key1320.text End-Para				
+					Para role inaudible<bnr>sid ac.Hierarch</>End-Para
+					Para role inaudible sid euLI.Key1321.text End-Para				
+					Para role inaudible<bnr>sid ac.Deacon</>End-Para				
+					Para role inaudible sid pr.res04.text End-Para				
+					Para role inaudible sid euLI.Key1322.text End-Para				
+					Para role inaudible<bnr>sid ac.Hierarch</>End-Para
+					Para role inaudible sid euLI.Key1323.text End-Para				
+					Para role inaudible<bnr>sid ac.Deacon</>End-Para				
+					Para role inaudible sid pr.res04.text End-Para				
+					Para role inaudible sid euLI.Key1324.text End-Para				
+					Para role inaudible<bnr>sid ac.Hierarch</>End-Para
+					Para role inaudible sid euLI.Key1325.text End-Para				
+					Para role inaudible<bnr>sid ac.Deacon</>End-Para				
+					Para role inaudible sid pr.res10.text End-Para				
+					Para role inaudible<bnr>sid ac.Hierarch</>End-Para
+					Para role inaudible sid euLI.Key1326.text End-Para				
+					Actor sid ac.Hierarch<r><Tsmaller>sid ru.Aloud</></>End-Actor
+					Dialog sid euLI.Key1327.text End-Dialog				
+				End-Section
+				Section theotokoshymn
+					Actor sid ac.Choir End-Actor
+					Title<Tdesig>sid ti.HymnToTheotokos</>End-Title
+					Insert_section Selector_Megalynarion.Chrysostom End-Insert
+				End-Section
+				Section commemorations
+					Section saints
+						Actor sid ac.Hierarch<r><Tsmaller>sid ru.InALowVoice</></>End-Actor 
+						Para role inaudible sid euLI.Key1329.text End-Para				
+					End-Section
+					Section bishop0bishop1
+						Actor sid ac.Hierarch<r><Tsmaller>sid ru.Aloud</></>End-Actor 
+						Dialog sid euLI.Key1330a.text<r>sid client_gr_GR_cog.cl.bishop0.rank sid client_gr_GR_cog.cl.bishop0.name_sc</>sid euLI.Key1330b.text End-Dialog				
+						Actor sid ac.Choir End-Actor
+						Dialog sid pr.res01.text End-Dialog		
+						Actor sid ac.Clergy End-Actor
+						Dialog sid euLI.Key1330a.text<r>sid client_gr_GR_cog.cl.bishop1.rank sid client_gr_GR_cog.cl.bishop1.name_sc</>sid euLI.Key1330b.text End-Dialog				
+						Actor sid ac.Choir End-Actor
+						Dialog sid pr.res01.text End-Dialog		
+					End-Section
+					Section all
+						Actor sid ac.Deacon End-Actor
+						Dialog sid euLI.Key1331.text End-Dialog				
+						Actor sid ac.Choir End-Actor
+						Rubric sid client_gr_GR_cog.cl.LI.R003 End-Rubric
+						Dialog sid pr.res01.text End-Dialog	
+					End-Section
+					Section world
+						Actor sid ac.Hierarch<r><Tsmaller>sid ru.InALowVoice</></>End-Actor 
+						Para role inaudible sid euLI.Key1333.text End-Para				
+						Actor sid ac.Hierarch<r><Tsmaller>sid ru.Aloud</></>End-Actor 
+						Dialog sid euLI.Key1334.text End-Dialog		
+						Actor sid ac.Choir End-Actor
+						Dialog sid pr.res04.text End-Dialog
+						Actor sid ac.Hierarch End-Actor
+						Dialog sid euLI.Key1335.text End-Dialog		
+						Actor sid ac.Choir End-Actor
+						Dialog sid euLI.Key1336.text End-Dialog
+					End-Section
+				End-Section
+				Section litany_upto_communion
+					Section block1
+						Title<Tsmaller>sid euLI.Key1400.title</>End-Title
+						Actor sid ac.Deacon End-Actor
+						Dialog sid euLI.Key1401.text End-Dialog
+						Actor sid ac.Choir End-Actor
+						Dialog sid pr.res01.text End-Dialog
+						Actor sid ac.Deacon End-Actor
+						Dialog sid euLI.Key1402.text End-Dialog			
+						Actor sid ac.Choir End-Actor
+						Dialog sid pr.res01.text End-Dialog
+						Actor sid ac.Deacon End-Actor
+						Dialog sid euLI.Key1403.text End-Dialog			
+						Actor sid ac.Choir End-Actor
+						Dialog sid pr.res01.text End-Dialog
+					End-Section
+					Section block3
+						Dialog sid euLI.Key1404.text End-Dialog
+						Actor sid ac.Choir End-Actor	
+						Dialog sid pr.res03.text End-Dialog
+						Actor sid ac.Hierarch<r><Tsmaller>sid ru.InALowVoice</></>End-Actor 
+						Para role inaudible sid euLI.Key1405.text End-Para				
+						Actor sid ac.Priest<r><Tsmaller>sid ru.Aloud</></>End-Actor
+						Dialog sid euLI.Key1406.text End-Dialog
+						Actor sid ac.People End-Actor
+						Title<Tdesig>sid pr.OurFather.title</>End-Title
+						Reading sid pr.OurFather.text End-Reading
+						Actor sid ac.Priest End-Actor
+						Dialog sid pr.exc20.text End-Dialog
+						Actor sid ac.Choir End-Actor
+						Dialog sid pr.res04.text End-Dialog
+						Title<Tsmaller>sid euLI.Key1407.title</>End-Title
 						Actor sid ac.Hierarch End-Actor
 						Dialog sid pr.pet31.text End-Dialog
 						Actor sid ac.Choir End-Actor
 						Dialog sid pr.res05.text End-Dialog
 						Actor sid ac.Deacon End-Actor
-						Dialog sid euLI.Key1204.text End-Dialog
+						Dialog sid pr.pet32.text End-Dialog
 						Actor sid ac.Choir End-Actor
-				//		Media sid euLI.Key1206.text End-Media
-						Hymn sid psLI.concelebration.kisshymn.v1.text End-Hymn
-				//		Rubric sid ru.Or End-Rubric
-				//		Hymn sid euLI.Key1205.text End-Hymn
-						Actor sid ac.Deacon End-Actor
-						Dialog sid euLI.Key1208.text End-Dialog				
-						Actor sid ac.People End-Actor
-						Title role smallcenter sid euLI.Key1209.title End-Title
-						Reading sid pr.Creed.text @ver End-Reading
+						Dialog sid pr.res03.text End-Dialog
+						Actor sid ac.Hierarch<r><Tsmaller>sid ru.InALowVoice</></>End-Actor 
+						Para role inaudible sid euLI.Key1407.text End-Para				
+						Actor sid ac.Hierarch<r><Tsmaller>sid ru.Aloud</></>End-Actor
+						Dialog sid euLI.Key1408.text End-Dialog				
 						Actor sid ac.Choir End-Actor
 						Dialog sid pr.res04.text End-Dialog
-					End-Section
-					Section anaphora
-						Title role desig sid euLI.Key1300.title End-Title	
-						Media sid euLI.Key1300.text End-Media
+						Title<Tsmaller>sid euLI.Key1409.title</>End-Title
+						Actor sid ac.Hierarch<r><Tsmaller>sid ru.InALowVoice</></>End-Actor 
+						Para role inaudible sid euLI.Key1409.text End-Para				
 						Actor sid ac.Deacon End-Actor
-						Dialog sid euLI.Key1301.text End-Dialog
-						Actor sid ac.Choir End-Actor
-						Dialog sid euLI.Key1302.text End-Dialog
+						Dialog sid pr.exc19.text End-Dialog
 						Actor sid ac.Hierarch End-Actor
-						Rubric sid ru.BlessingWithTheCross End-Rubric
-						Dialog sid euLI.Key1303.text End-Dialog
+						Dialog sid euLI.Key1410.text End-Dialog				
 						Actor sid ac.Choir End-Actor
-						Dialog sid euLI.Key1304.text End-Dialog
-						Actor sid ac.Hierarch End-Actor
-						Dialog sid euLI.Key1305.text End-Dialog
-						Actor sid ac.Choir End-Actor
-						Dialog sid euLI.Key1306.text End-Dialog
-						Actor sid ac.Hierarch End-Actor
-						Dialog sid euLI.Key1307.text End-Dialog
-						Actor sid ac.Choir End-Actor
-						Dialog sid euLI.Key1308.text End-Dialog
-						Actor sid ac.Hierarch<Trubric>sid ru.InALowVoice</>End-Actor 
-						Para role inaudible sid euLI.Key1309.text End-Para				
-						Actor sid ac.Priest End-Actor
-						Dialog sid euLI.Key1310.text End-Dialog
-						Actor sid ac.Choir End-Actor
-						Hymn sid euLI.Key1311.text End-Hymn	
-						Actor sid ac.Hierarch<Trubric>sid ru.InALowVoice</>End-Actor 
-						Para role inaudible sid euLI.Key1312.text End-Para				
-					//	Actor sid ac.Hierarch End-Actor
-						Rubric sid ru.Aloud End-Rubric
-						Dialog sid euLI.Key1313.text End-Dialog
-						Actor sid ac.Choir End-Actor
-						Dialog sid pr.res04.text End-Dialog
-						Actor sid ac.Hierarch<Trubric>sid ru.InALowVoice</>End-Actor 
-						Para role inaudible sid euLI.Key1314.text End-Para				
-					//	Actor sid ac.Hierarch End-Actor
-						Rubric sid ru.Aloud End-Rubric
-						Dialog sid euLI.Key1315.text End-Dialog
-						Actor sid ac.Choir End-Actor
-						Dialog sid pr.res04.text End-Dialog
-						Actor sid ac.Hierarch<Trubric>sid ru.InALowVoice</>End-Actor 
-						Para role inaudible sid euLI.Key1316.text End-Para				
-					//	Actor sid ac.Hierarch End-Actor
-						Rubric sid ru.Aloud End-Rubric
-						Dialog sid euLI.Key1317.text End-Dialog
-						Actor sid ac.Choir End-Actor
-						Media sid euLI.Key1318.text End-Media
-						Hymn sid euLI.Key1318.text media-off End-Hymn
-						Actor sid ac.Hierarch<Trubric>sid ru.InALowVoice</>End-Actor 
-						Para role inaudible sid euLI.Key1319.text End-Para				
-						Para role inaudible sid euLI.Key1321.text End-Para
-						Actor sid ac.Deacon End-Actor
-						Para role inaudible sid pr.res04.text End-Para				
-						Actor sid ac.Hierarch End-Actor 
-						Para role inaudible sid euLI.Key1323.text End-Para
-						Actor sid ac.Deacon End-Actor
-						Para role inaudible sid pr.res04.text End-Para				
-						Actor sid ac.Hierarch End-Actor 
-						Para role inaudible sid euLI.Key1325.text End-Para
-						Actor sid ac.Deacon End-Actor
-						Para role inaudible sid pr.res10.text End-Para				
-						Actor sid ac.Hierarch End-Actor 
-						Para role inaudible sid euLI.Key1326.text End-Para				
-						Actor sid ac.Hierarch<Trubric>sid ru.Aloud</>End-Actor 
-						Dialog sid euLI.Key1327.text End-Dialog				
-					End-Section
-					Section theotokoshymn
-						Actor sid ac.Choir End-Actor
-						Title<Tdesig>sid ti.HymnToTheotokos</>End-Title
-						Insert_section Selector_Megalynarion.Chrysostom End-Insert
-					End-Section
-					Section commemorations
-						Section saints
-							Actor sid ac.Hierarch<Trubric>sid ru.InALowVoice</>End-Actor 
-							Para role inaudible sid euLI.Key1329.text End-Para				
-						End-Section
- 						Section bishop0bishop1
-							Actor sid ac.Hierarch End-Actor
-							Dialog sid euLI.Key1330a.text<r>sid cl.bishop0.rank sid cl.bishop0.name_sc</>sid euLI.Key1330b.text End-Dialog				
-							Actor sid ac.Choir End-Actor
-							Dialog sid pr.res01.text End-Dialog	//added in 2022		
-							Actor sid ac.Clergy End-Actor
-							Dialog sid euLI.Key1330a.text<r>sid cl.bishop1.rank sid cl.bishop1.name_sc</>sid euLI.Key1330b.text End-Dialog				
-							Actor sid ac.Choir End-Actor
-							Dialog sid pr.res01.text End-Dialog	//added in 2022		
-						End-Section
-						Section all
-							Actor sid ac.Deacon End-Actor
-							Dialog sid euLI.Key1331.text End-Dialog				
-							Actor sid ac.Choir End-Actor
-							Rubric sid cl.LI.R003 End-Rubric
-							Dialog sid pr.res01.text End-Dialog	//changed in 2022		
-						//	Dialog sid euLI.Key1332.text End-Dialog		
-						End-Section
-						Section world
-							Actor sid ac.Hierarch<Trubric>sid ru.InALowVoice</>End-Actor 
-							Para role inaudible sid euLI.Key1333.text End-Para				
-							Actor sid ac.Hierarch<Trubric>sid ru.Aloud</>End-Actor 
-							Dialog sid euLI.Key1334.text End-Dialog		
-							Actor sid ac.Choir End-Actor
-							Dialog sid pr.res04.text End-Dialog
-							Actor sid ac.Hierarch End-Actor
-							Dialog sid euLI.Key1335.text End-Dialog		
-							Actor sid ac.Choir End-Actor
-							Dialog sid euLI.Key1336.text End-Dialog
-						End-Section
-					End-Section
-					Section litany_upto_communion
-						Section block1
-							Actor sid ac.Deacon End-Actor
-							Dialog sid euLI.Key1401.text End-Dialog
-							Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
-							Dialog sid euLI.Key1402.text End-Dialog			
-							Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
-							Dialog sid euLI.Key1403.text End-Dialog			
-							Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
-						End-Section
-					/* 	Section block2
-						 	Break line End_Break
-							Title role bmc_collapse sid template.titles_gr_GR_cog.clps.additionalpetitions.top End-Title
-								Rubric sid euLI.Key1404.rubric End-Rubric
-								Para role inaudible sid pr.pet11.text End-Para 
-								Para role inaudible<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Para
-								Para role inaudible sid pr.pet12.text End-Para
-								Para role inaudible<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Para
-								Para role inaudible sid pr.pet25m.text End-Para
-								Para role inaudible<i>sid misc.parenthesis.open sid pr.res02.text sid misc.parenthesis.close</>End-Para
-								Para role inaudible sid pr.pet26.text End-Para
-								Para role inaudible<i>sid misc.parenthesis.open sid pr.res02.text sid misc.parenthesis.close</>End-Para
-								Para role inaudible sid pr.pet27.text End-Para
-								Para role inaudible<i>sid misc.parenthesis.open sid pr.res02.text sid misc.parenthesis.close</>End-Para
-								Para role inaudible sid pr.pet28.text End-Para
-								Para role inaudible<i>sid misc.parenthesis.open sid pr.res02.text sid misc.parenthesis.close</>End-Para
-								Para role inaudible sid pr.pet29.text End-Para
-								Para role inaudible<i>sid misc.parenthesis.open sid pr.res02.text sid misc.parenthesis.close</>End-Para
-								Para role inaudible sid pr.pet30.text End-Para
-								Para role inaudible<i>sid misc.parenthesis.open sid pr.res02.text sid misc.parenthesis.close</>End-Para
-							Title role emc_collapse sid template.titles_gr_GR_cog.clps.additionalpetitions.bottom End-Title
-							Break line End_Break
-						End-Section */
-						Section block3
-							Dialog sid euLI.Key1404.text End-Dialog			
-							Dialog<i>sid misc.parenthesis.open sid pr.res03.text sid misc.parenthesis.close</>End-Dialog
-							Actor sid ac.Hierarch<Trubric>sid ru.InALowVoice</>End-Actor 
-							Para role inaudible sid euLI.Key1405.text End-Para				
-							Actor sid ac.Hierarch<Trubric>sid ru.Aloud</>End-Actor 
-							Dialog sid euLI.Key1406.text End-Dialog
-							Actor sid ac.People End-Actor
-							Title role desig sid ti.LordsPrayer.uc End-Title
-							Reading sid pr.OurFather.text @ver End-Reading
-							Actor sid ac.Priest End-Actor
-							Dialog sid pr.exc20.text End-Dialog
-							Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
-							Actor sid ac.Hierarch End-Actor
-							Dialog sid pr.pet31.text End-Dialog
-							Dialog<i>sid misc.parenthesis.open sid pr.res05.text sid misc.parenthesis.close</>End-Dialog
-							Actor sid ac.Deacon End-Actor
-							Dialog sid pr.pet32.text End-Dialog
-							Dialog<i>sid misc.parenthesis.open sid pr.res03.text sid misc.parenthesis.close</>End-Dialog
-							Actor sid ac.Hierarch<Trubric>sid ru.InALowVoice</>End-Actor 
-							Para role inaudible sid euLI.Key1407.text End-Para				
-							Actor sid ac.Hierarch<Trubric>sid ru.Aloud</>End-Actor 
-							Dialog sid euLI.Key1408.text End-Dialog				
-							Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
-							Title<Tdesig>sid euLI.Key1409.title</>End-Title
-							Actor sid ac.Hierarch<Trubric>sid ru.InALowVoice</>End-Actor 
-							Para role inaudible sid euLI.Key1409.text End-Para				
-							Actor sid ac.Deacon End-Actor
-							Dialog sid pr.exc19.text End-Dialog
-							Actor sid ac.Hierarch End-Actor
-							Dialog sid euLI.Key1410.text End-Dialog				
-							Actor sid ac.Choir End-Actor
-							Media sid euLI.Key1411.text End-Media
-							Hymn sid euLI.Key1411.text media-off End-Hymn
-						End-Section
+						Media sid euLI.Key1411.text End-Media
+						Hymn sid euLI.Key1411.text media-off End-Hymn
 					End-Section
 				End-Section
-			//	Insert_section PreCommunionPrayers End-Insert
-				Section communionhymn
-					Actor sid ac.Choir End-Actor
-					Insert_section Selector_CommunionHymn.Chrysostom End-Insert
-				End-Section
-				Insert_section Communion End-Insert
+			End-Section
+			Insert_section hLI.PreCommunionPrayers End-Insert
+			Section communionhymn
+				Actor sid ac.Choir End-Actor
+				Insert_section Selector_CommunionHymn.Chrysostom End-Insert
+			End-Section
+			Section part2
+				Insert_section hLI.call_to_communion End-Insert
+				Insert_section hLI.hymns_during_communion End-Insert
 				Section after_communion
 					Actor sid ac.Hierarch End-Actor
 					Dialog sid euLI.Key1529.text End-Dialog
 					Actor sid ac.Choir End-Actor
 					Title<Tdesig>sid eu.lichrysbasil_gr_GR_cog.euLI.Key1530.title</>End-Title
 					Insert_section Selector_AfterCommunion.Chrysostom End-Insert
-				//	Actor sid ac.Hierarch<Trubric>sid ru.InALowVoice</>End-Actor 
-				//	Para role inaudible sid euLI.Key1525.text End-Para
 					Rubric sid euLI.Key1621.rubric End-Rubric
-					Actor sid ac.Deacon<Trubric>sid ru.InALowVoice</>End-Actor
+					Actor sid ac.Deacon<r><Tsmaller>sid ru.InALowVoice</></>End-Actor
 					Para role inaudible sid euLI.Key1601.text End-Para	
-					Rubric sid euLI.Key1622.rubric End-Rubric
-					Actor sid ac.Hierarch<Trubric>sid ru.InALowVoice</>End-Actor 
+					Actor sid ac.Hierarch<r><Tsmaller>sid ru.InALowVoice</></>End-Actor
 					Para role inaudible sid euLI.Key1602.text<r>sid ru.Thrice</> End-Para
 					Rubric sid euLI.Key1623.rubric End-Rubric
 					Actor sid ac.Hierarch<Trubric>sid ru.InALowVoice</>End-Actor 
 					Para role inaudible sid pr.BlessedIsOurGod.text End-Para
 					Rubric sid euLI.Key1624.rubric End-Rubric
-					Actor sid ac.Priest<Trubric>sid ru.Aloud</>End-Actor 
+					Actor sid ac.Priest End-Actor 
 					Dialog sid pr.AlwaysNow.text End-Dialog
 					Rubric sid euLI.Key1625.rubric End-Rubric
 					Actor sid ac.Choir End-Actor
-					Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
-					Rubric sid euLI.Key1626.rubric End-Rubric
+					Dialog sid pr.res04.text End-Dialog
+					Title<Tsmaller>sid euLI.Key1604.title</>End-Title
 					Actor sid ac.Deacon End-Actor
 					Dialog sid euLI.Key1604.text End-Dialog
-					Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
+					Actor sid ac.Choir End-Actor
+					Dialog sid pr.res01.text End-Dialog
+					Actor sid ac.Deacon End-Actor
 					Dialog sid pr.pet12.text End-Dialog	
-					Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
+					Actor sid ac.Choir End-Actor
+					Dialog sid pr.res01.text End-Dialog
+					Actor sid ac.Deacon End-Actor
 					Dialog sid euLI.Key1605.text End-Dialog	
-					Dialog<i>sid misc.parenthesis.open sid pr.res03.text sid misc.parenthesis.close</>End-Dialog
-					Rubric sid euLI.Key1627.rubric End-Rubric
-					Actor sid ac.Hierarch<Trubric>sid ru.InALowVoice</>End-Actor 
-					Title role smallcenter sid euLI.Key1606.title End-Title
+					Actor sid ac.Choir End-Actor
+					Dialog sid pr.res03.text End-Dialog
+					Actor sid ac.Priest<r><Tsmaller>sid ru.InALowVoice</></>End-Actor 
+					Title<r><Tsmaller>sid euLI.Key1606.title</></>End-Title
 					Para role inaudible sid euLI.Key1606.text End-Para				
-					Actor sid ac.Hierarch<Trubric>sid ru.Aloud</>End-Actor 
+					Actor sid ac.Priest<r><Tsmaller>sid ru.Aloud</></>End-Actor 
 					Dialog sid euLI.Key1607.text End-Dialog	
-					Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
-					Rubric sid euLI.Key1628.rubric End-Rubric
+					Actor sid ac.Choir End-Actor
+					Dialog sid pr.res04.text End-Dialog
 				End-Section
 				Section ambo_prayer
+					Title<Tsmaller>sid euLI.Key1700.title</>End-Title
 					Actor sid ac.Hierarch End-Actor
 					Dialog sid euLI.Key1701.text End-Dialog
 					Actor sid ac.Deacon End-Actor
 					Dialog sid pr.pet00.text End-Dialog
-					Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
-					Rubric sid euLI.Key1720.rubric End-Rubric
+					Actor sid ac.Choir End-Actor
+					Dialog sid pr.res01.text End-Dialog
 					Actor sid ac.Priest End-Actor
-					Title role smallcenter sid euLI.Key1702.title End-Title
+					Title<r><Tsmaller>sid euLI.Key1702.title</></>End-Title
 					Dialog sid euLI.Key1702.text End-Dialog
+					Actor sid ac.Choir End-Actor
+					Dialog sid pr.res04.text End-Dialog
+						when-movable-cycle-day-is
+							71, 72, 73, 74, 75, 76, 77, 109 use:
+								Title role desig sid euLI.Key1703_pascha.text End-Title
+								Title role mode sid pe.d071_gr_GR_cog.peLI.AfterCommunion2.mode End-Title
+								Hymn sid pe.d071_gr_GR_cog.peLI.AfterCommunion2.text<r>sid ru.Thrice media-off</>End-Hymn	
+							otherwise use:
+								Media sid euLI.Key1703.text End-Media
+								Hymn sid liturgical.verses_gr_GR_cog.psLI.aftercommunion.v1.text @ver<r>sid ru.Thrice media-off</>End-Hymn
+						end-when
+					Title<r><Tsmaller>sid euLI.Key1704.title</></>End-Title
+					Actor sid ac.Hierarch<Trubric>sid ru.InALowVoice</>End-Actor 
+					Para role inaudible sid euLI.Key1704.text End-Para
 				End-Section
 			End-Section
-			Section part2
-				Actor sid ac.Choir End-Actor
-				Dialog sid pr.res04.text End-Dialog
-				Section hymn
-					when-movable-cycle-day-is
-						71, 72, 73, 74, 75, 76, 77, 109 use:
-							Title role desig sid euLI.Key1703_pascha.text End-Title
-							Title role mode sid pe.d071_gr_GR_cog.peLI.AfterCommunion2.mode End-Title
-							Hymn sid pe.d071_gr_GR_cog.peLI.AfterCommunion2.text<r>sid ru.Thrice media-off</>End-Hymn	
-						otherwise use:
-							Media sid euLI.Key1703.text End-Media
-							Hymn sid psLI.aftercommunion.v1.text @ver<r>sid ru.Thrice media-off</>End-Hymn
-					end-when
-				End-Section
-				Rubric sid euLI.Key1721.rubric End-Rubric
-				Actor sid ac.Hierarch<Trubric>sid ru.InALowVoice</>End-Actor 
-				Para role inaudible sid euLI.Key1704.text End-Para
-			End-Section	
-			Section part3
-			//	Rubric sid euLI.Key1722.rubric End-Rubric
-				Actor sid ac.Deacon End-Actor
-				Dialog sid pr.pet00.text End-Dialog		
-				Actor sid ac.Choir End-Actor
-				Dialog sid pr.res01.text End-Dialog
-				Actor sid ac.Hierarch End-Actor
-				Dialog sid pr.pet37.text End-Dialog	
-				Actor sid ac.Choir End-Actor
-				Dialog sid pr.res04.text End-Dialog
-				Title<Tdesig>sid euLI.Key1700.title</>End-Title
-				Rubric sid euLI.Key1723.rubric End-Rubric
-			End-Section	
 		End-Section
-
+		Section chrys_mealt1
+			Insert_section chrys_default.part1 End-Insert
+			Insert_section PreCommunionPrayers End-Insert
+			//Para role nodisplay sid properties_gr_GR_cog.dsection End-Para
+			Section communionhymn
+				Actor sid ac.Choir End-Actor
+				Insert_section Selector_CommunionHymn.mealt1 End-Insert
+			End-Section
+			//Para role nodisplay sid properties_gr_GR_cog.end_dsection End-Para
+			Insert_section chrys_default.part2 End-Insert
+		End-Section
 		Section chrys_consecration
 			Section part1
 				Section cherubic_upto_communion
@@ -1193,25 +1167,20 @@ Status NA
 							Hymn sid tr.d071_gr_GR_cog.trLI.CherubicHymnPart2.text @ver media-off End-Hymn
 						End-Section	
 					End-Section
-					Insert_section chrys_default.part1.cherubic_upto_communion.litany_creed End-Insert
-					Insert_section chrys_default.part1.cherubic_upto_communion.anaphora End-Insert
-					Insert_section chrys_default.part1.cherubic_upto_communion.theotokoshymn End-Insert
-					Insert_section chrys_default.part1.cherubic_upto_communion.commemorations End-Insert
-					Insert_section chrys_default.part1.cherubic_upto_communion.litany_upto_communion End-Insert
+					Insert_section chrys_default.part1.litany_creed End-Insert
+					Insert_section chrys_default.part1.anaphora End-Insert
+					Insert_section chrys_default.part1.theotokoshymn End-Insert
+					Insert_section chrys_default.part1.commemorations End-Insert
+					Insert_section chrys_default.part1.litany_upto_communion End-Insert
 				End-Section
-			//	Insert_section PreCommunionPrayers End-Insert
+				Insert_section hLI.PreCommunionPrayers End-Insert
 				Section communionhymn
 					Actor sid ac.Choir End-Actor
 					Insert_section Selector_CommunionHymn.Chrysostom End-Insert
 				End-Section
-				Insert_section Communion End-Insert
-				Insert_section chrys_default.part1.after_communion End-Insert
-				Insert_section chrys_default.part1.ambo_prayer End-Insert
+				Insert_section chrys_default.part2 End-Insert
 			End-Section
-			Insert_section chrys_default.part2 End-Insert
-			Insert_section chrys_default.part3 End-Insert
 		End-Section
-
 		Section chrys_ordination__
 			Section bishop__
 				Section part1_ordination
@@ -1238,9 +1207,9 @@ Status NA
 					Rubric sid euORD.EP.r11 End-Rubric
 					Actor sid ac.Hierarch End-Actor
 				//	Dialog sid euORD.EP.p412.text End-Dialog
-					Dialog sid euORD.EP.p412a.text sid cl.euORD.EP.p412a sid euORD.EP.p412b.text End-Dialog
+					Dialog sid euORD.EP.p412a.text sid client_gr_GR_cog.cl.euORD.EP.p412a sid euORD.EP.p412b.text End-Dialog
 				//	Dialog sid euORD.EP.p414.text End-Dialog
-					Dialog sid euORD.EP.p414a.text sid cl.euORD.EP.p414a sid euORD.EP.p414b.text sid cl.euORD.EP.p414b sid euORD.EP.p414c.text End-Dialog
+					Dialog sid euORD.EP.p414a.text sid client_gr_GR_cog.cl.euORD.EP.p414a sid euORD.EP.p414b.text sid client_gr_GR_cog.cl.euORD.EP.p414b sid euORD.EP.p414c.text End-Dialog
 					Rubric sid euORD.EP.r12 End-Rubric
 					Rubric sid euORD.EP.r13 End-Rubric
 					Rubric sid euORD.EP.r16 End-Rubric
@@ -1252,22 +1221,21 @@ Status NA
 					Rubric sid euORD.EP.r18 End-Rubric
 				End-Section
 				Section part2_theotokoshymn
-					Insert_section chrys_default.part1.cherubic_upto_communion.aftergospel_cherubic End-Insert
-					Insert_section chrys_default.part1.cherubic_upto_communion.litany_creed End-Insert
-					Insert_section chrys_default.part1.cherubic_upto_communion.anaphora End-Insert
-					Insert_section chrys_default.part1.cherubic_upto_communion.theotokoshymn End-Insert
-					Insert_section chrys_default.part1.cherubic_upto_communion.commemorations End-Insert
-					Insert_section chrys_default.part1.cherubic_upto_communion.litany_upto_communion End-Insert
+					Insert_section chrys_default.part1.aftergospel_cherubic End-Insert
+					Insert_section chrys_default.part1.litany_creed End-Insert
+					Insert_section chrys_default.part1.anaphora End-Insert
+					Insert_section chrys_default.part1.theotokoshymn End-Insert
+					Insert_section chrys_default.part1.commemorations End-Insert
+					Insert_section chrys_default.part1.litany_upto_communion End-Insert
 					Insert_section PreCommunionPrayers End-Insert
 				End-Section
 				Section part3_communionhymn
-					Insert_section chrys_default.part1.communionhymn End-Insert
-					Insert_section Communion End-Insert
+					Insert_section chrys_default.communionhymn End-Insert
+					Insert_section hLI.call_to_communion End-Insert
 				End-Section
 				Section part4_aftercommunion_staff
-					Insert_section chrys_default.part1.after_communion End-Insert
-					Insert_section chrys_default.part1.ambo_prayer End-Insert
-					Insert_section chrys_default.part2 End-Insert
+					Insert_section chrys_default.part2.after_communion End-Insert
+					Insert_section chrys_default.part2.ambo_prayer End-Insert
 					Rubric sid euORD.EP.r19 End-Rubric
 					Actor sid ac.Hierarch End-Actor
 					Dialog sid euORD.EP.p417.text End-Dialog
@@ -1282,11 +1250,11 @@ Status NA
 				End-Section	
 			End-Section
 			Section deacon
-				Insert_section chrys_default.part1.cherubic_upto_communion.aftergospel_cherubic End-Insert
-				Insert_section chrys_default.part1.cherubic_upto_communion.litany_creed End-Insert
-				Insert_section chrys_default.part1.cherubic_upto_communion.anaphora End-Insert
-				Insert_section chrys_default.part1.cherubic_upto_communion.theotokoshymn End-Insert
-				Insert_section chrys_default.part1.cherubic_upto_communion.commemorations End-Insert
+				Insert_section chrys_default.part1.aftergospel_cherubic End-Insert
+				Insert_section chrys_default.part1.litany_creed End-Insert
+				Insert_section chrys_default.part1.anaphora End-Insert
+				Insert_section chrys_default.part1.theotokoshymn End-Insert
+				Insert_section chrys_default.part1.commemorations End-Insert
 				Break line End_Break
 				Section ordination
 					Title role desig sid euORD.DE.p200.title End-Title
@@ -1323,7 +1291,7 @@ Status NA
 					Dialog sid pr.pet01.text End-Dialog
 					Dialog sid pr.pet02.text End-Dialog
 					Dialog sid pr.pet03.text End-Dialog
-					Dialog sid pr.petOrdination01a.text sid cl.bishop1.rank sid cl.bishop1.name_c sid pr.petOrdination01b.text End-Dialog
+					Dialog sid pr.petOrdination01a.text sid client_gr_GR_cog.cl.bishop1.rank sid client_gr_GR_cog.cl.bishop1.name_c sid pr.petOrdination01b.text End-Dialog
 					Dialog sid pr.petOrdination02_deacon.text End-Dialog
 					Dialog sid pr.petOrdination03_deacon.text End-Dialog
 					Dialog sid pr.pet08.text End-Dialog
@@ -1343,17 +1311,14 @@ Status NA
 					Rubric sid euORD.DE.r16 End-Rubric
 				End-Section
 				Break line End_Break
-				Insert_section chrys_default.part1.cherubic_upto_communion.litany_upto_communion End-Insert
+				Insert_section chrys_default.part1.litany_upto_communion End-Insert
 			//	Insert_section PreCommunionPrayers End-Insert
-				Insert_section chrys_default.part1.communionhymn End-Insert
+				Insert_section chrys_default.communionhymn End-Insert
 				Insert_section Communion End-Insert
-				Insert_section chrys_default.part1.after_communion End-Insert
-				Insert_section chrys_default.part1.ambo_prayer End-Insert
-				Insert_section chrys_default.part2 End-Insert
-				Insert_section chrys_default.part3 End-Insert
+				Insert_section chrys_default.part2.after_communion End-Insert
+				Insert_section chrys_default.part2.ambo_prayer End-Insert
 			End-Section
 		End-Section
-
 	End-Section
 	
 	Section _09_Dismissal__
@@ -1361,25 +1326,25 @@ Status NA
 			when-movable-cycle-day-is
 				69 use:
 					Section holythursday
+						Insert_section blessing_before_dismissal End-Insert
 						Actor sid ac.Hierarch End-Actor
-						Dialog sid dis00 sid dis00.holythursday sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 sid dis10 sid dis88 End-Dialog
+						Dialog sid dis00 sid dis00.holythursday sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid client_gr_GR_cog.cl.localpatronsaint1.dismissal</>sid dis09 sid dis10 sid dis88 End-Dialog
 						Actor sid ac.Choir End-Actor
 						Media sid euLI.Key1706h.text End-Media
 						Hymn sid euLI.Key1706h.text media-off End-Hymn
 						Actor sid ac.Hierarch End-Actor
 						Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
-						Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+						Actor sid ac.Choir End-Actor
+						Dialog sid pr.res04.text End-Dialog
 						Actor sid ac.Clergy End-Actor
 						Dialog sid pr.ThroughThePrayers_bishop.text End-Dialog
-						Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+						Actor sid ac.Choir End-Actor
+						Dialog sid pr.res04.text End-Dialog
 					End-Section
 				71, 72, 73, 74, 75, 76, 77, 109 use:
 					Section pascha
-						Section intro
-							Actor sid ac.Deacon End-Actor
-							Dialog sid pe.d071_gr_GR_cog.peMA.Troparion.text media-off End-Dialog
-							Dialog sid pr.res01.text<r>sid ru.Thrice</>sid pr.Bless_father.text End-Dialog
-						End-Section
+						Insert_section blessing_before_dismissal End-Insert
+						Insert_section dismissal_intro_paschal End-Insert
 						Actor sid ac.Hierarch End-Actor
 						Insert_section Selector_Dismissals.Com_Yes.part1 End-Insert
 						Actor sid ac.Choir End-Actor
@@ -1390,7 +1355,8 @@ Status NA
 					End-Section
 				78 thru 108 use:
 					Section afterpascha
-						Insert_section pascha.intro End-Insert
+						Insert_section blessing_before_dismissal End-Insert
+						Insert_section dismissal_intro_paschal End-Insert
 						Actor sid ac.Hierarch End-Actor
 						Insert_section Selector_Dismissals.Com_Yes.part1 End-Insert
 						Actor sid ac.Choir End-Actor
@@ -1401,6 +1367,7 @@ Status NA
 					End-Section
 				otherwise use:
 					Section notpaschal
+						Insert_section blessing_before_dismissal End-Insert
 						Actor sid ac.Hierarch End-Actor
 						Insert_section Selector_Dismissals.Com_Yes.part1 End-Insert
 						Actor sid ac.Choir End-Actor
@@ -1408,10 +1375,12 @@ Status NA
 						Hymn sid euLI.Key1706h.text media-off End-Hymn
 						Actor sid ac.Hierarch End-Actor
 						Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
-						Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+						Actor sid ac.Choir End-Actor
+						Dialog sid pr.res04.text End-Dialog
 						Actor sid ac.Clergy End-Actor
 						Dialog sid pr.ThroughThePrayers_bishop.text End-Dialog
-						Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+						Actor sid ac.Choir End-Actor
+						Dialog sid pr.res04.text End-Dialog
 					End-Section
 			end-when
 		End-Section
@@ -1419,11 +1388,8 @@ Status NA
 			when-movable-cycle-day-is
 				71, 72, 73, 74, 75, 76, 77, 109 use:
 					Section pascha
-						Section intro
-							Actor sid ac.Deacon End-Actor
-							Dialog sid pe.d071_gr_GR_cog.peMA.Troparion.text media-off End-Dialog
-							Dialog sid pr.res01.text<r>sid ru.Thrice</>sid pr.Bless_father.text End-Dialog
-						End-Section
+						Insert_section blessing_before_dismissal End-Insert
+						Insert_section dismissal_intro_paschal End-Insert
 						Actor sid ac.Hierarch End-Actor
 						Insert_section Selector_Dismissals.mealt1_Com_Yes.part1 End-Insert
 						Actor sid ac.Choir End-Actor
@@ -1434,7 +1400,8 @@ Status NA
 					End-Section
 				78 thru 108 use:
 					Section afterpascha
-						Insert_section pascha.intro End-Insert
+						Insert_section blessing_before_dismissal End-Insert
+						Insert_section dismissal_intro_paschal End-Insert
 						Actor sid ac.Hierarch End-Actor
 						Insert_section Selector_Dismissals.mealt1_Com_Yes.part1 End-Insert
 						Actor sid ac.Choir End-Actor
@@ -1445,6 +1412,7 @@ Status NA
 					End-Section
 				otherwise use:
 					Section notpaschal
+						Insert_section blessing_before_dismissal End-Insert
 						Actor sid ac.Hierarch End-Actor
 						Insert_section Selector_Dismissals.mealt1_Com_Yes.part1 End-Insert
 						Actor sid ac.Choir End-Actor
@@ -1452,10 +1420,12 @@ Status NA
 						Hymn sid euLI.Key1706h.text media-off End-Hymn
 						Actor sid ac.Hierarch End-Actor
 						Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
-						Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+						Actor sid ac.Choir End-Actor
+						Dialog sid pr.res04.text End-Dialog
 						Actor sid ac.Clergy End-Actor
 						Dialog sid pr.ThroughThePrayers_bishop.text End-Dialog
-						Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+						Actor sid ac.Choir End-Actor
+						Dialog sid pr.res04.text End-Dialog
 					End-Section
 			end-when
 		End-Section
@@ -1463,11 +1433,8 @@ Status NA
 			when-movable-cycle-day-is
 				71, 72, 73, 74, 75, 76, 77, 109 use:
 					Section pascha
-						Section intro
-							Actor sid ac.Deacon End-Actor
-							Dialog sid pe.d071_gr_GR_cog.peMA.Troparion.text media-off End-Dialog
-							Dialog sid pr.res01.text<r>sid ru.Thrice</>sid pr.Bless_father.text End-Dialog
-						End-Section
+						Insert_section blessing_before_dismissal End-Insert
+						Insert_section dismissal_intro_paschal End-Insert
 						Actor sid ac.Hierarch End-Actor
 						Insert_section Selector_Dismissals.Com_No.part1 End-Insert
 						Actor sid ac.Choir End-Actor
@@ -1478,7 +1445,8 @@ Status NA
 					End-Section
 				78 thru 108 use:
 					Section afterpascha
-					//	Insert_section pascha.intro End-Insert
+						Insert_section blessing_before_dismissal End-Insert
+						Insert_section dismissal_intro_paschal End-Insert
 						Actor sid ac.Hierarch End-Actor
 						Insert_section Selector_Dismissals.Com_No.part1 End-Insert
 						Actor sid ac.Choir End-Actor
@@ -1489,6 +1457,7 @@ Status NA
 					End-Section
 				otherwise use:
 					Section notpaschal
+						Insert_section blessing_before_dismissal End-Insert
 						Actor sid ac.Hierarch End-Actor
 						Insert_section Selector_Dismissals.Com_No.part1 End-Insert
 						Actor sid ac.Choir End-Actor
@@ -1496,33 +1465,35 @@ Status NA
 						Hymn sid euLI.Key1706h.text media-off End-Hymn
 						Actor sid ac.Hierarch End-Actor
 						Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
-						Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+						Actor sid ac.Choir End-Actor
+						Dialog sid pr.res04.text End-Dialog
 						Actor sid ac.Clergy End-Actor
 						Dialog sid pr.ThroughThePrayers_bishop.text End-Dialog
-						Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+						Actor sid ac.Choir End-Actor
+						Dialog sid pr.res04.text End-Dialog
 					End-Section
 			end-when
 		End-Section
 		Section specificcommemoration__
 			Section holysaturdayliturgy
+				Insert_section blessing_before_dismissal End-Insert
 				Actor sid ac.Hierarch End-Actor
-				Dialog sid dis00 sid dis00.resurrection sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid cl.localpatronsaint1.dismissal</>sid dis09 sid dis10 sid dis88 End-Dialog 
+				Dialog sid dis00 sid dis00.resurrection sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid client_gr_GR_cog.cl.localpatronsaint1.dismissal</>sid dis09 sid dis10 sid dis88 End-Dialog 
 				Actor sid ac.Choir End-Actor
 				Media sid euLI.Key1706h.text End-Media
 				Hymn sid euLI.Key1706h.text media-off End-Hymn
 				Actor sid ac.Hierarch End-Actor
 				Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
-				Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+				Actor sid ac.Choir End-Actor
+				Dialog sid pr.res04.text End-Dialog
 				Actor sid ac.Clergy End-Actor
 				Dialog sid pr.ThroughThePrayers_bishop.text End-Dialog
-				Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+				Actor sid ac.Choir End-Actor
+				Dialog sid pr.res04.text End-Dialog
 			End-Section
 			Section brightweek_stgeorge
-				Section intro
-					Actor sid ac.Deacon End-Actor
-					Dialog sid pe.d071_gr_GR_cog.peMA.Troparion.text media-off End-Dialog
-					Dialog sid pr.res01.text<r>sid ru.Thrice</>sid pr.Bless_father.text End-Dialog
-				End-Section
+				Insert_section blessing_before_dismissal End-Insert
+				Insert_section dismissal_intro_paschal End-Insert
 				Actor sid ac.Hierarch End-Actor
 				Insert_section Selector_Dismissals.Com_Specific__.brightweek_stgeorge End-Insert
 				Actor sid ac.Choir End-Actor
@@ -1532,11 +1503,8 @@ Status NA
 				Insert_section Selector_Dismissals.Com_Yes.part2 End-Insert
 			End-Section
 			Section brightweek_stmark
-				Section intro
-					Actor sid ac.Deacon End-Actor
-					Dialog sid pe.d071_gr_GR_cog.peMA.Troparion.text media-off End-Dialog
-					Dialog sid pr.res01.text<r>sid ru.Thrice</>sid pr.Bless_father.text End-Dialog
-				End-Section
+				Insert_section blessing_before_dismissal End-Insert
+				Insert_section dismissal_intro_paschal End-Insert
 				Actor sid ac.Hierarch End-Actor
 				Insert_section Selector_Dismissals.Com_Specific__.brightweek_stmark End-Insert
 				Actor sid ac.Choir End-Actor
@@ -1548,133 +1516,134 @@ Status NA
 		End-Section
 	End-Section
 
-	//blocks
-		Section short_litany_after_antiphon1
+		Section short_litany_after_antiphon1_deacon_choir
 			Title<Tdesig>sid euLI.Key0202.title</>End-Title
-			Actor sid ac.Deacon End-Actor
-			Insert_section LN.ShortLitany00_parentheses End-Insert
-			Actor sid ac.Hierarch<Trubric>sid ru.InALowVoice</>End-Actor 
-			Title role smallcenter sid euLI.Key0301.title End-Title
+			Insert_section LN.ShortLitany00_deacon_choir End-Insert
+			Actor sid ac.Hierarch<r><Tsmaller>sid ru.InALowVoice</></>End-Actor 
+			Title<r><Tsmaller>sid euLI.Key0301.title</></>End-Title
 			Para role inaudible sid euLI.Key0301.text End-Para
-			Actor sid ac.Priest End-Actor
+			Actor sid ac.Priest End-Actor 
 			Dialog sid pr.exc02.text End-Dialog
-			Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res04.text End-Dialog
 		End-Section
-		Section short_litany_after_antiphon2
+		Section short_litany_after_antiphon2_deacon_choir
 			Title<Tdesig>sid euLI.Key0202.title</>End-Title
-			Actor sid ac.Deacon End-Actor
-			Insert_section LN.ShortLitany00_parentheses End-Insert
-			Actor sid ac.Hierarch<Trubric>sid ru.InALowVoice</>End-Actor 
-			Title role smallcenter sid euLI.Key0401.title End-Title
+			Insert_section LN.ShortLitany00_deacon_choir End-Insert
+			Actor sid ac.Hierarch<r><Tsmaller>sid ru.InALowVoice</></>End-Actor 
+			Title<r><Tsmaller>sid euLI.Key0401.title</></>End-Title
 			Para role inaudible sid euLI.Key0401.text End-Para
-			Actor sid ac.Priest End-Actor
+			Actor sid ac.Priest End-Actor 
 			Dialog sid pr.exc03.text End-Dialog
-			Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res04.text End-Dialog
 		End-Section
-		Section EntrancePrayer //inserted in _04
-			Actor sid ac.Hierarch<Trubric>sid ru.InALowVoice</>End-Actor 
-			Title role smallcenter sid euLI.Key0501.title End-Title
+		Section EntrancePrayer
+			Actor sid ac.Deacon<r><Tsmaller>sid ru.InALowVoice</></>End-Actor 
+			Para role inaudible sid pr.pet00.text sid pr.res01.text End-Para
+			Actor sid ac.Hierarch<r><Tsmaller>sid ru.InALowVoice</></>End-Actor 
+			Title<r><Tsmaller>sid euLI.Key0501.title</></>End-Title
 			Para role inaudible sid euLI.Key0501.text sid pr.exc01.text End-Para
-			Actor sid ac.Deacon<Trubric>sid ru.InALowVoice</>End-Actor
+			Actor sid ac.Deacon<r><Tsmaller>sid ru.InALowVoice</></>End-Actor 
 			Para role inaudible sid euLI.Key0502.text End-Para
-			Actor sid ac.Hierarch<Trubric>sid ru.InALowVoice</>End-Actor
+			Actor sid ac.Hierarch<r><Tsmaller>sid ru.InALowVoice</></>End-Actor 
 			Para role inaudible sid euLI.Key0503.text sid pr.res04.text End-Para
-			Actor sid ac.Deacon End-Actor
+			Actor sid ac.Deacon<r><Tsmaller>sid ru.Aloud</></>End-Actor 
 			Dialog sid pr.exc17.text sid pr.exc18.text End-Dialog
 		End-Section
-		Section AfterGospel //inserted in _20_
+		Section AfterGospel
 			Section chrys
-			/* 	Section sermon
-					Break line End_Break
-					Title<Tdesig>sid euLI.Key0706.title</>End-Title
-					Rubric sid euLI.Key0706.rubric End-Rubric
-				End-Section
-				Break page End_Break
 				Rubric sid euLI.Key0707.rubric End-Rubric
 				Title role bmc_collapse sid template.titles_gr_GR_cog.clps.additionallitanies.top End-Title
 					Section _15_Litany 
 						Title<Tdesig><Toptional>sid euLI.Key0800.title</></>End-Title
 						Actor<Toptional>sid ac.Deacon</>End-Actor
 						Dialog<Toptional>sid pr.pet15.text</>End-Dialog
-						Dialog<Toptional><i>sid misc.parenthesis.open sid pr.res06.text sid misc.parenthesis.close</></>End-Dialog
+						Actor<Toptional>sid ac.Choir</>End-Actor
+						Dialog<Toptional>sid pr.res01.text</>End-Dialog
+						Actor<Toptional>sid ac.Deacon</>End-Actor
 						Dialog<Toptional>sid pr.pet16.text</>End-Dialog
+						Actor<Toptional>sid ac.Choir</>End-Actor
+						Dialog<Toptional>sid pr.res01.text</>End-Dialog
+						Actor<Toptional>sid ac.Deacon</>End-Actor
 						Dialog<Toptional>sid pr.pet17.text</>End-Dialog
-						Dialog<Toptional>sid pr.pet19Sa.text sid cl.bishop1.rank sid cl.bishop1.name_p</>End-Dialog
+						Actor<Toptional>sid ac.Choir<Tsmaller>sid ru.AfterEachPetition</></>End-Actor
+						Dialog<Toptional>sid pr.res01.text<r>sid ru.Thrice</></>End-Dialog
+						Actor<Toptional>sid ac.Deacon</>End-Actor
+						Dialog<Toptional>sid pr.pet18.text</>End-Dialog
+						Dialog<Toptional>sid pr.pet19Sa.text sid client_gr_GR_cog.cl.bishop1.rank sid client_gr_GR_cog.cl.bishop1.name_p</>End-Dialog
 						Dialog<Toptional>sid pr.pet20.text</>End-Dialog
 						Dialog<Toptional>sid pr.pet21.text</>End-Dialog
 						Dialog<Toptional>sid pr.pet22.text</>End-Dialog
 						Dialog<Toptional>sid pr.pet23.text</>End-Dialog
-						Actor<Toptional>sid Hierarch sid ru.InALowVoice</>End-Actor 
-						Title role smallcenter <Toptional>sid euLI.Key0801.title</>End-Title
+						Actor<Toptional>sid ac.Hierarch<Tsmaller>sid ru.InALowVoice</></>End-Actor
+						Title role smallcenter<Toptional>sid euLI.Key0801.title</>End-Title
 						Para role inaudible <Toptional>sid euLI.Key0801.text</>End-Para
-						Actor<Toptional>sid Priest</>End-Actor
+						Actor<Toptional>sid ac.Priest</>End-Actor
 						Dialog<Toptional>sid pr.exc11.text</>End-Dialog
-						Dialog<Toptional><i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</></>End-Dialog
+						Actor<Toptional>sid ac.Choir</>End-Actor
+						Dialog<Toptional>sid pr.res04.text</>End-Dialog
 					End-Section	
 					Section _16_Catechumens
 						Title<Tdesig><Toptional>sid euLI.Key0900.title</></>End-Title
 						Actor <Toptional>sid ac.Deacon </>End-Actor
 						Dialog <Toptional>sid euLI.Key0901.text </>End-Dialog	
-						Dialog<i><Toptional>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</></>End-Dialog
+						Actor<Toptional>sid ac.Choir<Tsmaller>sid ru.AfterEachPetition</></>End-Actor
+						Dialog<Toptional> sid pr.res01.text</>End-Dialog
 						Dialog <Toptional>sid euLI.Key0902.text </>End-Dialog	
-						Dialog<i><Toptional>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</></>End-Dialog
 						Dialog <Toptional>sid euLI.Key0903.text </>End-Dialog	
-						Dialog<i><Toptional>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</></>End-Dialog
 						Dialog <Toptional>sid euLI.Key0904.text </>End-Dialog	
-						Dialog<i><Toptional>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</></>End-Dialog
 						Dialog <Toptional>sid euLI.Key0905.text </>End-Dialog	
-						Dialog<i><Toptional>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</></>End-Dialog
 						Dialog <Toptional>sid euLI.Key0906.text </>End-Dialog	
-						Dialog<i><Toptional>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</></>End-Dialog
 						Dialog <Toptional>sid euLI.Key0907.text </>End-Dialog	
-						Dialog<i><Toptional>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</></>End-Dialog
 						Dialog <Toptional>sid euLI.Key0908.text </>End-Dialog	
-						Dialog<i><Toptional>sid misc.parenthesis.open sid pr.res03.text sid misc.parenthesis.close</></>End-Dialog
-						Actor<Toptional>sid Hierarch sid ru.InALowVoice</>End-Actor 
-						Title role smallcenter <Toptional>sid euLI.Key0909.title </>End-Title
+						Actor<Toptional>sid ac.Choir</>End-Actor
+						Dialog<Toptional>sid pr.res03.text</>End-Dialog
+						Actor<Toptional>sid ac.Hierarch<Tsmaller>sid ru.InALowVoice</></>End-Actor
+						Title role smallcenter<Toptional>sid euLI.Key0909.title</>End-Title
 						Para role inaudible <Toptional>sid euLI.Key0909.text </>End-Para
-						Actor <Toptional>sid Priest </>End-Actor
+						Actor <Toptional>sid ac.Priest</>End-Actor
 						Dialog <Toptional>sid euLI.Key0910.text </>End-Dialog
-						Dialog<i><Toptional>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</></>End-Dialog
+						Actor<Toptional>sid ac.Choir</>End-Actor
+						Dialog<Toptional>sid pr.res04.text</>End-Dialog
 						Actor <Toptional>sid ac.Deacon </>End-Actor
 						Dialog <Toptional>sid euLI.Key0911.text</>End-Dialog	
 					End-Section
 					Section _17_FirstPrayerOfFaithful
 						Title<Tdesig><Toptional>sid euLI.Key1000.title</></>End-Title
 						Actor <Toptional>sid ac.Deacon </>End-Actor
-						Dialog <Toptional>sid euLI.Key0912.text </>End-Dialog
-						Dialog<i><Toptional>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</></>End-Dialog
+						Dialog <Toptional> sid euLI.Key0912.text </>End-Dialog
+						Actor<Toptional>sid ac.Choir</>End-Actor
+						Dialog<Toptional>sid pr.res01.text</>End-Dialog
+						Actor <Toptional>sid ac.Deacon </>End-Actor
 						Dialog <Toptional>sid pr.pet12.text </>End-Dialog
-						Dialog<i><Toptional>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</></>End-Dialog
+						Actor<Toptional>sid ac.Choir</>End-Actor
+						Dialog<Toptional>sid pr.res03.text</>End-Dialog
+						Actor <Toptional>sid ac.Deacon </>End-Actor
 						Dialog <Toptional>sid pr.exc17.text </>End-Dialog
-						Actor<Toptional>sid Hierarch sid ru.InALowVoice</>End-Actor 
+						Actor<Toptional>sid ac.Hierarch<Tsmaller>sid ru.InALowVoice</></>End-Actor
 						Title role smallcenter <Toptional>sid euLI.Key1001.title </>End-Title
 						Para role inaudible <Toptional>sid euLI.Key1001.text </>End-Para
-						Actor <Toptional>sid Priest </>End-Actor 
+						Actor<Toptional>sid ac.Priest</>End-Actor
 						Dialog <Toptional>sid pr.exc01.text </>End-Dialog
-						Dialog<i><Toptional>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</></>End-Dialog
+						Actor<Toptional>sid ac.Choir</>End-Actor
+						Dialog<Toptional>sid pr.res04.text</>End-Dialog
 					End-Section
-					Section _18_SortLitany
+					Section _18_ShortLitany
 						Actor <Toptional>sid ac.Deacon </>End-Actor
 						Dialog <Toptional>sid pr.pet14.text </>End-Dialog
-						Dialog<i><Toptional>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</></>End-Dialog
+						Actor<Toptional>sid ac.Choir</>End-Actor
+						Dialog<Toptional>sid pr.res01.text</>End-Dialog
+						Actor <Toptional>sid ac.Deacon </>End-Actor
 						Dialog <Toptional>sid pr.pet12.text </>End-Dialog
-						Dialog<i><Toptional>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</></>End-Dialog
+						Actor<Toptional>sid ac.Choir</>End-Actor
+						Dialog<Toptional>sid pr.res01.text</>End-Dialog
+						Actor <Toptional>sid ac.Deacon </>End-Actor
 						Dialog <Toptional>sid pr.exc17.text </>End-Dialog
 						Title sid misc.horizontal_line.solid1 End-Title
 					End-Section
 				Title role emc_collapse sid template.titles_gr_GR_cog.clps.additionallitanies.bottom End-Title
 				Break page End_Break
-			 */
-				Section _19_SecondPrayerOfFaithful
-					Rubric sid cl.LI.R002 End-Rubric
-					Actor sid ac.Hierarch<Trubric>sid ru.InALowVoice</>End-Actor 
-					Title role smallcenter sid euLI.Key1002.title End-Title
-					Para role inaudible sid euLI.Key1002.text End-Para
-					Actor sid ac.Hierarch End-Actor 
-					Dialog sid euLI.Key1003.text End-Dialog
-					Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
-				End-Section //PrayerOfTheFaithful2
 			End-Section
 			Section basil
 		/*		Section sermon
@@ -1727,53 +1696,158 @@ Status NA
 						Para role inaudible sid euLI.Key1001.basil.text End-Para
 						Actor sid ac.Priest End-Actor 
 						Dialog sid pr.exc01.text End-Dialog
-						Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+						Actor sid ac.Choir End-Actor
+						Dialog sid pr.res04.text End-Dialog
 					End-Section
-					Insert_section chrys._18_SortLitany End-Insert
+					Insert_section chrys._18_ShortLitany End-Insert
 				Title role emc_collapse sid template.titles_gr_GR_cog.clps.additionallitanies.bottom End-Title
 				Break page End_Break
 		 */
 				Section _19_SecondPrayerOfFaithful
-					Rubric sid cl.LI.R002 End-Rubric
+					Rubric sid client_gr_GR_cog.cl.LI.R002 End-Rubric
 					Actor sid ac.Hierarch<Trubric>sid ru.InALowVoice</>End-Actor 
 					Title role smallcenter sid euLI.Key1002.title End-Title
 					Para role inaudible sid euLI.Key1002.basil.text End-Para
 					Actor sid ac.Hierarch End-Actor 
 					Dialog sid euLI.Key1003.text End-Dialog
-					Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+					Actor sid ac.Choir End-Actor
+					Dialog sid pr.res04.text End-Dialog
 				End-Section
 			End-Section
 		End-Section		
 		Section greatentrance_bishop1
 			Actor sid ac.Hierarch End-Actor
-			Dialog sid euLI.Key1112a.text sid cl.bishop1.name_c sid euLI.Key1112b.text<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+			Dialog sid euLI.Key1112a.text sid client_gr_GR_cog.cl.bishop1.name_c sid euLI.Key1112b.text<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+		End-Section
+	 	Section comp_litany_after_consecration
+		 	Break line End_Break
+			Title role bmc_collapse sid template.titles_gr_GR_cog.clps.additionalpetitions.top End-Title
+				Rubric sid euLI.Key1404.rubric End-Rubric
+				Para role inaudible sid pr.pet11.text End-Para 
+				Para role inaudible<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Para
+				Para role inaudible sid pr.pet12.text End-Para
+				Para role inaudible<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Para
+				Para role inaudible sid pr.pet25m.text End-Para
+				Para role inaudible<i>sid misc.parenthesis.open sid pr.res02.text sid misc.parenthesis.close</>End-Para
+				Para role inaudible sid pr.pet26.text End-Para
+				Para role inaudible<i>sid misc.parenthesis.open sid pr.res02.text sid misc.parenthesis.close</>End-Para
+				Para role inaudible sid pr.pet27.text End-Para
+				Para role inaudible<i>sid misc.parenthesis.open sid pr.res02.text sid misc.parenthesis.close</>End-Para
+				Para role inaudible sid pr.pet28.text End-Para
+				Para role inaudible<i>sid misc.parenthesis.open sid pr.res02.text sid misc.parenthesis.close</>End-Para
+				Para role inaudible sid pr.pet29.text End-Para
+				Para role inaudible<i>sid misc.parenthesis.open sid pr.res02.text sid misc.parenthesis.close</>End-Para
+				Para role inaudible sid pr.pet30.text End-Para
+				Para role inaudible<i>sid misc.parenthesis.open sid pr.res02.text sid misc.parenthesis.close</>End-Para
+			Title role emc_collapse sid template.titles_gr_GR_cog.clps.additionalpetitions.bottom End-Title
+			Break line End_Break
 		End-Section
 		Section PreCommunionPrayers
+			Title role bmc_collapse sid template.titles_gr_GR_cog.clps.precommunionprayers.top End-Title
 			Actor sid ac.People End-Actor
 			Title role smallcenter sid hoPrayer.title End-Title
+			Rubric sid hoPrayer.note1 End-Rubric
 			Reading sid hoPrayer.Key101.text End-Reading
-			Reading sid hoPrayer.Key110.text End-Reading
+			Para role readingzero sid hoPrayer.Key111.text End-Para
+			Para role readingzero sid hoPrayer.Key112.text End-Para
+			Para role readingzero sid hoPrayer.Key113.text End-Para
+			Reading sid hoPrayer.Key114.text End-Reading
 			Reading sid hoPrayer.Key121.text End-Reading
-			Reading sid hoPrayer.Key130.text End-Reading
+			Para role readingzero sid hoPrayer.Key131.text End-Para
+			Para role readingzero sid hoPrayer.Key132.text End-Para
+			Para role readingzero sid hoPrayer.Key133.text End-Para
+			Reading sid hoPrayer.Key134.text End-Reading
 			Reading sid hoPrayer.Key141.text End-Reading
 			Reading sid hoPrayer.Key151.text End-Reading
 			Reading sid hoPrayer.Key161.text End-Reading
 			Reading sid hoPrayer.Key121.text End-Reading
+			Title role emc_collapse sid template.titles_gr_GR_cog.clps.precommunionprayers.bottom End-Title
 		End-Section
+		Section fraction_of_gifts
+			Actor sid ac.Deacon<Trubric>sid ru.InALowVoice</>End-Actor	
+			Para role inaudible sid euLI.Key1501.text End-Para				
+			Actor sid ac.Hierarch End-Actor
+			Para role inaudible sid euLI.Key1502.text End-Para				
+			Actor sid ac.Deacon End-Actor	
+			Para role inaudible sid euLI.Key1503.text End-Para				
+			Actor sid ac.Hierarch End-Actor
+			Para role inaudible sid euLI.Key1504.text End-Para				
+			Actor sid ac.Deacon End-Actor	
+			Para role inaudible sid pr.res04.text sid euLI.Key1505.text End-Para				
+			Actor sid ac.Hierarch End-Actor
+			Para role inaudible sid euLI.Key1506.text End-Para				
+			Actor sid ac.Deacon End-Actor	
+			Para role inaudible sid euLI.Key1507.text End-Para			
+		End-Section
+		Section communion_of_clergy
+			Rubric sid ru.InALowVoice End-Rubric
+			Actor sid ac.Hierarch End-Actor
+			Para role inaudible sid euLI.Key1508.text End-Para				
+			Para role inaudible sid euLI.Key1551.text End-Para				
+			Para role inaudible sid euLI.Key1511.text End-Para				
+			Actor sid ac.Deacon End-Actor
+			Para role inaudible sid euLI.Key1512.text End-Para				
+			Actor sid ac.Hierarch End-Actor
+			Para role inaudible sid euLI.Key1513.text End-Para				
+			Para role inaudible sid euLI.Key1554.text End-Para				
+			Para role inaudible sid euLI.Key1516.text End-Para				
+			Para role inaudible sid euLI.Key1517.text End-Para				
+			Actor sid ac.Deacon End-Actor
+			Para role inaudible sid euLI.Key1518.text End-Para				
+			Actor sid ac.Hierarch End-Actor
+			Para role inaudible sid euLI.Key1519.text End-Para				
+			Para role inaudible sid euLI.Key1520.text End-Para				
+			Actor sid ac.Deacon End-Actor
+			Para role inaudible sid euLI.Key1521.text End-Para				
+			Para role inaudible sid euLI.Key1522.text End-Para				
+			Para role inaudible sid euLI.Key1523.text End-Para				
+			Para role inaudible sid euLI.Key1524.text End-Para	
+		End-Section
+		Section call_to_communion
+			Rubric sid euLI.Key1588.rubric End-Rubric
+			Actor sid ac.Deacon End-Actor
+			Dialog sid euLI.Key1526.text End-Dialog
+			Rubric sid euLI.Key1589.rubric End-Rubric
+			Para role inaudible sid euLI.Key1527.text End-Para
+		End-Section
+		Section hymns_during_communion
+			Actor sid ac.Choir End-Actor
+			Title<r>sid euLI.MM.HymnsDuringCommunion.title</>End-Title
+			Media sid euLI.MM.HymnsDuringCommunion.text End-Media
+		End-Section
+		Section blessing_before_dismissal
+			Rubric sid euLI.Key1723.rubric End-Rubric
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.pet00.text End-Dialog		
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res01.text End-Dialog
+			Actor sid ac.Hierarch End-Actor
+			Dialog sid pr.pet37.text End-Dialog	
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res04.text End-Dialog
+		End-Section
+		Section dismissal_intro_paschal
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pe.d071_gr_GR_cog.peMA.Troparion.text media-off End-Dialog
+			Dialog sid pr.res01.text<r>sid ru.Thrice</>sid pr.res13.text End-Dialog
+		End-Section
+
+
+
 		Section mealt1_communionhymn
 			Actor sid ac.Choir End-Actor
 			Insert_section Selector_CommunionHymn.mealt1 End-Insert
 		End-Section
 		Section commemorate_bishop1bishop2
-			Insert_section _08_Liturgy__.chrys_default.part1.cherubic_upto_communion.commemorations.saints End-Insert
+			Insert_section _08_Liturgy__.chrys_default.part1.commemorations.saints End-Insert
 			Section bishop0bishop1
 				Actor sid ac.Hierarch End-Actor
-				Dialog sid euLI.Key1330a.text<r>sid cl.bishop1.rank sid cl.bishop1.name_p</>sid euLI.Key1330b.text End-Dialog				
+				Dialog sid euLI.Key1330a.text<r>sid client_gr_GR_cog.cl.bishop1.rank sid client_gr_GR_cog.cl.bishop1.name_p</>sid euLI.Key1330b.text End-Dialog				
 				Actor sid ac.Clergy End-Actor
-				Dialog sid euLI.Key1330a.text<r>sid cl.bishop2.rank sid cl.bishop2.name_p</>sid euLI.Key1330b.text End-Dialog				
+				Dialog sid euLI.Key1330a.text<r>sid client_gr_GR_cog.cl.bishop2.rank sid client_gr_GR_cog.cl.bishop2.name_p</>sid euLI.Key1330b.text End-Dialog				
 			End-Section
-			Insert_section _08_Liturgy__.chrys_default.part1.cherubic_upto_communion.commemorations.all End-Insert
-			Insert_section _08_Liturgy__.chrys_default.part1.cherubic_upto_communion.commemorations.world End-Insert
+			Insert_section _08_Liturgy__.chrys_default.part1.commemorations.all End-Insert
+			Insert_section _08_Liturgy__.chrys_default.part1.commemorations.world End-Insert
 		End-Section
 		Section Communion //inserted in _27
 			Section fraction
@@ -1863,30 +1937,6 @@ Status NA
 			End-Section
 		End-Section
 		
-		Section seasonalhymns_chrys
-			when-movable-cycle-day-is 
-				71 thru 109 use:
-					Title<r>sid pe.d071_gr_GR_cog.peMA.MM.Canon1.text</>End-Title
-					Media sid pe.d071_gr_GR_cog.peMA.MM.Canon1.text End-Media
-				110 thru 127 use:
-					Section hymns
-						Actor sid ac.Choir End-Actor
-						Title<r>sid euLI.MM.HymnsDuringCommunion.title</>End-Title
-						Media sid euLI.MM.HymnsDuringCommunion.text End-Media
-					End-Section
-			end-when
-			when-date-is 
-				Mar 25 use:
-					Passthrough-Html "<tr><td class='leftCell'></td><td class='rightCell'><div class='media-group'><a class='media-icon tip-doc2' href='../../m/en_public/me/m03/d25/ma/t/canon.pdf' target='FrameScore'><span class='media-icon'>Text of Annunciation Canon</span></a></div></td></tr>" 
-					END-Passthrough-Html					
-				Aug 14 thru 22 use:
-					Title role desig sid other.dormitionencomia_gr_GR_cog.other.Encomia.title End-Title
-					Media sid other.dormitionencomia_gr_GR_cog.other.Encomia101.text End-Media
-			end-when
-			Break line End_Break
-		End-Section
-		Section seasonalhymns_basil
-		End-Section
 		Section kollyva_prayer__
 			Section me1
 				Section block1
@@ -1894,27 +1944,31 @@ Status NA
 					Title role smallcenter sid hiPR.Key0401.title End-Title
 					Actor sid ac.Deacon End-Actor
 					Dialog sid pr.pet00.text End-Dialog
-					Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
+					Actor sid ac.Choir End-Actor
+					Dialog sid pr.res01.text End-Dialog
 					Actor sid ac.Hierarch End-Actor
 				End-Section
 				Dialog sid hiPR.Key0402a.text rid meDA.insert1 sid hiPR.Key0402b.text rid meDA.insert1 rid meDA.insert2 sid hiPR.Key0402c.text End-Dialog
-				Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+				Actor sid ac.Choir End-Actor
+				Dialog sid pr.res04.text End-Dialog
 			End-Section
 			Section mealt1
 				Insert_section me1.block1 End-Insert
 				Dialog sid hiPR.Key0402a.text rid alt1.meDA.insert1 sid hiPR.Key0402b.text rid alt1.meDA.insert1 rid alt1.meDA.insert2 sid hiPR.Key0402c.text End-Dialog
-				Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+				Actor sid ac.Choir End-Actor
+				Dialog sid pr.res04.text End-Dialog
 			End-Section
 			Section tr
 				Insert_section me1.block1 End-Insert
 				Dialog sid hiPR.Key0402a.text rid trDA.insert1 sid hiPR.Key0402b.text rid trDA.insert1 rid trDA.insert2 sid hiPR.Key0402c.text End-Dialog
-				Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+				Actor sid ac.Choir End-Actor
+				Dialog sid pr.res04.text End-Dialog
 			End-Section
 		End-Section
 		Section trisagion_service__
 			Section short
 				Insert_section FU._01_TrisagionTroparia_ End-Insert
-				Insert_section LN.hForSoulSaturday_deacon_parentheses End-Insert
+				Insert_section LN.hForSoulSaturday_deacon_choir End-Insert
 				Insert_section FU._04_Everlasting_ End-Insert
 			End-Section
 		End-Section

@@ -292,12 +292,19 @@ Status NA
 				End-Section
 			Mar 8 use:
 				Section mar08
-					Insert_section mc_wed_fri_fast End-Insert
+					when-movable-cycle-day-is
+						13 use:
+							Rubric sid ru.fasting.rule.oil End-Rubric
+						otherwise use:
+							Insert_section mc_wed_fri_fast End-Insert
+					end-when
 				End-Section
 			Mar 9 use:
 				Section mar09
 					when-movable-cycle-day-is
-						1 thru 8 use:
+						1 thru 10 use:
+							Rubric sid ru.fasting.rule.free End-Rubric
+						12, 14, 15 use:
 							Rubric sid ru.fasting.rule.free End-Rubric
 						16 thru 22 use:
 							Rubric sid ru.fasting.rule.dairy End-Rubric
