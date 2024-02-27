@@ -20,40 +20,6 @@ Template LN
 	import bTags.*
 	import roles.*
 	
-	Section GreatLitany_parentheses
-		Section part1
-			Media sid eu.lichrysbasil_gr_GR_cog.euLI.MM.Key0200.text End-Media
-			Dialog sid pr.pet01.text End-Dialog
-			Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
-			Dialog sid pr.pet02.text End-Dialog
-			Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
-			Dialog sid pr.pet03.text End-Dialog
-			Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
-			Dialog sid pr.pet04.text End-Dialog
-			Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
-			Dialog sid pr.pet05.text End-Dialog
-			Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
-		End-Section	
-		Dialog sid pr.pet06a.text sid cl.bishop1.rank sid cl.bishop1.name_c sid pr.pet06b.text End-Dialog
-		Section part2
-			Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
-			Dialog sid pr.pet07L.text End-Dialog
-			Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
-			Dialog sid pr.pet08.text End-Dialog
-			Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
-			Dialog sid pr.pet09.text End-Dialog
-			Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
-			Dialog sid pr.pet10.text End-Dialog
-			Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
-			Dialog sid pr.pet11.text End-Dialog
-			Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
-			Dialog sid pr.pet12.text End-Dialog
-			Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
-			Dialog sid pr.pet13.text End-Dialog
-			Dialog<i>sid misc.parenthesis.open sid pr.res03.text sid misc.parenthesis.close</>End-Dialog
-		End-Section
-	End-Section
-
 	Section GreatLitany_deacon_choir 
 		Section part1
 			Actor sid ac.Deacon End-Actor
@@ -293,6 +259,11 @@ Template LN
 		End-Section
 	End-Section
 
+	Section GreatLitany_double_commemoration_deacon_compact
+		Insert_section GreatLitany_deacon_compact.part1 End-Insert
+		Dialog sid pr.pet06a.text sid cl.bishop1.rank sid cl.bishop1.name_c sid ru.And sid cl.bishop2.rank sid cl.bishop2.name_c sid pr.pet06b.text End-Dialog //with client specific bishop's name
+		Insert_section GreatLitany_deacon_compact.part2 End-Insert
+	End-Section
 	Section GreatLitany_double_commemoration_deacon_parentheses
 		Insert_section GreatLitany_deacon_parentheses.part1 End-Insert
 		Dialog sid pr.pet06a.text sid cl.bishop1.rank sid cl.bishop1.name_c sid ru.And sid cl.bishop2.rank sid cl.bishop2.name_c sid pr.pet06b.text End-Dialog //with client specific bishop's name
@@ -380,6 +351,25 @@ Template LN
 		Dialog sid pr.res03.text End-Dialog		
 	End-Section	
 
+	Section GreatLitany_Vespers_HolySpirit_deacon_compact
+		Insert_section GreatLitany_deacon_compact.part1 End-Insert
+		Dialog sid pr.pet06a.text<r>sid cl.bishop1.rank sid cl.bishop1.name_c</>sid pr.pet06b.text End-Dialog
+		Section part2
+			Dialog sid pr.pet07L.text End-Dialog
+			Dialog sid pr.pet08.text End-Dialog
+			Dialog sid pr.petKneel01.text End-Dialog
+			Dialog sid pr.petKneel02.text End-Dialog
+			Dialog sid pr.petKneel03.text End-Dialog
+			Dialog sid pr.petKneel04.text End-Dialog
+			Dialog sid pr.petKneel05.text End-Dialog
+			Dialog sid pr.petKneel06.text End-Dialog
+			Dialog sid pr.pet11.text End-Dialog
+			Dialog sid pr.pet12.text End-Dialog
+			Dialog sid pr.pet13.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res03.text End-Dialog
+		End-Section
+	End-Section
 	Section GreatLitany_Vespers_HolySpirit_deacon_parentheses
 		Insert_section GreatLitany_deacon_parentheses.part1 End-Insert
 		Dialog sid pr.pet06a.text<r>sid cl.bishop1.rank sid cl.bishop1.name_c</>sid pr.pet06b.text End-Dialog
@@ -410,32 +400,15 @@ Template LN
 		End-Section
 	End-Section
 
+	Section GreatLitany_Vespers_HolySpirit_double_commemoration_deacon_compact
+		Insert_section GreatLitany_deacon_compact.part1 End-Insert
+		Dialog sid pr.pet06a.text sid cl.bishop1.rank sid cl.bishop1.name_c sid ru.And sid cl.bishop2.rank sid cl.bishop2.name_c sid pr.pet06b.text End-Dialog //with client specific bishop's name
+		Insert_section GreatLitany_Vespers_HolySpirit_deacon_compact.part2 End-Insert
+	End-Section
 	Section GreatLitany_Vespers_HolySpirit_double_commemoration_deacon_parentheses
 		Insert_section GreatLitany_deacon_parentheses.part1 End-Insert
 		Dialog sid pr.pet06a.text sid cl.bishop1.rank sid cl.bishop1.name_c sid ru.And sid cl.bishop2.rank sid cl.bishop2.name_c sid pr.pet06b.text End-Dialog //with client specific bishop's name
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.pet07L.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.pet08.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.petKneel01.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.petKneel02.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.petKneel03.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.petKneel04.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.petKneel05.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.petKneel06.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.pet11.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.pet12.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.pet13.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res03.text sid misc.parenthesis.close</>End-Dialog
+		Insert_section GreatLitany_Vespers_HolySpirit_deacon_parentheses.part2 End-Insert
 	End-Section
 
 	Section ShortLitany00_parentheses
@@ -446,7 +419,6 @@ Template LN
 		Dialog sid pr.pet13.text End-Dialog
 		Dialog<i>sid misc.parenthesis.open sid pr.res03.text sid misc.parenthesis.close</>End-Dialog
 	End-Section
-
 	Section ShortLitany00_deacon_choir
 		Actor sid ac.Deacon End-Actor
 		Dialog sid pr.pet14.text End-Dialog
@@ -461,7 +433,28 @@ Template LN
 		Actor sid ac.Choir End-Actor
 		Dialog sid pr.res03.text End-Dialog
 	End-Section
+	Section ShortLitany00_priest_choir
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.pet14.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res01.text End-Dialog
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.pet12.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res01.text End-Dialog
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.pet13.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res03.text End-Dialog
+	End-Section
 
+	Section ShortLitany02_deacon_choir
+		Insert_section LN.ShortLitany00_deacon_choir End-Insert
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.exc02.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res04.text End-Dialog
+	End-Section
 	Section ShortLitany02_deacon_parentheses
 		Actor sid ac.Deacon End-Actor
 		Insert_section LN.ShortLitany00_parentheses End-Insert
@@ -470,6 +463,13 @@ Template LN
 		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 	End-Section
 
+	Section ShortLitany03_deacon_choir
+		Insert_section LN.ShortLitany00_deacon_choir End-Insert
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.exc03.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res04.text End-Dialog
+	End-Section
 	Section ShortLitany03_deacon_parentheses
 		Actor sid ac.Deacon End-Actor
 		Insert_section LN.ShortLitany00_parentheses End-Insert
@@ -478,6 +478,13 @@ Template LN
 		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 	End-Section
 
+	Section ShortLitany04_deacon_choir
+		Insert_section LN.ShortLitany00_deacon_choir End-Insert
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.exc04.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res04.text End-Dialog
+	End-Section
 	Section ShortLitany04_deacon_parentheses
 		Actor sid ac.Deacon End-Actor
 		Insert_section LN.ShortLitany00_parentheses End-Insert
@@ -486,6 +493,13 @@ Template LN
 		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 	End-Section
 
+	Section ShortLitany05_deacon_choir
+		Insert_section LN.ShortLitany00_deacon_choir End-Insert
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.exc05.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res04.text End-Dialog
+	End-Section
 	Section ShortLitany05_deacon_parentheses
 		Actor sid ac.Deacon End-Actor
 		Insert_section LN.ShortLitany00_parentheses End-Insert
@@ -494,6 +508,13 @@ Template LN
 		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 	End-Section
 
+	Section ShortLitany08_deacon_choir
+		Insert_section LN.ShortLitany00_deacon_choir End-Insert
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.exc08.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res04.text End-Dialog
+	End-Section
 	Section ShortLitany08_deacon_parentheses
 		Actor sid ac.Deacon End-Actor
 		Insert_section LN.ShortLitany00_parentheses End-Insert
@@ -502,6 +523,13 @@ Template LN
 		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 	End-Section
 
+	Section ShortLitany09_deacon_choir
+		Insert_section LN.ShortLitany00_deacon_choir End-Insert
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.exc09.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res04.text End-Dialog
+	End-Section
 	Section ShortLitany09_deacon_parentheses
 		Actor sid ac.Deacon End-Actor
 		Insert_section LN.ShortLitany00_parentheses End-Insert
@@ -510,6 +538,13 @@ Template LN
 		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 	End-Section
 
+	Section ShortLitany10_deacon_choir
+		Insert_section LN.ShortLitany00_deacon_choir End-Insert
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.exc10.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res04.text End-Dialog
+	End-Section
 	Section ShortLitany10_deacon_parentheses
 		Actor sid ac.Deacon End-Actor
 		Insert_section LN.ShortLitany00_parentheses End-Insert
@@ -518,6 +553,13 @@ Template LN
 		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 	End-Section
 
+	Section ShortLitany14_deacon_choir
+		Insert_section LN.ShortLitany00_deacon_choir End-Insert
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.exc14.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res04.text End-Dialog
+	End-Section
 	Section ShortLitany14_deacon_parentheses
 		Actor sid ac.Deacon End-Actor
 		Insert_section LN.ShortLitany00_parentheses End-Insert
@@ -526,6 +568,13 @@ Template LN
 		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 	End-Section
 
+	Section ShortLitany16_deacon_choir
+		Insert_section LN.ShortLitany00_deacon_choir End-Insert
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.exc16.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res04.text End-Dialog
+	End-Section
 	Section ShortLitany16_deacon_parentheses
 		Actor sid ac.Deacon End-Actor
 		Insert_section LN.ShortLitany00_parentheses End-Insert
@@ -534,6 +583,56 @@ Template LN
 		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 	End-Section
 
+	Section ShortLitany_HolySpirit_deacon_choir__
+		Section kneel
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.petKneel07.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res01.text End-Dialog
+		End-Section
+		Section rise1
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.petKneel08.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res01.text End-Dialog
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.pet13.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res03.text End-Dialog
+			Actor sid ac.Priest End-Actor
+			Dialog sid pr.exc13.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res04.text End-Dialog
+		End-Section
+		Section rise2
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.petKneel08.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res01.text End-Dialog
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.pet13.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res03.text End-Dialog
+			Actor sid ac.Priest End-Actor
+			Dialog sid pr.exc07c.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res04.text End-Dialog
+		End-Section
+		Section rise3
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.petKneel08.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res01.text End-Dialog
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.pet13.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res03.text End-Dialog
+			Actor sid ac.Priest End-Actor
+			Dialog sid pr.exc27.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res04.text End-Dialog
+		End-Section
+	End-Section
 	Section ShortLitany_HolySpirit_deacon_parentheses__
 		Section kneel
 			Actor sid ac.Deacon End-Actor
@@ -572,6 +671,13 @@ Template LN
 		End-Section
 	End-Section
 
+	Section ShortLitany02_priest_choir
+		Insert_section LN.ShortLitany00_priest_choir End-Insert
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.exc02.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res04.text End-Dialog
+	End-Section
 	Section ShortLitany02_priest_parentheses
 		Actor sid ac.Priest End-Actor
 		Insert_section LN.ShortLitany00_parentheses End-Insert
@@ -579,6 +685,13 @@ Template LN
 		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 	End-Section
 
+	Section ShortLitany03_priest_choir
+		Insert_section LN.ShortLitany00_priest_choir End-Insert
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.exc03.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res04.text End-Dialog
+	End-Section
 	Section ShortLitany03_priest_parentheses
 		Actor sid ac.Priest End-Actor
 		Insert_section LN.ShortLitany00_parentheses End-Insert
@@ -586,6 +699,13 @@ Template LN
 		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 	End-Section
 
+	Section ShortLitany04_priest_choir
+		Insert_section LN.ShortLitany00_priest_choir End-Insert
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.exc04.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res04.text End-Dialog
+	End-Section
 	Section ShortLitany04_priest_parentheses
 		Actor sid ac.Priest End-Actor
 		Insert_section LN.ShortLitany00_parentheses End-Insert
@@ -593,6 +713,13 @@ Template LN
 		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 	End-Section
 
+	Section ShortLitany05_priest_choir
+		Insert_section LN.ShortLitany00_priest_choir End-Insert
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.exc05.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res04.text End-Dialog
+	End-Section
 	Section ShortLitany05_priest_parentheses
 		Actor sid ac.Priest End-Actor
 		Insert_section LN.ShortLitany00_parentheses End-Insert
@@ -600,6 +727,13 @@ Template LN
 		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 	End-Section
 
+	Section ShortLitany08_priest_choir
+		Insert_section LN.ShortLitany00_priest_choir End-Insert
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.exc08.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res04.text End-Dialog
+	End-Section
 	Section ShortLitany08_priest_parentheses
 		Actor sid ac.Priest End-Actor
 		Insert_section LN.ShortLitany00_parentheses End-Insert
@@ -607,6 +741,13 @@ Template LN
 		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 	End-Section
 
+	Section ShortLitany09_priest_choir
+		Insert_section LN.ShortLitany00_priest_choir End-Insert
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.exc09.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res04.text End-Dialog
+	End-Section
 	Section ShortLitany09_priest_parentheses
 		Actor sid ac.Priest End-Actor
 		Insert_section LN.ShortLitany00_parentheses End-Insert
@@ -614,6 +755,13 @@ Template LN
 		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 	End-Section
 
+	Section ShortLitany10_priest_choir
+		Insert_section LN.ShortLitany00_priest_choir End-Insert
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.exc10.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res04.text End-Dialog
+	End-Section
 	Section ShortLitany10_priest_parentheses
 		Actor sid ac.Priest End-Actor
 		Insert_section LN.ShortLitany00_parentheses End-Insert
@@ -621,6 +769,13 @@ Template LN
 		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 	End-Section
 
+	Section ShortLitany14_priest_choir
+		Insert_section LN.ShortLitany00_priest_choir End-Insert
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.exc14.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res04.text End-Dialog
+	End-Section
 	Section ShortLitany14_priest_parentheses
 		Actor sid ac.Priest End-Actor
 		Insert_section LN.ShortLitany00_parentheses End-Insert
@@ -628,6 +783,13 @@ Template LN
 		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 	End-Section
 
+	Section ShortLitany16_priest_choir
+		Insert_section LN.ShortLitany00_priest_choir End-Insert
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.exc16.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res04.text End-Dialog
+	End-Section
 	Section ShortLitany16_priest_parentheses
 		Actor sid ac.Priest End-Actor
 		Insert_section LN.ShortLitany00_parentheses End-Insert
@@ -635,6 +797,56 @@ Template LN
 		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 	End-Section
 
+	Section ShortLitany_HolySpirit_priest_choir__
+		Section kneel
+			Actor sid ac.Priest End-Actor
+			Dialog sid pr.petKneel07.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res01.text End-Dialog
+		End-Section
+		Section rise1
+			Actor sid ac.Priest End-Actor
+			Dialog sid pr.petKneel08.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res01.text End-Dialog
+			Actor sid ac.Priest End-Actor
+			Dialog sid pr.pet13.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res03.text End-Dialog
+			Actor sid ac.Priest End-Actor
+			Dialog sid pr.exc13.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res04.text End-Dialog
+		End-Section
+		Section rise2
+			Actor sid ac.Priest End-Actor
+			Dialog sid pr.petKneel08.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res01.text End-Dialog
+			Actor sid ac.Priest End-Actor
+			Dialog sid pr.pet13.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res03.text End-Dialog
+			Actor sid ac.Priest End-Actor
+			Dialog sid pr.exc07c.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res04.text End-Dialog
+		End-Section
+		Section rise3
+			Actor sid ac.Priest End-Actor
+			Dialog sid pr.petKneel08.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res01.text End-Dialog
+			Actor sid ac.Priest End-Actor
+			Dialog sid pr.pet13.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res03.text End-Dialog
+			Actor sid ac.Priest End-Actor
+			Dialog sid pr.exc27.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res04.text End-Dialog
+		End-Section
+	End-Section
 	Section ShortLitany_HolySpirit_priest_parentheses__
 		Section kneel
 			Actor sid ac.Priest End-Actor
@@ -670,7 +882,36 @@ Template LN
 		End-Section
 	End-Section
 
-	Section Ektenia01
+	Section FervLitany_long_deacon_compact
+		Section part1
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.pet15.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res01.text End-Dialog
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.pet16.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res01.text End-Dialog
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.pet17.text End-Dialog
+			Actor sid ac.Choir<Tsmaller>sid ru.AfterEachPetition</>End-Actor
+			Dialog sid pr.res01.text<r>sid ru.Thrice</>End-Dialog
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.pet18.text End-Dialog
+		End-Section
+		Dialog sid pr.pet19Sa.text sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
+		Section part2
+			Dialog sid pr.pet20.text End-Dialog
+			Dialog sid pr.pet21.text End-Dialog
+			Dialog sid pr.pet22.text End-Dialog
+			Dialog sid pr.pet23.text End-Dialog
+			Actor sid ac.Priest End-Actor
+			Dialog sid pr.exc11.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res04.text End-Dialog
+		End-Section
+	End-Section
+	Section FervLitany_long_deacon_parentheses
 		Section part1
 			Actor sid ac.Deacon End-Actor
 			Dialog sid pr.pet15.text End-Dialog
@@ -699,123 +940,39 @@ Template LN
 		End-Section
 	End-Section
 
-	Section Ektenia01_double_commemoration //long version 
-		Actor sid ac.Deacon End-Actor
-		Dialog sid pr.pet15.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.pet16.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.pet17.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.pet18.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
+	Section FervLitany_long_double_commemoration_deacon_compact 
+		Insert_section LN.FervLitany_long_deacon_compact.part1 End-Insert
 		Dialog sid pr.pet19Sa.text sid cl.bishop1.rank sid cl.bishop1.name_c sid ru.And sid cl.bishop2.rank sid cl.bishop2.name_p End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.pet20.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.pet21.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.pet22.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.pet23.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Actor sid ac.Priest End-Actor
-		Dialog sid pr.exc11.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+		Insert_section LN.FervLitany_long_deacon_compact.part2 End-Insert
 	End-Section
-	Section Ektenia01_monastery_abbot //long version 
-		Actor sid ac.Deacon End-Actor
-		Dialog sid pr.pet15.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.pet16.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.pet17.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.pet18.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
+	Section FervLitany_long_double_commemoration_deacon_parentheses 
+		Insert_section LN.FervLitany_long_deacon_parentheses.part1 End-Insert
+		Dialog sid pr.pet19Sa.text sid cl.bishop1.rank sid cl.bishop1.name_c sid ru.And sid cl.bishop2.rank sid cl.bishop2.name_p End-Dialog
+		Insert_section LN.FervLitany_long_deacon_parentheses.part2 End-Insert
+	End-Section
+
+	Section FervLitany_short_deacon_compact
+		Section part1
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.pet17.text End-Dialog
+			Actor sid ac.Choir<r><Tsmaller>sid ru.AfterEachPetition</></>End-Actor
+			Dialog sid pr.res01.text<r>sid ru.Thrice</>End-Dialog
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.pet18.text End-Dialog
+		End-Section
 		Dialog sid pr.pet19Sa.text sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.pet19m.text sid cl.monastery1_p End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-	//	Dialog sid pr.pet21.text End-Dialog
-	//	Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.petMonastery22.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.petMonastery23.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Actor sid ac.Priest End-Actor
-		Dialog sid pr.exc11.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+		Section part2
+			Dialog sid pr.pet20.text End-Dialog
+			Dialog sid pr.pet21.text End-Dialog
+			Dialog sid pr.pet22.text End-Dialog
+			Dialog sid pr.pet23.text End-Dialog
+			Actor sid ac.Priest End-Actor
+			Dialog sid pr.exc11.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res04.text End-Dialog
+		End-Section
 	End-Section
-	Section Ektenia01_monastery_abbot_and_geronta //long version 
-		Actor sid ac.Deacon End-Actor
-		Dialog sid pr.pet15.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.pet16.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.pet17.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.pet18.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.pet19Sa.text sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.pet19m.text sid cl.monastery1_p End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.pet19m.text sid cl.monastery2_p End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-	//	Dialog sid pr.pet21.text End-Dialog
-	//	Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.petMonastery22.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.petMonastery23.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Actor sid ac.Priest End-Actor
-		Dialog sid pr.exc11.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
-	End-Section
-	Section Ektenia02_monastery_abbot //short version 
-		Actor sid ac.Deacon End-Actor
-		Dialog sid pr.pet17.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.pet18.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.pet19Sa.text sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.pet19m.text sid cl.monastery1_p End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-	//	Dialog sid pr.pet21.text End-Dialog
-	//	Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.petMonastery22.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.petMonastery23.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Actor sid ac.Priest End-Actor
-		Dialog sid pr.exc11.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
-	End-Section
-	Section Ektenia02_monastery_abbot_and_geronta //short version 
-		Actor sid ac.Deacon End-Actor
-		Dialog sid pr.pet17.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.pet18.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.pet19Sa.text sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.pet19Sa.text sid cl.monastery1_p End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.pet19m.text sid cl.monastery2_p End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-	//	Dialog sid pr.pet21.text End-Dialog
-	//	Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.petMonastery22.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.petMonastery23.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Actor sid ac.Priest End-Actor
-		Dialog sid pr.exc11.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
-	End-Section
-	Section Ektenia02 //short version 
+	Section FervLitany_short_deacon_parentheses
 		Section part1
 			Actor sid ac.Deacon End-Actor
 			Dialog sid pr.pet17.text End-Dialog
@@ -839,633 +996,93 @@ Template LN
 			Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 		End-Section
 	End-Section
-	Section Ektenia02_double_commemoration //short version 
-		Actor sid ac.Deacon End-Actor
-		Dialog sid pr.pet17.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.pet18.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
+	Section FervLitany_short_double_commemoration_deacon_parentheses 
+		Insert_section LN.FervLitany_short_deacon_parentheses.part1 End-Insert
 		Dialog sid pr.pet19Sa.text sid cl.bishop1.rank sid cl.bishop1.name_p sid ru.And sid cl.bishop2.rank sid cl.bishop2.name_p End-Dialog
+		Insert_section LN.FervLitany_short_deacon_parentheses.part2 End-Insert
+	End-Section
+
+	Section FervLitany_long_monastery_abbot_deacon_parentheses 
+		Insert_section LN.FervLitany_long_deacon_parentheses.part1 End-Insert
+		Dialog sid pr.pet19Sa.text sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
 		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.pet20.text End-Dialog
+		Dialog sid pr.pet19m.text sid cl.monastery1_p End-Dialog
 		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.pet21.text End-Dialog
+		Dialog sid pr.petMonastery22.text End-Dialog
 		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.pet22.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.pet23.text End-Dialog
+		Dialog sid pr.petMonastery23.text End-Dialog
 		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
 		Actor sid ac.Priest End-Actor
 		Dialog sid pr.exc11.text End-Dialog
 		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 	End-Section
-	Section Ektenia03_me1 //for Lity
-		Section part1
-			Actor sid ac.Deacon End-Actor
-			Media sid ho.ho10_gr_GR_cog.hoVE.MM.LityKyrieEleison.text End-Media
-			Dialog sid pr.pet17.text End-Dialog
+	Section FervLitany_long_monastery_abbot_and_geronta_deacon_parentheses 
+		Insert_section LN.FervLitany_long_deacon_parentheses.part1 End-Insert
+		Dialog sid pr.pet19Sa.text sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
+		Dialog sid pr.pet19m.text sid cl.monastery1_p End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
+		Dialog sid pr.pet19m.text sid cl.monastery2_p End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
+		Dialog sid pr.petMonastery22.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
+		Dialog sid pr.petMonastery23.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.exc11.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+	End-Section
+	Section FervLitany_short_monastery_abbot_deacon_parentheses
+		Insert_section LN.FervLitany_short_deacon_parentheses.part1 End-Insert
+		Dialog sid pr.pet19Sa.text sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
+		Dialog sid pr.pet19m.text sid cl.monastery1_p End-Dialog
+		Section part2
 			Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-			Dialog sid pr.pet18.text End-Dialog
+			Dialog sid pr.petMonastery22.text End-Dialog
 			Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-			Dialog sid pr.pet19Sa.text sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
-			Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-			Dialog sid pr.pet21a.text End-Dialog
-			Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-			Dialog sid pr.pet33.text End-Dialog
-			Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-			Dialog sid pr.pet34.text End-Dialog
+			Dialog sid pr.petMonastery23.text End-Dialog
 			Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
 			Actor sid ac.Priest End-Actor
-			Dialog sid pr.pet35.text End-Dialog
-			Dialog sid pr.exc11a.text End-Dialog
+			Dialog sid pr.exc11.text End-Dialog
 			Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
-			Dialog sid pr.pet31.text End-Dialog
-			Dialog<i>sid misc.parenthesis.open sid pr.res05.text sid misc.parenthesis.close</>End-Dialog
-			Actor sid ac.Deacon End-Actor
-			Dialog sid pr.pet32.text End-Dialog
-			Dialog<i>sid misc.parenthesis.open sid pr.res03.text sid misc.parenthesis.close</>End-Dialog
 		End-Section
-		Section part2
-			Actor sid ac.Priest End-Actor
-			when-movable-cycle-day-is 
-				36, 50, 57 use: Insert_section commemorations.ektenia_09 End-Insert
-				78, 85, 113 use: Insert_section commemorations.ektenia_20 End-Insert
-				127 use: Insert_section commemorations.ektenia_21 End-Insert
-				otherwise use: Insert_section LN.ektenia_menaion End-Insert
-			end-when
-			Dialog sid pr.pet36.text End-Dialog
-		End-Section
-	End-Section	
-	Section Ektenia03_me1_compact //for Lity
-		Section part1
-			Actor sid ac.Deacon End-Actor
-			Media sid ho.ho10_gr_GR_cog.hoVE.MM.LityKyrieEleison.text End-Media
-			Dialog sid pr.pet17.text End-Dialog
-			Actor sid ac.Choir<r><Tsmaller>sid ru.AfterEachPetition</></>End-Actor
-			Dialog sid pr.res01.text<r>sid ru.Thrice</> End-Dialog
-			Actor sid ac.Deacon End-Actor
-			Dialog sid pr.pet18.text End-Dialog
-			Dialog sid pr.pet19Sa.text sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
-			Dialog sid pr.pet21a.text End-Dialog
-			Dialog sid pr.pet33.text End-Dialog
-			Dialog sid pr.pet34.text End-Dialog
-			Actor sid ac.Priest End-Actor
-			Dialog sid pr.pet35.text End-Dialog
-			Dialog sid pr.exc11a.text End-Dialog
-			Actor sid ac.Choir End-Actor
-			Dialog sid pr.res04.text End-Dialog
-			Actor sid ac.Priest End-Actor
-			Dialog sid pr.pet31.text End-Dialog
-			Actor sid ac.Choir End-Actor
-			Dialog sid pr.res05.text End-Dialog
-			Actor sid ac.Deacon End-Actor
-			Dialog sid pr.pet32.text End-Dialog
-			Actor sid ac.Choir End-Actor
-			Dialog sid pr.res03.text End-Dialog
-		End-Section
-		Section part2
-			Actor sid ac.Priest End-Actor
-			when-movable-cycle-day-is 
-				36, 50, 57 use: Insert_section commemorations.ektenia_09 End-Insert
-				78, 85, 113 use: Insert_section commemorations.ektenia_20 End-Insert
-				127 use: Insert_section commemorations.ektenia_21 End-Insert
-				otherwise use: Insert_section LN.ektenia_menaion End-Insert
-			end-when
-			Dialog sid pr.pet36.text End-Dialog
-		End-Section
-	End-Section	
-	Section Ektenia03_mealt1 //for Lity
-		Section part1
-			Insert_section Ektenia03_me1.part1 End-Insert
-		End-Section
-		Section part2
-			Actor sid ac.Priest End-Actor
-			Insert_section LN.ektenia_mealt1 End-Insert
-			Dialog sid pr.pet36.text End-Dialog
-		End-Section
-	End-Section	
-	Section Ektenia03_me1mealt1 //for Lity
-		Section part1
-			Insert_section Ektenia03_me1.part1 End-Insert
-		End-Section
-		Section part2
-			Actor sid ac.Priest End-Actor
-			Insert_section LN.ektenia_mealt1 End-Insert
-			Dialog sid pr.pet36.text End-Dialog
-		End-Section
-	End-Section	
-	Section Ektenia03_me1mealt2 //for Lity
-		Section part1
-			Insert_section Ektenia03_me1.part1 End-Insert
-		End-Section
-		Section part2
-			Actor sid ac.Priest End-Actor
-			Insert_section LN.ektenia_with_mealt2 End-Insert
-			Dialog sid pr.pet36.text End-Dialog
-		End-Section
-	End-Section	
-	Section Ektenia03_mealt1mealt2 //for Lity
-		Section part1
-			Insert_section Ektenia03_me1.part1 End-Insert
-		End-Section
-		Section part2
-			Actor sid ac.Priest End-Actor
-			Insert_section LN.ektenia_mealt1_and_mealt2 End-Insert
-			Dialog sid pr.pet36.text End-Dialog
-		End-Section
-	End-Section	
-	Section Ektenia03_pe //for Lity
-		Section part1
-			Insert_section Ektenia03_me1.part1 End-Insert
-		End-Section
-		Section part2
-			Actor sid ac.Priest End-Actor
-			Insert_section LN.ektenia_pe End-Insert
-			Dialog sid pr.pet36.text End-Dialog
-		End-Section
-	End-Section	
-	Section Ektenia03_peme1 //for Lity
-		Section part1
-			Insert_section Ektenia03_me1.part1 End-Insert
-		End-Section
-		Section part2
-			Actor sid ac.Priest End-Actor
-			Insert_section LN.ektenia_peme1 End-Insert
-			Dialog sid pr.pet36.text End-Dialog
-		End-Section
-	End-Section	
-	Section Ektenia03_pealt1 //for Lity
-		Section part1
-			Insert_section Ektenia03_me1.part1 End-Insert
-		End-Section
-		Section part2
-			Actor sid ac.Priest End-Actor
-			Insert_section LN.ektenia_pealt1 End-Insert
-			Dialog sid pr.pet36.text End-Dialog
-		End-Section
-	End-Section	
-	Section Ektenia03_hierarchical_me1 //for Lity
-		Section part1
-			Actor sid ac.Deacon End-Actor
-			Media sid ho.ho10_gr_GR_cog.hoVE.MM.LityKyrieEleison.text End-Media
-			Dialog sid pr.pet17.text End-Dialog
-			Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-			Dialog sid pr.pet18.text End-Dialog
-			Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-			Dialog sid pr.pet19Sa.text sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
-			Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-			Dialog sid pr.pet21a.text End-Dialog
-			Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-			Dialog sid pr.pet33.text End-Dialog
-			Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-			Dialog sid pr.pet34.text End-Dialog
-			Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-			Actor sid ac.Hierarch End-Actor
-			Dialog sid pr.pet35.text End-Dialog
-			Dialog sid pr.exc11a.text End-Dialog
-			Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
-			Dialog sid pr.pet31.text End-Dialog
-			Dialog<i>sid misc.parenthesis.open sid pr.res05.text sid misc.parenthesis.close</>End-Dialog
-			Actor sid ac.Deacon End-Actor
-			Dialog sid pr.pet32.text End-Dialog
-			Dialog<i>sid misc.parenthesis.open sid pr.res03.text sid misc.parenthesis.close</>End-Dialog
-		End-Section
-		Section part2
-			Actor sid ac.Hierarch End-Actor
-			when-movable-cycle-day-is 
-				36, 50, 57 use: Insert_section commemorations.ektenia_09 End-Insert
-				78, 85, 113 use: Insert_section commemorations.ektenia_20 End-Insert
-				127 use: Insert_section commemorations.ektenia_21 End-Insert
-				otherwise use: Insert_section LN.ektenia_menaion End-Insert
-			end-when
-			Dialog sid pr.pet36.text End-Dialog
-		End-Section
-	End-Section	
-	Section Ektenia03_hierarchical_mealt1 //for Lity
-		Section part1
-			Insert_section Ektenia03_hierarchical_me1.part1 End-Insert
-		End-Section
-		Section part2
-			Actor sid ac.Hierarch End-Actor
-			Insert_section LN.ektenia_mealt1 End-Insert
-			Dialog sid pr.pet36.text End-Dialog
-		End-Section
-	End-Section	
-	Section Ektenia03_hierarchical_me1mealt1 //for Lity
-		Section part1
-			Insert_section Ektenia03_hierarchical_me1.part1 End-Insert
-		End-Section
-		Section part2
-			Actor sid ac.Hierarch End-Actor
-			Insert_section LN.ektenia_mealt1 End-Insert
-			Dialog sid pr.pet36.text End-Dialog
-		End-Section
-	End-Section	
-	Section Ektenia03_hierarchical_me1mealt2 //for Lity
-		Section part1
-			Insert_section Ektenia03_hierarchical_me1.part1 End-Insert
-		End-Section
-		Section part2
-			Actor sid ac.Hierarch End-Actor
-			Insert_section LN.ektenia_with_mealt2 End-Insert
-			Dialog sid pr.pet36.text End-Dialog
-		End-Section
-	End-Section	
-	Section Ektenia03_hierarchical_pe //for Lity
-		Section part1
-			Insert_section Ektenia03_hierarchical_me1.part1 End-Insert
-		End-Section
-		Section part2
-			Actor sid ac.Hierarch End-Actor
-			Insert_section LN.ektenia_pe End-Insert
-			Dialog sid pr.pet36.text End-Dialog
-		End-Section
-	End-Section	
-	Section Ektenia03_hierarchical_pealt1 //for Lity
-		Section part1
-			Insert_section Ektenia03_hierarchical_me1.part1 End-Insert
-		End-Section
-		Section part2
-			Actor sid ac.Hierarch End-Actor
-			Insert_section LN.ektenia_pealt1 End-Insert
-			Dialog sid pr.pet36.text End-Dialog
-		End-Section
-	End-Section	
-	Section hEktenia03__
-		Section me1 //for Lity
-			Section part1
-				Actor sid ac.Deacon End-Actor
-				Media sid ho.ho10_gr_GR_cog.hoVE.MM.LityKyrieEleison.text End-Media
-				Dialog sid pr.pet17.text End-Dialog
-				Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-				Dialog sid pr.pet18.text End-Dialog
-				Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-				Dialog sid pr.pet19Sa.text sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
-				Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-				Dialog sid pr.pet21a.text End-Dialog
-				Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-				Dialog sid pr.pet33.text End-Dialog
-				Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-				Dialog sid pr.pet34.text End-Dialog
-				Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-				Actor sid ac.Hierarch End-Actor
-				Dialog sid pr.pet35.text End-Dialog
-				Dialog sid pr.exc11a.text End-Dialog
-				Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
-				Dialog sid pr.pet31.text End-Dialog
-				Dialog<i>sid misc.parenthesis.open sid pr.res05.text sid misc.parenthesis.close</>End-Dialog
-				Actor sid ac.Deacon End-Actor
-				Dialog sid pr.pet32.text End-Dialog
-				Dialog<i>sid misc.parenthesis.open sid pr.res03.text sid misc.parenthesis.close</>End-Dialog
-			End-Section
-			Section part2
-				Actor sid ac.Hierarch End-Actor
-				when-movable-cycle-day-is 
-					36, 50, 57 use: Insert_section commemorations.ektenia_09 End-Insert
-					78, 85, 113 use: Insert_section commemorations.ektenia_20 End-Insert
-					127 use: Insert_section commemorations.ektenia_21 End-Insert
-					otherwise use: Insert_section LN.ektenia_menaion End-Insert
-				end-when
-				Dialog sid pr.pet36.text End-Dialog
-			End-Section
-		End-Section	
-		Section mealt1 //for Lity
-			Section part1
-				Insert_section me1.part1 End-Insert
-			End-Section
-			Section part2
-				Actor sid ac.Hierarch End-Actor
-				Insert_section LN.ektenia_mealt1 End-Insert
-				Dialog sid pr.pet36.text End-Dialog
-			End-Section
-		End-Section	
-		Section me1mealt1 //for Lity
-			Section part1
-				Insert_section me1.part1 End-Insert
-			End-Section
-			Section part2
-				Actor sid ac.Hierarch End-Actor
-				Insert_section LN.ektenia_mealt1 End-Insert
-				Dialog sid pr.pet36.text End-Dialog
-			End-Section
-		End-Section	
-		Section me1mealt2 //for Lity
-			Section part1
-				Insert_section me1.part1 End-Insert
-			End-Section
-			Section part2
-				Actor sid ac.Hierarch End-Actor
-				Insert_section LN.ektenia_with_mealt2 End-Insert
-				Dialog sid pr.pet36.text End-Dialog
-			End-Section
-		End-Section	
-		Section pe //for Lity
-			Section part1
-				Insert_section Ektenia03_hierarchical_me1.part1 End-Insert
-			End-Section
-			Section part2
-				Actor sid ac.Hierarch End-Actor
-				Insert_section LN.ektenia_pe End-Insert
-				Dialog sid pr.pet36.text End-Dialog
-			End-Section
-		End-Section	
-		Section pealt1 //for Lity
-			Section part1
-				Insert_section me1.part1 End-Insert
-			End-Section
-			Section part2
-				Actor sid ac.Hierarch End-Actor
-				Insert_section LN.ektenia_pealt1 End-Insert
-				Dialog sid pr.pet36.text End-Dialog
-			End-Section
-		End-Section	
 	End-Section
-	Section hEktenia03_double_commemoration__
-		Section me1 //for Lity
-			Section part1
-				Actor sid ac.Deacon End-Actor
-				Media sid ho.ho10_gr_GR_cog.hoVE.MM.LityKyrieEleison.text End-Media
-				Dialog sid pr.pet17.text End-Dialog
-				Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-				Dialog sid pr.pet18.text End-Dialog
-				Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-				Dialog sid pr.pet19Sa.text sid cl.bishop1.rank sid cl.bishop1.name_c sid ru.And sid cl.bishop2.rank sid cl.bishop2.name_p End-Dialog
-				Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-				Dialog sid pr.pet21a.text End-Dialog
-				Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-				Dialog sid pr.pet33.text End-Dialog
-				Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-				Dialog sid pr.pet34.text End-Dialog
-				Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-				Actor sid ac.Hierarch End-Actor
-				Dialog sid pr.pet35.text End-Dialog
-				Dialog sid pr.exc11a.text End-Dialog
-				Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
-				Dialog sid pr.pet31.text End-Dialog
-				Dialog<i>sid misc.parenthesis.open sid pr.res05.text sid misc.parenthesis.close</>End-Dialog
-				Actor sid ac.Deacon End-Actor
-				Dialog sid pr.pet32.text End-Dialog
-				Dialog<i>sid misc.parenthesis.open sid pr.res03.text sid misc.parenthesis.close</>End-Dialog
-			End-Section
-			Section part2
-				Actor sid ac.Hierarch End-Actor
-				when-movable-cycle-day-is 
-					36, 50, 57 use: Insert_section commemorations.ektenia_09 End-Insert
-					78, 85, 113 use: Insert_section commemorations.ektenia_20 End-Insert
-					127 use: Insert_section commemorations.ektenia_21 End-Insert
-					otherwise use: Insert_section LN.ektenia_menaion End-Insert
-				end-when
-				Dialog sid pr.pet36.text End-Dialog
-			End-Section
-		End-Section	
-		Section mealt1 //for Lity
-			Section part1
-				Insert_section me1.part1 End-Insert
-			End-Section
-			Section part2
-				Actor sid ac.Hierarch End-Actor
-				Insert_section LN.ektenia_mealt1 End-Insert
-				Dialog sid pr.pet36.text End-Dialog
-			End-Section
-		End-Section	
-		Section me1mealt1 //for Lity
-			Section part1
-				Insert_section me1.part1 End-Insert
-			End-Section
-			Section part2
-				Actor sid ac.Hierarch End-Actor
-				Insert_section LN.ektenia_mealt1 End-Insert
-				Dialog sid pr.pet36.text End-Dialog
-			End-Section
-		End-Section	
-		Section me1mealt2 //for Lity
-			Section part1
-				Insert_section me1.part1 End-Insert
-			End-Section
-			Section part2
-				Actor sid ac.Hierarch End-Actor
-				Insert_section LN.ektenia_with_mealt2 End-Insert
-				Dialog sid pr.pet36.text End-Dialog
-			End-Section
-		End-Section	
-		Section pealt1 //for Lity
-			Section part1
-				Insert_section me1.part1 End-Insert
-			End-Section
-			Section part2
-				Actor sid ac.Hierarch End-Actor
-				Insert_section LN.ektenia_pealt1 End-Insert
-				Dialog sid pr.pet36.text End-Dialog
-			End-Section
-		End-Section	
+	Section FervLitany_short_monastery_abbot_and_geronta_deacon_parentheses
+		Insert_section LN.FervLitany_short_deacon_parentheses.part1 End-Insert
+		Dialog sid pr.pet19Sa.text sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
+		Dialog sid pr.pet19Sa.text sid cl.monastery1_p End-Dialog
+		Insert_section LN.FervLitany_short_monastery_abbot_deacon_parentheses.part2 End-Insert
 	End-Section
 
-		Section ektenia_menaion
-			when-date-is
-				Jan 7 use: Insert_section commemorations.ektenia_05 End-Insert
-				Feb 24 use: Insert_section commemorations.ektenia_05 End-Insert
-				Mar 25 use: Insert_section commemorations.ektenia_02 End-Insert
-				May 25 use: Insert_section commemorations.ektenia_05 End-Insert
-				Jun 30 use: Insert_section commemorations.ektenia_06 End-Insert
-				Jun 24 use: Insert_section commemorations.ektenia_05 End-Insert
-				Jul 13 thru 19 use:
-					when-name-of-day-is Sunday
-						use: Insert_section commemorations.ektenia_10 End-Insert
-					end-when
-				Jul 22 use: Insert_section commemorations.ektenia_07_with_mealt1 End-Insert
-				Jul 25 use: Insert_section commemorations.ektenia_08 End-Insert
-				Aug 15 use: Insert_section commemorations.ektenia_02 End-Insert
-				Aug 29 use: Insert_section commemorations.ektenia_05 End-Insert
-				Aug 31 use: Insert_section commemorations.ektenia_02 End-Insert
-				Sep 8 use: Insert_section commemorations.ektenia_02 End-Insert
-				Sep 14 use: Insert_section commemorations.ektenia_03 End-Insert
-				Sep 17 use: Insert_section commemorations.ektenia_07 End-Insert
-				Sep 23 use: Insert_section commemorations.ektenia_05 End-Insert
-				Oct 11 thru 17 use:
-					when-name-of-day-is Sunday use:
-						Insert_section commemorations.ektenia_11 End-Insert
-					end-when
-				Oct 26 use: Insert_section commemorations.ektenia_07 End-Insert
-				Nov 8 use: Insert_section commemorations.ektenia_04 End-Insert
-				Nov 21 use: Insert_section commemorations.ektenia_02 End-Insert
-				Dec 4 use: Insert_section commemorations.ektenia_07 End-Insert
-				Dec 6 use: Insert_section commemorations.ektenia_07 End-Insert
-				Dec 9 use: Insert_section commemorations.ektenia_02 End-Insert
-				Dec 11, 13, 14, 16 use:
-					when-name-of-day-is Sunday use:
-						Insert_section commemorations.ektenia_14 End-Insert
-					end-when
-				Dec 12, 15, 17 use:
-					when-name-of-day-is Sunday use:
-						Insert_section commemorations.ektenia_15 End-Insert
-					otherwise use: Insert_section commemorations.ektenia_07 End-Insert
-					end-when
-				Dec 18 thru 24 use:
-					when-name-of-day-is Sunday use:
-						Insert_section commemorations.ektenia_16 End-Insert
-					end-when	
-				Dec 26 use: 
-					when-name-of-day-is
-						Sunday use: Insert_section commemorations.ektenia_17 End-Insert
-						otherwise use: Insert_section commemorations.ektenia_02 End-Insert
-					end-when
-				Dec 27 use: 
-					when-name-of-day-is
-						Sunday use: Insert_section commemorations.ektenia_18 End-Insert
-						otherwise use: Insert_section commemorations.ektenia_07 End-Insert
-					end-when
-				Dec 28 thru 31 use: 
-					when-name-of-day-is
-						Sunday use: Insert_section commemorations.ektenia_19 End-Insert
-					end-when
-				otherwise use: Insert_section commemorations.ektenia_07 End-Insert
-			end-when
-		End-Section
-
-		Section ektenia_mealt1
-			when-date-is
-				Feb 7 use: Insert_section commemorations.ektenia_07_mealt1 End-Insert
-				Mar 2 use: Insert_section commemorations.ektenia_07_mealt1 End-Insert
-				Jul 12 use: Insert_section commemorations.ektenia_07_mealt1 End-Insert
-				Jul 22 use: Insert_section commemorations.ektenia_07_mealt1 End-Insert
-				Aug 16, 24, 27 use: Insert_section commemorations.ektenia_07_mealt1 End-Insert
-				Sep 17 use: Insert_section commemorations.ektenia_07_mealt1 End-Insert
-				Oct 20 use: Insert_section commemorations.ektenia_07_mealt1 End-Insert
-				Oct 28 use: Insert_section commemorations.ektenia_12 End-Insert
-				Dec 2 use: Insert_section commemorations.ektenia_07_mealt1 End-Insert
-				Nov 9, 22 use: Insert_section commemorations.ektenia_07_mealt1 End-Insert
-				Dec 17 use:
-					when-name-of-day-is Sunday 
-						use: Insert_section commemorations.ektenia_15_mealt1 End-Insert
-						otherwise use: Insert_section commemorations.ektenia_07_mealt1 End-Insert
-					end-when
-			end-when
-		End-Section
-
-		Section ektenia_with_mealt2
-			when-date-is
-				Feb 6 use: Insert_section commemorations.ektenia_07_with_mealt2 End-Insert
-			end-when
-		End-Section
-		Section ektenia_mealt1_and_mealt2
-			when-date-is
-				Feb 6 use: Insert_section commemorations.ektenia_07_with_mealt2 End-Insert
-			end-when
-		End-Section
-
-		Section ektenia_pe
-			when-movable-cycle-day-is
-				127 use: 
-					Insert_section commemorations.ektenia_21 End-Insert
-				otherwise use: 
-					Insert_section commemorations.ektenia_20 End-Insert
-			end-when
-		End-Section
-
-		Section ektenia_peme1
-			when-movable-cycle-day-is
-				127 use: 
-					Insert_section commemorations.ektenia_21_me1 End-Insert
-				otherwise use: 
-					Insert_section commemorations.ektenia_20_me1 End-Insert
-			end-when
-		End-Section
-
-		Section ektenia_pealt1
-			when-movable-cycle-day-is
-				73 use: Insert_section commemorations.ektenia_07_pealt1 End-Insert
-			end-when
-		End-Section
-		
-		Section commemorations
-			Section ektenia_01 //Saint rubric
-				Dialog sid pr.sup00a.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text <r>sid pr.sup16a.text</>sid pr.sup16b.text sid pr.sup15.text End-Dialog	
-			End-Section
-			Section ektenia_02 //Theotokos
-				Dialog sid pr.sup00a.text sid pr.sup01.text rid meDA.insert2 sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text sid pr.sup15.text End-Dialog	
-			End-Section
-			Section ektenia_03 //Cross
-				Dialog sid pr.sup00a.text sid pr.sup01.text sid pr.sup02.text rid meDA.insert2 sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text sid pr.sup15.text End-Dialog	
-			End-Section
-			Section ektenia_04 //Angels
-				Dialog sid pr.sup00a.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text rid meDA.insert2 sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text sid pr.sup15.text End-Dialog	
-			End-Section
-			Section ektenia_05 //Forerunner
-				Dialog sid pr.sup00a.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text rid meDA.insert2 sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text sid pr.sup15.text End-Dialog	
-			End-Section
-			Section ektenia_06 //Apostles
-				Dialog sid pr.sup00a.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text rid meDA.insert2 sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text sid pr.sup15.text End-Dialog	
-			End-Section
-			Section ektenia_07 //Saint
-				Insert_section Selector_Supplication.Section02_ektenia End-Insert
-			End-Section
-			Section ektenia_07_with_mealt1 //Saint both
-				Dialog sid pr.sup00a.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text rid meDA.insert1 rid alt1.meDA.insert1 rid alt1.meDA.insert2 sid pr.sup15.text End-Dialog	
-			End-Section
-			Section ektenia_07_with_mealt2 //Saint both
-				Dialog sid pr.sup00a.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text rid meDA.insert1 rid alt2.meDA.insert1 rid alt2.meDA.insert2 sid pr.sup15.text End-Dialog	
-			End-Section
-			Section ektenia_07_mealt1 //Saint mealt1 only
-				Insert_section Selector_Supplication.Section04_ektenia_mealt1 End-Insert
-			End-Section
-			Section ektenia_07_mealt1_mealt2 //Saints mealt1 and mealt2
-				Dialog sid pr.sup00a.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text sid cl.localpatronsaint1.supplication sid pr.sup14.text rid alt1.meDA.insert1 rid alt2.meDA.insert1 rid alt2.meDA.insert2 sid pr.sup15.text End-Dialog	
-			End-Section
-			Section ektenia_07_pealt1 //Saint alt1pe1 only
-				Dialog sid pr.sup00a.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text rid alt1.peDA.insert1 rid alt1.meDA.insert2 sid pr.sup15.text End-Dialog	
-			End-Section
-			Section ektenia_08 //Joakim and Anna
-				Dialog sid pr.sup00a.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text rid meDA.insert2 sid pr.sup15.text End-Dialog	
-			End-Section
-			Section ektenia_09 //Triodion
-				Dialog sid pr.sup00a.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text rid trDA.insert1 rid trDA.insert2 sid pr.sup15.text End-Dialog	
-			End-Section
-			Section ektenia_10 //HolyFathersJuly
-				Dialog sid pr.sup00a.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text sid me.m07.dHF_gr_GR_cog.meDA.insert1 sid me.m07.dHF_gr_GR_cog.meDA.insert2 sid pr.sup15.text End-Dialog	
-			End-Section
-			Section ektenia_11 //HolyFathersOctober
-				Dialog sid pr.sup00a.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text sid me.m10.dHF_gr_GR_cog.meDA.insert1 sid me.m10.dHF_gr_GR_cog.meDA.insert2 sid pr.sup15.text End-Dialog	
-			End-Section
-			Section ektenia_12 //HolyProtectionOctober
-				Dialog sid pr.sup00a.text sid pr.sup01.text sid me.m10.d28_gr_GR_cog.alt1.meDA.insert2 sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text sid pr.sup15.text End-Dialog	
-			End-Section
-
-			Section ektenia_14 //ForefathersDecember
-				Dialog sid pr.sup00a.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text sid me.m12.dFF_gr_GR_cog.meDA.insert1 sid me.m12.dFF_gr_GR_cog.meDA.insert2 sid pr.sup15.text End-Dialog	
-			End-Section
-			Section ektenia_15 //ForefathersDecember1215
-				Dialog sid pr.sup00a.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text rid meDA.insert1 sid me.m12.dFF_gr_GR_cog.meDA.insert1 sid me.m12.dFF_gr_GR_cog.meDA.insert2 sid pr.sup15.text End-Dialog	
-			End-Section
-			Section ektenia_15_mealt1 //Forefathers_mealt1
-				Dialog sid pr.sup00a.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text rid alt1.meDA.insert1 sid me.m12.dFF_gr_GR_cog.meDA.insert1 sid me.m12.dFF_gr_GR_cog.meDA.insert2 sid pr.sup15.text End-Dialog	
-			End-Section
-			Section ektenia_16 //Sunday Before Xmas
-				Dialog sid pr.sup00a.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text sid me.m12.dBC_gr_GR_cog.meDA.insert1 sid me.m12.dBC_gr_GR_cog.meDA.insert2 sid pr.sup15.text End-Dialog	
-			End-Section
-			Section ektenia_17 //SunAfterXmas26
-				Dialog sid pr.sup00a.text sid pr.sup01.text sid me.m12.d26_gr_GR_cog.meDA.insert2 sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text sid me.m12.dAC_gr_GR_cog.meDA.insert1 sid me.m12.dAC_gr_GR_cog.meDA.insert2 sid pr.sup15.text End-Dialog	
-			End-Section
-			Section ektenia_18 //SunAfterXmas27
-				Dialog sid pr.sup00a.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text sid me.m12.d27_gr_GR_cog.meDA.insert1 sid me.m12.dAC_gr_GR_cog.meDA.insert1 sid me.m12.dAC_gr_GR_cog.meDA.insert2 sid pr.sup15.text End-Dialog	
-			End-Section
-			Section ektenia_19 //SunAfterXmas28293031
-				Dialog sid pr.sup00a.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text sid me.m12.dAC_gr_GR_cog.meDA.insert1 sid me.m12.dAC_gr_GR_cog.meDA.insert2 sid pr.sup15.text End-Dialog	
-			End-Section
-			Section ektenia_20 //Pentecostarion
-				Dialog sid pr.sup00a.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text rid peDA.insert1 rid meDA.insert2 sid pr.sup15.text End-Dialog	
-			End-Section
-			Section ektenia_20_me1 //Pentecostarion and saint
-				Dialog sid pr.sup00a.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text rid peDA.insert1 rid meDA.insert2 rid meDA.insert1 rid meDA.insert2 sid pr.sup15.text End-Dialog	
-			End-Section
-			Section ektenia_21 //AllSaints
-				Dialog sid pr.sup00a.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text rid peDA.insert1 rid meDA.insert2 End-Dialog	
-			End-Section
-			Section ektenia_21_me1 //AllSaints and saint
-				Dialog sid pr.sup00a.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text rid meDA.insert1 rid peDA.insert1 rid meDA.insert2 End-Dialog	
-			End-Section
+	Section FervLitany_lent_deacon_choir
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.pet15.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res01.text End-Dialog
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.pet16.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res01.text End-Dialog
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.pet17.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res01.text<r>sid ru.Thrice</>End-Dialog
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.pet18.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res01.text<r>sid ru.Thrice</>End-Dialog
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.pet19Sa.text sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res01.text<r>sid ru.Thrice</>End-Dialog
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.exc11.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res04.text End-Dialog
 	End-Section
-	
-	Section Ektenia04 //Shortened for Lent
+	Section FervLitany_lent_deacon_parentheses
 		Actor sid ac.Deacon End-Actor
 		Dialog sid pr.pet15.text End-Dialog
 		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
@@ -1481,8 +1098,172 @@ Template LN
 		Dialog sid pr.exc11.text End-Dialog
 		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 	End-Section
+	Section FervLitany_lent_priest_choir
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.pet15.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res01.text End-Dialog
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.pet16.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res01.text End-Dialog
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.pet17.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res01.text<r>sid ru.Thrice</>End-Dialog
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.pet18.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res01.text<r>sid ru.Thrice</>End-Dialog
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.pet19Sa.text sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res01.text<r>sid ru.Thrice</>End-Dialog
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.exc11.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res04.text End-Dialog
+	End-Section
+	Section FervLitany_lent_priest_parentheses
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.pet15.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
+		Dialog sid pr.pet16.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
+		Dialog sid pr.pet17.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
+		Dialog sid pr.pet18.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
+		Dialog sid pr.pet19Sa.text sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.exc11.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+	End-Section
 
-	Section Ektenia05_priest //For Paraclesis
+	Section Litany_cross_priest_choir
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.pet17.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res01.text<r>sid ru.CrossLitany</>End-Dialog
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.pet18.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res01.text<r>sid ru.CrossLitany</>End-Dialog
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.pet19Sa.text sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res01.text<r>sid ru.CrossLitany</>End-Dialog
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.pet21.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res01.text<r>sid ru.CrossLitany</>End-Dialog
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.petCross05.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res01.text<r>sid ru.CrossLitany</>End-Dialog
+	End-Section
+	Section Litany_cross_priest_compact
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.pet17.text End-Dialog
+		Actor sid ac.Choir<r><Tsmaller>sid ru.AfterEachPetition</></>End-Actor
+		Dialog sid pr.res01.text<r>sid ru.CrossLitany</>End-Dialog
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.pet18.text End-Dialog
+		Dialog sid pr.pet19Sa.text sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
+		Dialog sid pr.pet21.text End-Dialog
+		Dialog sid pr.petCross05.text End-Dialog
+	End-Section
+	Section Litany_cross_priest_parentheses
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.pet17.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.CrossLitany</>sid misc.parenthesis.close</>End-Dialog
+		Dialog sid pr.pet18.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.CrossLitany</>sid misc.parenthesis.close</>End-Dialog
+		Dialog sid pr.pet19Sa.text sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.CrossLitany</>sid misc.parenthesis.close</>End-Dialog
+		Dialog sid pr.pet21.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.CrossLitany</>sid misc.parenthesis.close</>End-Dialog
+		Dialog sid pr.petCross05.text End-Dialog
+		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.CrossLitany</>sid misc.parenthesis.close</>End-Dialog
+	End-Section
+
+	Section Litany_paraclesis_priest_choir
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.pet17.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res01.text<r>sid ru.Thrice</> End-Dialog
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.pet18.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res01.text<r>sid ru.Thrice</> End-Dialog
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.pet19Sa.text sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res01.text<r>sid ru.Thrice</> End-Dialog
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.pet21.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res01.text<r>sid ru.Thrice</> End-Dialog
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.pet21p.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res01.text<r>sid ru.Thrice</> End-Dialog
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.pet23.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res01.text<r>sid ru.Thrice</> End-Dialog
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.exc11.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res04.text End-Dialog
+	End-Section
+	Section Litany_paraclesisend_priest_choir
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.pet17.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res01.text<r>sid ru.Thrice</> End-Dialog
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.pet33.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res01.text<r>sid ru.Thrice</> End-Dialog
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.pet34.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res01.text<r>sid ru.Thrice</> End-Dialog
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.pet35.text sid pr.exc11a.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res04.text End-Dialog
+	End-Section
+	Section Litany_paraclesis_priest_compact
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.pet17.text End-Dialog
+		Actor sid ac.Choir<r><Tsmaller>sid ru.AfterEachPetition</></>End-Actor
+		Dialog sid pr.res01.text<r>sid ru.Thrice</> End-Dialog
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.pet18.text End-Dialog
+		Dialog sid pr.pet19Sa.text sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
+		Dialog sid pr.pet21.text End-Dialog
+		Dialog sid pr.pet21p.text End-Dialog
+		Dialog sid pr.pet23.text End-Dialog
+		Dialog sid pr.exc11.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res04.text End-Dialog
+	End-Section
+	Section Litany_paraclesisend_priest_compact
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.pet17.text End-Dialog
+		Actor sid ac.Choir<r><Tsmaller>sid ru.AfterEachPetition</></>End-Actor
+		Dialog sid pr.res01.text<r>sid ru.Thrice</> End-Dialog
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.pet33.text End-Dialog
+		Dialog sid pr.pet34.text End-Dialog
+		Dialog sid pr.pet35.text sid pr.exc11a.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res04.text End-Dialog
+	End-Section
+	Section Litany_paraclesis_priest_parentheses
 		Actor sid ac.Priest End-Actor
 		Dialog sid pr.pet17.text End-Dialog
 		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
@@ -1500,8 +1281,7 @@ Template LN
 		Dialog sid pr.exc11.text End-Dialog
 		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 	End-Section
-
-	Section Ektenia06_priest //For Paraclesis end
+	Section Litany_paraclesisend_priest_parentheses
 		Actor sid ac.Priest End-Actor
 		Dialog sid pr.pet17.text End-Dialog
 		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
@@ -1510,29 +1290,181 @@ Template LN
 		Dialog sid pr.pet34.text End-Dialog
 		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
 		Actor sid ac.Priest End-Actor
-		Dialog sid pr.pet35.text End-Dialog
-		Dialog sid pr.exc11a.text End-Dialog
+		Dialog sid pr.pet35.text sid pr.exc11a.text End-Dialog
 		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 	End-Section
 
-	Section Ektenia07_priest //For Elevation of Cross
+	Section Litany_lity_com_deacon_choir
+		Insert_section LN.litany_lity_part1_deacon_choir End-Insert
 		Actor sid ac.Priest End-Actor
-		Dialog sid pr.pet17.text End-Dialog
-		Rubric sid cl.me.m09.d14.R006 End-Rubric
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.pet18.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.pet19Sa.text sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.pet21.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.petCross05.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-	End-Section
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.whole_year End-Insert
+		Dialog sid pr.pet36.text End-Dialog
+	End-Section	
+	Section Litany_lity_com_deacon_compact
+		Insert_section LN.litany_lity_part1_deacon_compact End-Insert
+		Actor sid ac.Priest End-Actor
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.whole_year End-Insert
+		Dialog sid pr.pet36.text End-Dialog
+	End-Section	
+	Section Litany_lity_com_deacon_parentheses
+		Insert_section LN.litany_lity_part1_deacon_parentheses End-Insert
+		Actor sid ac.Priest End-Actor
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.whole_year End-Insert
+		Dialog sid pr.pet36.text End-Dialog
+	End-Section	
 
-	Section Ektenia08_vigil_lity_me1
+	Section Litany_lity_mealt1_deacon_choir
+		Insert_section LN.litany_lity_part1_deacon_choir End-Insert
+		Actor sid ac.Priest End-Actor
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.mealt1 End-Insert
+		Dialog sid pr.pet36.text End-Dialog
+	End-Section	
+	Section Litany_lity_mealt1_deacon_compact
+		Insert_section LN.litany_lity_part1_deacon_compact End-Insert
+		Actor sid ac.Priest End-Actor
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.mealt1 End-Insert
+		Dialog sid pr.pet36.text End-Dialog
+	End-Section	
+	Section Litany_lity_mealt1_deacon_parentheses
+		Insert_section LN.litany_lity_part1_deacon_parentheses End-Insert
+		Actor sid ac.Priest End-Actor
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.mealt1 End-Insert
+		Dialog sid pr.pet36.text End-Dialog
+	End-Section	
+
+	Section Litany_lity_me1_mealt1_deacon_choir
+		Insert_section LN.litany_lity_part1_deacon_choir End-Insert
+		Actor sid ac.Priest End-Actor
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.me1_mealt1 End-Insert
+		Dialog sid pr.pet36.text End-Dialog
+	End-Section	
+	Section Litany_lity_me1_mealt1_deacon_compact
+		Insert_section LN.litany_lity_part1_deacon_compact End-Insert
+		Actor sid ac.Priest End-Actor
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.me1_mealt1 End-Insert
+		Dialog sid pr.pet36.text End-Dialog
+	End-Section	
+	Section Litany_lity_me1_mealt1_deacon_parentheses
+		Insert_section LN.litany_lity_part1_deacon_parentheses End-Insert
+		Actor sid ac.Priest End-Actor
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.me1_mealt1 End-Insert
+		Dialog sid pr.pet36.text End-Dialog
+	End-Section	
+
+	Section Litany_lity_mealt1_mealt2_deacon_choir
+		Insert_section LN.litany_lity_part1_deacon_choir End-Insert
+		Actor sid ac.Priest End-Actor
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.mealt1_mealt2 End-Insert
+		Dialog sid pr.pet36.text End-Dialog
+	End-Section	
+	Section Litany_lity_mealt1_mealt2_deacon_compact
+		Insert_section LN.litany_lity_part1_deacon_compact End-Insert
+		Actor sid ac.Priest End-Actor
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.mealt1_mealt2 End-Insert
+		Dialog sid pr.pet36.text End-Dialog
+	End-Section	
+	Section Litany_lity_mealt1_mealt2_deacon_parentheses
+		Insert_section LN.litany_lity_part1_deacon_parentheses End-Insert
+		Actor sid ac.Priest End-Actor
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.mealt1_mealt2 End-Insert
+		Dialog sid pr.pet36.text End-Dialog
+	End-Section	
+
+	Section Litany_lity_mealt2_deacon_choir
+		Insert_section LN.litany_lity_part1_deacon_choir End-Insert
+		Actor sid ac.Priest End-Actor
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.mealt2 End-Insert
+		Dialog sid pr.pet36.text End-Dialog
+	End-Section	
+	Section Litany_lity_mealt2_deacon_compact
+		Insert_section LN.litany_lity_part1_deacon_compact End-Insert
+		Actor sid ac.Priest End-Actor
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.mealt2 End-Insert
+		Dialog sid pr.pet36.text End-Dialog
+	End-Section	
+	Section Litany_lity_mealt2_deacon_parentheses
+		Insert_section LN.litany_lity_part1_deacon_parentheses End-Insert
+		Actor sid ac.Priest End-Actor
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.mealt2 End-Insert
+		Dialog sid pr.pet36.text End-Dialog
+	End-Section	
+
+	Section Litany_lity_pealt1_deacon_choir
+		Insert_section LN.litany_lity_part1_deacon_choir End-Insert
+		Actor sid ac.Priest End-Actor
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.pealt1 End-Insert
+		Dialog sid pr.pet36.text End-Dialog
+	End-Section	
+	Section Litany_lity_pealt1_deacon_compact
+		Insert_section LN.litany_lity_part1_deacon_compact End-Insert
+		Actor sid ac.Priest End-Actor
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.pealt1 End-Insert
+		Dialog sid pr.pet36.text End-Dialog
+	End-Section	
+	Section Litany_lity_pealt1_deacon_parentheses
+		Insert_section LN.litany_lity_part1_deacon_parentheses End-Insert
+		Actor sid ac.Priest End-Actor
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.pealt1 End-Insert
+		Dialog sid pr.pet36.text End-Dialog
+	End-Section	
+
+	Section Litany_vigil_lity_com_deacon_compact
 		Section part1
-			Insert_section Supplication_deacon_me.part1 End-Insert
+			Actor sid ac.Deacon End-Actor
+			Para role dialogzero sid pr.sup00.text End-Para
+			Insert_section Selector_Commemorations.me End-Insert
+			Dialog sid pr.sup99.text End-Dialog
+			Media sid ho.ho10_gr_GR_cog.hoVE.MM.LityKyrieEleison.text End-Media
+			Actor sid ac.Choir<r><Tsmaller>sid ru.AfterEachPetition</></>End-Actor
+			Dialog sid pr.res01.text<r>sid ru.Thrice</>End-Dialog
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.pet18.text End-Dialog
+			Dialog sid pr.pet19Sa.text sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
+			Dialog sid pr.pet21a.text End-Dialog
+			Dialog sid pr.pet33.text End-Dialog
+			Dialog sid pr.pet34.text End-Dialog
+			Actor sid ac.Priest End-Actor
+			Dialog sid pr.pet35.text sid pr.exc11a.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res04.text End-Dialog
+			Actor sid ac.Priest End-Actor
+			Dialog sid pr.pet31.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res05.text End-Dialog
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.pet32.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res03.text End-Dialog
+		End-Section
+		Actor sid ac.Priest End-Actor
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.whole_year End-Insert
+		Dialog sid pr.pet36.text End-Dialog
+	End-Section
+	Section Litany_vigil_lity_com_deacon_parentheses
+		Section part1
+			Actor sid ac.Deacon End-Actor
+			Para role dialogzero sid pr.sup00.text End-Para
+			Insert_section Selector_Commemorations.me End-Insert
+			Dialog sid pr.sup99.text End-Dialog
 			Media sid ho.ho10_gr_GR_cog.hoVE.MM.LityKyrieEleison.text End-Media
 			Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
 			Dialog sid pr.pet18.text End-Dialog
@@ -1555,42 +1487,184 @@ Template LN
 			Dialog sid pr.pet32.text End-Dialog
 			Dialog<i>sid misc.parenthesis.open sid pr.res03.text sid misc.parenthesis.close</>End-Dialog
 		End-Section
-		Insert_section Ektenia03_me1.part2 End-Insert
+		Actor sid ac.Priest End-Actor
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.whole_year End-Insert
+		Dialog sid pr.pet36.text End-Dialog
 	End-Section
 
-	Section hEktenia08_vigil_lity__
-		Section me1
-			Section part1
-				Insert_section Supplication_deacon_me.part1 End-Insert
-				Media sid ho.ho10_gr_GR_cog.hoVE.MM.LityKyrieEleison.text End-Media
-				Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-				Dialog sid pr.pet18.text End-Dialog
-				Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-				Dialog sid pr.pet19Sa.text sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
-				Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-				Dialog sid pr.pet21a.text End-Dialog
-				Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-				Dialog sid pr.pet33.text End-Dialog
-				Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-				Dialog sid pr.pet34.text End-Dialog
-				Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-				Actor sid ac.Priest End-Actor
-				Dialog sid pr.pet35.text End-Dialog
-				Dialog sid pr.exc11a.text End-Dialog
-				Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
-				Dialog sid pr.pet31.text End-Dialog
-				Dialog<i>sid misc.parenthesis.open sid pr.res05.text sid misc.parenthesis.close</>End-Dialog
-				Actor sid ac.Deacon End-Actor
-				Dialog sid pr.pet32.text End-Dialog
-				Dialog<i>sid misc.parenthesis.open sid pr.res03.text sid misc.parenthesis.close</>End-Dialog
-			End-Section
-			Insert_section Ektenia03_hierarchical_me1.part2 End-Insert
-		End-Section
-	End-Section
+	Section hLitany_lity_com_deacon_choir
+		Insert_section LN.hlitany_lity_part1_deacon_choir End-Insert
+		Actor sid ac.Hierarch End-Actor
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.whole_year End-Insert
+		Dialog sid pr.pet36.text End-Dialog
+	End-Section	
+	Section hLitany_lity_com_deacon_compact
+		Insert_section LN.hlitany_lity_part1_deacon_compact End-Insert
+		Actor sid ac.Hierarch End-Actor
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.whole_year End-Insert
+		Dialog sid pr.pet36.text End-Dialog
+	End-Section	
+	Section hLitany_lity_com_deacon_parentheses
+		Insert_section LN.hlitany_lity_part1_deacon_parentheses End-Insert
+		Actor sid ac.Hierarch End-Actor
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.whole_year End-Insert
+		Dialog sid pr.pet36.text End-Dialog
+	End-Section	
 
-	Section Ektenia08_Monastery_hierarchical_vigil_lity_me1
+	Section hLitany_lity_mealt1_deacon_choir
+		Insert_section LN.hlitany_lity_part1_deacon_choir End-Insert
+		Actor sid ac.Hierarch End-Actor
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.mealt1 End-Insert
+		Dialog sid pr.pet36.text End-Dialog
+	End-Section	
+	Section hLitany_lity_mealt1_deacon_compact
+		Insert_section LN.hlitany_lity_part1_deacon_compact End-Insert
+		Actor sid ac.Hierarch End-Actor
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.mealt1 End-Insert
+		Dialog sid pr.pet36.text End-Dialog
+	End-Section	
+	Section hLitany_lity_mealt1_deacon_parentheses
+		Insert_section LN.hlitany_lity_part1_deacon_parentheses End-Insert
+		Actor sid ac.Hierarch End-Actor
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.mealt1 End-Insert
+		Dialog sid pr.pet36.text End-Dialog
+	End-Section	
+
+	Section hLitany_lity_me1_mealt1_deacon_choir
+		Insert_section LN.hlitany_lity_part1_deacon_choir End-Insert
+		Actor sid ac.Hierarch End-Actor
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.me1_mealt1 End-Insert
+		Dialog sid pr.pet36.text End-Dialog
+	End-Section	
+	Section hLitany_lity_me1_mealt1_deacon_compact
+		Insert_section LN.hlitany_lity_part1_deacon_compact End-Insert
+		Actor sid ac.Hierarch End-Actor
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.me1_mealt1 End-Insert
+		Dialog sid pr.pet36.text End-Dialog
+	End-Section	
+	Section hLitany_lity_me1_mealt1_deacon_parentheses
+		Insert_section LN.hlitany_lity_part1_deacon_parentheses End-Insert
+		Actor sid ac.Hierarch End-Actor
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.me1_mealt1 End-Insert
+		Dialog sid pr.pet36.text End-Dialog
+	End-Section	
+
+	Section hLitany_lity_mealt1_mealt2_deacon_choir
+		Insert_section LN.hlitany_lity_part1_deacon_choir End-Insert
+		Actor sid ac.Hierarch End-Actor
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.mealt1_mealt2 End-Insert
+		Dialog sid pr.pet36.text End-Dialog
+	End-Section	
+	Section hLitany_lity_mealt1_mealt2_deacon_compact
+		Insert_section LN.hlitany_lity_part1_deacon_compact End-Insert
+		Actor sid ac.Hierarch End-Actor
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.mealt1_mealt2 End-Insert
+		Dialog sid pr.pet36.text End-Dialog
+	End-Section	
+	Section hLitany_lity_mealt1_mealt2_deacon_parentheses
+		Insert_section LN.hlitany_lity_part1_deacon_parentheses End-Insert
+		Actor sid ac.Hierarch End-Actor
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.mealt1_mealt2 End-Insert
+		Dialog sid pr.pet36.text End-Dialog
+	End-Section	
+
+	Section hLitany_lity_mealt2_deacon_choir
+		Insert_section LN.hlitany_lity_part1_deacon_choir End-Insert
+		Actor sid ac.Hierarch End-Actor
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.mealt2 End-Insert
+		Dialog sid pr.pet36.text End-Dialog
+	End-Section	
+	Section hLitany_lity_mealt2_deacon_compact
+		Insert_section LN.hlitany_lity_part1_deacon_compact End-Insert
+		Actor sid ac.Hierarch End-Actor
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.mealt2 End-Insert
+		Dialog sid pr.pet36.text End-Dialog
+	End-Section	
+	Section hLitany_lity_mealt2_deacon_parentheses
+		Insert_section LN.hlitany_lity_part1_deacon_parentheses End-Insert
+		Actor sid ac.Hierarch End-Actor
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.mealt2 End-Insert
+		Dialog sid pr.pet36.text End-Dialog
+	End-Section	
+
+	Section hLitany_lity_pealt1_deacon_choir
+		Insert_section LN.hlitany_lity_part1_deacon_choir End-Insert
+		Actor sid ac.Hierarch End-Actor
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.pealt1 End-Insert
+		Dialog sid pr.pet36.text End-Dialog
+	End-Section	
+	Section hLitany_lity_pealt1_deacon_compact
+		Insert_section LN.hlitany_lity_part1_deacon_compact End-Insert
+		Actor sid ac.Hierarch End-Actor
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.pealt1 End-Insert
+		Dialog sid pr.pet36.text End-Dialog
+	End-Section	
+	Section hLitany_lity_pealt1_deacon_parentheses
+		Insert_section LN.hlitany_lity_part1_deacon_parentheses End-Insert
+		Actor sid ac.Hierarch End-Actor
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.pealt1 End-Insert
+		Dialog sid pr.pet36.text End-Dialog
+	End-Section	
+
+	Section hLitany_vigil_lity_com_deacon_compact
 		Section part1
-			Insert_section Supplication_deacon_me.part1 End-Insert
+			Actor sid ac.Deacon End-Actor
+			Para role dialogzero sid pr.sup00.text End-Para
+			Insert_section Selector_Commemorations.whole_year End-Insert
+			Dialog sid pr.sup99.text End-Dialog
+			Media sid ho.ho10_gr_GR_cog.hoVE.MM.LityKyrieEleison.text End-Media
+			Actor sid ac.Choir<r><Tsmaller>sid ru.AfterEachPetition</></>End-Actor
+			Dialog sid pr.res01.text<r>sid ru.Thrice</>End-Dialog
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.pet18.text End-Dialog
+			Dialog sid pr.pet19Sa.text sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
+			Dialog sid pr.pet21a.text End-Dialog
+			Dialog sid pr.pet33.text End-Dialog
+			Dialog sid pr.pet34.text End-Dialog
+			Actor sid ac.Hierarch End-Actor
+			Dialog sid pr.pet35.text sid pr.exc11a.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res04.text End-Dialog
+			Actor sid ac.Hierarch End-Actor
+			Dialog sid pr.pet31.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res05.text End-Dialog
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.pet32.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res03.text End-Dialog
+		End-Section
+		Actor sid ac.Hierarch End-Actor
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.whole_year End-Insert
+		Dialog sid pr.pet36.text End-Dialog
+	End-Section
+
+	Section hLitany_vigil_lity_monastery_com_deacon_parentheses
+		Section part1
+			Actor sid ac.Deacon End-Actor
+			Para role dialogzero sid pr.sup00.text End-Para
+			Insert_section Selector_Commemorations.whole_year End-Insert
+			Dialog sid pr.sup99.text End-Dialog
 			Media sid ho.ho10_gr_GR_cog.hoVE.MM.LityKyrieEleison.text End-Media
 			Actor sid ac.Choir End-Actor
 			Dialog sid pr.res06.text End-Dialog
@@ -1613,13 +1687,10 @@ Template LN
 			Rubric sid ru.LityLordHaveMercy101010103 End-Rubric
 			Actor sid ac.Deacon End-Actor
 			Dialog sid pr.petMonasteryLity03.text End-Dialog
-		//	Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
 			Dialog sid pr.pet34.text End-Dialog
 			Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
 			Actor sid ac.Hierarch End-Actor
-			Dialog sid pr.pet35.text End-Dialog
-		//	Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
-			Dialog sid pr.exc11a.text End-Dialog
+			Dialog sid pr.pet35.text sid pr.exc11a.text End-Dialog
 			Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 			Dialog sid pr.pet31.text End-Dialog
 			Dialog<i>sid misc.parenthesis.open sid pr.res05.text sid misc.parenthesis.close</>End-Dialog
@@ -1627,10 +1698,191 @@ Template LN
 			Dialog sid pr.pet32.text End-Dialog
 			Dialog<i>sid misc.parenthesis.open sid pr.res03.text sid misc.parenthesis.close</>End-Dialog
 		End-Section
-		Insert_section Ektenia03_hierarchical_me1.part2 End-Insert
+		Actor sid ac.Hierarch End-Actor
+		Para role dialogzero sid pr.sup00a.text End-Para
+		Insert_section Selector_Commemorations.whole_year End-Insert
+		Dialog sid pr.pet36.text End-Dialog
 	End-Section
 
-	Section ComplementaryVE_deacon_choir
+		Section litany_lity_part1_deacon_choir
+			Actor sid ac.Deacon End-Actor
+			Media sid ho.ho10_gr_GR_cog.hoVE.MM.LityKyrieEleison.text End-Media
+			Dialog sid pr.pet17.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res01.text<r>sid ru.Thrice</>End-Dialog
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.pet18.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res01.text<r>sid ru.Thrice</>End-Dialog
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.pet19Sa.text sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res01.text<r>sid ru.Thrice</>End-Dialog
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.pet21a.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res01.text<r>sid ru.Thrice</>End-Dialog
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.pet33.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res01.text<r>sid ru.Thrice</>End-Dialog
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.pet34.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res01.text<r>sid ru.Thrice</>End-Dialog
+			Actor sid ac.Priest End-Actor
+			Dialog sid pr.pet35.text sid pr.exc11a.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res04.text End-Dialog
+			Actor sid ac.Priest End-Actor
+			Dialog sid pr.pet31.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res05.text End-Dialog
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.pet32.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res03.text End-Dialog
+		End-Section
+		Section litany_lity_part1_deacon_compact
+			Actor sid ac.Deacon End-Actor
+			Media sid ho.ho10_gr_GR_cog.hoVE.MM.LityKyrieEleison.text End-Media
+			Dialog sid pr.pet17.text End-Dialog
+			Actor sid ac.Choir<r><Tsmaller>sid ru.AfterEachPetition</></>End-Actor
+			Dialog sid pr.res01.text<r>sid ru.Thrice</>End-Dialog
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.pet18.text End-Dialog
+			Dialog sid pr.pet19Sa.text sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
+			Dialog sid pr.pet21a.text End-Dialog
+			Dialog sid pr.pet33.text End-Dialog
+			Dialog sid pr.pet34.text End-Dialog
+			Actor sid ac.Priest End-Actor
+			Dialog sid pr.pet35.text sid pr.exc11a.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res04.text End-Dialog
+			Actor sid ac.Priest End-Actor
+			Dialog sid pr.pet31.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res05.text End-Dialog
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.pet32.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res03.text End-Dialog
+		End-Section
+		Section litany_lity_part1_deacon_parentheses
+			Actor sid ac.Deacon End-Actor
+			Media sid ho.ho10_gr_GR_cog.hoVE.MM.LityKyrieEleison.text End-Media
+			Dialog sid pr.pet17.text End-Dialog
+			Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
+			Dialog sid pr.pet18.text End-Dialog
+			Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
+			Dialog sid pr.pet19Sa.text sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
+			Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
+			Dialog sid pr.pet21a.text End-Dialog
+			Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
+			Dialog sid pr.pet33.text End-Dialog
+			Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
+			Dialog sid pr.pet34.text End-Dialog
+			Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
+			Actor sid ac.Priest End-Actor
+			Dialog sid pr.pet35.text sid pr.exc11a.text End-Dialog
+			Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+			Dialog sid pr.pet31.text End-Dialog
+			Dialog<i>sid misc.parenthesis.open sid pr.res05.text sid misc.parenthesis.close</>End-Dialog
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.pet32.text End-Dialog
+			Dialog<i>sid misc.parenthesis.open sid pr.res03.text sid misc.parenthesis.close</>End-Dialog
+		End-Section
+
+		Section hlitany_lity_part1_deacon_choir
+			Actor sid ac.Deacon End-Actor
+			Media sid ho.ho10_gr_GR_cog.hoVE.MM.LityKyrieEleison.text End-Media
+			Dialog sid pr.pet17.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res01.text<r>sid ru.Thrice</>End-Dialog
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.pet18.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res01.text<r>sid ru.Thrice</>End-Dialog
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.pet19Sa.text sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res01.text<r>sid ru.Thrice</>End-Dialog
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.pet21a.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res01.text<r>sid ru.Thrice</>End-Dialog
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.pet33.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res01.text<r>sid ru.Thrice</>End-Dialog
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.pet34.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res01.text<r>sid ru.Thrice</>End-Dialog
+			Actor sid ac.Hierarch End-Actor
+			Dialog sid pr.pet35.text sid pr.exc11a.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res04.text End-Dialog
+			Actor sid ac.Hierarch End-Actor
+			Dialog sid pr.pet31.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res05.text End-Dialog
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.pet32.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res03.text End-Dialog
+		End-Section
+		Section hlitany_lity_part1_deacon_compact
+			Actor sid ac.Deacon End-Actor
+			Media sid ho.ho10_gr_GR_cog.hoVE.MM.LityKyrieEleison.text End-Media
+			Dialog sid pr.pet17.text End-Dialog
+			Actor sid ac.Choir<r><Tsmaller>sid ru.AfterEachPetition</></>End-Actor
+			Dialog sid pr.res01.text<r>sid ru.Thrice</>End-Dialog
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.pet18.text End-Dialog
+			Dialog sid pr.pet19Sa.text sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
+			Dialog sid pr.pet21a.text End-Dialog
+			Dialog sid pr.pet33.text End-Dialog
+			Dialog sid pr.pet34.text End-Dialog
+			Actor sid ac.Hierarch End-Actor
+			Dialog sid pr.pet35.text sid pr.exc11a.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res04.text End-Dialog
+			Actor sid ac.Hierarch End-Actor
+			Dialog sid pr.pet31.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res05.text End-Dialog
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.pet32.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res03.text End-Dialog
+		End-Section
+		Section hlitany_lity_part1_deacon_parentheses
+			Actor sid ac.Deacon End-Actor
+			Media sid ho.ho10_gr_GR_cog.hoVE.MM.LityKyrieEleison.text End-Media
+			Dialog sid pr.pet17.text End-Dialog
+			Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
+			Dialog sid pr.pet18.text End-Dialog
+			Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
+			Dialog sid pr.pet19Sa.text sid cl.bishop1.rank sid cl.bishop1.name_p End-Dialog
+			Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
+			Dialog sid pr.pet21a.text End-Dialog
+			Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
+			Dialog sid pr.pet33.text End-Dialog
+			Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
+			Dialog sid pr.pet34.text End-Dialog
+			Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
+			Actor sid ac.Hierarch End-Actor
+			Dialog sid pr.pet35.text sid pr.exc11a.text End-Dialog
+			Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+			Dialog sid pr.pet31.text End-Dialog
+			Dialog<i>sid misc.parenthesis.open sid pr.res05.text sid misc.parenthesis.close</>End-Dialog
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.pet32.text End-Dialog
+			Dialog<i>sid misc.parenthesis.open sid pr.res03.text sid misc.parenthesis.close</>End-Dialog
+		End-Section
+
+	Section CompLitanyVE_deacon_choir
 		Actor sid ac.Deacon End-Actor
 		Dialog sid pr.pet24v.text End-Dialog
 		Actor sid ac.Choir End-Actor
@@ -1672,7 +1924,7 @@ Template LN
 		Actor sid ac.Choir End-Actor
 		Dialog sid pr.res04.text End-Dialog
 	End-Section
-	Section ComplementaryVE_deacon_compact
+	Section CompLitanyVE_deacon_compact
 		Actor sid ac.Deacon End-Actor
 		Dialog sid pr.pet24v.text End-Dialog
 		Actor sid ac.Choir End-Actor
@@ -1699,7 +1951,7 @@ Template LN
 		Actor sid ac.Choir End-Actor
 		Dialog sid pr.res04.text End-Dialog
 	End-Section
-	Section ComplementaryVE_deacon_parentheses
+	Section CompLitanyVE_deacon_parentheses
 		Actor sid ac.Deacon End-Actor
 		Dialog sid pr.pet24v.text End-Dialog
 		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
@@ -1724,7 +1976,7 @@ Template LN
 		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 	End-Section
 
-	Section ComplementaryMA_priest_compact
+	Section CompLitanyMA_priest_compact
 		Actor sid ac.Priest End-Actor
 		Dialog sid pr.pet24m.text End-Dialog
 		Actor sid ac.Choir End-Actor
@@ -1751,7 +2003,7 @@ Template LN
 		Actor sid ac.Choir End-Actor
 		Dialog sid pr.res04.text End-Dialog
 	End-Section
-	Section ComplementaryMA_priest_parentheses
+	Section CompLitanyMA_priest_parentheses
 		Actor sid ac.Priest End-Actor
 		Dialog sid pr.pet24m.text End-Dialog
 		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
@@ -1775,7 +2027,7 @@ Template LN
 		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 	End-Section
 
-	Section ComplementaryMA_deacon_compact
+	Section CompLitanyMA_deacon_compact
 		Actor sid ac.Deacon End-Actor
 		Dialog sid pr.pet24m.text End-Dialog
 		Actor sid ac.Choir End-Actor
@@ -1802,7 +2054,7 @@ Template LN
 		Actor sid ac.Choir End-Actor
 		Dialog sid pr.res04.text End-Dialog
 	End-Section
-	Section ComplementaryMA_deacon_parentheses
+	Section CompLitanyMA_deacon_parentheses
 		Actor sid ac.Deacon End-Actor
 		Dialog sid pr.pet24m.text End-Dialog
 		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
@@ -1827,8 +2079,8 @@ Template LN
 		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 	End-Section
 
-	Section ComplementaryLI_deacon_choir
-		Title role desig sid eu.lichrysbasil_gr_GR_cog.euLI.Key1200.title End-Title
+	Section CompLitanyLI_deacon_choir
+		Title<Tsmaller>sid eu.lichrysbasil_gr_GR_cog.euLI.Key1200.title</>End-Title
 		Actor sid ac.Deacon End-Actor
 		Dialog sid pr.pet24v.text End-Dialog
 		Actor sid ac.Choir End-Actor
@@ -1882,12 +2134,12 @@ Template LN
 		Actor sid ac.Choir End-Actor
 		Dialog sid pr.res03.text End-Dialog
 	End-Section
-	Section ComplementaryLI_deacon_compact
-		Title role desig sid eu.lichrysbasil_gr_GR_cog.euLI.Key1200.title End-Title
+	Section CompLitanyLI_deacon_compact
+		Title<Tsmaller>sid eu.lichrysbasil_gr_GR_cog.euLI.Key1200.title</>End-Title
 		Media sid eu.lichrysbasil_gr_GR_cog.euLI.Key1200.text End-Media
 		Actor sid ac.Deacon End-Actor
 		Dialog sid pr.pet24.text End-Dialog
-		Actor sid ac.Choir<Trubric>sid ru.AfterEachPetition</>End-Actor
+		Actor sid ac.Choir<r><Tsmaller>sid ru.AfterEachPetition</></>End-Actor
 		Dialog sid pr.res01.text End-Dialog
 		Actor sid ac.Deacon End-Actor
 		Dialog sid eu.lichrysbasil_gr_GR_cog.euLI.Key1201.text End-Dialog
@@ -1895,7 +2147,7 @@ Template LN
 		Dialog sid pr.pet11.text End-Dialog 
 		Dialog sid pr.pet12.text End-Dialog
 		Dialog sid pr.pet25m.text End-Dialog
-		Actor sid ac.Choir<Trubric>sid ru.AfterEachPetition</>End-Actor
+		Actor sid ac.Choir<r><Tsmaller>sid ru.AfterEachPetition</></>End-Actor
 		Dialog sid pr.res02.text End-Dialog
 		Actor sid ac.Deacon End-Actor
 		Dialog sid pr.pet26.text End-Dialog
@@ -1907,8 +2159,8 @@ Template LN
 		Actor sid ac.Choir End-Actor
 		Dialog sid pr.res03.text End-Dialog
 	End-Section
-	Section ComplementaryLI_deacon_parentheses
-		Title role desig sid eu.lichrysbasil_gr_GR_cog.euLI.Key1200.title End-Title
+	Section CompLitanyLI_deacon_parentheses
+		Title<Tsmaller>sid eu.lichrysbasil_gr_GR_cog.euLI.Key1200.title</>End-Title
 		Actor sid ac.Deacon End-Actor
 		Dialog sid pr.pet24v.text End-Dialog
 		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
@@ -1938,8 +2190,8 @@ Template LN
 		Dialog<i>sid misc.parenthesis.open sid pr.res03.text sid misc.parenthesis.close</>End-Dialog
 	End-Section
 
-	Section ComplementaryPL_deacon_choir
-		Title sid eu.lipresanctified_gr_GR_cog.euPL.Key1100.title End-Title
+	Section CompLitanyPL_deacon_choir
+		Title<Tsmaller>sid eu.lipresanctified_gr_GR_cog.euPL.Key1100.title</>End-Title
 		Actor sid ac.Deacon End-Actor
 		Dialog sid pr.pet24v.text End-Dialog
 		Actor sid ac.Choir End-Actor
@@ -1989,8 +2241,8 @@ Template LN
 		Actor sid ac.Choir End-Actor
 		Dialog sid pr.res03.text End-Dialog
 	End-Section
-	Section ComplementaryPL_deacon_compact
-		Title sid eu.lipresanctified_gr_GR_cog.euPL.Key1100.title End-Title
+	Section CompLitanyPL_deacon_compact
+		Title<Tsmaller>sid eu.lipresanctified_gr_GR_cog.euPL.Key1100.title</>End-Title
 		Actor sid ac.Deacon End-Actor
 		Dialog sid pr.pet24v.text End-Dialog
 		Actor sid ac.Choir<r><Tsmaller>sid ru.AfterEachPetition</></>End-Actor
@@ -2013,8 +2265,8 @@ Template LN
 		Actor sid ac.Choir End-Actor
 		Dialog sid pr.res03.text End-Dialog
 	End-Section
-	Section ComplementaryPL_deacon_parentheses
-		Title sid eu.lipresanctified_gr_GR_cog.euPL.Key1100.title End-Title
+	Section CompLitanyPL_deacon_parentheses
+		Title<Tsmaller>sid eu.lipresanctified_gr_GR_cog.euPL.Key1100.title</>End-Title
 		Actor sid ac.Deacon End-Actor
 		Dialog sid pr.pet24v.text End-Dialog
 		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
@@ -2042,6 +2294,38 @@ Template LN
 		Dialog<i>sid misc.parenthesis.open sid pr.res03.text sid misc.parenthesis.close</>End-Dialog
 	End-Section
 
+	Section BowHeadsVE_deacon_choir
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.pet31.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res05.text End-Dialog
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.pet32.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res03.text End-Dialog
+		Actor sid ac.Priest<r><Tsmaller>sid ru.InALowVoice</></>End-Actor
+		Para role inaudible sid hi.hi01_gr_GR_cog.hiVE.Key1111.text End-Para
+		Actor sid ac.Priest<r><Tsmaller>sid ru.Aloud</></>End-Actor
+		Dialog sid pr.exc14.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res04.text End-Dialog
+	End-Section
+	Section hBowHeadsVE_deacon_choir
+		Actor sid ac.Hierarch End-Actor
+		Dialog sid pr.pet31.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res05.text End-Dialog
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.pet32.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res03.text End-Dialog
+		Actor sid ac.Priest<r><Tsmaller>sid ru.InALowVoice</></>End-Actor
+		Para role inaudible sid hi.hi01_gr_GR_cog.hiVE.Key1111.text End-Para
+		Actor sid ac.Priest<r><Tsmaller>sid ru.Aloud</></>End-Actor
+		Dialog sid pr.exc14.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res04.text End-Dialog
+	End-Section
 	Section BowHeadsVE_deacon_parentheses
 		Actor sid ac.Priest End-Actor
 		Dialog sid pr.pet31.text End-Dialog
@@ -2069,6 +2353,38 @@ Template LN
 		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 	End-Section
 
+	Section BowHeadsMA_deacon_choir
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.pet31.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res05.text End-Dialog
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.pet32.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res03.text End-Dialog
+		Actor sid ac.Priest<r><Tsmaller>sid ru.InALowVoice</></>End-Actor
+		Para role inaudible sid hi.hi04_gr_GR_cog.hiMA.Key0113.text End-Para
+		Actor sid ac.Priest<r><Tsmaller>sid ru.Aloud</></>End-Actor
+		Dialog sid pr.exc13.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res04.text End-Dialog
+	End-Section
+	Section hBowHeadsMA_deacon_choir
+		Actor sid ac.Hierarch End-Actor
+		Dialog sid pr.pet31.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res05.text End-Dialog
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.pet32.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res03.text End-Dialog
+		Actor sid ac.Hierarch<r><Tsmaller>sid ru.InALowVoice</></>End-Actor
+		Para role inaudible sid hi.hi04_gr_GR_cog.hiMA.Key0113.text End-Para
+		Actor sid ac.Priest<r><Tsmaller>sid ru.Aloud</></>End-Actor
+		Dialog sid pr.exc13.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res04.text End-Dialog
+	End-Section
 	Section BowHeadsMA_deacon_parentheses
 		Actor sid ac.Priest End-Actor
 		Dialog sid pr.pet31.text End-Dialog
@@ -2096,6 +2412,30 @@ Template LN
 		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 	End-Section
 
+	Section BeforeGospel_deacon_choir
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.gos01.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res01.text<r>sid ru.Thrice</>End-Dialog
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.exc17.text sid pr.exc18.text sid pr.gos02.text End-Dialog
+		Actor sid ac.Priest End-Actor
+		Dialog sid pr.pet31.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res03.text End-Dialog
+	End-Section
+	Section hBeforeGospel_deacon_choir
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.gos01.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res01.text<r>sid ru.Thrice</>End-Dialog
+		Actor sid ac.Deacon End-Actor
+		Dialog sid pr.exc17.text sid pr.exc18.text sid pr.gos02.text End-Dialog
+		Actor sid ac.Hierarch End-Actor
+		Dialog sid pr.pet31.text End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res03.text End-Dialog
+	End-Section
 	Section BeforeGospel_deacon_parentheses
 		Actor sid ac.Deacon End-Actor
 		Dialog sid pr.gos01.text End-Dialog
@@ -2117,373 +2457,127 @@ Template LN
 		Dialog<i>sid misc.parenthesis.open sid pr.res05.text sid misc.parenthesis.close</>End-Dialog
 	End-Section
 
-//new ____________________________
-
-	Section Supplication_deacon_mc
-		Section part1
-			Actor sid ac.Deacon End-Actor
-			Insert_section sup_selector_mc End-Insert
-		End-Section
-		Insert_section supplication_part2 End-Insert
+	Section NewSupplication_deacon_com
+		Actor sid ac.Deacon End-Actor
+		Para role dialogzero sid pr.sup00.text End-Para
+		Insert_section Selector_Commemorations.whole_year End-Insert
+		Dialog sid pr.sup99.text End-Dialog
+		Insert_section supplication_part2_choir End-Insert
 	End-Section
 
-	Section Supplication_deacon_me
-		Section part1
-			Actor sid ac.Deacon End-Actor
-			Insert_section LN.sup_selector_me End-Insert
-		End-Section
-		Insert_section supplication_part2 End-Insert
+	Section NewSupplication_deacon_mealt1
+		Actor sid ac.Deacon End-Actor
+		Para role dialogzero sid pr.sup00.text End-Para
+		Insert_section Selector_Commemorations.mealt1 End-Insert
+		Dialog sid pr.sup99.text End-Dialog
+		Insert_section supplication_part2_choir End-Insert
 	End-Section
 
-	Section Supplication_deacon_mealt1
-		Section part1
-			Actor sid ac.Deacon End-Actor
-			Insert_section LN.sup_selector_mealt1 End-Insert
-		End-Section
-		Insert_section supplication_part2 End-Insert
+	Section NewSupplication_deacon_me1_mealt1
+		Actor sid ac.Deacon End-Actor
+		Para role dialogzero sid pr.sup00.text End-Para
+		Insert_section Selector_Commemorations.me1_mealt1 End-Insert
+		Dialog sid pr.sup99.text End-Dialog
+		Insert_section supplication_part2_choir End-Insert
 	End-Section
 
-	Section Supplication_deacon_me1_mealt1
-		Section part1
-			Actor sid ac.Deacon End-Actor
-			Insert_section sup_selector_me1_mealt1 End-Insert
-		End-Section
-		Insert_section supplication_part2 End-Insert
+	Section NewSupplication_deacon_mealt1_mealt2
+		Actor sid ac.Deacon End-Actor
+		Para role dialogzero sid pr.sup00.text End-Para
+		Insert_section Selector_Commemorations.mealt1_mealt2 End-Insert
+		Dialog sid pr.sup99.text End-Dialog
+		Insert_section supplication_part2_choir End-Insert
 	End-Section
 
-	Section Supplication_deacon_mealt1_mealt2
-		Section part1
-			Actor sid ac.Deacon End-Actor
-			Insert_section supplication_07_mealt1_mealt2 End-Insert
-		End-Section
-		Insert_section supplication_part2 End-Insert
+	Section NewSupplication_deacon_mealt2
+		Actor sid ac.Deacon End-Actor
+		Para role dialogzero sid pr.sup00.text End-Para
+		Insert_section Selector_Commemorations.mealt2 End-Insert
+		Dialog sid pr.sup99.text End-Dialog
+		Insert_section supplication_part2_choir End-Insert
 	End-Section
 
-	Section Supplication_deacon_pealt1
-		Section part1
-			Actor sid ac.Deacon End-Actor
-			Insert_section LN.sup_selector_pealt1 End-Insert
-		End-Section
-		Insert_section supplication_part2 End-Insert
+	Section NewSupplication_deacon_pealt1
+		Actor sid ac.Deacon End-Actor
+		Para role dialogzero sid pr.sup00.text End-Para
+		Insert_section Selector_Commemorations.pealt1 End-Insert
+		Dialog sid pr.sup99.text End-Dialog
+		Insert_section supplication_part2_choir End-Insert
 	End-Section
 
-	Section Supplication_deacon_plain
-		Section part1
-			Actor sid ac.Deacon End-Actor
-			Insert_section supplication_01 End-Insert	
-		End-Section
-		Insert_section supplication_part2 End-Insert
+	Section NewSupplication_deacon_plain
+		Actor sid ac.Deacon End-Actor
+		Para role dialogzero sid pr.sup00.text End-Para
+		Insert_section Selector_Commemorations.category_Plain End-Insert	
+		Dialog sid pr.sup99.text End-Dialog
+		Insert_section supplication_part2_choir End-Insert
 	End-Section
 
-	Section Supplication_priest_mc
-		Section part1
-			Actor sid ac.Priest End-Actor
-			Insert_section sup_selector_mc End-Insert
-		End-Section
-		Insert_section supplication_part2 End-Insert
+	Section NewSupplication_priest_com
+		Actor sid ac.Priest End-Actor
+		Para role dialogzero sid pr.sup00.text End-Para
+		Insert_section Selector_Commemorations.whole_year End-Insert
+		Dialog sid pr.sup99.text End-Dialog
+		Insert_section supplication_part2_choir End-Insert
 	End-Section
 
-	Section Supplication_priest_me
-		Section part1
-			Actor sid ac.Priest End-Actor
-			Insert_section LN.sup_selector_me End-Insert
-		End-Section
-		Insert_section supplication_part2 End-Insert
+	Section NewSupplication_priest_mealt1
+		Actor sid ac.Priest End-Actor
+		Para role dialogzero sid pr.sup00.text End-Para
+		Insert_section Selector_Commemorations.mealt1 End-Insert
+		Dialog sid pr.sup99.text End-Dialog
+		Insert_section supplication_part2_choir End-Insert
 	End-Section
 
-	Section Supplication_priest_mealt1
-		Section part1
-			Actor sid ac.Priest End-Actor
-			Insert_section LN.sup_selector_mealt1 End-Insert
-		End-Section
-		Insert_section supplication_part2 End-Insert
+	Section NewSupplication_priest_me1_mealt1
+		Actor sid ac.Priest End-Actor
+		Para role dialogzero sid pr.sup00.text End-Para
+		Insert_section Selector_Commemorations.me1_mealt1 End-Insert
+		Dialog sid pr.sup99.text End-Dialog
+		Insert_section supplication_part2_choir End-Insert
 	End-Section
 
-	Section Supplication_priest_me1_mealt1
-		Section part1
-			Actor sid ac.Priest End-Actor
-			Insert_section sup_selector_me1_mealt1 End-Insert
-		End-Section
-		Insert_section supplication_part2 End-Insert
+	Section NewSupplication_priest_mealt1_mealt2
+		Actor sid ac.Priest End-Actor
+		Para role dialogzero sid pr.sup00.text End-Para
+		Insert_section Selector_Commemorations.mealt1_mealt2 End-Insert
+		Dialog sid pr.sup99.text End-Dialog
+		Insert_section supplication_part2_choir End-Insert
 	End-Section
 
-	Section Supplication_priest_pealt1
-		Section part1
-			Actor sid ac.Priest End-Actor
-			Insert_section LN.sup_selector_pealt1 End-Insert
-		End-Section
-		Insert_section supplication_part2 End-Insert
+	Section NewSupplication_priest_mealt2
+		Actor sid ac.Priest End-Actor
+		Para role dialogzero sid pr.sup00.text End-Para
+		Insert_section Selector_Commemorations.mealt2 End-Insert
+		Dialog sid pr.sup99.text End-Dialog
+		Insert_section supplication_part2_choir End-Insert
 	End-Section
 
-	Section Supplication_priest_plain
-		Section part1
-			Actor sid ac.Priest End-Actor
-			Insert_section supplication_01 End-Insert	
-		End-Section	
-		Insert_section supplication_part2 End-Insert
+	Section NewSupplication_priest_pealt1
+		Actor sid ac.Priest End-Actor
+		Para role dialogzero sid pr.sup00.text End-Para
+		Insert_section Selector_Commemorations.pealt1 End-Insert
+		Dialog sid pr.sup99.text End-Dialog
+		Insert_section supplication_part2_choir End-Insert
 	End-Section
 
-		//selector for part 1
-			Section sup_selector_mc
-				when-movable-cycle-day-is 
-					1, 8, 15, 22, 29, 43, 64 use: Insert_section supplication_01 End-Insert
-					21, 28, 36 use:
-						when-date-is
-							Feb 24 use: Insert_section supplication_09_05 End-Insert
-							Mar 9 use: Insert_section supplication_07_09 End-Insert
-							otherwise use: Insert_section supplication_09 End-Insert
-						end-when
-					50, 57 use: Insert_section supplication_09 End-Insert
-					78, 85, 113 use: 
-						when-date-is
-							Apr 23 use: Insert_section supplication_20_with_me1 End-Insert
-							May 2, 8, 21, 25 use: Insert_section supplication_20_with_me1 End-Insert
-							otherwise use: Insert_section supplication_20 End-Insert
-						end-when
-					92, 99, 106 use:
-						when-date-is
-							Apr 23 use: Insert_section supplication_07 End-Insert
-							May 2, 8, 21, 25 use: Insert_section supplication_07 End-Insert
-							otherwise use: Insert_section supplication_01 End-Insert
-						end-when
-					110, 120 use:
-						when-date-is
-							May 21 use: Insert_section supplication_07 End-Insert
-							Jun 24 use: Insert_section supplication_07 End-Insert
-							otherwise use: Insert_section supplication_01 End-Insert
-						end-when
-					127 use:
-						when-date-is
-							Jun 24, 25, 29, 30 use: Insert_section supplication_21_with_me1 End-Insert
-							Jul 1 use: Insert_section supplication_21_with_me1 End-Insert
-							Jul 2 use: Insert_section supplication_21_with_theotokos End-Insert
-							otherwise use: Insert_section supplication_21 End-Insert
-						end-when
-				end-when
-			End-Section
+	Section NewSupplication_priest_plain
+		Actor sid ac.Priest End-Actor
+		Para role dialogzero sid pr.sup00.text End-Para
+		Insert_section Selector_Commemorations.category_Plain End-Insert	
+		Dialog sid pr.sup99.text End-Dialog
+		Insert_section supplication_part2_choir End-Insert
+	End-Section
 
-			Section sup_selector_me
-				when-date-is
-					Jan 7 use: Insert_section supplication_05 End-Insert
-					Jan 30 use: Insert_section supplication_07 End-Insert
-					Feb 24 use: Insert_section supplication_05 End-Insert
-				//	Mar 2 use: Insert_section supplication_07_mealt1 End-Insert
-					Mar 25 use: Insert_section supplication_02 End-Insert
-					May 8 use: Insert_section supplication_07 End-Insert
-					May 25 use: Insert_section supplication_05 End-Insert
-					Jun 30 use: Insert_section supplication_06 End-Insert
-					Jun 24 use: Insert_section supplication_05 End-Insert
-					Jul 2 use: Insert_section supplication_02 End-Insert
-					Jul 11 use: Insert_section supplication_07 End-Insert
-					Jul 13, 14, 15, 16, 18, 19 use:
-						when-name-of-day-is 
-							Sunday use:
-								Insert_section supplication_10 End-Insert
-						end-when
-					Jul 17 use: 
-						when-name-of-day-is 
-							Sunday use:					
-								Insert_section supplication_10_with_me1 End-Insert
-							otherwise use:
-								Insert_section supplication_07 End-Insert
-						end-when
-					Jul 25 use: Insert_section supplication_08 End-Insert
-					Aug 15 use: Insert_section supplication_02 End-Insert
-					Aug 29 use: Insert_section supplication_05 End-Insert
-					Aug 31 use: Insert_section supplication_02 End-Insert
-					Sep 8 use: Insert_section supplication_02 End-Insert
-					Sep 14 use: Insert_section supplication_03 End-Insert
-					Sep 16 use: Insert_section supplication_07 End-Insert
-					Sep 23 use: Insert_section supplication_05 End-Insert
-					Oct 11 thru 17 use:
-						when-name-of-day-is 
-							Sunday use:
-								Insert_section supplication_11 End-Insert
-						end-when
-					Oct 26 use: Insert_section supplication_07 End-Insert
-					Oct 28 use: Insert_section supplication_12 End-Insert
-					Nov 8 use: Insert_section supplication_04 End-Insert
-					Nov 21 use: Insert_section supplication_02 End-Insert
-					Dec 6 use: Insert_section supplication_07 End-Insert
-					Dec 9 use: Insert_section supplication_02 End-Insert
-					Dec 11, 13, 14, 16 use:
-						when-name-of-day-is 
-							Sunday use:
-								Insert_section supplication_14 End-Insert
-						end-when
-					Dec 12, 15, 17 use:
-						when-name-of-day-is 
-							Sunday use:
-								Insert_section supplication_15 End-Insert
-							otherwise use: 
-								Insert_section supplication_07 End-Insert
-						end-when
-					Dec 18 thru 24 use:
-						when-name-of-day-is 
-							Sunday use:
-								Insert_section supplication_16 End-Insert
-						end-when	
-					Dec 26 use: 
-						when-name-of-day-is
-							Sunday use: 
-								Insert_section supplication_17 End-Insert
-							otherwise use: 
-								Insert_section supplication_02 End-Insert
-						end-when
-					Dec 27 use: 
-						when-name-of-day-is
-							Sunday use: 
-								Insert_section supplication_18 End-Insert
-							otherwise use: 
-								Insert_section supplication_07 End-Insert
-						end-when
-					Dec 28 thru 31 use: 
-						when-name-of-day-is
-							Sunday use: 
-								Insert_section supplication_19 End-Insert
-						end-when
-					otherwise use: 
-						Insert_section supplication_07 End-Insert
-				end-when
-			End-Section
-		
-			Section sup_selector_mealt1
-				when-date-is
-					Feb 6, 7, 19, 26 use: Insert_section supplication_07_mealt1 End-Insert
-					Mar 2 use: Insert_section supplication_07_mealt1 End-Insert
-					Jul 12 use: Insert_section supplication_07_mealt1 End-Insert
-					Jul 22 use: Insert_section supplication_07_mealt1 End-Insert
-					Aug 16, 24, 27 use: Insert_section supplication_07_mealt1 End-Insert
-					Sep 3, 7, 17 use: Insert_section supplication_07_mealt1 End-Insert
-					Oct 20 use: Insert_section supplication_07_mealt1 End-Insert
-					Oct 1, 28 use: Insert_section supplication_12 End-Insert
-					Nov 9, 22, 26 use: Insert_section supplication_07_mealt1 End-Insert
-					Dec 2, 17 use:Insert_section supplication_07_mealt1 End-Insert
-				end-when
-			End-Section
-		
-			Section sup_selector_me1_mealt1
-				when-date-is
-					Sep 24 use: 
-						Section supplication_07_with_mealt1
-							Dialog sid pr.sup00.text sid pr.sup01.text rid alt1.meDA.insert2 sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text rid meDA.insert1 rid meDA.insert2 sid pr.sup15.text sid pr.sup99.text End-Dialog	
-						End-Section
-					otherwise use:
-						Insert_section supplication_07_mealt1 End-Insert
-				end-when
-			End-Section
-
-			Section sup_selector_pealt1
-				when-movable-cycle-day-is
-					73 use: Insert_section supplication_07_pealt1 End-Insert
-				end-when
-			End-Section
-
-			//blocks for sup_selectors
-				Section supplication_01 //plain
-					Dialog sid pr.sup00.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text sid pr.sup15.text sid pr.sup99.text End-Dialog	
-				End-Section
-				Section supplication_02 //Theotokos
-					Dialog sid pr.sup00.text sid pr.sup01.text rid meDA.insert2 sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text sid pr.sup15.text sid pr.sup99.text End-Dialog	
-				End-Section
-				Section supplication_03 //Cross
-					Dialog sid pr.sup00.text sid pr.sup01.text sid pr.sup02.text rid meDA.insert2 sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text sid pr.sup15.text sid pr.sup99.text End-Dialog	
-				End-Section
-				Section supplication_04 //Angels
-					Dialog sid pr.sup00.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text rid meDA.insert2 sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text sid pr.sup15.text sid pr.sup99.text End-Dialog	
-				End-Section
-				Section supplication_05 //Forerunner
-					Dialog sid pr.sup00.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text rid meDA.insert2 sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text sid pr.sup15.text sid pr.sup99.text End-Dialog	
-				End-Section
-				Section supplication_06 //Apostles
-					Dialog sid pr.sup00.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text rid meDA.insert2 sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text sid pr.sup15.text sid pr.sup99.text End-Dialog	
-				End-Section
-				Section supplication_07 //Saint
-					Insert_section Selector_Supplication.Section01_supplication End-Insert
-				End-Section
-				Section supplication_07_with_mealt1 //Saint
-					Dialog sid pr.sup00.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text rid meDA.insert1 rid alt1.meDA.insert1 rid alt1.meDA.insert2 sid pr.sup15.text sid pr.sup99.text End-Dialog	
-				End-Section
-				Section supplication_07_09 //Saint and Triodion
-					Dialog sid pr.sup00.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text rid meDA.insert1 rid trDA.insert1 rid trDA.insert2 sid pr.sup15.text sid pr.sup99.text End-Dialog	
-				End-Section
-				Section supplication_07_mealt1_mealt2 //Saint
-					Dialog sid pr.sup00.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text rid alt1.meDA.insert1 rid alt2.meDA.insert1 rid alt2.meDA.insert2 sid pr.sup15.text sid pr.sup99.text End-Dialog	
-				End-Section
-				Section supplication_07_mealt1 //Saint
-					Insert_section Selector_Supplication.Section03_supplication_mealt1 End-Insert
-				End-Section
-				Section supplication_07_pealt1 //Saint
-					Dialog sid pr.sup00.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text rid alt1.peDA.insert1 rid alt1.meDA.insert2 sid pr.sup15.text sid pr.sup99.text End-Dialog	
-				End-Section
-				Section supplication_08 //Joakim and Anna
-					Dialog sid pr.sup00.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text rid meDA.insert2 sid pr.sup15.text sid pr.sup99.text End-Dialog	
-				End-Section
-				Section supplication_09 //Triodion
-					Dialog sid pr.sup00.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text rid trDA.insert1 rid trDA.insert2 sid pr.sup15.text sid pr.sup99.text End-Dialog	
-				End-Section
-				Section supplication_09_05 //Triodion_and_Forerunner
-					Dialog sid pr.sup00.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text rid meDA.insert2 sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text rid trDA.insert1 rid trDA.insert2 sid pr.sup15.text sid pr.sup99.text End-Dialog	
-				End-Section
-				Section supplication_10 //HolyFathersJuly
-					Dialog sid pr.sup00.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text sid me.m07.dHF_gr_GR_cog.meDA.insert1 sid me.m07.dHF_gr_GR_cog.meDA.insert2 sid pr.sup15.text sid pr.sup99.text End-Dialog	
-				End-Section
-				Section supplication_10_with_me1 //HolyFathersJuly_and_StMarina
-					Dialog sid pr.sup00.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text rid meDA.insert1 sid me.m07.dHF_gr_GR_cog.meDA.insert1 sid me.m07.dHF_gr_GR_cog.meDA.insert2 sid pr.sup15.text sid pr.sup99.text End-Dialog	
-				End-Section
-				Section supplication_11 //HolyFathersOctober
-					Dialog sid pr.sup00.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text sid me.m10.dHF_gr_GR_cog.meDA.insert1 sid me.m10.dHF_gr_GR_cog.meDA.insert2 sid pr.sup15.text sid pr.sup99.text End-Dialog	
-				End-Section
-				Section supplication_12 //HolyProtectionOctober
-					Dialog sid pr.sup00.text sid pr.sup01.text sid me.m10.d28_gr_GR_cog.alt1.meDA.insert2 sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text sid pr.sup15.text sid pr.sup99.text End-Dialog	
-				End-Section
-			//	Section supplication_13 
-			//	End-Section
-				Section supplication_14 //ForefathersDecember
-					Dialog sid pr.sup00.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text sid me.m12.dFF_gr_GR_cog.meDA.insert1 sid me.m12.dFF_gr_GR_cog.meDA.insert2 sid pr.sup15.text sid pr.sup99.text End-Dialog	
-				End-Section
-				Section supplication_15 //ForefathersDecember121517
-					Dialog sid pr.sup00.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text rid meDA.insert1 sid me.m12.dFF_gr_GR_cog.meDA.insert1 sid me.m12.dFF_gr_GR_cog.meDA.insert2 sid pr.sup15.text sid pr.sup99.text End-Dialog	
-				End-Section
-				Section supplication_16 //Sunday Before Xmas
-					Dialog sid pr.sup00.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text sid me.m12.dBC_gr_GR_cog.meDA.insert1 sid me.m12.dBC_gr_GR_cog.meDA.insert2 sid pr.sup15.text sid pr.sup99.text End-Dialog	
-				End-Section
-				Section supplication_17 //SunAfterXmas26
-					Dialog sid pr.sup00.text sid pr.sup01.text sid me.m12.d26_gr_GR_cog.meDA.insert2 sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text sid me.m12.dAC_gr_GR_cog.meDA.insert1 sid me.m12.dAC_gr_GR_cog.meDA.insert2 sid pr.sup15.text sid pr.sup99.text End-Dialog	
-				End-Section
-				Section supplication_18 //SunAfterXmas27
-					Dialog sid pr.sup00.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text sid me.m12.d27_gr_GR_cog.meDA.insert1 sid me.m12.dAC_gr_GR_cog.meDA.insert1 sid me.m12.dAC_gr_GR_cog.meDA.insert2 sid pr.sup15.text sid pr.sup99.text End-Dialog	
-				End-Section
-				Section supplication_19 //SunAfterXmas28293031
-					Dialog sid pr.sup00.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text sid me.m12.dAC_gr_GR_cog.meDA.insert1 sid me.m12.dAC_gr_GR_cog.meDA.insert2 sid pr.sup15.text sid pr.sup99.text End-Dialog	
-				End-Section
-				Section supplication_20 //Pentecostarion
-					Dialog sid pr.sup00.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text rid peDA.insert1 rid meDA.insert2 sid pr.sup15.text sid pr.sup99.text End-Dialog	
-				End-Section
-				Section supplication_20_with_me1 //Pentecostarion and saint
-					Dialog sid pr.sup00.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text rid peDA.insert1 rid meDA.insert1 rid meDA.insert2 sid pr.sup15.text sid pr.sup99.text End-Dialog	
-				End-Section
-				Section supplication_21 //AllSaints
-					Dialog sid pr.sup00.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text rid peDA.insert1 rid peDA.insert2 sid pr.sup99.text End-Dialog	
-				End-Section
-				Section supplication_21_with_theotokos //Theotokos and AllSaints
-					Dialog sid pr.sup00.text sid pr.sup01.text rid meDA.insert2 sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text rid peDA.insert1 rid peDA.insert2 sid pr.sup99.text End-Dialog	
-				End-Section
-				Section supplication_21_with_me1 //Saint of day and AllSaints
-					Dialog sid pr.sup00.text sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text<r>sid cl.localpatronsaint1.supplication</>sid pr.sup14.text rid meDA.insert1 rid peDA.insert1 rid peDA.insert2 sid pr.sup99.text End-Dialog	
-				End-Section
-
-		Section supplication_part2
+		Section supplication_part2_choir
 			Actor sid ac.Choir End-Actor
 			Dialog sid pr.res01.text<r>sid ru.Twelve</>End-Dialog
 			Actor sid ac.Priest End-Actor
 			Dialog sid pr.exc07.text End-Dialog
-	//		Actor sid ac.Choir End-Actor
-	//		Dialog sid pr.res04.text End-Dialog
-			Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res04.text End-Dialog
 		End-Section
 
-			
 	Section ForMemorial_deacon_choir
 		Actor sid ac.Deacon End-Actor
 		Dialog sid pr.pet17.text End-Dialog
@@ -2848,7 +2942,7 @@ Template LN
 	End-Section
 
 	Section client__
-		Section Ektenia08_vigil_lity
+		Section Litany08_vigil_lity
 			Section part1
 				Actor sid ac.Deacon End-Actor
 				Dialog sid pr.sup00.text sid cl.saints.array01.text sid pr.sup15.text sid pr.sup99.text End-Dialog	
