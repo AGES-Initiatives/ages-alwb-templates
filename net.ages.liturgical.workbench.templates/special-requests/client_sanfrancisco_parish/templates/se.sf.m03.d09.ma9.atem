@@ -1,0 +1,109 @@
+Template se.sf.m03.d09.ma9
+
+Status NA
+
+	import client_gr_GR_cog.*
+	import tr.d014_gr_GR_cog.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import miscellanea_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+	
+	Head
+		Set_Date month 3 day 9 year 2024 End_Date
+			Page_Header_Even
+				center @lookup sid ma.pdf.header sid d.on lang L1 @date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ma.pdf.header sid d.on lang L2 @date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template pdf.cover.ma.me End-Insert
+		Insert_template pdf.cover.credits End-Insert
+	End-Preface
+
+	Section Instance01
+		Insert_section ST.ma.tr_mode End-Insert
+		Insert_section MA._01_Beginning__.alleluia__.mode8_deceased End-Insert
+		Insert_section AP.tr12t End-Insert
+		Insert_section MA._02_Kathisma1__.litany End-Insert
+		Insert_section MA._02_Kathisma1__.octr__.saturday_all End-Insert
+		Insert_section MA._03_Kathisma2__.evlogetaria_sos End-Insert
+		Insert_section MA._03_Kathisma2__.litany_sos End-Insert
+		Insert_section MA._03_Kathisma2__.sos End-Insert
+		Insert_section MA._07_Gospel__.no__.reader__.psalm50 End-Insert
+		Insert_section MA._11_Kontakion__.append__.tr_ End-Insert
+		Insert_section SY.Synaxarion End-Insert
+		Insert_section MA._10_Canon__.ode8_heirmos__.tr1 End-Insert
+		Section ode9	
+			Title role desig sid ti.TheCanon End-Title
+			Rubric sid cl.tr.d014.R001 End-Rubric
+			Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
+			Insert_section MA._10_Canon__.magnificat__.mode8 End-Insert
+			Title<Tdesig>sid misc.Ode9</><Tmode>sid trMA.Ode9C1H.mode</><Tdesig>sid trMA.Ode9C1H.melody</>End-Title
+			Hymn sid trMA.Ode9C1H.text @ver End-Hymn
+			Title role desig sid ti.Troparia End-Title
+			Insert_section PsalmVerses.forDeceased.verse1 End-Insert
+			Hymn sid trMA.Ode9C11.text @ver End-Hymn		
+			Insert_section PsalmVerses.forDeceased.verse3 End-Insert
+			Hymn sid trMA.Ode9C12.text @ver End-Hymn		
+			Insert_section PsalmVerses.forDeceased.verse2 End-Insert
+			Hymn sid trMA.Ode9C13.text @ver End-Hymn		
+			Title sid ti.Glory<Tdesig>sid ti.Triadic</>End-Title
+			Hymn sid trMA.Ode9C1Tr.text @ver End-Hymn		
+			Title sid ti.BothNow<Tdesig>sid ti.Theotokion</>End-Title
+			Hymn sid trMA.Ode9C1T.text @ver End-Hymn
+			Insert_section MA._10_Canon__.ode9_heirmos__.tr1 End-Insert
+			Insert_section MA._10_Canon__.ode9_end End-Insert
+		End-Section
+		Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+		Insert_section MA._12_Exaposteilarion__.tr__.exap1o2ot End-Insert
+		Insert_section MA._13_Lauds__.mode8__.for4 End-Insert
+		Insert_section MA._13_Lauds__.tr__.p_1234as3456_ End-Insert
+		Insert_section MA._13_Lauds__.glory__.tr__.gloryasglory_ End-Insert
+		Insert_section MA._13_Lauds__.both__.tr__.theotokion_ End-Insert
+		Insert_section MA._14_Doxology__.great End-Insert
+		Insert_section AP.tr1_ End-Insert
+		Insert_section HIRgoa.MA_18_End__.Met_Gerasimos_SanFrancisco End-Insert
+		Insert_section MA._20_Dismissal__.hierarchical__.nocommemoration End-Insert
+		Break page End_Break
+		Section subdeacon
+			Title<Tdesig>sid eu.ordination_gr_GR_cog.euORD.SD.p100.title</>End-Title
+			Rubric sid eu.ordination_gr_GR_cog.euORD.SD.r01 End-Rubric
+			Actor sid ac.Hierarch End-Actor
+			Para role prayer sid pr.InTheNameOfFather.text sid pr.res04.text<r>sid ru.Thrice</>End-Para
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.pet00.text End-Dialog
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res01.text End-Dialog
+			Actor sid ac.Hierarch End-Actor
+			Para role prayer sid eu.ordination_gr_GR_cog.euORD.SD.p101a.text sid hierarchs_gr_GR_cog.ordinand.name.acc.text sid eu.ordination_gr_GR_cog.euORD.SD.p101c.text End-Para
+			Para role prayer sid pr.exc20.text End-Para
+			Actor sid ac.Choir End-Actor
+			Dialog sid pr.res04.text End-Dialog
+			Rubric sid eu.ordination_gr_GR_cog.euORD.SD.r03 End-Rubric
+			Actor sid ac.Subdeacon End-Actor
+			Dialog sid eu.ordination_gr_GR_cog.euORD.SD.p102.text<inr>sid ru.Thrice</>End-Dialog
+			Rubric sid eu.ordination_gr_GR_cog.euORD.SD.r04 End-Rubric
+		End-Section
+		Insert_section AP.af End-Insert
+	End-Section	
+
+End-Template
