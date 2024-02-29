@@ -11665,7 +11665,7 @@ Template MA
 		Section read__
 			Section all
 				Actor sid ac.Reader End-Actor
-				Title role desig sid ti.Lauds<Trubric>sid ru.Read</>End-Title
+				Title role desig sid ti.Lauds<r><Tsmaller>sid ru.Read</></>End-Title
 				Title<Tdesig>sid psa148.title</>End-Title
 				Reading sid psa148.text @ver End-Reading
 				Title<Tdesig>sid psa149.title</>End-Title
@@ -11678,7 +11678,7 @@ Template MA
 		Section stichologia__
 			Section read__
 				Section for_4
-					Title role desig sid ti.Stichologia<Trubric>sid ru.Read</>End-Title
+					Title role desig sid ti.Stichologia<r><Tsmaller>sid ru.Read</></>End-Title
 					Insert_section Lauds_Stichologia.for_4 End-Insert
 				End-Section
 			End-Section
@@ -12145,13 +12145,13 @@ Template MA
 			Section small
 				Rubric sid ru.standing.prefix sid ru.standing.matins.smalldoxology End-Rubric
 				Actor sid ac.Hierarch End-Actor
-				Title role desig sid hoMA.SmallDoxology.title<Trubric>sid ru.Read</>End-Title
+				Title role desig sid hoMA.SmallDoxology.title<r><Tsmaller>sid ru.Read</></>End-Title
 				Reading sid hoMA.DoxologySmallIntro.text sid hoMA.SmallDoxology1.text sid hoMA.SmallDoxology1d sid hoMA.SmallDoxology2.text sid hoMA.SmallDoxology2d sid hoMA.SmallDoxology3.text End-Reading
 			End-Section
 		End-Section
 		Section append_small //2022 added Superior, so not really appended
 			Rubric sid ru.standing.prefix sid ru.standing.matins.smalldoxology End-Rubric
-			Title role desig sid hoMA.SmallDoxology.title<Trubric>sid ru.Read</>End-Title
+			Title role desig sid hoMA.SmallDoxology.title<r><Tsmaller>sid ru.Read</></>End-Title
 			Actor sid ac.SuperiorOrReader End-Actor
 			Reading sid hoMA.DoxologySmallIntro.text End-Reading
 			Actor sid ac.Reader End-Actor
@@ -12160,7 +12160,7 @@ Template MA
 		End-Section
 		Section small
 			Rubric sid ru.standing.prefix sid ru.standing.matins.smalldoxology End-Rubric
-			Title role desig sid hoMA.SmallDoxology.title<Trubric>sid ru.Read</>End-Title
+			Title role desig sid hoMA.SmallDoxology.title<r><Tsmaller>sid ru.Read</></>End-Title
 			Actor sid ac.SuperiorOrReader End-Actor
 			Reading sid hoMA.DoxologySmallIntro.text End-Reading
 			Actor sid ac.Reader End-Actor
@@ -13449,7 +13449,8 @@ Template MA
 					Dialog sid pr.InTheNameOfLordBless_father.text End-Dialog
 					Actor sid ac.Priest End-Actor
 					Dialog sid pr.DismissalPrayer1.text End-Dialog
-					Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+					Actor sid ac.Choir End-Actor
+					Dialog sid pr.res04.text End-Dialog	
 					Actor sid ac.Hierarch End-Actor
 					Dialog sid pr.DismissalPrayer2_lent.text End-Dialog
 					Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
@@ -13470,10 +13471,11 @@ Template MA
 				Section part1
 					Actor sid ac.Deacon End-Actor
 					Dialog sid pr.exc17.text End-Dialog
-					Dialog<i>sid pr.res13.text</>End-Dialog	
+					Dialog<i>sid misc.parenthesis.open sid pr.res13.text sid misc.parenthesis.close</>End-Dialog	
 					Actor sid ac.Priest End-Actor
 					Dialog sid pr.DismissalPrayer1.text End-Dialog
-					Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+					Actor sid ac.Choir End-Actor
+					Dialog sid pr.res04.text End-Dialog	
 					Actor sid ac.Hierarch End-Actor
 					Dialog sid pr.DismissalPrayer2.text End-Dialog
 					Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog	
@@ -13501,10 +13503,11 @@ Template MA
 				Section part1
 					Actor sid ac.Deacon End-Actor
 					Dialog sid pr.exc17.text End-Dialog
-					Dialog<i>sid pr.res13.text</>End-Dialog	
+					Dialog<i>sid misc.parenthesis.open sid pr.res13.text sid misc.parenthesis.close</>End-Dialog	
 					Actor sid ac.Priest End-Actor
 					Dialog sid pr.DismissalPrayer1.text End-Dialog
-					Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+					Actor sid ac.Choir End-Actor
+					Dialog sid pr.res04.text End-Dialog	
 					Actor sid ac.Hierarch End-Actor
 					Dialog sid pr.DismissalPrayer2.text End-Dialog
 					Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog	
@@ -13547,7 +13550,8 @@ Template MA
 				Dialog sid pr.InTheNameOfLordBless_father.text End-Dialog
 				Actor sid ac.Priest End-Actor
 				Dialog sid pr.DismissalPrayer1.text End-Dialog
-				Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+				Actor sid ac.Choir End-Actor
+				Dialog sid pr.res04.text End-Dialog	
 				Dialog sid pr.DismissalPrayer2_lent.text End-Dialog
 				Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
 				Insert_section TR.StEphraimPrayer_long End-Insert
@@ -13582,8 +13586,9 @@ Template MA
 				Actor sid ac.Priest End-Actor
 				Dialog sid pr.exc17.text End-Dialog
 				Dialog<i>sid misc.parenthesis.open sid pr.Bless_father.text sid misc.parenthesis.close</>End-Dialog	
-			//	Actor sid ac.Priest End-Actor
-				Dialog sid pr.DismissalPrayer1.text<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+				Dialog sid pr.DismissalPrayer1.text End-Dialog
+				Actor sid ac.Choir End-Actor
+				Dialog sid pr.res04.text End-Dialog	
 				Actor sid ac.SuperiorOrReader End-Actor
 				Dialog sid pr.DismissalPrayer2.text End-Dialog
 				Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog	
@@ -13612,7 +13617,8 @@ Template MA
 				Dialog sid pr.exc17.text End-Dialog
 				Dialog<i>sid misc.parenthesis.open sid pr.Bless_father.text sid misc.parenthesis.close</>End-Dialog	
 				Dialog sid pr.DismissalPrayer1.text End-Dialog
-				Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog	
+				Actor sid ac.Choir End-Actor
+				Dialog sid pr.res04.text End-Dialog	
 				Actor sid ac.SuperiorOrReader End-Actor
 				Dialog sid pr.DismissalPrayer2.text End-Dialog
 				Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog	
@@ -14017,7 +14023,7 @@ Template MA
 	End-Section
 	Section SmallDoxology_Matins
 		Actor sid ac.Reader End-Actor
-		Title role desig sid hoMA.SmallDoxology.title<Trubric>sid ru.Read</>End-Title
+		Title role desig sid hoMA.SmallDoxology.title<r><Tsmaller>sid ru.Read</></>End-Title
 		Reading sid hoMA.DoxologySmallIntro.text sid hoMA.SmallDoxology1.text sid hoMA.SmallDoxology1d sid hoMA.SmallDoxology2.text sid hoMA.SmallDoxology2d sid hoMA.SmallDoxology3.text End-Reading
 	End-Section
 
