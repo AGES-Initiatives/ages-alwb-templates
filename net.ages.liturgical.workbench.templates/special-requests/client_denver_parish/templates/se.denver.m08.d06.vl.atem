@@ -1,0 +1,64 @@
+Template se.denver.m08.d06.vl
+
+Status NA
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import miscellanea_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 8 day 6 year 2024 End_Date
+			Page_Header_Even
+				center @lookup sid vl.pdf.header rid da.daVE.OnTheEveningBefore.text lang L1 
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid vl.pdf.header rid da.daVE.OnTheEveningBefore.text lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template pdf.cover.ve.me End-Insert
+		Insert_template pdf.cover.credits End-Insert
+	End-Preface
+
+	Section Instance_Weekday
+		Insert_section ST.vl.ch.me End-Insert
+		Insert_section VE._01_Beginning__.liturgy End-Insert
+		Insert_section VE._02_LordIHaveCried__.mode4__.for6 End-Insert
+		Insert_section TI.ip.f End-Insert
+		Insert_section VE._03_Stichera__.me__.i_123as567 End-Insert
+		Title<Tmode>rid me.meVE.Aposticha1.mode</>End-Title
+		Insert_section VE.LIHC_Verses.v08 End-Insert
+		Hymn rid me.meVE.Aposticha1.text @ver media-off End-Hymn
+		Title<Tmode>rid me.meVE.Aposticha2.mode</>End-Title
+		Insert_section VE.LIHC_Verses.v09 End-Insert
+		Hymn rid me.meVE.Aposticha2.text @ver media-off End-Hymn
+		Title<Tmode>rid me.meVE.Aposticha3.mode</>End-Title
+		Insert_section VE.LIHC_Verses.v10 End-Insert
+		Hymn rid me.meVE.Aposticha3.text @ver media-off End-Hymn
+		Insert_section VE._03_Stichera__.gloryboth__.me__.gloryasgloryboth_ End-Insert
+		Insert_section VE._04_Middle__.entrance End-Insert
+		Insert_section VE._05_Readings__.reader End-Insert
+		Insert_section LI._06_Trisagion__.chrys End-Insert
+		Insert_section LE._01_Epistle__.menaion_ End-Insert
+		Insert_section LE._02_Gospel__.menaion_ End-Insert
+		Insert_section LI._08_Liturgy__.chrys_default End-Insert
+		Insert_section LI._09_Dismissal__.commemoration End-Insert
+	End-Section
+
+End-Template
