@@ -1,0 +1,69 @@
+Template se.m06.d12.ve5 
+
+Status NA
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import miscellanea_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head 
+		Set_Date month 6 day 12 year 2025 End_Date
+			Page_Header_Even
+			//	center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore.text lang L1 
+				center @text "June 12 - Vespers for St. Gerasimos"
+			End_Page_Header_Even
+			Page_Header_Odd
+			//	center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore.text lang L2
+				center @text "June 12 - Vespers for St. Gerasimos"
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template pdf.cover.ve56 End-Insert
+		Insert_template pdf.cover.credits End-Insert
+	End-Preface
+
+	when-name-of-day-is
+		Sunday use:
+			Section Instance_Sunday
+			End-Section
+
+		otherwise use:
+			Section Instance_Weekday
+				Insert_section ST.ve.mealt1 End-Insert
+				Insert_section VE._01_Beginning__.vespers End-Insert
+				Insert_section VE._02_LordIHaveCried__.mode1__.for6 End-Insert
+				Insert_section TI.stp.s._07_hierarch_.m End-Insert
+				Insert_section VE._03_Stichera__.me__.alt1__.p_123456as5678910 End-Insert
+				Insert_section VE._03_Stichera__.glory__.me__.alt1__.gloryasglory_ End-Insert
+				Insert_section VE._03_Stichera__.both__.firsttheotokion__.mode5_ End-Insert
+				Insert_section VE._04_Middle__.entrance End-Insert
+				Insert_section VE._05_Readings__.mealt1_reader End-Insert
+				Insert_section VE._06_Litanies__.fullektenia End-Insert
+				Insert_section VE._08_Aposticha__.me__.alt1__.p_hierarchs12 End-Insert
+				Insert_section VE._08_Aposticha__.glory__.me__.alt1__.gloryasglory_ End-Insert
+				Insert_section VE._08_Aposticha__.both__.primarytheotokion__.mode8 End-Insert
+				Insert_section VE._09_Symeon_Trisagion__.Priest End-Insert
+				Insert_section AP.mealt11_ End-Insert
+				Insert_section AP.gloryboth__.primarytheotokion__.mode5 End-Insert
+				Insert_section VE._10_End__.wisdom123.part1 End-Insert
+				Insert_section VE._11_Dismissal__.mealt1_commemoration End-Insert
+			End-Section
+	end-when
+
+End-Template
