@@ -14,26 +14,26 @@ Status NA
 	import bTags.*
 	import roles.*
 	
-	Head 
+	Head
 		Set_Date month 2 day 27 year 2024 End_Date
-		Page_Header_Even 
-			left @pageNbr 
-			center 
+		Page_Header_Even
+			left @pageNbr
+			center
 				@lookup sid co.pdf.header lang L2
-//				@date 
+//				@date
 		End_Page_Header_Even
-		Page_Header_Odd 
-			center 
+		Page_Header_Odd
+			center
 				@lookup sid co.pdf.header lang L2
-//				@date 
-			right @pageNbr 
+//				@date
+			right @pageNbr
 		End_Page_Header_Odd
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
 	when-movable-cycle-day-is
 		1, 8 use: Insert_section mc.map.co.Instance01 End-Insert
-		14 thru 62 use: Insert_section mc.map.co.Instance01 End-Insert 
+		14 thru 62 use: Insert_section mc.map.co.Instance01 End-Insert
 		otherwise use:
 			when-name-of-day-is
 				Sunday use:
