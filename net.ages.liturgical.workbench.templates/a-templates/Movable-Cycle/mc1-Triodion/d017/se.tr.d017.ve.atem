@@ -2,6 +2,13 @@ Template se.tr.d017.ve
 
 Status NA
 
+	import da.*
+	import oc.*
+	import me.*
+	import eo.*
+	import tr.*
+	import pe.*
+
 	import actors_gr_GR_cog.*
 	import dismissals_gr_GR_cog.*
 	import miscellanea_gr_GR_cog.*
@@ -17,10 +24,10 @@ Status NA
 	Head
 	//	Set_Date month 2 day 25 End_Date
 			Page_Header_Even
-				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore.text lang L1
+				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore.text lang L1
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @lookup sid ve.pdf.header rid da.daVE.OnTheEveningBefore.text lang L2
+				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore.text lang L2
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -45,10 +52,10 @@ Status NA
 			Insert_section TI.stp.me.com1 End-Insert
 			Insert_section VE._03_Stichera__.me__.p_123as8910 End-Insert
 			when-exists
-				rid me.meVE.SticGlory.text use:
+				rid meVE.SticGlory.text use:
 					Insert_section VE._03_Stichera__.glory__.me__.gloryasglory_ End-Insert
 					when-exists
-						rid me.meVE.SticTheotokion2.text use:
+						rid meVE.SticTheotokion2.text use:
 							Insert_section VE._03_Stichera__.both__.metheotokion2 End-Insert
 						otherwise use:	
 							Insert_section VE._03_Stichera__.both__.metheotokion End-Insert
@@ -60,7 +67,7 @@ Status NA
 			Insert_section VE._06_Litanies__.noektenia End-Insert
 			Insert_section VE._08_Aposticha__.tr__.weekday_.idiomelamartyric End-Insert
 			when-exists
-				rid me.meVE.AposGlory.text use:
+				rid meVE.AposGlory.text use:
 					Insert_section TI.g.me.com1 End-Insert
 					Insert_section VE._08_Aposticha__.glory__.me__.gloryasglory_.hymn End-Insert
 					Insert_section VE._08_Aposticha__.both__.metheotokion End-Insert
