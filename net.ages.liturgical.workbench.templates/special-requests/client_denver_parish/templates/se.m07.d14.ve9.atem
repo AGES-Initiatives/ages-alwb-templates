@@ -1,0 +1,138 @@
+Template se.m07.d14.ve9
+
+Status NA
+
+	import me.m07.dHF_gr_GR_cog.*
+	import eu.churchdooropening_gr_GR_cog.*
+	
+	import da.*
+	import oc.*
+	import me.*
+	import eo.*
+	import tr.*
+	import pe.*
+
+	import actors_gr_GR_cog.*
+	import client_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import miscellanea_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head
+		Set_Date month 7 day 14 year 2024 End_Date
+			Page_Header_Even
+				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore.text lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore.text lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template pdf.cover.ve.me End-Insert
+		Insert_template pdf.cover.credits End-Insert
+	End-Preface
+
+	Section Dooropening
+		Insert_section bk.eu.churchdooropening.Section00 End-Insert
+		Insert_section bk.eu.churchdooropening.Section01 End-Insert
+		Insert_section bk.eu.churchdooropening.Section02 End-Insert
+		Section Section03	
+			Title sid ti.Glory End-Title
+			Title role desig sid ti.ApolytikionLocalChurch End-Title
+			Title<Tmode>sid me.m07.d25_gr_GR_cog.meVE.Apolytikion1.mode</><Tmelody>sid me.m07.d25_gr_GR_cog.meVE.Apolytikion1.melody</>End-Title
+			Hymn sid me.m07.d25_gr_GR_cog.meVE.Apolytikion1.text @ver media-off End-Hymn
+		End-Section
+		Insert_section bk.eu.churchdooropening.Section04 End-Insert
+		Insert_section bk.eu.churchdooropening.Section05 End-Insert
+		Insert_section bk.eu.churchdooropening.Section06 End-Insert
+		Insert_section bk.eu.churchdooropening.Section07 End-Insert
+		Section Section08
+			Title<smaller>sid euCDO.Key201.title</>End-Title
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.pet01.text End-Dialog
+			Actor sid ac.Choir<smaller>sid ru.AfterEachPetition</>End-Actor
+			Dialog sid pr.res01.text End-Dialog
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.pet02.text End-Dialog
+			Dialog sid pr.pet03.text End-Dialog
+			Dialog sid hierarchs_gr_GR_cog.archbishop.america.elpidophoros.pet06.text End-Dialog
+			Dialog sid pr.pet07S.text End-Dialog
+			Dialog sid pr.pet08.text End-Dialog
+			Dialog sid pr.pet09.text End-Dialog
+			Dialog sid pr.pet10.text End-Dialog
+			Dialog sid pr.petWater01.text End-Dialog
+			Dialog sid pr.petWater02.text End-Dialog
+			Dialog sid pr.petWater13.text End-Dialog
+			Dialog sid pr.petConsecration01.text End-Dialog
+			Dialog sid pr.pet11.text End-Dialog
+			Dialog sid pr.pet12.text End-Dialog
+			Dialog sid pr.pet13.text End-Dialog
+			Actor sid ac.IL.Choir<dialogafteractor>sid pr.res03.text</>End-Actor
+			Actor sid ac.Priest End-Actor
+			Dialog sid pr.exc01.text End-Dialog
+			Actor sid ac.IL.Choir<dialogafteractor>sid pr.res04.text</>End-Actor
+		End-Section
+		Insert_section bk.eu.churchdooropening.Section09 End-Insert
+		Insert_section bk.eu.churchdooropening.Section10 End-Insert
+		Section Section11	
+			Rubric sid euCDO.R109 End-Rubric
+			Title role desig sid ti.Kontakion sid ti.Consecration End-Title
+			Title<Tmode>sid me.m09.d13_gr_GR_cog.meMA.Kontakion1.mode</><Tmelody>sid me.m09.d13_gr_GR_cog.meMA.Kontakion1.melody</>End-Title
+			Para role greekmelody sid me.m09.d13_gr_GR_cog.meMA.Kontakion1.greekmelody End-Para
+			Media sid me.m09.d13_gr_GR_cog.meMA.Kontakion1.text End-Media
+			Hymn sid me.m09.d13_gr_GR_cog.meMA.Kontakion1.text @ver media-off End-Hymn
+			Rubric sid euCDO.R110 End-Rubric
+			Title role desig sid ti.ApolytikionLocalChurch End-Title
+			Title<Tmode>sid me.m07.d25_gr_GR_cog.meVE.Apolytikion1.mode</><Tmelody>sid me.m07.d25_gr_GR_cog.meVE.Apolytikion1.melody</>End-Title
+			Hymn sid me.m07.d25_gr_GR_cog.meVE.Apolytikion1.text @ver media-off End-Hymn
+		End-Section
+		Section Section12
+			Actor sid ac.IL.Deacon<dialogafteractor>sid pr.pet00.text</>End-Actor
+			Actor sid ac.IL.Choir<dialogafteractor>sid pr.res01.text</>End-Actor
+			Actor sid ac.Hierarch End-Actor
+			Title<smallredbold>sid euCDO.Key0103.title</>End-Title
+			Para role prayer sid euCDO.Key0103.text sid cl.consecration.name sid euCDO.Key0105.text End-Para
+			Para role prayer sid euCDO.Key0106.text End-Para
+			Actor sid ac.IL.Choir<dialogafteractor>sid pr.res04.text</>End-Actor
+		End-Section
+		Insert_section bk.eu.churchdooropening.Section13 End-Insert
+	End-Section
+	Break page End_Break
+	Section Vespers
+		Insert_section ST.ve.oc_com End-Insert
+		Insert_section HIRgoa.VE_01_Beginning__.AB_Elpidophoros_America End-Insert
+		Insert_section VE._02_LordIHaveCried__.hierarchical__.modeofweek__.for10 End-Insert
+		Insert_section VE._03_Stichera__.oc__.sunday__.s_1234as1234 End-Insert
+		Insert_section VE._03_Stichera__.me__.JulHF_p_112234as5678910 End-Insert
+		Insert_section VE._03_Stichera__.glory__.me__.JulHF End-Insert
+		Insert_section VE._03_Stichera__.both__.firsttheotokion__.modeofweek End-Insert
+		Insert_section VE._04_Middle__.hierarchical__.entrance End-Insert	
+		Insert_section VE._05_Readings__.hierarchical End-Insert
+		Insert_section HIRgoa.VE_06_Litanies__.AB_Elpidophoros_America End-Insert
+		Insert_section VE._08_Aposticha__.oc__.sunday__.aposticha1234 End-Insert
+		Insert_section VE._08_Aposticha__.glory__.me__.JulHF End-Insert
+		Insert_section VE._08_Aposticha__.both__.primarytheotokion__.mode3 End-Insert
+		Insert_section VE._09_Symeon_Trisagion__.hierarchical End-Insert
+		Insert_section AP.res__.modeofweek End-Insert
+		Insert_section AP.glory__.com__.JulHF_ End-Insert
+		Insert_section AP.both__.primarytheotokion__.mode8 End-Insert
+		Insert_section VE._10_End__.hierarchical__.wisdom123.part1 End-Insert
+		Insert_section VE._11_Dismissal__.hierarchical__.commemoration End-Insert
+	End-Section
+
+End-Template
