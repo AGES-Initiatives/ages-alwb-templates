@@ -1,4 +1,4 @@
-Template bk.test
+Template bk.headertest
 
 Status NA
 
@@ -23,15 +23,35 @@ Status NA
 	import roles.*
 
 	
+	Head
+		Set_Date month 1 day 1 year 2024 End_Date
+			Page_Header_Even
+				center @lookup sid template.titles_gr_GR_cog.ma.pdf.header sid template.titles_gr_GR_cog.d.on rid daDay.text rid meDA.date lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid template.titles_gr_GR_cog.ma.pdf.header sid template.titles_gr_GR_cog.d.on rid daDay.text rid meDA.date lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
 	Section ldps
 		Set_Date month 1 day 27 year 2024 End_Date
 		Para ldp @Service_Date End-Para
 		Para ldp @Day_of_Movable_Cycle End-Para
 		Insert_section LE._01_Epistle__.daily_ End-Insert
+		Break page End_Break
 		Set_Date month 1 day 29 year 2024 End_Date
 		Para ldp @Service_Date End-Para
 		Para ldp @Day_of_Movable_Cycle End-Para
 		Insert_section LE._01_Epistle__.daily_ End-Insert
+		Break page End_Break
+		Break page End_Break
 	End-Section
 
 End-Template
