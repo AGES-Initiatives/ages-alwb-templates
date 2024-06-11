@@ -1,0 +1,110 @@
+Template se.m02.d18.li3
+
+Status Final
+
+	import da.*
+	import oc.*
+	import me.*
+	import eo.*
+	import tr.*
+	import pe.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import miscellanea_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head
+		Set_Date month 2 day 18 year 2024 End_Date
+			Page_Header_Even
+				center @lookup sid template.titles_gr_GR_cog.li3.pdf.header lang L1 @lookup rid daOnDay.text lang L1 @lookup rid meDA.pdfheaderdate lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid template.titles_gr_GR_cog.li3.pdf.header lang L2 @lookup rid daOnDay.text lang L2 @lookup rid meDA.pdfheaderdate lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	when-movable-cycle-day-is
+		1, 8, 14, 15, 16, 17, 19, 21, 22 use:
+			Insert_section mc.map.li3.Instance01 End-Insert
+
+		otherwise use:
+			when-name-of-day-is
+				Sunday use:
+					Section Instance_Sunday
+						Insert_section ST.li.oc End-Insert
+						Insert_section LI._10_Parts__._2_typika__.rubrics End-Insert
+						Insert_section LI._10_Parts__._3_beatitudes__.sunday__.b_123456TrTas5678910GB End-Insert
+							Break line End_Break
+						Insert_section LI._10_Parts__._4_entrance End-Insert
+							Break line End_Break
+						Title<Tdesig>sid ti.HymnsAfterSmallEntrance</>End-Title
+						Insert_section se.m02.d18.li.Instance_Sunday.hymns End-Insert
+							Break line End_Break
+						Insert_section LI._10_Parts__._5_trisagionhymn__.chrys End-Insert
+							Break line End_Break
+						Insert_section LE._01_Epistle__.textonly__.daily End-Insert
+							Break line End_Break
+						Insert_section LE._02_Gospel__.textonly__.daily End-Insert
+							Break line End_Break
+						Title<Tdesig>sid ti.HymnToTheotokos</>End-Title
+						Insert_section Selector_Megalynarion.Chrysostom End-Insert
+							Break line End_Break
+						Insert_section Selector_CommunionHymn.Chrysostom End-Insert
+							Break line End_Break
+						Title<Tdesig>sid eu.lichrysbasil_gr_GR_cog.euLI.Key1530.title</>End-Title
+						Insert_section Selector_AfterCommunion.Chrysostom End-Insert
+							Break line End_Break
+						Title<Tdesig>sid eu.lichrysbasil_gr_GR_cog.euLI.Key1700.title</>End-Title
+						Insert_section Selector_Dismissals.Com_No.part1 End-Insert
+							Break line End_Break	
+						Insert_section LI._10_Parts__._9_fasting_ End-Insert
+					End-Section
+				otherwise use:
+					Section Instance_Weekday
+						Insert_section ST.li.ho_oc End-Insert
+						Insert_section LI._10_Parts__._2_typika__.rubrics End-Insert
+						Insert_section LI._10_Parts__._3_beatitudes__.weekday__.b_1234TrTas78910GB End-Insert
+							Break line End_Break
+						Insert_section LI._10_Parts__._4_entrance End-Insert
+							Break line End_Break
+						Title<Tdesig>sid ti.HymnsAfterSmallEntrance</>End-Title
+						Insert_section se.m02.d18.li.Instance_Weekday.hymns End-Insert
+							Break line End_Break
+						Insert_section LI._10_Parts__._5_trisagionhymn__.chrys End-Insert
+							Break line End_Break
+						Insert_section LE._01_Epistle__.textonly__.daily End-Insert
+							Break line End_Break
+						Insert_section LE._02_Gospel__.textonly__.daily End-Insert
+							Break line End_Break
+						Title<Tdesig>sid ti.HymnToTheotokos</>End-Title
+						Insert_section Selector_Megalynarion.Chrysostom End-Insert
+							Break line End_Break
+						Insert_section Selector_CommunionHymn.Chrysostom End-Insert
+							Break line End_Break
+						Title<Tdesig>sid eu.lichrysbasil_gr_GR_cog.euLI.Key1530.title</>End-Title
+						Insert_section Selector_AfterCommunion.Chrysostom End-Insert
+							Break line End_Break
+						Title<Tdesig>sid eu.lichrysbasil_gr_GR_cog.euLI.Key1700.title</>End-Title
+						Insert_section Selector_Dismissals.Com_No.part1 End-Insert
+							Break line End_Break	
+						Insert_section LI._10_Parts__._9_fasting_ End-Insert
+					End-Section
+			end-when
+	end-when	
+
+End-Template
