@@ -1,0 +1,70 @@
+Template cu.denver.hierarchical_liturgy_parts
+
+Status NA
+
+	import eu.lichrysbasil_gr_GR_cog.*
+	import liturgical.verses_gr_GR_cog.*
+	import cu.li9_gr_GR_cog.*
+
+	import da.*
+	import oc.*
+	import me.*
+	import eo.*
+	import tr.*
+	import pe.*
+
+	import actors_gr_GR_cog.*
+	import miscellanea_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+		Head
+			Set_Date month 6 day 16 year 2024 End_Date
+				Page_Header_Even
+					center @text "Ἀρχιερατικὴ Θεία Λειτουργία"
+				End_Page_Header_Even
+				Page_Header_Odd
+					center @text "Hierarchical Divine Liturgy"
+				End_Page_Header_Odd
+				Page_Footer_Even
+					center @pageNbr
+				End_Page_Footer_Even
+				Page_Footer_Odd
+					center @pageNbr
+				End_Page_Footer_Odd
+			Set_Page_Number 1 End_Set_Page_Number
+		End_Head
+	
+	Section Instance01
+		Break line End_Break
+		Title<bnr>sid cu.HierarchicalLiturgy</>End-Title
+		Break line End_Break
+		Section hymns
+			Actor sid ac.IL.Clergy<rubric>sid cu.ApolytikionOfTheDay</>End-Actor
+			Actor sid ac.IL.Choir<rubric>sid cu.ApolytikiaOther</>End-Actor
+			Title<rubric>sid cu.IfMemorial</>End-Title
+ 			Actor sid ac.Clergy End-Actor
+			Title<Tmode>sid misc.Mode8</>End-Title
+			Hymn sid oc.m2.d7_gr_GR_cog.ocMA.Kathisma23.text @ver media-off End-Hymn
+			Actor sid ac.IL.Choir<rubric>sid cu.ApolytikionOfChurch</>End-Actor
+ 			Actor sid ac.IL.Clergy <rubric>sid cu.SeasonalKontakion</>End-Actor
+		End-Section
+		Section prayer
+			Actor sid ac.IL.Deacon<dialogafteractor>sid pr.pet00.text</>End-Actor
+			Actor sid ac.IL.Choir<dialogafteractor>sid pr.res01.text</>End-Actor
+			Actor sid ac.Hierarch End-Actor
+			Dialog sid pr.exc05a.text End-Dialog
+			Actor sid ac.Deacon End-Actor
+			Dialog sid pr.exc05b.text End-Dialog
+		End-Section
+		Insert_section Selector_Trisagion.hierarchical.holygod End-Insert
+		Insert_section HIRgoa.LI_07_Fimi__.one_choir__.Met_Constantine_Denver End-Insert
+	End-Section
+
+End-Template
