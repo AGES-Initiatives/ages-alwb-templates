@@ -33,6 +33,11 @@ Status NA
 			Dialog sid hierarchs_gr_GR_cog.metropolitan.chicago.nathanael.pet06.text End-Dialog
 			Insert_section vespers_blocks.enarxis2 End-Insert
 		End-Section
+		Section Met_Apostolos_NewJersey
+			Insert_section vespers_blocks.enarxis1 End-Insert
+			Dialog sid hierarchs_gr_GR_cog.metropolitan.newjersey.apostolos.pet06.text End-Dialog
+			Insert_section vespers_blocks.enarxis2 End-Insert
+		End-Section
 		Section Met_Constantine_Denver
 			Insert_section vespers_blocks.enarxis1 End-Insert
 			Dialog sid hierarchs_gr_GR_cog.metropolitan.denver.constantine.pet06.text End-Dialog
@@ -69,6 +74,11 @@ Status NA
 		Section Met_Nathanael_Chicago
 			Insert_section vespers_blocks.litanies1 End-Insert
 			Dialog sid hierarchs_gr_GR_cog.metropolitan.chicago.nathanael.pet19.text End-Dialog
+			Insert_section vespers_blocks.litanies2 End-Insert
+		End-Section
+		Section Met_Apostolos_NewJersey
+			Insert_section vespers_blocks.litanies1 End-Insert
+			Dialog sid hierarchs_gr_GR_cog.metropolitan.newjersey.apostolos.pet19.text End-Dialog
 			Insert_section vespers_blocks.litanies2 End-Insert
 		End-Section
 		Section Met_Constantine_Denver
@@ -122,6 +132,16 @@ Status NA
 		Section Met_Nathanael_Chicago
 			Insert_section LN.FervLitany_short_deacon_compact.part1 End-Insert
 			Dialog sid hierarchs_gr_GR_cog.metropolitan.chicago.nathanael.pet19.text End-Dialog
+			Insert_section LN.FervLitany_short_deacon_compact.part2 End-Insert
+			Insert_section LN.CompLitanyMA_deacon_compact End-Insert
+			Insert_section LN.hBowHeadsMA_deacon_choir End-Insert
+			Insert_section MA._18_End__.hierarchical__.wisdom123.part1 End-Insert
+			Insert_section MA._18_End__.hierarchical__.wisdom123.part2 End-Insert
+			Insert_section MA._18_End__.hierarchical__.wisdom123.part3 End-Insert
+		End-Section
+		Section Met_Apostolos_NewJersey
+			Insert_section LN.FervLitany_short_deacon_compact.part1 End-Insert
+			Dialog sid hierarchs_gr_GR_cog.metropolitan.newjersey.apostolos.pet19.text End-Dialog
 			Insert_section LN.FervLitany_short_deacon_compact.part2 End-Insert
 			Insert_section LN.CompLitanyMA_deacon_compact End-Insert
 			Insert_section LN.hBowHeadsMA_deacon_choir End-Insert
@@ -751,8 +771,7 @@ Status NA
 				end-when
 				Actor sid ac.Priest End-Actor
 				Dialog sid pr.exc01.text End-Dialog
-				Actor sid ac.Choir End-Actor
-				Dialog sid pr.res04.text End-Dialog
+				Actor sid ac.IL.Choir<dialogafteractor>sid pr.res04.text</>End-Actor
 			End-Section
 			Section litanies1
 				Insert_section LN.FervLitany_short_deacon_compact.part1 End-Insert
@@ -761,8 +780,7 @@ Status NA
 				Insert_section LN.FervLitany_short_deacon_compact.part2 End-Insert
 				Rubric sid ru.standing.prefix sid ru.standing.vespers.prayer End-Rubric
 				Actor sid ac.Hierarch End-Actor
-				Reading sid ho.ho10_gr_GR_cog.hoVE.Prayer_Kataxioson.text @ver End-Reading
-				Dialog <i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+				Reading sid ho.ho10_gr_GR_cog.hoVE.Prayer_Kataxioson.text @ver<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Reading
 				Insert_section LN.CompLitanyVE_deacon_compact End-Insert
 				Insert_section LN.hBowHeadsVE_deacon_choir End-Insert
 			End-Section
