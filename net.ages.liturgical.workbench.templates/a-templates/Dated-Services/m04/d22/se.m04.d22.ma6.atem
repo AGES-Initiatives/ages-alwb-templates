@@ -1,6 +1,6 @@
-Template se.m04.d27.co6
+Template se.m04.d22.ma6
 
-Status NA
+Status Final
 
 	import da.*
 	import oc.*
@@ -22,12 +22,12 @@ Status NA
 	import roles.*
 
 	Head
-		Set_Date month 4 day 27 year 2024 End_Date
+		Set_Date month 4 day 22 year 2025 End_Date
 			Page_Header_Even
-				center @lookup sid co6.pdf.header lang L1
+				center @lookup sid template.titles_gr_GR_cog.ma.pdf.header lang L1 @lookup rid daOnDay.text lang L1 @lookup rid meDA.pdfheaderdate lang L1
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @lookup sid co6.pdf.header lang L2
+				center @lookup sid template.titles_gr_GR_cog.ma.pdf.header lang L2 @lookup rid daOnDay.text lang L2 @lookup rid meDA.pdfheaderdate lang L2
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -39,14 +39,13 @@ Status NA
 	End_Head
 
 	Preface Covers
-		Insert_template pdf.cover.co End-Insert
+		Insert_template pdf.cover.ma56 End-Insert
 		Insert_template pdf.cover.credits End-Insert
 	End-Preface
 
-	when-movable-cycle-day-is 1 thru 77 use:
-		Insert_template mc.map.co End-Insert
-		otherwise use:
-		
-	end-when
-	
+	when-movable-cycle-day-is
+		73 use:
+			Insert_section se.pe.d073.ma3.Instance_RNI End-Insert
+	end-when		
+
 End-Template
