@@ -1,4 +1,4 @@
-Template se.m05.d01.li3
+Template se.m05.d03.li3
 
 Status NA
 
@@ -22,12 +22,12 @@ Status NA
 	import roles.*
 
 	Head
-		Set_Date month 5 day 1 year 2025 End_Date
+		Set_Date month 5 day 3 year 2025 End_Date
 			Page_Header_Even
-				center @lookup sid template.titles_gr_GR_cog.li3.pdf.header lang L1 @lookup rid daOnDay.text lang L1 @lookup rid meDA.pdfheaderdate lang L1
+				center @lookup sid template.titles_gr_GR_cog.li2.pdf.header lang L1 @lookup rid daOnDay.text lang L1 @lookup rid meDA.pdfheaderdate lang L1
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @lookup sid template.titles_gr_GR_cog.li3.pdf.header lang L2 @lookup rid daOnDay.text lang L2 @lookup rid meDA.pdfheaderdate lang L2
+				center @lookup sid template.titles_gr_GR_cog.li2.pdf.header lang L2 @lookup rid daOnDay.text lang L2 @lookup rid meDA.pdfheaderdate lang L2
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -39,30 +39,25 @@ Status NA
 	End_Head
 
 	when-movable-cycle-day-is
-		64, 71 use:
-			Insert_section mc.map.li3.Instance01 End-Insert
-			
-//		72 use: //Bright Monday - St. George
-//			Section Instance01_Monday
-//				Insert_section se.pe.d072.li3.Instance_George End-Insert
-//			End-Section
-			
-//		73 use: //Bright Tuesday - St. Mark
-//			Section Instance01_Tuesday
-//				Insert_section se.pe.d073.li3.Instance_Mark End-Insert
-//			End-Section
-			
 		78, 85, 92, 95 use:
 			Insert_section mc.map.li3.Instance01 End-Insert
 			
-		79, 80, 81, 82, 83, 84, 86, 87, 88, 89, 90, 91, 93, 94, 96, 97, 98 use:
+		79, 80, 81, 82, 83, 86, 87, 88, 89, 90, 91, 93, 94, 96, 97, 98, 100 use:
 			Section Instance02
 				Insert_section ST.li.pe_me1 End-Insert
-				Insert_section mc.map.li3.pe_typika_beatitudes End-Insert
+				Insert_section LI._10_Parts__._2_typika__.rubrics End-Insert
+				when-movable-cycle-day-is
+					79 thru 83 use:
+						Insert_section LI._10_Parts__._3_beatitudes__.festal__.pe__.thomas__.ode3c1_1123as5678 End-Insert
+						Insert_section LI._03_Beatitudes__.append__.festal__.pe__.thomas__.ode6c1_1123as910GB End-Insert
+					86 thru 90 use:
+						Insert_section LI._10_Parts__._3_beatitudes__.festal__.pe__.myrrhbearers__.ode3c1_1F1F2Tas5678 End-Insert
+						Insert_section LI._03_Beatitudes__.append__.festal__.pe__.myrrhbearers__.ode6c1_F1F2TrTas910GB End-Insert
+				end-when
 				Insert_section LI._10_Parts__._4_entrance End-Insert
 					Break line End_Break
 				Title<Tdesig>sid ti.HymnsAfterSmallEntrance</>End-Title
-				Insert_section se.m05.d01.li.Instance02.hymns End-Insert
+				Insert_section se.m05.d03.li.Instance02.hymns End-Insert
 					Break line End_Break
 				Insert_section LI._10_Parts__._5_trisagionhymn__.chrys End-Insert
 					Break line End_Break
