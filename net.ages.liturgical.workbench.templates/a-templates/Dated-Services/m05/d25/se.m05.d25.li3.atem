@@ -1,0 +1,94 @@
+Template se.m05.d25.li3
+
+Status NA
+
+	import da.*
+	import oc.*
+	import me.*
+	import eo.*
+	import tr.*
+	import pe.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import miscellanea_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head
+		Set_Date month 5 day 25 year 2025 End_Date
+			Page_Header_Even
+				center @lookup sid template.titles_gr_GR_cog.li3.pdf.header lang L1 @lookup rid daOnDay.text lang L1 @lookup rid meDA.pdfheaderdate lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid template.titles_gr_GR_cog.li3.pdf.header lang L2 @lookup rid daOnDay.text lang L2 @lookup rid meDA.pdfheaderdate lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	when-movable-cycle-day-is
+		92, 99, 106, 113 use:
+			Section Instance01
+				Insert_section ST.li.pe_me1 End-Insert
+				Insert_section LI._10_Parts__._2_typika__.rubrics End-Insert
+				when-movable-cycle-day-is
+					92, 99, 106 use:
+						Insert_section LI._10_Parts__._3_beatitudes__.sunday__.b_123Tas5678 End-Insert
+						Insert_section LI._03_Beatitudes__.append__.me1c1__.ode6_123Tas910GB End-Insert
+					113 use:
+						Insert_section LI._10_Parts__._3_beatitudes__.sunday__.b_123Tas1234 End-Insert
+						Insert_section LI._03_Beatitudes__.append__.festal__.pe__.holyfathers__.ode3c1_123Tas5678 End-Insert
+						Insert_section LI._03_Beatitudes__.append__.me1c1__.ode6_123Tas910GB End-Insert
+				end-when
+				Insert_section Selector_Eisodikon.eisodikon_complete.usualSunday End-Insert
+				Insert_section se.m05.d25.li2.Instance01.block01 End-Insert
+			End-Section
+
+		95 use:
+			Section Instance02
+				Insert_section ST.li.pe_me1 End-Insert
+				Insert_section LI._10_Parts__._2_typika__.rubrics End-Insert
+				Insert_section mc.map.li3.pe_typika_beatitudes_ode3 End-Insert
+				Insert_section LI._03_Beatitudes__.append__.me1c1__.ode6_123Tas910GB End-Insert
+				Insert_section Selector_Eisodikon.eisodikon_complete.usualSunday End-Insert
+				Insert_section se.m05.d25.li2.Instance02.block01 End-Insert
+			End-Section
+
+		111, 112, 114, 115, 116, 117, 118, 122 use:
+			Section Instance05
+				Insert_section ST.li.pe_me1 End-Insert
+				Insert_section mc.map.li3.pe_typika_beatitudes_ode3 End-Insert
+				Insert_section LI._03_Beatitudes__.append__.me1c1__.ode6_123Tas910GB End-Insert
+				Insert_section LI._10_Parts__._4_entrance End-Insert
+				Insert_section se.m05.d25.li2.Instance05.block01 End-Insert
+			End-Section
+		
+		119 use:
+			Section Instance06
+				Insert_section mc.map.li3.Instance01 End-Insert
+			End-Section
+
+		otherwise use:
+			Section Instance08
+				Insert_section ST.li.pe_me1 End-Insert
+				Insert_section mc.map.li3.pe_typika_beatitudes_ode3 End-Insert
+				Insert_section LI._03_Beatitudes__.append__.me1c1__.ode6_123Tas910GB End-Insert
+				Insert_section Selector_Eisodikon.eisodikon_complete.usualSunday End-Insert
+				Insert_section se.m05.d25.li2.Instance08.block01 End-Insert
+			End-Section
+		
+	end-when
+
+End-Template

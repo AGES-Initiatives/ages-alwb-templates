@@ -1,0 +1,81 @@
+Template se.m05.d26.li3
+
+Status NA
+
+	import da.*
+	import oc.*
+	import me.*
+	import eo.*
+	import tr.*
+	import pe.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import miscellanea_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head
+		Set_Date month 5 day 26 year 2025 End_Date
+			Page_Header_Even
+				center @lookup sid template.titles_gr_GR_cog.li3.pdf.header lang L1 @lookup rid daOnDay.text lang L1 @lookup rid meDA.pdfheaderdate lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid template.titles_gr_GR_cog.li3.pdf.header lang L2 @lookup rid daOnDay.text lang L2 @lookup rid meDA.pdfheaderdate lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	when-movable-cycle-day-is
+		89 thru 108 use:
+			Insert_section mc.map.li3.Instance01 End-Insert
+
+		111 use:	
+			Section Instance06_111
+				Para role servicesourcestitle sid misc.book.BooksSources.title End-Para
+				Para role servicesources sid misc.book.Hieratikon.name End-Para
+				Para role servicesourcessection sid li3.pdf.header End-Para
+				Para role servicesources sid misc.book.Pentecostarion.name End-Para
+				Para role servicesourcessection rid peDA.commemoration.short End-Para
+				Para role servicesources sid misc.book.Menaion.name sid misc.separator.hyphen sid me.m05.d25_gr_GR_cog.meDA.date End-Para
+				Para role servicesourcessection sid me.m05.d25_gr_GR_cog.meDA.commemoration.first_short End-Para
+				Title sid misc.horizontal_line.solid1 End-Title
+				Break line End_Break
+				Title<bnr>sid li3.html.tab</>End-Title
+				Insert_section ST.li.pe_me1 End-Insert
+				Insert_section mc.map.li3.pe_typika_beatitudes_ode3 End-Insert
+				Set_Date month 5 day 25 year 2025 End_Date
+				Insert_section LI._03_Beatitudes__.append__.me1c1__.ode6_123Tas910GB End-Insert
+				Insert_section LI._10_Parts__._4_entrance End-Insert
+				Insert_section se.m05.d26.li2.Instance06_111.block01 End-Insert
+				Set_Date month 5 day 26 year 2025 End_Date
+				Insert_section LI._10_Parts__._9_fasting_ End-Insert
+			End-Section
+
+		112 thru 119 use:
+			Insert_section mc.map.li3.Instance01 End-Insert
+			
+		121 use:
+			Section Instance07 //forerunner moved
+				Rubric sid misc.FutureInstance End-Rubric
+			End-Section
+
+		122 thru 123 use:
+			Insert_section mc.map.li3.Instance01 End-Insert
+		
+		otherwise use:	
+
+	end-when	
+End-Template
