@@ -132,6 +132,14 @@ Status NA
 			Insert_section Selector_Antiphons.antiphon3__.celebrated_saint_mealt1.title End-Insert
 			Insert_section Selector_Antiphons.antiphon3__.celebrated_saint_mealt1.verses End-Insert
 		End-Section
+		Section celebrated_saint_mealt2
+			Insert_section Selector_Antiphons.antiphon1__.celebrated_saint End-Insert
+			Insert_section hLI.short_litany_after_antiphon1_deacon_choir End-Insert
+			Insert_section Selector_Antiphons.antiphon2__.celebrated_saint End-Insert
+			Insert_section hLI.short_litany_after_antiphon2_deacon_choir End-Insert
+			Insert_section Selector_Antiphons.antiphon3__.celebrated_saint_mealt2.title End-Insert
+			Insert_section Selector_Antiphons.antiphon3__.celebrated_saint_mealt2.verses End-Insert
+		End-Section
 		Section psalm102
 			Actor sid ac.Choir End-Actor
 			Title role desig sid psLI.typika.ps102.title @ver End-Title
@@ -1062,10 +1070,13 @@ Status NA
 		Section chrys_mealt1
 			Insert_section chrys_default.part1 End-Insert
 			Insert_section prayers_before_communion End-Insert
-			Section communionhymn
-				Actor sid ac.Choir End-Actor
-				Insert_section Selector_CommunionHymn.mealt1 End-Insert
-			End-Section
+			Insert_section hLI.mealt1_communionhymn End-Insert
+			Insert_section chrys_default.part2 End-Insert
+		End-Section
+		Section chrys_mealt2
+			Insert_section chrys_default.part1 End-Insert
+			Insert_section prayers_before_communion End-Insert
+			Insert_section hLI.mealt2_communionhymn End-Insert
 			Insert_section chrys_default.part2 End-Insert
 		End-Section
 		Section chrys_consecration
@@ -1361,6 +1372,51 @@ Status NA
 						Insert_section blessing_before_dismissal End-Insert
 						Actor sid ac.Hierarch End-Actor
 						Insert_section Selector_Dismissals.mealt1_Com_Yes.part1 End-Insert
+						Actor sid ac.Choir End-Actor
+						Media sid euLI.Key1706h.text End-Media
+						Hymn sid euLI.Key1706h.text media-off End-Hymn
+						Actor sid ac.Hierarch End-Actor
+						Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
+						Actor sid ac.Choir End-Actor
+						Dialog sid pr.res04.text End-Dialog
+						Actor sid ac.Clergy End-Actor
+						Dialog sid pr.ThroughThePrayers_bishop.text End-Dialog
+						Actor sid ac.Choir End-Actor
+						Dialog sid pr.res04.text End-Dialog
+					End-Section
+			end-when
+		End-Section
+		Section mealt2_commemoration
+			when-movable-cycle-day-is
+				71, 72, 73, 74, 75, 76, 77, 109 use:
+					Section pascha
+						Insert_section blessing_before_dismissal End-Insert
+						Insert_section dismissal_intro_paschal End-Insert
+						Actor sid ac.Hierarch End-Actor
+						Insert_section Selector_Dismissals.mealt2_Com_Yes.part1 End-Insert
+						Actor sid ac.Choir End-Actor
+						Media sid euLI.Key1706h.text End-Media
+						Hymn sid euLI.Key1706h.text media-off End-Hymn
+						Actor sid ac.Hierarch End-Actor
+						Insert_section Selector_Dismissals.Com_Yes.part2 End-Insert
+					End-Section
+				78 thru 108 use:
+					Section afterpascha
+						Insert_section blessing_before_dismissal End-Insert
+						Insert_section dismissal_intro_paschal End-Insert
+						Actor sid ac.Hierarch End-Actor
+						Insert_section Selector_Dismissals.mealt2_Com_Yes.part1 End-Insert
+						Actor sid ac.Choir End-Actor
+						Media sid euLI.Key1706h.text End-Media
+						Hymn sid euLI.Key1706h.text media-off End-Hymn
+						Actor sid ac.Hierarch End-Actor
+						Insert_section Selector_Dismissals.Com_Yes.part2 End-Insert
+					End-Section
+				otherwise use:
+					Section notpaschal
+						Insert_section blessing_before_dismissal End-Insert
+						Actor sid ac.Hierarch End-Actor
+						Insert_section Selector_Dismissals.mealt2_Com_Yes.part1 End-Insert
 						Actor sid ac.Choir End-Actor
 						Media sid euLI.Key1706h.text End-Media
 						Hymn sid euLI.Key1706h.text media-off End-Hymn
@@ -1787,6 +1843,10 @@ Status NA
 		Section mealt1_communionhymn
 			Actor sid ac.Choir End-Actor
 			Insert_section Selector_CommunionHymn.mealt1 End-Insert
+		End-Section
+		Section mealt2_communionhymn
+			Actor sid ac.Choir End-Actor
+			Insert_section Selector_CommunionHymn.mealt2 End-Insert
 		End-Section
 		Section commemorate_bishop1bishop2
 			Insert_section _08_Liturgy__.chrys_default.part1.commemorations.saints End-Insert

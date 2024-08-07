@@ -707,7 +707,7 @@ Template hLE
 				Dialog sid pr.epi02.text End-Dialog	
 			End-Section	
 		End-Section //Epistle_Menaion
-		Section mealt1_ //computes
+		Section mealt1_
 			Section prokeimenon
 				Title<smaller>sid euLI.Key0700.title</>End-Title
 				Title role desig sid ti.Epistle End-Title
@@ -731,6 +731,30 @@ Template hLE
 				Dialog sid pr.epi02.text End-Dialog	
 			End-Section	
 		End-Section //Epistle_mealt1
+		Section mealt2_
+			Section prokeimenon
+				Title<smaller>sid euLI.Key0700.title</>End-Title
+				Title role desig sid ti.Epistle End-Title
+				Actor sid ac.Deacon End-Actor
+				Dialog sid pr.exc19.text End-Dialog
+				Actor sid ac.Reader End-Actor
+				Insert_section mealt2_ep_pr_title_mode End-Insert
+				Insert_section mealt2_ep_prokeimenon_verse End-Insert
+			End-Section
+			Section lesson
+				Actor sid ac.Deacon End-Actor
+				Dialog sid pr.exc17.text End-Dialog		
+				Insert_section Selector_EpistleLessons_Menaion.mealt2_ep_designation End-Insert
+				Actor sid ac.Reader End-Actor
+				Insert_section Selector_EpistleLessons_Menaion.mealt2_ep_book End-Insert
+				Actor sid ac.Deacon End-Actor
+				Dialog sid pr.exc19.text End-Dialog
+				Actor sid ac.Reader End-Actor
+				Insert_section Selector_EpistleLessons_Menaion.mealt2_ep_lesson End-Insert
+				Actor sid ac.Hierarch End-Actor
+				Dialog sid pr.epi02.text End-Dialog	
+			End-Section	
+		End-Section
 		Section vespers__
 			Section menaion_ //computes Ephiphany and Christmas Eve
 				Section prokeimenon
@@ -1909,6 +1933,38 @@ Template hLE
 				Dialog sid pr.GloryToYouLord.text End-Dialog
 				Actor sid ac.Deacon End-Actor
 				Insert_section Selector_GospelLessons_Menaion.mealt1_go_lesson End-Insert
+				Actor sid ac.Hierarch End-Actor
+				Dialog sid pr.gos06.text End-Dialog
+				Actor sid ac.Choir End-Actor						
+				Media sid pr.gos07.text End-Media
+				Dialog sid pr.GloryToYouLord.text End-Dialog	
+			End-Section
+		End-Section	
+		Section mealt2_
+			Section alleluia
+				Actor sid ac.Choir End-Actor
+				Media sid hoLI.MM.GospelAlleluia.text End-Media
+				Hymn sid pr.Alleluia3.text media-off End-Hymn
+				Rubric sid cl.LI.R004 End-Rubric
+			End-Section
+			Insert_section hLE.PrayerBeforeGospel End-Insert
+			Section lesson
+				Title role desig sid ti.Gospel End-Title
+				Insert_section Selector_GospelLessons_Menaion.mealt2_go_designation End-Insert
+				Actor sid ac.Deacon End-Actor
+				Dialog sid pr.exc17.text sid pr.exc18.text sid pr.gos02.text End-Dialog
+				Actor sid ac.Hierarch End-Actor
+				Dialog sid pr.pet31.text End-Dialog
+				Actor sid ac.Choir End-Actor
+				Dialog sid pr.res05.text End-Dialog
+				Actor sid ac.Deacon End-Actor
+				Insert_section Selector_GospelLessons_Menaion.mealt2_go_book End-Insert
+				Actor sid ac.Priest End-Actor
+				Dialog sid pr.exc19.text End-Dialog
+				Actor sid ac.Choir End-Actor
+				Dialog sid pr.GloryToYouLord.text End-Dialog
+				Actor sid ac.Deacon End-Actor
+				Insert_section Selector_GospelLessons_Menaion.mealt2_go_lesson End-Insert
 				Actor sid ac.Hierarch End-Actor
 				Dialog sid pr.gos06.text End-Dialog
 				Actor sid ac.Choir End-Actor						
