@@ -1,0 +1,80 @@
+Template se.m07.d27.ma2
+
+Status Review
+
+	import da.*
+	import oc.*
+	import me.*
+	import eo.*
+	import tr.*
+	import pe.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import miscellanea_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head
+		Set_Date month 7 day 27 year 2024 End_Date
+			Page_Header_Even
+				center @lookup sid template.titles_gr_GR_cog.ma.pdf.header lang L1 @lookup rid daOnDay.text lang L1 @lookup rid meDA.pdfheaderdate lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid template.titles_gr_GR_cog.ma.pdf.header lang L2 @lookup rid daOnDay.text lang L2 @lookup rid meDA.pdfheaderdate lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+
+		Insert_template pdf.cover.credits End-Insert
+	End-Preface
+
+	when-name-of-day-is
+		Sunday use:
+			Section Instance_Sunday
+				Insert_section ST.ma.oc_me1 End-Insert
+				Insert_section MA._01_Beginning__.modeofweek End-Insert
+				Insert_section AP.res__.modeofweek End-Insert
+				Insert_section TI.g.s._00_saint_.m End-Insert
+				Insert_section AP.me1_.hymn End-Insert
+				Insert_section AP.both__.primarytheotokion__.mode3 End-Insert
+				Insert_section MA._02_Kathisma1__.litany End-Insert
+				Insert_section MA._02_Kathisma1__.oc__.sunday__.whenmode3 End-Insert
+				Insert_section MA._03_Kathisma2__.append__.oc__.sunday__.kath212223 End-Insert
+				Insert_section TI.ka3.s._00_saint_.m End-Insert
+				Insert_section MA._05_Kathisma3__.append__.me__.kath31o323t_.hymns End-Insert
+				Insert_section MA._05_Kathisma3__.resurrectional_evlogetaria End-Insert
+				Insert_section MA._06_Antiphons__.sunday_ End-Insert
+				Insert_section MA2._09_Options__.sunday__.oc_h12tas0GrGrTh_and_me2_123tasVVGB_with_konoik_me1_and_kath_me1o2t_and_konoik_oc End-Insert
+				Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+				Insert_section MA._12_Exaposteilarion__.eo__.eoofweek_.exap End-Insert
+				Insert_section TI.s._00_saint_.m End-Insert
+				Insert_section MA._12_Exaposteilarion__.me__.exap1_.hymn End-Insert
+				Insert_section MA._13_Lauds__.modeofweek__.for6 End-Insert
+				Insert_section MA._13_Lauds__.oc__.s_1234as1234 End-Insert
+				Insert_section TI.s._00_saint_.m End-Insert
+				Insert_section MA._13_Lauds__.me__.p_1123as56greatmartyrs13 End-Insert
+				Insert_section MA._13_Lauds__.glory__.eo_ End-Insert
+				Insert_section MA._14_Doxology__.sunday End-Insert
+			End-Section
+		
+		otherwise use:
+			Section Instance_Weekday
+			End-Section
+	end-when			
+
+End-Template
