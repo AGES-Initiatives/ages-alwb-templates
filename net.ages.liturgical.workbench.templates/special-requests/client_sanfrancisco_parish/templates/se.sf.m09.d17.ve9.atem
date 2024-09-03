@@ -1,0 +1,91 @@
+Template se.sf.m09.d17.ve9
+
+Status NA
+
+	import da.*
+	import oc.*
+	import me.*
+	import eo.*
+	import tr.*
+	import pe.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import miscellanea_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+		
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head
+		Set_Date month 9 day 17 year 2024 End_Date
+			Page_Header_Even
+				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore.text lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore.text lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Preface Covers
+		Insert_template pdf.cover.ve4 End-Insert
+		Insert_template pdf.cover.credits End-Insert
+	End-Preface
+
+	when-name-of-day-is
+		Sunday use:	
+			Section Instance_Sunday
+			End-Section
+		otherwise use:
+			Section Instance_Weekday
+				Insert_section ST.ve.me1_mealt1 End-Insert
+				Insert_section HIRgoa.VE_01_Beginning__.Met_Gerasimos_SanFrancisco End-Insert
+				Insert_section VE._02_LordIHaveCried__.hierarchical__.mode4__.for6 End-Insert
+				Insert_section TI.stp.me.com1 End-Insert
+				Insert_section VE._03_Stichera__.me__.p_456as567 End-Insert
+				Insert_section TI.additional.stp End-Insert
+				Insert_section VE._03_Stichera__.me__.alt1__.p_456as8910 End-Insert
+				Insert_section VE._03_Stichera__.glory__.me__.alt1__.gloryasglory_ End-Insert
+				Insert_section TI.b.f End-Insert
+				Insert_section VE._03_Stichera__.both__.me__.alt1__.bothasboth_.hymn End-Insert
+				Insert_section VE._04_Middle__.hierarchical__.entrance End-Insert
+				Insert_section VE._05_Readings__.mealt1_hierarchical End-Insert
+				Insert_section HIRgoa.VE_06_Litanies__.Met_Gerasimos_SanFrancisco End-Insert
+				Insert_section VE._08_Aposticha__.me__.alt1__.p_martyrs12 End-Insert
+				Insert_section VE._08_Aposticha__.glory__.me__.alt1__.gloryasglory_ End-Insert
+				Insert_section TI.b.f End-Insert
+				Insert_section VE._08_Aposticha__.both__.me__.alt1__.bothasboth_.hymn End-Insert
+				Insert_section VE._09_Symeon_Trisagion__.hierarchical End-Insert
+				Insert_section AP.me2ger_ End-Insert
+				Insert_section TI.g.another End-Insert
+				Insert_section AP.me3_.hymn End-Insert
+				Insert_section AP.both__.af End-Insert
+				Insert_section VE._10_End__.wisdom123.part1 End-Insert
+				Actor sid ac.Priest End-Actor
+				Dialog sid dis00 rid meDA.dismissal sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08 sid dis09 rid meDA.insert1 rid meDA.insert2 sid dis10 sid dis88 End-Dialog
+				Actor sid ac.Choir End-Actor
+				Media sid eu.lichrysbasil_gr_GR_cog.euLI.Key1706h.text End-Media
+				Hymn sid eu.lichrysbasil_gr_GR_cog.euLI.Key1706h.text media-off End-Hymn
+				Actor sid ac.Hierarch End-Actor
+				Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
+				Actor sid ac.Choir End-Actor
+				Dialog sid pr.res04.text End-Dialog
+				Actor sid ac.Clergy End-Actor
+				Dialog sid pr.ThroughThePrayers_bishop.text End-Dialog
+				Actor sid ac.Choir End-Actor
+				Dialog sid pr.res04.text End-Dialog
+			End-Section
+		end-when
+
+End-Template
