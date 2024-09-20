@@ -2,8 +2,6 @@ Template bk.eu.consecration.relics
 
 Status NA
 
-	import eu.consecration_gr_GR_cog.*
-	
 	import da.*
 	import oc.*
 	import me.*
@@ -24,80 +22,69 @@ Status NA
 	import roles.*
 
 	Head
-		Set_Date month 11 day 7 year 2014 End_Date
-		Page_Header_Even
-			center @text "Reception of the Holy Relics"
-			left @pageNbr
-		End_Page_Header_Even
-		Page_Header_Odd
-			center @lookup rid daOnDay.text lang L2 @lookup rid meDA.pdfheaderdate lang L2
-			right @pageNbr
-		End_Page_Header_Odd
+		Set_Date month 10 day 5 year 2024 End_Date
+			Page_Header_Even
+				center @text "Reception of the Holy Relics"
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @text "Reception of the Holy Relics"
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
 		Set_Page_Number 1 End_Set_Page_Number
 	End_Head
 
+	Section Section00
+		Title role desig sid eu.consecration_gr_GR_cog.euCON.Key1000.title End-Title
+		Rubric sid eu.consecration_gr_GR_cog.euCON.R100 End-Rubric
+		Actor sid ac.Hierarch End-Actor
+		Title role desig sid eu.consecration_gr_GR_cog.euCON.Key1001.title End-Title
+		Para role prayer sid eu.consecration_gr_GR_cog.euCON.Key1001.text End-Para
+		Actor sid ac.IL.Choir<dialogafteractor> sid pr.res04.text</>End-Actor
+		Actor sid ac.Hierarch End-Actor
+		Title role desig sid eu.consecration_gr_GR_cog.euCON.Key1002.title End-Title
+		Actor sid ac.IL.Choir<dialogafteractor> sid pr.res04.text</>End-Actor
+	End-Section
 	Section Section01
-		Title role desig sid euCON.Key1000.title End-Title
-		Rubric sid euCON.R100 End-Rubric
+		Title role desig sid eu.consecration_gr_GR_cog.euCON.Key1000.title End-Title
+		Rubric sid eu.consecration_gr_GR_cog.euCON.R101 End-Rubric
 		Actor sid ac.Hierarch End-Actor
-		Title role desig sid euCON.Key1001.title End-Title
-		Para role prayer sid euCON.Key1001.text<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Para
-		Title role desig sid euCON.Key1002.title End-Title
-		Para role prayer sid euCON.Key1002.text<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Para
-		Rubric sid euCON.R101 End-Rubric
-		Actor sid ac.Hierarch End-Actor
-		Dialog sid pr.enarxis01.text <i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog	
-		Actor sid ac.People End-Actor
+		Dialog sid pr.enarxis01.text End-Dialog	
+		Actor sid ac.IL.Choir<dialogafteractor> sid pr.res04.text</>End-Actor
+		Actor sid ac.Reader End-Actor
 		Insert_section bk.ho.ho01.Trisagion_Prayers End-Insert	
 		Actor sid ac.Hierarch End-Actor
-		Dialog sid pr.exc20.text <i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
-		Actor sid ac.Choir End-Actor
-		Rubric sid euCON.R102 End-Rubric
+		Dialog sid pr.exc20.text End-Dialog
+		Actor sid ac.IL.Choir<dialogafteractor> sid pr.res04.text</>End-Actor
+		Rubric sid eu.consecration_gr_GR_cog.euCON.R102 End-Rubric
 	End-Section
-	Section Section02 // hymn of relic saint 1
-		Title role desig sid client_gr_GR_cog.cl.relics.saint1.Apolytikion.title End-Title
-		Title<Tmode>sid client_gr_GR_cog.cl.relics.saint1.Apolytikion.mode</><Tmelody>sid client_gr_GR_cog.cl.relics.saint1.Apolytikion.melody</>End-Title
-		Media sid client_gr_GR_cog.cl.relics.saint1.Apolytikion.text End-Media
-		Hymn sid client_gr_GR_cog.cl.relics.saint1.Apolytikion.text @ver media-off End-Hymn
+	Section Section02
+		Insert_section AP.consecration_relics__.saints_123_ End-Insert
+		Insert_section AP.client1_ End-Insert
 	End-Section
-	Section Section03 // hymn of relic saint 2
-		Title role desig sid client_gr_GR_cog.cl.relics.saint2.Apolytikion.title End-Title
-		Title<Tmode>sid client_gr_GR_cog.cl.relics.saint2.Apolytikion.mode</><Tmelody>sid client_gr_GR_cog.cl.relics.saint2.Apolytikion.melody</>End-Title
-		Media sid client_gr_GR_cog.cl.relics.saint2.Apolytikion.text End-Media
-		Hymn sid client_gr_GR_cog.cl.relics.saint2.Apolytikion.text @ver media-off End-Hymn
-	End-Section
-	Section Section04 // hymn of relic saint 3
-		Title role desig sid client_gr_GR_cog.cl.relics.saint3.Apolytikion.title End-Title
-		Title<Tmode>sid client_gr_GR_cog.cl.relics.saint3.Apolytikion.mode</><Tmelody>sid client_gr_GR_cog.cl.relics.saint3.Apolytikion.melody</>End-Title
-		Media sid client_gr_GR_cog.cl.relics.saint3.Apolytikion.text End-Media
-		Hymn sid client_gr_GR_cog.cl.relics.saint3.Apolytikion.text @ver media-off End-Hymn
-	End-Section
-	Section Section05 //hymn of local church
-		Title role desig sid client_gr_GR_cog.cl.Apolytikion1.title End-Title
-		Title<Tmode>sid client_gr_GR_cog.cl.Apolytikion1.mode</><Tmelody>sid client_gr_GR_cog.cl.Apolytikion1.melody</>End-Title
-		Media sid client_gr_GR_cog.cl.Apolytikion1.text End-Media
-		Hymn sid client_gr_GR_cog.cl.Apolytikion1.text @ver media-off End-Hymn
-	End-Section
-	Section Section06
-		Title role mode sid euCON.Key1003.mode End-Title
+	Section Section03
+		Title role mode sid eu.consecration_gr_GR_cog.euCON.Key1003.mode End-Title
 		Verse sid pr.GloryToTheFather.text End-Verse
-		Media sid euCON.Key1003.text End-Media
-		Hymn sid euCON.Key1003.text @ver media-off End-Hymn
+		Media sid eu.consecration_gr_GR_cog.euCON.Key1003.text End-Media
+		Hymn sid eu.consecration_gr_GR_cog.euCON.Key1003.text @ver media-off End-Hymn
 	End-Section
-	Section Section07	
-		Title role mode sid euCON.Key1004.mode End-Title
+	Section Section04	
+		Title role mode sid eu.consecration_gr_GR_cog.euCON.Key1004.mode End-Title
 		Verse sid pr.BothNowAndEver.text End-Verse
-		Media sid euCON.Key1004.text End-Media
-		Hymn sid euCON.Key1004.text @ver media-off End-Hymn
+		Media sid eu.consecration_gr_GR_cog.euCON.Key1004.text End-Media
+		Hymn sid eu.consecration_gr_GR_cog.euCON.Key1004.text @ver media-off End-Hymn
 	End-Section
-	Section Section08	
+	Section Section05	
 		Title role desig sid ti.Dismissal.uc End-Title
 		Actor sid ac.Hierarch End-Actor
 		Dialog sid pr.GloryToYouChristHope.text End-Dialog
 		Dialog sid dis00 sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08 sid client_gr_GR_cog.cl.relics.saint1 sid client_gr_GR_cog.cl.relics.saint2 sid client_gr_GR_cog.cl.relics.saint3 sid client_gr_GR_cog.cl.localpatronsaint1.dismissal sid dis09 sid dis10 sid dis88 End-Dialog
 		Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
-		Actor sid ac.People End-Actor
-		Dialog sid pr.res04.text End-Dialog
+		Actor sid ac.IL.Choir<dialogafteractor> sid pr.res04.text</>End-Actor
 	End-Section
 
 End-Template
