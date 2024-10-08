@@ -664,6 +664,7 @@ Status NA
 			Section communionhymn
 				Actor sid ac.Choir End-Actor
 				Insert_section Selector_CommunionHymn.Basil End-Insert
+				Insert_section hLI.hymns_during_communion End-Insert
 			End-Section
 			Section part2
 				Insert_section hLI.call_to_communion End-Insert
@@ -981,14 +982,10 @@ Status NA
 					End-Section
 				End-Section
 			End-Section
-			Insert_section prayers_before_communion End-Insert
-			Section communionhymn
-				Actor sid ac.Choir End-Actor
-				Insert_section Selector_CommunionHymn.Chrysostom End-Insert
-			End-Section
+			Insert_section hLI.prayers_before_communion End-Insert
+			Insert_section hLI.communionhymn End-Insert
 			Section part2
 				Insert_section hLI.call_to_communion End-Insert
-				Insert_section hLI.hymns_during_communion End-Insert
 				Section after_communion
 					Actor sid ac.Hierarch End-Actor
 					Dialog sid eu.lichrysbasil_gr_GR_cog.euLI.Key1529.text End-Dialog
@@ -1031,30 +1028,43 @@ Status NA
 					Dialog sid pr.res04.text End-Dialog
 				End-Section
 				Section ambo_prayer
-					Title<smaller>sid eu.lichrysbasil_gr_GR_cog.euLI.Key1700.title</>End-Title
+					Section prayer_hymn
+						Title<smaller>sid eu.lichrysbasil_gr_GR_cog.euLI.Key1700.title</>End-Title
+						Actor sid ac.Hierarch End-Actor
+						Dialog sid eu.lichrysbasil_gr_GR_cog.euLI.Key1701.text End-Dialog
+						Actor sid ac.Deacon End-Actor
+						Dialog sid pr.pet00.text End-Dialog
+						Actor sid ac.Choir End-Actor
+						Dialog sid pr.res01.text End-Dialog
+						Actor sid ac.Priest End-Actor
+						Title<smallred>sid eu.lichrysbasil_gr_GR_cog.euLI.Key1702.title</>End-Title
+						Dialog sid eu.lichrysbasil_gr_GR_cog.euLI.Key1702.text End-Dialog
+						Actor sid ac.Choir End-Actor
+						Dialog sid pr.res04.text End-Dialog
+							when-movable-cycle-day-is
+								71, 72, 73, 74, 75, 76, 77, 109 use:
+									Title role desig sid eu.lichrysbasil_gr_GR_cog.euLI.Key1703_pascha.text End-Title
+									Title role mode sid pe.d071_gr_GR_cog.peLI.AfterCommunion2.mode End-Title
+									Hymn sid pe.d071_gr_GR_cog.peLI.AfterCommunion2.text<r>sid ru.Thrice media-off</>End-Hymn	
+								otherwise use:
+									Media sid eu.lichrysbasil_gr_GR_cog.euLI.Key1703.text End-Media
+									Hymn sid liturgical.verses_gr_GR_cog.psLI.aftercommunion.v1.text @ver<r>sid ru.Thrice media-off</>End-Hymn
+							end-when
+					End-Section
+					Section collect_gifts
+						Rubric sid eu.lichrysbasil_gr_GR_cog.euLI.Key1721.rubric End-Rubric
+						Title<smallred>sid eu.lichrysbasil_gr_GR_cog.euLI.Key1704.title</>End-Title
+						Actor sid ac.Hierarch<smaller>sid ru.InALowVoice</>End-Actor
+						Para role inaudible sid eu.lichrysbasil_gr_GR_cog.euLI.Key1704.text End-Para
+					End-Section
+				End-Section
+				Section blessing_before_dismissal
+					Rubric sid eu.lichrysbasil_gr_GR_cog.euLI.Key1723.rubric End-Rubric
+					Actor sid ac.IL.Deacon<dialogafteractor>sid pr.pet00.text</>End-Actor	
+					Actor sid ac.IL.Choir<dialogafteractor>sid pr.res01.text</>End-Actor	
 					Actor sid ac.Hierarch End-Actor
-					Dialog sid eu.lichrysbasil_gr_GR_cog.euLI.Key1701.text End-Dialog
-					Actor sid ac.Deacon End-Actor
-					Dialog sid pr.pet00.text End-Dialog
-					Actor sid ac.Choir End-Actor
-					Dialog sid pr.res01.text End-Dialog
-					Actor sid ac.Priest End-Actor
-					Title<smallred>sid eu.lichrysbasil_gr_GR_cog.euLI.Key1702.title</>End-Title
-					Dialog sid eu.lichrysbasil_gr_GR_cog.euLI.Key1702.text End-Dialog
-					Actor sid ac.Choir End-Actor
-					Dialog sid pr.res04.text End-Dialog
-						when-movable-cycle-day-is
-							71, 72, 73, 74, 75, 76, 77, 109 use:
-								Title role desig sid eu.lichrysbasil_gr_GR_cog.euLI.Key1703_pascha.text End-Title
-								Title role mode sid pe.d071_gr_GR_cog.peLI.AfterCommunion2.mode End-Title
-								Hymn sid pe.d071_gr_GR_cog.peLI.AfterCommunion2.text<r>sid ru.Thrice media-off</>End-Hymn	
-							otherwise use:
-								Media sid eu.lichrysbasil_gr_GR_cog.euLI.Key1703.text End-Media
-								Hymn sid liturgical.verses_gr_GR_cog.psLI.aftercommunion.v1.text @ver<r>sid ru.Thrice media-off</>End-Hymn
-						end-when
-					Title<smallred>sid eu.lichrysbasil_gr_GR_cog.euLI.Key1704.title</>End-Title
-					Actor sid ac.Hierarch<smaller>sid ru.InALowVoice</>End-Actor
-					Para role inaudible sid eu.lichrysbasil_gr_GR_cog.euLI.Key1704.text End-Para
+					Dialog sid pr.pet37.text End-Dialog	
+					Actor sid ac.IL.Choir<dialogafteractor>sid pr.res04.text</>End-Actor	
 				End-Section
 			End-Section
 		End-Section
@@ -1121,6 +1131,7 @@ Status NA
 				Section communionhymn
 					Actor sid ac.Choir End-Actor
 					Insert_section Selector_CommunionHymn.Chrysostom End-Insert
+					Insert_section hLI.hymns_during_communion End-Insert
 				End-Section
 				Insert_section chrys_default.part2 End-Insert
 			End-Section
@@ -1176,10 +1187,10 @@ Status NA
 					Insert_section prayers_before_communion End-Insert
 				End-Section
 				Section part3_communionhymn
-					Insert_section chrys_default.communionhymn End-Insert
-					Insert_section hLI.call_to_communion End-Insert
+					Insert_section hLI.communionhymn End-Insert
 				End-Section
-				Section part4_aftercommunion_staff
+				Section part4_communion_staff
+					Insert_section hLI.call_to_communion End-Insert
 					Insert_section chrys_default.part2.after_communion End-Insert
 					Insert_section chrys_default.part2.ambo_prayer End-Insert
 					Rubric sid eu.ordination_gr_GR_cog.euORD.EP.r19 End-Rubric
@@ -1190,7 +1201,7 @@ Status NA
 					Actor sid ac.IL.Choir<dialogafteractor>sid pr.res01.text</>End-Actor	
 					Actor sid ac.Hierarch End-Actor
 					Dialog sid pr.pet37.text End-Dialog	
-					Actor sid ac.IL.Choir<dialogafteractor>sid pr.res01.text</>End-Actor	
+					Actor sid ac.IL.Choir<dialogafteractor>sid pr.res04.text</>End-Actor	
 					Actor sid ac.Hierarch End-Actor
 					Dialog sid pr.GloryToYouOurGod.text End-Dialog
 				End-Section	
@@ -1261,10 +1272,9 @@ Status NA
 				Break line End_Break
 				Insert_section chrys_default.part1.litany_upto_communion End-Insert
 			//	Insert_section PreCommunionPrayers End-Insert
-				Insert_section chrys_default.communionhymn End-Insert
-				Insert_section Communion End-Insert
-				Insert_section chrys_default.part2.after_communion End-Insert
-				Insert_section chrys_default.part2.ambo_prayer End-Insert
+				Insert_section hLI.communionhymn End-Insert
+				Insert_section hLI.clergy_communion End-Insert
+				Insert_section chrys_default.part2 End-Insert
 			End-Section
 		End-Section
 	End-Section
@@ -1274,7 +1284,6 @@ Status NA
 			when-movable-cycle-day-is
 				69 use:
 					Section holythursday
-						Insert_section blessing_before_dismissal End-Insert
 						Actor sid ac.Hierarch End-Actor
 						Dialog sid dis00 sid dis00.holythursday sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid client_gr_GR_cog.cl.localpatronsaint1.dismissal</>sid dis09 sid dis10 sid dis88 End-Dialog
 						Actor sid ac.Choir End-Actor
@@ -1291,7 +1300,6 @@ Status NA
 					End-Section
 				71, 72, 73, 74, 75, 76, 77, 109 use:
 					Section pascha
-						Insert_section blessing_before_dismissal End-Insert
 						Insert_section dismissal_intro_paschal End-Insert
 						Actor sid ac.Hierarch End-Actor
 						Insert_section Selector_Dismissals.Com_Yes.part1 End-Insert
@@ -1303,7 +1311,6 @@ Status NA
 					End-Section
 				78 thru 108 use:
 					Section afterpascha
-						Insert_section blessing_before_dismissal End-Insert
 						Insert_section dismissal_intro_paschal End-Insert
 						Actor sid ac.Hierarch End-Actor
 						Insert_section Selector_Dismissals.Com_Yes.part1 End-Insert
@@ -1315,7 +1322,6 @@ Status NA
 					End-Section
 				otherwise use:
 					Section notpaschal
-						Insert_section blessing_before_dismissal End-Insert
 						Actor sid ac.Hierarch End-Actor
 						Insert_section Selector_Dismissals.Com_Yes.part1 End-Insert
 						Actor sid ac.Choir End-Actor
@@ -1336,7 +1342,6 @@ Status NA
 			when-movable-cycle-day-is
 				71, 72, 73, 74, 75, 76, 77, 109 use:
 					Section pascha
-						Insert_section blessing_before_dismissal End-Insert
 						Insert_section dismissal_intro_paschal End-Insert
 						Actor sid ac.Hierarch End-Actor
 						Insert_section Selector_Dismissals.mealt1_Com_Yes.part1 End-Insert
@@ -1348,7 +1353,6 @@ Status NA
 					End-Section
 				78 thru 108 use:
 					Section afterpascha
-						Insert_section blessing_before_dismissal End-Insert
 						Insert_section dismissal_intro_paschal End-Insert
 						Actor sid ac.Hierarch End-Actor
 						Insert_section Selector_Dismissals.mealt1_Com_Yes.part1 End-Insert
@@ -1360,7 +1364,6 @@ Status NA
 					End-Section
 				otherwise use:
 					Section notpaschal
-						Insert_section blessing_before_dismissal End-Insert
 						Actor sid ac.Hierarch End-Actor
 						Insert_section Selector_Dismissals.mealt1_Com_Yes.part1 End-Insert
 						Actor sid ac.Choir End-Actor
@@ -1381,7 +1384,6 @@ Status NA
 			when-movable-cycle-day-is
 				71, 72, 73, 74, 75, 76, 77, 109 use:
 					Section pascha
-						Insert_section blessing_before_dismissal End-Insert
 						Insert_section dismissal_intro_paschal End-Insert
 						Actor sid ac.Hierarch End-Actor
 						Insert_section Selector_Dismissals.mealt2_Com_Yes.part1 End-Insert
@@ -1393,7 +1395,6 @@ Status NA
 					End-Section
 				78 thru 108 use:
 					Section afterpascha
-						Insert_section blessing_before_dismissal End-Insert
 						Insert_section dismissal_intro_paschal End-Insert
 						Actor sid ac.Hierarch End-Actor
 						Insert_section Selector_Dismissals.mealt2_Com_Yes.part1 End-Insert
@@ -1405,7 +1406,6 @@ Status NA
 					End-Section
 				otherwise use:
 					Section notpaschal
-						Insert_section blessing_before_dismissal End-Insert
 						Actor sid ac.Hierarch End-Actor
 						Insert_section Selector_Dismissals.mealt2_Com_Yes.part1 End-Insert
 						Actor sid ac.Choir End-Actor
@@ -1426,7 +1426,6 @@ Status NA
 			when-movable-cycle-day-is
 				71, 72, 73, 74, 75, 76, 77, 109 use:
 					Section pascha
-						Insert_section blessing_before_dismissal End-Insert
 						Insert_section dismissal_intro_paschal End-Insert
 						Actor sid ac.Hierarch End-Actor
 						Insert_section Selector_Dismissals.Com_No.part1 End-Insert
@@ -1438,7 +1437,6 @@ Status NA
 					End-Section
 				78 thru 108 use:
 					Section afterpascha
-						Insert_section blessing_before_dismissal End-Insert
 						Insert_section dismissal_intro_paschal End-Insert
 						Actor sid ac.Hierarch End-Actor
 						Insert_section Selector_Dismissals.Com_No.part1 End-Insert
@@ -1450,7 +1448,6 @@ Status NA
 					End-Section
 				otherwise use:
 					Section notpaschal
-						Insert_section blessing_before_dismissal End-Insert
 						Actor sid ac.Hierarch End-Actor
 						Insert_section Selector_Dismissals.Com_No.part1 End-Insert
 						Actor sid ac.Choir End-Actor
@@ -1469,7 +1466,6 @@ Status NA
 		End-Section
 		Section specificcommemoration__
 			Section holysaturdayliturgy
-				Insert_section blessing_before_dismissal End-Insert
 				Actor sid ac.Hierarch End-Actor
 				Dialog sid dis00 sid dis00.resurrection sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid client_gr_GR_cog.cl.localpatronsaint1.dismissal</>sid dis09 sid dis10 sid dis88 End-Dialog
 				Actor sid ac.Choir End-Actor
@@ -1485,7 +1481,6 @@ Status NA
 				Dialog sid pr.res04.text End-Dialog
 			End-Section
 			Section brightweek_stgeorge
-				Insert_section blessing_before_dismissal End-Insert
 				Insert_section dismissal_intro_paschal End-Insert
 				Actor sid ac.Hierarch End-Actor
 				Insert_section Selector_Dismissals.Com_Specific__.brightweek_stgeorge End-Insert
@@ -1496,7 +1491,6 @@ Status NA
 				Insert_section Selector_Dismissals.Com_Yes.part2 End-Insert
 			End-Section
 			Section brightweek_stmark
-				Insert_section blessing_before_dismissal End-Insert
 				Insert_section dismissal_intro_paschal End-Insert
 				Actor sid ac.Hierarch End-Actor
 				Insert_section Selector_Dismissals.Com_Specific__.brightweek_stmark End-Insert
@@ -1810,20 +1804,16 @@ Status NA
 			Para role inaudible sid eu.lichrysbasil_gr_GR_cog.euLI.Key1528.text End-Para
 		End-Section
 		Section hymns_during_communion
-			Actor sid ac.Choir End-Actor
-			Title<r>sid eu.lichrysbasil_gr_GR_cog.euLI.MM.HymnsDuringCommunion.title</>End-Title
+			Title role noprintdesig sid eu.lichrysbasil_gr_GR_cog.euLI.MM.HymnsDuringCommunion.title End-Title
 			Media sid eu.lichrysbasil_gr_GR_cog.euLI.MM.HymnsDuringCommunion.text End-Media
 		End-Section
 		Section blessing_before_dismissal
 			Rubric sid eu.lichrysbasil_gr_GR_cog.euLI.Key1723.rubric End-Rubric
-			Actor sid ac.Deacon End-Actor
-			Dialog sid pr.pet00.text End-Dialog		
-			Actor sid ac.Choir End-Actor
-			Dialog sid pr.res01.text End-Dialog
+			Actor sid ac.IL.Deacon<dialogafteractor>sid pr.pet00.text</>End-Actor	
+			Actor sid ac.IL.Choir<dialogafteractor>sid pr.res01.text</>End-Actor	
 			Actor sid ac.Hierarch End-Actor
 			Dialog sid pr.pet37.text End-Dialog	
-			Actor sid ac.Choir End-Actor
-			Dialog sid pr.res04.text End-Dialog
+			Actor sid ac.IL.Choir<dialogafteractor>sid pr.res04.text</>End-Actor	
 		End-Section
 		Section dismissal_intro_paschal
 			Actor sid ac.Deacon End-Actor
@@ -1831,13 +1821,20 @@ Status NA
 			Dialog sid pr.res01.text<r>sid ru.Thrice</>sid pr.res13.text End-Dialog
 		End-Section
 
+		Section communionhymn
+			Actor sid ac.Choir End-Actor
+			Insert_section Selector_CommunionHymn.Chrysostom End-Insert
+			Insert_section hLI.hymns_during_communion End-Insert
+		End-Section
 		Section mealt1_communionhymn
 			Actor sid ac.Choir End-Actor
 			Insert_section Selector_CommunionHymn.mealt1 End-Insert
+			Insert_section hLI.hymns_during_communion End-Insert
 		End-Section
 		Section mealt2_communionhymn
 			Actor sid ac.Choir End-Actor
 			Insert_section Selector_CommunionHymn.mealt2 End-Insert
+			Insert_section hLI.hymns_during_communion End-Insert
 		End-Section
 		Section commemorate_bishop1bishop2
 			Insert_section hLI._08_Liturgy__.chrys_default.part1.commemorations.saints End-Insert
@@ -1850,7 +1847,7 @@ Status NA
 			Insert_section hLI._08_Liturgy__.chrys_default.part1.commemorations.all End-Insert
 			Insert_section hLI._08_Liturgy__.chrys_default.part1.commemorations.world End-Insert
 		End-Section
-		Section Communion
+		Section clergy_communion
 			Section fraction
 				Rubric sid eu.lichrysbasil_gr_GR_cog.euLI.Key1540.rubric End-Rubric
 				Para role inaudible sid eu.lichrysbasil_gr_GR_cog.euLI.Key1501.text End-Para				
@@ -1925,14 +1922,6 @@ Status NA
 				Rubric sid eu.lichrysbasil_gr_GR_cog.euLI.Key1586.rubric End-Rubric
 				Para role inaudible sid eu.lichrysbasil_gr_GR_cog.euLI.Key1579.text End-Para				
 				Rubric sid eu.lichrysbasil_gr_GR_cog.euLI.Key1587.rubric End-Rubric
-				Rubric sid eu.lichrysbasil_gr_GR_cog.euLI.Key1588.rubric End-Rubric
-			End-Section
-			Section call
-				Actor sid ac.Deacon End-Actor
-				Dialog sid eu.lichrysbasil_gr_GR_cog.euLI.Key1526.text End-Dialog
-				Rubric sid eu.lichrysbasil_gr_GR_cog.euLI.Key1589.rubric End-Rubric
-				Dialog sid eu.lichrysbasil_gr_GR_cog.euLI.Key1528.text media-off End-Dialog
-				Rubric sid eu.lichrysbasil_gr_GR_cog.euLI.Key1620.rubric End-Rubric
 			End-Section
 		End-Section
 		
