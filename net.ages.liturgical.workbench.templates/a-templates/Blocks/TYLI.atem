@@ -2,11 +2,6 @@ Template TYLI
 
 Status NA
 
-	import ho.ho07_gr_GR_cog.*
-	import ho.ho21_gr_GR_cog.*
-	import le.go.os_gr_GR_cog.*
-	
-
 	import da.*
 	import oc.*
 	import me.*
@@ -21,19 +16,11 @@ Status NA
 	import rubrical_gr_GR_cog.*
 	import template.titles_gr_GR_cog.*
 	import titles_gr_GR_cog.*
-	import ty.typikon.parts_gr_GR_cog.*
-	import ty.typikon.pe_gr_GR_cog.*
 
-	import ty.li.incipit_gr_GR_cog.*
-	
 	import iTags.*
 	import bTags.*
 	import roles.*
 
-	//templates	
-	import bk.ap.da.sections.*
-	import bk.ho.ho07.*
-	
 	//Sections with names ending in __ require a selection
 	//Sections with names ending in _ have optional selections
 	//Sections with names not ending in _ have no options
@@ -43,19 +30,19 @@ Status NA
 			when-movable-cycle-day-is
 				71, 72, 73, 74, 75, 76, 77, 109 use:
 					Section pascha
-						Para role typikon<b>sid tyPart.Enarxis</>sid pr.enarxis02.text End-Para
-						Para role typikonindent sid pe.d071_gr_GR_cog.peMA.Troparion.incipit<r>sid tyPE.PaschalEnarxis1</>End-Para
+						Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Enarxis</>sid pr.enarxis02.text End-Para
+						Para role typikonindent sid pe.d071_gr_GR_cog.peMA.Troparion.incipit<r>sid ty.typikon.pe_gr_GR_cog.tyPE.PaschalEnarxis1</>End-Para
 					End-Section
 				78 thru 108 use:
 					Section afterpascha
-						Para role typikon<b>sid tyPart.Enarxis</>sid pr.enarxis02.text End-Para
-						Para role typikonindent sid pe.d071_gr_GR_cog.peMA.Troparion.incipit<r>sid tyPE.PaschalEnarxis2</> sid pr.ComeLetUsWorship1.incipit End-Para
+						Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Enarxis</>sid pr.enarxis02.text End-Para
+						Para role typikonindent sid pe.d071_gr_GR_cog.peMA.Troparion.incipit<r>sid ty.typikon.pe_gr_GR_cog.tyPE.PaschalEnarxis2</> sid pr.ComeLetUsWorship1.incipit End-Para
 					End-Section
 				otherwise use:
-					Para role typikon<b>sid tyPart.Enarxis</>sid pr.enarxis02.incipit End-Para
-			end-when	
+					Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Enarxis</>sid pr.enarxis02.incipit End-Para
+			end-when
 			Section _02
-				Para role typikonindent<r>sid tyPart.GreatLitany</>End-Para
+				Para role typikonindent<r>sid ty.typikon.parts_gr_GR_cog.tyPart.GreatLitany</>End-Para
 			End-Section
 		End-Section
 		Section vesperal
@@ -66,31 +53,31 @@ Status NA
 
 	Section _02_Antiphons__
 		Section sundays_weekdays_feasts
-		//	Para role typikon<b>sid tyPart.Antiphons</>End-Para
+		//	Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Antiphons</>End-Para
 
 			Section note
 				when-date-is
-					Jan 1 use: Para role typikon<b>sid tyPart.Antiphons</><r>sid tyLIin.antiphon_verses.jan01.note</>End-Para
-					Jan 6 thru 14 use: Para role typikon<b>sid tyPart.Antiphons</><r>sid tyLIin.antiphon_verses.jan06.note</>End-Para
-					Feb 2 thru 9 use: Para role typikon<b>sid tyPart.Antiphons</><r>sid tyLIin.antiphon_verses.feb02.note</>End-Para
-					Mar 25 use: Para role typikon<b>sid tyPart.Antiphons</><r>sid tyLIin.antiphon_verses.mar25.note</>End-Para
+					Jan 1 use: Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Antiphons</><r>sid ty.li.incipit_gr_GR_cog.tyLIin.antiphon_verses.jan01.note</>End-Para
+					Jan 6 thru 14 use: Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Antiphons</><r>sid ty.li.incipit_gr_GR_cog.tyLIin.antiphon_verses.jan06.note</>End-Para
+					Feb 2 thru 9 use: Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Antiphons</><r>sid ty.li.incipit_gr_GR_cog.tyLIin.antiphon_verses.feb02.note</>End-Para
+					Mar 25 use: Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Antiphons</><r>sid ty.li.incipit_gr_GR_cog.tyLIin.antiphon_verses.mar25.note</>End-Para
 					otherwise use:
 						when-movable-cycle-day-is
-							29 use: Para role typikon<b>sid tyPart.Antiphons</><r>sid tyLIin.antiphon_verses.lent1.note</>End-Para
-							43 use: Para role typikon<b>sid tyPart.Antiphons</><r>sid tyLIin.antiphon_verses.lent3.note</>End-Para
-							64 use: Para role typikon<b>sid tyPart.Antiphons</><r>sid tyLIin.antiphon_verses.palm.note</>End-Para
-							71 thru 109 use: Para role typikon<b>sid tyPart.Antiphons</><r>sid tyLIin.antiphon_verses.pascha.note</>End-Para
-							110 thru 118 use: Para role typikon<b>sid tyPart.Antiphons</><r>sid tyLIin.antiphon_verses.ascension.note</>End-Para
-							120 thru 126 use: Para role typikon<b>sid tyPart.Antiphons</><r>sid tyLIin.antiphon_verses.pentecost.note</>End-Para
+							29 use: Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Antiphons</><r>sid ty.li.incipit_gr_GR_cog.tyLIin.antiphon_verses.lent1.note</>End-Para
+							43 use: Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Antiphons</><r>sid ty.li.incipit_gr_GR_cog.tyLIin.antiphon_verses.lent3.note</>End-Para
+							64 use: Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Antiphons</><r>sid ty.li.incipit_gr_GR_cog.tyLIin.antiphon_verses.palm.note</>End-Para
+							71 thru 109 use: Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Antiphons</><r>sid ty.li.incipit_gr_GR_cog.tyLIin.antiphon_verses.pascha.note</>End-Para
+							110 thru 118 use: Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Antiphons</><r>sid ty.li.incipit_gr_GR_cog.tyLIin.antiphon_verses.ascension.note</>End-Para
+							120 thru 126 use: Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Antiphons</><r>sid ty.li.incipit_gr_GR_cog.tyLIin.antiphon_verses.pentecost.note</>End-Para
 							otherwise use:
 								when-date-is
-									Aug 6 thru 13 use: Para role typikon<b>sid tyPart.Antiphons</><r>sid tyLIin.antiphon_verses.aug06.note</>End-Para
-									Aug 15 thru 23 use: Para role typikon<b>sid tyPart.Antiphons</><r>sid tyLIin.antiphon_verses.aug15.note</>End-Para
-									Sep 8 thru 12 use: Para role typikon<b>sid tyPart.Antiphons</><r>sid tyLIin.antiphon_verses.sep08.note</>End-Para
-									Sep 14 thru 22 use: Para role typikon<b>sid tyPart.Antiphons</><r>sid tyLIin.antiphon_verses.sep14.note</>End-Para
-									Nov 21 thru 25 use: Para role typikon<b>sid tyPart.Antiphons</><r>sid tyLIin.antiphon_verses.nov21.note</>End-Para
-									Dec 25 thru 31 use: Para role typikon<b>sid tyPart.Antiphons</><r>sid tyLIin.antiphon_verses.dec25.note</>End-Para
-									otherwise use: Para role typikon<b>sid tyPart.Antiphons</><r>sid tyLIin.antiphon_verses.sunday.note</>End-Para
+									Aug 6 thru 13 use: Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Antiphons</><r>sid ty.li.incipit_gr_GR_cog.tyLIin.antiphon_verses.aug06.note</>End-Para
+									Aug 15 thru 23 use: Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Antiphons</><r>sid ty.li.incipit_gr_GR_cog.tyLIin.antiphon_verses.aug15.note</>End-Para
+									Sep 8 thru 12 use: Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Antiphons</><r>sid ty.li.incipit_gr_GR_cog.tyLIin.antiphon_verses.sep08.note</>End-Para
+									Sep 14 thru 22 use: Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Antiphons</><r>sid ty.li.incipit_gr_GR_cog.tyLIin.antiphon_verses.sep14.note</>End-Para
+									Nov 21 thru 25 use: Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Antiphons</><r>sid ty.li.incipit_gr_GR_cog.tyLIin.antiphon_verses.nov21.note</>End-Para
+									Dec 25 thru 31 use: Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Antiphons</><r>sid ty.li.incipit_gr_GR_cog.tyLIin.antiphon_verses.dec25.note</>End-Para
+									otherwise use: Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Antiphons</><r>sid ty.li.incipit_gr_GR_cog.tyLIin.antiphon_verses.sunday.note</>End-Para
 								end-when
 						end-when
 				end-when
@@ -122,7 +109,7 @@ Status NA
 				Insert_section Selector_Antiphons.antiphon3__.celebrated_saint.title End-Insert
 				Insert_section Selector_Antiphons.antiphon3__.celebrated_saint.verses End-Insert
 			End-Section
-		End-Section	
+		End-Section
 		Section celebrated_saint_mealt1
 			Insert_section celebrated_saint.antiphon1 End-Insert
 			Insert_section celebrated_saint.antiphon2 End-Insert
@@ -144,25 +131,25 @@ Status NA
 		Section parish
 		End-Section
 		Section choir
-			Para role typikon<b>sid tyPart.EntranceHymn</>End-Para
+			Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.EntranceHymn</>End-Para
 			Insert_section Selector_TY_Eisodikon.eisodikon_part1 End-Insert
 		End-Section
 		Section clergy
 		End-Section
 	End-Section
-	
+
 	Section _05_AfterEntranceHymns__
 		Section choir
-			Para role typikon<b>sid tyPart.AfterEntrance</>End-Para
+			Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.AfterEntrance</>End-Para
 		End-Section
 		Section clergy
-			Para role typikon<b>sid tyPart.AfterEntrance</>End-Para
+			Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.AfterEntrance</>End-Para
 		End-Section
 		Section local
-			Para role typikonindent<r>sid client_gr_GR_cog.cl.Apolytikion1.text</>End-Para		
+			Para role typikonindent<r>sid client_gr_GR_cog.cl.Apolytikion1.text</>End-Para	
 		End-Section
 	End-Section
-	
+
 	Section _06_Trisagion__
 		Section basil
 			Insert_section Selector_TY_Trisagion.Basil End-Insert
@@ -170,7 +157,7 @@ Status NA
 		Section chrys
 			Insert_section Selector_TY_Trisagion.Chrysostom End-Insert
 		End-Section
-	End-Section	
+	End-Section
 
 	Section _08_Liturgy__
 		Section basil
@@ -192,7 +179,7 @@ Status NA
 						Insert_section Selector_Megalynarion.Basil End-Insert
 					End-Section
 					Section commemorations
-					End-Section		
+					End-Section	
 				End-Section
 				Section communionhymn
 					Insert_section Selector_CommunionHymn.Basil End-Insert
@@ -210,7 +197,7 @@ Status NA
 					Section theotokoshymn
 						Insert_section Selector_TY_Megalynarion.Chrysostom End-Insert
 					End-Section
-				End-Section	
+				End-Section
 				Section communionhymn
 					Insert_section Selector_TY_CommunionHymn.Chrysostom End-Insert
 				End-Section
@@ -244,7 +231,7 @@ Status NA
 			End-Section
 		End-Section
 	End-Section
-	
+
 	Section _09_Dismissal__
 		Section commemoration
 			Insert_section Selector_Dismissals.Incipit End-Insert
@@ -294,7 +281,7 @@ Status NA
 		Section EntrancePrayer //inserted in _04
 		End-Section
 		Section AfterGospel //inserted in _20_
-		End-Section		
+		End-Section	
 		Section Communion
 			Section hymns
 				Actor sid ac.Choir End-Actor
@@ -317,5 +304,5 @@ Status NA
 					Media sid other.dormitionencomia_gr_GR_cog.other.Encomia101.text End-Media
 			end-when
 		End-Section
-	
+
 End-Template

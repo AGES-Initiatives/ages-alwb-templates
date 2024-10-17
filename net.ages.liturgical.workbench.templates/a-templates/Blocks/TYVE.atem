@@ -2,11 +2,6 @@ Template TYVE
 
 Status NA
 
-	import client_gr_GR_cog.*
-	import he.o_gr_GR_cog.heOT.*
-	import ty.typikon.parts_gr_GR_cog.*
-	import ty.typikon.pe_gr_GR_cog.*
-	
 	import da.*
 	import oc.*
 	import me.*
@@ -26,11 +21,6 @@ Status NA
 	import bTags.*
 	import roles.*
 
-	// Imported templates
-	import bk.ho.ho01.*
-	import bk.ho.ho10.*
-	import LiturgicalPsalms.*
-
 	//Sections with names ending in __ require a selection
 	//Sections with names ending in _ have optional selections
 	//Sections with names not ending in _ have no options
@@ -38,192 +28,192 @@ Status NA
 	Section _01_Beginning__
 		Section vespers
 		//	Break line End_Break
-		//	Para role typikoncenter<b>sid tyPart.Vespers</>End-Para
+		//	Para role typikoncenter<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Vespers</>End-Para
 			when-movable-cycle-day-is
 				72, 73, 74, 75, 76, 77, 109 use:
 					Section pascha
-						Para role typikon<b>sid tyPart.Enarxis</>sid pr.enarxis03.text End-Para
-						Para role typikonindent sid pe.d071_gr_GR_cog.peMA.Troparion.incipit<r>sid tyPE.PaschalEnarxis1</>End-Para
-						Para role typikonindent<r>sid tyPart.GreatLitany</>End-Para
+						Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Enarxis</>sid pr.enarxis03.text End-Para
+						Para role typikonindent sid pe.d071_gr_GR_cog.peMA.Troparion.incipit<r>sid ty.typikon.pe_gr_GR_cog.tyPE.PaschalEnarxis1</>End-Para
+						Para role typikonindent<r>sid ty.typikon.parts_gr_GR_cog.tyPart.GreatLitany</>End-Para
 					End-Section
 					otherwise use:
 						Section enarxis
 							when-movable-cycle-day-is
 								78 thru 108 use:
-									Para role typikon<b>sid tyPart.Enarxis</>sid pr.enarxis01.text End-Para
-									Para role typikonindent sid pe.d071_gr_GR_cog.peMA.Troparion.incipit<r>sid tyPE.PaschalEnarxis2</> sid pr.ComeLetUsWorship1.incipit End-Para
+									Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Enarxis</>sid pr.enarxis01.text End-Para
+									Para role typikonindent sid pe.d071_gr_GR_cog.peMA.Troparion.incipit<r>sid ty.typikon.pe_gr_GR_cog.tyPE.PaschalEnarxis2</> sid pr.ComeLetUsWorship1.incipit End-Para
 								121 use:
-									Para role typikon<b>sid tyPart.Enarxis</>sid pr.enarxis01.text sid pr.ComeLetUsWorship1.incipit End-Para
-									Para role typikonindent<r>sid tyPart.IntroductoryPsalm sid misc.separator.endash</><r>sid tyPart.GreatLitany sid ti.ofPentecost</>End-Para
+									Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Enarxis</>sid pr.enarxis01.text sid pr.ComeLetUsWorship1.incipit End-Para
+									Para role typikonindent<r>sid ty.typikon.parts_gr_GR_cog.tyPart.IntroductoryPsalm sid misc.separator.endash</><r>sid ty.typikon.parts_gr_GR_cog.tyPart.GreatLitany sid ti.ofPentecost</>End-Para
 								otherwise use:
-									Para role typikon<b>sid tyPart.Enarxis</>sid pr.enarxis01.text sid pr.ComeLetUsWorship1.incipit End-Para
-									Para role typikonindent<r>sid tyPart.IntroductoryPsalm sid misc.separator.endash</><r>sid tyPart.GreatLitany</>End-Para
+									Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Enarxis</>sid pr.enarxis01.text sid pr.ComeLetUsWorship1.incipit End-Para
+									Para role typikonindent<r>sid ty.typikon.parts_gr_GR_cog.tyPart.IntroductoryPsalm sid misc.separator.endash</><r>sid ty.typikon.parts_gr_GR_cog.tyPart.GreatLitany</>End-Para
 							end-when
 						End-Section
 						Section kathisma
 							Insert_section PS._01_Vespers__.number End-Insert
-						//	Para role typikonindent<r>sid tyPart.ShortLitany</>End-Para
+						//	Para role typikonindent<r>sid ty.typikon.parts_gr_GR_cog.tyPart.ShortLitany</>End-Para
 						End-Section
 			end-when
 		End-Section
 		Section kathisma1_stanza1
-			Para role typikon<b>sid tyPart.Psalter</><r>sid tyRubric.PsalterKathisma1Stanza1 sid misc.separator.endash sid tyPart.ShortLitany</>End-Para
+			Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Psalter</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.PsalterKathisma1Stanza1 sid misc.separator.endash sid ty.typikon.parts_gr_GR_cog.tyPart.ShortLitany</>End-Para
 		End-Section
 	End-Section
 
 	Section _02_LordIHaveCried__
 		Section modeofpeday__
 			Section noStichologia
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>rid peVE.Stichera01.mode</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>rid peVE.Stichera01.mode</>End-Para
 			End-Section
 			Section for6
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>rid peVE.Stichera01.mode sid tyRubric.VE.LIHC_06</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>rid peVE.Stichera01.mode sid ty.typikon.parts_gr_GR_cog.tyRubric.VE.LIHC_06</>End-Para
 			End-Section
 			Section for8
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>rid peVE.Stichera01.mode sid tyRubric.VE.LIHC_08</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>rid peVE.Stichera01.mode sid ty.typikon.parts_gr_GR_cog.tyRubric.VE.LIHC_08</>End-Para
 			End-Section
 			Section for10
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>rid peVE.Stichera01.mode sid tyRubric.VE.LIHC_10</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>rid peVE.Stichera01.mode sid ty.typikon.parts_gr_GR_cog.tyRubric.VE.LIHC_10</>End-Para
 			End-Section
 		End-Section
 		Section modeofweek__
 			Section noStichologia
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>rid ocVE.Stichera1.mode</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>rid ocVE.Stichera1.mode</>End-Para
 			End-Section
 			Section for6
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>rid ocVE.Stichera1.mode sid tyRubric.VE.LIHC_06</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>rid ocVE.Stichera1.mode sid ty.typikon.parts_gr_GR_cog.tyRubric.VE.LIHC_06</>End-Para
 			End-Section
 			Section for8
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>rid ocVE.Stichera1.mode sid tyRubric.VE.LIHC_08</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>rid ocVE.Stichera1.mode sid ty.typikon.parts_gr_GR_cog.tyRubric.VE.LIHC_08</>End-Para
 			End-Section
 			Section for10
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>rid ocVE.Stichera1.mode sid tyRubric.VE.LIHC_10</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>rid ocVE.Stichera1.mode sid ty.typikon.parts_gr_GR_cog.tyRubric.VE.LIHC_10</>End-Para
 			End-Section
 		End-Section
 		Section mode1__
 			Section noStichologia
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode1</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode1</>End-Para
 			End-Section
 			Section for6
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode1 sid tyRubric.VE.LIHC_06</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode1 sid ty.typikon.parts_gr_GR_cog.tyRubric.VE.LIHC_06</>End-Para
 			End-Section
 			Section for8
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode1 sid tyRubric.VE.LIHC_08</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode1 sid ty.typikon.parts_gr_GR_cog.tyRubric.VE.LIHC_08</>End-Para
 			End-Section
 			Section for10
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode1 sid tyRubric.VE.LIHC_10</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode1 sid ty.typikon.parts_gr_GR_cog.tyRubric.VE.LIHC_10</>End-Para
 			End-Section
 		End-Section
 		Section mode2__
 			Section noStichologia
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode2</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode2</>End-Para
 			End-Section
 			Section for6
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode2 sid tyRubric.VE.LIHC_06</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode2 sid ty.typikon.parts_gr_GR_cog.tyRubric.VE.LIHC_06</>End-Para
 			End-Section
 			Section for8
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode2 sid tyRubric.VE.LIHC_08</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode2 sid ty.typikon.parts_gr_GR_cog.tyRubric.VE.LIHC_08</>End-Para
 			End-Section
 			Section for10
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode2 sid tyRubric.VE.LIHC_10</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode2 sid ty.typikon.parts_gr_GR_cog.tyRubric.VE.LIHC_10</>End-Para
 			End-Section
 		End-Section
 		Section mode3__
 			Section noStichologia
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode3</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode3</>End-Para
 			End-Section
 			Section for6
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode3 sid tyRubric.VE.LIHC_06</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode3 sid ty.typikon.parts_gr_GR_cog.tyRubric.VE.LIHC_06</>End-Para
 			End-Section
 			Section for8
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode3 sid tyRubric.VE.LIHC_08</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode3 sid ty.typikon.parts_gr_GR_cog.tyRubric.VE.LIHC_08</>End-Para
 			End-Section
 			Section for10
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode3 sid tyRubric.VE.LIHC_10</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode3 sid ty.typikon.parts_gr_GR_cog.tyRubric.VE.LIHC_10</>End-Para
 			End-Section
 		End-Section
 		Section mode4__
 			Section noStichologia
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode4</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode4</>End-Para
 			End-Section
 			Section for6
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode4 sid tyRubric.VE.LIHC_06</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode4 sid ty.typikon.parts_gr_GR_cog.tyRubric.VE.LIHC_06</>End-Para
 			End-Section
 			Section for8
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode4 sid tyRubric.VE.LIHC_08</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode4 sid ty.typikon.parts_gr_GR_cog.tyRubric.VE.LIHC_08</>End-Para
 			End-Section
 			Section for10
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode4 sid tyRubric.VE.LIHC_10</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode4 sid ty.typikon.parts_gr_GR_cog.tyRubric.VE.LIHC_10</>End-Para
 			End-Section
 		End-Section
 		Section mode5__
 			Section noStichologia
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode5</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode5</>End-Para
 			End-Section
 			Section for6
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode5 sid tyRubric.VE.LIHC_06</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode5 sid ty.typikon.parts_gr_GR_cog.tyRubric.VE.LIHC_06</>End-Para
 			End-Section
 			Section for8
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode5 sid tyRubric.VE.LIHC_08</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode5 sid ty.typikon.parts_gr_GR_cog.tyRubric.VE.LIHC_08</>End-Para
 			End-Section
 			Section for10
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode5 sid tyRubric.VE.LIHC_10</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode5 sid ty.typikon.parts_gr_GR_cog.tyRubric.VE.LIHC_10</>End-Para
 			End-Section
 		End-Section
 		Section mode6__
 			Section noStichologia
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode6</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode6</>End-Para
 			End-Section
 			Section for6
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode6 sid tyRubric.VE.LIHC_06</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode6 sid ty.typikon.parts_gr_GR_cog.tyRubric.VE.LIHC_06</>End-Para
 			End-Section
 			Section for8
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode6 sid tyRubric.VE.LIHC_08</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode6 sid ty.typikon.parts_gr_GR_cog.tyRubric.VE.LIHC_08</>End-Para
 			End-Section
 			Section for10
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode6 sid tyRubric.VE.LIHC_10</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode6 sid ty.typikon.parts_gr_GR_cog.tyRubric.VE.LIHC_10</>End-Para
 			End-Section
 		End-Section
 		Section mode7__
 			Section noStichologia
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode7</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode7</>End-Para
 			End-Section
 			Section for6
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode7 sid tyRubric.VE.LIHC_06</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode7 sid ty.typikon.parts_gr_GR_cog.tyRubric.VE.LIHC_06</>End-Para
 			End-Section
 			Section for8
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode7 sid tyRubric.VE.LIHC_08</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode7 sid ty.typikon.parts_gr_GR_cog.tyRubric.VE.LIHC_08</>End-Para
 			End-Section
 			Section for10
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode7 sid tyRubric.VE.LIHC_10</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode7 sid ty.typikon.parts_gr_GR_cog.tyRubric.VE.LIHC_10</>End-Para
 			End-Section
 		End-Section
 		Section mode8__
 			Section noStichologia
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode8</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode8</>End-Para
 			End-Section
 			Section for6
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode8 sid tyRubric.VE.LIHC_06</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode8 sid ty.typikon.parts_gr_GR_cog.tyRubric.VE.LIHC_06</>End-Para
 			End-Section
 			Section for8
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode8 sid tyRubric.VE.LIHC_08</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode8 sid ty.typikon.parts_gr_GR_cog.tyRubric.VE.LIHC_08</>End-Para
 			End-Section
 			Section for10
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode8 sid tyRubric.VE.LIHC_10</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode8 sid ty.typikon.parts_gr_GR_cog.tyRubric.VE.LIHC_10</>End-Para
 			End-Section
 		End-Section
 		Section mode0__
 			Section noStichologia
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode0</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode0</>End-Para
 			End-Section
 			Section for6
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode0 sid tyRubric.VE.LIHC_06</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode0 sid ty.typikon.parts_gr_GR_cog.tyRubric.VE.LIHC_06</>End-Para
 			End-Section
 			Section for8
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode0 sid tyRubric.VE.LIHC_08</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode0 sid ty.typikon.parts_gr_GR_cog.tyRubric.VE.LIHC_08</>End-Para
 			End-Section
 			Section for10
-				Para role typikon<b>sid tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode0 sid tyRubric.VE.LIHC_10</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.LIHC</> sid liturgical.verses_gr_GR_cog.psVE.lihc.v1.incipit<r>sid misc.Mode0 sid ty.typikon.parts_gr_GR_cog.tyRubric.VE.LIHC_10</>End-Para
 			End-Section
 		End-Section
 	End-Section
@@ -240,7 +230,7 @@ Status NA
 			End-Section
 			Section firsttheotokion__
 				Section modeofweek
-					Para role typikon<b>sid tyPart.BothNow</><r>sid tyRubric.FirstTheotokion.ModeOfWeek</><r>sid tySource.Octoechos</>End-Para
+					Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.BothNow</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.FirstTheotokion.ModeOfWeek</><r>sid ty.typikon.parts_gr_GR_cog.tySource.Octoechos</>End-Para
 					Para role typikonindent<r>rid ocVE.SticTheotokion.mode @day D1</>rid ocVE.SticTheotokion.incipit @day D1 End-Para
 				End-Section
 				Section mode1_
@@ -249,10 +239,10 @@ Status NA
 							Insert_section modeofweek End-Insert
 						otherwise use:
 							Section hymn
-								Para role typikon<b>sid tyPart.BothNow</><r>sid tyRubric.FirstTheotokion.SameMode</><r>sid tySource.Octoechos</>End-Para
+								Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.BothNow</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.FirstTheotokion.SameMode</><r>sid ty.typikon.parts_gr_GR_cog.tySource.Octoechos</>End-Para
 								Para role typikonindent<r>sid oc.m1.d1_gr_GR_cog.ocVE.SticTheotokion.mode</>sid oc.m1.d1_gr_GR_cog.ocVE.SticTheotokion.incipit End-Para
 							End-Section
-					end-when	
+					end-when
 				End-Section
 				Section mode2_
 					when-name-of-day-is
@@ -260,10 +250,10 @@ Status NA
 							Insert_section modeofweek End-Insert
 						otherwise use:
 							Section hymn
-								Para role typikon<b>sid tyPart.BothNow</><r>sid tyRubric.FirstTheotokion.SameMode</><r>sid tySource.Octoechos</>End-Para
+								Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.BothNow</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.FirstTheotokion.SameMode</><r>sid ty.typikon.parts_gr_GR_cog.tySource.Octoechos</>End-Para
 								Para role typikonindent<r>sid oc.m2.d1_gr_GR_cog.ocVE.SticTheotokion.mode</>sid oc.m2.d1_gr_GR_cog.ocVE.SticTheotokion.incipit End-Para
 							End-Section
-					end-when	
+					end-when
 				End-Section
 				Section mode3_
 					when-name-of-day-is
@@ -271,10 +261,10 @@ Status NA
 							Insert_section modeofweek End-Insert
 						otherwise use:
 							Section hymn
-								Para role typikon<b>sid tyPart.BothNow</><r>sid tyRubric.FirstTheotokion.SameMode</><r>sid tySource.Octoechos</>End-Para
+								Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.BothNow</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.FirstTheotokion.SameMode</><r>sid ty.typikon.parts_gr_GR_cog.tySource.Octoechos</>End-Para
 								Para role typikonindent<r>sid oc.m3.d1_gr_GR_cog.ocVE.SticTheotokion.mode</>sid oc.m3.d1_gr_GR_cog.ocVE.SticTheotokion.incipit End-Para
 							End-Section
-					end-when	
+					end-when
 				End-Section
 				Section mode4_
 					when-name-of-day-is
@@ -282,10 +272,10 @@ Status NA
 							Insert_section modeofweek End-Insert
 						otherwise use:
 							Section hymn
-								Para role typikon<b>sid tyPart.BothNow</><r>sid tyRubric.FirstTheotokion.SameMode</><r>sid tySource.Octoechos</>End-Para
+								Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.BothNow</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.FirstTheotokion.SameMode</><r>sid ty.typikon.parts_gr_GR_cog.tySource.Octoechos</>End-Para
 								Para role typikonindent<r>sid oc.m4.d1_gr_GR_cog.ocVE.SticTheotokion.mode</>sid oc.m4.d1_gr_GR_cog.ocVE.SticTheotokion.incipit End-Para
 							End-Section
-					end-when	
+					end-when
 				End-Section
 				Section mode5_
 					when-name-of-day-is
@@ -293,10 +283,10 @@ Status NA
 							Insert_section modeofweek End-Insert
 						otherwise use:
 							Section hymn
-								Para role typikon<b>sid tyPart.BothNow</><r>sid tyRubric.FirstTheotokion.SameMode</><r>sid tySource.Octoechos</>End-Para
+								Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.BothNow</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.FirstTheotokion.SameMode</><r>sid ty.typikon.parts_gr_GR_cog.tySource.Octoechos</>End-Para
 								Para role typikonindent<r>sid oc.m5.d1_gr_GR_cog.ocVE.SticTheotokion.mode</>sid oc.m5.d1_gr_GR_cog.ocVE.SticTheotokion.incipit End-Para
 							End-Section
-					end-when	
+					end-when
 				End-Section
 				Section mode6_
 					when-name-of-day-is
@@ -304,10 +294,10 @@ Status NA
 							Insert_section modeofweek End-Insert
 						otherwise use:
 							Section hymn
-								Para role typikon<b>sid tyPart.BothNow</><r>sid tyRubric.FirstTheotokion.SameMode</><r>sid tySource.Octoechos</>End-Para
+								Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.BothNow</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.FirstTheotokion.SameMode</><r>sid ty.typikon.parts_gr_GR_cog.tySource.Octoechos</>End-Para
 								Para role typikonindent<r>sid oc.m6.d1_gr_GR_cog.ocVE.SticTheotokion.mode</>sid oc.m6.d1_gr_GR_cog.ocVE.SticTheotokion.incipit End-Para
 							End-Section
-					end-when	
+					end-when
 				End-Section
 				Section mode7_
 					when-name-of-day-is
@@ -315,10 +305,10 @@ Status NA
 							Insert_section modeofweek End-Insert
 						otherwise use:
 							Section hymn
-								Para role typikon<b>sid tyPart.BothNow</><r>sid tySource.Octoechos sid tyRubric.FirstTheotokion.SameMode</>End-Para
+								Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.BothNow</><r>sid ty.typikon.parts_gr_GR_cog.tySource.Octoechos sid ty.typikon.parts_gr_GR_cog.tyRubric.FirstTheotokion.SameMode</>End-Para
 								Para role typikonindent<r>sid oc.m7.d1_gr_GR_cog.ocVE.SticTheotokion.mode</>sid oc.m7.d1_gr_GR_cog.ocVE.SticTheotokion.incipit End-Para
 							End-Section
-					end-when	
+					end-when
 				End-Section
 				Section mode8_
 					when-name-of-day-is
@@ -326,10 +316,10 @@ Status NA
 							Insert_section modeofweek End-Insert
 						otherwise use:
 							Section hymn
-								Para role typikon<b>sid tyPart.BothNow</><r>sid tyRubric.FirstTheotokion.SameMode</><r>sid tySource.Octoechos</>End-Para
+								Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.BothNow</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.FirstTheotokion.SameMode</><r>sid ty.typikon.parts_gr_GR_cog.tySource.Octoechos</>End-Para
 								Para role typikonindent<r>sid oc.m8.d1_gr_GR_cog.ocVE.SticTheotokion.mode</>sid oc.m8.d1_gr_GR_cog.ocVE.SticTheotokion.incipit End-Para
 							End-Section
-					end-when	
+					end-when
 				End-Section
 			End-Section
 			Section me__
@@ -382,7 +372,7 @@ Status NA
 							Hymn rid ocVE.SticTheotokion.text @day D1 End-Hymn
 						End-Section
 				end-when
-			End-Section	
+			End-Section
 			Section metheotokion2
 				when-name-of-day-is
 					Monday, Tuesday, Thursday use:
@@ -398,7 +388,7 @@ Status NA
 							Hymn rid ocVE.SticTheotokion.text @day D1 End-Hymn
 						End-Section
 				end-when
-			End-Section	
+			End-Section
 			Section pe__
 				Section bothasboth_
 					Title sid ti.BothNow End-Title
@@ -656,7 +646,7 @@ Status NA
 					End-Section
 				End-Section
 			End-Section
-		End-Section		
+		End-Section	
 		Section eucon__
 			Section i_12as45
 				Insert_section VE.LIHC_Verses.v04 End-Insert
@@ -702,7 +692,7 @@ Status NA
 					End-Section
 				End-Section
 				Section bothasglory_
-					Para role typikon<b>sid tyPart.Glory</><r>sid tySource.Menaion</>End-Para
+					Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Glory</><r>sid ty.typikon.parts_gr_GR_cog.tySource.Menaion</>End-Para
 					Section hymn
 						Para role typikonindent rid meVE.SticBoth.incipit End-Para
 					End-Section
@@ -729,13 +719,13 @@ Status NA
 					End-Section
 				End-Section
 				Section gloryasglory_
-					Para role typikon<b>sid tyPart.Glory</><r>sid tySource.Menaion</>End-Para
+					Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Glory</><r>sid ty.typikon.parts_gr_GR_cog.tySource.Menaion</>End-Para
 					Section hymn
 						Para role typikonindent rid meVE.SticGlory.incipit End-Para
 					End-Section
 				End-Section
 				Section JulHF
-					Para role typikon<b>sid tyPart.Glory</><r>sid ti.Fathers</><r>sid tySource.Menaion</>End-Para
+					Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Glory</><r>sid ti.Fathers</><r>sid ty.typikon.parts_gr_GR_cog.tySource.Menaion</>End-Para
 					Para role typikonindent sid me.m07.dHF_gr_GR_cog.meVE.SticGlory.incipit End-Para
 				End-Section
 				Section OctHF
@@ -782,7 +772,7 @@ Status NA
 		Section gloryboth__
 			Section firsttheotokion
 				Section modeofweek
-					Para role typikon<b>sid tyPart.GloryBoth</><r>sid tyRubric.FirstTheotokion.ModeOfWeek</><r>sid tySource.Octoechos</>End-Para
+					Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.GloryBoth</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.FirstTheotokion.ModeOfWeek</><r>sid ty.typikon.parts_gr_GR_cog.tySource.Octoechos</>End-Para
 					Para role typikonindent<r>rid ocVE.SticTheotokion.mode @day D1</>rid ocVE.SticTheotokion.incipit @day D1 End-Para
 				End-Section
 			End-Section
@@ -816,13 +806,13 @@ Status NA
 					End-Section
 				End-Section
 				Section eightmodedoxasticon_
-					Para role typikon<b>sid tyPart.GloryBoth</><r>sid tyRubric.Feast.EightModeIdiomelon</>End-Para
+					Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.GloryBoth</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.Feast.EightModeIdiomelon</>End-Para
 					Section hymn
 						Para role typikonindent rid meVE.SticGlory1.incipit End-Para
 					End-Section
 				End-Section
 				Section gloryasgloryboth_
-					Para role typikon<b>sid tyPart.GloryBoth</><r>sid tySource.Menaion</>End-Para
+					Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.GloryBoth</><r>sid ty.typikon.parts_gr_GR_cog.tySource.Menaion</>End-Para
 					Section hymn
 						Para role typikonindent rid meVE.SticGlory.incipit End-Para
 					End-Section
@@ -1067,7 +1057,7 @@ Status NA
 				Hymn sid me.m12.dFF_gr_GR_cog.meVE.Stichera03.text End-Hymn
 				Insert_section VE.LIHC_Verses.v10 End-Insert
 				Hymn sid me.m12.dFF_gr_GR_cog.meVE.Stichera04.text End-Hymn
-			End-Section	
+			End-Section
 			Section DecFF_p_123as567
 				Insert_section VE.LIHC_Verses.v05 End-Insert
 				Hymn sid me.m12.dFF_gr_GR_cog.meVE.Stichera01.text End-Hymn
@@ -1075,9 +1065,9 @@ Status NA
 				Hymn sid me.m12.dFF_gr_GR_cog.meVE.Stichera02.text End-Hymn
 				Insert_section VE.LIHC_Verses.v07 End-Insert
 				Hymn sid me.m12.dFF_gr_GR_cog.meVE.Stichera03.text End-Hymn
-			End-Section	
+			End-Section
 			Section JulHF_p_112234as5678910
-				Para role typikonindent<r>sid tyRubric.Fathers.Prosomoia4as6</><r>sid tySource.Menaion</>End-Para
+				Para role typikonindent<r>sid ty.typikon.parts_gr_GR_cog.tyRubric.Fathers.Prosomoia4as6</><r>sid ty.typikon.parts_gr_GR_cog.tySource.Menaion</>End-Para
 				Para role typikonindent<i>sid liturgical.verses_gr_GR_cog.psVE.stichologia.v06.incipit</>sid me.m07.dHF_gr_GR_cog.meVE.Stichera01.incipit End-Para
 				Para role typikonindent<i>sid liturgical.verses_gr_GR_cog.psVE.stichologia.v05.incipit</>sid me.m07.dHF_gr_GR_cog.meVE.Stichera01.incipit End-Para
 				Para role typikonindent<i>sid liturgical.verses_gr_GR_cog.psVE.stichologia.v04.incipit</>sid me.m07.dHF_gr_GR_cog.meVE.Stichera02.incipit End-Para
@@ -1540,23 +1530,23 @@ Status NA
 		Section oc__
 			Section sunday__
 				Section s_123as123
-					Para role typikon<b>sid tyPart.Stichera</>End-Para
-					Para role typikonindent<r>sid tyRubric.Resurrectional.Stichera3</><r>sid tySource.Octoechos</>End-Para
+					Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Stichera</>End-Para
+					Para role typikonindent<r>sid ty.typikon.parts_gr_GR_cog.tyRubric.Resurrectional.Stichera3</><r>sid ty.typikon.parts_gr_GR_cog.tySource.Octoechos</>End-Para
 					Para role typikonindent<i>sid liturgical.verses_gr_GR_cog.psVE.stichologia.v10.incipit</>rid ocVE.Stichera1.incipit End-Para
 					Para role typikonindent<i>sid liturgical.verses_gr_GR_cog.psVE.stichologia.v09.incipit</>rid ocVE.Stichera2.incipit End-Para
 					Para role typikonindent<i>sid liturgical.verses_gr_GR_cog.psVE.stichologia.v08.incipit</>rid ocVE.Stichera3.incipit End-Para
 				End-Section
 				Section s_1234as1234
-					Para role typikon<b>sid tyPart.Stichera</>End-Para
-					Para role typikonindent<r>sid tyRubric.Resurrectional.Stichera4</><r>sid tySource.Octoechos</>End-Para
+					Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Stichera</>End-Para
+					Para role typikonindent<r>sid ty.typikon.parts_gr_GR_cog.tyRubric.Resurrectional.Stichera4</><r>sid ty.typikon.parts_gr_GR_cog.tySource.Octoechos</>End-Para
 					Para role typikonindent<i>sid liturgical.verses_gr_GR_cog.psVE.stichologia.v10.incipit</>rid ocVE.Stichera1.incipit End-Para
 					Para role typikonindent<i>sid liturgical.verses_gr_GR_cog.psVE.stichologia.v09.incipit</>rid ocVE.Stichera2.incipit End-Para
 					Para role typikonindent<i>sid liturgical.verses_gr_GR_cog.psVE.stichologia.v08.incipit</>rid ocVE.Stichera3.incipit End-Para
 					Para role typikonindent<i>sid liturgical.verses_gr_GR_cog.psVE.stichologia.v07.incipit</>rid ocVE.Stichera4.incipit End-Para
 				End-Section
 				Section s_123456as123456
-					Para role typikon<b>sid tyPart.Stichera</>End-Para
-					Para role typikonindent<r>sid tyRubric.Resurrectional.Stichera6</><r>sid tySource.Octoechos</>End-Para
+					Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Stichera</>End-Para
+					Para role typikonindent<r>sid ty.typikon.parts_gr_GR_cog.tyRubric.Resurrectional.Stichera6</><r>sid ty.typikon.parts_gr_GR_cog.tySource.Octoechos</>End-Para
 					Para role typikonindent<i>sid liturgical.verses_gr_GR_cog.psVE.stichologia.v10.incipit</>rid ocVE.Stichera1.incipit End-Para
 					Para role typikonindent<i>sid liturgical.verses_gr_GR_cog.psVE.stichologia.v09.incipit</>rid ocVE.Stichera2.incipit End-Para
 					Para role typikonindent<i>sid liturgical.verses_gr_GR_cog.psVE.stichologia.v08.incipit</>rid ocVE.Stichera3.incipit End-Para
@@ -1565,8 +1555,8 @@ Status NA
 					Para role typikonindent<i>sid liturgical.verses_gr_GR_cog.psVE.stichologia.v05.incipit</>rid ocVE.Stichera6.incipit End-Para
 				End-Section
 				Section s_1234567as1234567
-					Para role typikon<b>sid tyPart.Stichera</>End-Para
-					Para role typikonindent<r>sid tyRubric.Resurrectional.Stichera7</><r>sid tySource.Octoechos</>End-Para
+					Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Stichera</>End-Para
+					Para role typikonindent<r>sid ty.typikon.parts_gr_GR_cog.tyRubric.Resurrectional.Stichera7</><r>sid ty.typikon.parts_gr_GR_cog.tySource.Octoechos</>End-Para
 					Para role typikonindent<i>sid liturgical.verses_gr_GR_cog.psVE.stichologia.v10.incipit</>rid ocVE.Stichera1.incipit End-Para
 					Para role typikonindent<i>sid liturgical.verses_gr_GR_cog.psVE.stichologia.v09.incipit</>rid ocVE.Stichera2.incipit End-Para
 					Para role typikonindent<i>sid liturgical.verses_gr_GR_cog.psVE.stichologia.v08.incipit</>rid ocVE.Stichera3.incipit End-Para
@@ -1741,9 +1731,9 @@ Status NA
 				End-Section
 				Section p_8910as8910
 					Insert_section VE.LIHC_Verses.v08 End-Insert
-					Hymn rid alt1.peVE.Stichera08.text End-Hymn		
+					Hymn rid alt1.peVE.Stichera08.text End-Hymn	
 					Insert_section VE.LIHC_Verses.v09 End-Insert
-					Hymn rid alt1.peVE.Stichera09.text End-Hymn		
+					Hymn rid alt1.peVE.Stichera09.text End-Hymn	
 					Insert_section VE.LIHC_Verses.v10 End-Insert
 					Hymn rid alt1.peVE.Stichera10.text End-Hymn
 				End-Section
@@ -1993,41 +1983,41 @@ Status NA
 			End-Section
 			Section p_78910as78910
 				Insert_section VE.LIHC_Verses.v07 End-Insert
-				Hymn rid peVE.Stichera07.text End-Hymn		
+				Hymn rid peVE.Stichera07.text End-Hymn	
 				Insert_section VE.LIHC_Verses.v08 End-Insert
-				Hymn rid peVE.Stichera08.text End-Hymn		
+				Hymn rid peVE.Stichera08.text End-Hymn	
 				Insert_section VE.LIHC_Verses.v09 End-Insert
-				Hymn rid peVE.Stichera09.text End-Hymn		
+				Hymn rid peVE.Stichera09.text End-Hymn	
 				Insert_section VE.LIHC_Verses.v10 End-Insert
 				Hymn rid peVE.Stichera10.text End-Hymn
 			End-Section
 			Section p_8910as567
 				Insert_section VE.LIHC_Verses.v05 End-Insert
-				Hymn rid peVE.Stichera08.text End-Hymn		
+				Hymn rid peVE.Stichera08.text End-Hymn	
 				Insert_section VE.LIHC_Verses.v06 End-Insert
-				Hymn rid peVE.Stichera09.text End-Hymn		
+				Hymn rid peVE.Stichera09.text End-Hymn	
 				Insert_section VE.LIHC_Verses.v07 End-Insert
-				Hymn rid peVE.Stichera10.text End-Hymn	
+				Hymn rid peVE.Stichera10.text End-Hymn
 			End-Section
 			Section s_1234as1234
 				Insert_section VE.LIHC_Verses.v01 End-Insert
-				Hymn rid peVE.Stichera01.text End-Hymn		
+				Hymn rid peVE.Stichera01.text End-Hymn	
 				Insert_section VE.LIHC_Verses.v02 End-Insert
-				Hymn rid peVE.Stichera02.text End-Hymn		
+				Hymn rid peVE.Stichera02.text End-Hymn	
 				Insert_section VE.LIHC_Verses.v03 End-Insert
-				Hymn rid peVE.Stichera03.text End-Hymn		
+				Hymn rid peVE.Stichera03.text End-Hymn	
 				Insert_section VE.LIHC_Verses.v04 End-Insert
-				Hymn rid peVE.Stichera04.text End-Hymn		
+				Hymn rid peVE.Stichera04.text End-Hymn	
 			End-Section
 			Section s_1234as3456
 				Insert_section VE.LIHC_Verses.v03 End-Insert
-				Hymn rid peVE.Stichera01.text End-Hymn		
+				Hymn rid peVE.Stichera01.text End-Hymn	
 				Insert_section VE.LIHC_Verses.v04 End-Insert
-				Hymn rid peVE.Stichera02.text End-Hymn		
+				Hymn rid peVE.Stichera02.text End-Hymn	
 				Insert_section VE.LIHC_Verses.v05 End-Insert
-				Hymn rid peVE.Stichera03.text End-Hymn		
+				Hymn rid peVE.Stichera03.text End-Hymn	
 				Insert_section VE.LIHC_Verses.v06 End-Insert
-				Hymn rid peVE.Stichera04.text End-Hymn		
+				Hymn rid peVE.Stichera04.text End-Hymn	
 			End-Section
 			Section s_123456as123456
 				Insert_section VE.LIHC_Verses.v01 End-Insert
@@ -2304,16 +2294,16 @@ Status NA
 		Section entrance
 			when-date-is
 				Jan 6 use:
-					Para role typikon<b>sid tyPart.Entrance</><r>sid tyRubric.WithGospel</>sid ho.ho10_gr_GR_cog.hoVE.FosIlaron.incipit End-Para
-					Para role typikonindent<r>sid tyRubric.OnlySayEvening1</>sid hi.hi01_gr_GR_cog.hiVE.Key1110.text<r>sid tyRubric.OnlySayEvening2</>sid hi.hi01_gr_GR_cog.hiVE.Key1109.text End-Para
+					Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Entrance</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.WithGospel</>sid ho.ho10_gr_GR_cog.hoVE.FosIlaron.incipit End-Para
+					Para role typikonindent<r>sid ty.typikon.parts_gr_GR_cog.tyRubric.OnlySayEvening1</>sid hi.hi01_gr_GR_cog.hiVE.Key1110.text<r>sid ty.typikon.parts_gr_GR_cog.tyRubric.OnlySayEvening2</>sid hi.hi01_gr_GR_cog.hiVE.Key1109.text End-Para
 				Dec 25 use:
-					Para role typikon<b>sid tyPart.Entrance</><r>sid tyRubric.WithGospel</>sid ho.ho10_gr_GR_cog.hoVE.FosIlaron.incipit End-Para
-					Para role typikonindent<r>sid tyRubric.OnlySayEvening1</>sid hi.hi01_gr_GR_cog.hiVE.Key1110.text<r>sid tyRubric.OnlySayEvening2</>sid hi.hi01_gr_GR_cog.hiVE.Key1109.text End-Para
+					Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Entrance</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.WithGospel</>sid ho.ho10_gr_GR_cog.hoVE.FosIlaron.incipit End-Para
+					Para role typikonindent<r>sid ty.typikon.parts_gr_GR_cog.tyRubric.OnlySayEvening1</>sid hi.hi01_gr_GR_cog.hiVE.Key1110.text<r>sid ty.typikon.parts_gr_GR_cog.tyRubric.OnlySayEvening2</>sid hi.hi01_gr_GR_cog.hiVE.Key1109.text End-Para
 				otherwise use:
 					when-movable-cycle-day-is
 						71 use:
-							Para role typikon<b>sid tyPart.Entrance</><r>sid tyRubric.WithGospel</>sid ho.ho10_gr_GR_cog.hoVE.FosIlaron.incipit End-Para
-							Para role typikonindent<r>sid tyRubric.OnlySayEvening1</>sid hi.hi01_gr_GR_cog.hiVE.Key1110.text<r>sid tyRubric.OnlySayEvening2</>sid hi.hi01_gr_GR_cog.hiVE.Key1109.text End-Para
+							Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Entrance</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.WithGospel</>sid ho.ho10_gr_GR_cog.hoVE.FosIlaron.incipit End-Para
+							Para role typikonindent<r>sid ty.typikon.parts_gr_GR_cog.tyRubric.OnlySayEvening1</>sid hi.hi01_gr_GR_cog.hiVE.Key1110.text<r>sid ty.typikon.parts_gr_GR_cog.tyRubric.OnlySayEvening2</>sid hi.hi01_gr_GR_cog.hiVE.Key1109.text End-Para
 						otherwise use:
 							Insert_section Selector_VespersProkeimenon.Entrance_Incipit End-Insert
 					end-when
@@ -2322,24 +2312,24 @@ Status NA
 		Section entrance_readings
 			when-date-is
 				Jan 6 use:
-					Para role typikon<b>sid tyPart.Entrance</><r>sid tyRubric.WithGospel</>sid ho.ho10_gr_GR_cog.hoVE.FosIlaron.incipit End-Para
-					Para role typikonindent<r>sid tyRubric.OnlySayEvening1</>sid hi.hi01_gr_GR_cog.hiVE.Key1110.text<r>sid tyRubric.OnlySayEvening2</>sid hi.hi01_gr_GR_cog.hiVE.Key1109.text End-Para
+					Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Entrance</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.WithGospel</>sid ho.ho10_gr_GR_cog.hoVE.FosIlaron.incipit End-Para
+					Para role typikonindent<r>sid ty.typikon.parts_gr_GR_cog.tyRubric.OnlySayEvening1</>sid hi.hi01_gr_GR_cog.hiVE.Key1110.text<r>sid ty.typikon.parts_gr_GR_cog.tyRubric.OnlySayEvening2</>sid hi.hi01_gr_GR_cog.hiVE.Key1109.text End-Para
 				Dec 25 use:
-					Para role typikon<b>sid tyPart.Entrance</><r>sid tyRubric.WithGospel</>sid ho.ho10_gr_GR_cog.hoVE.FosIlaron.incipit End-Para
-					Para role typikonindent<r>sid tyRubric.OnlySayEvening1</>sid hi.hi01_gr_GR_cog.hiVE.Key1110.text<r>sid tyRubric.OnlySayEvening2</>sid hi.hi01_gr_GR_cog.hiVE.Key1109.text End-Para
+					Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Entrance</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.WithGospel</>sid ho.ho10_gr_GR_cog.hoVE.FosIlaron.incipit End-Para
+					Para role typikonindent<r>sid ty.typikon.parts_gr_GR_cog.tyRubric.OnlySayEvening1</>sid hi.hi01_gr_GR_cog.hiVE.Key1110.text<r>sid ty.typikon.parts_gr_GR_cog.tyRubric.OnlySayEvening2</>sid hi.hi01_gr_GR_cog.hiVE.Key1109.text End-Para
 				otherwise use:
 					when-movable-cycle-day-is
 						71 use:
-							Para role typikon<b>sid tyPart.Entrance</><r>sid tyRubric.WithGospel</>sid ho.ho10_gr_GR_cog.hoVE.FosIlaron.incipit End-Para
-							Para role typikonindent<r>sid tyRubric.OnlySayEvening1</>sid hi.hi01_gr_GR_cog.hiVE.Key1110.text<r>sid tyRubric.OnlySayEvening2</>sid hi.hi01_gr_GR_cog.hiVE.Key1109.text End-Para
+							Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Entrance</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.WithGospel</>sid ho.ho10_gr_GR_cog.hoVE.FosIlaron.incipit End-Para
+							Para role typikonindent<r>sid ty.typikon.parts_gr_GR_cog.tyRubric.OnlySayEvening1</>sid hi.hi01_gr_GR_cog.hiVE.Key1110.text<r>sid ty.typikon.parts_gr_GR_cog.tyRubric.OnlySayEvening2</>sid hi.hi01_gr_GR_cog.hiVE.Key1109.text End-Para
 						otherwise use:
-						//	Para role typikon<b>sid tyPart.Entrance</>sid ho.ho10_gr_GR_cog.hoVE.FosIlaron.incipit End-Para
+						//	Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Entrance</>sid ho.ho10_gr_GR_cog.hoVE.FosIlaron.incipit End-Para
 							Insert_section Selector_VespersProkeimenon.Entrance_Incipit End-Insert
 					end-when
 			end-when
 		End-Section
 		Section noentrance
-			Para role typikon<b>sid tyPart.NoEntrance</>sid ho.ho10_gr_GR_cog.hoVE.FosIlaron.incipit<r>sid tyRubric.IsRead</>End-Para
+			Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.NoEntrance</>sid ho.ho10_gr_GR_cog.hoVE.FosIlaron.incipit<r>sid ty.typikon.parts_gr_GR_cog.tyRubric.IsRead</>End-Para
 			when-movable-cycle-day-is
 				24, 25, 26, 27, 28, 31, 32, 33, 34, 35, 38, 39, 40, 41, 42, 45, 46, 47, 48, 49, 52, 53, 54, 55, 56, 59, 60, 61, 62, 63, 66, 67, 68 use:
 				otherwise use:
@@ -2347,12 +2337,12 @@ Status NA
 			end-when
 		End-Section
 		Section liturgy
-			Para role typikon<b>sid tyPart.Entrance</><r>sid tyRubric.WithGospel</>sid ho.ho10_gr_GR_cog.hoVE.FosIlaron.incipit<r>sid tyRubric.IsRead</>End-Para
+			Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Entrance</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.WithGospel</>sid ho.ho10_gr_GR_cog.hoVE.FosIlaron.incipit<r>sid ty.typikon.parts_gr_GR_cog.tyRubric.IsRead</>End-Para
 		End-Section
 	End-Section
 
 	Section _05_Readings_Litanies
-		Para role typikonindent<r>sid tyPart.Readings</><r>sid tyRubric.Litanies1</>sid ho.ho10_gr_GR_cog.hoVE.Prayer_Kataxioson.incipit<r>sid tyRubric.Litanies2</>End-Para
+		Para role typikonindent<r>sid ty.typikon.parts_gr_GR_cog.tyPart.Readings</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.Litanies1</>sid ho.ho10_gr_GR_cog.hoVE.Prayer_Kataxioson.incipit<r>sid ty.typikon.parts_gr_GR_cog.tyRubric.Litanies2</>End-Para
 	End-Section
 
 	Section _07_Lity__
@@ -2399,26 +2389,26 @@ Status NA
 					End-Section
 				End-Section
 				Section glory_
-					Para role typikonindent<b>sid tyPart.Glory</>End-Para
+					Para role typikonindent<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Glory</>End-Para
 					Section hymn
 						Para role typikonindent rid meVE.LityGlory.incipit End-Para
 					End-Section
 				End-Section
 				Section gloryboth_
-					Para role typikonindent<b>sid tyPart.GloryBoth</>End-Para
+					Para role typikonindent<b>sid ty.typikon.parts_gr_GR_cog.tyPart.GloryBoth</>End-Para
 					Section hymn
 						Para role typikonindent rid meVE.LityGlory.incipit End-Para
 					End-Section
 				End-Section
 				Section both_
-					Para role typikonindent<b>sid tyPart.BothNow</>End-Para
+					Para role typikonindent<b>sid ty.typikon.parts_gr_GR_cog.tyPart.BothNow</>End-Para
 					Section hymn
 						Para role typikonindent rid meVE.LityBoth.incipit End-Para
 					End-Section
 				End-Section
 				Section bothasgloryboth_
 					Section hymn
-						Para role typikonindent sid tyPart.GloryBoth rid meVE.LityBoth.incipit End-Para
+						Para role typikonindent sid ty.typikon.parts_gr_GR_cog.tyPart.GloryBoth rid meVE.LityBoth.incipit End-Para
 					End-Section
 				End-Section
 			End-Section
@@ -2644,14 +2634,14 @@ Status NA
 
 	Section _06_Litanies__
 		Section fullektenia
-			Para role typikonindent<r>sid tyRubric.Litanies1</>sid ho.ho10_gr_GR_cog.hoVE.Prayer_Kataxioson.incipit<r>sid tyRubric.Litanies2</>End-Para
+			Para role typikonindent<r>sid ty.typikon.parts_gr_GR_cog.tyRubric.Litanies1</>sid ho.ho10_gr_GR_cog.hoVE.Prayer_Kataxioson.incipit<r>sid ty.typikon.parts_gr_GR_cog.tyRubric.Litanies2</>End-Para
 		End-Section
 		Section lentenektenia
 		//	Insert_section LN.Litany_lent End-Insert
-			Para role typikonindent<r>sid tyRubric.Litanies1</>sid ho.ho10_gr_GR_cog.hoVE.Prayer_Kataxioson.incipit<r>sid tyRubric.Litanies2</>End-Para
+			Para role typikonindent<r>sid ty.typikon.parts_gr_GR_cog.tyRubric.Litanies1</>sid ho.ho10_gr_GR_cog.hoVE.Prayer_Kataxioson.incipit<r>sid ty.typikon.parts_gr_GR_cog.tyRubric.Litanies2</>End-Para
 		End-Section
 		Section noektenia
-			Para role typikonindent sid ho.ho10_gr_GR_cog.hoVE.Prayer_Kataxioson.incipit<r>sid tyRubric.Litanies2</>End-Para
+			Para role typikonindent sid ho.ho10_gr_GR_cog.hoVE.Prayer_Kataxioson.incipit<r>sid ty.typikon.parts_gr_GR_cog.tyRubric.Litanies2</>End-Para
 		End-Section
 	End-Section
 
@@ -3006,35 +2996,35 @@ Status NA
 			End-Section
 			Section primarytheotokion__
 				Section mode1
-					Para role typikon<b>sid tyPart.BothNow</><r>sid tyRubric.ItsTheotokionSameMode</>End-Para
+					Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.BothNow</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.ItsTheotokionSameMode</>End-Para
 					Para role typikonindent<r>sid oc.m1.d1_gr_GR_cog.ocVE.AposTheotokion.mode</>sid oc.m1.d1_gr_GR_cog.ocVE.AposTheotokion.incipit End-Para
 				End-Section
 				Section mode2
-					Para role typikon<b>sid tyPart.BothNow</><r>sid tyRubric.ItsTheotokionSameMode</>End-Para
+					Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.BothNow</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.ItsTheotokionSameMode</>End-Para
 					Para role typikonindent<r>sid oc.m2.d1_gr_GR_cog.ocVE.AposTheotokion.mode</>sid oc.m2.d1_gr_GR_cog.ocVE.AposTheotokion.incipit End-Para
 				End-Section
 				Section mode3
-					Para role typikon<b>sid tyPart.BothNow</><r>sid tyRubric.ItsTheotokionSameMode</>End-Para
+					Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.BothNow</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.ItsTheotokionSameMode</>End-Para
 					Para role typikonindent<r>sid oc.m3.d1_gr_GR_cog.ocVE.AposTheotokion.mode</>sid oc.m3.d1_gr_GR_cog.ocVE.AposTheotokion.incipit End-Para
 				End-Section
 				Section mode4
-					Para role typikon<b>sid tyPart.BothNow</><r>sid tyRubric.ItsTheotokionSameMode</>End-Para
+					Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.BothNow</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.ItsTheotokionSameMode</>End-Para
 					Para role typikonindent<r>sid oc.m4.d1_gr_GR_cog.ocVE.AposTheotokion.mode</>sid oc.m4.d1_gr_GR_cog.ocVE.AposTheotokion.incipit End-Para
 				End-Section
 				Section mode5
-					Para role typikon<b>sid tyPart.BothNow</><r>sid tyRubric.ItsTheotokionSameMode</>End-Para
+					Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.BothNow</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.ItsTheotokionSameMode</>End-Para
 					Para role typikonindent<r>sid oc.m5.d1_gr_GR_cog.ocVE.AposTheotokion.mode</>sid oc.m5.d1_gr_GR_cog.ocVE.AposTheotokion.incipit End-Para
 				End-Section
 				Section mode6
-					Para role typikon<b>sid tyPart.BothNow</><r>sid tyRubric.ItsTheotokionSameMode</>End-Para
+					Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.BothNow</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.ItsTheotokionSameMode</>End-Para
 					Para role typikonindent<r>sid oc.m6.d1_gr_GR_cog.ocVE.AposTheotokion.mode</>sid oc.m6.d1_gr_GR_cog.ocVE.AposTheotokion.incipit End-Para
 				End-Section
 				Section mode7
-					Para role typikon<b>sid tyPart.BothNow</><r>sid tyRubric.ItsTheotokionSameMode</>End-Para
+					Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.BothNow</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.ItsTheotokionSameMode</>End-Para
 					Para role typikonindent<r>sid oc.m7.d1_gr_GR_cog.ocVE.AposTheotokion.mode</>sid oc.m7.d1_gr_GR_cog.ocVE.AposTheotokion.incipit End-Para
 				End-Section
 				Section mode8
-					Para role typikon<b>sid tyPart.BothNow</><r>sid tyRubric.ItsTheotokionSameMode</>End-Para
+					Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.BothNow</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.ItsTheotokionSameMode</>End-Para
 					Para role typikonindent<r>sid oc.m8.d1_gr_GR_cog.ocVE.AposTheotokion.mode</>sid oc.m8.d1_gr_GR_cog.ocVE.AposTheotokion.incipit End-Para
 				End-Section
 			End-Section
@@ -3056,52 +3046,52 @@ Status NA
 				End-Section
 				Section mode6_vine__
 					Section apostle
-						Para role typikon<b>sid tyPart.BothNow</><r>sid tyRubric.Theotokion.SameMode</>End-Para
-						Para role typikonindent<r>sid TheotokeSyEi.mode</>sid TheotokeSyEi.incipit sid TheotokeSyEiApostolou.text sid misc.punctuation.ellipsis End-Para
+						Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.BothNow</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.Theotokion.SameMode</>End-Para
+						Para role typikonindent<r>sid he.o_gr_GR_cog.heOT.TheotokeSyEi.mode</>sid he.o_gr_GR_cog.heOT.TheotokeSyEi.incipit sid he.o_gr_GR_cog.heOT.TheotokeSyEiApostolou.text sid misc.punctuation.ellipsis End-Para
 					End-Section
 					Section apostles
-						Para role typikon<b>sid tyPart.BothNow</><r>sid tyRubric.Theotokion.SameMode</>End-Para
-						Para role typikonindent<r>sid TheotokeSyEi.mode</>sid TheotokeSyEi.incipit sid TheotokeSyEiApostolon.text sid misc.punctuation.ellipsis End-Para
+						Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.BothNow</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.Theotokion.SameMode</>End-Para
+						Para role typikonindent<r>sid he.o_gr_GR_cog.heOT.TheotokeSyEi.mode</>sid he.o_gr_GR_cog.heOT.TheotokeSyEi.incipit sid he.o_gr_GR_cog.heOT.TheotokeSyEiApostolon.text sid misc.punctuation.ellipsis End-Para
 					End-Section
 					Section devout
-						Para role typikon<b>sid tyPart.BothNow</><r>sid tyRubric.Theotokion.SameMode</>End-Para
-						Para role typikonindent<r>sid TheotokeSyEi.mode</>sid TheotokeSyEi.incipit sid TheotokeSyEiOsiou.text sid misc.punctuation.ellipsis End-Para
+						Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.BothNow</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.Theotokion.SameMode</>End-Para
+						Para role typikonindent<r>sid he.o_gr_GR_cog.heOT.TheotokeSyEi.mode</>sid he.o_gr_GR_cog.heOT.TheotokeSyEi.incipit sid he.o_gr_GR_cog.heOT.TheotokeSyEiOsiou.text sid misc.punctuation.ellipsis End-Para
 					End-Section
 					Section devouts
-						Para role typikon<b>sid tyPart.BothNow</><r>sid tyRubric.Theotokion.SameMode</>End-Para
-						Para role typikonindent<r>sid TheotokeSyEi.mode</>sid TheotokeSyEi.incipit sid TheotokeSyEiOsion.text sid misc.punctuation.ellipsis End-Para
+						Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.BothNow</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.Theotokion.SameMode</>End-Para
+						Para role typikonindent<r>sid he.o_gr_GR_cog.heOT.TheotokeSyEi.mode</>sid he.o_gr_GR_cog.heOT.TheotokeSyEi.incipit sid he.o_gr_GR_cog.heOT.TheotokeSyEiOsion.text sid misc.punctuation.ellipsis End-Para
 					End-Section
 					Section forerunner
-						Para role typikon<b>sid tyPart.BothNow</><r>sid tyRubric.Theotokion.SameMode</>End-Para
-						Para role typikonindent<r>sid TheotokeSyEi.mode</>sid TheotokeSyEi.incipit sid TheotokeSyEiProdromou.text sid misc.punctuation.ellipsis End-Para
+						Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.BothNow</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.Theotokion.SameMode</>End-Para
+						Para role typikonindent<r>sid he.o_gr_GR_cog.heOT.TheotokeSyEi.mode</>sid he.o_gr_GR_cog.heOT.TheotokeSyEi.incipit sid he.o_gr_GR_cog.heOT.TheotokeSyEiProdromou.text sid misc.punctuation.ellipsis End-Para
 					End-Section
 					Section hierarch
-						Para role typikon<b>sid tyPart.BothNow</><r>sid tyRubric.Theotokion.SameMode</>End-Para
-						Para role typikonindent<r>sid TheotokeSyEi.mode</>sid TheotokeSyEi.incipit sid TheotokeSyEiIerarchou.text sid misc.punctuation.ellipsis End-Para
+						Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.BothNow</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.Theotokion.SameMode</>End-Para
+						Para role typikonindent<r>sid he.o_gr_GR_cog.heOT.TheotokeSyEi.mode</>sid he.o_gr_GR_cog.heOT.TheotokeSyEi.incipit sid he.o_gr_GR_cog.heOT.TheotokeSyEiIerarchou.text sid misc.punctuation.ellipsis End-Para
 					End-Section
 					Section martyr
-						Para role typikon<b>sid tyPart.BothNow</><r>sid tyRubric.Theotokion.SameMode</>End-Para
-						Para role typikonindent<r>sid TheotokeSyEi.mode</>sid TheotokeSyEi.incipit sid TheotokeSyEiAthloforou.text sid misc.punctuation.ellipsis End-Para
+						Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.BothNow</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.Theotokion.SameMode</>End-Para
+						Para role typikonindent<r>sid he.o_gr_GR_cog.heOT.TheotokeSyEi.mode</>sid he.o_gr_GR_cog.heOT.TheotokeSyEi.incipit sid he.o_gr_GR_cog.heOT.TheotokeSyEiAthloforou.text sid misc.punctuation.ellipsis End-Para
 					End-Section
 					Section martyrs
-						Para role typikon<b>sid tyPart.BothNow</><r>sid tyRubric.Theotokion.SameMode</>End-Para
-						Para role typikonindent<r>sid TheotokeSyEi.mode</>sid TheotokeSyEi.incipit sid TheotokeSyEiAthloforon.text sid misc.punctuation.ellipsis End-Para
+						Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.BothNow</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.Theotokion.SameMode</>End-Para
+						Para role typikonindent<r>sid he.o_gr_GR_cog.heOT.TheotokeSyEi.mode</>sid he.o_gr_GR_cog.heOT.TheotokeSyEi.incipit sid he.o_gr_GR_cog.heOT.TheotokeSyEiAthloforon.text sid misc.punctuation.ellipsis End-Para
 					End-Section
 					Section prophet
-						Para role typikon<b>sid tyPart.BothNow</><r>sid tyRubric.Theotokion.SameMode</>End-Para
-						Para role typikonindent<r>sid TheotokeSyEi.mode</>sid TheotokeSyEi.incipit sid TheotokeSyEiProfitou.text sid misc.punctuation.ellipsis End-Para
+						Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.BothNow</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.Theotokion.SameMode</>End-Para
+						Para role typikonindent<r>sid he.o_gr_GR_cog.heOT.TheotokeSyEi.mode</>sid he.o_gr_GR_cog.heOT.TheotokeSyEi.incipit sid he.o_gr_GR_cog.heOT.TheotokeSyEiProfitou.text sid misc.punctuation.ellipsis End-Para
 					End-Section
 					Section teachers
-						Para role typikon<b>sid tyPart.BothNow</><r>sid tyRubric.Theotokion.SameMode</>End-Para
-						Para role typikonindent<r>sid TheotokeSyEi.mode</>sid TheotokeSyEi.incipit sid TheotokeSyEiDidaskalon.text sid misc.punctuation.ellipsis End-Para
+						Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.BothNow</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.Theotokion.SameMode</>End-Para
+						Para role typikonindent<r>sid he.o_gr_GR_cog.heOT.TheotokeSyEi.mode</>sid he.o_gr_GR_cog.heOT.TheotokeSyEi.incipit sid he.o_gr_GR_cog.heOT.TheotokeSyEiDidaskalon.text sid misc.punctuation.ellipsis End-Para
 					End-Section
 					Section unmercenaries
-						Para role typikon<b>sid tyPart.BothNow</><r>sid tyRubric.Theotokion.SameMode</>End-Para
-						Para role typikonindent<r>sid TheotokeSyEi.mode</>sid TheotokeSyEi.incipit sid TheotokeSyEiAnargyron.text sid misc.punctuation.ellipsis End-Para
+						Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.BothNow</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.Theotokion.SameMode</>End-Para
+						Para role typikonindent<r>sid he.o_gr_GR_cog.heOT.TheotokeSyEi.mode</>sid he.o_gr_GR_cog.heOT.TheotokeSyEi.incipit sid he.o_gr_GR_cog.heOT.TheotokeSyEiAnargyron.text sid misc.punctuation.ellipsis End-Para
 					End-Section
 					Section womanmartyr
-						Para role typikon<b>sid tyPart.BothNow</><r>sid tyRubric.Theotokion.SameMode</>End-Para
-						Para role typikonindent<r>sid TheotokeSyEi.mode</>sid TheotokeSyEi.incipit sid TheotokeSyEiAthliforou.text sid misc.punctuation.ellipsis End-Para
+						Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.BothNow</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.Theotokion.SameMode</>End-Para
+						Para role typikonindent<r>sid he.o_gr_GR_cog.heOT.TheotokeSyEi.mode</>sid he.o_gr_GR_cog.heOT.TheotokeSyEi.incipit sid he.o_gr_GR_cog.heOT.TheotokeSyEiAthliforou.text sid misc.punctuation.ellipsis End-Para
 					End-Section
 				End-Section
 				Section mode7
@@ -3168,13 +3158,13 @@ Status NA
 					End-Section
 				End-Section
 				Section gloryasglory_
-					Para role typikon<b>sid tyPart.Glory</><r>sid tySource.Menaion</>End-Para
+					Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Glory</><r>sid ty.typikon.parts_gr_GR_cog.tySource.Menaion</>End-Para
 					Section hymn
 						Para role typikonindent rid meVE.AposGlory.incipit End-Para
 					End-Section
 				End-Section
 				Section JulHF
-					Para role typikon<b>sid tyPart.Glory</><r>sid ti.Fathers</><r>sid tySource.Menaion</>End-Para
+					Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Glory</><r>sid ti.Fathers</><r>sid ty.typikon.parts_gr_GR_cog.tySource.Menaion</>End-Para
 					Para role typikonindent sid me.m07.dHF_gr_GR_cog.meVE.AposGlory.incipit End-Para
 				End-Section
 				Section OctHF
@@ -3221,13 +3211,13 @@ Status NA
 					End-Section
 				End-Section
 				Section bothasgloryboth_
-					Para role typikon<b>sid tyPart.GloryBoth</><r>sid tySource.Menaion</>End-Para
+					Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.GloryBoth</><r>sid ty.typikon.parts_gr_GR_cog.tySource.Menaion</>End-Para
 					Section hymn
 						Para role typikonindent rid meVE.AposBoth.incipit End-Para
 					End-Section
 				End-Section
 				Section gloryasgloryboth_
-					Para role typikon<b>sid tyPart.GloryBoth</><r>sid tySource.Menaion</>End-Para
+					Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.GloryBoth</><r>sid ty.typikon.parts_gr_GR_cog.tySource.Menaion</>End-Para
 					Section hymn
 						Para role typikonindent rid meVE.AposGlory.incipit End-Para
 					End-Section
@@ -3425,7 +3415,7 @@ Status NA
 				Hymn rid meVE.Aposticha3.text End-Hymn
 			End-Section
 			Section i_theotokos12
-				Para role typikon<b>sid tyPart.Aposticha</><r>sid tyRubric.Feast.Idiomela3</><r>sid tySource.Menaion</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Aposticha</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.Feast.Idiomela3</><r>sid ty.typikon.parts_gr_GR_cog.tySource.Menaion</>End-Para
 				Para role typikonindent rid meVE.Aposticha1.incipit End-Para
 				Para role typikonindent<inr>sid misc.vVerse</><i>sid liturgical.verses_gr_GR_cog.psVE.theotokos.aposverse.v1.text</>End-Para
 				Para role typikonindent rid meVE.Aposticha2.incipit End-Para
@@ -3433,7 +3423,7 @@ Status NA
 				Para role typikonindent rid meVE.Aposticha3.incipit End-Para
 			End-Section
 			Section i_transfiguration12
-				Para role typikon<b>sid tyPart.Aposticha</><r>sid tyRubric.Feast.Idiomela3</><r>sid tySource.Menaion</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Aposticha</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.Feast.Idiomela3</><r>sid ty.typikon.parts_gr_GR_cog.tySource.Menaion</>End-Para
 				Para role typikonindent rid meVE.Aposticha1.incipit End-Para
 				Para role typikonindent<inr>sid misc.vVerse</><i>sid menaion.verses_gr_GR_cog.psVE.m08.d06.aposverse.v1.text</>End-Para
 				Para role typikonindent rid meVE.Aposticha2.incipit End-Para
@@ -3492,7 +3482,7 @@ Status NA
 				Hymn rid meVE.Aposticha3.text End-Hymn
 			End-Section
 			Section p_cross12
-				Para role typikon<b>sid tyPart.Aposticha</><r>sid tyRubric.Prosomoia3 sid ti.Cross</><r>sid tySource.Menaion</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Aposticha</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.Prosomoia3 sid ti.Cross</><r>sid ty.typikon.parts_gr_GR_cog.tySource.Menaion</>End-Para
 				Para role typikonindent rid meVE.Aposticha1.incipit End-Para
 				Para role typikonindent<inr>sid misc.vVerse</><i>sid liturgical.verses_gr_GR_cog.psVE.cross.aposverse.v1.text</>End-Para
 				Para role typikonindent rid meVE.Aposticha2.incipit End-Para
@@ -3509,7 +3499,7 @@ Status NA
 					rid meVE.AposBoth.text use:
 						Hymn rid meVE.AposGlory.text End-Hymn
 						Hymn rid meVE.AposBoth.text End-Hymn
-					otherwise use:	
+					otherwise use:
 						Hymn rid meVE.AposGlory.text End-Hymn
 				end-when
 			End-Section
@@ -3572,7 +3562,7 @@ Status NA
 					rid meVE.AposBoth.text use:
 						Hymn rid meVE.AposGlory.text End-Hymn
 						Hymn rid meVE.AposBoth.text End-Hymn
-					otherwise use:	
+					otherwise use:
 						Hymn rid meVE.AposGlory.text End-Hymn
 				end-when
 			End-Section
@@ -3764,7 +3754,7 @@ Status NA
 					rid meVE.AposBoth.text use:
 						Hymn rid meVE.AposGlory.text End-Hymn
 						Hymn rid meVE.AposBoth.text End-Hymn
-					otherwise use:	
+					otherwise use:
 						Hymn rid meVE.AposGlory.text End-Hymn
 				end-when
 			End-Section
@@ -3813,7 +3803,7 @@ Status NA
 					rid meVE.AposBoth.text use:
 						Hymn rid meVE.AposGlory.text End-Hymn
 						Hymn rid meVE.AposBoth.text End-Hymn
-					otherwise use:	
+					otherwise use:
 						Hymn rid meVE.AposGlory.text End-Hymn
 				end-when
 			End-Section
@@ -3846,7 +3836,7 @@ Status NA
 				Hymn rid meVE.Aposticha3.text End-Hymn
 			End-Section
 			Section p_unmercenaries12
-				Para role typikon<b>sid tyPart.Aposticha</><r>sid tyRubric.Prosomoia3 rid meDA.commemoration.first_title</><r>sid tySource.Menaion</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Aposticha</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.Prosomoia3 rid meDA.commemoration.first_title</><r>sid ty.typikon.parts_gr_GR_cog.tySource.Menaion</>End-Para
 				Para role typikonindent rid meVE.Aposticha1.incipit End-Para
 				Para role typikonindent<inr>sid misc.vVerse</><i>sid liturgical.verses_gr_GR_cog.psVE.unmercenaries.aposverse.v1.text</>End-Para
 				Para role typikonindent rid meVE.Aposticha2.incipit End-Para
@@ -3856,7 +3846,7 @@ Status NA
 			Section p_women12
 				when-exists rid meVE.Aposticha.notice use:
 					Rubric rid meVE.Aposticha.notice End-Rubric
-				end-when	
+				end-when
 				Hymn rid meVE.Aposticha1.text End-Hymn
 				Insert_section PsalmVerses.forWomen.verse1 End-Insert
 				Hymn rid meVE.Aposticha2.text End-Hymn
@@ -3907,24 +3897,24 @@ Status NA
 			End-Section
 			Section sunday__
 				Section aposticha1_
-					Para role typikon<b>sid tyPart.Aposticha</><r>rid ocVE.Aposticha1.mode</><r>sid tyRubric.Aposticha.Resurrectional.First</><r>sid tySource.Octoechos</>End-Para
+					Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Aposticha</><r>rid ocVE.Aposticha1.mode</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.Aposticha.Resurrectional.First</><r>sid ty.typikon.parts_gr_GR_cog.tySource.Octoechos</>End-Para
 					Para role typikonindent rid ocVE.Aposticha1.incipit End-Para
 				End-Section
 				Section aposticha1234
-					Para role typikon<b>sid tyPart.Aposticha</><r>rid ocVE.Aposticha1.mode</><r>sid tyRubric.Aposticha.Resurrectional.All</><r>sid tySource.Octoechos</>End-Para
+					Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Aposticha</><r>rid ocVE.Aposticha1.mode</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.Aposticha.Resurrectional.All</><r>sid ty.typikon.parts_gr_GR_cog.tySource.Octoechos</>End-Para
 					Para role typikonindent rid ocVE.Aposticha1.incipit End-Para
 					Para role typikonindent<i>sid liturgical.verses_gr_GR_cog.psVE.saturday.aposverse.v1.incipit</>rid ocVE.Aposticha2.incipit End-Para
 					Para role typikonindent<i>sid liturgical.verses_gr_GR_cog.psVE.saturday.aposverse.v2.incipit</>rid ocVE.Aposticha3.incipit End-Para
 					Para role typikonindent<i>sid liturgical.verses_gr_GR_cog.psVE.saturday.aposverse.v3.incipit</>rid ocVE.Aposticha4.incipit End-Para
 				End-Section
 				Section aposticha1234gbT
-					Para role typikon<b>sid tyPart.Aposticha</><r>rid ocVE.Aposticha1.mode</><r>sid tyRubric.Aposticha.Resurrectional.All</><r>sid tySource.Octoechos</>End-Para
+					Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.Aposticha</><r>rid ocVE.Aposticha1.mode</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.Aposticha.Resurrectional.All</><r>sid ty.typikon.parts_gr_GR_cog.tySource.Octoechos</>End-Para
 					Para role typikonindent rid ocVE.Aposticha1.incipit End-Para
 					Para role typikonindent<i>sid liturgical.verses_gr_GR_cog.psVE.saturday.aposverse.v1.incipit</>rid ocVE.Aposticha2.incipit End-Para
 					Para role typikonindent<i>sid liturgical.verses_gr_GR_cog.psVE.saturday.aposverse.v2.incipit</>rid ocVE.Aposticha3.incipit End-Para
 					Para role typikonindent<i>sid liturgical.verses_gr_GR_cog.psVE.saturday.aposverse.v3.incipit</>rid ocVE.Aposticha4.incipit End-Para
-					Para role typikon<b>sid tyPart.GloryBoth</><r>sid tyRubric.TheirTheotokion</>rid ocVE.AposTheotokion.incipit @day D1 End-Para
-				//	Para role typikonindent rid ocVE.AposTheotokion.incipit @day D1 End-Para	
+					Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.GloryBoth</><r>sid ty.typikon.parts_gr_GR_cog.tyRubric.TheirTheotokion</>rid ocVE.AposTheotokion.incipit @day D1 End-Para
+				//	Para role typikonindent rid ocVE.AposTheotokion.incipit @day D1 End-Para
 				End-Section
 			End-Section
 		End-Section
@@ -4107,10 +4097,10 @@ Status NA
 	Section _09_Symeon_Trisagion__
 		Section Priest
 			Section symeon
-				Para role typikon<b>sid tyPart.OdeOfSymeon</>End-Para
+				Para role typikon<b>sid ty.typikon.parts_gr_GR_cog.tyPart.OdeOfSymeon</>End-Para
 			End-Section
 			Section trisagion
-				Para role typikonindent<r>sid tyPart.Trisagion</>sid pr.HolyGod.incipit End-Para
+				Para role typikonindent<r>sid ty.typikon.parts_gr_GR_cog.tyPart.Trisagion</>sid pr.HolyGod.incipit End-Para
 			End-Section
 		End-Section
 	End-Section
