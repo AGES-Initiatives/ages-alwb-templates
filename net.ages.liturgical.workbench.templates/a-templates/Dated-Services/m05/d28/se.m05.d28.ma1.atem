@@ -1,6 +1,6 @@
-Template se.m06.d13.ve5
+Template se.m05.d28.ma1
 
-Status Draft
+Status Final
 
 	import da.*
 	import oc.*
@@ -22,12 +22,12 @@ Status Draft
 	import roles.*
 
 	Head
-		Set_Date month 6 day 13 year 2024 End_Date
+		Set_Date month 5 day 28 year 2025 End_Date
 			Page_Header_Even
-				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore.text lang L1
+				center @lookup sid template.titles_gr_GR_cog.ma.pdf.header lang L1 @lookup rid daOnDay.text lang L1 @lookup rid meDA.pdfheaderdate lang L1
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @lookup sid ve.pdf.header rid daVE.OnTheEveningBefore.text lang L2
+				center @lookup sid template.titles_gr_GR_cog.ma.pdf.header lang L2 @lookup rid daOnDay.text lang L2 @lookup rid meDA.pdfheaderdate lang L2
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -39,19 +39,14 @@ Status Draft
 	End_Head
 
 	Preface Covers
-		Insert_template pdf.cover.ve.me End-Insert
+		Insert_template pdf.cover.ma.me End-Insert
 		Insert_template pdf.cover.credits End-Insert
 	End-Preface
 
 	when-movable-cycle-day-is
-		111 use:
-			Section d111
-			End-Section
-		
-		121 use:
-			Section d121
-			End-Section
-
-	end-when
-
+		71, 109 use:
+			Insert_section se.pe.d071.ma1.Instance01 End-Insert
+		otherwise use:
+	end-when	
+	
 End-Template

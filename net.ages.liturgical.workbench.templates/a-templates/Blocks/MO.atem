@@ -50,7 +50,8 @@ Status NA
 		Section enarxis
 			Actor sid ac.Priest End-Actor
 			Dialog sid pr.enarxis01.text End-Dialog
-			Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+			Actor sid ac.IL.Reader<dialogafteractor>sid pr.res04.text</>End-Actor
+			Actor sid ac.Priest End-Actor
 			Section Heavenly_King
 				when-movable-cycle-day-is
 					71 thru 109 use:
@@ -381,8 +382,7 @@ Status NA
 			Reading sid pr.OurFather.text @ver End-Reading
 			Actor sid ac.Priest End-Actor
 			Dialog sid pr.exc20.text End-Dialog
-			Actor sid ac.Reader End-Actor
-			Dialog sid pr.res04.text End-Dialog
+			Actor sid ac.IL.Reader<dialogafteractor>sid pr.res04.text</>End-Actor
 		End-Section
 		when-name-of-day-is
 			Sunday use:
@@ -407,8 +407,7 @@ Status NA
 			Reading sid pr.OurFather.text @ver End-Reading
 			Actor sid ac.Priest End-Actor
 			Dialog sid pr.exc20.text End-Dialog
-			Actor sid ac.Reader End-Actor
-			Dialog sid pr.res04.text End-Dialog
+			Actor sid ac.IL.Reader<dialogafteractor>sid pr.res04.text</>End-Actor
 		End-Section
 		Section troparia
 			when-date-is
@@ -526,7 +525,7 @@ Status NA
 			Insert_section Selector_Dismissals.Short End-Insert
 			Section litany
 				Dialog sid pr.petCompline01.text End-Dialog
-				Actor sid ac.Choir<smaller>sid ru.IntonedAfterEachPetition</>End-Actor
+				Actor sid ac.Reader<smaller>sid ru.IntonedAfterEachPetition</>End-Actor
 				Dialog sid pr.res01.text End-Dialog
 				Actor sid ac.Priest End-Actor
 				Dialog sid pr.petCompline02.text End-Dialog
@@ -545,8 +544,7 @@ Status NA
 				Dialog sid pr.petCompline15.text End-Dialog
 			End-Section
 			Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
-			Actor sid ac.Choir End-Actor
-			Dialog sid pr.res04.text End-Dialog
+			Actor sid ac.IL.Reader<dialogafteractor>sid pr.res04.text</>End-Actor
 		End-Section
 		Section after_hymns
 			Actor sid ac.Reader End-Actor

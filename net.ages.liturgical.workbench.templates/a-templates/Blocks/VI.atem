@@ -33,11 +33,12 @@ Status NA
 						Section pascha //needs work
 							Actor sid ac.Priest End-Actor
 							Dialog sid pr.enarxis03.text End-Dialog
-							Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+							Actor sid ac.IL.Choir<dialogafteractor>sid pr.res04.text</>End-Actor
 							Insert_section PE.Pascha_Beginning End-Insert
-							Insert_section LN.GreatLitany_deacon_parentheses End-Insert
+							Insert_section LN.GreatLitany_deacon_compact End-Insert
 							Actor sid ac.Priest End-Actor
-							Dialog sid pr.exc01.text<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+							Dialog sid pr.exc01.text End-Dialog
+							Actor sid ac.IL.Choir<dialogafteractor>sid pr.res04.text</>End-Actor
 						End-Section
 					otherwise use:
 						Section enarxis
@@ -46,14 +47,16 @@ Status NA
 						Section introductorypsalm
 							when-movable-cycle-day-is
 								78 thru 108 use:
+									Insert_section VE.vesperal_prayers_link End-Insert
 									Actor sid ac.Hierarch End-Actor
 									Insert_section PE.ChristIsRisen.once End-Insert
 									Actor sid ac.Choir End-Actor
 									Insert_section PE.ChristIsRisen.twice End-Insert
-									Insert_section VE.vesperal_prayers_link End-Insert
+									Rubric sid hi.hi01_gr_GR_cog.hiVE.R1113 End-Rubric
 									Actor sid ac.Hierarch End-Actor
 								otherwise use:
 									Insert_section VE.vesperal_prayers_link End-Insert
+									Rubric sid hi.hi01_gr_GR_cog.hiVE.R1113 End-Rubric
 									Actor sid ac.Hierarch End-Actor
 									Reading sid pr.ComeLetUsWorship1.text End-Reading
 									Reading sid pr.ComeLetUsWorship2.text End-Reading
@@ -75,10 +78,8 @@ Status NA
 			Actor sid ac.Choir End-Actor
 			Hymn sid liturgical.verses_gr_GR_cog.psVE.vigilentry.text End-Hymn
 			Break line End_Break
-			Actor sid ac.Priest End-Actor
-			Dialog sid pr.res11.text End-Dialog
-			Actor sid ac.Chanter End-Actor
-			Dialog sid pr.res04.text End-Dialog
+			Actor sid ac.IL.Priest<dialogafteractor>sid pr.res11.text</>End-Actor
+			Actor sid ac.IL.Chanter<dialogafteractor>sid pr.res04.text</>End-Actor
 		End-Section
 		Section no_anoixantaria
 			when-movable-cycle-day-is
@@ -86,17 +87,18 @@ Status NA
 					Section pascha
 						Actor sid ac.Priest End-Actor
 						Dialog sid pr.enarxis03.text End-Dialog
-						Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+						Actor sid ac.IL.Choir<dialogafteractor>sid pr.res04.text</>End-Actor
 						Insert_section PE.Pascha_Beginning End-Insert
-						Insert_section LN.GreatLitany_deacon_parentheses End-Insert
+						Insert_section LN.GreatLitany_deacon_compact End-Insert
 						Actor sid ac.Priest End-Actor
-						Dialog sid pr.exc01.text<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+						Dialog sid pr.exc01.text End-Dialog
+						Actor sid ac.IL.Choir<dialogafteractor>sid pr.res04.text</>End-Actor
 					End-Section
 				otherwise use:
 					Section enarxis
 						Actor sid ac.Priest End-Actor
 						Dialog sid pr.enarxis03.text End-Dialog
-						Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+						Actor sid ac.IL.Choir<dialogafteractor>sid pr.res04.text</>End-Actor
 					End-Section
 					Section introductorypsalm
 						when-movable-cycle-day-is
@@ -106,15 +108,18 @@ Status NA
 								Insert_section PE.ChristIsRisen.once End-Insert
 								Actor sid ac.Choir End-Actor
 								Insert_section PE.ChristIsRisen.twice End-Insert
+								Rubric sid ru.standing.prefix sid ru.standing.vespers.introductorypsalm End-Rubric
+								Rubric sid hi.hi01_gr_GR_cog.hiVE.R1113 End-Rubric
 								Actor sid ac.Hierarch End-Actor
 							otherwise use:
 								Insert_section VE.vesperal_prayers_link End-Insert
+								Rubric sid ru.standing.prefix sid ru.standing.vespers.introductorypsalm End-Rubric
+								Rubric sid hi.hi01_gr_GR_cog.hiVE.R1113 End-Rubric
 								Actor sid ac.Hierarch End-Actor
 								Reading sid pr.ComeLetUsWorship1.text End-Reading
 								Reading sid pr.ComeLetUsWorship2.text End-Reading
 								Reading sid pr.ComeLetUsWorship3.text End-Reading
 						end-when
-						Rubric sid ru.standing.prefix sid ru.standing.vespers.introductorypsalm End-Rubric
 						Section Psalm_103
 							Title role desig sid ps_gr_GR_cog.psa103.title End-Title
 							Media sid ho.ho10_gr_GR_cog.hoVE.Ps103.text End-Media
@@ -130,13 +135,13 @@ Status NA
 					Section litany
 						when-movable-cycle-day-is
 							121 use:
-								Insert_section LN.GreatLitany_Vespers_HolySpirit_deacon_parentheses End-Insert
+								Insert_section LN.GreatLitany_Vespers_HolySpirit_deacon_compact End-Insert
 							otherwise use:
-								Insert_section LN.GreatLitany_deacon_parentheses End-Insert
+								Insert_section LN.GreatLitany_deacon_compact End-Insert
 						end-when
 						Actor sid ac.Priest End-Actor
 						Dialog sid pr.exc01.text End-Dialog
-						Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+						Actor sid ac.IL.Choir<dialogafteractor>sid pr.res04.text</>End-Actor
 					End-Section //Part3
 			end-when
 		End-Section
@@ -146,29 +151,32 @@ Status NA
 					Section pascha
 						Actor sid ac.Priest End-Actor
 						Dialog sid pr.enarxis03.text End-Dialog
-						Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+						Actor sid ac.IL.Choir<dialogafteractor>sid pr.res04.text</>End-Actor
 						Insert_section PE.Pascha_Beginning End-Insert
-						Insert_section LN.GreatLitany_deacon_parentheses End-Insert
+						Insert_section LN.GreatLitany_deacon_compact End-Insert
 						Actor sid ac.Priest End-Actor
-						Dialog sid pr.exc01.text<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+						Dialog sid pr.exc01.text End-Dialog
+						Actor sid ac.IL.Choir<dialogafteractor>sid pr.res04.text</>End-Actor
 					End-Section
 				otherwise use:
 					Section enarxis
 						Actor sid ac.Priest End-Actor
 						Dialog sid pr.enarxis03.text End-Dialog
-						Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+						Actor sid ac.IL.Choir<dialogafteractor>sid pr.res04.text</>End-Actor
 					End-Section
 					Section introductorypsalm
 						when-movable-cycle-day-is
 							78 thru 108 use:
+								Insert_section VE.vesperal_prayers_link End-Insert
 								Actor sid ac.Priest End-Actor
 								Insert_section PE.ChristIsRisen.once End-Insert
 								Actor sid ac.Choir End-Actor
 								Insert_section PE.ChristIsRisen.twice End-Insert
-								Insert_section VE.vesperal_prayers_link End-Insert
+								Rubric sid hi.hi01_gr_GR_cog.hiVE.R1113 End-Rubric
 								Actor sid ac.Reader End-Actor
 							otherwise use:
 								Insert_section VE.vesperal_prayers_link End-Insert
+								Rubric sid hi.hi01_gr_GR_cog.hiVE.R1113 End-Rubric
 								Actor sid ac.Reader End-Actor
 								Reading sid pr.ComeLetUsWorship1.text End-Reading
 								Reading sid pr.ComeLetUsWorship2.text End-Reading
@@ -202,13 +210,13 @@ Status NA
 					Section litany
 						when-movable-cycle-day-is
 							121 use:
-								Insert_section LN.GreatLitany_Vespers_HolySpirit_deacon_parentheses End-Insert
+								Insert_section LN.GreatLitany_Vespers_HolySpirit_deacon_compact End-Insert
 							otherwise use:
-								Insert_section LN.GreatLitany_deacon_parentheses End-Insert
+								Insert_section LN.GreatLitany_deacon_compact End-Insert
 						end-when
 						Actor sid ac.Priest End-Actor
 						Dialog sid pr.exc01.text End-Dialog
-						Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+						Actor sid ac.IL.Choir<dialogafteractor>sid pr.res04.text</>End-Actor
 					End-Section //Part3
 			end-when
 		End-Section
@@ -540,11 +548,11 @@ Status NA
 			Section part1_blessingofloaves
 				Actor sid ac.Deacon End-Actor
 				Dialog sid pr.pet00.text End-Dialog
-				Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
+				Actor sid ac.IL.Choir<dialogafteractor>sid pr.res01.text</>End-Actor
 				Actor sid ac.Hierarch End-Actor
 				Dialog sid hi.hi01_gr_GR_cog.hiVE.Key1311.text End-Dialog
 				Dialog sid pr.exc28a.text End-Dialog
-				Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+				Actor sid ac.IL.Choir<dialogafteractor>sid pr.res04.text</>End-Actor
 			End-Section
 			Section part2_psalmverses__
 				Section read_all
@@ -607,10 +615,10 @@ Status NA
 			Section part4_end
 				Actor sid ac.Deacon End-Actor
 				Dialog sid pr.pet00.text End-Dialog
-				Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
+				Actor sid ac.IL.Choir<dialogafteractor>sid pr.res01.text</>End-Actor
 				Actor sid ac.Hierarch End-Actor
 				Dialog sid pr.pet37.text End-Dialog
-				Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+				Actor sid ac.IL.Choir<dialogafteractor>sid pr.res04.text</>End-Actor
 			End-Section
 			Section part5_rubric
 				Rubric sid hi.hi05_gr_GR_cog.hiVI.R201b sid hi.hi05_gr_GR_cog.hiVI.R201dalt End-Rubric
@@ -634,11 +642,11 @@ Status NA
 			Title<Tdesig>sid ti.PrayerBlessingLoaves</>End-Title
 			Actor sid ac.Deacon End-Actor
 			Dialog sid pr.pet00.text End-Dialog
-			Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
+			Actor sid ac.IL.Choir<dialogafteractor>sid pr.res01.text</>End-Actor
 			Actor sid ac.Priest End-Actor
 			Dialog sid hi.hi01_gr_GR_cog.hiVE.Key1311.text End-Dialog
 			Dialog sid pr.exc28a.text End-Dialog
-			Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+			Actor sid ac.IL.Choir<dialogafteractor>sid pr.res04.text</>End-Actor
 		End-Section
 		Section part2_psalmverses__
 			Section read_all
@@ -701,10 +709,10 @@ Status NA
 		Section part4_end
 			Actor sid ac.Deacon End-Actor
 			Dialog sid pr.pet00.text End-Dialog
-			Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
+			Actor sid ac.IL.Choir<dialogafteractor>sid pr.res01.text</>End-Actor
 			Actor sid ac.Priest End-Actor
 			Dialog sid pr.pet37.text End-Dialog
-			Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+			Actor sid ac.IL.Choir<dialogafteractor>sid pr.res04.text</>End-Actor
 		End-Section
 		Section part5_rubric
 			Rubric sid hi.hi05_gr_GR_cog.hiVI.R201b sid hi.hi05_gr_GR_cog.hiVI.R201dalt End-Rubric
