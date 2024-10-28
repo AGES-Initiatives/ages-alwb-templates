@@ -15,7 +15,7 @@ Status NA
 	import prayers_gr_GR_cog.*
 	import rubrical_gr_GR_cog.*
 	import titles_gr_GR_cog.*
-	
+
 	import iTags.*
 	import bTags.*
 	import roles.*
@@ -23,7 +23,7 @@ Status NA
 	Section Com_Yes //use this whenever there IS an explicit commemoration
 		Actor sid ac.Priest End-Actor
 		Section part1
-			Dialog sid pr.GloryToYouChrist.text End-Dialog
+			Dialog sid pr.GloryToYouOurGod.text End-Dialog
 			when-date-is
 				Jan 6 use: Insert_section dismissal_00 End-Insert
 				Jan 7 use: Insert_section dismissal_05 End-Insert
@@ -170,7 +170,7 @@ Status NA
 	Section mealt1_Com_Yes
 		Actor sid ac.Priest End-Actor
 		Section part1
-			Dialog sid pr.GloryToYouChrist.text End-Dialog
+			Dialog sid pr.GloryToYouOurGod.text End-Dialog
 			when-date-is
 				Feb 6, 19, 26 use: Insert_section dismissal_07_mealt1 End-Insert
 				Mar 2 use: Insert_section dismissal_07_mealt1 End-Insert
@@ -195,7 +195,7 @@ Status NA
 	Section me1_mealt1_Com_Yes
 		Actor sid ac.Priest End-Actor
 		Section part1
-			Dialog sid pr.GloryToYouChrist.text End-Dialog
+			Dialog sid pr.GloryToYouOurGod.text End-Dialog
 			when-date-is
 				Jul 22 use: Insert_section dismissal_07_with_mealt1 End-Insert
 				Sep 24 use: Insert_section dismissal_07_me1_mealt1_Sep24 End-Insert
@@ -209,7 +209,7 @@ Status NA
 	Section mealt2_Com_Yes
 		Actor sid ac.Priest End-Actor
 		Section part1
-			Dialog sid pr.GloryToYouChrist.text End-Dialog
+			Dialog sid pr.GloryToYouOurGod.text End-Dialog
 			when-date-is
 				Aug 24 use: Insert_section dismissal_07_mealt2 End-Insert
 			end-when
@@ -220,7 +220,7 @@ Status NA
 	Section pealt1_Com_Yes
 		Actor sid ac.Priest End-Actor
 		Section part1
-			Dialog sid pr.GloryToYouChrist.text End-Dialog
+			Dialog sid pr.GloryToYouOurGod.text End-Dialog
 			Insert_section dismissal_07_pealt1 End-Insert
 		End-Section
 		Insert_section Com_Yes.part2 End-Insert
@@ -229,7 +229,7 @@ Status NA
 	Section tr1_me1_Com_Yes
 		Actor sid ac.Priest End-Actor
 		Section part1
-			Dialog sid pr.GloryToYouChrist.text End-Dialog
+			Dialog sid pr.GloryToYouOurGod.text End-Dialog
 			Insert_section dismissal_07_tr1 End-Insert
 		End-Section
 		Section part2
@@ -241,7 +241,7 @@ Status NA
 	Section Com_No //use this whenever there is NO explicit commemoration
 		Actor sid ac.Priest End-Actor
 		Section part1
-			Dialog sid pr.GloryToYouChrist.text End-Dialog
+			Dialog sid pr.GloryToYouOurGod.text End-Dialog
 			Insert_section dismissal_01 End-Insert
 		End-Section
 		Section part2
@@ -259,7 +259,7 @@ Status NA
 					Actor sid ac.IL.Choir<dialogafteractor>sid pr.res04.text</>End-Actor
 			end-when
 		End-Section
-	End-Section			
+	End-Section
 
 	Section hierarchical
 		Section part2
@@ -324,30 +324,31 @@ Status NA
 	Section Com_Specific__
 		Section brightweek_stgeorge
 			Actor sid ac.Priest End-Actor
-			Dialog sid pr.GloryToYouChrist.text End-Dialog
+			Dialog sid pr.GloryToYouOurGod.text End-Dialog
 			Insert_section dismissal_stgeorge End-Insert
 			Insert_section Com_Yes.part2 End-Insert
 		End-Section
 		Section brightweek_stmark
 			Actor sid ac.Priest End-Actor
-			Dialog sid pr.GloryToYouChrist.text End-Dialog
+			Dialog sid pr.GloryToYouOurGod.text End-Dialog
 			Insert_section dismissal_stmark End-Insert
 			Insert_section Com_Yes.part2 End-Insert
 		End-Section
 		Section brightweek_stathanasios
 			Actor sid ac.Priest End-Actor
-			Dialog sid pr.GloryToYouChrist.text End-Dialog
+			Dialog sid pr.GloryToYouOurGod.text End-Dialog
 			Insert_section dismissal_stathanasios End-Insert
 			Insert_section Com_Yes.part2 End-Insert
 		End-Section
 		Section brightweek_stjohn
 			Actor sid ac.Priest End-Actor
-			Insert_section dismissal_stathanasios End-Insert
+			Dialog sid pr.GloryToYouOurGod.text End-Dialog
+			Insert_section dismissal_stjohn End-Insert
 			Insert_section Com_Yes.part2 End-Insert
 		End-Section
 		Section dec19_when_saturday
 			Actor sid ac.Priest End-Actor
-			Dialog sid pr.GloryToYouChrist.text End-Dialog
+			Dialog sid pr.GloryToYouOurGod.text End-Dialog
 			Dialog sid dis00 rid meDA.dismissal sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid client_gr_GR_cog.cl.localpatronsaint1.dismissal</>sid dis09 sid me.m12.d20_gr_GR_cog.meDA.insert1 sid me.m12.d20_gr_GR_cog.meDA.insert2 sid dis10 sid dis88 End-Dialog
 			Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
 			Actor sid ac.IL.Choir<dialogafteractor>sid pr.res04.text</>End-Actor
@@ -474,7 +475,7 @@ Status NA
 				end-when
 		end-when
 	End-Section
-	
+
 	Section dismissal_02 //Theotokos
 		when-movable-cycle-day-is 71 thru 126 use:
 			Dialog sid dis00 rid peDA.dismissal sid dis01 sid dis02 rid meDA.insert2 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid client_gr_GR_cog.cl.localpatronsaint1.dismissal</>sid dis09 sid dis10 sid dis88 End-Dialog
@@ -489,7 +490,7 @@ Status NA
 				end-when
 		end-when
 	End-Section
-	
+
 	Section dismissal_03 //Cross
 		when-name-of-day-is Sunday use:
 			Dialog sid dis00 sid dis00.resurrection sid dis01 sid dis02 sid dis03 rid meDA.insert2 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid client_gr_GR_cog.cl.localpatronsaint1.dismissal</>sid dis09 sid dis10 sid dis88 End-Dialog
@@ -497,7 +498,7 @@ Status NA
 				Dialog sid dis00 rid meDA.dismissal sid dis01 sid dis02 sid dis03 rid meDA.insert2 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid client_gr_GR_cog.cl.localpatronsaint1.dismissal</>sid dis09 sid dis10 sid dis88 End-Dialog
 		end-when
 	End-Section
-	
+
 	Section dismissal_04 //Angels
 		when-name-of-day-is Sunday use:
 			when-exists rid meDA.dismissal use:
@@ -508,7 +509,7 @@ Status NA
 				Dialog sid dis00 rid meDA.dismissal sid dis01 sid dis02 sid dis03 sid dis04 rid meDA.insert2 sid dis05 sid dis06 sid dis07 sid dis08<r>sid client_gr_GR_cog.cl.localpatronsaint1.dismissal</>sid dis09 sid dis10 sid dis88 End-Dialog
 		end-when
 	End-Section
-	
+
 	Section dismissal_05 //Forerunner
 		when-movable-cycle-day-is
 			71 thru 126 use:
@@ -527,7 +528,7 @@ Status NA
 				end-when
 		end-when
 	End-Section
-	
+
 	Section dismissal_06 //Apostles
 		when-movable-cycle-day-is 71 thru 126 use:
 			Dialog sid dis00 rid peDA.dismissal sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 rid meDA.insert2 sid dis07 sid dis08<r>sid client_gr_GR_cog.cl.localpatronsaint1.dismissal</>sid dis09 sid dis10 sid dis88 End-Dialog
@@ -561,7 +562,7 @@ Status NA
 					otherwise use:
 						Dialog sid dis00 rid meDA.dismissal sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid client_gr_GR_cog.cl.localpatronsaint1.dismissal</>sid dis09 rid meDA.insert1 rid meDA.insert2 sid dis10 sid dis88 End-Dialog
 				end-when
-		end-when		
+		end-when
 	End-Section
 	Section dismissal_07_with_mealt1 //Saint and mealt11
 		when-movable-cycle-day-is
@@ -583,7 +584,7 @@ Status NA
 					otherwise use:
 						Dialog sid dis00 rid meDA.dismissal sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid client_gr_GR_cog.cl.localpatronsaint1.dismissal</>sid dis09 rid meDA.insert1 rid alt1.meDA.insert1 sid dis11 sid dis10 sid dis88 End-Dialog
 				end-when
-		end-when		
+		end-when
 	End-Section
 	Section dismissal_07_me1_mealt1_Sep24
 		when-name-of-day-is
@@ -612,7 +613,7 @@ Status NA
 					otherwise use:
 						Dialog sid dis00 rid meDA.dismissal sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid client_gr_GR_cog.cl.localpatronsaint1.dismissal</>sid dis09 rid alt1.meDA.insert1 rid alt1.meDA.insert2 sid dis10 sid dis88 End-Dialog
 				end-when
-		end-when		
+		end-when
 	End-Section
 	Section dismissal_07_mealt2 //Saint only alt2
 		when-movable-cycle-day-is
@@ -633,7 +634,7 @@ Status NA
 					otherwise use:
 						Dialog sid dis00 rid meDA.dismissal sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08<r>sid client_gr_GR_cog.cl.localpatronsaint1.dismissal</>sid dis09 rid alt2.meDA.insert1 rid alt2.meDA.insert2 sid dis10 sid dis88 End-Dialog
 				end-when
-		end-when		
+		end-when
 	End-Section
 
 	Section dismissal_07_pealt1

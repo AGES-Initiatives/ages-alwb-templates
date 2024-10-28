@@ -15,109 +15,154 @@ Status NA
 	import prayers_gr_GR_cog.*
 	import rubrical_gr_GR_cog.*
 	import titles_gr_GR_cog.*
-	
+
 	import iTags.*
 	import bTags.*
 	import roles.*
 
 	Section Basil
-		Insert_section prayer End-Insert
 		when-date-is
 			Jan 1 use:
-				Insert_section holygod End-Insert
+				Insert_section Selector_Trisagion.holygod End-Insert
 			Jan 6 use:
 				when-name-of-day-is
 					Sunday, Monday use:
-						Insert_section baptized End-Insert
+						Insert_section Selector_Trisagion.baptized End-Insert
 					otherwise use:
-						Insert_section holygod End-Insert
+						Insert_section Selector_Trisagion.holygod End-Insert
 				end-when
 			Dec 25 use:
 				when-name-of-day-is
 					Sunday, Monday use:
-						Insert_section baptized End-Insert
+						Insert_section Selector_Trisagion.baptized End-Insert
 					otherwise use:
-						Insert_section holygod End-Insert
+						Insert_section Selector_Trisagion.holygod End-Insert
 				end-when
 			otherwise use:
 				when-movable-cycle-day-is
 					29, 36, 50, 57, 69 use:
-						Insert_section holygod End-Insert
+						Insert_section Selector_Trisagion.holygod End-Insert
 					43 use:
-						Insert_section cross End-Insert
+						Insert_section Selector_Trisagion.cross End-Insert
 					71 use:
-						Insert_section baptized End-Insert
-				end-when
-		end-when	
-	End-Section
-
-	Section Chrysostom
-		Insert_section prayer End-Insert
-		when-date-is
-			Jan 6, 7 use:
-				Insert_section baptized End-Insert
-			Sep 14 use:
-				Insert_section cross End-Insert
-			Dec 25, 26 use:
-				Insert_section baptized End-Insert
-			otherwise use:
-				when-movable-cycle-day-is
-					63, 71, 72, 73, 74, 75, 76, 77, 109, 120, 121 use:
-						Insert_section baptized End-Insert
-					otherwise use:
-						Insert_section holygod End-Insert
+						Insert_section Selector_Trisagion.baptized End-Insert
 				end-when
 		end-when
 	End-Section
 
-	Section hBasil
-		Insert_section hierarchical.prayer End-Insert
+	Section Chrysostom
+		when-date-is
+			Jan 6, 7 use:
+				Insert_section Selector_Trisagion.baptized End-Insert
+			Sep 14 use:
+				Insert_section Selector_Trisagion.cross End-Insert
+			Dec 25, 26 use:
+				Insert_section Selector_Trisagion.baptized End-Insert
+			otherwise use:
+				when-movable-cycle-day-is
+					63, 71, 72, 73, 74, 75, 76, 77, 109, 120, 121 use:
+						Insert_section Selector_Trisagion.baptized End-Insert
+					otherwise use:
+						Insert_section Selector_Trisagion.holygod End-Insert
+				end-when
+		end-when
+	End-Section
+
+	Section hBasil_one_choir
 		when-date-is
 			Jan 1 use:
-				Insert_section hierarchical.holygod End-Insert
+				Insert_section Selector_Trisagion.hierarchical__.holygod_one_choir End-Insert
 			Jan 6 use:
 				when-name-of-day-is
 					Sunday, Monday use:
-						Insert_section hierarchical.baptized End-Insert
+						Insert_section Selector_Trisagion.hierarchical__.baptized_one_choir End-Insert
 					otherwise use:
-						Insert_section hierarchical.holygod End-Insert
+						Insert_section Selector_Trisagion.hierarchical__.holygod_one_choir End-Insert
 				end-when
 			Dec 25 use:
 				when-name-of-day-is
 					Sunday, Monday use:
-						Insert_section hierarchical.baptized End-Insert
+						Insert_section Selector_Trisagion.hierarchical__.baptized_one_choir End-Insert
 					otherwise use:
-						Insert_section hierarchical.holygod End-Insert
+						Insert_section Selector_Trisagion.hierarchical__.holygod_one_choir End-Insert
 				end-when
 			otherwise use:
 				when-movable-cycle-day-is
 					29, 36, 50, 57, 69 use:
-						Insert_section hierarchical.holygod End-Insert
+						Insert_section Selector_Trisagion.hierarchical__.holygod_one_choir End-Insert
 					43 use:
-						Insert_section hierarchical.cross End-Insert
+						Insert_section Selector_Trisagion.hierarchical__.cross_one_choir End-Insert
 					71 use:
-						Insert_section hierarchical.baptized End-Insert
+						Insert_section Selector_Trisagion.hierarchical__.baptized_one_choir End-Insert
 				end-when
-		end-when	
+		end-when
+	End-Section
+	Section hBasil_two_choirs
+		when-date-is
+			Jan 1 use:
+				Insert_section Selector_Trisagion.hierarchical__.holygod_two_choirs End-Insert
+			Jan 6 use:
+				when-name-of-day-is
+					Sunday, Monday use:
+						Insert_section Selector_Trisagion.hierarchical__.baptized_two_choirs End-Insert
+					otherwise use:
+						Insert_section Selector_Trisagion.hierarchical__.holygod_two_choirs End-Insert
+				end-when
+			Dec 25 use:
+				when-name-of-day-is
+					Sunday, Monday use:
+						Insert_section Selector_Trisagion.hierarchical__.baptized_two_choirs End-Insert
+					otherwise use:
+						Insert_section Selector_Trisagion.hierarchical__.holygod_two_choirs End-Insert
+				end-when
+			otherwise use:
+				when-movable-cycle-day-is
+					29, 36, 50, 57, 69 use:
+						Insert_section Selector_Trisagion.hierarchical__.holygod_two_choirs End-Insert
+					43 use:
+						Insert_section Selector_Trisagion.hierarchical__.cross_two_choirs End-Insert
+					71 use:
+						Insert_section Selector_Trisagion.hierarchical__.baptized_two_choirs End-Insert
+				end-when
+		end-when
 	End-Section
 
-	Section hChrysostom
-		Insert_section hierarchical.prayer End-Insert
+	Section hChrysostom_one_choir
 		when-date-is
 			Jan 6, 7 use:
-				Insert_section hierarchical.baptized End-Insert
+				Insert_section Selector_Trisagion.hierarchical__.baptized_one_choir End-Insert
 		//	Aug 1 use:
-		//		Insert_section hierarchical.cross End-Insert
+		//		Insert_section Selector_Trisagion.hierarchical.cross End-Insert
 			Sep 14 use:
-				Insert_section hierarchical.cross End-Insert
+				Insert_section Selector_Trisagion.hierarchical__.cross_one_choir End-Insert
 			Dec 25, 26 use:
-				Insert_section hierarchical.baptized End-Insert
+				Insert_section Selector_Trisagion.hierarchical__.baptized_one_choir End-Insert
 			otherwise use:
 				when-movable-cycle-day-is
 					63, 71, 72, 73, 74, 75, 76, 77, 109, 120, 121 use:
-						Insert_section hierarchical.baptized End-Insert
+						Insert_section Selector_Trisagion.hierarchical__.baptized_one_choir End-Insert
 					otherwise use:
-						Insert_section hierarchical.holygod End-Insert
+						Insert_section Selector_Trisagion.hierarchical__.holygod_one_choir End-Insert
+				end-when
+		end-when
+	End-Section
+
+	Section hChrysostom_two_choirs
+		when-date-is
+			Jan 6, 7 use:
+				Insert_section Selector_Trisagion.hierarchical__.baptized_two_choirs End-Insert
+		//	Aug 1 use:
+		//		Insert_section Selector_Trisagion.hierarchical.cross End-Insert
+			Sep 14 use:
+				Insert_section Selector_Trisagion.hierarchical__.cross_two_choirs End-Insert
+			Dec 25, 26 use:
+				Insert_section Selector_Trisagion.hierarchical__.baptized_two_choirs End-Insert
+			otherwise use:
+				when-movable-cycle-day-is
+					63, 71, 72, 73, 74, 75, 76, 77, 109, 120, 121 use:
+						Insert_section Selector_Trisagion.hierarchical__.baptized_two_choirs End-Insert
+					otherwise use:
+						Insert_section Selector_Trisagion.hierarchical__.holygod_two_choirs End-Insert
 				end-when
 		end-when
 	End-Section
@@ -125,69 +170,54 @@ Status NA
 	Section hymnBasil
 		when-date-is
 			Jan 1 use:
-				Insert_section hymn__.holygod End-Insert
+				Insert_section Selector_Trisagion.hymn__.holygod End-Insert
 			Jan 6 use:
 				when-name-of-day-is
 					Sunday, Monday use:
-						Insert_section hymn__.baptized End-Insert
+						Insert_section Selector_Trisagion.hymn__.baptized End-Insert
 					otherwise use:
-						Insert_section hymn__.holygod End-Insert
+						Insert_section Selector_Trisagion.hymn__.holygod End-Insert
 				end-when
 			Dec 25 use:
 				when-name-of-day-is
 					Sunday, Monday use:
-						Insert_section hymn__.baptized End-Insert
+						Insert_section Selector_Trisagion.hymn__.baptized End-Insert
 					otherwise use:
-						Insert_section hymn__.holygod End-Insert
+						Insert_section Selector_Trisagion.hymn__.holygod End-Insert
 				end-when
 			otherwise use:
 				when-movable-cycle-day-is
 					29, 36, 50, 57, 69 use:
-						Insert_section hymn__.holygod End-Insert
+						Insert_section Selector_Trisagion.hymn__.holygod End-Insert
 					43 use:
-						Insert_section hymn__.cross End-Insert
+						Insert_section Selector_Trisagion.hymn__.cross End-Insert
 					71 use:
-						Insert_section hymn__.baptized End-Insert
+						Insert_section Selector_Trisagion.hymn__.baptized End-Insert
 				end-when
-		end-when	
+		end-when
 	End-Section
 
 	Section hymnChrysostom
 		when-date-is
 			Jan 6, 7 use:
-				Insert_section hymn__.baptized End-Insert
+				Insert_section Selector_Trisagion.hymn__.baptized End-Insert
 		//	Aug 1 use:
-		//		Insert_section hymn__.cross End-Insert
+		//		Insert_section Selector_Trisagion.hymn__.cross End-Insert
 			Sep 14 use:
-				Insert_section hymn__.cross End-Insert
+				Insert_section Selector_Trisagion.hymn__.cross End-Insert
 			Dec 25, 26 use:
-				Insert_section hymn__.baptized End-Insert
+				Insert_section Selector_Trisagion.hymn__.baptized End-Insert
 			otherwise use:
 				when-movable-cycle-day-is
 					63, 71, 72, 73, 74, 75, 76, 77, 109, 120, 121 use:
-						Insert_section hymn__.baptized End-Insert
+						Insert_section Selector_Trisagion.hymn__.baptized End-Insert
 					otherwise use:
-						Insert_section hymn__.holygod End-Insert
+						Insert_section Selector_Trisagion.hymn__.holygod End-Insert
 				end-when
 		end-when
 	End-Section
 
 	//blocks
-	Section prayer
-		Actor sid ac.Deacon End-Actor
-		Dialog sid pr.pet00.text End-Dialog
-		Actor sid ac.Choir End-Actor
-		Dialog sid pr.res01.text End-Dialog
-		Actor sid ac.Priest<smaller>sid ru.InALowVoice</>End-Actor
-		Title<smallred>sid eu.lichrysbasil_gr_GR_cog.euLI.Key0601.title</>End-Title
-		Para role inaudible sid eu.lichrysbasil_gr_GR_cog.euLI.Key0601.text End-Para
-		Actor sid ac.Priest<smaller>sid ru.Aloud</>End-Actor
-		Dialog sid pr.exc05a.text End-Dialog
-		Actor sid ac.Deacon End-Actor
-		Dialog sid pr.exc05b.text End-Dialog
-		Actor sid ac.Choir End-Actor
-		Dialog sid pr.res04.text End-Dialog
-	End-Section
 	Section baptized
 		Title role desig sid ho.ho07_gr_GR_cog.hoLI.OsoiEisChriston.title End-Title
 		Title<Tmode>sid misc.Mode1</>End-Title
@@ -196,38 +226,39 @@ Status NA
 		Para role chant sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Para
 		Para role chant sid liturgical.verses_gr_GR_cog.psLI.trisagionbaptized.v3.text sid liturgical.verses_gr_GR_cog.psLI.trisagionbaptized.v4.text End-Para
 		Actor sid ac.Deacon End-Actor
-		Dialog sid eu.lichrysbasil_gr_GR_cog.euLI.Key0602.text End-Dialog	
-		Para role actorinaudible sid ac.Deacon<smallred>sid ru.InALowVoice</>End-Para			
+		Dialog sid eu.lichrysbasil_gr_GR_cog.euLI.Key0602.text End-Dialog
+		Para role actorinaudible sid ac.Deacon<smallreditalic>sid ru.InALowVoice</>End-Para
 		Para role inaudible sid pr.Command_bishop.text End-Para
-		Para role actorinaudible sid ac.Priest<smallred>sid ru.InALowVoice</>End-Para			
+		Para role actorinaudible sid ac.Priest<smallreditalic>sid ru.InALowVoice</>End-Para
 		Para role inaudible sid eu.lichrysbasil_gr_GR_cog.euLI.Key0604.text End-Para
-		Para role actorinaudible sid ac.Deacon<smallred>sid ru.InALowVoice</>End-Para			
+		Para role actorinaudible sid ac.Deacon<smallreditalic>sid ru.InALowVoice</>End-Para
 		Para role inaudible sid eu.lichrysbasil_gr_GR_cog.euLI.Key0605.text End-Para
-		Para role actorinaudible sid ac.Priest<smallred>sid ru.InALowVoice</>End-Para			
+		Para role actorinaudible sid ac.Priest<smallreditalic>sid ru.InALowVoice</>End-Para
 		Para role inaudible sid eu.lichrysbasil_gr_GR_cog.euLI.Key0606.text End-Para
 		Actor sid ac.Choir End-Actor
 		Title<Tdesig>sid eu.lichrysbasil_gr_GR_cog.euLI.Key0602.text </>End-Title
-		Hymn sid liturgical.verses_gr_GR_cog.psLI.trisagionbaptized.text End-Hymn			
+		Hymn sid liturgical.verses_gr_GR_cog.psLI.trisagionbaptized.text End-Hymn
 	End-Section
 	Section cross
 		Title role desig sid ho.ho07_gr_GR_cog.hoLI.TonStavronSou.title End-Title
+		Title<Tmode>sid misc.Mode2</>End-Title
 		Media sid ho.ho07_gr_GR_cog.hoLI.TonStavronSou.text End-Media
 		Hymn sid ho.ho07_gr_GR_cog.hoLI.TonStavronSou.text media-off <r>sid ru.Thrice media-off</>End-Hymn
 		Para role chant sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Para
 		Para role chant sid ho.ho07_gr_GR_cog.hoLI.TonStavronSou3.text sid ho.ho07_gr_GR_cog.hoLI.TonStavronSou4.text End-Para
 		Actor sid ac.Deacon End-Actor
-		Dialog sid eu.lichrysbasil_gr_GR_cog.euLI.Key0602.text End-Dialog	
-		Para role actorinaudible sid ac.Deacon<smallred>sid ru.InALowVoice</>End-Para			
+		Dialog sid eu.lichrysbasil_gr_GR_cog.euLI.Key0602.text End-Dialog
+		Para role actorinaudible sid ac.Deacon<smallreditalic>sid ru.InALowVoice</>End-Para
 		Para role inaudible sid pr.Command_bishop.text End-Para
-		Para role actorinaudible sid ac.Priest<smallred>sid ru.InALowVoice</>End-Para			
+		Para role actorinaudible sid ac.Priest<smallreditalic>sid ru.InALowVoice</>End-Para
 		Para role inaudible sid eu.lichrysbasil_gr_GR_cog.euLI.Key0604.text End-Para
-		Para role actorinaudible sid ac.Deacon<smallred>sid ru.InALowVoice</>End-Para			
+		Para role actorinaudible sid ac.Deacon<smallreditalic>sid ru.InALowVoice</>End-Para
 		Para role inaudible sid eu.lichrysbasil_gr_GR_cog.euLI.Key0605.text End-Para
-		Para role actorinaudible sid ac.Priest<smallred>sid ru.InALowVoice</>End-Para			
+		Para role actorinaudible sid ac.Priest<smallreditalic>sid ru.InALowVoice</>End-Para
 		Para role inaudible sid eu.lichrysbasil_gr_GR_cog.euLI.Key0606.text End-Para
 		Actor sid ac.Choir End-Actor
 		Title<Tdesig>sid eu.lichrysbasil_gr_GR_cog.euLI.Key0602.text </>End-Title
-		Hymn sid ho.ho07_gr_GR_cog.hoLI.TonStavronSouDynamis.text End-Hymn			
+		Hymn sid ho.ho07_gr_GR_cog.hoLI.TonStavronSouDynamis.text End-Hymn
 	End-Section
 	Section holygod
 		Title role desig sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymn.title End-Title
@@ -236,14 +267,14 @@ Status NA
 		Para role chant sid pr.GloryToTheFather.text sid pr.BothNowAndEver.text End-Para
 		Para role chant sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymn34.text End-Para
 		Actor sid ac.Deacon End-Actor
-		Dialog sid eu.lichrysbasil_gr_GR_cog.euLI.Key0602.text End-Dialog	
-		Para role actorinaudible sid ac.Deacon<smallred>sid ru.InALowVoice</>End-Para			
+		Dialog sid eu.lichrysbasil_gr_GR_cog.euLI.Key0602.text End-Dialog
+		Para role actorinaudible sid ac.Deacon<smallreditalic>sid ru.InALowVoice</>End-Para
 		Para role inaudible sid pr.Command_bishop.text End-Para
-		Para role actorinaudible sid ac.Priest<smallred>sid ru.InALowVoice</>End-Para			
+		Para role actorinaudible sid ac.Priest<smallreditalic>sid ru.InALowVoice</>End-Para
 		Para role inaudible sid eu.lichrysbasil_gr_GR_cog.euLI.Key0604.text End-Para
-		Para role actorinaudible sid ac.Deacon<smallred>sid ru.InALowVoice</>End-Para			
+		Para role actorinaudible sid ac.Deacon<smallreditalic>sid ru.InALowVoice</>End-Para
 		Para role inaudible sid eu.lichrysbasil_gr_GR_cog.euLI.Key0605.text End-Para
-		Para role actorinaudible sid ac.Priest<smallred>sid ru.InALowVoice</>End-Para			
+		Para role actorinaudible sid ac.Priest<smallreditalic>sid ru.InALowVoice</>End-Para
 		Para role inaudible sid eu.lichrysbasil_gr_GR_cog.euLI.Key0606.text End-Para
 		Actor sid ac.Choir End-Actor
 		Title<Tdesig>sid eu.lichrysbasil_gr_GR_cog.euLI.Key0602.text </>End-Title
@@ -283,30 +314,66 @@ Status NA
 		End-Section
 	End-Section
 
-	Section hierarchical
-		Section prayer
-			Actor sid ac.IL.Deacon<dialogafteractor>sid pr.pet00.text</>End-Actor
-			Actor sid ac.IL.Choir<dialogafteractor>sid pr.res01.text</>End-Actor
-			Actor sid ac.Hierarch<smaller>sid ru.InALowVoice</>End-Actor
-			Title<smallred>sid eu.lichrysbasil_gr_GR_cog.euLI.Key0601.title</>End-Title
-			Para role inaudible sid eu.lichrysbasil_gr_GR_cog.euLI.Key0601.text End-Para
-			Actor sid ac.Hierarch<smaller>sid ru.Aloud</>End-Actor
-			Dialog sid pr.exc05a.text End-Dialog
-			Actor sid ac.Deacon End-Actor
-			Dialog sid pr.exc05b.text End-Dialog
-		End-Section
-		Section holygod
-			Actor sid ac.IL.Choir<dialogafteractor>sid pr.res04.text</>End-Actor
+	Section hierarchical__
+		Section holygod_one_choir
 			Title role desig sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymn.title End-Title
 			Media sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymn.text End-Media
+			Hymn sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymn.text media-off <r>sid ru.Twice media-off</>End-Hymn
+			Actor sid ac.Hierarch End-Actor
+			Hymn sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymn.text media-off End-Hymn
+			Actor sid ac.Choir End-Actor
+			Hymn sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymn.text media-off End-Hymn
+			Actor sid ac.Hierarch End-Actor
+			Hymn sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymn.text media-off End-Hymn
+			Actor sid ac.Choir End-Actor
+			Para role chant sid pr.GloryToTheFather.text End-Para
+			Para role chant sid pr.BothNowAndEver.text End-Para
+			Hymn sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymn34.text media-off End-Hymn
+			Actor sid ac.Clergy<smallreditalic>sid ru.SlowlyFromWithinTheAltar</>End-Actor
+			Media sid ho.ho07_gr_GR_cog.hoLI.MM.TrisagiosHymnBimatos.text End-Media
+			Para role chant sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymn1.text media-off End-Para
+			Actor sid ac.Hierarch End-Actor
+			Dialog sid liturgical.verses_gr_GR_cog.psLI.hierarchical.trisagionblessing.v1.text @ver End-Dialog
+			Actor sid ac.IL.Choir<dialogafteractor>sid pr.res04.text</>End-Actor
+			Actor sid ac.Clergy<smallreditalic>sid ru.SlowlyFromWithinTheAltar</>End-Actor
+			Para role chant sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymn2.text media-off End-Para
+			Actor sid ac.Hierarch End-Actor
+			Dialog sid liturgical.verses_gr_GR_cog.psLI.hierarchical.trisagionblessing.v1.text @ver End-Dialog
+			Actor sid ac.IL.Choir<dialogafteractor>sid pr.res04.text</>End-Actor
+			Actor sid ac.Clergy<smallreditalic>sid ru.SlowlyFromWithinTheAltar</>End-Actor
+			Para role chant sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymn3.text media-off End-Para
+			Actor sid ac.Hierarch End-Actor
+			Dialog sid liturgical.verses_gr_GR_cog.psLI.hierarchical.trisagionblessing.v1.text @ver End-Dialog
+			Actor sid ac.IL.Choir<dialogafteractor>sid pr.res04.text</>End-Actor
+			Actor sid ac.Clergy<smallreditalic>sid ru.SlowlyFromWithinTheAltar</>End-Actor
+			Para role chant sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymn4.text media-off End-Para
+			Actor sid ac.Deacon End-Actor
+			Dialog sid eu.lichrysbasil_gr_GR_cog.euLI.Key0602.text End-Dialog
+			Para role actorinaudible sid ac.Deacon<smallreditalic>sid ru.InALowVoice</>End-Para
+			Para role inaudible sid pr.Command_bishop.text End-Para
+			Para role actorinaudible sid ac.Hierarch<smallreditalic>sid ru.InALowVoice</>End-Para
+			Para role inaudible sid eu.lichrysbasil_gr_GR_cog.euLI.Key0604.text End-Para
+			Para role actorinaudible sid ac.Deacon<smallreditalic>sid ru.InALowVoice</>End-Para
+			Para role inaudible sid eu.lichrysbasil_gr_GR_cog.euLI.Key0605.text End-Para
+			Para role actorinaudible sid ac.Hierarch<smallreditalic>sid ru.InALowVoice</>End-Para
+			Para role inaudible sid eu.lichrysbasil_gr_GR_cog.euLI.Key0606.text End-Para
+			Actor sid ac.Choir End-Actor
+			Title<Tdesig>sid eu.lichrysbasil_gr_GR_cog.euLI.Key0602.text</>End-Title
+			Media sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymn.text End-Media
+			Hymn sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymnDynamis.text media-off End-Hymn
+		End-Section
+		Section holygod_two_choirs
+			Title role desig sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymn.title End-Title
+			Media sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymn.text End-Media
+			Actor sid ac.ChoirR End-Actor
 			Hymn sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymn.text media-off End-Hymn
 			Actor sid ac.ChoirL End-Actor
 			Hymn sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymn.text media-off End-Hymn
-			Actor sid ac.Clergy End-Actor
+			Actor sid ac.Hierarch End-Actor
 			Hymn sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymn.text media-off End-Hymn
 			Actor sid ac.ChoirR End-Actor
 			Hymn sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymn.text media-off End-Hymn
-			Actor sid ac.Clergy End-Actor
+			Actor sid ac.Hierarch End-Actor
 			Hymn sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymn.text media-off End-Hymn
 			Actor sid ac.ChoirL End-Actor
 			Para role chant sid pr.GloryToTheFather.text End-Para
@@ -314,106 +381,100 @@ Status NA
 			Para role chant sid pr.BothNowAndEver.text End-Para
 			Actor sid ac.ChoirL End-Actor
 			Para role chant sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymn34.text End-Para
-			Actor sid ac.Clergy<smaller>sid ru.SlowlyFromWithinTheAltar</>End-Actor
+			Actor sid ac.Clergy<smallreditalic>sid ru.SlowlyFromWithinTheAltar</>End-Actor
 			Media sid ho.ho07_gr_GR_cog.hoLI.MM.TrisagiosHymnBimatos.text End-Media
 			Para role chant sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymn1.text media-off End-Para
 			Actor sid ac.Hierarch End-Actor
 			Dialog sid liturgical.verses_gr_GR_cog.psLI.hierarchical.trisagionblessing.v1.text @ver End-Dialog
 			Actor sid ac.IL.ChoirR<dialogafteractor>sid pr.res04.text</>End-Actor
-		//	Para role chant sid pr.res07.text End-Para
-			Actor sid ac.Clergy<smaller>sid ru.SlowlyFromWithinTheAltar</>End-Actor
+			Actor sid ac.Clergy<smallreditalic>sid ru.SlowlyFromWithinTheAltar</>End-Actor
 			Para role chant sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymn2.text media-off End-Para
 			Actor sid ac.Hierarch End-Actor
 			Dialog sid liturgical.verses_gr_GR_cog.psLI.hierarchical.trisagionblessing.v1.text @ver End-Dialog
 			Actor sid ac.IL.ChoirL<dialogafteractor>sid pr.res04.text</>End-Actor
-		//	Para role chant sid pr.res07.text End-Para
-			Actor sid ac.Clergy<smaller>sid ru.SlowlyFromWithinTheAltar</>End-Actor
+			Actor sid ac.Clergy<smallreditalic>sid ru.SlowlyFromWithinTheAltar</>End-Actor
 			Para role chant sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymn3.text media-off End-Para
 			Actor sid ac.Hierarch End-Actor
 			Dialog sid liturgical.verses_gr_GR_cog.psLI.hierarchical.trisagionblessing.v1.text @ver End-Dialog
 			Actor sid ac.IL.ChoirR<dialogafteractor>sid pr.res04.text</>End-Actor
-		//	Para role chant sid pr.res07.text End-Para
-			Actor sid ac.Clergy<smaller>sid ru.SlowlyFromWithinTheAltar</>End-Actor
+			Actor sid ac.Clergy<smallreditalic>sid ru.SlowlyFromWithinTheAltar</>End-Actor
 			Para role chant sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymn4.text media-off End-Para
 			Actor sid ac.Deacon End-Actor
-			Dialog sid eu.lichrysbasil_gr_GR_cog.euLI.Key0602.text End-Dialog	
-			Para role actorinaudible sid ac.Deacon<smallred>sid ru.InALowVoice</>End-Para			
+			Dialog sid eu.lichrysbasil_gr_GR_cog.euLI.Key0602.text End-Dialog
+			Para role actorinaudible sid ac.Deacon<smallreditalic>sid ru.InALowVoice</>End-Para
 			Para role inaudible sid pr.Command_bishop.text End-Para
-			Para role actorinaudible sid ac.Hierarch<smallred>sid ru.InALowVoice</>End-Para			
+			Para role actorinaudible sid ac.Hierarch<smallreditalic>sid ru.InALowVoice</>End-Para
 			Para role inaudible sid eu.lichrysbasil_gr_GR_cog.euLI.Key0604.text End-Para
-			Para role actorinaudible sid ac.Deacon<smallred>sid ru.InALowVoice</>End-Para			
+			Para role actorinaudible sid ac.Deacon<smallreditalic>sid ru.InALowVoice</>End-Para
 			Para role inaudible sid eu.lichrysbasil_gr_GR_cog.euLI.Key0605.text End-Para
-			Para role actorinaudible sid ac.Hierarch<smallred>sid ru.InALowVoice</>End-Para			
+			Para role actorinaudible sid ac.Hierarch<smallreditalic>sid ru.InALowVoice</>End-Para
 			Para role inaudible sid eu.lichrysbasil_gr_GR_cog.euLI.Key0606.text End-Para
 			Actor sid ac.Choir End-Actor
 			Title<Tdesig>sid eu.lichrysbasil_gr_GR_cog.euLI.Key0602.text</>End-Title
 			Media sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymn.text End-Media
-			Hymn sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymnDynamis.text media-off End-Hymn			
+			Hymn sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymnDynamis.text media-off End-Hymn
 		End-Section
-		Section holygod_onechoir
-			Actor sid ac.IL.Choir<dialogafteractor>sid pr.res04.text</>End-Actor
-			Title role desig sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymn.title End-Title
-			Media sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymn.text End-Media
-			Hymn sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymn.text media-off <r>sid ru.Twice media-off</>End-Hymn
-			Actor sid ac.Clergy End-Actor
-			Hymn sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymn.text media-off End-Hymn
-			Actor sid ac.Choir End-Actor
-			Hymn sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymn.text media-off End-Hymn
-			Actor sid ac.Clergy End-Actor
-			Hymn sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymn.text media-off End-Hymn
-			Actor sid ac.Choir End-Actor
-			Para role chant sid pr.GloryToTheFather.text End-Para
-			Para role chant sid pr.BothNowAndEver.text End-Para
-			Hymn sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymn34.text media-off End-Hymn
-			Actor sid ac.Clergy<smaller>sid ru.SlowlyFromWithinTheAltar</>End-Actor
-			Media sid ho.ho07_gr_GR_cog.hoLI.MM.TrisagiosHymnBimatos.text End-Media
-			Para role chant sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymn1.text media-off End-Para
-			Actor sid ac.Hierarch End-Actor
-			Dialog sid liturgical.verses_gr_GR_cog.psLI.hierarchical.trisagionblessing.v1.text @ver End-Dialog
-			Actor sid ac.IL.Choir<dialogafteractor>sid pr.res04.text</>End-Actor
-		//	Para role chant sid pr.res07.text End-Para
-			Actor sid ac.Clergy<smaller>sid ru.SlowlyFromWithinTheAltar</>End-Actor
-			Para role chant sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymn2.text media-off End-Para
-			Actor sid ac.Hierarch End-Actor
-			Dialog sid liturgical.verses_gr_GR_cog.psLI.hierarchical.trisagionblessing.v1.text @ver End-Dialog
-			Actor sid ac.IL.Choir<dialogafteractor>sid pr.res04.text</>End-Actor
-		//	Para role chant sid pr.res07.text End-Para
-			Actor sid ac.Clergy<smaller>sid ru.SlowlyFromWithinTheAltar</>End-Actor
-			Para role chant sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymn3.text media-off End-Para
-			Actor sid ac.Hierarch End-Actor
-			Dialog sid liturgical.verses_gr_GR_cog.psLI.hierarchical.trisagionblessing.v1.text @ver End-Dialog
-			Actor sid ac.IL.Choir<dialogafteractor>sid pr.res04.text</>End-Actor
-		//	Para role chant sid pr.res07.text End-Para
-			Actor sid ac.Clergy<smaller>sid ru.SlowlyFromWithinTheAltar</>End-Actor
-			Para role chant sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymn4.text media-off End-Para
-			Actor sid ac.Deacon End-Actor
-			Dialog sid eu.lichrysbasil_gr_GR_cog.euLI.Key0602.text End-Dialog	
-			Para role actorinaudible sid ac.Deacon<smallred>sid ru.InALowVoice</>End-Para			
-			Para role inaudible sid pr.Command_bishop.text End-Para
-			Para role actorinaudible sid ac.Hierarch<smallred>sid ru.InALowVoice</>End-Para			
-			Para role inaudible sid eu.lichrysbasil_gr_GR_cog.euLI.Key0604.text End-Para
-			Para role actorinaudible sid ac.Deacon<smallred>sid ru.InALowVoice</>End-Para			
-			Para role inaudible sid eu.lichrysbasil_gr_GR_cog.euLI.Key0605.text End-Para
-			Para role actorinaudible sid ac.Hierarch<smallred>sid ru.InALowVoice</>End-Para			
-			Para role inaudible sid eu.lichrysbasil_gr_GR_cog.euLI.Key0606.text End-Para
-			Actor sid ac.Choir End-Actor
-			Title<Tdesig>sid eu.lichrysbasil_gr_GR_cog.euLI.Key0602.text</>End-Title
-			Media sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymn.text End-Media
-			Hymn sid ho.ho07_gr_GR_cog.hoLI.TrisagiosHymnDynamis.text media-off End-Hymn			
-		End-Section
-		Section baptized
-			Actor sid ac.IL.ChoirR<dialogafteractor>sid pr.res04.text</>End-Actor
+		Section baptized_one_choir
 			Title role desig sid ho.ho07_gr_GR_cog.hoLI.OsoiEisChriston.title End-Title
 			Title<Tmode>sid misc.Mode1</>End-Title
 			Media sid ho.ho07_gr_GR_cog.hoLI.MM.OsoiEisChriston.text End-Media
+			Hymn sid liturgical.verses_gr_GR_cog.psLI.trisagionbaptized.text @ver media-off<r>sid ru.Twice media-off</>End-Hymn
+			Actor sid ac.Hierarch End-Actor
+			Hymn sid liturgical.verses_gr_GR_cog.psLI.trisagionbaptized.text media-off End-Hymn
+			Actor sid ac.Choir End-Actor
+			Hymn sid liturgical.verses_gr_GR_cog.psLI.trisagionbaptized.text media-off End-Hymn
+			Actor sid ac.Hierarch End-Actor
+			Hymn sid liturgical.verses_gr_GR_cog.psLI.trisagionbaptized.text media-off End-Hymn
+			Actor sid ac.Choir End-Actor
+			Para role chant sid pr.GloryToTheFather.text End-Para
+			Para role chant sid pr.BothNowAndEver.text End-Para
+			Para role chant sid liturgical.verses_gr_GR_cog.psLI.trisagionbaptized.v3.text sid liturgical.verses_gr_GR_cog.psLI.trisagionbaptized.v4.text End-Para
+			Actor sid ac.Clergy<smallreditalic>sid ru.SlowlyFromWithinTheAltar</>End-Actor
+			Media sid ho.ho07_gr_GR_cog.hoLI.MM.OsoiEisChristonBimatos.text End-Media
+			Para role chant sid liturgical.verses_gr_GR_cog.psLI.trisagionbaptized.v1.text media-off End-Para
+			Actor sid ac.Hierarch End-Actor
+			Dialog sid liturgical.verses_gr_GR_cog.psLI.hierarchical.trisagionblessing.v1.text @ver End-Dialog
+			Actor sid ac.IL.Choir<dialogafteractor>sid pr.res04.text</>End-Actor
+			Actor sid ac.Clergy<smallreditalic>sid ru.SlowlyFromWithinTheAltar</>End-Actor
+			Para role chant sid liturgical.verses_gr_GR_cog.psLI.trisagionbaptized.v2.text media-off End-Para
+			Actor sid ac.Hierarch End-Actor
+			Dialog sid liturgical.verses_gr_GR_cog.psLI.hierarchical.trisagionblessing.v1.text @ver End-Dialog
+			Actor sid ac.IL.Choir<dialogafteractor>sid pr.res04.text</>End-Actor
+			Actor sid ac.Clergy<smallreditalic>sid ru.SlowlyFromWithinTheAltar</>End-Actor
+			Para role chant sid liturgical.verses_gr_GR_cog.psLI.trisagionbaptized.v3.text media-off End-Para
+			Actor sid ac.Hierarch End-Actor
+			Dialog sid liturgical.verses_gr_GR_cog.psLI.hierarchical.trisagionblessing.v1.text @ver End-Dialog
+			Actor sid ac.IL.Choir<dialogafteractor>sid pr.res04.text</>End-Actor
+			Actor sid ac.Clergy<smallreditalic>sid ru.SlowlyFromWithinTheAltar</>End-Actor
+			Para role chant sid liturgical.verses_gr_GR_cog.psLI.trisagionbaptized.v4.text media-off End-Para
+			Actor sid ac.Deacon End-Actor
+			Dialog sid eu.lichrysbasil_gr_GR_cog.euLI.Key0602.text End-Dialog
+			Para role actorinaudible sid ac.Deacon<smallreditalic>sid ru.InALowVoice</>End-Para
+			Para role inaudible sid pr.Command_bishop.text End-Para
+			Para role actorinaudible sid ac.Hierarch<smallreditalic>sid ru.InALowVoice</>End-Para
+			Para role inaudible sid eu.lichrysbasil_gr_GR_cog.euLI.Key0604.text End-Para
+			Para role actorinaudible sid ac.Deacon<smallreditalic>sid ru.InALowVoice</>End-Para
+			Para role inaudible sid eu.lichrysbasil_gr_GR_cog.euLI.Key0605.text End-Para
+			Para role actorinaudible sid ac.Hierarch<smallreditalic>sid ru.InALowVoice</>End-Para
+			Para role inaudible sid eu.lichrysbasil_gr_GR_cog.euLI.Key0606.text End-Para
+			Actor sid ac.Choir End-Actor
+			Title<Tdesig>sid eu.lichrysbasil_gr_GR_cog.euLI.Key0602.text</>End-Title
+			Media sid ho.ho07_gr_GR_cog.hoLI.MM.OsoiEisChriston.text End-Media
+			Hymn sid liturgical.verses_gr_GR_cog.psLI.trisagionbaptized.text media-off End-Hymn
+		End-Section
+		Section baptized_two_choirs
+			Title role desig sid ho.ho07_gr_GR_cog.hoLI.OsoiEisChriston.title End-Title
+			Title<Tmode>sid misc.Mode1</>End-Title
+			Media sid ho.ho07_gr_GR_cog.hoLI.MM.OsoiEisChriston.text End-Media
+			Actor sid ac.ChoirR End-Actor
 			Hymn sid liturgical.verses_gr_GR_cog.psLI.trisagionbaptized.text @ver media-off End-Hymn
 			Actor sid ac.ChoirL End-Actor
 			Hymn sid liturgical.verses_gr_GR_cog.psLI.trisagionbaptized.text media-off End-Hymn
-			Actor sid ac.Clergy End-Actor
+			Actor sid ac.Hierarch End-Actor
 			Hymn sid liturgical.verses_gr_GR_cog.psLI.trisagionbaptized.text media-off End-Hymn
 			Actor sid ac.ChoirR End-Actor
 			Hymn sid liturgical.verses_gr_GR_cog.psLI.trisagionbaptized.text media-off End-Hymn
-			Actor sid ac.Clergy End-Actor
+			Actor sid ac.Hierarch End-Actor
 			Hymn sid liturgical.verses_gr_GR_cog.psLI.trisagionbaptized.text media-off End-Hymn
 			Actor sid ac.ChoirL End-Actor
 			Para role chant sid pr.GloryToTheFather.text End-Para
@@ -421,54 +482,98 @@ Status NA
 			Para role chant sid pr.BothNowAndEver.text End-Para
 			Actor sid ac.ChoirL End-Actor
 			Para role chant sid liturgical.verses_gr_GR_cog.psLI.trisagionbaptized.v3.text sid liturgical.verses_gr_GR_cog.psLI.trisagionbaptized.v4.text End-Para
-			Actor sid ac.Clergy<smaller>sid ru.SlowlyFromWithinTheAltar</>End-Actor
+			Actor sid ac.Clergy<smallreditalic>sid ru.SlowlyFromWithinTheAltar</>End-Actor
 			Media sid ho.ho07_gr_GR_cog.hoLI.MM.OsoiEisChristonBimatos.text End-Media
 			Para role chant sid liturgical.verses_gr_GR_cog.psLI.trisagionbaptized.v1.text media-off End-Para
 			Actor sid ac.Hierarch End-Actor
 			Dialog sid liturgical.verses_gr_GR_cog.psLI.hierarchical.trisagionblessing.v1.text @ver End-Dialog
 			Actor sid ac.IL.ChoirR<dialogafteractor>sid pr.res04.text</>End-Actor
-		//	Para role chant sid pr.res07.text End-Para
-			Actor sid ac.Clergy<smaller>sid ru.SlowlyFromWithinTheAltar</>End-Actor
+			Actor sid ac.Clergy<smallreditalic>sid ru.SlowlyFromWithinTheAltar</>End-Actor
 			Para role chant sid liturgical.verses_gr_GR_cog.psLI.trisagionbaptized.v2.text media-off End-Para
 			Actor sid ac.Hierarch End-Actor
 			Dialog sid liturgical.verses_gr_GR_cog.psLI.hierarchical.trisagionblessing.v1.text @ver End-Dialog
 			Actor sid ac.IL.ChoirL<dialogafteractor>sid pr.res04.text</>End-Actor
-		//	Para role chant sid pr.res07.text End-Para
-			Actor sid ac.Clergy<smaller>sid ru.SlowlyFromWithinTheAltar</>End-Actor
+			Actor sid ac.Clergy<smallreditalic>sid ru.SlowlyFromWithinTheAltar</>End-Actor
 			Para role chant sid liturgical.verses_gr_GR_cog.psLI.trisagionbaptized.v3.text media-off End-Para
 			Actor sid ac.Hierarch End-Actor
 			Dialog sid liturgical.verses_gr_GR_cog.psLI.hierarchical.trisagionblessing.v1.text @ver End-Dialog
 			Actor sid ac.IL.ChoirR<dialogafteractor>sid pr.res04.text</>End-Actor
-		//	Para role chant sid pr.res07.text End-Para
-			Actor sid ac.Clergy<smaller>sid ru.SlowlyFromWithinTheAltar</>End-Actor
+			Actor sid ac.Clergy<smallreditalic>sid ru.SlowlyFromWithinTheAltar</>End-Actor
 			Para role chant sid liturgical.verses_gr_GR_cog.psLI.trisagionbaptized.v4.text media-off End-Para
 			Actor sid ac.Deacon End-Actor
-			Dialog sid eu.lichrysbasil_gr_GR_cog.euLI.Key0602.text End-Dialog	
-			Para role actorinaudible sid ac.Deacon<smallred>sid ru.InALowVoice</>End-Para			
+			Dialog sid eu.lichrysbasil_gr_GR_cog.euLI.Key0602.text End-Dialog
+			Para role actorinaudible sid ac.Deacon<smallreditalic>sid ru.InALowVoice</>End-Para
 			Para role inaudible sid pr.Command_bishop.text End-Para
-			Para role actorinaudible sid ac.Hierarch<smallred>sid ru.InALowVoice</>End-Para			
+			Para role actorinaudible sid ac.Hierarch<smallreditalic>sid ru.InALowVoice</>End-Para
 			Para role inaudible sid eu.lichrysbasil_gr_GR_cog.euLI.Key0604.text End-Para
-			Para role actorinaudible sid ac.Deacon<smallred>sid ru.InALowVoice</>End-Para			
+			Para role actorinaudible sid ac.Deacon<smallreditalic>sid ru.InALowVoice</>End-Para
 			Para role inaudible sid eu.lichrysbasil_gr_GR_cog.euLI.Key0605.text End-Para
-			Para role actorinaudible sid ac.Hierarch<smallred>sid ru.InALowVoice</>End-Para			
+			Para role actorinaudible sid ac.Hierarch<smallreditalic>sid ru.InALowVoice</>End-Para
 			Para role inaudible sid eu.lichrysbasil_gr_GR_cog.euLI.Key0606.text End-Para
 			Actor sid ac.Choir End-Actor
 			Title<Tdesig>sid eu.lichrysbasil_gr_GR_cog.euLI.Key0602.text</>End-Title
 			Media sid ho.ho07_gr_GR_cog.hoLI.MM.OsoiEisChriston.text End-Media
-			Hymn sid liturgical.verses_gr_GR_cog.psLI.trisagionbaptized.text media-off End-Hymn			
+			Hymn sid liturgical.verses_gr_GR_cog.psLI.trisagionbaptized.text media-off End-Hymn
 		End-Section
-		Section cross
-			Actor sid ac.IL.ChoirR<dialogafteractor>sid pr.res04.text</>End-Actor
+		Section cross_one_choir
 			Title role desig sid ho.ho07_gr_GR_cog.hoLI.TonStavronSou.title End-Title
 			Media sid ho.ho07_gr_GR_cog.hoLI.TonStavronSou.text End-Media
+			Hymn sid ho.ho07_gr_GR_cog.hoLI.TonStavronSou.text media-off <r>sid ru.Twice media-off</>End-Hymn
+			Actor sid ac.Hierarch End-Actor
+			Hymn sid ho.ho07_gr_GR_cog.hoLI.TonStavronSou.text media-off End-Hymn
+			Actor sid ac.Choir End-Actor
+			Hymn sid ho.ho07_gr_GR_cog.hoLI.TonStavronSou.text media-off End-Hymn
+			Actor sid ac.Hierarch End-Actor
+			Hymn sid ho.ho07_gr_GR_cog.hoLI.TonStavronSou.text media-off End-Hymn
+			Actor sid ac.Choir End-Actor
+			Para role chant sid pr.GloryToTheFather.text End-Para
+			Para role chant sid pr.BothNowAndEver.text End-Para
+			Para role chant sid ho.ho07_gr_GR_cog.hoLI.TonStavronSou3.text sid ho.ho07_gr_GR_cog.hoLI.TonStavronSou4.text End-Para
+			Actor sid ac.Clergy<smallreditalic>sid ru.SlowlyFromWithinTheAltar</>End-Actor
+			Media sid ho.ho07_gr_GR_cog.hoLI.MM.TonStavronSouBimatos.text End-Media
+			Para role chant sid ho.ho07_gr_GR_cog.hoLI.TonStavronSou1.text media-off End-Para
+			Actor sid ac.Hierarch End-Actor
+			Dialog sid liturgical.verses_gr_GR_cog.psLI.hierarchical.trisagionblessing.v1.text @ver End-Dialog
+			Actor sid ac.IL.Choir<dialogafteractor>sid pr.res04.text</>End-Actor
+			Actor sid ac.Clergy<smallreditalic>sid ru.SlowlyFromWithinTheAltar</>End-Actor
+			Para role chant sid ho.ho07_gr_GR_cog.hoLI.TonStavronSou2.text media-off End-Para
+			Actor sid ac.Hierarch End-Actor
+			Dialog sid liturgical.verses_gr_GR_cog.psLI.hierarchical.trisagionblessing.v1.text @ver End-Dialog
+			Actor sid ac.IL.Choir<dialogafteractor>sid pr.res04.text</>End-Actor
+			Actor sid ac.Clergy<smallreditalic>sid ru.SlowlyFromWithinTheAltar</>End-Actor
+			Para role chant sid ho.ho07_gr_GR_cog.hoLI.TonStavronSou3.text media-off End-Para
+			Actor sid ac.Hierarch End-Actor
+			Dialog sid liturgical.verses_gr_GR_cog.psLI.hierarchical.trisagionblessing.v1.text @ver End-Dialog
+			Actor sid ac.IL.Choir<dialogafteractor>sid pr.res04.text</>End-Actor
+			Actor sid ac.Clergy<smallreditalic>sid ru.SlowlyFromWithinTheAltar</>End-Actor
+			Para role chant sid ho.ho07_gr_GR_cog.hoLI.TonStavronSou4.text media-off End-Para
+			Actor sid ac.Deacon End-Actor
+			Dialog sid eu.lichrysbasil_gr_GR_cog.euLI.Key0602.text End-Dialog
+			Para role actorinaudible sid ac.Deacon<smallreditalic>sid ru.InALowVoice</>End-Para
+			Para role inaudible sid pr.Command_bishop.text End-Para
+			Para role actorinaudible sid ac.Hierarch<smallreditalic>sid ru.InALowVoice</>End-Para
+			Para role inaudible sid eu.lichrysbasil_gr_GR_cog.euLI.Key0604.text End-Para
+			Para role actorinaudible sid ac.Deacon<smallreditalic>sid ru.InALowVoice</>End-Para
+			Para role inaudible sid eu.lichrysbasil_gr_GR_cog.euLI.Key0605.text End-Para
+			Para role actorinaudible sid ac.Hierarch<smallreditalic>sid ru.InALowVoice</>End-Para
+			Para role inaudible sid eu.lichrysbasil_gr_GR_cog.euLI.Key0606.text End-Para
+			Actor sid ac.Choir End-Actor
+			Title<Tdesig>sid eu.lichrysbasil_gr_GR_cog.euLI.Key0602.text</>End-Title
+			Media sid ho.ho07_gr_GR_cog.hoLI.TonStavronSou.text End-Media
+			Hymn sid ho.ho07_gr_GR_cog.hoLI.TonStavronSouDynamis.text media-off End-Hymn
+		End-Section
+		Section cross_two_choirs
+			Title role desig sid ho.ho07_gr_GR_cog.hoLI.TonStavronSou.title End-Title
+			Media sid ho.ho07_gr_GR_cog.hoLI.TonStavronSou.text End-Media
+			Actor sid ac.ChoirR End-Actor
 			Hymn sid ho.ho07_gr_GR_cog.hoLI.TonStavronSou.text media-off End-Hymn
 			Actor sid ac.ChoirL End-Actor
 			Hymn sid ho.ho07_gr_GR_cog.hoLI.TonStavronSou.text media-off End-Hymn
-			Actor sid ac.Clergy End-Actor
+			Actor sid ac.Hierarch End-Actor
 			Hymn sid ho.ho07_gr_GR_cog.hoLI.TonStavronSou.text media-off End-Hymn
 			Actor sid ac.ChoirR End-Actor
 			Hymn sid ho.ho07_gr_GR_cog.hoLI.TonStavronSou.text media-off End-Hymn
-			Actor sid ac.Clergy End-Actor
+			Actor sid ac.Hierarch End-Actor
 			Hymn sid ho.ho07_gr_GR_cog.hoLI.TonStavronSou.text media-off End-Hymn
 			Actor sid ac.ChoirL End-Actor
 			Para role chant sid pr.GloryToTheFather.text End-Para
@@ -476,41 +581,38 @@ Status NA
 			Para role chant sid pr.BothNowAndEver.text End-Para
 			Actor sid ac.ChoirL End-Actor
 			Para role chant sid ho.ho07_gr_GR_cog.hoLI.TonStavronSou3.text sid ho.ho07_gr_GR_cog.hoLI.TonStavronSou4.text End-Para
-			Actor sid ac.Clergy<smaller>sid ru.SlowlyFromWithinTheAltar</>End-Actor
+			Actor sid ac.Clergy<smallreditalic>sid ru.SlowlyFromWithinTheAltar</>End-Actor
 			Media sid ho.ho07_gr_GR_cog.hoLI.MM.TonStavronSouBimatos.text End-Media
 			Para role chant sid ho.ho07_gr_GR_cog.hoLI.TonStavronSou1.text media-off End-Para
 			Actor sid ac.Hierarch End-Actor
 			Dialog sid liturgical.verses_gr_GR_cog.psLI.hierarchical.trisagionblessing.v1.text @ver End-Dialog
 			Actor sid ac.IL.ChoirR<dialogafteractor>sid pr.res04.text</>End-Actor
-		//	Para role chant sid pr.res07.text End-Para
-			Actor sid ac.Clergy<smaller>sid ru.SlowlyFromWithinTheAltar</>End-Actor
+			Actor sid ac.Clergy<smallreditalic>sid ru.SlowlyFromWithinTheAltar</>End-Actor
 			Para role chant sid ho.ho07_gr_GR_cog.hoLI.TonStavronSou2.text media-off End-Para
 			Actor sid ac.Hierarch End-Actor
 			Dialog sid liturgical.verses_gr_GR_cog.psLI.hierarchical.trisagionblessing.v1.text @ver End-Dialog
 			Actor sid ac.IL.ChoirL<dialogafteractor>sid pr.res04.text</>End-Actor
-		//	Para role chant sid pr.res07.text End-Para
-			Actor sid ac.Clergy<smaller>sid ru.SlowlyFromWithinTheAltar</>End-Actor
+			Actor sid ac.Clergy<smallreditalic>sid ru.SlowlyFromWithinTheAltar</>End-Actor
 			Para role chant sid ho.ho07_gr_GR_cog.hoLI.TonStavronSou3.text media-off End-Para
 			Actor sid ac.Hierarch End-Actor
 			Dialog sid liturgical.verses_gr_GR_cog.psLI.hierarchical.trisagionblessing.v1.text @ver End-Dialog
 			Actor sid ac.IL.ChoirR<dialogafteractor>sid pr.res04.text</>End-Actor
-		//	Para role chant sid pr.res07.text End-Para
-			Actor sid ac.Clergy<smaller>sid ru.SlowlyFromWithinTheAltar</>End-Actor
+			Actor sid ac.Clergy<smallreditalic>sid ru.SlowlyFromWithinTheAltar</>End-Actor
 			Para role chant sid ho.ho07_gr_GR_cog.hoLI.TonStavronSou4.text media-off End-Para
 			Actor sid ac.Deacon End-Actor
-			Dialog sid eu.lichrysbasil_gr_GR_cog.euLI.Key0602.text End-Dialog	
-			Para role actorinaudible sid ac.Deacon<smallred>sid ru.InALowVoice</>End-Para			
+			Dialog sid eu.lichrysbasil_gr_GR_cog.euLI.Key0602.text End-Dialog
+			Para role actorinaudible sid ac.Deacon<smallreditalic>sid ru.InALowVoice</>End-Para
 			Para role inaudible sid pr.Command_bishop.text End-Para
-			Para role actorinaudible sid ac.Hierarch<smallred>sid ru.InALowVoice</>End-Para			
+			Para role actorinaudible sid ac.Hierarch<smallreditalic>sid ru.InALowVoice</>End-Para
 			Para role inaudible sid eu.lichrysbasil_gr_GR_cog.euLI.Key0604.text End-Para
-			Para role actorinaudible sid ac.Deacon<smallred>sid ru.InALowVoice</>End-Para			
+			Para role actorinaudible sid ac.Deacon<smallreditalic>sid ru.InALowVoice</>End-Para
 			Para role inaudible sid eu.lichrysbasil_gr_GR_cog.euLI.Key0605.text End-Para
-			Para role actorinaudible sid ac.Hierarch<smallred>sid ru.InALowVoice</>End-Para			
+			Para role actorinaudible sid ac.Hierarch<smallreditalic>sid ru.InALowVoice</>End-Para
 			Para role inaudible sid eu.lichrysbasil_gr_GR_cog.euLI.Key0606.text End-Para
 			Actor sid ac.Choir End-Actor
 			Title<Tdesig>sid eu.lichrysbasil_gr_GR_cog.euLI.Key0602.text</>End-Title
 			Media sid ho.ho07_gr_GR_cog.hoLI.TonStavronSou.text End-Media
-			Hymn sid ho.ho07_gr_GR_cog.hoLI.TonStavronSouDynamis.text media-off End-Hymn			
+			Hymn sid ho.ho07_gr_GR_cog.hoLI.TonStavronSouDynamis.text media-off End-Hymn
 		End-Section
 	End-Section
 
