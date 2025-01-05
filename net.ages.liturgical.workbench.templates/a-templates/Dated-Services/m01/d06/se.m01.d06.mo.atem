@@ -46,28 +46,45 @@ Status Final
 	Section Instance01
 		Insert_section ST.mo.festal__.me1 End-Insert
 		Insert_section MO._01_intro_ End-Insert
-		Section lity
-			Actor sid ac.Choir End-Actor
-			Insert_section TI.ip.lity End-Insert
-			Insert_section VE._07_Lity__.part2__.me__.lity1_.hymn End-Insert
-			Insert_section VE._07_Lity__.part2__.me__.lity2_.hymn End-Insert
-			Insert_section VE._07_Lity__.part2__.me__.lity3_.hymn End-Insert
-			Insert_section VE._07_Lity__.part2__.me__.lity4_.hymn End-Insert
-			Insert_section VE._07_Lity__.part2__.me__.lity5_.hymn End-Insert
-			Insert_section VE._07_Lity__.part2__.me__.glory_.hymn End-Insert
-			Insert_section VE._07_Lity__.part2__.me__.both_.hymn End-Insert
-		End-Section
-		Section aposticha
-			Insert_section TI.ip.apos End-Insert
-			Title<inr>sid ru.WithoutVersesComingBefore</>End-Title
-			Title<Tmode>sid me.m01.d06_gr_GR_cog.meVE.Aposticha1.mode</>End-Title
-			Hymn sid me.m01.d06_gr_GR_cog.meVE.Aposticha1.text @ver media-off End-Hymn
-			Title<Tmode>sid me.m01.d06_gr_GR_cog.meVE.Aposticha2.mode</>End-Title
-			Hymn sid me.m01.d06_gr_GR_cog.meVE.Aposticha2.text @ver media-off End-Hymn
-			Title<Tmode>sid me.m01.d06_gr_GR_cog.meVE.Aposticha3.mode</>End-Title
-			Hymn sid me.m01.d06_gr_GR_cog.meVE.Aposticha3.text @ver media-off End-Hymn
-			Insert_section VE._08_Aposticha__.gloryboth__.me__.gloryasgloryboth_ End-Insert
-		End-Section
+		when-name-of-day-is
+			Sunday, Monday use:
+				Section lity
+					Rubric sid ru.IfLityNotDoneAtVespers End-Rubric
+					Actor sid ac.Choir End-Actor
+					Insert_section TI.ip.lity End-Insert
+					Insert_section VE._07_Lity__.part2__.me__.lity1_.hymn End-Insert
+					Insert_section VE._07_Lity__.part2__.me__.lity2_.hymn End-Insert
+					Insert_section VE._07_Lity__.part2__.me__.lity3_.hymn End-Insert
+					Insert_section VE._07_Lity__.part2__.me__.lity4_.hymn End-Insert
+					Insert_section VE._07_Lity__.part2__.me__.lity5_.hymn End-Insert
+					Insert_section VE._07_Lity__.part2__.me__.glory_ End-Insert
+					Insert_section VE._07_Lity__.part2__.me__.both_ End-Insert
+				End-Section
+			otherwise use:
+				Section lity2
+					Rubric sid ru.IfLityNotDoneAtVespers End-Rubric
+					Actor sid ac.Choir End-Actor
+					Insert_section TI.ip.lity End-Insert
+					Insert_section VE._07_Lity__.part2__.me__.lity1_.hymn End-Insert
+					Insert_section VE._07_Lity__.part2__.me__.lity2_.hymn End-Insert
+					Insert_section VE._07_Lity__.part2__.me__.lity3_.hymn End-Insert
+					Insert_section VE._07_Lity__.part2__.me__.lity4_.hymn End-Insert
+					Insert_section VE._07_Lity__.part2__.me__.lity5_.hymn End-Insert
+					Insert_section VE._07_Lity__.part2__.me__.glory_.hymn End-Insert
+					Insert_section VE._07_Lity__.part2__.me__.both_.hymn End-Insert
+				End-Section
+				Section aposticha
+					Insert_section TI.ip.apos End-Insert
+					Title<inr>sid ru.WithoutVersesComingBefore</>End-Title
+					Title<Tmode>sid me.m01.d06_gr_GR_cog.meVE.Aposticha1.mode</>End-Title
+					Hymn sid me.m01.d06_gr_GR_cog.meVE.Aposticha1.text @ver media-off End-Hymn
+					Title<Tmode>sid me.m01.d06_gr_GR_cog.meVE.Aposticha2.mode</>End-Title
+					Hymn sid me.m01.d06_gr_GR_cog.meVE.Aposticha2.text @ver media-off End-Hymn
+					Title<Tmode>sid me.m01.d06_gr_GR_cog.meVE.Aposticha3.mode</>End-Title
+					Hymn sid me.m01.d06_gr_GR_cog.meVE.Aposticha3.text @ver media-off End-Hymn
+					Insert_section VE._08_Aposticha__.gloryboth__.me__.gloryasgloryboth_ End-Insert
+				End-Section
+		end-when
 		Insert_section MO._06_sundays_feastdays_.trisagion End-Insert
 		Insert_section AP.NM.me1_ End-Insert
 		Insert_section MO._13_end_dismissal__.append_sunday_feastday End-Insert
