@@ -44,27 +44,24 @@ Status Final
 		Title sid misc.horizontal_line.dash1 End-Title
 		Break line End_Break
 		when-movable-cycle-day-is
-			1, 8, 14, 15, 18
-				use: Insert_section mc.map.dailyreadings.readings End-Insert
+			1, 8, 14, 15, 18 use:
+				Insert_section mc.map.dailyreadings.readings End-Insert
 			20 thru 77 use:
 				Insert_section mc.map.dailyreadings.readings End-Insert
 			otherwise use:
-				Section block1 //check readings
-			//		Title sid misc.horizontal_line.solid1 End-Title
-			//		Title<r>sid ti.ReadingsRegularCycle</>End-Title
-			//		Insert_section LE._01_Epistle__.textonly__.daily.title End-Insert
-			//		Insert_section LE._01_Epistle__.textonly__.daily.lesson End-Insert
-			//		Insert_section LE._02_Gospel__.textonly__.pretriodion__.week_14_matthew_sunday End-Insert
-				End-Section
+				when-name-of-day-is
+					Sunday use:
+						Title<r>sid ti.ReadingsRegularCycle</>End-Title
+						Insert_section se.m01.d24.li2.Instance_Sunday.block01.readings End-Insert
+						Title sid misc.horizontal_line.solid1 End-Title
+						Break line End_Break
+					otherwise use:
+						Title sid misc.horizontal_line.solid1 End-Title
+						Title<r>sid ti.ReadingsCommemoration</>End-Title
+						Insert_section se.m01.d24.li2.Instance_Weekday.block01.readings End-Insert
+				end-when
 		end-when
 		Break line End_Break
-		Section block2
-			Title sid misc.horizontal_line.solid1 End-Title
-			Title<r>sid ti.ReadingsCommemoration</>End-Title
-			Insert_section LE._01_Epistle__.textonly__.menaion.title End-Insert
-			Insert_section LE._01_Epistle__.textonly__.menaion.lesson End-Insert
-			Insert_section LE._02_Gospel__.textonly__.pretriodion__.week_03_matthew_sunday.lesson End-Insert
-		End-Section
 		Title sid misc.horizontal_line.solid1 End-Title
 		Break line End_Break
 		Insert_section SY.Synaxarion_for_DailyReadings End-Insert
