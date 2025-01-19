@@ -22,7 +22,7 @@ Status Final
 	import roles.*
 
 	Head
-		Set_Date month 2 day 12 year 2025 End_Date
+		Set_Date month 2 day 12 year 2022 End_Date
 			Page_Header_Even
 				center @lookup sid template.titles_gr_GR_cog.li.pdf.header lang L1 @lookup rid daOnDay.text lang L1 @lookup rid meDA.pdfheaderdate lang L1
 			End_Page_Header_Even
@@ -76,8 +76,14 @@ Status Final
 							Insert_section KO.weekday End-Insert
 						End-Section
 						Insert_section LI._06_Trisagion__.chrys End-Insert
-						Insert_section LE._01_Epistle__.pretriodion__.week_34_wednesday End-Insert
-						Insert_section LE._02_Gospel__.pretriodion__.week_17_wednesday End-Insert
+						when-movable-cycle-day-is
+							2 thru 7 use:
+								Insert_section LE._01_Epistle__.daily_ End-Insert
+								Insert_section LE._02_Gospel__.daily_ End-Insert
+							otherwise use:
+							//	Insert_section LE._01_Epistle__.pretriodion__.week_34_wednesday End-Insert
+							//	Insert_section LE._02_Gospel__.pretriodion__.week_17_wednesday End-Insert
+						end-when
 						Insert_section LI._08_Liturgy__.chrys_default End-Insert
 						Insert_section LI._09_Dismissal__.nocommemoration End-Insert
 					End-Section

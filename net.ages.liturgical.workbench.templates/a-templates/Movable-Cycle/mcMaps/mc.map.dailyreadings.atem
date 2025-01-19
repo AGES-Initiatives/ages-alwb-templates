@@ -1,11 +1,32 @@
 Template mc.map.dailyreadings
 
+	import actors_gr_GR_cog.*
+	import lectionaries_gr_GR_cog.*
+	import miscellanea_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+
+	import iTags.*
+	import bTags.*
+	import roles.*
+
 	Section readings
 		when-movable-cycle-day-is
-			1 use: Insert_section se.tr.d001.h91.Instance01 End-Insert
-			8 use: Insert_section se.tr.d001.h91.Instance01 End-Insert
-			14 use: Insert_section se.tr.d014.h91.Instance01 End-Insert
-			15 use: Insert_section se.tr.d015.h91.Instance01 End-Insert
+			1 thru 13 use:
+				Title sid misc.horizontal_line.solid1 End-Title
+				Title<i>sid ti.ReadingsRegularCycle</>End-Title
+				Insert_section LE._01_Epistle__.textonly__.daily.title End-Insert
+				Insert_section LE._01_Epistle__.textonly__.daily.lesson End-Insert
+				Insert_section LE._02_Gospel__.textonly__.daily.lesson End-Insert
+			14 use:
+				Insert_section se.tr.d014.h91.Instance01 End-Insert
+			15, 16, 17, 19 use:
+				Title sid misc.horizontal_line.solid1 End-Title
+				Title<i>sid ti.ReadingsRegularCycle</>End-Title
+				Insert_section LE._01_Epistle__.textonly__.daily.title End-Insert
+				Insert_section LE._01_Epistle__.textonly__.daily.lesson End-Insert
+				Insert_section LE._02_Gospel__.textonly__.daily.lesson End-Insert
 			18 use: Insert_section se.tr.d018.h91.Instance01 End-Insert
 			20 use: Insert_section se.tr.d020.h91.Instance01 End-Insert
 			21 use: Insert_section se.tr.d021.h91.Instance01 End-Insert
