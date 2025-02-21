@@ -1,6 +1,6 @@
 Template se.hc.m05.d06.ma8
 
-Status NA
+Status Final
 
 	import da.*
 	import oc.*
@@ -41,11 +41,32 @@ Status NA
 	Section Instance01
 		Insert_section ST.ma.pe_me1 End-Insert
 		Insert_section HC.MA._00_weekday_ordinary End-Insert
-		Insert_section MA._01_Beginning__.mode7 End-Insert
-		Insert_section AP.af End-Insert
-		Insert_section TI.g.s._00_saint_.m End-Insert
-		Insert_section AP.me1_.hymn End-Insert
-		Insert_section AP.both__.af End-Insert
+		when-movable-cycle-day-is
+			79 thru 83 use:
+				Insert_section MA._01_Beginning__.mode7 End-Insert
+			86 thru 91 use:
+				Insert_section MA._01_Beginning__.mode2 End-Insert
+		end-when
+		Section block1
+			when-movable-cycle-day-is
+				79 thru 83 use:
+						Insert_section AP.af End-Insert
+						Insert_section TI.g.s._00_saint_.m End-Insert
+						Insert_section AP.me1_.hymn End-Insert
+						Insert_section AP.both__.af End-Insert
+				86 thru 91 use:
+					Section block2
+						Set_mcDay day 85 End_mcDay
+							Insert_section TI.ap._ End-Insert
+							Insert_section AP.pe2_.hymn End-Insert
+							Insert_section TI.g.s._00_saint_.m End-Insert
+							Insert_section AP.me1_.hymn End-Insert
+							Insert_section TI.b.pe._02_myrrhbearers End-Insert
+							Insert_section AP.pe3_.hymn End-Insert
+						Set_mcDay day 0 End_mcDay
+					End-Section
+			end-when
+		End-Section
 		Insert_section MA._11_Kontakion__.me1_ End-Insert
 		Insert_section SY.Synaxarion End-Insert
 		Insert_section MA._10_Canon__.ode8_heirmos__.me End-Insert
