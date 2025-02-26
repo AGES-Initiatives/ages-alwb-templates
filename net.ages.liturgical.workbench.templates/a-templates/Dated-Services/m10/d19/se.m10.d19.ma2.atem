@@ -1,0 +1,102 @@
+Template se.m10.d19.ma2
+
+Status Review
+
+	import da.*
+	import oc.*
+	import me.*
+	import eo.*
+	import tr.*
+	import pe.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import miscellanea_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head
+		Set_Date month 10 day 19 year 2025 End_Date
+			Page_Header_Even
+				center @lookup sid template.titles_gr_GR_cog.ma.pdf.header lang L1 @lookup rid daOnDay.text lang L1 @lookup rid meDA.pdfheaderdate lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid template.titles_gr_GR_cog.ma.pdf.header lang L2 @lookup rid daOnDay.text lang L2 @lookup rid meDA.pdfheaderdate lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+		Preface Covers
+
+			Insert_template pdf.cover.credits End-Insert
+		End-Preface
+
+	when-name-of-day-is
+		Sunday use:
+			Section Instance_Sunday
+				Insert_section ST.ma.oc_me1 End-Insert
+				Insert_section MA._01_Beginning__.modeofweek End-Insert
+				Insert_section AP.resgloryres End-Insert
+				Insert_section AP.both__.primarytheotokion__.modeofweek End-Insert
+				Insert_section MA._02_Kathisma1__.litany End-Insert
+				Insert_section MA._02_Kathisma1__.oc__.sunday__.kath111213 End-Insert
+				Insert_section MA._03_Kathisma2__.append__.oc__.sunday__.kath212223 End-Insert
+				Insert_section MA._05_Kathisma3__.resurrectional_evlogetaria End-Insert
+				Insert_section MA._06_Antiphons__.sunday_ End-Insert
+				Insert_section MA2._09_Options__.sunday__.oc_h12tas0GrGrTh_and_me1_123tasVVGB_with_kath_me1o2t_and_konoik_oc.block01_eothinonposition1 End-Insert
+				Insert_section MA2._09_Options__.sunday__.oc_h12tas0GrGrTh_and_me1_123tasVVGB_with_kath_me1o2t_and_konoik_oc.block02_odes13 End-Insert
+				Section block04_ode3_kathisma
+					Para role bmc_ode3_kathisma sid website.preferences.titles_gr_GR_cog.mc.ode3.kathisma End-Para
+						Actor sid ac.Choir End-Actor
+						Title<Tdesig>sid ti.Kathisma</>End-Title
+	 					Para role source0 sid ti.sourceMenaion End-Para
+						Title<Tmode>rid meMA.Ode3Kathisma1.mode</><Tmelody>rid meMA.Ode3Kathisma1.melody</>End-Title
+						Title role greekmelody rid meMA.Ode3Kathisma1.greekmelody End-Title
+						Media rid meMA.Ode3Kathisma1.text End-Media
+						Hymn rid meMA.Ode3Kathisma1.text @ver media-off End-Hymn
+						Set_Date month 10 day 20 year 2025 End_Date
+						Insert_section TI.gb.th End-Insert
+						Title<Tmode>rid meMA.Ode3KathismaT.mode</><Tmelody>rid meMA.Ode3KathismaT.melody</>End-Title
+						Media rid meMA.Ode3KathismaT.text End-Media
+						Hymn rid meMA.Ode3KathismaT.text @ver media-off End-Hymn
+						Set_Date month 10 day 19 year 2025 End_Date
+					Para role emc_ode3_kathisma sid website.preferences.titles_gr_GR_cog.mc.tag End-Para
+				End-Section
+				Insert_section MA2._09_Options__.sunday__.oc_h12tas0GrGrTh_and_me1_123tasVVGB_with_kath_me1o2t_and_konoik_oc.block05_odes456 End-Insert
+				Insert_section MA2._09_Options__.sunday__.oc_h12tas0GrGrTh_and_me1_123tasVVGB_with_kath_me1o2t_and_konoik_oc.block06_kontakionposition1 End-Insert
+				Insert_section MA2._09_Options__.sunday__.oc_h12tas0GrGrTh_and_me1_123tasVVGB_with_kath_me1o2t_and_konoik_oc.block07_odes78 End-Insert
+				Insert_section MA2._09_Options__.sunday__.oc_h12tas0GrGrTh_and_me1_123tasVVGB_with_kath_me1o2t_and_konoik_oc.block08_kontakionposition12 End-Insert
+				Insert_section MA2._09_Options__.sunday__.oc_h12tas0GrGrTh_and_me1_123tasVVGB_with_kath_me1o2t_and_konoik_oc.block09_katavasias1345678 End-Insert
+				Insert_section MA2._09_Options__.sunday__.oc_h12tas0GrGrTh_and_me1_123tasVVGB_with_kath_me1o2t_and_konoik_oc.block10_eothinonposition2 End-Insert
+				Insert_section MA2._09_Options__.sunday__.oc_h12tas0GrGrTh_and_me1_123tasVVGB_with_kath_me1o2t_and_konoik_oc.block11_ode9 End-Insert
+				Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
+				Insert_section MA._12_Exaposteilarion__.eo__.eoofweek_ End-Insert
+				Insert_section MA._13_Lauds__.modeofweek__.for6_nocollapse End-Insert
+				Insert_section MA._13_Lauds__.oc__.sunday End-Insert
+				Insert_section MA._13_Lauds__.glory__.eo_ End-Insert
+				Insert_section MA._14_Doxology__.sunday End-Insert
+				Insert_section MA2._19_End_Options End-Insert
+				Insert_section MA._20_Dismissal__.nocommemoration End-Insert
+			End-Section
+
+//		Saturday use:
+
+		otherwise use:
+			Section Instance_Weekday
+			End-Section
+
+	end-when
+
+End-Template
