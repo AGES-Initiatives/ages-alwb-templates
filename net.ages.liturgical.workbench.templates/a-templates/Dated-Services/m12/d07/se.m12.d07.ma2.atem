@@ -1,6 +1,6 @@
-Template se.m12.d01.ma2
+Template se.m12.d07.ma2
 
-Status NA
+Status Review
 
 	import da.*
 	import oc.*
@@ -22,7 +22,7 @@ Status NA
 	import roles.*
 
 	Head
-		Set_Date month 12 day 1 year 2025 End_Date
+		Set_Date month 12 day 7 year 2025 End_Date
 			Page_Header_Even
 				center @lookup sid template.titles_gr_GR_cog.ma.pdf.header lang L1 @lookup rid daOnDay.text lang L1 @lookup rid meDA.pdfheaderdate lang L1
 			End_Page_Header_Even
@@ -39,8 +39,8 @@ Status NA
 	End_Head
 
 		Preface Covers
-		//	Insert_template pdf.cover.ma.s_oc_k_w_oc_me1 End-Insert
-		//	Insert_template pdf.cover.credits End-Insert
+
+			Insert_template pdf.cover.credits End-Insert
 		End-Preface
 
 	when-name-of-day-is
@@ -65,11 +65,9 @@ Status NA
 				Insert_section MA2._19_End_Options End-Insert
 				Insert_section MA._20_Dismissal__.nocommemoration End-Insert
 			End-Section
-
 		otherwise use:
 			Section Instance_Weekday
 			End-Section
-
 	end-when
 
 End-Template

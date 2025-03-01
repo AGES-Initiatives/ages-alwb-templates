@@ -1,6 +1,6 @@
-Template se.m12.d22.mo
+Template se.m12.d07.mo
 
-Status NA
+Status Final
 
 	import da.*
 	import oc.*
@@ -22,7 +22,7 @@ Status NA
 	import roles.*
 
 	Head
-		Set_Date month 12 day 22 year 2025 End_Date
+		Set_Date month 12 day 7 year 2025 End_Date
 			Page_Header_Even
 				center @lookup sid template.titles_gr_GR_cog.mo.pdf.header lang L1 @lookup rid daOnDay.text lang L1 @lookup rid meDA.pdfheaderdate lang L1
 			End_Page_Header_Even
@@ -45,9 +45,13 @@ Status NA
 	when-name-of-day-is
 		Sunday use:
 			Section Instance_Sunday
-				Insert_section se.m12.dBC.mo.Instance_Sunday End-Insert
+				Insert_section ST.mo.oc End-Insert
+				Insert_section MO._01_intro_ End-Insert
+				Insert_section MO._03_triadic_canon_ End-Insert
+				Insert_section MO._04_triadic_megalynaria End-Insert
+				Insert_section MO._06_sundays_feastdays_ End-Insert
+				Insert_section MO._13_end_dismissal__.append_sunday_feastday End-Insert
 			End-Section
-
 		otherwise use:
 			Section Instance_Weekday
 			End-Section
