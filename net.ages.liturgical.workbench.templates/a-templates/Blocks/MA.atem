@@ -6361,6 +6361,31 @@ Status NA
 					end-when
 				End-Section
 			End-Section
+			Section me1ger_
+				Title<Tdesig>sid ti.Kontakion</>End-Title
+				Section konoik_nt
+					Section kontakion_nt
+						Para role source0 sid ti.sourceMenaion End-Para
+						Title<Tmode>rid meMA.Kontakion1ger.mode</><Tmelody>rid meMA.Kontakion1ger.melody</>End-Title
+						Para role greekmelody rid meMA.Kontakion1ger.greekmelody End-Para
+						Reading rid meMA.Kontakion1ger.text @ver media-off End-Reading
+					End-Section
+					when-exists rid meMA.Oikos1ger.text use:
+						Title<Tdesig>sid ti.Oikos</>End-Title
+						Reading rid meMA.Oikos1ger.text @ver End-Reading
+						when-exists
+							rid meMA.Oikos12ger.text use:
+								Para role readingzero rid meMA.Oikos12ger.text End-Para
+								Para role readingzero rid meMA.Oikos13ger.text End-Para
+								Para role readingzero rid meMA.Oikos14ger.text End-Para
+								Para role readingzero rid meMA.Oikos15ger.text End-Para
+								Para role readingzero rid meMA.Oikos16ger.text End-Para
+								Para role readingzero rid meMA.Oikos17ger.text End-Para
+								Reading rid meMA.Oikos18ger.text End-Reading
+						end-when
+					end-when
+				End-Section
+			End-Section
 			Section me2_
 				Title<Tdesig>sid ti.Kontakion</>End-Title
 				Section konoik_nt
@@ -6577,6 +6602,31 @@ Status NA
 					end-when
 			end-when
 		End-Section
+		Section me1ger_
+			Section kontakion
+				Para role source sid ti.sourceMenaion End-Para
+				Actor sid ac.Reader End-Actor
+				Title<Tdesig>sid ti.Kontakion</>End-Title
+				Title<Tmode>rid meMA.Kontakion1ger.mode</><Tmelody>rid meMA.Kontakion1ger.melody</>End-Title
+				Para role greekmelody rid meMA.Kontakion1ger.greekmelody End-Para
+				Reading rid meMA.Kontakion1ger.text @ver End-Reading
+			End-Section
+			when-exists
+				rid meMA.Oikos1ger.text use:
+					Title<Tdesig>sid ti.Oikos</>End-Title
+					Reading rid meMA.Oikos1ger.text @ver End-Reading
+					when-exists
+						rid meMA.Oikos12.text use:
+							Para role readingzero rid meMA.Oikos12ger.text End-Para
+							Para role readingzero rid meMA.Oikos13ger.text End-Para
+							Para role readingzero rid meMA.Oikos14ger.text End-Para
+							Para role readingzero rid meMA.Oikos15ger.text End-Para
+							Para role readingzero rid meMA.Oikos16ger.text End-Para
+							Para role readingzero rid meMA.Oikos17ger.text End-Para
+							Reading rid meMA.Oikos18ger.text End-Reading
+					end-when
+			end-when
+		End-Section
 		Section me2_
 			Section kontakion
 				Para role source sid ti.sourceMenaion End-Para
@@ -6741,16 +6791,17 @@ Status NA
 							Media sid pe.d120_gr_GR_cog.peMA.Exaposteilarion2.text End-Media
 							Hymn sid pe.d120_gr_GR_cog.peMA.Exaposteilarion2.text @ver media-off End-Hymn
 						End-Section
-				end-when
-				when-date-is
-					Sep 14 thru 21 use:
-						Section Cross2
-							Para role source sid ti.sourceMenaion End-Para
-							Title<Tdesig>sid ti.Another_1hymn sid ti.Feast</>End-Title
-							Title<Tmode>sid me.m09.d14_gr_GR_cog.meMA.Exaposteilarion2.mode</><Tmelody>sid me.m09.d14_gr_GR_cog.meMA.Exaposteilarion2.melody</>End-Title
-							Media sid me.m09.d14_gr_GR_cog.meMA.Exaposteilarion2.text End-Media
-							Hymn sid me.m09.d14_gr_GR_cog.meMA.Exaposteilarion2.text @ver media-off End-Hymn
-						End-Section
+					otherwise use:
+						when-date-is
+							Sep 14 thru 21 use:
+								Section Cross2
+									Para role source sid ti.sourceMenaion End-Para
+									Title<Tdesig>sid ti.Another_1hymn sid ti.Feast</>End-Title
+									Title<Tmode>sid me.m09.d14_gr_GR_cog.meMA.Exaposteilarion2.mode</><Tmelody>sid me.m09.d14_gr_GR_cog.meMA.Exaposteilarion2.melody</>End-Title
+									Media sid me.m09.d14_gr_GR_cog.meMA.Exaposteilarion2.text End-Media
+									Hymn sid me.m09.d14_gr_GR_cog.meMA.Exaposteilarion2.text @ver media-off End-Hymn
+								End-Section
+						end-when
 				end-when
 			End-Section
 			Section me__
