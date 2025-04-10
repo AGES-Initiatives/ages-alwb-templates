@@ -1,0 +1,68 @@
+Template bk.HIRgoaDismissals
+
+Status NA
+
+	import da.*
+	import oc.*
+	import me.*
+	import eo.*
+	import tr.*
+	import pe.*
+	import ty.*
+
+	import actors_gr_GR_cog.*
+	import client_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import miscellanea_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head
+		Set_Date month 8 day 10 year 2025 End_Date
+			Page_Header_Even
+				center @lookup sid template.titles_gr_GR_cog.ma.pdf.header lang L1 @lookup rid daOnDay.text lang L1 @lookup rid meDA.pdfheaderdate lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid template.titles_gr_GR_cog.ma.pdf.header lang L2 @lookup rid daOnDay.text lang L2 @lookup rid meDA.pdfheaderdate lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Section composite_dismissal_alt1
+		Actor sid ac.Hierarch End-Actor
+		Dialog sid pr.GloryToYouOurGod.text End-Dialog
+		when-movable-cycle-day-is
+			1 thru 127 use:
+				Dialog sid dis00 rid trDA.dismissal rid peDA.dismissal sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08 rid ty.tyAME.localsaint1.dismissal sid dis09 rid trDA.insert1 rid peDA.insert1 rid tyAME.meDA.insert1 rid tyAME.meDA.insert2 rid trDA.insert2 rid peDA.insert2 sid dis10 sid dis88 End-Dialog
+			otherwise use:
+				when-exists
+					rid meDA.dismissal use:
+						when-date-is
+							Jan 6 use:
+								Dialog sid dis00 rid meDA.dismissal sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08 rid ty.tyAME.localsaint1.dismissal sid dis09 sid dis10 sid dis88 End-Dialog
+							Aug 6 use:
+								Dialog sid dis00 rid meDA.dismissal sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08 rid ty.tyAME.localsaint1.dismissal sid dis09 sid dis10 sid dis88 End-Dialog
+							Dec 25 use:
+								Dialog sid dis00 rid meDA.dismissal sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08 rid ty.tyAME.localsaint1.dismissal sid dis09 sid dis10 sid dis88 End-Dialog
+							otherwise use:
+								Dialog sid dis00 rid meDA.dismissal rid daDismissal2.text sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08 rid ty.tyAME.localsaint1.dismissal sid dis09 rid tyAME.meDA.insert1 rid tyAME.meDA.insert2 sid dis10 sid dis88 End-Dialog
+						end-when
+					otherwise use:
+						Dialog sid dis00 rid daDismissal1.text sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08 rid ty.tyAME.localsaint1.dismissal sid dis09 rid tyAME.meDA.insert1 rid tyAME.meDA.insert2 sid dis10 sid dis88 End-Dialog
+				end-when
+		end-when
+	End-Section
+
+End-Template
