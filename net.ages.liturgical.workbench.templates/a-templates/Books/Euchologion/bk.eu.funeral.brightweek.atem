@@ -40,8 +40,7 @@ Status Final
 
 	Actor sid ac.Priest End-Actor
 	Dialog sid pr.enarxis01.text End-Dialog
-	Actor sid ac.Choir End-Actor
-	Dialog sid pr.res04.text End-Dialog
+	Para role dialogwithactor<actorwithdialog>sid ac.IL.Choir</>sid pr.res04.text End-Para
 
 	Actor sid ac.Priest End-Actor
 	Insert_section PE.ChristIsRisen.once End-Insert
@@ -49,19 +48,22 @@ Status Final
 	Insert_section PE.ChristIsRisen.twice End-Insert
 
 	Section Litany01
-		Actor sid ac.PriestOrDeacon End-Actor
+		Actor sid ac.Deacon End-Actor
 		Dialog sid pr.pet17.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res01.text<r>sid ru.Thrice</> End-Dialog
+		Actor sid ac.Deacon End-Actor
 		Dialog sid pr.petFuneral01.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res01.text<r>sid ru.Thrice</> End-Dialog
+		Actor sid ac.Deacon End-Actor
 		Dialog sid pr.petFuneral02.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res02.text sid misc.parenthesis.close</>End-Dialog
+		Para role dialogwithactor<actorwithdialog>sid ac.IL.Choir</>sid pr.res02.text End-Para
 		Actor sid ac.Priest End-Actor
 		Dialog sid eu.funeral_gr_GR_cog.euFUN.Key0106.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+		Para role dialogwithactor<actorwithdialog>sid ac.IL.Choir</>sid pr.res04.text End-Para
 	End-Section
 
-	Actor sid ac.Choir End-Actor
 	Title role desig sid misc.Ode1 sid misc.Mode1 End-Title
 	Media sid he.k_gr_GR_cog.ka.MM.PaschaOde1.text End-Media
 	Hymn sid pe.d071_gr_GR_cog.peMA.Ode1C1H.text @ver media-off End-Hymn
@@ -70,15 +72,13 @@ Status Final
 	Hymn sid ho.ho03_gr_GR_cog.hoMA.SunPostGospelIdiomelon.text @ver media-off End-Hymn
 
 	Section Litany02
-		Actor sid ac.PriestOrDeacon End-Actor
-		Dialog sid pr.pet00.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
+		Para role dialogwithactor<actorwithdialog>sid ac.IL.Deacon</>sid pr.pet00.text End-Para
+		Para role dialogwithactor<actorwithdialog>sid ac.IL.Choir</>sid pr.res01.text End-Para
 		Actor sid ac.Priest End-Actor
 		Dialog sid eu.funeral_gr_GR_cog.euFUN.Key0106.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+		Para role dialogwithactor<actorwithdialog>sid ac.IL.Choir</>sid pr.res04.text End-Para
 	End-Section
 
-	Actor sid ac.Choir End-Actor
 	Title role desig sid misc.Ode3 sid misc.Mode1 End-Title
 	Media sid he.k_gr_GR_cog.ka.MM.PaschaOde3.text End-Media
 	Hymn sid pe.d071_gr_GR_cog.peMA.Ode3C1H.text @ver media-off End-Hymn
@@ -86,9 +86,8 @@ Status Final
 	Hymn sid pe.d071_gr_GR_cog.peMA.TroparionShort.text @ver media-off<r>sid ru.Thrice media-off</>End-Hymn
 	Hymn sid ho.ho03_gr_GR_cog.hoMA.SunPostGospelIdiomelon.text @ver media-off End-Hymn
 
-	Insert_section Litany02 End-Insert
+	Insert_section bk.eu.funeral.brightweek.Litany02 End-Insert
 
-	Actor sid ac.Choir End-Actor
 	Title role desig sid misc.Ode4 sid misc.Mode1 End-Title
 	Media sid he.k_gr_GR_cog.ka.MM.PaschaOde4.text End-Media
 	Hymn sid pe.d071_gr_GR_cog.peMA.Ode4C1H.text @ver media-off End-Hymn
@@ -136,10 +135,11 @@ Status Final
 	Media sid pe.d071_gr_GR_cog.peMA.Exaposteilarion1.text End-Media
 	Title role mode sid pe.d071_gr_GR_cog.peMA.Exaposteilarion1.melody<Tdesig>sid pe.d071_gr_GR_cog.peMA.Exaposteilarion1.melody</>End-Title
 	Hymn sid pe.d071_gr_GR_cog.peMA.Exaposteilarion1.text @ver media-off<r>sid ru.Twice media-off</>End-Hymn
+
 	Break line End_Break
 	Section Readings_of_the_day
 		Rubric sid eu.funeral_gr_GR_cog.euFUN.brightweek.R091 End-Rubric
-		Set_Date month 5 day 3 year 2016 End_Date
+		Set_mcDay day 75 End_mcDay
 		Insert_section LE._01_Epistle__.daily_ End-Insert
 		Insert_section LE._02_Gospel__.daily_.alleluia End-Insert
 		Insert_section LE._02_Gospel__.daily_.lesson End-Insert
@@ -147,19 +147,23 @@ Status Final
 	Break line End_Break
 
 	Section Litany_and_Prayer
-		Actor sid ac.PriestOrDeacon End-Actor
+		Actor sid ac.Deacon End-Actor
 		Dialog sid pr.pet17.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res01.text<r>sid ru.Thrice</> End-Dialog
+		Actor sid ac.Deacon End-Actor
 		Dialog sid pr.petFuneral01.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text<r>sid ru.Thrice</>sid misc.parenthesis.close</>End-Dialog
+		Actor sid ac.Choir End-Actor
+		Dialog sid pr.res01.text<r>sid ru.Thrice</> End-Dialog
+		Actor sid ac.Deacon End-Actor
 		Dialog sid pr.petFuneral02.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res02.text sid misc.parenthesis.close</>End-Dialog
+		Para role dialogwithactor<actorwithdialog>sid ac.IL.Choir</>sid pr.res02.text End-Para
+		Para role dialogwithactor<actorwithdialog>sid ac.IL.Deacon</>sid pr.pet00.text End-Para
+		Para role dialogwithactor<actorwithdialog>sid ac.IL.Choir</>sid pr.res01.text End-Para
 		Actor sid ac.Priest End-Actor
-		Dialog sid pr.pet00.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res01.text sid misc.parenthesis.close</>End-Dialog
 		Dialog sid eu.funeral_gr_GR_cog.euFUN.Key0105.text End-Dialog
 		Dialog sid eu.funeral_gr_GR_cog.euFUN.Key0106.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+		Para role dialogwithactor<actorwithdialog>sid ac.IL.Choir</>sid pr.res04.text End-Para
 	End-Section
 
 	Section Dismissal
@@ -173,7 +177,7 @@ Status Final
 	Break line End_Break
 	Rubric sid eu.funeral_gr_GR_cog.euFUN.brightweek.R111 End-Rubric
 	Actor sid ac.Choir End-Actor
-	Insert_section TI.gb End-Insert
+	Insert_section TI.gb._ End-Insert
 	Insert_section MA._13_Lauds__.gloryboth__.pascha_.hymn End-Insert
 	Actor sid ac.Priest End-Actor
 	Dialog sid pe.d071_gr_GR_cog.peMA.Troparion.text End-Dialog
@@ -181,7 +185,9 @@ Status Final
 	Dialog sid pr.PaschaDialog6.text End-Dialog
 	Break line End_Break
 	Rubric sid eu.funeral_gr_GR_cog.euFUN.brightweek.R112 End-Rubric
-	Insert_section MA._13_Lauds__.gloryboth__.pascha_.hymn End-Insert
+	Title role mode sid pe.d071_gr_GR_cog.peMA.SticheraGlory.mode End-Title
+	Media sid pe.d071_gr_GR_cog.peMA.SticheraGlory.text End-Media
+	Hymn sid pe.d071_gr_GR_cog.peMA.SticheraGlory.text @ver media-off End-Hymn
 
 	Break page End_Break
 
@@ -189,18 +195,17 @@ Status Final
 
 	Actor sid ac.Priest End-Actor
 	Dialog sid pr.enarxis01.text End-Dialog
-	Actor sid ac.Choir End-Actor
-	Dialog sid pr.res04.text End-Dialog
+	Para role dialogwithactor<actorwithdialog>sid ac.IL.Choir</>sid pr.res04.text End-Para
 
 	Actor sid ac.Priest End-Actor
 	Insert_section PE.ChristIsRisen.thrice End-Insert
 	Hymn sid ho.ho03_gr_GR_cog.hoMA.SunPostGospelIdiomelon.text @ver media-off End-Hymn
-	Insert_section Litany_and_Prayer End-Insert
+	Insert_section bk.eu.funeral.brightweek.Litany_and_Prayer End-Insert
 
 	Actor sid ac.Priest End-Actor
 	Para role prayer sid liturgical.verses_gr_GR_cog.psEU.funeral.casket.v1.text @ver End-Para
 	Para role prayer sid liturgical.verses_gr_GR_cog.psEU.funeral.casket.v2.text End-Para
-	Insert_section Dismissal End-Insert
+	Insert_section bk.eu.funeral.brightweek.Dismissal End-Insert
 	Actor sid ac.Priest End-Actor
 	Dialog sid pe.d071_gr_GR_cog.peMA.Troparion.text End-Dialog
 	Actor sid ac.People End-Actor

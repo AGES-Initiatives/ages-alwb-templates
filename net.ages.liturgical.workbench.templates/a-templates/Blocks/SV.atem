@@ -31,7 +31,7 @@ Status NA
 				Section pascha
 					Actor sid ac.Priest End-Actor
 					Dialog sid pr.enarxis01.text End-Dialog
-					Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+					Para role dialogwithactor<actorwithdialog>sid ac.IL.Choir</>sid pr.res04.text End-Para
 					Insert_section PE.Pascha_Beginning End-Insert
 					//no litany
 				End-Section
@@ -39,7 +39,7 @@ Status NA
 				Section enarxis
 					Actor sid ac.Priest End-Actor
 					Dialog sid pr.enarxis01.text End-Dialog
-					Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+					Para role dialogwithactor<actorwithdialog>sid ac.IL.Choir</>sid pr.res04.text End-Para
 				End-Section
 				Section introductorypsalm
 					when-movable-cycle-day-is 78 thru 108 use:
@@ -439,7 +439,7 @@ Status NA
 	Section _05_Prayer
 		Actor sid ac.Reader End-Actor
 		Reading sid ho.ho10_gr_GR_cog.hoVE.Prayer_Kataxioson.text @ver End-Reading
-		Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+		Para role dialogwithactor<actorwithdialog>sid ac.IL.Choir</>sid pr.res04.text End-Para
 	End-Section
 
 	Section _06_Aposticha__
@@ -1772,19 +1772,16 @@ Status NA
 			Insert_section bk.ho.ho01.Trisagion_Prayers End-Insert
 			Actor sid ac.Priest End-Actor
 			Para role prayer sid pr.exc20.text End-Para
-			Para role prayer<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Para
+			Para role dialogwithactor<actorwithdialog>sid ac.IL.Choir</>sid pr.res04.text End-Para
 		End-Section
 		Actor sid ac.Choir End-Actor
 	End-Section
 
 	Section _08_End
-		Actor sid ac.Priest End-Actor
-		Dialog sid pr.exc17.text End-Dialog
-		Dialog<i>sid misc.parenthesis.open sid pr.Bless_father.text sid misc.parenthesis.close</>End-Dialog
-		Dialog sid pr.DismissalPrayer1.text<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+		Para role dialogwithactor<actorwithdialog>sid ac.IL.Priest</>sid pr.exc17.text End-Para
+		Para role dialogwithactor<actorwithdialog>sid ac.IL.Reader</>sid pr.Bless_father.text End-Para
 		Dialog sid pr.DismissalPrayer2.text End-Dialog
-		Actor sid ac.Reader End-Actor
-		Dialog sid pr.res04.text End-Dialog
+		Para role dialogwithactor<actorwithdialog>sid ac.IL.Reader</>sid pr.res04.text End-Para
 		when-movable-cycle-day-is
 			71, 72, 73, 74, 75, 76, 77, 109 use:
 				Dialog sid pe.d071_gr_GR_cog.peMA.Ode9C1H.text End-Dialog
@@ -1804,7 +1801,7 @@ Status NA
 		Section commemoration
 			Insert_section Selector_Dismissals.Com_Yes End-Insert
 			Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
-			Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+			Para role dialogwithactor<actorwithdialog>sid ac.IL.Choir</>sid pr.res04.text End-Para
 		End-Section
 		Section mealt1_commemoration
 			Insert_section Selector_Dismissals.mealt1_Com_Yes End-Insert
@@ -1818,7 +1815,7 @@ Status NA
 		Section nocommemoration
 			Insert_section Selector_Dismissals.Short End-Insert
 			Dialog sid pr.ThroughThePrayers_fathers.text End-Dialog
-			Dialog<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+			Para role dialogwithactor<actorwithdialog>sid ac.IL.Choir</>sid pr.res04.text End-Para
 	End-Section
 		Section specificcommemoration__
 			Section brightweek_stgeorge
@@ -1999,7 +1996,8 @@ Status NA
 				Reading sid pr.OurFather.text End-Reading
 			End-Section
 			Actor sid ac.Priest End-Actor
-			Dialog sid pr.exc20.text<i>sid misc.parenthesis.open sid pr.res04.text sid misc.parenthesis.close</>End-Dialog
+			Dialog sid pr.exc20.text End-Dialog
+			Para role dialogwithactor<actorwithdialog>sid ac.IL.Choir</>sid pr.res04.text End-Para
 		End-Section
 	End-Section
 
