@@ -52,6 +52,11 @@ Status NA
 			Dialog sid hierarchs_gr_GR_cog.hierDET.pet06.text End-Dialog
 			Insert_section vespers_blocks.enarxis2 End-Insert
 		End-Section
+		Section ECI
+			Insert_section vespers_blocks.enarxis1 End-Insert
+			Dialog sid hierarchs_gr_GR_cog.hierECU.pet06.text End-Dialog
+			Insert_section vespers_blocks.enarxis2 End-Insert
+		End-Section
 		Section NEW
 			Insert_section vespers_blocks.enarxis1 End-Insert
 			Dialog sid hierarchs_gr_GR_cog.hierNEW.pet06.text End-Dialog
@@ -189,6 +194,11 @@ Status NA
 		Section DET
 			Insert_section vespers_blocks.litanies1 End-Insert
 			Dialog sid hierarchs_gr_GR_cog.hierDET.pet19.text End-Dialog
+			Insert_section vespers_blocks.litanies2 End-Insert
+		End-Section
+		Section ECU
+			Insert_section vespers_blocks.litanies1 End-Insert
+			Dialog sid hierarchs_gr_GR_cog.hierECU.pet19.text End-Dialog
 			Insert_section vespers_blocks.litanies2 End-Insert
 		End-Section
 		Section NEW
@@ -384,6 +394,11 @@ Status NA
 			Title role mode rid tyDET.localchurch.apolytikion.mode<Tmelody>rid tyDET.localchurch.apolytikion.melody</>End-Title
 			Hymn rid tyDET.localchurch.apolytikion.text End-Hymn
 		End-Section
+		Section ECU
+			Title role desig sid ti.Apolytikion<Tdesig>rid tyECU.localchurch.title</>End-Title
+			Title role mode rid tyECU.localchurch.apolytikion.mode<Tmelody>rid tyECU.localchurch.apolytikion.melody</>End-Title
+			Hymn rid tyECU.localchurch.apolytikion.text End-Hymn
+		End-Section
 		Section NEW
 			Title role desig sid ti.Apolytikion<Tdesig>rid tyNEW.localchurch.title</>End-Title
 			Title role mode rid tyNEW.localchurch.apolytikion.mode<Tmelody>rid tyNEW.localchurch.apolytikion.melody</>End-Title
@@ -570,6 +585,34 @@ Status NA
 			End-Section
 			Insert_section Selector_Dismissals.hierarchical.part2 End-Insert
 		End-Section
+		Section ECU
+			Section block1
+				Actor sid ac.Hierarch End-Actor
+				Dialog sid pr.GloryToYouOurGod.text End-Dialog
+				when-movable-cycle-day-is
+					1 thru 127 use:
+						Dialog sid dis00 rid trDA.dismissal rid peDA.dismissal sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08 rid ty.tyECU.localsaint1.dismissal sid dis09 rid trDA.insert1 rid peDA.insert1 rid tyECU.meDA.insert1 rid tyECU.meDA.insert2 rid trDA.insert2 rid peDA.insert2 sid dis10 sid dis88 End-Dialog
+					otherwise use:
+						when-exists
+							rid meDA.dismissal use:
+								when-date-is
+									Jan 6 use:
+										Dialog sid dis00 rid meDA.dismissal sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08 rid ty.tyECU.localsaint1.dismissal sid dis09 sid dis10 sid dis88 End-Dialog
+									Aug 6 use:
+										Dialog sid dis00 rid meDA.dismissal sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08 rid ty.tyECU.localsaint1.dismissal sid dis09 sid dis10 sid dis88 End-Dialog
+									Dec 25 use:
+										Dialog sid dis00 rid meDA.dismissal sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08 rid ty.tyECU.localsaint1.dismissal sid dis09 sid dis10 sid dis88 End-Dialog
+									otherwise use:
+										Dialog sid dis00 rid meDA.dismissal rid daDismissal2.text sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08 rid ty.tyECU.localsaint1.dismissal sid dis09 rid tyECU.meDA.insert1 rid tyECU.meDA.insert2 sid dis10 sid dis88 End-Dialog
+								end-when
+							otherwise use:
+								Dialog sid dis00 rid daDismissal1.text sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08 rid ty.tyECU.localsaint1.dismissal sid dis09 rid tyECU.meDA.insert1 rid tyECU.meDA.insert2 sid dis10 sid dis88 End-Dialog
+						end-when
+				end-when
+			//	Dialog sid dis00 rid tyECU.meDA.dismissal rid tyECU.trDA.dismissal rid tyECU.peDA.dismissal rid tyECU.dis00.resurrection rid tyECU.dis00.andresurrection sid dis01 sid dis02 sid dis03 sid dis04 sid dis05 sid dis06 sid dis07 sid dis08 rid tyECU.localsaint1.dismissal sid dis09 rid tyECU.meDA.insert1 rid tyECU.meDA.insert2 sid dis10 sid dis88 End-Dialog
+			End-Section
+			Insert_section Selector_Dismissals.hierarchical.part2 End-Insert
+		End-Section
 		Section NEW
 			Section block1
 				Actor sid ac.Hierarch End-Actor
@@ -699,6 +742,13 @@ Status NA
 			Dialog sid pr.sup99.text End-Dialog
 			Insert_section LN.supplication_part2_choir End-Insert
 		End-Section
+		Section ECU
+			Actor sid ac.Priest End-Actor
+			Para role dialogzero sid pr.sup00.text End-Para
+			Para role dialogzero sid pr.sup01.text sid pr.sup02.text sid pr.sup03.text sid pr.sup04.text sid pr.sup05.text sid pr.sup06.text sid pr.sup07.text sid pr.sup08.text sid pr.sup09.text sid pr.sup10.text sid pr.sup11.text sid pr.sup12.text rid tyECU.localsaint1.supplication sid pr.sup14.text rid tyECU.trDA.insert1 rid tyECU.trDA.insert2 rid tyECU.peDA.insert1 rid tyECU.peDA.insert2 rid tyECU.meDA.insert1 rid tyECU.meDA.insert2 sid pr.sup15.text End-Para
+			Dialog sid pr.sup99.text End-Dialog
+			Insert_section LN.supplication_part2_choir End-Insert
+		End-Section
 		Section NEW
 			Actor sid ac.Priest End-Actor
 			Para role dialogzero sid pr.sup00.text End-Para
@@ -776,6 +826,16 @@ Status NA
 		Section DET
 			Insert_section LN.FervLitany_short_deacon_compact.part1 End-Insert
 			Dialog sid hierarchs_gr_GR_cog.hierDET.pet19.text End-Dialog
+			Insert_section LN.FervLitany_short_deacon_compact.part2 End-Insert
+			Insert_section LN.CompLitanyMA_deacon_compact End-Insert
+			Insert_section LN.hBowHeadsMA_deacon_choir End-Insert
+			Insert_section MA._18_End__.hierarchical__.wisdom123.part1 End-Insert
+			Insert_section MA._18_End__.hierarchical__.wisdom123.part2 End-Insert
+			Insert_section MA._18_End__.hierarchical__.wisdom123.part3 End-Insert
+		End-Section
+		Section ECU
+			Insert_section LN.FervLitany_short_deacon_compact.part1 End-Insert
+			Dialog sid hierarchs_gr_GR_cog.hierECU.pet19.text End-Dialog
 			Insert_section LN.FervLitany_short_deacon_compact.part2 End-Insert
 			Insert_section LN.CompLitanyMA_deacon_compact End-Insert
 			Insert_section LN.hBowHeadsMA_deacon_choir End-Insert
@@ -1112,6 +1172,49 @@ Status NA
 				Insert_section HIRgoa.LI_09_Dismissal__.DET End-Insert
 			End-Section
 		End-Section
+		Section ECU_
+			Section block1
+				Insert_section CONS.LI_01 End-Insert
+				Insert_section HIRgoa.CONS.LI_02__.ECU End-Insert
+				Insert_section CONS.LI_03 End-Insert
+				Insert_section HIRgoa.CONS.LI_04__.ECU End-Insert
+				Insert_section CONS.LI_05 End-Insert
+				Insert_section HIRgoa.CONS.LI_06__.ECU End-Insert
+				Insert_section CONS.LI_07 End-Insert
+				Insert_section HIRgoa.CONS.LI_08__.ECU End-Insert
+				Insert_section CONS.LI_09 End-Insert
+				Insert_section HIRgoa.CONS.LI_10__.ECU End-Insert
+				Insert_section CONS.LI_11 End-Insert
+				Insert_section hLI._06_Trisagion__.one_choir__.chrys.hymn End-Insert 
+				Insert_section HIRgoa.LI_07_Fimi__.one_choir__.ECU End-Insert
+			End-Section
+			Insert_section CONS.LI_Epistle End-Insert
+			Insert_section CONS.LI_Gospel End-Insert
+			Section block2a
+				Insert_section CONS.LI_21 End-Insert
+				Insert_section HIRgoa.LI_22__.ECU End-Insert
+				Insert_section CONS.LI_23 End-Insert
+				Actor sid ac.Hierarch<smaller>sid ru.Aloud</>End-Actor
+				Dialog sid hierarchs_gr_GR_cog.hierECU.commemoration.text End-Dialog
+				Para role dialogwithactor<actorwithdialog>sid ac.IL.Choir</>sid pr.res01.text End-Para
+			End-Section
+			Section commemoration_concelebrarting_Metropolitan
+				Actor sid ac.Metropolitan<smaller>sid ru.Aloud</>End-Actor
+				Dialog sid hierarchs_gr_GR_cog.hierECU.commemoration.text End-Dialog
+				Para role dialogwithactor<actorwithdialog>sid ac.IL.Choir</>sid pr.res01.text End-Para
+			End-Section
+			Section block2b
+				Actor sid ac.Clergy End-Actor
+				Dialog sid hierarchs_gr_GR_cog.hierECU.commemoration.text End-Dialog
+				Para role dialogwithactor<actorwithdialog>sid ac.IL.Choir</>sid pr.res01.text End-Para
+				Insert_section CONS.LI_25 End-Insert
+			End-Section
+			Insert_section CONS.LI_26_CommunionHymn_ End-Insert
+			Section block3
+				Insert_section CONS.LI_27 End-Insert
+				Insert_section HIRgoa.LI_09_Dismissal__.ECU End-Insert
+			End-Section
+		End-Section
 		Section NEW_
 			Section block1
 				Insert_section CONS.LI_01 End-Insert
@@ -1237,6 +1340,11 @@ Status NA
 			Section DET
 				Insert_section liturgy_enarxis_block1 End-Insert
 				Dialog sid hierarchs_gr_GR_cog.hierDET.pet06.text End-Dialog
+				Insert_section liturgy_enarxis_block2 End-Insert
+			End-Section
+			Section ECU
+				Insert_section liturgy_enarxis_block1 End-Insert
+				Dialog sid hierarchs_gr_GR_cog.hierECU.pet06.text End-Dialog
 				Insert_section liturgy_enarxis_block2 End-Insert
 			End-Section
 			Section NEW
@@ -1370,6 +1478,22 @@ Status NA
 				Actor sid ac.Choir End-Actor
 				Hymn sid hierarchs_gr_GR_cog.hierDET.fimi.text End-Hymn
 			End-Section
+			Section ECU
+				Insert_section HIRgoa.fimi_part1_1choir End-Insert
+				Actor sid ac.Deacon End-Actor
+				Dialog sid hierarchs_gr_GR_cog.hierECU.fimi.text End-Dialog
+				Actor sid ac.Clergy End-Actor
+				Para role chant sid hierarchs_gr_GR_cog.hierECU.fimi.text End-Para
+				Media sid eu.lichrysbasil_gr_GR_cog.euLI.MM.Key0613.text End-Media
+				Actor sid ac.Choir End-Actor
+				Hymn sid hierarchs_gr_GR_cog.hierECU.fimi.text End-Hymn
+				Actor sid ac.Choir End-Actor
+				Hymn sid hierarchs_gr_GR_cog.hierECU.fimi.text End-Hymn
+				Actor sid ac.Deacon End-Actor
+				Dialog sid hierarchs_gr_GR_cog.hierECU.fimi.text End-Dialog
+				Actor sid ac.Clergy End-Actor
+				Hymn sid hierarchs_gr_GR_cog.hierECU.fimi.text End-Hymn
+			End-Section
 			Section NEW
 				Insert_section HIRgoa.fimi_part1_1choir End-Insert
 				Actor sid ac.Deacon End-Actor
@@ -1470,6 +1594,22 @@ Status NA
 				Dialog sid hierarchs_gr_GR_cog.hierAME.fimi.text End-Dialog
 				Actor sid ac.Clergy End-Actor
 				Hymn sid hierarchs_gr_GR_cog.hierAME.fimi.text End-Hymn
+			End-Section
+			Section ECU
+				Insert_section HIRgoa.fimi_part1_2choirs End-Insert
+				Actor sid ac.Deacon End-Actor
+				Dialog sid hierarchs_gr_GR_cog.hierECU.fimi.text End-Dialog
+				Actor sid ac.Clergy End-Actor
+				Para role chant sid hierarchs_gr_GR_cog.hierECU.fimi.text End-Para
+				Media sid eu.lichrysbasil_gr_GR_cog.euLI.MM.Key0613.text End-Media
+				Actor sid ac.ChoirR End-Actor
+				Hymn sid hierarchs_gr_GR_cog.hierECU.fimi.text End-Hymn
+				Actor sid ac.ChoirL End-Actor
+				Hymn sid hierarchs_gr_GR_cog.hierECU.fimi.text End-Hymn
+				Actor sid ac.Deacon End-Actor
+				Dialog sid hierarchs_gr_GR_cog.hierECU.fimi.text End-Dialog
+				Actor sid ac.Clergy End-Actor
+				Hymn sid hierarchs_gr_GR_cog.hierECU.fimi.text End-Hymn
 			End-Section
 		End-Section
 	End-Section
@@ -1579,6 +1719,26 @@ Status NA
 					Para role dialogwithactor<actorwithdialog>sid ac.IL.Choir</>sid pr.res04.text End-Para
 					Actor sid ac.Clergy End-Actor
 					Dialog sid hierarchs_gr_GR_cog.hierDET.commemoration.text End-Dialog
+					Para role dialogwithactor<actorwithdialog>sid ac.IL.Choir</>sid pr.res04.text End-Para
+					Insert_section HIRgoa.chrysostom_parts.block4 End-Insert
+					Insert_section hLI.prayers_before_communion End-Insert
+				End-Section
+				Insert_section HIRgoa.chrysostom_parts.block5 End-Insert
+				Insert_section HIRgoa.chrysostom_parts.block6 End-Insert
+			End-Section
+			Section ECU
+				Section block1a
+					Insert_section HIRgoa.chrysostom_parts.block1 End-Insert
+					Insert_section HIRgoa.LI_22__.ECU End-Insert
+					Insert_section HIRgoa.chrysostom_parts.block2 End-Insert
+					Insert_section HIRgoa.chrysostom_parts.block3 End-Insert
+					Actor sid ac.Hierarch<smaller>sid ru.Aloud</>End-Actor
+					Dialog sid hierarchs_gr_GR_cog.hierECU.commemoration.text End-Dialog
+					Para role dialogwithactor<actorwithdialog>sid ac.IL.Choir</>sid pr.res04.text End-Para
+				End-Section
+				Section block1b
+					Actor sid ac.Clergy End-Actor
+					Dialog sid hierarchs_gr_GR_cog.hierECU.commemoration.text End-Dialog
 					Para role dialogwithactor<actorwithdialog>sid ac.IL.Choir</>sid pr.res04.text End-Para
 					Insert_section HIRgoa.chrysostom_parts.block4 End-Insert
 					Insert_section hLI.prayers_before_communion End-Insert
@@ -2656,6 +2816,10 @@ Status NA
 			Insert_section HIRgoa.VEMA_Dismissal__.DET.block1 End-Insert
 			Insert_section hLI.dismissal_part2 End-Insert
 		End-Section
+		Section ECU
+			Insert_section HIRgoa.VEMA_Dismissal__.AME.block1 End-Insert
+			Insert_section hLI.dismissal_part2 End-Insert
+		End-Section
 		Section NEW
 			Insert_section HIRgoa.VEMA_Dismissal__.NEW.block1 End-Insert
 			Insert_section hLI.dismissal_part2 End-Insert
@@ -2753,6 +2917,20 @@ Status NA
 			End-Section
 			Section glory
 				Title sid ti.Glory<Tdesig>rid tyDET.localchurch.title</>End-Title
+			End-Section
+		End-Section
+		Section ECU__
+			Section apolytikion
+				Title role desig sid ti.Apolytikion rid tyECU.localchurch.title End-Title
+			End-Section
+			Section name
+				Title role desig rid tyECU.localchurch.title End-Title
+			End-Section
+			Section both
+				Title sid ti.BothNow<Tdesig>rid tyECU.localchurch.title</>End-Title
+			End-Section
+			Section glory
+				Title sid ti.Glory<Tdesig>rid tyECU.localchurch.title</>End-Title
 			End-Section
 		End-Section
 		Section NEW__
@@ -3152,6 +3330,14 @@ Status NA
 			Para role dialogwithactor<actorwithdialog>sid ac.IL.Choir</>sid pr.res04.text End-Para
 			Rubric sid eu.lichrysbasil_gr_GR_cog.euLI.Key1113.rubric End-Rubric
 		End-Section
+		Section ECU
+			Rubric sid eu.lichrysbasil_gr_GR_cog.euLI.Key1112.rubric End-Rubric
+			Para role dialogwithactor<actorwithdialog>sid ac.IL.Choir</>sid pr.res04.text End-Para
+			Actor sid ac.Priest End-Actor
+			Dialog sid eu.lichrysbasil_gr_GR_cog.euLI.Key1124.text End-Dialog
+			Para role dialogwithactor<actorwithdialog>sid ac.IL.Choir</>sid pr.res04.text End-Para
+			Rubric sid eu.lichrysbasil_gr_GR_cog.euLI.Key1113.rubric End-Rubric
+		End-Section
 		Section NEW
 			Rubric sid eu.lichrysbasil_gr_GR_cog.euLI.Key1112.rubric End-Rubric
 			Para role dialogwithactor<actorwithdialog>sid ac.IL.Choir</>sid pr.res04.text End-Para
@@ -3266,6 +3452,14 @@ Status NA
 			Dialog sid hierarchs_gr_GR_cog.hierDET.commemoration.text End-Dialog
 			Para role dialogwithactor<actorwithdialog>sid ac.IL.Choir</>sid pr.res01.text End-Para
 		End-Section
+		Section ECU
+			Actor sid ac.Hierarch<smaller>sid ru.Aloud</>End-Actor
+			Dialog sid hierarchs_gr_GR_cog.hierECU.commemoration.text End-Dialog
+			Para role dialogwithactor<actorwithdialog>sid ac.IL.Choir</>sid pr.res01.text End-Para
+			Actor sid ac.Clergy End-Actor
+			Dialog sid hierarchs_gr_GR_cog.hierECU.commemoration.text End-Dialog
+			Para role dialogwithactor<actorwithdialog>sid ac.IL.Choir</>sid pr.res01.text End-Para
+		End-Section
 		Section NEW
 			Actor sid ac.Hierarch<smaller>sid ru.Aloud</>End-Actor
 			Dialog sid hierarchs_gr_GR_cog.hierECU.commemoration.text End-Dialog
@@ -3352,6 +3546,9 @@ Status NA
 			Section DET
 				Para role prayer sid eu.consecrationliturgy_gr_GR_cog.euCON.Key4218.text rid tyDET.consecration.prayer1 sid eu.consecrationliturgy_gr_GR_cog.euCON.Key4219.text End-Para
 			End-Section
+			Section ECU
+				Para role prayer sid eu.consecrationliturgy_gr_GR_cog.euCON.Key4218.text rid tyECU.consecration.prayer1 sid eu.consecrationliturgy_gr_GR_cog.euCON.Key4219.text End-Para
+			End-Section
 			Section NEW
 				Para role prayer sid eu.consecrationliturgy_gr_GR_cog.euCON.Key4218.text rid tyNEW.consecration.prayer1 sid eu.consecrationliturgy_gr_GR_cog.euCON.Key4219.text End-Para
 			End-Section
@@ -3380,6 +3577,9 @@ Status NA
 			End-Section
 			Section DET
 				Para role prayer sid eu.consecrationliturgy_gr_GR_cog.euCON.Key4405.text rid tyDET.relic1.name rid tyDET.relic2.name rid tyDET.relic3.name sid eu.consecrationliturgy_gr_GR_cog.euCON.Key4406.text End-Para
+			End-Section
+			Section ECU
+				Para role prayer sid eu.consecrationliturgy_gr_GR_cog.euCON.Key4405.text rid tyECU.relic1.name rid tyECU.relic2.name rid tyECU.relic3.name sid eu.consecrationliturgy_gr_GR_cog.euCON.Key4406.text End-Para
 			End-Section
 			Section NEW
 				Para role prayer sid eu.consecrationliturgy_gr_GR_cog.euCON.Key4405.text rid tyNEW.relic1.name rid tyNEW.relic2.name rid tyNEW.relic3.name sid eu.consecrationliturgy_gr_GR_cog.euCON.Key4406.text End-Para
@@ -3410,6 +3610,9 @@ Status NA
 			Section DET
 				Para role prayer sid eu.consecrationliturgy_gr_GR_cog.euCON.Key4407.text rid tyDET.consecration.name sid eu.consecrationliturgy_gr_GR_cog.euCON.Key4408.text End-Para
 			End-Section
+			Section ECU
+				Para role prayer sid eu.consecrationliturgy_gr_GR_cog.euCON.Key4407.text rid tyECU.consecration.name sid eu.consecrationliturgy_gr_GR_cog.euCON.Key4408.text End-Para
+			End-Section
 			Section NEW
 				Para role prayer sid eu.consecrationliturgy_gr_GR_cog.euCON.Key4407.text rid tyNEW.consecration.name sid eu.consecrationliturgy_gr_GR_cog.euCON.Key4408.text End-Para
 			End-Section
@@ -3438,6 +3641,9 @@ Status NA
 			End-Section
 			Section DET
 				Para role prayer sid eu.consecrationliturgy_gr_GR_cog.euCON.Key4503.text rid tyDET.consecration.name sid eu.consecrationliturgy_gr_GR_cog.euCON.Key4504.text End-Para
+			End-Section
+			Section ECU
+				Para role prayer sid eu.consecrationliturgy_gr_GR_cog.euCON.Key4503.text rid tyECU.consecration.name sid eu.consecrationliturgy_gr_GR_cog.euCON.Key4504.text End-Para
 			End-Section
 			Section NEW
 				Para role prayer sid eu.consecrationliturgy_gr_GR_cog.euCON.Key4503.text rid tyNEW.consecration.name sid eu.consecrationliturgy_gr_GR_cog.euCON.Key4504.text End-Para
@@ -3491,6 +3697,13 @@ Status NA
 				Dialog rid tyAME.consecration.greatlitany.euCON.Key4508 End-Dialog
 				Insert_section CONS.LI_10_.block2 End-Insert
 				Dialog sid pr.petConsecration13a.text rid tyDET.consecration.greatlitany.finalpetition.name sid pr.petConsecration13b.text End-Dialog
+			End-Section
+			Section ECU
+				Insert_section CONS.LI_10_.block1 End-Insert
+				Dialog sid hierarchs_gr_GR_cog.hierECU.con_ord_petition_name.text sid eu.consecrationliturgy_gr_GR_cog.euCON.Key4507b.text End-Dialog
+				Dialog rid tyECU.consecration.greatlitany.euCON.Key4508 End-Dialog
+				Insert_section CONS.LI_10_.block2 End-Insert
+				Dialog sid pr.petConsecration13a.text rid tyECU.consecration.greatlitany.finalpetition.name sid pr.petConsecration13b.text End-Dialog
 			End-Section
 			Section NEW
 				Insert_section CONS.LI_10_.block1 End-Insert
