@@ -8062,18 +8062,13 @@ Status NA
 		End-Section
 		Section eome
 			Insert_section eo__.eoofweek_.exap End-Insert
-			when-exists rid meMA.Exaposteilarion1.text use:
-				when-exists
-					rid meDA.commemoration.first_title use:
-						Title role desig rid meDA.commemoration.first_title End-Title
-					otherwise use:
-						Title role desig sid ti.Menaion End-Title
-				end-when
-				Insert_section MA._12_Exaposteilarion__.append__.me__.exap123t End-Insert
-			otherwise use:
-				Title role desig sid ti.Theotokion sid ti.SameMelody_1hymn End-Title
-				Media rid eo.Theotokion.text End-Media
-				Hymn rid eo.Theotokion.text @ver media-off End-Hymn
+			when-exists 
+				rid meMA.Exaposteilarion1.text use:
+					Insert_section MA._12_Exaposteilarion__.append__.me__.exap123t End-Insert
+				otherwise use:
+					Title role desig sid ti.Theotokion sid ti.SameMelody_1hymn End-Title
+					Media rid eo.Theotokion.text End-Media
+					Hymn rid eo.Theotokion.text @ver media-off End-Hymn
 			end-when
 		End-Section
 		Section festal
