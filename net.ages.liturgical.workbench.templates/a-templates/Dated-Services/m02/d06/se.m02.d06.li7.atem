@@ -1,6 +1,6 @@
 Template se.m02.d06.li7
 
-Status Final
+Status NA
 
 	import da.*
 	import oc.*
@@ -22,12 +22,12 @@ Status Final
 	import roles.*
 
 	Head
-		Set_Date month 2 day 6 year 2025 End_Date
+		Set_Date month 2 day 6 year 2026 End_Date
 			Page_Header_Even
-				center @lookup sid template.titles_gr_GR_cog.li7.pdf.header lang L1 @lookup rid daOnDay.text lang L1 @lookup rid meDA.pdfheaderdate lang L1
+				center @lookup sid template.titles_gr_GR_cog.li2.pdf.header lang L1 @lookup rid daOnDay.text lang L1 @lookup rid meDA.pdfheaderdate lang L1
 			End_Page_Header_Even
 			Page_Header_Odd
-				center @lookup sid template.titles_gr_GR_cog.li7.pdf.header lang L2 @lookup rid daOnDay.text lang L2 @lookup rid meDA.pdfheaderdate lang L2
+				center @lookup sid template.titles_gr_GR_cog.li2.pdf.header lang L2 @lookup rid daOnDay.text lang L2 @lookup rid meDA.pdfheaderdate lang L2
 			End_Page_Header_Odd
 			Page_Footer_Even
 				center @pageNbr
@@ -40,84 +40,81 @@ Status Final
 
 	when-movable-cycle-day-is
 		1, 8 use:
-			Section Instance01 //2028
-			End-Section
+			Insert_section mc.map.li2.Instance02 End-Insert
 		13 use:
-			Section Instance02 //2037
+			Section Instance01
+				Insert_section se.m02.d09.li2.Instance_Weekday End-Insert
 			End-Section
+		14 use:
+			Insert_section mc.map.li2.Instance01 End-Insert
 
 		otherwise use:
 			when-name-of-day-is
 				Sunday use:
 					Section Instance_Sunday
-						Insert_section ST.li.oc_meaf_mealt1 End-Insert
+						Insert_section ST.li.oc_meaf End-Insert
 						Insert_section LI._10_Parts__._1_antiphons__.sundays_weekdays_feasts End-Insert
-							Break line End_Break
-							Break page End_Break
-						Insert_section LI._10_Parts__._2_typika__.rubrics End-Insert
-						Insert_section LI._10_Parts__._3_beatitudes__.sunday__.b_123Tas1234 End-Insert
-						Insert_section LI._03_Beatitudes__.append__.festal__.feb02__.ode3_as5678 End-Insert
-						Insert_section LI._03_Beatitudes__.append__.mealt1c1__.ode6_123Tas910GB End-Insert
-							Break line End_Break
-							Break page End_Break
+						Break line End_Break
 						Insert_section LI._10_Parts__._4_entrance End-Insert
-							Break line End_Break
+						Break line End_Break
+						Section block01
 						Title role desig sid ti.HymnsAfterSmallEntrance End-Title
-						Insert_section se.m02.d06.li6.Instance_Sunday.hymns End-Insert
-							Break line End_Break
+						Insert_section se.m02.d06.li.Instance_Sunday.hymns End-Insert
+						Break line End_Break
 						Insert_section LI._10_Parts__._5_trisagionhymn__.chrys End-Insert
-							Break line End_Break
-						Insert_section LE._01_Epistle__.textonly__.mealt1 End-Insert
-							Break line End_Break
+						Break line End_Break
+						Section readings
+						Insert_section LE._01_Epistle__.textonly__.daily End-Insert
+						Break line End_Break
 						Insert_section LE._02_Gospel__.textonly__.daily End-Insert
-							Break line End_Break
+						End-Section
+						Break line End_Break
 						Title role desig sid ti.HymnToTheotokos End-Title
 						Insert_section Selector_Megalynarion.Chrysostom End-Insert
-							Break line End_Break
-						Insert_section Selector_CommunionHymn.mealt1 End-Insert
-							Break line End_Break
+						Break line End_Break
+						Insert_section Selector_CommunionHymn.Chrysostom End-Insert
+						Break line End_Break
 						Title role desig sid eu.lichrysbasil_gr_GR_cog.euLI.Key1530.title End-Title
 						Insert_section Selector_AfterCommunion.Chrysostom End-Insert
-							Break line End_Break
+						Break line End_Break
 						Title role desig sid eu.lichrysbasil_gr_GR_cog.euLI.Key1700.title End-Title
-						Insert_section Selector_Dismissals.mealt1_Com_Yes.part1 End-Insert
-							Break line End_Break
+						Insert_section Selector_Dismissals.Com_No.part1 End-Insert
+						Break line End_Break
 						Insert_section LI._10_Parts__._9_fasting_ End-Insert
+						End-Section
 					End-Section
 				otherwise use:
 					Section Instance_Weekday
-						Insert_section ST.li.mealt1 End-Insert
+						Insert_section ST.li.me1 End-Insert
 						Insert_section LI._10_Parts__._1_antiphons__.sundays_weekdays_feasts End-Insert
-							Break line End_Break
-							Break page End_Break
-						Insert_section LI._10_Parts__._2_typika__.rubrics End-Insert
-						Insert_section LI._10_Parts__._3_beatitudes__.festal__.feb02__.ode3_as5678 End-Insert
-						Insert_section LI._03_Beatitudes__.append__.mealt1c1__.ode6_123Tas910GB End-Insert
-							Break line End_Break
-							Break page End_Break
+						Break line End_Break
 						Insert_section LI._10_Parts__._4_entrance End-Insert
-							Break line End_Break
+						Break line End_Break
+						Section block01
 						Title role desig sid ti.HymnsAfterSmallEntrance End-Title
-						Insert_section se.m02.d06.li6.Instance_Weekday.hymns End-Insert
-							Break line End_Break
+						Insert_section se.m02.d06.li.Instance_Weekday.hymns End-Insert
+						Break line End_Break
 						Insert_section LI._10_Parts__._5_trisagionhymn__.chrys End-Insert
-							Break line End_Break
-						Insert_section LE._01_Epistle__.textonly__.mealt1 End-Insert
-							Break line End_Break
-						Insert_section LE._02_Gospel__.textonly__.mealt1 End-Insert
-							Break line End_Break
+						Break line End_Break
+						Section readings
+						Insert_section LE._01_Epistle__.pretriodion__.textonly End-Insert
+						Break line End_Break
+						Insert_section LE._02_Gospel__.pretriodion__.textonly End-Insert
+						End-Section
+						Break line End_Break
 						Title role desig sid ti.HymnToTheotokos End-Title
 						Insert_section Selector_Megalynarion.Chrysostom End-Insert
-							Break line End_Break
-						Insert_section Selector_CommunionHymn.mealt1 End-Insert
-							Break line End_Break
+						Break line End_Break
+						Insert_section Selector_CommunionHymn.Chrysostom End-Insert
+						Break line End_Break
 						Title role desig sid eu.lichrysbasil_gr_GR_cog.euLI.Key1530.title End-Title
 						Insert_section Selector_AfterCommunion.Chrysostom End-Insert
-							Break line End_Break
+						Break line End_Break
 						Title role desig sid eu.lichrysbasil_gr_GR_cog.euLI.Key1700.title End-Title
-						Insert_section Selector_Dismissals.mealt1_Com_Yes.part1 End-Insert
-							Break line End_Break
+						Insert_section Selector_Dismissals.Com_No.part1 End-Insert
+						Break line End_Break
 						Insert_section LI._10_Parts__._9_fasting_ End-Insert
+						End-Section
 					End-Section
 			end-when
 	end-when
