@@ -22,7 +22,7 @@ Status NA
 	import roles.*
 
 	Head
-		Set_Date month 2 day 20 year 2030 End_Date
+		Set_Date month 2 day 1 year 2026 End_Date
 			Page_Header_Even
 				center @lookup sid hw.bridegroomservice lang L1 @lookup sid d.onSundayEvening lang L1
 			End_Page_Header_Even
@@ -39,11 +39,22 @@ Status NA
 	End_Head
 
 	Section test_mc
+		Set_Date month 1 day 31 year 2026 End_Date
 		Para ldp @Day_of_Movable_Cycle End-Para
-		Insert_section LE._01_Epistle__.daily_ End-Insert
-		Insert_section LE._01_Epistle__.pretriodion__.liturgy End-Insert
-
+		when-movable-cycle-day-is
+			0 use:
+				Para ldp @Day_of_Movable_Cycle End-Para		
+				Para rid meDA.date End-Para
+			1 use:
+				Para rid meDA.date End-Para
+			357 use:
+				Para rid meDA.date End-Para
+		end-when
 	End-Section
+//	Section test_mc
+//		Set_Date month 2 day 1 year 2026 End_Date
+//		Para ldp @Day_of_Movable_Cycle End-Para
+//	End-Section
 
 
 

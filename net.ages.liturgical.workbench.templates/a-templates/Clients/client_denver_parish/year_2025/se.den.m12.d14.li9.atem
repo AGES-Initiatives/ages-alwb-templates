@@ -1,0 +1,63 @@
+Template se.den.m12.d14.li9
+
+Status NA
+
+	import da.*
+	import oc.*
+	import me.*
+	import eo.*
+	import tr.*
+	import pe.*
+
+	import actors_gr_GR_cog.*
+	import dismissals_gr_GR_cog.*
+	import miscellanea_gr_GR_cog.*
+	import prayers_gr_GR_cog.*
+	import rubrical_gr_GR_cog.*
+	import template.titles_gr_GR_cog.*
+	import titles_gr_GR_cog.*
+
+	import iTags.*
+	import bTags.*
+	import roles.*
+
+	Head
+		Set_Date month 12 day 14 year 2025 End_Date
+			Page_Header_Even
+				center @lookup sid template.titles_gr_GR_cog.li4.pdf.header lang L1 @lookup rid daOnDay.text lang L1 @lookup rid meDA.pdfheaderdate lang L1
+			End_Page_Header_Even
+			Page_Header_Odd
+				center @lookup sid template.titles_gr_GR_cog.li4.pdf.header lang L2 @lookup rid daOnDay.text lang L2 @lookup rid meDA.pdfheaderdate lang L2
+			End_Page_Header_Odd
+			Page_Footer_Even
+				center @pageNbr
+			End_Page_Footer_Even
+			Page_Footer_Odd
+				center @pageNbr
+			End_Page_Footer_Odd
+		Set_Page_Number 1 End_Set_Page_Number
+	End_Head
+
+	Section Instance01
+		Insert_section ST.li.oc_com End-Insert
+		Insert_section HIRgoa.LI_01_Enarxis__.daily__.DEN End-Insert
+		Insert_section hLI._02_Antiphons__.sundays_weekdays_feasts End-Insert
+		Insert_section hLI._04_Entrance__.hierarch End-Insert
+		Insert_section hLI._05_AfterEntranceHymns__.hierarch End-Insert
+		Section hymns
+			Insert_section AP.res__.modeofweek End-Insert
+			Actor <ach>sid ac.Choir</>End-Actor
+			Insert_section TI.com.decff End-Insert
+			Insert_section AP.com__.DecFF_.hymn End-Insert
+			Insert_section AP.HIRgoa_local__.DEN End-Insert
+			Insert_section hLI._05_AfterEntranceHymns__.kontakion_hierarch End-Insert
+		End-Section
+		Insert_section hLI._06_Trisagion__.one_choir__.chrys End-Insert
+		Insert_section HIRgoa.LI_07_Fimi__.one_choir__.DEN End-Insert
+		Insert_section hLE._01_Epistle__.christmas__.sunFF_ End-Insert
+		Insert_section hLE._02_Gospel__.christmas__.sunFF_ End-Insert
+		Insert_section HIRgoa.LI_08_Liturgy__.chrys_ordination_priest__.DEN End-Insert
+		Insert_section HIRgoa.LI_09_Dismissal__.DEN End-Insert
+	End-Section
+
+End-Template
