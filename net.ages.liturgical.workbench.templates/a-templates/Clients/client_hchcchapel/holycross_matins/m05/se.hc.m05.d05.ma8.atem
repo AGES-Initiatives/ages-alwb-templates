@@ -65,7 +65,12 @@ Status Final
 					End-Section
 			end-when
 		End-Section
-		Insert_section MA._11_Kontakion__.me1_ End-Insert
+		when-exists
+			rid meMA.Kontakion1.text use:
+				Insert_section MA._11_Kontakion__.me1_ End-Insert
+			otherwise use:
+				Insert_section MA._11_Kontakion__.pe_weekday End-Insert
+		end-when
 		Insert_section SY.Synaxarion End-Insert
 		Insert_section MA._10_Canon__.ode8_heirmos__.me End-Insert
 		Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert
@@ -73,7 +78,12 @@ Status Final
 		Insert_section MA._10_Canon__.ode9_heirmos__.me End-Insert
 		Insert_section MA._10_Canon__.ode9_end End-Insert
 		Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
-		Insert_section MA._12_Exaposteilarion__.me__.exap123t.exap1 End-Insert
+		when-exists
+			rid meMA.Exaposteilarion1.text use:
+				Insert_section MA._12_Exaposteilarion__.me__.exap123t.exap1 End-Insert
+			otherwise use:
+				Insert_section MA._12_Exaposteilarion__.festal End-Insert
+		end-when
 		Insert_section MA._14_Doxology__.small End-Insert
 		Insert_section MA._15_Litanies__.aftersmalldoxology End-Insert
 		Insert_section MA._16_Aposticha__.pe__.weekday_ End-Insert

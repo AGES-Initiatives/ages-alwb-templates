@@ -76,7 +76,12 @@ Status NA
 				Insert_section AP.both__.af End-Insert
 		end-when
 	End-Section
-	Insert_section MA._11_Kontakion__.me1_ End-Insert
+	when-exists
+		rid meMA.Kontakion1.text use:
+			Insert_section MA._11_Kontakion__.me1_ End-Insert
+		otherwise use:
+			Insert_section MA._11_Kontakion__.pe_weekday End-Insert
+	end-when
 	Insert_section SY.Synaxarion End-Insert
 	Insert_section MA._10_Canon__.ode8_heirmos__.me End-Insert
 	Insert_section MA._10_Canon__.ode9_intro__.choir End-Insert

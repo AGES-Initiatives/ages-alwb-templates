@@ -77,7 +77,12 @@ Status Final
 					Insert_section AP.both__.af End-Insert
 			end-when
 		End-Section
-		Insert_section MA._11_Kontakion__.me1_ End-Insert
+		when-exists
+			rid meMA.Kontakion1.text use:
+				Insert_section MA._11_Kontakion__.me1_ End-Insert
+			otherwise use:
+				Insert_section MA._11_Kontakion__.pe_weekday End-Insert
+		end-when
 		Insert_section SY.Synaxarion End-Insert
 		Section ode8
 			Actor sid ac.Choir End-Actor
@@ -95,7 +100,12 @@ Status Final
 		End-Section
 		Insert_section MA._10_Canon__.ode9_end End-Insert
 		Insert_section MA._10_Canon__.litanies__.ode9 End-Insert
-		Insert_section MA._12_Exaposteilarion__.me__.exap123t.exap1 End-Insert
+		when-exists
+			rid meMA.Exaposteilarion1.text use:
+				Insert_section MA._12_Exaposteilarion__.me__.exap123t.exap1 End-Insert
+			otherwise use:
+				Insert_section MA._12_Exaposteilarion__.festal End-Insert
+		end-when
 		Insert_section MA._14_Doxology__.small End-Insert
 		Insert_section MA._15_Litanies__.aftersmalldoxology End-Insert
 		Insert_section HC.MA._16_lauds_as_aposticha__.me__.p_oneapostle12 End-Insert
