@@ -5559,13 +5559,13 @@ Status NA
 	Section resgloryres
 		Para role source sid ti.sourceOctoechos End-Para
 		Title role desig sid ti.ApolytikionResurrectional End-Title
-	//	when-exists
-	//		rid ocVE.Apolytikion.greekmelody use:
+		when-mode-of-week-is
+			M1, M5, M6 use:
 				Title role mode rid ocVE.Apolytikion.mode @day D1<Tmelody>rid ocVE.Apolytikion.melody @day D1</>End-Title
 				Title role greekmelody rid ocVE.Apolytikion.greekmelody @day D1 End-Title
-	//		otherwise use:
-	//			Title role mode rid ocVE.Apolytikion.mode End-Title
-	//	end-when
+			otherwise use:
+				Title role mode rid ocVE.Apolytikion.mode @day D1 End-Title
+		end-when
 		Media rid ocVE.Apolytikion.text @day D1 End-Media
 		Hymn rid ocVE.Apolytikion.text @ver media-off @day D1 End-Hymn
 		Title sid ti.Glory<Tdesig>sid ti.Repeat</>End-Title
@@ -5576,7 +5576,7 @@ Status NA
 			Para role source sid ti.sourceOctoechos End-Para
 			Title role desig sid ti.ApolytikionResurrectional End-Title
 			when-mode-of-week-is
-				M1, M5 use:
+				M1, M5, M6 use:
 					Title role mode rid ocVE.Apolytikion.mode @day D1<Tmelody>rid ocVE.Apolytikion.melody @day D1</>End-Title
 					Title role greekmelody rid ocVE.Apolytikion.greekmelody @day D1 End-Title
 				otherwise use:
@@ -5625,7 +5625,8 @@ Status NA
 		Section mode6
 			Para role source sid ti.sourceOctoechos End-Para
 			Title role desig sid ti.ApolytikionResurrectional End-Title
-			Title role mode sid oc.m6.d1_gr_GR_cog.ocVE.Apolytikion.mode End-Title
+			Title role mode sid oc.m6.d1_gr_GR_cog.ocVE.Apolytikion.mode<Tmelody>sid oc.m6.d1_gr_GR_cog.ocVE.Apolytikion.melody</>End-Title
+ 			Title role greekmelody sid oc.m6.d1_gr_GR_cog.ocVE.Apolytikion.greekmelody End-Title
 			Media sid oc.m6.d1_gr_GR_cog.ocVE.Apolytikion.text End-Media
 			Hymn sid oc.m6.d1_gr_GR_cog.ocVE.Apolytikion.text @ver media-off End-Hymn
 		End-Section
