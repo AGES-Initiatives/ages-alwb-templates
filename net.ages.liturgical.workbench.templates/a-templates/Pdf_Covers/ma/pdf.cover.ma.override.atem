@@ -2,9 +2,6 @@ Template pdf.cover.ma.override
 
 Status NA
 
-	import he.k_en_US_public.*
-	import pdf.covers_gr_GR_cog.*
-
 	import da.*
 	import oc.*
 	import me.*
@@ -30,280 +27,273 @@ Status NA
 
 	Switch-Version L2 End-Switch-Version
 
-	Insert_section pdf.cover.links.lookup.matins End-Insert
-	when-date-is
-		Jan 1 use:
-			Section title
-				Para role cover_logo_line_above sid cover_logo_line End-Para
-				Para role cover_logo1 sid cover_logo1.text End-Para
-				Para role cover_logo2 sid cover_logo2.text End-Para
-				Para role cover_logo_line_below sid cover_logo_line End-Para
-				Title role cover1 sid ma.pdf.cover End-Title
-				Title role cover3 sid d.for ldp @Service_Date End-Title
-			End-Section
-		Feb 7 use:
-			Section Feb07_vigil_2024
-				Insert_section title End-Insert
-			//	Section mode_eothinon
-			//		when-name-of-day-is
-			//			Sunday use:
-			//				Title role cover5 sid misc.book.Octoechos.name sid d.delimiter rid ocBK.ModeNaked End-Title
-			//				Insert_section pdf.cover.lookup.on_morning End-Insert
-			//				Title role cover4 sid ti.Eothinon ldp @Eothinon End-Title
-			//		end-when
-			//	End-Section
-				Section commeoration
-					Title role cover5 sid misc.book.Menaion.name sid d.delimiter rid meDA.date End-Title
-					Title role cover4 sid me.m02.d07_gr_GR_cog.meDA.commemoration.first End-Title
+		Insert_section pdf.cover.links.lookup.matins End-Insert
+		Title role cover81 sid pdf.covers_gr_GR_cog.cover_attribution1.text End-Title
+		Title role cover82 sid pdf.covers_gr_GR_cog.cover_attribution2.text End-Title
+
+		when-date-is
+			Jan 1 use:
+				Section title
+					Title role cover1 sid ma.pdf.cover End-Title
+					Title role cover3 sid d.for ldp @Service_Date End-Title
 				End-Section
-				Section katavasia
-					Insert_section KA._title End-Insert
-				End-Section
-			End-Section
-		Apr 13, 20 use:
-			Section Apr_client_ordination
-				Insert_section title End-Insert
-				Section commeoration
-					Title role cover5 sid misc.book.Pentecostarion.name End-Title
-					Title role cover4 sid pe.d120_gr_GR_cog.peDA.commemoration.full End-Title
-				End-Section
-				Section katavasia
-					Set_mcDay day 120 End_mcDay
-					Insert_section KA._title End-Insert	//Katavasia Moveable
-					Set_mcDay day 0 End_mcDay
-				End-Section
-				Section ordination
-					Title role cover5 sid misc.book.Euchologion.name End-Title
-					Title role cover4 sid eu.ordination_gr_GR_cog.euORD.EP.p400.title End-Title
-				End-Section
-			End-Section
-		May 7 use:
-			Section May7_2022_client_portjeffersonnygoa
-				Insert_section title End-Insert
-					Section ceremony
-						Title role cover5 sid misc.book.Euchologion.name sid d.delimiter sid ti.ConsecrationOfAChurch End-Title
-					End-Section
-					Section moveable
-						Insert_section pdf.cover.lookup.mc_matins End-Insert
+			Feb 7 use:
+				Section Feb07_vigil_2024
+					Insert_section title End-Insert
+				//	Section mode_eothinon
+				//		when-name-of-day-is
+				//			Sunday use:
+				//				Title role cover5 sid misc.book.Octoechos.name sid d.delimiter rid ocBK.ModeNaked End-Title
+				//				Insert_section pdf.cover.lookup.on_morning End-Insert
+				//				Title role cover4 sid ti.Eothinon ldp @Eothinon End-Title
+				//		end-when
+				//	End-Section
+					Section commeoration
+						Title role cover5 sid misc.book.Menaion.name sid d.delimiter rid meDA.date End-Title
+						Title role cover4 sid me.m02.d07_gr_GR_cog.meDA.commemoration.first End-Title
 					End-Section
 					Section katavasia
 						Insert_section KA._title End-Insert
 					End-Section
-			End-Section
-		May 17 use:
-			Section May17_client
-				Insert_section title End-Insert
-				Section commeoration
-					Title role cover5 sid misc.book.Menaion.name sid d.delimiter sid me.m05.d17_gr_GR_cog.meDA.date End-Title
-					Title role cover4 sid me.m05.d17_gr_GR_cog.meDA.commemoration.first End-Title
-					Title role cover5 sid misc.book.Pentecostarion.name End-Title
-					Title role cover4 sid pe.d098_gr_GR_cog.peDA.commemoration.full End-Title
 				End-Section
-				Section katavasia
-					Insert_section KA._title End-Insert	//Katavasia Moveable
+			Apr 13, 20 use:
+				Section Apr_client_ordination
+					Insert_section title End-Insert
+					Section commeoration
+						Title role cover5 sid misc.book.Pentecostarion.name End-Title
+						Title role cover4 sid pe.d120_gr_GR_cog.peDA.commemoration.full End-Title
+					End-Section
+					Section katavasia
+						Set_mcDay day 120 End_mcDay
+						Insert_section KA._title End-Insert
+						Set_mcDay day 0 End_mcDay
+					End-Section
+					Section ordination
+						Title role cover5 sid misc.book.Euchologion.name End-Title
+						Title role cover4 sid eu.ordination_gr_GR_cog.euORD.EP.p400.title End-Title
+					End-Section
 				End-Section
-			End-Section
-		Jul 4 use:
-			Section Jul4_2022_client_stnicholasshrine
-				Insert_section title End-Insert
-					Section ceremony
-						Title role cover5 sid ti.ConsecrationOfAChurch End-Title
-						Title role cover5 sid client_gr_GR_cog.cl.consecration.name End-Title
+			May 7 use:
+				Section May7_2022_client_portjeffersonnygoa
+					Insert_section title End-Insert
+						Section ceremony
+							Title role cover5 sid misc.book.Euchologion.name sid d.delimiter sid ti.ConsecrationOfAChurch End-Title
+						End-Section
+						Section moveable
+							Insert_section pdf.cover.lookup.mc_matins End-Insert
+						End-Section
+						Section katavasia
+							Insert_section KA._title End-Insert
+						End-Section
+				End-Section
+			May 17 use:
+				Section May17_client
+					Insert_section title End-Insert
+					Section commeoration
+						Title role cover5 sid misc.book.Menaion.name sid d.delimiter sid me.m05.d17_gr_GR_cog.meDA.date End-Title
+						Title role cover4 sid me.m05.d17_gr_GR_cog.meDA.commemoration.first End-Title
+						Title role cover5 sid misc.book.Pentecostarion.name End-Title
+						Title role cover4 sid pe.d098_gr_GR_cog.peDA.commemoration.full End-Title
 					End-Section
-					Section moveable
-						Insert_section pdf.cover.lookup.mc_matins End-Insert
+					Section katavasia
+						Insert_section KA._title End-Insert
 					End-Section
-			End-Section
-		Oct 5 use:
-			Section Oct05_client_oakmontpa
-				Insert_section title End-Insert
-					Section ceremony
-						Title role cover5 sid misc.book.Euchologion.name sid d.delimiter sid ti.ConsecrationOfAChurch End-Title
+				End-Section
+			Jul 4 use:
+				Section Jul4_2022_client_stnicholasshrine
+					Insert_section title End-Insert
+						Section ceremony
+							Title role cover5 sid ti.ConsecrationOfAChurch End-Title
+							Title role cover5 sid client_gr_GR_cog.cl.consecration.name End-Title
+						End-Section
+						Section moveable
+							Insert_section pdf.cover.lookup.mc_matins End-Insert
+						End-Section
+				End-Section
+			Oct 5 use:
+				Section Oct05_client_oakmontpa
+					Insert_section title End-Insert
+						Section ceremony
+							Title role cover5 sid misc.book.Euchologion.name sid d.delimiter sid ti.ConsecrationOfAChurch End-Title
+						End-Section
+						Section commeoration
+							Title role cover5 sid misc.book.Menaion.name sid d.delimiter sid me.m08.d15_gr_GR_cog.meDA.date End-Title
+							Title role cover4 sid me.m08.d15_gr_GR_cog.meDA.commemoration.first End-Title
+						End-Section
+					Section katavasia
+						Insert_section KA._title End-Insert
+					End-Section
+				End-Section
+			Oct 6 use:
+				Section Oct06_client_newjerseyparish
+					Insert_section title End-Insert
+					Section mode_eothinon
+						when-name-of-day-is
+							Sunday use:
+								Title role cover5 sid misc.book.Octoechos.name sid d.delimiter rid ocBK.ModeNaked End-Title
+								Insert_section pdf.cover.lookup.on_morning End-Insert
+								Title role cover4 sid ti.Eothinon ldp @Eothinon End-Title
+						end-when
+					End-Section
+						Section ceremony
+							Title role cover5 sid misc.book.Euchologion.name sid d.delimiter sid ti.ConsecrationOfAChurch End-Title
+						End-Section
+						Section commeoration
+							Title role cover5 sid misc.book.Menaion.name sid d.delimiter sid me.m05.d02_gr_GR_cog.meDA.date End-Title
+							Title role cover4 sid me.m05.d02_gr_GR_cog.meDA.commemoration.first End-Title
+						End-Section
+					Section katavasia
+						Insert_section KA._title End-Insert
+					End-Section
+				End-Section
+			Oct 12 use:
+				Section Oct12_client_yonkersnewyork
+					Insert_section title End-Insert
+						Section ceremony
+							Title role cover5 sid misc.book.Euchologion.name sid d.delimiter sid ti.ConsecrationOfAChurch End-Title
+						End-Section
+						Section commeoration
+							Title role cover5 sid misc.book.Menaion.name sid d.delimiter sid me.m04.d23_gr_GR_cog.meDA.date End-Title
+							Title role cover4 sid me.m04.d23_gr_GR_cog.meDA.commemoration.first End-Title
+						End-Section
+					Section katavasia
+						Insert_section KA._title End-Insert
+					End-Section
+				End-Section
+			Oct 15 use:
+				Section Oct15_client_ordination
+					Insert_section title End-Insert
+					Section commeoration
+						Title role cover5 sid misc.book.Pentecostarion.name End-Title
+						Title role cover4 sid pe.d120_gr_GR_cog.peDA.commemoration.full End-Title
+					End-Section
+					Section katavasia
+						Set_mcDay day 120 End_mcDay
+						Insert_section KA._title End-Insert
+						Set_mcDay day 0 End_mcDay
+					End-Section
+					Section ordination
+						Title role cover5 sid misc.book.Euchologion.name End-Title
+						Title role cover4 sid eu.ordination_gr_GR_cog.euORD.EP.p400.title End-Title
+					End-Section
+				End-Section
+		//	Nov 1 thru 7 use: //St. Raphael of Brooklyn
+		//		Section straphael
+		//			when-name-of-day-is
+		//				Saturday use:
+		//					Section this_title
+		//						Title role cover1 sid ma.pdf.cover End-Title 	//Service
+		//						Title role cover3 sid d.for ldp @Service_Date End-Title	//Date
+		//					End-Section
+		//					Section commeoration
+		//						Title role cover5 sid misc.book.MeSupplement.name sid d.delimiter sid me.m11.d07_gr_GR_cog.alt1.meDA.date End-Title
+		//						Title role cover4 sid me.m11.d07_gr_GR_cog.alt1.meDA.commemoration.full End-Title
+		//					End-Section
+		//					Section katavasia
+		//						Insert_section KA._title End-Insert
+		//					End-Section
+		//					Title role cover8 rid alt1.meDA.note End-Title
+		//			end-when
+		//		End-Section
+			Nov 2 use:
+				Section Nov02
+					Insert_section title End-Insert
+				//	Section mode_eothinon
+				//		when-name-of-day-is
+				//			Sunday use:
+				//				Title role cover5 sid misc.book.Octoechos.name sid d.delimiter rid ocBK.ModeNaked End-Title
+				//				Insert_section pdf.cover.lookup.on_morning End-Insert
+				//				Title role cover4 sid ti.Eothinon ldp @Eothinon End-Title
+				//		end-when
+				//	End-Section
+					Section commeoration
+						Title role cover5 sid misc.book.Menaion.name sid d.delimiter rid meDA.date End-Title
+						Title role cover4 sid me.m11.d02_gr_GR_cog.meDA.commemoration.first End-Title
+					End-Section
+					Section katavasia
+						Insert_section KA._title End-Insert
+					End-Section
+				End-Section
+			Nov 3 use:
+				Section Nov03
+					Insert_section title End-Insert
+				//	Section mode_eothinon
+				//		when-name-of-day-is
+				//			Sunday use:
+				//				Title role cover5 sid misc.book.Octoechos.name sid d.delimiter rid ocBK.ModeNaked End-Title
+				//				Insert_section pdf.cover.lookup.on_morning End-Insert
+				//				Title role cover4 sid ti.Eothinon ldp @Eothinon End-Title
+				//		end-when
+				//	End-Section
+					Section commeoration
+						Title role cover5 sid misc.book.Menaion.name sid d.delimiter rid meDA.date End-Title
+						Title role cover4 sid me.m11.d03_gr_GR_cog.meDA.commemoration.first End-Title
+					End-Section
+					Section katavasia
+						Insert_section KA._title End-Insert
+					End-Section
+				End-Section
+			Nov 15 use:
+				Section Nov15_client_flushingnewyork
+					Insert_section title End-Insert
+						Section ceremony
+							Title role cover5 sid misc.book.Euchologion.name sid d.delimiter sid ti.ConsecrationOfAChurch End-Title
+						End-Section
+						Section commeoration
+							Title role cover5 sid misc.book.Menaion.name sid d.delimiter sid me.m11.d01_gr_GR_cog.meDA.date End-Title
+							Title role cover4 sid me.m11.d01_gr_GR_cog.meDA.commemoration.first End-Title
+						End-Section
+					Section katavasia
+						Insert_section KA._title End-Insert
+					End-Section
+				End-Section
+			Nov 28 use:
+				Section Nov28_client_oceannjgoa
+					Insert_section title End-Insert
+					Section mode_eothinon
+						when-name-of-day-is
+							Sunday use:
+								Title role cover5 sid misc.book.Octoechos.name sid d.delimiter rid ocBK.ModeNaked End-Title
+								Insert_section pdf.cover.lookup.on_morning End-Insert
+								Title role cover4 sid ti.Eothinon ldp @Eothinon End-Title
+						end-when
+					End-Section
+						Section ceremony
+							Title role cover5 sid misc.book.Euchologion.name sid d.delimiter sid ti.ConsecrationOfAChurch End-Title
+						End-Section
+						Section commeoration
+							Title role cover5 sid misc.book.Menaion.name sid d.delimiter sid me.m04.d23_gr_GR_cog.meDA.date End-Title
+							Title role cover4 sid me.m04.d23_gr_GR_cog.meDA.commemoration.first End-Title
+						End-Section
+					Section katavasia
+						Insert_section KA._title End-Insert
+					End-Section
+				End-Section
+			Dec 5 use:
+				Section Dec05_client
+					Section title
+						Title role cover1 sid ma.pdf.cover End-Title
+						Title role cover3 sid d.for ldp @Service_Date End-Title
 					End-Section
 					Section commeoration
-						Title role cover5 sid misc.book.Menaion.name sid d.delimiter sid me.m08.d15_gr_GR_cog.meDA.date End-Title
-						Title role cover4 sid me.m08.d15_gr_GR_cog.meDA.commemoration.first End-Title
+						Title role cover5 sid misc.book.Pentecostarion.name End-Title
+						Title role cover4 sid pe.d120_gr_GR_cog.peDA.commemoration.full End-Title
+						Title role cover5 sid misc.book.Menaion.name sid d.delimiter rid meDA.date End-Title
+						Title role cover4 rid meDA.commemoration.full End-Title
 					End-Section
-				Section katavasia
-					Insert_section KA._title End-Insert
-				End-Section
-			End-Section
-		Oct 6 use:
-			Section Oct06_client_newjerseyparish
-				Insert_section title End-Insert
-				Section mode_eothinon
-					when-name-of-day-is
-						Sunday use:
-							Title role cover5 sid misc.book.Octoechos.name sid d.delimiter rid ocBK.ModeNaked End-Title
-							Insert_section pdf.cover.lookup.on_morning End-Insert
-							Title role cover4 sid ti.Eothinon ldp @Eothinon End-Title
-					end-when
-				End-Section
-					Section ceremony
-						Title role cover5 sid misc.book.Euchologion.name sid d.delimiter sid ti.ConsecrationOfAChurch End-Title
+					Section katavasia
+						Set_mcDay day 120 End_mcDay
+						Insert_section KA._title End-Insert	//Katavasia Moveable
+						Set_mcDay day 0 End_mcDay
 					End-Section
-					Section commeoration
-						Title role cover5 sid misc.book.Menaion.name sid d.delimiter sid me.m05.d02_gr_GR_cog.meDA.date End-Title
-						Title role cover4 sid me.m05.d02_gr_GR_cog.meDA.commemoration.first End-Title
+					Section ordination
+						Title role cover5 sid misc.book.Euchologion.name End-Title
+						Title role cover4 sid eu.ordination_gr_GR_cog.euORD.EP.p400.title End-Title
 					End-Section
-				Section katavasia
-					Insert_section KA._title End-Insert
 				End-Section
-			End-Section
-		Oct 12 use:
-			Section Oct12_client_yonkersnewyork
-				Insert_section title End-Insert
-					Section ceremony
-						Title role cover5 sid misc.book.Euchologion.name sid d.delimiter sid ti.ConsecrationOfAChurch End-Title
-					End-Section
-					Section commeoration
-						Title role cover5 sid misc.book.Menaion.name sid d.delimiter sid me.m04.d23_gr_GR_cog.meDA.date End-Title
-						Title role cover4 sid me.m04.d23_gr_GR_cog.meDA.commemoration.first End-Title
-					End-Section
-				Section katavasia
-					Insert_section KA._title End-Insert
-				End-Section
-			End-Section
-		Oct 15 use:
-			Section Oct15_client_ordination
-				Insert_section title End-Insert
-				Section commeoration
-					Title role cover5 sid misc.book.Pentecostarion.name End-Title
-					Title role cover4 sid pe.d120_gr_GR_cog.peDA.commemoration.full End-Title
-				End-Section
-				Section katavasia
-					Set_mcDay day 120 End_mcDay
-					Insert_section KA._title End-Insert	//Katavasia Moveable
-					Set_mcDay day 0 End_mcDay
-				End-Section
-				Section ordination
-					Title role cover5 sid misc.book.Euchologion.name End-Title
-					Title role cover4 sid eu.ordination_gr_GR_cog.euORD.EP.p400.title End-Title
-				End-Section
-			End-Section
-	//	Nov 1 thru 7 use: //St. Raphael of Brooklyn
-	//		Section straphael
-	//			when-name-of-day-is
-	//				Saturday use:
-	//					Section this_title
-	//						Para role cover_logo1 sid cover_logo1.text End-Para
-	//						Para role cover_logo2 sid cover_logo2.text End-Para
-	//						Title role cover1 sid ma.pdf.cover End-Title 	//Service
-	//						Title role cover3 sid d.for ldp @Service_Date End-Title	//Date
-	//					End-Section
-	//					Section commeoration
-	//						Title role cover5 sid misc.book.MeSupplement.name sid d.delimiter sid me.m11.d07_gr_GR_cog.alt1.meDA.date End-Title
-	//						Title role cover4 sid me.m11.d07_gr_GR_cog.alt1.meDA.commemoration.full End-Title
-	//					End-Section
-	//					Section katavasia
-	//						Insert_section KA._title End-Insert
-	//					End-Section
-	//					Title role cover8 rid alt1.meDA.note End-Title
-	//			end-when
-	//		End-Section
-		Nov 2 use:
-			Section Nov02
-				Insert_section title End-Insert
-			//	Section mode_eothinon
-			//		when-name-of-day-is
-			//			Sunday use:
-			//				Title role cover5 sid misc.book.Octoechos.name sid d.delimiter rid ocBK.ModeNaked End-Title
-			//				Insert_section pdf.cover.lookup.on_morning End-Insert
-			//				Title role cover4 sid ti.Eothinon ldp @Eothinon End-Title
-			//		end-when
-			//	End-Section
-				Section commeoration
-					Title role cover5 sid misc.book.Menaion.name sid d.delimiter rid meDA.date End-Title
-					Title role cover4 sid me.m11.d02_gr_GR_cog.meDA.commemoration.first End-Title
-				End-Section
-				Section katavasia
-					Insert_section KA._title End-Insert
-				End-Section
-			End-Section
-		Nov 3 use:
-			Section Nov03
-				Insert_section title End-Insert
-			//	Section mode_eothinon
-			//		when-name-of-day-is
-			//			Sunday use:
-			//				Title role cover5 sid misc.book.Octoechos.name sid d.delimiter rid ocBK.ModeNaked End-Title
-			//				Insert_section pdf.cover.lookup.on_morning End-Insert
-			//				Title role cover4 sid ti.Eothinon ldp @Eothinon End-Title
-			//		end-when
-			//	End-Section
-				Section commeoration
-					Title role cover5 sid misc.book.Menaion.name sid d.delimiter rid meDA.date End-Title
-					Title role cover4 sid me.m11.d03_gr_GR_cog.meDA.commemoration.first End-Title
-				End-Section
-				Section katavasia
-					Insert_section KA._title End-Insert
-				End-Section
-			End-Section
-		Nov 15 use:
-			Section Nov15_client_flushingnewyork
-				Insert_section title End-Insert
-					Section ceremony
-						Title role cover5 sid misc.book.Euchologion.name sid d.delimiter sid ti.ConsecrationOfAChurch End-Title
-					End-Section
-					Section commeoration
-						Title role cover5 sid misc.book.Menaion.name sid d.delimiter sid me.m11.d01_gr_GR_cog.meDA.date End-Title
-						Title role cover4 sid me.m11.d01_gr_GR_cog.meDA.commemoration.first End-Title
-					End-Section
-				Section katavasia
-					Insert_section KA._title End-Insert
-				End-Section
-			End-Section
-		Nov 28 use:
-			Section Nov28_client_oceannjgoa
-				Insert_section title End-Insert
-				Section mode_eothinon
-					when-name-of-day-is
-						Sunday use:
-							Title role cover5 sid misc.book.Octoechos.name sid d.delimiter rid ocBK.ModeNaked End-Title
-							Insert_section pdf.cover.lookup.on_morning End-Insert
-							Title role cover4 sid ti.Eothinon ldp @Eothinon End-Title
-					end-when
-				End-Section
-					Section ceremony
-						Title role cover5 sid misc.book.Euchologion.name sid d.delimiter sid ti.ConsecrationOfAChurch End-Title
-					End-Section
-					Section commeoration
-						Title role cover5 sid misc.book.Menaion.name sid d.delimiter sid me.m04.d23_gr_GR_cog.meDA.date End-Title
-						Title role cover4 sid me.m04.d23_gr_GR_cog.meDA.commemoration.first End-Title
-					End-Section
-				Section katavasia
-					Insert_section KA._title End-Insert
-				End-Section
-			End-Section
-		Dec 5 use:
-			Section Dec05_client
-				Section title
-					Para role cover_logo1 sid cover_logo1.text End-Para
-					Para role cover_logo2 sid cover_logo2.text End-Para
-					Title role cover1 sid ma.pdf.cover End-Title 	//Service
-					Title role cover3 sid d.for ldp @Service_Date End-Title	//Date
-				End-Section
-				Section commeoration
-					Title role cover5 sid misc.book.Pentecostarion.name End-Title
-					Title role cover4 sid pe.d120_gr_GR_cog.peDA.commemoration.full End-Title
-					Title role cover5 sid misc.book.Menaion.name sid d.delimiter rid meDA.date End-Title
-					Title role cover4 rid meDA.commemoration.full End-Title
-				End-Section
-				Section katavasia
-					Set_mcDay day 120 End_mcDay
-					Insert_section KA._title End-Insert	//Katavasia Moveable
-					Set_mcDay day 0 End_mcDay
-				End-Section
-				Section ordination
-					Title role cover5 sid misc.book.Euchologion.name End-Title
-					Title role cover4 sid eu.ordination_gr_GR_cog.euORD.EP.p400.title End-Title
-				End-Section
-			End-Section
-	end-when
-
-	Title role cover6 sid pref.generation_alwb.cover.version End-Title //GE or E
-
-//	Insert_section pdf.cover.links.lookup.matins End-Insert
+		end-when
+	
+		Title role cover6 sid pref.generation_alwb.cover.version End-Title //GE or E
 
 	Switch-Version Both End-Switch-Version
 

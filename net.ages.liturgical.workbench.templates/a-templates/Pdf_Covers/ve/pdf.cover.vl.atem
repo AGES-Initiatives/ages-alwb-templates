@@ -2,9 +2,6 @@ Template pdf.cover.vl
 
 Status Final
 
-	import he.k_en_US_public.*
-	import pdf.covers_gr_GR_cog.*
-
 	import da.*
 	import oc.*
 	import me.*
@@ -26,84 +23,61 @@ Status Final
 
 	Switch-Version L2 End-Switch-Version
 
-	Insert_section pdf.cover.links.lookup.vespers End-Insert
-	when-movable-cycle-day-is
-		69 use:
-			Section hw_vl1
-				Para role cover_logo_line_above sid cover_logo_line End-Para
-				Para role cover_logo1 sid cover_logo1.text End-Para
-				Para role cover_logo2 sid cover_logo2.text End-Para
-				Para role cover_logo_line_below sid cover_logo_line End-Para
-				Title role cover1 sid hw.pdf.cover ldp @Service_Year End-Title 	//Service
-				Title role cover2 sid vl.pdf.cover sid vl.pdf.cover2 End-Title
-				Title role cover2 sid d.onThursdayMorning End-Title
-				Title role cover4 sid ve.pdf.header sid d.of rid trDA.commemoration.short End-Title	//Triodion
-			End-Section //hw_vl1
-		71 use:
-			Section hw_vl2
-				Para role cover_logo_line_above sid cover_logo_line End-Para
-				Para role cover_logo1 sid cover_logo1.text End-Para
-				Para role cover_logo2 sid cover_logo2.text End-Para
-				Para role cover_logo_line_below sid cover_logo_line End-Para
-				Title role cover1 sid hw.pdf.cover ldp @Service_Year End-Title 	//Service
-				Title role cover2 sid vl.pdf.cover sid vl.pdf.cover2 End-Title
-				Title role cover2 sid d.onSaturdayMorning End-Title
-				Title role cover4 sid ve.pdf.header sid d.of rid peDA.commemoration.short End-Title
-			End-Section //hw_vl2
-		otherwise use:
-			when-date-is
-				Aug 15 use:
-					Para role cover_logo_line_above sid cover_logo_line End-Para
-					Para role cover_logo1 sid cover_logo1.text End-Para
-					Para role cover_logo2 sid cover_logo2.text End-Para
-					Para role cover_logo_line_below sid cover_logo_line End-Para
-					Title role cover1 sid vl2.pdf.cover End-Title 	//Service
-					Title role cover2 sid vl2.pdf.cover2 End-Title 	//Service
-					Insert_section pdf.cover.lookup.on_day_date_before End-Insert
-					Title role cover31 rid meDA.fordate ldp @Service_Year End-Title 
-					Title role cover5 sid misc.book.Menaion.name sid d.delimiter rid meDA.date End-Title
-					Title role cover4 rid meDA.commemoration.full End-Title
-				Sep 14 use:
-					Para role cover_logo_line_above sid cover_logo_line End-Para
-					Para role cover_logo1 sid cover_logo1.text End-Para
-					Para role cover_logo2 sid cover_logo2.text End-Para
-					Para role cover_logo_line_below sid cover_logo_line End-Para
-					Title role cover1 sid vl2.pdf.cover End-Title 	//Service
-					Title role cover2 sid vl2.pdf.cover2 End-Title 	//Service
-					Insert_section pdf.cover.lookup.on_day_date_before End-Insert
-					Title role cover31 rid meDA.fordate ldp @Service_Year End-Title 
-					Title role cover5 sid misc.book.Menaion.name sid d.delimiter rid meDA.date End-Title
-					Title role cover4 rid meDA.commemoration.full End-Title
+		Insert_section pdf.cover.links.lookup.vespers End-Insert
+		Title role cover81 sid pdf.covers_gr_GR_cog.cover_attribution1.text End-Title
+		Title role cover82 sid pdf.covers_gr_GR_cog.cover_attribution2.text End-Title
 
-				Dec 25 use:
-					Para role cover_logo_line_above sid cover_logo_line End-Para
-					Para role cover_logo1 sid cover_logo1.text End-Para
-					Para role cover_logo2 sid cover_logo2.text End-Para
-					Para role cover_logo_line_below sid cover_logo_line End-Para
-					Title role cover1 sid vl.pdf.cover End-Title 	//Service
-					Title role cover2 sid vl.pdf.cover2 End-Title 	//Service
-					Insert_section pdf.cover.lookup.on_day_date_before End-Insert
-
-					Title role cover5 sid misc.book.Menaion.name sid d.delimiter rid meDA.date End-Title
-					Title role cover4 rid meDA.commemoration.full End-Title
-
-				Jan 6 use:
-					Para role cover_logo_line_above sid cover_logo_line End-Para
-					Para role cover_logo1 sid cover_logo1.text End-Para
-					Para role cover_logo2 sid cover_logo2.text End-Para
-					Para role cover_logo_line_below sid cover_logo_line End-Para
-					Title role cover1 sid vl.pdf.cover End-Title 	//Service
-					Title role cover2 sid vl.pdf.cover2 End-Title 	//Service
-					Insert_section pdf.cover.lookup.on_day_date_before End-Insert
-
-					Title role cover5 sid misc.book.Menaion.name sid d.delimiter rid meDA.date End-Title
-					Title role cover4 rid meDA.commemoration.full End-Title
-			end-when
-	end-when
+		when-movable-cycle-day-is
+			69 use:
+				Section hw_vl1
+					Title role cover1 sid hw.pdf.cover ldp @Service_Year End-Title 	//Service
+					Title role cover2 sid vl.pdf.cover sid vl.pdf.cover2 End-Title
+					Title role cover2 sid d.onThursdayMorning End-Title
+					Title role cover4 sid ve.pdf.header sid d.of rid trDA.commemoration.short End-Title	//Triodion
+				End-Section //hw_vl1
+			71 use:
+				Section hw_vl2
+					Title role cover1 sid hw.pdf.cover ldp @Service_Year End-Title 	//Service
+					Title role cover2 sid vl.pdf.cover sid vl.pdf.cover2 End-Title
+					Title role cover2 sid d.onSaturdayMorning End-Title
+					Title role cover4 sid ve.pdf.header sid d.of rid peDA.commemoration.short End-Title
+				End-Section //hw_vl2
+			otherwise use:
+				when-date-is
+					Aug 15 use:
+						Title role cover1 sid vl2.pdf.cover End-Title 	//Service
+						Title role cover2 sid vl2.pdf.cover2 End-Title 	//Service
+						Insert_section pdf.cover.lookup.on_day_date_before End-Insert
+						Title role cover31 rid meDA.fordate ldp @Service_Year End-Title 
+						Title role cover5 sid misc.book.Menaion.name sid d.delimiter rid meDA.date End-Title
+						Title role cover4 rid meDA.commemoration.full End-Title
+					Sep 14 use:
+						Title role cover1 sid vl2.pdf.cover End-Title 	//Service
+						Title role cover2 sid vl2.pdf.cover2 End-Title 	//Service
+						Insert_section pdf.cover.lookup.on_day_date_before End-Insert
+						Title role cover31 rid meDA.fordate ldp @Service_Year End-Title 
+						Title role cover5 sid misc.book.Menaion.name sid d.delimiter rid meDA.date End-Title
+						Title role cover4 rid meDA.commemoration.full End-Title
+	
+					Dec 25 use:
+						Title role cover1 sid vl.pdf.cover End-Title 	//Service
+						Title role cover2 sid vl.pdf.cover2 End-Title 	//Service
+						Insert_section pdf.cover.lookup.on_day_date_before End-Insert
+	
+						Title role cover5 sid misc.book.Menaion.name sid d.delimiter rid meDA.date End-Title
+						Title role cover4 rid meDA.commemoration.full End-Title
+	
+					Jan 6 use:
+						Title role cover1 sid vl.pdf.cover End-Title 	//Service
+						Title role cover2 sid vl.pdf.cover2 End-Title 	//Service
+						Insert_section pdf.cover.lookup.on_day_date_before End-Insert
+	
+						Title role cover5 sid misc.book.Menaion.name sid d.delimiter rid meDA.date End-Title
+						Title role cover4 rid meDA.commemoration.full End-Title
+				end-when
+		end-when
 
 		Title role cover6 sid pref.generation_alwb.cover.version End-Title //GE or E
-
-//		Insert_section pdf.cover.links.lookup.vespers End-Insert
 
 	Switch-Version Both End-Switch-Version
 

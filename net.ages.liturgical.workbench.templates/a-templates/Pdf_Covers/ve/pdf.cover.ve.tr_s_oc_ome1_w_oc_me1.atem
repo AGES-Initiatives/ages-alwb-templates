@@ -2,8 +2,8 @@ Template pdf.cover.ve.tr_s_oc_ome1_w_oc_me1
 
 Status Final
 
-	import he.k_en_US_public.*
-	import pdf.covers_gr_GR_cog.*
+//	import he.k_en_US_public.*
+//	import pdf.covers_gr_GR_cog.*
 
 	import da.*
 	import oc.*
@@ -26,53 +26,49 @@ Status Final
 
 	Switch-Version L2 End-Switch-Version
 
-	Insert_section pdf.cover.links.lookup.vespers End-Insert
+		Insert_section pdf.cover.links.lookup.vespers End-Insert
+		Title role cover81 sid pdf.covers_gr_GR_cog.cover_attribution1.text End-Title
+		Title role cover82 sid pdf.covers_gr_GR_cog.cover_attribution2.text End-Title
 		Section title
-			Para role cover_logo_line_above sid cover_logo_line End-Para
-			Para role cover_logo1 sid cover_logo1.text End-Para
-			Para role cover_logo2 sid cover_logo2.text End-Para
-			Para role cover_logo_line_below sid cover_logo_line End-Para
 			Title role cover1 sid ve.pdf.cover End-Title
 			Insert_section pdf.cover.lookup.on_day_date_before End-Insert
 			Title role cover31 rid meDA.fordate ldp @Service_Year End-Title 
 		End-Section
 
-	Section cover
-		when-movable-cycle-day-is
-			1 thru 65 use:
-				Section triodion_lent
-					Section modeofweek
-						Insert_section pdf.cover.lookup.tr_modeofweek_ve End-Insert
+		Section cover
+			when-movable-cycle-day-is
+				1 thru 65 use:
+					Section triodion_lent
+						Section modeofweek
+							Insert_section pdf.cover.lookup.tr_modeofweek_ve End-Insert
+						End-Section
+						Section moveable
+							Insert_section pdf.cover.lookup.mc_vespers_on_day_before End-Insert
+						End-Section
+						Section commeoration
+							when-movable-cycle-day-is
+								1, 8, 14, 15, 21, 22, 28, 29, 36, 43, 50, 54, 56, 57, 63, 64 use:
+								otherwise use:
+									Title role cover5 sid misc.book.Menaion.name sid d.delimiter rid meDA.date End-Title
+									Title role cover4 rid meDA.commemoration.first_short End-Title
+							end-when
+						End-Section
 					End-Section
-					Section moveable
-						Insert_section pdf.cover.lookup.mc_vespers_on_day_before End-Insert
+				otherwise use:
+					Section normal
+						Section modeofweek
+							Title role cover5 sid misc.book.Octoechos.name sid d.delimiter rid ocBK.ModeNaked End-Title
+							Insert_section pdf.cover.lookup.on_evening_before End-Insert
+						End-Section
+						Section commeoration
+							Title role cover5 sid misc.book.Menaion.name sid d.delimiter rid meDA.date End-Title
+							Title role cover4 rid meDA.commemoration.first_short End-Title
+						End-Section
 					End-Section
-					Section commeoration
-						when-movable-cycle-day-is
-							1, 8, 14, 15, 21, 22, 28, 29, 36, 43, 50, 54, 56, 57, 63, 64 use:
-							otherwise use:
-								Title role cover5 sid misc.book.Menaion.name sid d.delimiter rid meDA.date End-Title
-								Title role cover4 rid meDA.commemoration.first_short End-Title
-						end-when
-					End-Section
-				End-Section
-			otherwise use:
-				Section normal
-					Section modeofweek
-						Title role cover5 sid misc.book.Octoechos.name sid d.delimiter rid ocBK.ModeNaked End-Title
-						Insert_section pdf.cover.lookup.on_evening_before End-Insert
-					End-Section
-					Section commeoration
-						Title role cover5 sid misc.book.Menaion.name sid d.delimiter rid meDA.date End-Title
-						Title role cover4 rid meDA.commemoration.first_short End-Title
-					End-Section
-				End-Section
-		end-when
-	End-Section
-
-	Title role cover6 sid pref.generation_alwb.cover.version End-Title
-
-//	Insert_section pdf.cover.links.lookup.vespers End-Insert
+			end-when
+		End-Section
+	
+		Title role cover6 sid pref.generation_alwb.cover.version End-Title
 
 	Switch-Version Both End-Switch-Version
 
